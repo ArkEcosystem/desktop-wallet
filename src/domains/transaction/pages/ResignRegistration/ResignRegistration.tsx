@@ -1,26 +1,24 @@
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
-import { Input, InputPassword } from "app/components/Input";
+import {  InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { useSelectionState } from "app/components/SelectionBar";
 import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { LinkCollection } from "domains/transaction/components/LinkCollection";
-import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-type UpdateRegistrationProps = {
+type ResignRegistrationProps = {
 	formDefaultData?: any;
 	onDownload: any;
 };
@@ -32,122 +30,18 @@ const FirstStep = ({ form }: { form: any }) => {
 	const selectionBarState = useSelectionState(1);
 
 	return (
-		<div data-testid="UpdateRegistration__first-step">
-			<h1>Update Business</h1>
-			<div className="text-theme-neutral-700">
-				Select the type of registration and the address you want to register with.
+		<div data-testid="ResignRegistration__first-step">
+			<h1>Delegate Resignation</h1>
+			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
+
+			<div className="mt-6">
+				<Alert size="large">
+					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
+					blockchain.
+				</Alert>
 			</div>
 
-			<div>
-				<TransactionDetail border={false} className="mb-8">
-					<FormField name="name">
-						<FormLabel required>Name</FormLabel>
-						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
-					</FormField>
-
-					<FormField name="description" className="mt-8">
-						<FormLabel required>Description</FormLabel>
-						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
-					</FormField>
-
-					<FormField name="website" className="mt-8">
-						<FormLabel>Website</FormLabel>
-						<Input type="website" ref={register} defaultValue="http://robank.com" />
-					</FormField>
-				</TransactionDetail>
-
-				<TransactionDetail className="mb-2">
-					<LinkCollection
-						title="Repository"
-						description="Show your projects through your repository"
-						types={[
-							{ label: "BitBucket", value: "bitbucket" },
-							{ label: "GitHub", value: "github" },
-							{ label: "GitLab", value: "gitlab" },
-						]}
-						typeName="repository"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail className="mb-2">
-					<LinkCollection
-						title="Social Media"
-						description="Tell people more about yourself through social media"
-						types={[
-							{ label: "Facebook", value: "facebook" },
-							{ label: "Twitter", value: "twitter" },
-							{ label: "LinkedIn", value: "linkedin" },
-						]}
-						typeName="media"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail className="mb-2">
-					<LinkCollection
-						title="Photo and Video"
-						description="Get more users and add more information about yourself"
-						types={[
-							{ label: "YouTube", value: "youtube" },
-							{ label: "Vimeo", value: "vimeo" },
-							{ label: "Flickr", value: "flickr" },
-						]}
-						typeName="files"
-						selectionTypes={["flickr"]}
-						selectionTypeTitle="Avatar"
-					/>
-				</TransactionDetail>
-
-				<TransactionDetail label="Fee ARK" className="mt-4">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
-				</TransactionDetail>
-			</div>
-		</div>
-	);
-};
-
-const SecondStep = () => {
-	const links = [
-		{
-			link: "http://github.com/robank",
-			type: "github",
-		},
-		{
-			link: "http://gitlab.com/robank",
-			type: "gitlab",
-		},
-		{
-			link: "http://bitbucket.com/robank",
-			type: "bitbucket",
-		},
-		{
-			link: "http://npmjs.com/robank",
-			type: "npm",
-		},
-	];
-
-	return (
-		<div data-testid="UpdateRegistration__second-step" className="space-y-8">
-			<div>
-				<h1 className="mb-0">Transaction Review</h1>
-				<p className="text-theme-neutral-dark">Check the information again before voting</p>
-			</div>
-			<div className="grid grid-flow-row gap-2">
-				<TransactionDetail
-					border={false}
-					label="Network"
-					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
-								<Icon name="Ark" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
-						ARK Ecosystem
-					</div>
-				</TransactionDetail>
-
+			<div className="mt-2">
 				<TransactionDetail
 					label=" "
 					extra={
@@ -155,58 +49,75 @@ const SecondStep = () => {
 							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
+					border={false}
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-						<span className="mr-1">Sender</span>
+						<span className="mr-1">Account</span>
 						<Label color="warning">Your address</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 				</TransactionDetail>
 
-				<TransactionDetail
-					label="Type"
-					extra={
-						<div>
-							<Circle className="border-black bg-theme-background" size="large">
-								<Icon name="Business" width={20} height={20} />
-							</Circle>
-						</div>
-					}
-				>
-					Update Business
+				<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+
+				<TransactionDetail label="Fee ARK">
+					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionDetail>
-
-				<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-
-				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-
-				<TransactionDetail label="Website">
-					<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
-						https://ark.io
-					</a>
-				</TransactionDetail>
-
-				<TransactionDetail className="mb-2">
-					<LinkList
-						title="Repository"
-						description="Show your projects through the repository"
-						links={links}
-					/>
-				</TransactionDetail>
-
-				<div className="my-4">
-					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
-				</div>
 			</div>
 		</div>
 	);
 };
 
+const SecondStep = () => (
+	<div data-testid="ResignRegistration__second-step" className="space-y-8">
+		<div>
+			<h1 className="mb-0">Transaction Review</h1>
+			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
+		</div>
+		<div className="grid grid-flow-row gap-2">
+			<TransactionDetail
+				border={false}
+				label="Network"
+				extra={
+					<div className="ml-1 text-theme-danger-500">
+						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Icon name="Ark" width={20} height={20} />
+						</Circle>
+					</div>
+				}
+			>
+				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
+			</TransactionDetail>
+
+			<TransactionDetail
+				label=" "
+				extra={
+					<div>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+					</div>
+				}
+			>
+				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<span className="mr-1">Account</span>
+					<Label color="warning">Your address</Label>
+				</div>
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+			</TransactionDetail>
+
+			<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+
+			<div className="my-4">
+				<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+			</div>
+		</div>
+	</div>
+);
+
 const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
 
 	return (
-		<div data-testid="UpdateRegistration__third-step">
+		<div data-testid="ResignRegistration__third-step">
 			{passwordType !== "ledger" && (
 				<div>
 					<h1>Authenticate</h1>
@@ -258,15 +169,9 @@ export const FourthStep = () => (
 				</Circle>
 			}
 		>
-			Update Business
+			Delegate Resignation
 		</TransactionDetail>
-		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
-				http://robank.com
-			</a>
-		</TransactionDetail>
+		<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
 			extra={
@@ -282,7 +187,7 @@ export const FourthStep = () => (
 	</TransactionSuccessful>
 );
 
-export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegistrationProps) => {
+export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
@@ -297,7 +202,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 	};
 
 	return (
-		<div data-testid="UpdateRegistration" className="max-w-xl mx-auto">
+		<div data-testid="ResignRegistration" className="max-w-xl mx-auto">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />
@@ -326,7 +231,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 							{activeTab < 6 && (
 								<Button
 									disabled={activeTab === 1}
-									data-testid="UpdateRegistration__back-button"
+									data-testid="ResignRegistration__back-button"
 									variant="plain"
 									onClick={handleBack}
 								>
@@ -336,7 +241,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 
 							{activeTab < 3 && (
 								<Button
-									data-testid="UpdateRegistration__continue-button"
+									data-testid="ResignRegistration__continue-button"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -346,7 +251,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 
 							{activeTab >= 3 && activeTab < 6 && (
 								<Button
-									data-testid="UpdateRegistration__send-button"
+									data-testid="ResignRegistration__send-button"
 									disabled={!isValid}
 									onClick={handleNext}
 								>
@@ -357,13 +262,13 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 
 							{activeTab === 6 && (
 								<div className="flex justify-end space-x-3">
-									<Button data-testid="UpdateRegistration__wallet-button" variant="plain">
+									<Button data-testid="ResignRegistration__wallet-button" variant="plain">
 										Back to wallet
 									</Button>
 
 									<Button
 										type="submit"
-										data-testid="UpdateRegistration__download-button"
+										data-testid="ResignRegistration__download-button"
 										variant="plain"
 									>
 										<Icon name="Download" className="mr-2" />
@@ -379,6 +284,6 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 	);
 };
 
-UpdateRegistration.defaultProps = {
+ResignRegistration.defaultProps = {
 	formDefaultData: {},
 };

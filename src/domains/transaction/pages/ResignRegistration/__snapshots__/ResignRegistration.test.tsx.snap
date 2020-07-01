@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UpdateRegistration should render 1st step 1`] = `
+exports[`ResignRegistration should render 1st step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -40,230 +40,112 @@ exports[`UpdateRegistration should render 1st step 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="UpdateRegistration__first-step"
+              data-testid="ResignRegistration__first-step"
             >
               <h1>
-                Update Business
+                Delegate Resignation
               </h1>
               <div
                 class="text-theme-neutral-700"
               >
-                Select the type of registration and the address you want to register with.
+                Resign your delegate for always.
               </div>
-              <div>
+              <div
+                class="mt-6"
+              >
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex rounded-lg overflow-hidden bg-theme-warning"
+                >
+                  <div
+                    class="sc-AxiKw eRaQyX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                  >
+                    <div
+                      class="sc-AxjAm bIZXgI"
+                      height="30"
+                      width="30"
+                    >
+                      <svg>
+                        alert-default.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxirZ iyxqHr flex-1 bg-theme-warning-100"
+                  >
+                    Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-2"
+              >
+                <div
+                  class="flex items-center py-4 true "
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="name"
-                          required=""
-                        >
-                          Name
-                          <div
-                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
-                        </label>
-                        <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="Input"
-                          name="name"
-                          type="text"
-                          value="ROBank Ecosystem"
-                        />
-                      </fieldset>
-                      <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="description"
-                          required=""
-                        >
-                          Description
-                          <div
-                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
-                        </label>
-                        <textarea
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="TextArea"
-                          name="description"
-                        >
-                          Not a trustworthy bank
-                        </textarea>
-                      </fieldset>
-                      <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="website"
-                        >
-                          Website
-                        </label>
-                        <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="Input"
-                          name="website"
-                          type="website"
-                          value="http://robank.com"
-                        />
-                      </fieldset>
+                       
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
                     <div
                       class="mt-2 font-semibold"
                     >
                       <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
+                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
                       >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
+                        <span
+                          class="mr-1"
                         >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Repository
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Show your projects through your repository
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
+                          Account
+                        </span>
+                        <div
+                          class="sc-fznKkj krlUGj"
+                          color="warning"
+                        >
+                          Your address
                         </div>
+                      </div>
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AUexKj...EVTQWK
+                        </span>
                       </div>
                     </div>
                   </div>
+                  <div>
+                    <div
+                      class="sc-AxhUy chcxWU"
+                    />
+                  </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Social Media
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Tell people more about yourself through social media
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Delegate Name
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
                     <div
                       class="mt-2 font-semibold"
                     >
-                      <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Photo and Video
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Get more users and add more information about yourself
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Delegate 3
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -283,10 +165,10 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           class="flex-1"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="sc-fzoLsD rzdyj"
                           >
                             <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -299,19 +181,19 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                 data-testid="Range"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
+                                  class="sc-fzpans jCtSxP"
                                   data-testid="Range__track"
                                   style="transform: scale(1); cursor: pointer;"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
+                                    class="sc-fzplWN dLuLpb"
                                     data-testid="Range__track__filled"
                                   >
                                     <div
                                       aria-valuemax="100"
                                       aria-valuemin="1"
                                       aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
+                                      class="sc-fznyAO caSzTt"
                                       data-testid="Range__thumb"
                                       draggable="false"
                                       role="slider"
@@ -332,7 +214,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -340,7 +222,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -348,7 +230,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -367,18 +249,18 @@ exports[`UpdateRegistration should render 1st step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxhCb BegvR"
               color="primary"
-              data-testid="UpdateRegistration__back-button"
+              data-testid="ResignRegistration__back-button"
               disabled=""
               type="button"
             >
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxhCb gBCygf"
               color="primary"
-              data-testid="UpdateRegistration__continue-button"
+              data-testid="ResignRegistration__continue-button"
               type="button"
             >
               Continue
@@ -391,11 +273,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`UpdateRegistration should render 2nd step 1`] = `
+exports[`ResignRegistration should render 2nd step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -432,7 +314,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
           >
             <div
               class="space-y-8"
-              data-testid="UpdateRegistration__second-step"
+              data-testid="ResignRegistration__second-step"
             >
               <div>
                 <h1
@@ -443,7 +325,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                 <p
                   class="text-theme-neutral-dark"
                 >
-                  Check the information again before voting
+                  Check the information again before Resignation
                 </p>
               </div>
               <div
@@ -474,10 +356,10 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="ml-1 text-theme-danger-500"
                   >
                     <div
-                      class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxjAm buCJuk"
                         height="20"
                         width="20"
                       >
@@ -508,10 +390,10 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                         <span
                           class="mr-1"
                         >
-                          Sender
+                          Account
                         </span>
                         <div
-                          class="sc-fzplWN gpwIyi"
+                          class="sc-fznKkj krlUGj"
                           color="warning"
                         >
                           Your address
@@ -521,13 +403,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                         class="inline-block truncate"
                       >
                         <span
-                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                          data-testid="address__wallet-name"
-                        >
-                          ROBank
-                        </span>
-                        <span
-                          class="text-theme-neutral-400 font-semibold text-base"
+                          class="text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj...EVTQWK
@@ -537,7 +413,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                   </div>
                   <div>
                     <div
-                      class="sc-AxirZ hTKBId"
+                      class="sc-AxhUy chcxWU"
                     />
                   </div>
                 </div>
@@ -550,132 +426,12 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     <div
                       class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      Type
+                      Delegate Name
                     </div>
                     <div
                       class="mt-2 font-semibold"
                     >
-                      Update Business
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      class="sc-AxirZ cZokSJ border-black bg-theme-background"
-                    >
-                      <div
-                        class="sc-AxhCb VoPpj"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          business.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Name
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      ROBank Eco
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Description
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      Not a trustworthy bank
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Website
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <a
-                        class="link"
-                        href="https://ark.io"
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        https://ark.io
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <div
-                        data-testid="LinkList"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkList__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Repository
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Show your projects through the repository
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Delegate 3
                     </div>
                   </div>
                 </div>
@@ -729,7 +485,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="px-1 py-2 bg-white"
                         >
                           <div
-                            class="sc-AxhCb cMyoID"
+                            class="sc-AxjAm pXfjM"
                             height="15"
                             width="15"
                           >
@@ -764,17 +520,17 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxhCb BegvR"
               color="primary"
-              data-testid="UpdateRegistration__back-button"
+              data-testid="ResignRegistration__back-button"
               type="button"
             >
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxhCb gBCygf"
               color="primary"
-              data-testid="UpdateRegistration__continue-button"
+              data-testid="ResignRegistration__continue-button"
               type="button"
             >
               Continue
@@ -787,11 +543,11 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`UpdateRegistration should render 3rd step 1`] = `
+exports[`ResignRegistration should render 3rd step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -827,7 +583,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="UpdateRegistration__third-step"
+              data-testid="ResignRegistration__third-step"
             >
               <div>
                 <h1>
@@ -842,7 +598,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                   class="mt-5"
                 >
                   <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
                   >
                     <label
                       class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -852,16 +608,16 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       Mnemonic
                     </label>
                     <div
-                      class="sc-AxmLO kuiknc max-w-20"
+                      class="sc-fzoLsD rzdyj max-w-20"
                     >
                       <input
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                        class="sc-Axmtr sc-fzozJi blzTcm mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -869,7 +625,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxhCb fxrKLH"
+                            class="sc-AxjAm cpczEI"
                             height="1em"
                             width="1em"
                           >
@@ -882,7 +638,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-AxiKw iQzisX mt-8"
+                    class="sc-AxgMl cwpxCQ mt-8"
                   >
                     <label
                       class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -892,16 +648,16 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       2nd Mnemonic
                     </label>
                     <div
-                      class="sc-AxmLO kuiknc max-w-20"
+                      class="sc-fzoLsD rzdyj max-w-20"
                     >
                       <input
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                        class="sc-Axmtr sc-fzozJi blzTcm mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -909,7 +665,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxhCb fxrKLH"
+                            class="sc-AxjAm cpczEI"
                             height="1em"
                             width="1em"
                           >
@@ -929,21 +685,21 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxhCb BegvR"
               color="primary"
-              data-testid="UpdateRegistration__back-button"
+              data-testid="ResignRegistration__back-button"
               type="button"
             >
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxhCb gBCygf"
               color="primary"
-              data-testid="UpdateRegistration__send-button"
+              data-testid="ResignRegistration__send-button"
               type="button"
             >
               <div
-                class="sc-AxhCb VoPpj mr-2"
+                class="sc-AxjAm buCJuk mr-2"
                 height="20"
                 width="20"
               >
@@ -961,11 +717,11 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`UpdateRegistration should render 4th step 1`] = `
+exports[`ResignRegistration should render 4th step 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -1063,7 +819,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxjAm cpczEI"
                               height="1em"
                               width="1em"
                             >
@@ -1112,7 +868,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxjAm cpczEI"
                               height="1em"
                               width="1em"
                             >
@@ -1161,10 +917,10 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger-500"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxhCb VoPpj"
+                          class="sc-AxjAm buCJuk"
                           height="20"
                           width="20"
                         >
@@ -1193,7 +949,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fzplWN gpwIyi"
+                            class="sc-fznKkj krlUGj"
                             color="warning"
                           >
                             Your address
@@ -1219,7 +975,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                     <div>
                       <div
-                        class="sc-AxirZ hTKBId"
+                        class="sc-AxhUy chcxWU"
                       />
                     </div>
                   </div>
@@ -1237,14 +993,14 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       <div
                         class="mt-2 font-semibold"
                       >
-                        Update Business
+                        Delegate Resignation
                       </div>
                     </div>
                     <div
-                      class="sc-AxirZ cZokSJ border-black"
+                      class="sc-AxhUy dSLmHc border-black"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxjAm buCJuk"
                         height="20"
                         width="20"
                       >
@@ -1263,55 +1019,12 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
                       >
-                        Name
+                        Delegate Name
                       </div>
                       <div
                         class="mt-2 font-semibold"
                       >
-                        ROBank Eco
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex-1"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-500"
-                      >
-                        Description
-                      </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        Not a trustworthy bank
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex-1"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-500"
-                      >
-                        Website
-                      </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        <a
-                          class="link"
-                          href="http://robank.com"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          http://robank.com
-                        </a>
+                        Delegate 3
                       </div>
                     </div>
                   </div>
@@ -1336,10 +1049,10 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxhCb liaKlj"
+                          class="sc-AxjAm eZAIEY"
                           height="50"
                           width="50"
                         >
@@ -1361,21 +1074,21 @@ exports[`UpdateRegistration should render 4th step 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxhCb BegvR"
                 color="primary"
-                data-testid="UpdateRegistration__wallet-button"
+                data-testid="ResignRegistration__wallet-button"
                 type="button"
               >
                 Back to wallet
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxhCb BegvR"
                 color="primary"
-                data-testid="UpdateRegistration__download-button"
+                data-testid="ResignRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxhCb fxrKLH mr-2"
+                  class="sc-AxjAm cpczEI mr-2"
                   height="1em"
                   width="1em"
                 >
@@ -1394,11 +1107,11 @@ exports[`UpdateRegistration should render 4th step 1`] = `
 </DocumentFragment>
 `;
 
-exports[`UpdateRegistration should should go back 1`] = `
+exports[`ResignRegistration should should go back 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -1434,230 +1147,112 @@ exports[`UpdateRegistration should should go back 1`] = `
             data-testid="tab-pabel__active-panel"
           >
             <div
-              data-testid="UpdateRegistration__first-step"
+              data-testid="ResignRegistration__first-step"
             >
               <h1>
-                Update Business
+                Delegate Resignation
               </h1>
               <div
                 class="text-theme-neutral-700"
               >
-                Select the type of registration and the address you want to register with.
+                Resign your delegate for always.
               </div>
-              <div>
+              <div
+                class="mt-6"
+              >
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex rounded-lg overflow-hidden bg-theme-warning"
+                >
+                  <div
+                    class="sc-AxiKw eRaQyX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                  >
+                    <div
+                      class="sc-AxjAm bIZXgI"
+                      height="30"
+                      width="30"
+                    >
+                      <svg>
+                        alert-default.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxirZ iyxqHr flex-1 bg-theme-warning-100"
+                  >
+                    Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mt-2"
+              >
+                <div
+                  class="flex items-center py-4 true "
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="name"
-                          required=""
-                        >
-                          Name
-                          <div
-                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
-                        </label>
-                        <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="Input"
-                          name="name"
-                          type="text"
-                          value="ROBank Ecosystem"
-                        />
-                      </fieldset>
-                      <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="description"
-                          required=""
-                        >
-                          Description
-                          <div
-                            class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
-                        </label>
-                        <textarea
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="TextArea"
-                          name="description"
-                        >
-                          Not a trustworthy bank
-                        </textarea>
-                      </fieldset>
-                      <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
-                      >
-                        <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                          data-testid="FormLabel"
-                          for="website"
-                        >
-                          Website
-                        </label>
-                        <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                          data-testid="Input"
-                          name="website"
-                          type="website"
-                          value="http://robank.com"
-                        />
-                      </fieldset>
+                       
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
                     <div
                       class="mt-2 font-semibold"
                     >
                       <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
+                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
                       >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
+                        <span
+                          class="mr-1"
                         >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Repository
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Show your projects through your repository
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
+                          Account
+                        </span>
+                        <div
+                          class="sc-fznKkj krlUGj"
+                          color="warning"
+                        >
+                          Your address
                         </div>
+                      </div>
+                      <div
+                        class="inline-block truncate"
+                      >
+                        <span
+                          class="text-theme-neutral-800 font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AUexKj...EVTQWK
+                        </span>
                       </div>
                     </div>
                   </div>
+                  <div>
+                    <div
+                      class="sc-AxhUy chcxWU"
+                    />
+                  </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="text-sm font-semibold text-theme-neutral-500"
                     >
-                      <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Social Media
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Tell people more about yourself through social media
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Delegate Name
                     </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
-                >
-                  <div
-                    class="flex-1"
-                  >
                     <div
                       class="mt-2 font-semibold"
                     >
-                      <div
-                        class="font-normal"
-                        data-testid="LinkCollection"
-                      >
-                        <div
-                          class="flex justify-between cursor-pointer"
-                          data-testid="LinkCollection__header"
-                        >
-                          <div>
-                            <span
-                              class="font-semibold"
-                            >
-                              Photo and Video
-                            </span>
-                            <div
-                              class="mt-2 text-theme-neutral-700"
-                            >
-                              Get more users and add more information about yourself
-                            </div>
-                          </div>
-                          <div>
-                            <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                chevron-down.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Delegate 3
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -1677,10 +1272,10 @@ exports[`UpdateRegistration should should go back 1`] = `
                           class="flex-1"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="sc-fzoLsD rzdyj"
                           >
                             <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -1693,19 +1288,19 @@ exports[`UpdateRegistration should should go back 1`] = `
                                 data-testid="Range"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
+                                  class="sc-fzpans jCtSxP"
                                   data-testid="Range__track"
                                   style="transform: scale(1); cursor: pointer;"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
+                                    class="sc-fzplWN dLuLpb"
                                     data-testid="Range__track__filled"
                                   >
                                     <div
                                       aria-valuemax="100"
                                       aria-valuemin="1"
                                       aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
+                                      class="sc-fznyAO caSzTt"
                                       data-testid="Range__thumb"
                                       draggable="false"
                                       role="slider"
@@ -1726,7 +1321,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1734,7 +1329,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1742,7 +1337,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1761,18 +1356,18 @@ exports[`UpdateRegistration should should go back 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxhCb BegvR"
               color="primary"
-              data-testid="UpdateRegistration__back-button"
+              data-testid="ResignRegistration__back-button"
               disabled=""
               type="button"
             >
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxhCb gBCygf"
               color="primary"
-              data-testid="UpdateRegistration__continue-button"
+              data-testid="ResignRegistration__continue-button"
               type="button"
             >
               Continue
@@ -1785,11 +1380,11 @@ exports[`UpdateRegistration should should go back 1`] = `
 </DocumentFragment>
 `;
 
-exports[`UpdateRegistration should submit 1`] = `
+exports[`ResignRegistration should submit 1`] = `
 <DocumentFragment>
   <div
     class="max-w-xl mx-auto"
-    data-testid="UpdateRegistration"
+    data-testid="ResignRegistration"
   >
     <form
       class="space-y-6"
@@ -1887,7 +1482,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxjAm cpczEI"
                               height="1em"
                               width="1em"
                             >
@@ -1936,7 +1531,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxjAm cpczEI"
                               height="1em"
                               width="1em"
                             >
@@ -1985,10 +1580,10 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger-500"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxhCb VoPpj"
+                          class="sc-AxjAm buCJuk"
                           height="20"
                           width="20"
                         >
@@ -2017,7 +1612,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fzplWN gpwIyi"
+                            class="sc-fznKkj krlUGj"
                             color="warning"
                           >
                             Your address
@@ -2043,7 +1638,7 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                     <div>
                       <div
-                        class="sc-AxirZ hTKBId"
+                        class="sc-AxhUy chcxWU"
                       />
                     </div>
                   </div>
@@ -2061,14 +1656,14 @@ exports[`UpdateRegistration should submit 1`] = `
                       <div
                         class="mt-2 font-semibold"
                       >
-                        Update Business
+                        Delegate Resignation
                       </div>
                     </div>
                     <div
-                      class="sc-AxirZ cZokSJ border-black"
+                      class="sc-AxhUy dSLmHc border-black"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxjAm buCJuk"
                         height="20"
                         width="20"
                       >
@@ -2087,55 +1682,12 @@ exports[`UpdateRegistration should submit 1`] = `
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
                       >
-                        Name
+                        Delegate Name
                       </div>
                       <div
                         class="mt-2 font-semibold"
                       >
-                        ROBank Eco
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex-1"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-500"
-                      >
-                        Description
-                      </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        Not a trustworthy bank
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
-                  >
-                    <div
-                      class="flex-1"
-                    >
-                      <div
-                        class="text-sm font-semibold text-theme-neutral-500"
-                      >
-                        Website
-                      </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        <a
-                          class="link"
-                          href="http://robank.com"
-                          rel="noreferrer"
-                          target="_blank"
-                        >
-                          http://robank.com
-                        </a>
+                        Delegate 3
                       </div>
                     </div>
                   </div>
@@ -2160,10 +1712,10 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxhCb liaKlj"
+                          class="sc-AxjAm eZAIEY"
                           height="50"
                           width="50"
                         >
@@ -2185,21 +1737,21 @@ exports[`UpdateRegistration should submit 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxhCb BegvR"
                 color="primary"
-                data-testid="UpdateRegistration__wallet-button"
+                data-testid="ResignRegistration__wallet-button"
                 type="button"
               >
                 Back to wallet
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxhCb BegvR"
                 color="primary"
-                data-testid="UpdateRegistration__download-button"
+                data-testid="ResignRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxhCb fxrKLH mr-2"
+                  class="sc-AxjAm cpczEI mr-2"
                   height="1em"
                   width="1em"
                 >
