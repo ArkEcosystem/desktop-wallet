@@ -109,7 +109,7 @@ export const LinkCollection = ({
 					<div>
 						<div className="flex space-x-2">
 							<div className="flex flex-col w-1/4">
-								<div className="w-full mb-2">
+								<div className="w-full">
 									<FormLabel label={`Add ${typeName}`} />
 								</div>
 								<InputGroup className="flex flex-1">
