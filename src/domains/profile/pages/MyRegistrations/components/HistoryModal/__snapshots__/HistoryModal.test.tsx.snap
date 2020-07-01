@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryModal should render empty state 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-30 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+    >
+      <button
+        class="sc-AxirZ iJKGpA"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="sc-AxjAm iepfoc"
+          height="10"
+          width="10"
+        >
+          <svg>
+            cross-slim.svg
+          </svg>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2>
+        History
+      </h2>
+      <div
+        class="flex-1 "
+      >
+        <div
+          class="mt-5 flex flex-col"
+        >
+          <div
+            class="sc-AxheI AUTYj"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  font-semibold"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Type
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  font-semibold justify-center"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Date
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                  <th
+                    class="text-xs text-left select-none text-theme-neutral-400"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top  font-semibold float-right"
+                    >
+                      <div
+                        class="mr-1"
+                      >
+                        Transaction
+                      </div>
+                      <div
+                        class="mt-1 text-theme-color-neutral-500"
+                        data-testid="table__Sort"
+                      />
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              />
+            </table>
+          </div>
+          <div
+            class="py-6 self-center"
+          >
+            <div
+              class="sc-AxhCb etDdhz"
+              data-testid="Pagination"
+            >
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
+                data-testid="CompactCompactPagination__first"
+                disabled=""
+                type="button"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    pagination-first.svg
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
+                data-testid="CompactPagination__previous"
+                disabled=""
+                type="button"
+              >
+                <div
+                  class="sc-AxjAm iepfoc"
+                  height="10"
+                  width="10"
+                >
+                  <svg>
+                    back.svg
+                  </svg>
+                </div>
+              </button>
+              <div
+                class="flex text-sm items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
+              >
+                Page 1 of 3
+              </div>
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
+                data-testid="CompactPagination__next"
+                type="button"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    forward.svg
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
+                data-testid="CompactPagination__last"
+                type="button"
+              >
+                <div
+                  class="sc-AxjAm HWmvM"
+                  height="12"
+                  width="12"
+                >
+                  <svg>
+                    pagination-last.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  ,
+</DocumentFragment>
+`;

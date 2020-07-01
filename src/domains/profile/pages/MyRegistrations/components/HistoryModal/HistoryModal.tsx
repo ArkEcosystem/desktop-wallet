@@ -30,7 +30,7 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")}>
+		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")} size="md">
 			<div className="mt-5 flex flex-col">
 				<Table columns={columns} data={history} className="self-center">
 					{(rowData: any) => (
