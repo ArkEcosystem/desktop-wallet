@@ -793,7 +793,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 Transaction fee
               </span>
               <span
-                class="mt-3 mr-2"
+                class="mt-3"
                 data-testid="total-amount-box__transaction-fee"
               >
                 0.09660435 ARK
@@ -1109,7 +1109,11 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
                   class="sc-fznZeY kKCHjH"
                   color="warning"
                 >
-                  Your address
+                  <span
+                    class="text-sm"
+                  >
+                    Your address
+                  </span>
                 </div>
               </div>
               <div
