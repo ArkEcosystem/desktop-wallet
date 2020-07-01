@@ -110,7 +110,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			description={!isSigned ? "Insert a message below to sign using your private key" : ""}
 			onClose={() => handleClose()}
 		>
-			<div className="mt-5">{renderSignedMessageContent()}</div>
+			<div className="mt-8">{renderSignedMessageContent()}</div>
 		</Modal>
 	);
 };

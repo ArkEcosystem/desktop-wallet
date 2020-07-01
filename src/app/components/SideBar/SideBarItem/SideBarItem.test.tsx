@@ -1,6 +1,6 @@
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+import { act, fireEvent, render } from "test-utils";
 
 import { SideBarItem } from "./SideBarItem";
 

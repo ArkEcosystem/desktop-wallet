@@ -248,7 +248,7 @@ const ThirdStep = () => {
 						</div>
 					}
 				>
-					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
@@ -265,7 +265,7 @@ const ThirdStep = () => {
 						<span className="mr-1">Sender</span>
 						<Label color="warning">Your address</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				<TransactionDetail

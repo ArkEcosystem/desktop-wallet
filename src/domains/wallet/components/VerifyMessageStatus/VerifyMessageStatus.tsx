@@ -18,7 +18,7 @@ export const VerifyMessageStatus = ({ title, description, type, onClose, isOpen 
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} onClick={onClose}>
-			<StatusInfo className="w-full mt-10" />
+			<StatusInfo className="w-full mt-8" />
 		</Modal>
 	);
 };
