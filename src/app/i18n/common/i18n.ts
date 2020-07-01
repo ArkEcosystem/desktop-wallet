@@ -61,6 +61,7 @@ export const translations: { [key: string]: any } = {
 	NOT: "not",
 	OF: "of",
 	OTHER: "Other",
+	PAGE: "Page",
 	PLUGIN: "Plugin",
 	PREV: "Prev",
 	PREVIOUS: "Previous",

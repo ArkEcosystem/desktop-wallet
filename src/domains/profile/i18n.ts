@@ -6,4 +6,19 @@ export const translations: { [key: string]: any } = {
 		START_TUTORIAL: "Start Tutorial",
 		SKIP_TUTORIAL: "Skip Tutorial",
 	},
+	MODAL_REPOSITORIES: {
+		TITLE: "Repository",
+		BitBucket: "Bitbucket",
+		GitHub: "GitHub",
+		GitLab: "GitLab",
+		Npm: "NPM",
+	},
+	MODAL_HISTORY: {
+		TITLE: "History",
+		TYPES: {
+			REGISTRATION: "Registration",
+			RESIGN: "Resign",
+			UPDATE: "Update",
+		},
+	},
 };
