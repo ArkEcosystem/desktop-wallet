@@ -272,6 +272,9 @@
 		}
 	},
 	"jest": {
+		"setupFilesAfterEnv": [
+			"<rootDir>/jest.setup.js"
+		],
 		"automock": false,
 		"collectCoverageFrom": [
 			"src/**/*.{js,jsx,ts,tsx}",
