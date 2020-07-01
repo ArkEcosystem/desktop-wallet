@@ -6,7 +6,7 @@ exports[`CreateWallet should render 1`] = `
     class="max-w-xl mx-auto"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -637,7 +637,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
         label="Wallet name (optional)"

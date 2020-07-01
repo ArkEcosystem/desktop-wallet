@@ -30,8 +30,8 @@ describe("PluginManagerControls", () => {
 			/>,
 		);
 
-		const gridIcon = getByTestId("PluginManagerControls__grid--icon");
-		const listIcon = getByTestId("PluginManagerControls__list--icon");
+		const gridIcon = getByTestId("LayoutControls__grid--icon");
+		const listIcon = getByTestId("LayoutControls__list--icon");
 
 		expect(gridIcon).toHaveClass("text-theme-danger-300");
 		expect(listIcon).not.toHaveClass("text-theme-danger-300");

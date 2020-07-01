@@ -1,4 +1,3 @@
-import MockDate from "mockdate";
 import React from "react";
 import { render } from "test-utils";
 
@@ -7,10 +6,6 @@ jest.mock("moment", () => {
 });
 
 import { PluginDetails } from "./PluginDetails";
-
-beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
-
-afterEach(() => MockDate.reset());
 
 describe("PluginDetails", () => {
 	const ratings = [

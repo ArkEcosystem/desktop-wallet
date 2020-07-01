@@ -44,7 +44,7 @@ export const WalletListItem = ({
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
-			<td className="py-4 mt-1">
+			<td className="py-6 mt-1">
 				<Circle className={coinClass} size="large">
 					<Icon name={coinIcon} width={20} height={20} />
 				</Circle>
@@ -57,17 +57,17 @@ export const WalletListItem = ({
 				<td className="py-1 text-sm font-bold">
 					{walletTypeIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
+							<div key={index} className={`inline-block mr-2 align-middle ${getIconTypeClass(type)}`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
 					})}
 				</td>
 			)}
-			<td className="py-1 font-bold text-right">
+			<td className="font-semibold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="py-1 font-semibold text-right text-theme-neutral-400">
+			<td className="text-right text-theme-neutral-400">
 				<div>{fiat}</div>
 			</td>
 			<td>

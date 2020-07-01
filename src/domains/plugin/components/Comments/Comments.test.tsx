@@ -1,12 +1,7 @@
-import MockDate from "mockdate";
 import React from "react";
 import { act, fireEvent, render } from "test-utils";
 
 import { Comments } from "./Comments";
-
-beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
-
-afterEach(() => MockDate.reset());
 
 describe("Comments", () => {
 	const comments = [

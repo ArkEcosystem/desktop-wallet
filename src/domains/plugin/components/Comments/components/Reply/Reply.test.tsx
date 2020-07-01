@@ -1,15 +1,7 @@
-import MockDate from "mockdate";
 import React from "react";
 import { render } from "test-utils";
-jest.mock("moment", () => {
-	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");
-});
 
 import { Reply } from "./Reply";
-
-beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
-
-afterEach(() => MockDate.reset());
 
 describe("Reply", () => {
 	it("should render properly", () => {
