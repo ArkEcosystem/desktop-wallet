@@ -35,7 +35,7 @@ export const Avatar = ({ address, size, noShadow, className }: Props) => {
 
 	return (
 		<AvatarStyled data-testid="Avatar" size={size!} noShadow={!!noShadow} className={className}>
-			<img src={`data:image/svg+xml;utf8,${svg}`} />
+			<img title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 		</AvatarStyled>
 	);
 };
