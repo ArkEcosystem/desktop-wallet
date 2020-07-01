@@ -41,7 +41,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxiKw wFYj"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 data-testid="PluginHeader__button--install"
                 type="button"
@@ -49,7 +49,7 @@ exports[`PluginDetails should render properly 1`] = `
                 Install
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxhCb BegvR ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
@@ -316,7 +316,7 @@ exports[`PluginDetails should render properly 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxjAm bIZXgI"
@@ -329,7 +329,7 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -401,53 +401,51 @@ exports[`PluginDetails should render properly 1`] = `
             </div>
             <div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -460,53 +458,51 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Gerard Blezer
-                      </span>
-                    </div>
+                    Gerard Blezer
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -517,30 +513,38 @@ exports[`PluginDetails should render properly 1`] = `
                     As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
                   </p>
                   <div
-                    class="flex flex-col mt-3 ml-3"
+                    class="flex flex-col mt-3"
                   >
                     <div
                       class="flex items-center text-theme-neutral-500"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="flex items-center w-10"
                       >
-                        <svg>
-                          reply-arrow.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm gvXdNR -mt-2 mx-auto"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            reply-arrow.svg
+                          </svg>
+                        </div>
                       </div>
                       <div
-                        class="grid grid-cols-2 divide-x"
+                        class="flex items-center space-x-3"
                       >
                         <span
-                          class="px-3 font-semibold text-theme-neutral-900"
+                          class="text-lg font-semibold text-theme-neutral-900"
                         >
                           Developer response
                         </span>
+                        <div
+                          class="sc-AxiKw fSbElo"
+                          type="vertical"
+                        />
                         <span
-                          class="px-3 text-theme-neutral-400"
+                          class="text-sm font-semibold text-theme-neutral-400"
                         >
                           <span
                             data-testid="timeago"
@@ -551,7 +555,7 @@ exports[`PluginDetails should render properly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -564,53 +568,51 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -623,53 +625,51 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -686,11 +686,11 @@ exports[`PluginDetails should render properly 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
@@ -707,7 +707,7 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
@@ -728,23 +728,23 @@ exports[`PluginDetails should render properly 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
                 </div>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
@@ -761,7 +761,7 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
@@ -788,7 +788,7 @@ exports[`PluginDetails should render properly 1`] = `
             class="w-full"
           >
             <button
-              class="sc-AxiKw wFYj"
+              class="sc-AxhCb gBCygf"
               color="primary"
               data-testid="ReviewBox__button--comment"
               type="button"
@@ -864,7 +864,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-300"
                       data-testid="5-stars__rating-count"
                       width="44.95677233429395"
                     />
@@ -899,7 +899,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-300"
                       data-testid="4-stars__rating-count"
                       width="55.907780979827095"
                     />
@@ -934,7 +934,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-300"
                       data-testid="3-stars__rating-count"
                       width="7.204610951008646"
                     />
@@ -969,7 +969,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-300"
                       data-testid="2-stars__rating-count"
                       width="12.103746397694524"
                     />
@@ -1004,7 +1004,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-300"
                       data-testid="1-stars__rating-count"
                       width="2.0172910662824206"
                     />
@@ -1061,7 +1061,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxiKw wFYj"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 data-testid="PluginHeader__button--open"
                 type="button"
@@ -1069,7 +1069,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 Open
               </button>
               <button
-                class="sc-AxiKw wFYj ml-3"
+                class="sc-AxhCb gBCygf ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--update"
                 type="button"
@@ -1085,7 +1085,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxhCb BegvR ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
@@ -1101,7 +1101,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxhCb BegvR ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--uninstall"
                 type="button"
@@ -1368,7 +1368,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxjAm bIZXgI"
@@ -1381,7 +1381,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -1453,53 +1453,51 @@ exports[`PluginDetails should render properly as installed 1`] = `
             </div>
             <div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -1512,53 +1510,51 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Gerard Blezer
-                      </span>
-                    </div>
+                    Gerard Blezer
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -1569,30 +1565,38 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
                   </p>
                   <div
-                    class="flex flex-col mt-3 ml-3"
+                    class="flex flex-col mt-3"
                   >
                     <div
                       class="flex items-center text-theme-neutral-500"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="flex items-center w-10"
                       >
-                        <svg>
-                          reply-arrow.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm gvXdNR -mt-2 mx-auto"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            reply-arrow.svg
+                          </svg>
+                        </div>
                       </div>
                       <div
-                        class="grid grid-cols-2 divide-x"
+                        class="flex items-center space-x-3"
                       >
                         <span
-                          class="px-3 font-semibold text-theme-neutral-900"
+                          class="text-lg font-semibold text-theme-neutral-900"
                         >
                           Developer response
                         </span>
+                        <div
+                          class="sc-AxiKw fSbElo"
+                          type="vertical"
+                        />
                         <span
-                          class="px-3 text-theme-neutral-400"
+                          class="text-sm font-semibold text-theme-neutral-400"
                         >
                           <span
                             data-testid="timeago"
@@ -1603,7 +1607,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -1616,53 +1620,51 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -1675,53 +1677,51 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="relative flex items-center space-x-3 divide-theme-neutral-400"
                 >
-                  <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                  <span
+                    class="text-lg font-semibold"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    Rok Cernec
+                  </span>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <div
+                    class="flex items-center text-sm font-semibold text-theme-warning-300"
+                  >
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="sc-AxjAm iepfoc"
+                      height="10"
+                      width="10"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="flex ml-1 text-theme-neutral-600"
-                      >
-                        4.6
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="ml-1 text-theme-neutral-600"
                     >
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        <span
-                          data-testid="timeago"
-                        >
-                          11 days ago
-                        </span>
-                      </span>
-                    </div>
+                      4.6
+                    </span>
                   </div>
+                  <div
+                    class="sc-AxiKw fSbElo"
+                    type="vertical"
+                  />
+                  <span
+                    class="text-sm font-semibold text-theme-neutral-400"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      11 days ago
+                    </span>
+                  </span>
                 </div>
                 <div
                   class="w-11/12 mt-2"
@@ -1738,11 +1738,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
@@ -1759,7 +1759,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
@@ -1780,23 +1780,23 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
                 </div>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
@@ -1813,7 +1813,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
@@ -1840,7 +1840,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             class="w-full"
           >
             <button
-              class="sc-AxiKw wFYj"
+              class="sc-AxhCb gBCygf"
               color="primary"
               data-testid="ReviewBox__button--comment"
               type="button"
@@ -1916,7 +1916,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-300"
                       data-testid="5-stars__rating-count"
                       width="44.95677233429395"
                     />
@@ -1951,7 +1951,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-300"
                       data-testid="4-stars__rating-count"
                       width="55.907780979827095"
                     />
@@ -1986,7 +1986,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-300"
                       data-testid="3-stars__rating-count"
                       width="7.204610951008646"
                     />
@@ -2021,7 +2021,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-300"
                       data-testid="2-stars__rating-count"
                       width="12.103746397694524"
                     />
@@ -2056,7 +2056,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                   >
                     <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
+                      class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-300"
                       data-testid="1-stars__rating-count"
                       width="2.0172910662824206"
                     />

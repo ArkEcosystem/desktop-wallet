@@ -1,3 +1,4 @@
+import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
@@ -53,23 +54,24 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 			</div>
 			<div>
 				{comments.map(({ author, score, date, comment, replies }, idx) => (
-					<div className="flex flex-col mt-5 text-sm" key={idx}>
-						<div className="w-2/4">
-							<div className="flex items-center divide-x space-x-3 divide-theme-neutral-400">
-								<div>
-									<span className="text-base font-semibold">{author}</span>
-								</div>
-								<div className="flex items-center pl-3 text-theme-warning-300">
-									<Icon name="Star" width={10} height={10} />
-									<span className="flex ml-1 text-theme-neutral-600">{score}</span>
-								</div>
-								<div className="px-3">
-									<span className="text-theme-neutral-400">
-										<TimeAgo date={date} />
-									</span>
-								</div>
+					<div className="flex flex-col mt-5" key={idx}>
+						<div className="relative flex items-center space-x-3 divide-theme-neutral-400">
+							<span className="text-lg font-semibold">{author}</span>
+
+							<Divider type="vertical" />
+
+							<div className="flex items-center text-sm font-semibold text-theme-warning-300">
+								<Icon name="Star" width={10} height={10} />
+								<span className="ml-1 text-theme-neutral-600">{score}</span>
 							</div>
+
+							<Divider type="vertical" />
+
+							<span className="text-sm font-semibold text-theme-neutral-400">
+								<TimeAgo date={date} />
+							</span>
 						</div>
+
 						<div className="w-11/12 mt-2">
 							<p className="text-theme-neutral-600">{comment}</p>
 							{replies &&
