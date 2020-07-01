@@ -73,6 +73,7 @@ import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
 import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
+import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -157,6 +158,7 @@ export const SvgCollection: any = {
 	Redirect,
 	RegistrationsIllustration,
 	ReplyArrow,
+	Report,
 	Reset,
 	Search,
 	Send,
