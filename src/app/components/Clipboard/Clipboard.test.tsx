@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "test-utils";
 
 import { Clipboard } from "./Clipboard";
 
@@ -17,7 +15,7 @@ describe("Clipboard", () => {
 		navigator.clipboard.writeText.mockRestore();
 	});
 
-	it("should render not render without children", () => {
+	it("should not render without children", () => {
 		const { asFragment, getByTestId } = render(<Clipboard />);
 
 		expect(() => getByTestId("clipboard__wrapper")).toThrow(/Unable to find an element by/);
@@ -37,11 +35,9 @@ describe("Clipboard", () => {
 
 	it("should change the tooltip content when clicked", async () => {
 		const { baseElement, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Clipboard>
-					<span>Hello!</span>
-				</Clipboard>
-			</I18nextProvider>,
+			<Clipboard>
+				<span>Hello!</span>
+			</Clipboard>,
 		);
 
 		act(() => {

@@ -13,7 +13,7 @@ const StepStyled = styled.li<{ isActive: boolean }>`
 `;
 
 export const StepIndicator: React.FC<StepIndicatorProps> = (props: StepIndicatorProps) => {
-    const steps = [...Array(props.size)];
+	const steps = [...Array(props.size)];
 	return (
 		<ul tw="flex space-x-3">
 			{steps.map((_, index) => (

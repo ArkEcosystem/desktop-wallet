@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/extend-expect";
 
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "test-utils";
 
 import { FormLabel } from "./FormLabel";
 import { FormFieldProvider } from "./useFormField";
