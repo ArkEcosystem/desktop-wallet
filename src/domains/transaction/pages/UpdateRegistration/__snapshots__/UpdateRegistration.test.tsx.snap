@@ -7,7 +7,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -64,7 +64,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -87,7 +87,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -110,7 +110,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
@@ -398,7 +398,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -518,7 +518,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
                           class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -794,7 +794,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -845,7 +845,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -885,7 +885,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     class="sc-AxiKw iQzisX mt-8"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -968,7 +968,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1049,7 +1049,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1098,7 +1098,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1140,7 +1140,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1200,7 +1200,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1401,7 +1401,7 @@ exports[`UpdateRegistration should should go back 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1458,7 +1458,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxiKw iQzisX flex flex-col space-y-2"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -1481,7 +1481,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -1504,7 +1504,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxiKw iQzisX mt-8"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
@@ -1792,7 +1792,7 @@ exports[`UpdateRegistration should submit 1`] = `
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1873,7 +1873,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1922,7 +1922,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
                                 class="text-theme-primary font-semibold text-base"
@@ -1964,7 +1964,7 @@ exports[`UpdateRegistration should submit 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -2024,7 +2024,7 @@ exports[`UpdateRegistration should submit 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
                             class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"

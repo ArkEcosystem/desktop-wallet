@@ -8,6 +8,7 @@ export const defaultTableStyle = `
 
 		th {
 			margin: 0;
+			padding-bottom: 12px;
 		}
 
         tr:last-child, tr:last-child > td {
