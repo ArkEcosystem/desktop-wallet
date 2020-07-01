@@ -27,7 +27,7 @@ export const ProfileCard = ({ profile, actions, onSelect, showSettings }: Profil
 			<div className="flex flex-row justify-between w-full">
 				<div className="flex items-center">
 					<AvatarWrapper data-testid="profile-card__user--avatar" size="large">
-						<img title={profile.name()} src={`data:image/svg+xml;utf8,${profile.avatar()}`} />
+						<img alt={profile.name()} title={profile.name()} src={`data:image/svg+xml;utf8,${profile.avatar()}`} />
 					</AvatarWrapper>
 
 					<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">

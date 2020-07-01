@@ -42,7 +42,7 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor }: Prop
 			className={className}
 			shadowColor={shadowColor}
 		>
-			<img title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+			<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 		</AvatarWrapper>
 	);
 };
