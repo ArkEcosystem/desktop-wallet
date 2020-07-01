@@ -7,47 +7,47 @@ exports[`PluginManagerControls should render 1`] = `
     data-testid="PluginManagerControls"
   >
     <div
-      class="inline-block"
-      data-testid="LayoutControls__grid"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
     >
       <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-        data-testid="LayoutControls__grid--icon"
+        class="inline-block"
+        data-testid="LayoutControls__grid"
       >
         <div
-          class="sc-AxirZ eLkhAQ"
-          height="14"
-          width="28"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          data-testid="LayoutControls__grid--icon"
         >
-          <svg>
-            grid.svg
-          </svg>
+          <div
+            class="sc-AxjAm jEKiJj"
+            height="14"
+            width="28"
+          >
+            <svg>
+              grid.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="inline-block"
+        data-testid="LayoutControls__list"
+      >
+        <div
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+          data-testid="LayoutControls__list--icon"
+        >
+          <div
+            class="sc-AxjAm eFgodT"
+            height="14"
+            width="24"
+          >
+            <svg>
+              list.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-    <div
-      class="inline-block"
-      data-testid="LayoutControls__list"
-    >
-      <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-        data-testid="LayoutControls__list--icon"
-      >
-        <div
-          class="sc-AxirZ iSCFNs"
-          height="14"
-          width="24"
-        >
-          <svg>
-            list.svg
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-AxjAm kdtlMM"
-      type="vertical"
-    />
     <div
       class="relative inline-block text-theme-primary-400"
     >
@@ -59,7 +59,7 @@ exports[`PluginManagerControls should render 1`] = `
           class="float-right outline-none cursor-pointer focus:outline-none"
         >
           <div
-            class="sc-AxirZ eEbZjj"
+            class="sc-AxjAm buCJuk"
             height="20"
             width="20"
           >
@@ -81,47 +81,47 @@ exports[`PluginManagerControls should toggle between list and grid 1`] = `
     data-testid="PluginManagerControls"
   >
     <div
-      class="inline-block"
-      data-testid="LayoutControls__grid"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
     >
       <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-        data-testid="LayoutControls__grid--icon"
+        class="inline-block"
+        data-testid="LayoutControls__grid"
       >
         <div
-          class="sc-AxirZ eLkhAQ"
-          height="14"
-          width="28"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          data-testid="LayoutControls__grid--icon"
         >
-          <svg>
-            grid.svg
-          </svg>
+          <div
+            class="sc-AxjAm jEKiJj"
+            height="14"
+            width="28"
+          >
+            <svg>
+              grid.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="inline-block"
+        data-testid="LayoutControls__list"
+      >
+        <div
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+          data-testid="LayoutControls__list--icon"
+        >
+          <div
+            class="sc-AxjAm eFgodT"
+            height="14"
+            width="24"
+          >
+            <svg>
+              list.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
-    <div
-      class="inline-block"
-      data-testid="LayoutControls__list"
-    >
-      <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-        data-testid="LayoutControls__list--icon"
-      >
-        <div
-          class="sc-AxirZ iSCFNs"
-          height="14"
-          width="24"
-        >
-          <svg>
-            list.svg
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-AxjAm kdtlMM"
-      type="vertical"
-    />
     <div
       class="relative inline-block text-theme-primary-400"
     >
@@ -133,7 +133,7 @@ exports[`PluginManagerControls should toggle between list and grid 1`] = `
           class="float-right outline-none cursor-pointer focus:outline-none"
         >
           <div
-            class="sc-AxirZ eEbZjj"
+            class="sc-AxjAm buCJuk"
             height="20"
             width="20"
           >
