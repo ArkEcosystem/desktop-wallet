@@ -51,23 +51,25 @@ const recipients = [
 
 export const FirstStep = ({ onSubmit, formValues }: any) => {
 	return (
-		<section data-testid="TransactionSend__step--first" className="space-y-8">
+		<section data-testid="TransactionSend__step--first">
 			<div>
 				<h1 className="mb-0">Send</h1>
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
-			<SendTransactionForm {...formValues} onSubmit={onSubmit} />
+			<div className="mt-8">
+				<SendTransactionForm {...formValues} onSubmit={onSubmit} />
+			</div>
 		</section>
 	);
 };
 
 export const SecondStep = () => (
-	<section data-testid="TransactionSend__step--second" className="space-y-8">
+	<section data-testid="TransactionSend__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -79,7 +81,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+				<div className="flex-auto text-md font-semibold truncate text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
@@ -91,17 +93,20 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-					<span className="mr-1">Sender</span>
-					<Label color="warning">Your address</Label>
+				<div className="mb-2 font-semibold text-theme-neutral-500">
+					<span className="mr-1 text-sm">Sender</span>
+					<Label color="warning">
+						<span className="text-sm">Your address</span>
+					</Label>
 				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail label="Recipients">
+			<TransactionDetail label="Recipients" className="py-6">
 				<RecipientList recipients={recipients} assetSymbol="ARK" isEditable={false} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Smartbridge"
+				className="pt-6"
 				extra={
 					<div className="mx-2">
 						<Icon name="Smartbridge" width={32} height={32} />
@@ -110,7 +115,7 @@ export const SecondStep = () => (
 			>
 				Hello!
 			</TransactionDetail>
-			<div className="my-4">
+			<div className="mt-2">
 				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
 			</div>
 		</div>
@@ -122,13 +127,13 @@ export const ThirdStep = ({ onSubmit }: any) => {
 	const { register } = form;
 
 	return (
-		<section data-testid="TransactionSend__step--third" className="space-y-8">
+		<section data-testid="TransactionSend__step--third">
 			<Form context={form} onSubmit={onSubmit}>
 				<div>
 					<h1 className="mb-0">Passphrase</h1>
 					<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-					<div className="grid grid-flow-row gap-2">
-						<TransactionDetail border={false} label="Your password">
+					<div className="grid grid-flow-row">
+						<TransactionDetail border={false} label="Your password" className="pt-8 pb-0">
 							<InputPassword name="passphrase" ref={register({ required: true })} />
 						</TransactionDetail>
 					</div>
@@ -139,7 +144,7 @@ export const ThirdStep = ({ onSubmit }: any) => {
 };
 
 export const FourthStep = () => (
-	<section data-testid="TransactionSend__step--fourth" className="space-y-8">
+	<section data-testid="TransactionSend__step--fourth">
 		<div>
 			<h1 className="mb-0">Confirm Your Transaction</h1>
 			<div className="grid grid-flow-row gap-2">
@@ -148,7 +153,7 @@ export const FourthStep = () => (
 					Please review and verify the information on your Ledger device. Choose Accept to complete your
 					transaction.
 				</p>
-				<div className="inline-flex items-center mt-5 space-x-4">
+				<div className="inline-flex items-center mt-8 space-x-4">
 					<Spinner color="primary" size="default" />
 					<span className="font-semibold text-black">Waiting for confirmation...</span>
 				</div>
@@ -166,6 +171,7 @@ export const FifthStep = () => (
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
+			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="large">
@@ -200,7 +206,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 			<Tabs activeId={activeTab}>
 				<StepIndicator size={5} activeIndex={activeTab} />
 
-				<div className="mt-10">
+				<div className="mt-8">
 					<TabPanel tabId={1}>
 						<FirstStep onSubmit={handleNext} formValues={formValues} />
 					</TabPanel>
@@ -217,7 +223,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 						<FifthStep />
 					</TabPanel>
 
-					<div className="flex justify-end mt-6 space-x-3">
+					<div className="flex justify-end mt-8 space-x-3">
 						{activeTab > 1 && activeTab < 5 && (
 							<>
 								<Button
