@@ -30,13 +30,13 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")} size="md">
+		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")}>
 			<div className="mt-5 flex flex-col">
 				<Table columns={columns} data={history} className="self-center">
 					{(rowData: any) => (
 						<tr
 							data-testid="blockchain-table__row"
-							className="border-b border-dashed border-theme-neutral-300 ai"
+							className="border-b border-dashed border-theme-neutral-300"
 						>
 							<td className="py-6 font-semibold text-left">
 								<span>{t(`PROFILE.MODAL_HISTORY.TYPES.${rowData.type}`)}</span>
@@ -51,8 +51,8 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 						</tr>
 					)}
 				</Table>
-				<div className="mt-7 self-center">
-					<Pagination totalCount={12} itemsPerPage={4} onSelectPage={console.log} currentPage={1} />
+				<div className="py-6 self-center">
+					<Pagination totalCount={12} itemsPerPage={4} onSelectPage={console.log} currentPage={1} size="sm" />
 				</div>
 			</div>
 		</Modal>
