@@ -52,7 +52,7 @@ export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearc
 				<div
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="flex items-center w-full px-6 py-4 bg-white rounded-md shadow-xl"
+					className="flex items-center w-full px-6 py-4 bg-white shadow-xl rounded-md"
 				>
 					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
 						<Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />
