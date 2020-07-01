@@ -1,7 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render } from "test-utils";
 
 // i18n
 import { translations } from "../../i18n";
@@ -9,11 +7,7 @@ import { Exchange } from "./Exchange";
 
 describe("Exchange", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={[]} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
@@ -40,11 +34,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={exchanges} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
@@ -67,11 +57,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={exchanges} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent("ChangeNOW Plugin");
 		expect(getByTestId("Exchange")).toHaveTextContent("Binance");
@@ -97,11 +83,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={exchanges} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		const changenowCard = getByTestId("Exchange__exchange-card-changenow-plugin");
 
@@ -131,11 +113,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={exchanges} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 
@@ -150,11 +128,7 @@ describe("Exchange", () => {
 	});
 
 	it("should open & close add exchange modal when no existing exchanges", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Exchange exchanges={[]} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 

@@ -1,0 +1,289 @@
+import { images } from "app/assets/images";
+import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
+import { Button } from "app/components/Button";
+import { Circle } from "app/components/Circle";
+import { Form, FormField, FormLabel } from "app/components/Form";
+import { Icon } from "app/components/Icon";
+import { InputPassword } from "app/components/Input";
+import { Label } from "app/components/Label";
+import { useSelectionState } from "app/components/SelectionBar";
+import { Spinner } from "app/components/Spinner";
+import { StepIndicator } from "app/components/StepIndicator";
+import { TabPanel, Tabs } from "app/components/Tabs";
+import { TransactionDetail } from "app/components/TransactionDetail";
+import { InputFee } from "domains/transaction/components/InputFee";
+import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
+import React from "react";
+import { useForm } from "react-hook-form";
+
+type ResignRegistrationProps = {
+	formDefaultData?: any;
+	onDownload: any;
+};
+
+const { ConfirmTransactionLedgerBanner } = images.transaction.common;
+
+const FirstStep = ({ form }: { form: any }) => {
+	const { register } = form;
+	const selectionBarState = useSelectionState(1);
+
+	return (
+		<div data-testid="ResignRegistration__first-step">
+			<h1>Delegate Resignation</h1>
+			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
+
+			<div className="mt-6">
+				<Alert size="large">
+					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
+					blockchain.
+				</Alert>
+			</div>
+
+			<div className="mt-2">
+				<TransactionDetail
+					label=" "
+					extra={
+						<div>
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						</div>
+					}
+					border={false}
+				>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+						<span className="mr-1">Account</span>
+						<Label color="warning">Your address</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+				</TransactionDetail>
+
+				<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+
+				<TransactionDetail label="Fee ARK">
+					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+				</TransactionDetail>
+			</div>
+		</div>
+	);
+};
+
+const SecondStep = () => (
+	<div data-testid="ResignRegistration__second-step" className="space-y-8">
+		<div>
+			<h1 className="mb-0">Transaction Review</h1>
+			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
+		</div>
+		<div className="grid grid-flow-row gap-2">
+			<TransactionDetail
+				border={false}
+				label="Network"
+				extra={
+					<div className="ml-1 text-theme-danger-500">
+						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Icon name="Ark" width={20} height={20} />
+						</Circle>
+					</div>
+				}
+			>
+				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
+			</TransactionDetail>
+
+			<TransactionDetail
+				label=" "
+				extra={
+					<div>
+						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+					</div>
+				}
+			>
+				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<span className="mr-1">Account</span>
+					<Label color="warning">Your address</Label>
+				</div>
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+			</TransactionDetail>
+
+			<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+
+			<div className="my-4">
+				<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
+			</div>
+		</div>
+	</div>
+);
+
+const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
+	const { register } = form;
+
+	return (
+		<div data-testid="ResignRegistration__third-step">
+			{passwordType !== "ledger" && (
+				<div>
+					<h1>Authenticate</h1>
+					<div className="text-sm text-theme-neutral-700">
+						Enter your twelve word mnemonic to authenticate the transaction.
+					</div>
+
+					<div className="mt-5">
+						<FormField name="name">
+							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
+							<InputPassword name={passwordType} ref={register} />
+						</FormField>
+
+						<FormField name="name" className="mt-8">
+							<FormLabel>2nd Mnemonic</FormLabel>
+							<InputPassword name="secondMnemonic" ref={register} />
+						</FormField>
+					</div>
+				</div>
+			)}
+
+			{passwordType === "ledger" && (
+				<div>
+					<h1>Confirm Your Transaction</h1>
+					<ConfirmTransactionLedgerBanner />
+
+					<div className="mt-8 text-theme-neutral-700">
+						Please review and verify the information on your Ledger device. Choose Accept to complete your
+						transaction.
+					</div>
+
+					<div className="inline-flex items-center mt-5 space-x-3">
+						<Spinner color="primary" size="default" />
+						<span className="text-black">Waiting for confirmation...</span>
+					</div>
+				</div>
+			)}
+		</div>
+	);
+};
+
+export const FourthStep = () => (
+	<TransactionSuccessful>
+		<TransactionDetail
+			label="Transaction Type"
+			extra={
+				<Circle className="border-black" size="large">
+					<Icon name="Business" width={20} height={20} />
+				</Circle>
+			}
+		>
+			Delegate Resignation
+		</TransactionDetail>
+		<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+		<TransactionDetail
+			label="Amount"
+			extra={
+				<div className="ml-1 text-theme-danger">
+					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Icon name="Sent" width={50} height={50} />
+					</Circle>
+				</div>
+			}
+		>
+			1.09660435 ARK
+		</TransactionDetail>
+	</TransactionSuccessful>
+);
+
+export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const [activeTab, setActiveTab] = React.useState(1);
+	const { formState } = form;
+	const { isValid } = formState;
+
+	const handleBack = () => {
+		setActiveTab(activeTab - 1);
+	};
+
+	const handleNext = () => {
+		setActiveTab(activeTab + 1);
+	};
+
+	return (
+		<div data-testid="ResignRegistration" className="max-w-xl mx-auto">
+			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+				<Tabs activeId={activeTab}>
+					<StepIndicator size={6} activeIndex={activeTab} />
+
+					<div className="mt-4">
+						<TabPanel tabId={1}>
+							<FirstStep form={form} />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep />
+						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep form={form} passwordType="mnemonic" />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<ThirdStep form={form} passwordType="password" />
+						</TabPanel>
+						<TabPanel tabId={5}>
+							<ThirdStep form={form} passwordType="ledger" />
+						</TabPanel>
+						<TabPanel tabId={6}>
+							<FourthStep />
+						</TabPanel>
+
+						<div className="flex justify-end mt-8 space-x-3">
+							{activeTab < 6 && (
+								<Button
+									disabled={activeTab === 1}
+									data-testid="ResignRegistration__back-button"
+									variant="plain"
+									onClick={handleBack}
+								>
+									Back
+								</Button>
+							)}
+
+							{activeTab < 3 && (
+								<Button
+									data-testid="ResignRegistration__continue-button"
+									disabled={!isValid}
+									onClick={handleNext}
+								>
+									Continue
+								</Button>
+							)}
+
+							{activeTab >= 3 && activeTab < 6 && (
+								<Button
+									data-testid="ResignRegistration__send-button"
+									disabled={!isValid}
+									onClick={handleNext}
+								>
+									<Icon name="Send" className="mr-2" width={20} height={20} />
+									Send
+								</Button>
+							)}
+
+							{activeTab === 6 && (
+								<div className="flex justify-end space-x-3">
+									<Button data-testid="ResignRegistration__wallet-button" variant="plain">
+										Back to wallet
+									</Button>
+
+									<Button
+										type="submit"
+										data-testid="ResignRegistration__download-button"
+										variant="plain"
+									>
+										<Icon name="Download" className="mr-2" />
+										Download
+									</Button>
+								</div>
+							)}
+						</div>
+					</div>
+				</Tabs>
+			</Form>
+		</div>
+	);
+};
+
+ResignRegistration.defaultProps = {
+	formDefaultData: {},
+};

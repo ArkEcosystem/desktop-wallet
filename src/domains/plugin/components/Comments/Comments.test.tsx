@@ -1,14 +1,7 @@
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
-import MockDate from "mockdate";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "test-utils";
 
 import { Comments } from "./Comments";
-
-beforeEach(() => MockDate.set(new Date("2020-06-22T14:48:00.000Z")));
-
-afterEach(() => MockDate.reset());
 
 describe("Comments", () => {
 	const comments = [
@@ -48,9 +41,7 @@ describe("Comments", () => {
 
 	it("should handle sortBy properly", () => {
 		const { asFragment, getByText, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Comments comments={comments} sortOptions={sortOptions} />,
-			</I18nextProvider>,
+			<Comments comments={comments} sortOptions={sortOptions} />,
 		);
 		const toggle = getByTestId("dropdown__toggle");
 

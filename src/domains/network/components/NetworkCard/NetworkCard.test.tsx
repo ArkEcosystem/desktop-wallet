@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "test-utils";
 
 import { networks } from "../../data";
 import { NetworkCard } from "./NetworkCard";

@@ -1,5 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "test-utils";
 
 import { MyRegistrations } from "./MyRegistrations";
 

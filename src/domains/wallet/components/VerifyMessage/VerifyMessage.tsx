@@ -23,11 +23,11 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 	const renderFormContent = () => {
 		if (verifyAddress)
 			return (
-				<div className="mt-10">
+				<div className="mt-8">
 					<Alert variant="warning" size="small">
 						<span className="p-5 text-sm font-semibold">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
-					<div className="mt-10">
+					<div className="mt-8">
 						<FormField name="signet-message-content">
 							<FormLabel label="Signet message content" />
 							<Input
@@ -44,17 +44,17 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 
 		return (
 			<div data-testid="noverify-address__content">
-				<FormField name="message-content" className="mt-10">
+				<FormField name="message-content" className="mt-8">
 					<FormLabel label="Message" />
 					<Input type="text" ref={register({ required: true })} />
 					<FormHelperText />
 				</FormField>
-				<FormField name="public-key" className="mt-3">
+				<FormField name="public-key" className="mt-8">
 					<FormLabel label="Public key" />
 					<Input type="text" disabled defaultValue={publicKey} ref={register({ required: true })} />
 					<FormHelperText />
 				</FormField>
-				<FormField name="signature" className="mt-3">
+				<FormField name="signature" className="mt-8">
 					<FormLabel label="Signature" />
 					<Input type="text" ref={register({ required: true })} />
 					<FormHelperText />
@@ -69,8 +69,8 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 			description="To make sure that you are the owner of this wallet, you can pass the check. and this more text."
 			onClose={handleClose}
 		>
-			<div className="mt-10">
-				<div className="flex flex-col pb-5 border-b border-dashed border-theme-neutral-light">
+			<div className="mt-8">
+				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
 					<span className="pb-2 text-base font-bold">Verify</span>
 					<div className="flex flex-row justify-between">
 						<span className="w-3/4 text-sm text-theme-neutral-light">

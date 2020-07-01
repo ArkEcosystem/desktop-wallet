@@ -9,11 +9,11 @@ exports[`CreateContact should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -35,14 +35,16 @@ exports[`CreateContact should render a modal 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Add Contact
       </h2>
       <div
         class="flex-1 "
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-700"
         >
           Enter your contacts name and addresses and add them to your list.
         </div>
@@ -50,14 +52,14 @@ exports[`CreateContact should render a modal 1`] = `
           class="mt-8"
         >
           <form
-            class="space-y-6"
+            class="space-y-8"
             data-testid="contact-form"
           >
             <fieldset
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="name"
               >
@@ -73,7 +75,7 @@ exports[`CreateContact should render a modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="network"
               >
@@ -114,7 +116,7 @@ exports[`CreateContact should render a modal 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="address"
               >

@@ -34,14 +34,14 @@ export const WalletUpdate = ({
 	return (
 		<Modal
 			title={t("WALLETS.MODAL_WALLET_UPDATE.TITLE", { version: "3.0.7" })}
-			image={isReady ? <WalletUpdateReadyBanner className="my-10" /> : <WalletUpdateBanner className="my-10" />}
+			image={isReady ? <WalletUpdateReadyBanner className="my-8" /> : <WalletUpdateBanner className="my-8" />}
 			isOpen={isOpen}
 			onClose={onClose}
 		>
 			<div className="container">
 				{!isUpdate && !isReady ? (
 					<>
-						<div className="mb-6 text-center">
+						<div className="mb-8 text-center">
 							<p className="text-sm text-theme-neutral-dark md:text-base">
 								{t("WALLETS.MODAL_WALLET_UPDATE.DESCRIPTION_1")}
 							</p>
