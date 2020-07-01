@@ -55,23 +55,23 @@ describe("Wallets", () => {
 
 	it("should change wallet view type from list to grid", () => {
 		const { getByTestId } = render(<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />);
-		const toggle = getByTestId("controls__grid");
+		const toggle = getByTestId("LayoutControls__grid--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(toggle).toHaveClass("text-theme-danger-400");
+		expect(toggle).toHaveClass("text-theme-danger-300");
 	});
 
 	it("should change wallet view type from grid to list", () => {
 		const { getByTestId } = render(<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />);
-		const toggle = getByTestId("controls__list");
+		const toggle = getByTestId("LayoutControls__list--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(toggle).toHaveClass("text-theme-danger-400");
+		expect(toggle).toHaveClass("text-theme-danger-300");
 	});
 });

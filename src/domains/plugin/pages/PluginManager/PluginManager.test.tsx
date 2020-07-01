@@ -34,13 +34,13 @@ describe("PluginManager", () => {
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginList")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__grid--icon"));
+			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 		});
 
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
@@ -62,13 +62,13 @@ describe("PluginManager", () => {
 		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginGrid")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 		});
 
 		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginList")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__grid--icon"));
+			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
 		});
 
 		expect(within(getByTestId("PluginManager__container--game")).getByTestId("PluginGrid")).toBeTruthy();
@@ -125,7 +125,7 @@ describe("PluginManager", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
@@ -159,7 +159,7 @@ describe("PluginManager", () => {
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
@@ -192,7 +192,7 @@ describe("PluginManager", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
@@ -214,7 +214,7 @@ describe("PluginManager", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
 		});
 
@@ -358,7 +358,7 @@ describe("PluginManager", () => {
 		expect(consoleSpy).toHaveBeenLastCalledWith("delete");
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerControls__list--icon"));
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(
 				within(getByTestId("PluginManager__container--game")).getAllByTestId("dropdown__toggle")[1],
 			);

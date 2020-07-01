@@ -9,11 +9,11 @@ exports[`AddExchange should render a modal 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -50,10 +50,10 @@ exports[`AddExchange should render a modal 1`] = `
         </h1>
       </div>
       <div
-        class="flex-1 mt-40"
+        class="flex-1 mt-38"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-700"
         >
           Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.
         </div>
@@ -61,7 +61,7 @@ exports[`AddExchange should render a modal 1`] = `
           class="mt-8 -mb-6"
         >
           <div
-            class="sc-AxhCb gfJeeC"
+            class="sc-AxhCb brtxRQ"
             role="table"
           >
             <table

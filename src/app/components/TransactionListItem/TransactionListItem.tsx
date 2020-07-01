@@ -83,7 +83,7 @@ export const TransactionListItem = ({
 				{transactionInfoIcons &&
 					transactionInfoIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 text text-theme-neutral-400`}>
+							<div key={index} className={`inline-block mr-2 align-middle text-theme-neutral-400`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
