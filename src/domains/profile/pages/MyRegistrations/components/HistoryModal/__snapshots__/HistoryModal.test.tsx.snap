@@ -7,11 +7,11 @@ exports[`HistoryModal should render empty state 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw fWjEmW absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxirZ iJKGpA"
@@ -33,7 +33,9 @@ exports[`HistoryModal should render empty state 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         History
       </h2>
       <div
@@ -43,7 +45,7 @@ exports[`HistoryModal should render empty state 1`] = `
           class="mt-5 flex flex-col"
         >
           <div
-            class="sc-AxheI AUTYj"
+            class="sc-AxheI bjlCjh"
             role="table"
           >
             <table
@@ -130,7 +132,7 @@ exports[`HistoryModal should render empty state 1`] = `
               <button
                 class="sc-AxirZ fhzkRl"
                 color="primary"
-                data-testid="CompactCompactPagination__first"
+                data-testid="CompactPagination__first"
                 disabled=""
                 type="button"
               >
@@ -162,7 +164,7 @@ exports[`HistoryModal should render empty state 1`] = `
                 </div>
               </button>
               <div
-                class="flex text-sm items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
+                class="flex items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
               >
                 Page 1 of 3
               </div>
