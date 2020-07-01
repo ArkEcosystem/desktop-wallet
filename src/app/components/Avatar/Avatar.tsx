@@ -10,7 +10,7 @@ type Props = {
 };
 
 const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
-	${tw`block rounded-full`}
+	${tw`block rounded-full overflow-hidden`}
 	${({ size }) => {
 		switch (size) {
 			case "large":
@@ -31,16 +31,12 @@ const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
 `;
 
 export const Avatar = ({ address, size, noShadow, className }: Props) => {
-	const gradients = React.useMemo(() => AvatarSDK.make(address), [address]);
+	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
-		<AvatarStyled
-			data-testid="Avatar"
-			size={size!}
-			noShadow={!!noShadow}
-			className={className}
-			style={{ background: gradients }}
-		/>
+		<AvatarStyled data-testid="Avatar" size={size!} noShadow={!!noShadow} className={className}>
+			<img title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+		</AvatarStyled>
 	);
 };
 
