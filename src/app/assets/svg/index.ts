@@ -20,6 +20,8 @@ import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
+import { ReactComponent as Lisk } from "./currencies/lsk.svg";
+import { ReactComponent as Ripple } from "./currencies/xrp.svg";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
@@ -100,6 +102,8 @@ export const SvgCollection: any = {
 	Back,
 	BitBucket,
 	Bitcoin,
+	Lisk,
+	Ripple,
 	Bridgechain,
 	Business,
 	Checkmark,
