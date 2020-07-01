@@ -7,6 +7,7 @@ const dateDifference = (date: string) => {
 	const target = DateTime.make(date);
 
 	for (const period of ["Years", "Months", "Days", "Hours", "Minutes"]) {
+		// @ts-ignore
 		const count: number = now[`diffIn${period}`](target);
 
 		if (count > 0) {
