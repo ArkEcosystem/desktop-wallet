@@ -69,7 +69,7 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2 mt-4">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -81,7 +81,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="flex-auto text-md font-semibold truncate text-theme-neutral-800 max-w-24">
+				<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
