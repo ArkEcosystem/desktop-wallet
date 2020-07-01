@@ -37,7 +37,7 @@ exports[`Registration should render 1st step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -45,7 +45,9 @@ exports[`Registration should render 1st step 1`] = `
             <div
               data-testid="Registration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Registration
               </h1>
               <div
@@ -54,128 +56,139 @@ exports[`Registration should render 1st step 1`] = `
                 Select the type of registration and the address you want to register with.
               </div>
               <div
-                class="sc-fzoLag TJgFv mt-5"
+                class="sc-fzoLag TJgFv mt-8"
               >
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label"
-                  class="relative"
-                  role="combobox"
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
                 >
                   <label
-                    for="downshift-0-input"
-                    id="downshift-0-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="network"
                   >
+                    Network
+                  </label>
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-0-label"
+                    class="relative"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-0-input"
+                      id="downshift-0-label"
+                    />
                     <div
-                      class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                      class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="px-4 py-2 flex-0 w-14"
+                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
+                          class="px-4 py-2 flex-0 w-14"
                         >
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="sc-AxirZ HSPq border-theme-neutral-200"
                           />
                         </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-0-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-0-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
+                        <div
+                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                        >
+                          <div
+                            class="relative z-10 w-full"
+                            data-testid="select-network__typeahead-"
+                          >
+                            <div
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            />
+                          </div>
+                          <input
+                            aria-autocomplete="list"
+                            aria-labelledby="downshift-0-label"
+                            autocomplete="off"
+                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                            data-testid="select-asset__input"
+                            id="downshift-0-input"
+                            placeholder="Enter a network name"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-labelledby="downshift-0-label"
+                      class="select-asset__items"
+                      data-testid="select-asset__items"
+                      id="downshift-0-menu"
+                      role="listbox"
+                    >
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-0-item-0"
+                        role="option"
+                        title="Ark Ecosystem"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-0-item-1"
+                        role="option"
+                        title="Bitcoin"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-0-item-2"
+                        role="option"
+                        title="Ethereum"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    aria-labelledby="downshift-0-label"
-                    class="select-asset__items"
-                    data-testid="select-asset__items"
-                    id="downshift-0-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-0-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-0-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-0-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </fieldset>
                 <fieldset
                   class="sc-AxiKw iQzisX relative h-20 mt-8"
                 >
@@ -362,7 +375,7 @@ exports[`Registration should render 2nd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -370,7 +383,9 @@ exports[`Registration should render 2nd step 1`] = `
             <div
               data-testid="Registration__second-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Register Business
               </h1>
               <div
@@ -380,7 +395,7 @@ exports[`Registration should render 2nd step 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex items-center py-4 true mt-2 mb-8"
                 >
                   <div
                     class="flex-1"
@@ -389,7 +404,7 @@ exports[`Registration should render 2nd step 1`] = `
                       class="mt-2 font-semibold"
                     >
                       <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                        class="sc-AxiKw iQzisX font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -411,7 +426,7 @@ exports[`Registration should render 2nd step 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -432,7 +447,7 @@ exports[`Registration should render 2nd step 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxiKw iQzisX mt-8 font-normal"
                       >
                         <label
                           class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -751,13 +766,12 @@ exports[`Registration should render 3rd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
           >
             <div
-              class="space-y-8"
               data-testid="Registration__third-step"
             >
               <div>
@@ -773,7 +787,7 @@ exports[`Registration should render 3rd step 1`] = `
                 </p>
               </div>
               <div
-                class="grid grid-flow-row gap-2"
+                class="grid grid-flow-row gap-2 mt-4"
               >
                 <div
                   class="flex items-center py-4 true "
@@ -840,7 +854,11 @@ exports[`Registration should render 3rd step 1`] = `
                           class="sc-fzplWN gpwIyi"
                           color="warning"
                         >
-                          Your address
+                          <span
+                            class="text-sm"
+                          >
+                            Your address
+                          </span>
                         </div>
                       </div>
                       <div
@@ -1005,9 +1023,7 @@ exports[`Registration should render 3rd step 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="my-4"
-                >
+                <div>
                   <div
                     class="border rounded-lg border-theme-neutral-300"
                   >
@@ -1150,7 +1166,7 @@ exports[`Registration should render 4th step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1159,16 +1175,18 @@ exports[`Registration should render 4th step 1`] = `
               data-testid="Registration__fourth-step"
             >
               <div>
-                <h1>
+                <h1
+                  class="mb-0"
+                >
                   Authenticate
                 </h1>
                 <div
-                  class="text-sm text-theme-neutral-700"
+                  class="text-theme-neutral-700"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
                 <div
-                  class="mt-5"
+                  class="mt-8"
                 >
                   <fieldset
                     class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -1327,7 +1345,7 @@ exports[`Registration should render 5th step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1652,7 +1670,7 @@ exports[`Registration should render 5th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
                   >
                     <div
                       class="flex-1"
@@ -1767,7 +1785,7 @@ exports[`Registration should select registration type 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1775,7 +1793,9 @@ exports[`Registration should select registration type 1`] = `
             <div
               data-testid="Registration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Registration
               </h1>
               <div
@@ -1784,128 +1804,139 @@ exports[`Registration should select registration type 1`] = `
                 Select the type of registration and the address you want to register with.
               </div>
               <div
-                class="sc-fzoLag TJgFv mt-5"
+                class="sc-fzoLag TJgFv mt-8"
               >
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-8-label"
-                  class="relative"
-                  role="combobox"
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
                 >
                   <label
-                    for="downshift-8-input"
-                    id="downshift-8-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="network"
                   >
+                    Network
+                  </label>
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-8-label"
+                    class="relative"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-8-input"
+                      id="downshift-8-label"
+                    />
                     <div
-                      class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                      class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="px-4 py-2 flex-0 w-14"
+                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
+                          class="px-4 py-2 flex-0 w-14"
                         >
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="sc-AxirZ HSPq border-theme-neutral-200"
                           />
                         </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-8-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-8-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
+                        <div
+                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                        >
+                          <div
+                            class="relative z-10 w-full"
+                            data-testid="select-network__typeahead-"
+                          >
+                            <div
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            />
+                          </div>
+                          <input
+                            aria-autocomplete="list"
+                            aria-labelledby="downshift-8-label"
+                            autocomplete="off"
+                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                            data-testid="select-asset__input"
+                            id="downshift-8-input"
+                            placeholder="Enter a network name"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-labelledby="downshift-8-label"
+                      class="select-asset__items"
+                      data-testid="select-asset__items"
+                      id="downshift-8-menu"
+                      role="listbox"
+                    >
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-8-item-0"
+                        role="option"
+                        title="Ark Ecosystem"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-8-item-1"
+                        role="option"
+                        title="Bitcoin"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-8-item-2"
+                        role="option"
+                        title="Ethereum"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    aria-labelledby="downshift-8-label"
-                    class="select-asset__items"
-                    data-testid="select-asset__items"
-                    id="downshift-8-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-8-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-8-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-8-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </fieldset>
                 <fieldset
                   class="sc-AxiKw iQzisX relative h-20 mt-8"
                 >
@@ -2098,7 +2129,7 @@ exports[`Registration should should go back 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -2106,7 +2137,9 @@ exports[`Registration should should go back 1`] = `
             <div
               data-testid="Registration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Registration
               </h1>
               <div
@@ -2115,128 +2148,139 @@ exports[`Registration should should go back 1`] = `
                 Select the type of registration and the address you want to register with.
               </div>
               <div
-                class="sc-fzoLag TJgFv mt-5"
+                class="sc-fzoLag TJgFv mt-8"
               >
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-2-label"
-                  class="relative"
-                  role="combobox"
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
                 >
                   <label
-                    for="downshift-2-input"
-                    id="downshift-2-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="network"
                   >
+                    Network
+                  </label>
+                  <div
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-2-label"
+                    class="relative"
+                    role="combobox"
+                  >
+                    <label
+                      for="downshift-2-input"
+                      id="downshift-2-label"
+                    />
                     <div
-                      class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                      class="relative flex items-center w-full flex-inline"
                     >
                       <div
-                        class="px-4 py-2 flex-0 w-14"
+                        class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                       >
                         <div
-                          class="sc-AxirZ HSPq border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
+                          class="px-4 py-2 flex-0 w-14"
                         >
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="sc-AxirZ HSPq border-theme-neutral-200"
                           />
                         </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-2-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-2-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
+                        <div
+                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                        >
+                          <div
+                            class="relative z-10 w-full"
+                            data-testid="select-network__typeahead-"
+                          >
+                            <div
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            />
+                          </div>
+                          <input
+                            aria-autocomplete="list"
+                            aria-labelledby="downshift-2-label"
+                            autocomplete="off"
+                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                            data-testid="select-asset__input"
+                            id="downshift-2-input"
+                            placeholder="Enter a network name"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-labelledby="downshift-2-label"
+                      class="select-asset__items"
+                      data-testid="select-asset__items"
+                      id="downshift-2-menu"
+                      role="listbox"
+                    >
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-2-item-0"
+                        role="option"
+                        title="Ark Ecosystem"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-2-item-1"
+                        role="option"
+                        title="Bitcoin"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        aria-selected="false"
+                        class="inline-block pt-6 mr-6 cursor-pointer"
+                        id="downshift-2-item-2"
+                        role="option"
+                        title="Ethereum"
+                      >
+                        <div
+                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxhCb dCXdPH"
+                            height="26"
+                            width="26"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div
-                    aria-labelledby="downshift-2-label"
-                    class="select-asset__items"
-                    data-testid="select-asset__items"
-                    id="downshift-2-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-2-item-0"
-                      role="option"
-                      title="Ark Ecosystem"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-2-item-1"
-                      role="option"
-                      title="Bitcoin"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-2-item-2"
-                      role="option"
-                      title="Ethereum"
-                    >
-                      <div
-                        class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxhCb dCXdPH"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </fieldset>
                 <fieldset
                   class="sc-AxiKw iQzisX relative h-20 mt-8"
                 >
@@ -2423,7 +2467,7 @@ exports[`Registration should submit 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -2748,7 +2792,7 @@ exports[`Registration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 pb-0"
                   >
                     <div
                       class="flex-1"
