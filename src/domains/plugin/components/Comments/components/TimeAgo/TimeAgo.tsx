@@ -6,29 +6,12 @@ const dateDifference = (date: string) => {
 	const now = DateTime.make();
 	const target = DateTime.make(date);
 
-	const yearDifference = now.diffInYears(target);
-	if (yearDifference > 0) {
-		return { count: yearDifference, key: "YEARS" };
-	}
+	for (const period of ["Years", "Months", "Days", "Hours", "Minutes"]) {
+		const count: number = now[`diffIn${period}`](target);
 
-	const monthDifference = now.diffInMonths(target);
-	if (monthDifference > 0) {
-		return { count: monthDifference, key: "MONTHS" };
-	}
-
-	const dayDifference = now.diffInDays(target);
-	if (dayDifference > 0) {
-		return { count: dayDifference, key: "DAYS" };
-	}
-
-	const hourDifference = now.diffInHours(target);
-	if (hourDifference > 0) {
-		return { count: hourDifference, key: "HOURS" };
-	}
-
-	const minuteDifference = now.diffInMinutes(target);
-	if (minuteDifference > 0) {
-		return { count: minuteDifference, key: "MINUTES" };
+		if (count > 0) {
+			return { count, key: period.toUpperCase() };
+		}
 	}
 
 	return { key: "FEW_SECONDS" };
