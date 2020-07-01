@@ -19,7 +19,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 			<div data-testid="LayoutControls__grid" className="inline-block">
 				<div
 					data-testid="LayoutControls__grid--icon"
-					className={`px-2 py-2 h-full border-b-2 cursor-pointer ${getViewTypeIconClass("grid")}`}
+					className={`px-3 py-3 h-full border-b-3 cursor-pointer ${getViewTypeIconClass("grid")}`}
 					onClick={onSelectGridView}
 				>
 					<Icon name="Grid" width={28} height={14} />
@@ -29,7 +29,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 			<div data-testid="LayoutControls__list" className="inline-block">
 				<div
 					data-testid="LayoutControls__list--icon"
-					className={`px-2 py-2 h-full border-b-2 cursor-pointer ${getViewTypeIconClass("list")}`}
+					className={`px-3 py-3 h-full border-b-3 cursor-pointer ${getViewTypeIconClass("list")}`}
 					onClick={onSelectListView}
 				>
 					<Icon name="List" width={24} height={14} />

@@ -1,6 +1,5 @@
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
@@ -40,16 +39,16 @@ export const WalletsControls = ({
 	};
 
 	return (
-		<div className="flex items-center">
-			<LayoutControls
-				onSelectGridView={onClickGridView}
-				onSelectListView={onClickListview}
-				selectedViewType={walletsViewType}
-			/>
+		<div className="flex">
+			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-100">
+				<LayoutControls
+					onSelectGridView={onClickGridView}
+					onSelectListView={onClickListview}
+					selectedViewType={walletsViewType}
+				/>
+			</div>
 
-			<Divider type="vertical" />
-
-			<div className="relative inline-block px-3 text-theme-primary-400">
+			<div className="flex items-center relative pr-6 mr-8 text-theme-primary-400 border-r border-theme-primary-100">
 				<Dropdown toggleIcon="Filters">
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
@@ -57,20 +56,21 @@ export const WalletsControls = ({
 				</Dropdown>
 			</div>
 
-			<Divider type="vertical" />
+			<div className="space-x-3">
+				<Button onClick={onCreateWallet} variant="plain">
+					<div className="flex items-center justify-center mr-2 text-sm align-middle">
+						<Icon name="Plus" width={10} />
+						<span className="ml-2">Create</span>
+					</div>
+				</Button>
 
-			<Button onClick={onCreateWallet} variant="plain" className="ml-8 mr-3">
-				<div className="flex items-center justify-center mr-2 text-sm align-middle">
-					<Icon name="Plus" width={10} />
-					<span className="ml-2">Create</span>
-				</div>
-			</Button>
-			<Button onClick={onImportWallet} variant="plain">
-				<div className="flex items-center justify-center mr-2 text-sm align-middle">
-					<Icon name="Import" />
-					<span className="ml-2">Import</span>
-				</div>
-			</Button>
+				<Button onClick={onImportWallet} variant="plain">
+					<div className="flex items-center justify-center mr-2 text-sm align-middle">
+						<Icon name="Import" />
+						<span className="ml-2">Import</span>
+					</div>
+				</Button>
+			</div>
 		</div>
 	);
 };
