@@ -194,7 +194,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="Avatar"
                 >
                   <img
-                    src="data:image/svg+xml;utf8,conic-gradient(from 457.62904038126885deg at 3.657633529618897% 26.70874635583157%, #742A2A, calc(0 * 100% / 5), transparent 0),conic-gradient(from 470.34506679538134deg at 0.444908826291736% 49.77415829202623%, #ED8936, calc(1 * 100% / 5), transparent 0),conic-gradient(from 173.63070498265697deg at 11.041577994097656% 66.10187902973202%, #9B2C2C, calc(2 * 100% / 5), transparent 0),conic-gradient(from 81.2488414558004deg at 51.135305421440435% 53.983702579553004%, #9B2C2C, calc(3 * 100% / 5), transparent 0),conic-gradient(from 311.7017852030667deg at 37.122865840528625% 0.9124707554442968%, #4C51BF, calc(4 * 100% / 5), transparent 0)"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                     title="APTz"
                   />
                 </div>
@@ -292,7 +292,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="float-right py-6 mt-1 flex justify-center items-center"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
                 class="sc-AxjAm kTAyCf"
@@ -348,7 +348,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="Avatar"
                 >
                   <img
-                    src="data:image/svg+xml;utf8,conic-gradient(from 457.62904038126885deg at 3.657633529618897% 26.70874635583157%, #742A2A, calc(0 * 100% / 5), transparent 0),conic-gradient(from 470.34506679538134deg at 0.444908826291736% 49.77415829202623%, #ED8936, calc(1 * 100% / 5), transparent 0),conic-gradient(from 173.63070498265697deg at 11.041577994097656% 66.10187902973202%, #9B2C2C, calc(2 * 100% / 5), transparent 0),conic-gradient(from 81.2488414558004deg at 51.135305421440435% 53.983702579553004%, #9B2C2C, calc(3 * 100% / 5), transparent 0),conic-gradient(from 311.7017852030667deg at 37.122865840528625% 0.9124707554442968%, #4C51BF, calc(4 * 100% / 5), transparent 0)"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                     title="APTz"
                   />
                 </div>
@@ -446,7 +446,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="float-right py-6 mt-1 flex justify-center items-center"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
                 class="sc-AxjAm kTAyCf"

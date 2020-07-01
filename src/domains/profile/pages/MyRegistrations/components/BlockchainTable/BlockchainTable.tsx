@@ -87,7 +87,7 @@ export const BlockchainTable = ({ data, handleDropdown }: Props) => (
 						<span className="-ml-5">View</span>
 					</td>
 					<td className="px-1 px-11" />
-					<td className="float-right py-6 mt-1 flex justify-center items-center">
+					<td className="flex items-center justify-center float-right py-6 mt-1">
 						<Button variant="plain" size="small">
 							<Dropdown
 								toggleIcon="Settings"

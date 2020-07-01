@@ -234,7 +234,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="Avatar"
                 >
                   <img
-                    src="data:image/svg+xml;utf8,conic-gradient(from 17.875111619290816deg at 37.05070666750771% 6.694306250453323%, #FEB2B2, calc(0 * 100% / 5), transparent 0),conic-gradient(from 50.04053558916528deg at 62.567353519788824% 34.213639563519834%, #319795, calc(1 * 100% / 5), transparent 0),conic-gradient(from 400.64439386429615deg at 32.014126896910234% 37.55312245190967%, #F6AD55, calc(2 * 100% / 5), transparent 0),conic-gradient(from 376.5641300063648deg at 60.780374638028576% 43.764231779135116%, #FBD38D, calc(3 * 100% / 5), transparent 0),conic-gradient(from 116.6425345886149deg at 38.93629903794377% 90.98220538490784%, #FC8181, calc(4 * 100% / 5), transparent 0)"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
                     title="AaAy"
                   />
                 </div>
@@ -302,7 +302,7 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="float-right py-6 mt-1 flex justify-center items-center"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
                 class="sc-AxjAm kTAyCf"
@@ -358,7 +358,7 @@ exports[`Welcome should render empty state 1`] = `
                   data-testid="Avatar"
                 >
                   <img
-                    src="data:image/svg+xml;utf8,conic-gradient(from 17.875111619290816deg at 37.05070666750771% 6.694306250453323%, #FEB2B2, calc(0 * 100% / 5), transparent 0),conic-gradient(from 50.04053558916528deg at 62.567353519788824% 34.213639563519834%, #319795, calc(1 * 100% / 5), transparent 0),conic-gradient(from 400.64439386429615deg at 32.014126896910234% 37.55312245190967%, #F6AD55, calc(2 * 100% / 5), transparent 0),conic-gradient(from 376.5641300063648deg at 60.780374638028576% 43.764231779135116%, #FBD38D, calc(3 * 100% / 5), transparent 0),conic-gradient(from 116.6425345886149deg at 38.93629903794377% 90.98220538490784%, #FC8181, calc(4 * 100% / 5), transparent 0)"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
                     title="AaAy"
                   />
                 </div>
@@ -426,7 +426,7 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-12"
             />
             <td
-              class="float-right py-6 mt-1 flex justify-center items-center"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
                 class="sc-AxjAm kTAyCf"

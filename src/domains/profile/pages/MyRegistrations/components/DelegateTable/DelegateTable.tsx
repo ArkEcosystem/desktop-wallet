@@ -92,7 +92,7 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 							<Icon name="Ark" className="ml-2" />
 						</div>
 					</td>
-					<td className="float-right py-6 mt-1 flex justify-center items-center">
+					<td className="flex items-center justify-center float-right py-6 mt-1">
 						<Button variant="plain" size="small">
 							<Dropdown
 								toggleIcon="Settings"

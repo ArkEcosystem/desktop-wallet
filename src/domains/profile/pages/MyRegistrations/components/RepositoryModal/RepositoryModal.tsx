@@ -15,7 +15,7 @@ export const RepositoryModal = ({ isOpen, handleClose, repositories }: Props) =>
 
 	return (
 		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_REPOSITORIES.TITLE")} size="sm">
-			<div className="flex flex-col space-y-5 mt-5">
+			<div className="flex flex-col mt-5 space-y-5">
 				{repositories.map(({ provider, url }: RepositoryLinkProps) => (
 					<RepositoryLink key={provider} provider={provider} url={url} />
 				))}

@@ -31,7 +31,7 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 
 	return (
 		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")} size="md">
-			<div className="mt-5 flex flex-col">
+			<div className="flex flex-col mt-5">
 				<Table columns={columns} data={history} className="self-center">
 					{(rowData: any) => (
 						<tr
@@ -44,14 +44,14 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 							<td className="py-6 font-semibold text-center">
 								<span>{rowData.date}</span>
 							</td>
-							<td className="py-6 flex text-theme-primary-500 items-center font-semibold float-right">
+							<td className="flex items-center float-right py-6 font-semibold text-theme-primary-500">
 								<Icon name="Redirect" width={22} height={22} />
 								<span className="ml-1">View</span>
 							</td>
 						</tr>
 					)}
 				</Table>
-				<div className="mt-2 self-center">
+				<div className="self-center mt-2">
 					<Pagination totalCount={12} itemsPerPage={4} onSelectPage={console.log} currentPage={1} size="sm" />
 				</div>
 			</div>
