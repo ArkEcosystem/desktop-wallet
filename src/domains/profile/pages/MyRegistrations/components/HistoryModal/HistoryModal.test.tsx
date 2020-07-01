@@ -7,22 +7,26 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { HistoryModal } from "./HistoryModal";
 
 describe("HistoryModal", () => {
-	const repositories = [
+	const history = [
 		{
-			provider: "GitHub",
-			url: "http://github.com/robank",
+			type: "REGISTRATION",
+			date: "27 May 2020",
+			transaction: "https://www.google.com.br",
 		},
 		{
-			provider: "GitLab",
-			url: "http://gitlab.com/robank",
+			type: "UPDATE",
+			date: "18 May 2020",
+			transaction: "https://www.google.com.br",
 		},
 		{
-			provider: "BitBucket",
-			url: "http://bitbucket.com/robank",
+			type: "UPDATE",
+			date: "3 May 2020",
+			transaction: "https://www.google.com.br",
 		},
 		{
-			provider: "Npm",
-			url: "http://npmjs.com/robank",
+			type: "RESIGN",
+			date: "15 Jun 2020",
+			transaction: "https://www.google.com.br",
 		},
 	];
 
@@ -32,7 +36,21 @@ describe("HistoryModal", () => {
 		const { asFragment } = render(
 			<Router>
 				<I18nextProvider i18n={i18n}>
-					<HistoryModal isOpen repositories={repositories} handleClose={() => handleClose()} />,
+					<HistoryModal isOpen handleClose={() => handleClose()} />,
+				</I18nextProvider>
+			</Router>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render properly", () => {
+		const handleClose = jest.fn();
+
+		const { asFragment } = render(
+			<Router>
+				<I18nextProvider i18n={i18n}>
+					<HistoryModal history={history} isOpen handleClose={() => handleClose()} />,
 				</I18nextProvider>
 			</Router>,
 		);
