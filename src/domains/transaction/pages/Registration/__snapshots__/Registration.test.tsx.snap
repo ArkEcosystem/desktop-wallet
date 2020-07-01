@@ -1040,7 +1040,7 @@ exports[`Registration should render 3rd step 1`] = `
                             Transaction fee
                           </span>
                           <span
-                            class="mt-3 mr-2"
+                            class="mt-3"
                             data-testid="total-amount-box__transaction-fee"
                           >
                             0.09660435 ARK
@@ -1527,7 +1527,11 @@ exports[`Registration should render 5th step 1`] = `
                             class="sc-fzplWN gpwIyi"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div
@@ -2617,7 +2621,11 @@ exports[`Registration should submit 1`] = `
                             class="sc-fzplWN gpwIyi"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div
