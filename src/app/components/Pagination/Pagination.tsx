@@ -4,6 +4,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
+import { CompactPagination } from "./components/CompactPagination";
+
 const Wrapper = styled.div`
 	${tw`flex space-x-3 h-10`}
 
@@ -22,6 +24,7 @@ type PaginationProps = {
 	onSelectPage: any;
 	currentPage: number;
 	className?: string;
+	size?: "sm" | "md" | "lg";
 };
 
 const PaginationButton = styled.div`
@@ -32,10 +35,27 @@ const PaginationButton = styled.div`
 	}
 `;
 
-export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
+export const Pagination = ({
+	totalCount,
+	itemsPerPage,
+	onSelectPage,
+	currentPage,
+	className,
+	size,
+}: PaginationProps) => {
 	const { t } = useTranslation();
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
 	const pageButtons = Array.from(Array(totalPages), (_, i) => i + 1);
+
+	if (size === "sm")
+		return (
+			<CompactPagination
+				totalCount={totalCount}
+				itemsPerPage={itemsPerPage}
+				onSelectPage={onSelectPage}
+				currentPage={currentPage}
+			/>
+		);
 
 	return (
 		<Wrapper data-testid="Pagination" className={className}>
@@ -95,4 +115,5 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 Pagination.defaultProps = {
 	currentPage: 1,
 	itemsPerPage: 4,
+	size: "md",
 };

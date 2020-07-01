@@ -59,7 +59,7 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="w-24 py-4">
+					<td className="w-24 py-6">
 						<div className="flex items-center">
 							<Circle className="border-theme-neutral-800" size="large">
 								<Icon name="Business" width={22} height={22} />
@@ -67,16 +67,16 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 							<Avatar address="APTz" />
 						</div>
 					</td>
-					<td className="py-4 mt-1 font-semibold">
+					<td className="py-6 mt-1 font-semibold">
 						<span>{rowData.delegate}</span>
 					</td>
-					<td className="py-1 text-theme-neutral-700">
+					<td className="py-6  text-theme-neutral-700">
 						<span className="-ml-14">{rowData.rank}</span>
 					</td>
-					<td className="py-1 text-bold text-theme-primary">
+					<td className="py-6  text-bold text-theme-primary">
 						<Icon name="Msq" width={22} height={22} />
 					</td>
-					<td className="py-1 text-theme-neutral-400">{getStatusIcon(rowData.confirmed)}</td>
+					<td className="py-6  text-theme-neutral-400">{getStatusIcon(rowData.confirmed)}</td>
 					<td>
 						<div className="flex float-right text-semibold text-theme-neutral-800">
 							<div className="flex items-center">
@@ -92,8 +92,8 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 							<Icon name="Ark" className="ml-2" />
 						</div>
 					</td>
-					<td className="float-right py-1">
-						<Button variant="plain" className="mt-4" size="small">
+					<td className="flex items-center justify-center float-right py-6 mt-1">
+						<Button variant="plain" size="small">
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}
