@@ -40,36 +40,37 @@ export const WalletHeader = ({
 
 	return (
 		<header data-testid="WalletHeader">
-			<div className="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text">
+			<div className="flex items-center justify-between px-12 py-6 bg-theme-neutral-900">
 				<div className="flex items-center space-x-4">
 					<div className="flex">
-						<Circle className="-mr-1 border-theme-neutral-light">
-							<Icon name={coin} className="text-theme-neutral-light" />
+						<Circle className="-mr-1 border-theme-neutral-700" noShadow={true}>
+							<Icon name={coin} className="text-theme-neutral-700" />
 						</Circle>
-						<Avatar address={address} />
+						<Avatar address={address} shadowColor="--theme-color-neutral-900" />
 					</div>
-					<h2 data-testid="WalletHeader__name" className="mb-0 text-theme-neutral-900">
+					<h2 data-testid="WalletHeader__name" className="mb-0 text-white">
 						{name}
 					</h2>
 					{isLedger && (
 						<span data-testid="WalletHeader__ledger">
-							<Icon name="Ledger" className="text-theme-neutral-light" />
+							<Icon name="Ledger" className="text-theme-neutral-700" />
 						</span>
 					)}
 					{isMultisig && (
 						<span data-testid="WalletHeader__multisig">
-							<Icon name="Multisig" className="text-theme-neutral-light" />
+							<Icon name="Multisig" className="text-theme-neutral-700" />
 						</span>
 					)}
 				</div>
 				<div className="flex items-stretch space-x-2">
 					<button
 						data-testid="WalletHeader__star-button"
-						className="px-3 text-theme-neutral"
+						className="px-3 text-theme-neutral-700"
 						onClick={onStar}
 					>
 						<Icon name={hasStarred ? "Star" : "StarOutline"} />
 					</button>
+
 					<Button data-testid="WalletHeader__send-button" onClick={onSend}>
 						Send
 					</Button>
