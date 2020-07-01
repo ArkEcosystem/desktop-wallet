@@ -33,6 +33,7 @@ import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as Facebook } from "./facebook.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
+import { ReactComponent as File } from "./file.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
@@ -122,6 +123,7 @@ export const SvgCollection: any = {
 	Eye,
 	EyeOff,
 	Facebook,
+	File,
 	FilePassword,
 	Filters,
 	Forward,

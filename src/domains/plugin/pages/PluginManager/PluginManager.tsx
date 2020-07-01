@@ -196,7 +196,13 @@ export const PluginManager = () => {
 
 						<div>
 							<div className="pl-8 border-l border-theme-neutral-200">
-								<Button className="whitespace-no-wrap">Install File</Button>
+								<Button>
+									<div className="flex items-center whitespace-no-wrap space-x-2">
+										<Icon name="File" width={15} height={15} />
+
+										<span>Install File</span>
+									</div>
+								</Button>
 							</div>
 						</div>
 					</div>
