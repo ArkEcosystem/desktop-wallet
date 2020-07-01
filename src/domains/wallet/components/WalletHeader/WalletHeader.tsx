@@ -18,7 +18,6 @@ type Props = {
 	publicKey?: string;
 	onCopy?: () => void;
 	onSend?: () => void;
-	onMore?: () => void;
 	onStar?: () => void;
 };
 
@@ -29,7 +28,6 @@ export const WalletHeader = ({
 	address,
 	publicKey,
 	onSend,
-	onMore,
 	onStar,
 	onCopy,
 	balance,
@@ -76,25 +74,27 @@ export const WalletHeader = ({
 						Send
 					</Button>
 
-					<Dropdown
-						toggleContent={
-							<Button variant="plain" size="icon" className="text-left">
-								<Icon name="Settings" width={20} height={20} />
-							</Button>
-						}
-						options={[
-							{ label: "Wallet Name", value: "wallet-name" },
-							{ label: "Sign Message", value: "sign-message" },
-							{ label: "Store Hash", value: "store-hash" },
-							{ label: "Delete", value: "delete" },
-						]}
-						onSelect={(option: any) => {
-							if (option.value === "delete") {
-								console.log(option);
+					<div data-testid="WalletHeader__more-button">
+						<Dropdown
+							toggleContent={
+								<Button variant="plain" size="icon" className="text-left">
+									<Icon name="Settings" width={20} height={20} />
+								</Button>
 							}
-						}}
-						dropdownClass="top-5 right-3 text-left bg-white"
-					/>
+							options={[
+								{ label: "Wallet Name", value: "wallet-name" },
+								{ label: "Sign Message", value: "sign-message" },
+								{ label: "Store Hash", value: "store-hash" },
+								{ label: "Delete", value: "delete" },
+							]}
+							onSelect={(option: any) => {
+								if (option.value === "delete") {
+									console.log(option);
+								}
+							}}
+							dropdownClass="top-5 right-3 text-left bg-white"
+						/>
+					</div>
 				</div>
 			</div>
 
