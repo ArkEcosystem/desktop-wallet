@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletHeader should render 1`] = `
+exports[`WalletHeader should delete wallet 1`] = `
 <DocumentFragment>
   <header
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
+      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
     >
       <div
         class="flex items-center space-x-4"
@@ -15,10 +15,10 @@ exports[`WalletHeader should render 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
+            class="sc-AxirZ paroP -mr-1 border-theme-neutral-700"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-light"
+              class="sc-AxiKw dzBdqj text-theme-neutral-700"
               height="1em"
               width="1em"
             >
@@ -28,7 +28,7 @@ exports[`WalletHeader should render 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPhsak"
             data-testid="Avatar"
           >
             <img
@@ -38,7 +38,204 @@ exports[`WalletHeader should render 1`] = `
           </div>
         </div>
         <h2
-          class="mb-0 text-theme-neutral-900"
+          class="mb-0 text-white"
+          data-testid="WalletHeader__name"
+        />
+        <span
+          data-testid="WalletHeader__ledger"
+        >
+          <div
+            class="sc-AxiKw dzBdqj text-theme-neutral-700"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              ledger.svg
+            </svg>
+          </div>
+        </span>
+        <span
+          data-testid="WalletHeader__multisig"
+        >
+          <div
+            class="sc-AxiKw dzBdqj text-theme-neutral-700"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              multisig.svg
+            </svg>
+          </div>
+        </span>
+      </div>
+      <div
+        class="flex items-stretch space-x-2"
+      >
+        <button
+          class="px-3 text-theme-neutral-700"
+          data-testid="WalletHeader__star-button"
+        >
+          <div
+            class="sc-AxiKw dzBdqj"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              star.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="WalletHeader__send-button"
+          type="button"
+        >
+          Send
+        </button>
+        <div
+          data-testid="WalletHeader__more-button"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="sc-AxjAm kwTlRm text-left"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul
+      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
+    >
+      <li
+        class="space-y-2"
+      >
+        <div
+          class="inline-flex items-center space-x-2"
+        >
+          <p
+            class="font-semibold text-sm text-theme-neutral-dark"
+          >
+            Address
+          </p>
+          <label>
+            <input
+              class="sc-AxhUy rBBWa"
+              data-testid="WalletHeader__toggle"
+              disabled=""
+              type="checkbox"
+            />
+            <div
+              class="sc-AxgMl dRIbey"
+            >
+              <span
+                class="sc-AxheI bTHYlW"
+              />
+            </div>
+          </label>
+          <p
+            class="font-semibold text-sm text-theme-neutral-light"
+          >
+            Public Key
+          </p>
+        </div>
+        <div>
+          <p
+            class="inline-block text-lg font-medium"
+            data-testid="WalletHeader__address-publickey"
+          >
+            abc
+          </p>
+          <button
+            class="inline-block px-3 text-theme-neutral focus:outline-none"
+            data-testid="WalletHeader__copy-button"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-primary-400"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </div>
+          </button>
+        </div>
+      </li>
+      <li
+        class="pl-8 space-y-2"
+      >
+        <p
+          class="text-sm font-semibold text-theme-neutral-dark"
+        >
+          Balance
+        </p>
+        <p
+          class="text-lg font-medium"
+          data-testid="WalletHeader__balance"
+        >
+          0
+        </p>
+      </li>
+    </ul>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`WalletHeader should render 1`] = `
+<DocumentFragment>
+  <header
+    data-testid="WalletHeader"
+  >
+    <div
+      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
+    >
+      <div
+        class="flex items-center space-x-4"
+      >
+        <div
+          class="flex"
+        >
+          <div
+            class="sc-AxirZ paroP -mr-1 border-theme-neutral-700"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-theme-neutral-700"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPhsak"
+            data-testid="Avatar"
+          >
+            <img
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+              title="abc"
+            />
+          </div>
+        </div>
+        <h2
+          class="mb-0 text-white"
           data-testid="WalletHeader__name"
         />
       </div>
@@ -46,7 +243,7 @@ exports[`WalletHeader should render 1`] = `
         class="flex items-stretch space-x-2"
       >
         <button
-          class="px-3 text-theme-neutral"
+          class="px-3 text-theme-neutral-700"
           data-testid="WalletHeader__star-button"
         >
           <div
@@ -67,22 +264,30 @@ exports[`WalletHeader should render 1`] = `
         >
           Send
         </button>
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
+        <div
           data-testid="WalletHeader__more-button"
-          type="button"
         >
           <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
+            class="relative"
+            data-testid="dropdown__toggle"
           >
-            <svg>
-              settings.svg
-            </svg>
+            <button
+              class="sc-AxjAm kwTlRm text-left"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
       </div>
     </div>
     <ul
@@ -101,16 +306,16 @@ exports[`WalletHeader should render 1`] = `
           </p>
           <label>
             <input
-              class="sc-AxhCb crfxJX"
+              class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
               disabled=""
               type="checkbox"
             />
             <div
-              class="sc-AxhUy gvyvto"
+              class="sc-AxgMl dRIbey"
             >
               <span
-                class="sc-AxgMl gXZfaE"
+                class="sc-AxheI bTHYlW"
               />
             </div>
           </label>
@@ -169,7 +374,7 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
+      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
     >
       <div
         class="flex items-center space-x-4"
@@ -178,10 +383,10 @@ exports[`WalletHeader should show modifiers 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
+            class="sc-AxirZ paroP -mr-1 border-theme-neutral-700"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-light"
+              class="sc-AxiKw dzBdqj text-theme-neutral-700"
               height="1em"
               width="1em"
             >
@@ -191,7 +396,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPhsak"
             data-testid="Avatar"
           >
             <img
@@ -201,14 +406,14 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <h2
-          class="mb-0 text-theme-neutral-900"
+          class="mb-0 text-white"
           data-testid="WalletHeader__name"
         />
         <span
           data-testid="WalletHeader__ledger"
         >
           <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-light"
+            class="sc-AxiKw dzBdqj text-theme-neutral-700"
             height="1em"
             width="1em"
           >
@@ -221,7 +426,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           data-testid="WalletHeader__multisig"
         >
           <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-light"
+            class="sc-AxiKw dzBdqj text-theme-neutral-700"
             height="1em"
             width="1em"
           >
@@ -235,7 +440,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         class="flex items-stretch space-x-2"
       >
         <button
-          class="px-3 text-theme-neutral"
+          class="px-3 text-theme-neutral-700"
           data-testid="WalletHeader__star-button"
         >
           <div
@@ -256,22 +461,30 @@ exports[`WalletHeader should show modifiers 1`] = `
         >
           Send
         </button>
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
+        <div
           data-testid="WalletHeader__more-button"
-          type="button"
         >
           <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
+            class="relative"
+            data-testid="dropdown__toggle"
           >
-            <svg>
-              settings.svg
-            </svg>
+            <button
+              class="sc-AxjAm kwTlRm text-left"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
       </div>
     </div>
     <ul
@@ -290,16 +503,16 @@ exports[`WalletHeader should show modifiers 1`] = `
           </p>
           <label>
             <input
-              class="sc-AxhCb crfxJX"
+              class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
               disabled=""
               type="checkbox"
             />
             <div
-              class="sc-AxhUy gvyvto"
+              class="sc-AxgMl dRIbey"
             >
               <span
-                class="sc-AxgMl gXZfaE"
+                class="sc-AxheI bTHYlW"
               />
             </div>
           </label>
@@ -358,7 +571,7 @@ exports[`WalletHeader should show publicKey 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text"
+      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
     >
       <div
         class="flex items-center space-x-4"
@@ -367,10 +580,10 @@ exports[`WalletHeader should show publicKey 1`] = `
           class="flex"
         >
           <div
-            class="sc-AxirZ hQTESw -mr-1 border-theme-neutral-light"
+            class="sc-AxirZ paroP -mr-1 border-theme-neutral-700"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-light"
+              class="sc-AxiKw dzBdqj text-theme-neutral-700"
               height="1em"
               width="1em"
             >
@@ -380,7 +593,7 @@ exports[`WalletHeader should show publicKey 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPhsak"
             data-testid="Avatar"
           >
             <img
@@ -390,7 +603,7 @@ exports[`WalletHeader should show publicKey 1`] = `
           </div>
         </div>
         <h2
-          class="mb-0 text-theme-neutral-900"
+          class="mb-0 text-white"
           data-testid="WalletHeader__name"
         />
       </div>
@@ -398,7 +611,7 @@ exports[`WalletHeader should show publicKey 1`] = `
         class="flex items-stretch space-x-2"
       >
         <button
-          class="px-3 text-theme-neutral"
+          class="px-3 text-theme-neutral-700"
           data-testid="WalletHeader__star-button"
         >
           <div
@@ -419,22 +632,30 @@ exports[`WalletHeader should show publicKey 1`] = `
         >
           Send
         </button>
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
+        <div
           data-testid="WalletHeader__more-button"
-          type="button"
         >
           <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
+            class="relative"
+            data-testid="dropdown__toggle"
           >
-            <svg>
-              settings.svg
-            </svg>
+            <button
+              class="sc-AxjAm kwTlRm text-left"
+              color="primary"
+              type="button"
+            >
+              <div
+                class="sc-AxiKw dklFyP"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  settings.svg
+                </svg>
+              </div>
+            </button>
           </div>
-        </button>
+        </div>
       </div>
     </div>
     <ul
@@ -453,15 +674,15 @@ exports[`WalletHeader should show publicKey 1`] = `
           </p>
           <label>
             <input
-              class="sc-AxhCb crfxJX"
+              class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
               type="checkbox"
             />
             <div
-              class="sc-AxhUy gvyvto"
+              class="sc-AxgMl dRIbey"
             >
               <span
-                class="sc-AxgMl gXZfaE"
+                class="sc-AxheI bTHYlW"
               />
             </div>
           </label>

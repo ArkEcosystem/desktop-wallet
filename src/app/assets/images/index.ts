@@ -4,6 +4,7 @@ import { offline } from "domains/offline/images";
 import { plugin } from "domains/plugin/images";
 import { profile } from "domains/profile/images";
 import { transaction } from "domains/transaction/images";
+import { vote } from "domains/vote/images";
 import { wallet } from "domains/wallet/images";
 
 import ARKLogo from "./ark-logo.png";
@@ -22,5 +23,6 @@ export const images = {
 	plugin,
 	profile,
 	transaction,
+	vote,
 	wallet,
 };
