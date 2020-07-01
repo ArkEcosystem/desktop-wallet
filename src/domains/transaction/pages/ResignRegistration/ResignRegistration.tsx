@@ -31,17 +31,17 @@ const FirstStep = ({ form }: { form: any }) => {
 
 	return (
 		<div data-testid="ResignRegistration__first-step">
-			<h1>Delegate Resignation</h1>
+			<h1 className="mb-0">Delegate Resignation</h1>
 			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
 
-			<div className="mt-6">
+			<div className="mt-8">
 				<Alert size="large">
 					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
 					blockchain.
 				</Alert>
 			</div>
 
-			<div className="mt-2">
+			<div className="mt-6">
 				<TransactionDetail
 					label=" "
 					extra={
@@ -53,7 +53,9 @@ const FirstStep = ({ form }: { form: any }) => {
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Account</span>
-						<Label color="warning">Your address</Label>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 				</TransactionDetail>
@@ -69,12 +71,12 @@ const FirstStep = ({ form }: { form: any }) => {
 };
 
 const SecondStep = () => (
-	<div data-testid="ResignRegistration__second-step" className="space-y-8">
+	<div data-testid="ResignRegistration__second-step">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
 		</div>
-		<div className="grid grid-flow-row gap-2">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -99,7 +101,9 @@ const SecondStep = () => (
 			>
 				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 					<span className="mr-1">Account</span>
-					<Label color="warning">Your address</Label>
+					<Label color="warning">
+						<span className="text-sm">Your address</span>
+					</Label>
 				</div>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 			</TransactionDetail>
@@ -120,18 +124,18 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 		<div data-testid="ResignRegistration__third-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1>Authenticate</h1>
-					<div className="text-sm text-theme-neutral-700">
+					<h1 className="mb-0">Authenticate</h1>
+					<div className="text-theme-neutral-700">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
-					<div className="mt-5">
+					<div className="mt-8">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						<FormField name="name" className="mt-8">
+						<FormField name="name" className="pb-4 mt-8">
 							<FormLabel>2nd Mnemonic</FormLabel>
 							<InputPassword name="secondMnemonic" ref={register} />
 						</FormField>
@@ -142,14 +146,14 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType === "ledger" && (
 				<div>
 					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner />
+					<ConfirmTransactionLedgerBanner className="my-8" />
 
 					<div className="mt-8 text-theme-neutral-700">
 						Please review and verify the information on your Ledger device. Choose Accept to complete your
 						transaction.
 					</div>
 
-					<div className="inline-flex items-center mt-5 space-x-3">
+					<div className="inline-flex items-center mt-8 mb-4 space-x-3">
 						<Spinner color="primary" size="default" />
 						<span className="text-black">Waiting for confirmation...</span>
 					</div>
@@ -207,7 +211,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />
 
-					<div className="mt-4">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep form={form} />
 						</TabPanel>
@@ -227,7 +231,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
+						<div className="flex justify-end mt-6 space-x-3">
 							{activeTab < 6 && (
 								<Button
 									disabled={activeTab === 1}
