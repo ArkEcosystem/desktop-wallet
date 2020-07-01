@@ -121,20 +121,17 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 						</div>
 					</div>
 					{assets && assets.length > 0 && (
-						<div data-testid="select-asset__items" className="pt-6" {...getMenuProps()}>
+						<div data-testid="select-asset__items" {...getMenuProps()}>
 							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
 										title={asset.name}
-										className="inline-block mr-4 cursor-pointer"
+										className="inline-block pt-6 mr-6 cursor-pointer"
 										key={index}
 										{...getItemProps({ item: asset })}
 									>
-										<Circle
-											className={assetClassName(asset, selectedItem, inputValue)}
-											size="large"
-										>
-											<Icon name={asset.icon} width={18} height={18} />
+										<Circle className={assetClassName(asset, selectedItem, inputValue)} size="xl">
+											<Icon name={asset.icon} width={26} height={26} />
 										</Circle>
 									</div>
 								);
