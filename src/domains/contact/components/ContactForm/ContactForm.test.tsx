@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "test-utils";
 
 import { contact2 as contact } from "../../data";
 import { translations } from "../../i18n";
@@ -40,9 +38,7 @@ describe("ContactForm", () => {
 
 	it("should add an address", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />
-			</I18nextProvider>,
+			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -105,9 +101,7 @@ describe("ContactForm", () => {
 	describe("when creating a new contact", () => {
 		it("should render the form", () => {
 			const { asFragment, getAllByTestId, getByTestId } = render(
-				<I18nextProvider i18n={i18n}>
-					<ContactForm onCancel={onCancel} onSave={onSave} />
-				</I18nextProvider>,
+				<ContactForm onCancel={onCancel} onSave={onSave} />,
 			);
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
@@ -125,11 +119,7 @@ describe("ContactForm", () => {
 			let renderContext;
 
 			await act(async () => {
-				renderContext = render(
-					<I18nextProvider i18n={i18n}>
-						<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />
-					</I18nextProvider>,
-				);
+				renderContext = render(<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />);
 			});
 
 			const { asFragment, getAllByTestId, getByTestId } = renderContext;

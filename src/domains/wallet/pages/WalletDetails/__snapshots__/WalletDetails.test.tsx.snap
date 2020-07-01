@@ -446,7 +446,7 @@ exports[`WalletDetails should render 1`] = `
           data-testid="WalletVote__toggle"
         >
           <span>
-            COMMON.HIDE
+            Hide
           </span>
           <span
             class="sc-Axmtr jbDzEV"
@@ -506,7 +506,7 @@ exports[`WalletDetails should render 1`] = `
                   Address Delegate
                 </p>
                 <div
-                  class="inline-block truncate"
+                  class="inline-block truncate align-middle"
                 >
                   <span
                     class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -646,7 +646,7 @@ exports[`WalletDetails should render 1`] = `
           data-testid="WalletRegistrations__toggle"
         >
           <span>
-            COMMON.HIDE
+            Hide
           </span>
           <span
             class="sc-Axmtr jbDzEV"
@@ -823,7 +823,7 @@ exports[`WalletDetails should render 1`] = `
         Pending Transactions
       </h2>
       <div
-        class="sc-AxhUy fkVaYz"
+        class="sc-AxhUy nFONV"
         role="table"
       >
         <table
@@ -971,7 +971,7 @@ exports[`WalletDetails should render 1`] = `
                 class="w-56"
               >
                 <div
-                  class="inline-block truncate"
+                  class="inline-block truncate align-middle"
                 >
                   <span
                     class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1041,7 +1041,7 @@ exports[`WalletDetails should render 1`] = `
                 class="w-56"
               >
                 <div
-                  class="inline-block truncate"
+                  class="inline-block truncate align-middle"
                 >
                   <span
                     class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1091,7 +1091,7 @@ exports[`WalletDetails should render 1`] = `
         Transaction History
       </h2>
       <div
-        class="sc-AxhUy fkVaYz"
+        class="sc-AxhUy nFONV"
         role="table"
       >
         <table
@@ -1239,7 +1239,7 @@ exports[`WalletDetails should render 1`] = `
                 class="w-56"
               >
                 <div
-                  class="inline-block truncate"
+                  class="inline-block truncate align-middle"
                 >
                   <span
                     class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1312,7 +1312,7 @@ exports[`WalletDetails should render 1`] = `
               data-testid="WalletBottomSheetMenu__toggle"
             >
               <span>
-                COMMON.SHOW
+                Show
               </span>
               <span
                 class="sc-Axmtr cwmxaH"
@@ -1343,7 +1343,7 @@ exports[`WalletDetails should render 1`] = `
             class="max-w-4xl mx-auto"
           >
             <div
-              class="sc-AxhUy fkVaYz"
+              class="sc-AxhUy nFONV"
               role="table"
             >
               <table
@@ -1510,7 +1510,7 @@ exports[`WalletDetails should render 1`] = `
                     class="border-b border-theme-neutral-200"
                   >
                     <td
-                      class="py-4 mt-1"
+                      class="py-6 mt-1"
                     >
                       <div
                         class="sc-AxiKw jQtkkF"
@@ -1533,7 +1533,7 @@ exports[`WalletDetails should render 1`] = `
                       class="py-1"
                     >
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
                           class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
@@ -1553,7 +1553,7 @@ exports[`WalletDetails should render 1`] = `
                       class="py-1 text-sm font-bold"
                     >
                       <div
-                        class="inline-block mr-2 text text-theme-neutral-600"
+                        class="inline-block mr-2 align-middle text-theme-neutral-600"
                       >
                         <div
                           class="sc-AxjAm vZRQY"
@@ -1566,7 +1566,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block mr-2 text text-theme-neutral-600"
+                        class="inline-block mr-2 align-middle text-theme-neutral-600"
                       >
                         <div
                           class="sc-AxjAm vZRQY"
@@ -1579,7 +1579,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block mr-2 text text-theme-neutral-600"
+                        class="inline-block mr-2 align-middle text-theme-neutral-600"
                       >
                         <div
                           class="sc-AxjAm vZRQY"
@@ -1592,7 +1592,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-block mr-2 text text-theme-neutral-600"
+                        class="inline-block mr-2 align-middle text-theme-neutral-600"
                       >
                         <div
                           class="sc-AxjAm vZRQY"
@@ -1606,14 +1606,14 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="py-1 font-bold text-right"
+                      class="font-semibold text-right"
                     >
                       <div>
                         120 ARK
                       </div>
                     </td>
                     <td
-                      class="py-1 font-semibold text-right text-theme-neutral-400"
+                      class="text-right text-theme-neutral-400"
                     >
                       <div>
                         980 USD

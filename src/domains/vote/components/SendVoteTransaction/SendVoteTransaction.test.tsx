@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { fireEvent, render, RenderResult, waitFor } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
+import { fireEvent, render, RenderResult, waitFor } from "test-utils";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "./SendVoteTransaction";
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "test-utils";
 
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
@@ -52,7 +52,7 @@ describe("HeaderSearchBar", () => {
 
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
-		const input = getByTestId("Input");
+		const input = getByTestId("Input") as HTMLInputElement;
 
 		act(() => {
 			fireEvent.change(input, {

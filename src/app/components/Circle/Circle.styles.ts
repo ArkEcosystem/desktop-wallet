@@ -16,6 +16,8 @@ const getSize = (size: string): any => {
 			return tw`w-8 h-8 px-2 py-1 text-sm`;
 		case "large":
 			return tw`px-2 py-1 text-sm w-11 h-11`;
+		case "xl":
+			return tw`px-2 py-1 text-sm w-16 h-16`;
 		default:
 			return tw`w-10 h-10 px-4 py-2 text-base`;
 	}

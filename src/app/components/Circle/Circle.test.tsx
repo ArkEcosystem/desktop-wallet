@@ -1,7 +1,6 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "test-utils";
 
-// import { act } from "@testing-library/react-hooks";
 import { Circle } from "./Circle";
 
 describe("Circle", () => {

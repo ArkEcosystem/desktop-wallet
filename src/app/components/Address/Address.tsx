@@ -27,7 +27,7 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 	};
 
 	return (
-		<div className="inline-block truncate">
+		<div className="inline-block truncate align-middle">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"

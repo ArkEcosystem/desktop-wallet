@@ -6,7 +6,7 @@ type CircleProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	avatarId?: string | null;
-	size?: "small" | "large" | "default";
+	size?: "small" | "large" | "xl" | "default";
 	className?: string | null;
 	noShadow?: boolean;
 };
