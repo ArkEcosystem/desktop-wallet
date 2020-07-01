@@ -22,7 +22,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 			data-testid={`PluginListItem--${plugin.id}`}
 			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
 		>
-			<td className="text-center w-16">
+			<td className="w-16 text-center">
 				<ChangeNowLogo className="w-12 h-12" />
 			</td>
 

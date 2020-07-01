@@ -48,7 +48,7 @@ export const WalletsControls = ({
 				/>
 			</div>
 
-			<div className="flex items-center relative pr-6 mr-8 text-theme-primary-400 border-r border-theme-primary-100">
+			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100">
 				<Dropdown toggleIcon="Filters">
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
