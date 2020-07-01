@@ -2,7 +2,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import styled from "styled-components";
 
-import { getDateDifferenceFromNow } from "../../utils";
+import { TimeAgo } from "../TimeAgo";
 
 const ReplyContent = styled.div`
 	a {
@@ -21,7 +21,9 @@ export const Reply = ({ date, content }: ReplyProps) => (
 			<Icon name="ReplyArrow" />
 			<div className="grid grid-cols-2 divide-x">
 				<span className="px-3 font-semibold text-theme-neutral-900">Developer response</span>
-				<span className="px-3">{getDateDifferenceFromNow(date)}</span>
+				<span className="px-3 text-theme-neutral-400">
+					<TimeAgo date={date} />
+				</span>
 			</div>
 		</div>
 		<ReplyContent className="mt-2 ml-7 text-theme-neutral-600" dangerouslySetInnerHTML={{ __html: content }} />

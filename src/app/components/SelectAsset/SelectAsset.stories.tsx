@@ -10,7 +10,7 @@ export const Default = () => {
 	const assets = [
 		{
 			icon: "Ark",
-			name: "Ark Ecosystem",
+			name: "ARK Ecosystem",
 			className: "text-theme-danger-400 border-theme-danger-200",
 		},
 		{
@@ -22,6 +22,16 @@ export const Default = () => {
 			icon: "Ethereum",
 			name: "Ethereum",
 			className: "text-theme-neutral-800 border-theme-neutral-600",
+		},
+		{
+			icon: "Lisk",
+			name: "Lisk",
+			className: "text-theme-primary-600 border-theme-primary-400",
+		},
+		{
+			icon: "Ripple",
+			name: "Ripple",
+			className: "text-theme-primary-700 border-theme-primary-500",
 		},
 	];
 

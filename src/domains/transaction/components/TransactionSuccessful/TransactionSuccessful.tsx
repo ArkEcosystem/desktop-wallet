@@ -59,7 +59,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail
 					extra={
@@ -70,9 +70,11 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				{children}

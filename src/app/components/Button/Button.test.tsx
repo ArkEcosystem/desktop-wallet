@@ -1,5 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { fireEvent, render } from "test-utils";
 
 import { Button } from "./Button";
 
@@ -58,7 +58,7 @@ describe("Button", () => {
 		const { asFragment, getByText } = render(<Button disabled>Click</Button>);
 
 		expect(getByText("Click")).toBeDisabled();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should emit event on click", () => {

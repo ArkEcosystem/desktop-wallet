@@ -1,5 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render, within } from "test-utils";
 
 import { WalletHeader } from "./WalletHeader";
 
@@ -12,28 +12,19 @@ describe("WalletHeader", () => {
 
 	it("should emit actions", () => {
 		const onSend = jest.fn();
-		const onMore = jest.fn();
 		const onStar = jest.fn();
 		const onCopy = jest.fn();
 
 		const { getByTestId } = render(
-			<WalletHeader
-				address="abc"
-				balance="0"
-				coin="Ark"
-				onCopy={onCopy}
-				onMore={onMore}
-				onStar={onStar}
-				onSend={onSend}
-			/>,
+			<WalletHeader address="abc" balance="0" coin="Ark" onCopy={onCopy} onStar={onStar} onSend={onSend} />,
 		);
 		fireEvent.click(getByTestId("WalletHeader__copy-button"));
-		fireEvent.click(getByTestId("WalletHeader__more-button"));
+		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("WalletHeader__star-button"));
 		fireEvent.click(getByTestId("WalletHeader__send-button"));
 
 		expect(onSend).toHaveBeenCalled();
-		expect(onMore).toHaveBeenCalled();
+		expect(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__content")).toBeTruthy();
 		expect(onStar).toHaveBeenCalled();
 		expect(onCopy).toHaveBeenCalled();
 	});
@@ -45,6 +36,28 @@ describe("WalletHeader", () => {
 		expect(getByTestId("WalletHeader__ledger")).toBeTruthy();
 		expect(getByTestId("WalletHeader__multisig")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should delete wallet", () => {
+		const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+		const { getByTestId, asFragment } = render(
+			<WalletHeader hasStarred isLedger isMultisig address="abc" balance="0" coin="Ark" />,
+		);
+
+		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
+		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__option--3"));
+
+		expect(consoleSpy).toHaveBeenCalledWith({ label: "Delete", value: "delete" });
+		consoleSpy.mockReset();
+
+		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
+		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__option--2"));
+
+		expect(consoleSpy).not.toHaveBeenCalled();
+		expect(asFragment()).toMatchSnapshot();
+
+		consoleSpy.mockRestore();
 	});
 
 	it("should show publicKey", () => {

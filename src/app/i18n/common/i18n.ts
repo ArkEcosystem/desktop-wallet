@@ -42,6 +42,7 @@ export const translations: { [key: string]: any } = {
 	FILTER_BLACKLISTED_PLUGINS: "Apply blacklist",
 	FINISH: "Finish",
 	FORGED_ARK: "Forged ARK",
+	HIDE: "Hide",
 	HIDE_WALLET_BUTTON_TEXT: "Hide text from wallet buttons",
 	INITIALIZING: "Initializing...",
 	INSTALL: "Install",
@@ -72,6 +73,7 @@ export const translations: { [key: string]: any } = {
 	SAVE: "Save",
 	SELECT: "Select",
 	SEND: "Send",
+	SHOW: "Show",
 	SIGN: "Sign",
 	SIZE: "Size",
 	SKIP: "Skip",
@@ -110,5 +112,21 @@ export const translations: { [key: string]: any } = {
 
 	VALIDATION: {
 		REQUIRED: "Field required",
+	},
+
+	DATETIME: {
+		FEW_SECONDS_AGO: "A few seconds ago",
+		MINUTES_AGO: "A minute ago",
+		MINUTES_AGO_plural: "{{count}} minutes ago",
+		HOURS_AGO: "An hour ago",
+		HOURS_AGO_plural: "{{count}} hours ago",
+		DAYS_AGO: "A day ago",
+		DAYS_AGO_plural: "{{count}} days ago",
+		WEEKS_AGO: "A week ago",
+		WEEKS_AGO_plural: "{{count}} weeks ago",
+		MONTHS_AGO: "A month ago",
+		MONTHS_AGO_plural: "{{count}} months ago",
+		YEARS_AGO: "A year ago",
+		YEARS_AGO_plural: "{{count}} years ago",
 	},
 };

@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "test-utils";
 
 import { Registration } from "../Registration";
 
@@ -51,23 +49,15 @@ beforeEach(() => {
 
 describe("Registration", () => {
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -78,15 +68,11 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -94,15 +80,11 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -113,15 +95,11 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -135,15 +113,11 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__fourth-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render 5th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -166,15 +140,11 @@ describe("Registration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -199,15 +169,11 @@ describe("Registration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select registration type", async () => {
-		const { asFragment, container } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, container } = render(<Registration {...defaultFormValues} />);
 
 		const initialOption = container.querySelectorAll("select[name=registrationType] option")[0];
 		const businessOption = container.querySelectorAll("select[name=registrationType] option")[1];
@@ -223,6 +189,6 @@ describe("Registration", () => {
 
 		expect(initialOption.selected).toBe(false);
 		expect(businessOption.selected).toBe(true);
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

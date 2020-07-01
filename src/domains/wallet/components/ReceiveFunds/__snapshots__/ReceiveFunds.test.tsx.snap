@@ -9,11 +9,11 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxhCb idLVlI"
@@ -35,52 +35,58 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Receive Funds
       </h2>
       <div
         class="flex-1 "
       >
-        <div>
-          <div
-            class="flex items-center mt-8 mb-6"
-          >
+        <div
+          class="mt-2"
+        >
+          <div>
             <div
-              class="flex-1"
+              class="flex items-center mt-6 mb-6"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="flex-1"
               >
-                Wallet
+                <div
+                  class="text-sm font-semibold text-theme-neutral-500"
+                >
+                  Wallet
+                </div>
+                <div
+                  class="flex items-center font-semibold"
+                >
+                  My Wallet
+                </div>
               </div>
               <div
-                class="flex items-center font-semibold"
+                class="sc-AxjAm bLfakz ml-4"
               >
-                My Wallet
+                <div
+                  class="sc-AxiKw dzBdqj"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
               </div>
             </div>
             <div
-              class="sc-AxjAm bLfakz ml-4"
-            >
-              <div
-                class="sc-AxiKw dzBdqj"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
+              class="sc-AxirZ iZJyTO"
+              type="horizontal"
+            />
           </div>
-          <div
-            class="sc-AxirZ iZJyTO"
-            type="horizontal"
-          />
         </div>
         <div>
           <div
-            class="flex items-center mt-8 mb-6"
+            class="flex items-center mt-6 mb-6"
           >
             <div
               class="flex-1"
@@ -110,7 +116,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               </div>
             </div>
             <div
-              class="ml-4"
+              class="mb-2 ml-4"
             >
               <div
                 class="sc-AxjAm ikTVPy"
@@ -142,11 +148,11 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-10 mt-5 mr-5"
     >
       <button
         class="sc-AxhCb idLVlI"
@@ -168,15 +174,20 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Receive Funds
       </h2>
       <div
         class="flex-1 "
       >
+        <div
+          class="mt-2"
+        />
         <div>
           <div
-            class="flex items-center mt-8 mb-6"
+            class="flex items-center mt-6 mb-6"
           >
             <div
               class="flex-1"
@@ -206,7 +217,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
               </div>
             </div>
             <div
-              class="ml-4"
+              class="mb-2 ml-4"
             >
               <div
                 class="sc-AxjAm bLfakz -mr-2"

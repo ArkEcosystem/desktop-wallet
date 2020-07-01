@@ -7,10 +7,11 @@ type Props = {
 	size?: "small" | "large" | "default";
 	noShadow?: boolean;
 	className?: string;
+	shadowColor?: string;
 };
 
-const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
-	${tw`block rounded-full`}
+const AvatarStyled = styled.div<{ shadowColor?: string; size: string; noShadow: boolean }>`
+	${tw`block rounded-full overflow-hidden`}
 	${({ size }) => {
 		switch (size) {
 			case "large":
@@ -21,17 +22,17 @@ const AvatarStyled = styled.div<{ size: string; noShadow: boolean }>`
 				return tw`w-10 h-10`;
 		}
 	}}
-	${({ noShadow }) =>
+	${({ noShadow, shadowColor }) =>
 		!noShadow &&
 		css`
 			& {
-				box-shadow: 0 0 0 6px var(--theme-background-color);
+				box-shadow: 0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
 			}
 		`};
 `;
 
-export const Avatar = ({ address, size, noShadow, className }: Props) => {
-	const gradients = React.useMemo(() => AvatarSDK.make(address), [address]);
+export const Avatar = ({ address, size, noShadow, className, shadowColor }: Props) => {
+	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
 		<AvatarStyled
@@ -39,8 +40,10 @@ export const Avatar = ({ address, size, noShadow, className }: Props) => {
 			size={size!}
 			noShadow={!!noShadow}
 			className={className}
-			style={{ background: gradients }}
-		/>
+			shadowColor={shadowColor}
+		>
+			<img title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+		</AvatarStyled>
 	);
 };
 

@@ -14,7 +14,7 @@ type SelectAssetProps = {
 	placeholder?: string;
 	name?: string;
 	value?: string;
-	onSelect?: () => void;
+	onSelect?: (asset: any) => void;
 };
 
 type InputValue = any;
@@ -85,7 +85,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<div className="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary">
+						<div className="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
@@ -121,20 +121,17 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 						</div>
 					</div>
 					{assets && assets.length > 0 && (
-						<div data-testid="select-asset__items" className="pt-6" {...getMenuProps()}>
+						<div data-testid="select-asset__items" className="select-asset__items" {...getMenuProps()}>
 							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
 										title={asset.name}
-										className="inline-block mr-4 cursor-pointer"
+										className="inline-block pt-6 mr-6 cursor-pointer"
 										key={index}
 										{...getItemProps({ item: asset })}
 									>
-										<Circle
-											className={assetClassName(asset, selectedItem, inputValue)}
-											size="large"
-										>
-											<Icon name={asset.icon} width={18} height={18} />
+										<Circle className={assetClassName(asset, selectedItem, inputValue)} size="xl">
+											<Icon name={asset.icon} width={26} height={26} />
 										</Circle>
 									</div>
 								);

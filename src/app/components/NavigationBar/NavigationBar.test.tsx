@@ -1,7 +1,7 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { BrowserRouter as Router } from "react-router-dom";
+import { fireEvent, render } from "test-utils";
 
 import { NavigationBar } from "./NavigationBar";
 

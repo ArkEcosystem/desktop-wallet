@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "test-utils";
 
 import { Input, InputAddonEnd, InputAddonStart, InputGroup } from "./index";
 
@@ -15,7 +15,7 @@ describe("InputGroup", () => {
 		);
 		const { getByTestId, asFragment } = render(tree);
 		expect(getByTestId("start")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with element on the right", () => {
@@ -29,7 +29,7 @@ describe("InputGroup", () => {
 		);
 		const { getByTestId, asFragment } = render(tree);
 		expect(getByTestId("end")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with both elements", () => {
@@ -47,6 +47,6 @@ describe("InputGroup", () => {
 		const { getByTestId, asFragment } = render(tree);
 		expect(getByTestId("start")).toBeTruthy();
 		expect(getByTestId("end")).toBeTruthy();
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

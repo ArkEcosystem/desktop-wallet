@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactForm should select network 1`] = `[Function]`;
-
-exports[`ContactForm when creating a new contact should render the form 1`] = `
+exports[`ContactForm should select network 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-6"
+    class="space-y-8"
     data-testid="contact-form"
   >
     <fieldset
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
@@ -28,7 +26,134 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Network
+      </label>
+      <div
+        class="sc-AxmLO kuiknc"
+      >
+        <select
+          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+          data-testid="contact-form__network-select"
+          name="network"
+        >
+          <option
+            disabled=""
+            selected=""
+            value=""
+          >
+            Select network...
+          </option>
+          <option
+            data-testid="contact-form__network-option"
+            value="ark"
+          >
+            Ark Ecosystem
+          </option>
+        </select>
+        <div
+          class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+        >
+          <div
+            class="sc-AxhCb fxrKLH"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="address"
+      >
+        Address
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__address-input"
+        name="address"
+      />
+    </fieldset>
+    <div
+      class="mt-4"
+    >
+      <button
+        class="sc-AxjAm ddJBbC w-full"
+        color="primary"
+        data-testid="contact-form__add-address-btn"
+        disabled=""
+        type="button"
+      >
+        Add address
+      </button>
+    </div>
+    <div
+      class="flex w-full justify-end"
+    >
+      <div
+        class="space-x-3"
+      >
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="contact-form__cancel-btn"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="sc-AxjAm ddQVWI"
+          color="primary"
+          data-testid="contact-form__save-btn"
+          disabled=""
+          type="submit"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`ContactForm when creating a new contact should render the form 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="contact-form"
+  >
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        data-testid="FormLabel"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        data-testid="contact-form__name-input"
+        name="name"
+      />
+    </fieldset>
+    <fieldset
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+    >
+      <label
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
       >
@@ -69,7 +194,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="address"
       >
@@ -126,14 +251,14 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
 exports[`ContactForm when editing an existing contact should render the form 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-6"
+    class="space-y-8"
     data-testid="contact-form"
   >
     <fieldset
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="name"
       >
@@ -149,7 +274,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="network"
       >
@@ -190,7 +315,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
-        class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
         data-testid="FormLabel"
         for="address"
       >
@@ -254,7 +379,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="font-semibold"
           >
             <div
-              class="inline-block truncate"
+              class="inline-block truncate align-middle"
             >
               <span
                 class="text-theme-neutral-800 font-semibold text-base"
@@ -309,7 +434,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="font-semibold"
           >
             <div
-              class="inline-block truncate"
+              class="inline-block truncate align-middle"
             >
               <span
                 class="text-theme-neutral-800 font-semibold text-base"
@@ -364,7 +489,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="font-semibold"
           >
             <div
-              class="inline-block truncate"
+              class="inline-block truncate align-middle"
             >
               <span
                 class="text-theme-neutral-800 font-semibold text-base"

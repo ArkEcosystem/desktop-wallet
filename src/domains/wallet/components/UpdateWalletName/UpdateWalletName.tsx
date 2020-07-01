@@ -25,18 +25,18 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 		<Modal
 			title={t("WALLETS.MODAL_NAME_WALLET.TITLE")}
 			description={t("WALLETS.MODAL_NAME_WALLET.DESCRIPTION")}
-			image={<NameWalletBanner className="mb-8" />}
+			image={<NameWalletBanner className="my-8" />}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<Form context={methods} onSubmit={props.onSave} className="mt-4">
+			<Form context={methods} onSubmit={props.onSave} className="mt-8">
 				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input ref={methods.register({ required: "Field required" })} />
 					<FormHelperText />
 				</FormField>
 
-				<div className="flex justify-end mt-4 space-x-3">
+				<div className="flex justify-end mt-8 space-x-3">
 					<Button variant="plain" onClick={props.onCancel}>
 						Cancel
 					</Button>

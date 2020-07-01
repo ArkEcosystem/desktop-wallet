@@ -1,6 +1,6 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
+import { fireEvent, render } from "test-utils";
 
 import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
@@ -15,7 +15,7 @@ describe("ContactListItem", () => {
 			</table>,
 		);
 
-		expect(asFragment).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should call onAction callback if provided", () => {

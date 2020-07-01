@@ -1,3 +1,143 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ContactListItem should render 1`] = `[Function]`;
+exports[`ContactListItem should render 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="sc-AxirZ hQTESw bg-theme-primary-600 border-theme-primary-600"
+            >
+              <span
+                class="text-sm text-theme-background"
+              >
+                RO
+              </span>
+            </div>
+            <span
+              class="font-semibold"
+            >
+              ROBank
+            </span>
+          </div>
+        </td>
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="sc-AxirZ hQTESw border-ark-mainnet"
+          >
+            <div
+              class="sc-AxiKw dzBdqj text-ark-mainnet"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-6 border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="sc-AxirZ hTKBId"
+            />
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="text-theme-neutral-800 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+        >
+          <div
+            class="sc-AxirZ hQTESw border-black"
+          >
+            <div
+              class="sc-AxiKw iQZLaj"
+              height="25"
+              width="25"
+            >
+              <svg>
+                delegate.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-AxirZ hQTESw border-black"
+          >
+            <div
+              class="sc-AxiKw iQZLaj"
+              height="25"
+              width="25"
+            >
+              <svg>
+                business.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="sc-AxirZ hQTESw border-black"
+          >
+            <div
+              class="sc-AxiKw iQZLaj"
+              height="25"
+              width="25"
+            >
+              <svg>
+                bridgechain.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="float-right"
+            >
+              <button
+                class="sc-AxjAm kwTlRm"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

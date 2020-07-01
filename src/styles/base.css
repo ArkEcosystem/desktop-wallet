@@ -1,3 +1,11 @@
 body {
-    @apply antialiased text-base font-sans bg-theme-background text-theme-text;
+	@apply antialiased text-base font-sans bg-theme-background text-theme-text;
+}
+
+a.link {
+	@apply text-theme-primary-600;
+}
+
+a.link:hover {
+	@apply text-theme-primary-500;
 }

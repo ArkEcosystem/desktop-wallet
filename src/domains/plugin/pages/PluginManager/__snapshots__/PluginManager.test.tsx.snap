@@ -178,16 +178,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -196,17 +196,17 @@ exports[`PluginManager should cancel install plugin 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -214,6 +214,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -254,7 +258,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -264,7 +268,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -1610,7 +1614,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -1620,7 +1624,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -2968,7 +2972,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -4488,16 +4492,16 @@ exports[`PluginManager should close install plugin modal 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -4506,17 +4510,17 @@ exports[`PluginManager should close install plugin modal 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -4524,6 +4528,10 @@ exports[`PluginManager should close install plugin modal 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -4564,7 +4572,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -4574,7 +4582,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -5920,7 +5928,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -5930,7 +5938,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -7278,7 +7286,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -8798,16 +8806,16 @@ exports[`PluginManager should delete plugin on game 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -8816,17 +8824,17 @@ exports[`PluginManager should delete plugin on game 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -8834,6 +8842,10 @@ exports[`PluginManager should delete plugin on game 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -8863,7 +8875,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
         data-testid="PluginList"
       >
         <div
-          class="sc-fzpans ljooBW"
+          class="sc-fzpans isbmKM"
           role="table"
         >
           <table
@@ -10734,16 +10746,16 @@ exports[`PluginManager should delete plugin on home 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -10752,17 +10764,17 @@ exports[`PluginManager should delete plugin on home 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -10770,6 +10782,10 @@ exports[`PluginManager should delete plugin on home 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -10810,7 +10826,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -11531,7 +11547,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -13139,16 +13155,16 @@ exports[`PluginManager should download & install plugin on game 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -13157,17 +13173,17 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -13175,6 +13191,10 @@ exports[`PluginManager should download & install plugin on game 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -13204,7 +13224,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
         data-testid="PluginList"
       >
         <div
-          class="sc-fzpans ljooBW"
+          class="sc-fzpans isbmKM"
           role="table"
         >
           <table
@@ -15075,16 +15095,16 @@ exports[`PluginManager should download & install plugin on home 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -15093,17 +15113,17 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -15111,6 +15131,10 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -15151,7 +15175,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -15161,7 +15185,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -16507,7 +16531,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -16517,7 +16541,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -17865,7 +17889,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             data-testid="PluginList"
           >
             <div
-              class="sc-fzpans ljooBW"
+              class="sc-fzpans isbmKM"
               role="table"
             >
               <table
@@ -19385,16 +19409,16 @@ exports[`PluginManager should open & close featured modal 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -19403,17 +19427,17 @@ exports[`PluginManager should open & close featured modal 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -19421,6 +19445,10 @@ exports[`PluginManager should open & close featured modal 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -19461,7 +19489,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -20182,7 +20210,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -21790,16 +21818,16 @@ exports[`PluginManager should open & close top rated modal 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -21808,17 +21836,17 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -21826,6 +21854,10 @@ exports[`PluginManager should open & close top rated modal 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -21866,7 +21898,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -22587,7 +22619,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -24195,16 +24227,16 @@ exports[`PluginManager should render 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -24213,17 +24245,17 @@ exports[`PluginManager should render 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -24231,6 +24263,10 @@ exports[`PluginManager should render 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -24271,7 +24307,7 @@ exports[`PluginManager should render 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -24992,7 +25028,7 @@ exports[`PluginManager should render 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -26623,16 +26659,16 @@ exports[`PluginManager should search for plugin 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -26641,17 +26677,17 @@ exports[`PluginManager should search for plugin 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -26659,6 +26695,10 @@ exports[`PluginManager should search for plugin 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -26699,7 +26739,7 @@ exports[`PluginManager should search for plugin 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -27420,7 +27460,7 @@ exports[`PluginManager should search for plugin 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -29028,16 +29068,16 @@ exports[`PluginManager should select plugin on game grid 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -29046,17 +29086,17 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -29064,6 +29104,10 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -31103,16 +31147,16 @@ exports[`PluginManager should select plugin on home grids 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -31121,17 +31165,17 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -31139,6 +31183,10 @@ exports[`PluginManager should select plugin on home grids 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -31179,7 +31227,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -31900,7 +31948,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More
@@ -33508,16 +33556,16 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -33526,17 +33574,17 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -33544,6 +33592,10 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -35583,16 +35635,16 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
         >
           <div
             class="inline-block"
-            data-testid="PluginManagerControls__grid"
+            data-testid="LayoutControls__grid"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="PluginManagerControls__grid--icon"
+              data-testid="LayoutControls__grid--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ eLkhAQ"
+                height="14"
+                width="28"
               >
                 <svg>
                   grid.svg
@@ -35601,17 +35653,17 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             </div>
           </div>
           <div
-            class="pr-5 mr-7 border-r border-theme-neutral-200 inline-block"
-            data-testid="PluginManagerControls__list"
+            class="inline-block"
+            data-testid="LayoutControls__list"
           >
             <div
               class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="PluginManagerControls__list--icon"
+              data-testid="LayoutControls__list--icon"
             >
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="sc-AxirZ iSCFNs"
+                height="14"
+                width="24"
               >
                 <svg>
                   list.svg
@@ -35619,6 +35671,10 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               </div>
             </div>
           </div>
+          <div
+            class="sc-fzqBZW fTLtbV"
+            type="vertical"
+          />
           <div
             class="relative inline-block text-theme-primary-400"
           >
@@ -35659,7 +35715,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               Featured Plugins
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__featured__view-more"
             >
               View More
@@ -36380,7 +36436,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
               Top Rated
             </h2>
             <span
-              class="cursor-pointer text-theme-primary-600 hover:text-theme-primary-500"
+              class="cursor-pointer link"
               data-testid="PluginManager__home__top-rated__view-more"
             >
               View More

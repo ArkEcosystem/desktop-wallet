@@ -1,5 +1,75 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LinkList should render 1`] = `[Function]`;
+exports[`LinkList should render 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="LinkList"
+  >
+    <div
+      class="flex justify-between cursor-pointer"
+      data-testid="LinkList__header"
+    >
+      <div>
+        <span
+          class="font-semibold"
+        >
+          Repository
+        </span>
+        <div
+          class="mt-2 text-theme-neutral-700"
+        >
+          Show your projects through the repository
+        </div>
+      </div>
+      <div>
+        <div
+          class="sc-AxirZ iOZZCn flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+          height="18"
+          width="18"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
-exports[`LinkList should toggle open/close of link collection 1`] = `[Function]`;
+exports[`LinkList should toggle open/close of link collection 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="LinkList"
+  >
+    <div
+      class="flex justify-between cursor-pointer"
+      data-testid="LinkList__header"
+    >
+      <div>
+        <span
+          class="font-semibold"
+        >
+          Repository
+        </span>
+        <div
+          class="mt-2 text-theme-neutral-700"
+        >
+          Show your projects through the repository
+        </div>
+      </div>
+      <div>
+        <div
+          class="sc-AxirZ iOZZCn flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+          height="18"
+          width="18"
+        >
+          <svg>
+            chevron-down.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
