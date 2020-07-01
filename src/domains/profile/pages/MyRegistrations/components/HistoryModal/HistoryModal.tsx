@@ -44,14 +44,14 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 							<td className="py-6 font-semibold text-center">
 								<span>{rowData.date}</span>
 							</td>
-							<td className="py-6 flex text-theme-primary items-center font-semibold float-right">
+							<td className="py-6 flex text-theme-primary-500 items-center font-semibold float-right">
 								<Icon name="Redirect" width={22} height={22} />
-								<span className="pb-1">View</span>
+								<span className="ml-1">View</span>
 							</td>
 						</tr>
 					)}
 				</Table>
-				<div className="py-6 self-center">
+				<div className="mt-2 self-center">
 					<Pagination totalCount={12} itemsPerPage={4} onSelectPage={console.log} currentPage={1} size="sm" />
 				</div>
 			</div>
