@@ -47,6 +47,7 @@ exports[`CompactPagination should handle first page click properly 1`] = `
       class="sc-AxjAm ddJBbC"
       color="primary"
       data-testid="CompactPagination__next"
+      disabled=""
       type="button"
     >
       <div
@@ -63,6 +64,7 @@ exports[`CompactPagination should handle first page click properly 1`] = `
       class="sc-AxjAm ddJBbC"
       color="primary"
       data-testid="CompactPagination__last"
+      disabled=""
       type="button"
     >
       <div
@@ -302,6 +304,87 @@ exports[`CompactPagination should handle previous page click properly 1`] = `
       class="sc-AxjAm ddJBbC"
       color="primary"
       data-testid="CompactPagination__last"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-last.svg
+        </svg>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CompactPagination should render next buttons as disabled on last page 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw bpKMZT"
+    data-testid="Pagination"
+  >
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      data-testid="CompactPagination__first"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          pagination-first.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      data-testid="CompactPagination__previous"
+      type="button"
+    >
+      <div
+        class="sc-AxirZ fttODj"
+        height="10"
+        width="10"
+      >
+        <svg>
+          back.svg
+        </svg>
+      </div>
+    </button>
+    <div
+      class="flex items-center px-4 py-2 rounded bg-theme-primary-contrast text-theme-primary"
+    >
+      Page 3 of 3
+    </div>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      data-testid="CompactPagination__next"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="sc-AxirZ hDwaov"
+        height="12"
+        width="12"
+      >
+        <svg>
+          forward.svg
+        </svg>
+      </div>
+    </button>
+    <button
+      class="sc-AxjAm ddJBbC"
+      color="primary"
+      data-testid="CompactPagination__last"
+      disabled=""
       type="button"
     >
       <div

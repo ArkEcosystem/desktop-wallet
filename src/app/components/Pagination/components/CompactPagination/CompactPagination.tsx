@@ -62,7 +62,7 @@ export const CompactPagination = ({
 				data-testid="CompactPagination__next"
 				variant="plain"
 				onClick={() => onSelectPage((currentPage += 1))}
-				disabled={currentPage === totalPages.length}
+				disabled={currentPage === totalPages}
 			>
 				<Icon name="Forward" height={12} width={12} />
 			</Button>
@@ -70,8 +70,8 @@ export const CompactPagination = ({
 			<Button
 				data-testid="CompactPagination__last"
 				variant="plain"
-				onClick={() => onSelectPage((currentPage = totalPages.length))}
-				disabled={currentPage === totalPages.length}
+				onClick={() => onSelectPage((currentPage = totalPages))}
+				disabled={currentPage === totalPages}
 			>
 				<Icon name="PaginationLast" height={12} width={12} />
 			</Button>
