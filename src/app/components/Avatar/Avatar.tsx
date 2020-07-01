@@ -10,7 +10,7 @@ type Props = {
 	shadowColor?: string;
 };
 
-export const AvatarWrapper = styled.div<{ shadowColor?: string; size: string; noShadow: boolean }>`
+export const AvatarWrapper = styled.div<{ shadowColor?: string; size: string; noShadow?: boolean }>`
 	${tw`block rounded-full overflow-hidden`}
 	${({ size }) => {
 		switch (size) {
