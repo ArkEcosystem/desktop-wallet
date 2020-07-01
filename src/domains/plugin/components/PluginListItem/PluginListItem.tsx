@@ -79,22 +79,23 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				)}
 
 				{plugin.isInstalled && (
-					<Button variant="plain" size="icon" className="text-left">
-						<div className="text-left">
-							<Dropdown
-								toggleIcon="Settings"
-								options={[
-									{ label: "View", value: "view" },
-									{ label: "Delete", value: "delete" },
-								]}
-								onSelect={(option: any) => {
-									if (option.value === "delete") {
-										onDelete(plugin);
-									}
-								}}
-							/>
-						</div>
-					</Button>
+					<Dropdown
+						toggleContent={
+							<Button variant="plain" size="icon" className="text-left">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						}
+						options={[
+							{ label: "View", value: "view" },
+							{ label: "Delete", value: "delete" },
+						]}
+						onSelect={(option: any) => {
+							if (option.value === "delete") {
+								onDelete(plugin);
+							}
+						}}
+						dropdownClass="top-3 text-left"
+					/>
 				)}
 			</td>
 		</tr>
