@@ -97,7 +97,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mt-4 pb-0">
+				<TransactionDetail className="pb-0 mt-4">
 					<FormField name="name" className="font-normal">
 						<FormLabel>Fee ARK</FormLabel>
 						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
@@ -134,7 +134,7 @@ const SecondStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="grid grid-flow-row mt-4">
+			<div className="mt-4 grid grid-flow-row">
 				<TransactionDetail
 					border={false}
 					label="Network"

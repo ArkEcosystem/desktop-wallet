@@ -32,12 +32,12 @@ const LinkItem = ({ link }: { link: Link }) => (
 			<div>
 				<div className="text-sm font-semibold text-theme-neutral-500">{link.type}</div>
 
-				<a href={link.link} className="mt-2 font-semibold link inline-block">
+				<a href={link.link} className="inline-block mt-2 font-semibold link">
 					{link.link}
 				</a>
 			</div>
 
-			<Circle className="border-black bg-theme-background my-auto" size="large">
+			<Circle className="my-auto border-black bg-theme-background" size="large">
 				<Icon name={linkIcons[link.type]} width={20} height={20} />
 			</Circle>
 		</div>
