@@ -76,7 +76,7 @@ const defaultFormValues = {
 };
 
 export const Default = () => (
-	<div className="mt-15">
+	<div>
 		<TransactionSend formValues={defaultFormValues} />
 	</div>
 );
