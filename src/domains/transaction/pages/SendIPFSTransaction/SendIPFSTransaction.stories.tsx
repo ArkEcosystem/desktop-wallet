@@ -33,7 +33,7 @@ export const Default = () => {
 		},
 	];
 	return (
-		<div className="mt-15">
+		<div>
 			<SendIPFSTransaction assets={assets} />
 		</div>
 	);
