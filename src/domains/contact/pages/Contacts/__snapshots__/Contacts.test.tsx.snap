@@ -7,14 +7,20 @@ exports[`Contacts should render 1`] = `
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 p-5 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
-      <span>
-         &lt;- 
-      </span>
       <div
-        class="space-x-3"
+        class="sc-AxjAm jMosRN"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
       >
         <a
           class="text-theme-neutral-700"
@@ -58,7 +64,7 @@ exports[`Contacts should render 1`] = `
               class="flex items-center justify-end space-x-5"
             >
               <button
-                class="sc-AxjAm ddQVWI whitespace-no-wrap"
+                class="sc-AxiKw wFYj whitespace-no-wrap"
                 color="primary"
                 data-testid="contacts__add-contact-btn"
                 type="button"
@@ -106,14 +112,20 @@ exports[`Contacts should render with contacts 1`] = `
     data-testid="contacts"
   >
     <div
-      class="flex items-center space-x-3 p-5 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
     >
-      <span>
-         &lt;- 
-      </span>
       <div
-        class="space-x-3"
+        class="sc-AxjAm jMosRN"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
       >
         <a
           class="text-theme-neutral-700"
@@ -167,7 +179,7 @@ exports[`Contacts should render with contacts 1`] = `
                     Search
                   </span>
                   <div
-                    class="sc-AxirZ eEbZjj"
+                    class="sc-AxjAm buCJuk"
                     height="20"
                     width="20"
                   >
@@ -181,7 +193,7 @@ exports[`Contacts should render with contacts 1`] = `
                 class="h-12 my-auto border-l border-1 border-theme-primary-100"
               />
               <button
-                class="sc-AxjAm ddQVWI whitespace-no-wrap"
+                class="sc-AxiKw wFYj whitespace-no-wrap"
                 color="primary"
                 data-testid="contacts__add-contact-btn"
                 type="button"
@@ -199,7 +211,7 @@ exports[`Contacts should render with contacts 1`] = `
           class="w-full"
         >
           <div
-            class="sc-fzoLsD hITtcw"
+            class="sc-fzpans isbmKM"
             role="table"
           >
             <table
@@ -230,7 +242,7 @@ exports[`Contacts should render with contacts 1`] = `
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
+                          class="sc-AxjAm iepfoc"
                           height="10"
                           width="10"
                         >
@@ -314,7 +326,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans bVDTSU bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -333,10 +345,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-ark-mainnet"
+                      class="sc-fzplWN iVxRgF border-ark-mainnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
+                        class="sc-AxjAm cpczEI text-ark-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -353,7 +365,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans cyrTyJ"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate align-middle"
@@ -371,10 +383,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-black"
+                      class="sc-fzplWN iVxRgF border-black"
                     >
                       <div
-                        class="sc-AxirZ dCVESD"
+                        class="sc-AxjAm jDLXpo"
                         height="25"
                         width="25"
                       >
@@ -384,10 +396,10 @@ exports[`Contacts should render with contacts 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fzpans bVDTSU border-black"
+                      class="sc-fzplWN iVxRgF border-black"
                     >
                       <div
-                        class="sc-AxirZ dCVESD"
+                        class="sc-AxjAm jDLXpo"
                         height="25"
                         width="25"
                       >
@@ -397,10 +409,10 @@ exports[`Contacts should render with contacts 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fzpans bVDTSU border-black"
+                      class="sc-fzplWN iVxRgF border-black"
                     >
                       <div
-                        class="sc-AxirZ dCVESD"
+                        class="sc-AxjAm jDLXpo"
                         height="25"
                         width="25"
                       >
@@ -421,12 +433,12 @@ exports[`Contacts should render with contacts 1`] = `
                         class="float-right"
                       >
                         <button
-                          class="sc-AxjAm kwTlRm"
+                          class="sc-AxiKw htlvx"
                           color="primary"
                           type="button"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
+                            class="sc-AxjAm buCJuk"
                             height="20"
                             width="20"
                           >
@@ -447,7 +459,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans bVDTSU bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -466,10 +478,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-ark-mainnet"
+                      class="sc-fzplWN iVxRgF border-ark-mainnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
+                        class="sc-AxjAm cpczEI text-ark-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -486,7 +498,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans cyrTyJ"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate align-middle"
@@ -504,10 +516,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-black"
+                      class="sc-fzplWN iVxRgF border-black"
                     >
                       <div
-                        class="sc-AxirZ dCVESD"
+                        class="sc-AxjAm jDLXpo"
                         height="25"
                         width="25"
                       >
@@ -528,12 +540,12 @@ exports[`Contacts should render with contacts 1`] = `
                         class="float-right"
                       >
                         <button
-                          class="sc-AxjAm kwTlRm"
+                          class="sc-AxiKw htlvx"
                           color="primary"
                           type="button"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
+                            class="sc-AxjAm buCJuk"
                             height="20"
                             width="20"
                           >
@@ -554,10 +566,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-bitcoin-mainnet"
+                      class="sc-fzplWN iVxRgF border-bitcoin-mainnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-bitcoin-mainnet"
+                        class="sc-AxjAm cpczEI text-bitcoin-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -574,7 +586,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans cyrTyJ"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate align-middle"
@@ -603,10 +615,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-ethereum-mainnet"
+                      class="sc-fzplWN iVxRgF border-ethereum-mainnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-ethereum-mainnet"
+                        class="sc-AxjAm cpczEI text-ethereum-mainnet"
                         height="1em"
                         width="1em"
                       >
@@ -623,7 +635,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzpans cyrTyJ"
+                        class="sc-fzplWN cwoIPg"
                       />
                       <div
                         class="inline-block truncate align-middle"
@@ -641,10 +653,10 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fzpans bVDTSU border-black"
+                      class="sc-fzplWN iVxRgF border-black"
                     >
                       <div
-                        class="sc-AxirZ dCVESD"
+                        class="sc-AxjAm jDLXpo"
                         height="25"
                         width="25"
                       >
