@@ -73,7 +73,7 @@ export const WalletHeader = ({
 					<Button data-testid="WalletHeader__send-button" onClick={onSend}>
 						Send
 					</Button>
-					<Button data-testid="WalletHeader__more-button" onClick={onMore} variant="plain">
+					<Button data-testid="WalletHeader__more-button" onClick={onMore} variant="plain" size="icon">
 						<Icon name="Settings" />
 					</Button>
 				</div>
