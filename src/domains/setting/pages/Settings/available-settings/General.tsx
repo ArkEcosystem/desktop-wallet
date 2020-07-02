@@ -128,7 +128,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 
 	return (
 		<>
-			<Header title={pageConfig?.title} subtitle={pageConfig?.subheader} />
+			<Header title="Wallet Settings" subtitle="Customize your wallet to suit your needs." />
 			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
 				<div className="mt-5">
 					<ListDivided items={personalDetails} />
