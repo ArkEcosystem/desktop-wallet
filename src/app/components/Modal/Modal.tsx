@@ -70,7 +70,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 			<div className="py-4">
 				{props.banner ? (
-					<div className="relative -mx-10 -mt-10 mb-10">
+					<div className="relative mb-10 -mx-10 -mt-10">
 						{props.banner}
 
 						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>

@@ -83,7 +83,7 @@ export const BestPlugins = (props: BestPluginsProps) => {
 	return (
 		<Modal
 			title={
-				<div className="w-3/5 font-bold text-white text-5xl leading-tight mb-5">
+				<div className="w-3/5 mb-5 text-5xl font-bold leading-tight text-white">
 					{t("PLUGINS.MODAL_BEST_PLUGINS.TITLE")}
 				</div>
 			}

@@ -83,7 +83,7 @@ export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 	return (
 		<Modal
 			title={
-				<div className="font-bold text-white text-5xl leading-tight mb-5">
+				<div className="mb-5 text-5xl font-bold leading-tight text-white">
 					{t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
 				</div>
 			}
