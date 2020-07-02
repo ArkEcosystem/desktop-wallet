@@ -25,6 +25,8 @@ export const Welcome = () => {
 		setProfiles(env.profiles().all());
 	}, [env]);
 
+	console.log({ profiles });
+
 	return (
 		<div className="w-full h-full">
 			<div className="px-4 sm:px-6 lg:px-8">
