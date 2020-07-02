@@ -4,7 +4,7 @@ import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -16,14 +16,10 @@ export const Welcome = () => {
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
+
 	const { env }: any = useContext(EnvironmentContext);
 	const { t } = useTranslation();
 	const history = useHistory();
-	const [profiles, setProfiles] = useState([]);
-
-	useEffect(() => {
-		setProfiles(env.profiles().all());
-	}, [env]);
 
 	return (
 		<div className="w-full h-full">
@@ -42,7 +38,7 @@ export const Welcome = () => {
 				</div>
 
 				<div className="max-w-lg mx-auto my-8 md:max-w-xl">
-					{profiles.length > 0 && (
+					{env.profiles().length > 0 && (
 						<>
 							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
 							<p className="text-sm text-theme-neutral-dark md:text-base">
@@ -50,7 +46,7 @@ export const Welcome = () => {
 							</p>
 
 							<div className="mt-6 mb-8 space-y-3">
-								{profiles.map((profile: any, index: number) => (
+								{env.profiles().map((profile: any, index: number) => (
 									<ProfileCard
 										handleClick={history.push(`dashboard/${profile.id()}`)}
 										key={index}
