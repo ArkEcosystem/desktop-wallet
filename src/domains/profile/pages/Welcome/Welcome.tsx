@@ -25,8 +25,6 @@ export const Welcome = () => {
 		setProfiles(env.profiles().all());
 	}, [env]);
 
-	console.log({ profiles });
-
 	return (
 		<div className="w-full h-full">
 			<div className="px-4 sm:px-6 lg:px-8">
@@ -76,7 +74,7 @@ export const Welcome = () => {
 						<Button
 							variant="plain"
 							className="w-full mt-2 md:mt-0"
-							onClick={() => history.push("/profile/create")}
+							onClick={() => history.push("/profiles/create")}
 						>
 							Create Profile
 						</Button>
