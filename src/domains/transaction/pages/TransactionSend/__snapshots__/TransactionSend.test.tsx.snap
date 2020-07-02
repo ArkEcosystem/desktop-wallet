@@ -1325,7 +1325,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       role="row"
                     >
                       <th
-                        class="text-xs text-left select-none text-theme-neutral-400"
+                        class="text-sm text-left select-none text-theme-neutral-500"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -1334,18 +1334,18 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="flex flex-inline align-top  invisible w-2"
                         >
                           <div
-                            class="mr-1"
+                            class="mr-2"
                           >
                             Avatar
                           </div>
                           <div
-                            class="mt-1 text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral-500"
                             data-testid="table__Sort"
                           />
                         </div>
                       </th>
                       <th
-                        class="text-xs text-left select-none text-theme-neutral-400"
+                        class="text-sm text-left select-none text-theme-neutral-500"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -1354,18 +1354,18 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="flex flex-inline align-top  undefined"
                         >
                           <div
-                            class="mr-1"
+                            class="mr-2"
                           >
                             Address
                           </div>
                           <div
-                            class="mt-1 text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral-500"
                             data-testid="table__Sort"
                           />
                         </div>
                       </th>
                       <th
-                        class="text-xs text-left select-none text-theme-neutral-400"
+                        class="text-sm text-left select-none text-theme-neutral-500"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -1374,12 +1374,12 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           class="flex flex-inline align-top  float-right"
                         >
                           <div
-                            class="mr-1"
+                            class="mr-2"
                           >
                             Amount
                           </div>
                           <div
-                            class="mt-1 text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral-500"
                             data-testid="table__Sort"
                           />
                         </div>
