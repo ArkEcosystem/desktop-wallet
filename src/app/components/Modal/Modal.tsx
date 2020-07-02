@@ -6,7 +6,7 @@ import { Size } from "types";
 
 type ModalProps = {
 	children: React.ReactNode;
-	title: string;
+	title: string | React.ReactNode;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
