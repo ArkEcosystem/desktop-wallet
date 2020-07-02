@@ -92,7 +92,10 @@ describe("LinkCollection", () => {
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
-				data={[{ link: "testing link", type: "twitter" }]}
+				data={[
+					{ link: "testing link", type: "twitter" },
+					{ link: "testing link 2", type: "facebook" },
+				]}
 				typeName="media"
 				selectionTypes={["twitter"]}
 				selectionTypeTitle="Primary"

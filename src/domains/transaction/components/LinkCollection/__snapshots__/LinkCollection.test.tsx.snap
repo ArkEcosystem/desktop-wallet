@@ -660,6 +660,43 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </button>
               </td>
             </tr>
+            <tr
+              class="border-b border-theme-neutral-200 font-semibold"
+            >
+              <td
+                class="w-16 text-center"
+              />
+              <td
+                class="w-40 py-6"
+              >
+                Facebook
+              </td>
+              <td
+                class="py-6"
+              >
+                testing link 2
+              </td>
+              <td
+                class="w-16 text-right false"
+              >
+                <button
+                  class="sc-AxjAm kwTlRm"
+                  color="primary"
+                  data-testid="LinkCollection__remove-link"
+                  type="button"
+                >
+                  <div
+                    class="sc-AxiKw dzBdqj"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      trash.svg
+                    </svg>
+                  </div>
+                </button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
