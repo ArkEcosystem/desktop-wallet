@@ -131,7 +131,7 @@ const SecondStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="grid grid-flow-row mt-4">
+			<div className="mt-4 grid grid-flow-row">
 				<TransactionDetail
 					border={false}
 					label="Network"
