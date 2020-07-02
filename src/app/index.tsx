@@ -12,11 +12,13 @@ import { EnvironmentProvider } from "./contexts";
 // i18n
 import { i18n } from "./i18n";
 
+const routesWithoutNavBar = ["/", "/profile/create"];
+
 export const App = withRouter(({ location }: any) => (
 	<I18nextProvider i18n={i18n}>
 		<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
 			<EnvironmentProvider>
-				{location.pathname !== "/" && (
+				{!routesWithoutNavBar.includes(location.pathname) && (
 					<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 				)}
 				{renderRoutes(routes)}
