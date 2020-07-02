@@ -13,10 +13,7 @@ export const SearchBarOptions = (props: SearchBarOptionsProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div
-			data-testid="SearchBarOptions"
-			className="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
-		>
+		<div data-testid="SearchBarOptions" className="flex items-center pr-8 my-1">
 			<Dropdown
 				toggleContent={
 					<span className="font-semibold cursor-pointer select-none">
