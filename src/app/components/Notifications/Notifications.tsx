@@ -58,7 +58,7 @@ export const Notifications = ({
 		if (typeof onAction === "function") onAction(name, item);
 	};
 
-	if (transactions.length === 0 && plugins.length == 0) {
+	if (transactions.length === 0 && plugins.length === 0) {
 		return <EmptyPlaceholder title={emptyText} />;
 	}
 
