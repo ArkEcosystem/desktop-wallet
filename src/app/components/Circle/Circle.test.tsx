@@ -16,7 +16,7 @@ describe("Circle", () => {
 
 	it("should render with content", () => {
 		const { container } = render(
-			<Circle size="small">
+			<Circle size="sm">
 				<div data-testid="circle__content" />
 			</Circle>,
 		);
@@ -29,19 +29,25 @@ describe("Circle", () => {
 	});
 
 	it("should render small", () => {
-		const { container } = render(<Circle size="small" />);
+		const { container } = render(<Circle size="sm" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render large", () => {
-		const { container } = render(<Circle size="large" />);
+		const { container } = render(<Circle size="lg" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render extra-large", () => {
+		const { container } = render(<Circle size="xl" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with no shadow", () => {
-		const { container } = render(<Circle size="small" noShadow />);
+		const { container } = render(<Circle size="sm" noShadow />);
 
 		expect(container).toMatchSnapshot();
 	});

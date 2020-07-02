@@ -13,7 +13,7 @@ type NetworkCardProps = {
 export const NetworkCard = ({ icon, name, network, onChange }: NetworkCardProps) => (
 	<CardControl type="radio" value={name} name="network" onChange={() => onChange(name)}>
 		<div className="flex items-center py-2">
-			<Circle className="transition-colors duration-100 border-theme-neutral-300" size="large" noShadow>
+			<Circle className="transition-colors duration-100 border-theme-neutral-300" size="lg" noShadow>
 				<Icon name={icon!} />
 			</Circle>
 			<div className="flex flex-col ml-4">

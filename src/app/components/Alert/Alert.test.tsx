@@ -18,13 +18,13 @@ describe("Alert", () => {
 	});
 
 	it("should render a small one", () => {
-		const { container } = render(<Alert size="small" />);
+		const { container } = render(<Alert size="sm" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
-		const { container } = render(<Alert size="large" />);
+		const { container } = render(<Alert size="lg" />);
 
 		expect(container).toMatchSnapshot();
 	});

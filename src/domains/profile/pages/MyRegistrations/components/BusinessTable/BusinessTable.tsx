@@ -55,7 +55,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
 					<td className="w-24 py-6">
 						<div className="flex items-center">
-							<Circle className="border-theme-neutral-800" size="large">
+							<Circle className="border-theme-neutral-800" size="lg">
 								<Icon name="Business" width={22} height={22} />
 							</Circle>
 							<Avatar address="AaAy" />
@@ -81,7 +81,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 					</td>
 					<td className="px-1 px-12" />
 					<td className="flex items-center justify-center float-right py-6 mt-1">
-						<Button variant="plain" size="small">
+						<Button variant="plain" size="sm">
 							<Dropdown
 								toggleIcon="Settings"
 								options={options}

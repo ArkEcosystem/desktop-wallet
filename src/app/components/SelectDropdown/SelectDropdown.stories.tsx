@@ -85,7 +85,7 @@ export const SelectNetwork = () => {
 						return (
 							<div className="p-6 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
 								<div className="flex items-center flex-inline">
-									<Circle size="small" noShadow>
+									<Circle size="sm" noShadow>
 										<Icon name={option.icon} width={18} height={18} />
 									</Circle>
 									<div className="ml-4 font-semibold text-theme-neutral-800">{option.label}</div>
@@ -97,7 +97,7 @@ export const SelectNetwork = () => {
 						if (selected) {
 							return (
 								<div className="flex items-center flex-inline">
-									<Circle size="small" noShadow>
+									<Circle size="sm" noShadow>
 										<Icon name={selected.icon} width={18} height={18} />
 									</Circle>
 									<div className="ml-4 font-semibold text-theme-neutral-800">{selected.label}</div>
@@ -106,7 +106,7 @@ export const SelectNetwork = () => {
 						}
 						return (
 							<div className="flex items-center flex-inline">
-								<Circle size="small" noShadow />
+								<Circle size="sm" noShadow />
 								<div className="ml-4 font-semibold text-theme-neutral-800" />
 							</div>
 						);

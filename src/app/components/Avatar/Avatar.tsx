@@ -1,23 +1,24 @@
 import { Avatar as AvatarSDK } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
+import { Size } from "types";
 
 type Props = {
 	address: string;
-	size?: "small" | "large" | "default";
+	size?: Size;
 	noShadow?: boolean;
 	className?: string;
 	shadowColor?: string;
 };
 
-export const AvatarWrapper = styled.div<{ shadowColor?: string; size: string; noShadow?: boolean }>`
+export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
 	${tw`block rounded-full overflow-hidden`}
 	${({ size }) => {
 		switch (size) {
-			case "large":
-				return tw`w-12 h-12`;
-			case "small":
+			case "sm":
 				return tw`w-8 h-8`;
+			case "lg":
+				return tw`w-12 h-12`;
 			default:
 				return tw`w-10 h-10`;
 		}
@@ -37,7 +38,7 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor }: Prop
 	return (
 		<AvatarWrapper
 			data-testid="Avatar"
-			size={size!}
+			size={size}
 			noShadow={!!noShadow}
 			className={className}
 			shadowColor={shadowColor}
@@ -45,8 +46,4 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor }: Prop
 			<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 		</AvatarWrapper>
 	);
-};
-
-Avatar.defaultProps = {
-	size: "default",
 };
