@@ -1,7 +1,7 @@
 import { act } from "@testing-library/react-hooks";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
-import { fireEvent, render, within } from "test-utils";
+import { fireEvent, render, within } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 import { article } from "../../data";
 import { Article } from "./Article";

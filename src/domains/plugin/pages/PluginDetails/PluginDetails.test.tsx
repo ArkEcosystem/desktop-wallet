@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 jest.mock("moment", () => {
 	return () => jest.requireActual("moment")("2020-06-19T14:48:00.000Z");

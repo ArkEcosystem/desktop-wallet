@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render, waitFor } from "test-utils";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";

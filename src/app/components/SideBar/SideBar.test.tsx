@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 import { SideBar } from "./SideBar";
 

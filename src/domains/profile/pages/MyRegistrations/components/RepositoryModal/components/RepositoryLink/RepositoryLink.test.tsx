@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 import { RepositoryLink } from "./RepositoryLink";
 
