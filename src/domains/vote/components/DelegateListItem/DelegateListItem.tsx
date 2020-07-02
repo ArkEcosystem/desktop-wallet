@@ -35,9 +35,9 @@ export const DelegateListItem = ({
 	const isSelected = selected?.find((selectedDelegate: any) => selectedDelegate.username === delegateName) || false;
 
 	return (
-		<tr className="border-b border-theme-neutral-200">
+		<tr className={`border-b border-theme-neutral-200 ${isSelected && "bg-theme-success-100"}`}>
 			<td className="py-5">
-				<Avatar address={delegateAddress!} />
+				<Avatar address={delegateAddress!} noShadow />
 			</td>
 
 			<td className="py-5 font-bold">{delegateName}</td>
