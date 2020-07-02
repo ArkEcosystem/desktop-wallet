@@ -15,52 +15,52 @@ exports[`Wallets should render 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex items-center"
+          class="flex"
         >
           <div
-            class="inline-block"
-            data-testid="LayoutControls__grid"
+            class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
           >
             <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="LayoutControls__grid--icon"
+              class="inline-block"
+              data-testid="LayoutControls__grid"
             >
               <div
-                class="sc-AxirZ eLkhAQ"
-                height="14"
-                width="28"
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                data-testid="LayoutControls__grid--icon"
               >
-                <svg>
-                  grid.svg
-                </svg>
+                <div
+                  class="sc-AxirZ eLkhAQ"
+                  height="14"
+                  width="28"
+                >
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-block"
+              data-testid="LayoutControls__list"
+            >
+              <div
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+                data-testid="LayoutControls__list--icon"
+              >
+                <div
+                  class="sc-AxirZ iSCFNs"
+                  height="14"
+                  width="24"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="inline-block"
-            data-testid="LayoutControls__list"
-          >
-            <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="LayoutControls__list--icon"
-            >
-              <div
-                class="sc-AxirZ iSCFNs"
-                height="14"
-                width="24"
-              >
-                <svg>
-                  list.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <div
-            class="relative inline-block px-3 text-theme-primary-400"
+            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
           >
             <div
               class="relative"
@@ -82,57 +82,57 @@ exports[`Wallets should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <button
-            class="sc-AxjAm ddJBbC ml-8 mr-3"
-            color="primary"
-            type="button"
+            class="space-x-3"
           >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ igJAf"
-                height="1em"
-                width="10"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  plus.svg
-                </svg>
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Create
-              </span>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            type="button"
-          >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ iQaTP"
-                height="1em"
-                width="1em"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  import.svg
-                </svg>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Import
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1595,52 +1595,52 @@ exports[`Wallets should render with empty wallets list 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex items-center"
+          class="flex"
         >
           <div
-            class="inline-block"
-            data-testid="LayoutControls__grid"
+            class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
           >
             <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="LayoutControls__grid--icon"
+              class="inline-block"
+              data-testid="LayoutControls__grid"
             >
               <div
-                class="sc-AxirZ eLkhAQ"
-                height="14"
-                width="28"
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                data-testid="LayoutControls__grid--icon"
               >
-                <svg>
-                  grid.svg
-                </svg>
+                <div
+                  class="sc-AxirZ eLkhAQ"
+                  height="14"
+                  width="28"
+                >
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-block"
+              data-testid="LayoutControls__list"
+            >
+              <div
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+                data-testid="LayoutControls__list--icon"
+              >
+                <div
+                  class="sc-AxirZ iSCFNs"
+                  height="14"
+                  width="24"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="inline-block"
-            data-testid="LayoutControls__list"
-          >
-            <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="LayoutControls__list--icon"
-            >
-              <div
-                class="sc-AxirZ iSCFNs"
-                height="14"
-                width="24"
-              >
-                <svg>
-                  list.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <div
-            class="relative inline-block px-3 text-theme-primary-400"
+            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
           >
             <div
               class="relative"
@@ -1662,57 +1662,57 @@ exports[`Wallets should render with empty wallets list 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <button
-            class="sc-AxjAm ddJBbC ml-8 mr-3"
-            color="primary"
-            type="button"
+            class="space-x-3"
           >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ igJAf"
-                height="1em"
-                width="10"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  plus.svg
-                </svg>
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Create
-              </span>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            type="button"
-          >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ iQaTP"
-                height="1em"
-                width="1em"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  import.svg
-                </svg>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Import
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1905,52 +1905,52 @@ exports[`Wallets should render with list view enabled as default 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex items-center"
+          class="flex"
         >
           <div
-            class="inline-block"
-            data-testid="LayoutControls__grid"
+            class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
           >
             <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="LayoutControls__grid--icon"
+              class="inline-block"
+              data-testid="LayoutControls__grid"
             >
               <div
-                class="sc-AxirZ eLkhAQ"
-                height="14"
-                width="28"
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+                data-testid="LayoutControls__grid--icon"
               >
-                <svg>
-                  grid.svg
-                </svg>
+                <div
+                  class="sc-AxirZ eLkhAQ"
+                  height="14"
+                  width="28"
+                >
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-block"
+              data-testid="LayoutControls__list"
+            >
+              <div
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                data-testid="LayoutControls__list--icon"
+              >
+                <div
+                  class="sc-AxirZ iSCFNs"
+                  height="14"
+                  width="24"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="inline-block"
-            data-testid="LayoutControls__list"
-          >
-            <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="LayoutControls__list--icon"
-            >
-              <div
-                class="sc-AxirZ iSCFNs"
-                height="14"
-                width="24"
-              >
-                <svg>
-                  list.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <div
-            class="relative inline-block px-3 text-theme-primary-400"
+            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
           >
             <div
               class="relative"
@@ -1972,57 +1972,57 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <button
-            class="sc-AxjAm ddJBbC ml-8 mr-3"
-            color="primary"
-            type="button"
+            class="space-x-3"
           >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ igJAf"
-                height="1em"
-                width="10"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  plus.svg
-                </svg>
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Create
-              </span>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            type="button"
-          >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ iQaTP"
-                height="1em"
-                width="1em"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  import.svg
-                </svg>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Import
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -3602,52 +3602,52 @@ exports[`Wallets should render with list view enabled as default and empty walle
         class="w-2/4 text-right"
       >
         <div
-          class="flex items-center"
+          class="flex"
         >
           <div
-            class="inline-block"
-            data-testid="LayoutControls__grid"
+            class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
           >
             <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="LayoutControls__grid--icon"
+              class="inline-block"
+              data-testid="LayoutControls__grid"
             >
               <div
-                class="sc-AxirZ eLkhAQ"
-                height="14"
-                width="28"
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+                data-testid="LayoutControls__grid--icon"
               >
-                <svg>
-                  grid.svg
-                </svg>
+                <div
+                  class="sc-AxirZ eLkhAQ"
+                  height="14"
+                  width="28"
+                >
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-block"
+              data-testid="LayoutControls__list"
+            >
+              <div
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                data-testid="LayoutControls__list--icon"
+              >
+                <div
+                  class="sc-AxirZ iSCFNs"
+                  height="14"
+                  width="24"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="inline-block"
-            data-testid="LayoutControls__list"
-          >
-            <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="LayoutControls__list--icon"
-            >
-              <div
-                class="sc-AxirZ iSCFNs"
-                height="14"
-                width="24"
-              >
-                <svg>
-                  list.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <div
-            class="relative inline-block px-3 text-theme-primary-400"
+            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
           >
             <div
               class="relative"
@@ -3669,57 +3669,57 @@ exports[`Wallets should render with list view enabled as default and empty walle
             </div>
           </div>
           <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <button
-            class="sc-AxjAm ddJBbC ml-8 mr-3"
-            color="primary"
-            type="button"
+            class="space-x-3"
           >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ igJAf"
-                height="1em"
-                width="10"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  plus.svg
-                </svg>
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Create
-              </span>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            type="button"
-          >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ iQaTP"
-                height="1em"
-                width="1em"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  import.svg
-                </svg>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Import
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -3751,52 +3751,52 @@ exports[`Wallets should render with list view enabled as default and empty walle
         class="w-2/4 text-right"
       >
         <div
-          class="flex items-center"
+          class="flex"
         >
           <div
-            class="inline-block"
-            data-testid="LayoutControls__grid"
+            class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
           >
             <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-              data-testid="LayoutControls__grid--icon"
+              class="inline-block"
+              data-testid="LayoutControls__grid"
             >
               <div
-                class="sc-AxirZ eLkhAQ"
-                height="14"
-                width="28"
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+                data-testid="LayoutControls__grid--icon"
               >
-                <svg>
-                  grid.svg
-                </svg>
+                <div
+                  class="sc-AxirZ eLkhAQ"
+                  height="14"
+                  width="28"
+                >
+                  <svg>
+                    grid.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="inline-block"
+              data-testid="LayoutControls__list"
+            >
+              <div
+                class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                data-testid="LayoutControls__list--icon"
+              >
+                <div
+                  class="sc-AxirZ iSCFNs"
+                  height="14"
+                  width="24"
+                >
+                  <svg>
+                    list.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
           <div
-            class="inline-block"
-            data-testid="LayoutControls__list"
-          >
-            <div
-              class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-              data-testid="LayoutControls__list--icon"
-            >
-              <div
-                class="sc-AxirZ iSCFNs"
-                height="14"
-                width="24"
-              >
-                <svg>
-                  list.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <div
-            class="relative inline-block px-3 text-theme-primary-400"
+            class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
           >
             <div
               class="relative"
@@ -3818,57 +3818,57 @@ exports[`Wallets should render with list view enabled as default and empty walle
             </div>
           </div>
           <div
-            class="sc-AxheI hnJJZa border-theme-neutral-300"
-            type="vertical"
-          />
-          <button
-            class="sc-AxjAm ddJBbC ml-8 mr-3"
-            color="primary"
-            type="button"
+            class="space-x-3"
           >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ igJAf"
-                height="1em"
-                width="10"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  plus.svg
-                </svg>
+                <div
+                  class="sc-AxirZ igJAf"
+                  height="1em"
+                  width="10"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Create
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Create
-              </span>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            type="button"
-          >
-            <div
-              class="flex items-center justify-center mr-2 text-sm align-middle"
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
               <div
-                class="sc-AxirZ iQaTP"
-                height="1em"
-                width="1em"
+                class="flex items-center justify-center mr-2 text-sm align-middle"
               >
-                <svg>
-                  import.svg
-                </svg>
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    import.svg
+                  </svg>
+                </div>
+                <span
+                  class="ml-2"
+                >
+                  Import
+                </span>
               </div>
-              <span
-                class="ml-2"
-              >
-                Import
-              </span>
-            </div>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
@@ -16,13 +15,13 @@ export const PluginManagerControls = ({
 }: PluginManagerControlsProps) => {
 	return (
 		<div data-testid="PluginManagerControls" className="flex items-center mx-4">
-			<LayoutControls
-				onSelectGridView={onSelectGridView}
-				onSelectListView={onSelectListView}
-				selectedViewType={selectedViewType}
-			/>
-
-			<Divider type="vertical" />
+			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-100">
+				<LayoutControls
+					onSelectGridView={onSelectGridView}
+					onSelectListView={onSelectListView}
+					selectedViewType={selectedViewType}
+				/>
+			</div>
 
 			<div className="relative inline-block text-theme-primary-400">
 				<Dropdown toggleIcon="Filters">

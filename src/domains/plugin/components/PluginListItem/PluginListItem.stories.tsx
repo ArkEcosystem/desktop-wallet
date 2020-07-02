@@ -2,7 +2,7 @@ import React from "react";
 
 import { PluginListItem } from "./PluginListItem";
 
-export default { title: "Domains / Plugin / Component / PluginListItem" };
+export default { title: "Domains / Plugin / Components / PluginListItem" };
 
 const plugins = [
 	{
