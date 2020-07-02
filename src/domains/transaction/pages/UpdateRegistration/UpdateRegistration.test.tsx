@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
@@ -22,7 +22,9 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = await waitFor(async () =>
+			render(<UpdateRegistration {...defaultFormValues} />),
+		);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
@@ -37,13 +39,9 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		let context;
-
-		await act(async () => {
-			context = render(<UpdateRegistration {...defaultFormValues} />);
-		});
-
-		const { asFragment, getByTestId } = context;
+		const { asFragment, getByTestId } = await waitFor(async () =>
+			render(<UpdateRegistration {...defaultFormValues} />),
+		);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
@@ -55,7 +53,9 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = await waitFor(async () =>
+			render(<UpdateRegistration {...defaultFormValues} />),
+		);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
@@ -70,7 +70,9 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = await waitFor(async () =>
+			render(<UpdateRegistration {...defaultFormValues} />),
+		);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
@@ -94,7 +96,9 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = await waitFor(async () =>
+			render(<UpdateRegistration {...defaultFormValues} />),
+		);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
