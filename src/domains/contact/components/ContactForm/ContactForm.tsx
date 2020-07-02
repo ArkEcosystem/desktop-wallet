@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { Select } from "app/components/Select";
+import { SelectAsset } from "app/components/SelectAsset";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -69,25 +69,25 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: any;
-	networks: any;
+	assets: any;
 	onCancel?: any;
 	onDelete?: any;
 	onSave: any;
 };
 
-export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, assets, onCancel, onDelete, onSave }: ContactFormProps) => {
 	const [contactAddresses, setContactAddresses] = useState(() => {
 		return contact ? contact.addresses() : [];
 	});
 
-	useEffect(() => {
-		form.setValue("name", contact ? contact.name() : "", !!contact);
-	}, [contact]);
-
+	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { name, network, address } = form.watch();
 
-	const { t } = useTranslation();
+	useEffect(() => {
+		form.setValue("name", contact ? contact.name() : "", !!contact);
+		form.register({ name: "network" });
+	}, [contact]);
 
 	const handleAddAddress = (network: string, address: string) => {
 		setContactAddresses(
@@ -132,18 +132,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 			<FormField name="network">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<Select
-					data-testid="contact-form__network-select"
-					placeholder="Select network..."
-					ref={form.register({})}
-				>
-					{networks &&
-						networks.map((network: any, index: number) => (
-							<option data-testid="contact-form__network-option" key={index} value={network.value}>
-								{network.label}
-							</option>
-						))}
-				</Select>
+				<SelectAsset assets={assets} onSelect={(selected: any) => form.setValue("network", selected)} />
 				<FormHelperText />
 			</FormField>
 
@@ -197,5 +186,5 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 };
 
 ContactForm.defaultProps = {
-	networks: [],
+	assets: [],
 };
