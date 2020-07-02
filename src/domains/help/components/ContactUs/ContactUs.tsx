@@ -92,7 +92,7 @@ export const ContactUs = (props: ContactUsProps) => {
 					/>
 				</FormField>
 
-				<div className="mt-4 flex justify-end space-x-3">
+				<div className="flex justify-end mt-4 space-x-3">
 					<Button variant="plain" onClick={props.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
