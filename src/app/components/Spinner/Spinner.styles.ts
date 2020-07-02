@@ -1,4 +1,5 @@
 import tw, { css } from "twin.macro";
+import { Size } from "types";
 
 const baseStyle = [
 	tw`rounded-full`,
@@ -25,17 +26,17 @@ const getColor = (color: string): any => {
 	`;
 };
 
-const getSize = (size: string): any => {
+const getSize = (size?: Size): any => {
 	switch (size) {
-		case "small":
+		case "sm":
 			return tw`w-5 h-5`;
-		case "large":
+		case "lg":
 			return tw`w-12 h-12`;
 		default:
 			return tw`w-8 h-8`;
 	}
 };
 
-export const getStyles = ({ color, size }: { color?: string; size?: string }) => {
-	return [...baseStyle, getSize(size!), ...getColor(color!)];
+export const getStyles = ({ color, size }: { color?: string; size?: Size }) => {
+	return [...baseStyle, getSize(size), ...getColor(color!)];
 };

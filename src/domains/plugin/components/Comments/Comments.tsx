@@ -31,7 +31,7 @@ const Sorter = ({ handleSortBy, options }: SorterProps) => {
 			<Dropdown
 				position="left"
 				toggleIcon="ArrowDown"
-				toggleSize="small"
+				toggleSize="sm"
 				options={options}
 				onSelect={(option: any) => handleSortBy(option)}
 			/>

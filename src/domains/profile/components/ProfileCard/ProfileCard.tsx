@@ -27,7 +27,7 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 
 			<div className="flex flex-row justify-between w-full">
 				<div className="flex items-center">
-					<AvatarWrapper data-testid="profile-card__user--avatar" size="large">
+					<AvatarWrapper data-testid="profile-card__user--avatar" size="lg">
 						<img
 							alt={profile.name()}
 							title={profile.name()}

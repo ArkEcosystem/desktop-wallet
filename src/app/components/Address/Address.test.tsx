@@ -23,7 +23,7 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render a small one", () => {
-		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="small" />);
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="sm" />);
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-sm");
 	});
 
@@ -33,18 +33,13 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render a large one", () => {
-		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="large" />);
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="lg" />);
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-xl");
 	});
 
 	it("should render with custom class for address", () => {
 		const { getByTestId } = render(
-			<Address
-				addressClass="text-theme-primary"
-				address={sampleAddress}
-				walletName="Sample Wallet"
-				size="large"
-			/>,
+			<Address addressClass="text-theme-primary" address={sampleAddress} walletName="Sample Wallet" size="lg" />,
 		);
 		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary");
 	});

@@ -43,10 +43,10 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 						>
 							<div className="flex items-center space-x-4">
 								<div className="flex items-center -space-x-2">
-									<Circle size="large" className="border-theme-neutral-900 text-theme-neutral-900">
+									<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 										<Icon name="Voted" />
 									</Circle>
-									<Avatar size="large" address={address} />
+									<Avatar size="lg" address={address} />
 								</div>
 								<div>
 									<p className="text-sm font-semibold text-theme-neutral space-y-1">

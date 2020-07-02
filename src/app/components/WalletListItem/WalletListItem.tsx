@@ -45,10 +45,10 @@ export const WalletListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
-				<Circle className={coinClass} size="large">
+				<Circle className={coinClass} size="lg">
 					<Icon name={coinIcon} width={20} height={20} />
 				</Circle>
-				<Circle avatarId={avatarId} size="large" />
+				<Circle avatarId={avatarId} size="lg" />
 			</td>
 			<td className="py-1">
 				<Address walletName={walletName} address={address} maxChars={22} />

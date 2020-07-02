@@ -45,7 +45,7 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 			{rest > 0 && (
 				<Circle
 					data-testid="DelegateAvatarList__avatar-list__rest"
-					size="large"
+					size="lg"
 					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
 				>
 					+{rest}
@@ -100,9 +100,9 @@ export const DelegateList = (props: DelegateListProps) => {
 			accessor: "commissionDaily",
 		},
 		{
-			Header: "",
+			Header: "Vote",
 			accessor: "onSelect",
-			disableSortBy: true,
+			className: "justify-end",
 		},
 	];
 

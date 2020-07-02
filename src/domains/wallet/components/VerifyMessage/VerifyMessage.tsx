@@ -24,7 +24,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 		if (verifyAddress)
 			return (
 				<div className="mt-8">
-					<Alert variant="warning" size="small">
+					<Alert variant="warning" size="sm">
 						<span className="p-5 text-sm font-semibold">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
 					<div className="mt-8">
