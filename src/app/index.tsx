@@ -12,7 +12,7 @@ import { EnvironmentProvider } from "./contexts";
 // i18n
 import { i18n } from "./i18n";
 
-const App = ({ location }: any) => (
+export const App = withRouter(({ location }: any) => (
 	<I18nextProvider i18n={i18n}>
 		<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
 			<EnvironmentProvider>
@@ -23,6 +23,4 @@ const App = ({ location }: any) => (
 			</EnvironmentProvider>
 		</main>
 	</I18nextProvider>
-);
-
-export default withRouter(App);
+));

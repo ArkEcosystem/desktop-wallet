@@ -1,7 +1,7 @@
 // Styles
 import "./styles/app.css";
 
-import App from "app";
+import { App } from "app";
 // React
 import React from "react";
 import ReactDOM from "react-dom";

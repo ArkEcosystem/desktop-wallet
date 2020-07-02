@@ -1,9 +1,9 @@
+import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Router } from "react-router-dom";
-import { render, screen, waitFor } from "test-utils";
 
-import App from "./";
+import { App } from "./";
 
 describe("App", () => {
 	const history = createMemoryHistory();
