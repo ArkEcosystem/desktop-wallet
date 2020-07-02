@@ -71,8 +71,8 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 			<div className="px-12 py-10 mb-10 bg-white">
 				<FastNavigation sections={sections} />
 
-				<div className="max-w-xl mx-auto text-sm">
-					<div className="flex mb-4">
+				<div className="max-w-xl mx-auto">
+					<div className="flex mb-4 text-sm">
 						<div className="flex">
 							<div className="my-auto mr-2">
 								<Icon name={categoryIcon} />
@@ -95,10 +95,8 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 							sections.map((section: SectionItem, index) => {
 								return (
 									<div className="mt-8" id={section.id} key={index}>
-										<h3>{section.title}</h3>
-										<p className="whitespace-pre-line text-theme-neutral-700 text-md">
-											{section.body}
-										</p>
+										<h3 className="text-lg">{section.title}</h3>
+										<p className="whitespace-pre-line text-theme-neutral-700">{section.body}</p>
 									</div>
 								);
 							})}
