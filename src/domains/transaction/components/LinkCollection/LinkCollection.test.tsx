@@ -76,7 +76,7 @@ describe("LinkCollection", () => {
 		});
 		fireEvent.click(getByTestId("LinkCollection__add-link"));
 
-		expect(getByTestId("LinkCollection")).toHaveTextContent("twitter");
+		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
 		fireEvent.click(getByTestId("LinkCollection__remove-link"));
