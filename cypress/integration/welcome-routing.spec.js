@@ -6,11 +6,4 @@ describe("Welcome -> Create Profile routing", () => {
 		cy.get("button").contains("Back").click();
 		cy.get("h1").should("have.text", "Welcome to ARK");
 	});
-
-	it("should navigate to portfolio page", () => {
-		cy.visit("/");
-
-		cy.get("p").contains("Anne Doe").click();
-		cy.get("div").contains("Wallets");
-	});
 });
