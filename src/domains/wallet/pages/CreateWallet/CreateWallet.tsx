@@ -224,7 +224,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 	};
 
 	return (
-		<div className="max-w-xl mx-auto">
+		<div className="max-w-xl mx-auto py-16">
 			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
