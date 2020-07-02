@@ -5,7 +5,7 @@ import { translations } from "../../i18n";
 import { LedgerConfirmation } from "./LedgerConfirmation";
 
 describe("LedgerConfirmation", () => {
-	it("should render a modal", () => {
+	it("should render", () => {
 		const { asFragment, getByTestId } = render(<LedgerConfirmation />);
 
 		expect(getByTestId("LedgerConfirmation-description")).toHaveTextContent(
