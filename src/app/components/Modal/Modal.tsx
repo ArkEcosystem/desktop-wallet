@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 
 type ModalProps = {
@@ -52,10 +52,10 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+			className="fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 z-10 mt-5 mr-5">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5">
 				<Button
 					data-testid="modal__close-btn"
 					color="neutral"
@@ -78,7 +78,7 @@ const ModalContent = (props: ModalContentProps) => {
 					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
 				)}
 
-				<div className={`flex-1 ${props.banner ? "mt-38" : ""}`}>
+				<div className={`flex-1 ${props.banner ? "mt-40" : ""}`}>
 					{props.image}
 
 					{props.description && <div className="mt-1 text-theme-neutral-700">{props.description}</div>}
@@ -90,7 +90,34 @@ const ModalContent = (props: ModalContentProps) => {
 	);
 };
 
+interface BodyRightOffset {
+	[key: string]: string;
+}
+
 export const Modal = (props: ModalProps) => {
+	// Disable scrolling when open
+	useEffect(() => {
+		const originalStyle = window.getComputedStyle(document.body).overflow;
+
+		// Prevent body content `glitching` upon change,
+		// by right padding if scrollbar existed initially
+		const rightPadding: BodyRightOffset = {
+			visible: "15px",
+			hidden: "0",
+		};
+
+		if (props.isOpen) {
+			document.body.style.overflow = "hidden";
+			document.body.style.paddingRight = rightPadding[originalStyle];
+		}
+
+		return () => {
+			document.body.style.overflow = originalStyle;
+			document.body.style.paddingRight = "0";
+			return;
+		};
+	}, [props.isOpen]);
+
 	if (!props.isOpen) {
 		return <></>;
 	}
@@ -98,7 +125,7 @@ export const Modal = (props: ModalProps) => {
 	return (
 		<>
 			<div
-				className="fixed inset-0 z-30 bg-black opacity-50"
+				className="fixed inset-0 z-50 bg-black opacity-50"
 				data-testid="modal__overlay"
 				onClick={props.onClose}
 			/>
