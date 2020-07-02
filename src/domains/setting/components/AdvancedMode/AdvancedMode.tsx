@@ -21,7 +21,7 @@ export const AdvancedMode = (props: AdvancedModeProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<div className="flex justify-end pb-5 mt-8 space-x-3">
+			<div className="flex justify-end mt-8 space-x-3">
 				<Button variant="plain" onClick={props.onDecline}>
 					{t("COMMON.I_DECLINE")}
 				</Button>

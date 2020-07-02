@@ -48,7 +48,7 @@ exports[`CustomPeers should render a modal 1`] = `
           data-testid="Form"
         >
           <fieldset
-            class="sc-AxiKw iQzisX flex flex-col space-y-2"
+            class="sc-AxiKw iQzisX mt-8"
           >
             <label
               class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -58,36 +58,52 @@ exports[`CustomPeers should render a modal 1`] = `
               Network
             </label>
             <div
-              class="sc-Axmtr jzhOwR"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-0-label"
+              class="relative"
+              role="combobox"
             >
-              <select
-                class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="Select"
-                name="network"
-              >
-                <option
-                  selected=""
-                  value=""
-                >
-                  Select
-                </option>
-                <option
-                  value="ark-ecosystem"
-                >
-                  ARK Ecosystem
-                </option>
-              </select>
+              <label
+                for="downshift-0-input"
+                id="downshift-0-label"
+              />
               <div
-                class="sc-AxhUy sc-AxheI bSLhdh w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                class="relative flex items-center w-full flex-inline"
               >
                 <div
-                  class="sc-AxmLO hLGjfU"
-                  height="1em"
-                  width="1em"
+                  class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                 >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                  <div
+                    class="px-4 py-2 flex-0 w-14"
+                  >
+                    <div
+                      class="sc-fznyAO crOapn border-theme-neutral-200"
+                    />
+                  </div>
+                  <div
+                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                  >
+                    <div
+                      class="relative z-10 w-full"
+                      data-testid="select-network__typeahead-"
+                    >
+                      <div
+                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-labelledby="downshift-0-label"
+                      autocomplete="off"
+                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                      data-testid="select-asset__input"
+                      id="downshift-0-input"
+                      name="network"
+                      placeholder="Enter a network name"
+                      value=""
+                    />
+                  </div>
                 </div>
               </div>
             </div>
