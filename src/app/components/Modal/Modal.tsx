@@ -52,10 +52,10 @@ const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
 			size={props.size!}
-			className="absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+			className="fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
-			<div className="absolute top-0 right-0 z-10 mt-5 mr-5">
+			<div className="absolute top-0 right-0 z-50 mt-5 mr-5">
 				<Button
 					data-testid="modal__close-btn"
 					color="neutral"
@@ -78,7 +78,7 @@ const ModalContent = (props: ModalContentProps) => {
 					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
 				)}
 
-				<div className={`flex-1 ${props.banner ? "mt-38" : ""}`}>
+				<div className={`flex-1 ${props.banner ? "mt-40" : ""}`}>
 					{props.image}
 
 					{props.description && <div className="mt-1 text-theme-neutral-700">{props.description}</div>}
@@ -98,7 +98,7 @@ export const Modal = (props: ModalProps) => {
 	return (
 		<>
 			<div
-				className="fixed inset-0 z-30 bg-black opacity-50"
+				className="fixed inset-0 z-50 bg-black opacity-50"
 				data-testid="modal__overlay"
 				onClick={props.onClose}
 			/>
