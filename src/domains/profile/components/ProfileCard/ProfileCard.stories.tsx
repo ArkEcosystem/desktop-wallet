@@ -20,5 +20,12 @@ export const Default = () => {
 		{ label: "Delete", value: "delete" },
 	];
 
-	return <ProfileCard profile={profile} actions={actions} showSettings={showSettings} />;
+	return (
+		<ProfileCard
+			handleClick={() => console.log(profile)}
+			profile={profile}
+			actions={actions}
+			showSettings={showSettings}
+		/>
+	);
 };
