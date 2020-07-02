@@ -100,9 +100,9 @@ export const DelegateList = (props: DelegateListProps) => {
 			accessor: "commissionDaily",
 		},
 		{
-			Header: "",
+			Header: "Vote",
 			accessor: "onSelect",
-			disableSortBy: true,
+			className: "justify-end",
 		},
 	];
 
