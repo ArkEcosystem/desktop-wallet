@@ -1,6 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
 
 type ModalProps = {
@@ -90,7 +90,34 @@ const ModalContent = (props: ModalContentProps) => {
 	);
 };
 
+interface BodyRightOffset {
+	[key: string]: string;
+}
+
 export const Modal = (props: ModalProps) => {
+	// Disable scrolling when open
+	useEffect(() => {
+		const originalStyle = window.getComputedStyle(document.body).overflow;
+
+		// Prevent body content `glitching` upon change,
+		// by right padding if scrollbar existed initially
+		const rightPadding: BodyRightOffset = {
+			visible: "15px",
+			hidden: "0",
+		};
+
+		if (props.isOpen) {
+			document.body.style.overflow = "hidden";
+			document.body.style.paddingRight = rightPadding[originalStyle];
+		}
+
+		return () => {
+			document.body.style.overflow = originalStyle;
+			document.body.style.paddingRight = "0";
+			return;
+		};
+	}, [props.isOpen]);
+
 	if (!props.isOpen) {
 		return <></>;
 	}
