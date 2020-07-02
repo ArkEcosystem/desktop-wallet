@@ -22,12 +22,12 @@ export const ProfileCreated = (props: ProfileCreatedProps) => {
 	return (
 		<Modal
 			title={t("PROFILE.MODAL_PROFILE_CREATED.TITLE")}
-			image={<ProfileCreatedBanner className="my-10" />}
+			image={<ProfileCreatedBanner className="my-8" />}
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
 			<div className="container">
-				<div className="mb-6 text-center">
+				<div className="mb-8 text-center">
 					<p className="mb-1 text-sm text-theme-neutral-dark md:text-base">
 						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}
 					</p>
