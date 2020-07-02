@@ -53,4 +53,17 @@ export const translations: { [key: string]: any } = {
 	MODAL_IPFS_DETAIL: {
 		TITLE: "Transaction IPFS Hash",
 	},
+
+	LINK_TYPES: {
+		BITBUCKET: "BitBucket",
+		FACEBOOK: "Facebook",
+		FLICKR: "Flickr",
+		GITHUB: "GitHub",
+		GITLAB: "GitLab",
+		LINKEDIN: "LinkedIn",
+		NPM: "Npm",
+		TWITTER: "Twitter",
+		VIMEO: "Vimeo",
+		YOUTUBE: "YouTube",
+	},
 };

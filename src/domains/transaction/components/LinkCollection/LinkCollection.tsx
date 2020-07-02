@@ -6,6 +6,7 @@ import { RadioButton } from "app/components/RadioButton";
 import { SelectDropdown } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 type Link = {
@@ -43,6 +44,8 @@ export const LinkCollection = ({
 	selectionTypes,
 	selectionTypeTitle,
 }: LinkCollectionProps) => {
+	const { t } = useTranslation();
+
 	const [isExpanded, setIsExpanded] = React.useState(false);
 	const [links, setLinks] = React.useState(data || []);
 	const [selected, setSelected] = React.useState((null as unknown) as Link);
@@ -193,7 +196,9 @@ export const LinkCollection = ({
 									</td>
 								)}
 
-								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>{rowData.type}</td>
+								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
+									{t(`TRANSACTION.LINK_TYPES.${rowData.type.toUpperCase()}`)}
+								</td>
 
 								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>{rowData.link}</td>
 
