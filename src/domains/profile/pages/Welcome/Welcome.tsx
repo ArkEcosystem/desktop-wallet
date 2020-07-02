@@ -25,6 +25,8 @@ export const Welcome = () => {
 		setProfiles(env.profiles().all());
 	}, [env]);
 
+	console.log({ profiles });
+
 	return (
 		<div className="w-full h-full">
 			<div className="px-4 sm:px-6 lg:px-8">
@@ -52,7 +54,7 @@ export const Welcome = () => {
 							<div className="mt-6 mb-8 space-y-3">
 								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										handleClick={history.push(`dashboard/${profile.id()}`)}
+										handleClick={() => history.push(`dashboard/${profile.id()}`)}
 										key={index}
 										profile={profile}
 										actions={profileCardActions}
