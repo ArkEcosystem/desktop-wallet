@@ -140,7 +140,7 @@ const SecondStep = () => {
 					label="Network"
 					extra={
 						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -172,7 +172,7 @@ const SecondStep = () => {
 					label="Type"
 					extra={
 						<div>
-							<Circle className="border-black bg-theme-background" size="large">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -244,7 +244,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 					</div>
 
 					<div className="inline-flex items-center mt-8 space-x-3">
-						<Spinner color="primary" size="default" />
+						<Spinner color="primary" />
 						<span className="text-black">Waiting for confirmation...</span>
 					</div>
 				</div>
@@ -258,7 +258,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Transaction Type"
 			extra={
-				<Circle className="border-black" size="large">
+				<Circle className="border-black" size="lg">
 					<Icon name="Business" width={20} height={20} />
 				</Circle>
 			}
@@ -276,7 +276,7 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
 				</div>

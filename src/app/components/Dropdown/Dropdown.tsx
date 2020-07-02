@@ -2,6 +2,7 @@ import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
+import { Size } from "types";
 
 import { defaultClasses, defaultStyles } from "./Dropdown.styles";
 
@@ -18,7 +19,7 @@ type Props = {
 	position?: string;
 	dropdownClass?: string;
 	toggleIcon: string;
-	toggleSize: "small" | "large" | "default";
+	toggleSize?: Size;
 	toggleContent?: any;
 };
 
@@ -48,23 +49,25 @@ const renderOptions = (options: any[], onSelect: any) => (
 	</ul>
 );
 
-const renderToggle = (
-	children: any,
-	toggleIcon: string,
-	toggleSize: "small" | "large" | "default",
-	isOpen: boolean,
-) => {
+const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggleSize?: Size) => {
 	// Default with toggleIcon
-	const size = {
-		small: 10,
-		default: 20,
-		large: 30,
+	const getSize = (size?: Size) => {
+		switch (size) {
+			case "sm":
+				return 10;
+			case "lg":
+				return 30;
+			default:
+				return 20;
+		}
 	};
 
 	if (!children) {
+		const size = getSize(toggleSize);
+
 		return (
 			<div className="float-right outline-none cursor-pointer focus:outline-none">
-				<Icon name={toggleIcon} width={size[toggleSize]} height={size[toggleSize]} />
+				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);
 	}
@@ -105,14 +108,14 @@ export const Dropdown = ({
 	if (!isOpen) {
 		return (
 			<div onClick={toggle} ref={ref} className="relative" data-testid="dropdown__toggle">
-				{renderToggle(toggleContent, toggleIcon, toggleSize, isOpen)}
+				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
 			</div>
 		);
 	}
 
 	return (
 		<div ref={ref} className="relative">
-			<span onClick={toggle}>{renderToggle(toggleContent, toggleIcon, toggleSize, isOpen)}</span>
+			<span onClick={toggle}>{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}</span>
 
 			<Wrapper className={`${position}-0 ${dropdownClass}`}>
 				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
@@ -126,5 +129,4 @@ Dropdown.defaultProps = {
 	options: [],
 	toggleIcon: "Settings",
 	position: "right",
-	toggleSize: "default",
 };

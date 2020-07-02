@@ -87,12 +87,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 									<div className="flex items-center">
 										{selectedAddress ? (
 											<>
-												<Avatar
-													className="mr-3"
-													address={selectedAddress}
-													size="small"
-													noShadow
-												/>
+												<Avatar className="mr-3" address={selectedAddress} size="sm" noShadow />
 												<Address
 													address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
 													walletName="ROBank"
@@ -100,7 +95,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 											</>
 										) : (
 											<>
-												<Circle className="mr-3" avatarId="test" size="small" noShadow />
+												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
 												<span className="text-base font-semibold text-theme-neutral-400">
 													Select address
 												</span>

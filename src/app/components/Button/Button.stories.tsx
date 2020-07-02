@@ -1,6 +1,7 @@
 import { boolean, select, withKnobs } from "@storybook/addon-knobs";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { Size } from "types";
 
 import { Button } from "./Button";
 
@@ -9,9 +10,16 @@ export default {
 	decorators: [withKnobs],
 };
 
+const sizeOptions: Record<string, Size | undefined> = {
+	small: "sm",
+	default: undefined,
+	large: "lg",
+	icon: "icon",
+};
+
 export const Default = () => {
 	const color = select("Color", ["primary", "success", "danger", "warning"], "primary");
-	const size = select("Size", ["small", "default", "large", "icon"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	const disabled = boolean("Disabled", false);
 	const variants: {
 		[variant: string]: string;
@@ -28,7 +36,7 @@ export const Default = () => {
 					key={key}
 					variant={key as "solid" | "plain" | "outline" | undefined}
 					color={color}
-					size={size}
+					size={size as Size}
 					disabled={disabled}
 				>
 					{variants[key]}
@@ -40,7 +48,7 @@ export const Default = () => {
 
 export const WithIcon = () => {
 	const color = select("Color", ["primary", "success", "danger", "warning"], "primary");
-	const size = select("Size", ["small", "default", "large", "icon"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	const disabled = boolean("Disabled", false);
 	const variants: {
 		[variant: string]: string;
@@ -57,7 +65,7 @@ export const WithIcon = () => {
 					key={key}
 					variant={key as "solid" | "plain" | "outline" | undefined}
 					color={color}
-					size={size}
+					size={size as Size}
 					disabled={disabled}
 				>
 					<Icon name="Download" />

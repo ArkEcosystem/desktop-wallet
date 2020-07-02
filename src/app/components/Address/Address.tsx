@@ -1,4 +1,5 @@
 import React from "react";
+import { Size } from "types";
 
 import { truncateStringMiddle } from "./utils";
 
@@ -8,22 +9,31 @@ type Props = {
 	address?: string | undefined;
 	maxChars?: number | null;
 	className?: string;
-	size?: "small" | "default" | "large";
-	fontWeight?: "default" | "normal";
+	size?: Size;
+	fontWeight?: "normal";
 };
 
 export const Address = ({ address, addressClass, fontWeight, walletName, maxChars, size }: Props) => {
 	if (!address) return null;
 
-	const fontSizes: any = {
-		small: "text-sm",
-		default: "text-base",
-		large: "text-xl",
+	const getFontSize = (size?: Size) => {
+		switch (size) {
+			case "sm":
+				return "text-sm";
+			case "lg":
+				return "text-xl";
+			default:
+				return "text-base";
+		}
 	};
 
-	const fontWeights: any = {
-		default: "font-semibold",
-		normal: "font-normal",
+	const getFontWeight = (fontWeight?: string) => {
+		switch (fontWeight) {
+			case "normal":
+				return "font-normal";
+			default:
+				return "font-semibold";
+		}
 	};
 
 	return (
@@ -31,18 +41,18 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 ${
-						fontWeight && fontWeights[fontWeight]
-					} ${size && fontSizes[size]}`}
+					className={`text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 ${getFontWeight(
+						fontWeight,
+					)} ${getFontSize(size)}`}
 				>
 					{walletName}
 				</span>
 			)}
 			<span
 				data-testid="address__wallet-address"
-				className={`${addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")} ${
-					fontWeight && fontWeights[fontWeight]
-				} ${size && fontSizes[size]}`}
+				className={`${
+					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
+				} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
 			>
 				{truncateStringMiddle(address, maxChars)}
 			</span>
@@ -52,6 +62,4 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 
 Address.defaultProps = {
 	maxChars: 16,
-	size: "default",
-	fontWeight: "default",
 };

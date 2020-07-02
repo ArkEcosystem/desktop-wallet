@@ -20,7 +20,7 @@ const RecipientListItem = ({
 }: RecipientListItemProps) => (
 	<tr className="border-b border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
 		<td className="w-12 py-4">
-			<Circle avatarId="test" size="small" />
+			<Circle avatarId="test" size="sm" />
 		</td>
 		<td>
 			<Address address={address} walletName={walletName} />

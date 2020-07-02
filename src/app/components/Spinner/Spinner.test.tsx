@@ -82,13 +82,13 @@ describe("Spinner", () => {
 	});
 
 	it("should render a small one", () => {
-		const { container } = render(<Spinner size="small" />);
+		const { container } = render(<Spinner size="sm" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
-		const { container } = render(<Spinner size="large" />);
+		const { container } = render(<Spinner size="lg" />);
 
 		expect(container).toMatchSnapshot();
 	});

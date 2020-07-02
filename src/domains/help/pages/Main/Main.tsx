@@ -48,7 +48,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 	>
 		<div className="flex flex-row w-full p-5 mx-2 bg-white px-7 rounded-md hover:shadow-xl">
 			<div className="w-2/5 my-auto">
-				<Circle className="border-theme-neutral-800" size="large">
+				<Circle className="border-theme-neutral-800" size="lg">
 					<div className="text-theme-neutral-800">
 						<Icon name={icon} width={20} height={20} />
 					</div>

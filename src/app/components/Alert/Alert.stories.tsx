@@ -1,5 +1,6 @@
 import { select, text, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
+import { Size } from "types";
 
 import { Alert } from "./Alert";
 
@@ -8,9 +9,15 @@ export default {
 	decorators: [withKnobs],
 };
 
+const sizeOptions: Record<string, Size | undefined> = {
+	small: "sm",
+	default: undefined,
+	large: "lg",
+};
+
 export const Default = () => {
 	const variant = select("Variant", ["primary", "success", "warning", "danger", "neutral"], "warning");
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	const title = text("Title", "Title");
 
 	return (

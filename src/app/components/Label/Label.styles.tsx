@@ -1,5 +1,5 @@
 import tw, { css } from "twin.macro";
-
+import { Size } from "types";
 const baseStyle = tw`inline-block font-semibold`;
 
 const getColors = (name: string): any => {
@@ -17,15 +17,15 @@ const getColors = (name: string): any => {
 	`;
 };
 
-const getSize = (size: string): any => {
+const getSize = (size?: Size): any => {
 	switch (size) {
-		case "large":
+		case "lg":
 			return tw`px-2 text-lg rounded`;
 		default:
 			return tw`px-2 text-base rounded-sm`;
 	}
 };
 
-export const getStyles = ({ color, size }: { color?: string; size?: string }) => {
-	return [getSize(size!), baseStyle, getColors(color!)];
+export const getStyles = ({ color, size }: { color?: string; size?: Size }) => {
+	return [getSize(size), baseStyle, getColors(color!)];
 };

@@ -108,7 +108,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 										</span>
 										<div className="">
 											<Circle
-												size="large"
+												size="lg"
 												className="relative z-10 bg-theme-background border-theme-neutral-300"
 											>
 												<span className="text-theme-success-600">
@@ -116,7 +116,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 												</span>
 											</Circle>
 											<Circle
-												size="large"
+												size="lg"
 												className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
 											>
 												<span className="text-xs font-semibold text-theme-success-600">
