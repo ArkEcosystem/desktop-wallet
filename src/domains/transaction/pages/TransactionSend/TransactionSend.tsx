@@ -202,7 +202,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	};
 
 	return (
-		<div className="max-w-xl mx-auto py-16">
+		<div className="max-w-xl py-16 mx-auto">
 			<Tabs activeId={activeTab}>
 				<StepIndicator size={5} activeIndex={activeTab} />
 
