@@ -206,7 +206,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 	};
 
 	return (
-		<div data-testid="ResignRegistration" className="max-w-xl mx-auto py-16">
+		<div data-testid="ResignRegistration" className="max-w-xl py-16 mx-auto">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />
