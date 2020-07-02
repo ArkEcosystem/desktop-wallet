@@ -1,4 +1,5 @@
 import tw, { css } from "twin.macro";
+import { Size } from "types";
 
 const baseStyle = [
 	tw`focus:outline-none focus:shadow-outline inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear rounded justify-center`,
@@ -50,11 +51,11 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 	}
 };
 
-const getSize = (size: string): any => {
+const getSize = (size?: Size): any => {
 	switch (size) {
-		case "small":
+		case "sm":
 			return tw`px-3 py-2 space-x-2 text-sm`;
-		case "large":
+		case "lg":
 			return tw`px-6 py-4 space-x-4 text-lg`;
 		case "icon":
 			return tw`p-3`;
@@ -63,6 +64,6 @@ const getSize = (size: string): any => {
 	}
 };
 
-export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: string }) => {
-	return [getSize(size!), ...baseStyle, ...getVariant(variant!, color!, getColorsVariable(color!))];
+export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: Size }) => {
+	return [getSize(size), ...baseStyle, ...getVariant(variant!, color!, getColorsVariable(color!))];
 };

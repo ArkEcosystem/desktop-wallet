@@ -32,7 +32,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 						<p className="mt-4 text-base font-semibold text-theme-neutral-dark">
 							{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
 						</p>
-						<ul className="max-w-xs mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
+						<ul className="mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
@@ -108,7 +108,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 										</span>
 										<div className="">
 											<Circle
-												size="large"
+												size="lg"
 												className="relative z-10 bg-theme-background border-theme-neutral-300"
 											>
 												<span className="text-theme-success-600">
@@ -116,7 +116,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 												</span>
 											</Circle>
 											<Circle
-												size="large"
+												size="lg"
 												className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
 											>
 												<span className="text-xs font-semibold text-theme-success-600">

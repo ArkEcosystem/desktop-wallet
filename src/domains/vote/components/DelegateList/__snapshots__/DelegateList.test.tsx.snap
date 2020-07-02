@@ -288,17 +288,31 @@ exports[`DelegateList should render 1`] = `
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top  justify-end"
               >
                 <div
                   class="mr-2"
-                />
+                >
+                  Vote
+                </div>
                 <div
                   class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -307,13 +321,13 @@ exports[`DelegateList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -407,13 +421,13 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -507,13 +521,13 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -571,13 +585,13 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -671,13 +685,13 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -1029,17 +1043,31 @@ exports[`DelegateList should render with empty list 1`] = `
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top  justify-end"
               >
                 <div
                   class="mr-2"
-                />
+                >
+                  Vote
+                </div>
                 <div
                   class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -1341,17 +1369,31 @@ exports[`DelegateList should select a delegate 1`] = `
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top  justify-end"
               >
                 <div
                   class="mr-2"
-                />
+                >
+                  Vote
+                </div>
                 <div
                   class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -1360,13 +1402,13 @@ exports[`DelegateList should select a delegate 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-100"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -1460,13 +1502,13 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -1560,13 +1602,13 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -1624,13 +1666,13 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -1724,13 +1766,13 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -2152,17 +2194,31 @@ exports[`DelegateList should select multiple delegates 1`] = `
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top  justify-end"
               >
                 <div
                   class="mr-2"
-                />
+                >
+                  Vote
+                </div>
                 <div
                   class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -2171,13 +2227,13 @@ exports[`DelegateList should select multiple delegates 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-100"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -2271,13 +2327,13 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-100"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -2371,13 +2427,13 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-100"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -2435,13 +2491,13 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -2535,13 +2591,13 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -3067,17 +3123,31 @@ exports[`DelegateList should unselect a delegate 1`] = `
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top  justify-end"
               >
                 <div
                   class="mr-2"
-                />
+                >
+                  Vote
+                </div>
                 <div
                   class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -3086,13 +3156,13 @@ exports[`DelegateList should unselect a delegate 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -3186,13 +3256,13 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -3286,13 +3356,13 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -3350,13 +3420,13 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img
@@ -3450,13 +3520,13 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iukqfU"
                 data-testid="Avatar"
               >
                 <img

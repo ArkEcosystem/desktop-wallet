@@ -45,16 +45,16 @@ export const TransactionListItem = ({
 				data-testid="transaction__row"
 			>
 				<td className="w-20 py-4 mt-1">
-					<Circle size="small" className={`${iconClasses[type]} -mr-1`}>
+					<Circle size="sm" className={`${iconClasses[type]} -mr-1`}>
 						<Icon name={iconName[type]} width={40} height={40} />
 					</Circle>
-					<Circle size="small" avatarId={avatarId} />
+					<Circle size="sm" avatarId={avatarId} />
 				</td>
 				<td className="w-56 py-1">
-					<Address walletName={walletName} address={address} maxChars={16} size="small" />
+					<Address walletName={walletName} address={address} maxChars={16} size="sm" />
 				</td>
 				<td className="py-1 text-sm text-right">
-					<Label color={amountLabelColor[type]} size="small">
+					<Label color={amountLabelColor[type]} size="sm">
 						{amount}
 					</Label>
 				</td>
@@ -70,10 +70,10 @@ export const TransactionListItem = ({
 		>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
 			<td className="w-32 py-5 mt-1">
-				<Circle className={`${iconClasses[type]} -mr-1`} size="large">
+				<Circle className={`${iconClasses[type]} -mr-1`} size="lg">
 					<Icon name={iconName[type]} width={40} height={40} />
 				</Circle>
-				<Circle avatarId={avatarId} size="large" />
+				<Circle avatarId={avatarId} size="lg" />
 			</td>
 			<td className="w-56">
 				<Address walletName={walletName} address={address} maxChars={24} />
@@ -90,7 +90,7 @@ export const TransactionListItem = ({
 					})}
 			</td>
 			<td className="text-sm text-right w-36">
-				<Label color={amountLabelColor[type]} size="small">
+				<Label color={amountLabelColor[type]} size="sm">
 					{amount}
 				</Label>
 			</td>

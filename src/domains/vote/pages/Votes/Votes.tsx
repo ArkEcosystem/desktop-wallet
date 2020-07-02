@@ -7,6 +7,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { NavigationBar } from "app/components/NavigationBar";
 import { SelectAsset } from "app/components/SelectAsset";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { useState } from "react";
@@ -52,7 +53,9 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
+		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
+
 			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
@@ -62,7 +65,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 						subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 						extra={
 							<div className="flex items-center justify-end">
-								<HeaderSearchBar />
+								<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
 							</div>
 						}
 					/>
@@ -87,12 +90,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 									<div className="flex items-center">
 										{selectedAddress ? (
 											<>
-												<Avatar
-													className="mr-3"
-													address={selectedAddress}
-													size="small"
-													noShadow
-												/>
+												<Avatar className="mr-3" address={selectedAddress} size="sm" noShadow />
 												<Address
 													address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
 													walletName="ROBank"
@@ -100,7 +98,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 											</>
 										) : (
 											<>
-												<Circle className="mr-3" avatarId="test" size="small" noShadow />
+												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
 												<span className="text-base font-semibold text-theme-neutral-400">
 													Select address
 												</span>

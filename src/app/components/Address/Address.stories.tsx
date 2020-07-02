@@ -1,5 +1,6 @@
 import { number, select, text, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
+import { Size } from "types";
 
 import { Address } from "./Address";
 
@@ -8,11 +9,17 @@ export default {
 	decorators: [withKnobs],
 };
 
+const sizeOptions: Record<string, Size | undefined> = {
+	small: "sm",
+	default: undefined,
+	large: "lg",
+};
+
 export const Default = () => {
 	const address = text("Address", "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT");
 	const walletName = text("Wallet Name", "My wallet");
 	const maxChars = number("Maximum characters", 20);
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
 
 	return (
 		<div className="">

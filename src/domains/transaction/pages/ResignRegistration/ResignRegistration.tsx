@@ -35,7 +35,7 @@ const FirstStep = ({ form }: { form: any }) => {
 			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
 
 			<div className="mt-8">
-				<Alert size="large">
+				<Alert size="lg">
 					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
 					blockchain.
 				</Alert>
@@ -82,7 +82,7 @@ const SecondStep = () => (
 				label="Network"
 				extra={
 					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -154,7 +154,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 					</div>
 
 					<div className="inline-flex items-center mt-8 mb-4 space-x-3">
-						<Spinner color="primary" size="default" />
+						<Spinner color="primary" />
 						<span className="text-black">Waiting for confirmation...</span>
 					</div>
 				</div>
@@ -168,7 +168,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Transaction Type"
 			extra={
-				<Circle className="border-black" size="large">
+				<Circle className="border-black" size="lg">
 					<Icon name="Business" width={20} height={20} />
 				</Circle>
 			}
@@ -180,7 +180,7 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
 				</div>
@@ -206,7 +206,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 	};
 
 	return (
-		<div data-testid="ResignRegistration" className="max-w-xl mx-auto">
+		<div data-testid="ResignRegistration" className="max-w-xl py-16 mx-auto">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />

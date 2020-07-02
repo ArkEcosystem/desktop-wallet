@@ -75,7 +75,7 @@ export const SecondStep = () => (
 				label="Network"
 				extra={
 					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -154,7 +154,7 @@ export const FourthStep = () => (
 					transaction.
 				</p>
 				<div className="inline-flex items-center mt-8 space-x-4">
-					<Spinner color="primary" size="default" />
+					<Spinner color="primary" />
 					<span className="font-semibold text-black">Waiting for confirmation...</span>
 				</div>
 			</div>
@@ -174,7 +174,7 @@ export const FifthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="large">
+					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
 				</div>

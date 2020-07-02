@@ -159,7 +159,7 @@ export const FourthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-neutral-900">
-					<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
+					<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
 						<Icon name="Voted" />
 					</Circle>
 				</div>
