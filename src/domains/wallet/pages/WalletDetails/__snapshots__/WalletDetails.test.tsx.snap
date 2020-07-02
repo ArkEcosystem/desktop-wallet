@@ -201,34 +201,23 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </nav>
     <div
-      class="flex justify-center w-full h-16 bg-theme-neutral-100 md:px-4"
+      class="flex items-center space-x-3 font-semibold text-theme-neutral-700"
+      data-testid="breadcrumbs__wrapper"
     >
+      <span>
+         &lt;- 
+      </span>
       <div
-        class="container flex items-center justify-start w-full h-full mx-auto text-sm font-semibold leading-none text-theme-neutral-600"
+        class="space-x-3"
       >
-        <span>
-          <a
-            aria-current="page"
-            class="flex font-semibold hover:underline transition-default active"
-            href="/"
-          >
-            <div
-              class="sc-AxjAm pXfjM"
-              height="15"
-              width="15"
-            >
-              <svg>
-                arrow-back.svg
-              </svg>
-            </div>
-            <span
-              class="ml-3"
-              data-testid="navigation-header__title"
-            >
-              Go back to portofolio
-            </span>
-          </a>
-        </span>
+        <a
+          class="text-theme-neutral-700"
+          href="/portfolio"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
       </div>
     </div>
     <header
@@ -860,7 +849,7 @@ exports[`WalletDetails should render 1`] = `
               role="row"
             >
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -869,18 +858,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  undefined"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Date
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -889,18 +878,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  invisible"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Type
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -909,18 +898,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  undefined"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Wallet Address
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -929,18 +918,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Amount
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -949,12 +938,12 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Fiat Value
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -1128,7 +1117,7 @@ exports[`WalletDetails should render 1`] = `
               role="row"
             >
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -1137,18 +1126,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  undefined"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Date
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -1157,18 +1146,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  invisible"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Type
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -1177,18 +1166,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  undefined"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Wallet Address
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -1197,18 +1186,18 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Amount
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -1217,12 +1206,12 @@ exports[`WalletDetails should render 1`] = `
                   class="flex flex-inline align-top  float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Fiat Value
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -1380,7 +1369,7 @@ exports[`WalletDetails should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral-500"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1391,18 +1380,18 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top  undefined"
                       >
                         <div
-                          class="mr-1"
+                          class="mr-2"
                         >
                           Asset Type
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -1412,7 +1401,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral-500"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -1423,18 +1412,18 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top  undefined"
                       >
                         <div
-                          class="mr-1"
+                          class="mr-2"
                         >
                           Wallet Address
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -1444,7 +1433,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral-500"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -1453,18 +1442,18 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top  undefined"
                       >
                         <div
-                          class="mr-1"
+                          class="mr-2"
                         >
                           Wallet Type
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         />
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral-500"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -1475,18 +1464,18 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top  float-right"
                       >
                         <div
-                          class="mr-1"
+                          class="mr-2"
                         >
                           Balance
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -1496,7 +1485,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral-500"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -1507,18 +1496,18 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top  float-right"
                       >
                         <div
-                          class="mr-1"
+                          class="mr-2"
                         >
                           Fiat Value
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
