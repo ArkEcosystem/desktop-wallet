@@ -3,52 +3,52 @@
 exports[`WalletsControls should render 1`] = `
 <div>
   <div
-    class="flex items-center"
+    class="flex"
   >
     <div
-      class="inline-block"
-      data-testid="LayoutControls__grid"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
     >
       <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-        data-testid="LayoutControls__grid--icon"
+        class="inline-block"
+        data-testid="LayoutControls__grid"
       >
         <div
-          class="sc-AxjAm jEKiJj"
-          height="14"
-          width="28"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          data-testid="LayoutControls__grid--icon"
         >
-          <svg>
-            grid.svg
-          </svg>
+          <div
+            class="sc-AxjAm jEKiJj"
+            height="14"
+            width="28"
+          >
+            <svg>
+              grid.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="inline-block"
+        data-testid="LayoutControls__list"
+      >
+        <div
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+          data-testid="LayoutControls__list--icon"
+        >
+          <div
+            class="sc-AxjAm eFgodT"
+            height="14"
+            width="24"
+          >
+            <svg>
+              list.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="inline-block"
-      data-testid="LayoutControls__list"
-    >
-      <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-        data-testid="LayoutControls__list--icon"
-      >
-        <div
-          class="sc-AxjAm eFgodT"
-          height="14"
-          width="24"
-        >
-          <svg>
-            list.svg
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-AxiKw idIEfz border-theme-neutral-300"
-      type="vertical"
-    />
-    <div
-      class="relative inline-block px-3 text-theme-primary-400"
+      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
     >
       <div
         class="relative"
@@ -70,57 +70,57 @@ exports[`WalletsControls should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw idIEfz border-theme-neutral-300"
-      type="vertical"
-    />
-    <button
-      class="sc-AxirZ fhzkRl ml-8 mr-3"
-      color="primary"
-      type="button"
+      class="space-x-3"
     >
-      <div
-        class="flex items-center justify-center mr-2 text-sm align-middle"
+      <button
+        class="sc-AxirZ fhzkRl"
+        color="primary"
+        type="button"
       >
         <div
-          class="sc-AxjAm bCAvJU"
-          height="1em"
-          width="10"
+          class="flex items-center justify-center mr-2 text-sm align-middle"
         >
-          <svg>
-            plus.svg
-          </svg>
+          <div
+            class="sc-AxjAm bCAvJU"
+            height="1em"
+            width="10"
+          >
+            <svg>
+              plus.svg
+            </svg>
+          </div>
+          <span
+            class="ml-2"
+          >
+            Create
+          </span>
         </div>
-        <span
-          class="ml-2"
-        >
-          Create
-        </span>
-      </div>
-    </button>
-    <button
-      class="sc-AxirZ fhzkRl"
-      color="primary"
-      type="button"
-    >
-      <div
-        class="flex items-center justify-center mr-2 text-sm align-middle"
+      </button>
+      <button
+        class="sc-AxirZ fhzkRl"
+        color="primary"
+        type="button"
       >
         <div
-          class="sc-AxjAm cpczEI"
-          height="1em"
-          width="1em"
+          class="flex items-center justify-center mr-2 text-sm align-middle"
         >
-          <svg>
-            import.svg
-          </svg>
+          <div
+            class="sc-AxjAm cpczEI"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              import.svg
+            </svg>
+          </div>
+          <span
+            class="ml-2"
+          >
+            Import
+          </span>
         </div>
-        <span
-          class="ml-2"
-        >
-          Import
-        </span>
-      </div>
-    </button>
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -128,52 +128,52 @@ exports[`WalletsControls should render 1`] = `
 exports[`WalletsControls should render with networks selection 1`] = `
 <div>
   <div
-    class="flex items-center"
+    class="flex"
   >
     <div
-      class="inline-block"
-      data-testid="LayoutControls__grid"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
     >
       <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-        data-testid="LayoutControls__grid--icon"
+        class="inline-block"
+        data-testid="LayoutControls__grid"
       >
         <div
-          class="sc-AxjAm jEKiJj"
-          height="14"
-          width="28"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          data-testid="LayoutControls__grid--icon"
         >
-          <svg>
-            grid.svg
-          </svg>
+          <div
+            class="sc-AxjAm jEKiJj"
+            height="14"
+            width="28"
+          >
+            <svg>
+              grid.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="inline-block"
+        data-testid="LayoutControls__list"
+      >
+        <div
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-theme-background"
+          data-testid="LayoutControls__list--icon"
+        >
+          <div
+            class="sc-AxjAm eFgodT"
+            height="14"
+            width="24"
+          >
+            <svg>
+              list.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="inline-block"
-      data-testid="LayoutControls__list"
-    >
-      <div
-        class="px-2 py-2 h-full border-b-2 cursor-pointer text-theme-primary-400 border-theme-background"
-        data-testid="LayoutControls__list--icon"
-      >
-        <div
-          class="sc-AxjAm eFgodT"
-          height="14"
-          width="24"
-        >
-          <svg>
-            list.svg
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-AxiKw idIEfz border-theme-neutral-300"
-      type="vertical"
-    />
-    <div
-      class="relative inline-block px-3 text-theme-primary-400"
+      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
     >
       <div
         class="relative"
@@ -195,57 +195,57 @@ exports[`WalletsControls should render with networks selection 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw idIEfz border-theme-neutral-300"
-      type="vertical"
-    />
-    <button
-      class="sc-AxirZ fhzkRl ml-8 mr-3"
-      color="primary"
-      type="button"
+      class="space-x-3"
     >
-      <div
-        class="flex items-center justify-center mr-2 text-sm align-middle"
+      <button
+        class="sc-AxirZ fhzkRl"
+        color="primary"
+        type="button"
       >
         <div
-          class="sc-AxjAm bCAvJU"
-          height="1em"
-          width="10"
+          class="flex items-center justify-center mr-2 text-sm align-middle"
         >
-          <svg>
-            plus.svg
-          </svg>
+          <div
+            class="sc-AxjAm bCAvJU"
+            height="1em"
+            width="10"
+          >
+            <svg>
+              plus.svg
+            </svg>
+          </div>
+          <span
+            class="ml-2"
+          >
+            Create
+          </span>
         </div>
-        <span
-          class="ml-2"
-        >
-          Create
-        </span>
-      </div>
-    </button>
-    <button
-      class="sc-AxirZ fhzkRl"
-      color="primary"
-      type="button"
-    >
-      <div
-        class="flex items-center justify-center mr-2 text-sm align-middle"
+      </button>
+      <button
+        class="sc-AxirZ fhzkRl"
+        color="primary"
+        type="button"
       >
         <div
-          class="sc-AxjAm cpczEI"
-          height="1em"
-          width="1em"
+          class="flex items-center justify-center mr-2 text-sm align-middle"
         >
-          <svg>
-            import.svg
-          </svg>
+          <div
+            class="sc-AxjAm cpczEI"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              import.svg
+            </svg>
+          </div>
+          <span
+            class="ml-2"
+          >
+            Import
+          </span>
         </div>
-        <span
-          class="ml-2"
-        >
-          Import
-        </span>
-      </div>
-    </button>
+      </button>
+    </div>
   </div>
 </div>
 `;
