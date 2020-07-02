@@ -1,7 +1,7 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { Form } from "./Form";
 

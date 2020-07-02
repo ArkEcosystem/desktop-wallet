@@ -1,8 +1,6 @@
-import { render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
 import { BrowserRouter as Router } from "react-router-dom";
+import { render } from "testing-library";
 
 import { HistoryModal } from "./HistoryModal";
 
@@ -35,9 +33,7 @@ describe("HistoryModal", () => {
 
 		const { asFragment } = render(
 			<Router>
-				<I18nextProvider i18n={i18n}>
-					<HistoryModal isOpen handleClose={() => handleClose()} />,
-				</I18nextProvider>
+				<HistoryModal isOpen handleClose={() => handleClose()} />,
 			</Router>,
 		);
 
@@ -49,9 +45,7 @@ describe("HistoryModal", () => {
 
 		const { asFragment } = render(
 			<Router>
-				<I18nextProvider i18n={i18n}>
-					<HistoryModal history={history} isOpen handleClose={() => handleClose()} />,
-				</I18nextProvider>
+				<HistoryModal history={history} isOpen handleClose={() => handleClose()} />,
 			</Router>,
 		);
 

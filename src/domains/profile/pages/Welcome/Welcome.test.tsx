@@ -7,7 +7,7 @@ import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Router } from "react-router-dom";
-import { fireEvent, render, screen, waitFor } from "test-utils";
+import { fireEvent, render, screen, waitFor } from "testing-library";
 
 import { Welcome } from "../Welcome";
 

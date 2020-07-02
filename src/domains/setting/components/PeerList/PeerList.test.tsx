@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { peers } from "../../data";
 import { PeerList } from "./PeerList";

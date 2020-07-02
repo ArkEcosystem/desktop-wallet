@@ -2,7 +2,7 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "test-utils";
+import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 

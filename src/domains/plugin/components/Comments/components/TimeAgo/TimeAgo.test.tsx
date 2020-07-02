@@ -1,6 +1,6 @@
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 import { TimeAgo } from "./TimeAgo";
 

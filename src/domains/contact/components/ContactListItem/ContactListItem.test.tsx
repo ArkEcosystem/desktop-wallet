@@ -1,6 +1,6 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
