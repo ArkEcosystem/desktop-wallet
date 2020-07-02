@@ -69,12 +69,12 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 			options={userActions}
 			toggleContent={(isOpen: boolean) => (
 				<div className="cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="-mr-1 border-theme-neutral-300" size="large">
+					<Circle className="-mr-1 border-theme-neutral-300" size="lg">
 						<span className="text-theme-neutral-600">
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative rotate-90 bg-theme-primary-600 border-theme-primary-600" size="large">
+					<Circle className="relative rotate-90 bg-theme-primary-600 border-theme-primary-600" size="lg">
 						<span className="text-sm text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${

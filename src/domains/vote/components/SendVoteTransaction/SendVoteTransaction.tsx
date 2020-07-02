@@ -52,7 +52,7 @@ export const FirstStep = () => {
 					label="Cryptoasset"
 					extra={
 						<div className="ml-1">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
 							</Circle>
 						</div>
@@ -67,7 +67,7 @@ export const FirstStep = () => {
 						<span className="mr-1">Sender</span>
 						<Label color="warning">Your address</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
 					<VoteList votes={votes} />
@@ -109,7 +109,7 @@ export const SecondStep = () => (
 				label="Cryptoasset"
 				extra={
 					<div className="ml-1">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
 						</Circle>
 					</div>
@@ -124,7 +124,7 @@ export const SecondStep = () => (
 					<span className="mr-1">Sender</span>
 					<Label color="warning">Your address</Label>
 				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
 			</TransactionDetail>
 			<TransactionDetail label="Votes">
 				<VoteList votes={votes} />
@@ -204,7 +204,7 @@ export const FourthStep = () => (
 					label="Cryptoasset"
 					extra={
 						<div className="ml-1">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
 							</Circle>
 						</div>
@@ -219,7 +219,7 @@ export const FourthStep = () => (
 						<span className="mr-1">Account</span>
 						<Label color="warning">Your address</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
 					<VoteList votes={votes} />
@@ -228,7 +228,7 @@ export const FourthStep = () => (
 					label="Amount"
 					extra={
 						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Sent" width={50} height={50} />
 							</Circle>
 						</div>
@@ -240,7 +240,7 @@ export const FourthStep = () => (
 					label="Transaction Type"
 					extra={
 						<div className="ml-1 text-theme-danger">
-							<Circle className="border-black bg-theme-background" size="large">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Voted" className="text-black" />
 							</Circle>
 						</div>

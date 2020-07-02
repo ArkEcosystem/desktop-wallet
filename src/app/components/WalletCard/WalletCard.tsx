@@ -57,8 +57,8 @@ export const WalletCard = ({
 				<Card>
 					<div className="p-2">
 						<div>
-							<Circle size="large" className="-mr-2 bg-white border-theme-primary-contrast" />
-							<Circle size="large" className="bg-white border-theme-primary-contrast" />
+							<Circle size="lg" className="-mr-2 bg-white border-theme-primary-contrast" />
+							<Circle size="lg" className="bg-white border-theme-primary-contrast" />
 						</div>
 
 						<div className={`mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
@@ -91,10 +91,10 @@ export const WalletCard = ({
 							})}
 					</div>
 					<div>
-						<Circle size="large" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
+						<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
 							{renderCoin(coinIcon)}
 						</Circle>
-						<Circle size="large" avatarId={avatarId} className="border-theme-primary-contrast" />
+						<Circle size="lg" avatarId={avatarId} className="border-theme-primary-contrast" />
 					</div>
 
 					<div className="mt-6 truncate max-w-12">

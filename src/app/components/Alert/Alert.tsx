@@ -1,5 +1,6 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
+import { Size } from "types";
 
 import { Icon } from "../Icon";
 
@@ -7,15 +8,15 @@ type AlertProps = {
 	children: React.ReactNode;
 	title?: string;
 	variant?: "primary" | "success" | "danger" | "warning" | "neutral";
-	size?: "small" | "default" | "large";
+	size?: Size;
 };
 
-const AlertContent = styled.div<{ size: string }>`
+const AlertContent = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
-			case "small":
+			case "sm":
 				return tw`px-6 py-4`;
-			case "large":
+			case "lg":
 				return tw`px-10 py-8`;
 			default:
 				return tw`px-8 py-6`;
@@ -23,12 +24,12 @@ const AlertContent = styled.div<{ size: string }>`
 	}}
 `;
 
-const AlertIconWrapper = styled.div<{ size: string }>`
+const AlertIconWrapper = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
-			case "small":
+			case "sm":
 				return tw`px-4 py-2`;
-			case "large":
+			case "lg":
 				return tw`px-8 py-6`;
 			default:
 				return tw`px-6 py-4`;
@@ -48,15 +49,15 @@ const AlertIcon = ({ variant }: { variant: string }) => {
 	return <Icon name={iconVariant[variant]} width={30} height={30} />;
 };
 
-const Alert = ({ variant, title, size, children }: AlertProps) => (
+export const Alert = ({ variant, title, size, children }: AlertProps) => (
 	<div className={`flex rounded-lg overflow-hidden bg-theme-${variant}`}>
 		<AlertIconWrapper
-			size={size!}
+			size={size}
 			className={`flex items-center justify-center text-theme-${variant} bg-theme-${variant}-200`}
 		>
 			<AlertIcon variant={variant!} />
 		</AlertIconWrapper>
-		<AlertContent size={size!} className={`flex-1 bg-theme-${variant}-100`}>
+		<AlertContent size={size} className={`flex-1 bg-theme-${variant}-100`}>
 			{title && (
 				<p className={`text-xl font-bold text-theme-${variant}`} data-testid="alert__title">
 					{title}
@@ -69,7 +70,4 @@ const Alert = ({ variant, title, size, children }: AlertProps) => (
 
 Alert.defaultProps = {
 	variant: "warning",
-	size: "default",
 };
-
-export { Alert };

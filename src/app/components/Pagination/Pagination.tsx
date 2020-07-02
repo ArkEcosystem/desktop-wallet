@@ -3,6 +3,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
+import { Size } from "types";
 
 import { CompactPagination } from "./components/CompactPagination";
 
@@ -24,7 +25,7 @@ type PaginationProps = {
 	onSelectPage: any;
 	currentPage: number;
 	className?: string;
-	size?: "sm" | "md" | "lg";
+	size?: Size;
 };
 
 const PaginationButton = styled.div`
@@ -115,5 +116,4 @@ export const Pagination = ({
 Pagination.defaultProps = {
 	currentPage: 1,
 	itemsPerPage: 4,
-	size: "md",
 };

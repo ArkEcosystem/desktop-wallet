@@ -39,7 +39,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<div className="relative">
 					<Input type="text" disabled />
 					<div className="absolute top-0 flex items-center mt-2 ml-4">
-						<Circle avatarId="test" size="small" noShadow />
+						<Circle avatarId="test" size="sm" noShadow />
 						<span className="ml-3 font-semibold ">{signatoryAddress}</span>
 					</div>
 				</div>
@@ -77,7 +77,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
 			</TransactionDetail>
 			<TransactionDetail border label="Message">
 				Oleg Happy in the Oleg Bank

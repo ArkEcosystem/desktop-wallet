@@ -14,7 +14,7 @@ export const RepositoryLink = ({ provider, url }: RepositoryLinkProps) => {
 
 	return (
 		<div className="flex items-center space-x-5">
-			<Circle className="border-theme-neutral-800" size="large">
+			<Circle className="border-theme-neutral-800" size="lg">
 				<Icon name={provider} width={22} height={22} data-testid="repository-link__icon" />
 			</Circle>
 			<div className="flex flex-col space-y-1">
