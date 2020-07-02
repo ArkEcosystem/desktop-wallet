@@ -20,9 +20,9 @@ type SelectAssetProps = {
 type InputValue = any;
 
 const AssetIconPlaceholder = ({ icon, className, name }: Asset) => {
-	if (!icon) return <Circle size="small" noShadow className="border-theme-neutral-200" />;
+	if (!icon) return <Circle size="sm" noShadow className="border-theme-neutral-200" />;
 	return (
-		<Circle className={className} size="small" data-testid={`select-asset__selected-${name}`}>
+		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name}`}>
 			<Icon name={icon} width={16} height={16} />
 		</Circle>
 	);

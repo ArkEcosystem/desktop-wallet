@@ -53,7 +53,7 @@ export const ProfileFormField = ({
 
 			{!selectedProfile && (
 				<div className="absolute ml-4 -mt-10">
-					<Circle className="mt-px bg-theme-neutral-200 border-theme-neutral-200" size="small" noShadow />
+					<Circle className="mt-px bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />
 				</div>
 			)}
 			{selectedProfile && (
@@ -61,7 +61,7 @@ export const ProfileFormField = ({
 					<Circle
 						avatarId={selectedProfile?.address}
 						className="bg-theme-neutral-300 border-theme-neutral-300"
-						size="small"
+						size="sm"
 						noShadow
 					/>
 					<div className="mt-1 ml-4 text-theme-neutral-800">

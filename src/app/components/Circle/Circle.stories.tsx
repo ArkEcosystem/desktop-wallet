@@ -1,6 +1,7 @@
 import { select, withKnobs } from "@storybook/addon-knobs";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { Size } from "types";
 
 import { Circle } from "./Circle";
 
@@ -9,8 +10,16 @@ export default {
 	decorators: [withKnobs],
 };
 
+const sizeOptions: Record<string, Size | undefined> = {
+	small: "sm",
+	default: undefined,
+	large: "lg",
+	"extra large": "xl",
+};
+
 export const Blank = () => {
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
+
 	return (
 		<div className="p-5">
 			<div className="mb-5" />
@@ -30,7 +39,7 @@ export const Blank = () => {
 };
 
 export const Colored = () => {
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	return (
 		<div className="p-5">
 			<div className="mb-5" />
@@ -50,7 +59,7 @@ export const Colored = () => {
 };
 
 export const Avatar = () => {
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	return (
 		<div className="p-5">
 			<div className="mb-5" />
@@ -70,7 +79,7 @@ export const Avatar = () => {
 };
 
 export const WithIcon = () => {
-	const size = select("Size", ["small", "default", "large"], "default");
+	const size = select("Size", sizeOptions, undefined);
 	return (
 		<div className="p-5">
 			<div className="mb-5" />

@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import React, { useEffect } from "react";
 import tw, { styled } from "twin.macro";
+import { Size } from "types";
 
 type ModalProps = {
 	children: React.ReactNode;
@@ -9,7 +10,7 @@ type ModalProps = {
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
+	size?: Size;
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
@@ -21,11 +22,11 @@ type ModalContentProps = {
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
-	size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl";
+	size?: Size;
 	onClose?: any;
 };
 
-const ModalContainer = styled.div<{ size: string }>`
+const ModalContainer = styled.div<{ size?: Size }>`
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -51,7 +52,7 @@ const ModalContainer = styled.div<{ size: string }>`
 const ModalContent = (props: ModalContentProps) => {
 	return (
 		<ModalContainer
-			size={props.size!}
+			size={props.size}
 			className="fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
 			data-testid="modal__inner"
 		>
@@ -146,7 +147,6 @@ export const Modal = (props: ModalProps) => {
 };
 
 Modal.defaultProps = {
-	size: "2xl",
 	isOpen: false,
 };
 

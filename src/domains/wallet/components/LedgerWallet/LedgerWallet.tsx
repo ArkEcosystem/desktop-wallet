@@ -22,7 +22,7 @@ export const LedgerWallet = ({ isOpen, onClose }: LedgerWalletProps) => {
 				</p>
 				<WaitingLedger className="my-8" />
 				<div className="inline-flex items-center space-x-4">
-					<Spinner color="primary" size="default" />
+					<Spinner color="primary" />
 					<span className="font-semibold text-black">
 						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_FOR_LEDGER")}
 					</span>

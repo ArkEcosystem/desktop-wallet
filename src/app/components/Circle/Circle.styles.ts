@@ -1,4 +1,5 @@
 import tw, { css } from "twin.macro";
+import { Size } from "types";
 
 const defaultStyle = (noShadow: boolean) => [
 	tw`inline-flex items-center justify-center align-middle border-2 rounded-full`,
@@ -10,11 +11,11 @@ const defaultStyle = (noShadow: boolean) => [
 		`,
 ];
 
-const getSize = (size: string): any => {
+const getSize = (size?: Size): any => {
 	switch (size) {
-		case "small":
+		case "sm":
 			return tw`w-8 h-8 px-2 py-1 text-sm`;
-		case "large":
+		case "lg":
 			return tw`px-2 py-1 text-sm w-11 h-11`;
 		case "xl":
 			return tw`px-2 py-1 text-sm w-16 h-16`;
@@ -41,9 +42,9 @@ export const getStyles = ({
 	avatarId,
 	noShadow,
 }: {
-	size?: string;
+	size?: Size;
 	avatarId?: string | null;
 	noShadow?: boolean;
 }) => {
-	return [...defaultStyle(noShadow!), getSize(size!), ...getAvatarCss(avatarId)];
+	return [...defaultStyle(noShadow!), getSize(size), ...getAvatarCss(avatarId)];
 };
