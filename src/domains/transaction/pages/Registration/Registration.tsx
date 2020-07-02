@@ -414,7 +414,7 @@ export const Registration = ({
 	};
 
 	return (
-		<div data-testid="Registration" className="max-w-xl mx-auto">
+		<div data-testid="Registration" className="max-w-xl py-16 mx-auto">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={7} activeIndex={activeTab} />
