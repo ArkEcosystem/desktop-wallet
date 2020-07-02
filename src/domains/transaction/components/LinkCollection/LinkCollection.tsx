@@ -181,7 +181,7 @@ export const LinkCollection = ({
 
 					<Table columns={columns} data={links}>
 						{(rowData: any, rowIndex: any) => (
-							<tr className="border-b border-theme-neutral-200 font-semibold">
+							<tr className="font-semibold border-b border-theme-neutral-200">
 								{selectionTypeTitle && (
 									<td className="w-16 text-center">
 										{selectionTypes && selectionTypes.includes(rowData.type) && (
