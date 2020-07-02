@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "test-utils";
+import { render } from "testing-library";
 
 import { Breadcrumbs } from "./Breadcrumbs";
 
@@ -16,7 +16,7 @@ describe("Breadcrumbs", () => {
 			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />,
 		);
 
-		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("<-");
+		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("arrow-back.svg");
 		expect(getByTestId("breadcrumbs__wrapper")).toHaveTextContent("Dashboard");
 		expect(asFragment()).toMatchSnapshot();
 	});

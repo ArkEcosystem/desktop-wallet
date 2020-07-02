@@ -22,7 +22,7 @@ exports[`Welcome should render empty state 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -31,18 +31,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  invisible"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Avatar
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -51,18 +51,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Agent
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -71,18 +71,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Blockchain Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -91,18 +91,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   History
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -111,18 +111,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Website
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -131,18 +131,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   MSQ
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -151,18 +151,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md ml-4"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Repository
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -171,18 +171,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  font-semibold text-md -ml-4"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Seed
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -191,18 +191,18 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  invisible float-right"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Spacer
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral-500"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
@@ -211,12 +211,12 @@ exports[`Welcome should render empty state 1`] = `
                 class="flex flex-inline align-top  invisible float-right"
               >
                 <div
-                  class="mr-1"
+                  class="mr-2"
                 >
                   Options
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center text-theme-color-neutral-500"
                   data-testid="table__Sort"
                 />
               </div>
@@ -231,7 +231,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="blockchain-table__row"
           >
             <td
-              class="w-24 py-4"
+              class="w-24 py-6"
             >
               <div
                 class="flex items-center"
@@ -250,32 +250,38 @@ exports[`Welcome should render empty state 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                   data-testid="Avatar"
-                />
+                >
+                  <img
+                    alt="1Pdj"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                    title="1Pdj"
+                  />
+                </div>
               </div>
             </td>
             <td
-              class="py-4 mt-1 font-semibold"
+              class="py-6 mt-1 font-semibold"
             >
               <span>
                 OLEBank
               </span>
             </td>
             <td
-              class="py-1 font-semibold"
+              class="py-6 font-semibold"
             >
               <span />
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span>
                 View
               </span>
             </td>
             <td
-              class="py-1 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-400"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-4"
@@ -288,7 +294,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <div
                 class="sc-AxiKw fFXzuz ml-1"
@@ -301,7 +307,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span
                 class="ml-7"
@@ -310,7 +316,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span
                 class="-ml-5"
@@ -322,10 +328,10 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-11"
             />
             <td
-              class="float-right py-1"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
-                class="sc-AxjAm kTAyCf mt-4"
+                class="sc-AxjAm kTAyCf"
                 color="primary"
                 type="button"
               >
@@ -355,7 +361,7 @@ exports[`Welcome should render empty state 1`] = `
             data-testid="blockchain-table__row"
           >
             <td
-              class="w-24 py-4"
+              class="w-24 py-6"
             >
               <div
                 class="flex items-center"
@@ -374,32 +380,38 @@ exports[`Welcome should render empty state 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                   data-testid="Avatar"
-                />
+                >
+                  <img
+                    alt="1Pdj"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                    title="1Pdj"
+                  />
+                </div>
               </div>
             </td>
             <td
-              class="py-4 mt-1 font-semibold"
+              class="py-6 mt-1 font-semibold"
             >
               <span>
                 OLEBank
               </span>
             </td>
             <td
-              class="py-1 font-semibold"
+              class="py-6 font-semibold"
             >
               <span />
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span>
                 View
               </span>
             </td>
             <td
-              class="py-1 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-400"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-4"
@@ -412,7 +424,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <div
                 class="sc-AxiKw fFXzuz ml-1"
@@ -425,7 +437,7 @@ exports[`Welcome should render empty state 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span
                 class="ml-7"
@@ -434,7 +446,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-semibold text-theme-primary"
+              class="py-6 text-semibold text-theme-primary"
             >
               <span
                 class="-ml-5"
@@ -446,10 +458,10 @@ exports[`Welcome should render empty state 1`] = `
               class="px-1 px-11"
             />
             <td
-              class="float-right py-1"
+              class="flex items-center justify-center float-right py-6 mt-1"
             >
               <button
-                class="sc-AxjAm kTAyCf mt-4"
+                class="sc-AxjAm kTAyCf"
                 color="primary"
                 type="button"
               >

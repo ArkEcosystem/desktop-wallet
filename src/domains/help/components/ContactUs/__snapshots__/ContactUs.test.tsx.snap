@@ -5,15 +5,15 @@ exports[`ContactUs should not render if not open 1`] = `<DocumentFragment />`;
 exports[`ContactUs should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzplWN jxRzUr absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzplWN jxRzUr fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-5 mr-5"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -49,7 +49,7 @@ exports[`ContactUs should render a modal 1`] = `
           We'd be happy to answer your questions
         </div>
         <div
-          class="flex px-12 pb-8 mt-2 mb-8 -mx-12 text-black border-b border-gray-500"
+          class="flex px-12 pb-8 mt-4 mb-8 -mx-12 text-black border-b border-gray-500"
         >
           <a
             class="mr-2 rounded-full hover:bg-theme-neutral-300"
@@ -232,7 +232,7 @@ exports[`ContactUs should render a modal 1`] = `
             />
           </fieldset>
           <div
-            class="mt-4 space-x-3"
+            class="flex justify-end mt-4 space-x-3"
           >
             <button
               class="sc-AxjAm ddJBbC"

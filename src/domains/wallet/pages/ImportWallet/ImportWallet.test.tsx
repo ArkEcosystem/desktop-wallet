@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent, render, RenderResult } from "test-utils";
+import { act, fireEvent, render, RenderResult } from "testing-library";
 
 import { ImportWallet } from "./ImportWallet";
 

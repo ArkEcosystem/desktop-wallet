@@ -44,7 +44,6 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<p className="text-xl font-bold">Reviews ARK Explorer</p>
 			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900">
 				<span>Sort by:</span>
 				<div className="flex items-center">

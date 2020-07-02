@@ -9,6 +9,7 @@ import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 type CreateProfileProps = {
 	onSubmit?: any;
@@ -18,6 +19,7 @@ const commonAssets = images.common;
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const form = useForm();
+	const history = useHistory();
 	const { register } = form;
 
 	const personalDetails = [
@@ -143,7 +145,9 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 						</div>
 
 						<div className="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16">
-							<Button variant="plain">Back</Button>
+							<Button variant="plain" onClick={() => history.go(-1)}>
+								Back
+							</Button>
 							<Button>Complete</Button>
 						</div>
 					</Form>

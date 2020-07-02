@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { LinkCollection } from "./LinkCollection";
 
@@ -76,7 +76,7 @@ describe("LinkCollection", () => {
 		});
 		fireEvent.click(getByTestId("LinkCollection__add-link"));
 
-		expect(getByTestId("LinkCollection")).toHaveTextContent("twitter");
+		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
 		fireEvent.click(getByTestId("LinkCollection__remove-link"));
@@ -92,7 +92,10 @@ describe("LinkCollection", () => {
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
-				data={[{ link: "testing link", type: "twitter" }]}
+				data={[
+					{ link: "testing link", type: "twitter" },
+					{ link: "testing link 2", type: "facebook" },
+				]}
 				typeName="media"
 				selectionTypes={["twitter"]}
 				selectionTypeTitle="Primary"

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { Registration } from "../Registration";
 

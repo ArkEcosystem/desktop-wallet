@@ -6,6 +6,7 @@ import { EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 const commonAssets = images.common;
 const { WelcomeBanner } = images.profile.pages.welcome;
@@ -17,6 +18,7 @@ export const Welcome = () => {
 	];
 	const { env }: any = useContext(EnvironmentContext);
 	const { t } = useTranslation();
+	const history = useHistory();
 	const [profiles, setProfiles] = useState([]);
 
 	useEffect(() => {
@@ -48,12 +50,11 @@ export const Welcome = () => {
 							</p>
 
 							<div className="mt-6 mb-8 space-y-3">
-								{profiles.map((profile: any) => (
+								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										name={profile.name()}
-										avatar={profile.avatar()}
-										balance="0"
-										key={profile.id()}
+										handleClick={history.push(`dashboard/${profile.id()}`)}
+										key={index}
+										profile={profile}
 										actions={profileCardActions}
 									/>
 								))}
@@ -70,7 +71,11 @@ export const Welcome = () => {
 							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Sign in to MarketSquare</span>
 						</Button>
-						<Button variant="plain" className="w-full mt-2 md:mt-0">
+						<Button
+							variant="plain"
+							className="w-full mt-2 md:mt-0"
+							onClick={() => history.push("/profile/create")}
+						>
 							Create Profile
 						</Button>
 					</div>

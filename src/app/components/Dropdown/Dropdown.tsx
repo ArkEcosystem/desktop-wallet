@@ -16,6 +16,7 @@ type Props = {
 	onSelect?: any;
 	options?: any;
 	position?: string;
+	dropdownClass?: string;
 	toggleIcon: string;
 	toggleSize: "small" | "large" | "default";
 	toggleContent?: any;
@@ -75,7 +76,16 @@ const renderToggle = (
 	return children;
 };
 
-export const Dropdown = ({ children, options, onSelect, position, toggleIcon, toggleSize, toggleContent }: Props) => {
+export const Dropdown = ({
+	children,
+	dropdownClass,
+	options,
+	onSelect,
+	position,
+	toggleIcon,
+	toggleSize,
+	toggleContent,
+}: Props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = (e: any) => {
@@ -104,7 +114,7 @@ export const Dropdown = ({ children, options, onSelect, position, toggleIcon, to
 		<div ref={ref} className="relative">
 			<span onClick={toggle}>{renderToggle(toggleContent, toggleIcon, toggleSize, isOpen)}</span>
 
-			<Wrapper className={`${position}-0`}>
+			<Wrapper className={`${position}-0 ${dropdownClass}`}>
 				<div data-testid="dropdown__content">{renderOptions(options, select)}</div>
 				<div>{children}</div>
 			</Wrapper>

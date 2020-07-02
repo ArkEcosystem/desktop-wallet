@@ -40,7 +40,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -76,6 +76,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
           </div>
           <div
             aria-labelledby="downshift-8-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-8-menu"
             role="listbox"
@@ -211,7 +212,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -302,7 +303,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -567,7 +568,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -603,6 +604,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
           </div>
           <div
             aria-labelledby="downshift-11-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-11-menu"
             role="listbox"
@@ -738,7 +740,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -829,7 +831,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -1094,7 +1096,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -1130,6 +1132,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
           </div>
           <div
             aria-labelledby="downshift-10-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-10-menu"
             role="listbox"
@@ -1265,7 +1268,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -1356,7 +1359,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -1621,7 +1624,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -1722,7 +1725,7 @@ exports[`SendTransactionForm should render 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -1813,7 +1816,7 @@ exports[`SendTransactionForm should render 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -2078,7 +2081,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -2114,6 +2117,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
           </div>
           <div
             aria-labelledby="downshift-2-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-2-menu"
             role="listbox"
@@ -2255,7 +2259,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -2352,7 +2356,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -2637,7 +2641,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -2673,6 +2677,7 @@ exports[`SendTransactionForm should select sender 1`] = `
           </div>
           <div
             aria-labelledby="downshift-1-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-1-menu"
             role="listbox"
@@ -2814,7 +2819,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -2925,7 +2930,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -3190,7 +3195,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -3291,7 +3296,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -3382,7 +3387,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -3647,7 +3652,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             class="relative flex items-center w-full flex-inline"
           >
             <div
-              class="flex w-full border rounded shadow-sm bg-theme-background border-theme-neutral-300 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
             >
               <div
                 class="px-4 py-2 flex-0 w-14"
@@ -3683,6 +3688,7 @@ exports[`SendTransactionForm should submit form 1`] = `
           </div>
           <div
             aria-labelledby="downshift-9-label"
+            class="select-asset__items"
             data-testid="select-asset__items"
             id="downshift-9-menu"
             role="listbox"
@@ -3818,7 +3824,7 @@ exports[`SendTransactionForm should submit form 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button
@@ -3909,7 +3915,7 @@ exports[`SendTransactionForm should submit form 1`] = `
               </div>
             </button>
             <div
-              class="sc-fznyAO gvZEWd"
+              class="sc-fznyAO hfJLGZ border-theme-neutral-300"
               type="vertical"
             />
             <button

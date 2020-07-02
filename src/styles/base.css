@@ -2,10 +2,10 @@ body {
 	@apply antialiased text-base font-sans bg-theme-background text-theme-text;
 }
 
-a.link {
+.link {
 	@apply text-theme-primary-600;
 }
 
-a.link:hover {
+.link:hover {
 	@apply text-theme-primary-500;
 }

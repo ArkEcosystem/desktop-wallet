@@ -1,18 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "test-utils";
+import { MemoryRouter } from "react-router-dom";
+import { fireEvent, render } from "testing-library";
 
 import { CreateProfile } from "./CreateProfile";
 
 describe("CreateProfile", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<Router>
+		const { container, getByText, asFragment } = render(
+			<MemoryRouter initialEntries={["/", "profile/create"]}>
 				<CreateProfile />
-			</Router>,
+			</MemoryRouter>,
 		);
 
 		expect(container).toBeTruthy();
+		fireEvent.click(getByText("Back"));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

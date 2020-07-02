@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";

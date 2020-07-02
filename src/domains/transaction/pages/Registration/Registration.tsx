@@ -103,13 +103,16 @@ const FirstStep = ({
 
 	return (
 		<div data-testid="Registration__first-step">
-			<h1>Registration</h1>
+			<h1 className="mb-0">Registration</h1>
 			<div className="text-theme-neutral-700">
 				Select the type of registration and the address you want to register with.
 			</div>
 
-			<FormWrapper className="mt-5">
-				<SelectAsset assets={networks} />
+			<FormWrapper className="mt-8">
+				<FormField name="network">
+					<FormLabel>Network</FormLabel>
+					<SelectAsset assets={networks} />
+				</FormField>
 
 				<ProfileFormField
 					formName="address"
@@ -138,24 +141,24 @@ const SecondStep = ({ form }: { form: any }) => {
 
 	return (
 		<div data-testid="Registration__second-step">
-			<h1>Register Business</h1>
+			<h1 className="mb-0">Register Business</h1>
 			<div className="text-theme-neutral-700">
 				Select the type of registration and the address you want to register with.
 			</div>
 
 			<div>
-				<TransactionDetail border={false} className="mb-8">
-					<FormField name="name">
+				<TransactionDetail border={false} className="mt-2 mb-8">
+					<FormField name="name" className="font-normal">
 						<FormLabel required>Name</FormLabel>
 						<Input type="text" ref={register} />
 					</FormField>
 
-					<FormField name="description" className="mt-8">
+					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel required>Description</FormLabel>
 						<TextArea ref={register} />
 					</FormField>
 
-					<FormField name="website" className="mt-8">
+					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>Website</FormLabel>
 						<Input type="website" ref={register} />
 					</FormField>
@@ -231,12 +234,12 @@ const ThirdStep = () => {
 	];
 
 	return (
-		<div data-testid="Registration__third-step" className="space-y-8">
+		<div data-testid="Registration__third-step">
 			<div>
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="grid grid-flow-row gap-2">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label="Network"
@@ -263,7 +266,9 @@ const ThirdStep = () => {
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
@@ -299,7 +304,7 @@ const ThirdStep = () => {
 					/>
 				</TransactionDetail>
 
-				<div className="my-4">
+				<div>
 					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 				</div>
 			</div>
@@ -314,12 +319,12 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 		<div data-testid="Registration__fourth-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1>Authenticate</h1>
-					<div className="text-sm text-theme-neutral-700">
+					<h1 className="mb-0">Authenticate</h1>
+					<div className="text-theme-neutral-700">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
-					<div className="mt-5">
+					<div className="mt-8">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
@@ -336,14 +341,14 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 			{passwordType === "ledger" && (
 				<div>
 					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner />
+					<ConfirmTransactionLedgerBanner className="my-8" />
 
 					<div className="mt-8 text-theme-neutral-700">
 						Please review and verify the information on your Ledger device. Choose Accept to complete your
 						transaction.
 					</div>
 
-					<div className="inline-flex items-center mt-5 space-x-3">
+					<div className="inline-flex items-center mt-8 space-x-3">
 						<Spinner color="primary" size="default" />
 						<span className="text-black">Waiting for confirmation...</span>
 					</div>
@@ -374,6 +379,7 @@ export const FifthStep = () => (
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
+			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="large">
@@ -413,7 +419,7 @@ export const Registration = ({
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={7} activeIndex={activeTab} />
 
-					<div className="mt-4">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep
 								addresses={addresses}

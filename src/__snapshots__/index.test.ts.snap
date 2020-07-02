@@ -141,6 +141,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "FORGED_ARK": "Forged ARK",
+                          "HIDE": "Hide",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
@@ -159,6 +160,7 @@ exports[`Application root should render without crashing 1`] = `
                           "NOT": "not",
                           "OF": "of",
                           "OTHER": "Other",
+                          "PAGE": "Page",
                           "PLUGIN": "Plugin",
                           "PREV": "Prev",
                           "PREVIOUS": "Previous",
@@ -175,6 +177,7 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SHOW": "Show",
                           "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
@@ -342,12 +345,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PROFILE": Object {
+                          "MODAL_HISTORY": Object {
+                            "TITLE": "History",
+                            "TYPES": Object {
+                              "REGISTRATION": "Registration",
+                              "RESIGN": "Resign",
+                              "UPDATE": "Update",
+                            },
+                          },
                           "MODAL_PROFILE_CREATED": Object {
                             "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                             "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                             "SKIP_TUTORIAL": "Skip Tutorial",
                             "START_TUTORIAL": "Start Tutorial",
                             "TITLE": "Profile Created!",
+                          },
+                          "MODAL_REPOSITORIES": Object {
+                            "BitBucket": "Bitbucket",
+                            "GitHub": "GitHub",
+                            "GitLab": "GitLab",
+                            "Npm": "NPM",
+                            "TITLE": "Repository",
                           },
                         },
                         "SETTINGS": Object {
@@ -364,6 +382,18 @@ exports[`Application root should render without crashing 1`] = `
                           "CONFIRMATIONS": "Confirmations",
                           "ID": "ID",
                           "IPFS_HASH": "IPFS Hash",
+                          "LINK_TYPES": Object {
+                            "BITBUCKET": "BitBucket",
+                            "FACEBOOK": "Facebook",
+                            "FLICKR": "Flickr",
+                            "GITHUB": "GitHub",
+                            "GITLAB": "GitLab",
+                            "LINKEDIN": "LinkedIn",
+                            "NPM": "Npm",
+                            "TWITTER": "Twitter",
+                            "VIMEO": "Vimeo",
+                            "YOUTUBE": "YouTube",
+                          },
                           "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                             "TITLE": "Delegate Registration",
                           },
@@ -404,6 +434,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TOTAL_AMOUNT": "Total Amount",
                           "TRANSACTION_FEE": "Transaction Fee",
                           "VOTER": "Voter",
+                        },
+                        "VOTE": Object {
+                          "VOTES_PAGE": Object {
+                            "SUBTITLE": "Manage your cryptoasset staking",
+                            "TITLE": "My Votes",
+                          },
                         },
                         "WALLETS": Object {
                           "MODAL_DELETE_WALLET": Object {
@@ -567,6 +603,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "FORGED_ARK": "Forged ARK",
+                        "HIDE": "Hide",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
@@ -585,6 +622,7 @@ exports[`Application root should render without crashing 1`] = `
                         "NOT": "not",
                         "OF": "of",
                         "OTHER": "Other",
+                        "PAGE": "Page",
                         "PLUGIN": "Plugin",
                         "PREV": "Prev",
                         "PREVIOUS": "Previous",
@@ -601,6 +639,7 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SHOW": "Show",
                         "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
@@ -768,12 +807,27 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PROFILE": Object {
+                        "MODAL_HISTORY": Object {
+                          "TITLE": "History",
+                          "TYPES": Object {
+                            "REGISTRATION": "Registration",
+                            "RESIGN": "Resign",
+                            "UPDATE": "Update",
+                          },
+                        },
                         "MODAL_PROFILE_CREATED": Object {
                           "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                           "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                           "SKIP_TUTORIAL": "Skip Tutorial",
                           "START_TUTORIAL": "Start Tutorial",
                           "TITLE": "Profile Created!",
+                        },
+                        "MODAL_REPOSITORIES": Object {
+                          "BitBucket": "Bitbucket",
+                          "GitHub": "GitHub",
+                          "GitLab": "GitLab",
+                          "Npm": "NPM",
+                          "TITLE": "Repository",
                         },
                       },
                       "SETTINGS": Object {
@@ -790,6 +844,18 @@ exports[`Application root should render without crashing 1`] = `
                         "CONFIRMATIONS": "Confirmations",
                         "ID": "ID",
                         "IPFS_HASH": "IPFS Hash",
+                        "LINK_TYPES": Object {
+                          "BITBUCKET": "BitBucket",
+                          "FACEBOOK": "Facebook",
+                          "FLICKR": "Flickr",
+                          "GITHUB": "GitHub",
+                          "GITLAB": "GitLab",
+                          "LINKEDIN": "LinkedIn",
+                          "NPM": "Npm",
+                          "TWITTER": "Twitter",
+                          "VIMEO": "Vimeo",
+                          "YOUTUBE": "YouTube",
+                        },
                         "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                           "TITLE": "Delegate Registration",
                         },
@@ -830,6 +896,12 @@ exports[`Application root should render without crashing 1`] = `
                         "TOTAL_AMOUNT": "Total Amount",
                         "TRANSACTION_FEE": "Transaction Fee",
                         "VOTER": "Voter",
+                      },
+                      "VOTE": Object {
+                        "VOTES_PAGE": Object {
+                          "SUBTITLE": "Manage your cryptoasset staking",
+                          "TITLE": "My Votes",
+                        },
                       },
                       "WALLETS": Object {
                         "MODAL_DELETE_WALLET": Object {
@@ -997,6 +1069,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -1015,6 +1088,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -1031,6 +1105,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -1198,12 +1273,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -1220,6 +1310,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -1260,6 +1362,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -1414,6 +1522,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -1432,6 +1541,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -1448,6 +1558,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -1615,12 +1726,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -1637,6 +1763,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -1677,6 +1815,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -1841,6 +1985,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -1859,6 +2004,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -1875,6 +2021,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -2042,12 +2189,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -2064,6 +2226,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -2104,6 +2278,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -2263,6 +2443,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -2281,6 +2462,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -2297,6 +2479,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -2464,12 +2647,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -2486,6 +2684,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -2526,6 +2736,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -2638,6 +2854,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "FORGED_ARK": "Forged ARK",
+                          "HIDE": "Hide",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
@@ -2656,6 +2873,7 @@ exports[`Application root should render without crashing 1`] = `
                           "NOT": "not",
                           "OF": "of",
                           "OTHER": "Other",
+                          "PAGE": "Page",
                           "PLUGIN": "Plugin",
                           "PREV": "Prev",
                           "PREVIOUS": "Previous",
@@ -2672,6 +2890,7 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SHOW": "Show",
                           "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
@@ -2839,12 +3058,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PROFILE": Object {
+                          "MODAL_HISTORY": Object {
+                            "TITLE": "History",
+                            "TYPES": Object {
+                              "REGISTRATION": "Registration",
+                              "RESIGN": "Resign",
+                              "UPDATE": "Update",
+                            },
+                          },
                           "MODAL_PROFILE_CREATED": Object {
                             "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                             "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                             "SKIP_TUTORIAL": "Skip Tutorial",
                             "START_TUTORIAL": "Start Tutorial",
                             "TITLE": "Profile Created!",
+                          },
+                          "MODAL_REPOSITORIES": Object {
+                            "BitBucket": "Bitbucket",
+                            "GitHub": "GitHub",
+                            "GitLab": "GitLab",
+                            "Npm": "NPM",
+                            "TITLE": "Repository",
                           },
                         },
                         "SETTINGS": Object {
@@ -2861,6 +3095,18 @@ exports[`Application root should render without crashing 1`] = `
                           "CONFIRMATIONS": "Confirmations",
                           "ID": "ID",
                           "IPFS_HASH": "IPFS Hash",
+                          "LINK_TYPES": Object {
+                            "BITBUCKET": "BitBucket",
+                            "FACEBOOK": "Facebook",
+                            "FLICKR": "Flickr",
+                            "GITHUB": "GitHub",
+                            "GITLAB": "GitLab",
+                            "LINKEDIN": "LinkedIn",
+                            "NPM": "Npm",
+                            "TWITTER": "Twitter",
+                            "VIMEO": "Vimeo",
+                            "YOUTUBE": "YouTube",
+                          },
                           "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                             "TITLE": "Delegate Registration",
                           },
@@ -2901,6 +3147,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TOTAL_AMOUNT": "Total Amount",
                           "TRANSACTION_FEE": "Transaction Fee",
                           "VOTER": "Voter",
+                        },
+                        "VOTE": Object {
+                          "VOTES_PAGE": Object {
+                            "SUBTITLE": "Manage your cryptoasset staking",
+                            "TITLE": "My Votes",
+                          },
                         },
                         "WALLETS": Object {
                           "MODAL_DELETE_WALLET": Object {
@@ -3059,6 +3311,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -3077,6 +3330,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -3093,6 +3347,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -3260,12 +3515,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -3282,6 +3552,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -3322,6 +3604,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -3481,6 +3769,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -3499,6 +3788,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -3515,6 +3805,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -3682,12 +3973,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -3704,6 +4010,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -3744,6 +4062,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -3915,6 +4239,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -3933,6 +4258,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -3949,6 +4275,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -4116,12 +4443,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -4138,6 +4480,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -4178,6 +4532,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -4332,6 +4692,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -4350,6 +4711,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -4366,6 +4728,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -4533,12 +4896,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -4555,6 +4933,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -4595,6 +4985,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -4758,6 +5154,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -4776,6 +5173,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -4792,6 +5190,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -4959,12 +5358,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -4981,6 +5395,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -5021,6 +5447,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -5187,6 +5619,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -5205,6 +5638,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -5221,6 +5655,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -5388,12 +5823,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -5410,6 +5860,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -5450,6 +5912,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -5604,6 +6072,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -5622,6 +6091,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -5638,6 +6108,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -5805,12 +6276,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -5827,6 +6313,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -5867,6 +6365,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -6031,6 +6535,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -6049,6 +6554,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -6065,6 +6571,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -6232,12 +6739,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -6254,6 +6776,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -6294,6 +6828,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -7350,6 +7890,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "FORGED_ARK": "Forged ARK",
+                        "HIDE": "Hide",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
@@ -7368,6 +7909,7 @@ exports[`Application root should render without crashing 1`] = `
                         "NOT": "not",
                         "OF": "of",
                         "OTHER": "Other",
+                        "PAGE": "Page",
                         "PLUGIN": "Plugin",
                         "PREV": "Prev",
                         "PREVIOUS": "Previous",
@@ -7384,6 +7926,7 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SHOW": "Show",
                         "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
@@ -7551,12 +8094,27 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PROFILE": Object {
+                        "MODAL_HISTORY": Object {
+                          "TITLE": "History",
+                          "TYPES": Object {
+                            "REGISTRATION": "Registration",
+                            "RESIGN": "Resign",
+                            "UPDATE": "Update",
+                          },
+                        },
                         "MODAL_PROFILE_CREATED": Object {
                           "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                           "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                           "SKIP_TUTORIAL": "Skip Tutorial",
                           "START_TUTORIAL": "Start Tutorial",
                           "TITLE": "Profile Created!",
+                        },
+                        "MODAL_REPOSITORIES": Object {
+                          "BitBucket": "Bitbucket",
+                          "GitHub": "GitHub",
+                          "GitLab": "GitLab",
+                          "Npm": "NPM",
+                          "TITLE": "Repository",
                         },
                       },
                       "SETTINGS": Object {
@@ -7573,6 +8131,18 @@ exports[`Application root should render without crashing 1`] = `
                         "CONFIRMATIONS": "Confirmations",
                         "ID": "ID",
                         "IPFS_HASH": "IPFS Hash",
+                        "LINK_TYPES": Object {
+                          "BITBUCKET": "BitBucket",
+                          "FACEBOOK": "Facebook",
+                          "FLICKR": "Flickr",
+                          "GITHUB": "GitHub",
+                          "GITLAB": "GitLab",
+                          "LINKEDIN": "LinkedIn",
+                          "NPM": "Npm",
+                          "TWITTER": "Twitter",
+                          "VIMEO": "Vimeo",
+                          "YOUTUBE": "YouTube",
+                        },
                         "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                           "TITLE": "Delegate Registration",
                         },
@@ -7613,6 +8183,12 @@ exports[`Application root should render without crashing 1`] = `
                         "TOTAL_AMOUNT": "Total Amount",
                         "TRANSACTION_FEE": "Transaction Fee",
                         "VOTER": "Voter",
+                      },
+                      "VOTE": Object {
+                        "VOTES_PAGE": Object {
+                          "SUBTITLE": "Manage your cryptoasset staking",
+                          "TITLE": "My Votes",
+                        },
                       },
                       "WALLETS": Object {
                         "MODAL_DELETE_WALLET": Object {
@@ -7715,6 +8291,7 @@ exports[`Application root should render without crashing 1`] = `
                       "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                       "FINISH": "Finish",
                       "FORGED_ARK": "Forged ARK",
+                      "HIDE": "Hide",
                       "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                       "INITIALIZING": "Initializing...",
                       "INSTALL": "Install",
@@ -7733,6 +8310,7 @@ exports[`Application root should render without crashing 1`] = `
                       "NOT": "not",
                       "OF": "of",
                       "OTHER": "Other",
+                      "PAGE": "Page",
                       "PLUGIN": "Plugin",
                       "PREV": "Prev",
                       "PREVIOUS": "Previous",
@@ -7749,6 +8327,7 @@ exports[`Application root should render without crashing 1`] = `
                       },
                       "SELECT": "Select",
                       "SEND": "Send",
+                      "SHOW": "Show",
                       "SIGN": "Sign",
                       "SIZE": "Size",
                       "SKIP": "Skip",
@@ -7916,12 +8495,27 @@ exports[`Application root should render without crashing 1`] = `
                       },
                     },
                     "PROFILE": Object {
+                      "MODAL_HISTORY": Object {
+                        "TITLE": "History",
+                        "TYPES": Object {
+                          "REGISTRATION": "Registration",
+                          "RESIGN": "Resign",
+                          "UPDATE": "Update",
+                        },
+                      },
                       "MODAL_PROFILE_CREATED": Object {
                         "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                         "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                         "SKIP_TUTORIAL": "Skip Tutorial",
                         "START_TUTORIAL": "Start Tutorial",
                         "TITLE": "Profile Created!",
+                      },
+                      "MODAL_REPOSITORIES": Object {
+                        "BitBucket": "Bitbucket",
+                        "GitHub": "GitHub",
+                        "GitLab": "GitLab",
+                        "Npm": "NPM",
+                        "TITLE": "Repository",
                       },
                     },
                     "SETTINGS": Object {
@@ -7938,6 +8532,18 @@ exports[`Application root should render without crashing 1`] = `
                       "CONFIRMATIONS": "Confirmations",
                       "ID": "ID",
                       "IPFS_HASH": "IPFS Hash",
+                      "LINK_TYPES": Object {
+                        "BITBUCKET": "BitBucket",
+                        "FACEBOOK": "Facebook",
+                        "FLICKR": "Flickr",
+                        "GITHUB": "GitHub",
+                        "GITLAB": "GitLab",
+                        "LINKEDIN": "LinkedIn",
+                        "NPM": "Npm",
+                        "TWITTER": "Twitter",
+                        "VIMEO": "Vimeo",
+                        "YOUTUBE": "YouTube",
+                      },
                       "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                         "TITLE": "Delegate Registration",
                       },
@@ -7978,6 +8584,12 @@ exports[`Application root should render without crashing 1`] = `
                       "TOTAL_AMOUNT": "Total Amount",
                       "TRANSACTION_FEE": "Transaction Fee",
                       "VOTER": "Voter",
+                    },
+                    "VOTE": Object {
+                      "VOTES_PAGE": Object {
+                        "SUBTITLE": "Manage your cryptoasset staking",
+                        "TITLE": "My Votes",
+                      },
                     },
                     "WALLETS": Object {
                       "MODAL_DELETE_WALLET": Object {
@@ -8133,6 +8745,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -8151,6 +8764,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -8167,6 +8781,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -8334,12 +8949,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -8356,6 +8986,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -8396,6 +9038,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -8550,6 +9198,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -8568,6 +9217,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -8584,6 +9234,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -8751,12 +9402,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -8773,6 +9439,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -8813,6 +9491,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -8977,6 +9661,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -8995,6 +9680,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -9011,6 +9697,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -9178,12 +9865,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -9200,6 +9902,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -9240,6 +9954,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -9399,6 +10119,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -9417,6 +10138,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -9433,6 +10155,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -9600,12 +10323,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -9622,6 +10360,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -9662,6 +10412,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -9833,6 +10589,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "FORGED_ARK": "Forged ARK",
+                                  "HIDE": "Hide",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
@@ -9851,6 +10608,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "NOT": "not",
                                   "OF": "of",
                                   "OTHER": "Other",
+                                  "PAGE": "Page",
                                   "PLUGIN": "Plugin",
                                   "PREV": "Prev",
                                   "PREVIOUS": "Previous",
@@ -9867,6 +10625,7 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SHOW": "Show",
                                   "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
@@ -10034,12 +10793,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PROFILE": Object {
+                                  "MODAL_HISTORY": Object {
+                                    "TITLE": "History",
+                                    "TYPES": Object {
+                                      "REGISTRATION": "Registration",
+                                      "RESIGN": "Resign",
+                                      "UPDATE": "Update",
+                                    },
+                                  },
                                   "MODAL_PROFILE_CREATED": Object {
                                     "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                     "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                     "SKIP_TUTORIAL": "Skip Tutorial",
                                     "START_TUTORIAL": "Start Tutorial",
                                     "TITLE": "Profile Created!",
+                                  },
+                                  "MODAL_REPOSITORIES": Object {
+                                    "BitBucket": "Bitbucket",
+                                    "GitHub": "GitHub",
+                                    "GitLab": "GitLab",
+                                    "Npm": "NPM",
+                                    "TITLE": "Repository",
                                   },
                                 },
                                 "SETTINGS": Object {
@@ -10056,6 +10830,18 @@ exports[`Application root should render without crashing 1`] = `
                                   "CONFIRMATIONS": "Confirmations",
                                   "ID": "ID",
                                   "IPFS_HASH": "IPFS Hash",
+                                  "LINK_TYPES": Object {
+                                    "BITBUCKET": "BitBucket",
+                                    "FACEBOOK": "Facebook",
+                                    "FLICKR": "Flickr",
+                                    "GITHUB": "GitHub",
+                                    "GITLAB": "GitLab",
+                                    "LINKEDIN": "LinkedIn",
+                                    "NPM": "Npm",
+                                    "TWITTER": "Twitter",
+                                    "VIMEO": "Vimeo",
+                                    "YOUTUBE": "YouTube",
+                                  },
                                   "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                     "TITLE": "Delegate Registration",
                                   },
@@ -10096,6 +10882,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TOTAL_AMOUNT": "Total Amount",
                                   "TRANSACTION_FEE": "Transaction Fee",
                                   "VOTER": "Voter",
+                                },
+                                "VOTE": Object {
+                                  "VOTES_PAGE": Object {
+                                    "SUBTITLE": "Manage your cryptoasset staking",
+                                    "TITLE": "My Votes",
+                                  },
                                 },
                                 "WALLETS": Object {
                                   "MODAL_DELETE_WALLET": Object {
@@ -10255,6 +11047,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -10273,6 +11066,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -10289,6 +11083,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -10456,12 +11251,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -10478,6 +11288,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -10518,6 +11340,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -10689,6 +11517,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "FORGED_ARK": "Forged ARK",
+                                  "HIDE": "Hide",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
@@ -10707,6 +11536,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "NOT": "not",
                                   "OF": "of",
                                   "OTHER": "Other",
+                                  "PAGE": "Page",
                                   "PLUGIN": "Plugin",
                                   "PREV": "Prev",
                                   "PREVIOUS": "Previous",
@@ -10723,6 +11553,7 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SHOW": "Show",
                                   "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
@@ -10890,12 +11721,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PROFILE": Object {
+                                  "MODAL_HISTORY": Object {
+                                    "TITLE": "History",
+                                    "TYPES": Object {
+                                      "REGISTRATION": "Registration",
+                                      "RESIGN": "Resign",
+                                      "UPDATE": "Update",
+                                    },
+                                  },
                                   "MODAL_PROFILE_CREATED": Object {
                                     "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                     "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                     "SKIP_TUTORIAL": "Skip Tutorial",
                                     "START_TUTORIAL": "Start Tutorial",
                                     "TITLE": "Profile Created!",
+                                  },
+                                  "MODAL_REPOSITORIES": Object {
+                                    "BitBucket": "Bitbucket",
+                                    "GitHub": "GitHub",
+                                    "GitLab": "GitLab",
+                                    "Npm": "NPM",
+                                    "TITLE": "Repository",
                                   },
                                 },
                                 "SETTINGS": Object {
@@ -10912,6 +11758,18 @@ exports[`Application root should render without crashing 1`] = `
                                   "CONFIRMATIONS": "Confirmations",
                                   "ID": "ID",
                                   "IPFS_HASH": "IPFS Hash",
+                                  "LINK_TYPES": Object {
+                                    "BITBUCKET": "BitBucket",
+                                    "FACEBOOK": "Facebook",
+                                    "FLICKR": "Flickr",
+                                    "GITHUB": "GitHub",
+                                    "GITLAB": "GitLab",
+                                    "LINKEDIN": "LinkedIn",
+                                    "NPM": "Npm",
+                                    "TWITTER": "Twitter",
+                                    "VIMEO": "Vimeo",
+                                    "YOUTUBE": "YouTube",
+                                  },
                                   "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                     "TITLE": "Delegate Registration",
                                   },
@@ -10952,6 +11810,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TOTAL_AMOUNT": "Total Amount",
                                   "TRANSACTION_FEE": "Transaction Fee",
                                   "VOTER": "Voter",
+                                },
+                                "VOTE": Object {
+                                  "VOTES_PAGE": Object {
+                                    "SUBTITLE": "Manage your cryptoasset staking",
+                                    "TITLE": "My Votes",
+                                  },
                                 },
                                 "WALLETS": Object {
                                   "MODAL_DELETE_WALLET": Object {
@@ -11106,6 +11970,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -11124,6 +11989,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -11140,6 +12006,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -11307,12 +12174,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -11329,6 +12211,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -11369,6 +12263,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -11532,6 +12432,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -11550,6 +12451,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -11566,6 +12468,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -11733,12 +12636,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -11755,6 +12673,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -11795,6 +12725,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -11961,6 +12897,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                     "FINISH": "Finish",
                                     "FORGED_ARK": "Forged ARK",
+                                    "HIDE": "Hide",
                                     "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                     "INITIALIZING": "Initializing...",
                                     "INSTALL": "Install",
@@ -11979,6 +12916,7 @@ exports[`Application root should render without crashing 1`] = `
                                     "NOT": "not",
                                     "OF": "of",
                                     "OTHER": "Other",
+                                    "PAGE": "Page",
                                     "PLUGIN": "Plugin",
                                     "PREV": "Prev",
                                     "PREVIOUS": "Previous",
@@ -11995,6 +12933,7 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                     "SELECT": "Select",
                                     "SEND": "Send",
+                                    "SHOW": "Show",
                                     "SIGN": "Sign",
                                     "SIZE": "Size",
                                     "SKIP": "Skip",
@@ -12162,12 +13101,27 @@ exports[`Application root should render without crashing 1`] = `
                                     },
                                   },
                                   "PROFILE": Object {
+                                    "MODAL_HISTORY": Object {
+                                      "TITLE": "History",
+                                      "TYPES": Object {
+                                        "REGISTRATION": "Registration",
+                                        "RESIGN": "Resign",
+                                        "UPDATE": "Update",
+                                      },
+                                    },
                                     "MODAL_PROFILE_CREATED": Object {
                                       "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                       "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                       "SKIP_TUTORIAL": "Skip Tutorial",
                                       "START_TUTORIAL": "Start Tutorial",
                                       "TITLE": "Profile Created!",
+                                    },
+                                    "MODAL_REPOSITORIES": Object {
+                                      "BitBucket": "Bitbucket",
+                                      "GitHub": "GitHub",
+                                      "GitLab": "GitLab",
+                                      "Npm": "NPM",
+                                      "TITLE": "Repository",
                                     },
                                   },
                                   "SETTINGS": Object {
@@ -12184,6 +13138,18 @@ exports[`Application root should render without crashing 1`] = `
                                     "CONFIRMATIONS": "Confirmations",
                                     "ID": "ID",
                                     "IPFS_HASH": "IPFS Hash",
+                                    "LINK_TYPES": Object {
+                                      "BITBUCKET": "BitBucket",
+                                      "FACEBOOK": "Facebook",
+                                      "FLICKR": "Flickr",
+                                      "GITHUB": "GitHub",
+                                      "GITLAB": "GitLab",
+                                      "LINKEDIN": "LinkedIn",
+                                      "NPM": "Npm",
+                                      "TWITTER": "Twitter",
+                                      "VIMEO": "Vimeo",
+                                      "YOUTUBE": "YouTube",
+                                    },
                                     "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                       "TITLE": "Delegate Registration",
                                     },
@@ -12224,6 +13190,12 @@ exports[`Application root should render without crashing 1`] = `
                                     "TOTAL_AMOUNT": "Total Amount",
                                     "TRANSACTION_FEE": "Transaction Fee",
                                     "VOTER": "Voter",
+                                  },
+                                  "VOTE": Object {
+                                    "VOTES_PAGE": Object {
+                                      "SUBTITLE": "Manage your cryptoasset staking",
+                                      "TITLE": "My Votes",
+                                    },
                                   },
                                   "WALLETS": Object {
                                     "MODAL_DELETE_WALLET": Object {
@@ -12378,6 +13350,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "FORGED_ARK": "Forged ARK",
+                                  "HIDE": "Hide",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
@@ -12396,6 +13369,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "NOT": "not",
                                   "OF": "of",
                                   "OTHER": "Other",
+                                  "PAGE": "Page",
                                   "PLUGIN": "Plugin",
                                   "PREV": "Prev",
                                   "PREVIOUS": "Previous",
@@ -12412,6 +13386,7 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SHOW": "Show",
                                   "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
@@ -12579,12 +13554,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PROFILE": Object {
+                                  "MODAL_HISTORY": Object {
+                                    "TITLE": "History",
+                                    "TYPES": Object {
+                                      "REGISTRATION": "Registration",
+                                      "RESIGN": "Resign",
+                                      "UPDATE": "Update",
+                                    },
+                                  },
                                   "MODAL_PROFILE_CREATED": Object {
                                     "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                     "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                     "SKIP_TUTORIAL": "Skip Tutorial",
                                     "START_TUTORIAL": "Start Tutorial",
                                     "TITLE": "Profile Created!",
+                                  },
+                                  "MODAL_REPOSITORIES": Object {
+                                    "BitBucket": "Bitbucket",
+                                    "GitHub": "GitHub",
+                                    "GitLab": "GitLab",
+                                    "Npm": "NPM",
+                                    "TITLE": "Repository",
                                   },
                                 },
                                 "SETTINGS": Object {
@@ -12601,6 +13591,18 @@ exports[`Application root should render without crashing 1`] = `
                                   "CONFIRMATIONS": "Confirmations",
                                   "ID": "ID",
                                   "IPFS_HASH": "IPFS Hash",
+                                  "LINK_TYPES": Object {
+                                    "BITBUCKET": "BitBucket",
+                                    "FACEBOOK": "Facebook",
+                                    "FLICKR": "Flickr",
+                                    "GITHUB": "GitHub",
+                                    "GITLAB": "GitLab",
+                                    "LINKEDIN": "LinkedIn",
+                                    "NPM": "Npm",
+                                    "TWITTER": "Twitter",
+                                    "VIMEO": "Vimeo",
+                                    "YOUTUBE": "YouTube",
+                                  },
                                   "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                     "TITLE": "Delegate Registration",
                                   },
@@ -12641,6 +13643,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TOTAL_AMOUNT": "Total Amount",
                                   "TRANSACTION_FEE": "Transaction Fee",
                                   "VOTER": "Voter",
+                                },
+                                "VOTE": Object {
+                                  "VOTES_PAGE": Object {
+                                    "SUBTITLE": "Manage your cryptoasset staking",
+                                    "TITLE": "My Votes",
+                                  },
                                 },
                                 "WALLETS": Object {
                                   "MODAL_DELETE_WALLET": Object {
@@ -12805,6 +13813,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                   "FINISH": "Finish",
                                   "FORGED_ARK": "Forged ARK",
+                                  "HIDE": "Hide",
                                   "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                   "INITIALIZING": "Initializing...",
                                   "INSTALL": "Install",
@@ -12823,6 +13832,7 @@ exports[`Application root should render without crashing 1`] = `
                                   "NOT": "not",
                                   "OF": "of",
                                   "OTHER": "Other",
+                                  "PAGE": "Page",
                                   "PLUGIN": "Plugin",
                                   "PREV": "Prev",
                                   "PREVIOUS": "Previous",
@@ -12839,6 +13849,7 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                   "SELECT": "Select",
                                   "SEND": "Send",
+                                  "SHOW": "Show",
                                   "SIGN": "Sign",
                                   "SIZE": "Size",
                                   "SKIP": "Skip",
@@ -13006,12 +14017,27 @@ exports[`Application root should render without crashing 1`] = `
                                   },
                                 },
                                 "PROFILE": Object {
+                                  "MODAL_HISTORY": Object {
+                                    "TITLE": "History",
+                                    "TYPES": Object {
+                                      "REGISTRATION": "Registration",
+                                      "RESIGN": "Resign",
+                                      "UPDATE": "Update",
+                                    },
+                                  },
                                   "MODAL_PROFILE_CREATED": Object {
                                     "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                     "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                     "SKIP_TUTORIAL": "Skip Tutorial",
                                     "START_TUTORIAL": "Start Tutorial",
                                     "TITLE": "Profile Created!",
+                                  },
+                                  "MODAL_REPOSITORIES": Object {
+                                    "BitBucket": "Bitbucket",
+                                    "GitHub": "GitHub",
+                                    "GitLab": "GitLab",
+                                    "Npm": "NPM",
+                                    "TITLE": "Repository",
                                   },
                                 },
                                 "SETTINGS": Object {
@@ -13028,6 +14054,18 @@ exports[`Application root should render without crashing 1`] = `
                                   "CONFIRMATIONS": "Confirmations",
                                   "ID": "ID",
                                   "IPFS_HASH": "IPFS Hash",
+                                  "LINK_TYPES": Object {
+                                    "BITBUCKET": "BitBucket",
+                                    "FACEBOOK": "Facebook",
+                                    "FLICKR": "Flickr",
+                                    "GITHUB": "GitHub",
+                                    "GITLAB": "GitLab",
+                                    "LINKEDIN": "LinkedIn",
+                                    "NPM": "Npm",
+                                    "TWITTER": "Twitter",
+                                    "VIMEO": "Vimeo",
+                                    "YOUTUBE": "YouTube",
+                                  },
                                   "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                     "TITLE": "Delegate Registration",
                                   },
@@ -13068,6 +14106,12 @@ exports[`Application root should render without crashing 1`] = `
                                   "TOTAL_AMOUNT": "Total Amount",
                                   "TRANSACTION_FEE": "Transaction Fee",
                                   "VOTER": "Voter",
+                                },
+                                "VOTE": Object {
+                                  "VOTES_PAGE": Object {
+                                    "SUBTITLE": "Manage your cryptoasset staking",
+                                    "TITLE": "My Votes",
+                                  },
                                 },
                                 "WALLETS": Object {
                                   "MODAL_DELETE_WALLET": Object {
@@ -14124,6 +15168,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -14142,6 +15187,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -14158,6 +15204,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -14325,12 +15372,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -14347,6 +15409,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -14387,6 +15461,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -14490,6 +15570,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "FORGED_ARK": "Forged ARK",
+                          "HIDE": "Hide",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
@@ -14508,6 +15589,7 @@ exports[`Application root should render without crashing 1`] = `
                           "NOT": "not",
                           "OF": "of",
                           "OTHER": "Other",
+                          "PAGE": "Page",
                           "PLUGIN": "Plugin",
                           "PREV": "Prev",
                           "PREVIOUS": "Previous",
@@ -14524,6 +15606,7 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SHOW": "Show",
                           "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
@@ -14691,12 +15774,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PROFILE": Object {
+                          "MODAL_HISTORY": Object {
+                            "TITLE": "History",
+                            "TYPES": Object {
+                              "REGISTRATION": "Registration",
+                              "RESIGN": "Resign",
+                              "UPDATE": "Update",
+                            },
+                          },
                           "MODAL_PROFILE_CREATED": Object {
                             "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                             "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                             "SKIP_TUTORIAL": "Skip Tutorial",
                             "START_TUTORIAL": "Start Tutorial",
                             "TITLE": "Profile Created!",
+                          },
+                          "MODAL_REPOSITORIES": Object {
+                            "BitBucket": "Bitbucket",
+                            "GitHub": "GitHub",
+                            "GitLab": "GitLab",
+                            "Npm": "NPM",
+                            "TITLE": "Repository",
                           },
                         },
                         "SETTINGS": Object {
@@ -14713,6 +15811,18 @@ exports[`Application root should render without crashing 1`] = `
                           "CONFIRMATIONS": "Confirmations",
                           "ID": "ID",
                           "IPFS_HASH": "IPFS Hash",
+                          "LINK_TYPES": Object {
+                            "BITBUCKET": "BitBucket",
+                            "FACEBOOK": "Facebook",
+                            "FLICKR": "Flickr",
+                            "GITHUB": "GitHub",
+                            "GITLAB": "GitLab",
+                            "LINKEDIN": "LinkedIn",
+                            "NPM": "Npm",
+                            "TWITTER": "Twitter",
+                            "VIMEO": "Vimeo",
+                            "YOUTUBE": "YouTube",
+                          },
                           "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                             "TITLE": "Delegate Registration",
                           },
@@ -14753,6 +15863,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TOTAL_AMOUNT": "Total Amount",
                           "TRANSACTION_FEE": "Transaction Fee",
                           "VOTER": "Voter",
+                        },
+                        "VOTE": Object {
+                          "VOTES_PAGE": Object {
+                            "SUBTITLE": "Manage your cryptoasset staking",
+                            "TITLE": "My Votes",
+                          },
                         },
                         "WALLETS": Object {
                           "MODAL_DELETE_WALLET": Object {
@@ -14911,6 +16027,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -14929,6 +16046,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -14945,6 +16063,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -15112,12 +16231,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -15134,6 +16268,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -15174,6 +16320,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -15333,6 +16485,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -15351,6 +16504,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -15367,6 +16521,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -15534,12 +16689,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -15556,6 +16726,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -15596,6 +16778,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -15768,6 +16956,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -15786,6 +16975,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -15802,6 +16992,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -15969,12 +17160,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -15991,6 +17197,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -16031,6 +17249,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -16185,6 +17409,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -16203,6 +17428,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -16219,6 +17445,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -16386,12 +17613,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -16408,6 +17650,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -16448,6 +17702,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -16612,6 +17872,7 @@ exports[`Application root should render without crashing 1`] = `
                             "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                             "FINISH": "Finish",
                             "FORGED_ARK": "Forged ARK",
+                            "HIDE": "Hide",
                             "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                             "INITIALIZING": "Initializing...",
                             "INSTALL": "Install",
@@ -16630,6 +17891,7 @@ exports[`Application root should render without crashing 1`] = `
                             "NOT": "not",
                             "OF": "of",
                             "OTHER": "Other",
+                            "PAGE": "Page",
                             "PLUGIN": "Plugin",
                             "PREV": "Prev",
                             "PREVIOUS": "Previous",
@@ -16646,6 +17908,7 @@ exports[`Application root should render without crashing 1`] = `
                             },
                             "SELECT": "Select",
                             "SEND": "Send",
+                            "SHOW": "Show",
                             "SIGN": "Sign",
                             "SIZE": "Size",
                             "SKIP": "Skip",
@@ -16813,12 +18076,27 @@ exports[`Application root should render without crashing 1`] = `
                             },
                           },
                           "PROFILE": Object {
+                            "MODAL_HISTORY": Object {
+                              "TITLE": "History",
+                              "TYPES": Object {
+                                "REGISTRATION": "Registration",
+                                "RESIGN": "Resign",
+                                "UPDATE": "Update",
+                              },
+                            },
                             "MODAL_PROFILE_CREATED": Object {
                               "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                               "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                               "SKIP_TUTORIAL": "Skip Tutorial",
                               "START_TUTORIAL": "Start Tutorial",
                               "TITLE": "Profile Created!",
+                            },
+                            "MODAL_REPOSITORIES": Object {
+                              "BitBucket": "Bitbucket",
+                              "GitHub": "GitHub",
+                              "GitLab": "GitLab",
+                              "Npm": "NPM",
+                              "TITLE": "Repository",
                             },
                           },
                           "SETTINGS": Object {
@@ -16835,6 +18113,18 @@ exports[`Application root should render without crashing 1`] = `
                             "CONFIRMATIONS": "Confirmations",
                             "ID": "ID",
                             "IPFS_HASH": "IPFS Hash",
+                            "LINK_TYPES": Object {
+                              "BITBUCKET": "BitBucket",
+                              "FACEBOOK": "Facebook",
+                              "FLICKR": "Flickr",
+                              "GITHUB": "GitHub",
+                              "GITLAB": "GitLab",
+                              "LINKEDIN": "LinkedIn",
+                              "NPM": "Npm",
+                              "TWITTER": "Twitter",
+                              "VIMEO": "Vimeo",
+                              "YOUTUBE": "YouTube",
+                            },
                             "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                               "TITLE": "Delegate Registration",
                             },
@@ -16875,6 +18165,12 @@ exports[`Application root should render without crashing 1`] = `
                             "TOTAL_AMOUNT": "Total Amount",
                             "TRANSACTION_FEE": "Transaction Fee",
                             "VOTER": "Voter",
+                          },
+                          "VOTE": Object {
+                            "VOTES_PAGE": Object {
+                              "SUBTITLE": "Manage your cryptoasset staking",
+                              "TITLE": "My Votes",
+                            },
                           },
                           "WALLETS": Object {
                             "MODAL_DELETE_WALLET": Object {
@@ -17034,6 +18330,7 @@ exports[`Application root should render without crashing 1`] = `
                           "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                           "FINISH": "Finish",
                           "FORGED_ARK": "Forged ARK",
+                          "HIDE": "Hide",
                           "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                           "INITIALIZING": "Initializing...",
                           "INSTALL": "Install",
@@ -17052,6 +18349,7 @@ exports[`Application root should render without crashing 1`] = `
                           "NOT": "not",
                           "OF": "of",
                           "OTHER": "Other",
+                          "PAGE": "Page",
                           "PLUGIN": "Plugin",
                           "PREV": "Prev",
                           "PREVIOUS": "Previous",
@@ -17068,6 +18366,7 @@ exports[`Application root should render without crashing 1`] = `
                           },
                           "SELECT": "Select",
                           "SEND": "Send",
+                          "SHOW": "Show",
                           "SIGN": "Sign",
                           "SIZE": "Size",
                           "SKIP": "Skip",
@@ -17235,12 +18534,27 @@ exports[`Application root should render without crashing 1`] = `
                           },
                         },
                         "PROFILE": Object {
+                          "MODAL_HISTORY": Object {
+                            "TITLE": "History",
+                            "TYPES": Object {
+                              "REGISTRATION": "Registration",
+                              "RESIGN": "Resign",
+                              "UPDATE": "Update",
+                            },
+                          },
                           "MODAL_PROFILE_CREATED": Object {
                             "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                             "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                             "SKIP_TUTORIAL": "Skip Tutorial",
                             "START_TUTORIAL": "Start Tutorial",
                             "TITLE": "Profile Created!",
+                          },
+                          "MODAL_REPOSITORIES": Object {
+                            "BitBucket": "Bitbucket",
+                            "GitHub": "GitHub",
+                            "GitLab": "GitLab",
+                            "Npm": "NPM",
+                            "TITLE": "Repository",
                           },
                         },
                         "SETTINGS": Object {
@@ -17257,6 +18571,18 @@ exports[`Application root should render without crashing 1`] = `
                           "CONFIRMATIONS": "Confirmations",
                           "ID": "ID",
                           "IPFS_HASH": "IPFS Hash",
+                          "LINK_TYPES": Object {
+                            "BITBUCKET": "BitBucket",
+                            "FACEBOOK": "Facebook",
+                            "FLICKR": "Flickr",
+                            "GITHUB": "GitHub",
+                            "GITLAB": "GitLab",
+                            "LINKEDIN": "LinkedIn",
+                            "NPM": "Npm",
+                            "TWITTER": "Twitter",
+                            "VIMEO": "Vimeo",
+                            "YOUTUBE": "YouTube",
+                          },
                           "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                             "TITLE": "Delegate Registration",
                           },
@@ -17297,6 +18623,12 @@ exports[`Application root should render without crashing 1`] = `
                           "TOTAL_AMOUNT": "Total Amount",
                           "TRANSACTION_FEE": "Transaction Fee",
                           "VOTER": "Voter",
+                        },
+                        "VOTE": Object {
+                          "VOTES_PAGE": Object {
+                            "SUBTITLE": "Manage your cryptoasset staking",
+                            "TITLE": "My Votes",
+                          },
                         },
                         "WALLETS": Object {
                           "MODAL_DELETE_WALLET": Object {
@@ -17461,6 +18793,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                                 "FINISH": "Finish",
                                 "FORGED_ARK": "Forged ARK",
+                                "HIDE": "Hide",
                                 "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                                 "INITIALIZING": "Initializing...",
                                 "INSTALL": "Install",
@@ -17479,6 +18812,7 @@ exports[`Application root should render without crashing 1`] = `
                                 "NOT": "not",
                                 "OF": "of",
                                 "OTHER": "Other",
+                                "PAGE": "Page",
                                 "PLUGIN": "Plugin",
                                 "PREV": "Prev",
                                 "PREVIOUS": "Previous",
@@ -17495,6 +18829,7 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                                 "SELECT": "Select",
                                 "SEND": "Send",
+                                "SHOW": "Show",
                                 "SIGN": "Sign",
                                 "SIZE": "Size",
                                 "SKIP": "Skip",
@@ -17662,12 +18997,27 @@ exports[`Application root should render without crashing 1`] = `
                                 },
                               },
                               "PROFILE": Object {
+                                "MODAL_HISTORY": Object {
+                                  "TITLE": "History",
+                                  "TYPES": Object {
+                                    "REGISTRATION": "Registration",
+                                    "RESIGN": "Resign",
+                                    "UPDATE": "Update",
+                                  },
+                                },
                                 "MODAL_PROFILE_CREATED": Object {
                                   "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                   "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                   "SKIP_TUTORIAL": "Skip Tutorial",
                                   "START_TUTORIAL": "Start Tutorial",
                                   "TITLE": "Profile Created!",
+                                },
+                                "MODAL_REPOSITORIES": Object {
+                                  "BitBucket": "Bitbucket",
+                                  "GitHub": "GitHub",
+                                  "GitLab": "GitLab",
+                                  "Npm": "NPM",
+                                  "TITLE": "Repository",
                                 },
                               },
                               "SETTINGS": Object {
@@ -17684,6 +19034,18 @@ exports[`Application root should render without crashing 1`] = `
                                 "CONFIRMATIONS": "Confirmations",
                                 "ID": "ID",
                                 "IPFS_HASH": "IPFS Hash",
+                                "LINK_TYPES": Object {
+                                  "BITBUCKET": "BitBucket",
+                                  "FACEBOOK": "Facebook",
+                                  "FLICKR": "Flickr",
+                                  "GITHUB": "GitHub",
+                                  "GITLAB": "GitLab",
+                                  "LINKEDIN": "LinkedIn",
+                                  "NPM": "Npm",
+                                  "TWITTER": "Twitter",
+                                  "VIMEO": "Vimeo",
+                                  "YOUTUBE": "YouTube",
+                                },
                                 "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                   "TITLE": "Delegate Registration",
                                 },
@@ -17724,6 +19086,12 @@ exports[`Application root should render without crashing 1`] = `
                                 "TOTAL_AMOUNT": "Total Amount",
                                 "TRANSACTION_FEE": "Transaction Fee",
                                 "VOTER": "Voter",
+                              },
+                              "VOTE": Object {
+                                "VOTES_PAGE": Object {
+                                  "SUBTITLE": "Manage your cryptoasset staking",
+                                  "TITLE": "My Votes",
+                                },
                               },
                               "WALLETS": Object {
                                 "MODAL_DELETE_WALLET": Object {
@@ -17878,6 +19246,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -17896,6 +19265,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -17912,6 +19282,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -18079,12 +19450,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -18101,6 +19487,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -18141,6 +19539,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -18305,6 +19709,7 @@ exports[`Application root should render without crashing 1`] = `
                               "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                               "FINISH": "Finish",
                               "FORGED_ARK": "Forged ARK",
+                              "HIDE": "Hide",
                               "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                               "INITIALIZING": "Initializing...",
                               "INSTALL": "Install",
@@ -18323,6 +19728,7 @@ exports[`Application root should render without crashing 1`] = `
                               "NOT": "not",
                               "OF": "of",
                               "OTHER": "Other",
+                              "PAGE": "Page",
                               "PLUGIN": "Plugin",
                               "PREV": "Prev",
                               "PREVIOUS": "Previous",
@@ -18339,6 +19745,7 @@ exports[`Application root should render without crashing 1`] = `
                               },
                               "SELECT": "Select",
                               "SEND": "Send",
+                              "SHOW": "Show",
                               "SIGN": "Sign",
                               "SIZE": "Size",
                               "SKIP": "Skip",
@@ -18506,12 +19913,27 @@ exports[`Application root should render without crashing 1`] = `
                               },
                             },
                             "PROFILE": Object {
+                              "MODAL_HISTORY": Object {
+                                "TITLE": "History",
+                                "TYPES": Object {
+                                  "REGISTRATION": "Registration",
+                                  "RESIGN": "Resign",
+                                  "UPDATE": "Update",
+                                },
+                              },
                               "MODAL_PROFILE_CREATED": Object {
                                 "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                                 "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                                 "SKIP_TUTORIAL": "Skip Tutorial",
                                 "START_TUTORIAL": "Start Tutorial",
                                 "TITLE": "Profile Created!",
+                              },
+                              "MODAL_REPOSITORIES": Object {
+                                "BitBucket": "Bitbucket",
+                                "GitHub": "GitHub",
+                                "GitLab": "GitLab",
+                                "Npm": "NPM",
+                                "TITLE": "Repository",
                               },
                             },
                             "SETTINGS": Object {
@@ -18528,6 +19950,18 @@ exports[`Application root should render without crashing 1`] = `
                               "CONFIRMATIONS": "Confirmations",
                               "ID": "ID",
                               "IPFS_HASH": "IPFS Hash",
+                              "LINK_TYPES": Object {
+                                "BITBUCKET": "BitBucket",
+                                "FACEBOOK": "Facebook",
+                                "FLICKR": "Flickr",
+                                "GITHUB": "GitHub",
+                                "GITLAB": "GitLab",
+                                "LINKEDIN": "LinkedIn",
+                                "NPM": "Npm",
+                                "TWITTER": "Twitter",
+                                "VIMEO": "Vimeo",
+                                "YOUTUBE": "YouTube",
+                              },
                               "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                                 "TITLE": "Delegate Registration",
                               },
@@ -18568,6 +20002,12 @@ exports[`Application root should render without crashing 1`] = `
                               "TOTAL_AMOUNT": "Total Amount",
                               "TRANSACTION_FEE": "Transaction Fee",
                               "VOTER": "Voter",
+                            },
+                            "VOTE": Object {
+                              "VOTES_PAGE": Object {
+                                "SUBTITLE": "Manage your cryptoasset staking",
+                                "TITLE": "My Votes",
+                              },
                             },
                             "WALLETS": Object {
                               "MODAL_DELETE_WALLET": Object {
@@ -19624,6 +21064,7 @@ exports[`Application root should render without crashing 1`] = `
                         "FILTER_BLACKLISTED_PLUGINS": "Apply blacklist",
                         "FINISH": "Finish",
                         "FORGED_ARK": "Forged ARK",
+                        "HIDE": "Hide",
                         "HIDE_WALLET_BUTTON_TEXT": "Hide text from wallet buttons",
                         "INITIALIZING": "Initializing...",
                         "INSTALL": "Install",
@@ -19642,6 +21083,7 @@ exports[`Application root should render without crashing 1`] = `
                         "NOT": "not",
                         "OF": "of",
                         "OTHER": "Other",
+                        "PAGE": "Page",
                         "PLUGIN": "Plugin",
                         "PREV": "Prev",
                         "PREVIOUS": "Previous",
@@ -19658,6 +21100,7 @@ exports[`Application root should render without crashing 1`] = `
                         },
                         "SELECT": "Select",
                         "SEND": "Send",
+                        "SHOW": "Show",
                         "SIGN": "Sign",
                         "SIZE": "Size",
                         "SKIP": "Skip",
@@ -19825,12 +21268,27 @@ exports[`Application root should render without crashing 1`] = `
                         },
                       },
                       "PROFILE": Object {
+                        "MODAL_HISTORY": Object {
+                          "TITLE": "History",
+                          "TYPES": Object {
+                            "REGISTRATION": "Registration",
+                            "RESIGN": "Resign",
+                            "UPDATE": "Update",
+                          },
+                        },
                         "MODAL_PROFILE_CREATED": Object {
                           "DESCRIPTION_1": "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
                           "DESCRIPTION_2": "If not, you can skip the tutorial to go directly to your portfolio.",
                           "SKIP_TUTORIAL": "Skip Tutorial",
                           "START_TUTORIAL": "Start Tutorial",
                           "TITLE": "Profile Created!",
+                        },
+                        "MODAL_REPOSITORIES": Object {
+                          "BitBucket": "Bitbucket",
+                          "GitHub": "GitHub",
+                          "GitLab": "GitLab",
+                          "Npm": "NPM",
+                          "TITLE": "Repository",
                         },
                       },
                       "SETTINGS": Object {
@@ -19847,6 +21305,18 @@ exports[`Application root should render without crashing 1`] = `
                         "CONFIRMATIONS": "Confirmations",
                         "ID": "ID",
                         "IPFS_HASH": "IPFS Hash",
+                        "LINK_TYPES": Object {
+                          "BITBUCKET": "BitBucket",
+                          "FACEBOOK": "Facebook",
+                          "FLICKR": "Flickr",
+                          "GITHUB": "GitHub",
+                          "GITLAB": "GitLab",
+                          "LINKEDIN": "LinkedIn",
+                          "NPM": "Npm",
+                          "TWITTER": "Twitter",
+                          "VIMEO": "Vimeo",
+                          "YOUTUBE": "YouTube",
+                        },
                         "MODAL_DELEGATE_REGISTRATION_DETAIL": Object {
                           "TITLE": "Delegate Registration",
                         },
@@ -19887,6 +21357,12 @@ exports[`Application root should render without crashing 1`] = `
                         "TOTAL_AMOUNT": "Total Amount",
                         "TRANSACTION_FEE": "Transaction Fee",
                         "VOTER": "Voter",
+                      },
+                      "VOTE": Object {
+                        "VOTES_PAGE": Object {
+                          "SUBTITLE": "Manage your cryptoasset staking",
+                          "TITLE": "My Votes",
+                        },
                       },
                       "WALLETS": Object {
                         "MODAL_DELETE_WALLET": Object {

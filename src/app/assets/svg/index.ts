@@ -33,6 +33,7 @@ import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as Facebook } from "./facebook.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
+import { ReactComponent as File } from "./file.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
@@ -73,6 +74,7 @@ import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
 import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
+import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -122,6 +124,7 @@ export const SvgCollection: any = {
 	Eye,
 	EyeOff,
 	Facebook,
+	File,
 	FilePassword,
 	Filters,
 	Forward,
@@ -157,6 +160,7 @@ export const SvgCollection: any = {
 	Redirect,
 	RegistrationsIllustration,
 	ReplyArrow,
+	Report,
 	Reset,
 	Search,
 	Send,

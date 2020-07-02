@@ -37,7 +37,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("game")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME")}
 						<span className="ml-1 text-theme-neutral-700">48</span>
 					</div>
 
@@ -52,7 +52,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("utility")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY")}
 						<span className="ml-1 text-theme-neutral-700">264</span>
 					</div>
 
@@ -67,7 +67,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("themes")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES")}
 						<span className="ml-1 text-theme-neutral-700">96</span>
 					</div>
 
@@ -82,7 +82,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						}`}
 						onClick={() => onChange("other")}
 					>
-						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER")}{" "}
+						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER")}
 						<span className="ml-1 text-theme-neutral-700">27</span>
 					</div>
 				</div>
@@ -94,7 +94,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					}`}
 					onClick={() => onChange("my-plugins")}
 				>
-					{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}{" "}
+					{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}
 					<span className="ml-1 text-theme-neutral-700">8</span>
 				</div>
 			</div>

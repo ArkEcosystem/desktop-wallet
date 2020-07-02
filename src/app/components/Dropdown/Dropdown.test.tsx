@@ -1,7 +1,7 @@
 import { act } from "@testing-library/react-hooks";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import React from "react";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { Dropdown } from "./Dropdown";
 

@@ -1,6 +1,6 @@
 import tw, { css } from "twin.macro";
 
-const baseStyle = [tw`border-t border-solid border-theme-neutral-300`];
+const baseStyle = [tw`border-t border-solid`];
 
 const getType = (type: string): any => {
 	switch (type) {
@@ -13,7 +13,7 @@ const getType = (type: string): any => {
 			];
 		case "vertical":
 			return [
-				tw`relative inline-block align-middle border-t-0 border-l border-solid border-theme-neutral-300`,
+				tw`relative inline-block align-middle border-t-0 border-l border-solid`,
 				css`
 					margin: 0 8px;
 				`,

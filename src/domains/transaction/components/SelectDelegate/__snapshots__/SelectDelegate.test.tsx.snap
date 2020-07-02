@@ -3,15 +3,15 @@
 exports[`SelectDelegate should allow multiple selection 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-5 mr-5"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -104,7 +104,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -113,18 +113,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Choose
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -133,18 +133,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                          
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -155,18 +155,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Delegate Name
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -176,7 +176,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -187,18 +187,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Rank
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -208,7 +208,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -217,18 +217,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         MarketSquare
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -239,18 +239,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Forged ARK
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -260,7 +260,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -271,18 +271,18 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  justify-end mr-8"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Votes
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -292,7 +292,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -301,12 +301,12 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Voting
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -700,15 +700,15 @@ exports[`SelectDelegate should not render if not open 1`] = `<DocumentFragment /
 exports[`SelectDelegate should only allow one selection 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-5 mr-5"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -801,7 +801,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -810,18 +810,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Choose
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -830,18 +830,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                          
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -852,18 +852,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Delegate Name
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -873,7 +873,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -884,18 +884,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Rank
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -905,7 +905,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -914,18 +914,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         MarketSquare
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -936,18 +936,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Forged ARK
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -957,7 +957,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -968,18 +968,18 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  justify-end mr-8"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Votes
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -989,7 +989,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -998,12 +998,12 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Voting
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -1343,15 +1343,15 @@ exports[`SelectDelegate should only allow one selection 1`] = `
 exports[`SelectDelegate should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy cowKBD absolute top-0 left-0 right-0 z-30 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy cowKBD fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-5 mr-5"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -1444,7 +1444,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -1453,18 +1453,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Choose
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -1473,18 +1473,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                          
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -1495,18 +1495,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Delegate Name
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -1516,7 +1516,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -1527,18 +1527,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Rank
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -1548,7 +1548,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -1557,18 +1557,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         MarketSquare
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -1579,18 +1579,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Forged ARK
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -1600,7 +1600,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -1611,18 +1611,18 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  justify-end mr-8"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Votes
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxhCb idmnCf"
-                          height="10"
-                          width="10"
+                          class="sc-AxhCb AoNtw"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -1632,7 +1632,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral-500"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -1641,12 +1641,12 @@ exports[`SelectDelegate should render a modal 1`] = `
                       class="flex flex-inline align-top  undefined"
                     >
                       <div
-                        class="mr-1"
+                        class="mr-2"
                       >
                         Voting
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       />
                     </div>

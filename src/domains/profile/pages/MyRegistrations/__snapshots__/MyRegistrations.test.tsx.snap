@@ -9,29 +9,64 @@ exports[`Welcome should render empty state 1`] = `
       class="px-10 py-14 bg-theme-background"
     >
       <div
-        class="flex justify-between"
+        class="flex items-center justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col items-start w-2/5"
         >
-          <span
-            class="text-3xl font-semibold"
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
           >
             My Registrations
-          </span>
-          <span
-            class="text-theme-neutral-600"
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             You can register a Delagate, Business and Bridgechain.
-          </span>
+          </div>
         </div>
-        <button
-          class="sc-AxjAm ddQVWI self-end"
-          color="primary"
-          type="button"
+        <div
+          class="w-3/5"
         >
-          Register
-        </button>
+          <div
+            class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
+          >
+            <button
+              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
+              data-testid="header-search-bar__button"
+            >
+              <div
+                class="flex items-center space-x-3"
+              >
+                <span>
+                  Search
+                </span>
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    search.svg
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div
+              class="pl-10"
+            >
+              <button
+                class="sc-AxjAm ddQVWI"
+                color="primary"
+                type="button"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -60,29 +95,64 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
       class="px-10 py-14 bg-theme-background"
     >
       <div
-        class="flex justify-between"
+        class="flex items-center justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col items-start w-2/5"
         >
-          <span
-            class="text-3xl font-semibold"
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
           >
             My Registrations
-          </span>
-          <span
-            class="text-theme-neutral-600"
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             You can register a Delagate, Business and Bridgechain.
-          </span>
+          </div>
         </div>
-        <button
-          class="sc-AxjAm ddQVWI self-end"
-          color="primary"
-          type="button"
+        <div
+          class="w-3/5"
         >
-          Register
-        </button>
+          <div
+            class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
+          >
+            <button
+              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
+              data-testid="header-search-bar__button"
+            >
+              <div
+                class="flex items-center space-x-3"
+              >
+                <span>
+                  Search
+                </span>
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    search.svg
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div
+              class="pl-10"
+            >
+              <button
+                class="sc-AxjAm ddQVWI"
+                color="primary"
+                type="button"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -98,29 +168,64 @@ exports[`Welcome should render properly 1`] = `
       class="px-10 py-14 bg-theme-background"
     >
       <div
-        class="flex justify-between"
+        class="flex items-center justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col"
+          class="flex flex-col items-start w-2/5"
         >
-          <span
-            class="text-3xl font-semibold"
+          <h1
+            class="text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
           >
             My Registrations
-          </span>
-          <span
-            class="text-theme-neutral-600"
+          </h1>
+          <div
+            class="mt-2 text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             You can register a Delagate, Business and Bridgechain.
-          </span>
+          </div>
         </div>
-        <button
-          class="sc-AxjAm ddQVWI self-end"
-          color="primary"
-          type="button"
+        <div
+          class="w-3/5"
         >
-          Register
-        </button>
+          <div
+            class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
+          >
+            <button
+              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
+              data-testid="header-search-bar__button"
+            >
+              <div
+                class="flex items-center space-x-3"
+              >
+                <span>
+                  Search
+                </span>
+                <div
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    search.svg
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div
+              class="pl-10"
+            >
+              <button
+                class="sc-AxjAm ddQVWI"
+                color="primary"
+                type="button"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div
@@ -132,7 +237,7 @@ exports[`Welcome should render properly 1`] = `
         Business
       </span>
       <div
-        class="sc-AxhUy nFONV"
+        class="sc-fzplWN kEUFYN"
         role="table"
       >
         <table
@@ -143,7 +248,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -152,18 +257,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Avatar
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -172,18 +277,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Agent
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -192,18 +297,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Business Name
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -212,18 +317,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md -ml-8"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     History
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -232,18 +337,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md ml-8 -mr-6"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Website
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -252,18 +357,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     MSQ
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -272,18 +377,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md ml-2"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Repository
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--7"
                 role="columnheader"
@@ -292,18 +397,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Spacer
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--8"
                 role="columnheader"
@@ -312,12 +417,12 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Options
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -332,16 +437,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="business-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -351,27 +456,33 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="AaAy"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="AaAy"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 font-semibold"
+                class="py-6 font-semibold"
               >
                 <span>
                   ARK Ecosystem
                 </span>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <span
                   class="-ml-8"
@@ -380,10 +491,10 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw dzBdqj ml-12"
+                  class="sc-AxirZ iQaTP ml-12"
                   height="1em"
                   width="1em"
                 >
@@ -393,10 +504,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz ml-1"
+                  class="sc-AxirZ hmuEJr ml-1"
                   height="22"
                   width="22"
                 >
@@ -406,7 +517,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <span
                   class="ml-3"
@@ -418,10 +529,10 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-12"
               />
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -433,7 +544,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -451,16 +562,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="business-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -470,27 +581,33 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="AaAy"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="AaAy"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 font-semibold"
+                class="py-6 font-semibold"
               >
                 <span>
                   ARK Ecosystem
                 </span>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <span
                   class="-ml-8"
@@ -499,10 +616,10 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw dzBdqj ml-12"
+                  class="sc-AxirZ iQaTP ml-12"
                   height="1em"
                   width="1em"
                 >
@@ -512,10 +629,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz ml-1"
+                  class="sc-AxirZ hmuEJr ml-1"
                   height="22"
                   width="22"
                 >
@@ -525,7 +642,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6 text-bold text-theme-primary"
               >
                 <span
                   class="ml-3"
@@ -537,10 +654,10 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-12"
               />
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -552,7 +669,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -578,7 +695,7 @@ exports[`Welcome should render properly 1`] = `
         Blockchain
       </span>
       <div
-        class="sc-AxhUy nFONV"
+        class="sc-fzplWN kEUFYN"
         role="table"
       >
         <table
@@ -589,7 +706,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -598,18 +715,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Avatar
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -618,18 +735,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Agent
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -638,18 +755,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Blockchain Name
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -658,18 +775,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     History
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -678,18 +795,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Website
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -698,18 +815,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     MSQ
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -718,18 +835,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md ml-4"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Repository
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--7"
                 role="columnheader"
@@ -738,18 +855,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md -ml-4"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Seed
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--8"
                 role="columnheader"
@@ -758,18 +875,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Spacer
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--9"
                 role="columnheader"
@@ -778,12 +895,12 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Options
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -798,16 +915,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="blockchain-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -817,37 +934,43 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="1Pdj"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                      title="1Pdj"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 font-semibold"
+                class="py-6 font-semibold"
               >
                 <span>
                   ARK Ecosystem
                 </span>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span>
                   View
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw dzBdqj ml-4"
+                  class="sc-AxirZ iQaTP ml-4"
                   height="1em"
                   width="1em"
                 >
@@ -857,10 +980,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz ml-1"
+                  class="sc-AxirZ hmuEJr ml-1"
                   height="22"
                   width="22"
                 >
@@ -870,7 +993,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span
                   class="ml-7"
@@ -879,7 +1002,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span
                   class="-ml-5"
@@ -891,10 +1014,10 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-11"
               />
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -906,7 +1029,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -924,16 +1047,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="blockchain-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -943,37 +1066,43 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="1Pdj"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"35\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                      title="1Pdj"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 font-semibold"
+                class="py-6 font-semibold"
               >
                 <span>
                   ARK Ecosystem
                 </span>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span>
                   View
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw dzBdqj ml-4"
+                  class="sc-AxirZ iQaTP ml-4"
                   height="1em"
                   width="1em"
                 >
@@ -983,10 +1112,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz ml-1"
+                  class="sc-AxirZ hmuEJr ml-1"
                   height="22"
                   width="22"
                 >
@@ -996,7 +1125,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span
                   class="ml-7"
@@ -1005,7 +1134,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-semibold text-theme-primary"
+                class="py-6 text-semibold text-theme-primary"
               >
                 <span
                   class="-ml-5"
@@ -1017,10 +1146,10 @@ exports[`Welcome should render properly 1`] = `
                 class="px-1 px-11"
               />
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -1032,7 +1161,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -1058,7 +1187,7 @@ exports[`Welcome should render properly 1`] = `
         Delegate
       </span>
       <div
-        class="sc-AxhUy nFONV"
+        class="sc-fzplWN kEUFYN"
         role="table"
       >
         <table
@@ -1069,7 +1198,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -1078,18 +1207,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Avatar
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -1098,18 +1227,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Delegate Name
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -1118,18 +1247,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md -ml-14"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Rank
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -1138,18 +1267,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     MSQ
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -1158,18 +1287,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Status
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -1178,18 +1307,18 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  invisible w-3 float-right"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Amount
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-xs text-left select-none text-theme-neutral-400"
+                class="text-sm text-left select-none text-theme-neutral-500"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -1198,12 +1327,12 @@ exports[`Welcome should render properly 1`] = `
                   class="flex flex-inline align-top  font-semibold text-md float-right ml-32"
                 >
                   <div
-                    class="mr-1"
+                    class="mr-2"
                   >
                     Votes
                   </div>
                   <div
-                    class="mt-1 text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral-500"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -1218,16 +1347,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="delegate-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -1237,20 +1366,26 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="APTz"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      title="APTz"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-700"
+                class="py-6  text-theme-neutral-700"
               >
                 <span
                   class="-ml-14"
@@ -1259,10 +1394,10 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6  text-bold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxirZ hmuEJr"
                   height="22"
                   width="22"
                 >
@@ -1272,10 +1407,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6  text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw iRsrJT ml-1 text-theme-success"
+                  class="sc-AxirZ bMjbpr ml-1 text-theme-success"
                   height="30"
                   width="30"
                 >
@@ -1297,7 +1432,7 @@ exports[`Welcome should render properly 1`] = `
                       2,450.643
                     </span>
                     <div
-                      class="sc-AxiKw dzBdqj ml-2"
+                      class="sc-AxirZ iQaTP ml-2"
                       height="1em"
                       width="1em"
                     >
@@ -1325,7 +1460,7 @@ exports[`Welcome should render properly 1`] = `
                     2,450.643
                   </span>
                   <div
-                    class="sc-AxiKw dzBdqj ml-2"
+                    class="sc-AxirZ iQaTP ml-2"
                     height="1em"
                     width="1em"
                   >
@@ -1336,10 +1471,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -1351,7 +1486,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -1369,16 +1504,16 @@ exports[`Welcome should render properly 1`] = `
               data-testid="delegate-table__row"
             >
               <td
-                class="w-24 py-4"
+                class="w-24 py-6"
               >
                 <div
                   class="flex items-center"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ border-theme-neutral-800"
+                    class="sc-fzoLsD kIrptx border-theme-neutral-800"
                   >
                     <div
-                      class="sc-AxiKw fFXzuz"
+                      class="sc-AxirZ hmuEJr"
                       height="22"
                       width="22"
                     >
@@ -1388,20 +1523,26 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
                     data-testid="Avatar"
-                  />
+                  >
+                    <img
+                      alt="APTz"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                      title="APTz"
+                    />
+                  </div>
                 </div>
               </td>
               <td
-                class="py-4 mt-1 font-semibold"
+                class="py-6 mt-1 font-semibold"
               >
                 <span>
                   OLEBank
                 </span>
               </td>
               <td
-                class="py-1 text-theme-neutral-700"
+                class="py-6  text-theme-neutral-700"
               >
                 <span
                   class="-ml-14"
@@ -1410,10 +1551,10 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-1 text-bold text-theme-primary"
+                class="py-6  text-bold text-theme-primary"
               >
                 <div
-                  class="sc-AxiKw fFXzuz"
+                  class="sc-AxirZ hmuEJr"
                   height="22"
                   width="22"
                 >
@@ -1423,10 +1564,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-1 text-theme-neutral-400"
+                class="py-6  text-theme-neutral-400"
               >
                 <div
-                  class="sc-AxiKw dzBdqj ml-2 text-theme-neutral-500"
+                  class="sc-AxirZ iQaTP ml-2 text-theme-neutral-500"
                   height="1em"
                   width="1em"
                 >
@@ -1448,7 +1589,7 @@ exports[`Welcome should render properly 1`] = `
                       2,450.643
                     </span>
                     <div
-                      class="sc-AxiKw dzBdqj ml-2"
+                      class="sc-AxirZ iQaTP ml-2"
                       height="1em"
                       width="1em"
                     >
@@ -1476,7 +1617,7 @@ exports[`Welcome should render properly 1`] = `
                     2,450.643
                   </span>
                   <div
-                    class="sc-AxiKw dzBdqj ml-2"
+                    class="sc-AxirZ iQaTP ml-2"
                     height="1em"
                     width="1em"
                   >
@@ -1487,10 +1628,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="float-right py-1"
+                class="flex items-center justify-center float-right py-6 mt-1"
               >
                 <button
-                  class="sc-AxjAm kTAyCf mt-4"
+                  class="sc-AxjAm kTAyCf"
                   color="primary"
                   type="button"
                 >
@@ -1502,7 +1643,7 @@ exports[`Welcome should render properly 1`] = `
                       class="float-right outline-none cursor-pointer focus:outline-none"
                     >
                       <div
-                        class="sc-AxiKw dklFyP"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >

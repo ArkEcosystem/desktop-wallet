@@ -25,12 +25,12 @@ export const FirstStep = ({ assets = [] }: any) => {
 	}, [register]);
 
 	return (
-		<section data-testid="SendIPFSTransaction__step--first" className="space-y-8">
+		<section data-testid="SendIPFSTransaction__step--first">
 			<div>
 				<h1 className="mb-0">IPFS</h1>
 				<p className="text-theme-neutral-dark">Store an IPFS hasn on the network</p>
 			</div>
-			<div className="grid grid-flow-row gap-2">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail border={false} label="Network">
 					<SelectAsset assets={assets} />
 				</TransactionDetail>
@@ -46,7 +46,7 @@ export const FirstStep = ({ assets = [] }: any) => {
 				<TransactionDetail border={false} label="Hash">
 					<Input name="hash" />
 				</TransactionDetail>
-				<TransactionDetail border={false} label="Fee ARK">
+				<TransactionDetail border={false} label="Fee ARK" className="pb-0">
 					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionDetail>
 			</div>
@@ -55,12 +55,12 @@ export const FirstStep = ({ assets = [] }: any) => {
 };
 
 export const SecondStep = () => (
-	<section data-testid="SendIPFSTransaction__step--second" className="space-y-8">
+	<section data-testid="SendIPFSTransaction__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
@@ -124,8 +124,8 @@ export const ThirdStep = () => {
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="grid grid-flow-row gap-2">
-					<TransactionDetail border={false} label="Your password">
+				<div className="mt-4 grid grid-flow-row gap-2">
+					<TransactionDetail border={false} label="Your password" className="pb-0">
 						<InputPassword name="passphras" />
 					</TransactionDetail>
 				</div>
@@ -141,6 +141,7 @@ export const FourthStep = () => (
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
+			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="large">
@@ -181,7 +182,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-10">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep assets={assets} />
 						</TabPanel>
@@ -195,7 +196,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-start mt-6 space-x-2">
+						<div className="flex justify-end mt-8 space-x-2">
 							{activeTab < 4 && (
 								<>
 									<Button

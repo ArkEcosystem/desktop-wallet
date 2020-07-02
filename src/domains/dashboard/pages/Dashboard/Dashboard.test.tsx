@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";

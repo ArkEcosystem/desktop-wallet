@@ -21,12 +21,12 @@ export const FirstStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="SendVoteTransaction__step--first" className="space-y-8">
+		<section data-testid="SendVoteTransaction__step--first">
 			<div>
 				<h1 className="mb-0">Vote for delegate</h1>
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
-			<div className="grid grid-flow-row gap-2">
+			<div className="mt-4 grid grid-flow-row gap-2">
 				<TransactionDetail
 					border={false}
 					label="Account"
@@ -36,7 +36,7 @@ export const FirstStep = () => {
 						</div>
 					}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail
 					label="Delegate"
@@ -46,9 +46,9 @@ export const FirstStep = () => {
 						</div>
 					}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 				</TransactionDetail>
-				<TransactionDetail border={false} label="Fee ARK">
+				<TransactionDetail border={false} label="Fee ARK" className="pb-0">
 					<div className="flex">
 						<div className="w-3/5 mr-2">
 							<InputRange defaultValue={25} min={1} max={100} step={1} />
@@ -73,24 +73,24 @@ export const FirstStep = () => {
 	);
 };
 export const SecondStep = () => (
-	<section data-testid="SendVoteTransaction__step--second" className="space-y-8">
+	<section data-testid="SendVoteTransaction__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
 					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<Circle className="bg-theme-background border-theme-danger-200">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Account"
@@ -100,7 +100,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Delegate"
@@ -110,9 +110,11 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
+			<TransactionDetail label="Transaction fee" className="pb-0">
+				0.09660435 ARK
+			</TransactionDetail>
 		</div>
 	</section>
 );
@@ -125,12 +127,12 @@ export const ThirdStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="SendVoteTransaction__step--third" className="space-y-8">
+		<section data-testid="SendVoteTransaction__step--third">
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="grid grid-flow-row gap-2">
-					<TransactionDetail border={false} label="Your password">
+				<div className="mt-4 grid grid-flow-row gap-2">
+					<TransactionDetail border={false} label="Your password" className="pb-0">
 						<InputPassword name="passphras" />
 					</TransactionDetail>
 				</div>
@@ -149,11 +151,12 @@ export const FourthStep = () => (
 				</div>
 			}
 		>
-			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} size="large" />
+			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 		</TransactionDetail>
 		<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 		<TransactionDetail
 			label="Transaction type"
+			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-neutral-900">
 					<Circle className="border-theme-neutral-900 bg-theme-background" size="large">
@@ -193,7 +196,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-10">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep />
 						</TabPanel>
@@ -207,7 +210,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							{activeTab < 4 && (
 								<>
 									<Button

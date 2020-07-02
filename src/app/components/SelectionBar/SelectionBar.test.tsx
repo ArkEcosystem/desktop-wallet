@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { SelectionBar, SelectionBarOption } from "./SelectionBar";
 import { useSelectionState } from "./useSelectionState";

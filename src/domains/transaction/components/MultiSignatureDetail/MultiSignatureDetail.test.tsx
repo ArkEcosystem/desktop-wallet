@@ -1,7 +1,7 @@
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";

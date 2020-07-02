@@ -1,6 +1,6 @@
 import { translations as COMMON } from "app/i18n/common/i18n";
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { translations as PLUGINS } from "../../i18n";
 import { InstallPlugin } from "./InstallPlugin";
