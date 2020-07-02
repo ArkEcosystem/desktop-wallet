@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "test-utils";
+import { act, fireEvent, render } from "testing-library";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
@@ -37,7 +37,13 @@ describe("UpdateRegistration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
+		let context;
+
+		await act(async () => {
+			context = render(<UpdateRegistration {...defaultFormValues} />);
+		});
+
+		const { asFragment, getByTestId } = context;
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));

@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, within } from "test-utils";
+import { fireEvent, render, within } from "testing-library";
 
 import { PluginList } from "./PluginList";
 

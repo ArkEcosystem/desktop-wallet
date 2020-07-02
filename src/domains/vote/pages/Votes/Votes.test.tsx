@@ -1,7 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "testing-library";
 
 import { addressListData, assets, delegateListData } from "../../data";
 import { Votes } from "./Votes";
@@ -9,9 +7,7 @@ import { Votes } from "./Votes";
 describe("Votes", () => {
 	it("should render", () => {
 		const { container, asFragment } = render(
-			<I18nextProvider i18n={i18n}>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />
-			</I18nextProvider>,
+			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
 		);
 
 		expect(container).toBeTruthy();
@@ -20,9 +16,7 @@ describe("Votes", () => {
 
 	it("should select a cryptoasset", () => {
 		const { container, asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />
-			</I18nextProvider>,
+			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -42,9 +36,7 @@ describe("Votes", () => {
 
 	it("should select address", () => {
 		const { asFragment, getByTestId, getAllByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />
-			</I18nextProvider>,
+			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -70,9 +62,7 @@ describe("Votes", () => {
 
 	it("should select a delegate", () => {
 		const { asFragment, getByTestId, getAllByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />
-			</I18nextProvider>,
+			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 

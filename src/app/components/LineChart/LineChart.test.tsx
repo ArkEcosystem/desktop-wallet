@@ -1,6 +1,6 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render, waitFor } from "test-utils";
+import { fireEvent, render, waitFor } from "testing-library";
 
 import { LineChart } from "./LineChart";
 

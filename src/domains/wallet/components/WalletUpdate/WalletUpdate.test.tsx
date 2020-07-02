@@ -1,6 +1,6 @@
 import { translations as COMMON } from "app/i18n/common/i18n";
 import React from "react";
-import { fireEvent, render } from "test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { translations as WALLETS } from "../../i18n";
 import { WalletUpdate } from "./WalletUpdate";
