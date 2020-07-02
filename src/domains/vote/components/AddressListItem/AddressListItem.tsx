@@ -39,7 +39,7 @@ export const AddressListItem = ({
 				<Avatar address={walletAddress!} />
 			</td>
 
-			<td className="py-5">
+			<td className="w-20 py-5">
 				<Address walletName={walletName} address={walletAddress} maxChars={22} />
 			</td>
 
@@ -57,7 +57,7 @@ export const AddressListItem = ({
 				{delegateAddress ? (
 					<Avatar address={delegateAddress} />
 				) : (
-					<Circle className="border-theme-neutral-200" />
+					<Circle className="border-theme-neutral-300" />
 				)}
 			</td>
 
