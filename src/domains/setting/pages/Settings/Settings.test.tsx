@@ -7,157 +7,31 @@ import { Settings } from "./Settings";
 
 describe("Settings", () => {
 	it("should render", () => {
-		const items = [
-			{
-				itemKey: "General",
-				label: "General",
-				icon: "General",
-				route: "/settings/general",
-			},
-			{
-				itemKey: "Peer",
-				label: "Peer",
-				icon: "Peer",
-				route: "/settings/peer",
-			},
-			{
-				itemKey: "Plugins",
-				label: "Plugins",
-				icon: "Plugin",
-				route: "/settings/plugins",
-			},
-		];
-
-		const settingsProps = {
-			pageConfig: {
-				title: "Wallet Settings",
-				subheader: "Customize your wallet to suit your needs.",
-			},
-		};
-
-		const { container, asFragment } = render(
-			<Settings settings={items} activeSettings={"General"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
-		);
+		const { container, asFragment } = render(<Settings />, { wrapper: MemoryRouter });
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render peer settings", () => {
-		const items = [
-			{
-				itemKey: "General",
-				label: "General",
-				icon: "General",
-				route: "/settings/general",
-			},
-			{
-				itemKey: "Peer",
-				label: "Peer",
-				icon: "Peer",
-				route: "/settings/peer",
-			},
-			{
-				itemKey: "Plugins",
-				label: "Plugins",
-				icon: "Plugin",
-				route: "/settings/plugins",
-			},
-		];
-
-		const settingsProps = {
-			pageConfig: {
-				title: "Peer Settings",
-				subheader: "Customize your wallet to suit your needs.",
-			},
-		};
-
-		const { container, asFragment } = render(
-			<Settings settings={items} activeSettings={"Peer"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
-		);
+		const { container, asFragment, getByText } = render(<Settings />, { wrapper: MemoryRouter });
 
 		expect(container).toBeTruthy();
+		fireEvent.click(getByText("Peer"));
+		act(() => {
+			expect(getByText("Peer Settings")).toBeInTheDocument();
+		});
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render plugin settings", () => {
-		const items = [
-			{
-				itemKey: "General",
-				label: "General",
-				icon: "General",
-				route: "/settings/general",
-			},
-			{
-				itemKey: "Peer",
-				label: "Peer",
-				icon: "Peer",
-				route: "/settings/peer",
-			},
-			{
-				itemKey: "Plugins",
-				label: "Plugins",
-				icon: "Plugin",
-				route: "/settings/plugins",
-			},
-		];
-
-		const settingsProps = {
-			pageConfig: {
-				title: "Plugin Settings",
-				subheader: "Customize your wallet to suit your needs.",
-			},
-		};
-
-		const { container, asFragment } = render(
-			<Settings settings={items} activeSettings={"Plugins"} setActiveSettings={() => null} {...settingsProps} />,
-
-			{ wrapper: MemoryRouter },
-		);
+	it("should render plugins settings", () => {
+		const { container, asFragment, getByText, getByTestId } = render(<Settings />, { wrapper: MemoryRouter });
 
 		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should open & close modals in the plugin settings", () => {
-		const items = [
-			{
-				itemKey: "General",
-				label: "General",
-				icon: "General",
-				route: "/settings/general",
-			},
-			{
-				itemKey: "Peer",
-				label: "Peer",
-				icon: "Peer",
-				route: "/settings/peer",
-			},
-			{
-				itemKey: "Plugins",
-				label: "Plugins",
-				icon: "Plugin",
-				route: "/settings/plugins",
-			},
-		];
-
-		const settingsProps = {
-			pageConfig: {
-				title: "Plugin Settings",
-				subheader: "Customize your wallet to suit your needs.",
-			},
-		};
-
-		const { container, asFragment, getByTestId, queryByText } = render(
-			<Settings settings={items} activeSettings={"Plugins"} setActiveSettings={() => null} {...settingsProps} />,
-
-			{ wrapper: MemoryRouter },
-		);
-
-		expect(container).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		fireEvent.click(getByText("Plugins"));
+		act(() => {
+			expect(getByText("Plugin Settings")).toBeInTheDocument();
+		});
 
 		// Open `BlacklistPlugins` modal
 		act(() => {
@@ -180,49 +54,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-	});
 
-	it("should render a not found information", () => {
-		const items = [
-			{
-				itemKey: "General",
-				label: "General",
-				icon: "General",
-				route: "/settings/general",
-			},
-			{
-				itemKey: "Peer",
-				label: "Peer",
-				icon: "Peer",
-				route: "/settings/peer",
-			},
-			{
-				itemKey: "Plugins",
-				label: "Plugins",
-				icon: "Plugin",
-				route: "/settings/plugins",
-			},
-			{
-				itemKey: "Foo",
-				label: "Foo",
-				icon: "Foo",
-				route: "/settings/foo",
-			},
-		];
-
-		const settingsProps = {
-			pageConfig: {
-				title: "Wallet Settings",
-				subheader: "Customize your wallet to suit your needs.",
-			},
-		};
-
-		const { container, asFragment } = render(
-			<Settings settings={items} activeSettings={"Foo"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
-		);
-
-		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
