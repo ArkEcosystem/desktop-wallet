@@ -32,7 +32,7 @@ export const InstallPlugin = ({ step, isOpen, onClose, onCancel, onDownload, onI
 						<p className="mt-4 text-base font-semibold text-theme-neutral-dark">
 							{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
 						</p>
-						<ul className="max-w-xs mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
+						<ul className="mt-2 text-sm list-inside leading-8 list-circle text-theme-neutral-dark">
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_1")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_2")}</li>
 							<li>{t("PLUGINS.MODAL_INSTALL_PLUGIN.ITEM_3")}</li>
