@@ -18,7 +18,7 @@ type ModalProps = {
 
 type ModalContentProps = {
 	children: React.ReactNode;
-	title: string;
+	title: string | React.ReactNode;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
