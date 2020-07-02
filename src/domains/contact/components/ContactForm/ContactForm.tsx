@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -21,10 +22,12 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 			className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
 		>
 			<div className="mr-4">
-				<Circle className="-mr-2">
-					<Icon name={address.coin} />
-				</Circle>
-				<Circle avatarId={address.avatar} />
+				<div className="flex items-center -space-x-1">
+					<Circle className={`-mr-1 ${address.coinClassName}`}>
+						<Icon name={address.coin} />
+					</Circle>
+					<Avatar address={address.address} />
+				</div>
 			</div>
 
 			<span className="font-semibold">
@@ -89,12 +92,13 @@ export const ContactForm = ({ contact, assets, onCancel, onDelete, onSave }: Con
 		form.register({ name: "network" });
 	}, [contact]);
 
-	const handleAddAddress = (network: string, address: string) => {
+	const handleAddAddress = (network: any, address: string) => {
 		setContactAddresses(
 			contactAddresses.concat({
-				network,
+				network: network.name,
 				address,
-				coin: "xxx", // TODO
+				coin: network.icon,
+				coinClassName: network.className,
 			}),
 		);
 
