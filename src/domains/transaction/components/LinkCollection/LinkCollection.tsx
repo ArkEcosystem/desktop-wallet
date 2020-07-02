@@ -6,6 +6,8 @@ import { RadioButton } from "app/components/RadioButton";
 import { SelectDropdown } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
 
 type Link = {
 	link: string;
@@ -27,6 +29,12 @@ type LinkCollectionProps = {
 	types: Type[];
 };
 
+const Wrapper = styled.div`
+	table th {
+		padding-bottom: 0;
+	}
+`;
+
 export const LinkCollection = ({
 	data,
 	title,
@@ -36,6 +44,8 @@ export const LinkCollection = ({
 	selectionTypes,
 	selectionTypeTitle,
 }: LinkCollectionProps) => {
+	const { t } = useTranslation();
+
 	const [isExpanded, setIsExpanded] = React.useState(false);
 	const [links, setLinks] = React.useState(data || []);
 	const [selected, setSelected] = React.useState((null as unknown) as Link);
@@ -73,7 +83,7 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<div data-testid="LinkCollection" className="font-normal">
+		<Wrapper data-testid="LinkCollection" className="font-normal">
 			<div
 				data-testid="LinkCollection__header"
 				className="flex justify-between cursor-pointer"
@@ -170,8 +180,8 @@ export const LinkCollection = ({
 					<div className="mt-8 mb-2 text-sm text-theme-neutral-700">Your {typeName}</div>
 
 					<Table columns={columns} data={links}>
-						{(rowData: any) => (
-							<tr className="border-b border-theme-neutral-200">
+						{(rowData: any, rowIndex: any) => (
+							<tr className="font-semibold border-b border-theme-neutral-200">
 								{selectionTypeTitle && (
 									<td className="w-16 text-center">
 										{selectionTypes && selectionTypes.includes(rowData.type) && (
@@ -186,14 +196,17 @@ export const LinkCollection = ({
 									</td>
 								)}
 
-								<td className="w-40 py-6">{rowData.type}</td>
+								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
+									{t(`TRANSACTION.LINK_TYPES.${rowData.type.toUpperCase()}`)}
+								</td>
 
-								<td className="py-6">{rowData.link}</td>
+								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>{rowData.link}</td>
 
-								<td className="w-16 text-right">
+								<td className={`w-16 text-right ${rowIndex === 0 && "pb-4"}`}>
 									<Button
 										data-testid="LinkCollection__remove-link"
 										size="icon"
+										variant="plain"
 										onClick={() => removeLink({ link: rowData.link, type: rowData.type })}
 									>
 										<Icon name="Trash" />
@@ -204,6 +217,6 @@ export const LinkCollection = ({
 					</Table>
 				</div>
 			)}
-		</div>
+		</Wrapper>
 	);
 };
