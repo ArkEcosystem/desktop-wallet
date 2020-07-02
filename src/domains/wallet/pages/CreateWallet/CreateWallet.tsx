@@ -82,7 +82,7 @@ export const SecondStep = ({
 			<Header title="Your Passphrase" />
 
 			<div className="space-y-8">
-				<Alert size="large">
+				<Alert size="lg">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex
 					ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam
 					facere nostrum.

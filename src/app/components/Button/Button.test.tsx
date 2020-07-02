@@ -37,13 +37,13 @@ describe("Button", () => {
 	});
 
 	it("should render a small one", () => {
-		const { container } = render(<Button size="small" />);
+		const { container } = render(<Button size="sm" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
-		const { container } = render(<Button size="large" />);
+		const { container } = render(<Button size="lg" />);
 
 		expect(container).toMatchSnapshot();
 	});

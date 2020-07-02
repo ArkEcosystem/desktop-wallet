@@ -11,6 +11,16 @@ describe("Dropdown", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render a small one", () => {
+		const { container } = render(<Dropdown toggleSize="sm" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a large one", () => {
+		const { container } = render(<Dropdown toggleSize="lg" />);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render toggle icon", () => {
 		const { container, getByTestId } = render(<Dropdown />);
 		expect(container).toMatchSnapshot();

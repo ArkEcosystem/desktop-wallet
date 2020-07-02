@@ -23,6 +23,52 @@ exports[`Dropdown should render 1`] = `
 </div>
 `;
 
+exports[`Dropdown should render a large one 1`] = `
+<div>
+  <div
+    class="relative"
+    data-testid="dropdown__toggle"
+  >
+    <div
+      class="float-right outline-none cursor-pointer focus:outline-none"
+    >
+      <div
+        class="sc-AxjAm bIZXgI"
+        height="30"
+        width="30"
+      >
+        <svg>
+          settings.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown should render a small one 1`] = `
+<div>
+  <div
+    class="relative"
+    data-testid="dropdown__toggle"
+  >
+    <div
+      class="float-right outline-none cursor-pointer focus:outline-none"
+    >
+      <div
+        class="sc-AxjAm iepfoc"
+        height="10"
+        width="10"
+      >
+        <svg>
+          settings.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Dropdown should render toggle icon 1`] = `
 <div>
   <div

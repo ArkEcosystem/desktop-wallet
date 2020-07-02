@@ -15,7 +15,7 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 				<Circle
 					data-testid="WalletRegistrations__icon-list__icon"
 					key={item}
-					size="large"
+					size="lg"
 					className="bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
 				>
 					<Icon name={item} className="text-xl" />
@@ -24,7 +24,7 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 			{rest > 0 && (
 				<Circle
 					data-testid="WalletRegistrations__icon-list__rest"
-					size="large"
+					size="lg"
 					className="text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
 				>
 					+{rest}
@@ -90,10 +90,10 @@ export const WalletRegistrations = ({
 					{hasNoRegistrations ? (
 						<div data-testid="WalletRegistrations__empty" className="flex items-center pr-8 space-x-4">
 							<div className="flex items-center -space-x-2">
-								<Circle size="large" className="text-theme-neutral-light">
+								<Circle size="lg" className="text-theme-neutral-light">
 									<Icon name="Delegate" className="text-xl" />
 								</Circle>
-								<Circle size="large" className="bg-theme-background" />
+								<Circle size="lg" className="bg-theme-background" />
 							</div>
 							<div className="space-y-1">
 								<p className="text-sm font-semibold text-theme-neutral">Type Registrations</p>
@@ -110,13 +110,10 @@ export const WalletRegistrations = ({
 							{delegate && (
 								<div className="flex items-center pr-8 space-x-4">
 									<div className="flex items-center -space-x-2">
-										<Circle
-											size="large"
-											className="border-theme-neutral-900 text-theme-neutral-900"
-										>
+										<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 											<Icon name="Delegate" className="text-xl" />
 										</Circle>
-										<Avatar size="large" address={address} />
+										<Avatar size="lg" address={address} />
 									</div>
 									<div>
 										<p className="text-sm font-semibold text-theme-neutral">Delegate</p>
@@ -130,10 +127,7 @@ export const WalletRegistrations = ({
 							{business && (
 								<div className="flex items-center px-8 space-x-4">
 									<div className="flex items-center">
-										<Circle
-											size="large"
-											className="border-theme-neutral-900 text-theme-neutral-900"
-										>
+										<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 											<Icon name="Business" className="text-xl" />
 										</Circle>
 									</div>

@@ -43,7 +43,7 @@ const LinkItem = ({ link }: { link: Link }) => {
 					</a>
 				</div>
 
-				<Circle className="my-auto border-black bg-theme-background" size="large">
+				<Circle className="my-auto border-black bg-theme-background" size="lg">
 					<Icon name={linkIcons[link.type]} width={20} height={20} />
 				</Circle>
 			</div>
