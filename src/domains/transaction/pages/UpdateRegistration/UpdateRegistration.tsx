@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -7,12 +6,12 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { useSelectionState } from "app/components/SelectionBar";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -24,8 +23,6 @@ type UpdateRegistrationProps = {
 	formDefaultData?: any;
 	onDownload: any;
 };
-
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
@@ -134,7 +131,7 @@ const SecondStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row">
+			<div className="grid grid-flow-row mt-4">
 				<TransactionDetail
 					border={false}
 					label="Network"
@@ -236,17 +233,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType === "ledger" && (
 				<div>
 					<h1 className="mb-0">Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner className="my-8" />
-
-					<div className="mt-8 text-theme-neutral-700">
-						Please review and verify the information on your Ledger device. Choose Accept to complete your
-						transaction.
-					</div>
-
-					<div className="inline-flex items-center mt-8 space-x-3">
-						<Spinner color="primary" />
-						<span className="text-black">Waiting for confirmation...</span>
-					</div>
+					<LedgerConfirmation />
 				</div>
 			)}
 		</div>
