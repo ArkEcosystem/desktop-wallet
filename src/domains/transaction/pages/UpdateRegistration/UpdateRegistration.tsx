@@ -302,7 +302,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 	};
 
 	return (
-		<div data-testid="UpdateRegistration" className="max-w-xl mx-auto">
+		<div data-testid="UpdateRegistration" className="max-w-xl mx-auto py-16">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />
