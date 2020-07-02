@@ -2,7 +2,6 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // React
-import { ARK } from "@arkecosystem/platform-sdk-ark";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { renderRoutes } from "react-router-config";
@@ -22,13 +21,6 @@ import { i18n } from "./i18n";
 const routesWithoutNavBar = ["/", "s/create"];
 
 const buildMockEnvironment = async (env: Environment) => {
-	const profile = env.profiles().create("Anne Doe");
-	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
-
-	env.persist();
-};
-
-const buildMockEnvironment = async (env: any) => {
 	const profile = env.profiles().create("Anne Doe");
 	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
 
