@@ -35,6 +35,10 @@ const comments = [
 		date: "2020-06-19T14:48:00.000Z",
 		comment:
 			"As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.",
+		votes: {
+			up: 0,
+			down: 0,
+		},
 	},
 	{
 		author: "Gerard Blezer",
@@ -42,6 +46,10 @@ const comments = [
 		date: "2020-06-19T14:48:00.000Z",
 		comment:
 			"As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.",
+		votes: {
+			up: 35,
+			down: 7,
+		},
 		replies: [
 			{
 				date: "2020-06-19T14:48:00.000Z",
@@ -55,6 +63,10 @@ const comments = [
 		date: "2020-06-19T14:48:00.000Z",
 		comment:
 			"As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.",
+		votes: {
+			up: 0,
+			down: 0,
+		},
 	},
 	{
 		author: "Rok Cernec",
@@ -62,6 +74,10 @@ const comments = [
 		date: "2020-06-19T14:48:00.000Z",
 		comment:
 			"As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.",
+		votes: {
+			up: 0,
+			down: 5,
+		},
 	},
 ];
 

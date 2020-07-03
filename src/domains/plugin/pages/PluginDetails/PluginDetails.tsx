@@ -21,7 +21,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	return (
-		<section className="h-full bg-theme-neutral-100" data-testid="plugin-details__header">
+		<section className="h-full -m-5 bg-theme-neutral-100" data-testid="plugin-details__header">
 			<PluginHeader
 				author={author}
 				category={category}
@@ -36,9 +36,11 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 			<div className="flex bg-theme-background p-10 mt-5">
 				<div className="flex flex-col">
-					<div class="flex items-center justify-between">
+					<div className="flex items-center justify-between">
 						<h2 className="mb-0">Reviews ARK Explorer</h2>
-						<Button data-testid="ReviewBox__button--comment" variant="plain">Leave a comment</Button>
+						<Button data-testid="ReviewBox__button--comment" variant="plain">
+							Leave a comment
+						</Button>
 					</div>
 
 					<div className="col-span-2" data-testid="plugin-details__comments">
@@ -46,7 +48,10 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					</div>
 				</div>
 
-				<div className="ml-32 p-5 border-2 border-theme-neutral-200 rounded-xl mb-auto" data-testid="plugin-details__review-box">
+				<div
+					className="ml-32 p-8 border-2 border-theme-neutral-200 rounded-xl mb-auto"
+					data-testid="plugin-details__review-box"
+				>
 					<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />
 				</div>
 			</div>

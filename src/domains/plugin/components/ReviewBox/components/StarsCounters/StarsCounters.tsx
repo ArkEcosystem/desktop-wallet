@@ -1,6 +1,6 @@
+import { Icon } from "app/components/Icon";
 import React from "react";
 import styled from "styled-components";
-import { Icon } from "app/components/Icon";
 
 export type RatingCountProps = {
 	width: number;
@@ -21,7 +21,7 @@ export type Props = {
 };
 
 export const StarsCounters = ({ ratings, totalAvaliations }: Props) => (
-	<div class="space-y-6">
+	<div className="space-y-6">
 		{ratings.map(({ rating, votes }: RatingType, index: number) => {
 			const calculatedRating = (votes / totalAvaliations) * 100;
 
