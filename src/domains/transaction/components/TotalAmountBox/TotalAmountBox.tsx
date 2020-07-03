@@ -24,7 +24,7 @@ export const TotalAmountBox = ({ transactionAmount, transactionFee, magnitude }:
 
 					<div className="flex flex-col justify-center px-6 py-5 text-right">
 						<span className="text-sm text-theme-neutral-500">Transaction fee</span>
-						<span className="mt-2 font-semibold text-lg" data-testid="total-amount-box__transaction-fee">
+						<span className="mt-2 text-lg font-semibold" data-testid="total-amount-box__transaction-fee">
 							{transactionFee} ARK
 						</span>
 					</div>
