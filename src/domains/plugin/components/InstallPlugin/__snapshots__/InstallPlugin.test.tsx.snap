@@ -59,7 +59,7 @@ exports[`InstallPlugin should render 1`] = `
                 class="max-w-sm"
               >
                 <ul
-                  class="mt-2 ml-5 list-outside leading-8 list-circle text-theme-neutral-dark"
+                  class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-neutral-dark"
                 >
                   <li>
                     Allows access to the Desktop Wallet alerts
@@ -115,7 +115,7 @@ exports[`InstallPlugin should render 1st step 1`] = `
       class="max-w-sm"
     >
       <ul
-        class="mt-2 ml-5 list-outside leading-8 list-circle text-theme-neutral-dark"
+        class="mt-2 ml-5 leading-8 list-outside list-circle text-theme-neutral-dark"
       >
         <li>
           Allows access to the Desktop Wallet alerts
@@ -212,7 +212,7 @@ exports[`InstallPlugin should render 2st step 1`] = `
                   transform="rotate(-90 25 25)"
                 />
                 <text
-                  data-testid="circular-progress-bar__percentage"
+                  data-testid="CircularProgressBar__percentage"
                   dy="0.3em"
                   fill="var(--theme-color-success-600)"
                   font-size="0.8rem"
@@ -221,7 +221,15 @@ exports[`InstallPlugin should render 2st step 1`] = `
                   x="50%"
                   y="50%"
                 >
-                  78%
+                  <tspan>
+                    78
+                    <tspan
+                      dy="-0.6em"
+                      font-size="0.4rem"
+                    >
+                      %
+                    </tspan>
+                  </tspan>
                 </text>
               </svg>
             </div>

@@ -59,9 +59,14 @@ export const CircularProgressBar = ({
 				fontSize={`${fontSize}rem`}
 				fontWeight="600"
 				textAnchor="middle"
-				data-testid="circular-progress-bar__percentage"
+				data-testid="CircularProgressBar__percentage"
 			>
-				{`${value}%`}
+				<tspan>
+					{value}
+					<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`}>
+						%
+					</tspan>
+				</tspan>
 			</text>
 		</svg>
 	);

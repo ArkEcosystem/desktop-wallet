@@ -7,7 +7,7 @@ export default {
 };
 
 export const Default = () => {
-	const [percentage, setPercentage] = useState(10);
+	const [percentage, setPercentage] = useState(78);
 
 	const updatePercentage = (event: any) => {
 		setPercentage(event.target.value);
