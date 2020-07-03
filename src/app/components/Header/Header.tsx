@@ -8,8 +8,8 @@ type Props = {
 
 export const Header = ({ title, subtitle, extra }: Props) => (
 	<div className="flex items-end justify-between bg-theme-background">
-		<div className="-mt-2">
-			<h1 className="mb-0 text-3xl font-bold md:text-4xl" data-testid="header__title">
+		<div>
+			<h1 className="mb-0 text-3xl font-bold md:text-4xl leading-tight" data-testid="header__title">
 				{title}
 			</h1>
 			{subtitle && (
