@@ -19,13 +19,13 @@ export const Reply = ({ date, content }: ReplyProps) => (
 	<div className="flex flex-col mt-3">
 		<div className="flex items-center text-theme-neutral-400">
 			<div className="flex items-center w-10">
-				<Icon className="-mt-2 mx-auto" name="ReplyArrow" width={15} height={18} />
+				<Icon className="mx-auto -mt-2" name="ReplyArrow" width={15} height={18} />
 			</div>
 
 			<div className="flex items-center divide-x divide-theme-neutral-400 space-x-3">
 				<span className="text-lg font-semibold text-theme-neutral-900">Developer response</span>
 
-				<span className="text-sm pl-3 font-semibold text-theme-neutral-500">
+				<span className="pl-3 text-sm font-semibold text-theme-neutral-500">
 					<TimeAgo date={date} />
 				</span>
 			</div>

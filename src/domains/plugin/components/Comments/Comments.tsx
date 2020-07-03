@@ -31,7 +31,7 @@ const Votes = ({ votes }: any) => {
 	}
 
 	return (
-		<div className="flex items-center space-x-2 font-semibold">
+		<div className="flex items-center font-semibold space-x-2">
 			<span className={voteDiffColor}>{voteDiff > 0 ? `+${voteDiff}` : voteDiff}</span>
 			<Icon className="text-theme-primary-200" name="ChevronUp" width={15} height={15} />
 			<Icon className="text-theme-primary-200" name="ChevronDown" width={15} height={15} />
@@ -44,7 +44,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex items-center mt-5 font-semibold text-sm text-theme-neutral-500">
+			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-500">
 				<span className="text-theme-neutral-900">Sort by:</span>
 				<div className="flex items-center ml-2 divide-x divide-theme-neutral-400 space-x-3">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
@@ -70,14 +70,14 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 					<div className="flex flex-col mt-5" key={index}>
 						<div className="flex items-center justify-between">
 							<div className="relative flex items-center divide-x divide-theme-neutral-400">
-								<span className="text-lg pr-3 font-semibold">{author}</span>
+								<span className="pr-3 text-lg font-semibold">{author}</span>
 
 								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
 									<span className="ml-1 text-theme-neutral-700">{score}</span>
 								</div>
 
-								<span className="text-sm pl-3 font-semibold text-theme-neutral-500">
+								<span className="pl-3 text-sm font-semibold text-theme-neutral-500">
 									<TimeAgo date={date} />
 								</span>
 							</div>

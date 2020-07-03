@@ -34,7 +34,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 			<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
 
-			<div className="flex bg-theme-background p-10 mt-5">
+			<div className="flex p-10 mt-5 bg-theme-background">
 				<div className="flex flex-col">
 					<div className="flex items-center justify-between">
 						<h2 className="mb-0">Reviews ARK Explorer</h2>
@@ -49,7 +49,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 				</div>
 
 				<div
-					className="ml-32 p-8 border-2 border-theme-neutral-200 rounded-xl mb-auto"
+					className="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
 					data-testid="plugin-details__review-box"
 				>
 					<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />

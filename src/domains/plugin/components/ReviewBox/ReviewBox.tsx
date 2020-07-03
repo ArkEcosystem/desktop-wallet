@@ -14,7 +14,7 @@ export const ReviewBox = ({ ratings, totalAvaliations, averageScore, maximumScor
 	<div className="w-full">
 		<div className="flex flex-col">
 			<div className="flex items-center text-2xl whitespace-no-wrap">
-				<Icon className="-mt-1 mr-1" name="StarsOutline" width={34} height={19} />
+				<Icon className="mr-1 -mt-1" name="StarsOutline" width={34} height={19} />
 
 				<span className="font-bold">
 					Avg. Rating: {averageScore}{" "}
