@@ -192,7 +192,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										disabled={activeTab === 1}
 										data-testid="SendIPFSTransaction__button--back"
 										variant="plain"
-										size="lg"
 										onClick={handleBack}
 									>
 										Back
@@ -200,7 +199,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 									<Button
 										data-testid="SendIPFSTransaction__button--continue"
 										variant="solid"
-										size="lg"
 										// disabled={!isValid}
 										onClick={handleNext}
 									>
@@ -215,7 +213,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										data-testid="SendIPFSTransaction__button--back-to-wallet"
 										variant="plain"
 										className={"block"}
-										size="lg"
 									>
 										Back to wallet
 									</Button>
@@ -223,7 +220,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										onClick={onCopy}
 										data-testid="SendIPFSTransaction__button--copy"
 										variant="plain"
-										size="lg"
 									>
 										<div className="flex items-center justify-between px-1">
 											<Icon name="Copy" />
