@@ -85,16 +85,6 @@ export const SecondStep = () => (
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
-				label="Recipient"
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<span className="font-normal">AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK</span>
-			</TransactionDetail>
-			<TransactionDetail
 				label="Hash"
 				extra={
 					<div className="ml-1">
@@ -106,7 +96,6 @@ export const SecondStep = () => (
 			>
 				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
-			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 		</div>
 	</section>
