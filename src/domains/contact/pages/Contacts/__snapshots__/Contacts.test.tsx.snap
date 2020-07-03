@@ -75,18 +75,20 @@ exports[`Contacts should render 1`] = `
         class="flex flex-1 p-10 bg-theme-background"
       >
         <div
-          class="flex flex-col items-center justify-center mx-auto"
+          class="flex flex-col items-center justify-center w-full"
           data-testid="contacts__banner"
         >
           <div
-            class="max-w-4xl mx-auto"
+            class="mx-auto"
           >
-            <svg>
+            <svg
+              height="175"
+            >
               contacts-banner.svg
             </svg>
           </div>
           <div
-            class="mt-6"
+            class="mt-8"
           >
             <span
               class="text-theme-neutral-dark"
