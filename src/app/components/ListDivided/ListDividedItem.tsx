@@ -9,6 +9,8 @@ type Props = {
 	value: string;
 	itemValueClass: string;
 	content: React.ReactNode;
+	contentClass: string;
+	wrapperClass: string;
 };
 
 export const ListDividedItem = ({
@@ -20,10 +22,12 @@ export const ListDividedItem = ({
 	value,
 	itemValueClass,
 	content,
+	contentClass,
+	wrapperClass,
 }: Props) => (
-	<li className="flex flex-col w-full py-4" data-testid="list-divided-item__wrapper">
+	<li className={`flex flex-col w-full ${wrapperClass || ""}`} data-testid="list-divided-item__wrapper">
 		<div
-			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"} mt-5`}
+			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}
 			data-testid="list-divided-item__inner-wrapper"
 		>
 			<div className="flex flex-col">
@@ -32,7 +36,7 @@ export const ListDividedItem = ({
 				</span>
 				{labelDescription && (
 					<span
-						className={`text-sm text-theme-neutral ${labelDescriptionClass || ""}`}
+						className={`text-sm text-theme-neutral-dark ${labelDescriptionClass || ""}`}
 						data-testid="list-divided-item__label--description"
 					>
 						{labelDescription}
@@ -46,7 +50,7 @@ export const ListDividedItem = ({
 			)}
 		</div>
 		{content && (
-			<div className="mt-4" data-testid="list-divided-item__content">
+			<div className={contentClass || ""} data-testid="list-divided-item__content">
 				{content}
 			</div>
 		)}
