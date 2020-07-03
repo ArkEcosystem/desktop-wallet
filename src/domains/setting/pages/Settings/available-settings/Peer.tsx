@@ -18,13 +18,14 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Broadcast to Multiple Peers",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pb-6",
 			content: (
-				<div className="flex flex-row justify-between mb-3">
-					<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
+				<div className="flex flex-row justify-between">
+					<span className="w-3/4 text-sm text-theme-neutral mt-1">
 						This protection will protect your money from unwanted Screenshot your PC.
 					</span>
-					<div className="-mt-11">
+					<div className="-mt-7">
 						<Toggle />
 					</div>
 				</div>
@@ -33,14 +34,15 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Use Custom Peers",
-			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-4",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
+					<span className="w-3/4 text-sm text-theme-neutral mt-1">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-					<div className="-mt-11">
+					<div className="-mt-7">
 						<Toggle />
 					</div>
 				</div>
@@ -51,11 +53,15 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 	return (
 		<>
 			<Header title="Peer Settings" subtitle="Customize your wallet to suit your needs." />
-			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit}>
+
+			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
 				<PeerList peers={peers} />
-				<Divider dashed />
-				<div className="flex justify-end w-full pt-2">
+				<div className="pt-2 pb-4">
+					<Divider dashed />
+				</div>
+
+				<div className="flex justify-end w-full">
 					<Button>Save</Button>
 				</div>
 			</Form>
