@@ -46,14 +46,14 @@ export const SecondStep = () => {
 					<div className="flex flex-col justify-around h-full">
 						<div>
 							<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.PLUGIN")}</p>
-							<p className="font-semibold text-theme-black">ARK Explorer</p>
+							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
 						</div>
 						<div className="flex justify-between">
 							<span>
 								<p className="text-sm font-semibold text-theme-neutral-light">
 									{t("COMMON.DOWNLOADED")}
 								</p>
-								<p className="text-sm font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
+								<p className="font-bold text-theme-neutral-dark">154 KB / 154 KB</p>
 							</span>
 							<div className="mr-2">
 								<CircularProgressBar value={78} size={50} strokeWidth={4} fontSize={0.8} />
@@ -79,14 +79,14 @@ export const ThirdStep = () => {
 					<div className="flex flex-col justify-around h-full">
 						<div>
 							<p className="text-sm font-semibold text-theme-neutral-light">{t("COMMON.PLUGIN")}</p>
-							<p className="font-semibold text-theme-black">ARK Explorer</p>
+							<p className="text-lg font-semibold text-theme-black">ARK Explorer</p>
 						</div>
 						<div className="flex justify-between">
 							<span>
 								<p className="text-sm font-semibold text-theme-neutral-light">
 									{t("COMMON.DOWNLOADED")}
 								</p>
-								<p className="text-sm font-bold text-theme-neutral-dark">{t("COMMON.COMPLETED")}</p>
+								<p className="font-bold text-theme-neutral-dark">{t("COMMON.COMPLETED")}</p>
 							</span>
 							<div className="">
 								<Circle
