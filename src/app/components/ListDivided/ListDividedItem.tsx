@@ -9,8 +9,8 @@ type Props = {
 	value: string;
 	itemValueClass: string;
 	content: React.ReactNode;
-	contentClass: string;
-	wrapperClass: string;
+	contentClass?: string;
+	wrapperClass?: string;
 };
 
 export const ListDividedItem = ({
