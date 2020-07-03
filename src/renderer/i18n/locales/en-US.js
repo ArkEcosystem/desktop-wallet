@@ -1120,6 +1120,7 @@ export default {
     WARNING: {
       BROADCAST: 'Transaction was broadcasted to other peers. It may not be accepted by them'
     },
+    ADD_RECIPIENT: 'Add Recipient',
     AMOUNT: 'Amount',
     BLOCK_ID: 'Block ID',
     BRIDGECHAIN_NAME: 'Bridgechain Name',

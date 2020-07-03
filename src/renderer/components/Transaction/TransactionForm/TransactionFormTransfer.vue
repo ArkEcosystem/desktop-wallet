@@ -44,7 +44,7 @@
       class="TransactionFormTransfer__recipient mb-5"
     />
 
-    <div class="flex items-baseline mb-5">
+    <div class="flex items-baseline">
       <InputCurrency
         ref="amount"
         v-model="$v.amount.$model"
@@ -64,14 +64,6 @@
         @input="setSendAll(false, false)"
       />
 
-      <ButtonGeneric
-        v-if="hasAip11"
-        :disabled="!isValidRecipient"
-        :label="$t('TRANSACTION.BUTTON_ADD')"
-        class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
-        @click="addRecipient"
-      />
-
       <InputSwitch
         v-model="isSendAllActive"
         :text="$t('TRANSACTION.SEND_ALL')"
@@ -80,6 +72,14 @@
         @change="setSendAll"
       />
     </div>
+
+    <ButtonGeneric
+      v-if="hasAip11"
+      :disabled="!isValidRecipient"
+      :label="$t('TRANSACTION.ADD_RECIPIENT')"
+      class="TransactionFormTransfer__add-recipient w-full py-1 h-8 my-3"
+      @click="addRecipient"
+    />
 
     <TransactionRecipientList
       v-if="hasAip11"
