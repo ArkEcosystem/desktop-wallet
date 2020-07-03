@@ -177,7 +177,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 	};
 
 	return (
-		<div className="max-w-xl mx-auto">
+		<div className="max-w-xl py-16 mx-auto">
 			<Form context={form} onSubmit={onSubmit}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
