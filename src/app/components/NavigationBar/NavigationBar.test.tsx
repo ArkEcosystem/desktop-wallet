@@ -1,3 +1,4 @@
+import { AppContext } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
@@ -10,9 +11,11 @@ describe("NavigationBar", () => {
 	const history = createMemoryHistory();
 	it("should render", () => {
 		const { container, asFragment } = render(
-			<Router history={history}>
-				<NavigationBar />
-			</Router>,
+			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+				<Router history={history}>
+					<NavigationBar />
+				</Router>
+			</AppContext.Provider>,
 		);
 
 		expect(container).toBeTruthy();
@@ -23,17 +26,20 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				path: "/portfolio",
+				mountPath: (profileId) => `/profiles/${profileId}`,
 			},
 			{
 				title: "test",
-				path: "/test",
+				mountPath: () => "/test",
 			},
 		];
 		const { container, asFragment } = render(
-			<Router history={history}>
-				<NavigationBar menu={menu} />
-			</Router>,
+			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+				<Router history={history}>
+					<NavigationBar menu={menu} />
+				</Router>
+				,
+			</AppContext.Provider>,
 		);
 
 		expect(container).toBeTruthy();
@@ -44,22 +50,25 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				path: "/portfolio",
+				mountPath: (profileId) => `/profiles/${profileId}`,
 			},
 			{
 				title: "test",
-				path: "/test",
+				mountPath: () => "/test",
 			},
 		];
 		const { container, asFragment, getByText } = render(
-			<Router history={history}>
-				<NavigationBar menu={menu} />
-			</Router>,
+			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+				<Router history={history}>
+					<NavigationBar menu={menu} />
+				</Router>
+				,
+			</AppContext.Provider>,
 		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Portfolio"));
-		expect(history.location.pathname).toEqual("/portfolio");
+		expect(history.location.pathname).toEqual("/profiles/123");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -69,9 +78,11 @@ describe("NavigationBar", () => {
 			{ label: "Option 2", value: "/test2" },
 		];
 		const { getByTestId, getByText } = render(
-			<Router history={history}>
-				<NavigationBar userActions={options} />
-			</Router>,
+			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+				<Router history={history}>
+					<NavigationBar userActions={options} />
+				</Router>
+			</AppContext.Provider>,
 		);
 		const toggle = getByTestId("navbar__useractions");
 
@@ -82,5 +93,32 @@ describe("NavigationBar", () => {
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
 		expect(history.location.pathname).toEqual("/test");
+	});
+
+	it("should not render if no active profile", () => {
+		const options = [
+			{ label: "Option 1", value: "/test" },
+			{ label: "Option 2", value: "/test2" },
+		];
+
+		const menu = [
+			{
+				title: "Portfolio",
+				mountPath: (profileId) => `/profiles/${profileId}`,
+			},
+			{
+				title: "test",
+				mountPath: () => "/test",
+			},
+		];
+
+		const { asFragment } = render(
+			<AppContext.Provider value={{ appContext: null }}>
+				<Router history={history}>
+					<NavigationBar menu={menu} userActions={options} />
+				</Router>
+			</AppContext.Provider>,
+		);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

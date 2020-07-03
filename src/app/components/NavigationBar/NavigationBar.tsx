@@ -5,7 +5,8 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
-import React from "react";
+import { AppContext } from "app/contexts";
+import React, { useContext } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -15,7 +16,7 @@ const commonAssets = images.common;
 
 type MenuItem = {
 	title: string;
-	path: string;
+	mountPath: any;
 };
 
 type NavigationBarProps = {
@@ -97,7 +98,26 @@ export const NavigationBar = ({
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
+	const { appState: { activeProfile = {} } = {} }: any = useContext(AppContext);
 
+	const renderMenu = () => {
+		if (!activeProfile?.id) return null;
+
+		return (
+			menu &&
+			menu.map((menuItem: any, index: number) => (
+				<li key={index} className="flex">
+					<NavLink
+						to={menuItem.mountPath(activeProfile.id())}
+						title={menuItem.title}
+						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+					>
+						{menuItem.title}
+					</NavLink>
+				</li>
+			))
+		);
+	};
 	return (
 		<NavWrapper aria-labelledby="main menu">
 			<div className="px-4 sm:px-6 lg:px-8">
@@ -106,20 +126,7 @@ export const NavigationBar = ({
 						<div className="flex p-2 mr-4 rounded-lg bg-logo">
 							<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
 						</div>
-						<ul className="flex h-20 md:h-24">
-							{menu &&
-								menu.map((menuItem: any, index: number) => (
-									<li key={index} className="flex">
-										<NavLink
-											to={menuItem.path}
-											title={menuItem.title}
-											className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-										>
-											{menuItem.title}
-										</NavLink>
-									</li>
-								))}
-						</ul>
+						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
 					</div>
 
 					<div className="flex items-center">
@@ -168,19 +175,19 @@ NavigationBar.defaultProps = {
 	menu: [
 		{
 			title: "Portfolio",
-			path: "/portfolio",
+			mountPath: (profileId: string) => `/profiles/${profileId}`,
 		},
 		{
 			title: "Plugins",
-			path: "/plugins",
+			mountPath: () => "/plugins",
 		},
 		{
 			title: "Exchange",
-			path: "/exchanges",
+			mountPath: () => "/exchanges",
 		},
 		{
 			title: "News",
-			path: "/news",
+			mountPath: () => "/news",
 		},
 	],
 	userActions: [
