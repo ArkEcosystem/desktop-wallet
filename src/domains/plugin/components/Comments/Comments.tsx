@@ -20,35 +20,27 @@ type CommentsProps = {
 	sortOptions: any;
 };
 
-type SorterProps = {
-	handleSortBy: any;
-	options: any;
-};
-
-const Sorter = ({ handleSortBy, options }: SorterProps) => {
-	return (
-		<div className="ml-1">
-			<Dropdown
-				position="left"
-				toggleIcon="ArrowDown"
-				toggleSize="sm"
-				options={options}
-				onSelect={(option: any) => handleSortBy(option)}
-			/>
-		</div>
-	);
-};
-
 export const Comments = ({ comments, sortOptions }: CommentsProps) => {
-	const [sortBy, setSortBy] = useState(sortOptions[0]);
+	const [sortBy, setSortBy] = useState(sortOptions);
 
 	return (
 		<div className="w-full">
-			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900">
-				<span>Sort by:</span>
-				<div className="flex items-center">
-					<span className="ml-2">{sortBy.label}</span>
-					<Sorter options={sortOptions} handleSortBy={setSortBy} />
+			<div className="flex items-center mt-5 text-sm text-theme-neutral-900">
+				<span className="font-semibold">Sort by:</span>
+				<div className="flex items-center ml-2">
+					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
+						<span className="cursor-pointer" key={index}>
+							{index > 0 && <Divider type="vertical" />}
+
+							{
+								sortBy.type === sortType
+									?	<span className="flex items-center font-semibold space-x-2">
+											<span>{sortType}</span> <Icon name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"} />
+										</span>
+									: <span>{sortType}</span>
+							}
+						</span>
+					))}
 				</div>
 			</div>
 			<div>
@@ -71,7 +63,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 							</span>
 						</div>
 
-						<div className="w-11/12 mt-2">
+						<div className="mt-2">
 							<p className="text-theme-neutral-600">{comment}</p>
 							{replies &&
 								replies.map((reply: any, index: number) => (

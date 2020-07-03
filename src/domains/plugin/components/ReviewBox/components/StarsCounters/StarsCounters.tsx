@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Icon } from "app/components/Icon";
 
 export type RatingCountProps = {
 	width: number;
@@ -20,18 +21,17 @@ export type Props = {
 };
 
 export const StarsCounters = ({ ratings, totalAvaliations }: Props) => (
-	<div>
-		{ratings.map(({ rating, votes }, idx) => {
+	<div class="space-y-6">
+		{ratings.map(({ rating, votes }: RatingType, index: number) => {
 			const calculatedRating = (votes / totalAvaliations) * 100;
 
+			const stars = Array(rating).fill(<Icon name="Star" width={13} height={13} />);
+
 			return (
-				<div className="flex flex-col mt-7" key={idx}>
+				<div className="flex flex-col" key={index}>
 					<div className="flex justify-between" data-testid={`${rating}-stars__rating-row`}>
-						<span className="font-bold">{rating} stars</span>
-						<div className="font-bold">
-							<span>{votes}</span>
-							<span className="text-theme-neutral-400">/{totalAvaliations}</span>
-						</div>
+						<div className="flex items-center space-x-1 text-theme-warning-300">{stars}</div>
+						<span className="font-bold">{votes}</span>
 					</div>
 					<div className="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200">
 						<RatingCount
