@@ -55,7 +55,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
             class="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light"
           >
             <span
-              class="pb-2 text-base font-bold"
+              class="text-lg font-semibold"
             >
               Verify
             </span>
@@ -63,17 +63,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
               class="flex flex-row justify-between"
             >
               <span
-                class="w-3/4 text-sm text-theme-neutral-light"
+                class="pt-2 text-sm text-theme-neutral"
               >
                 You can verify only text using a JSON public key
               </span>
               <div
-                class="mr-1 -mt-2"
+                class="mr-1 -mt-7"
               >
                 <label>
                   <input
                     checked=""
-                    class="sc-fznKkj cHSYkT -mt-3"
+                    class="sc-fznKkj cHSYkT"
                     data-testid="verify-address__togle"
                     type="checkbox"
                   />

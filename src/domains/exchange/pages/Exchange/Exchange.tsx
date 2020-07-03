@@ -1,4 +1,5 @@
 import { images } from "app/assets/images";
+import { Header } from "app/components/Header";
 import { Slider } from "app/components/Slider";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
@@ -98,10 +99,9 @@ export const Exchange = (props: ExchangeProps) => {
 		<div data-testid="Exchange">
 			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-			<div className="border-t-20 border-theme-neutral-100">
-				<div className="container mx-auto mt-10">
-					<h1>{t("EXCHANGE.TITLE")}</h1>
-					<div className="text-theme-neutral-700">{t("EXCHANGE.DESCRIPTION")}</div>
+			<div className="pt-16 border-t-20 border-theme-neutral-100">
+				<div className="container mx-auto">
+					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
 					{props.exchanges.length ? (
 						<ExchangesList
