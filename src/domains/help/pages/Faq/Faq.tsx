@@ -26,8 +26,8 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 				</div>
 			</div>
 			<div>
-				<div className="mb-2 ml-3 font-bold text-theme-neutral-800">{title}</div>
-				<div className="ml-3 text-sm text-theme-neutral-600">{description}</div>
+				<div className="mb-2 ml-3 text-lg font-bold text-theme-neutral-800">{title}</div>
+				<div className="ml-3 text-theme-neutral-600">{description}</div>
 			</div>
 		</a>
 	</li>
