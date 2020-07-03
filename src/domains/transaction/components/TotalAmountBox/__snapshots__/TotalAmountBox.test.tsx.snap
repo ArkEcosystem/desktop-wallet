@@ -20,7 +20,7 @@ exports[`IpfsDetailModal should not render if not open 1`] = `
             Transaction(s) Amount
           </span>
           <span
-            class="mt-3"
+            class="mt-2 font-semibold"
             data-testid="total-amount-box__transaction-amount"
           >
             1.00 ARK
@@ -35,7 +35,7 @@ exports[`IpfsDetailModal should not render if not open 1`] = `
             Transaction fee
           </span>
           <span
-            class="mt-3"
+            class="mt-2 font-semibold text-lg"
             data-testid="total-amount-box__transaction-fee"
           >
             0.09660435 ARK
