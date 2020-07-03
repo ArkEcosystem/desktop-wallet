@@ -3,317 +3,319 @@
 exports[`Settings should open & close modals in the plugin settings 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full h-full"
+    class="flex w-full h-full p-16"
   >
     <div
-      class="w-1/4 h-full"
+      class="sc-AxiKw eZuVXn"
     >
-      <div>
-        <ul>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--General"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    general.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                General
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Peer"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    peer.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Peer
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Plugins"
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--General"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
           >
             <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
-            <li
-              class="rounded-lg p-5 flex 
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  general.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Peer"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  peer.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Plugins"
+        >
+          <div
+            class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+          />
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
+          >
+            <div
+              class="text-theme-primary"
             >
               <div
-                class="text-theme-primary"
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    plugin.svg
-                  </svg>
-                </div>
+                <svg>
+                  plugin.svg
+                </svg>
               </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Plugins
-              </span>
-            </li>
-          </div>
-        </ul>
-      </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-semibold"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+      </ul>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="w-125"
       >
-        <div>
-          <h1
-            class="mb-0 text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
-          >
-            Plugin Settings
-          </h1>
-          <div
-            class="text-theme-neutral-dark"
-            data-testid="header__subtitle"
-          >
-            Customize your wallet to suit your needs.
+        <div
+          class="flex items-end justify-between bg-theme-background"
+        >
+          <div>
+            <h1
+              class="mb-0 text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Plugin Settings
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Customize your wallet to suit your needs.
+            </div>
           </div>
         </div>
-      </div>
-      <form
-        class="space-y-8"
-        data-testid="Form"
-        id="plugin-settings__form"
-      >
-        <ul
-          class="sc-fzplWN krwTau"
-          data-testid="list-divided__items"
+        <form
+          class="mt-8"
+          data-testid="Form"
+          id="plugin-settings__form"
         >
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
+          <ul
+            class="sc-fznyAO lyMNj"
+            data-testid="list-divided__items"
           >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
+            <li
+              class="flex flex-col w-full pb-6"
+              data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex flex-col"
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
               >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Apply Blacklist
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
-                </span>
                 <div
-                  class="-mt-11"
+                  class="flex flex-col"
                 >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <div
-                class="flex justify-end w-full py-6 space-x-3"
-              >
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="plugins__open-list"
-                  type="button"
-                >
-                  Open List
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="plugins__add-plugin"
-                  type="button"
-                >
-                  Add Plugin
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Plugin Source
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between mb-5"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  Turn this feature on, you can upload plugins to your wallet from third-party sources.
-                </span>
-                <div
-                  class="-mt-11"
-                >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="load-plugins"
-                >
-                  Load plugins from
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="load-plugins"
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
                   >
-                    <option
-                      selected=""
-                      value=""
-                    >
-                      Select
-                    </option>
-                    <option
-                      value="github"
-                    >
-                      GitHub
-                    </option>
-                  </select>
+                    Apply Blacklist
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral"
+                  >
+                    This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
+                  </span>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="-mt-7"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
                   </div>
                 </div>
-              </fieldset>
-            </div>
-          </li>
-        </ul>
-        <div
-          class="sc-fzokOt beAtQX border-theme-neutral-300"
-          type="horizontal"
-        />
-        <div
-          class="flex justify-end w-full pt-2"
-        >
-          <button
-            class="sc-AxiKw wFYj"
-            color="primary"
-            type="button"
+                <div
+                  class="flex justify-end w-full pt-6 space-x-3"
+                >
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="plugins__open-list"
+                    type="button"
+                  >
+                    Open List
+                  </button>
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="plugins__add-plugin"
+                    type="button"
+                  >
+                    Add Plugin
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full pt-6"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Plugin Source
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between mb-5"
+                >
+                  <span
+                    class="text-sm text-theme-neutral"
+                  >
+                    Turn this feature on, you can upload plugins to your wallet from third-party sources.
+                  </span>
+                  <div
+                    class="-mt-7"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <fieldset
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="load-plugins"
+                  >
+                    Load plugins from
+                  </label>
+                  <div
+                    class="sc-fzozJi OgXfh"
+                  >
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="load-plugins"
+                    >
+                      <option
+                        selected=""
+                        value=""
+                      >
+                        Select
+                      </option>
+                      <option
+                        value="github"
+                      >
+                        GitHub
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+            type="horizontal"
+          />
+          <div
+            class="flex justify-end w-full pt-2"
           >
-            Save
-          </button>
-        </div>
-      </form>
+            <button
+              class="sc-AxhCb gBCygf"
+              color="primary"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -322,174 +324,281 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
 exports[`Settings should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full h-full"
+    class="flex w-full h-full p-16"
   >
     <div
-      class="w-1/4 h-full"
+      class="sc-AxiKw eZuVXn"
     >
-      <div>
-        <ul>
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--General"
+        >
           <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--General"
-          >
-            <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
-            <li
-              class="rounded-lg p-5 flex 
+            class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+          />
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
-            >
-              <div
-                class="text-theme-primary"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    general.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                General
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Peer"
           >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            <div
+              class="text-theme-primary"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    peer.svg
-                  </svg>
-                </div>
+                <svg>
+                  general.svg
+                </svg>
               </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Peer
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Plugins"
+            </div>
+            <span
+              class="ml-3 text-lg font-semibold"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Peer"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
           >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            <div
+              class="text-theme-primary-light"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    plugin.svg
-                  </svg>
-                </div>
+                <svg>
+                  peer.svg
+                </svg>
               </div>
-              <span
-                class="ml-2 font-semibold"
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Plugins"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                Plugins
-              </span>
-            </li>
-          </div>
-        </ul>
-      </div>
+                <svg>
+                  plugin.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+      </ul>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
-      >
-        <div>
-          <h1
-            class="mb-0 text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
-          >
-            Wallet Settings
-          </h1>
-          <div
-            class="text-theme-neutral-dark"
-            data-testid="header__subtitle"
-          >
-            Customize your wallet to suit your needs.
-          </div>
-        </div>
-      </div>
-      <form
-        class="space-y-8"
-        data-testid="Form"
-        id="general-settings__form"
+        class="w-125"
       >
         <div
-          class="mt-5"
+          class="flex items-end justify-between bg-theme-background"
         >
-          <ul
-            class="sc-fzplWN krwTau"
-            data-testid="list-divided__items"
-          >
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
+          <div>
+            <h1
+              class="mb-0 text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
             >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
+              Wallet Settings
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Customize your wallet to suit your needs.
+            </div>
+          </div>
+        </div>
+        <form
+          class="space-y-8"
+          data-testid="Form"
+          id="general-settings__form"
+        >
+          <div
+            class="mt-8"
+          >
+            <ul
+              class="sc-fznyAO lyMNj"
+              data-testid="list-divided__items"
+            >
+              <li
+                class="flex flex-col w-full "
+                data-testid="list-divided-item__wrapper"
               >
                 <div
-                  class="flex flex-col"
-                >
-                  <span
-                    class="mr-5 text-3xl font-bold"
-                    data-testid="list-divided-item__label"
-                  >
-                    Personal Details
-                  </span>
-                  <span
-                    class="text-sm text-theme-neutral mt-3"
-                    data-testid="list-divided-item__label--description"
-                  >
-                    Select Profile Image
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="flex flex-row mt-2"
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
                 >
                   <div
-                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
+                    class="flex flex-col"
                   >
-                    <button
-                      class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-                      type="button"
+                    <span
+                      class="mr-5 text-2xl font-semibold"
+                      data-testid="list-divided-item__label"
+                    >
+                      Personal Details
+                    </span>
+                    <span
+                      class="text-sm text-theme-neutral-dark mt-1"
+                      data-testid="list-divided-item__label--description"
+                    >
+                      Select Profile Image
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row mt-2"
+                  >
+                    <div
+                      class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                    >
+                      <button
+                        class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            upload.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                    >
+                      <img
+                        alt="random avatar"
+                        class="object-cover rounded"
+                        src="https://randomuser.me/api/portraits/men/3.jpg"
+                      />
+                      <button
+                        class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                      >
+                        <div
+                          class="sc-AxjAm HWmvM"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            close.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div
+              class="flex justify-between w-full mt-8"
+            >
+              <div
+                class="flex flex-col w-2/4"
+              >
+                <fieldset
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="profile-name"
+                    label="Profile Name"
+                  >
+                    Profile Name
+                  </label>
+                  <input
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    data-testid="Input"
+                    name="profile-name"
+                    type="text"
+                  />
+                </fieldset>
+                <fieldset
+                  class="sc-AxhUy dJlYTe mt-8"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="passphrase-language"
+                    label="Passphrase Language"
+                  >
+                    Passphrase Language
+                  </label>
+                  <div
+                    class="sc-fzozJi OgXfh"
+                  >
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="passphrase-language"
+                    >
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                     >
                       <div
                         class="sc-AxjAm cpczEI"
@@ -497,710 +606,587 @@ exports[`Settings should render 1`] = `
                         width="1em"
                       >
                         <svg>
-                          upload.svg
+                          chevron-down.svg
                         </svg>
                       </div>
-                    </button>
+                    </div>
                   </div>
-                  <div
-                    class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                </fieldset>
+                <fieldset
+                  class="sc-AxhUy dJlYTe mt-8"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="currency"
+                    label="Currency"
                   >
-                    <img
-                      alt="random avatar"
-                      class="object-cover rounded"
-                      src="https://randomuser.me/api/portraits/men/3.jpg"
-                    />
-                    <button
-                      class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                    Currency
+                  </label>
+                  <div
+                    class="sc-fzozJi OgXfh"
+                  >
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="currency"
+                    >
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                     >
                       <div
-                        class="sc-AxjAm HWmvM"
-                        height="12"
-                        width="12"
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
                       >
                         <svg>
-                          close.svg
+                          chevron-down.svg
                         </svg>
                       </div>
-                    </button>
+                    </div>
                   </div>
-                </div>
+                </fieldset>
               </div>
-            </li>
-          </ul>
-          <div
-            class="flex justify-between w-full"
-          >
-            <div
-              class="flex flex-col w-2/4"
-            >
-              <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+              <div
+                class="flex flex-col w-2/4 ml-5"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="profile-name"
-                  label="Profile Name"
+                <fieldset
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
-                  Profile Name
-                </label>
-                <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                  data-testid="Input"
-                  name="profile-name"
-                  type="text"
-                />
-              </fieldset>
-              <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="passphrase-language"
-                  label="Passphrase Language"
-                >
-                  Passphrase Language
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="passphrase-language"
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="language"
+                    label="Language"
                   >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    Language
+                  </label>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-fzozJi OgXfh"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="language"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </fieldset>
-              <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="currency"
-                  label="Currency"
+                </fieldset>
+                <fieldset
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
-                  Currency
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="currency"
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="price-source"
+                    label="Price Source"
                   >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    Price Source
+                  </label>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-fzozJi OgXfh"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="price-source"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </fieldset>
-            </div>
-            <div
-              class="flex flex-col w-2/4 ml-5"
-            >
-              <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="language"
-                  label="Language"
+                </fieldset>
+                <fieldset
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
-                  Language
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="language"
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="time-format"
+                    label="Time Format"
                   >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    Time Format
+                  </label>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-fzozJi OgXfh"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="time-format"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </fieldset>
-              <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="price-source"
-                  label="Price Source"
-                >
-                  Price Source
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="price-source"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
-                  <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                  >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="time-format"
-                  label="Time Format"
-                >
-                  Time Format
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="time-format"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
-                  <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                  >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
+                </fieldset>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="relative mt-5"
-        >
           <div
-            class="flex items-end justify-between bg-theme-background"
+            class="relative mt-10"
           >
-            <div>
-              <h1
-                class="mb-0 text-3xl font-bold md:text-4xl"
-                data-testid="header__title"
-              >
-                Security
-              </h1>
-            </div>
-          </div>
-          <ul
-            class="sc-fzplWN krwTau"
-            data-testid="list-divided__items"
-          >
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
+            <h2>
+              Security
+            </h2>
+            <ul
+              class="sc-fznyAO lyMNj"
+              data-testid="list-divided__items"
             >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
+              <li
+                class="flex flex-col w-full pb-6"
+                data-testid="list-divided-item__wrapper"
               >
                 <div
-                  class="flex flex-col"
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
                 >
-                  <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                    data-testid="list-divided-item__label"
-                  >
-                    Screenshot Protection
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="flex flex-row justify-between"
-                >
-                  <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
-                  >
-                    This protection. will protect your money from unwanted Screenshot you PC.
-                  </span>
                   <div
-                    class="-mt-2"
+                    class="flex flex-col"
                   >
-                    <label>
-                      <input
-                        class="sc-fznyAO htyfyy"
-                        type="checkbox"
-                      />
-                      <div
-                        class="sc-fznKkj iTYdAh"
-                      >
-                        <span
-                          class="sc-fznZeY izeqLb"
-                        />
-                      </div>
-                    </label>
+                    <span
+                      class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                      data-testid="list-divided-item__label"
+                    >
+                      Screenshot Protection
+                    </span>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
-            >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
-              >
                 <div
-                  class="flex flex-col"
+                  class=""
+                  data-testid="list-divided-item__content"
                 >
-                  <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
-                    data-testid="list-divided-item__label"
-                  >
-                    Advanced Mode
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="flex flex-row justify-between"
-                >
-                  <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
-                  >
-                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
-                  </span>
                   <div
-                    class="-mt-2"
+                    class="flex flex-row justify-between"
                   >
-                    <label>
-                      <input
-                        class="sc-fznyAO htyfyy -mt-3"
-                        type="checkbox"
-                      />
-                      <div
-                        class="sc-fznKkj iTYdAh"
-                      >
-                        <span
-                          class="sc-fznZeY izeqLb"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
-            >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
-              >
-                <div
-                  class="flex flex-col"
-                >
-                  <span
-                    class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
-                    data-testid="list-divided-item__label"
-                  >
-                    Auto-logoff
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="auto-logoff"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
+                    <span
+                      class="mt-1 text-sm text-theme-neutral"
                     >
-                      Select Language
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
-                  <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                  >
+                      This protection. will protect your money from unwanted Screenshot you PC.
+                    </span>
                     <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
+                      class="-mt-7"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <label>
+                        <input
+                          class="sc-fznKkj cHSYkT"
+                          type="checkbox"
+                        />
+                        <div
+                          class="sc-fznZeY iMEJUl"
+                        >
+                          <span
+                            class="sc-fzokOt dWmOrE"
+                          />
+                        </div>
+                      </label>
                     </div>
                   </div>
                 </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="relative mt-5"
-        >
-          <div
-            class="flex items-end justify-between bg-theme-background"
-          >
-            <div>
-              <h1
-                class="mb-0 text-3xl font-bold md:text-4xl"
-                data-testid="header__title"
+              </li>
+              <li
+                class="flex flex-col w-full py-6"
+                data-testid="list-divided-item__wrapper"
               >
-                Other
-              </h1>
-            </div>
+                <div
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                      data-testid="list-divided-item__label"
+                    >
+                      Advanced Mode
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row justify-between"
+                  >
+                    <span
+                      class="mt-1 text-sm text-theme-neutral"
+                    >
+                      You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                    </span>
+                    <div
+                      class="-mt-7"
+                    >
+                      <label>
+                        <input
+                          class="sc-fznKkj cHSYkT"
+                          type="checkbox"
+                        />
+                        <div
+                          class="sc-fznZeY iMEJUl"
+                        >
+                          <span
+                            class="sc-fzokOt dWmOrE"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="flex flex-col w-full pt-8"
+                data-testid="list-divided-item__wrapper"
+              >
+                <div
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2"
+                      data-testid="list-divided-item__label"
+                    >
+                      Auto-logoff
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="sc-fzozJi OgXfh"
+                  >
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="auto-logoff"
+                    >
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Language
+                      </option>
+                      <option
+                        value="option1"
+                      >
+                        Option 1
+                      </option>
+                      <option
+                        value="option2"
+                      >
+                        Option 2
+                      </option>
+                      <option
+                        value="option3"
+                      >
+                        Option 3
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <ul
-            class="sc-fzplWN krwTau"
-            data-testid="list-divided__items"
-          >
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
-            >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
-              >
-                <div
-                  class="flex flex-col"
-                >
-                  <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                    data-testid="list-divided-item__label"
-                  >
-                    Dark Theme
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="flex flex-row justify-between"
-                >
-                  <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
-                  >
-                    Want to set the wallet to dark mode?
-                  </span>
-                  <div
-                    class="-mt-2"
-                  >
-                    <label>
-                      <input
-                        class="sc-fznyAO htyfyy"
-                        type="checkbox"
-                      />
-                      <div
-                        class="sc-fznKkj iTYdAh"
-                      >
-                        <span
-                          class="sc-fznZeY izeqLb"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="flex flex-col w-full py-4"
-              data-testid="list-divided-item__wrapper"
-            >
-              <div
-                class="flex justify-between flex-col items-start mt-5"
-                data-testid="list-divided-item__inner-wrapper"
-              >
-                <div
-                  class="flex flex-col"
-                >
-                  <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
-                    data-testid="list-divided-item__label"
-                  >
-                    Update Ledger in Background
-                  </span>
-                </div>
-              </div>
-              <div
-                class="mt-4"
-                data-testid="list-divided-item__content"
-              >
-                <div
-                  class="flex flex-row justify-between"
-                >
-                  <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
-                  >
-                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
-                  </span>
-                  <div
-                    class="-mt-2"
-                  >
-                    <label>
-                      <input
-                        class="sc-fznyAO htyfyy -mt-3"
-                        type="checkbox"
-                      />
-                      <div
-                        class="sc-fznKkj iTYdAh"
-                      >
-                        <span
-                          class="sc-fznZeY izeqLb"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div
-          class="flex justify-between w-full"
-        >
-          <button
-            class="sc-AxiKw imWDnq"
-            color="danger"
-            type="button"
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                reset.svg
-              </svg>
-            </div>
-            <span>
-              Reset Data
-            </span>
-          </button>
           <div
-            class="space-x-3"
+            class="relative mt-10"
+          >
+            <h2>
+              Other
+            </h2>
+            <ul
+              class="sc-fznyAO lyMNj"
+              data-testid="list-divided__items"
+            >
+              <li
+                class="flex flex-col w-full pb-6"
+                data-testid="list-divided-item__wrapper"
+              >
+                <div
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                      data-testid="list-divided-item__label"
+                    >
+                      Dark Theme
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row justify-between"
+                  >
+                    <span
+                      class="mt-1 text-sm text-theme-neutral"
+                    >
+                      Want to set the wallet to dark mode?
+                    </span>
+                    <div
+                      class="-mt-7"
+                    >
+                      <label>
+                        <input
+                          class="sc-fznKkj cHSYkT"
+                          type="checkbox"
+                        />
+                        <div
+                          class="sc-fznZeY iMEJUl"
+                        >
+                          <span
+                            class="sc-fzokOt dWmOrE"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="flex flex-col w-full pt-6"
+                data-testid="list-divided-item__wrapper"
+              >
+                <div
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                      data-testid="list-divided-item__label"
+                    >
+                      Update Ledger in Background
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row justify-between"
+                  >
+                    <span
+                      class="mt-1 text-sm text-theme-neutral"
+                    >
+                      You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                    </span>
+                    <div
+                      class="-mt-7"
+                    >
+                      <label>
+                        <input
+                          class="sc-fznKkj cHSYkT"
+                          type="checkbox"
+                        />
+                        <div
+                          class="sc-fznZeY iMEJUl"
+                        >
+                          <span
+                            class="sc-fzokOt dWmOrE"
+                          />
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex justify-between w-full pt-2"
           >
             <button
-              class="sc-AxiKw gFzSt"
-              color="primary"
+              class="sc-AxhCb clvjJS"
+              color="danger"
               type="button"
             >
-              Cancel
+              <div
+                class="sc-AxjAm cpczEI"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  reset.svg
+                </svg>
+              </div>
+              <span>
+                Reset Data
+              </span>
             </button>
-            <button
-              class="sc-AxiKw wFYj"
-              color="primary"
-              type="button"
+            <div
+              class="space-x-3"
             >
-              Save
-            </button>
+              <button
+                class="sc-AxhCb BegvR"
+                color="primary"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxhCb gBCygf"
+                color="primary"
+                type="button"
+              >
+                Save
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -1209,132 +1195,134 @@ exports[`Settings should render 1`] = `
 exports[`Settings should render a not found information 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full h-full"
+    class="flex w-full h-full p-16"
   >
     <div
-      class="w-1/4 h-full"
+      class="sc-AxiKw eZuVXn"
     >
-      <div>
-        <ul>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--General"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    general.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                General
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Peer"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    peer.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Peer
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Plugins"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    plugin.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Plugins
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Foo"
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--General"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
           >
             <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
-            <li
-              class="rounded-lg p-5 flex 
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  general.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Peer"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  peer.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Plugins"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  plugin.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Foo"
+        >
+          <div
+            class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+          />
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
+          >
+            <div
+              class="text-theme-primary"
             >
               <div
-                class="text-theme-primary"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                />
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Foo
-              </span>
-            </li>
-          </div>
-        </ul>
-      </div>
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              />
+            </div>
+            <span
+              class="ml-3 text-lg font-semibold"
+            >
+              Foo
+            </span>
+          </li>
+        </div>
+      </ul>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast"
     >
-      <span>
-        Foo settings not found
-      </span>
+      <div
+        class="w-125"
+      >
+        <span>
+          Foo settings not found
+        </span>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -1343,592 +1331,602 @@ exports[`Settings should render a not found information 1`] = `
 exports[`Settings should render peer settings 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full h-full"
+    class="flex w-full h-full p-16"
   >
     <div
-      class="w-1/4 h-full"
+      class="sc-AxiKw eZuVXn"
     >
-      <div>
-        <ul>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--General"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    general.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                General
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Peer"
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--General"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
           >
             <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
-            <li
-              class="rounded-lg p-5 flex 
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  general.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Peer"
+        >
+          <div
+            class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+          />
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
-            >
-              <div
-                class="text-theme-primary"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    peer.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Peer
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Plugins"
           >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+            <div
+              class="text-theme-primary"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    plugin.svg
-                  </svg>
-                </div>
+                <svg>
+                  peer.svg
+                </svg>
               </div>
-              <span
-                class="ml-2 font-semibold"
+            </div>
+            <span
+              class="ml-3 text-lg font-semibold"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Plugins"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                Plugins
-              </span>
-            </li>
-          </div>
-        </ul>
-      </div>
+                <svg>
+                  plugin.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+      </ul>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="w-125"
       >
-        <div>
-          <h1
-            class="mb-0 text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
-          >
-            Peer Settings
-          </h1>
-          <div
-            class="text-theme-neutral-dark"
-            data-testid="header__subtitle"
-          >
-            Customize your wallet to suit your needs.
+        <div
+          class="flex items-end justify-between bg-theme-background"
+        >
+          <div>
+            <h1
+              class="mb-0 text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Peer Settings
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Customize your wallet to suit your needs.
+            </div>
           </div>
         </div>
+        <form
+          class="mt-8"
+          data-testid="Form"
+          id="peer-settings__form"
+        >
+          <ul
+            class="sc-fznyAO lyMNj"
+            data-testid="list-divided__items"
+          >
+            <li
+              class="flex flex-col w-full pb-6"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Broadcast to Multiple Peers
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="mt-1 text-sm text-theme-neutral"
+                  >
+                    This protection will protect your money from unwanted Screenshot your PC.
+                  </span>
+                  <div
+                    class="-mt-7"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full pt-6"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Use Custom Peers
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="mt-1 text-sm text-theme-neutral"
+                  >
+                    You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
+                  </span>
+                  <div
+                    class="-mt-7"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="pt-8"
+          >
+            <div>
+              <div
+                class="sc-fzqNJr klEctb"
+                role="table"
+              >
+                <table
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      role="row"
+                    >
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral-500"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top  undefined"
+                        >
+                          <div
+                            class="mr-2"
+                          >
+                            Network
+                          </div>
+                          <div
+                            class="flex items-center text-theme-color-neutral-500"
+                            data-testid="table__Sort"
+                          />
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral-500"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top  undefined"
+                        >
+                          <div
+                            class="mr-2"
+                          >
+                            Name
+                          </div>
+                          <div
+                            class="flex items-center text-theme-color-neutral-500"
+                            data-testid="table__Sort"
+                          />
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral-500"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top  undefined"
+                        >
+                          <div
+                            class="mr-2"
+                          >
+                            Peer IP
+                          </div>
+                          <div
+                            class="flex items-center text-theme-color-neutral-500"
+                            data-testid="table__Sort"
+                          />
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral-500"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top  flex justify-center"
+                        >
+                          <div
+                            class="mr-2"
+                          >
+                            Type
+                          </div>
+                          <div
+                            class="flex items-center text-theme-color-neutral-500"
+                            data-testid="table__Sort"
+                          />
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-theme-neutral-200"
+                    >
+                      <td
+                        class="inline-flex items-center py-4 mt-1"
+                      >
+                        <div
+                          class="sc-fzoXzr jwmmOD text-logo border-theme-danger-200"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="ml-2"
+                        >
+                          ARK
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          ROBank
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          194.168.4.67:800
+                        </span>
+                      </td>
+                      <td
+                        class="py-1 text-theme-primary-300"
+                      >
+                        <div
+                          class="flex justify-center h-full"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxjAm buCJuk"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-theme-neutral-200"
+                    >
+                      <td
+                        class="inline-flex items-center py-4 mt-1"
+                      >
+                        <div
+                          class="sc-fzoXzr jwmmOD border-theme-neutral-300"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="ml-2"
+                        >
+                          ETHEREUM
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          MATBank
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          194.168.4.67:800
+                        </span>
+                      </td>
+                      <td
+                        class="py-1 text-theme-primary-300"
+                      >
+                        <div
+                          class="flex justify-center h-full"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxjAm buCJuk"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-theme-neutral-200"
+                    >
+                      <td
+                        class="inline-flex items-center py-4 mt-1"
+                      >
+                        <div
+                          class="sc-fzoXzr jwmmOD text-theme-warning-400 border-theme-warning-200"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="ml-2"
+                        >
+                          BITCOIN
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          OLEBank
+                        </span>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <span>
+                          194.168.4.67:800
+                        </span>
+                      </td>
+                      <td
+                        class="py-1 text-theme-primary-300"
+                      >
+                        <div
+                          class="flex justify-center h-full"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="relative"
+                          data-testid="dropdown__toggle"
+                        >
+                          <div
+                            class="float-right outline-none cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="sc-AxjAm buCJuk"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                class="sc-AxhCb BegvR w-full mt-8 mb-2"
+                color="primary"
+                data-testid="peer-list__add-button"
+                type="button"
+              >
+                Add Peer
+              </button>
+            </div>
+          </div>
+          <div
+            class="pt-2 pb-4"
+          >
+            <div
+              class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end w-full"
+          >
+            <button
+              class="sc-AxhCb gBCygf"
+              color="primary"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </form>
       </div>
-      <form
-        class="space-y-8"
-        data-testid="Form"
-        id="peer-settings__form"
-      >
-        <ul
-          class="sc-fzplWN krwTau"
-          data-testid="list-divided__items"
-        >
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Broadcast to Multiple Peers
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between mb-3"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  This protection will protect your money from unwanted Screenshot your PC.
-                </span>
-                <div
-                  class="-mt-11"
-                >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-4"
-                  data-testid="list-divided-item__label"
-                >
-                  Use Custom Peers
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
-                </span>
-                <div
-                  class="-mt-11"
-                >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <div>
-          <div
-            class="sc-fzqBZW cBnliu"
-            role="table"
-          >
-            <table
-              class="table-auto"
-            >
-              <thead>
-                <tr
-                  role="row"
-                >
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--0"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Network
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Name
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--2"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Peer IP
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--3"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  flex justify-center"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Type
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                role="rowgroup"
-              >
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
-                  >
-                    <div
-                      class="sc-fzoLag eQAZVl text-logo border-theme-danger-200"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      ARK
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      ROBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
-                  >
-                    <div
-                      class="sc-fzoLag eQAZVl border-theme-neutral-300"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          eth.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      ETHEREUM
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      MATBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
-                  >
-                    <div
-                      class="sc-fzoLag eQAZVl text-theme-warning-400 border-theme-warning-200"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      BITCOIN
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      OLEBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
-                      >
-                        <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
-                        >
-                          <svg>
-                            settings.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <button
-            class="sc-AxiKw gFzSt w-full mt-3 mb-2"
-            color="primary"
-            data-testid="peer-list__add-button"
-            type="button"
-          >
-            Add Peer
-          </button>
-        </div>
-        <div
-          class="sc-fzokOt beAtQX border-theme-neutral-300"
-          type="horizontal"
-        />
-        <div
-          class="flex justify-end w-full pt-2"
-        >
-          <button
-            class="sc-AxiKw wFYj"
-            color="primary"
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </form>
     </div>
   </div>
 </DocumentFragment>
@@ -1937,317 +1935,319 @@ exports[`Settings should render peer settings 1`] = `
 exports[`Settings should render plugin settings 1`] = `
 <DocumentFragment>
   <div
-    class="flex w-full h-full"
+    class="flex w-full h-full p-16"
   >
     <div
-      class="w-1/4 h-full"
+      class="sc-AxiKw eZuVXn"
     >
-      <div>
-        <ul>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--General"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    general.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                General
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Peer"
-          >
-            <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
-            >
-              <div
-                class="text-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    peer.svg
-                  </svg>
-                </div>
-              </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Peer
-              </span>
-            </li>
-          </div>
-          <div
-            class="relative cursor-pointer"
-            data-testid="side-menu__item--Plugins"
+      <ul>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--General"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
           >
             <div
-              class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
-            />
-            <li
-              class="rounded-lg p-5 flex 
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  general.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              General
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Peer"
+        >
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
+          >
+            <div
+              class="text-theme-primary-light"
+            >
+              <div
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  peer.svg
+                </svg>
+              </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-medium"
+            >
+              Peer
+            </span>
+          </li>
+        </div>
+        <div
+          class="relative cursor-pointer"
+          data-testid="side-menu__item--Plugins"
+        >
+          <div
+            class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
+          />
+          <li
+            class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
+          >
+            <div
+              class="text-theme-primary"
             >
               <div
-                class="text-theme-primary"
+                class="sc-AxjAm buCJuk"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    plugin.svg
-                  </svg>
-                </div>
+                <svg>
+                  plugin.svg
+                </svg>
               </div>
-              <span
-                class="ml-2 font-semibold"
-              >
-                Plugins
-              </span>
-            </li>
-          </div>
-        </ul>
-      </div>
+            </div>
+            <span
+              class="ml-3 text-lg font-semibold"
+            >
+              Plugins
+            </span>
+          </li>
+        </div>
+      </ul>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-end justify-between bg-theme-background"
+        class="w-125"
       >
-        <div>
-          <h1
-            class="mb-0 text-3xl font-bold md:text-4xl"
-            data-testid="header__title"
-          >
-            Plugin Settings
-          </h1>
-          <div
-            class="text-theme-neutral-dark"
-            data-testid="header__subtitle"
-          >
-            Customize your wallet to suit your needs.
+        <div
+          class="flex items-end justify-between bg-theme-background"
+        >
+          <div>
+            <h1
+              class="mb-0 text-3xl font-bold md:text-4xl"
+              data-testid="header__title"
+            >
+              Plugin Settings
+            </h1>
+            <div
+              class="text-theme-neutral-dark"
+              data-testid="header__subtitle"
+            >
+              Customize your wallet to suit your needs.
+            </div>
           </div>
         </div>
-      </div>
-      <form
-        class="space-y-8"
-        data-testid="Form"
-        id="plugin-settings__form"
-      >
-        <ul
-          class="sc-fzplWN krwTau"
-          data-testid="list-divided__items"
+        <form
+          class="mt-8"
+          data-testid="Form"
+          id="plugin-settings__form"
         >
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
+          <ul
+            class="sc-fznyAO lyMNj"
+            data-testid="list-divided__items"
           >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
+            <li
+              class="flex flex-col w-full pb-6"
+              data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex flex-col"
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
               >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Apply Blacklist
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
-                </span>
                 <div
-                  class="-mt-11"
+                  class="flex flex-col"
                 >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <div
-                class="flex justify-end w-full py-6 space-x-3"
-              >
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="plugins__open-list"
-                  type="button"
-                >
-                  Open List
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="plugins__add-plugin"
-                  type="button"
-                >
-                  Add Plugin
-                </button>
-              </div>
-            </div>
-          </li>
-          <li
-            class="flex flex-col w-full py-4"
-            data-testid="list-divided-item__wrapper"
-          >
-            <div
-              class="flex justify-between flex-col items-start mt-5"
-              data-testid="list-divided-item__inner-wrapper"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                  data-testid="list-divided-item__label"
-                >
-                  Plugin Source
-                </span>
-              </div>
-            </div>
-            <div
-              class="mt-4"
-              data-testid="list-divided-item__content"
-            >
-              <div
-                class="flex flex-row justify-between mb-5"
-              >
-                <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
-                >
-                  Turn this feature on, you can upload plugins to your wallet from third-party sources.
-                </span>
-                <div
-                  class="-mt-11"
-                >
-                  <label>
-                    <input
-                      class="sc-fznyAO htyfyy"
-                      type="checkbox"
-                    />
-                    <div
-                      class="sc-fznKkj iTYdAh"
-                    >
-                      <span
-                        class="sc-fznZeY izeqLb"
-                      />
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
-              >
-                <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="load-plugins"
-                >
-                  Load plugins from
-                </label>
-                <div
-                  class="sc-AxmLO kuiknc"
-                >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
-                    name="load-plugins"
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
                   >
-                    <option
-                      selected=""
-                      value=""
-                    >
-                      Select
-                    </option>
-                    <option
-                      value="github"
-                    >
-                      GitHub
-                    </option>
-                  </select>
+                    Apply Blacklist
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between"
+                >
+                  <span
+                    class="text-sm text-theme-neutral"
+                  >
+                    This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
+                  </span>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="-mt-7"
                   >
-                    <div
-                      class="sc-AxjAm cpczEI"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
                   </div>
                 </div>
-              </fieldset>
-            </div>
-          </li>
-        </ul>
-        <div
-          class="sc-fzokOt beAtQX border-theme-neutral-300"
-          type="horizontal"
-        />
-        <div
-          class="flex justify-end w-full pt-2"
-        >
-          <button
-            class="sc-AxiKw wFYj"
-            color="primary"
-            type="button"
+                <div
+                  class="flex justify-end w-full pt-6 space-x-3"
+                >
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="plugins__open-list"
+                    type="button"
+                  >
+                    Open List
+                  </button>
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="plugins__add-plugin"
+                    type="button"
+                  >
+                    Add Plugin
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li
+              class="flex flex-col w-full pt-6"
+              data-testid="list-divided-item__wrapper"
+            >
+              <div
+                class="flex justify-between flex-col items-start"
+                data-testid="list-divided-item__inner-wrapper"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <span
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
+                    data-testid="list-divided-item__label"
+                  >
+                    Plugin Source
+                  </span>
+                </div>
+              </div>
+              <div
+                class=""
+                data-testid="list-divided-item__content"
+              >
+                <div
+                  class="flex flex-row justify-between mb-5"
+                >
+                  <span
+                    class="text-sm text-theme-neutral"
+                  >
+                    Turn this feature on, you can upload plugins to your wallet from third-party sources.
+                  </span>
+                  <div
+                    class="-mt-7"
+                  >
+                    <label>
+                      <input
+                        class="sc-fznKkj cHSYkT"
+                        type="checkbox"
+                      />
+                      <div
+                        class="sc-fznZeY iMEJUl"
+                      >
+                        <span
+                          class="sc-fzokOt dWmOrE"
+                        />
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <fieldset
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="load-plugins"
+                  >
+                    Load plugins from
+                  </label>
+                  <div
+                    class="sc-fzozJi OgXfh"
+                  >
+                    <select
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="load-plugins"
+                    >
+                      <option
+                        selected=""
+                        value=""
+                      >
+                        Select
+                      </option>
+                      <option
+                        value="github"
+                      >
+                        GitHub
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+            type="horizontal"
+          />
+          <div
+            class="flex justify-end w-full pt-2"
           >
-            Save
-          </button>
-        </div>
-      </form>
+            <button
+              class="sc-AxhCb gBCygf"
+              color="primary"
+              type="button"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>

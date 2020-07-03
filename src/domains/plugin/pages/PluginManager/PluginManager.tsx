@@ -133,13 +133,6 @@ export const PluginManager = () => {
 	const [currentView, setCurrentView] = React.useState("home");
 	const [viewType, setViewType] = React.useState("grid");
 	const [installPlugin, setInstallPlugin] = React.useState(false);
-	const [installStep, setInstallStep] = React.useState(1);
-
-	React.useEffect(() => {
-		if (installStep === 2) {
-			setTimeout(() => setInstallStep(3), 1000);
-		}
-	}, [installStep]);
 
 	const plugins = [];
 	for (let i = 0; i < 10; i++) {
@@ -172,12 +165,9 @@ export const PluginManager = () => {
 	return (
 		<div data-testid="PluginManager">
 			<InstallPlugin
-				step={installStep}
 				isOpen={installPlugin}
 				onClose={() => setInstallPlugin(false)}
 				onCancel={() => setInstallPlugin(false)}
-				onDownload={() => setInstallStep(2)}
-				onInstall={() => setInstallPlugin(false)}
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
@@ -187,7 +177,7 @@ export const PluginManager = () => {
 						<div className="text-theme-neutral-700">{t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}</div>
 					</div>
 
-					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3">
+					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-10 space-x-3">
 						<div className="flex items-end py-2">
 							<HeaderSearchBar onSearch={() => console.log("search")}>
 								<Icon name="Search" width={20} height={20} className="mr-6" />
