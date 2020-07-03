@@ -22,7 +22,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">
 						This protection will protect your money from unwanted Screenshot your PC.
 					</span>
 					<div className="-mt-7">
@@ -38,7 +38,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>

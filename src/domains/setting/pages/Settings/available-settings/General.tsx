@@ -55,7 +55,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
 
@@ -72,7 +72,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			wrapperClass: "py-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
@@ -107,7 +107,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">Want to set the wallet to dark mode?</span>
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
 
 					<div className="-mt-7">
 						<Toggle />
@@ -122,7 +122,7 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral mt-1">
+					<span className="w-3/4 mt-1 text-sm text-theme-neutral">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>

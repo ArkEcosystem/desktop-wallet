@@ -54,7 +54,7 @@ export const Settings = ({
 		<div className="flex w-full h-full p-16">
 			<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
 
-			<div className="flex-1 pl-30 mx-10 border-l-1 border-theme-primary-contrast">
+			<div className="flex-1 mx-10 pl-30 border-l-1 border-theme-primary-contrast">
 				<div className="w-125">{renderSettings()}</div>
 			</div>
 		</div>
