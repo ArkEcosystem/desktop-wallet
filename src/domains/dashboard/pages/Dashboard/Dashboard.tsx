@@ -20,7 +20,6 @@ const Section = styled.div`
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-
 	// Wallet controls data
 	const filterProperties = {
 		visibleTransactionsView: showTransactions,
