@@ -80,10 +80,10 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 
 	return (
 		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
-			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="pl-10 p-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="py-16 px-10 bg-theme-background">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
