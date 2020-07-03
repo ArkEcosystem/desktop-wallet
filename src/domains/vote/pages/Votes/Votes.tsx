@@ -7,7 +7,6 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { NavigationBar } from "app/components/NavigationBar";
 import { SelectAsset } from "app/components/SelectAsset";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { useState } from "react";
@@ -54,8 +53,6 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 
 	return (
 		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">

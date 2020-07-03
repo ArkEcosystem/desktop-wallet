@@ -5,201 +5,6 @@ exports[`WalletDetails should render 1`] = `
   <div
     class="relative"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-Axmtr htxHJf"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-8"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/portfolio"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/exchanges"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hCRZAv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral-500"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-700"
-              />
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxhCb bzWLYJ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    />
-                    <span
-                      class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex items-center space-x-2 p-5 font-semibold bg-theme-neutral-100 text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -313,7 +118,7 @@ exports[`WalletDetails should render 1`] = `
             </div>
           </button>
           <button
-            class="sc-fzozJi ehyJYV"
+            class="sc-AxheI cqeDRe"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -328,7 +133,7 @@ exports[`WalletDetails should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-fzozJi bQxsMv text-left"
+                class="sc-AxheI gUIVyQ text-left"
                 color="primary"
                 type="button"
               >
@@ -362,15 +167,15 @@ exports[`WalletDetails should render 1`] = `
             </p>
             <label>
               <input
-                class="sc-fzoLsD cepnXb"
+                class="sc-AxmLO iNkaiA"
                 data-testid="WalletHeader__toggle"
                 type="checkbox"
               />
               <div
-                class="sc-fzpans hZvDwV"
+                class="sc-fzozJi cqRCNb"
               >
                 <span
-                  class="sc-fzplWN fjCJze"
+                  class="sc-fzoLsD jJbChn"
                 />
               </div>
             </label>
@@ -458,7 +263,7 @@ exports[`WalletDetails should render 1`] = `
             Hide
           </span>
           <span
-            class="sc-AxmLO fzDkck"
+            class="sc-AxgMl hoQVgY"
           >
             <div
               class="sc-AxirZ iQaTP"
@@ -629,7 +434,7 @@ exports[`WalletDetails should render 1`] = `
                 </li>
               </ul>
               <button
-                class="sc-fzozJi dahkbH"
+                class="sc-AxheI hoJyac"
                 color="primary"
                 data-testid="WalletVote__delegate__unvote"
                 type="button"
@@ -664,7 +469,7 @@ exports[`WalletDetails should render 1`] = `
             Hide
           </span>
           <span
-            class="sc-AxmLO fzDkck"
+            class="sc-AxgMl hoQVgY"
           >
             <div
               class="sc-AxirZ iQaTP"
@@ -821,7 +626,7 @@ exports[`WalletDetails should render 1`] = `
               Show all
             </button>
             <button
-              class="sc-fzozJi dahkbH"
+              class="sc-AxheI hoJyac"
               color="primary"
               data-testid="WalletRegistrations__register"
               type="button"
@@ -844,7 +649,7 @@ exports[`WalletDetails should render 1`] = `
         Pending Transactions
       </h2>
       <div
-        class="sc-AxgMl hJWcEH"
+        class="sc-AxiKw bvfChE"
         role="table"
       >
         <table
@@ -1015,7 +820,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxheI dbuKLQ"
+                  class="sc-AxhUy eCrePA"
                   color="success"
                 >
                   100 ARK
@@ -1085,7 +890,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxheI kinEEx"
+                  class="sc-AxhUy gRLEpJ"
                   color="danger"
                 >
                   - 100 ARK
@@ -1112,7 +917,7 @@ exports[`WalletDetails should render 1`] = `
         Transaction History
       </h2>
       <div
-        class="sc-AxgMl hJWcEH"
+        class="sc-AxiKw bvfChE"
         role="table"
       >
         <table
@@ -1283,7 +1088,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxheI kinEEx"
+                  class="sc-AxhUy gRLEpJ"
                   color="danger"
                 >
                   - 100 ARK
@@ -1336,7 +1141,7 @@ exports[`WalletDetails should render 1`] = `
                 Show
               </span>
               <span
-                class="sc-AxmLO WTmEC"
+                class="sc-AxgMl bDidZW"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -1364,7 +1169,7 @@ exports[`WalletDetails should render 1`] = `
             class="max-w-4xl mx-auto"
           >
             <div
-              class="sc-AxgMl hJWcEH"
+              class="sc-AxiKw bvfChE"
               role="table"
             >
               <table

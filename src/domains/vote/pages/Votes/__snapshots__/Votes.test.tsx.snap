@@ -6,205 +6,6 @@ exports[`Votes should render 1`] = `
     class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fznZeY eWtkXJ"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-8"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/portfolio"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/exchanges"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hCRZAv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral-500"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-700"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzpans bMLKJk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -308,7 +109,7 @@ exports[`Votes should render 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqBZW guxyBp"
+                  class="sc-fznyAO jIknem"
                 >
                   <div
                     aria-expanded="false"
@@ -521,205 +322,6 @@ exports[`Votes should select a cryptoasset 1`] = `
     class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fznZeY eWtkXJ"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-8"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/portfolio"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/exchanges"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hCRZAv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral-500"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-700"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzpans bMLKJk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -823,7 +425,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqBZW guxyBp"
+                  class="sc-fznyAO jIknem"
                 >
                   <div
                     aria-expanded="false"
@@ -1029,7 +631,7 @@ exports[`Votes should select a cryptoasset 1`] = `
             Select Address
           </h2>
           <div
-            class="sc-fznyAO fGJXsR"
+            class="sc-fzpans isbmKM"
             role="table"
           >
             <table
@@ -1418,7 +1020,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1536,7 +1138,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1617,7 +1219,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1698,7 +1300,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1725,205 +1327,6 @@ exports[`Votes should select a delegate 1`] = `
     class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fznZeY eWtkXJ"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-8"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/portfolio"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/exchanges"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hCRZAv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral-500"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-700"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzpans bMLKJk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -2027,7 +1430,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqBZW guxyBp"
+                  class="sc-fznyAO jIknem"
                 >
                   <div
                     aria-expanded="false"
@@ -2251,7 +1654,7 @@ exports[`Votes should select a delegate 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fznyAO fGJXsR"
+            class="sc-fzpans isbmKM"
             role="table"
           >
             <table
@@ -2650,7 +2053,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt kfmTyB"
+                        class="sc-fzplWN cMeOvn"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2750,7 +2153,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt kfmTyB"
+                        class="sc-fzplWN cMeOvn"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2814,7 +2217,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt kfmTyB"
+                        class="sc-fzplWN cMeOvn"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2914,7 +2317,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2978,7 +2381,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -3064,7 +2467,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-fzokOt jTxmEw"
+                    class="sc-fzplWN kShMau"
                     color="primary"
                     type="button"
                   >
@@ -3088,205 +2491,6 @@ exports[`Votes should select address 1`] = `
     class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fznZeY eWtkXJ"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-8"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/portfolio"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/exchanges"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
-                  href="/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hCRZAv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral-500"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-700"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzpans bMLKJk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -3390,7 +2594,7 @@ exports[`Votes should select address 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqBZW guxyBp"
+                  class="sc-fznyAO jIknem"
                 >
                   <div
                     aria-expanded="false"
@@ -3614,7 +2818,7 @@ exports[`Votes should select address 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fznyAO fGJXsR"
+            class="sc-fzpans isbmKM"
             role="table"
           >
             <table
@@ -4013,7 +3217,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4113,7 +3317,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4177,7 +3381,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4277,7 +3481,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4341,7 +3545,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzokOt ibUIZa"
+                        class="sc-fzplWN bszRLY"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
