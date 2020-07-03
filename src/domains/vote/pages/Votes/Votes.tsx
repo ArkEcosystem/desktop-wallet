@@ -56,7 +56,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
 			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-			<Breadcrumbs crumbs={crumbs} className="pl-10 py-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="py-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
 				<div className="px-10 py-16 bg-theme-background">

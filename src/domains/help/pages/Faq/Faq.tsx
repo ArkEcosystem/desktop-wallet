@@ -38,7 +38,7 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div className="bg-theme-neutral-100">
-			<div className="mb-5 bg-white px-13 py-16">
+			<div className="py-16 mb-5 bg-white px-13">
 				<Header
 					title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
 					subtitle={t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}
@@ -46,7 +46,7 @@ export const Faq = ({ articles }: FaqProps) => {
 						<div className="flex items-center justify-end space-x-8">
 							<Icon
 								name="Search"
-								className="text-theme-primary-100 cursor-pointer"
+								className="cursor-pointer text-theme-primary-100"
 								width={20}
 								height={20}
 							/>

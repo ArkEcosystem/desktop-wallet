@@ -5,11 +5,9 @@ exports[`Header should render an header 1`] = `
   <div
     class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="-mt-2"
-    >
+    <div>
       <h1
-        class="mb-0 text-3xl font-bold md:text-4xl"
+        class="mb-0 text-3xl font-bold leading-tight md:text-4xl"
         data-testid="header__title"
       >
         Header test
@@ -24,11 +22,9 @@ exports[`Header should render an header with a subtitle 1`] = `
   <div
     class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="-mt-2"
-    >
+    <div>
       <h1
-        class="mb-0 text-3xl font-bold md:text-4xl"
+        class="mb-0 text-3xl font-bold leading-tight md:text-4xl"
         data-testid="header__title"
       >
         Header test
@@ -49,11 +45,9 @@ exports[`Header should render an header with extra 1`] = `
   <div
     class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="-mt-2"
-    >
+    <div>
       <h1
-        class="mb-0 text-3xl font-bold md:text-4xl"
+        class="mb-0 text-3xl font-bold leading-tight md:text-4xl"
         data-testid="header__title"
       >
         Header test
