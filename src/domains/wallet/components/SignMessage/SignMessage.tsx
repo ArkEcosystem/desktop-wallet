@@ -77,9 +77,9 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail border label="Message">
+			<TransactionDetail border label="Message" className="text-lg">
 				Oleg Happy in the Oleg Bank
 			</TransactionDetail>
 			<TransactionDetail border label="Signature">
