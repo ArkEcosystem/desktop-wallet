@@ -70,7 +70,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 
 	return (
 		<section className="bg-theme-neutral-100">
-			<div className="px-10 py-14 bg-theme-background">
+			<div className="px-10 py-16 bg-theme-background">
 				<Header
 					title="My Registrations"
 					subtitle="You can register a Delagate, Business and Bridgechain."
