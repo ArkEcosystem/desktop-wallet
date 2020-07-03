@@ -1,4 +1,3 @@
-import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
 import React, { useState } from "react";
@@ -33,7 +32,7 @@ const Votes = ({ votes }: any) => {
 
 	return (
 		<div className="flex items-center space-x-2 font-semibold">
-			<span className={voteDiffColor}>{voteDiff}</span>
+			<span className={voteDiffColor}>{voteDiff > 0 ? `+${voteDiff}` : voteDiff}</span>
 			<Icon className="text-theme-primary-200" name="ChevronUp" width={15} height={15} />
 			<Icon className="text-theme-primary-200" name="ChevronDown" width={15} height={15} />
 		</div>
@@ -45,17 +44,19 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	return (
 		<div className="w-full">
-			<div className="flex items-center mt-5 text-sm text-theme-neutral-900">
-				<span className="font-semibold">Sort by:</span>
-				<div className="flex items-center ml-2">
+			<div className="flex items-center mt-5 font-semibold text-sm text-theme-neutral-500">
+				<span className="text-theme-neutral-900">Sort by:</span>
+				<div className="flex items-center ml-2 divide-x divide-theme-neutral-400 space-x-3">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
-						<span className="cursor-pointer" key={index}>
-							{index > 0 && <Divider type="vertical" />}
-
+						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
-								<span className="flex items-center font-semibold space-x-2">
-									<span>{sortType}</span>{" "}
-									<Icon name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"} />
+								<span className="flex items-center text-theme-neutral-900 space-x-1">
+									<span>{sortType}</span>
+									<Icon
+										name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"}
+										width={7}
+										height={5}
+									/>
 								</span>
 							) : (
 								<span>{sortType}</span>
@@ -68,19 +69,15 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 				{comments.map(({ author, score, date, comment, votes, replies }, index: number) => (
 					<div className="flex flex-col mt-5" key={index}>
 						<div className="flex items-center justify-between">
-							<div className="relative flex items-center space-x-3 divide-theme-neutral-400">
-								<span className="text-lg font-semibold">{author}</span>
+							<div className="relative flex items-center divide-x divide-theme-neutral-400">
+								<span className="text-lg pr-3 font-semibold">{author}</span>
 
-								<Divider type="vertical" />
-
-								<div className="flex items-center text-sm font-semibold text-theme-warning-300">
+								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-300">
 									<Icon name="Star" width={10} height={10} />
-									<span className="ml-1 text-theme-neutral-600">{score}</span>
+									<span className="ml-1 text-theme-neutral-700">{score}</span>
 								</div>
 
-								<Divider type="vertical" />
-
-								<span className="text-sm font-semibold text-theme-neutral-400">
+								<span className="text-sm pl-3 font-semibold text-theme-neutral-500">
 									<TimeAgo date={date} />
 								</span>
 							</div>

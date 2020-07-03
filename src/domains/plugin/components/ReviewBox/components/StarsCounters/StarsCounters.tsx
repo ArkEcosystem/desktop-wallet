@@ -25,7 +25,7 @@ export const StarsCounters = ({ ratings, totalAvaliations }: Props) => (
 		{ratings.map(({ rating, votes }: RatingType, index: number) => {
 			const calculatedRating = (votes / totalAvaliations) * 100;
 
-			const stars = Array(rating).fill(<Icon name="Star" width={13} height={13} />);
+			const stars = [...Array(rating)].map((e, index) => <Icon key={index} name="Star" width={13} height={13} />);
 
 			return (
 				<div className="flex flex-col" key={index}>

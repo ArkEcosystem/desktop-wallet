@@ -12,7 +12,7 @@ exports[`Reply should render properly 1`] = `
         class="flex items-center w-10"
       >
         <div
-          class="sc-AxirZ gNHFnS -mt-2 mx-auto"
+          class="sc-AxjAm gvXdNR -mt-2 mx-auto"
           height="18"
           width="15"
         >
@@ -22,19 +22,15 @@ exports[`Reply should render properly 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center space-x-3"
+        class="flex items-center divide-x divide-theme-neutral-400 space-x-3"
       >
         <span
           class="text-lg font-semibold text-theme-neutral-900"
         >
           Developer response
         </span>
-        <div
-          class="sc-AxjAm jsQKzL border-theme-neutral-300"
-          type="vertical"
-        />
         <span
-          class="text-sm font-semibold text-theme-neutral-400"
+          class="text-sm pl-3 font-semibold text-theme-neutral-500"
         >
           <span
             data-testid="timeago"
@@ -45,7 +41,7 @@ exports[`Reply should render properly 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw kLxjtc mt-2 ml-10 text-theme-neutral-600"
+      class="sc-AxirZ iYaTII mt-2 ml-10 text-theme-neutral-600"
     >
       <a
         href="#"
