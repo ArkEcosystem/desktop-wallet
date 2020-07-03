@@ -94,7 +94,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+				<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
 			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 		</div>
