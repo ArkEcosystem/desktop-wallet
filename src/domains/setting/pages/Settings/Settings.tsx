@@ -51,11 +51,12 @@ export const Settings = ({
 	};
 
 	return (
-		<div className="flex w-full h-full">
-			<div className="w-1/4 h-full">
-				<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
+		<div className="flex w-full h-full p-16">
+			<SideBar items={settings} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
+
+			<div className="flex-1 pl-30 mx-10 border-l-1 border-theme-primary-contrast">
+				<div className="w-125">{renderSettings()}</div>
 			</div>
-			<div className="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
 		</div>
 	);
 };
