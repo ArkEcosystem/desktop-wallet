@@ -63,13 +63,13 @@ exports[`SignMessage should render as signed 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                      class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                       data-testid="address__wallet-name"
                     >
                       ROBank
                     </span>
                     <span
-                      class="text-theme-neutral-400 font-semibold text-xl"
+                      class="text-theme-neutral-400 font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKj...EVTQWK
@@ -97,7 +97,7 @@ exports[`SignMessage should render as signed 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 text-lg"
             >
               <div
                 class="flex-1"
