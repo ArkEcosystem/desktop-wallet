@@ -27,13 +27,11 @@ const networks = [
 ];
 
 export const Default = () => (
-	<div className="mt-15">
-		<CreateWallet
-			mnemonic={mnemonic}
-			networks={networks}
-			onCopy={action("onCopy")}
-			onDownload={action("onDownload")}
-			onSubmit={action("onSubmit")}
-		/>
-	</div>
+	<CreateWallet
+		mnemonic={mnemonic}
+		networks={networks}
+		onCopy={action("onCopy")}
+		onDownload={action("onDownload")}
+		onSubmit={action("onSubmit")}
+	/>
 );

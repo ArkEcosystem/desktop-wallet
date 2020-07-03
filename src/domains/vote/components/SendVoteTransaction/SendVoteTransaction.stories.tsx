@@ -4,8 +4,4 @@ import { SendVoteTransaction } from "./SendVoteTransaction";
 
 export default { title: "Domains / Vote / Components / SendVoteTransaction" };
 
-export const Default = () => (
-	<div className="mt-15">
-		<SendVoteTransaction />
-	</div>
-);
+export const Default = () => <SendVoteTransaction />;

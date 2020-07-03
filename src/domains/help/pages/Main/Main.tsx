@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -66,23 +67,14 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	const { t } = useTranslation();
 	return (
 		<div className="bg-theme-neutral-100">
-			<div className="mb-5 bg-white p-13">
-				<div className="flex">
-					<div className="w-2/3">
-						<h1>{t("HELP.PAGE_SUPPORT.TITLE")}</h1>
-						<p className="text-theme-neutral-600">{t("HELP.PAGE_SUPPORT.SUBTITLE")}</p>
-					</div>
-					<div className="flex justify-end w-1/3">
-						<div className="my-auto cursor-pointer text-theme-primary-200">
-							<Icon name="Search" />
-						</div>
-						<div className="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100" />
-						<div className="my-auto">
-							<Button color="primary">{t("HELP.CONTACT_US")}</Button>
-						</div>
-					</div>
-				</div>
+			<div className="py-16 mb-5 bg-white px-13">
+				<Header
+					title={t("HELP.PAGE_SUPPORT.TITLE")}
+					subtitle={t("HELP.PAGE_SUPPORT.SUBTITLE")}
+					extra={<Button color="primary">{t("HELP.CONTACT_US")}</Button>}
+				/>
 			</div>
+
 			<div className="mb-5 bg-white p-13">
 				<div className="flex flex-row">
 					{categories &&
@@ -101,7 +93,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 			<div className="py-10 mb-10 bg-white px-14">
 				<div className="flex flex-row">
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h2>
 						<ul>
 							{helpfulArticles &&
 								helpfulArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
@@ -110,7 +102,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 						</ul>
 					</div>
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h2>
 						<ul>
 							{popularArticles &&
 								popularArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
@@ -119,7 +111,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 						</ul>
 					</div>
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h2>
 						<ul>
 							{newestArticles &&
 								newestArticles.map(({ title, path }: ArticleListItemProps, index: number) => (

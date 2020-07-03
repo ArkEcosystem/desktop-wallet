@@ -54,15 +54,16 @@ describe("Welcome", () => {
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 		fireEvent.click(getByText("Create Profile"));
-		expect(history.location.pathname).toEqual("/profile/create");
+		expect(history.location.pathname).toEqual("/profiles/create");
 	});
 
 	it("should render with profiles", async () => {
 		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 
 		env.profiles().create("caio");
+		const createdProfile = env.profiles().all()[0];
 
-		const { container, asFragment } = render(
+		const { container, getByText, asFragment } = render(
 			<Router history={history}>
 				<EnvironmentContext.Provider value={{ env }}>
 					<Welcome />
@@ -77,6 +78,8 @@ describe("Welcome", () => {
 		});
 
 		expect(container).toBeTruthy();
+		fireEvent.click(getByText("caio"));
+		expect(history.location.pathname).toEqual(`/portfolio/${createdProfile.id()}`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

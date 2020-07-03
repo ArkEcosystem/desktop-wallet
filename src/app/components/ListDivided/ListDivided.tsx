@@ -10,7 +10,7 @@ type Props = {
 };
 
 const StyledList = styled.ul({
-	li: tw`border-b border-dashed border-theme-neutral-light`,
+	li: tw`border-b border-dashed border-theme-neutral-300`,
 	"li:last-child": tw`
 		border-b-0
 	`,

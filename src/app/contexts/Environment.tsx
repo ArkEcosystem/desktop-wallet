@@ -18,4 +18,6 @@ const EnvironmentProvider = ({ children }: Props) => {
 	return <EnvironmentContext.Provider value={{ env }}>{children}</EnvironmentContext.Provider>;
 };
 
-export { EnvironmentContext, EnvironmentProvider };
+const EnvironmentConsumer = EnvironmentContext.Consumer;
+
+export { EnvironmentContext, EnvironmentProvider, EnvironmentConsumer };

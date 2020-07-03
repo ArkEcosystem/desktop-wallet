@@ -1,4 +1,5 @@
 import { Button } from "app/components/Button";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -26,8 +27,8 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 				</div>
 			</div>
 			<div>
-				<div className="mb-2 ml-3 font-bold text-theme-neutral-800">{title}</div>
-				<div className="ml-3 text-sm text-theme-neutral-600">{description}</div>
+				<div className="mb-2 ml-3 text-lg font-bold text-theme-neutral-800">{title}</div>
+				<div className="ml-3 text-theme-neutral-600">{description}</div>
 			</div>
 		</a>
 	</li>
@@ -37,23 +38,25 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div className="bg-theme-neutral-100">
-			<div className="mb-5 bg-white p-13">
-				<div className="flex">
-					<div className="w-2/3">
-						<h1>{t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}</h1>
-						<p className="text-theme-neutral-600">{t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}</p>
-					</div>
-					<div className="flex justify-end w-1/3">
-						<div className="my-auto cursor-pointer text-theme-primary-200">
-							<Icon name="Search" />
+			<div className="py-16 mb-5 bg-white px-13">
+				<Header
+					title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
+					subtitle={t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}
+					extra={
+						<div className="flex items-center justify-end space-x-8">
+							<Icon
+								name="Search"
+								className="cursor-pointer text-theme-primary-100"
+								width={20}
+								height={20}
+							/>
+							<div className="h-10 my-auto border-l border-1 border-theme-primary-100" />
+							<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
 						</div>
-						<div className="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100" />
-						<div className="my-auto">
-							<Button color="primary">{t("HELP.CONTACT_US")}</Button>
-						</div>
-					</div>
-				</div>
+					}
+				/>
 			</div>
+
 			<div className="px-12 py-10 mb-10 bg-white">
 				<div className="flex flex-row">
 					<div className="mr-10">

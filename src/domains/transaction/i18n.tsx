@@ -54,6 +54,12 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction IPFS Hash",
 	},
 
+	LEDGER_CONFIRMATION: {
+		DESCRIPTION:
+			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
+		LOADING_MESSAGE: "Waiting for confirmation ...",
+	},
+
 	LINK_TYPES: {
 		BITBUCKET: "BitBucket",
 		FACEBOOK: "Facebook",

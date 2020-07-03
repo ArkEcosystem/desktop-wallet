@@ -7,7 +7,7 @@ export const ProfileRoutes = [
 		component: Welcome,
 	},
 	{
-		path: "/profile/create",
+		path: "/profiles/create",
 		exact: true,
 		component: CreateProfile,
 	},

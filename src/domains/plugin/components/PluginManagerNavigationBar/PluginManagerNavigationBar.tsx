@@ -12,7 +12,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 	return (
 		<div
 			data-testid="PluginManagerNavigationBar"
-			className="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
+			className="sticky z-40 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
 		>
 			<div className="container flex justify-between h-full mx-auto text-theme-neutral-400">
 				<div className="flex h-full space-x-6">

@@ -106,21 +106,12 @@ describe("PluginManager", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
 		act(() => {
-			fireEvent.click(getByTestId("install-plugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
 		});
 
-		TestUtils.act(() => {
-			jest.runAllTimers();
-		});
-
-		expect(setTimeout).toBeCalled();
-		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
-
-		act(() => {
-			fireEvent.click(getByTestId("install-plugin__install-button"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -136,21 +127,12 @@ describe("PluginManager", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
 		act(() => {
-			fireEvent.click(getByTestId("install-plugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
 		});
 
-		TestUtils.act(() => {
-			jest.runAllTimers();
-		});
-
-		expect(setTimeout).toHaveBeenCalled();
-		expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
-
-		act(() => {
-			fireEvent.click(getByTestId("install-plugin__install-button"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -183,7 +165,7 @@ describe("PluginManager", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
 		act(() => {
-			fireEvent.click(getByTestId("install-plugin__cancel-button"));
+			fireEvent.click(getByTestId("InstallPlugin__cancel-button"));
 		});
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -193,7 +175,7 @@ describe("PluginManager", () => {
 	it("should search for plugin", (done) => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId, rerender } = render(<PluginManager />);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -219,7 +201,7 @@ describe("PluginManager", () => {
 	it("should select plugin on home grids", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(
@@ -253,7 +235,7 @@ describe("PluginManager", () => {
 	it("should select plugin on game grid", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -270,7 +252,7 @@ describe("PluginManager", () => {
 	it("should delete plugin on home", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getAllByTestId("dropdown__toggle")[0]);
@@ -287,7 +269,7 @@ describe("PluginManager", () => {
 	it("should delete plugin on game", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId, rerender } = render(<PluginManager />);
+		const { asFragment, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));

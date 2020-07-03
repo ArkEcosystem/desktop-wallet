@@ -10,6 +10,7 @@ type BlacklistPluginsProps = {
 	onClose?: any;
 };
 
+const { BestPluginsBanner } = images.plugin.common;
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
@@ -61,8 +62,13 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 
 	return (
 		<Modal
-			title={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
+			title={
+				<div className="mb-5 text-5xl font-bold leading-tight text-white">
+					{t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
+				</div>
+			}
 			description={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.DESCRIPTION")}
+			banner={<BestPluginsBanner className="w-full" />}
 			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}

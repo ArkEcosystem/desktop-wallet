@@ -38,10 +38,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 type ContactsProps = {
 	contacts: any[];
+	assets: any[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
+export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
 	const { t } = useTranslation();
@@ -73,25 +74,16 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 		},
 	];
 
-	// TODO: replace after design phase
-	const networks = [
-		{
-			label: "Ark Ecosystem",
-			value: "ark",
-			icon: "Ark",
-		},
-	];
-
 	const handleOnSave = () => {
 		setCreateIsOpen(false);
 	};
 
 	return (
 		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
-			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="px-10 py-16 bg-theme-background">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -134,7 +126,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				networks={networks}
+				assets={assets}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
@@ -145,4 +137,5 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
+	assets: [],
 };

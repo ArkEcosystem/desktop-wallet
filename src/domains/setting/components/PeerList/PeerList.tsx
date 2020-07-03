@@ -22,7 +22,7 @@ export const PeerList = ({ listColumns, peers, assets }: PeerListProps) => {
 
 			<Button
 				variant="plain"
-				className="w-full mt-3 mb-2"
+				className="w-full mt-8 mb-2"
 				onClick={() => setModalIsOpen(true)}
 				data-testid="peer-list__add-button"
 			>
