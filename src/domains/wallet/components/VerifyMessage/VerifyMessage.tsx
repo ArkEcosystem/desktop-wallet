@@ -24,9 +24,10 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 		if (verifyAddress)
 			return (
 				<div className="mt-8">
-					<Alert variant="warning" size="sm">
-						<span className="p-5 text-sm font-semibold">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
+					<Alert variant="warning">
+						<span className="text-sm font-medium">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
+
 					<div className="mt-8">
 						<FormField name="signet-message-content">
 							<FormLabel label="Signet message content" />
@@ -71,15 +72,14 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 		>
 			<div className="mt-8">
 				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
-					<span className="pb-2 text-base font-bold">Verify</span>
+					<span className="text-lg font-semibold">Verify</span>
 					<div className="flex flex-row justify-between">
-						<span className="w-3/4 text-sm text-theme-neutral-light">
+						<span className="text-sm text-theme-neutral pt-2">
 							You can verify only text using a JSON public key
 						</span>
-						<div className="mr-1 -mt-2">
+						<div className="mr-1 -mt-7">
 							<Toggle
 								data-testid="verify-address__togle"
-								className="-mt-3"
 								checked={verifyAddress}
 								onChange={(event) => setVerifyAddress(event.target.checked)}
 							/>
