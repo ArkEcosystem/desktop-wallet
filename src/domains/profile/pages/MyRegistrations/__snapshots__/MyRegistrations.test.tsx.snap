@@ -6,14 +6,12 @@ exports[`Welcome should render empty state 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="px-10 py-14 bg-theme-background"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start"
-        >
+        <div>
           <h1
             class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
@@ -27,9 +25,7 @@ exports[`Welcome should render empty state 1`] = `
             You can register a Delagate, Business and Bridgechain.
           </div>
         </div>
-        <div
-          class="w-3/5"
-        >
+        <div>
           <div
             class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
           >
@@ -92,14 +88,12 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="px-10 py-14 bg-theme-background"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start"
-        >
+        <div>
           <h1
             class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
@@ -113,9 +107,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
             You can register a Delagate, Business and Bridgechain.
           </div>
         </div>
-        <div
-          class="w-3/5"
-        >
+        <div>
           <div
             class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
           >
@@ -165,14 +157,12 @@ exports[`Welcome should render properly 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="px-10 py-14 bg-theme-background"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start"
-        >
+        <div>
           <h1
             class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
@@ -186,9 +176,7 @@ exports[`Welcome should render properly 1`] = `
             You can register a Delagate, Business and Bridgechain.
           </div>
         </div>
-        <div
-          class="w-3/5"
-        >
+        <div>
           <div
             class="flex justify-end divide-x space-x-10 divide-theme-neutral-300"
           >

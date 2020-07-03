@@ -6,53 +6,33 @@ exports[`SupportPage should render empty main support page 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="mb-5 bg-white p-13"
+      class="py-16 mb-5 bg-white px-13"
     >
       <div
-        class="flex"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="w-2/3"
-        >
-          <h1>
+        <div>
+          <h1
+            class="mb-0 text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
             Help & Support
           </h1>
-          <p
-            class="text-theme-neutral-600"
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             Do you need any help? Find it in our archive or write to us
-          </p>
+          </div>
         </div>
-        <div
-          class="flex justify-end w-1/3"
-        >
-          <div
-            class="my-auto cursor-pointer text-theme-primary-200"
+        <div>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            type="button"
           >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
-          />
-          <div
-            class="my-auto"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
-            >
-              Contact us
-            </button>
-          </div>
+            Contact us
+          </button>
         </div>
       </div>
     </div>
@@ -105,53 +85,33 @@ exports[`SupportPage should render main support page with categories 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="mb-5 bg-white p-13"
+      class="py-16 mb-5 bg-white px-13"
     >
       <div
-        class="flex"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="w-2/3"
-        >
-          <h1>
+        <div>
+          <h1
+            class="mb-0 text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
             Help & Support
           </h1>
-          <p
-            class="text-theme-neutral-600"
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             Do you need any help? Find it in our archive or write to us
-          </p>
+          </div>
         </div>
-        <div
-          class="flex justify-end w-1/3"
-        >
-          <div
-            class="my-auto cursor-pointer text-theme-primary-200"
+        <div>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            type="button"
           >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
-          />
-          <div
-            class="my-auto"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
-            >
-              Contact us
-            </button>
-          </div>
+            Contact us
+          </button>
         </div>
       </div>
     </div>
@@ -381,53 +341,33 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
     class="bg-theme-neutral-100"
   >
     <div
-      class="mb-5 bg-white p-13"
+      class="py-16 mb-5 bg-white px-13"
     >
       <div
-        class="flex"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="w-2/3"
-        >
-          <h1>
+        <div>
+          <h1
+            class="mb-0 text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
             Help & Support
           </h1>
-          <p
-            class="text-theme-neutral-600"
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             Do you need any help? Find it in our archive or write to us
-          </p>
+          </div>
         </div>
-        <div
-          class="flex justify-end w-1/3"
-        >
-          <div
-            class="my-auto cursor-pointer text-theme-primary-200"
+        <div>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            type="button"
           >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
-          />
-          <div
-            class="my-auto"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
-            >
-              Contact us
-            </button>
-          </div>
+            Contact us
+          </button>
         </div>
       </div>
     </div>
@@ -631,53 +571,33 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
     class="bg-theme-neutral-100"
   >
     <div
-      class="mb-5 bg-white p-13"
+      class="py-16 mb-5 bg-white px-13"
     >
       <div
-        class="flex"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="w-2/3"
-        >
-          <h1>
+        <div>
+          <h1
+            class="mb-0 text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
             Help & Support
           </h1>
-          <p
-            class="text-theme-neutral-600"
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             Do you need any help? Find it in our archive or write to us
-          </p>
+          </div>
         </div>
-        <div
-          class="flex justify-end w-1/3"
-        >
-          <div
-            class="my-auto cursor-pointer text-theme-primary-200"
+        <div>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            type="button"
           >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
-          />
-          <div
-            class="my-auto"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
-            >
-              Contact us
-            </button>
-          </div>
+            Contact us
+          </button>
         </div>
       </div>
     </div>
@@ -881,53 +801,33 @@ exports[`SupportPage should render main support page with popular articles 1`] =
     class="bg-theme-neutral-100"
   >
     <div
-      class="mb-5 bg-white p-13"
+      class="py-16 mb-5 bg-white px-13"
     >
       <div
-        class="flex"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="w-2/3"
-        >
-          <h1>
+        <div>
+          <h1
+            class="mb-0 text-3xl font-bold md:text-4xl"
+            data-testid="header__title"
+          >
             Help & Support
           </h1>
-          <p
-            class="text-theme-neutral-600"
+          <div
+            class="text-theme-neutral-dark"
+            data-testid="header__subtitle"
           >
             Do you need any help? Find it in our archive or write to us
-          </p>
+          </div>
         </div>
-        <div
-          class="flex justify-end w-1/3"
-        >
-          <div
-            class="my-auto cursor-pointer text-theme-primary-200"
+        <div>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            type="button"
           >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100"
-          />
-          <div
-            class="my-auto"
-          >
-            <button
-              class="sc-AxjAm ddQVWI"
-              color="primary"
-              type="button"
-            >
-              Contact us
-            </button>
-          </div>
+            Contact us
+          </button>
         </div>
       </div>
     </div>

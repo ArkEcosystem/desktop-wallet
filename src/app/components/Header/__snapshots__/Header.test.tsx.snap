@@ -3,11 +3,9 @@
 exports[`Header should render an header 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between bg-theme-background"
+    class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="flex flex-col items-start"
-    >
+    <div>
       <h1
         class="mb-0 text-3xl font-bold md:text-4xl"
         data-testid="header__title"
@@ -22,11 +20,9 @@ exports[`Header should render an header 1`] = `
 exports[`Header should render an header with a subtitle 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between bg-theme-background"
+    class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="flex flex-col items-start"
-    >
+    <div>
       <h1
         class="mb-0 text-3xl font-bold md:text-4xl"
         data-testid="header__title"
@@ -47,11 +43,9 @@ exports[`Header should render an header with a subtitle 1`] = `
 exports[`Header should render an header with extra 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center justify-between bg-theme-background"
+    class="flex items-end justify-between bg-theme-background"
   >
-    <div
-      class="flex flex-col items-start"
-    >
+    <div>
       <h1
         class="mb-0 text-3xl font-bold md:text-4xl"
         data-testid="header__title"
@@ -65,9 +59,7 @@ exports[`Header should render an header with extra 1`] = `
         Subtitle test
       </div>
     </div>
-    <div
-      class="w-3/5"
-    >
+    <div>
       <div
         class="flex justify-end space-x-3"
       >
