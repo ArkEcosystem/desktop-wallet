@@ -45,7 +45,7 @@ exports[`Contacts should render 1`] = `
             class="flex flex-col items-start"
           >
             <h1
-              class="text-3xl font-bold md:text-4xl mb-0"
+              class="mb-0 text-3xl font-bold md:text-4xl"
               data-testid="header__title"
             >
               My Contacts
@@ -150,7 +150,7 @@ exports[`Contacts should render with contacts 1`] = `
             class="flex flex-col items-start"
           >
             <h1
-              class="text-3xl font-bold md:text-4xl mb-0"
+              class="mb-0 text-3xl font-bold md:text-4xl"
               data-testid="header__title"
             >
               My Contacts
