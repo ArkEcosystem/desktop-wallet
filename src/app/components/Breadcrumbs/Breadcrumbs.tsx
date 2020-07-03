@@ -49,5 +49,5 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 };
 
 Breadcrumbs.defaultProps = {
-	className: "p-5 font-semibold bg-theme-neutral-100",
+	className: "px-20 py-5 font-semibold bg-theme-neutral-100",
 };

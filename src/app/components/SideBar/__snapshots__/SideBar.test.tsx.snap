@@ -2,7 +2,9 @@
 
 exports[`SideBar should render empty 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="sc-AxiKw eZuVXn"
+  >
     <ul />
   </div>
 </DocumentFragment>
@@ -10,7 +12,9 @@ exports[`SideBar should render empty 1`] = `
 
 exports[`SideBar should render with items 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="sc-AxiKw eZuVXn"
+  >
     <ul>
       <div
         class="relative cursor-pointer"
@@ -20,7 +24,7 @@ exports[`SideBar should render with items 1`] = `
           class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
         />
         <li
-          class="rounded-lg p-5 flex 
+          class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -29,9 +33,9 @@ exports[`SideBar should render with items 1`] = `
             class="text-theme-primary"
           >
             <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
             >
               <svg>
                 general.svg
@@ -39,7 +43,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-2 font-semibold"
+            class="ml-3 text-lg font-semibold"
           >
             General
           </span>
@@ -53,7 +57,7 @@ exports[`SideBar should render with items 1`] = `
           class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
         />
         <li
-          class="rounded-lg p-5 flex 
+          class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -62,9 +66,9 @@ exports[`SideBar should render with items 1`] = `
             class="text-theme-primary"
           >
             <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
             >
               <svg>
                 peer.svg
@@ -72,7 +76,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-2 font-semibold"
+            class="ml-3 text-lg font-semibold"
           >
             Peer
           </span>
@@ -86,7 +90,7 @@ exports[`SideBar should render with items 1`] = `
           class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
         />
         <li
-          class="rounded-lg p-5 flex 
+          class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -95,9 +99,9 @@ exports[`SideBar should render with items 1`] = `
             class="text-theme-primary"
           >
             <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
+              class="sc-AxjAm buCJuk"
+              height="20"
+              width="20"
             >
               <svg>
                 plugin.svg
@@ -105,7 +109,7 @@ exports[`SideBar should render with items 1`] = `
             </div>
           </div>
           <span
-            class="ml-2 font-semibold"
+            class="ml-3 text-lg font-semibold"
           >
             Plugins
           </span>
