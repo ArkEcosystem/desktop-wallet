@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 
 type CreateContactProps = {
 	isOpen: boolean;
-	networks: any;
+	assets: any;
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
 };
 
-export const CreateContact = ({ isOpen, networks, onClose, onCancel, onSave }: CreateContactProps) => {
+export const CreateContact = ({ isOpen, assets, onClose, onCancel, onSave }: CreateContactProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -22,7 +22,7 @@ export const CreateContact = ({ isOpen, networks, onClose, onCancel, onSave }: C
 			onClose={onClose}
 		>
 			<div className="mt-8">
-				<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />
+				<ContactForm assets={assets} onCancel={onCancel} onSave={onSave} />
 			</div>
 		</Modal>
 	);
@@ -30,5 +30,5 @@ export const CreateContact = ({ isOpen, networks, onClose, onCancel, onSave }: C
 
 CreateContact.defaultProps = {
 	isOpen: false,
-	networks: [],
+	assets: [],
 };

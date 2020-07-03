@@ -36,7 +36,7 @@ exports[`AddExchange should render a modal 1`] = `
       class="py-4"
     >
       <div
-        class="absolute top-0 left-0 right-0"
+        class="relative mb-10 -mx-10 -mt-10"
       >
         <svg
           class="w-full"
@@ -50,7 +50,7 @@ exports[`AddExchange should render a modal 1`] = `
         </h1>
       </div>
       <div
-        class="flex-1 mt-40"
+        class="flex-1"
       >
         <div
           class="mt-1 text-theme-neutral-700"

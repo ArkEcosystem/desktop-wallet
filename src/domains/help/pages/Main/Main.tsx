@@ -101,7 +101,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 			<div className="py-10 mb-10 bg-white px-14">
 				<div className="flex flex-row">
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h2>
 						<ul>
 							{helpfulArticles &&
 								helpfulArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
@@ -110,7 +110,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 						</ul>
 					</div>
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h2>
 						<ul>
 							{popularArticles &&
 								popularArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
@@ -119,7 +119,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 						</ul>
 					</div>
 					<div className="w-1/3 mr-10">
-						<h3>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h3>
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h2>
 						<ul>
 							{newestArticles &&
 								newestArticles.map(({ title, path }: ArticleListItemProps, index: number) => (

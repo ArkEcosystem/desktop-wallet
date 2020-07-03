@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
@@ -8,11 +7,11 @@ import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { useSelectionState } from "app/components/SelectionBar";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
@@ -22,8 +21,6 @@ type ResignRegistrationProps = {
 	formDefaultData?: any;
 	onDownload: any;
 };
-
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
@@ -146,17 +143,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType === "ledger" && (
 				<div>
 					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner className="my-8" />
-
-					<div className="mt-8 text-theme-neutral-700">
-						Please review and verify the information on your Ledger device. Choose Accept to complete your
-						transaction.
-					</div>
-
-					<div className="inline-flex items-center mt-8 mb-4 space-x-3">
-						<Spinner color="primary" />
-						<span className="text-black">Waiting for confirmation...</span>
-					</div>
+					<LedgerConfirmation />
 				</div>
 			)}
 		</div>

@@ -6,22 +6,14 @@ import { useTranslation } from "react-i18next";
 type UpdateContactProps = {
 	isOpen: boolean;
 	contact: any;
-	networks: any;
+	assets: any;
 	onClose?: any;
 	onCancel?: any;
 	onDelete: any;
 	onSave: any;
 };
 
-export const UpdateContact = ({
-	isOpen,
-	contact,
-	networks,
-	onClose,
-	onCancel,
-	onDelete,
-	onSave,
-}: UpdateContactProps) => {
+export const UpdateContact = ({ isOpen, contact, assets, onClose, onCancel, onDelete, onSave }: UpdateContactProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -29,7 +21,7 @@ export const UpdateContact = ({
 			<div className="mt-8">
 				<ContactForm
 					contact={contact}
-					networks={networks}
+					assets={assets}
 					onCancel={onCancel}
 					onDelete={onDelete}
 					onSave={onSave}
@@ -41,5 +33,5 @@ export const UpdateContact = ({
 
 UpdateContact.defaultProps = {
 	isOpen: false,
-	networks: [],
+	assets: [],
 };

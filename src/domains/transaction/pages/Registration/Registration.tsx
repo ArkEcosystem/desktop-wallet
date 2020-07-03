@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -9,13 +8,13 @@ import { Label } from "app/components/Label";
 import { Select } from "app/components/Select";
 import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -34,8 +33,6 @@ type RegistrationProps = {
 
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
-
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const FormWrapper = styled.div`
 	.select-transparent {
@@ -341,17 +338,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 			{passwordType === "ledger" && (
 				<div>
 					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner className="my-8" />
-
-					<div className="mt-8 text-theme-neutral-700">
-						Please review and verify the information on your Ledger device. Choose Accept to complete your
-						transaction.
-					</div>
-
-					<div className="inline-flex items-center mt-8 space-x-3">
-						<Spinner color="primary" />
-						<span className="text-black">Waiting for confirmation...</span>
-					</div>
+					<LedgerConfirmation />
 				</div>
 			)}
 		</div>

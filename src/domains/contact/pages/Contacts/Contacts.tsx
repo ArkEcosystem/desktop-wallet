@@ -38,10 +38,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 type ContactsProps = {
 	contacts: any[];
+	assets: any[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
+export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
 	const { t } = useTranslation();
@@ -70,15 +71,6 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 		{
 			Header: "Account Type",
 			className: "justify-center",
-		},
-	];
-
-	// TODO: replace after design phase
-	const networks = [
-		{
-			label: "Ark Ecosystem",
-			value: "ark",
-			icon: "Ark",
 		},
 	];
 
@@ -134,7 +126,7 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				networks={networks}
+				assets={assets}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
@@ -145,4 +137,5 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
+	assets: [],
 };

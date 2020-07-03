@@ -12,6 +12,7 @@ type FeaturedPluginsProps = {
 	onClose?: any;
 };
 
+const { BestPluginsBanner } = images.plugin.common;
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
@@ -81,8 +82,13 @@ export const FeaturedPlugins = (props: FeaturedPluginsProps) => {
 
 	return (
 		<Modal
-			title={t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
+			title={
+				<div className="mb-5 text-5xl font-bold leading-tight text-white">
+					{t("PLUGINS.MODAL_FEATURED_PLUGINS.TITLE")}
+				</div>
+			}
 			description={t("PLUGINS.MODAL_FEATURED_PLUGINS.DESCRIPTION")}
+			banner={<BestPluginsBanner className="w-full" />}
 			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
