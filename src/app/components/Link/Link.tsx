@@ -30,7 +30,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
 			<AnchorStyled
 				data-testid="Link"
 				isExternal={isExternal!}
-				className="transition-colors duration-200 text-theme-primary font-semibold cursor-pointer inline-flex items-center hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+				className="inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
 				target={isExternal ? "_blank" : target}
 				rel={isExternal ? "noopener noreferrer" : rel}
 				ref={ref}

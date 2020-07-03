@@ -3,7 +3,7 @@
 exports[`Link should render 1`] = `
 <DocumentFragment>
   <a
-    class="sc-AxirZ bvOtTg transition-colors duration-200 text-theme-primary font-semibold cursor-pointer inline-flex items-center hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    class="sc-AxirZ bvOtTg inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
     data-testid="Link"
     href="/test"
   >
@@ -15,7 +15,7 @@ exports[`Link should render 1`] = `
 exports[`Link should render external 1`] = `
 <DocumentFragment>
   <a
-    class="sc-AxirZ fYobRB transition-colors duration-200 text-theme-primary font-semibold cursor-pointer inline-flex items-center hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    class="sc-AxirZ fYobRB inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
     data-testid="Link"
     href="https://ark.io"
     rel="noopener noreferrer"
@@ -39,7 +39,7 @@ exports[`Link should render external 1`] = `
 exports[`Link should render external without children 1`] = `
 <DocumentFragment>
   <a
-    class="sc-AxirZ fYobRB transition-colors duration-200 text-theme-primary font-semibold cursor-pointer inline-flex items-center hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+    class="sc-AxirZ fYobRB inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
     data-testid="Link"
     href="https://ark.io"
     rel="noopener noreferrer"
