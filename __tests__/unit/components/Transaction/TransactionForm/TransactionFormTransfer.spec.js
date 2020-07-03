@@ -184,8 +184,8 @@ describe('TransactionFormTransfer', () => {
       expect(wrapper.contains('.TransactionFormTransfer__amount')).toBe(true)
     })
 
-    it('should have add button', () => {
-      expect(wrapper.contains('.TransactionFormTransfer__add')).toBe(true)
+    it('should have add recipient button', () => {
+      expect(wrapper.contains('.TransactionFormTransfer__add-recipient')).toBe(true)
     })
 
     it('should have send all switch', () => {
