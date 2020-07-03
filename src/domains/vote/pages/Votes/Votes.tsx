@@ -56,17 +56,15 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
 			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="pl-10 py-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="px-10 py-16 bg-theme-background">
 					<Header
 						title={t("VOTE.VOTES_PAGE.TITLE")}
 						subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 						extra={
-							<div className="flex items-center justify-end">
-								<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
-							</div>
+							<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
 						}
 					/>
 				</div>
