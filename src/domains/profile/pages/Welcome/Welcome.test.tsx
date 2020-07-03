@@ -1,7 +1,7 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // Contexts
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
+import { AppContext, EnvironmentContext } from "app/contexts";
 // i18n
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
@@ -13,13 +13,16 @@ import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
 	const history = createMemoryHistory();
-	it("should render", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
+	const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
+	const updateAppState = jest.fn();
 
+	it("should render", async () => {
 		const { container, asFragment } = render(
 			<Router history={history}>
 				<EnvironmentContext.Provider value={{ env }}>
-					<Welcome />
+					<AppContext.Provider value={{ updateAppState }}>
+						<Welcome />
+					</AppContext.Provider>
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
@@ -35,12 +38,12 @@ describe("Welcome", () => {
 	});
 
 	it("should change route to create profile", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
-
 		const { container, getByText, asFragment } = render(
 			<Router history={history}>
 				<EnvironmentContext.Provider value={{ env }}>
-					<Welcome />
+					<AppContext.Provider value={{ updateAppState }}>
+						<Welcome />
+					</AppContext.Provider>
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
@@ -58,15 +61,15 @@ describe("Welcome", () => {
 	});
 
 	it("should render with profiles", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
-
 		env.profiles().create("caio");
 		const createdProfile = env.profiles().all()[0];
 
 		const { container, getByText, asFragment } = render(
 			<Router history={history}>
 				<EnvironmentContext.Provider value={{ env }}>
-					<Welcome />
+					<AppContext.Provider value={{ updateAppState }}>
+						<Welcome />
+					</AppContext.Provider>
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
@@ -79,7 +82,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("caio"));
-		expect(history.location.pathname).toEqual(`/portfolio/${createdProfile.id()}`);
+		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

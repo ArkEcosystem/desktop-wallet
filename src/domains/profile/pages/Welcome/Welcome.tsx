@@ -2,7 +2,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { EnvironmentContext } from "app/contexts";
+import { AppContext, EnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,6 +17,7 @@ export const Welcome = () => {
 		{ label: "Delete", value: "delete" },
 	];
 	const { env }: any = useContext(EnvironmentContext);
+	const { updateAppState }: any = useContext(AppContext);
 	const { t } = useTranslation();
 	const history = useHistory();
 	const [profiles, setProfiles] = useState([]);
@@ -52,7 +53,11 @@ export const Welcome = () => {
 							<div className="mt-6 mb-8 space-y-3">
 								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										handleClick={() => history.push(`/portfolio/${profile.id()}`)}
+										handleClick={() => {
+											updateAppState("activeProfile", profile);
+
+											return history.push(`/profiles/${profile.id()}`);
+										}}
 										key={index}
 										profile={profile}
 										actions={profileCardActions}
