@@ -104,19 +104,19 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col items-start w-2/5"
+          class="-mt-2"
         >
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Plugin Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -425,19 +425,19 @@ exports[`Settings should render 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col items-start w-2/5"
+          class="-mt-2"
         >
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Wallet Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -852,13 +852,13 @@ exports[`Settings should render 1`] = `
           class="relative mt-5"
         >
           <div
-            class="flex items-center justify-between bg-theme-background"
+            class="flex items-end justify-between bg-theme-background"
           >
             <div
-              class="flex flex-col items-start w-2/5"
+              class="-mt-2"
             >
               <h1
-                class="text-3xl font-bold md:text-4xl"
+                class="mb-0 text-3xl font-bold md:text-4xl"
                 data-testid="header__title"
               >
                 Security
@@ -1047,13 +1047,13 @@ exports[`Settings should render 1`] = `
           class="relative mt-5"
         >
           <div
-            class="flex items-center justify-between bg-theme-background"
+            class="flex items-end justify-between bg-theme-background"
           >
             <div
-              class="flex flex-col items-start w-2/5"
+              class="-mt-2"
             >
               <h1
-                class="text-3xl font-bold md:text-4xl"
+                class="mb-0 text-3xl font-bold md:text-4xl"
                 data-testid="header__title"
               >
                 Other
@@ -1452,19 +1452,19 @@ exports[`Settings should render peer settings 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col items-start w-2/5"
+          class="-mt-2"
         >
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Peer Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -2048,19 +2048,19 @@ exports[`Settings should render plugin settings 1`] = `
       class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
         <div
-          class="flex flex-col items-start w-2/5"
+          class="-mt-2"
         >
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Plugin Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
