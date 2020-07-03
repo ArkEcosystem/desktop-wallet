@@ -84,7 +84,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			</TransactionDetail>
 			<TransactionDetail border label="Signature">
 				<TextArea
-					className="mt-2"
+					className="mt-2 rounded-lg"
 					name="signature"
 					wrap="hard"
 					ref={messageRef}
