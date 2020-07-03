@@ -6,7 +6,7 @@ import { Size } from "types";
 
 type ModalProps = {
 	children: React.ReactNode;
-	title: string;
+	title: string | React.ReactNode;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
@@ -18,7 +18,7 @@ type ModalProps = {
 
 type ModalContentProps = {
 	children: React.ReactNode;
-	title: string;
+	title: string | React.ReactNode;
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
@@ -70,7 +70,7 @@ const ModalContent = (props: ModalContentProps) => {
 
 			<div className="py-4">
 				{props.banner ? (
-					<div className="absolute top-0 left-0 right-0">
+					<div className="relative mb-10 -mx-10 -mt-10">
 						{props.banner}
 
 						<h1 className="absolute bottom-0 left-0 mb-8 ml-12">{props.title}</h1>
@@ -79,7 +79,7 @@ const ModalContent = (props: ModalContentProps) => {
 					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
 				)}
 
-				<div className={`flex-1 ${props.banner ? "mt-40" : ""}`}>
+				<div className="flex-1">
 					{props.image}
 
 					{props.description && <div className="mt-1 text-theme-neutral-700">{props.description}</div>}
