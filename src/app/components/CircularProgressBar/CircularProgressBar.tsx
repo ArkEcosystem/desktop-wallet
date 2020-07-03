@@ -18,9 +18,9 @@ export const CircularProgressBar = ({
 	value,
 	fontSize,
 }: CircularProgressBarProps) => {
-	// Enclose circle in a circumscribing square
+	// Enclose circle in a circumscribed square
 	const viewBox = `0 0 ${size} ${size}`;
-	// SVG centers the stroke width on the radius, subtract out so circle fits in square
+	// SVG centers the stroke width in the radius and subtracts so that the circle fits the square
 	const radius = (size - strokeWidth) / 2;
 	// Arc length at 100% coverage is the circle circumference
 	const dashArray = radius * Math.PI * 2;
@@ -63,7 +63,7 @@ export const CircularProgressBar = ({
 			>
 				<tspan>
 					{value}
-					<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`}>
+					<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`} fontWeight="bold">
 						%
 					</tspan>
 				</tspan>
