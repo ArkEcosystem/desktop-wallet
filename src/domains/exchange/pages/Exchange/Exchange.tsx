@@ -99,7 +99,7 @@ export const Exchange = (props: ExchangeProps) => {
 		<div data-testid="Exchange">
 			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-			<div className="border-t-20 border-theme-neutral-100 pt-16">
+			<div className="pt-16 border-t-20 border-theme-neutral-100">
 				<div className="container mx-auto">
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
