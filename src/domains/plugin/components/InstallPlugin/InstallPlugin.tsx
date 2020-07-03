@@ -18,7 +18,7 @@ export const FirstStep = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="InstallPlugin__first-step">
+		<section data-testid="InstallPlugin__step--first">
 			<p className="mt-4 text-lg font-semibold text-theme-neutral-dark">
 				{t("PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION")}
 			</p>
@@ -37,7 +37,7 @@ export const SecondStep = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="InstallPlugin__second-step">
+		<section data-testid="InstallPlugin__step--second">
 			<div className="flex mt-4">
 				<div className="flex-shrink-0 mr-6">
 					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
@@ -70,7 +70,7 @@ export const ThirdStep = () => {
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="InstallPlugin__third-step">
+		<section data-testid="InstallPlugin__step--third">
 			<div className="flex mt-4">
 				<div className="flex-shrink-0 mr-6">
 					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
