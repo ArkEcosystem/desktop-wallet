@@ -133,13 +133,6 @@ export const PluginManager = () => {
 	const [currentView, setCurrentView] = React.useState("home");
 	const [viewType, setViewType] = React.useState("grid");
 	const [installPlugin, setInstallPlugin] = React.useState(false);
-	const [installStep, setInstallStep] = React.useState(1);
-
-	React.useEffect(() => {
-		if (installStep === 2) {
-			setTimeout(() => setInstallStep(3), 1000);
-		}
-	}, [installStep]);
 
 	const plugins = [];
 	for (let i = 0; i < 10; i++) {
@@ -172,12 +165,9 @@ export const PluginManager = () => {
 	return (
 		<div data-testid="PluginManager">
 			<InstallPlugin
-				step={installStep}
 				isOpen={installPlugin}
 				onClose={() => setInstallPlugin(false)}
 				onCancel={() => setInstallPlugin(false)}
-				onDownload={() => setInstallStep(2)}
-				onInstall={() => setInstallPlugin(false)}
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
