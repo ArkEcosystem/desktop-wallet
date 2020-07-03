@@ -1,10 +1,11 @@
-
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import React from "react";
+import Placeholder from "domains/plugin/images/placeholder.png";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type InstallPluginProps = {
@@ -37,10 +38,7 @@ export const SecondStep = () => {
 		<section data-testid="InstallPlugin__second-step">
 			<div className="flex mt-4">
 				<div className="flex-shrink-0 mr-6">
-					<img
-						className="rounded-xl"
-						src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
-					/>
+					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
 				</div>
 				<div className="flex-1">
 					<div className="flex flex-col justify-around h-full">
@@ -73,10 +71,7 @@ export const ThirdStep = () => {
 		<section data-testid="InstallPlugin__third-step">
 			<div className="flex mt-4">
 				<div className="flex-shrink-0 mr-6">
-					<img
-						className="rounded-xl"
-						src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
-					/>
+					<img className="w-32 h-32 rounded-xl" src={Placeholder} alt="Plugin Logo" />
 				</div>
 				<div className="flex-1">
 					<div className="flex flex-col justify-around h-full">
@@ -117,7 +112,7 @@ export const ThirdStep = () => {
 
 export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps) => {
 	const { t } = useTranslation();
-	const [activeStep, setActiveStep] = React.useState(1);
+	const [activeStep, setActiveStep] = useState(1);
 
 	const handleBack = () => {
 		setActiveStep(activeStep - 1);
@@ -144,6 +139,39 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel }: InstallPluginProps)
 				<TabPanel tabId={3}>
 					<ThirdStep />
 				</TabPanel>
+
+				<div className="flex justify-end mt-8 space-x-3">
+					{activeStep === 1 && (
+						<>
+							<Button variant="plain" onClick={onCancel} data-testid="InstallPlugin__cancel-button">
+								{t("COMMON.CANCEL")}
+							</Button>
+							<Button onClick={handleNext} data-testid="InstallPlugin__download-button">
+								{t("COMMON.DOWNLOAD")}
+							</Button>
+						</>
+					)}
+
+					{activeStep === 2 && (
+						<>
+							<Button variant="plain" onClick={handleBack} data-testid="InstallPlugin__back-button">
+								{t("COMMON.BACK")}
+							</Button>
+							<Button onClick={handleNext} data-testid="InstallPlugin__continue-button">
+								{t("COMMON.CONTINUE")}
+							</Button>
+						</>
+					)}
+
+					{activeStep === 3 && (
+						<>
+							<Button variant="plain" onClick={handleBack} data-testid="InstallPlugin__cancel-button">
+								{t("COMMON.CANCEL")}
+							</Button>
+							<Button data-testid="InstallPlugin__install-button">{t("COMMON.INSTALL")}</Button>
+						</>
+					)}
+				</div>
 			</Tabs>
 		</Modal>
 	);
