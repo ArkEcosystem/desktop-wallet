@@ -126,7 +126,7 @@ export const ThirdStep = () => {
 export const FourthStep = () => (
 	<TransactionSuccessful>
 		<TransactionDetail label="IPFS Hash">
-			<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+			<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
