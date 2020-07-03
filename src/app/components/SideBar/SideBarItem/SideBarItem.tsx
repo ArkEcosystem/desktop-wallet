@@ -36,13 +36,13 @@ export const SideBarItem = withRouter(
 				data-testid={`side-menu__item--${itemKey}`}
 			>
 				{isActive && <ActiveIndicator className="absolute top-0 left-0 rounded-lg bg-theme-primary" />}
-				<li className={`rounded-lg p-5 flex ${getActiveClass()} flex items-center`}>
+				<li className={`rounded-lg py-5 pl-10 pr-8 flex ${getActiveClass()} flex items-center`}>
 					{icon && (
-						<div className={`text-theme-${isActive ? "primary" : "primary-contrast"}`}>
-							<Icon name={icon} />
+						<div className={`text-theme-${isActive ? "primary" : "primary-light"}`}>
+							<Icon name={icon} width={20} height={20} />
 						</div>
 					)}
-					<span className="ml-2 font-semibold">{label}</span>
+					<span className={`ml-3 text-lg ${isActive ? "font-semibold" : "font-medium"}`}>{label}</span>
 				</li>
 			</div>
 		);
