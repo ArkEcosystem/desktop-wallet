@@ -42,16 +42,16 @@ exports[`Contacts should render 1`] = `
           class="flex items-center justify-between bg-theme-background"
         >
           <div
-            class="flex flex-col items-start w-2/5"
+            class="flex flex-col items-start"
           >
             <h1
-              class="text-3xl font-bold md:text-4xl"
+              class="text-3xl font-bold md:text-4xl mb-0"
               data-testid="header__title"
             >
               My Contacts
             </h1>
             <div
-              class="mt-2 text-theme-neutral-dark"
+              class="text-theme-neutral-dark"
               data-testid="header__subtitle"
             >
               Manage your frequent contacts
@@ -147,16 +147,16 @@ exports[`Contacts should render with contacts 1`] = `
           class="flex items-center justify-between bg-theme-background"
         >
           <div
-            class="flex flex-col items-start w-2/5"
+            class="flex flex-col items-start"
           >
             <h1
-              class="text-3xl font-bold md:text-4xl"
+              class="text-3xl font-bold md:text-4xl mb-0"
               data-testid="header__title"
             >
               My Contacts
             </h1>
             <div
-              class="mt-2 text-theme-neutral-dark"
+              class="text-theme-neutral-dark"
               data-testid="header__subtitle"
             >
               Manage your frequent contacts

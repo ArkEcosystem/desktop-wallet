@@ -346,10 +346,10 @@ exports[`CreateWallet should render 2nd step 1`] = `
       class="flex items-center justify-between bg-theme-background"
     >
       <div
-        class="flex flex-col items-start w-2/5"
+        class="flex flex-col items-start"
       >
         <h1
-          class="text-3xl font-bold md:text-4xl"
+          class="text-3xl font-bold md:text-4xl mb-0"
           data-testid="header__title"
         >
           Your Passphrase
