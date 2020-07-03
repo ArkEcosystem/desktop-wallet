@@ -187,7 +187,7 @@ export const PluginManager = () => {
 						<div className="text-theme-neutral-700">{t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}</div>
 					</div>
 
-					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-12 space-x-3">
+					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-10 space-x-3">
 						<div className="flex items-end py-2">
 							<HeaderSearchBar onSearch={() => console.log("search")}>
 								<Icon name="Search" width={20} height={20} className="mr-6" />
