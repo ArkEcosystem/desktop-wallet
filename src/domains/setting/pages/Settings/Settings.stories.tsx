@@ -1,4 +1,5 @@
 import { text, withKnobs } from "@storybook/addon-knobs";
+import { NavigationBar } from "app/components/NavigationBar";
 import React, { useState } from "react";
 
 import { Settings } from "./Settings";
@@ -37,13 +38,14 @@ export const GeneralSettings = () => {
 	const [activeSettings, setActiveSettings] = useState("General");
 
 	return (
-		<div className="w-full h-full">
+		<>
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 			<Settings
 				settings={items}
 				activeSettings={activeSettings}
 				setActiveSettings={setActiveSettings}
 				{...settingsProps}
 			/>
-		</div>
+		</>
 	);
 };
