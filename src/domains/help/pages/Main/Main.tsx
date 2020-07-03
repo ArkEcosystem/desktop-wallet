@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -66,23 +67,14 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	const { t } = useTranslation();
 	return (
 		<div className="bg-theme-neutral-100">
-			<div className="mb-5 bg-white p-13">
-				<div className="flex">
-					<div className="w-2/3">
-						<h1>{t("HELP.PAGE_SUPPORT.TITLE")}</h1>
-						<p className="text-theme-neutral-600">{t("HELP.PAGE_SUPPORT.SUBTITLE")}</p>
-					</div>
-					<div className="flex justify-end w-1/3">
-						<div className="my-auto cursor-pointer text-theme-primary-200">
-							<Icon name="Search" />
-						</div>
-						<div className="h-8 mx-10 my-auto border-l border-1 border-theme-primary-100" />
-						<div className="my-auto">
-							<Button color="primary">{t("HELP.CONTACT_US")}</Button>
-						</div>
-					</div>
-				</div>
+			<div className="mb-5 bg-white px-13 py-16">
+				<Header
+					title={t("HELP.PAGE_SUPPORT.TITLE")}
+					subtitle={t("HELP.PAGE_SUPPORT.SUBTITLE")}
+					extra={<Button color="primary">{t("HELP.CONTACT_US")}</Button>}
+				/>
 			</div>
+
 			<div className="mb-5 bg-white p-13">
 				<div className="flex flex-row">
 					{categories &&
