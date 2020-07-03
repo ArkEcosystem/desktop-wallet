@@ -22,7 +22,6 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			labelDescription: "Select Profile Image",
 			labelClass: "text-2xl font-semibold",
 			labelDescriptionClass: "mt-1",
-			wrapperClass: "pt-2",
 			content: (
 				<div className="flex flex-row mt-2">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
