@@ -74,7 +74,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
 					<span className="text-lg font-semibold">Verify</span>
 					<div className="flex flex-row justify-between">
-						<span className="text-sm text-theme-neutral pt-2">
+						<span className="pt-2 text-sm text-theme-neutral">
 							You can verify only text using a JSON public key
 						</span>
 						<div className="mr-1 -mt-7">
