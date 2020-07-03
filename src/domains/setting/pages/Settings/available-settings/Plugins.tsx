@@ -27,7 +27,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="w-3/4 text-sm text-theme-neutral">
+						<span className="text-sm text-theme-neutral">
 							This list is selected safely by ARK Ecosystem. You can view it and add to the list of
 							plugins that you find suspicious.
 						</span>
@@ -65,7 +65,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
-						<span className="w-3/4 text-sm text-theme-neutral">
+						<span className="text-sm text-theme-neutral">
 							Turn this feature on, you can upload plugins to your wallet from third-party sources.
 						</span>
 						<div className="-mt-7">
