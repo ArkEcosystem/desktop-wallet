@@ -72,7 +72,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 							<div className="relative flex items-center divide-x divide-theme-neutral-400">
 								<span className="pr-3 text-lg font-semibold">{author}</span>
 
-								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-300">
+								<div className="flex items-center px-3 text-sm font-semibold text-theme-warning-400">
 									<Icon name="Star" width={10} height={10} />
 									<span className="ml-1 text-theme-neutral-700">{score}</span>
 								</div>

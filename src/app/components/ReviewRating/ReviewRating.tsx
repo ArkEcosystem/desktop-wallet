@@ -12,7 +12,7 @@ export const ReviewRating = (props: ReviewRatingProps) => (
 		<div className="relative my-auto">
 			{props.rating > 0 && (
 				<div className="absolute overflow-hidden" style={{ width: `${((props.rating - 1) / 4) * 100}%` }}>
-					<SvgCollection.Star className={`text-theme-warning-300 w-${props.width}`} />
+					<SvgCollection.Star className={`text-theme-warning-400 w-${props.width}`} />
 				</div>
 			)}
 
