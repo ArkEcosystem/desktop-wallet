@@ -1,4 +1,5 @@
 import { text, withKnobs } from "@storybook/addon-knobs";
+import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { NavigationBar } from "app/components/NavigationBar";
 import React, { useState } from "react";
 
@@ -40,6 +41,9 @@ export const GeneralSettings = () => {
 	return (
 		<>
 			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
+
+			<Breadcrumbs crumbs={[{ route: "dashboard", label: "Dashboard" }]} />
+
 			<Settings
 				settings={items}
 				activeSettings={activeSettings}
