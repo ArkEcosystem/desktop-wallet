@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -6,18 +5,16 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
-
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
 
 const recipients = [
 	{
@@ -147,17 +144,7 @@ export const FourthStep = () => (
 	<section data-testid="TransactionSend__step--fourth">
 		<div>
 			<h1 className="mb-0">Confirm Your Transaction</h1>
-			<div className="grid grid-flow-row gap-2">
-				<ConfirmTransactionLedgerBanner className="my-8" />
-				<p className="text-theme-neutral-dark">
-					Please review and verify the information on your Ledger device. Choose Accept to complete your
-					transaction.
-				</p>
-				<div className="inline-flex items-center mt-8 space-x-4">
-					<Spinner color="primary" />
-					<span className="font-semibold text-black">Waiting for confirmation...</span>
-				</div>
-			</div>
+			<LedgerConfirmation />
 		</div>
 	</section>
 );

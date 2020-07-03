@@ -1737,32 +1737,30 @@ exports[`Transaction Send should render 4th step 1`] = `
       >
         Confirm Your Transaction
       </h1>
-      <div
-        class="grid grid-flow-row gap-2"
+      <svg
+        class="my-8"
       >
-        <svg
-          class="my-8"
-        >
-          confirm-transaction-ledger-banner.svg
-        </svg>
-        <p
-          class="text-theme-neutral-dark"
-        >
-          Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
-        </p>
+        confirm-transaction-ledger-banner.svg
+      </svg>
+      <div
+        class="mt-8 text-center text-theme-neutral-700"
+        data-testid="LedgerConfirmation-description"
+      >
+        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+      </div>
+      <div
+        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+      >
         <div
-          class="inline-flex items-center mt-8 space-x-4"
+          class="sc-fznZeY geIyIZ"
+          color="primary"
+        />
+        <span
+          class="font-semibold text-black"
+          data-testid="LedgerConfirmation-loading_message"
         >
-          <div
-            class="sc-fznyAO kywRmk"
-            color="primary"
-          />
-          <span
-            class="font-semibold text-black"
-          >
-            Waiting for confirmation...
-          </span>
-        </div>
+          Waiting for confirmation ...
+        </span>
       </div>
     </div>
   </section>
