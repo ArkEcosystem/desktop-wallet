@@ -11,7 +11,7 @@ type TransactionDetailProps = {
 
 export const TransactionDetail = ({ border, children, className, extra, label, padding }: TransactionDetailProps) => (
 	<div
-		className={`flex items-center ${!padding || "py-4"} ${
+		className={`flex items-center ${!padding || "py-6"} ${
 			!border || "border-t border-dashed border-theme-neutral-300"
 		} ${className}`}
 	>
