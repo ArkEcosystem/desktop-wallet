@@ -14,7 +14,7 @@ import { identity } from "../tests/fixtures/identity";
 // UI Elements
 import { NavigationBar } from "./components/NavigationBar";
 // Context
-import {  AppContextProvider, EnvironmentConsumer, EnvironmentProvider } from "./contexts";
+import { AppContextProvider, EnvironmentConsumer, EnvironmentProvider } from "./contexts";
 // i18n
 import { i18n } from "./i18n";
 
