@@ -59,10 +59,10 @@ exports[`ResignRegistration should render 1st step 1`] = `
                   class="flex rounded-lg overflow-hidden bg-theme-warning"
                 >
                   <div
-                    class="sc-AxiKw eRaQyX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                    class="sc-AxhCb emmdwf flex items-center justify-center text-theme-warning bg-theme-warning-200"
                   >
                     <div
-                      class="sc-AxjAm bIZXgI"
+                      class="sc-AxirZ bMjbpr"
                       height="30"
                       width="30"
                     >
@@ -72,7 +72,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxirZ iyxqHr flex-1 bg-theme-warning-100"
+                    class="sc-AxiKw ffnSzD flex-1 bg-theme-warning-100"
                   >
                     Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
                   </div>
@@ -82,7 +82,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                 class="mt-6"
               >
                 <div
-                  class="flex items-center py-4 true "
+                  class="flex items-center py-6 true "
                 >
                   <div
                     class="flex-1"
@@ -104,7 +104,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                           Account
                         </span>
                         <div
-                          class="sc-fznKkj krlUGj"
+                          class="sc-fznZeY kKCHjH"
                           color="warning"
                         >
                           <span
@@ -118,22 +118,22 @@ exports[`ResignRegistration should render 1st step 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AUexKj...EVTQWK
+                          AUexKj…EVTQWK
                         </span>
                       </div>
                     </div>
                   </div>
                   <div>
                     <div
-                      class="sc-AxhUy chcxWU"
+                      class="sc-AxgMl jPeNW"
                     />
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -151,7 +151,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -171,10 +171,10 @@ exports[`ResignRegistration should render 1st step 1`] = `
                           class="flex-1"
                         >
                           <div
-                            class="sc-fzoLsD rzdyj"
+                            class="sc-fzpans diytpf"
                           >
                             <input
-                              class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -187,19 +187,19 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                 data-testid="Range"
                               >
                                 <div
-                                  class="sc-fzpans jCtSxP"
+                                  class="sc-fzplWN fPUzCC"
                                   data-testid="Range__track"
                                   style="transform: scale(1); cursor: pointer;"
                                 >
                                   <div
-                                    class="sc-fzplWN dLuLpb"
+                                    class="sc-fznyAO dcAGHn"
                                     data-testid="Range__track__filled"
                                   >
                                     <div
                                       aria-valuemax="100"
                                       aria-valuemin="1"
                                       aria-valuenow="25"
-                                      class="sc-fznyAO caSzTt"
+                                      class="sc-fznKkj erbBrw"
                                       data-testid="Range__thumb"
                                       draggable="false"
                                       role="slider"
@@ -220,7 +220,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -228,7 +228,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -236,7 +236,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -255,7 +255,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
             class="flex justify-end mt-6 space-x-3"
           >
             <button
-              class="sc-AxhCb BegvR"
+              class="sc-AxhUy hiyDSc"
               color="primary"
               data-testid="ResignRegistration__back-button"
               disabled=""
@@ -264,7 +264,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxhCb gBCygf"
+              class="sc-AxhUy hMFbHm"
               color="primary"
               data-testid="ResignRegistration__continue-button"
               type="button"
@@ -337,7 +337,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                 class="mt-4 grid grid-flow-row gap-2"
               >
                 <div
-                  class="flex items-center py-4 true "
+                  class="flex items-center py-6 true "
                 >
                   <div
                     class="flex-1"
@@ -361,10 +361,10 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     class="ml-1 text-theme-danger-500"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
+                      class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -376,7 +376,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -398,7 +398,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           Account
                         </span>
                         <div
-                          class="sc-fznKkj krlUGj"
+                          class="sc-fznZeY kKCHjH"
                           color="warning"
                         >
                           <span
@@ -412,22 +412,22 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AUexKj...EVTQWK
+                          AUexKj…EVTQWK
                         </span>
                       </div>
                     </div>
                   </div>
                   <div>
                     <div
-                      class="sc-AxhUy chcxWU"
+                      class="sc-AxgMl jPeNW"
                     />
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -494,7 +494,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           class="px-1 py-2 bg-white"
                         >
                           <div
-                            class="sc-AxjAm pXfjM"
+                            class="sc-AxirZ fkjLBb"
                             height="15"
                             width="15"
                           >
@@ -529,7 +529,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
             class="flex justify-end mt-6 space-x-3"
           >
             <button
-              class="sc-AxhCb BegvR"
+              class="sc-AxhUy hiyDSc"
               color="primary"
               data-testid="ResignRegistration__back-button"
               type="button"
@@ -537,7 +537,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxhCb gBCygf"
+              class="sc-AxhUy hMFbHm"
               color="primary"
               data-testid="ResignRegistration__continue-button"
               type="button"
@@ -609,7 +609,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                   class="mt-8"
                 >
                   <fieldset
-                    class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+                    class="sc-AxheI dThsOi flex flex-col space-y-2"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -619,16 +619,16 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       Mnemonic
                     </label>
                     <div
-                      class="sc-fzoLsD rzdyj max-w-20"
+                      class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-Axmtr sc-fzozJi blzTcm mr-4"
+                        class="sc-AxmLO sc-fzoLsD ghtxmM mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -636,7 +636,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxjAm cpczEI"
+                            class="sc-AxirZ iQaTP"
                             height="1em"
                             width="1em"
                           >
@@ -649,7 +649,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-AxgMl cwpxCQ pb-4 mt-8"
+                    class="sc-AxheI dThsOi pb-4 mt-8"
                   >
                     <label
                       class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -659,16 +659,16 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       2nd Mnemonic
                     </label>
                     <div
-                      class="sc-fzoLsD rzdyj max-w-20"
+                      class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-Axmtr sc-fzozJi blzTcm mr-4"
+                        class="sc-AxmLO sc-fzoLsD ghtxmM mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -676,7 +676,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxjAm cpczEI"
+                            class="sc-AxirZ iQaTP"
                             height="1em"
                             width="1em"
                           >
@@ -696,7 +696,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
             class="flex justify-end mt-6 space-x-3"
           >
             <button
-              class="sc-AxhCb BegvR"
+              class="sc-AxhUy hiyDSc"
               color="primary"
               data-testid="ResignRegistration__back-button"
               type="button"
@@ -704,13 +704,13 @@ exports[`ResignRegistration should render 3rd step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxhCb gBCygf"
+              class="sc-AxhUy hMFbHm"
               color="primary"
               data-testid="ResignRegistration__send-button"
               type="button"
             >
               <div
-                class="sc-AxjAm buCJuk mr-2"
+                class="sc-AxirZ eEbZjj mr-2"
                 height="20"
                 width="20"
               >
@@ -795,7 +795,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                   </p>
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex items-center py-6 true "
                   >
                     <div
                       class="flex-1"
@@ -819,10 +819,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -830,7 +830,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxjAm cpczEI"
+                              class="sc-AxirZ iQaTP"
                               height="1em"
                               width="1em"
                             >
@@ -844,7 +844,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -868,10 +868,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -879,7 +879,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxjAm cpczEI"
+                              class="sc-AxirZ iQaTP"
                               height="1em"
                               width="1em"
                             >
@@ -893,7 +893,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -916,10 +916,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
@@ -928,10 +928,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger-500"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxjAm buCJuk"
+                          class="sc-AxirZ eEbZjj"
                           height="20"
                           width="20"
                         >
@@ -943,7 +943,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -960,7 +960,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fznKkj krlUGj"
+                            class="sc-fznZeY kKCHjH"
                             color="warning"
                           >
                             <span
@@ -980,22 +980,22 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
                     <div>
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-AxgMl jPeNW"
                       />
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1012,10 +1012,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc border-black"
+                      class="sc-AxgMl daFHdi border-black"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -1026,7 +1026,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1044,7 +1044,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1064,10 +1064,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxjAm eZAIEY"
+                          class="sc-AxirZ iyilmn"
                           height="50"
                           width="50"
                         >
@@ -1089,7 +1089,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxhCb BegvR"
+                class="sc-AxhUy hiyDSc"
                 color="primary"
                 data-testid="ResignRegistration__wallet-button"
                 type="button"
@@ -1097,13 +1097,13 @@ exports[`ResignRegistration should render 4th step 1`] = `
                 Back to wallet
               </button>
               <button
-                class="sc-AxhCb BegvR"
+                class="sc-AxhUy hiyDSc"
                 color="primary"
                 data-testid="ResignRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxjAm cpczEI mr-2"
+                  class="sc-AxirZ iQaTP mr-2"
                   height="1em"
                   width="1em"
                 >
@@ -1181,10 +1181,10 @@ exports[`ResignRegistration should should go back 1`] = `
                   class="flex rounded-lg overflow-hidden bg-theme-warning"
                 >
                   <div
-                    class="sc-AxiKw eRaQyX flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                    class="sc-AxhCb emmdwf flex items-center justify-center text-theme-warning bg-theme-warning-200"
                   >
                     <div
-                      class="sc-AxjAm bIZXgI"
+                      class="sc-AxirZ bMjbpr"
                       height="30"
                       width="30"
                     >
@@ -1194,7 +1194,7 @@ exports[`ResignRegistration should should go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="sc-AxirZ iyxqHr flex-1 bg-theme-warning-100"
+                    class="sc-AxiKw ffnSzD flex-1 bg-theme-warning-100"
                   >
                     Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
                   </div>
@@ -1204,7 +1204,7 @@ exports[`ResignRegistration should should go back 1`] = `
                 class="mt-6"
               >
                 <div
-                  class="flex items-center py-4 true "
+                  class="flex items-center py-6 true "
                 >
                   <div
                     class="flex-1"
@@ -1226,7 +1226,7 @@ exports[`ResignRegistration should should go back 1`] = `
                           Account
                         </span>
                         <div
-                          class="sc-fznKkj krlUGj"
+                          class="sc-fznZeY kKCHjH"
                           color="warning"
                         >
                           <span
@@ -1240,22 +1240,22 @@ exports[`ResignRegistration should should go back 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AUexKj...EVTQWK
+                          AUexKj…EVTQWK
                         </span>
                       </div>
                     </div>
                   </div>
                   <div>
                     <div
-                      class="sc-AxhUy chcxWU"
+                      class="sc-AxgMl jPeNW"
                     />
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -1273,7 +1273,7 @@ exports[`ResignRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
                     class="flex-1"
@@ -1293,10 +1293,10 @@ exports[`ResignRegistration should should go back 1`] = `
                           class="flex-1"
                         >
                           <div
-                            class="sc-fzoLsD rzdyj"
+                            class="sc-fzpans diytpf"
                           >
                             <input
-                              class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -1309,19 +1309,19 @@ exports[`ResignRegistration should should go back 1`] = `
                                 data-testid="Range"
                               >
                                 <div
-                                  class="sc-fzpans jCtSxP"
+                                  class="sc-fzplWN fPUzCC"
                                   data-testid="Range__track"
                                   style="transform: scale(1); cursor: pointer;"
                                 >
                                   <div
-                                    class="sc-fzplWN dLuLpb"
+                                    class="sc-fznyAO dcAGHn"
                                     data-testid="Range__track__filled"
                                   >
                                     <div
                                       aria-valuemax="100"
                                       aria-valuemin="1"
                                       aria-valuenow="25"
-                                      class="sc-fznyAO caSzTt"
+                                      class="sc-fznKkj erbBrw"
                                       data-testid="Range__thumb"
                                       draggable="false"
                                       role="slider"
@@ -1342,7 +1342,7 @@ exports[`ResignRegistration should should go back 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1350,7 +1350,7 @@ exports[`ResignRegistration should should go back 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1358,7 +1358,7 @@ exports[`ResignRegistration should should go back 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznZeY gPIbY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1377,7 +1377,7 @@ exports[`ResignRegistration should should go back 1`] = `
             class="flex justify-end mt-6 space-x-3"
           >
             <button
-              class="sc-AxhCb BegvR"
+              class="sc-AxhUy hiyDSc"
               color="primary"
               data-testid="ResignRegistration__back-button"
               disabled=""
@@ -1386,7 +1386,7 @@ exports[`ResignRegistration should should go back 1`] = `
               Back
             </button>
             <button
-              class="sc-AxhCb gBCygf"
+              class="sc-AxhUy hMFbHm"
               color="primary"
               data-testid="ResignRegistration__continue-button"
               type="button"
@@ -1468,7 +1468,7 @@ exports[`ResignRegistration should submit 1`] = `
                     Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                   </p>
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex items-center py-6 true "
                   >
                     <div
                       class="flex-1"
@@ -1492,10 +1492,10 @@ exports[`ResignRegistration should submit 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1503,7 +1503,7 @@ exports[`ResignRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxjAm cpczEI"
+                              class="sc-AxirZ iQaTP"
                               height="1em"
                               width="1em"
                             >
@@ -1517,7 +1517,7 @@ exports[`ResignRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1541,10 +1541,10 @@ exports[`ResignRegistration should submit 1`] = `
                               class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1552,7 +1552,7 @@ exports[`ResignRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxjAm cpczEI"
+                              class="sc-AxirZ iQaTP"
                               height="1em"
                               width="1em"
                             >
@@ -1566,7 +1566,7 @@ exports[`ResignRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1589,10 +1589,10 @@ exports[`ResignRegistration should submit 1`] = `
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
@@ -1601,10 +1601,10 @@ exports[`ResignRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger-500"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxjAm buCJuk"
+                          class="sc-AxirZ eEbZjj"
                           height="20"
                           width="20"
                         >
@@ -1616,7 +1616,7 @@ exports[`ResignRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1633,7 +1633,7 @@ exports[`ResignRegistration should submit 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fznKkj krlUGj"
+                            class="sc-fznZeY kKCHjH"
                             color="warning"
                           >
                             <span
@@ -1653,22 +1653,22 @@ exports[`ResignRegistration should submit 1`] = `
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
                     <div>
                       <div
-                        class="sc-AxhUy chcxWU"
+                        class="sc-AxgMl jPeNW"
                       />
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1685,10 +1685,10 @@ exports[`ResignRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc border-black"
+                      class="sc-AxgMl daFHdi border-black"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
+                        class="sc-AxirZ eEbZjj"
                         height="20"
                         width="20"
                       >
@@ -1699,7 +1699,7 @@ exports[`ResignRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1717,7 +1717,7 @@ exports[`ResignRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
                       class="flex-1"
@@ -1737,10 +1737,10 @@ exports[`ResignRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
                       >
                         <div
-                          class="sc-AxjAm eZAIEY"
+                          class="sc-AxirZ iyilmn"
                           height="50"
                           width="50"
                         >
@@ -1762,7 +1762,7 @@ exports[`ResignRegistration should submit 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxhCb BegvR"
+                class="sc-AxhUy hiyDSc"
                 color="primary"
                 data-testid="ResignRegistration__wallet-button"
                 type="button"
@@ -1770,13 +1770,13 @@ exports[`ResignRegistration should submit 1`] = `
                 Back to wallet
               </button>
               <button
-                class="sc-AxhCb BegvR"
+                class="sc-AxhUy hiyDSc"
                 color="primary"
                 data-testid="ResignRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxjAm cpczEI mr-2"
+                  class="sc-AxirZ iQaTP mr-2"
                   height="1em"
                   width="1em"
                 >
