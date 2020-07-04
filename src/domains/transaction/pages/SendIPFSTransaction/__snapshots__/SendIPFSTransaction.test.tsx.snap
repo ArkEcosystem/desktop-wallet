@@ -293,7 +293,7 @@ exports[`SendIPFSTransaction should render 1`] = `
             class="flex justify-end mt-8 space-x-2"
           >
             <button
-              class="sc-AxirZ ePEaNt"
+              class="sc-AxirZ fhzkRl"
               color="primary"
               data-testid="SendIPFSTransaction__button--back"
               disabled=""
@@ -302,7 +302,7 @@ exports[`SendIPFSTransaction should render 1`] = `
               Back
             </button>
             <button
-              class="sc-AxirZ hAJKfj"
+              class="sc-AxirZ dPtiuf"
               color="primary"
               data-testid="SendIPFSTransaction__button--continue"
               type="button"
@@ -682,40 +682,13 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-            Recipient
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            <span
-              class="font-normal"
-            >
-              AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
-            </span>
-          </div>
-        </div>
-        <div>
-          <div
-            class="sc-AxiKw kvRvRJ"
-          />
-        </div>
-      </div>
-      <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
             Hash
           </div>
           <div
             class="mt-2 font-semibold"
           >
             <span
-              class="font-normal"
+              class="font-semibold"
             >
               QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf
             </span>
@@ -740,24 +713,6 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-      >
-        <div
-          class="flex-1"
-        >
-          <div
-            class="text-sm font-semibold text-theme-neutral-500"
-          >
-            Transaction fee
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
-            0.09660435 ARK
-          </div>
-        </div>
-      </div>
-      <div
         class="border rounded-lg border-theme-neutral-300"
       >
         <div
@@ -775,7 +730,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 Transaction(s) Amount
               </span>
               <span
-                class="mt-3"
+                class="mt-2 font-semibold"
                 data-testid="total-amount-box__transaction-amount"
               >
                 1.00 ARK
@@ -790,7 +745,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
                 Transaction fee
               </span>
               <span
-                class="mt-3"
+                class="mt-2 text-lg font-semibold"
                 data-testid="total-amount-box__transaction-fee"
               >
                 0.09660435 ARK
@@ -1152,7 +1107,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
               class="mt-2 font-semibold"
             >
               <span
-                class="font-normal"
+                class="font-semibold"
               >
                 QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf
               </span>

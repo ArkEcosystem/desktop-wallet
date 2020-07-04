@@ -1042,7 +1042,7 @@ exports[`Registration should render 3rd step 1`] = `
                             Transaction(s) Amount
                           </span>
                           <span
-                            class="mt-3"
+                            class="mt-2 font-semibold"
                             data-testid="total-amount-box__transaction-amount"
                           >
                             0.00 ARK
@@ -1057,7 +1057,7 @@ exports[`Registration should render 3rd step 1`] = `
                             Transaction fee
                           </span>
                           <span
-                            class="mt-3"
+                            class="mt-2 text-lg font-semibold"
                             data-testid="total-amount-box__transaction-fee"
                           >
                             0.09660435 ARK
