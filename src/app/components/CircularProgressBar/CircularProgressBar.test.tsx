@@ -9,6 +9,6 @@ describe("CircularProgressBar", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-		expect(getByTestId("circular-progress-bar__percentage")).toHaveTextContent("50%");
+		expect(getByTestId("CircularProgressBar__percentage")).toHaveTextContent("50%");
 	});
 });

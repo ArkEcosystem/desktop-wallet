@@ -29,7 +29,7 @@ exports[`CircularProgressBar should render 1`] = `
       transform="rotate(-90 65 65)"
     />
     <text
-      data-testid="circular-progress-bar__percentage"
+      data-testid="CircularProgressBar__percentage"
       dy="0.3em"
       fill="var(--theme-color-success-600)"
       font-size="2rem"
@@ -38,7 +38,16 @@ exports[`CircularProgressBar should render 1`] = `
       x="50%"
       y="50%"
     >
-      50%
+      <tspan>
+        50
+        <tspan
+          dy="-0.6em"
+          font-size="1rem"
+          font-weight="bold"
+        >
+          %
+        </tspan>
+      </tspan>
     </text>
   </svg>
 </DocumentFragment>
