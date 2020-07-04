@@ -7,7 +7,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
     data-testid="contact-form"
   >
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -17,13 +17,13 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Name
       </label>
       <input
-        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="contact-form__name-input"
         name="name"
       />
     </fieldset>
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -53,7 +53,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
               class="px-4 py-2 flex-0 w-14"
             >
               <div
-                class="sc-AxirZ HSPq border-theme-neutral-200"
+                class="sc-AxiKw cxOZEi border-theme-neutral-200"
               />
             </div>
             <div
@@ -83,7 +83,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       </div>
     </fieldset>
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -93,7 +93,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Address
       </label>
       <input
-        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -102,7 +102,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       class="mt-4"
     >
       <button
-        class="sc-AxjAm ddJBbC w-full"
+        class="sc-AxirZ fhzkRl w-full"
         color="primary"
         data-testid="contact-form__add-address-btn"
         disabled=""
@@ -118,7 +118,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         class="space-x-3"
       >
         <button
-          class="sc-AxjAm ddJBbC"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -126,7 +126,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           Cancel
         </button>
         <button
-          class="sc-AxjAm ddQVWI"
+          class="sc-AxirZ dPtiuf"
           color="primary"
           data-testid="contact-form__save-btn"
           disabled=""
@@ -147,7 +147,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
     data-testid="contact-form"
   >
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -157,13 +157,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Name
       </label>
       <input
-        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="contact-form__name-input"
         name="name"
       />
     </fieldset>
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -193,7 +193,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="px-4 py-2 flex-0 w-14"
             >
               <div
-                class="sc-AxirZ HSPq border-theme-neutral-200"
+                class="sc-AxiKw cxOZEi border-theme-neutral-200"
               />
             </div>
             <div
@@ -223,7 +223,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       </div>
     </fieldset>
     <fieldset
-      class="sc-AxiKw iQzisX flex flex-col space-y-2"
+      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -233,7 +233,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Address
       </label>
       <input
-        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -242,7 +242,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="mt-4"
     >
       <button
-        class="sc-AxjAm ddJBbC w-full"
+        class="sc-AxirZ fhzkRl w-full"
         color="primary"
         data-testid="contact-form__add-address-btn"
         disabled=""
@@ -273,10 +273,10 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxirZ hQTESw -mr-1 undefined"
+                class="sc-AxiKw eHzXqc -mr-1 undefined"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
+                  class="sc-AxhUy cPXLjK"
                   height="1em"
                   width="1em"
                 >
@@ -304,21 +304,21 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuusXSW9k...P6T9GQ3kqT
+                ASuusXSW9k…P6T9GQ3kqT
               </span>
             </div>
           </span>
           <button
-            class="sc-AxjAm kwTlRm flex items-center ml-auto"
+            class="sc-AxirZ ggAYoh flex items-center ml-auto"
             color="primary"
             data-testid="contact-form__remove-address-btn"
             type="button"
           >
             <div
-              class="sc-AxhCb fxrKLH"
+              class="sc-AxhUy cPXLjK"
               height="1em"
               width="1em"
             >
@@ -339,10 +339,10 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxirZ hQTESw -mr-1 undefined"
+                class="sc-AxiKw eHzXqc -mr-1 undefined"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
+                  class="sc-AxhUy cPXLjK"
                   height="1em"
                   width="1em"
                 >
@@ -370,21 +370,21 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                15pyr1HRAx...myCtXXu9G8
+                15pyr1HRAx…myCtXXu9G8
               </span>
             </div>
           </span>
           <button
-            class="sc-AxjAm kwTlRm flex items-center ml-auto"
+            class="sc-AxirZ ggAYoh flex items-center ml-auto"
             color="primary"
             data-testid="contact-form__remove-address-btn"
             type="button"
           >
             <div
-              class="sc-AxhCb fxrKLH"
+              class="sc-AxhUy cPXLjK"
               height="1em"
               width="1em"
             >
@@ -405,10 +405,10 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxirZ hQTESw -mr-1 undefined"
+                class="sc-AxiKw eHzXqc -mr-1 undefined"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
+                  class="sc-AxhUy cPXLjK"
                   height="1em"
                   width="1em"
                 >
@@ -436,21 +436,21 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                0x5e8f7a63...8b380d7c33
+                0x5e8f7a63…8b380d7c33
               </span>
             </div>
           </span>
           <button
-            class="sc-AxjAm kwTlRm flex items-center ml-auto"
+            class="sc-AxirZ ggAYoh flex items-center ml-auto"
             color="primary"
             data-testid="contact-form__remove-address-btn"
             type="button"
           >
             <div
-              class="sc-AxhCb fxrKLH"
+              class="sc-AxhUy cPXLjK"
               height="1em"
               width="1em"
             >
@@ -466,13 +466,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       class="flex w-full justify-between"
     >
       <button
-        class="sc-AxjAm bxcsTZ"
+        class="sc-AxirZ nDNwi"
         color="danger"
         data-testid="contact-form__delete-btn"
         type="button"
       >
         <div
-          class="sc-AxhCb fxrKLH"
+          class="sc-AxhUy cPXLjK"
           height="1em"
           width="1em"
         >
@@ -488,7 +488,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         class="space-x-3"
       >
         <button
-          class="sc-AxjAm ddJBbC"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="contact-form__cancel-btn"
           type="button"
@@ -496,7 +496,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           Cancel
         </button>
         <button
-          class="sc-AxjAm ddQVWI"
+          class="sc-AxirZ dPtiuf"
           color="primary"
           data-testid="contact-form__save-btn"
           type="submit"

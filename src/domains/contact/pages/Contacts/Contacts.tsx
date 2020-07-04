@@ -101,12 +101,12 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 					{contacts.length === 0 && (
 						<div
 							data-testid="contacts__banner"
-							className="flex flex-col items-center justify-center mx-auto"
+							className="flex flex-col items-center justify-center w-full"
 						>
-							<div className="max-w-4xl mx-auto">
-								<ContactsBanner />
+							<div className="mx-auto">
+								<ContactsBanner height={175} />
 							</div>
-							<div className="mt-6">
+							<div className="mt-8">
 								<span className="text-theme-neutral-dark">
 									{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
 								</span>

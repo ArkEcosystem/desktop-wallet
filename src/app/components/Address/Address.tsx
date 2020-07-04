@@ -1,13 +1,12 @@
+import { TruncateMiddle } from "app/components/TruncateMiddle";
 import React from "react";
 import { Size } from "types";
-
-import { truncateStringMiddle } from "./utils";
 
 type Props = {
 	walletName?: string;
 	addressClass?: string;
 	address?: string | undefined;
-	maxChars?: number | null;
+	maxChars?: number;
 	className?: string;
 	size?: Size;
 	fontWeight?: "normal";
@@ -48,14 +47,14 @@ export const Address = ({ address, addressClass, fontWeight, walletName, maxChar
 					{walletName}
 				</span>
 			)}
-			<span
+			<TruncateMiddle
+				text={address}
+				maxChars={maxChars}
 				data-testid="address__wallet-address"
 				className={`${
 					addressClass || (walletName ? "text-theme-neutral-400" : "text-theme-neutral-800")
 				} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
-			>
-				{truncateStringMiddle(address, maxChars)}
-			</span>
+			/>
 		</div>
 	);
 };

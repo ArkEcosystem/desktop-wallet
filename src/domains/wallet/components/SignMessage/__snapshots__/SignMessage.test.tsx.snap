@@ -7,20 +7,20 @@ exports[`SignMessage should render as signed 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzplWN jxRzUr fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fznyAO ioJhAT fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
       class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
-        class="sc-AxjAm bThAoP"
+        class="sc-AxirZ iJKGpA"
         color="neutral"
         data-testid="modal__close-btn"
         type="button"
       >
         <div
-          class="sc-AxhCb idmnCf"
+          class="sc-AxhUy gKrfcW"
           height="10"
           width="10"
         >
@@ -69,20 +69,20 @@ exports[`SignMessage should render as signed 1`] = `
                       ROBank
                     </span>
                     <span
-                      class="text-theme-neutral-400 font-semibold text-base"
+                      class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
-                      AUexKj...EVTQWK
+                      AUexKj…EVTQWK
                     </span>
                   </div>
                 </div>
               </div>
               <div>
                 <div
-                  class="sc-AxirZ hQTESw -mr-2 border-black"
+                  class="sc-AxiKw eHzXqc -mr-2 border-black"
                 >
                   <div
-                    class="sc-AxhCb gZVKaf"
+                    class="sc-AxhUy fZIogq"
                     height="25"
                     width="25"
                   >
@@ -92,7 +92,7 @@ exports[`SignMessage should render as signed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxirZ hTKBId"
+                  class="sc-AxiKw kvRvRJ"
                 />
               </div>
             </div>
@@ -129,7 +129,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <textarea
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2 rounded-lg"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2 rounded-lg"
                     data-testid="TextArea"
                     name="signature"
                     style="height: 4px;"
@@ -144,12 +144,12 @@ exports[`SignMessage should render as signed 1`] = `
               class="flex justify-end pb-5 mt-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 type="button"
               >
                 <div
-                  class="sc-AxhCb fxrKLH"
+                  class="sc-AxhUy cPXLjK"
                   height="1em"
                   width="1em"
                 >
@@ -177,20 +177,20 @@ exports[`SignMessage should render the SignMessage 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzplWN jxRzUr fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fznyAO ioJhAT fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
       class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
-        class="sc-AxjAm bThAoP"
+        class="sc-AxirZ iJKGpA"
         color="neutral"
         data-testid="modal__close-btn"
         type="button"
       >
         <div
-          class="sc-AxhCb idmnCf"
+          class="sc-AxhUy gKrfcW"
           height="10"
           width="10"
         >
@@ -225,7 +225,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
             id="sign-message__form"
           >
             <fieldset
-              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -239,7 +239,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="relative"
               >
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                   data-testid="Input"
                   disabled=""
                   name="signatory-address"
@@ -249,7 +249,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                   class="absolute top-0 flex items-center mt-2 ml-4"
                 >
                   <div
-                    class="sc-AxirZ kSZulD"
+                    class="sc-AxiKw gPGCtr"
                   />
                   <span
                     class="ml-3 font-semibold "
@@ -260,7 +260,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               </div>
             </fieldset>
             <fieldset
-              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -271,14 +271,14 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Message
               </label>
               <input
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                 data-testid="Input"
                 name="message"
                 type="text"
               />
             </fieldset>
             <fieldset
-              class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -289,16 +289,16 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Your Passphrase
               </label>
               <div
-                class="sc-AxmLO kuiknc max-w-20"
+                class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                   data-testid="Input"
                   name="passphrase"
                   type="password"
                 />
                 <div
-                  class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                  class="sc-AxheI sc-AxmLO ecniej mr-4"
                 >
                   <button
                     class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -306,7 +306,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                     type="button"
                   >
                     <div
-                      class="sc-AxhCb fxrKLH"
+                      class="sc-AxhUy cPXLjK"
                       height="1em"
                       width="1em"
                     >
@@ -322,14 +322,14 @@ exports[`SignMessage should render the SignMessage 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxirZ dPtiuf"
                 color="primary"
                 data-testid="sign-message__sign-button"
                 type="button"
