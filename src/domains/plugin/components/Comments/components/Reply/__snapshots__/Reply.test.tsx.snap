@@ -3,30 +3,34 @@
 exports[`Reply should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col mt-3 ml-3"
+    class="flex flex-col mt-3"
   >
     <div
-      class="flex items-center text-theme-neutral-500"
+      class="flex items-center text-theme-neutral-400"
     >
       <div
-        class="sc-AxjAm cpczEI"
-        height="1em"
-        width="1em"
+        class="flex items-center w-10"
       >
-        <svg>
-          reply-arrow.svg
-        </svg>
+        <div
+          class="sc-AxjAm gvXdNR mx-auto -mt-2"
+          height="18"
+          width="15"
+        >
+          <svg>
+            reply-arrow.svg
+          </svg>
+        </div>
       </div>
       <div
-        class="grid grid-cols-2 divide-x"
+        class="flex items-center divide-x divide-theme-neutral-400 space-x-3"
       >
         <span
-          class="px-3 font-semibold text-theme-neutral-900"
+          class="text-lg font-semibold text-theme-neutral-900"
         >
           Developer response
         </span>
         <span
-          class="px-3 text-theme-neutral-400"
+          class="pl-3 text-sm font-semibold text-theme-neutral-500"
         >
           <span
             data-testid="timeago"
@@ -37,7 +41,7 @@ exports[`Reply should render properly 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxirZ iYaTII mt-2 ml-7 text-theme-neutral-600"
+      class="sc-AxirZ iYaTII mt-2 ml-10 text-theme-neutral-600"
     >
       <a
         href="#"

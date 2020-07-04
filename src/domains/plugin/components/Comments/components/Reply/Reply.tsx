@@ -16,16 +16,21 @@ type ReplyProps = {
 };
 
 export const Reply = ({ date, content }: ReplyProps) => (
-	<div className="flex flex-col mt-3 ml-3">
-		<div className="flex items-center text-theme-neutral-500">
-			<Icon name="ReplyArrow" />
-			<div className="grid grid-cols-2 divide-x">
-				<span className="px-3 font-semibold text-theme-neutral-900">Developer response</span>
-				<span className="px-3 text-theme-neutral-400">
+	<div className="flex flex-col mt-3">
+		<div className="flex items-center text-theme-neutral-400">
+			<div className="flex items-center w-10">
+				<Icon className="mx-auto -mt-2" name="ReplyArrow" width={15} height={18} />
+			</div>
+
+			<div className="flex items-center divide-x divide-theme-neutral-400 space-x-3">
+				<span className="text-lg font-semibold text-theme-neutral-900">Developer response</span>
+
+				<span className="pl-3 text-sm font-semibold text-theme-neutral-500">
 					<TimeAgo date={date} />
 				</span>
 			</div>
 		</div>
-		<ReplyContent className="mt-2 ml-7 text-theme-neutral-600" dangerouslySetInnerHTML={{ __html: content }} />
+
+		<ReplyContent className="mt-2 ml-10 text-theme-neutral-600" dangerouslySetInnerHTML={{ __html: content }} />
 	</div>
 );

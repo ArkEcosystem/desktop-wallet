@@ -105,6 +105,8 @@ export const WithIcon = () => {
 					<Badge
 						className="border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
 						icon="ChevronDown"
+						iconWidth={10}
+						iconHeight={10}
 					/>
 				</Circle>
 			</div>

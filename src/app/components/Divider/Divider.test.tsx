@@ -23,6 +23,18 @@ describe("Divider", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render vertical type and small", () => {
+		const { container } = render(<Divider type="vertical" size="sm" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render vertical type and large", () => {
+		const { container } = render(<Divider type="vertical" size="lg" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render a dashed", () => {
 		const { container } = render(<Divider dashed />);
 

@@ -75,16 +75,16 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 					{isExpanded && (
 						<Icon
 							name="ChevronUp"
-							width={9}
-							height={9}
+							width={10}
+							height={10}
 							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
 						/>
 					)}
 					{!isExpanded && (
 						<Icon
 							name="ChevronDown"
-							width={18}
-							height={18}
+							width={10}
+							height={10}
 							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
 						/>
 					)}

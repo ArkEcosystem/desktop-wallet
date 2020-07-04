@@ -85,6 +85,7 @@ import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as Star } from "./star.svg";
+import { ReactComponent as StarsOutline } from "./stars-outline.svg";
 import { ReactComponent as StatusClock } from "./status-clock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
@@ -171,6 +172,7 @@ export const SvgCollection: any = {
 	Sort,
 	Star,
 	StarOutline,
+	StarsOutline,
 	StatusClock,
 	Trash,
 	Twitter,
