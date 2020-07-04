@@ -63,7 +63,7 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 					<td className="py-6 border-b border-dashed border-theme-neutral-200">
 						<div className="flex items-center space-x-3">
 							<Circle avatarId={address.avatar} />
-							<Address address={address.address} maxChars={isCondensed() ? 24 : null} />
+							<Address address={address.address} maxChars={isCondensed() ? 24 : undefined} />
 						</div>
 					</td>
 					{!isCondensed() && (
