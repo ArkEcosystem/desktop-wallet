@@ -49,7 +49,7 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 			<div className="w-1/4 h-full">
 				<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
 			</div>
-			<div className="border-l-1 border-theme-primary-contrast w-3/5 pl-20 mx-12">{renderSettings()}</div>
+			<div className="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
 		</div>
 	);
 };
