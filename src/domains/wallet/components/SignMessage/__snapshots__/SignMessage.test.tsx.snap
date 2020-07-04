@@ -42,11 +42,11 @@ exports[`SignMessage should render as signed 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-8"
+          class="mt-2"
         >
           <div>
             <div
-              class="flex items-center py-4 true "
+              class="flex items-center py-6 true "
             >
               <div
                 class="flex-1"
@@ -63,13 +63,13 @@ exports[`SignMessage should render as signed 1`] = `
                     class="inline-block truncate align-middle"
                   >
                     <span
-                      class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                      class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                       data-testid="address__wallet-name"
                     >
                       ROBank
                     </span>
                     <span
-                      class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-xl"
+                      class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKj…EVTQWK
@@ -97,7 +97,7 @@ exports[`SignMessage should render as signed 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 text-lg"
             >
               <div
                 class="flex-1"
@@ -115,7 +115,7 @@ exports[`SignMessage should render as signed 1`] = `
               </div>
             </div>
             <div
-              class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
             >
               <div
                 class="flex-1"
@@ -129,7 +129,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <textarea
-                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2 rounded-lg"
                     data-testid="TextArea"
                     name="signature"
                     style="height: 4px;"
@@ -217,7 +217,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
           Insert a message below to sign using your private key
         </div>
         <div
-          class="mt-8"
+          class="mt-2"
         >
           <form
             class="space-y-8"
