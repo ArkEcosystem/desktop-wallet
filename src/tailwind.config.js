@@ -136,11 +136,13 @@ module.exports = {
 			width: {
 				"128": "32rem",
 				"144": "36rem",
+				"125": "31.25rem",
 			},
 			padding: {
 				10: "2.5rem",
 				15: "3.75rem",
 				18: "4.5rem",
+				30: "7.5rem",
 			},
 			margin: {
 				"-14": "-3.5rem",

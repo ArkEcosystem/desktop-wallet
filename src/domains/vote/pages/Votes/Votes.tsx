@@ -52,18 +52,16 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
+		<div data-testid="MyVotes" className="bg-theme-neutral-100 flex flex-col min-h-screen -m-5">
 			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="bg-theme-background px-10 py-16">
 					<Header
 						title={t("VOTE.VOTES_PAGE.TITLE")}
 						subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 						extra={
-							<div className="flex items-center justify-end">
-								<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
-							</div>
+							<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
 						}
 					/>
 				</div>
@@ -96,7 +94,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 										) : (
 											<>
 												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-												<span className="text-base font-semibold text-theme-neutral-400">
+												<span className="text-theme-neutral-400 text-base font-semibold">
 													Select address
 												</span>
 											</>
@@ -109,7 +107,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 					</div>
 				</div>
 
-				<div className="relative p-10 bg-theme-background">
+				<div className="bg-theme-background relative p-10">
 					{!selectedCrypto ? (
 						<div className="flex flex-col space-y-5">
 							{addressList?.map((item) => (

@@ -1,4 +1,5 @@
 import React from "react";
+import tw, { styled } from "twin.macro";
 
 // UI Elements
 import { SideBarItem } from "./SideBarItem";
@@ -18,8 +19,14 @@ export type ItemProps = {
 	handleActiveItem?: any;
 };
 
+const SideBarContainer = styled.div`
+	${tw`h-full`}
+
+	width: 210px;
+`;
+
 export const SideBar = ({ activeItem, handleActiveItem, items }: Props) => (
-	<div>
+	<SideBarContainer>
 		<ul>
 			{items &&
 				items.map(({ label, route, itemKey, icon }: ItemProps, index: number) => (
@@ -34,5 +41,5 @@ export const SideBar = ({ activeItem, handleActiveItem, items }: Props) => (
 					/>
 				))}
 		</ul>
-	</div>
+	</SideBarContainer>
 );

@@ -8,7 +8,9 @@ exports[`Settings should render 1`] = `
     <div
       class="w-1/4 h-full"
     >
-      <div>
+      <div
+        class="sc-AxiKw eZuVXn"
+      >
         <ul>
           <div
             class="relative cursor-pointer"
@@ -18,7 +20,7 @@ exports[`Settings should render 1`] = `
               class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
             />
             <li
-              class="rounded-lg p-5 flex 
+              class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -27,9 +29,9 @@ exports[`Settings should render 1`] = `
                 class="text-theme-primary"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     general.svg
@@ -37,7 +39,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-semibold"
               >
                 General
               </span>
@@ -48,15 +50,15 @@ exports[`Settings should render 1`] = `
             data-testid="side-menu__item--Peer"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     peer.svg
@@ -64,7 +66,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 Peer
               </span>
@@ -75,15 +77,15 @@ exports[`Settings should render 1`] = `
             data-testid="side-menu__item--Plugins"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     plugin.svg
@@ -91,7 +93,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 Plugins
               </span>
@@ -101,22 +103,20 @@ exports[`Settings should render 1`] = `
       </div>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="border-l-1 border-theme-primary-contrast w-3/5 pl-20 mx-12"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start w-2/5"
-        >
+        <div>
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Wallet Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -129,31 +129,31 @@ exports[`Settings should render 1`] = `
         id="general-settings__form"
       >
         <div
-          class="mt-5"
+          class="mt-8"
         >
           <ul
-            class="sc-fzplWN krwTau"
+            class="sc-fznyAO lyMNj"
             data-testid="list-divided__items"
           >
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full "
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 text-3xl font-bold"
+                    class="mr-5 text-2xl font-semibold"
                     data-testid="list-divided-item__label"
                   >
                     Personal Details
                   </span>
                   <span
-                    class="text-sm text-theme-neutral mt-3"
+                    class="text-sm text-theme-neutral-dark mt-1"
                     data-testid="list-divided-item__label--description"
                   >
                     Select Profile Image
@@ -161,14 +161,14 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
                   class="flex flex-row mt-2"
                 >
                   <div
-                    class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light"
+                    class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
                   >
                     <button
                       class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
@@ -212,13 +212,13 @@ exports[`Settings should render 1`] = `
             </li>
           </ul>
           <div
-            class="flex justify-between w-full"
+            class="flex justify-between w-full mt-8"
           >
             <div
               class="flex flex-col w-2/4"
             >
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -229,14 +229,14 @@ exports[`Settings should render 1`] = `
                   Profile Name
                 </label>
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                   data-testid="Input"
                   name="profile-name"
                   type="text"
                 />
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
+                class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -247,10 +247,10 @@ exports[`Settings should render 1`] = `
                   Passphrase Language
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="passphrase-language"
                   >
@@ -278,7 +278,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -293,7 +293,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
+                class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -304,10 +304,10 @@ exports[`Settings should render 1`] = `
                   Currency
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="currency"
                   >
@@ -335,7 +335,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -354,7 +354,7 @@ exports[`Settings should render 1`] = `
               class="flex flex-col w-2/4 ml-5"
             >
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -365,10 +365,10 @@ exports[`Settings should render 1`] = `
                   Language
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="language"
                   >
@@ -396,7 +396,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -411,7 +411,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
+                class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -422,10 +422,10 @@ exports[`Settings should render 1`] = `
                   Price Source
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="price-source"
                   >
@@ -453,7 +453,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -468,7 +468,7 @@ exports[`Settings should render 1`] = `
                 </div>
               </fieldset>
               <fieldset
-                class="sc-AxhCb ckQmOL mt-3"
+                class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -479,10 +479,10 @@ exports[`Settings should render 1`] = `
                   Time Format
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="time-format"
                   >
@@ -510,7 +510,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -528,39 +528,28 @@ exports[`Settings should render 1`] = `
           </div>
         </div>
         <div
-          class="relative mt-5"
+          class="relative mt-10"
         >
-          <div
-            class="flex items-center justify-between bg-theme-background"
-          >
-            <div
-              class="flex flex-col items-start w-2/5"
-            >
-              <h1
-                class="text-3xl font-bold md:text-4xl"
-                data-testid="header__title"
-              >
-                Security
-              </h1>
-            </div>
-          </div>
+          <h2>
+            Security
+          </h2>
           <ul
-            class="sc-fzplWN krwTau"
+            class="sc-fznyAO lyMNj"
             data-testid="list-divided__items"
           >
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full pb-6"
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                     data-testid="list-divided-item__label"
                   >
                     Screenshot Protection
@@ -568,30 +557,30 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
+                    class="mt-1 text-sm text-theme-neutral"
                   >
                     This protection. will protect your money from unwanted Screenshot you PC.
                   </span>
                   <div
-                    class="-mt-2"
+                    class="-mt-7"
                   >
                     <label>
                       <input
-                        class="sc-fznyAO htyfyy"
+                        class="sc-fznKkj cHSYkT"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznKkj iTYdAh"
+                        class="sc-fznZeY iMEJUl"
                       >
                         <span
-                          class="sc-fznZeY izeqLb"
+                          class="sc-fzokOt dWmOrE"
                         />
                       </div>
                     </label>
@@ -600,18 +589,18 @@ exports[`Settings should render 1`] = `
               </div>
             </li>
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full py-6"
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                     data-testid="list-divided-item__label"
                   >
                     Advanced Mode
@@ -619,30 +608,30 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
+                    class="mt-1 text-sm text-theme-neutral"
                   >
                     You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                   </span>
                   <div
-                    class="-mt-2"
+                    class="-mt-7"
                   >
                     <label>
                       <input
-                        class="sc-fznyAO htyfyy -mt-3"
+                        class="sc-fznKkj cHSYkT"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznKkj iTYdAh"
+                        class="sc-fznZeY iMEJUl"
                       >
                         <span
-                          class="sc-fznZeY izeqLb"
+                          class="sc-fzokOt dWmOrE"
                         />
                       </div>
                     </label>
@@ -651,18 +640,18 @@ exports[`Settings should render 1`] = `
               </div>
             </li>
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full pt-8"
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2"
                     data-testid="list-divided-item__label"
                   >
                     Auto-logoff
@@ -670,14 +659,14 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="auto-logoff"
                   >
@@ -705,7 +694,7 @@ exports[`Settings should render 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -723,39 +712,28 @@ exports[`Settings should render 1`] = `
           </ul>
         </div>
         <div
-          class="relative mt-5"
+          class="relative mt-10"
         >
-          <div
-            class="flex items-center justify-between bg-theme-background"
-          >
-            <div
-              class="flex flex-col items-start w-2/5"
-            >
-              <h1
-                class="text-3xl font-bold md:text-4xl"
-                data-testid="header__title"
-              >
-                Other
-              </h1>
-            </div>
-          </div>
+          <h2>
+            Other
+          </h2>
           <ul
-            class="sc-fzplWN krwTau"
+            class="sc-fznyAO lyMNj"
             data-testid="list-divided__items"
           >
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full pb-6"
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                     data-testid="list-divided-item__label"
                   >
                     Dark Theme
@@ -763,30 +741,30 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
+                    class="mt-1 text-sm text-theme-neutral"
                   >
                     Want to set the wallet to dark mode?
                   </span>
                   <div
-                    class="-mt-2"
+                    class="-mt-7"
                   >
                     <label>
                       <input
-                        class="sc-fznyAO htyfyy"
+                        class="sc-fznKkj cHSYkT"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznKkj iTYdAh"
+                        class="sc-fznZeY iMEJUl"
                       >
                         <span
-                          class="sc-fznZeY izeqLb"
+                          class="sc-fzokOt dWmOrE"
                         />
                       </div>
                     </label>
@@ -795,18 +773,18 @@ exports[`Settings should render 1`] = `
               </div>
             </li>
             <li
-              class="flex flex-col w-full py-4"
+              class="flex flex-col w-full pt-6"
               data-testid="list-divided-item__wrapper"
             >
               <div
-                class="flex justify-between flex-col items-start mt-5"
+                class="flex justify-between flex-col items-start"
                 data-testid="list-divided-item__inner-wrapper"
               >
                 <div
                   class="flex flex-col"
                 >
                   <span
-                    class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-5"
+                    class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                     data-testid="list-divided-item__label"
                   >
                     Update Ledger in Background
@@ -814,30 +792,30 @@ exports[`Settings should render 1`] = `
                 </div>
               </div>
               <div
-                class="mt-4"
+                class=""
                 data-testid="list-divided-item__content"
               >
                 <div
                   class="flex flex-row justify-between"
                 >
                   <span
-                    class="w-3/4 text-sm text-theme-neutral-dark"
+                    class="mt-1 text-sm text-theme-neutral"
                   >
                     You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                   </span>
                   <div
-                    class="-mt-2"
+                    class="-mt-7"
                   >
                     <label>
                       <input
-                        class="sc-fznyAO htyfyy -mt-3"
+                        class="sc-fznKkj cHSYkT"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznKkj iTYdAh"
+                        class="sc-fznZeY iMEJUl"
                       >
                         <span
-                          class="sc-fznZeY izeqLb"
+                          class="sc-fzokOt dWmOrE"
                         />
                       </div>
                     </label>
@@ -848,10 +826,10 @@ exports[`Settings should render 1`] = `
           </ul>
         </div>
         <div
-          class="flex justify-between w-full"
+          class="flex justify-between w-full pt-2"
         >
           <button
-            class="sc-AxiKw imWDnq"
+            class="sc-AxhCb clvjJS"
             color="danger"
             type="button"
           >
@@ -872,14 +850,14 @@ exports[`Settings should render 1`] = `
             class="space-x-3"
           >
             <button
-              class="sc-AxiKw gFzSt"
+              class="sc-AxhCb BegvR"
               color="primary"
               type="button"
             >
               Cancel
             </button>
             <button
-              class="sc-AxiKw wFYj"
+              class="sc-AxhCb gBCygf"
               color="primary"
               type="button"
             >
@@ -901,22 +879,24 @@ exports[`Settings should render peer settings 1`] = `
     <div
       class="w-1/4 h-full"
     >
-      <div>
+      <div
+        class="sc-AxiKw eZuVXn"
+      >
         <ul>
           <div
             class="relative cursor-pointer"
             data-testid="side-menu__item--General"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     general.svg
@@ -924,7 +904,7 @@ exports[`Settings should render peer settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 General
               </span>
@@ -938,7 +918,7 @@ exports[`Settings should render peer settings 1`] = `
               class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
             />
             <li
-              class="rounded-lg p-5 flex 
+              class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -947,9 +927,9 @@ exports[`Settings should render peer settings 1`] = `
                 class="text-theme-primary"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     peer.svg
@@ -957,7 +937,7 @@ exports[`Settings should render peer settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-semibold"
               >
                 Peer
               </span>
@@ -968,15 +948,15 @@ exports[`Settings should render peer settings 1`] = `
             data-testid="side-menu__item--Plugins"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     plugin.svg
@@ -984,7 +964,7 @@ exports[`Settings should render peer settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 Plugins
               </span>
@@ -994,22 +974,20 @@ exports[`Settings should render peer settings 1`] = `
       </div>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="border-l-1 border-theme-primary-contrast w-3/5 pl-20 mx-12"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start w-2/5"
-        >
+        <div>
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Peer Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -1017,27 +995,27 @@ exports[`Settings should render peer settings 1`] = `
         </div>
       </div>
       <form
-        class="space-y-8"
+        class="mt-8"
         data-testid="Form"
         id="peer-settings__form"
       >
         <ul
-          class="sc-fzplWN krwTau"
+          class="sc-fznyAO lyMNj"
           data-testid="list-divided__items"
         >
           <li
-            class="flex flex-col w-full py-4"
+            class="flex flex-col w-full pb-6"
             data-testid="list-divided-item__wrapper"
           >
             <div
-              class="flex justify-between flex-col items-start mt-5"
+              class="flex justify-between flex-col items-start"
               data-testid="list-divided-item__inner-wrapper"
             >
               <div
                 class="flex flex-col"
               >
                 <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                   data-testid="list-divided-item__label"
                 >
                   Broadcast to Multiple Peers
@@ -1045,30 +1023,30 @@ exports[`Settings should render peer settings 1`] = `
               </div>
             </div>
             <div
-              class="mt-4"
+              class=""
               data-testid="list-divided-item__content"
             >
               <div
-                class="flex flex-row justify-between mb-3"
+                class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
+                  class="mt-1 text-sm text-theme-neutral"
                 >
                   This protection will protect your money from unwanted Screenshot your PC.
                 </span>
                 <div
-                  class="-mt-11"
+                  class="-mt-7"
                 >
                   <label>
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznKkj cHSYkT"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj iTYdAh"
+                      class="sc-fznZeY iMEJUl"
                     >
                       <span
-                        class="sc-fznZeY izeqLb"
+                        class="sc-fzokOt dWmOrE"
                       />
                     </div>
                   </label>
@@ -1077,18 +1055,18 @@ exports[`Settings should render peer settings 1`] = `
             </div>
           </li>
           <li
-            class="flex flex-col w-full py-4"
+            class="flex flex-col w-full pt-6"
             data-testid="list-divided-item__wrapper"
           >
             <div
-              class="flex justify-between flex-col items-start mt-5"
+              class="flex justify-between flex-col items-start"
               data-testid="list-divided-item__inner-wrapper"
             >
               <div
                 class="flex flex-col"
               >
                 <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark -mt-4"
+                  class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                   data-testid="list-divided-item__label"
                 >
                   Use Custom Peers
@@ -1096,30 +1074,30 @@ exports[`Settings should render peer settings 1`] = `
               </div>
             </div>
             <div
-              class="mt-4"
+              class=""
               data-testid="list-divided-item__content"
             >
               <div
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
+                  class="mt-1 text-sm text-theme-neutral"
                 >
                   You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                 </span>
                 <div
-                  class="-mt-11"
+                  class="-mt-7"
                 >
                   <label>
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznKkj cHSYkT"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj iTYdAh"
+                      class="sc-fznZeY iMEJUl"
                     >
                       <span
-                        class="sc-fznZeY izeqLb"
+                        class="sc-fzokOt dWmOrE"
                       />
                     </div>
                   </label>
@@ -1128,355 +1106,363 @@ exports[`Settings should render peer settings 1`] = `
             </div>
           </li>
         </ul>
-        <div>
-          <div
-            class="sc-fzqBZW cBnliu"
-            role="table"
-          >
-            <table
-              class="table-auto"
+        <div
+          class="pt-8"
+        >
+          <div>
+            <div
+              class="sc-fzqNJr klEctb"
+              role="table"
             >
-              <thead>
-                <tr
-                  role="row"
-                >
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--0"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Network
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--1"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Name
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--2"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  undefined"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Peer IP
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
-                    colspan="1"
-                    data-testid="table__th--3"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top  flex justify-center"
-                    >
-                      <div
-                        class="mr-2"
-                      >
-                        Type
-                      </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody
-                role="rowgroup"
+              <table
+                class="table-auto"
               >
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
+                <thead>
+                  <tr
+                    role="row"
                   >
-                    <div
-                      class="sc-fzoLag eQAZVl text-logo border-theme-danger-200"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral-500"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      ARK
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      ROBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="flex flex-inline align-top  undefined"
                       >
                         <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
+                          class="mr-2"
+                        >
+                          Network
+                        </div>
+                        <div
+                          class="flex items-center text-theme-color-neutral-500"
+                          data-testid="table__Sort"
+                        />
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral-500"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top  undefined"
+                      >
+                        <div
+                          class="mr-2"
+                        >
+                          Name
+                        </div>
+                        <div
+                          class="flex items-center text-theme-color-neutral-500"
+                          data-testid="table__Sort"
+                        />
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral-500"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top  undefined"
+                      >
+                        <div
+                          class="mr-2"
+                        >
+                          Peer IP
+                        </div>
+                        <div
+                          class="flex items-center text-theme-color-neutral-500"
+                          data-testid="table__Sort"
+                        />
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral-500"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top  flex justify-center"
+                      >
+                        <div
+                          class="mr-2"
+                        >
+                          Type
+                        </div>
+                        <div
+                          class="flex items-center text-theme-color-neutral-500"
+                          data-testid="table__Sort"
+                        />
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="inline-flex items-center py-4 mt-1"
+                    >
+                      <div
+                        class="sc-fzoXzr jwmmOD text-logo border-theme-danger-200"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
                         >
                           <svg>
-                            settings.svg
+                            ark.svg
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
-                  >
-                    <div
-                      class="sc-fzoLag eQAZVl border-theme-neutral-300"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="ml-2"
                       >
-                        <svg>
-                          eth.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
+                        ARK
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
                     >
-                      ETHEREUM
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      MATBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
+                      <span>
+                        ROBank
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <span>
+                        194.168.4.67:800
+                      </span>
+                    </td>
+                    <td
+                      class="py-1 text-theme-primary-300"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="flex justify-center h-full"
                       >
                         <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
                         >
                           <svg>
-                            settings.svg
+                            multisig.svg
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-theme-neutral-200"
-                >
-                  <td
-                    class="inline-flex items-center py-4 mt-1"
-                  >
-                    <div
-                      class="sc-fzoLag eQAZVl text-theme-warning-400 border-theme-warning-200"
-                    >
+                    </td>
+                    <td>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                    <span
-                      class="ml-2"
-                    >
-                      BITCOIN
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      OLEBank
-                    </span>
-                  </td>
-                  <td
-                    class="py-1"
-                  >
-                    <span>
-                      194.168.4.67:800
-                    </span>
-                  </td>
-                  <td
-                    class="py-1 text-theme-primary-300"
-                  >
-                    <div
-                      class="flex justify-center h-full"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right outline-none cursor-pointer focus:outline-none"
+                        class="relative"
+                        data-testid="dropdown__toggle"
                       >
                         <div
-                          class="sc-AxjAm buCJuk"
-                          height="20"
-                          width="20"
+                          class="float-right outline-none cursor-pointer focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxjAm buCJuk"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="inline-flex items-center py-4 mt-1"
+                    >
+                      <div
+                        class="sc-fzoXzr jwmmOD border-theme-neutral-300"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
                         >
                           <svg>
-                            settings.svg
+                            eth.svg
                           </svg>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                      <span
+                        class="ml-2"
+                      >
+                        ETHEREUM
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <span>
+                        MATBank
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <span>
+                        194.168.4.67:800
+                      </span>
+                    </td>
+                    <td
+                      class="py-1 text-theme-primary-300"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <div
+                          class="float-right outline-none cursor-pointer focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxjAm buCJuk"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="inline-flex items-center py-4 mt-1"
+                    >
+                      <div
+                        class="sc-fzoXzr jwmmOD text-theme-warning-400 border-theme-warning-200"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <span
+                        class="ml-2"
+                      >
+                        BITCOIN
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <span>
+                        OLEBank
+                      </span>
+                    </td>
+                    <td
+                      class="py-1"
+                    >
+                      <span>
+                        194.168.4.67:800
+                      </span>
+                    </td>
+                    <td
+                      class="py-1 text-theme-primary-300"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="relative"
+                        data-testid="dropdown__toggle"
+                      >
+                        <div
+                          class="float-right outline-none cursor-pointer focus:outline-none"
+                        >
+                          <div
+                            class="sc-AxjAm buCJuk"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              settings.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button
+              class="sc-AxhCb BegvR w-full mt-8 mb-2"
+              color="primary"
+              data-testid="peer-list__add-button"
+              type="button"
+            >
+              Add Peer
+            </button>
           </div>
-          <button
-            class="sc-AxiKw gFzSt w-full mt-3 mb-2"
-            color="primary"
-            data-testid="peer-list__add-button"
-            type="button"
-          >
-            Add Peer
-          </button>
         </div>
         <div
-          class="sc-fzokOt beAtQX border-theme-neutral-300"
-          type="horizontal"
-        />
+          class="pt-2 pb-4"
+        >
+          <div
+            class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+            type="horizontal"
+          />
+        </div>
         <div
-          class="flex justify-end w-full pt-2"
+          class="flex justify-end w-full"
         >
           <button
-            class="sc-AxiKw wFYj"
+            class="sc-AxhCb gBCygf"
             color="primary"
             type="button"
           >
@@ -1497,22 +1483,24 @@ exports[`Settings should render plugins settings 1`] = `
     <div
       class="w-1/4 h-full"
     >
-      <div>
+      <div
+        class="sc-AxiKw eZuVXn"
+      >
         <ul>
           <div
             class="relative cursor-pointer"
             data-testid="side-menu__item--General"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     general.svg
@@ -1520,7 +1508,7 @@ exports[`Settings should render plugins settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 General
               </span>
@@ -1531,15 +1519,15 @@ exports[`Settings should render plugins settings 1`] = `
             data-testid="side-menu__item--Peer"
           >
             <li
-              class="rounded-lg p-5 flex text-theme-medium flex items-center"
+              class="rounded-lg py-5 pl-10 pr-8 flex text-theme-medium flex items-center"
             >
               <div
-                class="text-theme-primary-contrast"
+                class="text-theme-primary-light"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     peer.svg
@@ -1547,7 +1535,7 @@ exports[`Settings should render plugins settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-medium"
               >
                 Peer
               </span>
@@ -1561,7 +1549,7 @@ exports[`Settings should render plugins settings 1`] = `
               class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
             />
             <li
-              class="rounded-lg p-5 flex 
+              class="rounded-lg py-5 pl-10 pr-8 flex 
         text-theme-primary
         bg-theme-primary-contrast
      flex items-center"
@@ -1570,9 +1558,9 @@ exports[`Settings should render plugins settings 1`] = `
                 class="text-theme-primary"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxjAm buCJuk"
+                  height="20"
+                  width="20"
                 >
                   <svg>
                     plugin.svg
@@ -1580,7 +1568,7 @@ exports[`Settings should render plugins settings 1`] = `
                 </div>
               </div>
               <span
-                class="ml-2 font-semibold"
+                class="ml-3 text-lg font-semibold"
               >
                 Plugins
               </span>
@@ -1590,22 +1578,20 @@ exports[`Settings should render plugins settings 1`] = `
       </div>
     </div>
     <div
-      class="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast"
+      class="border-l-1 border-theme-primary-contrast w-3/5 pl-20 mx-12"
     >
       <div
-        class="flex items-center justify-between bg-theme-background"
+        class="flex items-end justify-between bg-theme-background"
       >
-        <div
-          class="flex flex-col items-start w-2/5"
-        >
+        <div>
           <h1
-            class="text-3xl font-bold md:text-4xl"
+            class="mb-0 text-3xl font-bold md:text-4xl"
             data-testid="header__title"
           >
             Plugin Settings
           </h1>
           <div
-            class="mt-2 text-theme-neutral-dark"
+            class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
             Customize your wallet to suit your needs.
@@ -1613,27 +1599,27 @@ exports[`Settings should render plugins settings 1`] = `
         </div>
       </div>
       <form
-        class="space-y-8"
+        class="mt-8"
         data-testid="Form"
         id="plugin-settings__form"
       >
         <ul
-          class="sc-fzplWN krwTau"
+          class="sc-fznyAO lyMNj"
           data-testid="list-divided__items"
         >
           <li
-            class="flex flex-col w-full py-4"
+            class="flex flex-col w-full pb-6"
             data-testid="list-divided-item__wrapper"
           >
             <div
-              class="flex justify-between flex-col items-start mt-5"
+              class="flex justify-between flex-col items-start"
               data-testid="list-divided-item__inner-wrapper"
             >
               <div
                 class="flex flex-col"
               >
                 <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                   data-testid="list-divided-item__label"
                 >
                   Apply Blacklist
@@ -1641,40 +1627,40 @@ exports[`Settings should render plugins settings 1`] = `
               </div>
             </div>
             <div
-              class="mt-4"
+              class=""
               data-testid="list-divided-item__content"
             >
               <div
                 class="flex flex-row justify-between"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
+                  class="text-sm text-theme-neutral"
                 >
                   This list is selected safely by ARK Ecosystem. You can view it and add to the list of plugins that you find suspicious.
                 </span>
                 <div
-                  class="-mt-11"
+                  class="-mt-7"
                 >
                   <label>
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznKkj cHSYkT"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj iTYdAh"
+                      class="sc-fznZeY iMEJUl"
                     >
                       <span
-                        class="sc-fznZeY izeqLb"
+                        class="sc-fzokOt dWmOrE"
                       />
                     </div>
                   </label>
                 </div>
               </div>
               <div
-                class="flex justify-end w-full py-6 space-x-3"
+                class="flex justify-end w-full pt-6 space-x-3"
               >
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="plugins__open-list"
                   type="button"
@@ -1682,7 +1668,7 @@ exports[`Settings should render plugins settings 1`] = `
                   Open List
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxhCb BegvR"
                   color="primary"
                   data-testid="plugins__add-plugin"
                   type="button"
@@ -1693,18 +1679,18 @@ exports[`Settings should render plugins settings 1`] = `
             </div>
           </li>
           <li
-            class="flex flex-col w-full py-4"
+            class="flex flex-col w-full pt-6"
             data-testid="list-divided-item__wrapper"
           >
             <div
-              class="flex justify-between flex-col items-start mt-5"
+              class="flex justify-between flex-col items-start"
               data-testid="list-divided-item__inner-wrapper"
             >
               <div
                 class="flex flex-col"
               >
                 <span
-                  class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                  class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                   data-testid="list-divided-item__label"
                 >
                   Plugin Source
@@ -1712,37 +1698,37 @@ exports[`Settings should render plugins settings 1`] = `
               </div>
             </div>
             <div
-              class="mt-4"
+              class=""
               data-testid="list-divided-item__content"
             >
               <div
                 class="flex flex-row justify-between mb-5"
               >
                 <span
-                  class="w-3/4 -mt-4 text-sm text-theme-neutral"
+                  class="text-sm text-theme-neutral"
                 >
                   Turn this feature on, you can upload plugins to your wallet from third-party sources.
                 </span>
                 <div
-                  class="-mt-11"
+                  class="-mt-7"
                 >
                   <label>
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznKkj cHSYkT"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj iTYdAh"
+                      class="sc-fznZeY iMEJUl"
                     >
                       <span
-                        class="sc-fznZeY izeqLb"
+                        class="sc-fzokOt dWmOrE"
                       />
                     </div>
                   </label>
                 </div>
               </div>
               <fieldset
-                class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
                   class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1752,10 +1738,10 @@ exports[`Settings should render plugins settings 1`] = `
                   Load plugins from
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="sc-fzozJi OgXfh"
                 >
                   <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
                     data-testid="Select"
                     name="load-plugins"
                   >
@@ -1772,7 +1758,7 @@ exports[`Settings should render plugins settings 1`] = `
                     </option>
                   </select>
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
                   >
                     <div
                       class="sc-AxjAm cpczEI"
@@ -1790,14 +1776,14 @@ exports[`Settings should render plugins settings 1`] = `
           </li>
         </ul>
         <div
-          class="sc-fzokOt beAtQX border-theme-neutral-300"
+          class="sc-fzqBZW ldtzXK border-theme-neutral-300"
           type="horizontal"
         />
         <div
           class="flex justify-end w-full pt-2"
         >
           <button
-            class="sc-AxiKw wFYj"
+            class="sc-AxhCb gBCygf"
             color="primary"
             type="button"
           >

@@ -85,16 +85,6 @@ export const SecondStep = () => (
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
-				label="Recipient"
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<span className="font-normal">AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK</span>
-			</TransactionDetail>
-			<TransactionDetail
 				label="Hash"
 				extra={
 					<div className="ml-1">
@@ -104,9 +94,8 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+				<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 			</TransactionDetail>
-			<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
 			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 		</div>
 	</section>
@@ -137,7 +126,7 @@ export const ThirdStep = () => {
 export const FourthStep = () => (
 	<TransactionSuccessful>
 		<TransactionDetail label="IPFS Hash">
-			<span className="font-normal">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+			<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
@@ -203,7 +192,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										disabled={activeTab === 1}
 										data-testid="SendIPFSTransaction__button--back"
 										variant="plain"
-										size="lg"
 										onClick={handleBack}
 									>
 										Back
@@ -211,7 +199,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 									<Button
 										data-testid="SendIPFSTransaction__button--continue"
 										variant="solid"
-										size="lg"
 										// disabled={!isValid}
 										onClick={handleNext}
 									>
@@ -226,7 +213,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										data-testid="SendIPFSTransaction__button--back-to-wallet"
 										variant="plain"
 										className={"block"}
-										size="lg"
 									>
 										Back to wallet
 									</Button>
@@ -234,7 +220,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 										onClick={onCopy}
 										data-testid="SendIPFSTransaction__button--copy"
 										variant="plain"
-										size="lg"
 									>
 										<div className="flex items-center justify-between px-1">
 											<Icon name="Copy" />

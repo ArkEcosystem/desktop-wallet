@@ -80,10 +80,10 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 
 	return (
 		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
-			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="px-10 py-16 bg-theme-background">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -101,12 +101,12 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 					{contacts.length === 0 && (
 						<div
 							data-testid="contacts__banner"
-							className="flex flex-col items-center justify-center mx-auto"
+							className="flex flex-col items-center justify-center w-full"
 						>
-							<div className="max-w-4xl mx-auto">
-								<ContactsBanner />
+							<div className="mx-auto">
+								<ContactsBanner height={175} />
 							</div>
-							<div className="mt-6">
+							<div className="mt-8">
 								<span className="text-theme-neutral-dark">
 									{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
 								</span>
