@@ -25,7 +25,7 @@ export const CollapseToggleButton = ({ isOpen, ...props }: Props) => {
 		>
 			<span>{isOpen ? t("COMMON.HIDE") : t("COMMON.SHOW")}</span>
 			<ToggleIcon isOpen={isOpen!}>
-				<Icon name="ChevronDown" />
+				<Icon name="ChevronDown" width={10} height={10} />
 			</ToggleIcon>
 		</button>
 	);

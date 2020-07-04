@@ -57,7 +57,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 					>
 						<div className="flex">
 							<div className="my-auto">Period: {period}</div>
-							<div className="my-auto">
+							<div className="my-auto ml-1">
 								<Icon name="ChevronDown" />
 							</div>
 						</div>

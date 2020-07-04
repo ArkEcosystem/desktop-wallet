@@ -30,7 +30,25 @@ exports[`Divider should render horizontal type 1`] = `
 exports[`Divider should render vertical type 1`] = `
 <div>
   <div
-    class="sc-AxjAm jJSzSo border-theme-neutral-300"
+    class="sc-AxjAm jsQKzL border-theme-neutral-300"
+    type="vertical"
+  />
+</div>
+`;
+
+exports[`Divider should render vertical type and large 1`] = `
+<div>
+  <div
+    class="sc-AxjAm hlvmjM border-theme-neutral-300"
+    type="vertical"
+  />
+</div>
+`;
+
+exports[`Divider should render vertical type and small 1`] = `
+<div>
+  <div
+    class="sc-AxjAm iCCswl border-theme-neutral-300"
     type="vertical"
   />
 </div>

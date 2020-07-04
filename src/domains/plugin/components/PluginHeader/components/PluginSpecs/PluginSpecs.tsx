@@ -71,7 +71,7 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 			<div className="flex flex-col">
 				<span className="font-bold text-theme-neutral-400">Rating</span>
 				<div className="flex items-center">
-					<div className="pr-1 text-theme-warning-300">
+					<div className="pr-1 text-theme-warning-400">
 						<Icon name="Star" />
 					</div>
 					<span className="font-bold text-theme-neutral-600">{rating}</span>

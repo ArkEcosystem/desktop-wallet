@@ -81,8 +81,8 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 								isOpen ? "rotate-180" : ""
 							} bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500`}
 							icon="ChevronDown"
-							iconWidth={16}
-							iconHeight={16}
+							iconWidth={10}
+							iconHeight={10}
 						/>
 					</Circle>
 				</div>

@@ -62,7 +62,7 @@ export const FilterWallets = ({
 						onClick={onWalletClick}
 					>
 						<span className="inline-block pr-1 font-semibold">All</span>
-						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={19} iconHeight={19} />
+						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={15} iconHeight={15} />
 					</div>
 				</div>
 			</div>

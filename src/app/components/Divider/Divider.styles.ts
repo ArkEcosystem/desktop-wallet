@@ -13,12 +13,24 @@ const getType = (type: string): any => {
 			];
 		case "vertical":
 			return [
-				tw`relative inline-block h-4 align-middle border-t-0 border-l border-solid`,
+				tw`relative inline-block align-middle border-t-0 border-l border-solid`,
 				css`
-					top: -0.06em;
 					margin: 0 8px;
 				`,
 			];
+	}
+};
+
+const getSize = (type: string, size: string): any => {
+	if (type === "vertical") {
+		switch (size) {
+			case "sm":
+				return tw`h-2`;
+			case "lg":
+				return tw`h-8`;
+			default:
+				return tw`h-4`;
+		}
 	}
 };
 
@@ -36,6 +48,6 @@ const isDashed = (dashed: boolean): any => {
 	return null;
 };
 
-export const getStyles = ({ type, dashed }: { type?: string; dashed?: boolean }) => {
-	return [...baseStyle, getType(type!), isDashed(dashed!)];
+export const getStyles = ({ size, type, dashed }: { size?: string; type?: string; dashed?: boolean }) => {
+	return [getSize(type!, size!), ...baseStyle, getType(type!), isDashed(dashed!)];
 };
