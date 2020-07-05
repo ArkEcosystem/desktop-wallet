@@ -176,41 +176,51 @@ exports[`ContactUs should render a modal 1`] = `
               Subject
             </label>
             <div
-              class="sc-AxmLO kuiknc"
+              class="w-full"
             >
-              <select
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                data-testid="Select"
+              <input
+                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                data-testid="select-list__input"
                 name="subject"
-              >
-                <option
-                  selected=""
-                  value=""
-                >
-                  Select
-                </option>
-                <option
-                  value="security"
-                >
-                  Security
-                </option>
-                <option
-                  value="other"
-                >
-                  Other
-                </option>
-              </select>
+                readonly=""
+                type="text"
+                value=""
+              />
               <div
-                class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                class="relative w-full cursor-pointer"
               >
+                <div>
+                  <button
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                    class="sc-fznyAO ijanzL   "
+                    data-testid="select-list__toggle-button"
+                    id="downshift-0-toggle-button"
+                    type="button"
+                  >
+                    Select
+                  </button>
+                  <ul
+                    aria-labelledby="downshift-0-label"
+                    class="sc-fznKkj dPXThn"
+                    id="downshift-0-menu"
+                    role="listbox"
+                    tabindex="-1"
+                  />
+                </div>
                 <div
-                  class="sc-AxhCb fxrKLH"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
                 >
-                  <svg>
-                    chevron-down.svg
-                  </svg>
+                  <div
+                    class="sc-AxhCb dxfUlj"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      arrowdown.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
