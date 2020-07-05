@@ -1,88 +1,113 @@
 import { Icon } from "app/components/Icon";
-import Downshift from "downshift";
-import React from "react";
+import { Input, InputAddonEnd } from "app/components/Input";
+import { useSelect } from "downshift";
+import React, { useState } from "react";
 
-type Label = {
+import { SelectOptionsList, SelectToggleButton } from "./styles";
+
+type Option = {
 	label: string;
 	value: string | number;
 };
 
 type Props = {
-	options: Label[];
-	option?: any;
-	toggle?: any;
-	className?: string;
-	selected?: any;
-	onChange?: (selected: any) => void;
-};
+	defaultValue?: string;
+	isInvalid?: boolean;
+	options: Option[];
+	onChange?: (selected: Option) => void;
+} & React.InputHTMLAttributes<any>;
 
-export const SelectDropdown = ({ className, toggle, options, option, selected, onChange }: Props) => {
-	const renderOption = (rowData: any) => {
-		if (typeof option === "function") return option(rowData);
-	};
+const SelectDropdown = ({
+	placeholder,
+	options,
+	onSelectedItemChange,
+	disabled,
+	isInvalid,
+	defaultSelectedItem,
+}: any) => {
+	const { isOpen, selectedItem, getToggleButtonProps, getMenuProps, highlightedIndex, getItemProps } = useSelect({
+		items: options,
+		onSelectedItemChange,
+		defaultSelectedItem: defaultSelectedItem,
+	});
 
-	const renderToggle = (selected: any, isOpen: boolean) => {
-		if (typeof toggle === "function") return toggle(selected, isOpen);
-	};
-
-	const onSelect = (selectedItem: any) => {
-		if (typeof onChange === "function") return onChange(selectedItem);
-	};
+	const isOpenClassName = isOpen ? "is-open" : "";
+	const isSelectedClassName = selectedItem ? "is-selected" : "";
+	const isInvalidClassName = isInvalid ? "is-invalid" : "";
+	const toggleButtonClassName = `${isOpenClassName} ${isSelectedClassName} ${isInvalidClassName}`;
 
 	return (
-		<Downshift itemToString={(i) => i?.value} onChange={onSelect} initialSelectedItem={selected}>
-			{({ getLabelProps, getInputProps, getItemProps, isOpen, toggleMenu, selectedItem }) => (
-				<div className={`relative ${className}`}>
-					<label {...getLabelProps({ htmlFor: "dropdown-select" })}>
-						<div className="relative flex items-center w-full flex-inline">
-							<div className="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary">
-								{renderToggle(selectedItem, isOpen)}
-							</div>
-							<div className="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark">
-								<div className={isOpen ? "transform rotate-180" : ""}>
-									<Icon name="ChevronDown" />
-								</div>
-							</div>
-						</div>
-					</label>
-
-					<div className="relative btn-group">
-						<input {...getInputProps({ readOnly: true })} type="hidden" />
-						<button
-							id="dropdown-select"
-							data-testid="select-dropdown__toggle"
-							type="button"
-							className="hidden dropdown-toggle"
-							onClick={(params: any) => toggleMenu(params)}
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded={isOpen}
-						/>
-						{isOpen ? (
-							<div
-								data-testid="select-dropdown__content"
-								className="absolute z-10 w-full mt-1 rounded-lg shadow-xl bg-theme-background border-theme-neutral-100 border-1"
+		<div className="relative w-full cursor-pointer">
+			<div>
+				<SelectToggleButton
+					type="button"
+					data-testid="select-list__toggle-button"
+					{...getToggleButtonProps({
+						disabled,
+						className: toggleButtonClassName,
+					})}
+				>
+					{selectedItem?.label || placeholder}
+				</SelectToggleButton>
+				<SelectOptionsList {...getMenuProps({ className: isOpenClassName })}>
+					{isOpen &&
+						options.map((item: Option, index: number) => (
+							<li
+								key={`${item.value}${index}`}
+								data-testid={`select-list__toggle-option-${index}`}
+								{...getItemProps({
+									item,
+									index,
+									className: `select-list-option ${
+										highlightedIndex === index ? "is-highlighted" : ""
+									}`,
+								})}
 							>
-								{options.map((item: any, index: number) => (
-									<div
-										{...getItemProps({ item })}
-										key={index}
-										data-testid={`select-dropdown__option-${index}`}
-										className="cursor-pointer dropdown-item"
-										style={{ cursor: "pointer" }}
-									>
-										{renderOption(item)}
-									</div>
-								))}
-							</div>
-						) : null}
-					</div>
-				</div>
-			)}
-		</Downshift>
+								<div className="select-list-option__label">{item.label}</div>
+							</li>
+						))}
+				</SelectOptionsList>
+			</div>
+			<InputAddonEnd className="w-10 pointer-events-none text-theme-neutral-500">
+				<Icon name={isOpen ? "ArrowUp" : "ArrowDown"} width={8} height={8} />
+			</InputAddonEnd>
+		</div>
 	);
 };
 
-SelectDropdown.defaultProps = {
+export const Select = React.forwardRef<HTMLInputElement, Props>(
+	({ isInvalid, placeholder, onChange, defaultValue, options }: Props, ref) => {
+		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
+		const [selected, setSelected] = useState(defaultSelectedItem);
+
+		return (
+			<div className="w-full">
+				<Input
+					data-testid="select-list__input"
+					type="text"
+					ref={ref}
+					value={selected?.value || ""}
+					className="sr-only"
+					readOnly
+					isInvalid={isInvalid}
+				/>
+				<SelectDropdown
+					options={options}
+					defaultSelectedItem={defaultSelectedItem}
+					placeholder={placeholder}
+					isInvalid={isInvalid}
+					onSelectedItemChange={({ selectedItem }: any) => {
+						setSelected(selectedItem);
+						onChange?.(selectedItem);
+					}}
+				/>
+			</div>
+		);
+	},
+);
+
+Select.displayName = "Select";
+Select.defaultProps = {
+	defaultValue: "",
 	options: [],
 };
