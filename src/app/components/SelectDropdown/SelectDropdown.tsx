@@ -40,9 +40,9 @@ const SelectDropdown = ({
 		<div className="relative w-full cursor-pointer">
 			<div>
 				<SelectToggleButton
-					type="button"
 					data-testid="select-list__toggle-button"
 					{...getToggleButtonProps({
+						type: "button",
 						disabled,
 						className: toggleButtonClassName,
 					})}
