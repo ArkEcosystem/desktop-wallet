@@ -186,47 +186,51 @@ exports[`CreateProfile should render 1`] = `
                   Market Provider
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="w-full"
                 >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    data-testid="select-list__input"
                     name="market-provider"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Market Provider
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="relative w-full cursor-pointer"
                   >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                        class="sc-fznyAO ijanzL   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-0-toggle-button"
+                        type="button"
+                      >
+                        Select Market Provider
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-0-label"
+                        class="sc-fznKkj dPXThn"
+                        id="downshift-0-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
                     <div
-                      class="sc-AxhCb fxrKLH"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -243,47 +247,51 @@ exports[`CreateProfile should render 1`] = `
                   Currency
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="w-full"
                 >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    data-testid="select-list__input"
                     name="currency"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Currency
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="relative w-full cursor-pointer"
                   >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                        class="sc-fznyAO ijanzL   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-1-toggle-button"
+                        type="button"
+                      >
+                        Select Currency
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-1-label"
+                        class="sc-fznKkj dPXThn"
+                        id="downshift-1-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
                     <div
-                      class="sc-AxhCb fxrKLH"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -332,14 +340,14 @@ exports[`CreateProfile should render 1`] = `
                       >
                         <label>
                           <input
-                            class="sc-fznyAO htyfyy"
+                            class="sc-fznZeY gFDxaj"
                             type="checkbox"
                           />
                           <div
-                            class="sc-fznKkj iTYdAh"
+                            class="sc-fzokOt gWpRLq"
                           >
                             <span
-                              class="sc-fznZeY izeqLb"
+                              class="sc-fzqBZW jzxcvp"
                             />
                           </div>
                         </label>

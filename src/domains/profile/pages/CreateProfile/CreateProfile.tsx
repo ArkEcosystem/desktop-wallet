@@ -5,7 +5,7 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -111,28 +111,26 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 								<FormField name="market-provider">
 									<FormLabel label="Market Provider" />
 									<Select
-										name="market-provider"
 										placeholder="Select Market Provider"
 										ref={register({ required: true })}
-									>
-										<option value="option1">Option 1</option>
-										<option value="option2">Option 2</option>
-										<option value="option3">Option 3</option>
-									</Select>
+										options={[
+											{ label: "Option 1", value: "option1" },
+											{ label: "Option 2", value: "option2" },
+										]}
+									/>
 									<FormHelperText />
 								</FormField>
 
 								<FormField name="currency">
 									<FormLabel label="Currency" />
 									<Select
-										name="currency"
 										placeholder="Select Currency"
 										ref={register({ required: true })}
-									>
-										<option value="option1">Option 1</option>
-										<option value="option2">Option 2</option>
-										<option value="option3">Option 3</option>
-									</Select>
+										options={[
+											{ label: "Option 1", value: "option1" },
+											{ label: "Option 2", value: "option2" },
+										]}
+									/>
 									<FormHelperText />
 								</FormField>
 							</div>
