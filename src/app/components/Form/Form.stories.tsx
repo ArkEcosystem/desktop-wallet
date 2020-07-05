@@ -1,5 +1,5 @@
 import { Input } from "app/components/Input";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { TextArea } from "app/components/TextArea";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -48,14 +48,15 @@ export const Default = () => {
 				<FormField name="coin">
 					<FormLabel>Coin</FormLabel>
 					<Select
+						placeholder="Select coin"
+						options={[
+							{ label: "ARK", value: "ark" },
+							{ label: "Bitcoin", value: "bitcoin" },
+						]}
 						ref={methods.register({
 							required: "Coin required",
 						})}
-					>
-						<option value="">Select</option>
-						<option value="ark">ARK</option>
-						<option value="bitcoin">Bitcoin</option>
-					</Select>
+					 />
 				</FormField>
 
 				<FormField name="message">
