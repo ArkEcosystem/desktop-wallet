@@ -56,7 +56,7 @@ export const Default = () => {
 						ref={methods.register({
 							required: "Coin required",
 						})}
-					 />
+					/>
 				</FormField>
 
 				<FormField name="message">
