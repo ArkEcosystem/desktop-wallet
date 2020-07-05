@@ -3,7 +3,7 @@
 exports[`LinkCollection should add and remove links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznyAO gXdpmR font-normal"
+    class="sc-fznZeY btEwYs font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -59,70 +59,50 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="sc-Axmtr jzhOwR flex flex-1"
             >
               <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-labelledby="downshift-1-label"
-                class="relative w-full"
-                role="combobox"
+                class="w-full"
               >
-                <label
-                  for="dropdown-select"
-                  id="downshift-1-label"
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                  data-testid="select-list__input"
+                  readonly=""
+                  type="text"
+                  value="twitter"
+                />
+                <div
+                  class="relative w-full cursor-pointer"
                 >
+                  <div>
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                      class="sc-fzplWN eNOicT  is-selected "
+                      data-testid="select-list__toggle-button"
+                      id="downshift-1-toggle-button"
+                    >
+                      Twitter
+                    </button>
+                    <ul
+                      aria-labelledby="downshift-1-label"
+                      class="sc-fznyAO kkNVti"
+                      id="downshift-1-menu"
+                      role="listbox"
+                      tabindex="-1"
+                    />
+                  </div>
                   <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral-500"
                   >
                     <div
-                      class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="sc-AxiKw iDEwuj"
+                      height="8"
+                      width="8"
                     >
-                      <div
-                        class="flex items-center flex-inline"
-                      >
-                        <div>
-                          Twitter
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-                    >
-                      <div
-                        class=""
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
+                      <svg>
+                        arrowdown.svg
+                      </svg>
                     </div>
                   </div>
-                </label>
-                <div
-                  class="relative btn-group"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-labelledby="downshift-1-label"
-                    autocomplete="off"
-                    id="downshift-1-input"
-                    readonly=""
-                    type="hidden"
-                    value="twitter"
-                  />
-                  <button
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    class="hidden dropdown-toggle"
-                    data-testid="select-dropdown__toggle"
-                    data-toggle="dropdown"
-                    id="dropdown-select"
-                    type="button"
-                  />
                 </div>
               </div>
             </div>
@@ -169,7 +149,7 @@ exports[`LinkCollection should add and remove links 1`] = `
         Your media
       </div>
       <div
-        class="sc-fzplWN kEUFYN"
+        class="sc-fznKkj crvYjk"
         role="table"
       >
         <table
@@ -278,7 +258,7 @@ exports[`LinkCollection should add and remove links 1`] = `
 exports[`LinkCollection should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznyAO gXdpmR font-normal"
+    class="sc-fznZeY btEwYs font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -316,7 +296,7 @@ exports[`LinkCollection should render 1`] = `
 exports[`LinkCollection should select a specific link type 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznyAO gXdpmR font-normal"
+    class="sc-fznZeY btEwYs font-normal"
     data-testid="LinkCollection"
   >
     <div
@@ -372,72 +352,48 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="sc-Axmtr jzhOwR flex flex-1"
             >
               <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-labelledby="downshift-2-label"
-                class="relative w-full"
-                role="combobox"
+                class="w-full"
               >
-                <label
-                  for="dropdown-select"
-                  id="downshift-2-label"
+                <input
+                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                  data-testid="select-list__input"
+                  readonly=""
+                  type="text"
+                  value=""
+                />
+                <div
+                  class="relative w-full cursor-pointer"
                 >
+                  <div>
+                    <button
+                      aria-expanded="false"
+                      aria-haspopup="listbox"
+                      aria-labelledby="downshift-8-label downshift-8-toggle-button"
+                      class="sc-fzplWN eNOicT   "
+                      data-testid="select-list__toggle-button"
+                      id="downshift-8-toggle-button"
+                    />
+                    <ul
+                      aria-labelledby="downshift-8-label"
+                      class="sc-fznyAO kkNVti"
+                      id="downshift-8-menu"
+                      role="listbox"
+                      tabindex="-1"
+                    />
+                  </div>
                   <div
-                    class="relative flex items-center w-full flex-inline"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral-500"
                   >
                     <div
-                      class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+                      class="sc-AxiKw iDEwuj"
+                      height="8"
+                      width="8"
                     >
-                      <div
-                        class="flex items-center flex-inline"
-                      >
-                        <div
-                          class="font-semibold text-theme-neutral-800"
-                        >
-                           
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-                    >
-                      <div
-                        class=""
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
-                        </div>
-                      </div>
+                      <svg>
+                        arrowdown.svg
+                      </svg>
                     </div>
                   </div>
-                </label>
-                <div
-                  class="relative btn-group"
-                >
-                  <input
-                    aria-autocomplete="list"
-                    aria-labelledby="downshift-2-label"
-                    autocomplete="off"
-                    id="downshift-2-input"
-                    readonly=""
-                    type="hidden"
-                    value=""
-                  />
-                  <button
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    class="hidden dropdown-toggle"
-                    data-testid="select-dropdown__toggle"
-                    data-toggle="dropdown"
-                    id="dropdown-select"
-                    type="button"
-                  />
                 </div>
               </div>
             </div>
@@ -485,7 +441,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         Your media
       </div>
       <div
-        class="sc-fzplWN kEUFYN"
+        class="sc-fznKkj crvYjk"
         role="table"
       >
         <table
@@ -708,7 +664,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
 exports[`LinkCollection should toggle open/close of link collection 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznyAO gXdpmR font-normal"
+    class="sc-fznZeY btEwYs font-normal"
     data-testid="LinkCollection"
   >
     <div
