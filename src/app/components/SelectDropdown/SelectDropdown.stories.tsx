@@ -27,6 +27,9 @@ export const Dropdown = () => {
 			<Select placeholder="Invalid" isInvalid options={options} />
 			<Select placeholder="Disabled" disabled options={options} />
 			<div className="mt-4">With default value</div>
+			<Select placeholder="Disabled" options={options} defaultValue="3" />
+
+			<div className="mt-4">With default value (disabled)</div>
 			<Select placeholder="Disabled" disabled options={options} defaultValue="3" />
 		</div>
 	);

@@ -13,6 +13,7 @@ type Option = {
 type Props = {
 	defaultValue?: string;
 	isInvalid?: boolean;
+	disabled?: any;
 	options: Option[];
 	onChange?: (selected: Option) => void;
 } & React.InputHTMLAttributes<any>;
@@ -76,7 +77,7 @@ const SelectDropdown = ({
 };
 
 export const Select = React.forwardRef<HTMLInputElement, Props>(
-	({ isInvalid, placeholder, onChange, defaultValue, options }: Props, ref) => {
+	({ isInvalid, placeholder, onChange, defaultValue, options, disabled }: Props, ref) => {
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
@@ -92,6 +93,7 @@ export const Select = React.forwardRef<HTMLInputElement, Props>(
 					isInvalid={isInvalid}
 				/>
 				<SelectDropdown
+					disabled={disabled}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
