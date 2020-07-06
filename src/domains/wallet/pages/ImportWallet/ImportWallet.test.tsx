@@ -37,16 +37,19 @@ describe("Wallet / Import", () => {
 	it("should navigate between steps", () => {
 		const { getByTestId } = rendered;
 
-		const arkCard = getByTestId("card-control__ARK Ecosystem");
-		expect(arkCard).toBeTruthy();
+		const selectAssetInput = getByTestId("select-asset__input");
+		expect(selectAssetInput).toBeTruthy();
 
 		act(() => {
-			// Select network
-			fireEvent.click(arkCard);
+			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
 		});
 
 		// Check network is selected
-		expect(arkCard.checked).toEqual(true);
+		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
 
 		const continueBtn = getByTestId("import-wallet__next-step--button");
 		expect(continueBtn).toBeTruthy();
@@ -80,10 +83,6 @@ describe("Wallet / Import", () => {
 		});
 
 		// Check if previous step is rendered
-		const arkCardSelected = getByTestId("card-control__ARK Ecosystem");
-		expect(arkCardSelected).toBeTruthy();
-
-		// check ark is selectedd
-		expect(arkCardSelected.checked).toEqual(true);
+		expect(getByTestId("select-asset__input")).toBeTruthy();
 	});
 });
