@@ -86,7 +86,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<div className="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
+						<div className="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
