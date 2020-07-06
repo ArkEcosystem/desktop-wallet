@@ -4,7 +4,7 @@ describe("Startup application", () => {
 
 		cy.get("h1").should("have.text", "Welcome to ARK");
 		cy.get("img").should("have.length", 3);
-		cy.get("svg").should("have.length", 3);
+		cy.get("svg").should("have.length", 8);
 		cy.get("button").should("have.length", 2);
 	});
 });
