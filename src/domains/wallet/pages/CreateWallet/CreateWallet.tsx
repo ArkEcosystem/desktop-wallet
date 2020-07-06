@@ -71,18 +71,25 @@ export const SecondStep = ({
 					facere nostrum.
 				</Alert>
 				<MnemonicList mnemonic={mnemonic} />
-				<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
-					<Icon name="Copy" />
-					<span>Copy</span>
-				</Button>
+				<div className="flex justify-end w-full">
+					<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
+						<Icon name="Copy" />
+						<span>Copy</span>
+					</Button>
+				</div>
 			</div>
 
 			<Divider dashed />
 
-			<div className="flex py-3">
-				<div className="flex-1">
-					<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
-					<p className="text-theme-neutral">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+			<div className="py-3">
+				<div className="flex justify-between">
+					<div>
+						<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
+						<p className="text-theme-neutral">You can also download and store safely your passphrase.</p>
+					</div>
+					<Icon name="FilePassword" width={40} height={40} />
+				</div>
+				<div className="flex justify-end w-full">
 					<Button
 						onClick={onDownload}
 						data-testid="CreateWallet__download"
@@ -92,9 +99,6 @@ export const SecondStep = ({
 						<Icon name="Download" />
 						<span>Download</span>
 					</Button>
-				</div>
-				<div className="ml-10">
-					<Icon name="FilePassword" width={40} height={40} />
 				</div>
 			</div>
 
