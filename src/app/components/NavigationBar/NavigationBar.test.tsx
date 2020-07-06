@@ -46,6 +46,22 @@ describe("NavigationBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should handle default menu", () => {
+		const profile = env.profiles().create("test");
+		history.push(`/profiles/${profile.id()}`);
+		const { getByText } = render(
+			<Router history={history}>
+				<EnvironmentContext.Provider value={env}>
+					<Route path="/profiles/:profileId">
+						<NavigationBar />
+					</Route>
+				</EnvironmentContext.Provider>
+			</Router>,
+		);
+
+		expect(getByText("Portfolio")).toBeTruthy();
+	});
+
 	it("should handle menu click", () => {
 		const menu = [
 			{
@@ -57,7 +73,7 @@ describe("NavigationBar", () => {
 				mountPath: () => "/test",
 			},
 		];
-		const profile = env.profiles().create("test");
+		const profile = env.profiles().create("test2");
 		history.push(`/profiles/${profile.id()}`);
 		const { getByText } = render(
 			<Router history={history}>
