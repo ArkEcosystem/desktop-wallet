@@ -8,7 +8,7 @@ exports[`Votes should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
+      class="sc-fzqBZW cqbNAj"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -184,7 +184,7 @@ exports[`Votes should render 1`] = `
                       IO
                     </span>
                     <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -255,27 +255,31 @@ exports[`Votes should render 1`] = `
             </div>
           </div>
           <div>
-            <button
-              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
-              data-testid="header-search-bar__button"
+            <div
+              class="relative"
             >
-              <div
-                class="flex items-center space-x-3"
+              <button
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                data-testid="header-search-bar__button"
               >
-                <span>
-                  Search
-                </span>
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="flex items-center space-x-3"
                 >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <span>
+                    Search
+                  </span>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      search.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -300,7 +304,7 @@ exports[`Votes should render 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqNJr bHRmfU"
+                  class="sc-fzoyAV fbIxVy"
                 >
                   <div
                     aria-expanded="false"
@@ -515,7 +519,7 @@ exports[`Votes should select a cryptoasset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
+      class="sc-fzqBZW cqbNAj"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -691,7 +695,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       IO
                     </span>
                     <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -762,27 +766,31 @@ exports[`Votes should select a cryptoasset 1`] = `
             </div>
           </div>
           <div>
-            <button
-              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
-              data-testid="header-search-bar__button"
+            <div
+              class="relative"
             >
-              <div
-                class="flex items-center space-x-3"
+              <button
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                data-testid="header-search-bar__button"
               >
-                <span>
-                  Search
-                </span>
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="flex items-center space-x-3"
                 >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <span>
+                    Search
+                  </span>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      search.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -807,7 +815,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqNJr bHRmfU"
+                  class="sc-fzoyAV fbIxVy"
                 >
                   <div
                     aria-expanded="false"
@@ -1013,7 +1021,7 @@ exports[`Votes should select a cryptoasset 1`] = `
             Select Address
           </h2>
           <div
-            class="sc-fznKkj crvYjk"
+            class="sc-fznZeY dcDttg"
             role="table"
           >
             <table
@@ -1402,7 +1410,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1520,7 +1528,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1601,7 +1609,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1682,7 +1690,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="AddressListItem__button--select"
                         type="button"
@@ -1711,7 +1719,7 @@ exports[`Votes should select a delegate 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
+      class="sc-fzqBZW cqbNAj"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -1887,7 +1895,7 @@ exports[`Votes should select a delegate 1`] = `
                       IO
                     </span>
                     <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -1958,27 +1966,31 @@ exports[`Votes should select a delegate 1`] = `
             </div>
           </div>
           <div>
-            <button
-              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
-              data-testid="header-search-bar__button"
+            <div
+              class="relative"
             >
-              <div
-                class="flex items-center space-x-3"
+              <button
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                data-testid="header-search-bar__button"
               >
-                <span>
-                  Search
-                </span>
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="flex items-center space-x-3"
                 >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <span>
+                    Search
+                  </span>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      search.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -2003,7 +2015,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqNJr bHRmfU"
+                  class="sc-fzoyAV fbIxVy"
                 >
                   <div
                     aria-expanded="false"
@@ -2227,7 +2239,7 @@ exports[`Votes should select a delegate 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fznKkj crvYjk"
+            class="sc-fznZeY dcDttg"
             role="table"
           >
             <table
@@ -2626,7 +2638,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW iOkWkI"
+                        class="sc-fzqNJr cWXPmt"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2726,7 +2738,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW iOkWkI"
+                        class="sc-fzqNJr cWXPmt"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2790,7 +2802,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW iOkWkI"
+                        class="sc-fzqNJr cWXPmt"
                         color="danger"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2890,7 +2902,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -2954,7 +2966,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -3040,7 +3052,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </div>
                   <button
-                    class="sc-fzqBZW cNBvVZ"
+                    class="sc-fzqNJr ctfbqM"
                     color="primary"
                     type="button"
                   >
@@ -3066,7 +3078,7 @@ exports[`Votes should select address 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
+      class="sc-fzqBZW cqbNAj"
     >
       <div
         class="px-4 sm:px-6 lg:px-8"
@@ -3242,7 +3254,7 @@ exports[`Votes should select address 1`] = `
                       IO
                     </span>
                     <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
                     >
                       <div
                         class="sc-AxiKw ksjdLL"
@@ -3313,27 +3325,31 @@ exports[`Votes should select address 1`] = `
             </div>
           </div>
           <div>
-            <button
-              class="my-auto font-semibold cursor-pointer text-theme-primary-200"
-              data-testid="header-search-bar__button"
+            <div
+              class="relative"
             >
-              <div
-                class="flex items-center space-x-3"
+              <button
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                data-testid="header-search-bar__button"
               >
-                <span>
-                  Search
-                </span>
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="flex items-center space-x-3"
                 >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <span>
+                    Search
+                  </span>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      search.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </button>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -3358,7 +3374,7 @@ exports[`Votes should select address 1`] = `
                 class="mt-2 font-semibold"
               >
                 <div
-                  class="sc-fzqNJr bHRmfU"
+                  class="sc-fzoyAV fbIxVy"
                 >
                   <div
                     aria-expanded="false"
@@ -3582,7 +3598,7 @@ exports[`Votes should select address 1`] = `
             Select a Delegate
           </h2>
           <div
-            class="sc-fznKkj crvYjk"
+            class="sc-fznZeY dcDttg"
             role="table"
           >
             <table
@@ -3981,7 +3997,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4081,7 +4097,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4145,7 +4161,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4245,7 +4261,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
@@ -4309,7 +4325,7 @@ exports[`Votes should select address 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-fzqBZW jRoAML"
+                        class="sc-fzqNJr kYTSFy"
                         color="primary"
                         data-testid="DelegateListItem__button--toggle"
                         type="button"
