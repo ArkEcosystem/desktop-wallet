@@ -131,19 +131,19 @@ const SecondStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="grid grid-flow-row mt-4">
+			<div className="mt-4 grid grid-flow-row">
 				<TransactionDetail
 					border={false}
 					label="Network"
 					extra={
-						<div className="text-theme-danger-500 ml-1">
+						<div className="ml-1 text-theme-danger-500">
 							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
@@ -156,7 +156,7 @@ const SecondStep = () => {
 						</div>
 					}
 				>
-					<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -169,7 +169,7 @@ const SecondStep = () => {
 					label="Type"
 					extra={
 						<div>
-							<Circle className="bg-theme-background border-black" size="lg">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -262,7 +262,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Amount"
 			extra={
-				<div className="text-theme-danger ml-1">
+				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>

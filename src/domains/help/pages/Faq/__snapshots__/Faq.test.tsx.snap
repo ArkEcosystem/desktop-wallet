@@ -7,7 +7,7 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -31,7 +31,7 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
               class="flex items-center justify-end space-x-8"
             >
               <div
-                class="sc-AxirZ eEbZjj text-theme-primary-100 cursor-pointer"
+                class="sc-AxirZ eEbZjj cursor-pointer text-theme-primary-100"
                 height="20"
                 width="20"
               >
@@ -40,7 +40,7 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                 </svg>
               </div>
               <div
-                class="border-1 border-theme-primary-100 h-10 my-auto border-l"
+                class="h-10 my-auto border-l border-1 border-theme-primary-100"
               />
               <button
                 class="sc-AxjAm ddQVWI whitespace-no-wrap"
@@ -64,16 +64,16 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
           >
             <ul>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-6 -mx-3 rounded-md"
+                  class="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Development Environment Setup"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -88,12 +88,12 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                   </div>
                   <div>
                     <div
-                      class="text-theme-neutral-800 mb-2 ml-3 text-lg font-bold"
+                      class="mb-2 ml-3 text-lg font-bold text-theme-neutral-800"
                     >
                       Development Environment Setup
                     </div>
                     <div
-                      class="text-theme-neutral-600 ml-3"
+                      class="ml-3 text-theme-neutral-600"
                     >
                       ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment
                     </div>
@@ -101,16 +101,16 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-6 -mx-3 rounded-md"
+                  class="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Core-Tester provides set of instructions on how to run commands for creating and sending transactions?"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -125,12 +125,12 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                   </div>
                   <div>
                     <div
-                      class="text-theme-neutral-800 mb-2 ml-3 text-lg font-bold"
+                      class="mb-2 ml-3 text-lg font-bold text-theme-neutral-800"
                     >
                       Core-Tester provides set of instructions on how to run commands for creating and sending transactions?
                     </div>
                     <div
-                      class="text-theme-neutral-600 ml-3"
+                      class="ml-3 text-theme-neutral-600"
                     >
                       With our testnet up and running, the first thing we need to do is to connect to it. All interactions between ARK Nodes and the outside world happen through the Public API, which is a REST API facilitating different actions on the blockchain.
                     </div>
@@ -138,16 +138,16 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-6 -mx-3 rounded-md"
+                  class="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Setup Your Own Blockchain Explorer"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -162,12 +162,12 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                   </div>
                   <div>
                     <div
-                      class="text-theme-neutral-800 mb-2 ml-3 text-lg font-bold"
+                      class="mb-2 ml-3 text-lg font-bold text-theme-neutral-800"
                     >
                       Setup Your Own Blockchain Explorer
                     </div>
                     <div
-                      class="text-theme-neutral-600 ml-3"
+                      class="ml-3 text-theme-neutral-600"
                     >
                       ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment
                     </div>
@@ -175,16 +175,16 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-6 -mx-3 rounded-md"
+                  class="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Is it essential for you to understand and master the art of ARK Core Module development?"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxirZ hPsuTj"
@@ -199,12 +199,12 @@ exports[`SupportPage should render faq portfolio category page 1`] = `
                   </div>
                   <div>
                     <div
-                      class="text-theme-neutral-800 mb-2 ml-3 text-lg font-bold"
+                      class="mb-2 ml-3 text-lg font-bold text-theme-neutral-800"
                     >
                       Is it essential for you to understand and master the art of ARK Core Module development?
                     </div>
                     <div
-                      class="text-theme-neutral-600 ml-3"
+                      class="ml-3 text-theme-neutral-600"
                     >
                       ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as execution environment. This guid will take you through the basic steps of setting up a development environment
                     </div>

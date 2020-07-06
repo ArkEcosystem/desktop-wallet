@@ -17,12 +17,12 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="grid grid-cols-8 gap-4 mt-8 mb-16">
-			<div className="border-theme-primary-100 flex flex-col h-32 col-span-6 border-2 rounded-lg">
+		<div className="mt-8 mb-16 grid grid-cols-8 gap-4">
+			<div className="flex flex-col h-32 border-2 rounded-lg border-theme-primary-100 col-span-6">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 
-					<span className="text-theme-neutral-500 m-auto text-sm">{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}</span>
+					<span className="m-auto text-sm text-theme-neutral-500">{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}</span>
 				</div>
 			</div>
 
@@ -100,7 +100,7 @@ export const Exchange = (props: ExchangeProps) => {
 			<div>
 				<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-				<div className="border-t-20 border-theme-neutral-100 pt-16">
+				<div className="pt-16 border-t-20 border-theme-neutral-100">
 					<div className="container mx-auto">
 						<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
@@ -122,7 +122,7 @@ export const Exchange = (props: ExchangeProps) => {
 						<div className="text-center">
 							<ExchangeCardsBanner className="mx-auto mt-20" />
 
-							<div className="text-theme-neutral-700 mt-6">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+							<div className="mt-6 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
 						</div>
 					) : (
 						<NoExchangesBanner className="mx-auto mt-16" />

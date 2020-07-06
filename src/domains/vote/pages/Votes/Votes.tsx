@@ -53,11 +53,11 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 
 	return (
 		<div data-testid="MyVotes">
-			<div className="bg-theme-neutral-100 flex flex-col min-h-screen -m-5">
+			<div className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
 				<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
 
 				<div className="flex flex-col flex-1 space-y-5">
-					<div className="bg-theme-background px-10 py-16">
+					<div className="px-10 py-16 bg-theme-background">
 						<Header
 							title={t("VOTE.VOTES_PAGE.TITLE")}
 							subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
@@ -100,7 +100,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 											) : (
 												<>
 													<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-													<span className="text-theme-neutral-400 text-base font-semibold">
+													<span className="text-base font-semibold text-theme-neutral-400">
 														Select address
 													</span>
 												</>
@@ -113,7 +113,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 						</div>
 					</div>
 
-					<div className="bg-theme-background relative p-10">
+					<div className="relative p-10 bg-theme-background">
 						{!selectedCrypto ? (
 							<div className="flex flex-col space-y-5">
 								{addressList?.map((item) => (

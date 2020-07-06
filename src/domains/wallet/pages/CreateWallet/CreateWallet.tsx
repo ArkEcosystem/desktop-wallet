@@ -59,7 +59,7 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 							>
 								<Icon name={network.icon} />
 							</Circle>
-							<span className="text-theme-text ml-4">{network.name}</span>
+							<span className="ml-4 text-theme-text">{network.name}</span>
 						</NetworkItem>
 					</CardControl>
 				))}
@@ -98,7 +98,7 @@ export const SecondStep = ({
 
 			<div className="flex py-3">
 				<div className="flex-1">
-					<h3 className="text-theme-neutral-dark mb-1">Your password in the file</h3>
+					<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
 					<p className="text-theme-neutral">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 					<Button
 						onClick={onDownload}
@@ -140,7 +140,7 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 	return (
 		<section data-testid="CreateWallet__third-step">
 			<h1 className="mb-0">Confirm your passphrase</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -161,12 +161,12 @@ export const FourthStep = () => {
 	return (
 		<section data-testid="CreateWallet__fourth-step">
 			<h1 className="mb-0">Completed</h1>
-			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-theme-neutral-dark text-sm font-semibold">Network</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
 						<p data-testid="CrateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
@@ -180,7 +180,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-theme-neutral-dark text-sm font-semibold">Address</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
 						<p className="text-lg font-medium">D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax</p>
 					</div>
 					<Circle />

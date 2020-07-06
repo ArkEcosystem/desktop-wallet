@@ -25,14 +25,14 @@ type SupportProps = {
 };
 
 const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
-	<li className="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer">
+	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0">
 		<a
 			title={title}
 			href={path}
-			className="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+			className="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
 		>
 			<div>
-				<div className="text-theme-neutral-800 pt-1">
+				<div className="pt-1 text-theme-neutral-800">
 					<Icon name="Article" width={16} height={16} />
 				</div>
 			</div>
@@ -45,9 +45,9 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 	<a
 		href={path}
 		title={title}
-		className="border-r-1 last:border-r-0 border-theme-neutral-200 flex flex-row w-64 cursor-pointer"
+		className="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
 	>
-		<div className="px-7 hover:shadow-xl flex flex-row w-full p-5 mx-2 bg-white rounded-md">
+		<div className="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md">
 			<div className="w-2/5 my-auto">
 				<Circle className="border-theme-neutral-800" size="lg">
 					<div className="text-theme-neutral-800">
@@ -56,8 +56,8 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 				</Circle>
 			</div>
 			<div className="flex-auto my-auto">
-				<div className="text-theme-neutral-800 font-bold">{title}</div>
-				<div className="text-theme-neutral-500 text-sm">{subtitle}</div>
+				<div className="font-bold text-theme-neutral-800">{title}</div>
+				<div className="text-sm text-theme-neutral-500">{subtitle}</div>
 			</div>
 		</div>
 	</a>
@@ -68,7 +68,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	return (
 		<div>
 			<div className="bg-theme-neutral-100">
-				<div className="px-13 py-16 mb-5 bg-white">
+				<div className="py-16 mb-5 bg-white px-13">
 					<Header
 						title={t("HELP.PAGE_SUPPORT.TITLE")}
 						subtitle={t("HELP.PAGE_SUPPORT.SUBTITLE")}
@@ -76,7 +76,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 					/>
 				</div>
 
-				<div className="p-13 mb-5 bg-white">
+				<div className="mb-5 bg-white p-13">
 					<div className="flex flex-row">
 						{categories &&
 							categories.map((category: CategoryItemProps, index: number) => {
@@ -91,7 +91,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 							})}
 					</div>
 				</div>
-				<div className="px-14 py-10 mb-10 bg-white">
+				<div className="py-10 mb-10 bg-white px-14">
 					<div className="flex flex-row">
 						<div className="w-1/3 mr-10">
 							<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h2>
