@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEnvironment } from "../contexts/Environment";
 
 export const useActiveProfile = () => {
-	const { env } = useEnvironment();
+	const env = useEnvironment();
 	const { profileId } = useParams();
 
 	return React.useMemo(() => {
@@ -25,7 +25,7 @@ export const useActiveWallet = () => {
 	return React.useMemo(() => {
 		if (profile) {
 			try {
-				return profile.wallets().findById(id);
+				return profile.wallets().findById(address);
 			} catch {
 				return undefined;
 			}
