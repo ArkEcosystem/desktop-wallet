@@ -97,7 +97,7 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 					/>
 				</div>
 
-				<div className="flex flex-1 items-start px-10 py-16 bg-theme-background">
+				<div className="flex items-start flex-1 px-10 py-16 bg-theme-background">
 					{contacts.length === 0 && (
 						<div
 							data-testid="contacts__banner"
