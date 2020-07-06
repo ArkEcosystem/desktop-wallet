@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import Downshift from "downshift";
@@ -85,7 +86,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<div className="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
+						<div className="flex w-full transition-colors duration-200 border rounded shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<AssetIconPlaceholder {...selectedItem} />
 							</div>
@@ -125,14 +126,18 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
-										title={asset.name}
-										className="inline-block pt-6 mr-6 cursor-pointer"
 										key={index}
+										className="inline-block pt-6 mr-6 cursor-pointer"
 										{...getItemProps({ item: asset })}
 									>
-										<Circle className={assetClassName(asset, selectedItem, inputValue)} size="xl">
-											<Icon name={asset.icon} width={26} height={26} />
-										</Circle>
+										<Tippy content={asset.name}>
+											<Circle
+												className={assetClassName(asset, selectedItem, inputValue)}
+												size="xl"
+											>
+												<Icon name={asset.icon} width={26} height={26} />
+											</Circle>
+										</Tippy>
 									</div>
 								);
 							})}
