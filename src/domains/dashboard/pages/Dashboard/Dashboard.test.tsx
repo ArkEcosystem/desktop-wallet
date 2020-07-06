@@ -1,28 +1,25 @@
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Router } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { act, fireEvent, render } from "testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {
-	const history = createMemoryHistory();
-
 	it("should render", () => {
 		const { container } = render(
-			<Router history={history}>
+			<MemoryRouter>
 				<Dashboard />
-			</Router>,
+			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide transaction view", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<Router history={history}>
+			<MemoryRouter>
 				<Dashboard wallets={wallets} transactions={transactions} />
-			</Router>,
+			</MemoryRouter>,
 		);
 		const filterNetwork = getAllByTestId("dropdown__toggle");
 		// const transactionsView = getByTestId("dashboard__transactions-view");
@@ -39,27 +36,27 @@ describe("Dashboard", () => {
 
 	it("should render portfolio percentage bar", () => {
 		const { container } = render(
-			<Router history={history}>
+			<MemoryRouter>
 				<Dashboard portfolioPercentages={portfolioPercentages} />
-			</Router>,
+			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", () => {
 		const { container } = render(
-			<Router history={history}>
+			<MemoryRouter>
 				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
-			</Router>,
+			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide portfolio view", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<Router history={history}>
+			<MemoryRouter>
 				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
-			</Router>,
+			</MemoryRouter>,
 		);
 		const filterNetwork = getAllByTestId("dropdown__toggle");
 
