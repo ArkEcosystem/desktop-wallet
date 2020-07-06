@@ -1,0 +1,20 @@
+import React from "react";
+import { render } from "testing-library";
+
+import { TransactionField } from "./TransactionField";
+
+describe("TransactionField", () => {
+	it("should render", () => {
+		const { container } = render(<TransactionField label="Test">test</TransactionField>);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render without padding", () => {
+		const { container } = render(
+			<TransactionField label="Test" padding={false}>
+				test
+			</TransactionField>,
+		);
+		expect(container).toMatchSnapshot();
+	});
+});
