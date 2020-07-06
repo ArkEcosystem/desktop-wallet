@@ -2,14 +2,20 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { clickOutsideHandler, useDebounce } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
+import { styled } from "twin.macro";
 
 type HeaderSearchBarProps = {
 	placeholder?: string;
+	label?: string;
 	children?: React.ReactNode;
 	onSearch?: any;
 };
 
-export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearchBarProps) => {
+const SearchBarInputWrapper = styled.div`
+	min-width: 24rem;
+`;
+
+export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState("");
 
@@ -30,18 +36,18 @@ export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearc
 	};
 
 	return (
-		<>
+		<div className="relative">
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="my-auto font-semibold cursor-pointer text-theme-primary-200"
+					className="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
 					onClick={() => setSearchbarVisible(true)}
 				>
 					{children ? (
 						children
 					) : (
 						<div className="flex items-center space-x-3">
-							<span>Search</span>
+							<span>{label}</span>
 							<Icon name="Search" width={20} height={20} />
 						</div>
 					)}
@@ -49,10 +55,10 @@ export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearc
 			)}
 
 			{searchbarVisible && (
-				<div
+				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="flex items-center w-full px-6 py-4 bg-white shadow-xl rounded-md"
+					className="flex items-center px-6 py-4 bg-white shadow-xl rounded-md absolute -bottom-4 -right-6"
 				>
 					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
 						<Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />
@@ -68,12 +74,13 @@ export const HeaderSearchBar = ({ placeholder, children, onSearch }: HeaderSearc
 					</div>
 
 					<Icon className="text-theme-neutral-500" name="Search" width={20} height={20} />
-				</div>
+				</SearchBarInputWrapper>
 			)}
-		</>
+		</div>
 	);
 };
 
 HeaderSearchBar.defaultProps = {
 	placeholder: "Search...",
+	label: "Search",
 };
