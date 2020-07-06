@@ -93,7 +93,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 									</div>
 									<div className="flex flex-row items-center justify-between mt-8">
 										<div>
-											<p className="font-semibold text-theme-neutral-dark text-lg">
+											<p className="text-lg font-semibold text-theme-neutral-dark">
 												Use the address only
 											</p>
 											<p className="text-sm text-theme-neutral">
