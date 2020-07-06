@@ -3,7 +3,6 @@ import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { NavigationBar } from "app/components/NavigationBar";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { CreateContact } from "domains/contact/components/CreateContact";
@@ -81,8 +80,6 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 
 	return (
 		<div data-testid="contacts">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="bg-theme-neutral-200 flex flex-col min-h-screen -m-5">
 				<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 

@@ -1,6 +1,5 @@
 import { images } from "app/assets/images";
 import { Header } from "app/components/Header";
-import { NavigationBar } from "app/components/NavigationBar";
 import { Slider } from "app/components/Slider";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
@@ -98,8 +97,6 @@ export const Exchange = (props: ExchangeProps) => {
 
 	return (
 		<div data-testid="Exchange">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div>
 				<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 

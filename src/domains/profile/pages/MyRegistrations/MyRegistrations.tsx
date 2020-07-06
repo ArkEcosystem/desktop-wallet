@@ -2,7 +2,6 @@ import { SvgCollection } from "app/assets/svg";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 
 import { BlockchainTable } from "./components/BlockchainTable";
@@ -71,8 +70,6 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<section className="bg-theme-neutral-100">
 				<div className="bg-theme-background px-10 py-16">
 					<Header

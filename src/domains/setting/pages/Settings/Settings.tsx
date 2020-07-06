@@ -1,4 +1,3 @@
-import { NavigationBar } from "app/components/NavigationBar";
 import { SideBar } from "app/components/SideBar";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -47,8 +46,6 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="flex w-full h-full">
 				<div className="w-1/4 h-full">
 					<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />

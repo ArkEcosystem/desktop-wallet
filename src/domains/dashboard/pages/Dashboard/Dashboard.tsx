@@ -1,5 +1,4 @@
 import { LineChart } from "app/components/LineChart";
-import { NavigationBar } from "app/components/NavigationBar";
 import { PercentageBar } from "app/components/PercentageBar";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
@@ -52,8 +51,6 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div>
 				{showPortfolio && balances && (
 					<Section>

@@ -1,5 +1,4 @@
 import { Breadcrumbs } from "app/components/Breadcrumbs";
-import { NavigationBar } from "app/components/NavigationBar";
 import { Table } from "app/components/Table";
 import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
@@ -68,8 +67,6 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 	return (
 		<div className="relative">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<Breadcrumbs crumbs={crumbs} />
 			<WalletHeader
 				coin={wallet.coinIcon}

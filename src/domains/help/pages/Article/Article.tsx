@@ -1,6 +1,5 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -69,8 +68,6 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 	const { t } = useTranslation();
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="-m-5">
 				<div className="px-12 py-10 mb-10 bg-white">
 					<FastNavigation sections={sections} />

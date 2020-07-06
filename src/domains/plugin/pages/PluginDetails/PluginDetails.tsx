@@ -1,5 +1,4 @@
 import { Button } from "app/components/Button";
-import { NavigationBar } from "app/components/NavigationBar";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
@@ -23,8 +22,6 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 	return (
 		<div data-testid="plugin-details__header">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<section className="bg-theme-neutral-100 h-full -m-5">
 				<PluginHeader
 					author={author}

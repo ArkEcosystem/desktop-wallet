@@ -5,7 +5,6 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { NavigationBar } from "app/components/NavigationBar";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
@@ -75,17 +74,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="w-full h-full">
-				<div className="sm:px-6 lg:px-8 px-4">
-					<div className="md:h-24 flex items-center flex-shrink-0 h-20">
-						<div className="bg-logo flex p-2 rounded-lg">
-							<img src={commonAssets.ARKLogo} className="md:h-8 lg:h-10 h-6" alt="ARK Logo" />
-						</div>
-					</div>
-				</div>
-
 				<div className="container mx-auto">
 					<div className="xl:max-w-xl max-w-lg mx-auto">
 						<h1 className="md:mx-8 xl:mx-16 mx-4">Create Profile</h1>

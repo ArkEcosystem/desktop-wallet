@@ -5,7 +5,6 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { NavigationBar } from "app/components/NavigationBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -191,8 +190,6 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="max-w-xl py-16 mx-auto">
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={5} activeIndex={activeTab} />
