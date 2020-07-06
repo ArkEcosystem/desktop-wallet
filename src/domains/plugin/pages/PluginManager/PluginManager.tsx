@@ -1,6 +1,7 @@
 import { snakeCase } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { BestPlugins } from "domains/plugin/components/BestPlugins";
@@ -171,31 +172,23 @@ export const PluginManager = () => {
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				<div className="container relative items-end justify-between mx-auto mt-10 mb-15">
-					<div className="inline-block">
-						<h1>{t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}</h1>
-						<div className="text-theme-neutral-700">{t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}</div>
-					</div>
-
-					<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-10 space-x-3">
-						<div className="flex items-end py-2">
-							<HeaderSearchBar onSearch={() => console.log("search")}>
-								<Icon name="Search" width={20} height={20} className="mr-6" />
-							</HeaderSearchBar>
-						</div>
-
-						<div>
-							<div className="pl-8 border-l border-theme-neutral-200">
+				<div className="container mx-auto py-16 bg-theme-background">
+					<Header
+						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
+						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
+						extra={
+							<div className="flex items-top justify-end">
+								<HeaderSearchBar label="" onSearch={() => console.log("search")} />
+								<div className="h-8 my-auto pl-8 ml-8 border-l border-theme-neutral-200" />
 								<Button>
 									<div className="flex items-center whitespace-no-wrap space-x-2">
 										<Icon name="File" width={15} height={15} />
-
 										<span>Install File</span>
 									</div>
 								</Button>
 							</div>
-						</div>
-					</div>
+						}
+					/>
 				</div>
 			</div>
 
