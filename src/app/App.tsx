@@ -6,7 +6,7 @@ import { I18nextProvider } from "react-i18next";
 import { RouterView, routes } from "../router";
 import { identity } from "../tests/fixtures/identity";
 import { Layout } from "./components/Layout";
-import { AppContextProvider, EnvironmentProvider, useEnvironment } from "./contexts";
+import { EnvironmentProvider, useEnvironment } from "./contexts";
 import { i18n } from "./i18n";
 
 const buildMockEnvironment = async (env: Environment) => {
@@ -21,7 +21,7 @@ const Main = () => {
 
 	React.useLayoutEffect(() => {
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
-			buildMockEnvironment(env!);
+			buildMockEnvironment(env);
 		}
 	}, [env]);
 
@@ -34,10 +34,8 @@ const Main = () => {
 
 export const App = () => (
 	<I18nextProvider i18n={i18n}>
-		<AppContextProvider>
-			<EnvironmentProvider>
-				<Main />
-			</EnvironmentProvider>
-		</AppContextProvider>
+		<EnvironmentProvider>
+			<Main />
+		</EnvironmentProvider>
 	</I18nextProvider>
 );

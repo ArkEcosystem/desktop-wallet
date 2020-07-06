@@ -1,6 +1,6 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { AppContext, EnvironmentContext } from "app/contexts";
+import { EnvironmentContext } from "app/contexts";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -13,15 +13,12 @@ describe("Welcome", () => {
 	const history = createMemoryHistory();
 
 	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
-	const updateAppState = jest.fn();
 
 	it("should render", async () => {
 		const { container, asFragment } = render(
 			<Router history={history}>
 				<EnvironmentContext.Provider value={env}>
-					<AppContext.Provider value={{ updateAppState }}>
-						<Welcome />
-					</AppContext.Provider>
+					<Welcome />
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
