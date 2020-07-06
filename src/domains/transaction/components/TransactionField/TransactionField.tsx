@@ -3,12 +3,13 @@ import React from "react";
 type TransactionFieldProps = {
 	border: boolean;
 	children: React.ReactNode;
+	className?: string;
+	extra?: React.ReactNode;
 	label?: string;
 	padding?: boolean;
-	className?: string;
 };
 
-export const TransactionField = ({ border, children, className, label, padding }: TransactionFieldProps) => (
+export const TransactionField = ({ border, children, className, extra, label, padding }: TransactionFieldProps) => (
 	<div
 		className={`flex items-center ${padding || "py-4"} ${
 			!border || "border-t border-dashed border-theme-neutral-300"
@@ -19,6 +20,8 @@ export const TransactionField = ({ border, children, className, label, padding }
 
 			<div className="mt-2">{children}</div>
 		</div>
+
+		{extra ? extra : null}
 	</div>
 );
 
