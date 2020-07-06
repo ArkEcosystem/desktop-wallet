@@ -57,7 +57,7 @@ exports[`Contacts should render 1`] = `
           </div>
           <div>
             <div
-              class="flex items-center justify-end space-x-5"
+              class="flex items-top justify-end"
             >
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"
@@ -160,31 +160,35 @@ exports[`Contacts should render with contacts 1`] = `
           </div>
           <div>
             <div
-              class="flex items-center justify-end space-x-5"
+              class="flex items-top justify-end"
             >
-              <button
-                class="my-auto font-semibold cursor-pointer text-theme-primary-200"
-                data-testid="header-search-bar__button"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <span>
-                    Search
-                  </span>
-                  <div
-                    class="sc-AxirZ eEbZjj"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      search.svg
-                    </svg>
-                  </div>
-                </div>
-              </button>
               <div
-                class="h-12 my-auto border-l border-1 border-theme-primary-100"
+                class="relative"
+              >
+                <button
+                  class="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+                  data-testid="header-search-bar__button"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <div
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="h-10 my-auto pl-8 ml-8 border-l border-theme-neutral-200"
               />
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"
@@ -205,7 +209,7 @@ exports[`Contacts should render with contacts 1`] = `
           class="w-full"
         >
           <div
-            class="sc-fzpans isbmKM"
+            class="sc-fzplWN kEUFYN"
             role="table"
           >
             <table
@@ -320,7 +324,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznKkj eisocE bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -339,7 +343,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
+                      class="sc-fznKkj eisocE border-ark-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ark-mainnet"
@@ -359,13 +363,13 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO krpMbs"
+                        class="sc-fznKkj fFsEIt"
                       />
                       <div
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzplWN kfkaqr text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fznyAO hdDwJr text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           ASuusX…GQ3kqT
@@ -377,7 +381,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-black"
+                      class="sc-fznKkj eisocE border-black"
                     >
                       <div
                         class="sc-AxirZ dCVESD"
@@ -390,7 +394,7 @@ exports[`Contacts should render with contacts 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fznyAO gQONjx border-black"
+                      class="sc-fznKkj eisocE border-black"
                     >
                       <div
                         class="sc-AxirZ dCVESD"
@@ -403,7 +407,7 @@ exports[`Contacts should render with contacts 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-fznyAO gQONjx border-black"
+                      class="sc-fznKkj eisocE border-black"
                     >
                       <div
                         class="sc-AxirZ dCVESD"
@@ -453,7 +457,7 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznKkj eisocE bg-theme-primary-600 border-theme-primary-600"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -472,7 +476,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
+                      class="sc-fznKkj eisocE border-ark-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ark-mainnet"
@@ -492,13 +496,13 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO krpMbs"
+                        class="sc-fznKkj fFsEIt"
                       />
                       <div
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzplWN kfkaqr text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fznyAO hdDwJr text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           ASuusX…GQ3kqT
@@ -510,7 +514,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-black"
+                      class="sc-fznKkj eisocE border-black"
                     >
                       <div
                         class="sc-AxirZ dCVESD"
@@ -560,7 +564,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-bitcoin-mainnet"
+                      class="sc-fznKkj eisocE border-bitcoin-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-bitcoin-mainnet"
@@ -580,13 +584,13 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO krpMbs"
+                        class="sc-fznKkj fFsEIt"
                       />
                       <div
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzplWN kfkaqr text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fznyAO hdDwJr text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           15pyr1…XXu9G8
@@ -609,7 +613,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-ethereum-mainnet"
+                      class="sc-fznKkj eisocE border-ethereum-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ethereum-mainnet"
@@ -629,13 +633,13 @@ exports[`Contacts should render with contacts 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO krpMbs"
+                        class="sc-fznKkj fFsEIt"
                       />
                       <div
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-fzplWN kfkaqr text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fznyAO hdDwJr text-theme-neutral-800 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           0x5e8f…0d7c33
@@ -647,7 +651,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-black"
+                      class="sc-fznKkj eisocE border-black"
                     >
                       <div
                         class="sc-AxirZ dCVESD"
