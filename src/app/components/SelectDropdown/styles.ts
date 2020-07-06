@@ -47,7 +47,13 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&.is-highlighted {
-			${tw`bg-theme-neutral-100 -mt-px pt-px`};
+			${tw`bg-theme-neutral-100 -mt-px`};
+			padding-top: 1px;
+
+			&:last-child {
+				${tw`-mb-px`};
+			}
+
 			.select-list-option__label {
 				${tw`border-b border-theme-neutral-100`};
 			}
