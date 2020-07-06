@@ -26,7 +26,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -50,7 +50,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -68,7 +68,7 @@ describe("NavigationBar", () => {
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Portfolio"));
-		expect(history.location.pathname).toEqual("/profiles/123");
+		expect(history.location.pathname).toEqual("/profiles/123/dashboard");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -104,7 +104,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
