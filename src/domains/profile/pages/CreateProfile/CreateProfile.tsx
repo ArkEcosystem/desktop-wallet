@@ -62,7 +62,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			content: (
 				<div className="flex flex-row justify-between items-center">
 					<span className="mt-2 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
-					<div>
+					<div className="-mt-8">
 						<Toggle />
 					</div>
 				</div>
