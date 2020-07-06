@@ -33,7 +33,7 @@ exports[`Welcome should render empty state 1`] = `
               class="relative"
             >
               <button
-                class="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -119,7 +119,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
               class="relative"
             >
               <button
-                class="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -192,7 +192,7 @@ exports[`Welcome should render properly 1`] = `
               class="relative"
             >
               <button
-                class="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
                 data-testid="header-search-bar__button"
               >
                 <div

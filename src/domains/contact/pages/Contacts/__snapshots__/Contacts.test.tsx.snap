@@ -57,7 +57,7 @@ exports[`Contacts should render 1`] = `
           </div>
           <div>
             <div
-              class="flex items-top justify-end"
+              class="flex justify-end items-top"
             >
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"
@@ -160,13 +160,13 @@ exports[`Contacts should render with contacts 1`] = `
           </div>
           <div>
             <div
-              class="flex items-top justify-end"
+              class="flex justify-end items-top"
             >
               <div
                 class="relative"
               >
                 <button
-                  class="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
                   data-testid="header-search-bar__button"
                 >
                   <div
@@ -188,7 +188,7 @@ exports[`Contacts should render with contacts 1`] = `
                 </button>
               </div>
               <div
-                class="h-10 my-auto pl-8 ml-8 border-l border-theme-neutral-200"
+                class="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
               />
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"

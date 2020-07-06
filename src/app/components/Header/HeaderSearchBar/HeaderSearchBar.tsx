@@ -40,7 +40,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: Head
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="my-auto font-semibold cursor-pointer text-theme-primary-200 h-full"
+					className="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
 					onClick={() => setSearchbarVisible(true)}
 				>
 					{children ? (
@@ -58,7 +58,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: Head
 				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="flex items-center px-6 py-4 bg-white shadow-xl rounded-md absolute -bottom-4 -right-6"
+					className="absolute flex items-center px-6 py-4 bg-white shadow-xl rounded-md -bottom-4 -right-6"
 				>
 					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
 						<Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />

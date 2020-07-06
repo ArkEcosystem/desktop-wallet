@@ -21,11 +21,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex items-top justify-end">
+		<div className="flex justify-end items-top">
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="h-10 my-auto pl-8 ml-8 border-l border-theme-neutral-200" />
+					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 				</>
 			)}
 

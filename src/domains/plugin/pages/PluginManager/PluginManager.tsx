@@ -172,14 +172,14 @@ export const PluginManager = () => {
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				<div className="container mx-auto py-16 bg-theme-background">
+				<div className="container py-16 mx-auto bg-theme-background">
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
 						extra={
-							<div className="flex items-top justify-end">
+							<div className="flex justify-end items-top">
 								<HeaderSearchBar label="" onSearch={() => console.log("search")} />
-								<div className="h-8 my-auto pl-8 ml-8 border-l border-theme-neutral-200" />
+								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 								<Button>
 									<div className="flex items-center whitespace-no-wrap space-x-2">
 										<Icon name="File" width={15} height={15} />
