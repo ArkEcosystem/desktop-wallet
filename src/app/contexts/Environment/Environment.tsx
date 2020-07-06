@@ -1,8 +1,5 @@
-// Coins
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-// Env
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-// Services
 import { httpClient } from "app/services";
 import React, { createContext } from "react";
 
@@ -10,14 +7,13 @@ type Props = {
 	children: React.ReactNode;
 };
 
-const EnvironmentContext = createContext({});
+export const EnvironmentContext = createContext({});
 
-const EnvironmentProvider = ({ children }: Props) => {
+export const EnvironmentProvider = ({ children }: Props) => {
 	const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 
 	return <EnvironmentContext.Provider value={{ env }}>{children}</EnvironmentContext.Provider>;
 };
 
-const EnvironmentConsumer = EnvironmentContext.Consumer;
-
-export { EnvironmentContext, EnvironmentProvider, EnvironmentConsumer };
+export const EnvironmentConsumer = EnvironmentContext.Consumer;
+export const useEnvironment = () => React.useContext<{ env?: Environment }>(EnvironmentContext);
