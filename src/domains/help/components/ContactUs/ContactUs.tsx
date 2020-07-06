@@ -5,7 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 // UI Elements
 import { Modal } from "app/components/Modal";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { TextArea } from "app/components/TextArea";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -76,11 +76,12 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED").toString(),
 						})}
-					>
-						<option value="">{t("COMMON.SELECT")}</option>
-						<option value="security">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY")}</option>
-						<option value="other">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER")}</option>
-					</Select>
+						placeholder={t("COMMON.SELECT")}
+						options={[
+							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY"), value: "security" },
+							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER"), value: "other" },
+						]}
+					/>
 				</FormField>
 
 				<FormField name="message">

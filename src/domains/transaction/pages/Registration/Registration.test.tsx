@@ -173,22 +173,22 @@ describe("Registration", () => {
 	});
 
 	it("should select registration type", async () => {
-		const { asFragment, container } = render(<Registration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
-		const initialOption = container.querySelectorAll("select[name=registrationType] option")[0];
-		const businessOption = container.querySelectorAll("select[name=registrationType] option")[1];
+		const toggle = getByTestId("select-list__toggle-button");
 
-		expect(initialOption.selected).toBe(true);
-		expect(businessOption.selected).toBe(false);
-
-		await act(async () => {
-			fireEvent.change(container.querySelector("select[name=registrationType]"), {
-				target: { value: "business" },
-			});
+		act(() => {
+			fireEvent.click(toggle);
 		});
 
-		expect(initialOption.selected).toBe(false);
-		expect(businessOption.selected).toBe(true);
+		const firstOption = getByTestId("select-list__toggle-option-0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("business");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

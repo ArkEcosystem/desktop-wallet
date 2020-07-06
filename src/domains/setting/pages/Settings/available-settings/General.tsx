@@ -4,7 +4,7 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
 
@@ -90,11 +90,17 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 				"FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2",
 			wrapperClass: "pt-8",
 			content: (
-				<Select name="auto-logoff" placeholder="Select Language" ref={formConfig.register({ required: true })}>
-					<option value="option1">Option 1</option>
-					<option value="option2">Option 2</option>
-					<option value="option3">Option 3</option>
-				</Select>
+				<FormField className="mt-8" name="price-source">
+					<Select
+						placeholder="Select Language"
+						ref={formConfig.register({ required: true })}
+						options={[
+							{ label: "Option 1", value: "option1" },
+							{ label: "Option 2", value: "option2" },
+						]}
+					/>
+					<FormHelperText />
+				</FormField>
 			),
 		},
 	];
@@ -152,27 +158,25 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 							<FormField className="mt-8" name="passphrase-language">
 								<FormLabel label="Passphrase Language" />
 								<Select
-									name="passphrase-language"
 									placeholder="Select Language"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 							<FormField className="mt-8" name="currency">
 								<FormLabel label="Currency" />
 								<Select
 									placeholder="Select Language"
-									name="currency"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 						</div>
@@ -181,39 +185,36 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								<FormLabel label="Language" />
 								<Select
 									placeholder="Select Language"
-									name="language"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 							<FormField className="mt-8" name="price-source">
 								<FormLabel label="Price Source" />
 								<Select
 									placeholder="Select Language"
-									name="price-source"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 							<FormField className="mt-8" name="time-format">
 								<FormLabel label="Time Format" />
 								<Select
 									placeholder="Select Language"
-									name="time-format"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 						</div>

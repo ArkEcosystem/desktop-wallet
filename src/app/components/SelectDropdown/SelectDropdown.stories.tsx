@@ -1,14 +1,12 @@
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import React from "react";
 
-import { SelectDropdown } from "./SelectDropdown";
+import { Select } from "./SelectDropdown";
 
 export default {
-	title: "App / Components / SelectDropdown",
+	title: "App / Components / Select",
 };
 
-export const Simple = () => {
+export const Dropdown = () => {
 	const options = [
 		{
 			label: "Option 1",
@@ -23,96 +21,16 @@ export const Simple = () => {
 			value: "3",
 		},
 	];
-
 	return (
-		<div className="">
-			<div className="mt-10 w-128">
-				<SelectDropdown
-					selected={{ label: "Option 1", value: "3" }}
-					option={(option: any) => {
-						return (
-							<div className="p-2 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
-								{option.label}
-							</div>
-						);
-					}}
-					toggle={(selected: any) => {
-						if (selected) {
-							return (
-								<div className="flex items-center flex-inline">
-									<div>{selected.label}</div>
-								</div>
-							);
-						}
-						return (
-							<div className="flex items-center flex-inline">
-								<div className="font-semibold text-theme-neutral-800">Select Option</div>
-							</div>
-						);
-					}}
-					options={options}
-					onChange={console.log}
-				/>
-			</div>
-		</div>
-	);
-};
-export const SelectNetwork = () => {
-	const options = [
-		{
-			label: "Ark Ecosystem",
-			value: "ark",
-			icon: "Ark",
-		},
-		{
-			label: "Bitcoin",
-			value: "btc",
-			icon: "Bitcoin",
-		},
-		{
-			label: "Ethereum",
-			value: "eth",
-			icon: "Ethereum",
-		},
-	];
+		<div className="max-w-xs space-y-4">
+			<Select placeholder="Select option" options={options} />
+			<Select placeholder="Invalid" isInvalid options={options} />
+			<Select placeholder="Disabled" disabled options={options} />
+			<div className="mt-4">With default value</div>
+			<Select placeholder="Disabled" options={options} defaultValue="3" />
 
-	return (
-		<div className="">
-			<div className="mt-10 w-128">
-				<SelectDropdown
-					options={options}
-					option={(option: any) => {
-						return (
-							<div className="p-6 border-b border-theme-neutral-200 hover:bg-theme-neutral-100">
-								<div className="flex items-center flex-inline">
-									<Circle size="sm" noShadow>
-										<Icon name={option.icon} width={18} height={18} />
-									</Circle>
-									<div className="ml-4 font-semibold text-theme-neutral-800">{option.label}</div>
-								</div>
-							</div>
-						);
-					}}
-					toggle={(selected: any) => {
-						if (selected) {
-							return (
-								<div className="flex items-center flex-inline">
-									<Circle size="sm" noShadow>
-										<Icon name={selected.icon} width={18} height={18} />
-									</Circle>
-									<div className="ml-4 font-semibold text-theme-neutral-800">{selected.label}</div>
-								</div>
-							);
-						}
-						return (
-							<div className="flex items-center flex-inline">
-								<Circle size="sm" noShadow />
-								<div className="ml-4 font-semibold text-theme-neutral-800" />
-							</div>
-						);
-					}}
-				/>
-			</div>
+			<div className="mt-4">With default value (disabled)</div>
+			<Select placeholder="Disabled" disabled options={options} defaultValue="3" />
 		</div>
 	);
 };

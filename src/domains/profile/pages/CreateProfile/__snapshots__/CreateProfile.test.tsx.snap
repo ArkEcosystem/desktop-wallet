@@ -355,6 +355,111 @@ exports[`CreateProfile should render 1`] = `
                       >
                         Select Market Provider
                       </option>
+                    </select>
+                    <div
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxhCb fxrKLH"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="currency"
+                    label="Currency"
+                  >
+                    Currency
+                  </label>
+                  <div
+                    class="sc-AxmLO kuiknc"
+                  >
+                    <select
+                      class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="currency"
+                    >
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Currency
+                      </option>
+                    </select>
+                    <div
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    >
+                      <div
+                        class="sc-AxhCb fxrKLH"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div
+                class="flex flex-col space-y-8"
+              >
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="name"
+                    label="Name"
+                  >
+                    Name
+                  </label>
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    data-testid="Input"
+                    name="name"
+                  />
+                </fieldset>
+                <fieldset
+                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="market-provider"
+                    label="Market Provider"
+                  >
+                    Market Provider
+                  </label>
+                  <div
+                    class="sc-AxmLO kuiknc"
+                  >
+                    <select
+                      class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                      data-testid="Select"
+                      name="market-provider"
+                    >
+                      <option
+                        disabled=""
+                        selected=""
+                        value=""
+                      >
+                        Select Market Provider
+                      </option>
                       <option
                         value="option1"
                       >

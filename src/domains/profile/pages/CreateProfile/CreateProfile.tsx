@@ -115,6 +115,40 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 									<FormField name="market-provider">
 										<FormLabel label="Market Provider" />
 										<Select
+											placeholder="Select Market Provider"
+											ref={register({ required: true })}
+											options={[
+												{ label: "Option 1", value: "option1" },
+												{ label: "Option 2", value: "option2" },
+											]}
+										/>
+										<FormHelperText />
+									</FormField>
+
+									<FormField name="currency">
+										<FormLabel label="Currency" />
+										<Select
+											placeholder="Select Currency"
+											ref={register({ required: true })}
+											options={[
+												{ label: "Option 1", value: "option1" },
+												{ label: "Option 2", value: "option2" },
+											]}
+										/>
+										<FormHelperText />
+									</FormField>
+								</div>
+
+								<div className="flex flex-col space-y-8">
+									<FormField name="name">
+										<FormLabel label="Name" />
+										<Input ref={register({ required: true })} />
+										<FormHelperText />
+									</FormField>
+
+									<FormField name="market-provider">
+										<FormLabel label="Market Provider" />
+										<Select
 											name="market-provider"
 											placeholder="Select Market Provider"
 											ref={register({ required: true })}

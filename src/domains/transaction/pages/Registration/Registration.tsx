@@ -53,29 +53,18 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => (
-	<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-		<div className="mb-2">
-			<FormLabel label="Registration Type" />
-		</div>
-		<div>
-			<Select placeholder=" " ref={register} data-testid="Registration__type-select">
-				{registrationTypes &&
-					registrationTypes.map((registrationType: any, index: number) => (
-						<option key={index} value={registrationType.value} data-testid="Registration__type-option">
-							{registrationType.label}
-						</option>
-					))}
-			</Select>
-
-			{selectedType && (
-				<div data-testid="Registration__type-selected" className="-mt-9 flex items-center ml-4 leading-tight">
-					{selectedType.label}
-				</div>
-			)}
-		</div>
-	</FormField>
-);
+const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+	return (
+		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
+			<div className="mb-2">
+				<FormLabel label="Registration Type" />
+			</div>
+			<div>
+				<Select ref={register} data-testid="Registration__type-select" options={registrationTypes} />
+			</div>
+		</FormField>
+	);
+};
 
 const getAddressInfo = (addresses: any[], address: string) => {
 	return addresses.find((profile: any) => profile.address === address);
