@@ -5,8 +5,8 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
-import { AppContext } from "app/contexts";
-import React, { useContext } from "react";
+import { useActiveProfile } from "app/hooks";
+import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -100,10 +100,12 @@ export const NavigationBar = ({
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
-	const { appState: { activeProfile = {} } = {} }: any = useContext(AppContext);
+	const activeProfile = useActiveProfile();
 
 	const renderMenu = () => {
-		if (!activeProfile?.id) return null;
+		if (!activeProfile?.id()) {
+			return null;
+		}
 
 		return (
 			menu &&

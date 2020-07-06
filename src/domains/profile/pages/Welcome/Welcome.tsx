@@ -53,11 +53,7 @@ export const Welcome = () => {
 							<div className="mt-6 mb-8 space-y-3">
 								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										handleClick={() => {
-											updateAppState("activeProfile", profile);
-
-											return history.push(`/profiles/${profile.id()}`);
-										}}
+										handleClick={() => history.push(`/profiles/${profile.id()}/dashboard`)}
 										key={index}
 										profile={profile}
 										actions={profileCardActions}

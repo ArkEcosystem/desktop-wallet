@@ -7,12 +7,20 @@ export const useActiveProfile = () => {
 	const { env }: any = useContext(EnvironmentContext);
 	const { profileId } = useParams();
 
-	return env.profiles().get(profileId);
+	try {
+		return env.profiles().get(profileId);
+	} catch {
+		return undefined;
+	}
 };
 
 export const useActiveWallet = () => {
 	const profile = useActiveProfile();
 	const { address } = useParams();
 
-	return profile.wallets().findByAddress(address);
+	try {
+		return profile.wallets().findByAddress(address);
+	} catch {
+		return undefined;
+	}
 };

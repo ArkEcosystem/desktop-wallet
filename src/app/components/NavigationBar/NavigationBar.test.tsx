@@ -11,7 +11,7 @@ describe("NavigationBar", () => {
 	const history = createMemoryHistory();
 	it("should render", () => {
 		const { container, asFragment } = render(
-			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+			<AppContext.Provider>
 				<Router history={history}>
 					<NavigationBar />
 				</Router>
@@ -34,7 +34,7 @@ describe("NavigationBar", () => {
 			},
 		];
 		const { container, asFragment } = render(
-			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+			<AppContext.Provider>
 				<Router history={history}>
 					<NavigationBar menu={menu} />
 				</Router>
@@ -58,7 +58,7 @@ describe("NavigationBar", () => {
 			},
 		];
 		const { container, asFragment, getByText } = render(
-			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+			<AppContext.Provider>
 				<Router history={history}>
 					<NavigationBar menu={menu} />
 				</Router>
@@ -78,7 +78,7 @@ describe("NavigationBar", () => {
 			{ label: "Option 2", value: "/test2" },
 		];
 		const { getByTestId, getByText } = render(
-			<AppContext.Provider value={{ appState: { activeProfile: { id: () => "123" } } }}>
+			<AppContext.Provider>
 				<Router history={history}>
 					<NavigationBar userActions={options} />
 				</Router>
