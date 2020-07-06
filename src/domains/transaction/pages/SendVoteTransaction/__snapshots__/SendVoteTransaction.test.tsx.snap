@@ -89,7 +89,7 @@ exports[`Vote For Delegate should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
                 >
                   <div
                     class="flex-1"
@@ -127,18 +127,18 @@ exports[`Vote For Delegate should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 true pb-0"
+                  class="flex items-center py-4 true pb-0"
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-medium text-theme-neutral-700"
                     >
                       Fee ARK
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="mt-2"
                     >
                       <div
                         class="flex"
@@ -316,7 +316,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
       >
         <div
           class="flex-1"
@@ -354,18 +354,18 @@ exports[`Vote For Delegate should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-6 true pb-0"
+        class="flex items-center py-4 true pb-0"
       >
         <div
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-medium text-theme-neutral-700"
           >
             Fee ARK
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="mt-2"
           >
             <div
               class="flex"
@@ -921,7 +921,9 @@ exports[`Vote For Delegate should render 4th step 1`] = `
               </div>
             </div>
           </div>
-          <div>
+          <div
+            class="mt-2"
+          >
             <div
               class="sc-AxiKw kvRvRJ"
             />

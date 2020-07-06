@@ -62,7 +62,7 @@ exports[`Registration should render 1st step 1`] = `
                   class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -196,7 +196,7 @@ exports[`Registration should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -260,7 +260,7 @@ exports[`Registration should render 1st step 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -406,7 +406,7 @@ exports[`Registration should render 2nd step 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-6 true mt-2 mb-8"
+                  class="flex items-center py-6 true pb-8"
                 >
                   <div
                     class="flex-1"
@@ -418,7 +418,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -440,7 +440,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -461,7 +461,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                           data-testid="FormLabel"
                           for="website"
                         >
@@ -478,7 +478,7 @@ exports[`Registration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -496,7 +496,7 @@ exports[`Registration should render 2nd step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="font-semibold text-lg"
                             >
                               Repository
                             </span>
@@ -523,7 +523,7 @@ exports[`Registration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -541,7 +541,7 @@ exports[`Registration should render 2nd step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="font-semibold text-lg"
                             >
                               Social Media
                             </span>
@@ -568,7 +568,7 @@ exports[`Registration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -586,7 +586,7 @@ exports[`Registration should render 2nd step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="font-semibold text-lg"
                             >
                               Photo and Video
                             </span>
@@ -613,100 +613,107 @@ exports[`Registration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Fee ARK
-                    </div>
-                    <div
                       class="mt-2 font-semibold"
                     >
-                      <div
-                        class="flex space-x-2"
+                      <fieldset
+                        class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                       >
+                        <label
+                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
+                          data-testid="FormLabel"
+                          for="fee"
+                        >
+                          Fee ARK
+                        </label>
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-fzozJi OgXfh"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-fzozJi OgXfh"
                             >
+                              <input
+                                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                data-testid="InputCurrency"
+                                name="fee"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzoLsD gcqOdX"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzpans fDmiZy"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzoLsD gcqOdX"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzplWN eSQZBV"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzpans fDmiZy"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzplWN eSQZBV"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -798,7 +805,7 @@ exports[`Registration should render 3rd step 1`] = `
                 </p>
               </div>
               <div
-                class="mt-4 grid grid-flow-row gap-2"
+                class="mt-4"
               >
                 <div
                   class="flex items-center py-6 true "
@@ -840,7 +847,7 @@ exports[`Registration should render 3rd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
                 >
                   <div
                     class="flex-1"
@@ -890,7 +897,9 @@ exports[`Registration should render 3rd step 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div
+                    class="mt-2"
+                  >
                     <div
                       class="sc-AxiKw kvRvRJ"
                     />
@@ -1008,7 +1017,7 @@ exports[`Registration should render 3rd step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="font-semibold text-lg"
                             >
                               Repository
                             </span>
@@ -1203,7 +1212,7 @@ exports[`Registration should render 4th step 1`] = `
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1243,7 +1252,7 @@ exports[`Registration should render 4th step 1`] = `
                     class="sc-AxhCb ckQmOL mt-8"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -1582,7 +1591,9 @@ exports[`Registration should render 5th step 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div
+                      class="mt-2"
+                    >
                       <div
                         class="sc-AxiKw kvRvRJ"
                       />
@@ -1821,7 +1832,7 @@ exports[`Registration should select registration type 1`] = `
                   class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -1955,7 +1966,7 @@ exports[`Registration should select registration type 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -2019,7 +2030,7 @@ exports[`Registration should select registration type 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -2172,7 +2183,7 @@ exports[`Registration should should go back 1`] = `
                   class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -2306,7 +2317,7 @@ exports[`Registration should should go back 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="address"
                       label="Address"
@@ -2370,7 +2381,7 @@ exports[`Registration should should go back 1`] = `
                     class="mb-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
                       data-testid="FormLabel"
                       for="registrationType"
                       label="Registration Type"
@@ -2722,7 +2733,9 @@ exports[`Registration should submit 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div
+                      class="mt-2"
+                    >
                       <div
                         class="sc-AxiKw kvRvRJ"
                       />
