@@ -4,6 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
+import { NavigationBar } from "app/components/NavigationBar";
 import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -30,7 +31,7 @@ export const FirstStep = ({ assets = [] }: any) => {
 				<h1 className="mb-0">IPFS</h1>
 				<p className="text-theme-neutral-dark">Store an IPFS hasn on the network</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail border={false} label="Network">
 					<SelectAsset assets={assets} />
 				</TransactionDetail>
@@ -60,12 +61,12 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
+					<div className="text-theme-danger-500 ml-1">
 						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
@@ -88,7 +89,7 @@ export const SecondStep = () => (
 				label="Hash"
 				extra={
 					<div className="ml-1">
-						<Circle className="border-black bg-theme-background" size="lg">
+						<Circle className="bg-theme-background border-black" size="lg">
 							<Icon name="Ipfs" width={23} height={23} />
 						</Circle>
 					</div>
@@ -113,7 +114,7 @@ export const ThirdStep = () => {
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="mt-4 grid grid-flow-row gap-2">
+				<div className="grid grid-flow-row gap-2 mt-4">
 					<TransactionDetail border={false} label="Your password" className="pb-0">
 						<InputPassword name="passphras" />
 					</TransactionDetail>
@@ -132,7 +133,7 @@ export const FourthStep = () => (
 			label="Amount"
 			className="pb-0"
 			extra={
-				<div className="ml-1 text-theme-danger">
+				<div className="text-theme-danger ml-1">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
@@ -166,72 +167,76 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 	};
 
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={onSubmit}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<div>
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep assets={assets} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={onSubmit}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="flex justify-end mt-8 space-x-2">
-							{activeTab < 4 && (
-								<>
-									<Button
-										disabled={activeTab === 1}
-										data-testid="SendIPFSTransaction__button--back"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
-									</Button>
-									<Button
-										data-testid="SendIPFSTransaction__button--continue"
-										variant="solid"
-										// disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								</>
-							)}
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep assets={assets} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-							{activeTab === 4 && (
-								<>
-									<Button
-										data-testid="SendIPFSTransaction__button--back-to-wallet"
-										variant="plain"
-										className={"block"}
-									>
-										Back to wallet
-									</Button>
-									<Button
-										onClick={onCopy}
-										data-testid="SendIPFSTransaction__button--copy"
-										variant="plain"
-									>
-										<div className="flex items-center justify-between px-1">
-											<Icon name="Copy" />
-											<span className="ml-2">Copy</span>
-										</div>
-									</Button>
-								</>
-							)}
+							<div className="flex justify-end mt-8 space-x-2">
+								{activeTab < 4 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="SendIPFSTransaction__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="SendIPFSTransaction__button--continue"
+											variant="solid"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
+
+								{activeTab === 4 && (
+									<>
+										<Button
+											data-testid="SendIPFSTransaction__button--back-to-wallet"
+											variant="plain"
+											className={"block"}
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="SendIPFSTransaction__button--copy"
+											variant="plain"
+										>
+											<div className="flex items-center justify-between px-1">
+												<Icon name="Copy" />
+												<span className="ml-2">Copy</span>
+											</div>
+										</Button>
+									</>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

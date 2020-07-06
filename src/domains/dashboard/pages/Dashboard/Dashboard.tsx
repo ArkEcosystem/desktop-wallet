@@ -1,4 +1,5 @@
 import { LineChart } from "app/components/LineChart";
+import { NavigationBar } from "app/components/NavigationBar";
 import { PercentageBar } from "app/components/PercentageBar";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
@@ -14,7 +15,7 @@ type DashboardProps = {
 };
 
 const Section = styled.div`
-	${tw`bg-white py-16 px-13 mt-5`}
+	${tw`px-13 py-16 mt-5 bg-white`}
 `;
 
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
@@ -51,23 +52,27 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 	return (
 		<div>
-			{showPortfolio && balances && (
-				<Section>
-					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
-					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
-				</Section>
-			)}
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-			<Section>
-				<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
-			</Section>
-			{showTransactions && (
-				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
+			<div>
+				{showPortfolio && balances && (
+					<Section>
+						<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
+						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
+						<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
+						<PercentageBar title="Total portfolio" data={portfolioPercentages} />
+					</Section>
+				)}
+
+				<Section>
+					<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
 				</Section>
-			)}
+				{showTransactions && (
+					<Section data-testid="dashboard__transactions-view">
+						<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
+					</Section>
+				)}
+			</div>
 		</div>
 	);
 };

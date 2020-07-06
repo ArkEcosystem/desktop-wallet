@@ -5,6 +5,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { NavigationBar } from "app/components/NavigationBar";
 import { Select } from "app/components/Select";
 import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
@@ -68,7 +69,7 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes, sele
 			</Select>
 
 			{selectedType && (
-				<div data-testid="Registration__type-selected" className="flex items-center ml-4 leading-tight -mt-9">
+				<div data-testid="Registration__type-selected" className="-mt-9 flex items-center ml-4 leading-tight">
 					{selectedType.label}
 				</div>
 			)}
@@ -236,19 +237,19 @@ const ThirdStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
+						<div className="text-theme-danger-500 ml-1">
 							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
@@ -261,7 +262,7 @@ const ThirdStep = () => {
 						</div>
 					}
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -274,7 +275,7 @@ const ThirdStep = () => {
 					label="Type"
 					extra={
 						<div>
-							<Circle className="border-black bg-theme-background" size="lg">
+							<Circle className="bg-theme-background border-black" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -368,7 +369,7 @@ export const FifthStep = () => (
 			label="Amount"
 			className="pb-0"
 			extra={
-				<div className="ml-1 text-theme-danger">
+				<div className="text-theme-danger ml-1">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
@@ -401,88 +402,96 @@ export const Registration = ({
 	};
 
 	return (
-		<div data-testid="Registration" className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={7} activeIndex={activeTab} />
+		<div data-testid="Registration">
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep
-								addresses={addresses}
-								form={form}
-								networks={networks}
-								registrationTypes={registrationTypes}
-							/>
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep form={form} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep form={form} passwordType="mnemonic" />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<FourthStep form={form} passwordType="password" />
-						</TabPanel>
-						<TabPanel tabId={6}>
-							<FourthStep form={form} passwordType="ledger" />
-						</TabPanel>
-						<TabPanel tabId={7}>
-							<FifthStep />
-						</TabPanel>
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={7} activeIndex={activeTab} />
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 7 && (
-								<Button
-									disabled={activeTab === 1}
-									data-testid="Registration__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-							)}
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep
+									addresses={addresses}
+									form={form}
+									networks={networks}
+									registrationTypes={registrationTypes}
+								/>
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep form={form} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep form={form} passwordType="mnemonic" />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<FourthStep form={form} passwordType="password" />
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<FourthStep form={form} passwordType="ledger" />
+							</TabPanel>
+							<TabPanel tabId={7}>
+								<FifthStep />
+							</TabPanel>
 
-							{activeTab < 4 && (
-								<Button
-									data-testid="Registration__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							)}
-
-							{activeTab >= 4 && activeTab < 7 && (
-								<Button
-									data-testid="Registration__send-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									<Icon name="Send" className="mr-2" width={20} height={20} />
-									Send
-								</Button>
-							)}
-
-							{activeTab === 7 && (
-								<div className="flex justify-end space-x-3">
-									<Button data-testid="Registration__wallet-button" variant="plain">
-										Back to wallet
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 7 && (
+									<Button
+										disabled={activeTab === 1}
+										data-testid="Registration__back-button"
+										variant="plain"
+										onClick={handleBack}
+									>
+										Back
 									</Button>
+								)}
 
-									<Button type="submit" data-testid="Registration__download-button" variant="plain">
-										<Icon name="Download" className="mr-2" />
-										Download
+								{activeTab < 4 && (
+									<Button
+										data-testid="Registration__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
 									</Button>
-								</div>
-							)}
+								)}
+
+								{activeTab >= 4 && activeTab < 7 && (
+									<Button
+										data-testid="Registration__send-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										<Icon name="Send" className="mr-2" width={20} height={20} />
+										Send
+									</Button>
+								)}
+
+								{activeTab === 7 && (
+									<div className="flex justify-end space-x-3">
+										<Button data-testid="Registration__wallet-button" variant="plain">
+											Back to wallet
+										</Button>
+
+										<Button
+											type="submit"
+											data-testid="Registration__download-button"
+											variant="plain"
+										>
+											<Icon name="Download" className="mr-2" />
+											Download
+										</Button>
+									</div>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

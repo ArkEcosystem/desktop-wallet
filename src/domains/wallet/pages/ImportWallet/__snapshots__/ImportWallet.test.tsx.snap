@@ -2,177 +2,333 @@
 
 exports[`Wallet / Import should render 1`] = `
 <DocumentFragment>
-  <div
-    class="py-16"
-  >
-    <div>
+  <div>
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzqNJr iuaMMa"
+    >
       <div
-        data-testid="tab-pabel__active-panel"
+        class="px-4 sm:px-6 lg:px-8"
       >
         <div
-          class="flex justify-center w-full"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="w-2/4"
+            class="flex items-center flex-shrink-0"
           >
-            <ul
-              class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-            >
-              <li
-                class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-              />
-              <li
-                class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-              />
-            </ul>
             <div
-              class="mt-10"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <div>
-                <p
-                  class="text-4xl font-bold"
-                >
-                  Network for import
-                </p>
-                <p
-                  class="text-medium"
-                >
-                  Select the network where you want to import your wallet
-                </p>
-              </div>
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            />
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
               <div
-                class="mt-5"
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="mb-3"
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
                 >
-                  <label
-                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                  >
-                    <input
-                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                      data-testid="card-control__ARK Ecosystem"
-                      name="ARK Ecosystem"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                    >
-                      <div
-                        class="flex flex-row items-center h-full py-3"
-                      >
-                        <div
-                          class="flex items-center justify-center w-12 h-12 mr-3 border rounded-full border-theme-primary-contrast"
-                        >
-                          <div
-                            class="sc-AxiKw iQZLaj"
-                            height="25"
-                            width="25"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <span>
-                          ARK Ecosystem
-                        </span>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-                <div
-                  class="mb-3"
-                >
-                  <label
-                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                  >
-                    <input
-                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                      data-testid="card-control__Ethereum"
-                      name="Ethereum"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                    >
-                      <div
-                        class="flex flex-row items-center h-full py-3"
-                      >
-                        <div
-                          class="flex items-center justify-center w-12 h-12 mr-3 border rounded-full border-theme-primary-contrast"
-                        >
-                          <div
-                            class="sc-AxiKw iQZLaj"
-                            height="25"
-                            width="25"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <span>
-                          Ethereum
-                        </span>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-                <div
-                  class="mb-3"
-                >
-                  <label
-                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                  >
-                    <input
-                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                      data-testid="card-control__Bitcoin"
-                      name="Bitcoin"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                    >
-                      <div
-                        class="flex flex-row items-center h-full py-3"
-                      >
-                        <div
-                          class="flex items-center justify-center w-12 h-12 mr-3 border rounded-full border-theme-primary-contrast"
-                        >
-                          <div
-                            class="sc-AxiKw iQZLaj"
-                            height="25"
-                            width="25"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                        <span>
-                          Bitcoin
-                        </span>
-                      </div>
-                    </div>
-                  </label>
+                  <svg>
+                    notification.svg
+                  </svg>
                 </div>
               </div>
             </div>
             <div
-              class="flex justify-end mt-10"
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
             >
-              <button
-                class="sc-AxjAm ddQVWI"
-                color="primary"
-                data-testid="import-wallet__next-step--button"
-                type="button"
+              <div
+                class="sc-AxiKw ldtbjv"
+                height="42"
+                width="42"
               >
-                Continue
-              </button>
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              >
+                34,253.75
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-fznyAO hUVUQM -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-fznyAO hUVUQM relative bg-theme-primary-600 border-theme-primary-600 rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    >
+                      IO
+                    </span>
+                    <span
+                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw ksjdLL"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="py-16"
+    >
+      <div>
+        <div
+          data-testid="tab-pabel__active-panel"
+        >
+          <div
+            class="flex justify-center w-full"
+          >
+            <div
+              class="w-2/4"
+            >
+              <ul
+                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+              </ul>
+              <div
+                class="mt-10"
+              >
+                <div>
+                  <p
+                    class="text-4xl font-bold"
+                  >
+                    Network for import
+                  </p>
+                  <p
+                    class="text-medium"
+                  >
+                    Select the network where you want to import your wallet
+                  </p>
+                </div>
+                <div
+                  class="mt-5"
+                >
+                  <div
+                    class="mb-3"
+                  >
+                    <label
+                      class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                    >
+                      <input
+                        class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                        data-testid="card-control__ARK Ecosystem"
+                        name="ARK Ecosystem"
+                        type="checkbox"
+                        value=""
+                      />
+                      <div
+                        class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                      >
+                        <div
+                          class="flex flex-row items-center h-full py-3"
+                        >
+                          <div
+                            class="border-theme-primary-contrast flex items-center justify-center w-12 h-12 mr-3 border rounded-full"
+                          >
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span>
+                            ARK Ecosystem
+                          </span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="mb-3"
+                  >
+                    <label
+                      class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                    >
+                      <input
+                        class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                        data-testid="card-control__Ethereum"
+                        name="Ethereum"
+                        type="checkbox"
+                        value=""
+                      />
+                      <div
+                        class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                      >
+                        <div
+                          class="flex flex-row items-center h-full py-3"
+                        >
+                          <div
+                            class="border-theme-primary-contrast flex items-center justify-center w-12 h-12 mr-3 border rounded-full"
+                          >
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                eth.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span>
+                            Ethereum
+                          </span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="mb-3"
+                  >
+                    <label
+                      class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                    >
+                      <input
+                        class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                        data-testid="card-control__Bitcoin"
+                        name="Bitcoin"
+                        type="checkbox"
+                        value=""
+                      />
+                      <div
+                        class="sc-AxirZ PHAyy CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                      >
+                        <div
+                          class="flex flex-row items-center h-full py-3"
+                        >
+                          <div
+                            class="border-theme-primary-contrast flex items-center justify-center w-12 h-12 mr-3 border rounded-full"
+                          >
+                            <div
+                              class="sc-AxiKw iQZLaj"
+                              height="25"
+                              width="25"
+                            >
+                              <svg>
+                                btc.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <span>
+                            Bitcoin
+                          </span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex justify-end mt-10"
+              >
+                <button
+                  class="sc-AxjAm ddQVWI"
+                  color="primary"
+                  data-testid="import-wallet__next-step--button"
+                  type="button"
+                >
+                  Continue
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { NavigationBar } from "app/components/NavigationBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
@@ -54,12 +55,12 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 					>
 						<NetworkItem className="flex items-center py-2">
 							<Circle
-								className="NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+								className="NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
 								noShadow
 							>
 								<Icon name={network.icon} />
 							</Circle>
-							<span className="ml-4 text-theme-text">{network.name}</span>
+							<span className="text-theme-text ml-4">{network.name}</span>
 						</NetworkItem>
 					</CardControl>
 				))}
@@ -98,7 +99,7 @@ export const SecondStep = ({
 
 			<div className="flex py-3">
 				<div className="flex-1">
-					<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
+					<h3 className="text-theme-neutral-dark mb-1">Your password in the file</h3>
 					<p className="text-theme-neutral">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
 					<Button
 						onClick={onDownload}
@@ -140,7 +141,7 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 	return (
 		<section data-testid="CreateWallet__third-step">
 			<h1 className="mb-0">Confirm your passphrase</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -161,12 +162,12 @@ export const FourthStep = () => {
 	return (
 		<section data-testid="CreateWallet__fourth-step">
 			<h1 className="mb-0">Completed</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<p className="text-theme-neutral-dark mb-8">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
 
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">Network</p>
 						<p data-testid="CrateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
@@ -180,7 +181,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">Address</p>
 						<p className="text-lg font-medium">D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax</p>
 					</div>
 					<Circle />
@@ -224,54 +225,57 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 	};
 
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<div>
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-4">
-						<TabPanel tabId={1}>
-							<FirstStep networks={networks} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-4">
+							<TabPanel tabId={1}>
+								<FirstStep networks={networks} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
-							<Button
-								disabled={activeTab === 1}
-								data-testid="CreateWallet__back-button"
-								variant="plain"
-								onClick={handleBack}
-							>
-								Back
-							</Button>
-
-							{activeTab < 4 && (
+							<div className="flex justify-end mt-6 space-x-3">
 								<Button
-									data-testid="CreateWallet__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
+									disabled={activeTab === 1}
+									data-testid="CreateWallet__back-button"
+									variant="plain"
+									onClick={handleBack}
 								>
-									Continue
+									Back
 								</Button>
-							)}
 
-							{activeTab === 4 && (
-								<Button type="submit" data-testid="CreateWallet__save-button">
-									Save & Finish
-								</Button>
-							)}
+								{activeTab < 4 && (
+									<Button
+										data-testid="CreateWallet__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
+									</Button>
+								)}
+
+								{activeTab === 4 && (
+									<Button type="submit" data-testid="CreateWallet__save-button">
+										Save & Finish
+									</Button>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

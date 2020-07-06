@@ -4,6 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
+import { NavigationBar } from "app/components/NavigationBar";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -26,7 +27,7 @@ export const FirstStep = () => {
 				<h1 className="mb-0">Vote for delegate</h1>
 				<p className="text-theme-neutral-dark">Enter details to send your money</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-4">
 				<TransactionDetail
 					border={false}
 					label="Account"
@@ -78,12 +79,12 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
+					<div className="text-theme-danger-500 ml-1">
 						<Circle className="bg-theme-background border-theme-danger-200">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
@@ -131,7 +132,7 @@ export const ThirdStep = () => {
 			<div>
 				<h1 className="mb-0">Passphrase</h1>
 				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="mt-4 grid grid-flow-row gap-2">
+				<div className="grid grid-flow-row gap-2 mt-4">
 					<TransactionDetail border={false} label="Your password" className="pb-0">
 						<InputPassword name="passphras" />
 					</TransactionDetail>
@@ -158,7 +159,7 @@ export const FourthStep = () => (
 			label="Transaction type"
 			className="pb-0"
 			extra={
-				<div className="ml-1 text-theme-neutral-900">
+				<div className="text-theme-neutral-900 ml-1">
 					<Circle className="border-theme-neutral-900 bg-theme-background" size="lg">
 						<Icon name="Voted" />
 					</Circle>
@@ -191,65 +192,72 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 	};
 
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={onSubmit}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<div>
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={onSubmit}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 4 && (
-								<>
-									<Button
-										disabled={activeTab === 1}
-										data-testid="SendVoteTransaction__button--back"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
-									</Button>
-									<Button
-										data-testid="SendVoteTransaction__button--continue"
-										// disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								</>
-							)}
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-							{activeTab === 4 && (
-								<>
-									<Button data-testid="SendVoteTransaction__button--back-to-wallet" variant="plain">
-										Back to wallet
-									</Button>
-									<Button
-										onClick={onCopy}
-										data-testid="SendVoteTransaction__button--copy"
-										variant="plain"
-									>
-										<Icon name="Copy" />
-										<span>Copy</span>
-									</Button>
-								</>
-							)}
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 4 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="SendVoteTransaction__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="SendVoteTransaction__button--continue"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
+
+								{activeTab === 4 && (
+									<>
+										<Button
+											data-testid="SendVoteTransaction__button--back-to-wallet"
+											variant="plain"
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="SendVoteTransaction__button--copy"
+											variant="plain"
+										>
+											<Icon name="Copy" />
+											<span>Copy</span>
+										</Button>
+									</>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

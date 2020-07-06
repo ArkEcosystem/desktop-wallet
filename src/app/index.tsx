@@ -11,14 +11,10 @@ import { Switch, withRouter } from "react-router-dom";
 import { routes } from "../router";
 // Fixtures
 import { identity } from "../tests/fixtures/identity";
-// UI Elements
-import { NavigationBar } from "./components/NavigationBar";
 // Context
 import { AppContextProvider, EnvironmentConsumer, EnvironmentProvider } from "./contexts";
 // i18n
 import { i18n } from "./i18n";
-
-const routesWithoutNavBar = ["/", "s/create"];
 
 const buildMockEnvironment = async (env: Environment) => {
 	const profile = env.profiles().create("Anne Doe");
@@ -27,7 +23,7 @@ const buildMockEnvironment = async (env: Environment) => {
 	env.persist();
 };
 
-export const App = withRouter(({ location }: any) => (
+export const App = withRouter(() => (
 	<I18nextProvider i18n={i18n}>
 		<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
 			<AppContextProvider>
@@ -38,9 +34,6 @@ export const App = withRouter(({ location }: any) => (
 
 							return (
 								<>
-									{!routesWithoutNavBar.includes(location.pathname) && (
-										<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-									)}
 									<Switch>{renderRoutes(routes)}</Switch>
 								</>
 							);

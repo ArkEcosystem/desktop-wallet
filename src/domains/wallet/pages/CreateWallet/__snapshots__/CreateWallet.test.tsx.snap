@@ -2,197 +2,353 @@
 
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
-  <div
-    class="max-w-xl py-16 mx-auto"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
+  <div>
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoXzr iwOJma"
     >
-      <div>
-        <ul
-          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-        >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-        </ul>
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
         <div
-          class="mt-4"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            data-testid="tab-pabel__active-panel"
+            class="flex items-center flex-shrink-0"
           >
-            <section
-              class="space-y-8"
-              data-testid="CreateWallet__first-step"
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <div>
-                <h1
-                  class="mb-0"
-                >
-                  Select Network
-                </h1>
-                <p
-                  class="text-theme-neutral-dark"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </p>
-              </div>
-              <div
-                class="grid grid-flow-row gap-2"
-              >
-                <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="ARK"
-                  />
-                  <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                  >
-                    <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
-                    >
-                      <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
-                      >
-                        <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        ARK
-                      </span>
-                    </div>
-                  </div>
-                </label>
-                <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="Ethereum"
-                  />
-                  <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                  >
-                    <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
-                    >
-                      <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
-                      >
-                        <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        Ethereum
-                      </span>
-                    </div>
-                  </div>
-                </label>
-                <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="Bitcoin"
-                  />
-                  <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
-                  >
-                    <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
-                    >
-                      <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
-                      >
-                        <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        Bitcoin
-                      </span>
-                    </div>
-                  </div>
-                </label>
-              </div>
-            </section>
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            />
           </div>
           <div
-            class="flex justify-end mt-6 space-x-3"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxhCb BegvR"
-              color="primary"
-              data-testid="CreateWallet__back-button"
-              disabled=""
-              type="button"
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              Back
-            </button>
-            <button
-              class="sc-AxhCb gBCygf"
-              color="primary"
-              data-testid="CreateWallet__continue-button"
-              disabled=""
-              type="button"
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxjAm jmgDQY"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
             >
-              Continue
-            </button>
+              <div
+                class="sc-AxjAm bsDiDM"
+                height="42"
+                width="42"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              >
+                34,253.75
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxgMl daFHdi -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxgMl daFHdi relative bg-theme-primary-600 border-theme-primary-600 rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    >
+                      IO
+                    </span>
+                    <span
+                      class="sc-fzokOt dSPERz flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </form>
+    </nav>
+    <div
+      class="max-w-xl py-16 mx-auto"
+    >
+      <form
+        class="space-y-8"
+        data-testid="Form"
+      >
+        <div>
+          <ul
+            class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+          >
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+          </ul>
+          <div
+            class="mt-4"
+          >
+            <div
+              data-testid="tab-pabel__active-panel"
+            >
+              <section
+                class="space-y-8"
+                data-testid="CreateWallet__first-step"
+              >
+                <div>
+                  <h1
+                    class="mb-0"
+                  >
+                    Select Network
+                  </h1>
+                  <p
+                    class="text-theme-neutral-dark"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  </p>
+                </div>
+                <div
+                  class="grid grid-flow-row gap-2"
+                >
+                  <label
+                    aria-checked="false"
+                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                  >
+                    <input
+                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                      data-testid="card-control__network"
+                      name="network"
+                      type="radio"
+                      value="ARK"
+                    />
+                    <div
+                      class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    >
+                      <div
+                        class="sc-fzoiQi hEdGeI flex items-center py-2"
+                      >
+                        <div
+                          class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="text-theme-text ml-4"
+                        >
+                          ARK
+                        </span>
+                      </div>
+                    </div>
+                  </label>
+                  <label
+                    aria-checked="false"
+                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                  >
+                    <input
+                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                      data-testid="card-control__network"
+                      name="network"
+                      type="radio"
+                      value="Ethereum"
+                    />
+                    <div
+                      class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    >
+                      <div
+                        class="sc-fzoiQi hEdGeI flex items-center py-2"
+                      >
+                        <div
+                          class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="text-theme-text ml-4"
+                        >
+                          Ethereum
+                        </span>
+                      </div>
+                    </div>
+                  </label>
+                  <label
+                    aria-checked="false"
+                    class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                  >
+                    <input
+                      class="CardControl__Input-sc-28luv0-0 lbnjeC"
+                      data-testid="card-control__network"
+                      name="network"
+                      type="radio"
+                      value="Bitcoin"
+                    />
+                    <div
+                      class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    >
+                      <div
+                        class="sc-fzoiQi hEdGeI flex items-center py-2"
+                      >
+                        <div
+                          class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="text-theme-text ml-4"
+                        >
+                          Bitcoin
+                        </span>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </section>
+            </div>
+            <div
+              class="flex justify-end mt-6 space-x-3"
+            >
+              <button
+                class="sc-AxhCb BegvR"
+                color="primary"
+                data-testid="CreateWallet__back-button"
+                disabled=""
+                type="button"
+              >
+                Back
+              </button>
+              <button
+                class="sc-AxhCb gBCygf"
+                color="primary"
+                data-testid="CreateWallet__continue-button"
+                disabled=""
+                type="button"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -233,10 +389,10 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="sc-fzoiQi hEdGeI flex items-center py-2"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
             >
               <div
                 class="sc-AxjAm cpczEI"
@@ -249,7 +405,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4 text-theme-text"
+              class="text-theme-text ml-4"
             >
               ARK
             </span>
@@ -271,10 +427,10 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="sc-fzoiQi hEdGeI flex items-center py-2"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
             >
               <div
                 class="sc-AxjAm cpczEI"
@@ -287,7 +443,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4 text-theme-text"
+              class="text-theme-text ml-4"
             >
               Ethereum
             </span>
@@ -309,10 +465,10 @@ exports[`CreateWallet should render 1st step 1`] = `
           class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="sc-fzoiQi hEdGeI flex items-center py-2"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxgMl iqKzwo NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
             >
               <div
                 class="sc-AxjAm cpczEI"
@@ -325,7 +481,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               </div>
             </div>
             <span
-              class="ml-4 text-theme-text"
+              class="text-theme-text ml-4"
             >
               Bitcoin
             </span>
@@ -504,7 +660,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex-1"
       >
         <h3
-          class="mb-1 text-theme-neutral-dark"
+          class="text-theme-neutral-dark mb-1"
         >
           Your password in the file
         </h3>
@@ -566,7 +722,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       Completed
     </h1>
     <p
-      class="mb-8 text-theme-neutral-dark"
+      class="text-theme-neutral-dark mb-8"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit
     </p>
@@ -576,7 +732,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       >
         <div>
           <p
-            class="text-sm font-semibold text-theme-neutral-dark"
+            class="text-theme-neutral-dark text-sm font-semibold"
           >
             Network
           </p>
@@ -612,7 +768,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       >
         <div>
           <p
-            class="text-sm font-semibold text-theme-neutral-dark"
+            class="text-theme-neutral-dark text-sm font-semibold"
           >
             Address
           </p>

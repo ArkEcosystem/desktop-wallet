@@ -5,6 +5,7 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
+import { NavigationBar } from "app/components/NavigationBar";
 import { Select } from "app/components/Select";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
@@ -31,21 +32,21 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelDescriptionClass: "font-semibold mt-3 text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row mb-4 -mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
+					<div className="border-theme-neutral-300 flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded">
 						<button
 							type="button"
-							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							className="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+					<div className="bg-theme-neutral-light relative w-24 h-24 rounded">
 						<img
 							src="https://randomuser.me/api/portraits/men/3.jpg"
 							className="object-cover rounded"
 							alt="random avatar"
 						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
+						<button className="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded">
 							<Icon name="Close" height={12} width={12} />
 						</button>
 					</div>
@@ -61,7 +62,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 -mt-4 text-sm text-theme-neutral-dark">
+					<span className="text-theme-neutral-dark w-3/4 -mt-4 text-sm">
 						Want to set the wallet to dark mode?
 					</span>
 					<div className="-mt-11">
@@ -73,84 +74,88 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	];
 
 	return (
-		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+		<div>
+			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
+
+			<div className="w-full h-full">
+				<div className="sm:px-6 lg:px-8 px-4">
+					<div className="md:h-24 flex items-center flex-shrink-0 h-20">
+						<div className="bg-logo flex p-2 rounded-lg">
+							<img src={commonAssets.ARKLogo} className="md:h-8 lg:h-10 h-6" alt="ARK Logo" />
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div className="container mx-auto">
-				<div className="max-w-lg mx-auto xl:max-w-xl">
-					<h1 className="mx-4 md:mx-8 xl:mx-16">Create Profile</h1>
-					<div className="mx-4 text-theme-neutral-dark md:mx-8 xl:mx-16">
-						Create a new Profile or login with your MarketSquare account to get started.
-					</div>
-
-					<div className="mx-4 mt-8 md:mx-8 xl:mx-16">
-						<Button className="w-full mb-6">
-							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">Login with MarketSquare</span>
-						</Button>
-						<Divider />
-					</div>
-
-					<Form id="create-profile__form" className="-mt-6" context={form} onSubmit={onSubmit}>
-						<div className="mx-4 md:mx-8 xl:mx-16">
-							<ListDivided items={personalDetails} />
-
-							<div className="flex flex-col space-y-8">
-								<FormField name="name">
-									<FormLabel label="Name" />
-									<Input ref={register({ required: true })} />
-									<FormHelperText />
-								</FormField>
-
-								<FormField name="market-provider">
-									<FormLabel label="Market Provider" />
-									<Select
-										name="market-provider"
-										placeholder="Select Market Provider"
-										ref={register({ required: true })}
-									>
-										<option value="option1">Option 1</option>
-										<option value="option2">Option 2</option>
-										<option value="option3">Option 3</option>
-									</Select>
-									<FormHelperText />
-								</FormField>
-
-								<FormField name="currency">
-									<FormLabel label="Currency" />
-									<Select
-										name="currency"
-										placeholder="Select Currency"
-										ref={register({ required: true })}
-									>
-										<option value="option1">Option 1</option>
-										<option value="option2">Option 2</option>
-										<option value="option3">Option 3</option>
-									</Select>
-									<FormHelperText />
-								</FormField>
-							</div>
-
-							<div className="mb-4">
-								<ListDivided items={otherItems} />
-							</div>
-
-							<Divider dashed />
+				<div className="container mx-auto">
+					<div className="xl:max-w-xl max-w-lg mx-auto">
+						<h1 className="md:mx-8 xl:mx-16 mx-4">Create Profile</h1>
+						<div className="text-theme-neutral-dark md:mx-8 xl:mx-16 mx-4">
+							Create a new Profile or login with your MarketSquare account to get started.
 						</div>
 
-						<div className="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16">
-							<Button variant="plain" onClick={() => history.go(-1)}>
-								Back
+						<div className="md:mx-8 xl:mx-16 mx-4 mt-8">
+							<Button className="w-full mb-6">
+								<Icon name="Msq" width={20} height={20} />
+								<span className="ml-2">Login with MarketSquare</span>
 							</Button>
-							<Button>Complete</Button>
+							<Divider />
 						</div>
-					</Form>
+
+						<Form id="create-profile__form" className="-mt-6" context={form} onSubmit={onSubmit}>
+							<div className="md:mx-8 xl:mx-16 mx-4">
+								<ListDivided items={personalDetails} />
+
+								<div className="flex flex-col space-y-8">
+									<FormField name="name">
+										<FormLabel label="Name" />
+										<Input ref={register({ required: true })} />
+										<FormHelperText />
+									</FormField>
+
+									<FormField name="market-provider">
+										<FormLabel label="Market Provider" />
+										<Select
+											name="market-provider"
+											placeholder="Select Market Provider"
+											ref={register({ required: true })}
+										>
+											<option value="option1">Option 1</option>
+											<option value="option2">Option 2</option>
+											<option value="option3">Option 3</option>
+										</Select>
+										<FormHelperText />
+									</FormField>
+
+									<FormField name="currency">
+										<FormLabel label="Currency" />
+										<Select
+											name="currency"
+											placeholder="Select Currency"
+											ref={register({ required: true })}
+										>
+											<option value="option1">Option 1</option>
+											<option value="option2">Option 2</option>
+											<option value="option3">Option 3</option>
+										</Select>
+										<FormHelperText />
+									</FormField>
+								</div>
+
+								<div className="mb-4">
+									<ListDivided items={otherItems} />
+								</div>
+
+								<Divider dashed />
+							</div>
+
+							<div className="md:mx-8 xl:mx-16 flex justify-end mx-4 mt-12 mb-16 space-x-3">
+								<Button variant="plain" onClick={() => history.go(-1)}>
+									Back
+								</Button>
+								<Button>Complete</Button>
+							</div>
+						</Form>
+					</div>
 				</div>
 			</div>
 		</div>

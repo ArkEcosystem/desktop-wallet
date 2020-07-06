@@ -2,317 +2,473 @@
 
 exports[`SendIPFSTransaction should render 1`] = `
 <DocumentFragment>
-  <div
-    class="max-w-xl py-16 mx-auto"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
+  <div>
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzqBZW cqbNAj"
     >
-      <div>
-        <ul
-          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-        >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-        </ul>
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
         <div
-          class="mt-8"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            data-testid="tab-pabel__active-panel"
+            class="flex items-center flex-shrink-0"
           >
-            <section
-              data-testid="SendIPFSTransaction__step--first"
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <div>
-                <h1
-                  class="mb-0"
-                >
-                  IPFS
-                </h1>
-                <p
-                  class="text-theme-neutral-dark"
-                >
-                  Store an IPFS hasn on the network
-                </p>
-              </div>
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            />
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
               <div
-                class="mt-4 grid grid-flow-row gap-2"
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
-                  class="flex items-center py-6 true "
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxhUy iA-DovK"
+                height="42"
+                width="42"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxhUy gwxBWy"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              >
+                34,253.75
+              </div>
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="flex-1"
+                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
                   >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Network
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                    <span
+                      class="text-theme-neutral-600"
                     >
                       <div
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-labelledby="downshift-1-label"
-                        class="relative"
-                        role="combobox"
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
                       >
-                        <label
-                          for="downshift-1-input"
-                          id="downshift-1-label"
-                        />
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxiKw jQtkkF relative bg-theme-primary-600 border-theme-primary-600 rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    >
+                      IO
+                    </span>
+                    <span
+                      class="sc-fznyAO bxiLWJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxhUy gKrfcW"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="max-w-xl py-16 mx-auto"
+    >
+      <form
+        class="space-y-8"
+        data-testid="Form"
+      >
+        <div>
+          <ul
+            class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+          >
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+            <li
+              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+            />
+          </ul>
+          <div
+            class="mt-8"
+          >
+            <div
+              data-testid="tab-pabel__active-panel"
+            >
+              <section
+                data-testid="SendIPFSTransaction__step--first"
+              >
+                <div>
+                  <h1
+                    class="mb-0"
+                  >
+                    IPFS
+                  </h1>
+                  <p
+                    class="text-theme-neutral-dark"
+                  >
+                    Store an IPFS hasn on the network
+                  </p>
+                </div>
+                <div
+                  class="grid grid-flow-row gap-2 mt-4"
+                >
+                  <div
+                    class="flex items-center py-6 true "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Network
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
                         <div
-                          class="relative flex items-center w-full flex-inline"
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-1-label"
+                          class="relative"
+                          role="combobox"
                         >
+                          <label
+                            for="downshift-1-input"
+                            id="downshift-1-label"
+                          />
                           <div
-                            class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                            class="relative flex items-center w-full flex-inline"
                           >
                             <div
-                              class="px-4 py-2 flex-0 w-14"
+                              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                             >
                               <div
-                                class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                              />
-                            </div>
-                            <div
-                              class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                            >
-                              <div
-                                class="relative z-10 w-full"
-                                data-testid="select-network__typeahead-"
+                                class="px-4 py-2 flex-0 w-14"
                               >
                                 <div
-                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                  class="sc-AxiKw cxOZEi border-theme-neutral-200"
                                 />
                               </div>
-                              <input
-                                aria-autocomplete="list"
-                                aria-labelledby="downshift-1-label"
-                                autocomplete="off"
-                                class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                data-testid="select-asset__input"
-                                id="downshift-1-input"
-                                placeholder="Enter a network name"
-                                value=""
-                              />
+                              <div
+                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                              >
+                                <div
+                                  class="relative z-10 w-full"
+                                  data-testid="select-network__typeahead-"
+                                >
+                                  <div
+                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                  />
+                                </div>
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-labelledby="downshift-1-label"
+                                  autocomplete="off"
+                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                                  data-testid="select-asset__input"
+                                  id="downshift-1-input"
+                                  placeholder="Enter a network name"
+                                  value=""
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="flex items-center py-6 true "
-                >
                   <div
-                    class="flex-1"
+                    class="flex items-center py-6 true "
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Sender
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                      class="flex-1"
                     >
                       <div
-                        class="relative flex items-center"
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Sender
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
+                      >
+                        <div
+                          class="relative flex items-center"
+                        >
+                          <input
+                            class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                            data-testid="Input"
+                            disabled=""
+                            type="text"
+                          />
+                          <div
+                            class="absolute flex items-center ml-3"
+                          >
+                            <div
+                              class="sc-AxiKw gPGCtr mr-3"
+                            />
+                            <div
+                              class="inline-block truncate align-middle"
+                            >
+                              <span
+                                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                data-testid="address__wallet-name"
+                              >
+                                ROBank
+                              </span>
+                              <span
+                                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKj…EVTQWK
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center py-6 true "
+                  >
+                    <div
+                      class="flex-1"
+                    >
+                      <div
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Hash
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
                       >
                         <input
                           class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                           data-testid="Input"
-                          disabled=""
-                          type="text"
+                          name="hash"
                         />
-                        <div
-                          class="absolute flex items-center ml-3"
-                        >
-                          <div
-                            class="sc-AxiKw gPGCtr mr-3"
-                          />
-                          <div
-                            class="inline-block truncate align-middle"
-                          >
-                            <span
-                              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                              data-testid="address__wallet-name"
-                            >
-                              ROBank
-                            </span>
-                            <span
-                              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                              data-testid="address__wallet-address"
-                            >
-                              AUexKj…EVTQWK
-                            </span>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="flex items-center py-6 true "
-                >
                   <div
-                    class="flex-1"
+                    class="flex items-center py-6 true pb-0"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Hash
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                        data-testid="Input"
-                        name="hash"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex items-center py-6 true pb-0"
-                >
-                  <div
-                    class="flex-1"
-                  >
-                    <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                      Fee ARK
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                      class="flex-1"
                     >
                       <div
-                        class="flex space-x-2"
+                        class="text-sm font-semibold text-theme-neutral-500"
+                      >
+                        Fee ARK
+                      </div>
+                      <div
+                        class="mt-2 font-semibold"
                       >
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-fzozJi OgXfh"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-fzozJi OgXfh"
                             >
+                              <input
+                                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                data-testid="InputCurrency"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzoLsD gcqOdX"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzpans fDmiZy"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzoLsD gcqOdX"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzplWN eSQZBV"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzpans fDmiZy"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzplWN eSQZBV"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
-          </div>
-          <div
-            class="flex justify-end mt-8 space-x-2"
-          >
-            <button
-              class="sc-AxirZ fhzkRl"
-              color="primary"
-              data-testid="SendIPFSTransaction__button--back"
-              disabled=""
-              type="button"
+              </section>
+            </div>
+            <div
+              class="flex justify-end mt-8 space-x-2"
             >
-              Back
-            </button>
-            <button
-              class="sc-AxirZ dPtiuf"
-              color="primary"
-              data-testid="SendIPFSTransaction__button--continue"
-              type="button"
-            >
-              Continue
-            </button>
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
+                data-testid="SendIPFSTransaction__button--back"
+                disabled=""
+                type="button"
+              >
+                Back
+              </button>
+              <button
+                class="sc-AxirZ dPtiuf"
+                color="primary"
+                data-testid="SendIPFSTransaction__button--continue"
+                type="button"
+              >
+                Continue
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -335,7 +491,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
       </p>
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -545,7 +701,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -553,7 +709,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -561,7 +717,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzqNJr kLZRsr relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -596,7 +752,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
       </p>
     </div>
     <div
-      class="mt-4 grid grid-flow-row gap-2"
+      class="grid grid-flow-row gap-2 mt-4"
     >
       <div
         class="flex items-center py-6 true "
@@ -618,7 +774,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="text-theme-danger-500 ml-1"
         >
           <div
             class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
@@ -698,7 +854,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           class="ml-1"
         >
           <div
-            class="sc-AxiKw jQtkkF border-black bg-theme-background"
+            class="sc-AxiKw jQtkkF bg-theme-background border-black"
           >
             <div
               class="sc-AxhUy cztmDe"
@@ -809,7 +965,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
         Confirm your password to continue
       </p>
       <div
-        class="mt-4 grid grid-flow-row gap-2"
+        class="grid grid-flow-row gap-2 mt-4"
       >
         <div
           class="flex items-center py-6 true pb-0"
@@ -1132,7 +1288,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger"
+            class="text-theme-danger ml-1"
           >
             <div
               class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
