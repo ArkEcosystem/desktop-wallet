@@ -37,10 +37,7 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
-			<div>
-				<h1 className="mb-0">Select a Cryptoasset</h1>
-				<p className="text-theme-neutral-dark">Select a cryptoasset to create your new wallet address</p>
-			</div>
+			<Header title="Select a Cryptoasset" subtitle="Select a cryptoasset to create your new wallet address" />
 
 			<SelectAsset
 				name={activeNetwork as any}
