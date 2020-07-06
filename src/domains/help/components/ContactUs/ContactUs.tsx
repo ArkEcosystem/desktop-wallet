@@ -82,6 +82,7 @@ export const ContactUs = (props: ContactUsProps) => {
 							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER"), value: "other" },
 						]}
 					/>
+					<FormHelperText />
 				</FormField>
 
 				<FormField name="message">

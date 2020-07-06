@@ -1,6 +1,7 @@
 import { snakeCase } from "@arkecosystem/utils";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
+import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { BestPlugins } from "domains/plugin/components/BestPlugins";
@@ -67,7 +68,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__featured__view-more"
 						onClick={() => setFeaturedModalOpen(true)}
-						className="link font-semibold cursor-pointer"
+						className="font-semibold cursor-pointer link"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
@@ -92,7 +93,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 					<span
 						data-testid="PluginManager__home__top-rated__view-more"
 						onClick={() => setBestModalOpen(true)}
-						className="link font-semibold cursor-pointer"
+						className="font-semibold cursor-pointer link"
 					>
 						{t("COMMON.VIEW_MORE")}
 					</span>
@@ -163,80 +164,70 @@ export const PluginManager = () => {
 	}
 
 	return (
-		<div>
-			<div data-testid="PluginManager">
-				<InstallPlugin
-					isOpen={installPlugin}
-					onClose={() => setInstallPlugin(false)}
-					onCancel={() => setInstallPlugin(false)}
-				/>
+		<div data-testid="PluginManager">
+			<InstallPlugin
+				isOpen={installPlugin}
+				onClose={() => setInstallPlugin(false)}
+				onCancel={() => setInstallPlugin(false)}
+			/>
 
-				<div className="border-t-20 border-theme-neutral-100">
-					<div className="mb-15 container relative items-end justify-between mx-auto mt-10">
-						<div className="inline-block">
-							<h1>{t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}</h1>
-							<div className="text-theme-neutral-700">{t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}</div>
-						</div>
-
-						<div className="absolute top-0 bottom-0 right-0 flex items-center justify-end mt-10 space-x-3">
-							<div className="flex items-end py-2">
-								<HeaderSearchBar onSearch={() => console.log("search")}>
-									<Icon name="Search" width={20} height={20} className="mr-6" />
-								</HeaderSearchBar>
+			<div className="border-t-20 border-theme-neutral-100">
+				<div className="container py-16 mx-auto bg-theme-background">
+					<Header
+						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
+						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
+						extra={
+							<div className="flex justify-end items-top">
+								<HeaderSearchBar label="" onSearch={() => console.log("search")} />
+								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
+								<Button>
+									<div className="flex items-center whitespace-no-wrap space-x-2">
+										<Icon name="File" width={15} height={15} />
+										<span>Install File</span>
+									</div>
+								</Button>
 							</div>
+						}
+					/>
+				</div>
+			</div>
 
-							<div>
-								<div className="border-theme-neutral-200 pl-8 border-l">
-									<Button>
-										<div className="flex items-center space-x-2 whitespace-no-wrap">
-											<Icon name="File" width={15} height={15} />
+			<PluginManagerNavigationBar selected={currentView} onChange={setCurrentView} />
 
-											<span>Install File</span>
-										</div>
-									</Button>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-16">
+				<div className="flex items-center justify-between">
+					<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
+
+					<PluginManagerControls
+						onSelectGridView={() => setViewType("grid")}
+						onSelectListView={() => setViewType("list")}
+						selectedViewType={viewType}
+					/>
 				</div>
 
-				<PluginManagerNavigationBar selected={currentView} onChange={setCurrentView} />
-
-				<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-16">
-					<div className="flex items-center justify-between">
-						<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
-
-						<PluginManagerControls
-							onSelectGridView={() => setViewType("grid")}
-							onSelectListView={() => setViewType("list")}
-							selectedViewType={viewType}
-						/>
-					</div>
-
-					{currentView === "home" && (
-						<PluginManagerHome
-							viewType={viewType}
-							onInstall={() => setInstallPlugin(true)}
-							onDelete={() => console.log("delete")}
-						/>
-					)}
-					{currentView !== "home" && viewType === "grid" && (
-						<PluginGrid
-							plugins={plugins}
-							onSelect={() => console.log("selected")}
-							onDelete={() => console.log("delete")}
-							className="mt-6"
-						/>
-					)}
-					{currentView !== "home" && viewType === "list" && (
-						<PluginList
-							plugins={plugins}
-							onInstall={() => setInstallPlugin(true)}
-							onDelete={() => console.log("delete")}
-							className="mt-6"
-						/>
-					)}
-				</div>
+				{currentView === "home" && (
+					<PluginManagerHome
+						viewType={viewType}
+						onInstall={() => setInstallPlugin(true)}
+						onDelete={() => console.log("delete")}
+					/>
+				)}
+				{currentView !== "home" && viewType === "grid" && (
+					<PluginGrid
+						plugins={plugins}
+						onSelect={() => console.log("selected")}
+						onDelete={() => console.log("delete")}
+						className="mt-6"
+					/>
+				)}
+				{currentView !== "home" && viewType === "list" && (
+					<PluginList
+						plugins={plugins}
+						onInstall={() => setInstallPlugin(true)}
+						onDelete={() => console.log("delete")}
+						className="mt-6"
+					/>
+				)}
 			</div>
 		</div>
 	);

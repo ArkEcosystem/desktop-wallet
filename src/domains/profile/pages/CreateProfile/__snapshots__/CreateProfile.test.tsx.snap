@@ -2,61 +2,303 @@
 
 exports[`CreateProfile should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="w-full h-full"
+  >
     <div
-      class="w-full h-full"
+      class="px-4 sm:px-6 lg:px-8"
     >
       <div
-        class="container mx-auto"
+        class="flex items-center flex-shrink-0 h-20 md:h-24"
       >
         <div
-          class="xl:max-w-xl max-w-lg mx-auto"
+          class="flex p-2 rounded-lg bg-logo"
         >
-          <h1
-            class="md:mx-8 xl:mx-16 mx-4"
+          <img
+            alt="ARK Logo"
+            class="h-6 md:h-8 lg:h-10"
+            src="ark-logo.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="container mx-auto"
+    >
+      <div
+        class="max-w-lg mx-auto xl:max-w-xl"
+      >
+        <h1
+          class="mb-0 text-3xl font-bold md:text-4xl"
+        >
+          Create Profile
+        </h1>
+        <div
+          class="text-theme-neutral-dark"
+        >
+          Create a new Profile or login with your MarketSquare account to get started.
+        </div>
+        <div
+          class="pb-4 mt-8"
+        >
+          <button
+            class="sc-AxjAm ddQVWI w-full"
+            color="primary"
+            type="button"
           >
-            Create Profile
-          </h1>
-          <div
-            class="text-theme-neutral-dark md:mx-8 xl:mx-16 mx-4"
-          >
-            Create a new Profile or login with your MarketSquare account to get started.
-          </div>
-          <div
-            class="md:mx-8 xl:mx-16 mx-4 mt-8"
-          >
-            <button
-              class="sc-AxjAm ddQVWI w-full mb-6"
-              color="primary"
-              type="button"
+            <div
+              class="sc-AxhCb VoPpj"
+              height="20"
+              width="20"
             >
-              <div
-                class="sc-AxhCb VoPpj"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  msq.svg
-                </svg>
-              </div>
-              <span
-                class="ml-2"
-              >
-                Login with MarketSquare
-              </span>
-            </button>
-            <div
-              class="sc-AxirZ cLgKLC border-theme-neutral-300"
-              type="horizontal"
-            />
-          </div>
-          <form
-            class="-mt-6"
-            data-testid="Form"
-            id="create-profile__form"
+              <svg>
+                msq.svg
+              </svg>
+            </div>
+            <span
+              class="ml-2"
+            >
+              Login with MarketSquare
+            </span>
+          </button>
+        </div>
+        <div
+          class="sc-AxirZ cLgKLC border-theme-neutral-300"
+          type="horizontal"
+        />
+        <form
+          class="mt-4"
+          data-testid="Form"
+          id="create-profile__form"
+        >
+          <div
+            class=""
           >
+            <ul
+              class="sc-fzplWN tTUfL"
+              data-testid="list-divided__items"
+            >
+              <li
+                class="flex flex-col w-full "
+                data-testid="list-divided-item__wrapper"
+              >
+                <div
+                  class="flex justify-between flex-col items-start"
+                  data-testid="list-divided-item__inner-wrapper"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="mr-5 text-2xl font-semibold"
+                      data-testid="list-divided-item__label"
+                    >
+                      New Profile
+                    </span>
+                    <span
+                      class="text-sm text-theme-neutral-dark my-1 text-theme-neutral-dark"
+                      data-testid="list-divided-item__label--description"
+                    >
+                      Select Profile Image
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class=""
+                  data-testid="list-divided-item__content"
+                >
+                  <div
+                    class="flex flex-row mt-4 mb-8"
+                  >
+                    <div
+                      class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
+                    >
+                      <button
+                        class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxhCb fxrKLH"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            upload.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                    <div
+                      class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                    >
+                      <img
+                        alt="random avatar"
+                        class="object-cover rounded"
+                        src="https://randomuser.me/api/portraits/men/3.jpg"
+                      />
+                      <button
+                        class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                      >
+                        <div
+                          class="sc-AxhCb koOqYD"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            close.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
             <div
-              class="md:mx-8 xl:mx-16 mx-4"
+              class="relative space-y-8"
+            >
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="name"
+                  label="Name"
+                >
+                  Name
+                </label>
+                <input
+                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  data-testid="Input"
+                  name="name"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="market-provider"
+                  label="Market Provider"
+                >
+                  Market Provider
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    data-testid="select-list__input"
+                    name="market-provider"
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    class="relative w-full cursor-pointer"
+                  >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                        class="sc-fznyAO ijanzL   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-0-toggle-button"
+                        type="button"
+                      >
+                        Select Market Provider
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-0-label"
+                        class="sc-fznKkj hupalw"
+                        id="downshift-0-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
+                    <div
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
+                    >
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset
+                class="sc-AxiKw iQzisX flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="currency"
+                  label="Currency"
+                >
+                  Currency
+                </label>
+                <div
+                  class="relative w-full"
+                >
+                  <input
+                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    data-testid="select-list__input"
+                    name="currency"
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
+                  <div
+                    class="relative w-full cursor-pointer"
+                  >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                        class="sc-fznyAO ijanzL   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-1-toggle-button"
+                        type="button"
+                      >
+                        Select Currency
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-1-label"
+                        class="sc-fznKkj hupalw"
+                        id="downshift-1-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
+                    <div
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
+                    >
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div
+              class="mt-8"
             >
               <ul
                 class="sc-fzplWN tTUfL"
@@ -74,16 +316,10 @@ exports[`CreateProfile should render 1`] = `
                       class="flex flex-col"
                     >
                       <span
-                        class="mr-5 text-xl font-bold"
+                        class="mr-5 text-xl font-bold text-theme-neutral-dark"
                         data-testid="list-divided-item__label"
                       >
-                        New Profile
-                      </span>
-                      <span
-                        class="text-sm text-theme-neutral-dark font-semibold mt-3 text-theme-neutral-dark"
-                        data-testid="list-divided-item__label--description"
-                      >
-                        Select Profile Image
+                        Dark Theme
                       </span>
                     </div>
                   </div>
@@ -92,280 +328,59 @@ exports[`CreateProfile should render 1`] = `
                     data-testid="list-divided-item__content"
                   >
                     <div
-                      class="flex flex-row mb-4 -mt-2"
+                      class="flex flex-row items-center justify-between"
                     >
-                      <div
-                        class="border-theme-neutral-300 flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded"
+                      <span
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
-                        <button
-                          class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxhCb fxrKLH"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              upload.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
+                        Want to set the wallet to dark mode?
+                      </span>
                       <div
-                        class="bg-theme-neutral-light relative w-24 h-24 rounded"
+                        class="-mt-8"
                       >
-                        <img
-                          alt="random avatar"
-                          class="object-cover rounded"
-                          src="https://randomuser.me/api/portraits/men/3.jpg"
-                        />
-                        <button
-                          class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
-                        >
+                        <label>
+                          <input
+                            class="sc-fznZeY gFDxaj"
+                            type="checkbox"
+                          />
                           <div
-                            class="sc-AxhCb koOqYD"
-                            height="12"
-                            width="12"
+                            class="sc-fzokOt gWpRLq"
                           >
-                            <svg>
-                              close.svg
-                            </svg>
+                            <span
+                              class="sc-fzqBZW jzxcvp"
+                            />
                           </div>
-                        </button>
+                        </label>
                       </div>
                     </div>
                   </div>
                 </li>
               </ul>
-              <div
-                class="flex flex-col space-y-8"
-              >
-                <fieldset
-                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                    data-testid="FormLabel"
-                    for="name"
-                    label="Name"
-                  >
-                    Name
-                  </label>
-                  <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                    data-testid="Input"
-                    name="name"
-                  />
-                </fieldset>
-                <fieldset
-                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                    data-testid="FormLabel"
-                    for="market-provider"
-                    label="Market Provider"
-                  >
-                    Market Provider
-                  </label>
-                  <div
-                    class="w-full"
-                  >
-                    <input
-                      class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
-                      data-testid="select-list__input"
-                      name="market-provider"
-                      readonly=""
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      class="relative w-full cursor-pointer"
-                    >
-                      <div>
-                        <button
-                          aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                          class="sc-fznyAO ijanzL   "
-                          data-testid="select-list__toggle-button"
-                          id="downshift-0-toggle-button"
-                          type="button"
-                        >
-                          Select Market Provider
-                        </button>
-                        <ul
-                          aria-labelledby="downshift-0-label"
-                          class="sc-fznKkj dPXThn"
-                          id="downshift-0-menu"
-                          role="listbox"
-                          tabindex="-1"
-                        />
-                      </div>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
-                      >
-                        <div
-                          class="sc-AxhCb dxfUlj"
-                          height="8"
-                          width="8"
-                        >
-                          <svg>
-                            arrowdown.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="sc-AxiKw iQzisX flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                    data-testid="FormLabel"
-                    for="currency"
-                    label="Currency"
-                  >
-                    Currency
-                  </label>
-                  <div
-                    class="w-full"
-                  >
-                    <input
-                      class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
-                      data-testid="select-list__input"
-                      name="currency"
-                      readonly=""
-                      type="text"
-                      value=""
-                    />
-                    <div
-                      class="relative w-full cursor-pointer"
-                    >
-                      <div>
-                        <button
-                          aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                          class="sc-fznyAO ijanzL   "
-                          data-testid="select-list__toggle-button"
-                          id="downshift-1-toggle-button"
-                          type="button"
-                        >
-                          Select Currency
-                        </button>
-                        <ul
-                          aria-labelledby="downshift-1-label"
-                          class="sc-fznKkj dPXThn"
-                          id="downshift-1-menu"
-                          role="listbox"
-                          tabindex="-1"
-                        />
-                      </div>
-                      <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral-500"
-                      >
-                        <div
-                          class="sc-AxhCb dxfUlj"
-                          height="8"
-                          width="8"
-                        >
-                          <svg>
-                            arrowdown.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <div
-                class="mb-4"
-              >
-                <ul
-                  class="sc-fzplWN tTUfL"
-                  data-testid="list-divided__items"
-                >
-                  <li
-                    class="flex flex-col w-full "
-                    data-testid="list-divided-item__wrapper"
-                  >
-                    <div
-                      class="flex justify-between flex-col items-start"
-                      data-testid="list-divided-item__inner-wrapper"
-                    >
-                      <div
-                        class="flex flex-col"
-                      >
-                        <span
-                          class="mr-5 text-xl font-bold text-theme-neutral-dark"
-                          data-testid="list-divided-item__label"
-                        >
-                          Dark Theme
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      class=""
-                      data-testid="list-divided-item__content"
-                    >
-                      <div
-                        class="flex flex-row justify-between"
-                      >
-                        <span
-                          class="text-theme-neutral-dark w-3/4 -mt-4 text-sm"
-                        >
-                          Want to set the wallet to dark mode?
-                        </span>
-                        <div
-                          class="-mt-11"
-                        >
-                          <label>
-                            <input
-                              class="sc-fznZeY gFDxaj"
-                              type="checkbox"
-                            />
-                            <div
-                              class="sc-fzokOt gWpRLq"
-                            >
-                              <span
-                                class="sc-fzqBZW jzxcvp"
-                              />
-                            </div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="sc-AxirZ bTLcec border-theme-neutral-300"
-                type="horizontal"
-              />
             </div>
             <div
-              class="md:mx-8 xl:mx-16 flex justify-end mx-4 mt-12 mb-16 space-x-3"
+              class="sc-AxirZ bTLcec border-theme-neutral-300"
+              type="horizontal"
+            />
+          </div>
+          <div
+            class="flex justify-end mt-8 mb-16 space-x-3"
+          >
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              type="button"
             >
-              <button
-                class="sc-AxjAm ddJBbC"
-                color="primary"
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                class="sc-AxjAm ddQVWI"
-                color="primary"
-                type="button"
-              >
-                Complete
-              </button>
-            </div>
-          </form>
-        </div>
+              Back
+            </button>
+            <button
+              class="sc-AxjAm ddQVWI"
+              color="primary"
+              type="button"
+            >
+              Complete
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

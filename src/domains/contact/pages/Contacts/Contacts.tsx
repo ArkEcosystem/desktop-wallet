@@ -21,11 +21,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex items-center justify-end space-x-5">
+		<div className="flex justify-end items-top">
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="border-1 border-theme-primary-100 h-12 my-auto border-l" />
+					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 				</>
 			)}
 
@@ -79,60 +79,58 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 	};
 
 	return (
-		<div data-testid="contacts">
-			<div className="bg-theme-neutral-200 flex flex-col min-h-screen -m-5">
-				<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
+		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
+			<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 
-				<div className="flex flex-col flex-1 space-y-5">
-					<div className="bg-theme-background px-10 py-16">
-						<Header
-							title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
-							subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
-							extra={
-								<ContactsHeaderExtra
-									showSearchBar={contacts.length > 0}
-									onSearch={onSearch}
-									onAddContact={() => setCreateIsOpen(true)}
-								/>
-							}
-						/>
-					</div>
-
-					<div className="bg-theme-background flex flex-1 p-10">
-						{contacts.length === 0 && (
-							<div
-								data-testid="contacts__banner"
-								className="flex flex-col items-center justify-center w-full"
-							>
-								<div className="mx-auto">
-									<ContactsBanner height={175} />
-								</div>
-								<div className="mt-8">
-									<span className="text-theme-neutral-dark">
-										{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
-									</span>
-								</div>
-							</div>
-						)}
-
-						{contacts.length > 0 && (
-							<div className="w-full">
-								<Table columns={listColumns} data={contacts}>
-									{(contact: any) => <ContactListItem contact={contact} />}
-								</Table>
-							</div>
-						)}
-					</div>
+			<div className="flex flex-col flex-1 space-y-5">
+				<div className="px-10 py-16 bg-theme-background">
+					<Header
+						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
+						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
+						extra={
+							<ContactsHeaderExtra
+								showSearchBar={contacts.length > 0}
+								onSearch={onSearch}
+								onAddContact={() => setCreateIsOpen(true)}
+							/>
+						}
+					/>
 				</div>
 
-				<CreateContact
-					isOpen={createIsOpen}
-					assets={assets}
-					onCancel={() => setCreateIsOpen(false)}
-					onClose={() => setCreateIsOpen(false)}
-					onSave={handleOnSave}
-				/>
+				<div className="flex items-start flex-1 px-10 py-16 bg-theme-background">
+					{contacts.length === 0 && (
+						<div
+							data-testid="contacts__banner"
+							className="flex flex-col items-center justify-center w-full"
+						>
+							<div className="mx-auto">
+								<ContactsBanner height={175} />
+							</div>
+							<div className="mt-8">
+								<span className="text-theme-neutral-dark">
+									{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
+								</span>
+							</div>
+						</div>
+					)}
+
+					{contacts.length > 0 && (
+						<div className="w-full">
+							<Table columns={listColumns} data={contacts}>
+								{(contact: any) => <ContactListItem contact={contact} />}
+							</Table>
+						</div>
+					)}
+				</div>
 			</div>
+
+			<CreateContact
+				isOpen={createIsOpen}
+				assets={assets}
+				onCancel={() => setCreateIsOpen(false)}
+				onClose={() => setCreateIsOpen(false)}
+				onSave={handleOnSave}
+			/>
 		</div>
 	);
 };
