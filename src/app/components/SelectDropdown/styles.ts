@@ -34,7 +34,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10`};
+		${tw`px-10 border-0`};
 
 		&__label {
 			${tw`py-4 `};
