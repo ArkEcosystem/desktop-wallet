@@ -12,7 +12,7 @@ exports[`LinkCollection should add and remove links 1`] = `
     >
       <div>
         <span
-          class="font-semibold text-lg"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -48,7 +48,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="w-full"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
               >
@@ -115,7 +115,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
               >
@@ -268,7 +268,7 @@ exports[`LinkCollection should render 1`] = `
     >
       <div>
         <span
-          class="font-semibold text-lg"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -306,7 +306,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
     >
       <div>
         <span
-          class="font-semibold text-lg"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -342,7 +342,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="w-full"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
               >
@@ -407,7 +407,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark font-medium"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
               >
@@ -675,7 +675,7 @@ exports[`LinkCollection should toggle open/close of link collection 1`] = `
     >
       <div>
         <span
-          class="font-semibold text-lg"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
