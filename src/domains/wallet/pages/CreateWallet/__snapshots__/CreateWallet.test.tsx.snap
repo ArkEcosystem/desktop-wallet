@@ -8,25 +8,25 @@ exports[`CreateWallet should render 1`] = `
       class="sc-fzoXzr iwOJma"
     >
       <div
-        class="px-4 sm:px-6 lg:px-8"
+        class="sm:px-6 lg:px-8 px-4"
       >
         <div
-          class="relative flex justify-between h-20 md:h-24"
+          class="md:h-24 relative flex justify-between h-20"
         >
           <div
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
+              class="bg-logo flex p-2 mr-4 rounded-lg"
             >
               <img
                 alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
+                class="md:h-8 lg:h-10 h-6"
                 src="ark-logo.png"
               />
             </div>
             <ul
-              class="flex h-20 md:h-24"
+              class="md:h-24 flex h-20"
             />
           </div>
           <div
@@ -37,7 +37,7 @@ exports[`CreateWallet should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -51,10 +51,10 @@ exports[`CreateWallet should render 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="border-theme-neutral-200 h-8 border-r"
             />
             <div
-              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
             >
               <div
                 class="sc-AxjAm bsDiDM"
@@ -67,10 +67,10 @@ exports[`CreateWallet should render 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="border-theme-neutral-200 h-8 border-r"
             />
             <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -83,24 +83,24 @@ exports[`CreateWallet should render 1`] = `
               </div>
             </div>
             <div
-              class="h-8 border-r border-theme-neutral-200"
+              class="border-theme-neutral-200 h-8 border-r"
             />
             <div
               class="p-2 ml-4 text-right"
             >
               <div
-                class="text-xs text-theme-neutral-500"
+                class="text-theme-neutral-500 text-xs"
               >
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-neutral-700"
+                class="text-theme-neutral-700 text-sm font-bold"
               >
                 34,253.75
               </div>
             </div>
             <div
-              class="flex p-1 cusror-pointer"
+              class="cusror-pointer flex p-1"
             >
               <div
                 class="relative"
@@ -111,7 +111,7 @@ exports[`CreateWallet should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxgMl daFHdi -mr-1 border-theme-neutral-300"
+                    class="sc-AxgMl daFHdi border-theme-neutral-300 -mr-1"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -128,10 +128,10 @@ exports[`CreateWallet should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxgMl daFHdi relative bg-theme-primary-600 border-theme-primary-600 rotate-90"
+                    class="sc-AxgMl daFHdi bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
                   >
                     <span
-                      class="text-sm text-theme-background"
+                      class="text-theme-background text-sm"
                     >
                       IO
                     </span>

@@ -13,6 +13,7 @@ import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
 	const history = createMemoryHistory();
+
 	const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 	const updateAppState = jest.fn();
 

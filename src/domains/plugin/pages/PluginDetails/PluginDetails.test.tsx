@@ -1,10 +1,14 @@
+import { createMemoryHistory } from "history";
 import React from "react";
+import { Router } from "react-router-dom";
 import { render } from "testing-library";
 
 import { comments } from "../../data";
 import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
+	const history = createMemoryHistory();
+
 	const ratings = [
 		{
 			rating: 5,
@@ -48,7 +52,11 @@ describe("PluginDetails", () => {
 	};
 
 	it("should render properly", () => {
-		const { asFragment, getByTestId } = render(<PluginDetails pluginData={pluginData} reviewData={reviewData} />);
+		const { asFragment, getByTestId } = render(
+			<Router history={history}>
+				<PluginDetails pluginData={pluginData} reviewData={reviewData} />
+			</Router>,
+		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();
 		expect(getByTestId("plugin-details__comments")).toBeTruthy();
@@ -59,7 +67,9 @@ describe("PluginDetails", () => {
 
 	it("should render properly as installed", () => {
 		const { asFragment, getByTestId } = render(
-			<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
+			<Router history={history}>
+				<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />
+			</Router>,
 		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();

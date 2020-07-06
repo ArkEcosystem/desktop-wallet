@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
+import { Router } from "react-router-dom";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
@@ -68,6 +70,8 @@ const defaultFormValues = {
 	],
 };
 describe("Transaction Send", () => {
+	const history = createMemoryHistory();
+
 	const onCopy = jest.fn();
 
 	it("should render 1st step", async () => {
@@ -131,7 +135,11 @@ describe("Transaction Send", () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />);
+			rendered = render(
+				<Router history={history}>
+					<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
+				</Router>,
+			);
 			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
 		});
 

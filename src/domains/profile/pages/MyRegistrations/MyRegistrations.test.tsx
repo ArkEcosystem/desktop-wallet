@@ -1,9 +1,13 @@
+import { createMemoryHistory } from "history";
 import React from "react";
+import { Router } from "react-router-dom";
 import { act, fireEvent, render } from "testing-library";
 
 import { MyRegistrations } from "./MyRegistrations";
 
 describe("Welcome", () => {
+	const history = createMemoryHistory();
+
 	const registrations = [
 		{
 			type: "business",
@@ -72,14 +76,22 @@ describe("Welcome", () => {
 	];
 
 	it("should render empty state", () => {
-		const { getByTestId, asFragment } = render(<MyRegistrations />);
+		const { getByTestId, asFragment } = render(
+			<Router history={history}>
+				<MyRegistrations />
+			</Router>,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(getByTestId("my-registrations__empty-state")).toBeTruthy();
 	});
 
 	it("should render properly", () => {
-		const { getAllByTestId, asFragment } = render(<MyRegistrations registrations={registrations} />);
+		const { getAllByTestId, asFragment } = render(
+			<Router history={history}>
+				<MyRegistrations registrations={registrations} />
+			</Router>,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(getAllByTestId("business-table__row").length).toEqual(2);
@@ -88,7 +100,11 @@ describe("Welcome", () => {
 	});
 
 	it("should render null for a not knwown type of table", () => {
-		const { asFragment } = render(<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />);
+		const { asFragment } = render(
+			<Router history={history}>
+				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+			</Router>,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -96,7 +112,9 @@ describe("Welcome", () => {
 	it("should handle business dropdown", () => {
 		const handleDropdown = jest.fn();
 		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
+			<Router history={history}>
+				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+			</Router>,
 		);
 
 		const toggle = getAllByTestId("dropdown__toggle");
@@ -118,7 +136,9 @@ describe("Welcome", () => {
 	it("should handle blockchain dropdown", () => {
 		const handleDropdown = jest.fn();
 		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
+			<Router history={history}>
+				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+			</Router>,
 		);
 
 		const toggle = getAllByTestId("dropdown__toggle");
@@ -140,7 +160,9 @@ describe("Welcome", () => {
 	it("should handle delegate dropdown", () => {
 		const handleDropdown = jest.fn();
 		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
+			<Router history={history}>
+				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+			</Router>,
 		);
 
 		const toggle = getAllByTestId("dropdown__toggle");

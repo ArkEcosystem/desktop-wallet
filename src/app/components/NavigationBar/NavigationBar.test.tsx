@@ -9,6 +9,7 @@ import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
+
 	it("should render", () => {
 		const { container, asFragment } = render(
 			<AppContext.Provider>

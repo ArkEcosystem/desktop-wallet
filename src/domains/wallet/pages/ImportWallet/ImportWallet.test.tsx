@@ -1,4 +1,6 @@
+import { createMemoryHistory } from "history";
 import React from "react";
+import { Router } from "react-router-dom";
 import { act, fireEvent, render, RenderResult } from "testing-library";
 
 import { ImportWallet } from "./ImportWallet";
@@ -24,7 +26,13 @@ describe("Wallet / Import", () => {
 	];
 
 	beforeEach(() => {
-		rendered = render(<ImportWallet networks={networks} />);
+		const history = createMemoryHistory();
+
+		rendered = render(
+			<Router history={history}>
+				<ImportWallet networks={networks} />
+			</Router>,
+		);
 	});
 
 	it("should render", () => {

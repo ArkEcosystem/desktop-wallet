@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { createMemoryHistory } from "history";
 import React from "react";
+import { Router } from "react-router-dom";
 import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { contacts } from "../../data";
@@ -25,8 +27,14 @@ const assets = [
 ];
 
 describe("Contacts", () => {
+	const history = createMemoryHistory();
+
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(<Contacts contacts={[]} />);
+		const { asFragment, getByTestId } = render(
+			<Router history={history}>
+				<Contacts contacts={[]} />
+			</Router>,
+		);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -37,7 +45,11 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = render(<Contacts contacts={contacts} />);
+		const { asFragment, getByTestId } = render(
+			<Router history={history}>
+				<Contacts contacts={contacts} />
+			</Router>,
+		);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -52,7 +64,11 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
-		const { getAllByTestId, getByTestId, queryByTestId } = render(<Contacts contacts={[]} assets={assets} />);
+		const { getAllByTestId, getByTestId, queryByTestId } = render(
+			<Router history={history}>
+				<Contacts contacts={[]} assets={assets} />
+			</Router>,
+		);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));
 

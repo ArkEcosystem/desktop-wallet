@@ -1,20 +1,31 @@
 import { translations as pluginTranslations } from "domains/plugin/i18n";
+import { createMemoryHistory } from "history";
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
 import { act, fireEvent, render } from "testing-library";
 
 import { Settings } from "./Settings";
 
 describe("Settings", () => {
+	const history = createMemoryHistory();
+
 	it("should render", () => {
-		const { container, asFragment } = render(<Settings />, { wrapper: MemoryRouter });
+		const { container, asFragment } = render(
+			<Router history={history}>
+				<Settings />
+			</Router>,
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render peer settings", () => {
-		const { container, asFragment, getByText } = render(<Settings />, { wrapper: MemoryRouter });
+		const { container, asFragment, getByText } = render(
+			<Router history={history}>
+				<Settings />
+			</Router>,
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Peer"));
@@ -25,7 +36,11 @@ describe("Settings", () => {
 	});
 
 	it("should render plugins settings", () => {
-		const { container, asFragment, getByText, getByTestId } = render(<Settings />, { wrapper: MemoryRouter });
+		const { container, asFragment, getByText, getByTestId } = render(
+			<Router history={history}>
+				<Settings />
+			</Router>,
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Plugins"));

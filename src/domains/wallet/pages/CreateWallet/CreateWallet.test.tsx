@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
+import { Router } from "react-router-dom";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
+	const history = createMemoryHistory();
+
 	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
 	const networks = [
 		{ name: "ARK", icon: "Ark" },
@@ -116,14 +120,16 @@ describe("CreateWallet", () => {
 
 		await act(async () => {
 			rendered = render(
-				<CreateWallet
-					onSubmit={onSubmit}
-					onCopy={onCopy}
-					onDownload={onDownload}
-					mnemonic={mnemonic}
-					networks={networks}
-					skipMnemonicVerification={true}
-				/>,
+				<Router history={history}>
+					<CreateWallet
+						onSubmit={onSubmit}
+						onCopy={onCopy}
+						onDownload={onDownload}
+						mnemonic={mnemonic}
+						networks={networks}
+						skipMnemonicVerification={true}
+					/>
+				</Router>,
 			);
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		});
