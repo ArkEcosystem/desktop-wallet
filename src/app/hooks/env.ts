@@ -25,7 +25,7 @@ export const useActiveWallet = () => {
 	return React.useMemo(() => {
 		if (profile) {
 			try {
-				return profile.wallets().findByAddress(address);
+				return profile.wallets().findById(id);
 			} catch {
 				return undefined;
 			}
