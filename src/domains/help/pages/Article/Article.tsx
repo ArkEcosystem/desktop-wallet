@@ -35,8 +35,8 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 	};
 
 	return (
-		<NavWrapper className="top-2 sticky float-right w-32">
-			<div className="text-theme-neutral-400 border-l-1 border-theme-neutral-300 pl-3 text-xs font-bold">
+		<NavWrapper className="sticky float-right w-32 top-2">
+			<div className="pl-3 text-xs font-bold text-theme-neutral-400 border-l-1 border-theme-neutral-300">
 				Fast navigation
 			</div>
 			<ul>
@@ -78,14 +78,14 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 								<div className="my-auto mr-2">
 									<Icon name={categoryIcon} />
 								</div>
-								<div className="font-sm text-theme-neutral-700 font-bold">{category}</div>
+								<div className="font-bold font-sm text-theme-neutral-700">{category}</div>
 							</div>
 							{views && (
 								<div className="flex ml-5">
 									<div className="my-auto mr-2">
 										<Icon name="EyeTag" width={18} height={18} />
 									</div>
-									<div className="font-sm text-theme-neutral-700 font-bold">{views}</div>
+									<div className="font-bold font-sm text-theme-neutral-700">{views}</div>
 								</div>
 							)}
 						</div>
@@ -97,14 +97,14 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 									return (
 										<div className="mt-8" id={section.id} key={index}>
 											<h3 className="text-lg">{section.title}</h3>
-											<p className="text-theme-neutral-700 whitespace-pre-line">{section.body}</p>
+											<p className="whitespace-pre-line text-theme-neutral-700">{section.body}</p>
 										</div>
 									);
 								})}
 						</div>
 					</div>
 				</div>
-				<div className="border-t-1 border-theme-neutral-300 px-12 py-10 bg-white">
+				<div className="px-12 py-10 bg-white border-t-1 border-theme-neutral-300">
 					<div className="max-w-xl mx-auto">
 						<div className="flex">
 							<div className="w-3/4">

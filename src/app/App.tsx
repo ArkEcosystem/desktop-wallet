@@ -21,7 +21,7 @@ const Main = () => {
 
 	React.useLayoutEffect(() => {
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {
-			buildMockEnvironment(env);
+			buildMockEnvironment(env!);
 		}
 	}, [env]);
 

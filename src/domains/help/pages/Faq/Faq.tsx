@@ -15,20 +15,20 @@ type FaqProps = {
 };
 
 const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => (
-	<li className="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer">
+	<li className="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0">
 		<a
 			title={title}
 			href={path}
-			className="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-6 -mx-3 rounded-md"
+			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
 		>
 			<div>
-				<div className="text-theme-neutral-800 pt-1">
+				<div className="pt-1 text-theme-neutral-800">
 					<Icon name="Article" width={16} height={16} />
 				</div>
 			</div>
 			<div>
-				<div className="text-theme-neutral-800 mb-2 ml-3 text-lg font-bold">{title}</div>
-				<div className="text-theme-neutral-600 ml-3">{description}</div>
+				<div className="mb-2 ml-3 text-lg font-bold text-theme-neutral-800">{title}</div>
+				<div className="ml-3 text-theme-neutral-600">{description}</div>
 			</div>
 		</a>
 	</li>
@@ -39,7 +39,7 @@ export const Faq = ({ articles }: FaqProps) => {
 	return (
 		<div>
 			<div className="bg-theme-neutral-100">
-				<div className="px-13 py-16 mb-5 bg-white">
+				<div className="py-16 mb-5 bg-white px-13">
 					<Header
 						title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
 						subtitle={t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}
@@ -47,11 +47,11 @@ export const Faq = ({ articles }: FaqProps) => {
 							<div className="flex items-center justify-end space-x-8">
 								<Icon
 									name="Search"
-									className="text-theme-primary-100 cursor-pointer"
+									className="cursor-pointer text-theme-primary-100"
 									width={20}
 									height={20}
 								/>
-								<div className="border-1 border-theme-primary-100 h-10 my-auto border-l" />
+								<div className="h-10 my-auto border-l border-1 border-theme-primary-100" />
 								<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
 							</div>
 						}

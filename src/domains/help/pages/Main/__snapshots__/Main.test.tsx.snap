@@ -7,7 +7,7 @@ exports[`SupportPage should render empty main support page 1`] = `
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -38,14 +38,14 @@ exports[`SupportPage should render empty main support page 1`] = `
         </div>
       </div>
       <div
-        class="p-13 mb-5 bg-white"
+        class="mb-5 bg-white p-13"
       >
         <div
           class="flex flex-row"
         />
       </div>
       <div
-        class="px-14 py-10 mb-10 bg-white"
+        class="py-10 mb-10 bg-white px-14"
       >
         <div
           class="flex flex-row"
@@ -88,7 +88,7 @@ exports[`SupportPage should render main support page with categories 1`] = `
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -119,17 +119,17 @@ exports[`SupportPage should render main support page with categories 1`] = `
         </div>
       </div>
       <div
-        class="p-13 mb-5 bg-white"
+        class="mb-5 bg-white p-13"
       >
         <div
           class="flex flex-row"
         >
           <a
-            class="border-r-1 last:border-r-0 border-theme-neutral-200 flex flex-row w-64 cursor-pointer"
+            class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
             title="Profile"
           >
             <div
-              class="px-7 hover:shadow-xl flex flex-row w-full p-5 mx-2 bg-white rounded-md"
+              class="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md"
             >
               <div
                 class="w-2/5 my-auto"
@@ -156,12 +156,12 @@ exports[`SupportPage should render main support page with categories 1`] = `
                 class="flex-auto my-auto"
               >
                 <div
-                  class="text-theme-neutral-800 font-bold"
+                  class="font-bold text-theme-neutral-800"
                 >
                   Profile
                 </div>
                 <div
-                  class="text-theme-neutral-500 text-sm"
+                  class="text-sm text-theme-neutral-500"
                 >
                   38 topics
                 </div>
@@ -169,11 +169,11 @@ exports[`SupportPage should render main support page with categories 1`] = `
             </div>
           </a>
           <a
-            class="border-r-1 last:border-r-0 border-theme-neutral-200 flex flex-row w-64 cursor-pointer"
+            class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
             title="Portfolio"
           >
             <div
-              class="px-7 hover:shadow-xl flex flex-row w-full p-5 mx-2 bg-white rounded-md"
+              class="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md"
             >
               <div
                 class="w-2/5 my-auto"
@@ -200,12 +200,12 @@ exports[`SupportPage should render main support page with categories 1`] = `
                 class="flex-auto my-auto"
               >
                 <div
-                  class="text-theme-neutral-800 font-bold"
+                  class="font-bold text-theme-neutral-800"
                 >
                   Portfolio
                 </div>
                 <div
-                  class="text-theme-neutral-500 text-sm"
+                  class="text-sm text-theme-neutral-500"
                 >
                   9 topics
                 </div>
@@ -213,11 +213,11 @@ exports[`SupportPage should render main support page with categories 1`] = `
             </div>
           </a>
           <a
-            class="border-r-1 last:border-r-0 border-theme-neutral-200 flex flex-row w-64 cursor-pointer"
+            class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
             title="Plugins"
           >
             <div
-              class="px-7 hover:shadow-xl flex flex-row w-full p-5 mx-2 bg-white rounded-md"
+              class="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md"
             >
               <div
                 class="w-2/5 my-auto"
@@ -244,12 +244,12 @@ exports[`SupportPage should render main support page with categories 1`] = `
                 class="flex-auto my-auto"
               >
                 <div
-                  class="text-theme-neutral-800 font-bold"
+                  class="font-bold text-theme-neutral-800"
                 >
                   Plugins
                 </div>
                 <div
-                  class="text-theme-neutral-500 text-sm"
+                  class="text-sm text-theme-neutral-500"
                 >
                   106 topics
                 </div>
@@ -257,11 +257,11 @@ exports[`SupportPage should render main support page with categories 1`] = `
             </div>
           </a>
           <a
-            class="border-r-1 last:border-r-0 border-theme-neutral-200 flex flex-row w-64 cursor-pointer"
+            class="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
             title="Exchanges"
           >
             <div
-              class="px-7 hover:shadow-xl flex flex-row w-full p-5 mx-2 bg-white rounded-md"
+              class="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md"
             >
               <div
                 class="w-2/5 my-auto"
@@ -288,12 +288,12 @@ exports[`SupportPage should render main support page with categories 1`] = `
                 class="flex-auto my-auto"
               >
                 <div
-                  class="text-theme-neutral-800 font-bold"
+                  class="font-bold text-theme-neutral-800"
                 >
                   Exchanges
                 </div>
                 <div
-                  class="text-theme-neutral-500 text-sm"
+                  class="text-sm text-theme-neutral-500"
                 >
                   28 topics
                 </div>
@@ -303,7 +303,7 @@ exports[`SupportPage should render main support page with categories 1`] = `
         </div>
       </div>
       <div
-        class="px-14 py-10 mb-10 bg-white"
+        class="py-10 mb-10 bg-white px-14"
       >
         <div
           class="flex flex-row"
@@ -346,7 +346,7 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -377,14 +377,14 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
         </div>
       </div>
       <div
-        class="p-13 mb-5 bg-white"
+        class="mb-5 bg-white p-13"
       >
         <div
           class="flex flex-row"
         />
       </div>
       <div
-        class="px-14 py-10 mb-10 bg-white"
+        class="py-10 mb-10 bg-white px-14"
       >
         <div
           class="flex flex-row"
@@ -397,16 +397,16 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
             </h2>
             <ul>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to register an account?"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -427,16 +427,16 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to enter your account"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -457,16 +457,16 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How can I change my personal data if I do not have access to my account (forgot my password) and to my mail?"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -487,16 +487,16 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="If you need to make changes to the data entered during the passage of verification, where to apply, how to issue a request?"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -517,16 +517,16 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Can I delete my account"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -578,7 +578,7 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -609,14 +609,14 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
         </div>
       </div>
       <div
-        class="p-13 mb-5 bg-white"
+        class="mb-5 bg-white p-13"
       >
         <div
           class="flex flex-row"
         />
       </div>
       <div
-        class="px-14 py-10 mb-10 bg-white"
+        class="py-10 mb-10 bg-white px-14"
       >
         <div
           class="flex flex-row"
@@ -645,16 +645,16 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
             </h2>
             <ul>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to withdraw from wallet"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -675,16 +675,16 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to Make Internal Transfer within wallet"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -705,16 +705,16 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Missing Withdrawals"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -735,16 +735,16 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Withdrawal to a Wrong Address"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -765,16 +765,16 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to Resume the Withdrawal Function"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -810,7 +810,7 @@ exports[`SupportPage should render main support page with popular articles 1`] =
       class="bg-theme-neutral-100"
     >
       <div
-        class="px-13 py-16 mb-5 bg-white"
+        class="py-16 mb-5 bg-white px-13"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -841,14 +841,14 @@ exports[`SupportPage should render main support page with popular articles 1`] =
         </div>
       </div>
       <div
-        class="p-13 mb-5 bg-white"
+        class="mb-5 bg-white p-13"
       >
         <div
           class="flex flex-row"
         />
       </div>
       <div
-        class="px-14 py-10 mb-10 bg-white"
+        class="py-10 mb-10 bg-white px-14"
       >
         <div
           class="flex flex-row"
@@ -869,16 +869,16 @@ exports[`SupportPage should render main support page with popular articles 1`] =
             </h2>
             <ul>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to delete YubiKey for Two-factor Authentication (2FA)"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -899,16 +899,16 @@ exports[`SupportPage should render main support page with popular articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Using a YubiKey for Two-Factor Authentication (2FA)"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -929,16 +929,16 @@ exports[`SupportPage should render main support page with popular articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="2FA Code Error"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -959,16 +959,16 @@ exports[`SupportPage should render main support page with popular articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="How to Reset SMS Authentication"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"
@@ -989,16 +989,16 @@ exports[`SupportPage should render main support page with popular articles 1`] =
                 </a>
               </li>
               <li
-                class="border-b-1 border-theme-neutral-300 last:border-b-0 border-dotted cursor-pointer"
+                class="border-dotted cursor-pointer border-b-1 border-theme-neutral-300 last:border-b-0"
               >
                 <a
-                  class="border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 flex px-2 py-4 -mx-3 rounded-md"
+                  class="flex px-2 py-4 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
                   href="/"
                   title="Supported SMS countries Not Receiving SMS Auth Codes"
                 >
                   <div>
                     <div
-                      class="text-theme-neutral-800 pt-1"
+                      class="pt-1 text-theme-neutral-800"
                     >
                       <div
                         class="sc-AxiKw bctdez"

@@ -22,7 +22,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 	return (
 		<div data-testid="plugin-details__header">
-			<section className="bg-theme-neutral-100 h-full -m-5">
+			<section className="h-full -m-5 bg-theme-neutral-100">
 				<PluginHeader
 					author={author}
 					category={category}
@@ -35,7 +35,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 				<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
 
-				<div className="bg-theme-background flex p-10 mt-5">
+				<div className="flex p-10 mt-5 bg-theme-background">
 					<div className="flex flex-col">
 						<div className="flex items-center justify-between">
 							<h2 className="mb-0">Reviews ARK Explorer</h2>
@@ -50,7 +50,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					</div>
 
 					<div
-						className="border-theme-neutral-200 rounded-xl p-8 mb-auto ml-32 border-2"
+						className="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
 						data-testid="plugin-details__review-box"
 					>
 						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />

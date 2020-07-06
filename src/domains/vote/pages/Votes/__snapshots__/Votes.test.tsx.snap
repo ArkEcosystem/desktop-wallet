@@ -6,7 +6,7 @@ exports[`Votes should render 1`] = `
     data-testid="MyVotes"
   >
     <div
-      class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
+      class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     >
       <div
         class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
@@ -38,7 +38,7 @@ exports[`Votes should render 1`] = `
         class="flex flex-col flex-1 space-y-5"
       >
         <div
-          class="bg-theme-background px-10 py-16"
+          class="px-10 py-16 bg-theme-background"
         >
           <div
             class="flex items-end justify-between bg-theme-background"
@@ -267,7 +267,7 @@ exports[`Votes should render 1`] = `
                           class="sc-AxhCb kyaIar mr-3"
                         />
                         <span
-                          class="text-theme-neutral-400 text-base font-semibold"
+                          class="text-base font-semibold text-theme-neutral-400"
                         >
                           Select address
                         </span>
@@ -289,7 +289,7 @@ exports[`Votes should render 1`] = `
           </div>
         </div>
         <div
-          class="bg-theme-background relative p-10"
+          class="relative p-10 bg-theme-background"
         >
           <div
             class="flex flex-col space-y-5"
@@ -321,7 +321,7 @@ exports[`Votes should select a cryptoasset 1`] = `
     data-testid="MyVotes"
   >
     <div
-      class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
+      class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     >
       <div
         class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
@@ -353,7 +353,7 @@ exports[`Votes should select a cryptoasset 1`] = `
         class="flex flex-col flex-1 space-y-5"
       >
         <div
-          class="bg-theme-background px-10 py-16"
+          class="px-10 py-16 bg-theme-background"
         >
           <div
             class="flex items-end justify-between bg-theme-background"
@@ -595,7 +595,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                           class="sc-AxhCb kyaIar mr-3"
                         />
                         <span
-                          class="text-theme-neutral-400 text-base font-semibold"
+                          class="text-base font-semibold text-theme-neutral-400"
                         >
                           Select address
                         </span>
@@ -617,7 +617,7 @@ exports[`Votes should select a cryptoasset 1`] = `
           </div>
         </div>
         <div
-          class="bg-theme-background relative p-10"
+          class="relative p-10 bg-theme-background"
         >
           <div
             data-testid="AddressList"
@@ -1325,7 +1325,7 @@ exports[`Votes should select a delegate 1`] = `
     data-testid="MyVotes"
   >
     <div
-      class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
+      class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     >
       <div
         class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
@@ -1357,7 +1357,7 @@ exports[`Votes should select a delegate 1`] = `
         class="flex flex-col flex-1 space-y-5"
       >
         <div
-          class="bg-theme-background px-10 py-16"
+          class="px-10 py-16 bg-theme-background"
         >
           <div
             class="flex items-end justify-between bg-theme-background"
@@ -1639,7 +1639,7 @@ exports[`Votes should select a delegate 1`] = `
           </div>
         </div>
         <div
-          class="bg-theme-background relative p-10"
+          class="relative p-10 bg-theme-background"
         >
           <div
             data-testid="DelegateList"
@@ -2488,7 +2488,7 @@ exports[`Votes should select address 1`] = `
     data-testid="MyVotes"
   >
     <div
-      class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
+      class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
     >
       <div
         class="flex items-center space-x-2 p-5 font-semibold text-theme-neutral-700"
@@ -2520,7 +2520,7 @@ exports[`Votes should select address 1`] = `
         class="flex flex-col flex-1 space-y-5"
       >
         <div
-          class="bg-theme-background px-10 py-16"
+          class="px-10 py-16 bg-theme-background"
         >
           <div
             class="flex items-end justify-between bg-theme-background"
@@ -2802,7 +2802,7 @@ exports[`Votes should select address 1`] = `
           </div>
         </div>
         <div
-          class="bg-theme-background relative p-10"
+          class="relative p-10 bg-theme-background"
         >
           <div
             data-testid="DelegateList"
