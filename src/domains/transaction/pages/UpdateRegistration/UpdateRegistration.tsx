@@ -5,7 +5,6 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { NavigationBar } from "app/components/NavigationBar";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -291,8 +290,6 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 
 	return (
 		<div data-testid="UpdateRegistration">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="max-w-xl py-16 mx-auto">
 				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

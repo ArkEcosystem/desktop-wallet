@@ -5,7 +5,6 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { NavigationBar } from "app/components/NavigationBar";
 import { SelectAsset } from "app/components/SelectAsset";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
@@ -392,8 +391,6 @@ export const Registration = ({
 
 	return (
 		<div data-testid="Registration">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="max-w-xl py-16 mx-auto">
 				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

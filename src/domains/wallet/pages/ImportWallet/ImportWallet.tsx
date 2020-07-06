@@ -4,7 +4,6 @@ import { CardControl } from "app/components/Card";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { NavigationBar } from "app/components/NavigationBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
@@ -56,8 +55,6 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="py-16">
 				<Tabs activeId={activeIndex}>
 					<TabPanel tabId={1}>

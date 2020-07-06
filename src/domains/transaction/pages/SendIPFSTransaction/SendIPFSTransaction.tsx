@@ -4,7 +4,6 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { NavigationBar } from "app/components/NavigationBar";
 import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -168,8 +167,6 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="max-w-xl py-16 mx-auto">
 				<Form context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>

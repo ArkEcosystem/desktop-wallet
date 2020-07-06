@@ -7,7 +7,6 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { NavigationBar } from "app/components/NavigationBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
@@ -226,7 +225,6 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 			<div className="max-w-xl py-16 mx-auto">
 				<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
 					<Tabs activeId={activeTab}>

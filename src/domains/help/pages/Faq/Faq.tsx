@@ -1,7 +1,6 @@
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
-import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -39,8 +38,6 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="bg-theme-neutral-100">
 				<div className="px-13 py-16 mb-5 bg-white">
 					<Header

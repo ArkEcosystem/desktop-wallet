@@ -3,7 +3,6 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
-import { NavigationBar } from "app/components/NavigationBar";
 import { BestPlugins } from "domains/plugin/components/BestPlugins";
 import { FeaturedPlugins } from "domains/plugin/components/FeaturedPlugins";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
@@ -165,8 +164,6 @@ export const PluginManager = () => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div data-testid="PluginManager">
 				<InstallPlugin
 					isOpen={installPlugin}

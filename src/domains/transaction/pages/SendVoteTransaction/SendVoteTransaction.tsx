@@ -4,7 +4,6 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
-import { NavigationBar } from "app/components/NavigationBar";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -193,8 +192,6 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 
 	return (
 		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
 			<div className="max-w-xl py-16 mx-auto">
 				<Form context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>
