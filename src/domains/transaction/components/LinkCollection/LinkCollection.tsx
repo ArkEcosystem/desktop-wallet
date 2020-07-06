@@ -3,7 +3,7 @@ import { FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputGroup } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
-import { SelectDropdown } from "app/components/SelectDropdown";
+import { Select } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -123,29 +123,7 @@ export const LinkCollection = ({
 									<FormLabel label={`Add ${typeName}`} />
 								</div>
 								<InputGroup className="flex flex-1">
-									<SelectDropdown
-										option={(type: Type) => {
-											return <div className="p-2 border-b link">{type.label}</div>;
-										}}
-										toggle={(selected: Type) => {
-											if (selected) {
-												return (
-													<div className="flex items-center flex-inline">
-														<div>{selected.label}</div>
-													</div>
-												);
-											}
-
-											return (
-												<div className="flex items-center flex-inline">
-													<div className="font-semibold text-theme-neutral-800">&nbsp;</div>
-												</div>
-											);
-										}}
-										options={types}
-										className="w-full"
-										onChange={(selected: Type) => setSelectedType(selected)}
-									/>
+									<Select options={types} onChange={(selected: any) => setSelectedType(selected)} />
 								</InputGroup>
 							</div>
 

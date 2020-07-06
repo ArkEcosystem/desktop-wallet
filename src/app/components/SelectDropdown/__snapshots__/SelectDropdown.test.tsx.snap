@@ -1,360 +1,361 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectDropdown should close if clicked outside 1`] = `
-<div>
-  <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="downshift-3-label"
-    class="relative undefined"
-    role="combobox"
-  >
-    <label
-      for="dropdown-select"
-      id="downshift-3-label"
-    >
-      <div
-        class="relative flex items-center w-full flex-inline"
-      >
-        <div
-          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
-        >
-          <div
-            class="flex items-center flex-inline"
-          >
-            <div
-              class="font-semibold text-theme-neutral-800"
-            >
-              Select Option
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-        >
-          <div
-            class=""
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </label>
-    <div
-      class="relative btn-group"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-3-label"
-        autocomplete="off"
-        id="downshift-3-input"
-        readonly=""
-        type="hidden"
-        value=""
-      />
-      <button
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="hidden dropdown-toggle"
-        data-testid="select-dropdown__toggle"
-        data-toggle="dropdown"
-        id="dropdown-select"
-        type="button"
-      />
-    </div>
-  </div>
-</div>
-`;
-
 exports[`SelectDropdown should render 1`] = `
 <div>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="downshift-0-label"
-    class="relative undefined"
-    role="combobox"
+    class="w-full"
   >
-    <label
-      for="dropdown-select"
-      id="downshift-0-label"
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
     >
-      <div
-        class="relative flex items-center w-full flex-inline"
-      >
-        <div
-          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          class="sc-fzozJi gnBvXI   "
+          data-testid="select-list__toggle-button"
+          id="downshift-0-toggle-button"
+          type="button"
         />
+        <ul
+          aria-labelledby="downshift-0-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-0-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
+      <div
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
+      >
         <div
-          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
         >
-          <div
-            class=""
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </div>
+          <svg>
+            arrowdown.svg
+          </svg>
         </div>
       </div>
-    </label>
-    <div
-      class="relative btn-group"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-0-label"
-        autocomplete="off"
-        id="downshift-0-input"
-        readonly=""
-        type="hidden"
-        value=""
-      />
-      <button
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="hidden dropdown-toggle"
-        data-testid="select-dropdown__toggle"
-        data-toggle="dropdown"
-        id="dropdown-select"
-        type="button"
-      />
     </div>
   </div>
 </div>
 `;
 
-exports[`SelectDropdown should render with custom toggle and option templates 1`] = `
+exports[`SelectDropdown should render disabled 1`] = `
 <div>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="downshift-2-label"
-    class="relative undefined"
-    role="combobox"
+    class="w-full"
   >
-    <label
-      for="dropdown-select"
-      id="downshift-2-label"
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
     >
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-2-label downshift-2-toggle-button"
+          class="sc-fzozJi gnBvXI   "
+          data-testid="select-list__toggle-button"
+          disabled=""
+          id="downshift-2-toggle-button"
+          type="button"
+        />
+        <ul
+          aria-labelledby="downshift-2-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-2-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
       <div
-        class="relative flex items-center w-full flex-inline"
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
       >
         <div
-          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
         >
-          <div
-            class="flex items-center flex-inline"
-          >
-            <div
-              class="font-semibold text-theme-neutral-800"
-            >
-              Select Option
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-        >
-          <div
-            class=""
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </div>
+          <svg>
+            arrowdown.svg
+          </svg>
         </div>
       </div>
-    </label>
-    <div
-      class="relative btn-group"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-2-label"
-        autocomplete="off"
-        id="downshift-2-input"
-        readonly=""
-        type="hidden"
-        value=""
-      />
-      <button
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="hidden dropdown-toggle"
-        data-testid="select-dropdown__toggle"
-        data-toggle="dropdown"
-        id="dropdown-select"
-        type="button"
-      />
     </div>
   </div>
 </div>
 `;
 
-exports[`SelectDropdown should render with initial value 1`] = `
+exports[`SelectDropdown should render invalid 1`] = `
 <div>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="downshift-1-label"
-    class="relative undefined"
-    role="combobox"
+    class="w-full"
   >
-    <label
-      for="dropdown-select"
-      id="downshift-1-label"
+    <input
+      aria-invalid="true"
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
     >
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-1-label downshift-1-toggle-button"
+          class="sc-fzozJi gnBvXI   is-invalid"
+          data-testid="select-list__toggle-button"
+          id="downshift-1-toggle-button"
+          type="button"
+        />
+        <ul
+          aria-labelledby="downshift-1-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-1-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
       <div
-        class="relative flex items-center w-full flex-inline"
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
       >
         <div
-          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
         >
-          <div
-            class="flex items-center flex-inline"
-          >
-            <div
-              class="font-semibold text-theme-neutral-800"
-            >
-              Select Option
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-        >
-          <div
-            class=""
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </div>
+          <svg>
+            arrowdown.svg
+          </svg>
         </div>
       </div>
-    </label>
-    <div
-      class="relative btn-group"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-1-label"
-        autocomplete="off"
-        id="downshift-1-input"
-        readonly=""
-        type="hidden"
-        value="1"
-      />
-      <button
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="hidden dropdown-toggle"
-        data-testid="select-dropdown__toggle"
-        data-toggle="dropdown"
-        id="dropdown-select"
-        type="button"
-      />
     </div>
   </div>
 </div>
 `;
 
-exports[`SelectDropdown should render without option content 1`] = `
+exports[`SelectDropdown should render with empty options 1`] = `
 <div>
   <div
-    aria-expanded="false"
-    aria-haspopup="listbox"
-    aria-labelledby="downshift-7-label"
-    class="relative undefined"
-    role="combobox"
+    class="w-full"
   >
-    <label
-      for="dropdown-select"
-      id="downshift-7-label"
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
     >
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-5-label downshift-5-toggle-button"
+          class="sc-fzozJi gnBvXI   "
+          data-testid="select-list__toggle-button"
+          id="downshift-5-toggle-button"
+          type="button"
+        />
+        <ul
+          aria-labelledby="downshift-5-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-5-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
       <div
-        class="relative flex items-center w-full flex-inline"
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
       >
         <div
-          class="flex w-full px-4 py-3 pr-12 overflow-hidden border rounded cursor-pointer m-h-20 shadow-sm bg-theme-background border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hover:outline-none hover:border-theme-primary"
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
         >
-          <div
-            class="flex items-center flex-inline"
-          >
-            <div
-              class="font-semibold text-theme-neutral-800"
-            >
-              Select Option
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-12 px-4 py-4 -ml-12 text-lg pointer-events-none text-theme-neutral-dark"
-        >
-          <div
-            class=""
-          >
-            <div
-              class="sc-AxjAm cpczEI"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </div>
+          <svg>
+            arrowdown.svg
+          </svg>
         </div>
       </div>
-    </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with initial default value 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value="3"
+    />
     <div
-      class="relative btn-group"
+      class="relative w-full cursor-pointer"
     >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-7-label"
-        autocomplete="off"
-        id="downshift-7-input"
-        readonly=""
-        type="hidden"
-        value=""
-      />
-      <button
-        aria-expanded="false"
-        aria-haspopup="true"
-        class="hidden dropdown-toggle"
-        data-testid="select-dropdown__toggle"
-        data-toggle="dropdown"
-        id="dropdown-select"
-        type="button"
-      />
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-3-label downshift-3-toggle-button"
+          class="sc-fzozJi gnBvXI  is-selected "
+          data-testid="select-list__toggle-button"
+          id="downshift-3-toggle-button"
+          type="button"
+        >
+          Option 3
+        </button>
+        <ul
+          aria-labelledby="downshift-3-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-3-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
+      <div
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
+      >
+        <div
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
+        >
+          <svg>
+            arrowdown.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with options values as numbers 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
+    >
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-6-label downshift-6-toggle-button"
+          class="sc-fzozJi gnBvXI   "
+          data-testid="select-list__toggle-button"
+          id="downshift-6-toggle-button"
+          type="button"
+        />
+        <ul
+          aria-labelledby="downshift-6-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-6-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
+      <div
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
+      >
+        <div
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
+        >
+          <svg>
+            arrowdown.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with wrong default value 1`] = `
+<div>
+  <div
+    class="w-full"
+  >
+    <input
+      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      data-testid="select-list__input"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <div
+      class="relative w-full cursor-pointer"
+    >
+      <div>
+        <button
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-4-label downshift-4-toggle-button"
+          class="sc-fzozJi gnBvXI   "
+          data-testid="select-list__toggle-button"
+          id="downshift-4-toggle-button"
+          type="button"
+        />
+        <ul
+          aria-labelledby="downshift-4-label"
+          class="sc-fzoLsD jQrIPL"
+          id="downshift-4-menu"
+          role="listbox"
+          tabindex="-1"
+        />
+      </div>
+      <div
+        class="sc-AxiKw sc-AxhUy KqhRN w-10 pointer-events-none text-theme-neutral-500"
+      >
+        <div
+          class="sc-AxjAm dKDmBo"
+          height="8"
+          width="8"
+        >
+          <svg>
+            arrowdown.svg
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </div>
