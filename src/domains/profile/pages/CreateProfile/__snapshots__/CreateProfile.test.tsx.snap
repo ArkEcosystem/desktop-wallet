@@ -29,20 +29,20 @@ exports[`CreateProfile should render 1`] = `
         class="max-w-lg mx-auto xl:max-w-xl"
       >
         <h1
-          class="mx-4 md:mx-8 xl:mx-16"
+          class="mb-0 text-3xl font-bold md:text-4xl"
         >
           Create Profile
         </h1>
         <div
-          class="mx-4 text-theme-neutral-dark md:mx-8 xl:mx-16"
+          class="text-theme-neutral-dark"
         >
           Create a new Profile or login with your MarketSquare account to get started.
         </div>
         <div
-          class="mx-4 mt-8 md:mx-8 xl:mx-16"
+          class="mt-8 pb-4"
         >
           <button
-            class="sc-AxjAm ddQVWI w-full mb-6"
+            class="sc-AxjAm ddQVWI w-full"
             color="primary"
             type="button"
           >
@@ -61,18 +61,18 @@ exports[`CreateProfile should render 1`] = `
               Login with MarketSquare
             </span>
           </button>
-          <div
-            class="sc-AxirZ cLgKLC border-theme-neutral-300"
-            type="horizontal"
-          />
         </div>
+        <div
+          class="sc-AxirZ cLgKLC border-theme-neutral-300"
+          type="horizontal"
+        />
         <form
-          class="-mt-6"
+          class="mt-4"
           data-testid="Form"
           id="create-profile__form"
         >
           <div
-            class="mx-4 md:mx-8 xl:mx-16"
+            class=""
           >
             <ul
               class="sc-fzplWN tTUfL"
@@ -90,13 +90,13 @@ exports[`CreateProfile should render 1`] = `
                     class="flex flex-col"
                   >
                     <span
-                      class="mr-5 text-xl font-bold"
+                      class="mr-5 text-2xl font-semibold"
                       data-testid="list-divided-item__label"
                     >
                       New Profile
                     </span>
                     <span
-                      class="text-sm text-theme-neutral-dark font-semibold mt-3 text-theme-neutral-dark"
+                      class="text-sm text-theme-neutral-dark my-1 text-theme-neutral-dark"
                       data-testid="list-divided-item__label--description"
                     >
                       Select Profile Image
@@ -108,7 +108,7 @@ exports[`CreateProfile should render 1`] = `
                   data-testid="list-divided-item__content"
                 >
                   <div
-                    class="flex flex-row mb-4 -mt-2"
+                    class="flex flex-row mb-8 mt-4"
                   >
                     <div
                       class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
@@ -155,7 +155,7 @@ exports[`CreateProfile should render 1`] = `
               </li>
             </ul>
             <div
-              class="flex flex-col space-y-8"
+              class="relative space-y-8"
             >
               <fieldset
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -298,7 +298,7 @@ exports[`CreateProfile should render 1`] = `
               </fieldset>
             </div>
             <div
-              class="mb-4"
+              class="mt-8"
             >
               <ul
                 class="sc-fzplWN tTUfL"
@@ -328,15 +328,15 @@ exports[`CreateProfile should render 1`] = `
                     data-testid="list-divided-item__content"
                   >
                     <div
-                      class="flex flex-row justify-between"
+                      class="flex flex-row justify-between items-center"
                     >
                       <span
-                        class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
                         Want to set the wallet to dark mode?
                       </span>
                       <div
-                        class="-mt-11"
+                        class="-mt-8"
                       >
                         <label>
                           <input
@@ -363,7 +363,7 @@ exports[`CreateProfile should render 1`] = `
             />
           </div>
           <div
-            class="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16"
+            class="flex justify-end mt-8 mb-16 space-x-3"
           >
             <button
               class="sc-AxjAm ddJBbC"
