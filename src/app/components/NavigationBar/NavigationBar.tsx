@@ -5,7 +5,7 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
@@ -179,19 +179,19 @@ NavigationBar.defaultProps = {
 	menu: [
 		{
 			title: "Portfolio",
-			mountPath: (profileId: string) => `/profiles/${profileId}`,
+			mountPath: (profileId: string) => `/profiles/${profileId}/portfolio`,
 		},
 		{
 			title: "Plugins",
-			mountPath: () => "/plugins",
+			mountPath: (profileId: string) => `/profiles/${profileId}/plugins`,
 		},
 		{
 			title: "Exchange",
-			mountPath: () => "/exchanges",
+			mountPath: (profileId: string) => `/profiles/${profileId}/exchange`,
 		},
 		{
 			title: "News",
-			mountPath: () => "/news",
+			mountPath: (profileId: string) => `/profiles/${profileId}/news`,
 		},
 	],
 	userActions: [

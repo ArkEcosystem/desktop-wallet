@@ -1,10 +1,11 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { AppContext, EnvironmentContext } from "app/contexts";
+import { useEnvironment } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -16,14 +17,15 @@ export const Welcome = () => {
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-	const { env }: any = useContext(EnvironmentContext);
-	const { updateAppState }: any = useContext(AppContext);
+	const env = useEnvironment();
 	const { t } = useTranslation();
 	const history = useHistory();
-	const [profiles, setProfiles] = useState([]);
+	const [profiles, setProfiles] = React.useState<Profile[]>([]);
 
-	useEffect(() => {
-		setProfiles(env.profiles().all());
+	React.useEffect(() => {
+		if (env) {
+			setProfiles(env.profiles().all());
+		}
 	}, [env]);
 
 	return (
@@ -53,7 +55,7 @@ export const Welcome = () => {
 							<div className="mt-6 mb-8 space-y-3">
 								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										handleClick={() => history.push(`/profiles/${profile.id()}/dashboard`)}
+										handleClick={() => history.push(`/profiles/${profile.id()}/portfolio`)}
 										key={index}
 										profile={profile}
 										actions={profileCardActions}

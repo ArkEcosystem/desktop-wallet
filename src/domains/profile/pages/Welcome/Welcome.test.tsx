@@ -1,8 +1,6 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-// Contexts
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { AppContext, EnvironmentContext } from "app/contexts";
-// i18n
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -14,13 +12,13 @@ import { Welcome } from "../Welcome";
 describe("Welcome", () => {
 	const history = createMemoryHistory();
 
-	const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
+	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 	const updateAppState = jest.fn();
 
 	it("should render", async () => {
 		const { container, asFragment } = render(
 			<Router history={history}>
-				<EnvironmentContext.Provider value={{ env }}>
+				<EnvironmentContext.Provider value={env}>
 					<AppContext.Provider value={{ updateAppState }}>
 						<Welcome />
 					</AppContext.Provider>
@@ -41,10 +39,8 @@ describe("Welcome", () => {
 	it("should change route to create profile", async () => {
 		const { container, getByText, asFragment } = render(
 			<Router history={history}>
-				<EnvironmentContext.Provider value={{ env }}>
-					<AppContext.Provider value={{ updateAppState }}>
-						<Welcome />
-					</AppContext.Provider>
+				<EnvironmentContext.Provider value={env}>
+					<Welcome />
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
@@ -67,10 +63,8 @@ describe("Welcome", () => {
 
 		const { container, getByText, asFragment } = render(
 			<Router history={history}>
-				<EnvironmentContext.Provider value={{ env }}>
-					<AppContext.Provider value={{ updateAppState }}>
-						<Welcome />
-					</AppContext.Provider>
+				<EnvironmentContext.Provider value={env}>
+					<Welcome />
 				</EnvironmentContext.Provider>
 			</Router>,
 		);
@@ -83,7 +77,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("caio"));
-		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}/dashboard`);
+		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}/portfolio`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

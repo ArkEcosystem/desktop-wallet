@@ -1,22 +1,24 @@
-import { AppContext } from "app/contexts";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentContext } from "app/contexts";
+import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { Router } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import { fireEvent, render } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
+	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 
 	it("should render", () => {
 		const { container, asFragment } = render(
-			<AppContext.Provider>
-				<Router history={history}>
-					<NavigationBar />
-				</Router>
-			</AppContext.Provider>,
+			<Router history={history}>
+				<NavigationBar />
+			</Router>,
 		);
 
 		expect(container).toBeTruthy();
@@ -27,7 +29,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
 			},
 			{
 				title: "test",
@@ -35,12 +37,9 @@ describe("NavigationBar", () => {
 			},
 		];
 		const { container, asFragment } = render(
-			<AppContext.Provider>
-				<Router history={history}>
-					<NavigationBar menu={menu} />
-				</Router>
-				,
-			</AppContext.Provider>,
+			<Router history={history}>
+				<NavigationBar menu={menu} />
+			</Router>,
 		);
 
 		expect(container).toBeTruthy();
@@ -51,26 +50,27 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
 			},
 			{
 				title: "test",
 				mountPath: () => "/test",
 			},
 		];
-		const { container, asFragment, getByText } = render(
-			<AppContext.Provider>
-				<Router history={history}>
-					<NavigationBar menu={menu} />
-				</Router>
-				,
-			</AppContext.Provider>,
+		const profile = env.profiles().create("test");
+		history.push(`/profiles/${profile.id()}`);
+		const { getByText } = render(
+			<Router history={history}>
+				<EnvironmentContext.Provider value={env}>
+					<Route path="/profiles/:profileId">
+						<NavigationBar menu={menu} />
+					</Route>
+				</EnvironmentContext.Provider>
+			</Router>,
 		);
 
-		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Portfolio"));
-		expect(history.location.pathname).toEqual("/profiles/123/dashboard");
-		expect(asFragment()).toMatchSnapshot();
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/portfolio`);
 	});
 
 	it("should open user actions dropdown on click", () => {
@@ -79,11 +79,9 @@ describe("NavigationBar", () => {
 			{ label: "Option 2", value: "/test2" },
 		];
 		const { getByTestId, getByText } = render(
-			<AppContext.Provider>
-				<Router history={history}>
-					<NavigationBar userActions={options} />
-				</Router>
-			</AppContext.Provider>,
+			<Router history={history}>
+				<NavigationBar userActions={options} />
+			</Router>,
 		);
 		const toggle = getByTestId("navbar__useractions");
 
@@ -105,7 +103,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
 			},
 			{
 				title: "test",
@@ -114,11 +112,9 @@ describe("NavigationBar", () => {
 		];
 
 		const { asFragment } = render(
-			<AppContext.Provider value={{ appContext: null }}>
-				<Router history={history}>
-					<NavigationBar menu={menu} userActions={options} />
-				</Router>
-			</AppContext.Provider>,
+			<Router history={history}>
+				<NavigationBar menu={menu} userActions={options} />
+			</Router>,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});

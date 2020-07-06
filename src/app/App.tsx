@@ -17,7 +17,7 @@ const buildMockEnvironment = async (env: Environment) => {
 };
 
 const Main = () => {
-	const { env } = useEnvironment();
+	const env = useEnvironment();
 
 	React.useLayoutEffect(() => {
 		if (env && process.env.REACT_APP_BUILD_MODE === "demo") {
