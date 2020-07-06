@@ -82,7 +82,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("caio"));
-		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}`);
+		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}/dashboard`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
