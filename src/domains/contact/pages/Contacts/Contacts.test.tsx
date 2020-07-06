@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { MemoryRouter as Router } from "react-router-dom";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
@@ -27,11 +26,7 @@ const assets = [
 
 describe("Contacts", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<Router>
-				<Contacts contacts={[]} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={[]} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -42,11 +37,7 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = render(
-			<Router>
-				<Contacts contacts={contacts} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={contacts} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -61,10 +52,8 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
-		const { getAllByTestId, getByTestId, queryByTestId } = render(
-			<Router>
-				<Contacts contacts={[]} assets={assets} />
-			</Router>,
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+			<Contacts contacts={[]} assets={assets} />,
 		);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));

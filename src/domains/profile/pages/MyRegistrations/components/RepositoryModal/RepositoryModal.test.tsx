@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "testing-library";
+import { renderWithRouter } from "testing-library";
 
 import { RepositoryModal } from "./RepositoryModal";
 
@@ -27,10 +26,8 @@ describe("RepositoryModal", () => {
 	it("should render empty state", () => {
 		const handleClose = jest.fn();
 
-		const { asFragment } = render(
-			<Router>
-				<RepositoryModal isOpen repositories={repositories} handleClose={() => handleClose()} />,
-			</Router>,
+		const { asFragment } = renderWithRouter(
+			<RepositoryModal isOpen repositories={repositories} handleClose={() => handleClose()} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
