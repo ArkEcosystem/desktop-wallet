@@ -37,13 +37,20 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
-			<Header title="Select a Cryptoasset" subtitle="Select a cryptoasset to create your new wallet address" />
-
-			<SelectAsset
-				name={activeNetwork as any}
-				assets={networks}
-				onSelect={(selected) => handleSelect(selected?.name)}
-			/>
+			<div className="my-8">
+				<Header
+					title="Select a Cryptoasset"
+					subtitle="Select a cryptoasset to create your new wallet address"
+				/>
+			</div>
+			<div className="space-y-2">
+				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+				<SelectAsset
+					name={activeNetwork as any}
+					assets={networks}
+					onSelect={(selected) => handleSelect(selected?.name)}
+				/>
+			</div>
 		</section>
 	);
 };
@@ -59,7 +66,9 @@ export const SecondStep = ({
 }) => {
 	return (
 		<section data-testid="CreateWallet__second-step">
-			<Header title="Your Passphrase" />
+			<div className="my-8">
+				<Header title="Your Passphrase" />
+			</div>
 
 			<div className="space-y-8">
 				<Alert size="lg">
@@ -123,8 +132,9 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 
 	return (
 		<section data-testid="CreateWallet__third-step">
-			<h1 className="mb-0">Confirm your passphrase</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<div className="my-8">
+				<Header title="Confirm your passphrase" subtitle="Confirm your password to continue" />
+			</div>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -144,8 +154,9 @@ export const FourthStep = () => {
 
 	return (
 		<section data-testid="CreateWallet__fourth-step">
-			<h1 className="mb-0">Completed</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<div className="my-8">
+				<Header title="Completed" subtitle="Wallet creation is complete. Now you can use it." />
+			</div>
 
 			<ul>
 				<li className="flex justify-between">
