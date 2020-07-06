@@ -8,13 +8,17 @@ import { vote } from "domains/vote/images";
 import { wallet } from "domains/wallet/images";
 
 import ARKLogo from "./ark-logo.png";
+import { ReactComponent as ConfirmedBanner } from "./confirmed-banner.svg";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
+import { ReactComponent as MistakeBanner } from "./mistake-banner.svg";
 import { ReactComponent as SuccessBanner } from "./success-banner.svg";
 
 export const images = {
 	common: {
 		ARKLogo,
+		ConfirmedBanner,
 		DeleteBanner,
+		MistakeBanner,
 		SuccessBanner,
 	},
 	contacts,
