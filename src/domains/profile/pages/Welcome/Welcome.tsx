@@ -23,9 +23,7 @@ export const Welcome = () => {
 	const [profiles, setProfiles] = React.useState<Profile[]>([]);
 
 	React.useEffect(() => {
-		if (env) {
-			setProfiles(env.profiles().all());
-		}
+		setProfiles(env!.profiles().all());
 	}, [env]);
 
 	return (

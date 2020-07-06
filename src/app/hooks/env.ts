@@ -1,7 +1,6 @@
+import { useEnvironment } from "app/contexts/Environment";
 import React from "react";
 import { useParams } from "react-router-dom";
-
-import { useEnvironment } from "../contexts/Environment";
 
 export const useActiveProfile = () => {
 	const env = useEnvironment();
@@ -16,19 +15,4 @@ export const useActiveProfile = () => {
 			}
 		}
 	}, [env, profileId]);
-};
-
-export const useActiveWallet = () => {
-	const profile = useActiveProfile();
-	const { address } = useParams();
-
-	return React.useMemo(() => {
-		if (profile) {
-			try {
-				return profile.wallets().findById(address);
-			} catch {
-				return undefined;
-			}
-		}
-	}, [profile, address]);
 };

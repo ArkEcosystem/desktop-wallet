@@ -20,8 +20,8 @@ const Main = () => {
 	const env = useEnvironment();
 
 	React.useLayoutEffect(() => {
-		if (env && process.env.REACT_APP_BUILD_MODE === "demo") {
-			buildMockEnvironment(env);
+		if (process.env.REACT_APP_BUILD_MODE === "demo") {
+			buildMockEnvironment(env!);
 		}
 	}, [env]);
 

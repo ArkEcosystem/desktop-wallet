@@ -1,9 +1,14 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Router } from "react-router-dom";
 
-import { App } from "./";
+import { App } from "./App";
+
+beforeAll(() => {
+	nock.disableNetConnect();
+});
 
 describe("App", () => {
 	const history = createMemoryHistory();
@@ -22,5 +27,15 @@ describe("App", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render mock", () => {
+		process.env.REACT_APP_BUILD_MODE = "demo";
+		const { container } = render(
+			<Router history={history}>
+				<App />
+			</Router>,
+		);
+		expect(container).toBeTruthy();
 	});
 });
