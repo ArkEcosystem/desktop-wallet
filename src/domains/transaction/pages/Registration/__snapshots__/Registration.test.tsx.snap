@@ -270,38 +270,49 @@ exports[`Registration should render 1st step 1`] = `
                   </div>
                   <div>
                     <div
-                      class="sc-fzozJi OgXfh"
+                      class="w-full"
                     >
-                      <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
+                      <input
+                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        data-testid="select-list__input"
                         name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
+                        readonly=""
+                        type="text"
+                        value=""
+                      />
                       <div
-                        class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="relative w-full cursor-pointer"
                       >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                            class="sc-fznKkj euPWra   "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-1-toggle-button"
+                            type="button"
+                          />
+                          <ul
+                            aria-labelledby="downshift-1-label"
+                            class="sc-fznZeY dutHwD"
+                            id="downshift-1-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
                         <div
-                          class="sc-AxhUy cPXLjK"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div
+                            class="sc-AxhUy ctWTwa"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -671,7 +682,7 @@ exports[`Registration should render 2nd step 1`] = `
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -679,7 +690,7 @@ exports[`Registration should render 2nd step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -687,7 +698,7 @@ exports[`Registration should render 2nd step 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
                             >
@@ -1819,13 +1830,13 @@ exports[`Registration should select registration type 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-labelledby="downshift-8-label"
+                    aria-labelledby="downshift-25-label"
                     class="relative"
                     role="combobox"
                   >
                     <label
-                      for="downshift-8-input"
-                      id="downshift-8-label"
+                      for="downshift-25-input"
+                      id="downshift-25-label"
                     />
                     <div
                       class="relative flex items-center w-full flex-inline"
@@ -1853,11 +1864,11 @@ exports[`Registration should select registration type 1`] = `
                           </div>
                           <input
                             aria-autocomplete="list"
-                            aria-labelledby="downshift-8-label"
+                            aria-labelledby="downshift-25-label"
                             autocomplete="off"
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
-                            id="downshift-8-input"
+                            id="downshift-25-input"
                             placeholder="Enter a network name"
                             value=""
                           />
@@ -1865,16 +1876,16 @@ exports[`Registration should select registration type 1`] = `
                       </div>
                     </div>
                     <div
-                      aria-labelledby="downshift-8-label"
+                      aria-labelledby="downshift-25-label"
                       class="select-asset__items"
                       data-testid="select-asset__items"
-                      id="downshift-8-menu"
+                      id="downshift-25-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-8-item-0"
+                        id="downshift-25-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
@@ -1895,7 +1906,7 @@ exports[`Registration should select registration type 1`] = `
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-8-item-1"
+                        id="downshift-25-item-1"
                         role="option"
                         title="Bitcoin"
                       >
@@ -1916,7 +1927,7 @@ exports[`Registration should select registration type 1`] = `
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-8-item-2"
+                        id="downshift-25-item-2"
                         role="option"
                         title="Ethereum"
                       >
@@ -2018,46 +2029,53 @@ exports[`Registration should select registration type 1`] = `
                   </div>
                   <div>
                     <div
-                      class="sc-fzozJi OgXfh"
+                      class="w-full"
                     >
-                      <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
+                      <input
+                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        data-testid="select-list__input"
                         name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
+                        readonly=""
+                        type="text"
+                        value="business"
+                      />
                       <div
-                        class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="relative w-full cursor-pointer"
                       >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-26-label downshift-26-toggle-button"
+                            class="sc-fznKkj euPWra  is-selected "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-26-toggle-button"
+                            type="button"
+                          >
+                            Business
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-26-label"
+                            class="sc-fznZeY dutHwD"
+                            id="downshift-26-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
                         <div
-                          class="sc-AxhUy cPXLjK"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div
+                            class="sc-AxhUy ctWTwa"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div
-                      class="flex items-center ml-4 leading-tight -mt-9"
-                      data-testid="Registration__type-selected"
-                    >
-                      Business
                     </div>
                   </div>
                 </fieldset>
@@ -2163,13 +2181,13 @@ exports[`Registration should should go back 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-labelledby="downshift-2-label"
+                    aria-labelledby="downshift-5-label"
                     class="relative"
                     role="combobox"
                   >
                     <label
-                      for="downshift-2-input"
-                      id="downshift-2-label"
+                      for="downshift-5-input"
+                      id="downshift-5-label"
                     />
                     <div
                       class="relative flex items-center w-full flex-inline"
@@ -2197,11 +2215,11 @@ exports[`Registration should should go back 1`] = `
                           </div>
                           <input
                             aria-autocomplete="list"
-                            aria-labelledby="downshift-2-label"
+                            aria-labelledby="downshift-5-label"
                             autocomplete="off"
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
-                            id="downshift-2-input"
+                            id="downshift-5-input"
                             placeholder="Enter a network name"
                             value=""
                           />
@@ -2209,16 +2227,16 @@ exports[`Registration should should go back 1`] = `
                       </div>
                     </div>
                     <div
-                      aria-labelledby="downshift-2-label"
+                      aria-labelledby="downshift-5-label"
                       class="select-asset__items"
                       data-testid="select-asset__items"
-                      id="downshift-2-menu"
+                      id="downshift-5-menu"
                       role="listbox"
                     >
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-0"
+                        id="downshift-5-item-0"
                         role="option"
                         title="Ark Ecosystem"
                       >
@@ -2239,7 +2257,7 @@ exports[`Registration should should go back 1`] = `
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-1"
+                        id="downshift-5-item-1"
                         role="option"
                         title="Bitcoin"
                       >
@@ -2260,7 +2278,7 @@ exports[`Registration should should go back 1`] = `
                       <div
                         aria-selected="false"
                         class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-2"
+                        id="downshift-5-item-2"
                         role="option"
                         title="Ethereum"
                       >
@@ -2362,38 +2380,49 @@ exports[`Registration should should go back 1`] = `
                   </div>
                   <div>
                     <div
-                      class="sc-fzozJi OgXfh"
+                      class="w-full"
                     >
-                      <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                        data-testid="Registration__type-select"
+                      <input
+                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        data-testid="select-list__input"
                         name="registrationType"
-                      >
-                        <option
-                          disabled=""
-                          selected=""
-                          value=""
-                        >
-                           
-                        </option>
-                        <option
-                          data-testid="Registration__type-option"
-                          value="business"
-                        >
-                          Business
-                        </option>
-                      </select>
+                        readonly=""
+                        type="text"
+                        value=""
+                      />
                       <div
-                        class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                        class="relative w-full cursor-pointer"
                       >
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                            class="sc-fznKkj euPWra   "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-6-toggle-button"
+                            type="button"
+                          />
+                          <ul
+                            aria-labelledby="downshift-6-label"
+                            class="sc-fznZeY dutHwD"
+                            id="downshift-6-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
                         <div
-                          class="sc-AxhUy cPXLjK"
-                          height="1em"
-                          width="1em"
+                          class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                         >
-                          <svg>
-                            chevron-down.svg
-                          </svg>
+                          <div
+                            class="sc-AxhUy ctWTwa"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -5,8 +5,8 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { Select } from "app/components/Select";
 import { SelectAsset } from "app/components/SelectAsset";
+import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -52,29 +52,18 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => (
-	<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-		<div className="mb-2">
-			<FormLabel label="Registration Type" />
-		</div>
-		<div>
-			<Select placeholder=" " ref={register} data-testid="Registration__type-select">
-				{registrationTypes &&
-					registrationTypes.map((registrationType: any, index: number) => (
-						<option key={index} value={registrationType.value} data-testid="Registration__type-option">
-							{registrationType.label}
-						</option>
-					))}
-			</Select>
-
-			{selectedType && (
-				<div data-testid="Registration__type-selected" className="flex items-center ml-4 leading-tight -mt-9">
-					{selectedType.label}
-				</div>
-			)}
-		</div>
-	</FormField>
-);
+const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+	return (
+		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
+			<div className="mb-2">
+				<FormLabel label="Registration Type" />
+			</div>
+			<div>
+				<Select ref={register} data-testid="Registration__type-select" options={registrationTypes} />
+			</div>
+		</FormField>
+	);
+};
 
 const getAddressInfo = (addresses: any[], address: string) => {
 	return addresses.find((profile: any) => profile.address === address);

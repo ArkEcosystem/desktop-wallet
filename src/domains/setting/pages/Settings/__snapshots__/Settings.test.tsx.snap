@@ -167,14 +167,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -238,14 +238,14 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -262,36 +262,51 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     Load plugins from
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="load-plugins"
-                    >
-                      <option
-                        selected=""
-                        value=""
-                      >
-                        Select
-                      </option>
-                      <option
-                        value="github"
-                      >
-                        GitHub
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-7-label downshift-7-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-7-toggle-button"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-7-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-7-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -300,7 +315,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             </li>
           </ul>
           <div
-            class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+            class="sc-fzoyAV iPIqIV border-theme-neutral-300"
             type="horizontal"
           />
           <div
@@ -567,47 +582,51 @@ exports[`Settings should render 1`] = `
                     Passphrase Language
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="passphrase-language"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-0-toggle-button"
+                          type="button"
+                        >
+                          Select Language
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-0-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-0-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -624,47 +643,51 @@ exports[`Settings should render 1`] = `
                     Currency
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="currency"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-1-toggle-button"
+                          type="button"
+                        >
+                          Select Language
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-1-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-1-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -685,47 +708,51 @@ exports[`Settings should render 1`] = `
                     Language
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="language"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-2-label downshift-2-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-2-toggle-button"
+                          type="button"
+                        >
+                          Select Language
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-2-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-2-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -742,47 +769,51 @@ exports[`Settings should render 1`] = `
                     Price Source
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="price-source"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-3-label downshift-3-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-3-toggle-button"
+                          type="button"
+                        >
+                          Select Language
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-3-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-3-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -799,47 +830,51 @@ exports[`Settings should render 1`] = `
                     Time Format
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="time-format"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-4-label downshift-4-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-4-toggle-button"
+                          type="button"
+                        >
+                          Select Language
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-4-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-4-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -893,14 +928,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznKkj cHSYkT"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznZeY iMEJUl"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fzokOt dWmOrE"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -944,14 +979,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznKkj cHSYkT"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznZeY iMEJUl"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fzokOt dWmOrE"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -982,51 +1017,59 @@ exports[`Settings should render 1`] = `
                   class=""
                   data-testid="list-divided-item__content"
                 >
-                  <div
-                    class="sc-fzozJi OgXfh"
+                  <fieldset
+                    class="sc-AxhUy dJlYTe mt-8"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
-                      name="auto-logoff"
-                    >
-                      <option
-                        disabled=""
-                        selected=""
-                        value=""
-                      >
-                        Select Language
-                      </option>
-                      <option
-                        value="option1"
-                      >
-                        Option 1
-                      </option>
-                      <option
-                        value="option2"
-                      >
-                        Option 2
-                      </option>
-                      <option
-                        value="option3"
-                      >
-                        Option 3
-                      </option>
-                    </select>
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="w-full"
                     >
+                      <input
+                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        data-testid="select-list__input"
+                        name="price-source"
+                        readonly=""
+                        type="text"
+                        value=""
+                      />
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="relative w-full cursor-pointer"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div>
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-labelledby="downshift-5-label downshift-5-toggle-button"
+                            class="sc-fznKkj euPWra   "
+                            data-testid="select-list__toggle-button"
+                            id="downshift-5-toggle-button"
+                            type="button"
+                          >
+                            Select Language
+                          </button>
+                          <ul
+                            aria-labelledby="downshift-5-label"
+                            class="sc-fznZeY dutHwD"
+                            id="downshift-5-menu"
+                            role="listbox"
+                            tabindex="-1"
+                          />
+                        </div>
+                        <div
+                          class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
+                        >
+                          <div
+                            class="sc-AxjAm dKDmBo"
+                            height="8"
+                            width="8"
+                          >
+                            <svg>
+                              arrowdown.svg
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </fieldset>
                 </div>
               </li>
             </ul>
@@ -1077,14 +1120,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznKkj cHSYkT"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznZeY iMEJUl"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fzokOt dWmOrE"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -1128,14 +1171,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznKkj cHSYkT"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznZeY iMEJUl"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fzokOt dWmOrE"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -1495,14 +1538,14 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -1546,14 +1589,14 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -1567,7 +1610,7 @@ exports[`Settings should render peer settings 1`] = `
           >
             <div>
               <div
-                class="sc-fzqNJr klEctb"
+                class="sc-fzoLag jeUJBt"
                 role="table"
               >
                 <table
@@ -1669,7 +1712,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-fzoXzr jwmmOD text-logo border-theme-danger-200"
+                          class="sc-fznxsB ehZhYn text-logo border-theme-danger-200"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1746,7 +1789,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-fzoXzr jwmmOD border-theme-neutral-300"
+                          class="sc-fznxsB ehZhYn border-theme-neutral-300"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1823,7 +1866,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-fzoXzr jwmmOD text-theme-warning-400 border-theme-warning-200"
+                          class="sc-fznxsB ehZhYn text-theme-warning-400 border-theme-warning-200"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1910,7 +1953,7 @@ exports[`Settings should render peer settings 1`] = `
             class="pt-2 pb-4"
           >
             <div
-              class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+              class="sc-fzoyAV iPIqIV border-theme-neutral-300"
               type="horizontal"
             />
           </div>
@@ -2099,14 +2142,14 @@ exports[`Settings should render plugin settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -2170,14 +2213,14 @@ exports[`Settings should render plugin settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznKkj cHSYkT"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznZeY iMEJUl"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fzokOt dWmOrE"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -2194,36 +2237,51 @@ exports[`Settings should render plugin settings 1`] = `
                     Load plugins from
                   </label>
                   <div
-                    class="sc-fzozJi OgXfh"
+                    class="w-full"
                   >
-                    <select
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                      data-testid="Select"
+                    <input
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      data-testid="select-list__input"
                       name="load-plugins"
-                    >
-                      <option
-                        selected=""
-                        value=""
-                      >
-                        Select
-                      </option>
-                      <option
-                        value="github"
-                      >
-                        GitHub
-                      </option>
-                    </select>
+                      readonly=""
+                      type="text"
+                      value=""
+                    />
                     <div
-                      class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                      class="relative w-full cursor-pointer"
                     >
+                      <div>
+                        <button
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-6-label downshift-6-toggle-button"
+                          class="sc-fznKkj euPWra   "
+                          data-testid="select-list__toggle-button"
+                          id="downshift-6-toggle-button"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                        <ul
+                          aria-labelledby="downshift-6-label"
+                          class="sc-fznZeY dutHwD"
+                          id="downshift-6-menu"
+                          role="listbox"
+                          tabindex="-1"
+                        />
+                      </div>
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm dKDmBo"
+                          height="8"
+                          width="8"
+                        >
+                          <svg>
+                            arrowdown.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2232,7 +2290,7 @@ exports[`Settings should render plugin settings 1`] = `
             </li>
           </ul>
           <div
-            class="sc-fzqBZW ldtzXK border-theme-neutral-300"
+            class="sc-fzoyAV iPIqIV border-theme-neutral-300"
             type="horizontal"
           />
           <div

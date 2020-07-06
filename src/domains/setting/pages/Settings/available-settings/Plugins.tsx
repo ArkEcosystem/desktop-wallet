@@ -3,7 +3,7 @@ import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
@@ -74,10 +74,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 					</div>
 					<FormField name="load-plugins">
 						<FormLabel>Load plugins from</FormLabel>
-						<Select>
-							<option value="">Select</option>
-							<option value="github">GitHub</option>
-						</Select>
+						<Select placeholder="Select" options={[{ label: "Github", value: "github" }]} />
 					</FormField>
 				</>
 			),
