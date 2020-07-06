@@ -5,160 +5,6 @@ exports[`Votes should render 1`] = `
   <div
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw ldtbjv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxhCb bzWLYJ border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxhCb bzWLYJ bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
     >
@@ -257,7 +103,7 @@ exports[`Votes should render 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <div
-                    class="sc-fzqNJr bHRmfU"
+                    class="sc-fznKkj eSDHbn"
                   >
                     <div
                       aria-expanded="false"
@@ -470,160 +316,6 @@ exports[`Votes should select a cryptoasset 1`] = `
   <div
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw ldtbjv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxhCb bzWLYJ border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxhCb bzWLYJ bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
     >
@@ -722,7 +414,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <div
-                    class="sc-fzqNJr bHRmfU"
+                    class="sc-fznKkj eSDHbn"
                   >
                     <div
                       aria-expanded="false"
@@ -928,7 +620,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               Select Address
             </h2>
             <div
-              class="sc-fznKkj crvYjk"
+              class="sc-fzplWN kEUFYN"
               role="table"
             >
               <table
@@ -1317,7 +1009,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1435,7 +1127,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1516,7 +1208,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1597,7 +1289,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1624,160 +1316,6 @@ exports[`Votes should select a delegate 1`] = `
   <div
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw ldtbjv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxhCb bzWLYJ border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxhCb bzWLYJ bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
     >
@@ -1876,7 +1414,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <div
-                    class="sc-fzqNJr bHRmfU"
+                    class="sc-fznKkj eSDHbn"
                   >
                     <div
                       aria-expanded="false"
@@ -2100,7 +1638,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fznKkj crvYjk"
+              class="sc-fzplWN kEUFYN"
               role="table"
             >
               <table
@@ -2499,7 +2037,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznyAO hvZNwL"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2599,7 +2137,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznyAO hvZNwL"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2663,7 +2201,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznyAO hvZNwL"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2763,7 +2301,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2827,7 +2365,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2913,7 +2451,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-fzqBZW cNBvVZ"
+                      class="sc-fznyAO gVFrKi"
                       color="primary"
                       type="button"
                     >
@@ -2937,160 +2475,6 @@ exports[`Votes should select address 1`] = `
   <div
     data-testid="MyVotes"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzokOt jOdSeW"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw ldtbjv"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxhCb bzWLYJ border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxhCb bzWLYJ bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fzplWN cprukN flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="bg-theme-neutral-100 flex flex-col min-h-screen -m-5"
     >
@@ -3189,7 +2573,7 @@ exports[`Votes should select address 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <div
-                    class="sc-fzqNJr bHRmfU"
+                    class="sc-fznKkj eSDHbn"
                   >
                     <div
                       aria-expanded="false"
@@ -3413,7 +2797,7 @@ exports[`Votes should select address 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fznKkj crvYjk"
+              class="sc-fzplWN kEUFYN"
               role="table"
             >
               <table
@@ -3812,7 +3196,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -3912,7 +3296,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -3976,7 +3360,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4076,7 +3460,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4140,7 +3524,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznyAO dgRTkI"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"

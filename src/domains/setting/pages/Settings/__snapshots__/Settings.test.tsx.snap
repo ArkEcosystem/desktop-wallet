@@ -3,160 +3,6 @@
 exports[`Settings should render 1`] = `
 <DocumentFragment>
   <div>
-    <nav
-      aria-labelledby="main menu"
-      class="sc-Axmtr htxHJf"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxjAm jmgDQY"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm bsDiDM"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm jmgDQY"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex w-full h-full"
     >
@@ -164,7 +10,7 @@ exports[`Settings should render 1`] = `
         class="w-1/4 h-full"
       >
         <div
-          class="sc-fzozJi ieCDyN"
+          class="sc-AxiKw eZuVXn"
         >
           <ul>
             <div
@@ -172,7 +18,7 @@ exports[`Settings should render 1`] = `
               data-testid="side-menu__item--General"
             >
               <div
-                class="sc-AxmLO dhFHgl absolute top-0 left-0 rounded-lg bg-theme-primary"
+                class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
               />
               <li
                 class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -287,7 +133,7 @@ exports[`Settings should render 1`] = `
             class="mt-8"
           >
             <ul
-              class="sc-fzoLag eaHeEX"
+              class="sc-fznyAO lyMNj"
               data-testid="list-divided__items"
             >
               <li
@@ -373,7 +219,7 @@ exports[`Settings should render 1`] = `
                 class="flex flex-col w-2/4"
               >
                 <fieldset
-                  class="sc-fzpans jYpWTb flex flex-col space-y-2"
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -384,14 +230,14 @@ exports[`Settings should render 1`] = `
                     Profile Name
                   </label>
                   <input
-                    class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
                     data-testid="Input"
                     name="profile-name"
                     type="text"
                   />
                 </fieldset>
                 <fieldset
-                  class="sc-fzpans jYpWTb mt-8"
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -405,7 +251,7 @@ exports[`Settings should render 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="passphrase-language"
                       readonly=""
@@ -420,7 +266,7 @@ exports[`Settings should render 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-0-toggle-button"
                           type="button"
@@ -429,14 +275,14 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-0-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-0-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -452,7 +298,7 @@ exports[`Settings should render 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-fzpans jYpWTb mt-8"
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -466,7 +312,7 @@ exports[`Settings should render 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="currency"
                       readonly=""
@@ -481,7 +327,7 @@ exports[`Settings should render 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-1-toggle-button"
                           type="button"
@@ -490,14 +336,14 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-1-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-1-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -517,7 +363,7 @@ exports[`Settings should render 1`] = `
                 class="flex flex-col w-2/4 ml-5"
               >
                 <fieldset
-                  class="sc-fzpans jYpWTb flex flex-col space-y-2"
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -531,7 +377,7 @@ exports[`Settings should render 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="language"
                       readonly=""
@@ -546,7 +392,7 @@ exports[`Settings should render 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-2-toggle-button"
                           type="button"
@@ -555,14 +401,14 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-2-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-2-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -578,7 +424,7 @@ exports[`Settings should render 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-fzpans jYpWTb mt-8"
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -592,7 +438,7 @@ exports[`Settings should render 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="price-source"
                       readonly=""
@@ -607,7 +453,7 @@ exports[`Settings should render 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-3-toggle-button"
                           type="button"
@@ -616,14 +462,14 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-3-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-3-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -639,7 +485,7 @@ exports[`Settings should render 1`] = `
                   </div>
                 </fieldset>
                 <fieldset
-                  class="sc-fzpans jYpWTb mt-8"
+                  class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -653,7 +499,7 @@ exports[`Settings should render 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="time-format"
                       readonly=""
@@ -668,7 +514,7 @@ exports[`Settings should render 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-4-toggle-button"
                           type="button"
@@ -677,14 +523,14 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-4-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-4-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -709,7 +555,7 @@ exports[`Settings should render 1`] = `
               Security
             </h2>
             <ul
-              class="sc-fzoLag eaHeEX"
+              class="sc-fznyAO lyMNj"
               data-testid="list-divided__items"
             >
               <li
@@ -748,14 +594,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznxsB dVTXMU"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznJRM hKomnC"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fznWqX bxHBNH"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -799,14 +645,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznxsB dVTXMU"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznJRM hKomnC"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fznWqX bxHBNH"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -838,13 +684,13 @@ exports[`Settings should render 1`] = `
                   data-testid="list-divided-item__content"
                 >
                   <fieldset
-                    class="sc-fzpans jYpWTb mt-8"
+                    class="sc-AxhUy dJlYTe mt-8"
                   >
                     <div
                       class="w-full"
                     >
                       <input
-                        class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                         data-testid="select-list__input"
                         name="price-source"
                         readonly=""
@@ -859,7 +705,7 @@ exports[`Settings should render 1`] = `
                             aria-expanded="false"
                             aria-haspopup="listbox"
                             aria-labelledby="downshift-5-label downshift-5-toggle-button"
-                            class="sc-fzoXzr cmxuaV   "
+                            class="sc-fznKkj euPWra   "
                             data-testid="select-list__toggle-button"
                             id="downshift-5-toggle-button"
                             type="button"
@@ -868,14 +714,14 @@ exports[`Settings should render 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-5-label"
-                            class="sc-fzpjYC hGFVOD"
+                            class="sc-fznZeY dutHwD"
                             id="downshift-5-menu"
                             role="listbox"
                             tabindex="-1"
                           />
                         </div>
                         <div
-                          class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                          class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                         >
                           <div
                             class="sc-AxjAm dKDmBo"
@@ -901,7 +747,7 @@ exports[`Settings should render 1`] = `
               Other
             </h2>
             <ul
-              class="sc-fzoLag eaHeEX"
+              class="sc-fznyAO lyMNj"
               data-testid="list-divided__items"
             >
               <li
@@ -940,14 +786,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznxsB dVTXMU"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznJRM hKomnC"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fznWqX bxHBNH"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -991,14 +837,14 @@ exports[`Settings should render 1`] = `
                     >
                       <label>
                         <input
-                          class="sc-fznxsB dVTXMU"
+                          class="sc-fzokOt juJlhY"
                           type="checkbox"
                         />
                         <div
-                          class="sc-fznJRM hKomnC"
+                          class="sc-fzqBZW llLJVP"
                         >
                           <span
-                            class="sc-fznWqX bxHBNH"
+                            class="sc-fzqNJr lhXIDM"
                           />
                         </div>
                       </label>
@@ -1012,7 +858,7 @@ exports[`Settings should render 1`] = `
             class="flex justify-between w-full pt-2"
           >
             <button
-              class="sc-fzoLsD fefkbm"
+              class="sc-AxhCb clvjJS"
               color="danger"
               type="button"
             >
@@ -1033,14 +879,14 @@ exports[`Settings should render 1`] = `
               class="space-x-3"
             >
               <button
-                class="sc-fzoLsD cxVEGx"
+                class="sc-AxhCb BegvR"
                 color="primary"
                 type="button"
               >
                 Cancel
               </button>
               <button
-                class="sc-fzoLsD fdTDED"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 type="button"
               >
@@ -1058,160 +904,6 @@ exports[`Settings should render 1`] = `
 exports[`Settings should render peer settings 1`] = `
 <DocumentFragment>
   <div>
-    <nav
-      aria-labelledby="main menu"
-      class="sc-Axmtr htxHJf"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxjAm jmgDQY"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm bsDiDM"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm jmgDQY"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex w-full h-full"
     >
@@ -1219,7 +911,7 @@ exports[`Settings should render peer settings 1`] = `
         class="w-1/4 h-full"
       >
         <div
-          class="sc-fzozJi ieCDyN"
+          class="sc-AxiKw eZuVXn"
         >
           <ul>
             <div
@@ -1254,7 +946,7 @@ exports[`Settings should render peer settings 1`] = `
               data-testid="side-menu__item--Peer"
             >
               <div
-                class="sc-AxmLO dhFHgl absolute top-0 left-0 rounded-lg bg-theme-primary"
+                class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
               />
               <li
                 class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -1339,7 +1031,7 @@ exports[`Settings should render peer settings 1`] = `
           id="peer-settings__form"
         >
           <ul
-            class="sc-fzoLag eaHeEX"
+            class="sc-fznyAO lyMNj"
             data-testid="list-divided__items"
           >
             <li
@@ -1378,14 +1070,14 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznxsB dVTXMU"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznJRM hKomnC"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fznWqX bxHBNH"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -1429,14 +1121,14 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznxsB dVTXMU"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznJRM hKomnC"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fznWqX bxHBNH"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -1450,7 +1142,7 @@ exports[`Settings should render peer settings 1`] = `
           >
             <div>
               <div
-                class="sc-AxhUy nFONV"
+                class="sc-fzoLag jeUJBt"
                 role="table"
               >
                 <table
@@ -1552,7 +1244,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-AxiKw eHzXqc text-logo border-theme-danger-200"
+                          class="sc-fznxsB ehZhYn text-logo border-theme-danger-200"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1629,7 +1321,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-AxiKw eHzXqc border-theme-neutral-300"
+                          class="sc-fznxsB ehZhYn border-theme-neutral-300"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1706,7 +1398,7 @@ exports[`Settings should render peer settings 1`] = `
                         class="inline-flex items-center py-4 mt-1"
                       >
                         <div
-                          class="sc-AxiKw eHzXqc text-theme-warning-400 border-theme-warning-200"
+                          class="sc-fznxsB ehZhYn text-theme-warning-400 border-theme-warning-200"
                         >
                           <div
                             class="sc-AxjAm cpczEI"
@@ -1780,7 +1472,7 @@ exports[`Settings should render peer settings 1`] = `
                 </table>
               </div>
               <button
-                class="sc-fzoLsD cxVEGx w-full mt-8 mb-2"
+                class="sc-AxhCb BegvR w-full mt-8 mb-2"
                 color="primary"
                 data-testid="peer-list__add-button"
                 type="button"
@@ -1793,7 +1485,7 @@ exports[`Settings should render peer settings 1`] = `
             class="pt-2 pb-4"
           >
             <div
-              class="sc-fzoiQi kDHbpS border-theme-neutral-300"
+              class="sc-fzoyAV iPIqIV border-theme-neutral-300"
               type="horizontal"
             />
           </div>
@@ -1801,7 +1493,7 @@ exports[`Settings should render peer settings 1`] = `
             class="flex justify-end w-full"
           >
             <button
-              class="sc-fzoLsD fdTDED"
+              class="sc-AxhCb gBCygf"
               color="primary"
               type="button"
             >
@@ -1818,160 +1510,6 @@ exports[`Settings should render peer settings 1`] = `
 exports[`Settings should render plugins settings 1`] = `
 <DocumentFragment>
   <div>
-    <nav
-      aria-labelledby="main menu"
-      class="sc-Axmtr htxHJf"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxjAm jmgDQY"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm bsDiDM"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxjAm jmgDQY"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="flex w-full h-full"
     >
@@ -1979,7 +1517,7 @@ exports[`Settings should render plugins settings 1`] = `
         class="w-1/4 h-full"
       >
         <div
-          class="sc-fzozJi ieCDyN"
+          class="sc-AxiKw eZuVXn"
         >
           <ul>
             <div
@@ -2041,7 +1579,7 @@ exports[`Settings should render plugins settings 1`] = `
               data-testid="side-menu__item--Plugins"
             >
               <div
-                class="sc-AxmLO dhFHgl absolute top-0 left-0 rounded-lg bg-theme-primary"
+                class="sc-AxirZ dA-dDXy absolute top-0 left-0 rounded-lg bg-theme-primary"
               />
               <li
                 class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -2099,7 +1637,7 @@ exports[`Settings should render plugins settings 1`] = `
           id="plugin-settings__form"
         >
           <ul
-            class="sc-fzoLag eaHeEX"
+            class="sc-fznyAO lyMNj"
             data-testid="list-divided__items"
           >
             <li
@@ -2138,14 +1676,14 @@ exports[`Settings should render plugins settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznxsB dVTXMU"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznJRM hKomnC"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fznWqX bxHBNH"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
@@ -2155,7 +1693,7 @@ exports[`Settings should render plugins settings 1`] = `
                   class="flex justify-end w-full pt-6 space-x-3"
                 >
                   <button
-                    class="sc-fzoLsD cxVEGx"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="plugins__open-list"
                     type="button"
@@ -2163,7 +1701,7 @@ exports[`Settings should render plugins settings 1`] = `
                     Open List
                   </button>
                   <button
-                    class="sc-fzoLsD cxVEGx"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="plugins__add-plugin"
                     type="button"
@@ -2209,21 +1747,21 @@ exports[`Settings should render plugins settings 1`] = `
                   >
                     <label>
                       <input
-                        class="sc-fznxsB dVTXMU"
+                        class="sc-fzokOt juJlhY"
                         type="checkbox"
                       />
                       <div
-                        class="sc-fznJRM hKomnC"
+                        class="sc-fzqBZW llLJVP"
                       >
                         <span
-                          class="sc-fznWqX bxHBNH"
+                          class="sc-fzqNJr lhXIDM"
                         />
                       </div>
                     </label>
                   </div>
                 </div>
                 <fieldset
-                  class="sc-fzpans jYpWTb flex flex-col space-y-2"
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
                     class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -2236,7 +1774,7 @@ exports[`Settings should render plugins settings 1`] = `
                     class="w-full"
                   >
                     <input
-                      class="sc-fzplWN gSscHr overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
                       data-testid="select-list__input"
                       name="load-plugins"
                       readonly=""
@@ -2251,7 +1789,7 @@ exports[`Settings should render plugins settings 1`] = `
                           aria-expanded="false"
                           aria-haspopup="listbox"
                           aria-labelledby="downshift-18-label downshift-18-toggle-button"
-                          class="sc-fzoXzr cmxuaV   "
+                          class="sc-fznKkj euPWra   "
                           data-testid="select-list__toggle-button"
                           id="downshift-18-toggle-button"
                           type="button"
@@ -2260,14 +1798,14 @@ exports[`Settings should render plugins settings 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-18-label"
-                          class="sc-fzpjYC hGFVOD"
+                          class="sc-fznZeY dutHwD"
                           id="downshift-18-menu"
                           role="listbox"
                           tabindex="-1"
                         />
                       </div>
                       <div
-                        class="sc-fznyAO sc-fznZeY hxpHng w-10 pointer-events-none text-theme-neutral-500"
+                        class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
                       >
                         <div
                           class="sc-AxjAm dKDmBo"
@@ -2286,14 +1824,14 @@ exports[`Settings should render plugins settings 1`] = `
             </li>
           </ul>
           <div
-            class="sc-fzoiQi kDHbpS border-theme-neutral-300"
+            class="sc-fzoyAV iPIqIV border-theme-neutral-300"
             type="horizontal"
           />
           <div
             class="flex justify-end w-full pt-2"
           >
             <button
-              class="sc-fzoLsD fdTDED"
+              class="sc-AxhCb gBCygf"
               color="primary"
               type="button"
             >

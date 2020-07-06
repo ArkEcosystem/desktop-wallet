@@ -5,160 +5,6 @@ exports[`Registration should render 1st step 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -212,7 +58,7 @@ exports[`Registration should render 1st step 1`] = `
                   Select the type of registration and the address you want to register with.
                 </div>
                 <div
-                  class="sc-fzqARJ jDAHRa mt-8"
+                  class="sc-fznJRM kIbuPl mt-8"
                 >
                   <fieldset
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -444,14 +290,14 @@ exports[`Registration should render 1st step 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                              class="sc-fzqNJr hZuAcp   "
+                              class="sc-fznKkj euPWra   "
                               data-testid="select-list__toggle-button"
                               id="downshift-1-toggle-button"
                               type="button"
                             />
                             <ul
                               aria-labelledby="downshift-1-label"
-                              class="sc-fzoyAV cgIUlq"
+                              class="sc-fznZeY dutHwD"
                               id="downshift-1-menu"
                               role="listbox"
                               tabindex="-1"
@@ -511,160 +357,6 @@ exports[`Registration should render 2nd step 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -800,7 +492,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="sc-fzoiQi bcjhVq font-normal"
+                          class="sc-fznxsB eBubjr font-normal"
                           data-testid="LinkCollection"
                         >
                           <div
@@ -845,7 +537,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="sc-fzoiQi bcjhVq font-normal"
+                          class="sc-fznxsB eBubjr font-normal"
                           data-testid="LinkCollection"
                         >
                           <div
@@ -890,7 +582,7 @@ exports[`Registration should render 2nd step 1`] = `
                         class="mt-2 font-semibold"
                       >
                         <div
-                          class="sc-fzoiQi bcjhVq font-normal"
+                          class="sc-fznxsB eBubjr font-normal"
                           data-testid="LinkCollection"
                         >
                           <div
@@ -995,7 +687,7 @@ exports[`Registration should render 2nd step 1`] = `
                             >
                               <button
                                 aria-checked="true"
-                                class="sc-fzoLag hewmfN relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                               >
@@ -1003,7 +695,7 @@ exports[`Registration should render 2nd step 1`] = `
                               </button>
                               <button
                                 aria-checked="false"
-                                class="sc-fzoLag hewmfN relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                               >
@@ -1011,7 +703,7 @@ exports[`Registration should render 2nd step 1`] = `
                               </button>
                               <button
                                 aria-checked="false"
-                                class="sc-fzoLag hewmfN relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                class="sc-fzokOt bxysDT relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                 data-testid="SelectionBarOption"
                                 role="radio"
                               >
@@ -1059,160 +751,6 @@ exports[`Registration should render 3rd step 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -1616,160 +1154,6 @@ exports[`Registration should render 4th step 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -1952,160 +1336,6 @@ exports[`Registration should render 5th step 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -2549,160 +1779,6 @@ exports[`Registration should select registration type 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -2756,7 +1832,7 @@ exports[`Registration should select registration type 1`] = `
                   Select the type of registration and the address you want to register with.
                 </div>
                 <div
-                  class="sc-fzqARJ jDAHRa mt-8"
+                  class="sc-fznJRM kIbuPl mt-8"
                 >
                   <fieldset
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -2988,7 +2064,7 @@ exports[`Registration should select registration type 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-26-label downshift-26-toggle-button"
-                              class="sc-fzqNJr hZuAcp  is-selected "
+                              class="sc-fznKkj euPWra  is-selected "
                               data-testid="select-list__toggle-button"
                               id="downshift-26-toggle-button"
                               type="button"
@@ -2997,7 +2073,7 @@ exports[`Registration should select registration type 1`] = `
                             </button>
                             <ul
                               aria-labelledby="downshift-26-label"
-                              class="sc-fzoyAV cgIUlq"
+                              class="sc-fznZeY dutHwD"
                               id="downshift-26-menu"
                               role="listbox"
                               tabindex="-1"
@@ -3057,160 +2133,6 @@ exports[`Registration should should go back 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
@@ -3264,7 +2186,7 @@ exports[`Registration should should go back 1`] = `
                   Select the type of registration and the address you want to register with.
                 </div>
                 <div
-                  class="sc-fzqARJ jDAHRa mt-8"
+                  class="sc-fznJRM kIbuPl mt-8"
                 >
                   <fieldset
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -3496,14 +2418,14 @@ exports[`Registration should should go back 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                              class="sc-fzqNJr hZuAcp   "
+                              class="sc-fznKkj euPWra   "
                               data-testid="select-list__toggle-button"
                               id="downshift-6-toggle-button"
                               type="button"
                             />
                             <ul
                               aria-labelledby="downshift-6-label"
-                              class="sc-fzoyAV cgIUlq"
+                              class="sc-fznZeY dutHwD"
                               id="downshift-6-menu"
                               role="listbox"
                               tabindex="-1"
@@ -3563,160 +2485,6 @@ exports[`Registration should submit 1`] = `
   <div
     data-testid="Registration"
   >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzqBZW cqbNAj"
-    >
-      <div
-        class="sm:px-6 lg:px-8 px-4"
-      >
-        <div
-          class="md:h-24 relative flex justify-between h-20"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
-            >
-              <img
-                alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="md:h-24 flex h-20"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-              >
-                <div
-                  class="sc-AxhUy gwxBWy"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy iA-DovK"
-                height="42"
-                width="42"
-              >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
-            >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="border-theme-neutral-200 h-8 border-r"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-theme-neutral-500 text-xs"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-theme-neutral-700 text-sm font-bold"
-              >
-                34,253.75
-              </div>
-            </div>
-            <div
-              class="cusror-pointer flex p-1"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxhUy cPXLjK"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxiKw jQtkkF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
-                  >
-                    <span
-                      class="text-theme-background text-sm"
-                    >
-                      IO
-                    </span>
-                    <span
-                      class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxhUy gKrfcW"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
     <div
       class="max-w-xl py-16 mx-auto"
     >
