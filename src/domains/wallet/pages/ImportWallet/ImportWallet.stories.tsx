@@ -8,19 +8,29 @@ export default {
 
 const networks = [
 	{
-		id: 1,
-		name: "ARK Ecosystem",
 		icon: "Ark",
+		name: "ARK Ecosystem",
+		className: "text-theme-danger-400 border-theme-danger-200",
 	},
 	{
-		id: 2,
-		name: "Ethereum",
-		icon: "Eth",
-	},
-	{
-		id: 3,
+		icon: "Bitcoin",
 		name: "Bitcoin",
-		icon: "Btc",
+		className: "text-theme-warning-400 border-theme-warning-200",
+	},
+	{
+		icon: "Ethereum",
+		name: "Ethereum",
+		className: "text-theme-neutral-800 border-theme-neutral-600",
+	},
+	{
+		icon: "Lisk",
+		name: "Lisk",
+		className: "text-theme-primary-600 border-theme-primary-400",
+	},
+	{
+		icon: "Ripple",
+		name: "Ripple",
+		className: "text-theme-primary-700 border-theme-primary-500",
 	},
 ];
 
