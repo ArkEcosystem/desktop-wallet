@@ -6,7 +6,7 @@ export default {
 	title: "App / Components / Select",
 };
 
-export const Default = () => (
+export const Native = () => (
 	<div className="max-w-xs space-y-4">
 		<Select placeholder="Select option">
 			<option value="option1">Option 1</option>
