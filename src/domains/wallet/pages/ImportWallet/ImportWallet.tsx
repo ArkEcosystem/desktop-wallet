@@ -55,9 +55,9 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 							<StepIndicator size={2} activeIndex={activeIndex} />
 							<div>
 								<div className="my-8">
-									<h1 className="mb-0">Network for import</h1>
+									<h1 className="mb-0">Select a Cryptoasset</h1>
 									<p className="text-medium text-theme-neutral-700">
-										Select the network where you want to import your wallet
+										Select a cryptoasset to import your existing wallet address
 									</p>
 								</div>
 								<SelectAsset
@@ -93,8 +93,12 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 									</div>
 									<div className="flex flex-row items-center justify-between mt-8">
 										<div>
-											<p className="text-xl font-bold">Use the address only</p>
-											<p className="text-sm">You can only view your wallet but not send money.</p>
+											<p className="font-semibold text-theme-neutral-dark text-lg">
+												Use the address only
+											</p>
+											<p className="text-sm text-theme-neutral">
+												You can only view your wallet but not send money.
+											</p>
 										</div>
 										<Toggle
 											checked={isAddressOnly}
