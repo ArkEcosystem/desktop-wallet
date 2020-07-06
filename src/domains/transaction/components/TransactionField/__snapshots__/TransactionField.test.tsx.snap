@@ -46,6 +46,32 @@ exports[`TransactionField should render with border 1`] = `
 </div>
 `;
 
+exports[`TransactionField should render with extra children 1`] = `
+<div>
+  <div
+    class="flex items-center py-4 true "
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="text-sm font-medium text-theme-neutral-700"
+      >
+        Test
+      </div>
+      <div
+        class="mt-2"
+      >
+        test
+      </div>
+    </div>
+    <div
+      data-testid="TEST_CHILD"
+    />
+  </div>
+</div>
+`;
+
 exports[`TransactionField should render without padding 1`] = `
 <div>
   <div

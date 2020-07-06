@@ -26,4 +26,15 @@ describe("TransactionField", () => {
 		);
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render with extra children", () => {
+		const { container, getByTestId } = render(
+			<TransactionField label="Test" padding={false} extra={<div data-testid="TEST_CHILD" />}>
+				test
+			</TransactionField>,
+		);
+
+		expect(getByTestId("TEST_CHILD")).toBeTruthy();
+		expect(container).toMatchSnapshot();
+	});
 });
