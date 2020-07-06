@@ -1,3 +1,4 @@
+import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd } from "app/components/Input";
 import { useSelect } from "downshift";
@@ -81,8 +82,11 @@ export const Select = React.forwardRef<HTMLInputElement, Props>(
 		const defaultSelectedItem = options.find((option: Option) => option.value === defaultValue);
 		const [selected, setSelected] = useState(defaultSelectedItem);
 
+		const fieldContext = useFormField();
+		const isInvalidField = fieldContext?.isInvalid || isInvalid;
+
 		return (
-			<div className="w-full">
+			<div className="relative w-full">
 				<Input
 					data-testid="select-list__input"
 					type="text"
@@ -90,14 +94,14 @@ export const Select = React.forwardRef<HTMLInputElement, Props>(
 					value={selected?.value || ""}
 					className="sr-only"
 					readOnly
-					isInvalid={isInvalid}
+					isInvalid={isInvalidField}
 				/>
 				<SelectDropdown
 					disabled={disabled}
 					options={options}
 					defaultSelectedItem={defaultSelectedItem}
 					placeholder={placeholder}
-					isInvalid={isInvalid}
+					isInvalid={isInvalidField}
 					onSelectedItemChange={({ selectedItem }: any) => {
 						setSelected(selectedItem);
 						onChange?.(selectedItem);

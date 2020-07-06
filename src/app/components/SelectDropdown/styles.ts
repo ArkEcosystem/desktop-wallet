@@ -34,7 +34,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10`};
+		${tw`px-10 border-0`};
 
 		&__label {
 			${tw`py-4 `};
@@ -47,7 +47,13 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&.is-highlighted {
-			${tw`bg-theme-neutral-100 -mt-px pt-px`};
+			${tw`bg-theme-neutral-100 -mt-px`};
+			padding-top: 1px;
+
+			&:last-child {
+				${tw`-mb-px`};
+			}
+
 			.select-list-option__label {
 				${tw`border-b border-theme-neutral-100`};
 			}

@@ -86,11 +86,10 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Auto-logoff",
-			labelClass:
-				"FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2",
+			labelClass: "FormLabel transition-colors duration-100 inline-block text-sm text-theme-neutral-dark mb-2",
 			wrapperClass: "pt-8",
 			content: (
-				<FormField className="mt-8" name="price-source">
+				<FormField name="price-source">
 					<Select
 						placeholder="Select Language"
 						ref={formConfig.register({ required: true })}
