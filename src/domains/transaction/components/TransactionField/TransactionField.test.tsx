@@ -9,6 +9,15 @@ describe("TransactionField", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with border", () => {
+		const { container } = render(
+			<TransactionField label="Test" border={true}>
+				test
+			</TransactionField>,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render without padding", () => {
 		const { container } = render(
 			<TransactionField label="Test" padding={false}>
