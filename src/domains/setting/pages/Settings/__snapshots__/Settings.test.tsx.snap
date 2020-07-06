@@ -262,7 +262,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     Load plugins from
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -289,7 +289,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-7-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-7-menu"
                           role="listbox"
                           tabindex="-1"
@@ -582,7 +582,7 @@ exports[`Settings should render 1`] = `
                     Passphrase Language
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -609,7 +609,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-0-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-0-menu"
                           role="listbox"
                           tabindex="-1"
@@ -643,7 +643,7 @@ exports[`Settings should render 1`] = `
                     Currency
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -670,7 +670,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-1-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-1-menu"
                           role="listbox"
                           tabindex="-1"
@@ -708,7 +708,7 @@ exports[`Settings should render 1`] = `
                     Language
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -735,7 +735,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-2-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-2-menu"
                           role="listbox"
                           tabindex="-1"
@@ -769,7 +769,7 @@ exports[`Settings should render 1`] = `
                     Price Source
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -796,7 +796,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-3-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-3-menu"
                           role="listbox"
                           tabindex="-1"
@@ -830,7 +830,7 @@ exports[`Settings should render 1`] = `
                     Time Format
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -857,7 +857,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-4-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-4-menu"
                           role="listbox"
                           tabindex="-1"
@@ -1006,7 +1006,7 @@ exports[`Settings should render 1`] = `
                     class="flex flex-col"
                   >
                     <span
-                      class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2"
+                      class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm text-theme-neutral-dark mb-2"
                       data-testid="list-divided-item__label"
                     >
                       Auto-logoff
@@ -1018,10 +1018,10 @@ exports[`Settings should render 1`] = `
                   data-testid="list-divided-item__content"
                 >
                   <fieldset
-                    class="sc-AxhUy dJlYTe mt-8"
+                    class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                   >
                     <div
-                      class="w-full"
+                      class="relative w-full"
                     >
                       <input
                         class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -1048,7 +1048,7 @@ exports[`Settings should render 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-5-label"
-                            class="sc-fznZeY dutHwD"
+                            class="sc-fznZeY ftMtbA"
                             id="downshift-5-menu"
                             role="listbox"
                             tabindex="-1"
@@ -2237,7 +2237,7 @@ exports[`Settings should render plugin settings 1`] = `
                     Load plugins from
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
                       class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
@@ -2264,7 +2264,7 @@ exports[`Settings should render plugin settings 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-6-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-6-menu"
                           role="listbox"
                           tabindex="-1"
