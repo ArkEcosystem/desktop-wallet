@@ -30,7 +30,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			labelClass: "text-2xl font-semibold",
 			labelDescriptionClass: "my-1 text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row mb-8 mt-4">
+				<div className="flex flex-row mt-4 mb-8">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
 						<button
 							type="button"
@@ -60,7 +60,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 			label: "Dark Theme",
 			labelClass: "text-xl font-bold text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row justify-between items-center">
+				<div className="flex flex-row items-center justify-between">
 					<span className="mt-2 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
 					<div className="-mt-8">
 						<Toggle />
@@ -87,7 +87,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 						Create a new Profile or login with your MarketSquare account to get started.
 					</div>
 
-					<div className="mt-8 pb-4">
+					<div className="pb-4 mt-8">
 						<Button className="w-full">
 							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Login with MarketSquare</span>
