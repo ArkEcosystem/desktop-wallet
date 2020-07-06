@@ -3,7 +3,7 @@ describe("Startup application", () => {
 		cy.visit("/");
 
 		cy.get("h1").should("have.text", "Welcome to ARK");
-		cy.get("img").should("have.length", 2);
+		cy.get("img").should("have.length", 3);
 		cy.get("svg").should("have.length", 3);
 		cy.get("button").should("have.length", 2);
 	});
