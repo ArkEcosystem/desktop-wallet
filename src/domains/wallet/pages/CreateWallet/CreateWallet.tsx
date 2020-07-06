@@ -1,12 +1,12 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { CardControl } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { SelectAsset } from "app/components/SelectAsset";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
@@ -30,7 +30,7 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleChange = (network: Network) => {
+	const handleSelect = (network: Network) => {
 		setActiveNetwork(network);
 		setValue("network", network, true);
 	};
@@ -38,32 +38,15 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
 			<div>
-				<h1 className="mb-0">Select Network</h1>
-				<p className="text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+				<h1 className="mb-0">Select a Cryptoasset</h1>
+				<p className="text-theme-neutral-dark">Select a cryptoasset to create your new wallet address</p>
 			</div>
 
-			<div className="grid grid-flow-row gap-2">
-				{networks.map((network) => (
-					<CardControl
-						type="radio"
-						key={network.name}
-						value={network.name}
-						name="network"
-						onChange={() => handleChange(network)}
-						aria-checked={activeNetwork?.name === network.name}
-					>
-						<NetworkItem className="flex items-center py-2">
-							<Circle
-								className="NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
-								noShadow
-							>
-								<Icon name={network.icon} />
-							</Circle>
-							<span className="ml-4 text-theme-text">{network.name}</span>
-						</NetworkItem>
-					</CardControl>
-				))}
-			</div>
+			<SelectAsset
+				name={activeNetwork as any}
+				assets={networks}
+				onSelect={(selected) => handleSelect(selected?.name)}
+			/>
 		</section>
 	);
 };
@@ -243,7 +226,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-end mt-10 space-x-3">
 							<Button
 								disabled={activeTab === 1}
 								data-testid="CreateWallet__back-button"

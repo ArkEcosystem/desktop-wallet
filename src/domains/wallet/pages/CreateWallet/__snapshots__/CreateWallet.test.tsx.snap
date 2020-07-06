@@ -40,136 +40,138 @@ exports[`CreateWallet should render 1`] = `
                 <h1
                   class="mb-0"
                 >
-                  Select Network
+                  Select a Cryptoasset
                 </h1>
                 <p
                   class="text-theme-neutral-dark"
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                  Select a cryptoasset to create your new wallet address
                 </p>
               </div>
               <div
-                class="grid grid-flow-row gap-2"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-1-label"
+                class="relative"
+                role="combobox"
               >
                 <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                  for="downshift-1-input"
+                  id="downshift-1-label"
+                />
+                <div
+                  class="relative flex items-center w-full flex-inline"
                 >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="ARK"
-                  />
                   <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                   >
                     <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
+                      class="px-4 py-2 flex-0 w-14"
                     >
                       <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+                        class="sc-AxhUy iJOgmr border-theme-neutral-200"
+                      />
+                    </div>
+                    <div
+                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                    >
+                      <div
+                        class="relative z-10 w-full"
+                        data-testid="select-network__typeahead-"
                       >
                         <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
+                          class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                        />
                       </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        ARK
-                      </span>
+                      <input
+                        aria-autocomplete="list"
+                        aria-labelledby="downshift-1-label"
+                        autocomplete="off"
+                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                        data-testid="select-asset__input"
+                        id="downshift-1-input"
+                        placeholder="Enter a network name"
+                        value=""
+                      />
                     </div>
                   </div>
-                </label>
-                <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+                </div>
+                <div
+                  aria-labelledby="downshift-1-label"
+                  class="select-asset__items"
+                  data-testid="select-asset__items"
+                  id="downshift-1-menu"
+                  role="listbox"
                 >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="Ethereum"
-                  />
                   <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="downshift-1-item-0"
+                    role="option"
+                    title="ARK"
                   >
                     <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
+                      class="sc-AxhUy iZkFLc"
                     >
                       <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+                        class="sc-AxjAm jakjmk"
+                        height="26"
+                        width="26"
                       >
-                        <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
+                        <svg>
+                          ark.svg
+                        </svg>
                       </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        Ethereum
-                      </span>
                     </div>
                   </div>
-                </label>
-                <label
-                  aria-checked="false"
-                  class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-                >
-                  <input
-                    class="CardControl__Input-sc-28luv0-0 lbnjeC"
-                    data-testid="card-control__network"
-                    name="network"
-                    type="radio"
-                    value="Bitcoin"
-                  />
                   <div
-                    class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="downshift-1-item-1"
+                    role="option"
+                    title="Ethereum"
                   >
                     <div
-                      class="sc-fzoLag jfCWJn flex items-center py-2"
+                      class="sc-AxhUy iZkFLc"
                     >
                       <div
-                        class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+                        class="sc-AxjAm jakjmk"
+                        height="26"
+                        width="26"
                       >
-                        <div
-                          class="sc-AxjAm cpczEI"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
+                        <svg>
+                          eth.svg
+                        </svg>
                       </div>
-                      <span
-                        class="ml-4 text-theme-text"
-                      >
-                        Bitcoin
-                      </span>
                     </div>
                   </div>
-                </label>
+                  <div
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="downshift-1-item-2"
+                    role="option"
+                    title="Bitcoin"
+                  >
+                    <div
+                      class="sc-AxhUy iZkFLc"
+                    >
+                      <div
+                        class="sc-AxjAm jakjmk"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
           <div
-            class="flex justify-end mt-6 space-x-3"
+            class="flex justify-end mt-10 space-x-3"
           >
             <button
               class="sc-AxhCb BegvR"
@@ -207,131 +209,133 @@ exports[`CreateWallet should render 1st step 1`] = `
       <h1
         class="mb-0"
       >
-        Select Network
+        Select a Cryptoasset
       </h1>
       <p
         class="text-theme-neutral-dark"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit
+        Select a cryptoasset to create your new wallet address
       </p>
     </div>
     <div
-      class="grid grid-flow-row gap-2"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-0-label"
+      class="relative"
+      role="combobox"
     >
       <label
-        aria-checked="false"
-        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+        for="downshift-0-input"
+        id="downshift-0-label"
+      />
+      <div
+        class="relative flex items-center w-full flex-inline"
       >
-        <input
-          class="CardControl__Input-sc-28luv0-0 lbnjeC"
-          data-testid="card-control__network"
-          name="network"
-          type="radio"
-          value="ARK"
-        />
         <div
-          class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+          class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="px-4 py-2 flex-0 w-14"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxhUy iJOgmr border-theme-neutral-200"
+            />
+          </div>
+          <div
+            class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+          >
+            <div
+              class="relative z-10 w-full"
+              data-testid="select-network__typeahead-"
             >
               <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
+                class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+              />
             </div>
-            <span
-              class="ml-4 text-theme-text"
-            >
-              ARK
-            </span>
+            <input
+              aria-autocomplete="list"
+              aria-labelledby="downshift-0-label"
+              autocomplete="off"
+              class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+              data-testid="select-asset__input"
+              id="downshift-0-input"
+              placeholder="Enter a network name"
+              value=""
+            />
           </div>
         </div>
-      </label>
-      <label
-        aria-checked="false"
-        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
+      </div>
+      <div
+        aria-labelledby="downshift-0-label"
+        class="select-asset__items"
+        data-testid="select-asset__items"
+        id="downshift-0-menu"
+        role="listbox"
       >
-        <input
-          class="CardControl__Input-sc-28luv0-0 lbnjeC"
-          data-testid="card-control__network"
-          name="network"
-          type="radio"
-          value="Ethereum"
-        />
         <div
-          class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+          aria-selected="false"
+          class="inline-block pt-6 mr-6 cursor-pointer"
+          id="downshift-0-item-0"
+          role="option"
+          title="ARK"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="sc-AxhUy iZkFLc"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxjAm jakjmk"
+              height="26"
+              width="26"
             >
-              <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  eth.svg
-                </svg>
-              </div>
+              <svg>
+                ark.svg
+              </svg>
             </div>
-            <span
-              class="ml-4 text-theme-text"
-            >
-              Ethereum
-            </span>
           </div>
         </div>
-      </label>
-      <label
-        aria-checked="false"
-        class="CardControl___StyledLabel-sc-28luv0-3 PNVuh"
-      >
-        <input
-          class="CardControl__Input-sc-28luv0-0 lbnjeC"
-          data-testid="card-control__network"
-          name="network"
-          type="radio"
-          value="Bitcoin"
-        />
         <div
-          class="sc-AxhUy gnuRcL CardControl__CustomCard-sc-28luv0-1 dojmPD"
+          aria-selected="false"
+          class="inline-block pt-6 mr-6 cursor-pointer"
+          id="downshift-0-item-1"
+          role="option"
+          title="Ethereum"
         >
           <div
-            class="sc-fzoLag jfCWJn flex items-center py-2"
+            class="sc-AxhUy iZkFLc"
           >
             <div
-              class="sc-AxgMl iqKzwo NetworkItemIcon transition-colors duration-100 border-theme-neutral-300"
+              class="sc-AxjAm jakjmk"
+              height="26"
+              width="26"
             >
-              <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  btc.svg
-                </svg>
-              </div>
+              <svg>
+                eth.svg
+              </svg>
             </div>
-            <span
-              class="ml-4 text-theme-text"
-            >
-              Bitcoin
-            </span>
           </div>
         </div>
-      </label>
+        <div
+          aria-selected="false"
+          class="inline-block pt-6 mr-6 cursor-pointer"
+          id="downshift-0-item-2"
+          role="option"
+          title="Bitcoin"
+        >
+          <div
+            class="sc-AxhUy iZkFLc"
+          >
+            <div
+              class="sc-AxjAm jakjmk"
+              height="26"
+              width="26"
+            >
+              <svg>
+                btc.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </DocumentFragment>
@@ -494,7 +498,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </button>
     </div>
     <div
-      class="sc-AxheI fGlcjJ border-theme-neutral-300"
+      class="sc-AxgMl fujBvH border-theme-neutral-300"
       type="horizontal"
     />
     <div
@@ -548,7 +552,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxheI fGlcjJ border-theme-neutral-300"
+      class="sc-AxgMl fujBvH border-theme-neutral-300"
       type="horizontal"
     />
   </section>
@@ -588,7 +592,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxgMl hjpKRL"
+          class="sc-AxhUy fHeTTV"
         >
           <div
             class="sc-AxjAm cpczEI"
@@ -603,7 +607,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
       <li>
         <div
-          class="sc-AxheI fGlcjJ border-theme-neutral-300"
+          class="sc-AxgMl fujBvH border-theme-neutral-300"
           type="horizontal"
         />
       </li>
@@ -623,16 +627,16 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxgMl hjpKRL"
+          class="sc-AxhUy fHeTTV"
         />
       </li>
     </ul>
     <div
-      class="sc-AxheI fGlcjJ border-theme-neutral-300"
+      class="sc-AxgMl fujBvH border-theme-neutral-300"
       type="horizontal"
     />
     <fieldset
-      class="sc-Axmtr bqoVnZ flex flex-col space-y-2"
+      class="sc-AxheI dThsOi flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -643,7 +647,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         Wallet name (optional)
       </label>
       <input
-        class="sc-AxmLO gdjiOR overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+        class="sc-Axmtr INsXA overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />
