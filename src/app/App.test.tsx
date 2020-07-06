@@ -11,14 +11,14 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
-	const responseBody = JSON.stringify({
+	const responseBody = {
 		data: {
 			exceptions: {},
 			genesisBlock: {},
 			milestones: {},
 			network: {},
 		},
-	});
+	};
 
 	nock("http://167.114.29.54:4003/api").get("/node/configuration/crypto").reply(200, responseBody);
 });
