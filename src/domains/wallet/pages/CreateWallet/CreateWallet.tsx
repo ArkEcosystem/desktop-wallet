@@ -6,21 +6,14 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
-import tw, { styled } from "twin.macro";
 
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
-
-const NetworkItem = styled.div`
-	[aria-checked="true"] & > .NetworkItemIcon {
-		${tw`text-theme-success`}
-	}
-`;
 
 export const FirstStep = ({ networks }: { networks: Network[] }) => {
 	const { register, setValue } = useFormContext();
@@ -45,7 +38,7 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 			</div>
 			<div className="space-y-2">
 				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-				<SelectAsset
+				<SelectNetwork
 					name={activeNetwork as any}
 					networks={networks}
 					onSelect={(selected) => handleSelect(selected?.name)}

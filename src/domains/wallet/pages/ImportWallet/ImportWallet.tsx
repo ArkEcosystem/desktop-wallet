@@ -2,7 +2,7 @@
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputPassword } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
@@ -60,7 +60,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 										Select a cryptoasset to import your existing wallet address
 									</p>
 								</div>
-								<SelectAsset
+								<SelectNetwork
 									name={selected as any}
 									networks={networks}
 									onSelect={(selected) => setSelected(selected.name)}

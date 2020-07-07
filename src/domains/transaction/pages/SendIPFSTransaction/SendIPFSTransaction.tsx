@@ -4,8 +4,8 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -33,7 +33,7 @@ export const FirstStep = ({ networks = [] }: any) => {
 			</div>
 			<div className="mt-4 grid grid-flow-row">
 				<TransactionField border={false} label="Network" padding={false}>
-					<SelectAsset networks={networks} />
+					<SelectNetwork networks={networks} />
 				</TransactionField>
 				<TransactionField border={false} label="Sender" padding={false}>
 					<div className="relative flex items-center">

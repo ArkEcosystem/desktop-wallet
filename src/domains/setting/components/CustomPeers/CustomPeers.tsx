@@ -3,7 +3,7 @@ import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -22,7 +22,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 			<Form context={form} onSubmit={onAddPeer}>
 				<FormField name="network" className="mt-8">
 					<FormLabel>Network</FormLabel>
-					<SelectAsset networks={networks} name="network" value="ARK" />
+					<SelectNetwork networks={networks} name="network" value="ARK" />
 					<FormHelperText />
 				</FormField>
 

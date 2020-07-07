@@ -5,7 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -136,7 +136,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 			<FormField name="network">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<SelectAsset networks={networks} onSelect={(selected: any) => form.setValue("network", selected)} />
+				<SelectNetwork networks={networks} onSelect={(selected: any) => form.setValue("network", selected)} />
 				<FormHelperText />
 			</FormField>
 

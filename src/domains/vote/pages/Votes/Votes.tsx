@@ -8,7 +8,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { NavigationBar } from "app/components/NavigationBar";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -25,7 +25,7 @@ type VotesProps = {
 
 const { PlaceholderVotes } = images.vote.pages.votes;
 
-const SelectAssetWrapper = styled.div`
+const SelectNetworkWrapper = styled.div`
 	.select-asset__items {
 		> div > div {
 			box-shadow: none;
@@ -72,14 +72,14 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 				<div className="px-10">
 					<div className="grid grid-flow-col gap-6">
 						<TransactionDetail border={false} label="Cryptoasset">
-							<SelectAssetWrapper>
-								<SelectAsset
+							<SelectNetworkWrapper>
+								<SelectNetwork
 									networks={networks}
 									name="cryptoasset"
 									placeholder="Select cryptoasset"
 									onSelect={handleSelectCrypto}
 								/>
-							</SelectAssetWrapper>
+							</SelectNetworkWrapper>
 						</TransactionDetail>
 						<TransactionDetail border={false} label="Address" className="mt-2">
 							<div className="relative flex items-center pb-24">
