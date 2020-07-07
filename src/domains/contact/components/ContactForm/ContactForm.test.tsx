@@ -7,7 +7,7 @@ import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
 
 describe("ContactForm", () => {
-	const assets = [
+	const networks = [
 		{
 			icon: "Ark",
 			name: "Ark Ecosystem",
@@ -30,7 +30,7 @@ describe("ContactForm", () => {
 	const onCancel = jest.fn();
 
 	it("should select network", () => {
-		const { getByTestId } = render(<ContactForm assets={assets} onCancel={onCancel} onSave={onSave} />);
+		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
 		const input = getByTestId("select-asset__input");
 		act(() => {
@@ -46,7 +46,7 @@ describe("ContactForm", () => {
 
 	it("should add an address", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = render(
-			<ContactForm assets={assets} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -84,7 +84,7 @@ describe("ContactForm", () => {
 
 		await act(async () => {
 			renderContext = render(
-				<ContactForm contact={contact} assets={assets} onCancel={onCancel} onSave={onSave} />,
+				<ContactForm contact={contact} networks={networks} onCancel={onCancel} onSave={onSave} />,
 			);
 		});
 
@@ -104,7 +104,7 @@ describe("ContactForm", () => {
 
 		await act(async () => {
 			renderContext = render(
-				<ContactForm contact={contact} assets={assets} onCancel={onCancel} onSave={onSave} />,
+				<ContactForm contact={contact} networks={networks} onCancel={onCancel} onSave={onSave} />,
 			);
 		});
 
@@ -152,13 +152,13 @@ describe("ContactForm", () => {
 		});
 
 		it("should call onDelete callback", async () => {
-			let renderContext;
+			let renderContext: any;
 
 			await act(async () => {
 				renderContext = render(
 					<ContactForm
 						contact={contact}
-						assets={assets}
+						networks={networks}
 						onCancel={onCancel}
 						onDelete={onDelete}
 						onSave={onSave}
