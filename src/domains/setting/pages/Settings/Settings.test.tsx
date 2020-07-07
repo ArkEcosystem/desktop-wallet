@@ -1,7 +1,6 @@
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { Settings } from "./Settings";
 
@@ -35,9 +34,8 @@ describe("Settings", () => {
 			},
 		};
 
-		const { container, asFragment } = render(
+		const { container, asFragment } = renderWithRouter(
 			<Settings settings={items} activeSettings={"General"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
 		);
 
 		expect(container).toBeTruthy();
@@ -73,9 +71,8 @@ describe("Settings", () => {
 			},
 		};
 
-		const { container, asFragment } = render(
+		const { container, asFragment } = renderWithRouter(
 			<Settings settings={items} activeSettings={"Peer"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
 		);
 
 		expect(container).toBeTruthy();
@@ -111,10 +108,8 @@ describe("Settings", () => {
 			},
 		};
 
-		const { container, asFragment } = render(
+		const { container, asFragment } = renderWithRouter(
 			<Settings settings={items} activeSettings={"Plugins"} setActiveSettings={() => null} {...settingsProps} />,
-
-			{ wrapper: MemoryRouter },
 		);
 
 		expect(container).toBeTruthy();
@@ -150,10 +145,8 @@ describe("Settings", () => {
 			},
 		};
 
-		const { container, asFragment, getByTestId, queryByText } = render(
+		const { container, asFragment, getByTestId, queryByText } = renderWithRouter(
 			<Settings settings={items} activeSettings={"Plugins"} setActiveSettings={() => null} {...settingsProps} />,
-
-			{ wrapper: MemoryRouter },
 		);
 
 		expect(container).toBeTruthy();
@@ -217,9 +210,8 @@ describe("Settings", () => {
 			},
 		};
 
-		const { container, asFragment } = render(
+		const { container, asFragment } = renderWithRouter(
 			<Settings settings={items} activeSettings={"Foo"} setActiveSettings={() => null} {...settingsProps} />,
-			{ wrapper: MemoryRouter },
 		);
 
 		expect(container).toBeTruthy();
