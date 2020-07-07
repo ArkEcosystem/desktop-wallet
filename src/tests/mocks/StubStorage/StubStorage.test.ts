@@ -48,9 +48,9 @@ describe("StubStorage", () => {
 	});
 
 	it("should restore", async () => {
-		expect(await stubStorage.restore()).toEqual(true);
+		expect(await stubStorage.restore()).toEqual(undefined);
 	});
 	it("should snapshot", async () => {
-		expect(await stubStorage.snapshot()).toEqual(true);
+		expect(await stubStorage.snapshot()).toEqual(undefined);
 	});
 });
