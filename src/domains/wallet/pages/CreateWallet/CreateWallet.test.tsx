@@ -4,37 +4,11 @@ import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
+import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
 	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
-	const networks = [
-		{
-			icon: "Ark",
-			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-		{
-			icon: "Lisk",
-			name: "Lisk",
-			className: "text-theme-primary-600 border-theme-primary-400",
-		},
-		{
-			icon: "Ripple",
-			name: "Ripple",
-			className: "text-theme-primary-700 border-theme-primary-500",
-		},
-	];
 
 	const onSubmit = jest.fn();
 	const onCopy = jest.fn();

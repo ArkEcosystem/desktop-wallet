@@ -4,8 +4,8 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -16,7 +16,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
-export const FirstStep = ({ assets = [] }: any) => {
+export const FirstStep = ({ networks = [] }: any) => {
 	const { register } = useFormContext();
 	const selectionBarState = useSelectionState(1);
 
@@ -33,7 +33,7 @@ export const FirstStep = ({ assets = [] }: any) => {
 			</div>
 			<div className="mt-4 grid grid-flow-row">
 				<TransactionField border={false} label="Network" padding={false}>
-					<SelectAsset assets={assets} />
+					<SelectNetwork networks={networks} />
 				</TransactionField>
 				<TransactionField border={false} label="Sender" padding={false}>
 					<div className="relative flex items-center">
@@ -148,10 +148,10 @@ export const FourthStep = () => (
 type Props = {
 	onCopy?: () => void;
 	onSubmit?: any;
-	assets?: any[];
+	networks?: any[];
 };
 
-export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
+export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -174,7 +174,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 
 					<div className="mt-8">
 						<TabPanel tabId={1}>
-							<FirstStep assets={assets} />
+							<FirstStep networks={networks} />
 						</TabPanel>
 						<TabPanel tabId={2}>
 							<SecondStep />

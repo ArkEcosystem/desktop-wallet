@@ -5,9 +5,9 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { SelectAsset } from "app/components/SelectAsset";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
@@ -97,7 +97,7 @@ const FirstStep = ({
 			<FormWrapper className="mt-8">
 				<FormField name="network">
 					<FormLabel>Network</FormLabel>
-					<SelectAsset assets={networks} />
+					<SelectNetwork networks={networks} />
 				</FormField>
 
 				<ProfileFormField
