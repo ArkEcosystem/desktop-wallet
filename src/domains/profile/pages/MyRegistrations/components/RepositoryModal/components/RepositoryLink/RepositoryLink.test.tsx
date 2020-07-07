@@ -1,15 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "testing-library";
+import { renderWithRouter } from "testing-library";
 
 import { RepositoryLink } from "./RepositoryLink";
 
 describe("RepositoryLink", () => {
 	it("should render properly", () => {
-		const { container, asFragment, getByText } = render(
-			<Router>
-				<RepositoryLink provider="GitLab" url="http://github.com/robank" />,
-			</Router>,
+		const { container, asFragment, getByText } = renderWithRouter(
+			<RepositoryLink provider="GitLab" url="http://github.com/robank" />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

@@ -1,18 +1,11 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Router } from "react-router-dom";
+import { renderWithRouter, screen, waitFor } from "testing-library";
 
 import { App } from "./";
 
 describe("App", () => {
-	const history = createMemoryHistory();
 	it("should render", async () => {
-		const { container, asFragment } = render(
-			<Router history={history}>
-				<App />
-			</Router>,
-		);
+		const { container, asFragment } = renderWithRouter(<App />);
 
 		await waitFor(async () => {
 			await expect(

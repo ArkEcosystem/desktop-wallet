@@ -82,7 +82,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 			<div className="container mx-auto">
 				<div className="max-w-lg mx-auto xl:max-w-xl">
-					<h1 className="mb-0 text-3xl font-bold md:text-4xl">Create Profile</h1>
+					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
 					<div className="text-theme-neutral-dark">
 						Create a new Profile or login with your MarketSquare account to get started.
 					</div>

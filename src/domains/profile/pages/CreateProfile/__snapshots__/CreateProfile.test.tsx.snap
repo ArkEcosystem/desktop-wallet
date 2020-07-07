@@ -29,7 +29,7 @@ exports[`CreateProfile should render 1`] = `
         class="max-w-lg mx-auto xl:max-w-xl"
       >
         <h1
-          class="mb-0 text-3xl font-bold md:text-4xl"
+          class="mb-0 md:text-4xl"
         >
           Create Profile
         </h1>
@@ -169,7 +169,7 @@ exports[`CreateProfile should render 1`] = `
                   Name
                 </label>
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   name="name"
                 />
@@ -189,7 +189,7 @@ exports[`CreateProfile should render 1`] = `
                   class="relative w-full"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                     data-testid="select-list__input"
                     name="market-provider"
                     readonly=""
@@ -250,7 +250,7 @@ exports[`CreateProfile should render 1`] = `
                   class="relative w-full"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                     data-testid="select-list__input"
                     name="currency"
                     readonly=""
@@ -344,10 +344,10 @@ exports[`CreateProfile should render 1`] = `
                             type="checkbox"
                           />
                           <div
-                            class="sc-fzokOt gWpRLq"
+                            class="sc-fzokOt diusSt"
                           >
                             <span
-                              class="sc-fzqBZW jzxcvp"
+                              class="sc-fzqBZW kedYqi"
                             />
                           </div>
                         </label>

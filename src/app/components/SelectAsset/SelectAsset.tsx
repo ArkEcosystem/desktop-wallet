@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import Downshift from "downshift";
@@ -125,14 +126,18 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 							{assets.map((asset: Asset, index: number) => {
 								return (
 									<div
-										title={asset.name}
-										className="inline-block pt-6 mr-6 cursor-pointer"
 										key={index}
+										className="inline-block pt-6 mr-6 cursor-pointer"
 										{...getItemProps({ item: asset })}
 									>
-										<Circle className={assetClassName(asset, selectedItem, inputValue)} size="xl">
-											<Icon name={asset.icon} width={26} height={26} />
-										</Circle>
+										<Tippy content={asset.name}>
+											<Circle
+												className={assetClassName(asset, selectedItem, inputValue)}
+												size="xl"
+											>
+												<Icon name={asset.icon} width={26} height={26} />
+											</Circle>
+										</Tippy>
 									</div>
 								);
 							})}

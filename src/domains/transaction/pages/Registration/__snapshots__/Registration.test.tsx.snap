@@ -128,7 +128,6 @@ exports[`Registration should render 1st step 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
@@ -149,7 +148,6 @@ exports[`Registration should render 1st step 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
@@ -170,7 +168,6 @@ exports[`Registration should render 1st step 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
@@ -211,7 +208,7 @@ exports[`Registration should render 1st step 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="ProfileFormField__select-address"
                         name="address"
                       >
@@ -273,7 +270,7 @@ exports[`Registration should render 1st step 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                         data-testid="select-list__input"
                         name="registrationType"
                         readonly=""
@@ -430,7 +427,7 @@ exports[`Registration should render 2nd step 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -452,7 +449,7 @@ exports[`Registration should render 2nd step 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         />
@@ -468,7 +465,7 @@ exports[`Registration should render 2nd step 1`] = `
                           Website
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -636,7 +633,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="sc-fzozJi OgXfh"
                           >
                             <input
-                              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -1213,7 +1210,7 @@ exports[`Registration should render 4th step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
@@ -1253,7 +1250,7 @@ exports[`Registration should render 4th step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
@@ -1887,7 +1884,6 @@ exports[`Registration should select registration type 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-25-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
@@ -1908,7 +1904,6 @@ exports[`Registration should select registration type 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-25-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
@@ -1929,7 +1924,6 @@ exports[`Registration should select registration type 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-25-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
@@ -1970,7 +1964,7 @@ exports[`Registration should select registration type 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="ProfileFormField__select-address"
                         name="address"
                       >
@@ -2032,7 +2026,7 @@ exports[`Registration should select registration type 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                         data-testid="select-list__input"
                         name="registrationType"
                         readonly=""
@@ -2238,7 +2232,6 @@ exports[`Registration should should go back 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-5-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
@@ -2259,7 +2252,6 @@ exports[`Registration should should go back 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-5-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
@@ -2280,7 +2272,6 @@ exports[`Registration should should go back 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-5-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
@@ -2321,7 +2312,7 @@ exports[`Registration should should go back 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <select
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="ProfileFormField__select-address"
                         name="address"
                       >
@@ -2383,7 +2374,7 @@ exports[`Registration should should go back 1`] = `
                       class="relative w-full"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                         data-testid="select-list__input"
                         name="registrationType"
                         readonly=""
