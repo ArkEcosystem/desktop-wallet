@@ -1,35 +1,38 @@
-export class StubStorage {
-	readonly #storage;
+/* eslint-disable @typescript-eslint/require-await */
+import { Storage } from "@arkecosystem/platform-sdk-profiles";
+
+export class StubStorage implements Storage {
+	#storage: Record<string, unknown> = {};
 
 	public constructor() {
 		this.#storage = {};
 	}
 
-	public all(): object {
+	public async all(): Promise<object> {
 		return this.#storage;
 	}
 
-	public get<T = any>(key: string): T | undefined {
-		return this.#storage[key];
+	public async get<T = any>(key: string): Promise<T | undefined> {
+		return this.#storage[key] as T;
 	}
 
-	public set(key: string, value: string | object): void {
+	public async set(key: string, value: string | object): Promise<void> {
 		this.#storage[key] = value;
 	}
 
-	public has(key: string): boolean {
+	public async has(key: string): Promise<boolean> {
 		return Object.keys(this.#storage).includes(key);
 	}
 
-	public forget(key: string): void {
+	public async forget(key: string): Promise<void> {
 		delete this.#storage[key];
 	}
 
-	public flush(): void {
+	public async flush(): Promise<void> {
 		this.#storage = {};
 	}
 
-	public count(): number {
+	public async count(): Promise<number> {
 		return 0;
 	}
 

@@ -14,7 +14,12 @@ export const EnvironmentProvider = ({ children }: Props) => {
 	const env = new Environment({
 		coins: { ARK },
 		httpClient,
-		storage: process.env.NODE_ENV === "test" ? new StubStorage() : "indexeddb",
+		/**
+		 * @TODO
+		 * - use a storage with persistence (rxdb)
+		 * - check why the localforage driver is randomly undefined in tests
+		 */
+		storage: new StubStorage(),
 	});
 
 	return <EnvironmentContext.Provider value={env}>{children}</EnvironmentContext.Provider>;
