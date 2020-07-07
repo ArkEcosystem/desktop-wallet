@@ -54,7 +54,7 @@
       @select="ensureAvailableAmount"
     />
 
-    <div :class="{ 'rounded-lg bg-theme-input-toggle-choice -mx-6 px-6 pb-6 mb-2': isMultiPayment }">
+    <div :class="{ 'rounded-lg bg-theme-input-toggle-choice -mx-6 p-6 pt-4 mb-2': isMultiPayment }">
       <InputAddress
         ref="recipient"
         v-model="$v.recipientId.$model"
