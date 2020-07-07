@@ -122,6 +122,7 @@ let colors = {
   'theme-option-heading-button-text': 'var(--theme-option-heading-button-text)',
   'theme-input-field-border': 'var(--theme-input-field-border)',
   'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
+  'theme-input-toggle-choice-hover': 'var(--theme-input-toggle-choice-hover)',
   'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
   'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
   'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
