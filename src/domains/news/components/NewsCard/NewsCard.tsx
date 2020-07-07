@@ -39,6 +39,10 @@ export const NewsCard = () => (
 				quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi
 				recusandae ab.
 			</p>
+
+			<div className="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-contrast">
+				<img src="https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png" alt="ARK Banner" />
+			</div>
 		</div>
 	</Card>
 );
