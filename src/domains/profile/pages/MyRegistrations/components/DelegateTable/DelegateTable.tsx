@@ -64,7 +64,7 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 							<Circle className="border-theme-neutral-800" size="lg">
 								<Icon name="Business" width={22} height={22} />
 							</Circle>
-							<Avatar address="APTz" />
+							<Avatar address="APTz" size="lg" />
 						</div>
 					</td>
 					<td className="py-6 mt-1 font-semibold">

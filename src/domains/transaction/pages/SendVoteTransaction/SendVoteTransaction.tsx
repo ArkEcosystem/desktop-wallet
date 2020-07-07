@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
@@ -33,7 +34,7 @@ export const FirstStep = () => {
 					label="Account"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 				>
@@ -43,7 +44,7 @@ export const FirstStep = () => {
 					label="Delegate"
 					extra={
 						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 					className="pb-0"
@@ -98,7 +99,7 @@ export const SecondStep = () => (
 				label="Account"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -108,7 +109,7 @@ export const SecondStep = () => (
 				label="Delegate"
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>
@@ -149,7 +150,7 @@ export const FourthStep = () => (
 			label="Delegate"
 			extra={
 				<div>
-					<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+					<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 				</div>
 			}
 		>

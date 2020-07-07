@@ -1,5 +1,6 @@
 import { Address } from "app/components/Address";
 import { Alert } from "app/components/Alert";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -43,7 +44,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					label=" "
 					extra={
 						<div className="mt-2">
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+							<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 					border={false}
@@ -95,7 +96,7 @@ const SecondStep = () => (
 				label=" "
 				extra={
 					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 					</div>
 				}
 			>

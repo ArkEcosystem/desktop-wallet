@@ -37,7 +37,7 @@ export const DelegateListItem = ({
 	return (
 		<tr className={`border-b border-theme-neutral-200 ${isSelected && "bg-theme-success-100"}`}>
 			<td className="py-5">
-				<Avatar address={delegateAddress!} noShadow />
+				<Avatar address={delegateAddress} noShadow />
 			</td>
 
 			<td className="py-5 font-bold">{delegateName}</td>

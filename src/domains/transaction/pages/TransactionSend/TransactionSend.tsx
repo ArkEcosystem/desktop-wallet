@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
@@ -82,14 +83,7 @@ export const SecondStep = () => (
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
+			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<div className="mb-2 font-semibold text-theme-neutral-500">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">

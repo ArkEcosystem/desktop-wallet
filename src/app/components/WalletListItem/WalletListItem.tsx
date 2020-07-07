@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -9,7 +10,6 @@ import { Dropdown } from "../Dropdown";
 export type WalletListItemProps = {
 	coinIcon: string;
 	coinClass?: string;
-	avatarId?: string;
 	address?: string;
 	walletName?: string;
 	balance?: string;
@@ -23,7 +23,6 @@ export type WalletListItemProps = {
 export const WalletListItem = ({
 	coinIcon,
 	coinClass,
-	avatarId,
 	address,
 	walletName,
 	balance,
@@ -45,10 +44,12 @@ export const WalletListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
-				<Circle className={coinClass} size="lg">
-					<Icon name={coinIcon} width={20} height={20} />
-				</Circle>
-				<Circle avatarId={avatarId} size="lg" />
+				<div className="flex">
+					<Circle className={coinClass} size="lg">
+						<Icon name={coinIcon} width={20} height={20} />
+					</Circle>
+					<Avatar size="lg" address={address as string} />
+				</div>
 			</td>
 			<td className="py-1">
 				<Address walletName={walletName} address={address} maxChars={22} />
@@ -98,4 +99,5 @@ export const WalletListItem = ({
 WalletListItem.defaultProps = {
 	walletTypeIcons: [],
 	actions: [],
+	address: "",
 };

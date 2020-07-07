@@ -13,9 +13,8 @@ export const Default = () => {
 				<WalletCard
 					coinIcon="Ethereum"
 					coinClass="border-theme-neutral-800"
-					avatarId="test"
 					walletName="Primary"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+					address="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
 					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },
@@ -29,9 +28,8 @@ export const Default = () => {
 					className="mr-5"
 					coinIcon="Ethereum"
 					coinClass="border-theme-neutral-800"
-					avatarId="test"
 					walletName="Secondary"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+					address="2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
 					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },
@@ -41,7 +39,6 @@ export const Default = () => {
 				<WalletCard
 					coinIcon="Ethereum"
 					coinClass="border-theme-neutral-800"
-					avatarId="test"
 					walletName="My wallet"
 					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
 					balance="100,000 ETH"

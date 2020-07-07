@@ -1,5 +1,6 @@
 // UI Elements
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -39,8 +40,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<div className="relative">
 					<Input type="text" disabled />
 					<div className="absolute top-0 flex items-center mt-2 ml-4">
-						<Circle avatarId="test" size="sm" noShadow />
-						<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+						<div className="flex items-center">
+							<Avatar address="test" size="sm" noShadow />
+							<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+						</div>
 					</div>
 				</div>
 			</FormField>
@@ -69,11 +72,11 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				border={false}
 				label="Signatory"
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" size="sm" />
 					</div>
 				}
 			>
