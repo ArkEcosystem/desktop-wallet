@@ -13,7 +13,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 	return (
 		<InputGroup className="max-w-20">
 			<Input ref={ref} type={show ? "text" : "password"} className="pr-12" {...props} />
-			<InputAddonEnd className="mr-4 my-px">
+			<InputAddonEnd className="my-px mr-4">
 				<button
 					data-testid="InputPassword__toggle"
 					type="button"
