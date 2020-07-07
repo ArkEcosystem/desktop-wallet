@@ -413,7 +413,8 @@ describe('TransactionFormTransfer', () => {
         expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1))
       })
 
-      it('should return value including all recipients', async () => {
+      it('should return value including all recipients for multiple', async () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
         wrapper.vm.$v.amount.$model = 10
