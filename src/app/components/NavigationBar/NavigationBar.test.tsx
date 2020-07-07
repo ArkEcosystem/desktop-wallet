@@ -94,8 +94,8 @@ describe("NavigationBar", () => {
 
 	it("should open user actions dropdown on click", () => {
 		const options = [
-			{ label: "Option 1", value: "/test" },
-			{ label: "Option 2", value: "/test2" },
+			{ label: "Option 1", value: "/test", mountPath: () => "/test" },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
 		];
 		const { getByTestId, getByText } = renderWithRouter(<NavigationBar userActions={options} />);
 		const toggle = getByTestId("navbar__useractions");
@@ -111,8 +111,8 @@ describe("NavigationBar", () => {
 
 	it("should not render if no active profile", () => {
 		const options = [
-			{ label: "Option 1", value: "/test" },
-			{ label: "Option 2", value: "/test2" },
+			{ label: "Option 1", value: "/test", mountPath: () => "/test" },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
 		];
 
 		const menu = [
