@@ -38,11 +38,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 type ContactsProps = {
 	contacts: any[];
-	assets: any[];
+	networks: any[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
+export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
 	const { t } = useTranslation();
@@ -97,7 +97,7 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 					/>
 				</div>
 
-				<div className="flex flex-1 p-10 bg-theme-background">
+				<div className="flex items-start flex-1 px-10 py-16 bg-theme-background">
 					{contacts.length === 0 && (
 						<div
 							data-testid="contacts__banner"
@@ -126,7 +126,7 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				assets={assets}
+				networks={networks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
@@ -137,5 +137,5 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
-	assets: [],
+	networks: [],
 };

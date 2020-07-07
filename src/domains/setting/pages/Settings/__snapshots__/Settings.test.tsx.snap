@@ -109,7 +109,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               Plugin Settings
@@ -171,10 +171,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -242,10 +242,10 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -255,17 +255,17 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="load-plugins"
                   >
                     Load plugins from
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="load-plugins"
                       readonly=""
@@ -289,7 +289,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-7-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-7-menu"
                           role="listbox"
                           tabindex="-1"
@@ -445,7 +445,7 @@ exports[`Settings should render 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               Wallet Settings
@@ -556,7 +556,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="profile-name"
                     label="Profile Name"
@@ -564,7 +564,7 @@ exports[`Settings should render 1`] = `
                     Profile Name
                   </label>
                   <input
-                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     name="profile-name"
                     type="text"
@@ -574,7 +574,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="passphrase-language"
                     label="Passphrase Language"
@@ -582,10 +582,10 @@ exports[`Settings should render 1`] = `
                     Passphrase Language
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="passphrase-language"
                       readonly=""
@@ -609,7 +609,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-0-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-0-menu"
                           role="listbox"
                           tabindex="-1"
@@ -635,7 +635,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="currency"
                     label="Currency"
@@ -643,10 +643,10 @@ exports[`Settings should render 1`] = `
                     Currency
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="currency"
                       readonly=""
@@ -670,7 +670,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-1-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-1-menu"
                           role="listbox"
                           tabindex="-1"
@@ -700,7 +700,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="language"
                     label="Language"
@@ -708,10 +708,10 @@ exports[`Settings should render 1`] = `
                     Language
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="language"
                       readonly=""
@@ -735,7 +735,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-2-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-2-menu"
                           role="listbox"
                           tabindex="-1"
@@ -761,7 +761,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="price-source"
                     label="Price Source"
@@ -769,10 +769,10 @@ exports[`Settings should render 1`] = `
                     Price Source
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="price-source"
                       readonly=""
@@ -796,7 +796,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-3-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-3-menu"
                           role="listbox"
                           tabindex="-1"
@@ -822,7 +822,7 @@ exports[`Settings should render 1`] = `
                   class="sc-AxhUy dJlYTe mt-8"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="time-format"
                     label="Time Format"
@@ -830,10 +830,10 @@ exports[`Settings should render 1`] = `
                     Time Format
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="time-format"
                       readonly=""
@@ -857,7 +857,7 @@ exports[`Settings should render 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-4-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-4-menu"
                           role="listbox"
                           tabindex="-1"
@@ -932,10 +932,10 @@ exports[`Settings should render 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="sc-fzqBZW llLJVP"
+                          class="sc-fzqBZW mFrXE"
                         >
                           <span
-                            class="sc-fzqNJr lhXIDM"
+                            class="sc-fzqNJr gQwiJv"
                           />
                         </div>
                       </label>
@@ -983,10 +983,10 @@ exports[`Settings should render 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="sc-fzqBZW llLJVP"
+                          class="sc-fzqBZW mFrXE"
                         >
                           <span
-                            class="sc-fzqNJr lhXIDM"
+                            class="sc-fzqNJr gQwiJv"
                           />
                         </div>
                       </label>
@@ -999,18 +999,16 @@ exports[`Settings should render 1`] = `
                 data-testid="list-divided-item__wrapper"
               >
                 <div
-                  class="flex justify-between flex-col items-start"
+                  class="flex justify-between items-center"
                   data-testid="list-divided-item__inner-wrapper"
                 >
                   <div
                     class="flex flex-col"
                   >
                     <span
-                      class="mr-5 FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark mb-2"
+                      class="mr-5 undefined"
                       data-testid="list-divided-item__label"
-                    >
-                      Auto-logoff
-                    </span>
+                    />
                   </div>
                 </div>
                 <div
@@ -1018,13 +1016,21 @@ exports[`Settings should render 1`] = `
                   data-testid="list-divided-item__content"
                 >
                   <fieldset
-                    class="sc-AxhUy dJlYTe mt-8"
+                    class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                   >
+                    <label
+                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      data-testid="FormLabel"
+                      for="price-source"
+                      label="Auto-logoff"
+                    >
+                      Auto-logoff
+                    </label>
                     <div
-                      class="w-full"
+                      class="relative w-full"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                         data-testid="select-list__input"
                         name="price-source"
                         readonly=""
@@ -1048,7 +1054,7 @@ exports[`Settings should render 1`] = `
                           </button>
                           <ul
                             aria-labelledby="downshift-5-label"
-                            class="sc-fznZeY dutHwD"
+                            class="sc-fznZeY ftMtbA"
                             id="downshift-5-menu"
                             role="listbox"
                             tabindex="-1"
@@ -1124,10 +1130,10 @@ exports[`Settings should render 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="sc-fzqBZW llLJVP"
+                          class="sc-fzqBZW mFrXE"
                         >
                           <span
-                            class="sc-fzqNJr lhXIDM"
+                            class="sc-fzqNJr gQwiJv"
                           />
                         </div>
                       </label>
@@ -1175,10 +1181,10 @@ exports[`Settings should render 1`] = `
                           type="checkbox"
                         />
                         <div
-                          class="sc-fzqBZW llLJVP"
+                          class="sc-fzqBZW mFrXE"
                         >
                           <span
-                            class="sc-fzqNJr lhXIDM"
+                            class="sc-fzqNJr gQwiJv"
                           />
                         </div>
                       </label>
@@ -1480,7 +1486,7 @@ exports[`Settings should render peer settings 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               Peer Settings
@@ -1542,10 +1548,10 @@ exports[`Settings should render peer settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -1593,10 +1599,10 @@ exports[`Settings should render peer settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -1745,7 +1751,7 @@ exports[`Settings should render peer settings 1`] = `
                         </span>
                       </td>
                       <td
-                        class="py-1 text-theme-primary-300"
+                        class="py-1 text-theme-neutral-500"
                       >
                         <div
                           class="flex justify-center h-full"
@@ -1761,7 +1767,9 @@ exports[`Settings should render peer settings 1`] = `
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <td
+                        class="text-theme-neutral-300"
+                      >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
@@ -1822,7 +1830,7 @@ exports[`Settings should render peer settings 1`] = `
                         </span>
                       </td>
                       <td
-                        class="py-1 text-theme-primary-300"
+                        class="py-1 text-theme-neutral-500"
                       >
                         <div
                           class="flex justify-center h-full"
@@ -1838,7 +1846,9 @@ exports[`Settings should render peer settings 1`] = `
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <td
+                        class="text-theme-neutral-300"
+                      >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
@@ -1899,7 +1909,7 @@ exports[`Settings should render peer settings 1`] = `
                         </span>
                       </td>
                       <td
-                        class="py-1 text-theme-primary-300"
+                        class="py-1 text-theme-neutral-500"
                       >
                         <div
                           class="flex justify-center h-full"
@@ -1915,7 +1925,9 @@ exports[`Settings should render peer settings 1`] = `
                           </div>
                         </div>
                       </td>
-                      <td>
+                      <td
+                        class="text-theme-neutral-300"
+                      >
                         <div
                           class="relative"
                           data-testid="dropdown__toggle"
@@ -2084,7 +2096,7 @@ exports[`Settings should render plugin settings 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               Plugin Settings
@@ -2146,10 +2158,10 @@ exports[`Settings should render plugin settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -2217,10 +2229,10 @@ exports[`Settings should render plugin settings 1`] = `
                         type="checkbox"
                       />
                       <div
-                        class="sc-fzqBZW llLJVP"
+                        class="sc-fzqBZW mFrXE"
                       >
                         <span
-                          class="sc-fzqNJr lhXIDM"
+                          class="sc-fzqNJr gQwiJv"
                         />
                       </div>
                     </label>
@@ -2230,17 +2242,17 @@ exports[`Settings should render plugin settings 1`] = `
                   class="sc-AxhUy dJlYTe flex flex-col space-y-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="load-plugins"
                   >
                     Load plugins from
                   </label>
                   <div
-                    class="w-full"
+                    class="relative w-full"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                       data-testid="select-list__input"
                       name="load-plugins"
                       readonly=""
@@ -2264,7 +2276,7 @@ exports[`Settings should render plugin settings 1`] = `
                         </button>
                         <ul
                           aria-labelledby="downshift-6-label"
-                          class="sc-fznZeY dutHwD"
+                          class="sc-fznZeY ftMtbA"
                           id="downshift-6-menu"
                           role="listbox"
                           tabindex="-1"

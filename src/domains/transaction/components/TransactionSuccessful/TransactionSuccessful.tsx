@@ -35,6 +35,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					</div>
 				</TransactionDetail>
+
 				<TransactionDetail label="Block ID">
 					<div className="flex items-center">
 						<Clipboard>
@@ -49,6 +50,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					</div>
 				</TransactionDetail>
+
 				<TransactionDetail
 					label="Network"
 					extra={
@@ -61,7 +63,14 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
-				<TransactionDetail extra={<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+
+				<TransactionDetail
+					extra={
+						<div className="mt-2">
+							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						</div>
+					}
+				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">

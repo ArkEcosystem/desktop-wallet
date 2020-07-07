@@ -29,7 +29,7 @@ exports[`CreateProfile should render 1`] = `
         class="max-w-lg mx-auto xl:max-w-xl"
       >
         <h1
-          class="mb-0 text-3xl font-bold md:text-4xl"
+          class="mb-0 md:text-4xl"
         >
           Create Profile
         </h1>
@@ -161,7 +161,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="name"
                   label="Name"
@@ -169,7 +169,7 @@ exports[`CreateProfile should render 1`] = `
                   Name
                 </label>
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   name="name"
                 />
@@ -178,7 +178,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="market-provider"
                   label="Market Provider"
@@ -186,10 +186,10 @@ exports[`CreateProfile should render 1`] = `
                   Market Provider
                 </label>
                 <div
-                  class="w-full"
+                  class="relative w-full"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                     data-testid="select-list__input"
                     name="market-provider"
                     readonly=""
@@ -213,7 +213,7 @@ exports[`CreateProfile should render 1`] = `
                       </button>
                       <ul
                         aria-labelledby="downshift-0-label"
-                        class="sc-fznKkj dPXThn"
+                        class="sc-fznKkj hupalw"
                         id="downshift-0-menu"
                         role="listbox"
                         tabindex="-1"
@@ -239,7 +239,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="currency"
                   label="Currency"
@@ -247,10 +247,10 @@ exports[`CreateProfile should render 1`] = `
                   Currency
                 </label>
                 <div
-                  class="w-full"
+                  class="relative w-full"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                     data-testid="select-list__input"
                     name="currency"
                     readonly=""
@@ -274,7 +274,7 @@ exports[`CreateProfile should render 1`] = `
                       </button>
                       <ul
                         aria-labelledby="downshift-1-label"
-                        class="sc-fznKkj dPXThn"
+                        class="sc-fznKkj hupalw"
                         id="downshift-1-menu"
                         role="listbox"
                         tabindex="-1"
@@ -344,10 +344,10 @@ exports[`CreateProfile should render 1`] = `
                             type="checkbox"
                           />
                           <div
-                            class="sc-fzokOt gWpRLq"
+                            class="sc-fzokOt diusSt"
                           >
                             <span
-                              class="sc-fzqBZW jzxcvp"
+                              class="sc-fzqBZW kedYqi"
                             />
                           </div>
                         </label>

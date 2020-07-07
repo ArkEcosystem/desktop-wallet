@@ -31,18 +31,18 @@ const FirstStep = ({ form }: { form: any }) => {
 			<h1 className="mb-0">Delegate Resignation</h1>
 			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
 
-			<div className="mt-8">
+			<div className="mt-6">
 				<Alert size="lg">
 					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
 					blockchain.
 				</Alert>
 			</div>
 
-			<div className="mt-6">
+			<div>
 				<TransactionDetail
 					label=" "
 					extra={
-						<div>
+						<div className="mt-2">
 							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
@@ -59,8 +59,11 @@ const FirstStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
 
-				<TransactionDetail label="Fee ARK">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+				<TransactionDetail className="pt-6 pb-0">
+					<FormField name="name" className="font-normal">
+						<FormLabel>Fee ARK</FormLabel>
+						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+					</FormField>
 				</TransactionDetail>
 			</div>
 		</div>
@@ -218,7 +221,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							{activeTab < 6 && (
 								<Button
 									disabled={activeTab === 1}

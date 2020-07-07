@@ -1,4 +1,4 @@
-import { SvgCollection } from "app/assets/svg";
+import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
@@ -18,12 +18,14 @@ type RegistrationProps = {
 	registrations: any;
 };
 
+const { RegisterBanner } = images.common;
+
 const EmptyRegistrations = (
 	<div
 		data-testid="my-registrations__empty-state"
 		className="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
 	>
-		<SvgCollection.RegistrationsIllustration />
+		<RegisterBanner />
 		<span className="text-sm mt-7 text-theme-neutral-600">
 			Register Business, Bridgechain and Delegate in the most convenient way.
 		</span>
@@ -75,7 +77,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 					title="My Registrations"
 					subtitle="You can register a Delagate, Business and Bridgechain."
 					extra={
-						<div className="flex justify-end divide-x space-x-10 divide-theme-neutral-300">
+						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
 								<Button>Register</Button>

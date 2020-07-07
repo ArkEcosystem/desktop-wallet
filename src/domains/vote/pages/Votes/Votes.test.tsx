@@ -1,16 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, renderWithRouter } from "testing-library";
 
-import { addressListData, assets, delegateListData } from "../../data";
+import { addressListData, delegateListData, networks } from "../../data";
 import { Votes } from "./Votes";
 
 describe("Votes", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<Router>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
-			</Router>,
+		const { container, asFragment } = renderWithRouter(
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 
 		expect(container).toBeTruthy();
@@ -18,10 +15,8 @@ describe("Votes", () => {
 	});
 
 	it("should select a cryptoasset", () => {
-		const { container, asFragment, getByTestId } = render(
-			<Router>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
-			</Router>,
+		const { container, asFragment, getByTestId } = renderWithRouter(
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -40,10 +35,8 @@ describe("Votes", () => {
 	});
 
 	it("should select address", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<Router>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
-			</Router>,
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -68,10 +61,8 @@ describe("Votes", () => {
 	});
 
 	it("should select a delegate", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<Router>
-				<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
-			</Router>,
+		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 

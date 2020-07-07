@@ -14,7 +14,6 @@ import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
-import { ReactComponent as Confirmed } from "./confirmed.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
@@ -50,7 +49,6 @@ import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Medium } from "./medium.svg";
-import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
@@ -72,7 +70,6 @@ import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
-import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
@@ -113,7 +110,6 @@ export const SvgCollection: any = {
 	ChevronDown,
 	ChevronUp,
 	Close,
-	Confirmed,
 	Copy,
 	CrossSlim,
 	Dash,
@@ -143,7 +139,6 @@ export const SvgCollection: any = {
 	LinkedIn,
 	List,
 	Medium,
-	Mistake,
 	Msq,
 	Multisig,
 	Npm,
@@ -159,7 +154,6 @@ export const SvgCollection: any = {
 	Received,
 	Reddit,
 	Redirect,
-	RegistrationsIllustration,
 	ReplyArrow,
 	Report,
 	Reset,

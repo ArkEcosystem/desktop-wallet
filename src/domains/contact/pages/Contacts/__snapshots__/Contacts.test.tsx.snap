@@ -43,7 +43,7 @@ exports[`Contacts should render 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Contacts
@@ -72,7 +72,7 @@ exports[`Contacts should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 p-10 bg-theme-background"
+        class="flex items-start flex-1 px-10 py-16 bg-theme-background"
       >
         <div
           class="flex flex-col items-center justify-center w-full"
@@ -146,7 +146,7 @@ exports[`Contacts should render with contacts 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Contacts
@@ -203,7 +203,7 @@ exports[`Contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-1 p-10 bg-theme-background"
+        class="flex items-start flex-1 px-10 py-16 bg-theme-background"
       >
         <div
           class="w-full"

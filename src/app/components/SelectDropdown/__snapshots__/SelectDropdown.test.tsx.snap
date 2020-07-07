@@ -3,10 +3,10 @@
 exports[`SelectDropdown should render 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -27,7 +27,7 @@ exports[`SelectDropdown should render 1`] = `
         />
         <ul
           aria-labelledby="downshift-0-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-0-menu"
           role="listbox"
           tabindex="-1"
@@ -54,10 +54,10 @@ exports[`SelectDropdown should render 1`] = `
 exports[`SelectDropdown should render disabled 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -79,7 +79,7 @@ exports[`SelectDropdown should render disabled 1`] = `
         />
         <ul
           aria-labelledby="downshift-2-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-2-menu"
           role="listbox"
           tabindex="-1"
@@ -106,11 +106,11 @@ exports[`SelectDropdown should render disabled 1`] = `
 exports[`SelectDropdown should render invalid 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
       aria-invalid="true"
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -131,7 +131,7 @@ exports[`SelectDropdown should render invalid 1`] = `
         />
         <ul
           aria-labelledby="downshift-1-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-1-menu"
           role="listbox"
           tabindex="-1"
@@ -158,10 +158,10 @@ exports[`SelectDropdown should render invalid 1`] = `
 exports[`SelectDropdown should render with empty options 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -182,7 +182,7 @@ exports[`SelectDropdown should render with empty options 1`] = `
         />
         <ul
           aria-labelledby="downshift-5-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-5-menu"
           role="listbox"
           tabindex="-1"
@@ -209,10 +209,10 @@ exports[`SelectDropdown should render with empty options 1`] = `
 exports[`SelectDropdown should render with initial default value 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -235,7 +235,7 @@ exports[`SelectDropdown should render with initial default value 1`] = `
         </button>
         <ul
           aria-labelledby="downshift-3-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-3-menu"
           role="listbox"
           tabindex="-1"
@@ -262,10 +262,10 @@ exports[`SelectDropdown should render with initial default value 1`] = `
 exports[`SelectDropdown should render with options values as numbers 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -286,7 +286,7 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
         />
         <ul
           aria-labelledby="downshift-6-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-6-menu"
           role="listbox"
           tabindex="-1"
@@ -313,10 +313,10 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
 exports[`SelectDropdown should render with wrong default value 1`] = `
 <div>
   <div
-    class="w-full"
+    class="relative w-full"
   >
     <input
-      class="sc-AxirZ brHQwS overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+      class="sc-AxirZ kwiJpQ overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
       data-testid="select-list__input"
       readonly=""
       type="text"
@@ -337,7 +337,7 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
         />
         <ul
           aria-labelledby="downshift-4-label"
-          class="sc-fzoLsD jQrIPL"
+          class="sc-fzoLsD ciCmXo"
           id="downshift-4-menu"
           role="listbox"
           tabindex="-1"

@@ -22,13 +22,17 @@ exports[`CustomPeers should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxmLO cgCtOs"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxmLO fZFkuY"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -51,7 +55,7 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX mt-8"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="network"
             >
@@ -112,14 +116,14 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
               Name
             </label>
             <input
-              class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="name"
             />
@@ -128,14 +132,14 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-ip"
             >
               Peer IP http://
             </label>
             <input
-              class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="peer-ip"
             />
@@ -144,7 +148,7 @@ exports[`CustomPeers should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="peer-type"
             >

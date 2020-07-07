@@ -1,17 +1,12 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { BrowserRouter as Router } from "react-router-dom";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, renderWithRouter } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<Router>
-				<NavigationBar />
-			</Router>,
-		);
+		const { container, asFragment } = renderWithRouter(<NavigationBar />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -28,11 +23,7 @@ describe("NavigationBar", () => {
 				path: "/test",
 			},
 		];
-		const { container, asFragment } = render(
-			<Router>
-				<NavigationBar menu={menu} />
-			</Router>,
-		);
+		const { container, asFragment } = renderWithRouter(<NavigationBar menu={menu} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -43,11 +34,7 @@ describe("NavigationBar", () => {
 			{ label: "Option 1", value: "1" },
 			{ label: "Option 2", value: -"2" },
 		];
-		const { getByTestId, getByText } = render(
-			<Router>
-				<NavigationBar userActions={options} />
-			</Router>,
-		);
+		const { getByTestId, getByText } = renderWithRouter(<NavigationBar userActions={options} />);
 		const toggle = getByTestId("navbar__useractions");
 
 		act(() => {

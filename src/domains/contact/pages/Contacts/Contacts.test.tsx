@@ -1,32 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
-import { contacts } from "../../data";
+import { contacts, networks } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
-const assets = [
-	{
-		icon: "Ark",
-		name: "Ark Ecosystem",
-		className: "text-theme-danger-400 border-theme-danger-200",
-	},
-	{
-		icon: "Bitcoin",
-		name: "Bitcoin",
-		className: "text-theme-warning-400 border-theme-warning-200",
-	},
-	{
-		icon: "Ethereum",
-		name: "Ethereum",
-		className: "text-theme-neutral-800 border-theme-neutral-600",
-	},
-];
-
 describe("Contacts", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(<Contacts contacts={[]} />);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={[]} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -37,7 +19,7 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = render(<Contacts contacts={contacts} />);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={contacts} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -52,7 +34,9 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
-		const { getAllByTestId, getByTestId, queryByTestId } = render(<Contacts contacts={[]} assets={assets} />);
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+			<Contacts contacts={[]} networks={networks} />,
+		);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));
 

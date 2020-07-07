@@ -20,13 +20,17 @@ exports[`SearchWallet should render 1`] = `
         type="button"
       >
         <div
-          class="sc-AxjAm iepfoc"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -83,7 +87,7 @@ exports[`SearchWallet should render 1`] = `
                 class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxheI gJZyBf overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="What would you like to search for?"
                 />

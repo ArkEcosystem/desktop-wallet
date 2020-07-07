@@ -54,7 +54,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-6 true pt-0 mt-6"
+                  class="flex items-center py-6 true pb-8"
                 >
                   <div
                     class="flex-1"
@@ -66,7 +66,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -78,7 +78,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -89,7 +89,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -101,7 +101,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -112,14 +112,14 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
                           Website
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -130,7 +130,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -148,7 +148,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Repository
                             </span>
@@ -175,7 +175,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -193,7 +193,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Social Media
                             </span>
@@ -220,7 +220,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -238,7 +238,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Photo and Video
                             </span>
@@ -265,7 +265,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0 mt-4"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
                     class="flex-1"
@@ -277,7 +277,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                         >
@@ -293,7 +293,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-fzozJi OgXfh"
                             >
                               <input
-                                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -497,7 +497,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
                 >
                   <div
                     class="flex-1"
@@ -547,7 +547,9 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div
+                    class="mt-2"
+                  >
                     <div
                       class="sc-AxiKw kvRvRJ"
                     />
@@ -648,7 +650,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -665,7 +667,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Repository
                             </span>
@@ -859,7 +861,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -869,13 +871,13 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxheI sc-AxmLO ecniej mr-4"
+                        class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -899,7 +901,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     class="sc-AxhCb ckQmOL mt-8"
                   >
                     <label
-                      class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
@@ -909,13 +911,13 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxheI sc-AxmLO ecniej mr-4"
+                        class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -1236,8 +1238,12 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxiKw kvRvRJ"
-                    />
+                      class="mt-2"
+                    >
+                      <div
+                        class="sc-AxiKw kvRvRJ"
+                      />
+                    </div>
                   </div>
                   <div
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
@@ -1464,7 +1470,7 @@ exports[`UpdateRegistration should should go back 1`] = `
               </div>
               <div>
                 <div
-                  class="flex items-center py-6 true pt-0 mt-6"
+                  class="flex items-center py-6 true pb-8"
                 >
                   <div
                     class="flex-1"
@@ -1476,7 +1482,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -1488,7 +1494,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -1499,7 +1505,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -1511,7 +1517,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -1522,14 +1528,14 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
                           Website
                         </label>
                         <input
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -1540,7 +1546,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -1558,7 +1564,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Repository
                             </span>
@@ -1585,7 +1591,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -1603,7 +1609,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Social Media
                             </span>
@@ -1630,7 +1636,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
                     class="flex-1"
@@ -1648,7 +1654,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Photo and Video
                             </span>
@@ -1675,7 +1681,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0 mt-4"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
                     class="flex-1"
@@ -1687,7 +1693,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                         class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                         >
@@ -1703,7 +1709,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-fzozJi OgXfh"
                             >
                               <input
-                                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -2071,8 +2077,12 @@ exports[`UpdateRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxiKw kvRvRJ"
-                    />
+                      class="mt-2"
+                    >
+                      <div
+                        class="sc-AxiKw kvRvRJ"
+                      />
+                    </div>
                   </div>
                   <div
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "

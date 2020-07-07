@@ -119,9 +119,9 @@ export const Exchange = (props: ExchangeProps) => {
 			<div className="border-t-20 border-theme-neutral-100">
 				{props.exchanges.length ? (
 					<div className="text-center">
-						<ExchangeCardsBanner className="mx-auto mt-20" />
+						<ExchangeCardsBanner className="mx-auto mt-16" />
 
-						<div className="mt-6 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+						<div className="mt-8 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
 					</div>
 				) : (
 					<NoExchangesBanner className="mx-auto mt-16" />

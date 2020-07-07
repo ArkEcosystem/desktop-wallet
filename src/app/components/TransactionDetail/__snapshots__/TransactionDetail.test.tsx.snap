@@ -23,6 +23,32 @@ exports[`TransactionDetail should render 1`] = `
 </div>
 `;
 
+exports[`TransactionDetail should render with extra children 1`] = `
+<div>
+  <div
+    class="flex items-center true border-t border-dashed border-theme-neutral-300 "
+  >
+    <div
+      class="flex-1"
+    >
+      <div
+        class="text-sm font-semibold text-theme-neutral-500"
+      >
+        Test
+      </div>
+      <div
+        class="mt-2 font-semibold"
+      >
+        test
+      </div>
+    </div>
+    <div
+      data-testid="TEST_CHILD"
+    />
+  </div>
+</div>
+`;
+
 exports[`TransactionDetail should render without border 1`] = `
 <div>
   <div

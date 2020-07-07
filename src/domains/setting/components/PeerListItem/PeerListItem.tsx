@@ -27,12 +27,12 @@ export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onA
 		<td className="py-1">
 			<span>{peerIp}</span>
 		</td>
-		<td className="py-1 text-theme-primary-300">
+		<td className="py-1 text-theme-neutral-500">
 			<div className="flex justify-center h-full">
 				<Icon name={type!} />
 			</div>
 		</td>
-		<td>
+		<td className="text-theme-neutral-300">
 			{actions?.length &&
 				(() => {
 					return <Dropdown options={actions} onSelect={onAction} />;

@@ -22,13 +22,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
         type="button"
       >
         <div
-          class="sc-AxjAm iepfoc"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -78,10 +82,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                     type="checkbox"
                   />
                   <div
-                    class="sc-fznZeY iMEJUl"
+                    class="sc-fznZeY brFAFO"
                   >
                     <span
-                      class="sc-fzokOt dWmOrE"
+                      class="sc-fzokOt eGmHXf"
                     />
                   </div>
                 </label>
@@ -100,7 +104,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="message-content"
                   label="Message"
@@ -108,7 +112,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   Message
                 </label>
                 <input
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   name="message-content"
                   type="text"
@@ -118,7 +122,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="public-key"
                   label="Public key"
@@ -126,7 +130,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   Public key
                 </label>
                 <input
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   disabled=""
                   name="public-key"
@@ -138,7 +142,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 class="sc-AxhUy dJlYTe mt-8"
               >
                 <label
-                  class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
                   label="Signature"
@@ -146,7 +150,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   Signature
                 </label>
                 <input
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   name="signature"
                   type="text"

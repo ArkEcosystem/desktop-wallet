@@ -22,13 +22,17 @@ exports[`ContactUs should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxhCb idmnCf"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxhCb koOqYD"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -137,14 +141,14 @@ exports[`ContactUs should render a modal 1`] = `
               Feedback
             </h2>
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
               Name
             </label>
             <input
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="name"
             />
@@ -153,14 +157,14 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="email"
             >
               Email
             </label>
             <input
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="email"
             />
@@ -169,17 +173,17 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="subject"
             >
               Subject
             </label>
             <div
-              class="w-full"
+              class="relative w-full"
             >
               <input
-                class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                 data-testid="select-list__input"
                 name="subject"
                 readonly=""
@@ -203,7 +207,7 @@ exports[`ContactUs should render a modal 1`] = `
                   </button>
                   <ul
                     aria-labelledby="downshift-0-label"
-                    class="sc-fznKkj dPXThn"
+                    class="sc-fznKkj hupalw"
                     id="downshift-0-menu"
                     role="listbox"
                     tabindex="-1"
@@ -229,14 +233,14 @@ exports[`ContactUs should render a modal 1`] = `
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="message"
             >
               Message
             </label>
             <textarea
-              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="TextArea"
               name="message"
             />

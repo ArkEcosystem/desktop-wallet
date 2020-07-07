@@ -1,6 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import React from "react";
 
+import { networks } from "../../data";
 import { CreateWallet } from "./CreateWallet";
 
 export default { title: "Domains / Wallet / Pages / CreateWallet" };
@@ -18,12 +19,6 @@ const mnemonic = [
 	"nisi",
 	"natus",
 	"adipisci",
-];
-
-const networks = [
-	{ name: "ARK", icon: "Ark" },
-	{ name: "Ethereum", icon: "Eth" },
-	{ name: "Bitcoin", icon: "Btc" },
 ];
 
 export const Default = () => (

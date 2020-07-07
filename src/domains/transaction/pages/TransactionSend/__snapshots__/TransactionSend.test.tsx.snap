@@ -64,7 +64,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mb-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="network"
                         label="Network"
@@ -121,77 +121,6 @@ exports[`Transaction Send should render 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div
-                        aria-labelledby="downshift-1-label"
-                        class="select-asset__items"
-                        data-testid="select-asset__items"
-                        id="downshift-1-menu"
-                        role="listbox"
-                      >
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-0"
-                          role="option"
-                          title="Ark Ecosystem"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-1"
-                          role="option"
-                          title="Bitcoin"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-2"
-                          role="option"
-                          title="Ethereum"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                eth.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </fieldset>
                   <fieldset
@@ -201,7 +130,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mb-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="sender"
                         label="Sender"
@@ -216,7 +145,7 @@ exports[`Transaction Send should render 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-sender"
                           name="sender"
                         >
@@ -298,7 +227,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mb-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="recipient"
                         label="Recipient"
@@ -313,7 +242,7 @@ exports[`Transaction Send should render 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-recipient"
                           name="recipient"
                         >
@@ -407,7 +336,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mb-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="amount"
                         label="Amount ARK"
@@ -419,7 +348,7 @@ exports[`Transaction Send should render 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                         data-testid="send-transaction__amount-input"
                         name="amount"
                         placeholder="Amount"
@@ -444,7 +373,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mb-2"
                     >
                       <label
-                        class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                        class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="smartbridge"
                         label="Smartbridge"
@@ -456,7 +385,7 @@ exports[`Transaction Send should render 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <input
-                        class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                         data-testid="Input"
                         maxlength="255"
                         name="smartbridge"
@@ -487,7 +416,7 @@ exports[`Transaction Send should render 1`] = `
                           class="mb-2"
                         >
                           <label
-                            class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                             data-testid="FormLabel"
                             for="fee"
                             label="Fee ARK"
@@ -498,7 +427,7 @@ exports[`Transaction Send should render 1`] = `
                             class="sc-fzozJi OgXfh"
                           >
                             <input
-                              class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                               data-testid="InputCurrency"
                               name="fee"
                               type="text"
@@ -643,7 +572,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="network"
                 label="Network"
@@ -700,77 +629,6 @@ exports[`Transaction Send should render 1st step 1`] = `
                   </div>
                 </div>
               </div>
-              <div
-                aria-labelledby="downshift-0-label"
-                class="select-asset__items"
-                data-testid="select-asset__items"
-                id="downshift-0-menu"
-                role="listbox"
-              >
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-0"
-                  role="option"
-                  title="Ark Ecosystem"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-1"
-                  role="option"
-                  title="Bitcoin"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-2"
-                  role="option"
-                  title="Ethereum"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        eth.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </fieldset>
           <fieldset
@@ -780,7 +638,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="sender"
                 label="Sender"
@@ -795,7 +653,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="sc-fzozJi OgXfh"
               >
                 <select
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="ProfileFormField__select-sender"
                   name="sender"
                 >
@@ -877,7 +735,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="recipient"
                 label="Recipient"
@@ -892,7 +750,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="sc-fzozJi OgXfh"
               >
                 <select
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="ProfileFormField__select-recipient"
                   name="recipient"
                 >
@@ -986,7 +844,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="amount"
                 label="Amount ARK"
@@ -998,7 +856,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-fzozJi OgXfh"
             >
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="send-transaction__amount-input"
                 name="amount"
                 placeholder="Amount"
@@ -1023,7 +881,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="smartbridge"
                 label="Smartbridge"
@@ -1035,7 +893,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-fzozJi OgXfh"
             >
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="Input"
                 maxlength="255"
                 name="smartbridge"
@@ -1066,7 +924,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   class="mb-2"
                 >
                   <label
-                    class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
                     for="fee"
                     label="Fee ARK"
@@ -1077,7 +935,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="sc-fzozJi OgXfh"
                   >
                     <input
-                      class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -1691,13 +1549,13 @@ exports[`Transaction Send should render 3rd step 1`] = `
                   class="sc-fzozJi OgXfh max-w-20"
                 >
                   <input
-                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                     data-testid="Input"
                     name="passphrase"
                     type="password"
                   />
                   <div
-                    class="sc-AxheI sc-AxmLO ecniej mr-4"
+                    class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                   >
                     <button
                       class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -1991,8 +1849,12 @@ exports[`Transaction Send should render 5th step 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxiKw kvRvRJ"
-          />
+            class="mt-2"
+          >
+            <div
+              class="sc-AxiKw kvRvRJ"
+            />
+          </div>
         </div>
         <div
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "

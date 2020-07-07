@@ -4,15 +4,11 @@ import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
+import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
 	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
-	const networks = [
-		{ name: "ARK", icon: "Ark" },
-		{ name: "Ethereum", icon: "Ethereum" },
-		{ name: "Bitcoin", icon: "Bitcoin" },
-	];
 
 	const onSubmit = jest.fn();
 	const onCopy = jest.fn();
@@ -20,7 +16,7 @@ describe("CreateWallet", () => {
 
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const { getAllByTestId, getByTestId, asFragment } = render(
+		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
 				<FirstStep networks={networks} />
 			</FormContext>,
@@ -29,14 +25,18 @@ describe("CreateWallet", () => {
 		expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const networksEl = getAllByTestId(`card-control__network`);
-		expect(networksEl.length).toEqual(networks.length);
+		const selectAssetsInput = getByTestId("select-asset__input");
+		expect(selectAssetsInput).toBeTruthy();
 
 		await act(async () => {
-			fireEvent.click(networksEl[0]);
+			fireEvent.change(selectAssetsInput, { target: { value: "Bitco" } });
 		});
 
-		expect(form.current.getValues("network")).toEqual(networks[0]);
+		await act(async () => {
+			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		});
+
+		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
 	});
 
 	it("should render 2nd step", async () => {
@@ -132,11 +132,13 @@ describe("CreateWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
+		const selectAssetsInput = getByTestId("select-asset__input");
 		await act(async () => {
 			const continueButton = getByTestId(`CreateWallet__continue-button`);
 
 			// Navigation between steps
-			fireEvent.click(getAllByTestId(`card-control__network`)[0]);
+			fireEvent.change(selectAssetsInput, { target: { value: "Bitco" } });
+			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(continueButton);
@@ -158,6 +160,6 @@ describe("CreateWallet", () => {
 			// expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy();
 		});
 
-		expect(onSubmit).toHaveBeenCalledWith({ name: "", network: networks[0] });
+		expect(onSubmit).toHaveBeenCalledWith({ name: "", network: networks[1].name });
 	});
 });
