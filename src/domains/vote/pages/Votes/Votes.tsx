@@ -18,7 +18,7 @@ import { AddressList } from "../../components/AddressList";
 import { DelegateList } from "../../components/DelegateList";
 
 type VotesProps = {
-	assets?: any[];
+	networks?: any[];
 	addressList?: any[];
 	delegateList?: any[];
 };
@@ -33,7 +33,7 @@ const SelectAssetWrapper = styled.div`
 	}
 `;
 
-export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
+export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	const { t } = useTranslation();
 	const [selectedCrypto, setSelectCrypto] = useState("");
 	const [selectedAddress, setSelectAddress] = useState("");
@@ -74,7 +74,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 						<TransactionDetail border={false} label="Cryptoasset">
 							<SelectAssetWrapper>
 								<SelectAsset
-									assets={assets}
+									networks={networks}
 									name="cryptoasset"
 									placeholder="Select cryptoasset"
 									onSelect={handleSelectCrypto}
@@ -129,7 +129,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 };
 
 Votes.defaultProps = {
-	assets: [],
+	networks: [],
 	addressList: [],
 	delegateList: [],
 };

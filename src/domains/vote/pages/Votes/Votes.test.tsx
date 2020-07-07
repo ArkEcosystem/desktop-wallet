@@ -1,13 +1,13 @@
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 
-import { addressListData, assets, delegateListData } from "../../data";
+import { addressListData, delegateListData,networks } from "../../data";
 import { Votes } from "./Votes";
 
 describe("Votes", () => {
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
-			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 
 		expect(container).toBeTruthy();
@@ -16,7 +16,7 @@ describe("Votes", () => {
 
 	it("should select a cryptoasset", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
-			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -36,7 +36,7 @@ describe("Votes", () => {
 
 	it("should select address", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
-			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
@@ -62,7 +62,7 @@ describe("Votes", () => {
 
 	it("should select a delegate", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
-			<Votes assets={assets} addressList={addressListData} delegateList={delegateListData} />,
+			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
 		const selectAssetInput = getByTestId("select-asset__input");
 
