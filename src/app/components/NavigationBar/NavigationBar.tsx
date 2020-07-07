@@ -158,7 +158,7 @@ export const NavigationBar = ({
 								userInitials={userInitials}
 								currencyIcon={currencyIcon}
 								userActions={userActions}
-								onUserAction={(action: any) => history.push(action.value)}
+								onUserAction={(action: any) => history.push(action.mountPath(activeProfile?.id()))}
 							/>
 						</div>
 					</div>
@@ -197,19 +197,23 @@ NavigationBar.defaultProps = {
 	userActions: [
 		{
 			label: "Contacts",
-			value: "/contacts",
+			value: "contacts",
+			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
 		},
 		{
 			label: "Settings",
-			value: "/settings",
+			value: "settings",
+			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
 		},
 		{
 			label: "Support",
-			value: "/support",
+			value: "support",
+			mountPath: (profileId: string) => `/profiles/${profileId}/support`,
 		},
 		{
 			label: "Exit",
 			value: "exit",
+			mountPath: (profileId: string) => `/profiles/${profileId}/exit`,
 		},
 	],
 };
