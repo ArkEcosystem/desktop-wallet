@@ -1,5 +1,5 @@
 import { Dropdown } from "app/components/Dropdown";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { FilterNetwork } from "app/components/FilterNetwork";
 import React from "react";
 
 type SearchBarFiltersProps = {
@@ -17,7 +17,7 @@ export const SearchBarFilters = ({ networks, onNetworkChange, onViewAllNetworks 
 						<div className="mb-3 font-semibold text-theme-neutral-700">Filter Network</div>
 						<div className="text-sm text-theme-neutral-500">Select the types of networks</div>
 					</div>
-					<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
+					<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 				</div>
 			</Dropdown>
 		</div>
