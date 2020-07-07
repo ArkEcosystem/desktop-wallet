@@ -1,7 +1,7 @@
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 
-import { addressListData, delegateListData,networks } from "../../data";
+import { addressListData, delegateListData, networks } from "../../data";
 import { Votes } from "./Votes";
 
 describe("Votes", () => {

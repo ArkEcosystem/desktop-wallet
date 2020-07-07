@@ -1,6 +1,6 @@
 import React from "react";
 
-import { networks,peers } from "../../data";
+import { networks, peers } from "../../data";
 import { PeerList } from "./PeerList";
 
 export default { title: "Domains / Setting / Components / PeerList" };

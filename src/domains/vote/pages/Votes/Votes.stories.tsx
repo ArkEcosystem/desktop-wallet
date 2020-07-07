@@ -1,6 +1,6 @@
 import React from "react";
 
-import { addressListData, delegateListData,networks } from "../../data";
+import { addressListData, delegateListData, networks } from "../../data";
 import { Votes } from "./Votes";
 
 export default { title: "Domains / Vote / Pages / Votes" };
