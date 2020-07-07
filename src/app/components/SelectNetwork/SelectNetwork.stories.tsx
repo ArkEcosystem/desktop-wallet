@@ -1,9 +1,9 @@
 import React from "react";
 
-import { SelectAsset } from "./SelectAsset";
+import { SelectNetwork } from "./SelectNetwork";
 
 export default {
-	title: "App / Components / SelectAsset",
+	title: "App / Components / SelectNetwork",
 };
 
 export const Default = () => {
@@ -38,7 +38,7 @@ export const Default = () => {
 	return (
 		<div className="">
 			<div className="mt-10 w-128">
-				<SelectAsset networks={networks} />
+				<SelectNetwork networks={networks} />
 			</div>
 		</div>
 	);

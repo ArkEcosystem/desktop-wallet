@@ -10,7 +10,7 @@ type Network = {
 	className?: string;
 };
 
-type SelectAssetProps = {
+type SelectNetworkProps = {
 	networks: Network[];
 	placeholder?: string;
 	name?: string;
@@ -43,7 +43,7 @@ const TypeAhead = ({ input, matches }: any) => {
 	);
 };
 
-export const SelectAsset = ({ networks, placeholder, onSelect, name }: SelectAssetProps) => {
+export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectNetworkProps) => {
 	const isMatch = (network: Network, input: InputValue) => {
 		if (!input) return false;
 		return network.name.toLowerCase().startsWith(input.toLowerCase());
@@ -149,7 +149,7 @@ export const SelectAsset = ({ networks, placeholder, onSelect, name }: SelectAss
 	);
 };
 
-SelectAsset.defaultProps = {
+SelectNetwork.defaultProps = {
 	networks: [],
 	placeholder: "Enter a network name",
 };
