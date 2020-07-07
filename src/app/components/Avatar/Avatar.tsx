@@ -18,7 +18,7 @@ export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; n
 			case "sm":
 				return tw`w-8 h-8`;
 			case "lg":
-				return tw`w-12 h-12`;
+				return tw`w-11 h-11`;
 			default:
 				return tw`w-10 h-10`;
 		}
