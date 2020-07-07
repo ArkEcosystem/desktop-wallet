@@ -138,7 +138,9 @@ exports[`WalletHeader should delete wallet 1`] = `
           >
             Address
           </p>
-          <label>
+          <label
+            class="flex"
+          >
             <input
               class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
@@ -314,7 +316,9 @@ exports[`WalletHeader should render 1`] = `
           >
             Address
           </p>
-          <label>
+          <label
+            class="flex"
+          >
             <input
               class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
@@ -516,7 +520,9 @@ exports[`WalletHeader should show modifiers 1`] = `
           >
             Address
           </p>
-          <label>
+          <label
+            class="flex"
+          >
             <input
               class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"
@@ -692,7 +698,9 @@ exports[`WalletHeader should show publicKey 1`] = `
           >
             Address
           </p>
-          <label>
+          <label
+            class="flex"
+          >
             <input
               class="sc-AxhUy rBBWa"
               data-testid="WalletHeader__toggle"

@@ -3,18 +3,18 @@
 exports[`FilterWallets should render 1`] = `
 <div>
   <div
-    class="text-left"
+    class="flex flex-col text-left"
   >
     <div
       class="mb-8"
     >
       <div
-        class="mb-3 font-semibold text-theme-neutral-700"
+        class="font-semibold text-theme-neutral-dark"
       >
         Filter Network
       </div>
       <div
-        class="text-sm text-theme-neutral-500"
+        class="text-sm text-theme-neutral mt-1"
       >
         Select the types of networks
       </div>
@@ -25,7 +25,7 @@ exports[`FilterWallets should render 1`] = `
         data-testid="network__option"
       />
       <div
-        class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+        class="sc-AxhCb bzWLYJ relative ml-2 cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -34,7 +34,7 @@ exports[`FilterWallets should render 1`] = `
           All
         </div>
         <span
-          class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+          class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
         >
           <div
             class="sc-AxjAm iepfoc"
@@ -53,124 +53,116 @@ exports[`FilterWallets should render 1`] = `
       class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
     />
     <div
-      class="flex flex-row mb-8"
+      class="flex flex-col"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Your Wallets
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="relative"
+          data-testid="dropdown__toggle"
         >
-          Select the display of your wallets
-        </div>
-      </div>
-      <div
-        class="w-1/5 text-right"
-      >
-        <div
-          class="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
-          data-testid="filter-wallets__wallets"
-        >
-          <span
-            class="inline-block pr-1 font-semibold"
+          <div
+            class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+            data-testid="filter-wallets__wallets"
           >
-            All
-          </span>
-          <span
-            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-1 -right-6"
-          >
+            <span
+              class="inline-block mr-2 font-semibold"
+            >
+              All
+            </span>
             <div
-              class="sc-AxjAm pXfjM"
-              height="15"
-              width="15"
+              class="sc-AxjAm HWmvM"
+              height="12"
+              width="12"
             >
               <svg>
                 chevron-down.svg
               </svg>
             </div>
-            <span />
-          </span>
+          </div>
         </div>
+      </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        Select the display of your wallets
       </div>
     </div>
     <div
       class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
     />
     <div
-      class="flex flex-row mb-6"
+      class="flex flex-col mb-6"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Portfolio Chart
         </div>
-        <div
-          class="text-sm text-theme-neutral-500"
+        <label
+          class="flex"
         >
-          You an hide this unit if you like
-        </div>
-      </div>
-      <div
-        class="w-1/5 pt-3 text-right"
-      >
-        <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--portfolio"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
       </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        You can hide this unit if you like
+      </div>
     </div>
     <div
-      class="flex flex-row mb-4"
+      class="flex flex-col"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Transaction History
         </div>
-        <div
-          class="text-sm text-theme-neutral-500"
+        <label
+          class="flex"
         >
-          You can hide this unit if you like
-        </div>
-      </div>
-      <div
-        class="w-1/5 pt-3 text-right"
-      >
-        <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
+      </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        You can hide this unit if you like
       </div>
     </div>
   </div>
@@ -180,18 +172,18 @@ exports[`FilterWallets should render 1`] = `
 exports[`FilterWallets should render with networks selection 1`] = `
 <div>
   <div
-    class="text-left"
+    class="flex flex-col text-left"
   >
     <div
       class="mb-8"
     >
       <div
-        class="mb-3 font-semibold text-theme-neutral-700"
+        class="font-semibold text-theme-neutral-dark"
       >
         Filter Network
       </div>
       <div
-        class="text-sm text-theme-neutral-500"
+        class="text-sm text-theme-neutral mt-1"
       >
         Select the types of networks
       </div>
@@ -206,7 +198,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--0"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -218,7 +210,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
             >
               <div
                 class="sc-AxjAm HWmvM"
@@ -238,7 +230,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--1"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -250,7 +242,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
             >
               <div
                 class="sc-AxjAm HWmvM"
@@ -270,7 +262,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--2"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-neutral-200 text-theme-neutral-300"
+            class="sc-AxhCb bzWLYJ relative border-theme-neutral-200 text-theme-neutral-300"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -282,7 +274,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
+              class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
             >
               <span />
             </span>
@@ -290,7 +282,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </li>
       </ul>
       <div
-        class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+        class="sc-AxhCb bzWLYJ relative ml-2 cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -299,7 +291,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           All
         </div>
         <span
-          class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+          class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
         >
           <div
             class="sc-AxjAm iepfoc"
@@ -318,124 +310,116 @@ exports[`FilterWallets should render with networks selection 1`] = `
       class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
     />
     <div
-      class="flex flex-row mb-8"
+      class="flex flex-col"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Your Wallets
         </div>
         <div
-          class="text-sm text-theme-neutral-500"
+          class="relative"
+          data-testid="dropdown__toggle"
         >
-          Select the display of your wallets
-        </div>
-      </div>
-      <div
-        class="w-1/5 text-right"
-      >
-        <div
-          class="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
-          data-testid="filter-wallets__wallets"
-        >
-          <span
-            class="inline-block pr-1 font-semibold"
+          <div
+            class="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+            data-testid="filter-wallets__wallets"
           >
-            All
-          </span>
-          <span
-            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-1 -right-6"
-          >
+            <span
+              class="inline-block mr-2 font-semibold"
+            >
+              All
+            </span>
             <div
-              class="sc-AxjAm pXfjM"
-              height="15"
-              width="15"
+              class="sc-AxjAm HWmvM"
+              height="12"
+              width="12"
             >
               <svg>
                 chevron-down.svg
               </svg>
             </div>
-            <span />
-          </span>
+          </div>
         </div>
+      </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        Select the display of your wallets
       </div>
     </div>
     <div
       class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
     />
     <div
-      class="flex flex-row mb-6"
+      class="flex flex-col mb-6"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Portfolio Chart
         </div>
-        <div
-          class="text-sm text-theme-neutral-500"
+        <label
+          class="flex"
         >
-          You an hide this unit if you like
-        </div>
-      </div>
-      <div
-        class="w-1/5 pt-3 text-right"
-      >
-        <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--portfolio"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
       </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        You can hide this unit if you like
+      </div>
     </div>
     <div
-      class="flex flex-row mb-4"
+      class="flex flex-col"
     >
       <div
-        class="w-4/5"
+        class="flex items-center justify-between"
       >
         <div
-          class="mb-3 font-semibold text-theme-neutral-700"
+          class="font-semibold text-theme-neutral-dark"
         >
           Transaction History
         </div>
-        <div
-          class="text-sm text-theme-neutral-500"
+        <label
+          class="flex"
         >
-          You can hide this unit if you like
-        </div>
-      </div>
-      <div
-        class="w-1/5 pt-3 text-right"
-      >
-        <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
+      </div>
+      <div
+        class="text-sm text-theme-neutral mt-1 pr-12"
+      >
+        You can hide this unit if you like
       </div>
     </div>
   </div>
