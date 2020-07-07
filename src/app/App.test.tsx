@@ -8,19 +8,13 @@ import { App } from "./App";
 
 beforeAll(() => {
 	nock.disableNetConnect();
-});
 
-beforeEach(() => {
-	const responseBody = {
-		data: {
-			exceptions: {},
-			genesisBlock: {},
-			milestones: {},
-			network: {},
-		},
-	};
-
-	nock("http://167.114.29.54:4003/api").get("/node/configuration/crypto").reply(200, responseBody);
+	nock(/.+/)
+		.get("/api/node/configuration/crypto")
+		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+		.get("/api/node/syncing")
+		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.persist();
 });
 
 describe("App", () => {

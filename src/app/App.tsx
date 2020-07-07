@@ -11,6 +11,7 @@ import { i18n } from "./i18n";
 
 const buildMockEnvironment = async (env: Environment) => {
 	const profile = env.profiles().create("Anne Doe");
+
 	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
 
 	env.persist();
