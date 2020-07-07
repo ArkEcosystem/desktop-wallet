@@ -7,8 +7,4 @@ export default {
 	title: "Domains / Wallet / Pages / ImportWallet",
 };
 
-export const Default = () => (
-	<div className="w-full h-full">
-		<ImportWallet networks={networks} />
-	</div>
-);
+export const Default = () => <ImportWallet networks={networks} />;
