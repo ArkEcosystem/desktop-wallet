@@ -563,14 +563,8 @@ export default {
       if (this.isMultiPayment) {
         transactionData.recipients = this.form.recipients
       } else {
-        if (this.isMultiPayment) {
-          transactionData.recipientId = this.form.recipients[0].address
-          transactionData.amount = this.getAmountNormalTransaction()
-        } else {
-          transactionData.recipientId = this.recipientId
-          transactionData.amount = this.currency_unitToSub(this.amount)
-        }
-
+        transactionData.recipientId = this.recipientId
+        transactionData.amount = this.currency_unitToSub(this.amount)
         transactionData.networkId = this.walletNetwork.id
       }
 
