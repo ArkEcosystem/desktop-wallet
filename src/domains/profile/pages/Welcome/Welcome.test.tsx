@@ -1,17 +1,16 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-// Contexts
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentContext } from "app/contexts";
-// i18n
 import { httpClient } from "app/services";
 import React from "react";
 import { fireEvent, render, renderWithRouter, screen, waitFor } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
 	it("should render", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "localstorage" });
+		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const { container, asFragment } = render(
 			<EnvironmentContext.Provider value={env}>
@@ -30,7 +29,7 @@ describe("Welcome", () => {
 	});
 
 	it("should change route to create profile", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "localstorage" });
+		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const { container, getByText, asFragment, history } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
@@ -51,9 +50,9 @@ describe("Welcome", () => {
 	});
 
 	it("should render with profiles", async () => {
-		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: "localstorage" });
+		const env: Environment = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		env.profiles().create("caio");
+		env.profiles().create("Anne Doe");
 		const createdProfile = env.profiles().all()[0];
 
 		const { container, getByText, asFragment, history } = renderWithRouter(
@@ -69,7 +68,7 @@ describe("Welcome", () => {
 		});
 
 		expect(container).toBeTruthy();
-		fireEvent.click(getByText("caio"));
+		fireEvent.click(getByText("Anne Doe"));
 		expect(history.location.pathname).toEqual(`/profiles/${createdProfile.id()}/dashboard`);
 		expect(asFragment()).toMatchSnapshot();
 	});

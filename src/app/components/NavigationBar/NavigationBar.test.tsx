@@ -7,12 +7,14 @@ import React from "react";
 import { act } from "react-dom/test-utils";
 import { Route } from "react-router-dom";
 import { fireEvent, renderWithRouter } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: "localstorage" });
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	env.profiles().create("Jane Doe");
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar />);
@@ -39,7 +41,7 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle default menu", () => {
-		const profile = env.profiles().create("test");
+		const profile = env.profiles().create("Janne Doe");
 		history.push(`/profiles/${profile.id()}/dashboard`);
 
 		const { getByText } = renderWithRouter(
@@ -54,6 +56,9 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle menu click", () => {
+		const profile = env.profiles().create("Anne Doe");
+		history.push(`/profiles/${profile.id()}`);
+
 		const menu = [
 			{
 				title: "Portfolio",
@@ -64,8 +69,7 @@ describe("NavigationBar", () => {
 				mountPath: () => "/test",
 			},
 		];
-		const profile = env.profiles().create("test2");
-		history.push(`/profiles/${profile.id()}`);
+
 		const { getByText } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
