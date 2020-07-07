@@ -42,7 +42,8 @@ describe("NavigationBar", () => {
 
 	it("should handle default menu", () => {
 		const profile = env.profiles().create("Janne Doe");
-		history.push(`/profiles/${profile.id()}/dashboard`);
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
 
 		const { getByText } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
@@ -50,6 +51,10 @@ describe("NavigationBar", () => {
 					<NavigationBar />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
 		expect(getByText("Portfolio")).toBeTruthy();
@@ -57,7 +62,8 @@ describe("NavigationBar", () => {
 
 	it("should handle menu click", () => {
 		const profile = env.profiles().create("Anne Doe");
-		history.push(`/profiles/${profile.id()}`);
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
 
 		const menu = [
 			{
@@ -76,6 +82,10 @@ describe("NavigationBar", () => {
 					<NavigationBar menu={menu} />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
 		fireEvent.click(getByText("Portfolio"));
