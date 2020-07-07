@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -45,10 +46,12 @@ export const TransactionListItem = ({
 				data-testid="transaction__row"
 			>
 				<td className="w-20 py-4 mt-1">
-					<Circle size="sm" className={`${iconClasses[type]} -mr-1`}>
-						<Icon name={iconName[type]} width={40} height={40} />
-					</Circle>
-					<Circle size="sm" avatarId={avatarId} />
+					<div className="flex">
+						<Circle size="sm" className={`${iconClasses[type]} -mr-1`}>
+							<Icon name={iconName[type]} width={40} height={40} />
+						</Circle>
+						<Circle size="sm" avatarId={avatarId} />
+					</div>
 				</td>
 				<td className="w-56 py-1">
 					<Address walletName={walletName} address={address} maxChars={16} size="sm" />
@@ -70,10 +73,12 @@ export const TransactionListItem = ({
 		>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
 			<td className="w-32 py-5 mt-1">
-				<Circle className={`${iconClasses[type]} -mr-1`} size="lg">
-					<Icon name={iconName[type]} width={40} height={40} />
-				</Circle>
-				<Circle avatarId={avatarId} size="lg" />
+				<div className="flex">
+					<Circle className={`${iconClasses[type]} -mr-1`} size="lg">
+						<Icon name={iconName[type]} width={40} height={40} />
+					</Circle>
+					<Avatar size="lg" address={address as string} />
+				</div>
 			</td>
 			<td className="w-56">
 				<Address walletName={walletName} address={address} maxChars={24} />
@@ -104,4 +109,5 @@ export const TransactionListItem = ({
 TransactionListItem.defaultProps = {
 	walletTypeIcons: [],
 	actions: [],
+	address: "",
 };
