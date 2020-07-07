@@ -1,48 +1,19 @@
-import { Contacts } from "domains/contact/pages";
-import { Dashboard } from "domains/dashboard/pages";
-import { Exchange } from "domains/exchange/pages/Exchange";
-import { Main as HelpMain } from "domains/help/pages";
-import { PluginManager } from "domains/plugin/pages";
-import { CreateProfile, Welcome } from "domains/profile/pages";
-import { Settings } from "domains/setting/pages";
+import { ContactRoutes } from "domains/contact/routing";
+import { DashboardRoutes } from "domains/dashboard/routing";
+import { ExchangeRoutes } from "domains/exchange/routing";
+import { HelpRoutes } from "domains/help/routing";
+import { PluginRoutes } from "domains/plugin/routing";
+import { ProfileRoutes } from "domains/profile/routing";
+import { SettingRoutes } from "domains/setting/routing";
 
 export * from "./RouterView";
 
-export const routes: any[] = [
-	{
-		path: "/profiles/create",
-		component: CreateProfile,
-	},
-	{
-		path: "/profiles/:profileId/dashboard",
-		component: Dashboard,
-	},
-	{
-		path: "/profiles/:profileId/exchange",
-		component: Exchange,
-	},
-	{
-		path: "/profiles/:profileId/plugins",
-		component: PluginManager,
-	},
-	{
-		path: "/profiles/:profileId/contacts",
-		component: Contacts,
-	},
-	{
-		path: "/profiles/:profileId/settings",
-		component: Settings,
-	},
-	{
-		path: "/profiles/:profileId",
-		component: Dashboard,
-	},
-	{
-		path: "/support",
-		component: HelpMain,
-	},
-	{
-		path: "/",
-		component: Welcome,
-	},
+export const routes: Array<Object> = [
+	...ContactRoutes,
+	...DashboardRoutes,
+	...ExchangeRoutes,
+	...HelpRoutes,
+	...PluginRoutes,
+	...ProfileRoutes,
+	...SettingRoutes,
 ];
