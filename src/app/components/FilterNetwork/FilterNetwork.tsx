@@ -45,7 +45,7 @@ const renderNetworks = (networks: any[], onClick: any) => (
 	</ul>
 );
 
-export const SelectNetwork = ({ networks, onChange, onViewAll }: NetworkProps) => {
+export const FilterNetwork = ({ networks, onChange, onViewAll }: NetworkProps) => {
 	const [networkList, setNetworkList] = useState(networks.concat());
 
 	const onClick = (network: Network, index: number) => {
@@ -78,7 +78,7 @@ export const SelectNetwork = ({ networks, onChange, onViewAll }: NetworkProps) =
 	);
 };
 
-SelectNetwork.defaultProps = {
+FilterNetwork.defaultProps = {
 	isSelected: false,
 	networks: [],
 };

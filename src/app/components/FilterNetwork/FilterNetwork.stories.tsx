@@ -1,9 +1,9 @@
 import React from "react";
 
-import { SelectNetwork } from "./SelectNetwork";
+import { FilterNetwork } from "./FilterNetwork";
 
 export default {
-	title: "App / Components / SelectNetwork",
+	title: "App / Components / FilterNetwork",
 };
 
 export const Default = () => {
@@ -23,7 +23,7 @@ export const Default = () => {
 	];
 	return (
 		<div>
-			<SelectNetwork networks={networks} onViewAll={() => alert("View all networks")} />
+			<FilterNetwork networks={networks} onViewAll={() => alert("View all networks")} />
 		</div>
 	);
 };

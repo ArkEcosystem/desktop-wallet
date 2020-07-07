@@ -2,9 +2,9 @@ import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { fireEvent, render } from "testing-library";
 
-import { SelectNetwork } from "./SelectNetwork";
+import { FilterNetwork } from "./FilterNetwork";
 
-describe("SelectNetwork", () => {
+describe("FilterNetwork", () => {
 	const networks = [
 		{
 			name: "Ark",
@@ -21,18 +21,18 @@ describe("SelectNetwork", () => {
 	];
 
 	it("should render", () => {
-		const { container } = render(<SelectNetwork />);
+		const { container } = render(<FilterNetwork />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with icon", () => {
-		const { container } = render(<SelectNetwork networks={networks} />);
+		const { container } = render(<FilterNetwork networks={networks} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should call onChange callback upon change", () => {
 		const onChange = jest.fn();
-		const { getByTestId } = render(<SelectNetwork networks={networks} onChange={onChange} />);
+		const { getByTestId } = render(<FilterNetwork networks={networks} onChange={onChange} />);
 		const firstNetwork = getByTestId("network__option--0");
 
 		act(() => {
@@ -44,7 +44,7 @@ describe("SelectNetwork", () => {
 
 	it("should ignore onChange callback upon selection if not provided", () => {
 		const onChange = jest.fn();
-		const { getByTestId } = render(<SelectNetwork networks={networks} />);
+		const { getByTestId } = render(<FilterNetwork networks={networks} />);
 		const firstNetwork = getByTestId("network__option--0");
 
 		act(() => {
