@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -17,18 +18,18 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Avatar address="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.RECIPIENT")}
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 			>

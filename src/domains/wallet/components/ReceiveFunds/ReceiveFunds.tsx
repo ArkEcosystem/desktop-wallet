@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
@@ -65,13 +66,13 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 					</button>
 				}
 			>
-				<div className="mb-2 ml-4">
+				<div className="mb-2 ml-4 flex items-center">
 					{!wallet.walletName && (
 						<Circle className="-mr-2">
 							<Icon name={wallet.coinIcon} />
 						</Circle>
 					)}
-					<Circle avatarId={wallet.avatarId} />
+					<Avatar address={wallet.address} />
 				</div>
 			</Wrapper>
 
