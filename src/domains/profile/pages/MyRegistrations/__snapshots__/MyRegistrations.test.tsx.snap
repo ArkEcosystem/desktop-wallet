@@ -6,7 +6,7 @@ exports[`Welcome should render empty state 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="bg-theme-background px-10 py-16"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
         class="flex items-end justify-between bg-theme-background"
@@ -27,7 +27,7 @@ exports[`Welcome should render empty state 1`] = `
         </div>
         <div>
           <div
-            class="divide-theme-neutral-300 flex justify-end space-x-10 divide-x"
+            class="flex justify-end divide-theme-neutral-300 space-x-10 divide-x"
           >
             <div
               class="relative"
@@ -70,14 +70,14 @@ exports[`Welcome should render empty state 1`] = `
       </div>
     </div>
     <div
-      class="bg-theme-background flex flex-col items-center justify-center px-10 py-20 mt-4"
+      class="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
       data-testid="my-registrations__empty-state"
     >
       <svg>
         register-banner.svg
       </svg>
       <span
-        class="mt-7 text-theme-neutral-600 text-sm"
+        class="text-sm mt-7 text-theme-neutral-600"
       >
         Register Business, Bridgechain and Delegate in the most convenient way.
       </span>
@@ -92,7 +92,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="bg-theme-background px-10 py-16"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
         class="flex items-end justify-between bg-theme-background"
@@ -113,7 +113,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
         </div>
         <div>
           <div
-            class="divide-theme-neutral-300 flex justify-end space-x-10 divide-x"
+            class="flex justify-end divide-theme-neutral-300 space-x-10 divide-x"
           >
             <div
               class="relative"
@@ -165,7 +165,7 @@ exports[`Welcome should render properly 1`] = `
     class="bg-theme-neutral-100"
   >
     <div
-      class="bg-theme-background px-10 py-16"
+      class="px-10 py-16 bg-theme-background"
     >
       <div
         class="flex items-end justify-between bg-theme-background"
@@ -186,7 +186,7 @@ exports[`Welcome should render properly 1`] = `
         </div>
         <div>
           <div
-            class="divide-theme-neutral-300 flex justify-end space-x-10 divide-x"
+            class="flex justify-end divide-theme-neutral-300 space-x-10 divide-x"
           >
             <div
               class="relative"

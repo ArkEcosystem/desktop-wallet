@@ -3,7 +3,7 @@
 exports[`PluginDetails should render properly 1`] = `
 <DocumentFragment>
   <section
-    class="bg-theme-neutral-100 h-full -m-5"
+    class="h-full -m-5 bg-theme-neutral-100"
     data-testid="plugin-details__header"
   >
     <div
@@ -378,7 +378,7 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </div>
     <div
-      class="bg-theme-background flex p-10 mt-5"
+      class="flex p-10 mt-5 bg-theme-background"
     >
       <div
         class="flex flex-col"
@@ -925,7 +925,7 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
       <div
-        class="border-theme-neutral-200 rounded-xl p-8 mb-auto ml-32 border-2"
+        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
         data-testid="plugin-details__review-box"
       >
         <div
@@ -1247,7 +1247,7 @@ exports[`PluginDetails should render properly 1`] = `
 exports[`PluginDetails should render properly as installed 1`] = `
 <DocumentFragment>
   <section
-    class="bg-theme-neutral-100 h-full -m-5"
+    class="h-full -m-5 bg-theme-neutral-100"
     data-testid="plugin-details__header"
   >
     <div
@@ -1654,7 +1654,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </div>
     <div
-      class="bg-theme-background flex p-10 mt-5"
+      class="flex p-10 mt-5 bg-theme-background"
     >
       <div
         class="flex flex-col"
@@ -2201,7 +2201,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
         </div>
       </div>
       <div
-        class="border-theme-neutral-200 rounded-xl p-8 mb-auto ml-32 border-2"
+        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
         data-testid="plugin-details__review-box"
       >
         <div

@@ -10,25 +10,25 @@ exports[`App should render 1`] = `
       class="sc-fzoant bHYiAJ"
     >
       <div
-        class="sm:px-6 lg:px-8 px-4"
+        class="px-4 sm:px-6 lg:px-8"
       >
         <div
-          class="md:h-24 relative flex justify-between h-20"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
               <img
                 alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
+                class="h-6 md:h-8 lg:h-10"
                 src="ark-logo.png"
               />
             </div>
             <ul
-              class="md:h-24 flex h-20"
+              class="flex h-20 md:h-24"
             />
           </div>
           <div
@@ -39,7 +39,7 @@ exports[`App should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -53,10 +53,10 @@ exports[`App should render 1`] = `
               </div>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer"
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
             >
               <div
                 class="sc-AxirZ hCRZAv"
@@ -69,10 +69,10 @@ exports[`App should render 1`] = `
               </div>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
               <div
                 class="sc-AxirZ hmuEJr"
@@ -85,22 +85,22 @@ exports[`App should render 1`] = `
               </div>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
               class="p-2 ml-4 text-right"
             >
               <div
-                class="text-theme-neutral-500 text-xs"
+                class="text-xs text-theme-neutral-500"
               >
                 Your balance
               </div>
               <div
-                class="text-theme-neutral-700 text-sm font-bold"
+                class="text-sm font-bold text-theme-neutral-700"
               />
             </div>
             <div
-              class="cusror-pointer flex p-1"
+              class="flex p-1 cusror-pointer"
             >
               <div
                 class="relative"
@@ -111,7 +111,7 @@ exports[`App should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-fznKkj frSQbF border-theme-neutral-300 -mr-1"
+                    class="sc-fznKkj frSQbF -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -128,10 +128,10 @@ exports[`App should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-fznKkj frSQbF bg-theme-primary-600 border-theme-primary-600 relative rotate-90"
+                    class="sc-fznKkj frSQbF relative bg-theme-primary-600 border-theme-primary-600 rotate-90"
                   >
                     <span
-                      class="text-theme-background text-sm"
+                      class="text-sm text-theme-background"
                     />
                     <span
                       class="sc-fzoXzr gFNxGL flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
@@ -159,24 +159,24 @@ exports[`App should render 1`] = `
       class="w-full h-full"
     >
       <div
-        class="sm:px-6 lg:px-8 px-4"
+        class="px-4 sm:px-6 lg:px-8"
       >
         <div
-          class="md:h-24 flex items-center flex-shrink-0 h-20"
+          class="flex items-center flex-shrink-0 h-20 md:h-24"
         >
           <div
-            class="bg-logo flex p-2 rounded-lg"
+            class="flex p-2 rounded-lg bg-logo"
           >
             <img
               alt="ARK Logo"
-              class="md:h-8 lg:h-10 h-6"
+              class="h-6 md:h-8 lg:h-10"
               src="ark-logo.png"
             />
           </div>
         </div>
       </div>
       <div
-        class="sm:px-6 lg:px-0 container px-4 mx-auto text-center"
+        class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
       >
         <h1
           class="mb-8"
@@ -184,22 +184,22 @@ exports[`App should render 1`] = `
           Welcome to ARK
         </h1>
         <div
-          class="lg:w-4/5 xl:w-2/3 w-full mx-auto"
+          class="w-full mx-auto lg:w-4/5 xl:w-2/3"
         >
           <svg>
             welcome-banner.svg
           </svg>
         </div>
         <div
-          class="md:max-w-xl max-w-lg mx-auto my-8"
+          class="max-w-lg mx-auto my-8 md:max-w-xl"
         >
           <p
-            class="text-theme-neutral-dark md:text-base mb-4 text-sm"
+            class="mb-4 text-sm text-theme-neutral-dark md:text-base"
           >
             Create a new Profile or login with your MarketSquare account to get started
           </p>
           <div
-            class="md:space-x-3 md:flex-row flex flex-col"
+            class="flex flex-col md:space-x-3 md:flex-row"
           >
             <button
               class="sc-AxiKw wFYj w-full"
@@ -222,7 +222,7 @@ exports[`App should render 1`] = `
               </span>
             </button>
             <button
-              class="sc-AxiKw gFzSt md:mt-0 w-full mt-2"
+              class="sc-AxiKw gFzSt w-full mt-2 md:mt-0"
               color="primary"
               type="button"
             >

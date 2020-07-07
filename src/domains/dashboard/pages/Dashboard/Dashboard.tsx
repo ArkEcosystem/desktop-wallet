@@ -56,7 +56,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
+					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
 					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
 				</Section>
 			)}

@@ -58,12 +58,12 @@ export const FirstStep = () => {
 						</div>
 					}
 				>
-					<div className="text-theme-neutral-800 max-w-24 flex-auto text-xl font-semibold truncate">
+					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
 				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">Your address</Label>
 					</div>
@@ -115,12 +115,12 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="text-theme-neutral-800 max-w-24 flex-auto text-xl font-semibold truncate">
+				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
 			<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
+				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 					<span className="mr-1">Sender</span>
 					<Label color="warning">Your address</Label>
 				</div>
@@ -181,7 +181,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 mb-1 ml-5">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
@@ -195,7 +195,7 @@ export const FourthStep = () => (
 								maxChars={32}
 							/>
 						</Clipboard>
-						<div className="text-theme-primary-300 mb-1 ml-5">
+						<div className="mb-1 ml-5 text-theme-primary-300">
 							<Icon name="Copy" />
 						</div>
 					</div>
@@ -210,12 +210,12 @@ export const FourthStep = () => (
 						</div>
 					}
 				>
-					<div className="text-theme-neutral-800 max-w-24 flex-auto text-xl font-semibold truncate">
+					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
 				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Account</span>
 						<Label color="warning">Your address</Label>
 					</div>
@@ -227,7 +227,7 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Amount"
 					extra={
-						<div className="text-theme-danger ml-1">
+						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 								<Icon name="Sent" width={50} height={50} />
 							</Circle>
@@ -239,8 +239,8 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Transaction Type"
 					extra={
-						<div className="text-theme-danger ml-1">
-							<Circle className="bg-theme-background border-black" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Voted" className="text-black" />
 							</Circle>
 						</div>

@@ -2547,10 +2547,10 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <div
-                class="border-theme-neutral-300 px-8 mr-8 font-semibold border-r"
+                class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
               >
                 <div
-                  class="text-theme-neutral-500 text-sm"
+                  class="text-sm text-theme-neutral-500"
                 >
                   Quantity
                 </div>
@@ -2605,14 +2605,14 @@ exports[`Votes should select a delegate 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-200 text-theme-primary-700 text-lg font-bold"
+                          class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
                           data-testid="DelegateAvatarList__avatar-list__rest"
                         >
                           +1
                         </div>
                       </div>
                       <div
-                        class="text-theme-primary-700 hover:text-theme-primary-500 ml-4 cursor-pointer"
+                        class="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
                         data-testid="DelegateList__toggle-show-selected"
                       >
                         Show List
