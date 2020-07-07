@@ -36,7 +36,7 @@ export const AddressListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-5">
-				<Avatar address={walletAddress!} />
+				<Avatar address={walletAddress} />
 			</td>
 
 			<td className="w-20 py-5">
