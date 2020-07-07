@@ -7,7 +7,7 @@ exports[`Avatar should render 1`] = `
     data-testid="Avatar"
   >
     <div
-      class="rounded-full overflow-hidden"
+      class="overflow-hidden rounded-full"
     >
       <img
         alt="abc"
@@ -26,7 +26,7 @@ exports[`Avatar should render with custom size 1`] = `
     data-testid="Avatar"
   >
     <div
-      class="rounded-full overflow-hidden"
+      class="overflow-hidden rounded-full"
     >
       <img
         alt="abc"
@@ -45,7 +45,7 @@ exports[`Avatar should render without shadow 1`] = `
     data-testid="Avatar"
   >
     <div
-      class="rounded-full overflow-hidden"
+      class="overflow-hidden rounded-full"
     >
       <img
         alt="abc"

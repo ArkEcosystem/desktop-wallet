@@ -44,7 +44,7 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor, childr
 			className={className}
 			shadowColor={shadowColor}
 		>
-			<div className="rounded-full overflow-hidden">
+			<div className="overflow-hidden rounded-full">
 				<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 			</div>
 			{children}
