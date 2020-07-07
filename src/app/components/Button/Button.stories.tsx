@@ -41,7 +41,7 @@ export const WithIcon = () => {
 	const disabled = boolean("Disabled", false);
 
 	return (
-		<div className="space-x-4 capitalize">
+		<div className="capitalize space-x-4">
 			{variants.map((variant: ButtonVariant) => (
 				<Button key={variant} variant={variant} color={color} size={size} disabled={disabled}>
 					<Icon name="Download" />
