@@ -9,7 +9,6 @@ import { TransactionListItemProps } from "./models";
 
 export const TransactionListItem = ({
 	date,
-	avatarId,
 	type,
 	address,
 	walletName,
@@ -50,7 +49,7 @@ export const TransactionListItem = ({
 						<Circle size="sm" className={`${iconClasses[type]} -mr-1`}>
 							<Icon name={iconName[type]} width={40} height={40} />
 						</Circle>
-						<Circle size="sm" avatarId={avatarId} />
+						<Avatar size="sm" address={address as string} />
 					</div>
 				</td>
 				<td className="w-56 py-1">
