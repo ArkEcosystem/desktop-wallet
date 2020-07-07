@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -22,11 +23,11 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.SENDER")}
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 				border={false}

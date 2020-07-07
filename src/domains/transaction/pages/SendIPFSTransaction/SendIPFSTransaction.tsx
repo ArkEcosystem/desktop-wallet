@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
@@ -39,7 +40,7 @@ export const FirstStep = ({ networks = [] }: any) => {
 					<div className="relative flex items-center">
 						<Input type="text" disabled />
 						<div className="absolute flex items-center ml-3">
-							<Circle avatarId="test" size="sm" noShadow className="mr-3" />
+							<Avatar address="test" size="sm" noShadow className="mr-3" />
 							<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
 						</div>
 					</div>
@@ -75,14 +76,7 @@ export const SecondStep = () => (
 			>
 				<span>ARK Ecosystem</span>
 			</TransactionDetail>
-			<TransactionDetail
-				label="Sender"
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
+			<TransactionDetail label="Sender" extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail

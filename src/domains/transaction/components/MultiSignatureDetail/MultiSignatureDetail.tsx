@@ -1,4 +1,5 @@
 import { images } from "app/assets/images";
+import { Avatar } from "app/components/Avatar";
 // UI Elements
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -34,45 +35,46 @@ const Signatures = () => {
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.YOU")}</div>
 
 					<div className="pr-4 mr-2 border-r border-theme-neutral-300">
-						<Circle avatarId="test" className="relative ml-2">
+						<Avatar address="test" noShadow>
 							<Badge
 								className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
 								icon="Checkmark"
 							/>
-						</Circle>
+						</Avatar>
 					</div>
 				</div>
 
 				<div>
 					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.OTHER")}</div>
+					<div className="flex">
+						<Avatar address="test" noShadow className="ml-2">
+							<Badge
+								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+								icon="StatusClock"
+							/>
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-2">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow className="ml-4">
+							<Badge
+								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+								icon="StatusClock"
+							/>
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow className="ml-4">
+							<Badge
+								className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
+								icon="Checkmark"
+							/>
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
-							icon="Checkmark"
-						/>
-					</Circle>
-
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow className="ml-4">
+							<Badge
+								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
+								icon="StatusClock"
+							/>
+						</Avatar>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -84,11 +86,11 @@ export const FirstStep = () => {
 
 	return (
 		<section data-testid="MultiSignatureDetail__first-step">
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Avatar address="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test" />}>
+			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Avatar address="test" />}>
 				Bank
 				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
 			</TransactionDetail>

@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -152,7 +153,7 @@ const SecondStep = () => {
 					label=" "
 					extra={
 						<div className="mt-2">
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 					className="pt-4"

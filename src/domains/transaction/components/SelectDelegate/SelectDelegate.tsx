@@ -1,5 +1,6 @@
 import { Numeral } from "@arkecosystem/platform-sdk-intl";
 import { SvgCollection } from "app/assets/svg";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
@@ -32,7 +33,7 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
 			>
 				<div className="flex flex-1">
-					<Circle avatarId="test" className="mr-8" />
+					<Avatar address="test" size="sm" className="mr-8" />
 
 					<div className="mr-2">{delegate.username}</div>
 					<div className="text-theme-neutral-500">{delegate.address}</div>
@@ -193,7 +194,7 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 								</td>
 
 								<td className="w-16 px-4">
-									<Circle avatarId="test" noShadow={true} />
+									<Avatar address="test" noShadow />
 								</td>
 
 								<td className="py-6 font-semibold">
@@ -224,7 +225,7 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 
 								<td className="w-16">
 									{rowData.voting ? (
-										<Circle avatarId="test" noShadow={true} />
+										<Avatar address="test" noShadow />
 									) : (
 										<Circle className=" border-theme-primary-100" noShadow={true} />
 									)}
@@ -249,7 +250,7 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 							</div>
 
 							<div className="flex flex-1">
-								<Circle avatarId="test" className="mr-2" />
+								<Avatar address="test" className="mr-2" />
 
 								<div>
 									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATE_ADDRESS")}</div>

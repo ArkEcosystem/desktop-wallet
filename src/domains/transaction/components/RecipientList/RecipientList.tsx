@@ -1,6 +1,6 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import React from "react";
@@ -20,7 +20,7 @@ const RecipientListItem = ({
 }: RecipientListItemProps) => (
 	<tr className="border-b border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
 		<td className="w-12 py-4">
-			<Circle avatarId="test" size="sm" />
+			<Avatar address="test" size="sm" />
 		</td>
 		<td>
 			<Address address={address} walletName={walletName} />

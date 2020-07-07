@@ -81,7 +81,9 @@ exports[`SignMessage should render as signed 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
+              <div
+                class="flex items-center"
+              >
                 <div
                   class="sc-AxiKw eHzXqc -mr-2 border-black"
                 >
@@ -96,8 +98,19 @@ exports[`SignMessage should render as signed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxiKw kvRvRJ"
-                />
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dqAFnQ"
+                  data-testid="Avatar"
+                >
+                  <div
+                    class="overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="test"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      title="test"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
             <div
@@ -257,13 +270,28 @@ exports[`SignMessage should render the SignMessage 1`] = `
                   class="absolute top-0 flex items-center mt-2 ml-4"
                 >
                   <div
-                    class="sc-AxiKw gPGCtr"
-                  />
-                  <span
-                    class="ml-3 font-semibold "
+                    class="flex items-center"
                   >
-                    AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
-                  </span>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gHAmvf"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="overflow-hidden rounded-full"
+                      >
+                        <img
+                          alt="test"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                          title="test"
+                        />
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 font-semibold "
+                    >
+                      AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                    </span>
+                  </div>
                 </div>
               </div>
             </fieldset>
