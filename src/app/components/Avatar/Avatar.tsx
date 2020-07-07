@@ -6,13 +6,14 @@ import { Size } from "types";
 type Props = {
 	address: string;
 	size?: Size;
+	children?: React.ReactNode;
 	noShadow?: boolean;
 	className?: string;
 	shadowColor?: string;
 };
 
 export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
-	${tw`block rounded-full overflow-hidden`}
+	${tw`block rounded-full relative`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -32,7 +33,7 @@ export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; n
 		`};
 `;
 
-export const Avatar = ({ address, size, noShadow, className, shadowColor }: Props) => {
+export const Avatar = ({ address, size, noShadow, className, shadowColor, children }: Props) => {
 	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
 
 	return (
@@ -43,7 +44,14 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor }: Prop
 			className={className}
 			shadowColor={shadowColor}
 		>
-			<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+			<div className="rounded-full overflow-hidden">
+				<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+			</div>
+			{children}
 		</AvatarWrapper>
 	);
+};
+
+Avatar.defaultProps = {
+	address: "",
 };
