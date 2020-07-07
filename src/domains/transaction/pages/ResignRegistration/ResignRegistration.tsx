@@ -196,99 +196,84 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 	};
 
 	return (
-		<div data-testid="ResignRegistration">
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-					<Tabs activeId={activeTab}>
-						<StepIndicator size={6} activeIndex={activeTab} />
+		<div data-testid="ResignRegistration" className="max-w-xl py-16 mx-auto">
+			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+				<Tabs activeId={activeTab}>
+					<StepIndicator size={6} activeIndex={activeTab} />
 
-						<div className="mt-8">
-							<TabPanel tabId={1}>
-								<FirstStep form={form} />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep form={form} passwordType="mnemonic" />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								<ThirdStep form={form} passwordType="password" />
-							</TabPanel>
-							<TabPanel tabId={5}>
-								<ThirdStep form={form} passwordType="ledger" />
-							</TabPanel>
-							<TabPanel tabId={6}>
-								<FourthStep />
-							</TabPanel>
+					<div className="mt-8">
+						<TabPanel tabId={1}>
+							<FirstStep form={form} />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep />
+						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep form={form} passwordType="mnemonic" />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<ThirdStep form={form} passwordType="password" />
+						</TabPanel>
+						<TabPanel tabId={5}>
+							<ThirdStep form={form} passwordType="ledger" />
+						</TabPanel>
+						<TabPanel tabId={6}>
+							<FourthStep />
+						</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 6 && (
-									<Button
-										disabled={activeTab === 1}
-										data-testid="ResignRegistration__back-button"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
+						<div className="flex justify-end mt-8 space-x-3">
+							{activeTab < 6 && (
+								<Button
+									disabled={activeTab === 1}
+									data-testid="ResignRegistration__back-button"
+									variant="plain"
+									onClick={handleBack}
+								>
+									Back
+								</Button>
+							)}
+
+							{activeTab < 3 && (
+								<Button
+									data-testid="ResignRegistration__continue-button"
+									disabled={!isValid}
+									onClick={handleNext}
+								>
+									Continue
+								</Button>
+							)}
+
+							{activeTab >= 3 && activeTab < 6 && (
+								<Button
+									data-testid="ResignRegistration__send-button"
+									disabled={!isValid}
+									onClick={handleNext}
+								>
+									<Icon name="Send" className="mr-2" width={20} height={20} />
+									Send
+								</Button>
+							)}
+
+							{activeTab === 6 && (
+								<div className="flex justify-end space-x-3">
+									<Button data-testid="ResignRegistration__wallet-button" variant="plain">
+										Back to wallet
 									</Button>
-								)}
 
-								<div className="flex justify-end mt-6 space-x-3">
-									{activeTab < 6 && (
-										<Button
-											disabled={activeTab === 1}
-											data-testid="ResignRegistration__back-button"
-											variant="plain"
-											onClick={handleBack}
-										>
-											Back
-										</Button>
-									)}
-
-									{activeTab < 3 && (
-										<Button
-											data-testid="ResignRegistration__continue-button"
-											disabled={!isValid}
-											onClick={handleNext}
-										>
-											Continue
-										</Button>
-									)}
-
-									{activeTab >= 3 && activeTab < 6 && (
-										<Button
-											data-testid="ResignRegistration__send-button"
-											disabled={!isValid}
-											onClick={handleNext}
-										>
-											<Icon name="Send" className="mr-2" width={20} height={20} />
-											Send
-										</Button>
-									)}
-
-									{activeTab === 6 && (
-										<div className="flex justify-end space-x-3">
-											<Button data-testid="ResignRegistration__wallet-button" variant="plain">
-												Back to wallet
-											</Button>
-
-											<Button
-												type="submit"
-												data-testid="ResignRegistration__download-button"
-												variant="plain"
-											>
-												<Icon name="Download" className="mr-2" />
-												Download
-											</Button>
-										</div>
-									)}
+									<Button
+										type="submit"
+										data-testid="ResignRegistration__download-button"
+										variant="plain"
+									>
+										<Icon name="Download" className="mr-2" />
+										Download
+									</Button>
 								</div>
-							</div>
+							)}
 						</div>
-					</Tabs>
-				</Form>
-			</div>
+					</div>
+				</Tabs>
+			</Form>
 		</div>
 	);
 };

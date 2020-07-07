@@ -12,7 +12,7 @@ import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
+	const env = new Environment({ coins: { ARK }, httpClient, storage: "localstorage" });
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar />);

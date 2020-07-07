@@ -6,24 +6,24 @@ exports[`Welcome should change route to create profile 1`] = `
     class="w-full h-full"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="sm:px-6 lg:px-8 px-4"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="md:h-24 flex items-center flex-shrink-0 h-20"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="bg-logo flex p-2 rounded-lg"
         >
           <img
             alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
+            class="md:h-8 lg:h-10 h-6"
             src="ark-logo.png"
           />
         </div>
       </div>
     </div>
     <div
-      class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+      class="sm:px-6 lg:px-0 container px-4 mx-auto text-center"
     >
       <h1
         class="mb-8"
@@ -31,22 +31,22 @@ exports[`Welcome should change route to create profile 1`] = `
         Welcome to ARK
       </h1>
       <div
-        class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+        class="lg:w-4/5 xl:w-2/3 w-full mx-auto"
       >
         <svg>
           welcome-banner.svg
         </svg>
       </div>
       <div
-        class="max-w-lg mx-auto my-8 md:max-w-xl"
+        class="md:max-w-xl max-w-lg mx-auto my-8"
       >
         <p
-          class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+          class="text-theme-neutral-dark md:text-base mb-4 text-sm"
         >
           Create a new Profile or login with your MarketSquare account to get started
         </p>
         <div
-          class="flex flex-col md:space-x-3 md:flex-row"
+          class="md:space-x-3 md:flex-row flex flex-col"
         >
           <button
             class="sc-AxjAm ddQVWI w-full"
@@ -69,7 +69,7 @@ exports[`Welcome should change route to create profile 1`] = `
             </span>
           </button>
           <button
-            class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+            class="sc-AxjAm ddJBbC md:mt-0 w-full mt-2"
             color="primary"
             type="button"
           >
@@ -88,24 +88,24 @@ exports[`Welcome should render 1`] = `
     class="w-full h-full"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="sm:px-6 lg:px-8 px-4"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="md:h-24 flex items-center flex-shrink-0 h-20"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="bg-logo flex p-2 rounded-lg"
         >
           <img
             alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
+            class="md:h-8 lg:h-10 h-6"
             src="ark-logo.png"
           />
         </div>
       </div>
     </div>
     <div
-      class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+      class="sm:px-6 lg:px-0 container px-4 mx-auto text-center"
     >
       <h1
         class="mb-8"
@@ -113,22 +113,22 @@ exports[`Welcome should render 1`] = `
         Welcome to ARK
       </h1>
       <div
-        class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+        class="lg:w-4/5 xl:w-2/3 w-full mx-auto"
       >
         <svg>
           welcome-banner.svg
         </svg>
       </div>
       <div
-        class="max-w-lg mx-auto my-8 md:max-w-xl"
+        class="md:max-w-xl max-w-lg mx-auto my-8"
       >
         <p
-          class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+          class="text-theme-neutral-dark md:text-base mb-4 text-sm"
         >
           Create a new Profile or login with your MarketSquare account to get started
         </p>
         <div
-          class="flex flex-col md:space-x-3 md:flex-row"
+          class="md:space-x-3 md:flex-row flex flex-col"
         >
           <button
             class="sc-AxjAm ddQVWI w-full"
@@ -151,7 +151,7 @@ exports[`Welcome should render 1`] = `
             </span>
           </button>
           <button
-            class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+            class="sc-AxjAm ddJBbC md:mt-0 w-full mt-2"
             color="primary"
             type="button"
           >
@@ -170,24 +170,24 @@ exports[`Welcome should render with profiles 1`] = `
     class="w-full h-full"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="sm:px-6 lg:px-8 px-4"
     >
       <div
-        class="flex items-center flex-shrink-0 h-20 md:h-24"
+        class="md:h-24 flex items-center flex-shrink-0 h-20"
       >
         <div
-          class="flex p-2 rounded-lg bg-logo"
+          class="bg-logo flex p-2 rounded-lg"
         >
           <img
             alt="ARK Logo"
-            class="h-6 md:h-8 lg:h-10"
+            class="md:h-8 lg:h-10 h-6"
             src="ark-logo.png"
           />
         </div>
       </div>
     </div>
     <div
-      class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+      class="sm:px-6 lg:px-0 container px-4 mx-auto text-center"
     >
       <h1
         class="mb-8"
@@ -195,22 +195,22 @@ exports[`Welcome should render with profiles 1`] = `
         Welcome to ARK
       </h1>
       <div
-        class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+        class="lg:w-4/5 xl:w-2/3 w-full mx-auto"
       >
         <svg>
           welcome-banner.svg
         </svg>
       </div>
       <div
-        class="max-w-lg mx-auto my-8 md:max-w-xl"
+        class="md:max-w-xl max-w-lg mx-auto my-8"
       >
         <h2
-          class="mx-4 text-xl font-bold md:text-2xl"
+          class="md:text-2xl mx-4 text-xl font-bold"
         >
           Select Profile
         </h2>
         <p
-          class="text-sm text-theme-neutral-dark md:text-base"
+          class="text-theme-neutral-dark md:text-base text-sm"
         >
           You already have a profile, you can choose any of them
         </p>
@@ -305,12 +305,12 @@ exports[`Welcome should render with profiles 1`] = `
           type="horizontal"
         />
         <p
-          class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+          class="text-theme-neutral-dark md:text-base mb-4 text-sm"
         >
           Create a new Profile or login with your MarketSquare account to get started
         </p>
         <div
-          class="flex flex-col md:space-x-3 md:flex-row"
+          class="md:space-x-3 md:flex-row flex flex-col"
         >
           <button
             class="sc-AxjAm ddQVWI w-full"
@@ -333,7 +333,7 @@ exports[`Welcome should render with profiles 1`] = `
             </span>
           </button>
           <button
-            class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+            class="sc-AxjAm ddJBbC md:mt-0 w-full mt-2"
             color="primary"
             type="button"
           >

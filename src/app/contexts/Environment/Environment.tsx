@@ -10,7 +10,11 @@ type Props = {
 export const EnvironmentContext = React.createContext<Environment | undefined>(undefined);
 
 export const EnvironmentProvider = ({ children }: Props) => {
-	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
+	const env = new Environment({
+		coins: { ARK },
+		httpClient,
+		storage: process.env.NODE_ENV === "test" ? "localstorage" : "indexeddb",
+	});
 
 	return <EnvironmentContext.Provider value={env}>{children}</EnvironmentContext.Provider>;
 };

@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { createMemoryHistory } from "history";
 import React from "react";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { ResignRegistration } from "../ResignRegistration";
 
@@ -14,10 +13,8 @@ beforeEach(() => {
 });
 
 describe("ResignRegistration", () => {
-	const history = createMemoryHistory();
-
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		expect(getByTestId("ResignRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
@@ -25,7 +22,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -40,7 +37,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -52,7 +49,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -67,7 +64,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
@@ -91,7 +88,7 @@ describe("ResignRegistration", () => {
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<ResignRegistration {...defaultFormValues} />);
+		const { asFragment, getByTestId } = render(<ResignRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("ResignRegistration__continue-button"));
