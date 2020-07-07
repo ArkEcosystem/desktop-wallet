@@ -67,7 +67,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<div>
-					<span className="font-semibold">{title}</span>
+					<span className="text-lg font-semibold">{title}</span>
 					<div className="mt-2 text-theme-neutral-700">{description}</div>
 				</div>
 

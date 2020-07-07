@@ -1,37 +1,37 @@
 import React from "react";
 import { render } from "testing-library";
 
-import { TransactionDetail } from "./TransactionDetail";
+import { TransactionField } from "./TransactionField";
 
-describe("TransactionDetail", () => {
+describe("TransactionField", () => {
 	it("should render", () => {
-		const { container } = render(<TransactionDetail label="Test">test</TransactionDetail>);
+		const { container } = render(<TransactionField label="Test">test</TransactionField>);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render without border", () => {
+	it("should render with border", () => {
 		const { container } = render(
-			<TransactionDetail label="Test" border={false}>
+			<TransactionField label="Test" border={true}>
 				test
-			</TransactionDetail>,
+			</TransactionField>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without padding", () => {
 		const { container } = render(
-			<TransactionDetail label="Test" padding={false}>
+			<TransactionField label="Test" padding={false}>
 				test
-			</TransactionDetail>,
+			</TransactionField>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with extra children", () => {
 		const { container, getByTestId } = render(
-			<TransactionDetail label="Test" padding={false} extra={<div data-testid="TEST_CHILD" />}>
+			<TransactionField label="Test" padding={false} extra={<div data-testid="TEST_CHILD" />}>
 				test
-			</TransactionDetail>,
+			</TransactionField>,
 		);
 
 		expect(getByTestId("TEST_CHILD")).toBeTruthy();
