@@ -21,11 +21,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex justify-end items-top">
+		<div className="items-top flex justify-end">
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
+					<div className="border-theme-neutral-200 h-10 pl-8 my-auto ml-8 border-l" />
 				</>
 			)}
 
@@ -79,11 +79,11 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 	};
 
 	return (
-		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
+		<div data-testid="contacts" className="bg-theme-neutral-200 flex flex-col min-h-screen -m-5">
 			<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="px-10 py-16 bg-theme-background">
+				<div className="bg-theme-background px-10 py-16">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -97,7 +97,7 @@ export const Contacts = ({ contacts, assets, onSearch }: ContactsProps) => {
 					/>
 				</div>
 
-				<div className="flex items-start flex-1 px-10 py-16 bg-theme-background">
+				<div className="bg-theme-background flex items-start flex-1 px-10 py-16">
 					{contacts.length === 0 && (
 						<div
 							data-testid="contacts__banner"

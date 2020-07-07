@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { createMemoryHistory } from "history";
 import React from "react";
 import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
@@ -26,8 +25,6 @@ const assets = [
 ];
 
 describe("Contacts", () => {
-	const history = createMemoryHistory();
-
 	it("should render", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={[]} />);
 

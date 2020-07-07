@@ -275,9 +275,6 @@
 		}
 	},
 	"jest": {
-		"setupFiles": [
-			"jest-localstorage-mock"
-		],
 		"setupFilesAfterEnv": [
 			"<rootDir>/jest.setup.js"
 		],

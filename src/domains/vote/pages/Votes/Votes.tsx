@@ -52,80 +52,73 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<div data-testid="MyVotes">
-			<div className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
-				<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+		<div data-testid="MyVotes" className="bg-theme-neutral-100 flex flex-col min-h-screen -m-5">
+			<Breadcrumbs crumbs={crumbs} className="py-5 pl-10 font-semibold" />
 
-				<div className="flex flex-col flex-1 space-y-5">
-					<div className="px-10 py-16 bg-theme-background">
-						<Header
-							title={t("VOTE.VOTES_PAGE.TITLE")}
-							subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-							extra={
-								<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
-							}
-						/>
-					</div>
+			<div className="flex flex-col flex-1 space-y-5">
+				<div className="bg-theme-background px-10 py-16">
+					<Header
+						title={t("VOTE.VOTES_PAGE.TITLE")}
+						subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
+						extra={
+							<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />
+						}
+					/>
+				</div>
 
-					<div className="px-10">
-						<div className="grid grid-flow-col gap-6">
-							<TransactionDetail border={false} label="Cryptoasset">
-								<SelectAssetWrapper>
-									<SelectAsset
-										assets={assets}
-										name="cryptoasset"
-										placeholder="Select cryptoasset"
-										onSelect={handleSelectCrypto}
-									/>
-								</SelectAssetWrapper>
-							</TransactionDetail>
-							<TransactionDetail border={false} label="Address" className="mt-2">
-								<div className="relative flex items-center pb-24">
-									<Input type="text" disabled />
-									<div className="absolute flex items-center justify-between w-full ml-3">
-										<div className="flex items-center">
-											{selectedAddress ? (
-												<>
-													<Avatar
-														className="mr-3"
-														address={selectedAddress}
-														size="sm"
-														noShadow
-													/>
-													<Address
-														address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-														walletName="ROBank"
-													/>
-												</>
-											) : (
-												<>
-													<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-													<span className="text-base font-semibold text-theme-neutral-400">
-														Select address
-													</span>
-												</>
-											)}
-										</div>
-										<Icon name="User" className="mr-6" width={20} height={20} />
+				<div className="px-10">
+					<div className="grid grid-flow-col gap-6">
+						<TransactionDetail border={false} label="Cryptoasset">
+							<SelectAssetWrapper>
+								<SelectAsset
+									assets={assets}
+									name="cryptoasset"
+									placeholder="Select cryptoasset"
+									onSelect={handleSelectCrypto}
+								/>
+							</SelectAssetWrapper>
+						</TransactionDetail>
+						<TransactionDetail border={false} label="Address" className="mt-2">
+							<div className="relative flex items-center pb-24">
+								<Input type="text" disabled />
+								<div className="absolute flex items-center justify-between w-full ml-3">
+									<div className="flex items-center">
+										{selectedAddress ? (
+											<>
+												<Avatar className="mr-3" address={selectedAddress} size="sm" noShadow />
+												<Address
+													address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+													walletName="ROBank"
+												/>
+											</>
+										) : (
+											<>
+												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
+												<span className="text-theme-neutral-400 text-base font-semibold">
+													Select address
+												</span>
+											</>
+										)}
 									</div>
+									<Icon name="User" className="mr-6" width={20} height={20} />
 								</div>
-							</TransactionDetail>
-						</div>
-					</div>
-
-					<div className="relative p-10 bg-theme-background">
-						{!selectedCrypto ? (
-							<div className="flex flex-col space-y-5">
-								{addressList?.map((item) => (
-									<PlaceholderVotes key={item.walletAddress} />
-								))}
 							</div>
-						) : selectedAddress ? (
-							<DelegateList data={delegateList} />
-						) : (
-							<AddressList data={addressList} onSelect={handleSelectAddress} />
-						)}
+						</TransactionDetail>
 					</div>
+				</div>
+
+				<div className="bg-theme-background relative p-10">
+					{!selectedCrypto ? (
+						<div className="flex flex-col space-y-5">
+							{addressList?.map((item) => (
+								<PlaceholderVotes key={item.walletAddress} />
+							))}
+						</div>
+					) : selectedAddress ? (
+						<DelegateList data={delegateList} />
+					) : (
+						<AddressList data={addressList} onSelect={handleSelectAddress} />
+					)}
 				</div>
 			</div>
 		</div>

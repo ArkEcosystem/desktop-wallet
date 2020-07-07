@@ -14,7 +14,7 @@ export const routes: any[] = [
 		component: CreateProfile,
 	},
 	{
-		path: "/profiles/:profileId/portfolio",
+		path: "/profiles/:profileId/dashboard",
 		component: Dashboard,
 	},
 	{

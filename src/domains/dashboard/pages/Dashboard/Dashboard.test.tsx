@@ -1,5 +1,4 @@
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
 import { act, fireEvent, render } from "testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
@@ -7,20 +6,12 @@ import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {
 	it("should render", () => {
-		const { container } = render(
-			<MemoryRouter>
-				<Dashboard />
-			</MemoryRouter>,
-		);
+		const { container } = render(<Dashboard />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide transaction view", () => {
-		const { getByTestId, getAllByTestId } = render(
-			<MemoryRouter>
-				<Dashboard wallets={wallets} transactions={transactions} />
-			</MemoryRouter>,
-		);
+		const { getByTestId, getAllByTestId } = render(<Dashboard wallets={wallets} transactions={transactions} />);
 		const filterNetwork = getAllByTestId("dropdown__toggle");
 		// const transactionsView = getByTestId("dashboard__transactions-view");
 
@@ -35,28 +26,18 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio percentage bar", () => {
-		const { container } = render(
-			<MemoryRouter>
-				<Dashboard portfolioPercentages={portfolioPercentages} />
-			</MemoryRouter>,
-		);
+		const { container } = render(<Dashboard portfolioPercentages={portfolioPercentages} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", () => {
-		const { container } = render(
-			<MemoryRouter>
-				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
-			</MemoryRouter>,
-		);
+		const { container } = render(<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide portfolio view", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<MemoryRouter>
-				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
-			</MemoryRouter>,
+			<Dashboard balances={balances} wallets={wallets} transactions={transactions} />,
 		);
 		const filterNetwork = getAllByTestId("dropdown__toggle");
 

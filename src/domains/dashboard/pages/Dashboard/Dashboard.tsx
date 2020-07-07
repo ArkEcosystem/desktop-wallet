@@ -20,6 +20,7 @@ const Section = styled.div`
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+
 	// Wallet controls data
 	const filterProperties = {
 		visibleTransactionsView: showTransactions,
@@ -51,25 +52,23 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 	return (
 		<div>
-			<div>
-				{showPortfolio && balances && (
-					<Section>
-						<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
-						<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-						<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-						<PercentageBar title="Total portfolio" data={portfolioPercentages} />
-					</Section>
-				)}
-
+			{showPortfolio && balances && (
 				<Section>
-					<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
+					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
+					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
+					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
+					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
 				</Section>
-				{showTransactions && (
-					<Section data-testid="dashboard__transactions-view">
-						<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
-					</Section>
-				)}
-			</div>
+			)}
+
+			<Section>
+				<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
+			</Section>
+			{showTransactions && (
+				<Section data-testid="dashboard__transactions-view">
+					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
+				</Section>
+			)}
 		</div>
 	);
 };

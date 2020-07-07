@@ -1,16 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
-import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { Router } from "react-router-dom";
 import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
 describe("Vote For Delegate", () => {
-	const history = createMemoryHistory();
-
 	const onCopy = jest.fn();
 
 	it("should render 1st step", async () => {
@@ -61,11 +57,7 @@ describe("Vote For Delegate", () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(
-				<Router history={history}>
-					<SendVoteTransaction onCopy={onCopy} />
-				</Router>,
-			);
+			rendered = render(<SendVoteTransaction onCopy={onCopy} />);
 			await waitFor(() => expect(rendered.getByTestId(`SendVoteTransaction__step--first`)).toBeTruthy());
 		});
 

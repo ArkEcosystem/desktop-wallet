@@ -25,7 +25,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -40,10 +40,11 @@ describe("NavigationBar", () => {
 
 	it("should handle default menu", () => {
 		const profile = env.profiles().create("test");
-		history.push(`/profiles/${profile.id()}`);
+		history.push(`/profiles/${profile.id()}/dashboard`);
+
 		const { getByText } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId">
+				<Route path="/profiles/:profileId/dashboard">
 					<NavigationBar />
 				</Route>
 			</EnvironmentContext.Provider>,
@@ -56,7 +57,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -67,14 +68,14 @@ describe("NavigationBar", () => {
 		history.push(`/profiles/${profile.id()}`);
 		const { getByText } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId">
+				<Route path="/profiles/:profileId/dashboard">
 					<NavigationBar menu={menu} />
 				</Route>
 			</EnvironmentContext.Provider>,
 		);
 
 		fireEvent.click(getByText("Portfolio"));
-		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/portfolio`);
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/dashboard`);
 	});
 
 	it("should open user actions dropdown on click", () => {
@@ -103,7 +104,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/portfolio`,
+				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",

@@ -3,7 +3,7 @@
 exports[`Contacts should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
+    class="bg-theme-neutral-200 flex flex-col min-h-screen -m-5"
     data-testid="contacts"
   >
     <div
@@ -36,7 +36,7 @@ exports[`Contacts should render 1`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="px-10 py-16 bg-theme-background"
+        class="bg-theme-background px-10 py-16"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -57,7 +57,7 @@ exports[`Contacts should render 1`] = `
           </div>
           <div>
             <div
-              class="flex justify-end items-top"
+              class="items-top flex justify-end"
             >
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"
@@ -72,7 +72,7 @@ exports[`Contacts should render 1`] = `
         </div>
       </div>
       <div
-        class="flex items-start flex-1 px-10 py-16 bg-theme-background"
+        class="bg-theme-background flex items-start flex-1 px-10 py-16"
       >
         <div
           class="flex flex-col items-center justify-center w-full"
@@ -106,7 +106,7 @@ exports[`Contacts should render 1`] = `
 exports[`Contacts should render with contacts 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-200"
+    class="bg-theme-neutral-200 flex flex-col min-h-screen -m-5"
     data-testid="contacts"
   >
     <div
@@ -139,7 +139,7 @@ exports[`Contacts should render with contacts 1`] = `
       class="flex flex-col flex-1 space-y-5"
     >
       <div
-        class="px-10 py-16 bg-theme-background"
+        class="bg-theme-background px-10 py-16"
       >
         <div
           class="flex items-end justify-between bg-theme-background"
@@ -160,7 +160,7 @@ exports[`Contacts should render with contacts 1`] = `
           </div>
           <div>
             <div
-              class="flex justify-end items-top"
+              class="items-top flex justify-end"
             >
               <div
                 class="relative"
@@ -188,7 +188,7 @@ exports[`Contacts should render with contacts 1`] = `
                 </button>
               </div>
               <div
-                class="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200"
+                class="border-theme-neutral-200 h-10 pl-8 my-auto ml-8 border-l"
               />
               <button
                 class="sc-AxiKw wFYj whitespace-no-wrap"
@@ -203,7 +203,7 @@ exports[`Contacts should render with contacts 1`] = `
         </div>
       </div>
       <div
-        class="flex items-start flex-1 px-10 py-16 bg-theme-background"
+        class="bg-theme-background flex items-start flex-1 px-10 py-16"
       >
         <div
           class="w-full"

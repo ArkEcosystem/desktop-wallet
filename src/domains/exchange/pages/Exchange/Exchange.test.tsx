@@ -1,6 +1,4 @@
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Router } from "react-router-dom";
 import { fireEvent, render } from "testing-library";
 
 // i18n
@@ -8,14 +6,8 @@ import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
 describe("Exchange", () => {
-	const history = createMemoryHistory();
-
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={[]} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
@@ -42,11 +34,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={exchanges} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
 		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
@@ -69,11 +57,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={exchanges} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		expect(getByTestId("Exchange")).toHaveTextContent("ChangeNOW Plugin");
 		expect(getByTestId("Exchange")).toHaveTextContent("Binance");
@@ -99,11 +83,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={exchanges} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		const changenowCard = getByTestId("Exchange__exchange-card-changenow-plugin");
 
@@ -133,11 +113,7 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={exchanges} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 
@@ -152,11 +128,7 @@ describe("Exchange", () => {
 	});
 
 	it("should open & close add exchange modal when no existing exchanges", () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Exchange exchanges={[]} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 

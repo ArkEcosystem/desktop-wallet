@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Router } from "react-router-dom";
 import { act, fireEvent, render } from "testing-library";
 
 import { Registration } from "./Registration";
@@ -50,14 +48,8 @@ beforeEach(() => {
 });
 
 describe("Registration", () => {
-	const history = createMemoryHistory();
-
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
@@ -65,11 +57,7 @@ describe("Registration", () => {
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -84,11 +72,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -100,11 +84,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -119,11 +99,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -141,11 +117,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 5th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -172,11 +144,7 @@ describe("Registration", () => {
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -205,11 +173,7 @@ describe("Registration", () => {
 	});
 
 	it("should select registration type", async () => {
-		const { asFragment, getByTestId } = render(
-			<Router history={history}>
-				<Registration {...defaultFormValues} />
-			</Router>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		const toggle = getByTestId("select-list__toggle-button");
 

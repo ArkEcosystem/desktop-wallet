@@ -66,19 +66,19 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
+					<div className="text-theme-danger-500 ml-1">
 						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
 				}
 			>
-				<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+				<div className="text-md text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
@@ -90,7 +90,7 @@ export const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="mb-2 font-semibold text-theme-neutral-500">
+				<div className="text-theme-neutral-500 mb-2 font-semibold">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -152,7 +152,7 @@ export const FourthStep = () => (
 export const FifthStep = () => (
 	<TransactionSuccessful>
 		<TransactionDetail label="IPFS Hash">
-			<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
+			<div className="text-theme-neutral-800 text-md mt-4 mr-1 font-semibold truncate">
 				JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
 			</div>
 		</TransactionDetail>
@@ -160,7 +160,7 @@ export const FifthStep = () => (
 			label="Amount"
 			className="pb-0"
 			extra={
-				<div className="ml-1 text-theme-danger">
+				<div className="text-theme-danger ml-1">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
@@ -189,72 +189,66 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	};
 
 	return (
-		<div>
-			<div className="max-w-xl py-16 mx-auto">
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={5} activeIndex={activeTab} />
+		<div className="max-w-xl py-16 mx-auto">
+			<Tabs activeId={activeTab}>
+				<StepIndicator size={5} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep onSubmit={handleNext} formValues={formValues} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<FifthStep />
-						</TabPanel>
+				<div className="mt-8">
+					<TabPanel tabId={1}>
+						<FirstStep onSubmit={handleNext} formValues={formValues} />
+					</TabPanel>
+					<TabPanel tabId={2}>
+						<SecondStep />
+					</TabPanel>
+					<TabPanel tabId={3}>
+						<ThirdStep />
+					</TabPanel>
+					<TabPanel tabId={4}>
+						<FourthStep />
+					</TabPanel>
+					<TabPanel tabId={5}>
+						<FifthStep />
+					</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab > 1 && activeTab < 5 && (
-								<>
-									<Button
-										disabled={activeTab === 1}
-										data-testid="TransactionSend__button--back"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
-									</Button>
-									<Button
-										data-testid="TransactionSend__button--continue"
-										// disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								</>
-							)}
+					<div className="flex justify-end mt-8 space-x-3">
+						{activeTab > 1 && activeTab < 5 && (
+							<>
+								<Button
+									disabled={activeTab === 1}
+									data-testid="TransactionSend__button--back"
+									variant="plain"
+									onClick={handleBack}
+								>
+									Back
+								</Button>
+								<Button
+									data-testid="TransactionSend__button--continue"
+									// disabled={!isValid}
+									onClick={handleNext}
+								>
+									Continue
+								</Button>
+							</>
+						)}
 
-							{activeTab === 5 && (
-								<>
-									<Button
-										data-testid="TransactionSend__button--back-to-wallet"
-										variant="plain"
-										className={"block"}
-									>
-										Back to wallet
-									</Button>
-									<Button
-										onClick={onCopy}
-										data-testid="TransactionSend__button--copy"
-										variant="plain"
-									>
-										<Icon name="Copy" />
-										<span>Copy</span>
-									</Button>
-								</>
-							)}
-						</div>
+						{activeTab === 5 && (
+							<>
+								<Button
+									data-testid="TransactionSend__button--back-to-wallet"
+									variant="plain"
+									className={"block"}
+								>
+									Back to wallet
+								</Button>
+								<Button onClick={onCopy} data-testid="TransactionSend__button--copy" variant="plain">
+									<Icon name="Copy" />
+									<span>Copy</span>
+								</Button>
+							</>
+						)}
 					</div>
-				</Tabs>
-			</div>
+				</div>
+			</Tabs>
 		</div>
 	);
 };

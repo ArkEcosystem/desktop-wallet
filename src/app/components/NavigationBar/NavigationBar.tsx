@@ -44,12 +44,12 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+			<div className="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer">
 				<Icon name="Notification" width={22} height={22} />
 			</div>
 		}
 	>
-		<div className="p-8 py-3 mt-2 w-128">
+		<div className="w-128 p-8 py-3 mt-2">
 			<Notifications
 				pluginsHeader={pluginsHeader}
 				plugins={plugins}
@@ -68,13 +68,13 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 			options={userActions}
 			toggleContent={(isOpen: boolean) => (
 				<div className="cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="-mr-1 border-theme-neutral-300" size="lg">
+					<Circle className="border-theme-neutral-300 -mr-1" size="lg">
 						<span className="text-theme-neutral-600">
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative bg-theme-primary-600 border-theme-primary-600 rotate-90" size="lg">
-						<span className="text-sm text-theme-background">{userInitials}</span>
+					<Circle className="bg-theme-primary-600 border-theme-primary-600 relative rotate-90" size="lg">
+						<span className="text-theme-background text-sm">{userInitials}</span>
 						<Badge
 							className={`transform ${
 								isOpen ? "rotate-180" : ""
@@ -114,7 +114,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(activeProfile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+						className="text-md text-theme-neutral-500 flex items-center mx-4 font-bold"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -124,36 +124,36 @@ export const NavigationBar = ({
 	};
 	return (
 		<NavWrapper aria-labelledby="main menu">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="relative flex justify-between h-20 md:h-24">
+			<div className="sm:px-6 lg:px-8 px-4">
+				<div className="md:h-24 relative flex justify-between h-20">
 					<div className="flex items-center flex-shrink-0">
-						<div className="flex p-2 mr-4 rounded-lg bg-logo">
-							<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+						<div className="bg-logo flex p-2 mr-4 rounded-lg">
+							<img src={commonAssets.ARKLogo} className="md:h-8 lg:h-10 h-6" alt="ARK Logo" />
 						</div>
-						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
+						<ul className="md:h-24 flex h-20">{renderMenu()}</ul>
 					</div>
 
 					<div className="flex items-center">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
-						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="border-theme-neutral-200 h-8 border-r" />
 
-						<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
+						<div className="text-theme-primary-300 flex items-center h-full px-3 -mt-1 cursor-pointer">
 							<Icon name="Sent" width={42} height={42} />
 						</div>
 
-						<div className="h-8 border-r border-theme-neutral-200" />
-						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+						<div className="border-theme-neutral-200 h-8 border-r" />
+						<div className="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer">
 							<Icon name="Receive" width={22} height={22} />
 						</div>
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="border-theme-neutral-200 h-8 border-r" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral-500">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+							<div className="text-theme-neutral-500 text-xs">Your balance</div>
+							<div className="text-theme-neutral-700 text-sm font-bold">{balance}</div>
 						</div>
 
-						<div className="flex p-1 cusror-pointer">
+						<div className="cusror-pointer flex p-1">
 							<UserInfo
 								userInitials={userInitials}
 								currencyIcon={currencyIcon}
@@ -179,7 +179,7 @@ NavigationBar.defaultProps = {
 	menu: [
 		{
 			title: "Portfolio",
-			mountPath: (profileId: string) => `/profiles/${profileId}/portfolio`,
+			mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 		},
 		{
 			title: "Plugins",
