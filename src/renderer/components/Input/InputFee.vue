@@ -58,7 +58,7 @@
     </p>
 
     <div
-      v-if="isStaticFee && !isAdvancedFee"
+      v-if="!hideStaticFeeNotice && isStaticFee && !isAdvancedFee"
       class="mt-6 mb-4"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
@@ -121,6 +121,12 @@ export default {
       type: Object,
       required: false,
       default: null
+    },
+
+    hideStaticFeeNotice: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 

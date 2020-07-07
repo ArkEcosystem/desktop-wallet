@@ -135,6 +135,7 @@
         :is-disabled="!currentWallet"
         :wallet="currentWallet"
         :wallet-network="walletNetwork"
+        :hide-static-fee-notice="isMultiPayment"
         class="TransactionFormTransfer__fee"
         :class="{
           'TransactionFormTransfer__fee--helper': isMultiPayment && insufficientFundsError
