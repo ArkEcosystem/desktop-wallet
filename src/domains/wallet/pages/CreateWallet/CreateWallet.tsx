@@ -6,21 +6,14 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
-import tw, { styled } from "twin.macro";
 
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
-
-const NetworkItem = styled.div`
-	[aria-checked="true"] & > .NetworkItemIcon {
-		${tw`text-theme-success`}
-	}
-`;
 
 export const FirstStep = ({ networks }: { networks: Network[] }) => {
 	const { register, setValue } = useFormContext();
@@ -44,10 +37,10 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 				/>
 			</div>
 			<div className="space-y-2">
-				<span className="text-theme-neutral-dark text-sm font-medium">Network</span>
-				<SelectAsset
+				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+				<SelectNetwork
 					name={activeNetwork as any}
-					assets={networks}
+					networks={networks}
 					onSelect={(selected) => handleSelect(selected?.name)}
 				/>
 			</div>
@@ -90,7 +83,7 @@ export const SecondStep = ({
 			<div className="py-3">
 				<div className="flex justify-between">
 					<div>
-						<h3 className="text-theme-neutral-dark mb-1">Your password in the file</h3>
+						<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
 						<p className="text-theme-neutral">You can also download and store safely your passphrase.</p>
 					</div>
 					<Icon name="FilePassword" width={40} height={40} />
@@ -161,7 +154,7 @@ export const FourthStep = () => {
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-theme-neutral-dark text-sm font-semibold">Network</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
 						<p data-testid="CrateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
@@ -175,7 +168,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-theme-neutral-dark text-sm font-semibold">Address</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
 						<p className="text-lg font-medium">D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax</p>
 					</div>
 					<Circle />

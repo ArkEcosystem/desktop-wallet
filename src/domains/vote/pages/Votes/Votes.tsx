@@ -7,7 +7,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -17,14 +17,14 @@ import { AddressList } from "../../components/AddressList";
 import { DelegateList } from "../../components/DelegateList";
 
 type VotesProps = {
-	assets?: any[];
+	networks?: any[];
 	addressList?: any[];
 	delegateList?: any[];
 };
 
 const { PlaceholderVotes } = images.vote.pages.votes;
 
-const SelectAssetWrapper = styled.div`
+const SelectNetworkWrapper = styled.div`
 	.select-asset__items {
 		> div > div {
 			box-shadow: none;
@@ -32,7 +32,7 @@ const SelectAssetWrapper = styled.div`
 	}
 `;
 
-export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
+export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	const { t } = useTranslation();
 	const [selectedCrypto, setSelectCrypto] = useState("");
 	const [selectedAddress, setSelectAddress] = useState("");
@@ -52,11 +52,11 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<div data-testid="MyVotes" className="bg-theme-neutral-100 flex flex-col min-h-screen -m-5">
+		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
 			<Breadcrumbs crumbs={crumbs} className="py-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="bg-theme-background px-10 py-16">
+				<div className="px-10 py-16 bg-theme-background">
 					<Header
 						title={t("VOTE.VOTES_PAGE.TITLE")}
 						subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
@@ -69,14 +69,14 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 				<div className="px-10">
 					<div className="grid grid-flow-col gap-6">
 						<TransactionDetail border={false} label="Cryptoasset">
-							<SelectAssetWrapper>
-								<SelectAsset
-									assets={assets}
+							<SelectNetworkWrapper>
+								<SelectNetwork
+									networks={networks}
 									name="cryptoasset"
 									placeholder="Select cryptoasset"
 									onSelect={handleSelectCrypto}
 								/>
-							</SelectAssetWrapper>
+							</SelectNetworkWrapper>
 						</TransactionDetail>
 						<TransactionDetail border={false} label="Address" className="mt-2">
 							<div className="relative flex items-center pb-24">
@@ -94,7 +94,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 										) : (
 											<>
 												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-												<span className="text-theme-neutral-400 text-base font-semibold">
+												<span className="text-base font-semibold text-theme-neutral-400">
 													Select address
 												</span>
 											</>
@@ -107,7 +107,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 					</div>
 				</div>
 
-				<div className="bg-theme-background relative p-10">
+				<div className="relative p-10 bg-theme-background">
 					{!selectedCrypto ? (
 						<div className="flex flex-col space-y-5">
 							{addressList?.map((item) => (
@@ -126,7 +126,7 @@ export const Votes = ({ assets, addressList, delegateList }: VotesProps) => {
 };
 
 Votes.defaultProps = {
-	assets: [],
+	networks: [],
 	addressList: [],
 	delegateList: [],
 };

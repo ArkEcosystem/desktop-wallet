@@ -5,6 +5,201 @@ exports[`WalletDetails should render 1`] = `
   <div
     class="relative"
   >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-AxmLO hieoxO"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-8"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/portfolio"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+                  href="/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hCRZAv"
+                height="42"
+                width="42"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral-500"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-700"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhCb bzWLYJ relative rotate-90 bg-theme-primary-600 border-theme-primary-600"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div
       class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-100 text-theme-neutral-700"
       data-testid="breadcrumbs__wrapper"
@@ -44,7 +239,7 @@ exports[`WalletDetails should render 1`] = `
             class="flex"
           >
             <div
-              class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-700"
+              class="sc-AxhCb dtyYr -mr-1 border-theme-neutral-700"
             >
               <div
                 class="sc-AxirZ iQaTP text-theme-neutral-700"
@@ -57,14 +252,18 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPhsak"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kpLzmr"
               data-testid="Avatar"
             >
-              <img
-                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-              />
+              <div
+                class="overflow-hidden rounded-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
           <h2
@@ -118,7 +317,7 @@ exports[`WalletDetails should render 1`] = `
             </div>
           </button>
           <button
-            class="sc-Axmtr BZusx"
+            class="sc-fzoLsD fdTDED"
             color="primary"
             data-testid="WalletHeader__send-button"
             type="button"
@@ -133,7 +332,7 @@ exports[`WalletDetails should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <button
-                class="sc-Axmtr bgzyQn text-left"
+                class="sc-fzoLsD fSIQCF text-left"
                 color="primary"
                 type="button"
               >
@@ -167,15 +366,15 @@ exports[`WalletDetails should render 1`] = `
             </p>
             <label>
               <input
-                class="sc-fzozJi ffhyTJ"
+                class="sc-fzpans bPktWT"
                 data-testid="WalletHeader__toggle"
                 type="checkbox"
               />
               <div
-                class="sc-fzoLsD iIErui"
+                class="sc-fzplWN gYRoqz"
               >
                 <span
-                  class="sc-fzpans cHEAkY"
+                  class="sc-fznyAO fvzGyp"
                 />
               </div>
             </label>
@@ -241,7 +440,7 @@ exports[`WalletDetails should render 1`] = `
       </ul>
     </header>
     <div
-      class="bg-theme-neutral-100 h-4"
+      class="h-4 bg-theme-neutral-100"
     />
     <section
       class="px-12 py-8"
@@ -263,7 +462,7 @@ exports[`WalletDetails should render 1`] = `
             Hide
           </span>
           <span
-            class="sc-AxheI iRQbgq"
+            class="sc-fzozJi bOpsZZ"
           >
             <div
               class="sc-AxirZ fttODj"
@@ -296,7 +495,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
                 >
                   <div
                     class="sc-AxirZ iQaTP"
@@ -309,14 +508,18 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bFijeL"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
                   data-testid="Avatar"
                 >
-                  <img
-                    alt="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                    title="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
-                  />
+                  <div
+                    class="overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                      title="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
+                    />
+                  </div>
                 </div>
               </div>
               <div>
@@ -335,7 +538,7 @@ exports[`WalletDetails should render 1`] = `
                     Delegate 3
                   </span>
                   <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-400 font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-400 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     Abuzhu…FgETuW
@@ -434,7 +637,7 @@ exports[`WalletDetails should render 1`] = `
                 </li>
               </ul>
               <button
-                class="sc-Axmtr gOjuLj"
+                class="sc-fzoLsD cxVEGx"
                 color="primary"
                 data-testid="WalletVote__delegate__unvote"
                 type="button"
@@ -447,7 +650,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </section>
     <div
-      class="bg-theme-neutral-100 h-4"
+      class="h-4 bg-theme-neutral-100"
     />
     <section
       class="px-12 py-8"
@@ -469,7 +672,7 @@ exports[`WalletDetails should render 1`] = `
             Hide
           </span>
           <span
-            class="sc-AxheI iRQbgq"
+            class="sc-fzozJi bOpsZZ"
           >
             <div
               class="sc-AxirZ fttODj"
@@ -501,7 +704,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-xl"
@@ -514,14 +717,18 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bFijeL"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
                   data-testid="Avatar"
                 >
-                  <img
-                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                  />
+                  <div
+                    class="overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
                 </div>
               </div>
               <div>
@@ -545,7 +752,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-xl"
@@ -580,7 +787,7 @@ exports[`WalletDetails should render 1`] = `
                 data-testid="WalletRegistrations__icon-list"
               >
                 <div
-                  class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                   data-testid="WalletRegistrations__icon-list__icon"
                 >
                   <div
@@ -594,7 +801,7 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                   data-testid="WalletRegistrations__icon-list__icon"
                 >
                   <div
@@ -608,7 +815,7 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                   data-testid="WalletRegistrations__icon-list__rest"
                 >
                   +1
@@ -626,7 +833,7 @@ exports[`WalletDetails should render 1`] = `
               Show all
             </button>
             <button
-              class="sc-Axmtr gOjuLj"
+              class="sc-fzoLsD cxVEGx"
               color="primary"
               data-testid="WalletRegistrations__register"
               type="button"
@@ -638,7 +845,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </section>
     <div
-      class="bg-theme-neutral-100 h-4"
+      class="h-4 bg-theme-neutral-100"
     />
     <div
       class="px-12 py-8"
@@ -649,7 +856,7 @@ exports[`WalletDetails should render 1`] = `
         Pending Transactions
       </h2>
       <div
-        class="sc-AxiKw bvfChE"
+        class="sc-AxgMl hJWcEH"
         role="table"
       >
         <table
@@ -777,21 +984,36 @@ exports[`WalletDetails should render 1`] = `
                 class="w-32 py-5 mt-1"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-400 -mr-1"
+                  class="flex"
                 >
                   <div
-                    class="sc-AxirZ RbXVX"
-                    height="40"
-                    width="40"
+                    class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-400 -mr-1"
                   >
-                    <svg>
-                      received.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ RbXVX"
+                      height="40"
+                      width="40"
+                    >
+                      <svg>
+                        received.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="overflow-hidden rounded-full"
+                    >
+                      <img
+                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="sc-AxhUy bZEzx"
-                />
               </td>
               <td
                 class="w-56"
@@ -806,7 +1028,7 @@ exports[`WalletDetails should render 1`] = `
                     My Wallet
                   </span>
                   <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-400 font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-400 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusXSW9k…P6T9GQ3kqT
@@ -820,7 +1042,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxgMl bNYTxW"
+                  class="sc-Axmtr fXByBf"
                   color="success"
                 >
                   100 ARK
@@ -847,21 +1069,36 @@ exports[`WalletDetails should render 1`] = `
                 class="w-32 py-5 mt-1"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-danger-200 text-theme-danger-400 -mr-1"
+                  class="flex"
                 >
                   <div
-                    class="sc-AxirZ RbXVX"
-                    height="40"
-                    width="40"
+                    class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ RbXVX"
+                      height="40"
+                      width="40"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="overflow-hidden rounded-full"
+                    >
+                      <img
+                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="sc-AxhUy bZEzx"
-                />
               </td>
               <td
                 class="w-56"
@@ -876,7 +1113,7 @@ exports[`WalletDetails should render 1`] = `
                     My Wallet
                   </span>
                   <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-400 font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-400 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusXSW9k…P6T9GQ3kqT
@@ -890,7 +1127,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxgMl eXChH"
+                  class="sc-Axmtr cYWaUi"
                   color="danger"
                 >
                   - 100 ARK
@@ -917,7 +1154,7 @@ exports[`WalletDetails should render 1`] = `
         Transaction History
       </h2>
       <div
-        class="sc-AxiKw bvfChE"
+        class="sc-AxgMl hJWcEH"
         role="table"
       >
         <table
@@ -1045,21 +1282,36 @@ exports[`WalletDetails should render 1`] = `
                 class="w-32 py-5 mt-1"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-danger-200 text-theme-danger-400 -mr-1"
+                  class="flex"
                 >
                   <div
-                    class="sc-AxirZ RbXVX"
-                    height="40"
-                    width="40"
+                    class="sc-AxhCb bzWLYJ border-theme-danger-200 text-theme-danger-400 -mr-1"
                   >
-                    <svg>
-                      sent.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ RbXVX"
+                      height="40"
+                      width="40"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="overflow-hidden rounded-full"
+                    >
+                      <img
+                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="sc-AxhUy bZEzx"
-                />
               </td>
               <td
                 class="w-56"
@@ -1074,7 +1326,7 @@ exports[`WalletDetails should render 1`] = `
                     My Wallet
                   </span>
                   <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-400 font-semibold text-base"
+                    class="sc-AxheI fniENP text-theme-neutral-400 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     ASuusXSW9k…P6T9GQ3kqT
@@ -1088,7 +1340,7 @@ exports[`WalletDetails should render 1`] = `
                 class="text-sm text-right w-36"
               >
                 <div
-                  class="sc-AxgMl eXChH"
+                  class="sc-Axmtr cYWaUi"
                   color="danger"
                 >
                   - 100 ARK
@@ -1141,7 +1393,7 @@ exports[`WalletDetails should render 1`] = `
                 Show
               </span>
               <span
-                class="sc-AxheI chvtGo"
+                class="sc-fzozJi ivRqtn"
               >
                 <div
                   class="sc-AxirZ fttODj"
@@ -1169,7 +1421,7 @@ exports[`WalletDetails should render 1`] = `
             class="max-w-4xl mx-auto"
           >
             <div
-              class="sc-AxiKw bvfChE"
+              class="sc-AxgMl hJWcEH"
               role="table"
             >
               <table
@@ -1339,21 +1591,36 @@ exports[`WalletDetails should render 1`] = `
                       class="py-6 mt-1"
                     >
                       <div
-                        class="sc-AxhUy dSLmHc"
+                        class="flex"
                       >
                         <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                          class="sc-AxhCb bzWLYJ"
                         >
-                          <svg>
-                            ark.svg
-                          </svg>
+                          <div
+                            class="sc-AxirZ eEbZjj"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full"
+                          >
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
+                          </div>
                         </div>
                       </div>
-                      <div
-                        class="sc-AxhUy bZEzx"
-                      />
                     </td>
                     <td
                       class="py-1"
@@ -1368,7 +1635,7 @@ exports[`WalletDetails should render 1`] = `
                           ARK Wallet 1
                         </span>
                         <span
-                          class="sc-AxhCb ccMvAG text-theme-neutral-400 font-semibold text-base"
+                          class="sc-AxheI fniENP text-theme-neutral-400 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           ASuusXSW9…6T9GQ3kqT

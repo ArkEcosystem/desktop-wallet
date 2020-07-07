@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
@@ -66,31 +67,24 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="grid grid-flow-row gap-2 mt-4">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
-					<div className="text-theme-danger-500 ml-1">
+					<div className="ml-1 text-theme-danger-500">
 						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
 				}
 			>
-				<div className="text-md text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">
+				<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<div className="text-theme-neutral-500 mb-2 font-semibold">
+			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 font-semibold text-theme-neutral-500">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -152,7 +146,7 @@ export const FourthStep = () => (
 export const FifthStep = () => (
 	<TransactionSuccessful>
 		<TransactionDetail label="IPFS Hash">
-			<div className="text-theme-neutral-800 text-md mt-4 mr-1 font-semibold truncate">
+			<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
 				JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
 			</div>
 		</TransactionDetail>
@@ -160,7 +154,7 @@ export const FifthStep = () => (
 			label="Amount"
 			className="pb-0"
 			extra={
-				<div className="text-theme-danger ml-1">
+				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>

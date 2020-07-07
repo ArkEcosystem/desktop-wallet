@@ -1,11 +1,12 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
 import { useSelectionState } from "app/components/SelectionBar";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -16,7 +17,7 @@ import { TransactionSuccessful } from "domains/transaction/components/Transactio
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
-export const FirstStep = ({ assets = [] }: any) => {
+export const FirstStep = ({ networks = [] }: any) => {
 	const { register } = useFormContext();
 	const selectionBarState = useSelectionState(1);
 
@@ -33,13 +34,13 @@ export const FirstStep = ({ assets = [] }: any) => {
 			</div>
 			<div className="mt-4 grid grid-flow-row">
 				<TransactionField border={false} label="Network" padding={false}>
-					<SelectAsset assets={assets} />
+					<SelectNetwork networks={networks} />
 				</TransactionField>
 				<TransactionField border={false} label="Sender" padding={false}>
 					<div className="relative flex items-center">
 						<Input type="text" disabled />
 						<div className="absolute flex items-center ml-3">
-							<Circle avatarId="test" size="sm" noShadow className="mr-3" />
+							<Avatar address="test" size="sm" noShadow className="mr-3" />
 							<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
 						</div>
 					</div>
@@ -75,14 +76,7 @@ export const SecondStep = () => (
 			>
 				<span>ARK Ecosystem</span>
 			</TransactionDetail>
-			<TransactionDetail
-				label="Sender"
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
+			<TransactionDetail label="Sender" extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
@@ -148,10 +142,10 @@ export const FourthStep = () => (
 type Props = {
 	onCopy?: () => void;
 	onSubmit?: any;
-	assets?: any[];
+	networks?: any[];
 };
 
-export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
+export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 
 	const form = useForm({ mode: "onChange" });
@@ -167,74 +161,72 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, assets }: Props) => {
 	};
 
 	return (
-		<div>
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={onSubmit}>
-					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+		<div className="max-w-xl py-16 mx-auto">
+			<Form context={form} onSubmit={onSubmit}>
+				<Tabs activeId={activeTab}>
+					<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="mt-8">
-							<TabPanel tabId={1}>
-								<FirstStep assets={assets} />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								<FourthStep />
-							</TabPanel>
+					<div className="mt-8">
+						<TabPanel tabId={1}>
+							<FirstStep networks={networks} />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep />
+						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<FourthStep />
+						</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-2">
-								{activeTab < 4 && (
-									<>
-										<Button
-											disabled={activeTab === 1}
-											data-testid="SendIPFSTransaction__button--back"
-											variant="plain"
-											onClick={handleBack}
-										>
-											Back
-										</Button>
-										<Button
-											data-testid="SendIPFSTransaction__button--continue"
-											variant="solid"
-											// disabled={!isValid}
-											onClick={handleNext}
-										>
-											Continue
-										</Button>
-									</>
-								)}
+						<div className="flex justify-end mt-8 space-x-2">
+							{activeTab < 4 && (
+								<>
+									<Button
+										disabled={activeTab === 1}
+										data-testid="SendIPFSTransaction__button--back"
+										variant="plain"
+										onClick={handleBack}
+									>
+										Back
+									</Button>
+									<Button
+										data-testid="SendIPFSTransaction__button--continue"
+										variant="solid"
+										// disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
+									</Button>
+								</>
+							)}
 
-								{activeTab === 4 && (
-									<>
-										<Button
-											data-testid="SendIPFSTransaction__button--back-to-wallet"
-											variant="plain"
-											className={"block"}
-										>
-											Back to wallet
-										</Button>
-										<Button
-											onClick={onCopy}
-											data-testid="SendIPFSTransaction__button--copy"
-											variant="plain"
-										>
-											<div className="flex items-center justify-between px-1">
-												<Icon name="Copy" />
-												<span className="ml-2">Copy</span>
-											</div>
-										</Button>
-									</>
-								)}
-							</div>
+							{activeTab === 4 && (
+								<>
+									<Button
+										data-testid="SendIPFSTransaction__button--back-to-wallet"
+										variant="plain"
+										className={"block"}
+									>
+										Back to wallet
+									</Button>
+									<Button
+										onClick={onCopy}
+										data-testid="SendIPFSTransaction__button--copy"
+										variant="plain"
+									>
+										<div className="flex items-center justify-between px-1">
+											<Icon name="Copy" />
+											<span className="ml-2">Copy</span>
+										</div>
+									</Button>
+								</>
+							)}
 						</div>
-					</Tabs>
-				</Form>
-			</div>
+					</div>
+				</Tabs>
+			</Form>
 		</div>
 	);
 };

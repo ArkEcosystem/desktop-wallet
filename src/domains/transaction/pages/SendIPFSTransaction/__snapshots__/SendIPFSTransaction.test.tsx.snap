@@ -2,319 +2,305 @@
 
 exports[`SendIPFSTransaction should render 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="max-w-xl py-16 mx-auto"
+  <div
+    class="max-w-xl py-16 mx-auto"
+  >
+    <form
+      class="space-y-8"
+      data-testid="Form"
     >
-      <form
-        class="space-y-8"
-        data-testid="Form"
-      >
-        <div>
-          <ul
-            class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-          >
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-          </ul>
+      <div>
+        <ul
+          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+        >
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+          <li
+            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+          />
+        </ul>
+        <div
+          class="mt-8"
+        >
           <div
-            class="mt-8"
+            data-testid="tab-pabel__active-panel"
           >
-            <div
-              data-testid="tab-pabel__active-panel"
+            <section
+              data-testid="SendIPFSTransaction__step--first"
             >
-              <section
-                data-testid="SendIPFSTransaction__step--first"
+              <div>
+                <h1
+                  class="mb-0"
+                >
+                  IPFS
+                </h1>
+                <p
+                  class="text-theme-neutral-dark"
+                >
+                  Store an IPFS hash on the network
+                </p>
+              </div>
+              <div
+                class="mt-4 grid grid-flow-row"
               >
-                <div>
-                  <h1
-                    class="mb-0"
-                  >
-                    IPFS
-                  </h1>
-                  <p
-                    class="text-theme-neutral-dark"
-                  >
-                    Store an IPFS hash on the network
-                  </p>
-                </div>
                 <div
-                  class="mt-4 grid grid-flow-row"
+                  class="flex items-center py-4 true "
                 >
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex-1"
                   >
                     <div
-                      class="flex-1"
+                      class="text-sm font-medium text-theme-neutral-700"
                     >
-                      <div
-                        class="text-sm font-medium text-theme-neutral-700"
-                      >
-                        Network
-                      </div>
-                      <div
-                        class="mt-2"
-                      >
+                      Network
+                    </div>
+                    <div
+                      class="mt-2"
+                    >
+                      <div>
+                        <ul
+                          class="inline-block"
+                          data-testid="network__option"
+                        />
                         <div
-                          aria-expanded="false"
-                          aria-haspopup="listbox"
-                          aria-labelledby="downshift-1-label"
-                          class="relative"
-                          role="combobox"
+                          class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+                          data-testid="network__viewall"
                         >
-                          <label
-                            for="downshift-1-input"
-                            id="downshift-1-label"
-                          />
                           <div
-                            class="relative flex items-center w-full flex-inline"
+                            class="text-sm font-semibold text-theme-primary-500"
+                          >
+                            All
+                          </div>
+                          <span
+                            class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
                           >
                             <div
-                              class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                              class="sc-AxhUy gKrfcW"
+                              height="10"
+                              width="10"
                             >
-                              <div
-                                class="px-4 py-2 flex-0 w-14"
-                              >
-                                <div
-                                  class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                                />
-                              </div>
-                              <div
-                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                              >
-                                <div
-                                  class="relative z-10 w-full"
-                                  data-testid="select-network__typeahead-"
-                                >
-                                  <div
-                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
-                                  />
-                                </div>
-                                <input
-                                  aria-autocomplete="list"
-                                  aria-labelledby="downshift-1-label"
-                                  autocomplete="off"
-                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                  data-testid="select-asset__input"
-                                  id="downshift-1-input"
-                                  placeholder="Enter a network name"
-                                  value=""
-                                />
-                              </div>
+                              <svg>
+                                chevron-down.svg
+                              </svg>
                             </div>
-                          </div>
+                            <span />
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="flex items-center py-4 true "
+                >
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex-1"
                   >
                     <div
-                      class="flex-1"
+                      class="text-sm font-medium text-theme-neutral-700"
                     >
-                      <div
-                        class="text-sm font-medium text-theme-neutral-700"
-                      >
-                        Sender
-                      </div>
-                      <div
-                        class="mt-2"
-                      >
-                        <div
-                          class="relative flex items-center"
-                        >
-                          <input
-                            class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
-                            data-testid="Input"
-                            disabled=""
-                            type="text"
-                          />
-                          <div
-                            class="absolute flex items-center ml-3"
-                          >
-                            <div
-                              class="sc-AxiKw gPGCtr mr-3"
-                            />
-                            <div
-                              class="inline-block truncate align-middle"
-                            >
-                              <span
-                                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                data-testid="address__wallet-name"
-                              >
-                                ROBank
-                              </span>
-                              <span
-                                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                                data-testid="address__wallet-address"
-                              >
-                                AUexKj…EVTQWK
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      Sender
                     </div>
-                  </div>
-                  <div
-                    class="flex items-center py-4 true "
-                  >
                     <div
-                      class="flex-1"
+                      class="mt-2"
                     >
                       <div
-                        class="text-sm font-medium text-theme-neutral-700"
-                      >
-                        Hash
-                      </div>
-                      <div
-                        class="mt-2"
+                        class="relative flex items-center"
                       >
                         <input
                           class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
-                          name="hash"
+                          disabled=""
+                          type="text"
                         />
+                        <div
+                          class="absolute flex items-center ml-3"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fkPMsk mr-3"
+                            data-testid="Avatar"
+                          >
+                            <img
+                              alt="test"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="test"
+                            />
+                          </div>
+                          <div
+                            class="inline-block truncate align-middle"
+                          >
+                            <span
+                              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                              data-testid="address__wallet-name"
+                            >
+                              ROBank
+                            </span>
+                            <span
+                              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              AUexKj…EVTQWK
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div
+                  class="flex items-center py-4 true "
+                >
                   <div
-                    class="flex items-center py-4 true pb-0"
+                    class="flex-1"
                   >
                     <div
-                      class="flex-1"
+                      class="text-sm font-medium text-theme-neutral-700"
+                    >
+                      Hash
+                    </div>
+                    <div
+                      class="mt-2"
+                    >
+                      <input
+                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                        data-testid="Input"
+                        name="hash"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-4 true pb-0"
+                >
+                  <div
+                    class="flex-1"
+                  >
+                    <div
+                      class="text-sm font-medium text-theme-neutral-700"
+                    >
+                      Fee ARK
+                    </div>
+                    <div
+                      class="mt-2"
                     >
                       <div
-                        class="text-sm font-medium text-theme-neutral-700"
-                      >
-                        Fee ARK
-                      </div>
-                      <div
-                        class="mt-2"
+                        class="flex space-x-2"
                       >
                         <div
-                          class="flex space-x-2"
+                          class="flex-1"
                         >
                           <div
-                            class="flex-1"
+                            class="sc-fzozJi OgXfh"
                           >
+                            <input
+                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                              data-testid="InputCurrency"
+                              type="text"
+                              value="25"
+                            />
                             <div
-                              class="sc-fzozJi OgXfh"
+                              class="absolute bottom-0 w-full px-1"
                             >
-                              <input
-                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
-                                data-testid="InputCurrency"
-                                type="text"
-                                value="25"
-                              />
                               <div
-                                class="absolute bottom-0 w-full px-1"
+                                class="flex flex-wrap justify-center"
+                                data-testid="Range"
                               >
                                 <div
-                                  class="flex flex-wrap justify-center"
-                                  data-testid="Range"
+                                  class="sc-fzoLsD gcqOdX"
+                                  data-testid="Range__track"
+                                  style="transform: scale(1); cursor: pointer;"
                                 >
                                   <div
-                                    class="sc-fzoLsD gcqOdX"
-                                    data-testid="Range__track"
-                                    style="transform: scale(1); cursor: pointer;"
+                                    class="sc-fzpans fDmiZy"
+                                    data-testid="Range__track__filled"
                                   >
                                     <div
-                                      class="sc-fzpans fDmiZy"
-                                      data-testid="Range__track__filled"
-                                    >
-                                      <div
-                                        aria-valuemax="100"
-                                        aria-valuemin="1"
-                                        aria-valuenow="25"
-                                        class="sc-fzplWN eSQZBV"
-                                        data-testid="Range__thumb"
-                                        draggable="false"
-                                        role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                        tabindex="0"
-                                      />
-                                    </div>
+                                      aria-valuemax="100"
+                                      aria-valuemin="1"
+                                      aria-valuenow="25"
+                                      class="sc-fzplWN eSQZBV"
+                                      data-testid="Range__thumb"
+                                      draggable="false"
+                                      role="slider"
+                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                      tabindex="0"
+                                    />
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div>
-                            <div
-                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
+                        </div>
+                        <div>
+                          <div
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                            data-testid="SelectionBar"
+                            role="radiogroup"
+                          >
+                            <button
+                              aria-checked="true"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
                             >
-                              <button
-                                aria-checked="true"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                              >
-                                Last
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                              >
-                                Average
-                              </button>
-                            </div>
+                              Last
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Min
+                            </button>
+                            <button
+                              aria-checked="false"
+                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              data-testid="SelectionBarOption"
+                              role="radio"
+                            >
+                              Average
+                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </section>
-            </div>
-            <div
-              class="flex justify-end mt-8 space-x-2"
+              </div>
+            </section>
+          </div>
+          <div
+            class="flex justify-end mt-8 space-x-2"
+          >
+            <button
+              class="sc-AxirZ fhzkRl"
+              color="primary"
+              data-testid="SendIPFSTransaction__button--back"
+              disabled=""
+              type="button"
             >
-              <button
-                class="sc-AxirZ fhzkRl"
-                color="primary"
-                data-testid="SendIPFSTransaction__button--back"
-                disabled=""
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                class="sc-AxirZ dPtiuf"
-                color="primary"
-                data-testid="SendIPFSTransaction__button--continue"
-                type="button"
-              >
-                Continue
-              </button>
-            </div>
+              Back
+            </button>
+            <button
+              class="sc-AxirZ dPtiuf"
+              color="primary"
+              data-testid="SendIPFSTransaction__button--continue"
+              type="button"
+            >
+              Continue
+            </button>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </DocumentFragment>
 `;
@@ -353,53 +339,34 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           <div
             class="mt-2"
           >
-            <div
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
-              role="combobox"
-            >
-              <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+            <div>
+              <ul
+                class="inline-block"
+                data-testid="network__option"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+                data-testid="network__viewall"
               >
                 <div
-                  class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="text-sm font-semibold text-theme-primary-500"
+                >
+                  All
+                </div>
+                <span
+                  class="sc-fznKkj fAObjk flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
+                    class="sc-AxhUy gKrfcW"
+                    height="10"
+                    width="10"
                   >
-                    <div
-                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                    />
+                    <svg>
+                      chevron-down.svg
+                    </svg>
                   </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
-                  </div>
-                </div>
+                  <span />
+                </span>
               </div>
             </div>
           </div>
@@ -432,8 +399,15 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 class="absolute flex items-center ml-3"
               >
                 <div
-                  class="sc-AxiKw gPGCtr mr-3"
-                />
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fkPMsk mr-3"
+                  data-testid="Avatar"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
                 <div
                   class="inline-block truncate align-middle"
                 >
@@ -669,9 +643,14 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
             </div>
           </div>
         </div>
-        <div>
-          <div
-            class="sc-AxiKw kvRvRJ"
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cBelGv"
+          data-testid="Avatar"
+        >
+          <img
+            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
           />
         </div>
       </div>
@@ -1060,7 +1039,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
                   Sender
                 </span>
                 <div
-                  class="sc-fzokOt bvPuXE"
+                  class="sc-fzqBZW gkKxDF"
                   color="warning"
                 >
                   <span
