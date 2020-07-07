@@ -16,6 +16,8 @@ export const translations: { [key: string]: any } = {
 	BACKGROUND: "Background",
 	BALANCE: "Balance",
 	BIP39_LANGUAGE: "Passphrase Language (BIP39)",
+	BUSINESS: "Business",
+	BRIDGECHAIN: "Bridgechain",
 	CANCEL: "Cancel",
 	CATEGORY: "Category",
 	CHOOSE: "Choose",
