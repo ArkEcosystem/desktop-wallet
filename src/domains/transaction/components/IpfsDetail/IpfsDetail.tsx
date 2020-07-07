@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 // UI Elements
@@ -20,11 +21,11 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 				label={t("TRANSACTION.SENDER")}
 				border={false}
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 			>

@@ -121,74 +121,6 @@ exports[`Transaction Send should render 1`] = `
                           </div>
                         </div>
                       </div>
-                      <div
-                        aria-labelledby="downshift-1-label"
-                        class="select-asset__items"
-                        data-testid="select-asset__items"
-                        id="downshift-1-menu"
-                        role="listbox"
-                      >
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-0"
-                          role="option"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                ark.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-1"
-                          role="option"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          aria-selected="false"
-                          class="inline-block pt-6 mr-6 cursor-pointer"
-                          id="downshift-1-item-2"
-                          role="option"
-                        >
-                          <div
-                            class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
-                          >
-                            <div
-                              class="sc-AxhUy gkBhrK"
-                              height="26"
-                              width="26"
-                            >
-                              <svg>
-                                eth.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </fieldset>
                   <fieldset
@@ -694,74 +626,6 @@ exports[`Transaction Send should render 1st step 1`] = `
                       placeholder="Enter a network name"
                       value=""
                     />
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-labelledby="downshift-0-label"
-                class="select-asset__items"
-                data-testid="select-asset__items"
-                id="downshift-0-menu"
-                role="listbox"
-              >
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-0"
-                  role="option"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-1"
-                  role="option"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-warning-400 border-theme-warning-200"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        btc.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  aria-selected="false"
-                  class="inline-block pt-6 mr-6 cursor-pointer"
-                  id="downshift-0-item-2"
-                  role="option"
-                >
-                  <div
-                    class="sc-AxiKw hbPDzJ text-theme-neutral-800 border-theme-neutral-600"
-                  >
-                    <div
-                      class="sc-AxhUy gkBhrK"
-                      height="26"
-                      width="26"
-                    >
-                      <svg>
-                        eth.svg
-                      </svg>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1284,10 +1148,19 @@ exports[`Transaction Send should render 2nd step 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gUuAHk"
+          data-testid="Avatar"
+        >
           <div
-            class="sc-AxiKw kvRvRJ"
-          />
+            class="overflow-hidden rounded-full"
+          >
+            <img
+              alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+              title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -1391,8 +1264,19 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         class="w-12 py-4"
                       >
                         <div
-                          class="sc-AxiKw daEcTw"
-                        />
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dqAFnQ"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full"
+                          >
+                            <img
+                              alt="test"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="test"
+                            />
+                          </div>
+                        </div>
                       </td>
                       <td>
                         <div
@@ -1426,8 +1310,19 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         class="w-12 py-4"
                       >
                         <div
-                          class="sc-AxiKw daEcTw"
-                        />
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dqAFnQ"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full"
+                          >
+                            <img
+                              alt="test"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="test"
+                            />
+                          </div>
+                        </div>
                       </td>
                       <td>
                         <div
@@ -1461,8 +1356,19 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         class="w-12 py-4"
                       >
                         <div
-                          class="sc-AxiKw daEcTw"
-                        />
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dqAFnQ"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full"
+                          >
+                            <img
+                              alt="test"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="test"
+                            />
+                          </div>
+                        </div>
                       </td>
                       <td>
                         <div
@@ -1496,8 +1402,19 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         class="w-12 py-4"
                       >
                         <div
-                          class="sc-AxiKw daEcTw"
-                        />
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 dqAFnQ"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="overflow-hidden rounded-full"
+                          >
+                            <img
+                              alt="test"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              title="test"
+                            />
+                          </div>
+                        </div>
                       </td>
                       <td>
                         <div
@@ -1691,7 +1608,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
                     type="password"
                   />
                   <div
-                    class="sc-AxheI sc-AxmLO ecniej mr-4"
+                    class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                   >
                     <button
                       class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -1988,8 +1905,19 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="mt-2"
           >
             <div
-              class="sc-AxiKw kvRvRJ"
-            />
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gUuAHk"
+              data-testid="Avatar"
+            >
+              <div
+                class="overflow-hidden rounded-full"
+              >
+                <img
+                  alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                  title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div

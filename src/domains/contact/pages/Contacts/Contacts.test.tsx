@@ -2,27 +2,9 @@
 import React from "react";
 import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
-import { contacts } from "../../data";
+import { contacts, networks } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
-
-const assets = [
-	{
-		icon: "Ark",
-		name: "Ark Ecosystem",
-		className: "text-theme-danger-400 border-theme-danger-200",
-	},
-	{
-		icon: "Bitcoin",
-		name: "Bitcoin",
-		className: "text-theme-warning-400 border-theme-warning-200",
-	},
-	{
-		icon: "Ethereum",
-		name: "Ethereum",
-		className: "text-theme-neutral-800 border-theme-neutral-600",
-	},
-];
 
 describe("Contacts", () => {
 	it("should render", () => {
@@ -53,7 +35,7 @@ describe("Contacts", () => {
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<Contacts contacts={[]} assets={assets} />,
+			<Contacts contacts={[]} networks={networks} />,
 		);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));

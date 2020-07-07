@@ -3,7 +3,7 @@
 exports[`Wallet / Import should render 1`] = `
 <DocumentFragment>
   <div
-    class="py-16"
+    class="max-w-xl py-16 mx-auto"
   >
     <div>
       <div
@@ -13,7 +13,7 @@ exports[`Wallet / Import should render 1`] = `
           class="flex justify-center w-full"
         >
           <div
-            class="w-3/5"
+            class="w-full"
           >
             <ul
               class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
@@ -41,117 +41,126 @@ exports[`Wallet / Import should render 1`] = `
                 </p>
               </div>
               <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-labelledby="downshift-0-label"
-                class="relative"
-                role="combobox"
+                class="space-y-2"
               >
-                <label
-                  for="downshift-0-input"
-                  id="downshift-0-label"
-                />
-                <div
-                  class="relative flex items-center w-full flex-inline"
+                <span
+                  class="text-sm font-medium text-theme-neutral-dark"
                 >
+                  Network
+                </span>
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-labelledby="downshift-0-label"
+                  class="relative"
+                  role="combobox"
+                >
+                  <label
+                    for="downshift-0-input"
+                    id="downshift-0-label"
+                  />
                   <div
-                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                    class="relative flex items-center w-full flex-inline"
                   >
                     <div
-                      class="px-4 py-2 flex-0 w-14"
+                      class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                     >
                       <div
-                        class="sc-fzpans zJElq border-theme-neutral-200"
-                      />
-                    </div>
-                    <div
-                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                    >
-                      <div
-                        class="relative z-10 w-full"
-                        data-testid="select-network__typeahead-"
+                        class="px-4 py-2 flex-0 w-14"
                       >
                         <div
-                          class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          class="sc-fzpans zJElq border-theme-neutral-200"
                         />
                       </div>
-                      <input
-                        aria-autocomplete="list"
-                        aria-labelledby="downshift-0-label"
-                        autocomplete="off"
-                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                        data-testid="select-asset__input"
-                        id="downshift-0-input"
-                        placeholder="Enter a network name"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div
-                  aria-labelledby="downshift-0-label"
-                  class="select-asset__items"
-                  data-testid="select-asset__items"
-                  id="downshift-0-menu"
-                  role="listbox"
-                >
-                  <div
-                    aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
-                    id="downshift-0-item-0"
-                    role="option"
-                  >
-                    <div
-                      class="sc-fzpans ddxVbx"
-                    >
                       <div
-                        class="sc-Axmtr wZFix"
-                        height="26"
-                        width="26"
+                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
                       >
-                        <svg>
-                          ark.svg
-                        </svg>
+                        <div
+                          class="relative z-10 w-full"
+                          data-testid="select-network__typeahead-"
+                        >
+                          <div
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          />
+                        </div>
+                        <input
+                          aria-autocomplete="list"
+                          aria-labelledby="downshift-0-label"
+                          autocomplete="off"
+                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                          data-testid="select-asset__input"
+                          id="downshift-0-input"
+                          placeholder="Enter a network name"
+                          value=""
+                        />
                       </div>
                     </div>
                   </div>
                   <div
-                    aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
-                    id="downshift-0-item-1"
-                    role="option"
+                    aria-labelledby="downshift-0-label"
+                    class="select-asset__items"
+                    data-testid="select-asset__items"
+                    id="downshift-0-menu"
+                    role="listbox"
                   >
                     <div
-                      class="sc-fzpans ddxVbx"
+                      aria-selected="false"
+                      class="inline-block pt-6 mr-6 cursor-pointer"
+                      id="downshift-0-item-0"
+                      role="option"
                     >
                       <div
-                        class="sc-Axmtr wZFix"
-                        height="26"
-                        width="26"
+                        class="sc-fzpans ddxVbx"
                       >
-                        <svg>
-                          eth.svg
-                        </svg>
+                        <div
+                          class="sc-Axmtr wZFix"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    aria-selected="false"
-                    class="inline-block pt-6 mr-6 cursor-pointer"
-                    id="downshift-0-item-2"
-                    role="option"
-                  >
                     <div
-                      class="sc-fzpans ddxVbx"
+                      aria-selected="false"
+                      class="inline-block pt-6 mr-6 cursor-pointer"
+                      id="downshift-0-item-1"
+                      role="option"
                     >
                       <div
-                        class="sc-Axmtr wZFix"
-                        height="26"
-                        width="26"
+                        class="sc-fzpans ddxVbx"
                       >
-                        <svg>
-                          btc.svg
-                        </svg>
+                        <div
+                          class="sc-Axmtr wZFix"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            eth.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-selected="false"
+                      class="inline-block pt-6 mr-6 cursor-pointer"
+                      id="downshift-0-item-2"
+                      role="option"
+                    >
+                      <div
+                        class="sc-fzpans ddxVbx"
+                      >
+                        <div
+                          class="sc-Axmtr wZFix"
+                          height="26"
+                          width="26"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </div>

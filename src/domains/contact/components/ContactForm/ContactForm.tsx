@@ -5,7 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -72,13 +72,13 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: any;
-	assets: any;
+	networks: any;
 	onCancel?: any;
 	onDelete?: any;
 	onSave: any;
 };
 
-export const ContactForm = ({ contact, assets, onCancel, onDelete, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
 	const [contactAddresses, setContactAddresses] = useState(() => {
 		return contact ? contact.addresses() : [];
 	});
@@ -136,7 +136,7 @@ export const ContactForm = ({ contact, assets, onCancel, onDelete, onSave }: Con
 
 			<FormField name="network">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<SelectAsset assets={assets} onSelect={(selected: any) => form.setValue("network", selected)} />
+				<SelectNetwork networks={networks} onSelect={(selected: any) => form.setValue("network", selected)} />
 				<FormHelperText />
 			</FormField>
 
@@ -190,5 +190,5 @@ export const ContactForm = ({ contact, assets, onCancel, onDelete, onSave }: Con
 };
 
 ContactForm.defaultProps = {
-	assets: [],
+	networks: [],
 };

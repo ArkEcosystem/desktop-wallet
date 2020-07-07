@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 // UI Elements
@@ -19,11 +20,11 @@ export const VoteDetail = (props: VoteDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.ACCOUNT")}
 				extra={
-					<div>
+					<div className="flex">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 				border={false}
@@ -35,11 +36,11 @@ export const VoteDetail = (props: VoteDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.VOTER")}
 				extra={
-					<div>
+					<div className="flex">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Voted" width={13} height={13} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 			>

@@ -1,5 +1,5 @@
 import { Badge } from "app/components/Badge";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { FilterNetwork } from "app/components/FilterNetwork";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
 
@@ -47,7 +47,7 @@ export const FilterWallets = ({
 				<div className="mb-3 font-semibold text-theme-neutral-700">Filter Network</div>
 				<div className="text-sm text-theme-neutral-500">Select the types of networks</div>
 			</div>
-			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
+			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
 			<div className="flex flex-row mb-8">

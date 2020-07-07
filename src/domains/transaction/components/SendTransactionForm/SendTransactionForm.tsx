@@ -2,9 +2,9 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { InputRange } from "app/components/Input/InputRange";
-import { SelectAsset } from "app/components/SelectAsset";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
@@ -25,7 +25,7 @@ type SendTransactionFormProps = {
 	assetSymbol: string;
 	onSubmit?: any;
 	onBack?: any;
-	assets: any;
+	networks: any;
 };
 
 const FormWrapper = styled.div`
@@ -42,7 +42,7 @@ export const SendTransactionForm = ({
 	onSubmit,
 	onBack,
 	assetSymbol,
-	assets,
+	networks,
 }: SendTransactionFormProps) => {
 	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
 
@@ -95,7 +95,7 @@ export const SendTransactionForm = ({
 					<div className="mb-2">
 						<FormLabel label="Network" />
 					</div>
-					<SelectAsset assets={assets} name="network" value={network} />
+					<SelectNetwork networks={networks} name="network" value={network} />
 				</FormField>
 
 				<ProfileFormField
@@ -219,7 +219,7 @@ SendTransactionForm.defaultProps = {
 		min: 1,
 		average: 14,
 	},
-	assets: [],
+	networks: [],
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,

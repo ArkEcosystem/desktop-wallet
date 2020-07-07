@@ -2,7 +2,7 @@
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputPassword } from "app/components/Input";
-import { SelectAsset } from "app/components/SelectAsset";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
@@ -47,11 +47,11 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	};
 
 	return (
-		<div className="py-16">
+		<div className="max-w-xl py-16 mx-auto">
 			<Tabs activeId={activeIndex}>
 				<TabPanel tabId={1}>
 					<div className="flex justify-center w-full">
-						<div className="w-3/5">
+						<div className="w-full">
 							<StepIndicator size={2} activeIndex={activeIndex} />
 							<div>
 								<div className="my-8">
@@ -60,11 +60,14 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 										Select a cryptoasset to import your existing wallet address
 									</p>
 								</div>
-								<SelectAsset
-									name={selected as any}
-									assets={networks}
-									onSelect={(selected) => setSelected(selected.name)}
-								/>
+								<div className="space-y-2">
+									<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+									<SelectNetwork
+										name={selected as any}
+										networks={networks}
+										onSelect={(selected) => setSelected(selected.name)}
+									/>
+								</div>
 							</div>
 							<div className="flex justify-end mt-10">
 								<Button
@@ -80,7 +83,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 
 				<TabPanel tabId={2}>
 					<div className="flex justify-center w-full">
-						<div className="w-3/5">
+						<div className="w-full">
 							<StepIndicator size={2} activeIndex={activeIndex} />
 							<Form id="import-wallet__form" context={form} onSubmit={onSubmit}>
 								<div className="mt-8">

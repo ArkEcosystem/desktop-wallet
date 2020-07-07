@@ -1,5 +1,6 @@
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -66,7 +67,7 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 					</td>
 					<td className="py-6 border-b border-dashed border-theme-neutral-200">
 						<div className="flex items-center space-x-3">
-							<Circle avatarId={address.avatar} />
+							<Avatar address={address.address} />
 							<Address address={address.address} maxChars={isCondensed() ? 24 : undefined} />
 						</div>
 					</td>
