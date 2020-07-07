@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "testing-library";
+import { renderWithRouter } from "testing-library";
 
 import { WalletDetails } from "./WalletDetails";
 
@@ -79,11 +78,7 @@ const wallets = [
 
 describe("WalletDetails", () => {
 	it("should render", () => {
-		const { asFragment } = render(
-			<Router>
-				<WalletDetails wallets={wallets} wallet={wallets[0]} />
-			</Router>,
-		);
+		const { asFragment } = renderWithRouter(<WalletDetails wallets={wallets} wallet={wallets[0]} />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

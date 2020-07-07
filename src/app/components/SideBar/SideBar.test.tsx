@@ -1,12 +1,11 @@
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
-import { render } from "testing-library";
+import { renderWithRouter } from "testing-library";
 
 import { SideBar } from "./SideBar";
 
 describe("SideBar", () => {
 	it("should render empty", () => {
-		const { container, asFragment } = render(<SideBar />, { wrapper: MemoryRouter });
+		const { container, asFragment } = renderWithRouter(<SideBar />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -34,7 +33,7 @@ describe("SideBar", () => {
 			},
 		];
 
-		const { container, asFragment, getAllByRole } = render(<SideBar items={items} />, { wrapper: MemoryRouter });
+		const { container, asFragment, getAllByRole } = renderWithRouter(<SideBar items={items} />);
 
 		expect(container).toBeTruthy();
 		expect(getAllByRole("listitem").length).toEqual(3);

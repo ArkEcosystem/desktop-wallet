@@ -1,9 +1,11 @@
+import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type ContactListItemProps = {
 	contact: any;
@@ -12,6 +14,8 @@ type ContactListItemProps = {
 };
 
 export const ContactListItem = ({ contact, variant, onAction }: ContactListItemProps) => {
+	const { t } = useTranslation();
+
 	const onDropdownAction = (action: any) => {
 		if (typeof onAction === "function") onAction(action);
 	};
@@ -70,9 +74,11 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 						<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
 							{["Delegate", "Business", "Bridgechain"].map((type: string) => {
 								return address[`is${type}`]() ? (
-									<Circle key={type} className="border-black">
-										<Icon name={type} width={25} height={25} />
-									</Circle>
+									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+										<Circle className="border-black">
+											<Icon name={type} width={25} height={25} />
+										</Circle>
+									</Tippy>
 								) : null;
 							})}
 						</td>

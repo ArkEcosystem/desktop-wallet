@@ -242,7 +242,7 @@ exports[`Votes should render 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Votes
@@ -367,7 +367,6 @@ exports[`Votes should render 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-danger-400 border-theme-danger-200"
@@ -388,7 +387,6 @@ exports[`Votes should render 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-warning-400 border-theme-warning-200"
@@ -409,7 +407,6 @@ exports[`Votes should render 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-0-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-800 border-theme-neutral-600"
@@ -449,7 +446,7 @@ exports[`Votes should render 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -507,7 +504,6 @@ exports[`Votes should render 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -753,7 +749,7 @@ exports[`Votes should select a cryptoasset 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Votes
@@ -891,7 +887,6 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -912,7 +907,6 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-success-500 border-theme-success-200"
@@ -933,7 +927,6 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-1-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -973,7 +966,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -1707,7 +1700,6 @@ exports[`Votes should select a cryptoasset 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -1953,7 +1945,7 @@ exports[`Votes should select a delegate 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Votes
@@ -2091,7 +2083,6 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -2112,7 +2103,6 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-success-500 border-theme-success-200"
@@ -2133,7 +2123,6 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-3-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -2173,7 +2162,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -3066,7 +3055,6 @@ exports[`Votes should select a delegate 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
 
@@ -3312,7 +3300,7 @@ exports[`Votes should select address 1`] = `
         >
           <div>
             <h1
-              class="mb-0 text-3xl font-bold md:text-4xl"
+              class="mb-0 md:text-4xl"
               data-testid="header__title"
             >
               My Votes
@@ -3450,7 +3438,6 @@ exports[`Votes should select address 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-0"
                         role="option"
-                        title="Ark Ecosystem"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -3471,7 +3458,6 @@ exports[`Votes should select address 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-1"
                         role="option"
-                        title="Bitcoin"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-success-500 border-theme-success-200"
@@ -3492,7 +3478,6 @@ exports[`Votes should select address 1`] = `
                         class="inline-block pt-6 mr-6 cursor-pointer"
                         id="downshift-2-item-2"
                         role="option"
-                        title="Ethereum"
                       >
                         <div
                           class="sc-AxhCb dTATcJ text-theme-neutral-400"
@@ -3532,7 +3517,7 @@ exports[`Votes should select address 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -4342,6 +4327,5 @@ exports[`Votes should select address 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;

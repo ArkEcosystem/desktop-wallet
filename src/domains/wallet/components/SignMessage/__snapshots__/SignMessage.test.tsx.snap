@@ -129,7 +129,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <textarea
-                    class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary mt-2 rounded-lg"
+                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 mt-2 rounded-lg"
                     data-testid="TextArea"
                     name="signature"
                     style="height: 4px;"
@@ -239,7 +239,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="relative"
               >
                 <input
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   disabled=""
                   name="signatory-address"
@@ -271,7 +271,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Message
               </label>
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="Input"
                 name="message"
                 type="text"
@@ -292,7 +292,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="Input"
                   name="passphrase"
                   type="password"
