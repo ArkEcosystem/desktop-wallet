@@ -97,7 +97,7 @@ const FirstStep = ({
 			<FormWrapper className="mt-8">
 				<FormField name="network">
 					<FormLabel>Network</FormLabel>
-					<SelectAsset assets={networks} />
+					<SelectAsset networks={networks} />
 				</FormField>
 
 				<ProfileFormField

@@ -25,7 +25,7 @@ type SendTransactionFormProps = {
 	assetSymbol: string;
 	onSubmit?: any;
 	onBack?: any;
-	assets: any;
+	networks: any;
 };
 
 const FormWrapper = styled.div`
@@ -42,7 +42,7 @@ export const SendTransactionForm = ({
 	onSubmit,
 	onBack,
 	assetSymbol,
-	assets,
+	networks,
 }: SendTransactionFormProps) => {
 	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
 
@@ -95,7 +95,7 @@ export const SendTransactionForm = ({
 					<div className="mb-2">
 						<FormLabel label="Network" />
 					</div>
-					<SelectAsset assets={assets} name="network" value={network} />
+					<SelectAsset networks={networks} name="network" value={network} />
 				</FormField>
 
 				<ProfileFormField
@@ -219,7 +219,7 @@ SendTransactionForm.defaultProps = {
 		min: 1,
 		average: 14,
 	},
-	assets: [],
+	networks: [],
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,

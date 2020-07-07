@@ -1,10 +1,13 @@
 import React from "react";
 
+import { networks } from "../../data";
 import { SendTransactionForm } from "./SendTransactionForm";
 
 export default {
 	title: "Domains / Transaction / Components / SendTransactionForm",
 };
+
+console.log("networks", networks);
 
 const defaultFormValues = {
 	maxAvailableAmount: 80,
@@ -14,33 +17,7 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	assets: [
-		{
-			icon: "Ark",
-			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-		{
-			icon: "Lisk",
-			name: "Lisk",
-			className: "text-theme-primary-600 border-theme-primary-400",
-		},
-		{
-			icon: "Ripple",
-			name: "Ripple",
-			className: "text-theme-primary-700 border-theme-primary-500",
-		},
-	],
+	networks,
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
