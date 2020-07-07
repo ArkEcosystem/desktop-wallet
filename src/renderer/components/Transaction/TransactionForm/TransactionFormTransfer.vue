@@ -870,7 +870,11 @@ export default {
       recipients: {
         aboveMinimum () {
           if (!this.isMultiPayment) {
-            return true
+            if (this.$refs.recipient && this.$refs.amount) {
+              return !this.$refs.recipient.$v.$invalid && !this.$refs.amount.$v.$invalid
+            }
+
+            return false
           }
 
           return this.form.recipients.length > 1
