@@ -13,7 +13,7 @@ type Props = {
 };
 
 export const AvatarWrapper = styled.div<{ shadowColor?: string; size?: string; noShadow?: boolean }>`
-	${tw`block rounded-full relative`}
+	${tw`inline-flex rounded-full relative items-center justify-center align-middle`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -44,7 +44,7 @@ export const Avatar = ({ address, size, noShadow, className, shadowColor, childr
 			className={className}
 			shadowColor={shadowColor}
 		>
-			<div className="overflow-hidden rounded-full">
+			<div className="overflow-hidden w-full h-full rounded-full">
 				<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 			</div>
 			{children}

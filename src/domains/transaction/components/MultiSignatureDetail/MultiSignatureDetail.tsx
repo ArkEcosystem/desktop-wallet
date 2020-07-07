@@ -36,43 +36,28 @@ const Signatures = () => {
 
 					<div className="pr-4 mr-2 border-r border-theme-neutral-300">
 						<Avatar address="test" noShadow>
-							<Badge
-								className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
-								icon="Checkmark"
-							/>
+							<Badge className="bg-theme-success-200 text-theme-success-500" icon="Checkmark" />
 						</Avatar>
 					</div>
 				</div>
 
 				<div>
 					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.OTHER")}</div>
-					<div className="flex">
-						<Avatar address="test" noShadow className="ml-2">
-							<Badge
-								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-								icon="StatusClock"
-							/>
+					<div className="flex ml-2 space-x-4">
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 
-						<Avatar address="test" noShadow className="ml-4">
-							<Badge
-								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-								icon="StatusClock"
-							/>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 
-						<Avatar address="test" noShadow className="ml-4">
-							<Badge
-								className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
-								icon="Checkmark"
-							/>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-success-200 text-theme-success-500" icon="Checkmark" />
 						</Avatar>
 
-						<Avatar address="test" noShadow className="ml-4">
-							<Badge
-								className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-								icon="StatusClock"
-							/>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 					</div>
 				</div>

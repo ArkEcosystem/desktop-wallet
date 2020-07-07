@@ -13,4 +13,12 @@ describe("Badge", () => {
 		const { container } = render(<Badge icon="settings" />);
 		expect(container).toMatchSnapshot();
 	});
+
+	it.each(["top", "top-right", "right", "bottom-right", "bottom", "bottom-left", "left", "top-left"])(
+		"should render with position '%s'",
+		(position) => {
+			const { container } = render(<Badge icon="settings" position={position} />);
+			expect(container).toMatchSnapshot();
+		},
+	);
 });
