@@ -37,10 +37,10 @@ export class StubStorage implements Storage {
 	}
 
 	public async snapshot(): Promise<void> {
-		//
+		return true;
 	}
 
 	public async restore(): Promise<void> {
-		//
+		return true;
 	}
 }
