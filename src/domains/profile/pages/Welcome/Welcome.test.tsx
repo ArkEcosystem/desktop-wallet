@@ -2,25 +2,20 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentContext } from "app/contexts";
 import { httpClient } from "app/services";
-import { createMemoryHistory } from "history";
 import React from "react";
-import { Router } from "react-router-dom";
-import { fireEvent, render, screen, waitFor } from "testing-library";
+import { fireEvent, render, renderWithRouter, screen, waitFor } from "testing-library";
 
 import { Welcome } from "../Welcome";
 
+let env: Environment;
+beforeEach(() => (env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" })));
+
 describe("Welcome", () => {
-	const history = createMemoryHistory();
-
-	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
-
 	it("should render", async () => {
 		const { container, asFragment } = render(
-			<Router history={history}>
-				<EnvironmentContext.Provider value={env}>
-					<Welcome />
-				</EnvironmentContext.Provider>
-			</Router>,
+			<EnvironmentContext.Provider value={{ env }}>
+				<Welcome />
+			</EnvironmentContext.Provider>,
 		);
 
 		await waitFor(async () => {
@@ -34,12 +29,10 @@ describe("Welcome", () => {
 	});
 
 	it("should change route to create profile", async () => {
-		const { container, getByText, asFragment } = render(
-			<Router history={history}>
-				<EnvironmentContext.Provider value={env}>
-					<Welcome />
-				</EnvironmentContext.Provider>
-			</Router>,
+		const { container, getByText, asFragment, history } = renderWithRouter(
+			<EnvironmentContext.Provider value={{ env }}>
+				<Welcome />
+			</EnvironmentContext.Provider>,
 		);
 
 		await waitFor(async () => {
@@ -55,15 +48,12 @@ describe("Welcome", () => {
 	});
 
 	it("should render with profiles", async () => {
-		env.profiles().create("caio");
-		const createdProfile = env.profiles().all()[0];
+		const createdProfile = env.profiles().create("caio");
 
-		const { container, getByText, asFragment } = render(
-			<Router history={history}>
-				<EnvironmentContext.Provider value={env}>
-					<Welcome />
-				</EnvironmentContext.Provider>
-			</Router>,
+		const { container, getByText, asFragment, history } = renderWithRouter(
+			<EnvironmentContext.Provider value={{ env }}>
+				<Welcome />
+			</EnvironmentContext.Provider>,
 		);
 
 		await waitFor(async () => {

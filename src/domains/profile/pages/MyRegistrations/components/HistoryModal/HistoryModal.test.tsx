@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { render } from "testing-library";
+import { renderWithRouter } from "testing-library";
 
 import { HistoryModal } from "./HistoryModal";
 
@@ -31,11 +30,7 @@ describe("HistoryModal", () => {
 	it("should render empty state", () => {
 		const handleClose = jest.fn();
 
-		const { asFragment } = render(
-			<Router>
-				<HistoryModal isOpen handleClose={() => handleClose()} />,
-			</Router>,
-		);
+		const { asFragment } = renderWithRouter(<HistoryModal isOpen handleClose={() => handleClose()} />);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -43,10 +38,8 @@ describe("HistoryModal", () => {
 	it("should render properly", () => {
 		const handleClose = jest.fn();
 
-		const { asFragment } = render(
-			<Router>
-				<HistoryModal history={history} isOpen handleClose={() => handleClose()} />,
-			</Router>,
+		const { asFragment } = renderWithRouter(
+			<HistoryModal history={history} isOpen handleClose={() => handleClose()} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

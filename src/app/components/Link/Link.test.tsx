@@ -1,27 +1,20 @@
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
+import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { Link } from "./Link";
 
 describe("Link", () => {
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(
-			<MemoryRouter>
-				<Link to="/test">Test</Link>
-			</MemoryRouter>,
-		);
+		const { getByTestId, asFragment } = renderWithRouter(<Link to="/test">Test</Link>);
 		expect(getByTestId("Link")).toHaveTextContent("Test");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render external", () => {
-		const { getByTestId, asFragment } = render(
-			<MemoryRouter>
-				<Link to={{ pathname: "https://ark.io" }} isExternal>
-					ARK.io
-				</Link>
-			</MemoryRouter>,
+		const { getByTestId, asFragment } = renderWithRouter(
+			<Link to={{ pathname: "https://ark.io" }} isExternal>
+				ARK.io
+			</Link>,
 		);
 		expect(getByTestId("Link")).toHaveAttribute("rel", "noopener noreferrer");
 		expect(getByTestId("Link")).toHaveAttribute("target", "_blank");
@@ -30,22 +23,16 @@ describe("Link", () => {
 	});
 
 	it("should render external without children", () => {
-		const { getByTestId, asFragment } = render(
-			<MemoryRouter>
-				<Link to={{ pathname: "https://ark.io" }} isExternal />
-			</MemoryRouter>,
-		);
+		const { getByTestId, asFragment } = renderWithRouter(<Link to={{ pathname: "https://ark.io" }} isExternal />);
 		expect(getByTestId("Link__external")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with tooltip", () => {
-		const { getByTestId, baseElement } = render(
-			<MemoryRouter>
-				<Link to="/test" tooltip="Custom Tooltip">
-					Test
-				</Link>
-			</MemoryRouter>,
+		const { getByTestId, baseElement } = renderWithRouter(
+			<Link to="/test" tooltip="Custom Tooltip">
+				Test
+			</Link>,
 		);
 
 		act(() => {

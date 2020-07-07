@@ -12,7 +12,7 @@ exports[`LinkCollection should add and remove links 1`] = `
     >
       <div>
         <span
-          class="font-semibold"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -48,7 +48,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="w-full"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
               >
@@ -62,7 +62,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                  class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                   data-testid="select-list__input"
                   readonly=""
                   type="text"
@@ -115,7 +115,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
               >
@@ -126,7 +126,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="sc-Axmtr jzhOwR"
             >
               <input
-                class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="LinkCollection__input-link"
                 maxlength="255"
                 placeholder=" "
@@ -268,7 +268,7 @@ exports[`LinkCollection should render 1`] = `
     >
       <div>
         <span
-          class="font-semibold"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -306,7 +306,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
     >
       <div>
         <span
-          class="font-semibold"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>
@@ -342,7 +342,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="w-full"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Add media"
               >
@@ -356,7 +356,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary sr-only"
+                  class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                   data-testid="select-list__input"
                   readonly=""
                   type="text"
@@ -407,7 +407,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="mb-2"
             >
               <label
-                class="flex inline-block mb-2 text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 label="Link"
               >
@@ -418,7 +418,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="sc-Axmtr jzhOwR"
             >
               <input
-                class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-20"
+                class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="LinkCollection__input-link"
                 maxlength="255"
                 placeholder=" "
@@ -675,7 +675,7 @@ exports[`LinkCollection should toggle open/close of link collection 1`] = `
     >
       <div>
         <span
-          class="font-semibold"
+          class="text-lg font-semibold"
         >
           Social Media
         </span>

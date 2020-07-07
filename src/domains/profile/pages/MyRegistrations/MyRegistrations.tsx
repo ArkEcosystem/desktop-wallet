@@ -1,4 +1,4 @@
-import { SvgCollection } from "app/assets/svg";
+import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
@@ -18,13 +18,15 @@ type RegistrationProps = {
 	registrations: any;
 };
 
+const { RegisterBanner } = images.common;
+
 const EmptyRegistrations = (
 	<div
 		data-testid="my-registrations__empty-state"
-		className="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
+		className="bg-theme-background flex flex-col items-center justify-center px-10 py-20 mt-4"
 	>
-		<SvgCollection.RegistrationsIllustration />
-		<span className="text-sm mt-7 text-theme-neutral-600">
+		<RegisterBanner />
+		<span className="mt-7 text-theme-neutral-600 text-sm">
 			Register Business, Bridgechain and Delegate in the most convenient way.
 		</span>
 	</div>
@@ -69,25 +71,23 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 		});
 
 	return (
-		<div>
-			<section className="bg-theme-neutral-100">
-				<div className="px-10 py-16 bg-theme-background">
-					<Header
-						title="My Registrations"
-						subtitle="You can register a Delagate, Business and Bridgechain."
-						extra={
-							<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
-								<HeaderSearchBar onSearch={console.log} />
-								<div className="pl-10">
-									<Button>Register</Button>
-								</div>
+		<section className="bg-theme-neutral-100">
+			<div className="bg-theme-background px-10 py-16">
+				<Header
+					title="My Registrations"
+					subtitle="You can register a Delagate, Business and Bridgechain."
+					extra={
+						<div className="divide-theme-neutral-300 flex justify-end space-x-10 divide-x">
+							<HeaderSearchBar onSearch={console.log} />
+							<div className="pl-10">
+								<Button>Register</Button>
 							</div>
-						}
-					/>
-				</div>
-				{!registrations.length ? EmptyRegistrations : mountRegistrations()}
-			</section>
-		</div>
+						</div>
+					}
+				/>
+			</div>
+			{!registrations.length ? EmptyRegistrations : mountRegistrations()}
+		</section>
 	);
 };
 

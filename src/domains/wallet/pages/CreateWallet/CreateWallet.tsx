@@ -1,12 +1,12 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { CardControl } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { SelectAsset } from "app/components/SelectAsset";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React from "react";
@@ -30,39 +30,26 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleChange = (network: Network) => {
+	const handleSelect = (network: Network) => {
 		setActiveNetwork(network);
 		setValue("network", network, true);
 	};
 
 	return (
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
-			<div>
-				<h1 className="mb-0">Select Network</h1>
-				<p className="text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<div className="my-8">
+				<Header
+					title="Select a Cryptoasset"
+					subtitle="Select a cryptoasset to create your new wallet address"
+				/>
 			</div>
-
-			<div className="grid grid-flow-row gap-2">
-				{networks.map((network) => (
-					<CardControl
-						type="radio"
-						key={network.name}
-						value={network.name}
-						name="network"
-						onChange={() => handleChange(network)}
-						aria-checked={activeNetwork?.name === network.name}
-					>
-						<NetworkItem className="flex items-center py-2">
-							<Circle
-								className="NetworkItemIcon border-theme-neutral-300 transition-colors duration-100"
-								noShadow
-							>
-								<Icon name={network.icon} />
-							</Circle>
-							<span className="ml-4 text-theme-text">{network.name}</span>
-						</NetworkItem>
-					</CardControl>
-				))}
+			<div className="space-y-2">
+				<span className="text-theme-neutral-dark text-sm font-medium">Network</span>
+				<SelectAsset
+					name={activeNetwork as any}
+					assets={networks}
+					onSelect={(selected) => handleSelect(selected?.name)}
+				/>
 			</div>
 		</section>
 	);
@@ -79,7 +66,9 @@ export const SecondStep = ({
 }) => {
 	return (
 		<section data-testid="CreateWallet__second-step">
-			<Header title="Your Passphrase" />
+			<div className="my-8">
+				<Header title="Your Passphrase" />
+			</div>
 
 			<div className="space-y-8">
 				<Alert size="lg">
@@ -88,18 +77,25 @@ export const SecondStep = ({
 					facere nostrum.
 				</Alert>
 				<MnemonicList mnemonic={mnemonic} />
-				<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
-					<Icon name="Copy" />
-					<span>Copy</span>
-				</Button>
+				<div className="flex justify-end w-full">
+					<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
+						<Icon name="Copy" />
+						<span>Copy</span>
+					</Button>
+				</div>
 			</div>
 
 			<Divider dashed />
 
-			<div className="flex py-3">
-				<div className="flex-1">
-					<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
-					<p className="text-theme-neutral">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+			<div className="py-3">
+				<div className="flex justify-between">
+					<div>
+						<h3 className="text-theme-neutral-dark mb-1">Your password in the file</h3>
+						<p className="text-theme-neutral">You can also download and store safely your passphrase.</p>
+					</div>
+					<Icon name="FilePassword" width={40} height={40} />
+				</div>
+				<div className="flex justify-end w-full">
 					<Button
 						onClick={onDownload}
 						data-testid="CreateWallet__download"
@@ -109,9 +105,6 @@ export const SecondStep = ({
 						<Icon name="Download" />
 						<span>Download</span>
 					</Button>
-				</div>
-				<div className="ml-10">
-					<Icon name="FilePassword" width={40} height={40} />
 				</div>
 			</div>
 
@@ -139,8 +132,9 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 
 	return (
 		<section data-testid="CreateWallet__third-step">
-			<h1 className="mb-0">Confirm your passphrase</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<div className="my-8">
+				<Header title="Confirm your passphrase" subtitle="Confirm your password to continue" />
+			</div>
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
@@ -160,13 +154,14 @@ export const FourthStep = () => {
 
 	return (
 		<section data-testid="CreateWallet__fourth-step">
-			<h1 className="mb-0">Completed</h1>
-			<p className="mb-8 text-theme-neutral-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+			<div className="my-8">
+				<Header title="Completed" subtitle="Wallet creation is complete. Now you can use it." />
+			</div>
 
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">Network</p>
 						<p data-testid="CrateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
@@ -180,7 +175,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">Address</p>
 						<p className="text-lg font-medium">D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax</p>
 					</div>
 					<Circle />
@@ -224,56 +219,54 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 	};
 
 	return (
-		<div>
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
-					<Tabs activeId={activeTab}>
-						<StepIndicator size={4} activeIndex={activeTab} />
+		<div className="max-w-xl py-16 mx-auto">
+			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
+				<Tabs activeId={activeTab}>
+					<StepIndicator size={4} activeIndex={activeTab} />
 
-						<div className="mt-4">
-							<TabPanel tabId={1}>
-								<FirstStep networks={networks} />
-							</TabPanel>
-							<TabPanel tabId={2}>
-								<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
-							</TabPanel>
-							<TabPanel tabId={3}>
-								<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
-							</TabPanel>
-							<TabPanel tabId={4}>
-								<FourthStep />
-							</TabPanel>
+					<div className="mt-4">
+						<TabPanel tabId={1}>
+							<FirstStep networks={networks} />
+						</TabPanel>
+						<TabPanel tabId={2}>
+							<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
+						</TabPanel>
+						<TabPanel tabId={3}>
+							<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
+						</TabPanel>
+						<TabPanel tabId={4}>
+							<FourthStep />
+						</TabPanel>
 
-							<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-end mt-10 space-x-3">
+							<Button
+								disabled={activeTab === 1}
+								data-testid="CreateWallet__back-button"
+								variant="plain"
+								onClick={handleBack}
+							>
+								Back
+							</Button>
+
+							{activeTab < 4 && (
 								<Button
-									disabled={activeTab === 1}
-									data-testid="CreateWallet__back-button"
-									variant="plain"
-									onClick={handleBack}
+									data-testid="CreateWallet__continue-button"
+									disabled={!isValid}
+									onClick={handleNext}
 								>
-									Back
+									Continue
 								</Button>
+							)}
 
-								{activeTab < 4 && (
-									<Button
-										data-testid="CreateWallet__continue-button"
-										disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								)}
-
-								{activeTab === 4 && (
-									<Button type="submit" data-testid="CreateWallet__save-button">
-										Save & Finish
-									</Button>
-								)}
-							</div>
+							{activeTab === 4 && (
+								<Button type="submit" data-testid="CreateWallet__save-button">
+									Save & Finish
+								</Button>
+							)}
 						</div>
-					</Tabs>
-				</Form>
-			</div>
+					</div>
+				</Tabs>
+			</Form>
 		</div>
 	);
 };

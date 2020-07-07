@@ -8,6 +8,7 @@ import { SelectionBar, SelectionBarOption, useSelectionState } from "app/compone
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { TransactionField } from "domains/transaction/components/TransactionField";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -45,10 +46,11 @@ export const FirstStep = () => {
 							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
+					className="pb-0"
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 				</TransactionDetail>
-				<TransactionDetail border={false} label="Fee ARK" className="pb-0">
+				<TransactionField label="Fee ARK" className="pb-0">
 					<div className="flex">
 						<div className="w-3/5 mr-2">
 							<InputRange defaultValue={25} min={1} max={100} step={1} />
@@ -67,7 +69,7 @@ export const FirstStep = () => {
 							</SelectionBar>
 						</div>
 					</div>
-				</TransactionDetail>
+				</TransactionField>
 			</div>
 		</section>
 	);

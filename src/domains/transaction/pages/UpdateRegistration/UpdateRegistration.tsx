@@ -36,7 +36,7 @@ const FirstStep = ({ form }: { form: any }) => {
 			</div>
 
 			<div>
-				<TransactionDetail border={false} className="pt-0 mt-6">
+				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel required>Name</FormLabel>
 						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
@@ -53,7 +53,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					</FormField>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Repository"
 						description="Show your projects through your repository"
@@ -66,7 +66,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Social Media"
 						description="Tell people more about yourself through social media"
@@ -79,7 +79,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Photo and Video"
 						description="Get more users and add more information about yourself"
@@ -94,7 +94,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="pb-0 mt-4">
+				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">
 						<FormLabel>Fee ARK</FormLabel>
 						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
@@ -151,10 +151,11 @@ const SecondStep = () => {
 				<TransactionDetail
 					label=" "
 					extra={
-						<div>
+						<div className="mt-2">
 							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
+					className="pt-4"
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 						<span className="mr-1">Sender</span>
@@ -188,7 +189,7 @@ const SecondStep = () => {
 					</a>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkList
 						title="Repository"
 						description="Show your projects through the repository"

@@ -5,8 +5,8 @@ import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { Route, Router } from "react-router-dom";
-import { fireEvent, render } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, renderWithRouter } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
@@ -15,11 +15,7 @@ describe("NavigationBar", () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: "indexeddb" });
 
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<Router history={history}>
-				<NavigationBar />
-			</Router>,
-		);
+		const { container, asFragment } = renderWithRouter(<NavigationBar />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -36,11 +32,7 @@ describe("NavigationBar", () => {
 				mountPath: () => "/test",
 			},
 		];
-		const { container, asFragment } = render(
-			<Router history={history}>
-				<NavigationBar menu={menu} />
-			</Router>,
-		);
+		const { container, asFragment } = renderWithRouter(<NavigationBar menu={menu} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -49,14 +41,12 @@ describe("NavigationBar", () => {
 	it("should handle default menu", () => {
 		const profile = env.profiles().create("test");
 		history.push(`/profiles/${profile.id()}`);
-		const { getByText } = render(
-			<Router history={history}>
-				<EnvironmentContext.Provider value={env}>
-					<Route path="/profiles/:profileId">
-						<NavigationBar />
-					</Route>
-				</EnvironmentContext.Provider>
-			</Router>,
+		const { getByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
 		);
 
 		expect(getByText("Portfolio")).toBeTruthy();
@@ -75,14 +65,12 @@ describe("NavigationBar", () => {
 		];
 		const profile = env.profiles().create("test2");
 		history.push(`/profiles/${profile.id()}`);
-		const { getByText } = render(
-			<Router history={history}>
-				<EnvironmentContext.Provider value={env}>
-					<Route path="/profiles/:profileId">
-						<NavigationBar menu={menu} />
-					</Route>
-				</EnvironmentContext.Provider>
-			</Router>,
+		const { getByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId">
+					<NavigationBar menu={menu} />
+				</Route>
+			</EnvironmentContext.Provider>,
 		);
 
 		fireEvent.click(getByText("Portfolio"));
@@ -94,11 +82,7 @@ describe("NavigationBar", () => {
 			{ label: "Option 1", value: "/test" },
 			{ label: "Option 2", value: "/test2" },
 		];
-		const { getByTestId, getByText } = render(
-			<Router history={history}>
-				<NavigationBar userActions={options} />
-			</Router>,
-		);
+		const { getByTestId, getByText } = renderWithRouter(<NavigationBar userActions={options} />);
 		const toggle = getByTestId("navbar__useractions");
 
 		act(() => {
@@ -107,7 +91,7 @@ describe("NavigationBar", () => {
 
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
-		expect(history.location.pathname).toEqual("/test");
+		expect(history.location.pathname).toMatch("/profiles/");
 	});
 
 	it("should not render if no active profile", () => {
@@ -127,11 +111,7 @@ describe("NavigationBar", () => {
 			},
 		];
 
-		const { asFragment } = render(
-			<Router history={history}>
-				<NavigationBar menu={menu} userActions={options} />
-			</Router>,
-		);
+		const { asFragment } = renderWithRouter(<NavigationBar menu={menu} userActions={options} />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

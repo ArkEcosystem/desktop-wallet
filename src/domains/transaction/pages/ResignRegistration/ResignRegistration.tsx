@@ -31,24 +31,24 @@ const FirstStep = ({ form }: { form: any }) => {
 			<h1 className="mb-0">Delegate Resignation</h1>
 			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
 
-			<div className="mt-8">
+			<div className="mt-6">
 				<Alert size="lg">
 					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
 					blockchain.
 				</Alert>
 			</div>
 
-			<div className="mt-6">
+			<div>
 				<TransactionDetail
 					label=" "
 					extra={
-						<div>
+						<div className="mt-2">
 							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 						</div>
 					}
 					border={false}
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
 						<span className="mr-1">Account</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -59,8 +59,11 @@ const FirstStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
 
-				<TransactionDetail label="Fee ARK">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+				<TransactionDetail className="pt-6 pb-0">
+					<FormField name="name" className="font-normal">
+						<FormLabel>Fee ARK</FormLabel>
+						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+					</FormField>
 				</TransactionDetail>
 			</div>
 		</div>
@@ -73,19 +76,19 @@ const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
+					<div className="text-theme-danger-500 ml-1">
 						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
 				}
 			>
-				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
+				<div className="text-theme-neutral-800 max-w-24 flex-auto font-semibold truncate">ARK Ecosystem</div>
 			</TransactionDetail>
 
 			<TransactionDetail
@@ -96,7 +99,7 @@ const SecondStep = () => (
 					</div>
 				}
 			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+				<div className="text-theme-neutral-500 mb-2 text-sm font-semibold">
 					<span className="mr-1">Account</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -166,7 +169,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Amount"
 			extra={
-				<div className="ml-1 text-theme-danger">
+				<div className="text-theme-danger ml-1">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
@@ -219,7 +222,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 								<FourthStep />
 							</TabPanel>
 
-							<div className="flex justify-end mt-6 space-x-3">
+							<div className="flex justify-end mt-8 space-x-3">
 								{activeTab < 6 && (
 									<Button
 										disabled={activeTab === 1}
@@ -231,43 +234,56 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 									</Button>
 								)}
 
-								{activeTab < 3 && (
-									<Button
-										data-testid="ResignRegistration__continue-button"
-										disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								)}
-
-								{activeTab >= 3 && activeTab < 6 && (
-									<Button
-										data-testid="ResignRegistration__send-button"
-										disabled={!isValid}
-										onClick={handleNext}
-									>
-										<Icon name="Send" className="mr-2" width={20} height={20} />
-										Send
-									</Button>
-								)}
-
-								{activeTab === 6 && (
-									<div className="flex justify-end space-x-3">
-										<Button data-testid="ResignRegistration__wallet-button" variant="plain">
-											Back to wallet
-										</Button>
-
+								<div className="flex justify-end mt-6 space-x-3">
+									{activeTab < 6 && (
 										<Button
-											type="submit"
-											data-testid="ResignRegistration__download-button"
+											disabled={activeTab === 1}
+											data-testid="ResignRegistration__back-button"
 											variant="plain"
+											onClick={handleBack}
 										>
-											<Icon name="Download" className="mr-2" />
-											Download
+											Back
 										</Button>
-									</div>
-								)}
+									)}
+
+									{activeTab < 3 && (
+										<Button
+											data-testid="ResignRegistration__continue-button"
+											disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									)}
+
+									{activeTab >= 3 && activeTab < 6 && (
+										<Button
+											data-testid="ResignRegistration__send-button"
+											disabled={!isValid}
+											onClick={handleNext}
+										>
+											<Icon name="Send" className="mr-2" width={20} height={20} />
+											Send
+										</Button>
+									)}
+
+									{activeTab === 6 && (
+										<div className="flex justify-end space-x-3">
+											<Button data-testid="ResignRegistration__wallet-button" variant="plain">
+												Back to wallet
+											</Button>
+
+											<Button
+												type="submit"
+												data-testid="ResignRegistration__download-button"
+												variant="plain"
+											>
+												<Icon name="Download" className="mr-2" />
+												Download
+											</Button>
+										</div>
+									)}
+								</div>
 							</div>
 						</div>
 					</Tabs>

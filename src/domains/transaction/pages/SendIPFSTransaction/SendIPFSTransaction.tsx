@@ -11,6 +11,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
+import { TransactionField } from "domains/transaction/components/TransactionField";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -28,13 +29,13 @@ export const FirstStep = ({ assets = [] }: any) => {
 		<section data-testid="SendIPFSTransaction__step--first">
 			<div>
 				<h1 className="mb-0">IPFS</h1>
-				<p className="text-theme-neutral-dark">Store an IPFS hasn on the network</p>
+				<p className="text-theme-neutral-dark">Store an IPFS hash on the network</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row gap-2">
-				<TransactionDetail border={false} label="Network">
+			<div className="mt-4 grid grid-flow-row">
+				<TransactionField border={false} label="Network" padding={false}>
 					<SelectAsset assets={assets} />
-				</TransactionDetail>
-				<TransactionDetail border={false} label="Sender">
+				</TransactionField>
+				<TransactionField border={false} label="Sender" padding={false}>
 					<div className="relative flex items-center">
 						<Input type="text" disabled />
 						<div className="absolute flex items-center ml-3">
@@ -42,13 +43,13 @@ export const FirstStep = ({ assets = [] }: any) => {
 							<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName="ROBank" />
 						</div>
 					</div>
-				</TransactionDetail>
-				<TransactionDetail border={false} label="Hash">
+				</TransactionField>
+				<TransactionField border={false} label="Hash" padding={false}>
 					<Input name="hash" />
-				</TransactionDetail>
-				<TransactionDetail border={false} label="Fee ARK" className="pb-0">
+				</TransactionField>
+				<TransactionField border={false} label="Fee ARK" className="pb-0">
 					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
-				</TransactionDetail>
+				</TransactionField>
 			</div>
 		</section>
 	);
@@ -60,7 +61,7 @@ export const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before voting</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="mt-2 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"

@@ -37,7 +37,7 @@ export const Welcome = () => {
 			</div>
 
 			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
-				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
+				<h1 className="mb-8">{t("COMMON.WELCOME")}</h1>
 				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>

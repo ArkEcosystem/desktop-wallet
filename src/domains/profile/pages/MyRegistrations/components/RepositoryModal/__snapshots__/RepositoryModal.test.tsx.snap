@@ -20,13 +20,17 @@ exports[`RepositoryModal should render empty state 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -184,6 +188,5 @@ exports[`RepositoryModal should render empty state 1`] = `
       </div>
     </div>
   </div>
-  ,
 </DocumentFragment>
 `;
