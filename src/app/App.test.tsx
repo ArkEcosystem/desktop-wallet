@@ -12,6 +12,8 @@ beforeAll(() => {
 		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
 		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+		.reply(200, require("../tests/fixtures/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 		.persist();
 });
 
