@@ -159,6 +159,11 @@ let colors = {
 
   'theme-footer-text': '#a4acb8',
 
+  'theme-tooltip-icon': 'var(--theme-tooltip-icon)',
+  'theme-tooltip-icon-hover': 'var(--theme-tooltip-icon-hover)',
+  'theme-tooltip-icon-text': 'var(--theme-tooltip-icon-text)',
+  'theme-tooltip-icon-hover-text': 'var(--theme-tooltip-icon-hover-text)',
+
   'transparent': 'transparent',
   'inherit': 'inherit',
 

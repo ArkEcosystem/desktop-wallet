@@ -115,6 +115,11 @@
   --theme-fee-range-track: var(--theme-page-text-light);
   --theme-fee-range-track-active: var(--theme-button-text);
 	--theme-fee-range-shadow: rgba(9, 100, 228, 0.34);
+
+  --theme-tooltip-icon: #f1f5f8;
+  --theme-tooltip-icon-hover: #212225;
+  --theme-tooltip-icon-text: #606f7b;
+  --theme-tooltip-icon-hover-text: #fff;
 }
 
 .theme-dark {
@@ -228,6 +233,11 @@
   --theme-fee-handler-inside: var(--theme-modal);
   --theme-fee-range-track: var(--theme-page-text-light);
   --theme-fee-range-track-active: var(--theme-button-text);
+
+  --theme-tooltip-icon: #333644;
+  --theme-tooltip-icon-hover: #919eca;
+  --theme-tooltip-icon-text: #4c5166;
+  --theme-tooltip-icon-hover-text: #383c4d;
 }
 
 #app {
