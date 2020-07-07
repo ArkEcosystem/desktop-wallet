@@ -4,23 +4,23 @@ import { Icon } from "app/components/Icon";
 import Downshift from "downshift";
 import React from "react";
 
-type Asset = {
+type Network = {
 	icon: string;
 	name: string;
 	className?: string;
 };
 
 type SelectAssetProps = {
-	assets: Asset[];
+	networks: Network[];
 	placeholder?: string;
 	name?: string;
 	value?: string;
-	onSelect?: (asset: any) => void;
+	onSelect?: (network: any) => void;
 };
 
 type InputValue = any;
 
-const AssetIconPlaceholder = ({ icon, className, name }: Asset) => {
+const IconPlaceholder = ({ icon, className, name }: Network) => {
 	if (!icon) return <Circle size="sm" noShadow className="border-theme-neutral-200" />;
 	return (
 		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name}`}>
@@ -30,8 +30,8 @@ const AssetIconPlaceholder = ({ icon, className, name }: Asset) => {
 };
 
 const TypeAhead = ({ input, matches }: any) => {
-	const formatTypeHeadToMatchInputCase = (asset: Asset, input: InputValue) => {
-		return [input, asset?.name.slice(input.length)].join("");
+	const formatTypeHeadToMatchInputCase = (network: Network, input: InputValue) => {
+		return [input, network?.name.slice(input.length)].join("");
 	};
 
 	const typeaheadFormatted = matches.length === 1 ? formatTypeHeadToMatchInputCase(matches[0], input) : "";
@@ -43,29 +43,29 @@ const TypeAhead = ({ input, matches }: any) => {
 	);
 };
 
-export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAssetProps) => {
-	const isMatch = (asset: Asset, input: InputValue) => {
+export const SelectAsset = ({ networks, placeholder, onSelect, name }: SelectAssetProps) => {
+	const isMatch = (network: Network, input: InputValue) => {
 		if (!input) return false;
-		return asset.name.toLowerCase().startsWith(input.toLowerCase());
+		return network.name.toLowerCase().startsWith(input.toLowerCase());
 	};
 
-	const getMatches = (assets: Asset[], input: InputValue) => {
-		return assets.filter((asset: Asset) => isMatch(asset, input));
+	const getMatches = (networks: Network[], input: InputValue) => {
+		return networks.filter((network: Network) => isMatch(network, input));
 	};
 
-	const assetClassName = (asset: Asset, selectedAsset: Asset, input: any) => {
+	const assetClassName = (network: Network, selectedAsset: Network, input: any) => {
 		// Selected is me. Show me green
-		if (selectedAsset && selectedAsset.name === asset.name) {
+		if (selectedAsset && selectedAsset.name === network.name) {
 			return "text-theme-success-500 border-theme-success-200";
 		}
 		// Selection is made but not me. Show me disabled
-		if (selectedAsset && selectedAsset.name !== asset.name) return "text-theme-neutral-400";
+		if (selectedAsset && selectedAsset.name !== network.name) return "text-theme-neutral-400";
 
 		// Initial state. Nothing entered, nothing selected
-		if (!input) return asset.className;
+		if (!input) return network.className;
 
 		// Input entered, matching with input. Show normal colors
-		if (isMatch(asset, input)) return asset.className;
+		if (isMatch(network, input)) return network.className;
 
 		// Disabled otherwise
 		return "text-theme-neutral-400";
@@ -88,10 +88,10 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 					<div className="relative flex items-center w-full flex-inline">
 						<div className="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
-								<AssetIconPlaceholder {...selectedItem} />
+								<IconPlaceholder {...selectedItem} />
 							</div>
 							<div className="relative flex-1 p-1 font-semibold text-theme-neutral-800">
-								<TypeAhead input={inputValue} matches={getMatches(assets, inputValue)} />
+								<TypeAhead input={inputValue} matches={getMatches(networks, inputValue)} />
 								<input
 									name={name}
 									{...getInputProps({
@@ -100,7 +100,7 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 										onKeyDown: (event: any) => {
 											if (event.key === "Tab" || event.key === "Enter") {
 												// Selected if exact match
-												const matches = getMatches(assets, inputValue);
+												const matches = getMatches(networks, inputValue);
 												if (matches.length === 1) {
 													selectItem(matches[0]);
 												}
@@ -121,21 +121,21 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 							</div>
 						</div>
 					</div>
-					{assets && assets.length > 0 && (
+					{networks && networks.length > 0 && (
 						<div data-testid="select-asset__items" className="select-asset__items" {...getMenuProps()}>
-							{assets.map((asset: Asset, index: number) => {
+							{networks.map((network: Network, index: number) => {
 								return (
 									<div
 										key={index}
 										className="inline-block pt-6 mr-6 cursor-pointer"
-										{...getItemProps({ item: asset })}
+										{...getItemProps({ item: network })}
 									>
-										<Tippy content={asset.name}>
+										<Tippy content={network.name}>
 											<Circle
-												className={assetClassName(asset, selectedItem, inputValue)}
+												className={assetClassName(network, selectedItem, inputValue)}
 												size="xl"
 											>
-												<Icon name={asset.icon} width={26} height={26} />
+												<Icon name={network.icon} width={26} height={26} />
 											</Circle>
 										</Tippy>
 									</div>
@@ -150,6 +150,6 @@ export const SelectAsset = ({ assets, placeholder, onSelect, name }: SelectAsset
 };
 
 SelectAsset.defaultProps = {
-	assets: [],
+	networks: [],
 	placeholder: "Enter a network name",
 };

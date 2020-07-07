@@ -7,7 +7,7 @@ export default {
 };
 
 export const Default = () => {
-	const assets = [
+	const networks = [
 		{
 			icon: "Ark",
 			name: "ARK Ecosystem",
@@ -38,7 +38,7 @@ export const Default = () => {
 	return (
 		<div className="">
 			<div className="mt-10 w-128">
-				<SelectAsset assets={assets} />
+				<SelectAsset networks={networks} />
 			</div>
 		</div>
 	);

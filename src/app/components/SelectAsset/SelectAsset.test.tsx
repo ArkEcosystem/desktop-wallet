@@ -5,7 +5,7 @@ import { fireEvent, render } from "testing-library";
 import { SelectAsset } from "./SelectAsset";
 
 describe("SelectAsset", () => {
-	const assets = [
+	const networks = [
 		{
 			icon: "Ark",
 			name: "Ark Ecosystem",
@@ -28,13 +28,13 @@ describe("SelectAsset", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with assets", () => {
-		const { container } = render(<SelectAsset assets={assets} />);
+	it("should render with networks", () => {
+		const { container } = render(<SelectAsset networks={networks} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should show typeahead when typing has found one exact match", () => {
-		const { getByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitco" } });
@@ -44,7 +44,7 @@ describe("SelectAsset", () => {
 	});
 
 	it("should select first matching asset with enter", () => {
-		const { getByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitco" } });
@@ -58,7 +58,7 @@ describe("SelectAsset", () => {
 	});
 
 	it("should select first matching asset with tab", () => {
-		const { getByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitcoi" } });
@@ -72,7 +72,7 @@ describe("SelectAsset", () => {
 	});
 
 	it("should not select non-matching asset after key input and tab", () => {
-		const { getByTestId, queryByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId, queryByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bot" } });
@@ -86,7 +86,7 @@ describe("SelectAsset", () => {
 	});
 
 	it("should not select first matched asset after random key enter", () => {
-		const { getByTestId, queryByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId, queryByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 
 		act(() => {
@@ -101,7 +101,7 @@ describe("SelectAsset", () => {
 	});
 
 	it("should clear selection when changing input", () => {
-		const { getByTestId, queryByTestId } = render(<SelectAsset assets={assets} />);
+		const { getByTestId, queryByTestId } = render(<SelectAsset networks={networks} />);
 		const input = getByTestId("select-asset__input");
 
 		act(() => {
