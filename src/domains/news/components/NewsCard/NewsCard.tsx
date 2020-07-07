@@ -9,32 +9,32 @@ export const NewsCard = () => (
 	<Card>
 		<div className="flex flex-col p-4 space-y-8">
 			<div className="flex justify-between w-full">
-				<div className="flex items-center space-x-2">
+				<div className="flex items-center space-x-4">
 					<Circle className="text-theme-danger-400 border-theme-danger-200" size="lg">
-						<Icon name="Ark" />
+						<Icon name="Ark" width={20} height={20} />
 					</Circle>
 
 					<div>
 						<p className="text-lg font-semibold">ARK Ecosystem</p>
 
-						<div className="flex items-center space-x-2">
+						<div className="flex items-center space-x-4">
 							<p className="text-sm font-semibold text-theme-neutral">Travis Walker, Co-Founder</p>
-
 							<Divider type="vertical" />
-
 							<p className="text-sm font-semibold text-theme-neutral">2 days ago</p>
 						</div>
 					</div>
 				</div>
 
 				<div className="flex flex-col justify-end">
-					<Label color="warning">#Technical</Label>
+					<Label color="warning">
+						<span className="text-sm">#Technical</span>
+					</Label>
 				</div>
 			</div>
 
 			<Divider />
 
-			<p>
+			<p className="text-theme-neutral-dark">
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error
 				quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi
 				recusandae ab.
