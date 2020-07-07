@@ -46,7 +46,7 @@ export const FilterWallets = ({
 		<div className="flex flex-col text-left">
 			<div className="mb-8">
 				<div className="font-semibold text-theme-neutral-dark">Filter Network</div>
-				<div className="text-sm text-theme-neutral mt-1">Select the types of networks</div>
+				<div className="mt-1 text-sm text-theme-neutral">Select the types of networks</div>
 			</div>
 
 			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
@@ -76,7 +76,7 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="text-sm text-theme-neutral mt-1 pr-12">Select the display of your wallets</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">Select the display of your wallets</div>
 			</div>
 
 			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
@@ -92,7 +92,7 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="text-sm text-theme-neutral mt-1 pr-12">You can hide this unit if you like</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
 			</div>
 
 			<div className="flex flex-col">
@@ -106,7 +106,7 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="text-sm text-theme-neutral mt-1 pr-12">You can hide this unit if you like</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
 			</div>
 		</div>
 	);
