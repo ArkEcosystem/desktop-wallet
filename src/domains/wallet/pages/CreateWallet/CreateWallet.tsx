@@ -47,7 +47,7 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
 				<SelectAsset
 					name={activeNetwork as any}
-					assets={networks}
+					networks={networks}
 					onSelect={(selected) => handleSelect(selected?.name)}
 				/>
 			</div>

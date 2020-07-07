@@ -62,7 +62,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								</div>
 								<SelectAsset
 									name={selected as any}
-									assets={networks}
+									networks={networks}
 									onSelect={(selected) => setSelected(selected.name)}
 								/>
 							</div>
