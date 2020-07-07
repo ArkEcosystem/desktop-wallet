@@ -1,4 +1,5 @@
 import { text, withKnobs } from "@storybook/addon-knobs";
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React from "react";
@@ -25,10 +26,12 @@ export const WithExtra = () => (
 		label={text("Label", "Label")}
 		extra={
 			<div>
-				<Circle className="-mr-2 border-black">
-					<Icon name="Delegate" width={25} height={25} />
-				</Circle>
-				<Circle avatarId="test" />
+				<div className="flex">
+					<Circle className="-mr-2 border-black">
+						<Icon name="Delegate" width={25} height={25} />
+					</Circle>
+					<Avatar address="test" />
+				</div>
 			</div>
 		}
 	>
