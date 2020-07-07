@@ -109,4 +109,5 @@ WalletCard.defaultProps = {
 	isBlank: false,
 	blankTitle: "New wallet",
 	blankSubtitle: "Balance",
+	address: "",
 };
