@@ -7,7 +7,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container mx-auto flex justify-between items-center"
+      class="container flex items-center justify-between mx-auto"
     >
       <div>
         <ul
@@ -26,7 +26,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 Home
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -48,7 +48,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 48
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -70,7 +70,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 264
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -92,7 +92,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 96
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -114,7 +114,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                 27
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -139,7 +139,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
           </span>
         </a>
         <div
-          class="border-r w-px border-theme-neutral-300 mx-8 h-10 my-auto"
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
         />
         <div
           class="flex items-center"
@@ -197,7 +197,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container mx-auto flex justify-between items-center"
+      class="container flex items-center justify-between mx-auto"
     >
       <div>
         <ul
@@ -216,7 +216,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 Home
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -238,7 +238,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 48
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -260,7 +260,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 264
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -282,7 +282,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 96
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -304,7 +304,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                 27
               </span>
               <div
-                class="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4"
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
               />
             </a>
           </li>
@@ -329,7 +329,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
           </span>
         </a>
         <div
-          class="border-r w-px border-theme-neutral-300 mx-8 h-10 my-auto"
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
         />
         <div
           class="flex items-center"

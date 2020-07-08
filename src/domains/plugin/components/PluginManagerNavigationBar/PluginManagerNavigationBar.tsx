@@ -27,7 +27,7 @@ export const PluginManagerNavigationBar = ({
 }: PluginManagerNavigationBar) => {
 	return (
 		<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-100">
-			<div className="container mx-auto flex justify-between items-center">
+			<div className="container flex items-center justify-between mx-auto">
 				<div>
 					<ul className="flex h-24">
 						{menu &&
@@ -46,7 +46,7 @@ export const PluginManagerNavigationBar = ({
 										{menuItem.count && (
 											<span className="ml-1 text-theme-neutral-400">{menuItem.count}</span>
 										)}
-										<div className="PluginManagerNavigationBar__menu-divider border-r w-px border-theme-neutral-300 pl-6 h-4" />
+										<div className="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
 									</a>
 								</li>
 							))}
@@ -65,7 +65,7 @@ export const PluginManagerNavigationBar = ({
 						<span>MyPlugin</span>
 						<span className="ml-1 text-theme-neutral-400">8</span>
 					</a>
-					<div className="border-r w-px border-theme-neutral-300 mx-8 h-10 my-auto" />
+					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />
 					<PluginManagerControls
 						onSelectGridView={onSelectGridView}
 						onSelectListView={onSelectListView}
