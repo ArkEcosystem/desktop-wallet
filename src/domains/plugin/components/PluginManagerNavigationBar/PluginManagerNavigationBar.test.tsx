@@ -46,7 +46,7 @@ describe("PluginManagerNavigationBar", () => {
 			);
 
 			expect(result.current.currentView).toBe(navId);
-			expect(getByTestId(`PluginManagerNavigationBar__${navId}`)).toHaveClass("border-theme-primary-500");
+			expect(getByTestId(`PluginManagerNavigationBar__${navId}`)).toHaveClass("active");
 		}
 
 		expect(asFragment()).toMatchSnapshot();
