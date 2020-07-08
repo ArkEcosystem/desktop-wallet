@@ -90,7 +90,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	useEffect(() => {
 		form.setValue("name", contact ? contact.name() : "", !!contact);
 		form.register({ name: "network" });
-	}, [contact]);
+	}, [form, contact]);
 
 	const handleAddAddress = (network: any, address: string) => {
 		setContactAddresses(

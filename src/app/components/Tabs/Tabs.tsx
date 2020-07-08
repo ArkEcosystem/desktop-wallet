@@ -20,7 +20,7 @@ export function Tabs({ children, activeId, onChange }: TabsProps) {
 
 	React.useEffect(() => {
 		context.setCurrentId(activeId);
-	}, [activeId]);
+	}, [context, activeId]);
 
 	return (
 		<TabContext.Provider value={context}>

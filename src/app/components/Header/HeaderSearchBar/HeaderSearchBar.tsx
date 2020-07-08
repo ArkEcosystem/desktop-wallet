@@ -29,7 +29,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: Head
 		if (debouncedQuery) {
 			onSearch(debouncedQuery);
 		}
-	}, [debouncedQuery]);
+	}, [onSearch, debouncedQuery]);
 
 	const resetQuery = () => {
 		setQuery("");
