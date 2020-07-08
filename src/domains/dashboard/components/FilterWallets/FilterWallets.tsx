@@ -1,5 +1,6 @@
-import { Badge } from "app/components/Badge";
+import { Dropdown } from "app/components/Dropdown";
 import { FilterNetwork } from "app/components/FilterNetwork";
+import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
 
@@ -55,14 +56,26 @@ export const FilterWallets = ({
 					<div className="mb-3 font-semibold text-theme-neutral-700">Your Wallets</div>
 					<div className="text-sm text-theme-neutral-500">Select the display of your wallets</div>
 				</div>
-				<div className="w-1/5 text-right">
+				<div className="w-1/5 my-auto text-right">
 					<div
 						data-testid="filter-wallets__wallets"
-						className="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
+						className="relative cursor-pointer text-theme-neutral-700"
 						onClick={onWalletClick}
 					>
-						<span className="inline-block pr-1 font-semibold">All</span>
-						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={15} iconHeight={15} />
+						<Dropdown
+							toggleIcon="ChevronDown"
+							options={[
+								{ label: "Option 1", value: "option1" },
+								{ label: "Option 2", value: "option2" },
+							]}
+							onSelect={onWalletClick}
+							toggleContent={
+								<div className="flex items-center justify-end">
+									<span className="inline-block pr-1 font-semibold">All</span>
+									<Icon name="ChevronDown" width={15} height={15} />
+								</div>
+							}
+						/>
 					</div>
 				</div>
 			</div>

@@ -27,17 +27,14 @@ const renderNetworks = (networks: any[], onClick: any) => (
 				{!option.isSelected && (
 					<Circle size="lg" className="relative border-theme-neutral-200 text-theme-neutral-300">
 						<Icon name={option.name} width={20} height={20} />
-						<Badge className="border-theme-neutral-200 -bottom-1 -right-4" />
+						<Badge className="border-theme-neutral-200" />
 					</Circle>
 				)}
 
 				{option.isSelected && (
 					<Circle size="lg" className="relative border-theme-success-500 text-theme-success-500">
 						<Icon name={option.name} width={20} height={20} />
-						<Badge
-							className="-bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
-							icon="Checkmark"
-						/>
+						<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 					</Circle>
 				)}
 			</li>
@@ -63,12 +60,12 @@ export const FilterNetwork = ({ networks, onChange, onViewAll }: NetworkProps) =
 			<Circle
 				size="lg"
 				data-testid="network__viewall"
-				className="relative ml-2 cursor-pointer border-theme-primary-100"
+				className="relative cursor-pointer border-theme-primary-100"
 				onClick={onViewAll}
 			>
 				<div className="text-sm font-semibold text-theme-primary-500">All</div>
 				<Badge
-					className="border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+					className="border-theme-primary-100 text-theme-primary-500"
 					icon="ChevronDown"
 					iconWidth={10}
 					iconHeight={10}

@@ -25,7 +25,7 @@ exports[`FilterWallets should render 1`] = `
         data-testid="network__option"
       />
       <div
-        class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+        class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -34,7 +34,7 @@ exports[`FilterWallets should render 1`] = `
           All
         </div>
         <span
-          class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+          class="sc-AxiKw eKROFT flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-100 text-theme-primary-500"
         >
           <div
             class="sc-AxjAm iepfoc"
@@ -70,31 +70,35 @@ exports[`FilterWallets should render 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right"
+        class="w-1/5 my-auto text-right"
       >
         <div
-          class="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
+          class="relative cursor-pointer text-theme-neutral-700"
           data-testid="filter-wallets__wallets"
         >
-          <span
-            class="inline-block pr-1 font-semibold"
-          >
-            All
-          </span>
-          <span
-            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-1 -right-6"
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-AxjAm pXfjM"
-              height="15"
-              width="15"
+              class="flex items-center justify-end"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block pr-1 font-semibold"
+              >
+                All
+              </span>
+              <div
+                class="sc-AxjAm pXfjM"
+                height="15"
+                width="15"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
@@ -123,15 +127,15 @@ exports[`FilterWallets should render 1`] = `
       >
         <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--portfolio"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
@@ -159,15 +163,15 @@ exports[`FilterWallets should render 1`] = `
       >
         <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
@@ -206,7 +210,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--0"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -218,7 +222,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+              class="sc-AxiKw eKROFT flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
             >
               <div
                 class="sc-AxjAm HWmvM"
@@ -238,7 +242,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--1"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-success-500 text-theme-success-500"
+            class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -250,7 +254,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent -bottom-1 -right-4 bg-theme-success-500 text-theme-success-contrast"
+              class="sc-AxiKw eKROFT flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
             >
               <div
                 class="sc-AxjAm HWmvM"
@@ -270,7 +274,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           data-testid="network__option--2"
         >
           <div
-            class="sc-AxiKw jQtkkF relative border-theme-neutral-200 text-theme-neutral-300"
+            class="sc-AxhCb bzWLYJ relative border-theme-neutral-200 text-theme-neutral-300"
           >
             <div
               class="sc-AxjAm buCJuk"
@@ -282,7 +286,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
               </svg>
             </div>
             <span
-              class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-neutral-200 -bottom-1 -right-4"
+              class="sc-AxiKw eKROFT flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-neutral-200"
             >
               <span />
             </span>
@@ -290,7 +294,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </li>
       </ul>
       <div
-        class="sc-AxiKw jQtkkF relative ml-2 cursor-pointer border-theme-primary-100"
+        class="sc-AxhCb bzWLYJ relative cursor-pointer border-theme-primary-100"
         data-testid="network__viewall"
       >
         <div
@@ -299,7 +303,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
           All
         </div>
         <span
-          class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent border-theme-primary-100 -bottom-1 -right-4 text-theme-primary-500"
+          class="sc-AxiKw eKROFT flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-100 text-theme-primary-500"
         >
           <div
             class="sc-AxjAm iepfoc"
@@ -335,31 +339,35 @@ exports[`FilterWallets should render with networks selection 1`] = `
         </div>
       </div>
       <div
-        class="w-1/5 text-right"
+        class="w-1/5 my-auto text-right"
       >
         <div
-          class="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
+          class="relative cursor-pointer text-theme-neutral-700"
           data-testid="filter-wallets__wallets"
         >
-          <span
-            class="inline-block pr-1 font-semibold"
-          >
-            All
-          </span>
-          <span
-            class="sc-AxirZ nnMcM flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent top-1 -right-6"
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
           >
             <div
-              class="sc-AxjAm pXfjM"
-              height="15"
-              width="15"
+              class="flex items-center justify-end"
             >
-              <svg>
-                chevron-down.svg
-              </svg>
+              <span
+                class="inline-block pr-1 font-semibold"
+              >
+                All
+              </span>
+              <div
+                class="sc-AxjAm pXfjM"
+                height="15"
+                width="15"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
             </div>
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
@@ -388,15 +396,15 @@ exports[`FilterWallets should render with networks selection 1`] = `
       >
         <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--portfolio"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
@@ -424,15 +432,15 @@ exports[`FilterWallets should render with networks selection 1`] = `
       >
         <label>
           <input
-            class="sc-AxhCb crfxJX"
+            class="sc-AxhUy rBBWa"
             data-testid="filter-wallets_toggle--transactions"
             type="checkbox"
           />
           <div
-            class="sc-AxhUy fdlXZX"
+            class="sc-AxgMl hwTgHl"
           >
             <span
-              class="sc-AxgMl jilcKf"
+              class="sc-AxheI hZHhjt"
             />
           </div>
         </label>
