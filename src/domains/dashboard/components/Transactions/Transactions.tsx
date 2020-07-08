@@ -2,6 +2,8 @@ import { Button } from "app/components/Button";
 import { Table } from "app/components/Table";
 import { TransactionListItem } from "app/components/TransactionListItem";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import i18n from 'i18next'
 
 type TransactionsProps = {
 	title: string;
@@ -11,6 +13,8 @@ type TransactionsProps = {
 };
 
 export const Transactions = ({ transactions, columns, title, emptyText }: TransactionsProps) => {
+	const { t } = useTranslation();
+
 	return (
 		<div className="bg-white">
 			<div className="text-4xl font-bold">{title}</div>
@@ -21,7 +25,7 @@ export const Transactions = ({ transactions, columns, title, emptyText }: Transa
 					</Table>
 
 					<Button variant="plain" className="w-full mt-10 mb-5">
-						See more
+						{t("COMMON.VIEW_MORE")}
 					</Button>
 				</div>
 			)}
@@ -31,30 +35,29 @@ export const Transactions = ({ transactions, columns, title, emptyText }: Transa
 };
 
 Transactions.defaultProps = {
-	title: "Transactions History",
-	emptyText:
-		"This will display the history of your transactions. But you don't have more than one transaction at the moment.",
+	title: i18n.t("DASHBOARD.TRANSACTION_HISTORY.TITLE"),
+	emptyText: i18n.t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_TEXT"),
 	columns: [
 		{
-			Header: "Date",
+			Header: i18n.t("COMMON.DATE"),
 		},
 		{
-			Header: "Type",
+			Header: i18n.t("COMMON.TYPE"),
 			className: "invisible",
 		},
 		{
-			Header: "Wallet Address",
+			Header: i18n.t("COMMON.WALLET_ADDRESS"),
 		},
 		{
-			Header: "Info",
+			Header: i18n.t("COMMON.INFO"),
 			className: "justify-center",
 		},
 		{
-			Header: "Amount",
+			Header: i18n.t("COMMON.AMOUNT"),
 			className: "float-right",
 		},
 		{
-			Header: "Fiat Value",
+			Header: i18n.t("COMMON.FIAT_VALUE"),
 			className: "float-right",
 		},
 	],

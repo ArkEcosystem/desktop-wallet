@@ -4,6 +4,7 @@ import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type WalletsControlsProps = {
 	filterProperties?: FilterWalletsProps;
@@ -23,6 +24,8 @@ export const WalletsControls = ({
 	viewType,
 }: WalletsControlsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
+
+	const { t } = useTranslation();
 
 	const onClickGridView = () => {
 		if (walletsViewType === "grid") return;
@@ -60,14 +63,14 @@ export const WalletsControls = ({
 				<Button onClick={onCreateWallet} variant="plain">
 					<div className="flex items-center justify-center mr-2 text-sm align-middle">
 						<Icon name="Plus" width={10} />
-						<span className="ml-2">Create</span>
+						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
 					</div>
 				</Button>
 
 				<Button onClick={onImportWallet} variant="plain">
 					<div className="flex items-center justify-center mr-2 text-sm align-middle">
 						<Icon name="Import" />
-						<span className="ml-2">Import</span>
+						<span className="ml-2">{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
 					</div>
 				</Button>
 			</div>

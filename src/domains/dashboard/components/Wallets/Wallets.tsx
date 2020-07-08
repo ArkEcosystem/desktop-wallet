@@ -5,6 +5,8 @@ import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from 'i18next'
 
 type WalletsProps = {
 	wallets?: any;
@@ -30,6 +32,8 @@ export const Wallets = ({
 	walletsEmptyText,
 }: WalletsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
+
+	const { t } = useTranslation();
 
 	const walletSliderOptions = {
 		slideHeight: 220, // Wallet card height, including margin-bottom
@@ -109,7 +113,7 @@ export const Wallets = ({
 								</Table>
 
 								<Button variant="plain" className="w-full mt-10 mb-5">
-									See more
+									{t("COMMON.VIEW_MORE")}
 								</Button>
 							</div>
 						)}
@@ -122,30 +126,30 @@ export const Wallets = ({
 };
 
 Wallets.defaultProps = {
-	title: "Wallets",
+	title: i18n.t("COMMON.WALLETS"),
 	networks: [],
 	wallets: [],
 	walletsEmptyText: "",
 	viewType: "grid",
 	listColumns: [
 		{
-			Header: "Asset Type",
+			Header: i18n.t("COMMON.ASSET_TYPE"),
 			accessor: "avatarId",
 		},
 		{
-			Header: "Wallet Address",
+			Header: i18n.t("COMMON.WALLET_ADDRESS"),
 			accessor: "address",
 		},
 		{
-			Header: "Wallet Type",
+			Header: i18n.t("COMMON.WALLET_TYPE"),
 		},
 		{
-			Header: "Balance",
+			Header: i18n.t("COMMON.BALANCE"),
 			accessor: "balance",
 			className: "float-right",
 		},
 		{
-			Header: "Fiat Value",
+			Header: i18n.t("COMMON.FIAT_VALUE"),
 			accessor: "fiat",
 			className: "float-right",
 		},
