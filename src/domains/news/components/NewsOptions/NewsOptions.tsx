@@ -1,10 +1,11 @@
 import { Button } from "app/components/Button";
-import { CardControl } from "app/components/Card/CardControl";
 import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+import { SelectCategory } from "./components/SelectCategory";
 
 type Props = {
 	categories?: any[];
@@ -23,28 +24,26 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 
 				<Divider dashed />
 
-				<div>
-					<h5 className="mb-2 font-semibold">{t("COMMON.CATEGORY")}</h5>
+				<div className="flex flex-col space-y-3">
+					<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
 					<p className="text-sm text-theme-neutral">{t("NEWS.SELECT_YOUR_CATEGORIES")}</p>
 
-					<div className="flex mt-4 space-x-2">
+					<div className="flex flex-wrap -mx-1">
 						{categories?.map((category, index) => (
-							<CardControl key={index} className="-p-0" defaultChecked={category.isSelected}>
-								<div className="flex flex-col items-center justify-between h-full">
-									<span>#{category.name}</span>
-								</div>
-							</CardControl>
+							<SelectCategory key={index} className="p-1" defaultChecked={category.isSelected}>
+								#{category.name}
+							</SelectCategory>
 						))}
 					</div>
 				</div>
 
 				<Divider dashed />
 
-				<div>
-					<h5 className="mb-2 font-semibold">{t("NEWS.FILTER_ASSETS")}</h5>
+				<div className="flex flex-col space-y-3">
+					<h5 className="font-semibold">{t("NEWS.FILTER_ASSETS")}</h5>
 					<p className="text-sm text-theme-neutral">{t("NEWS.YOUR_CURRENT_SELECTIONS")}</p>
 
-					<div className="mt-4 mb-8">
+					<div className="pb-4">
 						<FilterNetwork networks={selectedAssets} />
 					</div>
 
