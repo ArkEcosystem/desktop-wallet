@@ -128,7 +128,7 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		});
 
-		const { getByTestId, getAllByTestId, asFragment } = rendered!;
+		const { getByTestId, asFragment } = rendered!;
 
 		expect(asFragment()).toMatchSnapshot();
 

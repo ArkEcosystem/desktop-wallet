@@ -2,7 +2,7 @@ import { Dashboard } from "./pages";
 
 export const DashboardRoutes = [
 	{
-		path: "/portfolio/:walletId",
+		path: "/profiles/:profileId/dashboard",
 		exact: true,
 		component: Dashboard,
 	},

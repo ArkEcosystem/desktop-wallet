@@ -194,65 +194,70 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 	};
 
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={onSubmit}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<div>
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={onSubmit}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 4 && (
-								<>
-									<Button
-										disabled={activeTab === 1}
-										data-testid="SendVoteTransaction__button--back"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
-									</Button>
-									<Button
-										data-testid="SendVoteTransaction__button--continue"
-										// disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								</>
-							)}
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 4 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="SendVoteTransaction__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="SendVoteTransaction__button--continue"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
 
-							{activeTab === 4 && (
-								<>
-									<Button data-testid="SendVoteTransaction__button--back-to-wallet" variant="plain">
-										Back to wallet
-									</Button>
-									<Button
-										onClick={onCopy}
-										data-testid="SendVoteTransaction__button--copy"
-										variant="plain"
-									>
-										<Icon name="Copy" />
-										<span>Copy</span>
-									</Button>
-								</>
-							)}
+								{activeTab === 4 && (
+									<>
+										<Button
+											data-testid="SendVoteTransaction__button--back-to-wallet"
+											variant="plain"
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="SendVoteTransaction__button--copy"
+											variant="plain"
+										>
+											<Icon name="Copy" />
+											<span>Copy</span>
+										</Button>
+									</>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

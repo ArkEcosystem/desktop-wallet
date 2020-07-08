@@ -2,7 +2,7 @@
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
-import { Registration } from "../Registration";
+import { Registration } from "./Registration";
 
 let defaultFormValues = {};
 

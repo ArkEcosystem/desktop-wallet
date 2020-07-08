@@ -46,7 +46,7 @@ export const Default = () => {
 
 export const Colored = () => {
 	return (
-		<div className="mt-3 mb-10 space-x-5">
+		<div className="mt-3 mb-10 text-base space-x-5">
 			<Circle className="relative text-white border-theme-success-500">
 				<Badge className="bg-theme-success-500" position="top" />
 			</Circle>
@@ -84,19 +84,19 @@ export const WithIcon = () => {
 					<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 				</Circle>
 				<Circle className="relative ml-5 border-theme-success-500 text-theme-success-500">
-					<Icon name="Eth" />
+					<Icon name="Ethereum" />
 					<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 				</Circle>
 				<Circle className="relative ml-5 border-theme-success-500 text-theme-success-500">
-					<Icon name="Btc" />
+					<Icon name="Bitcoin" />
 					<Badge className="bg-theme-success-500 text-theme-success-contrast" icon="Checkmark" />
 				</Circle>
-				<Circle className="relative ml-5 border-theme-neutral-200">
-					<div className="italic text-md text-theme-neutral-200">D</div>
+				<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
+					<Icon name="Lisk" />
 					<Badge className="border-theme-neutral-200" />
 				</Circle>
-				<Circle className="relative ml-5 border-theme-neutral-200">
-					<div className="italic text-md text-theme-neutral-200">D</div>
+				<Circle className="relative ml-5 border-theme-neutral-200 text-theme-neutral-200">
+					<Icon name="Ripple" />
 					<Badge className="border-theme-neutral-200" />
 				</Circle>
 				<Circle className="relative ml-5 border-theme-primary-contrast">

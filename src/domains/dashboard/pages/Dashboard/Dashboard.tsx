@@ -14,7 +14,7 @@ type DashboardProps = {
 };
 
 const Section = styled.div`
-	${tw`bg-white py-16 px-13 mt-5`}
+	${tw`px-13 py-16 mt-5 bg-white`}
 `;
 
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {

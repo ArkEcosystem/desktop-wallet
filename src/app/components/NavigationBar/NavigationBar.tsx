@@ -5,8 +5,9 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
 import { defaultStyle } from "./NavigationBar.styles";
@@ -15,7 +16,7 @@ const commonAssets = images.common;
 
 type MenuItem = {
 	title: string;
-	path: string;
+	mountPath: any;
 };
 
 type NavigationBarProps = {
@@ -40,27 +41,25 @@ const NotificationsDropdown = ({
 	transactionsHeader,
 	transactions,
 	onAction,
-}: NotificationsProps) => {
-	return (
-		<Dropdown
-			toggleContent={
-				<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-					<Icon name="Notification" width={22} height={22} />
-				</div>
-			}
-		>
-			<div className="p-8 py-3 mt-2 w-128">
-				<Notifications
-					pluginsHeader={pluginsHeader}
-					plugins={plugins}
-					transactionsHeader={transactionsHeader}
-					transactions={transactions}
-					onAction={onAction}
-				/>
+}: NotificationsProps) => (
+	<Dropdown
+		toggleContent={
+			<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+				<Icon name="Notification" width={22} height={22} />
 			</div>
-		</Dropdown>
-	);
-};
+		}
+	>
+		<div className="p-8 py-3 mt-2 w-128">
+			<Notifications
+				pluginsHeader={pluginsHeader}
+				plugins={plugins}
+				transactionsHeader={transactionsHeader}
+				transactions={transactions}
+				onAction={onAction}
+			/>
+		</div>
+	</Dropdown>
+);
 
 const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavigationBarProps) => {
 	return (
@@ -74,7 +73,7 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative rotate-90 bg-theme-primary border-theme-primary" size="lg">
+					<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
 						<span className="text-sm text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${
@@ -97,67 +96,78 @@ export const NavigationBar = ({
 	userActions,
 	userInitials,
 	balance,
-	onUserAction,
 	currencyIcon,
 	notifications,
 	onNotificationAction,
-}: NavigationBarProps) => (
-	<NavWrapper aria-labelledby="main menu">
-		<div className="px-4 sm:px-6 lg:px-8">
-			<div className="relative flex justify-between h-20 md:h-24">
-				<div className="flex items-center flex-shrink-0">
-					<div className="flex p-2 mr-4 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
-					</div>
-					<ul className="flex h-20 md:h-24">
-						{menu &&
-							menu.map((menuItem: any, index: number) => (
-								<li key={index} className="flex">
-									<NavLink
-										to={menuItem.path}
-										title={menuItem.title}
-										className="flex items-center mx-4 font-bold text-md text-theme-neutral"
-									>
-										{menuItem.title}
-									</NavLink>
-								</li>
-							))}
-					</ul>
-				</div>
+}: NavigationBarProps) => {
+	const history = useHistory();
+	const activeProfile = useActiveProfile();
 
-				<div className="flex items-center">
-					<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
-					<div className="h-8 border-r border-theme-neutral-200" />
+	const renderMenu = () => {
+		if (!activeProfile?.id()) {
+			return null;
+		}
 
-					<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
-						<Icon name="Sent" width={42} height={42} />
-					</div>
-
-					<div className="h-8 border-r border-theme-neutral-200" />
-					<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-						<Icon name="Receive" width={22} height={22} />
+		return (
+			menu &&
+			menu.map((menuItem: any, index: number) => (
+				<li key={index} className="flex">
+					<NavLink
+						to={menuItem.mountPath(activeProfile.id())}
+						title={menuItem.title}
+						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+					>
+						{menuItem.title}
+					</NavLink>
+				</li>
+			))
+		);
+	};
+	return (
+		<NavWrapper aria-labelledby="main menu">
+			<div className="px-4 sm:px-6 lg:px-8">
+				<div className="relative flex justify-between h-20 md:h-24">
+					<div className="flex items-center flex-shrink-0">
+						<div className="flex p-2 mr-4 rounded-lg bg-logo">
+							<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+						</div>
+						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
 					</div>
 
-					<div className="h-8 border-r border-theme-neutral-200" />
+					<div className="flex items-center">
+						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+						<div className="h-8 border-r border-theme-neutral-200" />
 
-					<div className="p-2 ml-4 text-right">
-						<div className="text-xs text-theme-neutral">Your balance</div>
-						<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
-					</div>
+						<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
+							<Icon name="Sent" width={42} height={42} />
+						</div>
 
-					<div className="flex p-1 cusror-pointer">
-						<UserInfo
-							userInitials={userInitials}
-							currencyIcon={currencyIcon}
-							userActions={userActions}
-							onUserAction={onUserAction}
-						/>
+						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+							<Icon name="Receive" width={22} height={22} />
+						</div>
+
+						<div className="h-8 border-r border-theme-neutral-200" />
+
+						<div className="p-2 ml-4 text-right">
+							<div className="text-xs text-theme-neutral-500">Your balance</div>
+							<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+						</div>
+
+						<div className="flex p-1 cusror-pointer">
+							<UserInfo
+								userInitials={userInitials}
+								currencyIcon={currencyIcon}
+								userActions={userActions}
+								onUserAction={(action: any) => history.push(action.mountPath(activeProfile?.id()))}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</NavWrapper>
-);
+		</NavWrapper>
+	);
+};
 
 NavigationBar.defaultProps = {
 	currencyIcon: "Bitcoin",
@@ -170,37 +180,41 @@ NavigationBar.defaultProps = {
 	menu: [
 		{
 			title: "Portfolio",
-			path: "/portfolio",
+			mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 		},
 		{
 			title: "Plugins",
-			path: "/plugins",
+			mountPath: (profileId: string) => `/profiles/${profileId}/plugins`,
 		},
 		{
 			title: "Exchange",
-			path: "/exchange",
+			mountPath: (profileId: string) => `/profiles/${profileId}/exchange`,
 		},
 		{
 			title: "News",
-			path: "/news",
+			mountPath: (profileId: string) => `/profiles/${profileId}/news`,
 		},
 	],
 	userActions: [
 		{
 			label: "Contacts",
 			value: "contacts",
+			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
 		},
 		{
 			label: "Settings",
 			value: "settings",
+			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
 		},
 		{
 			label: "Support",
 			value: "support",
+			mountPath: (profileId: string) => `/profiles/${profileId}/support`,
 		},
 		{
 			label: "Exit",
 			value: "exit",
+			mountPath: () => `/`,
 		},
 	],
 };

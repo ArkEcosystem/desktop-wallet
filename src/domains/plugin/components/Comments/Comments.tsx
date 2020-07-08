@@ -40,7 +40,7 @@ const Votes = ({ votes }: any) => {
 };
 
 export const Comments = ({ comments, sortOptions }: CommentsProps) => {
-	const [sortBy, setSortBy] = useState(sortOptions);
+	const [sortBy] = useState(sortOptions);
 
 	return (
 		<div className="w-full">
