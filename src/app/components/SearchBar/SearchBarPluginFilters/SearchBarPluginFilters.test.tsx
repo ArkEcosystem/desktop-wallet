@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent,render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { SearchBarPluginFilters } from "./SearchBarPluginFilters";
 
