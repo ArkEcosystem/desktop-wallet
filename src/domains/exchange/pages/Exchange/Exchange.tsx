@@ -3,7 +3,7 @@ import { Header } from "app/components/Header";
 import { Slider } from "app/components/Slider";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type ExchangeProps = {
@@ -73,7 +73,9 @@ const ExchangesList = ({
 				{(exchange: any) => {
 					if (exchange.isNew) {
 						return <AddExchangeCard onAddExchange={onAddExchange} />;
-					} else if (exchange.isBlank) {
+					}
+
+					if (exchange.isBlank) {
 						return <BlankCard />;
 					}
 
@@ -90,52 +92,39 @@ const ExchangesList = ({
 	);
 };
 
-export const Exchange = (props: ExchangeProps) => {
+export const Exchange = ({ exchanges }: ExchangeProps) => {
 	const { t } = useTranslation();
-	const [modalIsOpen, setModalIsOpen] = React.useState(false);
-	const [selectedExchange, setSelectedExchange] = React.useState(null);
+
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const [selectedExchange, setSelectedExchange] = useState(null);
 
 	return (
 		<div data-testid="Exchange">
-			<div>
-				<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-				<div className="pt-16 border-t-20 border-theme-neutral-100">
-					<div className="container mx-auto">
-						<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
+			<div className="pt-16 border-t-20 border-theme-neutral-100">
+				<div className="container mx-auto">
+					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
-						{props.exchanges.length ? (
-							<ExchangesList
-								exchanges={props.exchanges}
-								selectedExchange={selectedExchange}
-								onAddExchange={() => setModalIsOpen(true)}
-								onSelect={(exchange: any) => setSelectedExchange(exchange)}
-							/>
-						) : (
-							<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
-						)}
-					</div>
-				</div>
-
-				<div className="border-t-20 border-theme-neutral-100">
-					{props.exchanges.length ? (
-						<div className="text-center">
-							<ExchangeCardsBanner className="mx-auto mt-20" />
-
-							<div className="mt-6 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
-						</div>
+					{exchanges.length ? (
+						<ExchangesList
+							exchanges={exchanges}
+							selectedExchange={selectedExchange}
+							onAddExchange={() => setModalIsOpen(true)}
+							onSelect={(exchange: any) => setSelectedExchange(exchange)}
+						/>
 					) : (
-						<NoExchangesBanner className="mx-auto mt-16" />
+						<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
 					)}
 				</div>
 			</div>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				{props.exchanges.length ? (
+				{exchanges.length ? (
 					<div className="text-center">
 						<ExchangeCardsBanner className="mx-auto mt-16" />
 
-						<div className="mt-8 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+						<div className="mt-6 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
 					</div>
 				) : (
 					<NoExchangesBanner className="mx-auto mt-16" />
