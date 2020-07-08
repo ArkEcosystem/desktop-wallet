@@ -31,7 +31,7 @@
 		"test": "react-app-rewired test",
 		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
 		"test:e2e": "cypress run --headless",
-		"test:e2e:ci": "REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn test:e2e\"",
+		"test:e2e:ci": "REACT_APP_BUILD_MODE=demo concurrently -k -s first \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn test:e2e\"",
 		"cy:run": "cypress run",
 		"cy:open": "cypress open",
 		"cy:install": "cypress install --force",
