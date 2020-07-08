@@ -46,7 +46,7 @@ export const Default = () => {
 
 export const Colored = () => {
 	return (
-		<div className="mt-3 mb-10 space-x-5 text-base">
+		<div className="mt-3 mb-10 text-base space-x-5">
 			<Circle className="relative text-white border-theme-success-500">
 				<Badge className="bg-theme-success-500" position="top" />
 			</Circle>
