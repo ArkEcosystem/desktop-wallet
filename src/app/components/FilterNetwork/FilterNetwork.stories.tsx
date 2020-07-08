@@ -21,9 +21,6 @@ export const Default = () => {
 			isSelected: false,
 		},
 	];
-	return (
-		<div>
-			<FilterNetwork networks={networks} onViewAll={() => alert("View all networks")} />
-		</div>
-	);
+
+	return <FilterNetwork networks={networks} onViewAll={() => alert("View all networks")} />;
 };

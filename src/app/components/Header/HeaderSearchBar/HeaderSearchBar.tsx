@@ -59,12 +59,12 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 				<SearchBarInputWrapper
 					data-testid="header-search-bar__input"
 					ref={ref}
-					className="absolute flex items-center px-6 py-4 bg-white shadow-xl rounded-md -bottom-4 -right-6"
+					className="absolute flex items-center px-6 py-4 bg-white rounded-md shadow-xl -bottom-4 -right-6"
 				>
 					{extra && (
 						<div className="flex items-center">
 							<div className="ml-2">{extra}</div>
-							<div className="h-10 mx-8 border-l  border-theme-neutral-200" />
+							<div className="h-10 mx-8 border-l border-theme-neutral-200" />
 						</div>
 					)}
 
