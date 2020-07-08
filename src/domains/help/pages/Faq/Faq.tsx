@@ -36,6 +36,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 
 export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
+
 	return (
 		<div>
 			<div className="bg-theme-neutral-100">

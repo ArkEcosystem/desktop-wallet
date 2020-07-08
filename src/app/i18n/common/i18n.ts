@@ -77,6 +77,7 @@ export const translations: { [key: string]: any } = {
 	RATING: "Rating",
 	REMOVE: "Remove",
 	SAVE: "Save",
+	SECURITY: "Security",
 	SELECT: "Select",
 	SEND: "Send",
 	SHOW: "Show",
@@ -88,6 +89,7 @@ export const translations: { [key: string]: any } = {
 	THEME: "Theme",
 	TITLE: "Title",
 	TIME_FORMAT: "Time format",
+	TRANSACTION: "Transaction",
 	TYPE: "Type",
 	UNSELECT: "Unselect",
 	UPDATE_LATER: "Update Later",
@@ -121,6 +123,7 @@ export const translations: { [key: string]: any } = {
 
 	VALIDATION: {
 		REQUIRED: "Field required",
+		FIELD_REQUIRED: "{{field}} is required",
 	},
 
 	DATETIME: {

@@ -65,6 +65,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 
 export const Main = ({ categories, helpfulArticles, popularArticles, newestArticles }: SupportProps) => {
 	const { t } = useTranslation();
+
 	return (
 		<div>
 			<div className="bg-theme-neutral-100">

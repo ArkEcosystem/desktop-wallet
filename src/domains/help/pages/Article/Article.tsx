@@ -66,6 +66,7 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 
 export const Article = ({ title, category, categoryIcon, views, sections, image }: ArticleProps) => {
 	const { t } = useTranslation();
+
 	return (
 		<div>
 			<div className="-m-5">
