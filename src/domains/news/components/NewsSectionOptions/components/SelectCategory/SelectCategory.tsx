@@ -16,9 +16,9 @@ const Input = styled.input`
 `;
 
 const CustomButton = styled.div`
-	${tw`p-6 transition-colors duration-200 border-2 rounded-lg border-theme-primary-contrast`}
+	${tw`p-2 px-4 font-semibold text-center transition-colors duration-200 border-2 rounded-md border-theme-primary-contrast text-theme-primary-light`}
 	${Input}:checked + & {
-		${tw`bg-theme-success-contrast border-theme-success text-theme-success-contrast`}
+		${tw`bg-theme-success-contrast border-theme-success text-theme-success`}
 	}
 `;
 
