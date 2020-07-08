@@ -266,15 +266,17 @@ export default {
     }
   },
 
+  watch: {
+    transactionType () {
+      this.triggerTypeUpdate()
+    }
+  },
+
   created () {
     // Fees should be synchronized only when this component is active
     this.$synchronizer.appendFocus('fees')
 
-    if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
-      this.onChoice(this.session_profile.defaultChosenFee)
-    } else {
-      this.emitFee(this.feeChoices.AVERAGE)
-    }
+    this.triggerTypeUpdate()
   },
 
   beforeDestroy () {
@@ -282,6 +284,13 @@ export default {
   },
 
   methods: {
+    triggerTypeUpdate () {
+      if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
+        this.onChoice(this.session_profile.defaultChosenFee)
+      } else {
+        this.emitFee(this.feeChoices.AVERAGE)
+      }
+    },
     focusInput () {
       this.$refs.input.focus()
     },
