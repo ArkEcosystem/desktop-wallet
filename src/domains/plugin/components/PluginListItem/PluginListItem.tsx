@@ -28,7 +28,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 			<td>
 				<div className="flex items-center space-x-2">
-					<a href="#" className="font-semibold link">
+					<a href="/" className="font-semibold link">
 						{plugin.name}
 					</a>
 

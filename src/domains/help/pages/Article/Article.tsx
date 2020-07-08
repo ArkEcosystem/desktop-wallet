@@ -90,7 +90,7 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 							)}
 						</div>
 						<h1 className="leading-tight">{title}</h1>
-						{image && <img src={image} />}
+						{image && <img alt={title} src={image} />}
 						<div>
 							{sections &&
 								sections.map((section: SectionItem, index) => {
