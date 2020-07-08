@@ -22,11 +22,11 @@ const CustomButton = styled.div`
 	}
 `;
 
-export const CategoryControl = React.forwardRef<HTMLInputElement, Props>(
+export const SelectCategory = React.forwardRef<HTMLInputElement, Props>(
 	({ children, type, checked, defaultChecked, onChange, readonly, value, name, ...props }: Props, ref) => (
-		<label htmlFor={name}>
+		<label htmlFor={name} className="cursor-pointer" {...props}>
 			<Input
-				data-testid={`CategoryControl__${name}`}
+				data-testid={`SelectCategory__${name}`}
 				ref={ref}
 				type={type}
 				checked={checked}
@@ -41,7 +41,7 @@ export const CategoryControl = React.forwardRef<HTMLInputElement, Props>(
 	),
 );
 
-CategoryControl.displayName = "CategoryControl";
-CategoryControl.defaultProps = {
+SelectCategory.displayName = "SelectCategory";
+SelectCategory.defaultProps = {
 	type: "checkbox",
 };
