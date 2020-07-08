@@ -2,6 +2,7 @@
 import { translations as CONTACTS } from "../../../domains/contact/i18n";
 import { translations as EXCHANGE } from "../../../domains/exchange/i18n";
 import { translations as HELP } from "../../../domains/help/i18n";
+import { translations as NEWS } from "../../../domains/news/i18n";
 import { translations as OFFLINE } from "../../../domains/offline/i18n";
 import { translations as PLUGINS } from "../../../domains/plugin/i18n";
 import { translations as PROFILE } from "../../../domains/profile/i18n";
@@ -16,6 +17,7 @@ export const buildTranslations = (): any => ({
 	CONTACTS,
 	EXCHANGE,
 	HELP,
+	NEWS,
 	OFFLINE,
 	PLUGINS,
 	PROFILE,
