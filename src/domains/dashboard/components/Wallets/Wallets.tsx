@@ -4,9 +4,9 @@ import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
+import i18n from "i18next";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from 'i18next'
 
 type WalletsProps = {
 	wallets?: any;

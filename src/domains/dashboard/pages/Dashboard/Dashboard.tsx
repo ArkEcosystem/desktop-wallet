@@ -3,8 +3,8 @@ import { PercentageBar } from "app/components/PercentageBar";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
-import tw, { styled } from "twin.macro";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
 type DashboardProps = {
 	balances?: any;
@@ -57,7 +57,10 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
 					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-					<PercentageBar title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")} data={portfolioPercentages} />
+					<PercentageBar
+						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+						data={portfolioPercentages}
+					/>
 				</Section>
 			)}
 
