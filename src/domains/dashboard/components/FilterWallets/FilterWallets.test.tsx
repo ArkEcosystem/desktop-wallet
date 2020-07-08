@@ -77,22 +77,29 @@ describe("FilterWallets", () => {
 	it("should emit event for wallets display", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} onWalletsDisplay={fn} />);
-		const toggle = getByTestId("filter-wallets__wallets");
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("filter-wallets__wallets"));
 		});
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--0"));
+		});
+
 		expect(fn).toBeCalled();
 	});
 
 	it("should ignore emit event for wallet display if callback not provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<FilterWallets networks={networks} />);
-		const toggle = getByTestId("filter-wallets__wallets");
+		act(() => {
+			fireEvent.click(getByTestId("filter-wallets__wallets"));
+		});
 
 		act(() => {
-			fireEvent.click(toggle);
+			fireEvent.click(getByTestId("dropdown__option--0"));
 		});
+
 		expect(fn).not.toBeCalled();
 	});
 });

@@ -29,7 +29,7 @@ type ToggleProps = React.InputHTMLAttributes<any>;
 
 export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => {
 	return (
-		<label>
+		<label className="flex">
 			<Input type="checkbox" ref={ref} {...props} />
 			<Handle>
 				<HandleInner />
