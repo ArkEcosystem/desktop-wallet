@@ -2,7 +2,7 @@ import React from "react";
 
 type TransactionDetailProps = {
 	children: React.ReactNode;
-	label?: string;
+	label?: any;
 	extra?: React.ReactNode;
 	border?: boolean;
 	padding?: boolean;

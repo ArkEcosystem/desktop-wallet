@@ -65,13 +65,17 @@ export const FirstStep = () => {
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
-				<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 font-semibold text-theme-neutral-500">
-						<span className="mr-1 text-sm">Sender</span>
-						<Label color="warning">
-							<span className="text-sm">Your address</span>
-						</Label>
-					</div>
+				<TransactionDetail
+					label={
+						<div className="mb-2 font-semibold text-theme-neutral-500">
+							<span className="mr-1 text-sm">Sender</span>
+							<Label color="warning">
+								<span className="text-sm">Your address</span>
+							</Label>
+						</div>
+					}
+					extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
@@ -124,18 +128,27 @@ export const SecondStep = () => (
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 font-semibold text-theme-neutral-500">
-					<span className="mr-1 text-sm">Sender</span>
-					<Label color="warning">
-						<span className="text-sm">Your address</span>
-					</Label>
-				</div>
+			<TransactionDetail
+				label={
+					<div className="mb-2 font-semibold text-theme-neutral-500">
+						<span className="mr-1 text-sm">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
+					</div>
+				}
+				extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail label="Votes">
-				<VoteList votes={votes} />
-			</TransactionDetail>
+			{votes &&
+				votes.map((vote: any, index: number) => {
+					return (
+						<TransactionDetail label="Vote" extra={<Avatar address={vote.delegateName} />} key={index}>
+							<Address address={vote.address} walletName={vote.delegateName} />
+						</TransactionDetail>
+					);
+				})}
 			<div className="mt-2 mb-6">
 				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
 			</div>
@@ -228,13 +241,17 @@ export const FourthStep = () => (
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
-				<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 font-semibold text-theme-neutral-500">
-						<span className="mr-1 text-sm">Account</span>
-						<Label color="warning">
-							<span className="text-sm">Your address</span>
-						</Label>
-					</div>
+				<TransactionDetail
+					label={
+						<div className="mb-2 font-semibold text-theme-neutral-500">
+							<span className="mr-1 text-sm">Account</span>
+							<Label color="warning">
+								<span className="text-sm">Your address</span>
+							</Label>
+						</div>
+					}
+					extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
