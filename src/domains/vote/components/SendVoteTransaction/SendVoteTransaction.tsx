@@ -1,9 +1,10 @@
+import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
-import { Form } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
 import { Label } from "app/components/Label";
@@ -16,6 +17,8 @@ import React, { useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
 import { VoteList } from "../VoteList";
+
+const { TransactionSuccessfulBanner } = images.transaction.common;
 
 const votes = [
 	{
@@ -41,7 +44,7 @@ export const FirstStep = () => {
 	}, [register]);
 
 	return (
-		<section className="space-y-8" data-testid="SendVoteTransaction__step--first">
+		<section className="space-y-2" data-testid="SendVoteTransaction__step--first">
 			<div>
 				<h1 className="mb-0">Vote Transaction</h1>
 				<p className="text-theme-neutral-dark">Select a fee to continue</p>
@@ -51,23 +54,25 @@ export const FirstStep = () => {
 					border={false}
 					label="Cryptoasset"
 					extra={
-						<div className="ml-1">
+						<div className="ml-1 text-theme-danger-500">
 							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-								<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
+								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
-				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
+				<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 font-semibold text-theme-neutral-500">
+						<span className="mr-1 text-sm">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
 					<VoteList votes={votes} />
@@ -98,7 +103,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => (
-	<section className="space-y-8" data-testid="SendVoteTransaction__step--second">
+	<section className="space-y-2" data-testid="SendVoteTransaction__step--second">
 		<div>
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Review the transaction details</p>
@@ -108,28 +113,30 @@ export const SecondStep = () => (
 				border={false}
 				label="Cryptoasset"
 				extra={
-					<div className="ml-1">
+					<div className="ml-1 text-theme-danger-500">
 						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-							<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
+							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
 				}
 			>
-				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+				<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-					<span className="mr-1">Sender</span>
-					<Label color="warning">Your address</Label>
+			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 font-semibold text-theme-neutral-500">
+					<span className="mr-1 text-sm">Sender</span>
+					<Label color="warning">
+						<span className="text-sm">Your address</span>
+					</Label>
 				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail label="Votes">
 				<VoteList votes={votes} />
 			</TransactionDetail>
-			<div className="my-4">
+			<div className="mt-2 mb-6">
 				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
 			</div>
 		</div>
@@ -145,15 +152,22 @@ export const ThirdStep = () => {
 
 	return (
 		<section data-testid="SendVoteTransaction__step--third" className="space-y-8">
-			<div>
+			<div className="mb-8">
 				<h1 className="mb-0">Authenticate</h1>
-				<p className="text-theme-neutral-dark">
-					Enter your twelve word mnemonic to authenticate the transaction
-				</p>
-				<div className="grid grid-flow-row gap-2">
-					<TransactionDetail border={false} label="Mnemonic">
-						<InputPassword name="passphrase" ref={register({ required: true })} />
-					</TransactionDetail>
+				<div className="text-theme-neutral-700">
+					Enter your twelve word mnemonic to authenticate the transaction.
+				</div>
+
+				<div className="mt-8">
+					<FormField name="name">
+						<FormLabel>Mnemonic</FormLabel>
+						<InputPassword name="mnemonic" ref={register} />
+					</FormField>
+
+					<FormField name="name" className="mt-8">
+						<FormLabel>2nd Mnemonic</FormLabel>
+						<InputPassword name="secondMnemonic" ref={register} />
+					</FormField>
 				</div>
 			</div>
 		</section>
@@ -165,10 +179,10 @@ export const FourthStep = () => (
 		<div>
 			<h1 className="mb-0">Transaction Successful</h1>
 			<div className="grid grid-flow-row gap-2">
-				<div className="w-full mt-10">
-					<Icon name="TransactionSuccessful" width="100%" height={200} />
+				<div className="w-full my-10">
+					<TransactionSuccessfulBanner className="w-full" />
 				</div>
-				<p className="text-theme-neutral-dark">
+				<p className="mb-4 text-theme-neutral-dark">
 					Your transaction was successfully sent. Please monitor the blockchain to ensure your transactions is
 					confirmed and processed, The following is relevant information for your transaction.
 				</p>
@@ -203,23 +217,25 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Cryptoasset"
 					extra={
-						<div className="ml-1">
+						<div className="ml-1 text-theme-danger-500">
 							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-								<Icon name="Ark" width={20} height={20} className="text-theme-danger-500" />
+								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
-				<TransactionDetail label=" " extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-						<span className="mr-1">Account</span>
-						<Label color="warning">Your address</Label>
+				<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 font-semibold text-theme-neutral-500">
+						<span className="mr-1 text-sm">Account</span>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="lg" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail label="Votes">
 					<VoteList votes={votes} />
@@ -275,7 +291,7 @@ export const SendVoteTransaction = ({ onSubmit }: SendVoteTransactionProps) => {
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-10">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep />
 						</TabPanel>
@@ -289,7 +305,7 @@ export const SendVoteTransaction = ({ onSubmit }: SendVoteTransactionProps) => {
 							<FourthStep />
 						</TabPanel>
 
-						<div className="flex justify-end mt-6 space-x-3">
+						<div className="flex justify-end mt-2 space-x-3">
 							{activeTab >= 1 && activeTab < 4 && (
 								<>
 									<Button
