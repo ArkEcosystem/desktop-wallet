@@ -82,6 +82,7 @@
   --theme-option-heading-button-disabled-hover: #555869;
   --theme-option-heading-button-text-disabled-hover: #828d9e;
   --theme-input-toggle-choice: #f1f5f8;
+  --theme-input-toggle-choice-hover: #e0f0fd;
   --theme-input-toggle-choice-text: #606f7b;
   --theme-input-field-border: #b9c2d7;
   --theme-modal-footer-button: #e7d28e;
@@ -115,6 +116,11 @@
   --theme-fee-range-track: var(--theme-page-text-light);
   --theme-fee-range-track-active: var(--theme-button-text);
 	--theme-fee-range-shadow: rgba(9, 100, 228, 0.34);
+
+  --theme-tooltip-icon: #f1f5f8;
+  --theme-tooltip-icon-hover: #212225;
+  --theme-tooltip-icon-text: #606f7b;
+  --theme-tooltip-icon-hover-text: #fff;
 }
 
 .theme-dark {
@@ -196,7 +202,8 @@
   --theme-option-heading-button-disabled-hover: #555869;
   --theme-option-heading-button-text-disabled-hover: #828d9e;
   --theme-input-toggle-choice: #333644;
-  --theme-input-toggle-choice-text: #4c5166;
+  --theme-input-toggle-choice-hover: #383c4d;
+  --theme-input-toggle-choice-text: #787fa3;
   --theme-input-field-border: #585c6f;
   --theme-modal-footer-button: #e7d28e;
   --theme-modal-footer-button-text: #b3a36f;
@@ -228,6 +235,11 @@
   --theme-fee-handler-inside: var(--theme-modal);
   --theme-fee-range-track: var(--theme-page-text-light);
   --theme-fee-range-track-active: var(--theme-button-text);
+
+  --theme-tooltip-icon: #333644;
+  --theme-tooltip-icon-hover: #919eca;
+  --theme-tooltip-icon-text: #4c5166;
+  --theme-tooltip-icon-hover-text: #383c4d;
 }
 
 #app {
