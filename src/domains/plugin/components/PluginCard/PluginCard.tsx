@@ -3,7 +3,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 type PluginCardProps = {
@@ -20,7 +19,6 @@ const PluginCardStyled = styled.div`
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardProps) => {
-	const { t } = useTranslation();
 	const options = [
 		{ label: "View", value: "view" },
 		{ label: "Delete", value: "delete" },
