@@ -85,12 +85,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
-	const { name, network, address } = form.watch();
+	const { watch, register } = form;
+	const { name, network, address } = watch();
 
 	useEffect(() => {
-		form.setValue("name", contact ? contact.name() : "", !!contact);
-		form.register({ name: "network" });
-	}, [form, contact]);
+		register({ name: "network" });
+	}, [register]);
 
 	const handleAddAddress = (network: any, address: string) => {
 		setContactAddresses(
@@ -130,6 +130,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<Input
 					data-testid="contact-form__name-input"
 					ref={form.register({ required: t("COMMON.VALIDATION.REQUIRED").toString() })}
+					defaultValue={contact?.name?.()}
 				/>
 				<FormHelperText />
 			</FormField>
