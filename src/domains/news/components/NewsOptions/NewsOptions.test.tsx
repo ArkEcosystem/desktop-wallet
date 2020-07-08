@@ -2,13 +2,11 @@ import React from "react";
 import { render } from "testing-library";
 
 import { assets, categories } from "../../data";
-import { NewsSectionOptions } from "./NewsSectionOptions";
+import { NewsOptions } from "./NewsOptions";
 
-describe("NewsSectionOptions", () => {
+describe("NewsOptions", () => {
 	it("should render", () => {
-		const { container, asFragment } = render(
-			<NewsSectionOptions categories={categories} selectedAssets={assets} />,
-		);
+		const { container, asFragment } = render(<NewsOptions categories={categories} selectedAssets={assets} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

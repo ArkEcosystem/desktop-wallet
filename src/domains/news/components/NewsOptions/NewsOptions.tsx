@@ -10,8 +10,8 @@ type Props = {
 	selectedAssets?: any[];
 };
 
-export const NewsSectionOptions = ({ categories, selectedAssets }: Props) => (
-	<div className="p-8 border-2 rounded-lg border-theme-primary-contrast">
+export const NewsOptions = ({ categories, selectedAssets }: Props) => (
+	<div className="p-8 border-2 rounded-lg border-theme-primary-contrast" data-testid="NewsOptions">
 		<div className="flex flex-col space-y-10">
 			<div className="flex justify-end">
 				<HeaderSearchBar />
@@ -52,7 +52,7 @@ export const NewsSectionOptions = ({ categories, selectedAssets }: Props) => (
 	</div>
 );
 
-NewsSectionOptions.defaultProps = {
+NewsOptions.defaultProps = {
 	categories: [],
 	selectedAssets: [],
 };
