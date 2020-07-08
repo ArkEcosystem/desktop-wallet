@@ -56,20 +56,20 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const listColumns = [
 		{
-			Header: "Nickname",
+			Header: t("COMMON.NAME"),
 			accessor: "name",
 			className: "pl-13",
 		},
 		{
-			Header: "Network",
+			Header: t("COMMON.NETWORK"),
 			className: "justify-center",
 		},
 		{
-			Header: "Address",
+			Header: t("COMMON.ADDRESS"),
 			className: "pl-13",
 		},
 		{
-			Header: "Account Type",
+			Header: t("COMMON.ACCOUNT_TYPE"),
 			className: "justify-center",
 		},
 	];
