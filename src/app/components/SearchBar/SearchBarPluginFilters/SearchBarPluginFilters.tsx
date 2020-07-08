@@ -18,7 +18,7 @@ type FilterProps = {
 const Stars = ({ length = 5, value }: any) => {
 	const stars = Array.from({ length });
 	return (
-		<span className="text-theme-neutral-200 flex space-x-1">
+		<span className="flex text-theme-neutral-200 space-x-1">
 			{stars.map((_, index: number) => {
 				return (
 					<span key={index} className={`${index < value ? "text-theme-warning-300" : ""}`}>
@@ -37,7 +37,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
 				ratings.map((rating: number) => {
 					return (
 						<label
-							className="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+							className="flex items-center block mt-2 cursor-pointer space-x-3 text-theme-neutral-700"
 							key={rating}
 						>
 							<span>
@@ -47,7 +47,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
 									data-testid={`SearchBarPluginFilters-rating-${rating}`}
 								/>
 							</span>
-							<span className="mt-1 flex space-x-2 items-center">
+							<span className="flex items-center mt-1 space-x-2">
 								<Stars value={rating} />
 								{rating > 1 && <span>{suffixLabel}</span>}
 							</span>
@@ -65,7 +65,7 @@ const CategoryCheckboxes = ({ categories }: any) => {
 				categories.map((category: Category, index: number) => {
 					return (
 						<label
-							className="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+							className="flex items-center block mt-2 cursor-pointer space-x-3 text-theme-neutral-700"
 							key={index}
 						>
 							<span>
@@ -92,11 +92,11 @@ export const SearchBarPluginFilters = ({
 	return (
 		<div data-testid="SearchBarPluginFilters" className="relative flex items-center pr-8 text-theme-primary-400">
 			<Dropdown position="left" toggleIcon="Filters">
-				<div className="py-6 px-8 w-64">
+				<div className="w-64 px-8 py-6">
 					<div className="mb-2 font-semibold text-theme-neutral-700">{categoriesLabel}</div>
 					<CategoryCheckboxes categories={categories} />
 
-					<div className="border-b border-theme-neutral-200 my-8" />
+					<div className="my-8 border-b border-theme-neutral-200" />
 
 					<div className="mb-2 font-semibold text-theme-neutral-700">{ratingsLabel}</div>
 					<RatingsCheckboxes ratings={ratings} suffixLabel={ratingsSuffix} />
