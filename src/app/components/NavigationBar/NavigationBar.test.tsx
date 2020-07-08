@@ -40,6 +40,25 @@ describe("NavigationBar", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without profile", () => {
+		const dashboardURL = `/profiles/nonexistent-id/dashboard`;
+		history.push(dashboardURL);
+
+		const { container } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container).toBeInTheDocument();
+	});
+
 	it("should handle default menu", () => {
 		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
