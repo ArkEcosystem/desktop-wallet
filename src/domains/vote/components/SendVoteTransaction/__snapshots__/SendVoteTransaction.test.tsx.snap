@@ -99,11 +99,6 @@ exports[`SendVoteTransaction should render 1`] = `
                     <div
                       class="text-sm font-semibold text-theme-neutral-500"
                     >
-                       
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
                       <div
                         class="mb-2 font-semibold text-theme-neutral-500"
                       >
@@ -123,6 +118,10 @@ exports[`SendVoteTransaction should render 1`] = `
                           </span>
                         </div>
                       </div>
+                    </div>
+                    <div
+                      class="mt-2 font-semibold"
+                    >
                       <div
                         class="inline-block truncate align-middle"
                       >
@@ -518,11 +517,6 @@ exports[`SendVoteTransaction should render 1st step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-             
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
             <div
               class="mb-2 font-semibold text-theme-neutral-500"
             >
@@ -542,6 +536,10 @@ exports[`SendVoteTransaction should render 1st step 1`] = `
                 </span>
               </div>
             </div>
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
             <div
               class="inline-block truncate align-middle"
             >
@@ -911,11 +909,6 @@ exports[`SendVoteTransaction should render 2st step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-             
-          </div>
-          <div
-            class="mt-2 font-semibold"
-          >
             <div
               class="mb-2 font-semibold text-theme-neutral-500"
             >
@@ -935,6 +928,10 @@ exports[`SendVoteTransaction should render 2st step 1`] = `
                 </span>
               </div>
             </div>
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
             <div
               class="inline-block truncate align-middle"
             >
@@ -977,156 +974,135 @@ exports[`SendVoteTransaction should render 2st step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral-500"
           >
-            Votes
+            Vote
           </div>
           <div
             class="mt-2 font-semibold"
           >
             <div
-              class="-my-5"
+              class="inline-block truncate align-middle"
             >
-              <div
-                class="flex items-center py-6 true "
+              <span
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
               >
-                <div
-                  class="flex-1"
-                >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral-500"
-                  >
-                     
-                  </div>
-                  <div
-                    class="mt-2 font-semibold"
-                  >
-                    <div
-                      class="inline-block truncate align-middle"
-                    >
-                      <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        Delegate 1
-                      </span>
-                      <span
-                        class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        FJKDSA…SJKDFJ
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full overflow-hidden rounded-full"
-                  >
-                    <img
-                      alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                      title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                Delegate 1
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                data-testid="address__wallet-address"
               >
-                <div
-                  class="flex-1"
-                >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral-500"
-                  >
-                     
-                  </div>
-                  <div
-                    class="mt-2 font-semibold"
-                  >
-                    <div
-                      class="inline-block truncate align-middle"
-                    >
-                      <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        Delegate 2
-                      </span>
-                      <span
-                        class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        AhFJKD…SJKDFJ
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full overflow-hidden rounded-full"
-                  >
-                    <img
-                      alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                      title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-              >
-                <div
-                  class="flex-1"
-                >
-                  <div
-                    class="text-sm font-semibold text-theme-neutral-500"
-                  >
-                     
-                  </div>
-                  <div
-                    class="mt-2 font-semibold"
-                  >
-                    <div
-                      class="inline-block truncate align-middle"
-                    >
-                      <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                        data-testid="address__wallet-name"
-                      >
-                        Delegate 3
-                      </span>
-                      <span
-                        class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                        data-testid="address__wallet-address"
-                      >
-                        FAhFJK…SJKDFJ
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full overflow-hidden rounded-full"
-                  >
-                    <img
-                      alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                      title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                    />
-                  </div>
-                </div>
-              </div>
+                FJKDSA…SJKDFJ
+              </span>
             </div>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full overflow-hidden rounded-full"
+          >
+            <img
+              alt="Delegate 1"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+              title="Delegate 1"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Vote
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                Delegate 2
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                AhFJKD…SJKDFJ
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full overflow-hidden rounded-full"
+          >
+            <img
+              alt="Delegate 2"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+              title="Delegate 2"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1"
+        >
+          <div
+            class="text-sm font-semibold text-theme-neutral-500"
+          >
+            Vote
+          </div>
+          <div
+            class="mt-2 font-semibold"
+          >
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                Delegate 3
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                FAhFJK…SJKDFJ
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full overflow-hidden rounded-full"
+          >
+            <img
+              alt="Delegate 3"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+              title="Delegate 3"
+            />
           </div>
         </div>
       </div>
@@ -1496,11 +1472,6 @@ exports[`SendVoteTransaction should render 4st step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral-500"
             >
-               
-            </div>
-            <div
-              class="mt-2 font-semibold"
-            >
               <div
                 class="mb-2 font-semibold text-theme-neutral-500"
               >
@@ -1520,6 +1491,10 @@ exports[`SendVoteTransaction should render 4st step 1`] = `
                   </span>
                 </div>
               </div>
+            </div>
+            <div
+              class="mt-2 font-semibold"
+            >
               <div
                 class="inline-block truncate align-middle"
               >
