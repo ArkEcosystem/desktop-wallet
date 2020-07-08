@@ -4,9 +4,9 @@ exports[`Application root should render without crashing 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      <HashRouter>
-        <withRouter() />
-      </HashRouter>,
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
       <div
         id="root"
       />,

@@ -16,7 +16,8 @@ export const Default = () => {
 
 	return (
 		<div className="w-full h-full">
-			<EnvironmentContext.Provider value={{ env }}>
+			{/* @ts-ignore */}
+			<EnvironmentContext.Provider value={env}>
 				<Welcome />
 			</EnvironmentContext.Provider>
 		</div>
@@ -47,7 +48,8 @@ export const WithProfiles = () => {
 
 	return (
 		<div className="w-full h-full">
-			<EnvironmentContext.Provider value={{ env }}>
+			{/* @ts-ignore */}
+			<EnvironmentContext.Provider value={env}>
 				<Welcome />
 			</EnvironmentContext.Provider>
 		</div>
