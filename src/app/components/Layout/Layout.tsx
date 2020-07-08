@@ -10,11 +10,13 @@ type Props = {
 const hideNavBarFrom = ["/", "/profiles/create"];
 
 export const Layout = ({ children }: Props) => {
+	// TODO: Move this logic to NavigationBar
 	const { pathname } = useLocation();
+	const hideNavigationBar = hideNavBarFrom.includes(pathname);
 
 	return (
 		<React.Fragment>
-			{!hideNavBarFrom.includes(pathname) && <NavigationBar />}
+			{!hideNavigationBar && <NavigationBar />}
 			{children}
 		</React.Fragment>
 	);
