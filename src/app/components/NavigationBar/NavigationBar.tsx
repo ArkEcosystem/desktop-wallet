@@ -214,7 +214,7 @@ NavigationBar.defaultProps = {
 		{
 			label: "Exit",
 			value: "exit",
-			mountPath: (profileId: string) => `/profiles/${profileId}/exit`,
+			mountPath: () => `/`,
 		},
 	],
 };

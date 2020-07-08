@@ -212,7 +212,7 @@ describe("NavigationBar", () => {
 
 		expect(await findByText("Exit")).toBeTruthy();
 		fireEvent.click(await findByText("Exit"));
-		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/exit`);
+		expect(history.location.pathname).toMatch(`/`);
 	});
 
 	it("should not render if no active profile", () => {
