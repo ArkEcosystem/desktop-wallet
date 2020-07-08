@@ -18,7 +18,7 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 
 	return (
 		<div className="mt-8 mb-16 grid grid-cols-8 gap-4">
-			<div className="flex flex-col h-32 border-2 rounded-lg col-span-6 border-theme-primary-100">
+			<div className="flex flex-col h-32 border-2 rounded-lg border-theme-primary-100 col-span-6">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 
@@ -97,21 +97,35 @@ export const Exchange = (props: ExchangeProps) => {
 
 	return (
 		<div data-testid="Exchange">
-			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+			<div>
+				<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-			<div className="pt-16 border-t-20 border-theme-neutral-100">
-				<div className="container mx-auto">
-					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
+				<div className="pt-16 border-t-20 border-theme-neutral-100">
+					<div className="container mx-auto">
+						<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
+						{props.exchanges.length ? (
+							<ExchangesList
+								exchanges={props.exchanges}
+								selectedExchange={selectedExchange}
+								onAddExchange={() => setModalIsOpen(true)}
+								onSelect={(exchange: any) => setSelectedExchange(exchange)}
+							/>
+						) : (
+							<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
+						)}
+					</div>
+				</div>
+
+				<div className="border-t-20 border-theme-neutral-100">
 					{props.exchanges.length ? (
-						<ExchangesList
-							exchanges={props.exchanges}
-							selectedExchange={selectedExchange}
-							onAddExchange={() => setModalIsOpen(true)}
-							onSelect={(exchange: any) => setSelectedExchange(exchange)}
-						/>
+						<div className="text-center">
+							<ExchangeCardsBanner className="mx-auto mt-20" />
+
+							<div className="mt-6 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+						</div>
 					) : (
-						<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
+						<NoExchangesBanner className="mx-auto mt-16" />
 					)}
 				</div>
 			</div>
