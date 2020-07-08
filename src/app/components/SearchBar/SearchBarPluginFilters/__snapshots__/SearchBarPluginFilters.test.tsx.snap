@@ -1,0 +1,1129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBarPluginFilters should render 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex items-center pr-8 text-theme-primary-400"
+    data-testid="SearchBarPluginFilters"
+  >
+    <div
+      class="relative"
+      data-testid="dropdown__toggle"
+    >
+      <div
+        class="float-right outline-none cursor-pointer focus:outline-none"
+      >
+        <div
+          class="sc-AxirZ eEbZjj"
+          height="20"
+          width="20"
+        >
+          <svg>
+            filters.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBarPluginFilters should render categories 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex items-center pr-8 text-theme-primary-400"
+    data-testid="SearchBarPluginFilters"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="float-right outline-none cursor-pointer focus:outline-none"
+        >
+          <div
+            class="sc-AxirZ eEbZjj"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw bvzlGg left-0 undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <ul
+            data-testid="dropdown__options"
+          />
+        </div>
+        <div>
+          <div
+            class="py-6 px-8 w-64"
+          >
+            <div
+              class="mb-2 font-semibold text-theme-neutral-700"
+            >
+              Category
+            </div>
+            <fieldset>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-category-game"
+                    name="category"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1"
+                >
+                  Game
+                </span>
+              </label>
+            </fieldset>
+            <div
+              class="border-b border-theme-neutral-200 my-8"
+            />
+            <div
+              class="mb-2 font-semibold text-theme-neutral-700"
+            >
+              Rating
+            </div>
+            <fieldset>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-5"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-4"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-3"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-2"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-1"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                </span>
+              </label>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SearchBarPluginFilters should render ratings 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex items-center pr-8 text-theme-primary-400"
+    data-testid="SearchBarPluginFilters"
+  >
+    <div
+      class="relative"
+    >
+      <span>
+        <div
+          class="float-right outline-none cursor-pointer focus:outline-none"
+        >
+          <div
+            class="sc-AxirZ eEbZjj"
+            height="20"
+            width="20"
+          >
+            <svg>
+              filters.svg
+            </svg>
+          </div>
+        </div>
+      </span>
+      <div
+        class="sc-AxiKw bvzlGg left-0 undefined"
+      >
+        <div
+          data-testid="dropdown__content"
+        >
+          <ul
+            data-testid="dropdown__options"
+          />
+        </div>
+        <div>
+          <div
+            class="py-6 px-8 w-64"
+          >
+            <div
+              class="mb-2 font-semibold text-theme-neutral-700"
+            >
+              Category
+            </div>
+            <fieldset>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-category-game"
+                    name="category"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1"
+                >
+                  Game
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-category-utility"
+                    name="category"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1"
+                >
+                  Utility
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-category-themes"
+                    name="category"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1"
+                >
+                  Themes
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-category-other"
+                    name="category"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1"
+                >
+                  Other
+                </span>
+              </label>
+            </fieldset>
+            <div
+              class="border-b border-theme-neutral-200 my-8"
+            />
+            <div
+              class="mb-2 font-semibold text-theme-neutral-700"
+            >
+              Rating
+            </div>
+            <fieldset>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-5"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-4"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-3"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-2"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                  <span>
+                    & up
+                  </span>
+                </span>
+              </label>
+              <label
+                class="block flex space-x-3 items-center mt-2 cursor-pointer text-theme-neutral-700"
+              >
+                <span>
+                  <input
+                    class="sc-AxjAm gykLhk w-2"
+                    color="success"
+                    data-testid="SearchBarPluginFilters-rating-1"
+                    name="rating"
+                    type="checkbox"
+                  />
+                </span>
+                <span
+                  class="mt-1 flex space-x-2 items-center"
+                >
+                  <span
+                    class="text-theme-neutral-200 flex space-x-1"
+                  >
+                    <span
+                      class="text-theme-warning-300"
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                    <span
+                      class=""
+                    >
+                      <div
+                        class="sc-AxirZ eEbZjj"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          star.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </span>
+                </span>
+              </label>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
