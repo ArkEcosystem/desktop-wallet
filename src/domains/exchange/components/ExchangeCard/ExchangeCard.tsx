@@ -50,7 +50,6 @@ export const BlankCard = () => {
 };
 
 export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProps) => {
-	const { t } = useTranslation();
 	const options = [{ label: "Option 1", value: "1" }];
 
 	return (

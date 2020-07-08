@@ -19,7 +19,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-6 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -37,35 +37,44 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
-		<div className="bg-theme-neutral-100">
-			<div className="py-16 mb-5 bg-white px-13">
-				<Header
-					title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
-					subtitle={t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}
-					extra={
-						<div className="flex items-center justify-end space-x-8">
-							<Icon
-								name="Search"
-								className="cursor-pointer text-theme-primary-100"
-								width={20}
-								height={20}
-							/>
-							<div className="h-10 my-auto border-l border-1 border-theme-primary-100" />
-							<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
-						</div>
-					}
-				/>
-			</div>
+		<div>
+			<div className="bg-theme-neutral-100">
+				<div className="py-16 mb-5 bg-white px-13">
+					<Header
+						title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
+						subtitle={t("HELP.PAGE_FAQ.PORTFOLIO.SUBTITLE")}
+						extra={
+							<div className="flex items-center justify-end space-x-8">
+								<Icon
+									name="Search"
+									className="cursor-pointer text-theme-primary-100"
+									width={20}
+									height={20}
+								/>
+								<div className="h-10 my-auto border-l border-1 border-theme-primary-100" />
+								<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
+							</div>
+						}
+					/>
+				</div>
 
-			<div className="px-12 py-10 mb-10 bg-white">
-				<div className="flex flex-row">
-					<div className="mr-10">
-						<ul>
-							{articles &&
-								articles.map(({ title, path, description }: ArticleListItemProps, index: number) => (
-									<ArticleListItem title={title} path={path} key={index} description={description} />
-								))}
-						</ul>
+				<div className="px-12 py-10 mb-10 bg-white">
+					<div className="flex flex-row">
+						<div className="mr-10">
+							<ul>
+								{articles &&
+									articles.map(
+										({ title, path, description }: ArticleListItemProps, index: number) => (
+											<ArticleListItem
+												title={title}
+												path={path}
+												key={index}
+												description={description}
+											/>
+										),
+									)}
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>

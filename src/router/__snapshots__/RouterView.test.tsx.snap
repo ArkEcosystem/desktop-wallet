@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RouterView should render 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxjAm StDqN"
+    data-testid="RouterView__wrapper"
+  >
+    <h1>
+      Test
+    </h1>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`RouterView should render with custom wrapper 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-AxjAm StDqN"
+    data-testid="RouterView__wrapper"
+  >
+    <h1>
+      Test
+    </h1>
+  </section>
+</DocumentFragment>
+`;

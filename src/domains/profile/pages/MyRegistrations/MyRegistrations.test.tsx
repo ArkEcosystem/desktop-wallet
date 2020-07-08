@@ -1,9 +1,12 @@
+import { createMemoryHistory } from "history";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
 import { MyRegistrations } from "./MyRegistrations";
 
 describe("Welcome", () => {
+	const history = createMemoryHistory();
+
 	const registrations = [
 		{
 			type: "business",

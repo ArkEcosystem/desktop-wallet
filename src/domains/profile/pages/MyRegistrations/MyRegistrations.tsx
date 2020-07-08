@@ -77,7 +77,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 					title="My Registrations"
 					subtitle="You can register a Delagate, Business and Bridgechain."
 					extra={
-						<div className="flex justify-end space-x-10 divide-x divide-theme-neutral-300">
+						<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
 								<Button>Register</Button>

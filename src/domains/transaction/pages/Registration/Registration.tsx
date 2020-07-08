@@ -396,88 +396,94 @@ export const Registration = ({
 	};
 
 	return (
-		<div data-testid="Registration" className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={7} activeIndex={activeTab} />
+		<div data-testid="Registration">
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={7} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep
-								addresses={addresses}
-								form={form}
-								networks={networks}
-								registrationTypes={registrationTypes}
-							/>
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep form={form} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep form={form} passwordType="mnemonic" />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<FourthStep form={form} passwordType="password" />
-						</TabPanel>
-						<TabPanel tabId={6}>
-							<FourthStep form={form} passwordType="ledger" />
-						</TabPanel>
-						<TabPanel tabId={7}>
-							<FifthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep
+									addresses={addresses}
+									form={form}
+									networks={networks}
+									registrationTypes={registrationTypes}
+								/>
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep form={form} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep form={form} passwordType="mnemonic" />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<FourthStep form={form} passwordType="password" />
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<FourthStep form={form} passwordType="ledger" />
+							</TabPanel>
+							<TabPanel tabId={7}>
+								<FifthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 7 && (
-								<Button
-									disabled={activeTab === 1}
-									data-testid="Registration__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-							)}
-
-							{activeTab < 4 && (
-								<Button
-									data-testid="Registration__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							)}
-
-							{activeTab >= 4 && activeTab < 7 && (
-								<Button
-									data-testid="Registration__send-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									<Icon name="Send" className="mr-2" width={20} height={20} />
-									Send
-								</Button>
-							)}
-
-							{activeTab === 7 && (
-								<div className="flex justify-end space-x-3">
-									<Button data-testid="Registration__wallet-button" variant="plain">
-										Back to wallet
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 7 && (
+									<Button
+										disabled={activeTab === 1}
+										data-testid="Registration__back-button"
+										variant="plain"
+										onClick={handleBack}
+									>
+										Back
 									</Button>
+								)}
 
-									<Button type="submit" data-testid="Registration__download-button" variant="plain">
-										<Icon name="Download" className="mr-2" />
-										Download
+								{activeTab < 4 && (
+									<Button
+										data-testid="Registration__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
 									</Button>
-								</div>
-							)}
+								)}
+
+								{activeTab >= 4 && activeTab < 7 && (
+									<Button
+										data-testid="Registration__send-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										<Icon name="Send" className="mr-2" width={20} height={20} />
+										Send
+									</Button>
+								)}
+
+								{activeTab === 7 && (
+									<div className="flex justify-end space-x-3">
+										<Button data-testid="Registration__wallet-button" variant="plain">
+											Back to wallet
+										</Button>
+
+										<Button
+											type="submit"
+											data-testid="Registration__download-button"
+											variant="plain"
+										>
+											<Icon name="Download" className="mr-2" />
+											Download
+										</Button>
+									</div>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };
