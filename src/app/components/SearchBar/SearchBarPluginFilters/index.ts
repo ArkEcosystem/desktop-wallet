@@ -1,1 +1,1 @@
-export * from "./SearchBarFilters";
+export * from "./SearchBarPluginFilters";
