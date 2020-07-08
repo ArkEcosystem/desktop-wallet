@@ -64,7 +64,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 					{extra && (
 						<div className="flex items-center">
 							<div className="ml-2">{extra}</div>
-							<div className="mx-8 h-10  border-l border-theme-neutral-200" />
+							<div className="h-10 mx-8 border-l  border-theme-neutral-200" />
 						</div>
 					)}
 
@@ -74,7 +74,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 
 					<div className="mx-4">
 						<Input
-							className="border-none shadow-none pt-2"
+							className="pt-2 border-none shadow-none"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
