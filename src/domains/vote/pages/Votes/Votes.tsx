@@ -53,7 +53,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
+		<div data-testid="MyVotes" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast">
 			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
 			<Breadcrumbs crumbs={crumbs} className="py-5 pl-10 font-semibold" />
@@ -97,7 +97,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 										) : (
 											<>
 												<Circle className="mr-3" avatarId="test" size="sm" noShadow />
-												<span className="text-base font-semibold text-theme-neutral-400">
+												<span className="text-base font-semibold text-theme-neutral-light">
 													Select address
 												</span>
 											</>

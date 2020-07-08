@@ -76,7 +76,7 @@ CircularProgressBar.defaultProps = {
 	size: 130,
 	strokeWidth: 10,
 	strokeColor: twConfig.theme.colors["theme-success-200"],
-	progressColor: twConfig.theme.colors["theme-success-600"],
+	progressColor: twConfig.theme.colors["theme-success"],
 	value: 0,
 	fontSize: 2,
 };

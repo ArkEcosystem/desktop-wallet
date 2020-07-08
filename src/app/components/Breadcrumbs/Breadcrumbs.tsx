@@ -22,7 +22,7 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 		<div
 			data-testid="breadcrumbs__wrapper"
 			className={`flex items-center space-x-2 ${className} ${
-				crumbs.length === 1 ? "text-theme-neutral-700" : "text-theme-neutral-500"
+				crumbs.length === 1 ? "text-theme-neutral-dark" : "text-theme-neutral"
 			}`}
 		>
 			{crumbs.length && <Icon name="ArrowBack" width={19} height={10} />}
@@ -30,13 +30,13 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 			{crumbs.map((crumb: Crumb, index: number) => {
 				return (
 					<div key={index} className="space-x-2">
-						<NavLink to={crumb.route} className={`${isLast(index) ? "text-theme-neutral-700" : ""}`}>
+						<NavLink to={crumb.route} className={`${isLast(index) ? "text-theme-neutral-dark" : ""}`}>
 							<span>{crumb.label}</span>
 						</NavLink>
 
 						{!isLast(index) && (
 							<span>
-								<Divider className="border-1 border-theme-neutral-500" type="vertical" />
+								<Divider className="border-1 border-theme-neutral" type="vertical" />
 							</span>
 						)}
 					</div>
@@ -47,5 +47,5 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 };
 
 Breadcrumbs.defaultProps = {
-	className: "px-20 py-5 font-semibold bg-theme-neutral-100",
+	className: "px-20 py-5 font-semibold bg-theme-neutral-contrast",
 };

@@ -14,7 +14,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 			data-testid="PluginManagerNavigationBar"
 			className="sticky z-40 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
 		>
-			<div className="container flex justify-between h-full mx-auto text-theme-neutral-400">
+			<div className="container flex justify-between h-full mx-auto text-theme-neutral-light">
 				<div className="flex h-full space-x-6">
 					<div
 						data-testid="PluginManagerNavigationBar__home"
@@ -27,7 +27,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					</div>
 
 					<div className="flex items-center">
-						<div className="w-px h-4 bg-theme-neutral-700" />
+						<div className="w-px h-4 bg-theme-neutral-dark" />
 					</div>
 
 					<div
@@ -38,11 +38,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("game")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAME")}
-						<span className="ml-1 text-theme-neutral-700">48</span>
+						<span className="ml-1 text-theme-neutral-dark">48</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="w-px h-4 bg-theme-neutral-700" />
+						<div className="w-px h-4 bg-theme-neutral-dark" />
 					</div>
 
 					<div
@@ -53,11 +53,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("utility")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY")}
-						<span className="ml-1 text-theme-neutral-700">264</span>
+						<span className="ml-1 text-theme-neutral-dark">264</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="w-px h-4 bg-theme-neutral-700" />
+						<div className="w-px h-4 bg-theme-neutral-dark" />
 					</div>
 
 					<div
@@ -68,11 +68,11 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("themes")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.THEMES")}
-						<span className="ml-1 text-theme-neutral-700">96</span>
+						<span className="ml-1 text-theme-neutral-dark">96</span>
 					</div>
 
 					<div className="flex items-center">
-						<div className="w-px h-4 bg-theme-neutral-700" />
+						<div className="w-px h-4 bg-theme-neutral-dark" />
 					</div>
 
 					<div
@@ -83,7 +83,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 						onClick={() => onChange("other")}
 					>
 						{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER")}
-						<span className="ml-1 text-theme-neutral-700">27</span>
+						<span className="ml-1 text-theme-neutral-dark">27</span>
 					</div>
 				</div>
 
@@ -95,7 +95,7 @@ export const PluginManagerNavigationBar = ({ onChange, selected }: PluginManager
 					onClick={() => onChange("my-plugins")}
 				>
 					{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}
-					<span className="ml-1 text-theme-neutral-700">8</span>
+					<span className="ml-1 text-theme-neutral-dark">8</span>
 				</div>
 			</div>
 		</div>

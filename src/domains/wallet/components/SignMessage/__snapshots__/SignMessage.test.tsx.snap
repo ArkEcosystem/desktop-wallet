@@ -56,7 +56,7 @@ exports[`SignMessage should render as signed 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral-500"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Signatory
                 </div>
@@ -73,7 +73,7 @@ exports[`SignMessage should render as signed 1`] = `
                       ROBank
                     </span>
                     <span
-                      class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                       data-testid="address__wallet-address"
                     >
                       AUexKj…EVTQWK
@@ -120,7 +120,7 @@ exports[`SignMessage should render as signed 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral-500"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Message
                 </div>
@@ -138,7 +138,7 @@ exports[`SignMessage should render as signed 1`] = `
                 class="flex-1"
               >
                 <div
-                  class="text-sm font-semibold text-theme-neutral-500"
+                  class="text-sm font-semibold text-theme-neutral"
                 >
                   Signature
                 </div>
@@ -146,7 +146,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="mt-2 font-semibold"
                 >
                   <textarea
-                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 mt-2 rounded-lg"
+                    class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 mt-2 rounded-lg"
                     data-testid="TextArea"
                     name="signature"
                     style="height: 4px;"
@@ -233,7 +233,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Insert a message below to sign using your private key
         </div>
@@ -260,7 +260,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="relative"
               >
                 <input
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   disabled=""
                   name="signatory-address"
@@ -307,7 +307,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Message
               </label>
               <input
-                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="Input"
                 name="message"
                 type="text"
@@ -328,7 +328,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="Input"
                   name="passphrase"
                   type="password"

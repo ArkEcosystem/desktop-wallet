@@ -16,7 +16,7 @@ export const TransactionDetail = ({ border, children, className, extra, label, p
 		} ${className}`}
 	>
 		<div className="flex-1">
-			{label && <div className="text-sm font-semibold text-theme-neutral-500">{label}</div>}
+			{label && <div className="text-sm font-semibold text-theme-neutral">{label}</div>}
 
 			<div className="mt-2 font-semibold">{children}</div>
 		</div>

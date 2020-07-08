@@ -60,12 +60,12 @@ export const FilterNetwork = ({ networks, onChange, onViewAll }: NetworkProps) =
 			<Circle
 				size="lg"
 				data-testid="network__viewall"
-				className="relative cursor-pointer border-theme-primary-100"
+				className="relative cursor-pointer border-theme-primary-contrast"
 				onClick={onViewAll}
 			>
 				<div className="text-sm font-semibold text-theme-primary-500">All</div>
 				<Badge
-					className="border-theme-primary-100 text-theme-primary-500"
+					className="border-theme-primary-contrast text-theme-primary-500"
 					icon="ChevronDown"
 					iconWidth={10}
 					iconHeight={10}

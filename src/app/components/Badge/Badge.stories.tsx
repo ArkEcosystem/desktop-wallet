@@ -99,10 +99,10 @@ export const WithIcon = () => {
 					<div className="italic text-md text-theme-neutral-200">D</div>
 					<Badge className="border-theme-neutral-200" />
 				</Circle>
-				<Circle className="relative ml-5 border-theme-primary-100">
+				<Circle className="relative ml-5 border-theme-primary-contrast">
 					<div className="text-xs text-theme-primary-500">All</div>
 					<Badge
-						className="border-theme-primary-100 text-theme-primary-500"
+						className="border-theme-primary-contrast text-theme-primary-500"
 						icon="ChevronDown"
 						iconWidth={10}
 						iconHeight={10}

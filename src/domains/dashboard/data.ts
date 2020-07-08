@@ -16,7 +16,7 @@ export const networks = [
 export const wallets = [
 	{
 		coinIcon: "Ark",
-		coinClass: "text-theme-danger-400 border-theme-danger-200",
+		coinClass: "text-theme-danger-400 border-theme-danger-light",
 		address: "1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
 		balance: "2,000,000 ARK",
@@ -131,7 +131,7 @@ export const wallets = [
 	},
 	{
 		coinIcon: "Ark",
-		coinClass: "text-theme-danger-400 border-theme-danger-200",
+		coinClass: "text-theme-danger-400 border-theme-danger-light",
 		address: "6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		walletName: "My Wallet",
 		balance: "2,000,000 ARK",
@@ -178,9 +178,9 @@ export const wallets = [
 	{
 		isBlank: true,
 		blankTitle: "You have 8 more wallets",
-		blankTitleClass: "text-theme-neutral-700 cursor-pointer",
+		blankTitleClass: "text-theme-neutral-dark cursor-pointer",
 		blankSubtitle: "Look all wallet",
-		blankSubtitleClass: "text-theme-primary-600 font-semibold cursor-pointer",
+		blankSubtitleClass: "text-theme-primary font-semibold cursor-pointer",
 	},
 	{
 		coinIcon: "Bitcoin",

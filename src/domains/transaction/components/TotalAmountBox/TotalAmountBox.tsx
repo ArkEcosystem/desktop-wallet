@@ -16,14 +16,14 @@ export const TotalAmountBox = ({ transactionAmount, transactionFee, magnitude }:
 			<div className="relative p-3">
 				<div className="grid grid-cols-2 divide-x divide-gray-400">
 					<div className="flex flex-col justify-center px-6 py-5">
-						<span className="text-sm text-theme-neutral-500">Transaction(s) Amount</span>
+						<span className="text-sm text-theme-neutral">Transaction(s) Amount</span>
 						<span className="mt-2 font-semibold" data-testid="total-amount-box__transaction-amount">
 							{transactionAmount} ARK
 						</span>
 					</div>
 
 					<div className="flex flex-col justify-center px-6 py-5 text-right">
-						<span className="text-sm text-theme-neutral-500">Transaction fee</span>
+						<span className="text-sm text-theme-neutral">Transaction fee</span>
 						<span className="mt-2 text-lg font-semibold" data-testid="total-amount-box__transaction-fee">
 							{transactionFee} ARK
 						</span>
@@ -36,8 +36,8 @@ export const TotalAmountBox = ({ transactionAmount, transactionFee, magnitude }:
 					</div>
 				</div>
 			</div>
-			<div className="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100">
-				<span className="text-sm text-theme-neutral-500">Total Amount</span>
+			<div className="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast">
+				<span className="text-sm text-theme-neutral">Total Amount</span>
 				<span className="text-2xl font-bold" data-testid="total-amount-box__total">
 					{totalAmount} ARK
 				</span>

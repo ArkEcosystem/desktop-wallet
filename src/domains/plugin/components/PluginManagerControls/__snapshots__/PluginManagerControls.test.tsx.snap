@@ -7,14 +7,14 @@ exports[`PluginManagerControls should render 1`] = `
     data-testid="PluginManagerControls"
   >
     <div
-      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
     >
       <div
         class="inline-block"
         data-testid="LayoutControls__grid"
       >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
           data-testid="LayoutControls__grid--icon"
         >
           <div
@@ -81,14 +81,14 @@ exports[`PluginManagerControls should toggle between list and grid 1`] = `
     data-testid="PluginManagerControls"
   >
     <div
-      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
     >
       <div
         class="inline-block"
         data-testid="LayoutControls__grid"
       >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
           data-testid="LayoutControls__grid--icon"
         >
           <div

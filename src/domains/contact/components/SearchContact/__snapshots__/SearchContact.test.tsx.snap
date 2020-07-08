@@ -48,7 +48,7 @@ exports[`SearchContact should render a modal 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Find the contact you need quickly and conveniently
         </div>
@@ -56,7 +56,7 @@ exports[`SearchContact should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -75,7 +75,7 @@ exports[`SearchContact should render a modal 1`] = `
                 class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                  class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search..."
                 />
@@ -110,7 +110,7 @@ exports[`SearchContact should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -126,7 +126,7 @@ exports[`SearchContact should render a modal 1`] = `
                         Nickname
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -142,7 +142,7 @@ exports[`SearchContact should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -156,13 +156,13 @@ exports[`SearchContact should render a modal 1`] = `
                         Network
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral"
                         data-testid="table__Sort"
                       />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -176,7 +176,7 @@ exports[`SearchContact should render a modal 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center text-theme-color-neutral"
                         data-testid="table__Sort"
                       />
                     </div>
@@ -194,7 +194,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -295,7 +295,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
                       >
                         <span
                           class="text-sm text-theme-background"

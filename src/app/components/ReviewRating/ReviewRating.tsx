@@ -16,14 +16,14 @@ export const ReviewRating = (props: ReviewRatingProps) => (
 				</div>
 			)}
 
-			<SvgCollection.Star className={`text-theme-neutral-500 w-${props.width}`} />
+			<SvgCollection.Star className={`text-theme-neutral w-${props.width}`} />
 		</div>
 
 		<span className="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}">
 			{props.rating > 0 ? props.rating : "-"}
 		</span>
 
-		{props.showTotal && <span className="text-theme-neutral-500">/5</span>}
+		{props.showTotal && <span className="text-theme-neutral">/5</span>}
 	</div>
 );
 

@@ -11,7 +11,7 @@ describe("ContactForm", () => {
 		{
 			icon: "Ark",
 			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
+			className: "text-theme-danger-400 border-theme-danger-light",
 		},
 		{
 			icon: "Bitcoin",

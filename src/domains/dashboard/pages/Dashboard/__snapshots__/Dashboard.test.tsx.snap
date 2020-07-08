@@ -22,14 +22,14 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <div
-                class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+                class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
               >
                 <div
                   class="inline-block"
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -64,7 +64,7 @@ exports[`Dashboard should render 1`] = `
                 </div>
               </div>
               <div
-                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
               >
                 <div
                   class="relative"
@@ -325,7 +325,7 @@ exports[`Dashboard should render 1`] = `
           Transactions History
         </div>
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
         >
           This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>
@@ -360,7 +360,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <div
-                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
               >
                 <div
                   class="flex"
@@ -401,7 +401,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       2.16
@@ -417,7 +417,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       8,000
@@ -469,7 +469,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ARK
                  - 
@@ -484,7 +484,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 BTC
                  - 
@@ -499,7 +499,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ETH
                  - 
@@ -514,7 +514,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 Other
                  - 
@@ -561,14 +561,14 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <div
-                class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+                class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
               >
                 <div
                   class="inline-block"
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -603,7 +603,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 </div>
               </div>
               <div
-                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
               >
                 <div
                   class="relative"
@@ -864,7 +864,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
           Transactions History
         </div>
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
         >
           This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>
@@ -896,14 +896,14 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <div
-                class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+                class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
               >
                 <div
                   class="inline-block"
                   data-testid="LayoutControls__grid"
                 >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
                     data-testid="LayoutControls__grid--icon"
                   >
                     <div
@@ -938,7 +938,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 </div>
               </div>
               <div
-                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
               >
                 <div
                   class="relative"
@@ -1199,7 +1199,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           Transactions History
         </div>
         <div
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
         >
           This will display the history of your transactions. But you don't have more than one transaction at the moment.
         </div>

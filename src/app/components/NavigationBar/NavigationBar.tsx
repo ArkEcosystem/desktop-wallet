@@ -74,12 +74,12 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative rotate-90 bg-theme-primary-600 border-theme-primary-600" size="lg">
+					<Circle className="relative rotate-90 bg-theme-primary border-theme-primary" size="lg">
 						<span className="text-sm text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${
 								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500`}
+							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
 							position="right"
 							icon="ChevronDown"
 							iconWidth={10}
@@ -116,7 +116,7 @@ export const NavigationBar = ({
 									<NavLink
 										to={menuItem.path}
 										title={menuItem.title}
-										className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+										className="flex items-center mx-4 font-bold text-md text-theme-neutral"
 									>
 										{menuItem.title}
 									</NavLink>
@@ -141,8 +141,8 @@ export const NavigationBar = ({
 					<div className="h-8 border-r border-theme-neutral-200" />
 
 					<div className="p-2 ml-4 text-right">
-						<div className="text-xs text-theme-neutral-500">Your balance</div>
-						<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+						<div className="text-xs text-theme-neutral">Your balance</div>
+						<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
 					</div>
 
 					<div className="flex p-1 cusror-pointer">

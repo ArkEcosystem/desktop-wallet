@@ -46,7 +46,7 @@ export const Colored = () => {
 			<Circle size={size} />
 
 			<div className="mb-5" />
-			<Circle className="-mr-2 bg-theme-background border-theme-neutral-400" size={size} />
+			<Circle className="-mr-2 bg-theme-background border-theme-neutral-light" size={size} />
 			<Circle className="-mr-2 bg-theme-background border-theme-success-light" size={size} />
 
 			<div className="mb-5" />
@@ -72,7 +72,7 @@ export const Avatar = () => {
 			<div className="mb-5" />
 			<Circle avatarId="test" className="-mr-2 bg-theme-background" size={size} />
 			<Circle className="-mr-2 bg-theme-background border-theme-neutral-300" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-warning-100" size={size} />
+			<Circle className="-mr-2 bg-theme-background border-theme-warning-contrast" size={size} />
 			<Circle avatarId="test" size={size} />
 		</div>
 	);
@@ -95,7 +95,7 @@ export const WithIcon = () => {
 
 			<div className="mb-5" />
 			<Circle avatarId="test" className="-mr-2 bg-theme-background" size={size} />
-			<Circle className="-mr-2 bg-theme-background border-theme-danger-200" size={size}>
+			<Circle className="-mr-2 bg-theme-background border-theme-danger-light" size={size}>
 				<Icon name="Ark" />
 			</Circle>
 
@@ -104,7 +104,7 @@ export const WithIcon = () => {
 			<Circle className="-mr-2 bg-theme-background border-theme-neutral-800" size={size}>
 				<Icon name="Ethereum" width={16} height={16} />
 			</Circle>
-			<Circle className="-mr-2 bg-theme-background border-theme-danger-200" size={size}>
+			<Circle className="-mr-2 bg-theme-background border-theme-danger-light" size={size}>
 				<Icon name="Ark" />
 			</Circle>
 		</div>

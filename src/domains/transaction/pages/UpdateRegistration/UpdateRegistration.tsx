@@ -32,7 +32,7 @@ const FirstStep = ({ form }: { form: any }) => {
 	return (
 		<div data-testid="UpdateRegistration__first-step">
 			<h1 className="mb-0">Update Business</h1>
-			<div className="text-theme-neutral-700">
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
@@ -137,8 +137,8 @@ const SecondStep = () => {
 					border={false}
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -158,7 +158,7 @@ const SecondStep = () => {
 					}
 					className="pt-4"
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -214,7 +214,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-700">
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -265,7 +265,7 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 						<Icon name="Sent" width={50} height={50} />
 					</Circle>
 				</div>

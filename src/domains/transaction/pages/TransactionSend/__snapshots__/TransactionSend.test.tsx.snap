@@ -104,7 +104,7 @@ exports[`Transaction Send should render 1`] = `
                               data-testid="select-network__typeahead-"
                             >
                               <div
-                                class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                               />
                             </div>
                             <input
@@ -145,7 +145,7 @@ exports[`Transaction Send should render 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-sender"
                           name="sender"
                         >
@@ -242,7 +242,7 @@ exports[`Transaction Send should render 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-recipient"
                           name="recipient"
                         >
@@ -348,7 +348,7 @@ exports[`Transaction Send should render 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <input
-                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                         data-testid="send-transaction__amount-input"
                         name="amount"
                         placeholder="Amount"
@@ -385,7 +385,7 @@ exports[`Transaction Send should render 1`] = `
                       class="sc-fzozJi OgXfh"
                     >
                       <input
-                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                         data-testid="Input"
                         maxlength="255"
                         name="smartbridge"
@@ -396,7 +396,7 @@ exports[`Transaction Send should render 1`] = `
                         class="sc-AxheI sc-AxmLO ecniej"
                       >
                         <button
-                          class="px-4 text-theme-neutral-400 focus:outline-none"
+                          class="px-4 text-theme-neutral-light focus:outline-none"
                         >
                           255 Max
                         </button>
@@ -427,7 +427,7 @@ exports[`Transaction Send should render 1`] = `
                             class="sc-fzozJi OgXfh"
                           >
                             <input
-                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                              class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                               data-testid="InputCurrency"
                               name="fee"
                               type="text"
@@ -612,7 +612,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                       data-testid="select-network__typeahead-"
                     >
                       <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                       />
                     </div>
                     <input
@@ -653,7 +653,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="sc-fzozJi OgXfh"
               >
                 <select
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="ProfileFormField__select-sender"
                   name="sender"
                 >
@@ -750,7 +750,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="sc-fzozJi OgXfh"
               >
                 <select
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="ProfileFormField__select-recipient"
                   name="recipient"
                 >
@@ -856,7 +856,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-fzozJi OgXfh"
             >
               <input
-                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="send-transaction__amount-input"
                 name="amount"
                 placeholder="Amount"
@@ -893,7 +893,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-fzozJi OgXfh"
             >
               <input
-                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="Input"
                 maxlength="255"
                 name="smartbridge"
@@ -904,7 +904,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="sc-AxheI sc-AxmLO ecniej"
               >
                 <button
-                  class="px-4 text-theme-neutral-400 focus:outline-none"
+                  class="px-4 text-theme-neutral-light focus:outline-none"
                 >
                   255 Max
                 </button>
@@ -935,7 +935,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="sc-fzozJi OgXfh"
                   >
                     <input
-                      class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                      class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -1065,7 +1065,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Network
           </div>
@@ -1080,10 +1080,10 @@ exports[`Transaction Send should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="ml-1 text-theme-danger"
         >
           <div
-            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
           >
             <div
               class="sc-AxhUy hSYVGy"
@@ -1104,7 +1104,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
              
           </div>
@@ -1112,7 +1112,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="mt-2 font-semibold"
           >
             <div
-              class="mb-2 font-semibold text-theme-neutral-500"
+              class="mb-2 font-semibold text-theme-neutral"
             >
               <span
                 class="mr-1 text-sm"
@@ -1140,7 +1140,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -1170,7 +1170,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Recipients
           </div>
@@ -1192,7 +1192,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                       role="row"
                     >
                       <th
-                        class="text-sm text-left select-none text-theme-neutral-500"
+                        class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -1206,13 +1206,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Avatar
                           </div>
                           <div
-                            class="flex items-center text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral"
                             data-testid="table__Sort"
                           />
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral-500"
+                        class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -1226,13 +1226,13 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Address
                           </div>
                           <div
-                            class="flex items-center text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral"
                             data-testid="table__Sort"
                           />
                         </div>
                       </th>
                       <th
-                        class="text-sm text-left select-none text-theme-neutral-500"
+                        class="text-sm text-left select-none text-theme-neutral"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -1246,7 +1246,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Amount
                           </div>
                           <div
-                            class="flex items-center text-theme-color-neutral-500"
+                            class="flex items-center text-theme-color-neutral"
                             data-testid="table__Sort"
                           />
                         </div>
@@ -1289,7 +1289,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Recipient 1
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             FJKDSA…SJKDFJ
@@ -1335,7 +1335,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Recipient 2
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AhFJKD…SJKDFJ
@@ -1381,7 +1381,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Recipient 3
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             FAhFJK…SJKDFJ
@@ -1427,7 +1427,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                             Recipient 4
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             FAhFJK…SJKDFJ
@@ -1454,7 +1454,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Smartbridge
           </div>
@@ -1494,7 +1494,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                 class="flex flex-col justify-center px-6 py-5"
               >
                 <span
-                  class="text-sm text-theme-neutral-500"
+                  class="text-sm text-theme-neutral"
                 >
                   Transaction(s) Amount
                 </span>
@@ -1509,7 +1509,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                 class="flex flex-col justify-center px-6 py-5 text-right"
               >
                 <span
-                  class="text-sm text-theme-neutral-500"
+                  class="text-sm text-theme-neutral"
                 >
                   Transaction fee
                 </span>
@@ -1540,10 +1540,10 @@ exports[`Transaction Send should render 2nd step 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+            class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
           >
             <span
-              class="text-sm text-theme-neutral-500"
+              class="text-sm text-theme-neutral"
             >
               Total Amount
             </span>
@@ -1591,7 +1591,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
               class="flex-1"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Your password
               </div>
@@ -1602,7 +1602,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
                   class="sc-fzozJi OgXfh max-w-20"
                 >
                   <input
-                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                    class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                     data-testid="Input"
                     name="passphrase"
                     type="password"
@@ -1654,7 +1654,7 @@ exports[`Transaction Send should render 4th step 1`] = `
         confirm-transaction-ledger-banner.svg
       </svg>
       <div
-        class="mt-8 text-center text-theme-neutral-700"
+        class="mt-8 text-center text-theme-neutral-dark"
         data-testid="LedgerConfirmation-description"
       >
         Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
@@ -1714,7 +1714,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
@@ -1763,7 +1763,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
@@ -1812,7 +1812,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Network
             </div>
@@ -1829,7 +1829,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1838,10 +1838,10 @@ exports[`Transaction Send should render 5th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger-500"
+            class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy hSYVGy"
@@ -1865,7 +1865,7 @@ exports[`Transaction Send should render 5th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                class="mb-2 text-sm font-semibold text-theme-neutral"
               >
                 <span
                   class="mr-1"
@@ -1893,7 +1893,7 @@ exports[`Transaction Send should render 5th step 1`] = `
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1927,7 +1927,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               IPFS Hash
             </div>
@@ -1949,7 +1949,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Amount
             </div>
@@ -1963,7 +1963,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy dFCItS"

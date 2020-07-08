@@ -57,7 +57,7 @@ exports[`Vote For Delegate should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Account
                     </div>
@@ -74,7 +74,7 @@ exports[`Vote For Delegate should render 1`] = `
                           ROBank
                         </span>
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -106,7 +106,7 @@ exports[`Vote For Delegate should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate
                     </div>
@@ -123,7 +123,7 @@ exports[`Vote For Delegate should render 1`] = `
                           Delegate 3
                         </span>
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -155,7 +155,7 @@ exports[`Vote For Delegate should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-medium text-theme-neutral-700"
+                      class="text-sm font-medium text-theme-neutral-dark"
                     >
                       Fee ARK
                     </div>
@@ -172,7 +172,7 @@ exports[`Vote For Delegate should render 1`] = `
                             class="sc-fzozJi OgXfh"
                           >
                             <input
-                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                              class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -306,7 +306,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Account
           </div>
@@ -323,7 +323,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -355,7 +355,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Delegate
           </div>
@@ -372,7 +372,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                 Delegate 3
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -404,7 +404,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Fee ARK
           </div>
@@ -421,7 +421,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   class="sc-fzozJi OgXfh"
                 >
                   <input
-                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="InputCurrency"
                     type="text"
                     value="25"
@@ -529,7 +529,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Network
           </div>
@@ -546,7 +546,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -555,10 +555,10 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="ml-1 text-theme-danger"
         >
           <div
-            class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-200"
+            class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-light"
           >
             <div
               class="sc-AxhUy hSYVGy"
@@ -579,7 +579,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Account
           </div>
@@ -596,7 +596,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -628,7 +628,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Delegate
           </div>
@@ -645,7 +645,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -677,7 +677,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Transaction fee
           </div>
@@ -719,7 +719,7 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Your password
             </div>
@@ -730,7 +730,7 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="Input"
                   name="passphras"
                   type="password"
@@ -800,7 +800,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
@@ -849,7 +849,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
@@ -898,7 +898,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Network
             </div>
@@ -915,7 +915,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -924,10 +924,10 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger-500"
+            class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy hSYVGy"
@@ -951,7 +951,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
               class="mt-2 font-semibold"
             >
               <div
-                class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                class="mb-2 text-sm font-semibold text-theme-neutral"
               >
                 <span
                   class="mr-1"
@@ -979,7 +979,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1013,7 +1013,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Delegate
             </div>
@@ -1030,7 +1030,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   Delegate 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1062,7 +1062,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction fee
             </div>
@@ -1080,7 +1080,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             class="flex-1"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction type
             </div>

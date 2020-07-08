@@ -18,11 +18,11 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 
 	return (
 		<div className="mt-8 mb-16 grid grid-cols-8 gap-4">
-			<div className="flex flex-col h-32 border-2 rounded-lg col-span-6 border-theme-primary-100">
+			<div className="flex flex-col h-32 border-2 rounded-lg col-span-6 border-theme-primary-contrast">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 
-					<span className="m-auto text-sm text-theme-neutral-500">{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}</span>
+					<span className="m-auto text-sm text-theme-neutral">{t("EXCHANGE.NO_EXCHANGES_MESSAGE")}</span>
 				</div>
 			</div>
 
@@ -99,7 +99,7 @@ export const Exchange = (props: ExchangeProps) => {
 		<div data-testid="Exchange">
 			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-			<div className="pt-16 border-t-20 border-theme-neutral-100">
+			<div className="pt-16 border-t-20 border-theme-neutral-contrast">
 				<div className="container mx-auto">
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
@@ -116,12 +116,12 @@ export const Exchange = (props: ExchangeProps) => {
 				</div>
 			</div>
 
-			<div className="border-t-20 border-theme-neutral-100">
+			<div className="border-t-20 border-theme-neutral-contrast">
 				{props.exchanges.length ? (
 					<div className="text-center">
 						<ExchangeCardsBanner className="mx-auto mt-16" />
 
-						<div className="mt-8 text-theme-neutral-700">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+						<div className="mt-8 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
 					</div>
 				) : (
 					<NoExchangesBanner className="mx-auto mt-16" />

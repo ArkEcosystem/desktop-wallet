@@ -40,7 +40,7 @@ export const WalletsControls = ({
 
 	return (
 		<div className="flex">
-			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-100">
+			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
 				<LayoutControls
 					onSelectGridView={onClickGridView}
 					onSelectListView={onClickListview}
@@ -48,7 +48,7 @@ export const WalletsControls = ({
 				/>
 			</div>
 
-			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100">
+			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast">
 				<Dropdown toggleIcon="Filters">
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />

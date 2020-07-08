@@ -70,7 +70,7 @@ const SelectDropdown = ({
 						))}
 				</SelectOptionsList>
 			</div>
-			<InputAddonEnd className="w-10 pointer-events-none text-theme-neutral-500">
+			<InputAddonEnd className="w-10 pointer-events-none text-theme-neutral">
 				<Icon name={isOpen ? "ArrowUp" : "ArrowDown"} width={8} height={8} />
 			</InputAddonEnd>
 		</div>

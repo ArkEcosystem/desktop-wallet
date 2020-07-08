@@ -3,7 +3,7 @@
 exports[`Welcome should render empty state 1`] = `
 <DocumentFragment>
   <section
-    class="bg-theme-neutral-100"
+    class="bg-theme-neutral-contrast"
   >
     <div
       class="px-10 py-16 bg-theme-background"
@@ -33,7 +33,7 @@ exports[`Welcome should render empty state 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -89,7 +89,7 @@ exports[`Welcome should render empty state 1`] = `
 exports[`Welcome should render null for a not knwown type of table 1`] = `
 <DocumentFragment>
   <section
-    class="bg-theme-neutral-100"
+    class="bg-theme-neutral-contrast"
   >
     <div
       class="px-10 py-16 bg-theme-background"
@@ -119,7 +119,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -162,7 +162,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
 exports[`Welcome should render properly 1`] = `
 <DocumentFragment>
   <section
-    class="bg-theme-neutral-100"
+    class="bg-theme-neutral-contrast"
   >
     <div
       class="px-10 py-16 bg-theme-background"
@@ -192,7 +192,7 @@ exports[`Welcome should render properly 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -248,7 +248,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -262,13 +262,13 @@ exports[`Welcome should render properly 1`] = `
                     Avatar
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -282,13 +282,13 @@ exports[`Welcome should render properly 1`] = `
                     Agent
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -302,13 +302,13 @@ exports[`Welcome should render properly 1`] = `
                     Business Name
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -322,13 +322,13 @@ exports[`Welcome should render properly 1`] = `
                     History
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -342,13 +342,13 @@ exports[`Welcome should render properly 1`] = `
                     Website
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -362,13 +362,13 @@ exports[`Welcome should render properly 1`] = `
                     MSQ
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -382,13 +382,13 @@ exports[`Welcome should render properly 1`] = `
                     Repository
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--7"
                 role="columnheader"
@@ -402,13 +402,13 @@ exports[`Welcome should render properly 1`] = `
                     Spacer
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--8"
                 role="columnheader"
@@ -422,7 +422,7 @@ exports[`Welcome should render properly 1`] = `
                     Options
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -495,7 +495,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-light"
               >
                 <div
                   class="sc-AxirZ iQaTP ml-12"
@@ -624,7 +624,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-light"
               >
                 <div
                   class="sc-AxirZ iQaTP ml-12"
@@ -714,7 +714,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -728,13 +728,13 @@ exports[`Welcome should render properly 1`] = `
                     Avatar
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -748,13 +748,13 @@ exports[`Welcome should render properly 1`] = `
                     Agent
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -768,13 +768,13 @@ exports[`Welcome should render properly 1`] = `
                     Blockchain Name
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -788,13 +788,13 @@ exports[`Welcome should render properly 1`] = `
                     History
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -808,13 +808,13 @@ exports[`Welcome should render properly 1`] = `
                     Website
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -828,13 +828,13 @@ exports[`Welcome should render properly 1`] = `
                     MSQ
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -848,13 +848,13 @@ exports[`Welcome should render properly 1`] = `
                     Repository
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--7"
                 role="columnheader"
@@ -868,13 +868,13 @@ exports[`Welcome should render properly 1`] = `
                     Seed
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--8"
                 role="columnheader"
@@ -888,13 +888,13 @@ exports[`Welcome should render properly 1`] = `
                     Spacer
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--9"
                 role="columnheader"
@@ -908,7 +908,7 @@ exports[`Welcome should render properly 1`] = `
                     Options
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -979,7 +979,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-light"
               >
                 <div
                   class="sc-AxirZ iQaTP ml-4"
@@ -1115,7 +1115,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6 text-theme-neutral-400"
+                class="py-6 text-theme-neutral-light"
               >
                 <div
                   class="sc-AxirZ iQaTP ml-4"
@@ -1214,7 +1214,7 @@ exports[`Welcome should render properly 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -1228,13 +1228,13 @@ exports[`Welcome should render properly 1`] = `
                     Avatar
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -1248,13 +1248,13 @@ exports[`Welcome should render properly 1`] = `
                     Delegate Name
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -1268,13 +1268,13 @@ exports[`Welcome should render properly 1`] = `
                     Rank
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -1288,13 +1288,13 @@ exports[`Welcome should render properly 1`] = `
                     MSQ
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -1308,13 +1308,13 @@ exports[`Welcome should render properly 1`] = `
                     Status
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--5"
                 role="columnheader"
@@ -1328,13 +1328,13 @@ exports[`Welcome should render properly 1`] = `
                     Amount
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--6"
                 role="columnheader"
@@ -1348,7 +1348,7 @@ exports[`Welcome should render properly 1`] = `
                     Votes
                   </div>
                   <div
-                    class="flex items-center text-theme-color-neutral-500"
+                    class="flex items-center text-theme-color-neutral"
                     data-testid="table__Sort"
                   />
                 </div>
@@ -1405,7 +1405,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6  text-theme-neutral-700"
+                class="py-6  text-theme-neutral-dark"
               >
                 <span
                   class="-ml-14"
@@ -1427,7 +1427,7 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-6  text-theme-neutral-400"
+                class="py-6  text-theme-neutral-light"
               >
                 <div
                   class="sc-AxirZ bMjbpr ml-1 text-theme-success"
@@ -1470,7 +1470,7 @@ exports[`Welcome should render properly 1`] = `
                   class="flex items-center ml-5 -mr-10"
                 >
                   <small
-                    class="text-theme-neutral-500"
+                    class="text-theme-neutral"
                   >
                     2,43%
                   </small>
@@ -1566,7 +1566,7 @@ exports[`Welcome should render properly 1`] = `
                 </span>
               </td>
               <td
-                class="py-6  text-theme-neutral-700"
+                class="py-6  text-theme-neutral-dark"
               >
                 <span
                   class="-ml-14"
@@ -1588,10 +1588,10 @@ exports[`Welcome should render properly 1`] = `
                 </div>
               </td>
               <td
-                class="py-6  text-theme-neutral-400"
+                class="py-6  text-theme-neutral-light"
               >
                 <div
-                  class="sc-AxirZ iQaTP ml-2 text-theme-neutral-500"
+                  class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
                   height="1em"
                   width="1em"
                 >
@@ -1631,7 +1631,7 @@ exports[`Welcome should render properly 1`] = `
                   class="flex items-center ml-5 -mr-10"
                 >
                   <small
-                    class="text-theme-neutral-500"
+                    class="text-theme-neutral"
                   >
                     2,43%
                   </small>

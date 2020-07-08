@@ -6,7 +6,7 @@ import { WalletDetails } from "./WalletDetails";
 const wallets = [
 	{
 		coinIcon: "Ark",
-		coinClassName: "text-theme-danger-400 border-theme-danger-200",
+		coinClassName: "text-theme-danger-400 border-theme-danger-light",
 		avatarId: "test1",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		publicKey: "028fe98e42e159f2450a52371dfb23ae69a39fc5fee6545690b7f51bfcee933357",

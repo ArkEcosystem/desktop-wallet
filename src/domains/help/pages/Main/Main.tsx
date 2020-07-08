@@ -29,7 +29,7 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600"
+			className="flex px-2 py-4 -mx-3 rounded-md border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -57,7 +57,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 			</div>
 			<div className="flex-auto my-auto">
 				<div className="font-bold text-theme-neutral-800">{title}</div>
-				<div className="text-sm text-theme-neutral-500">{subtitle}</div>
+				<div className="text-sm text-theme-neutral">{subtitle}</div>
 			</div>
 		</div>
 	</a>
@@ -66,7 +66,7 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 export const Main = ({ categories, helpfulArticles, popularArticles, newestArticles }: SupportProps) => {
 	const { t } = useTranslation();
 	return (
-		<div className="bg-theme-neutral-100">
+		<div className="bg-theme-neutral-contrast">
 			<div className="py-16 mb-5 bg-white px-13">
 				<Header
 					title={t("HELP.PAGE_SUPPORT.TITLE")}

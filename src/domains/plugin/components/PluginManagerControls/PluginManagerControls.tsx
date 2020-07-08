@@ -15,7 +15,7 @@ export const PluginManagerControls = ({
 }: PluginManagerControlsProps) => {
 	return (
 		<div data-testid="PluginManagerControls" className="flex items-center mx-4">
-			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-100">
+			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
 				<LayoutControls
 					onSelectGridView={onSelectGridView}
 					onSelectListView={onSelectListView}

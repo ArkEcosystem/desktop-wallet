@@ -21,7 +21,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 	const { comments, ratings, totalAvaliations } = reviewData;
 
 	return (
-		<section className="h-full -m-5 bg-theme-neutral-100" data-testid="plugin-details__header">
+		<section className="h-full -m-5 bg-theme-neutral-contrast" data-testid="plugin-details__header">
 			<PluginHeader
 				author={author}
 				category={category}

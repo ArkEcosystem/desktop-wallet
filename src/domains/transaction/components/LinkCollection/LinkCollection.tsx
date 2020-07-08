@@ -91,7 +91,7 @@ export const LinkCollection = ({
 			>
 				<div>
 					<span className="text-lg font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-700">{description}</div>
+					<div className="mt-2 text-theme-neutral-dark">{description}</div>
 				</div>
 
 				<div>
@@ -100,7 +100,7 @@ export const LinkCollection = ({
 							name="ChevronUp"
 							width={10}
 							height={10}
-							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
 					)}
 					{!isExpanded && (
@@ -108,7 +108,7 @@ export const LinkCollection = ({
 							name="ChevronDown"
 							width={10}
 							height={10}
-							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
 						/>
 					)}
 				</div>
@@ -155,7 +155,7 @@ export const LinkCollection = ({
 						</Button>
 					</div>
 
-					<div className="mt-8 mb-2 text-sm text-theme-neutral-700">Your {typeName}</div>
+					<div className="mt-8 mb-2 text-sm text-theme-neutral-dark">Your {typeName}</div>
 
 					<Table columns={columns} data={links}>
 						{(rowData: any, rowIndex: any) => (

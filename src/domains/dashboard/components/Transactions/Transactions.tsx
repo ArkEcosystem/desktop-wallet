@@ -25,7 +25,7 @@ export const Transactions = ({ transactions, columns, title, emptyText }: Transa
 					</Button>
 				</div>
 			)}
-			{transactions.length === 0 && <div className="text-theme-neutral-700">{emptyText}</div>}
+			{transactions.length === 0 && <div className="text-theme-neutral-dark">{emptyText}</div>}
 		</div>
 	);
 };

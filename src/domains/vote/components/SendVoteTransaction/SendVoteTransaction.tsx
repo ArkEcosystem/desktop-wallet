@@ -54,8 +54,8 @@ export const FirstStep = () => {
 					border={false}
 					label="Cryptoasset"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -67,7 +67,7 @@ export const FirstStep = () => {
 				</TransactionDetail>
 				<TransactionDetail
 					label={
-						<div className="mb-2 font-semibold text-theme-neutral-500">
+						<div className="mb-2 font-semibold text-theme-neutral">
 							<span className="mr-1 text-sm">Sender</span>
 							<Label color="warning">
 								<span className="text-sm">Your address</span>
@@ -117,8 +117,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Cryptoasset"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -130,7 +130,7 @@ export const SecondStep = () => (
 			</TransactionDetail>
 			<TransactionDetail
 				label={
-					<div className="mb-2 font-semibold text-theme-neutral-500">
+					<div className="mb-2 font-semibold text-theme-neutral">
 						<span className="mr-1 text-sm">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -167,7 +167,7 @@ export const ThirdStep = () => {
 		<section data-testid="SendVoteTransaction__step--third" className="space-y-8">
 			<div className="mb-8">
 				<h1 className="mb-0">Authenticate</h1>
-				<div className="text-theme-neutral-700">
+				<div className="text-theme-neutral-dark">
 					Enter your twelve word mnemonic to authenticate the transaction.
 				</div>
 
@@ -230,8 +230,8 @@ export const FourthStep = () => (
 				<TransactionDetail
 					label="Cryptoasset"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -243,7 +243,7 @@ export const FourthStep = () => (
 				</TransactionDetail>
 				<TransactionDetail
 					label={
-						<div className="mb-2 font-semibold text-theme-neutral-500">
+						<div className="mb-2 font-semibold text-theme-neutral">
 							<span className="mr-1 text-sm">Account</span>
 							<Label color="warning">
 								<span className="text-sm">Your address</span>
@@ -261,7 +261,7 @@ export const FourthStep = () => (
 					label="Amount"
 					extra={
 						<div className="ml-1 text-theme-danger">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Sent" width={50} height={50} />
 							</Circle>
 						</div>
