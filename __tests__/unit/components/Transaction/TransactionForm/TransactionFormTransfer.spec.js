@@ -415,6 +415,9 @@ describe('TransactionFormTransfer', () => {
 
       it('should return value including all recipients for multiple', async () => {
         wrapper.vm.onSendTypeChange('Multiple')
+
+        await wrapper.vm.$nextTick()
+
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
         wrapper.vm.$v.amount.$model = 10
