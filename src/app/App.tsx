@@ -13,7 +13,7 @@ const buildMockEnvironment = async (env: Environment) => {
 	const profile = env.profiles().create("Anne Doe");
 
 	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
-
+	/* istanbul ignore next */
 	env.persist();
 };
 

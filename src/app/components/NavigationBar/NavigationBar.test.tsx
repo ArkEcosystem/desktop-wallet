@@ -14,7 +14,7 @@ import { NavigationBar } from "./NavigationBar";
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	env.profiles().create("Jane Doe");
+	const profile = env.profiles().create("Jane Doe");
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar />);
@@ -41,7 +41,6 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle default menu", () => {
-		const profile = env.profiles().create("Janne Doe");
 		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 
@@ -61,7 +60,6 @@ describe("NavigationBar", () => {
 	});
 
 	it("should handle menu click", () => {
-		const profile = env.profiles().create("Anne Doe");
 		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 
@@ -109,12 +107,115 @@ describe("NavigationBar", () => {
 		expect(history.location.pathname).toMatch("/profiles/");
 	});
 
-	it("should not render if no active profile", () => {
-		const options = [
-			{ label: "Option 1", value: "/test", mountPath: () => "/test" },
-			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
-		];
+	it("should handle contacts click on user actions dropdown", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
 
+		const { getByTestId, findByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(await findByText("Contacts")).toBeTruthy();
+		fireEvent.click(await findByText("Contacts"));
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/contacts`);
+	});
+
+	it("should handle settings click on user actions dropdown", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(await findByText("Settings")).toBeTruthy();
+		fireEvent.click(await findByText("Settings"));
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/settings`);
+	});
+
+	it("should handle support click on user actions dropdown", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(await findByText("Support")).toBeTruthy();
+		fireEvent.click(await findByText("Support"));
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/support`);
+	});
+
+	it("should handle exit click on user actions dropdown", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<NavigationBar />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const toggle = getByTestId("navbar__useractions");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(await findByText("Exit")).toBeTruthy();
+		fireEvent.click(await findByText("Exit"));
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/exit`);
+	});
+
+	it("should not render if no active profile", () => {
 		const menu = [
 			{
 				title: "Portfolio",
@@ -126,7 +227,7 @@ describe("NavigationBar", () => {
 			},
 		];
 
-		const { asFragment } = renderWithRouter(<NavigationBar menu={menu} userActions={options} />);
+		const { asFragment } = renderWithRouter(<NavigationBar menu={menu} />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
