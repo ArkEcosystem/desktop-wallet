@@ -15,11 +15,11 @@ type FilterProps = {
 	ratings?: number[];
 };
 
-const Stars = ({ length = 5, value = 0 }: any) => {
+const Stars = ({ length = 5, value }: any) => {
 	const stars = Array.from({ length });
 	return (
 		<span className="text-theme-neutral-200 flex space-x-1">
-			{stars.map((_, index) => {
+			{stars.map((_, index: number) => {
 				return (
 					<span key={index} className={`${index < value ? "text-theme-warning-300" : ""}`}>
 						<Icon name="Star" width={20} height={20} />
@@ -93,15 +93,13 @@ export const SearchBarPluginFilters = ({
 		<div data-testid="SearchBarPluginFilters" className="relative flex items-center pr-8 text-theme-primary-400">
 			<Dropdown position="left" toggleIcon="Filters">
 				<div className="py-6 px-8 w-64">
-					<div>
-						<div className="mb-2 font-semibold text-theme-neutral-700">{categoriesLabel}</div>
-						<CategoryCheckboxes categories={categories} />
-					</div>
+					<div className="mb-2 font-semibold text-theme-neutral-700">{categoriesLabel}</div>
+					<CategoryCheckboxes categories={categories} />
+
 					<div className="border-b border-theme-neutral-200 my-8" />
-					<div>
-						<div className="mb-2 font-semibold text-theme-neutral-700">{ratingsLabel}</div>
-						<RatingsCheckboxes ratings={ratings} suffixLabel={ratingsSuffix} />
-					</div>
+
+					<div className="mb-2 font-semibold text-theme-neutral-700">{ratingsLabel}</div>
+					<RatingsCheckboxes ratings={ratings} suffixLabel={ratingsSuffix} />
 				</div>
 			</Dropdown>
 		</div>
