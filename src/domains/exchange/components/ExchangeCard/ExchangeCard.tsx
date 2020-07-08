@@ -18,8 +18,6 @@ const ExchangeCardStyled = styled.div`
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
-	const { t } = useTranslation();
-
 	return (
 		<ExchangeCardStyled
 			data-testid="Exchange__add-exchange-card"
@@ -50,7 +48,6 @@ export const BlankCard = () => {
 };
 
 export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProps) => {
-	const { t } = useTranslation();
 	const options = [{ label: "Option 1", value: "1" }];
 
 	return (
