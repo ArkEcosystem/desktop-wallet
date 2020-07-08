@@ -9,11 +9,11 @@ import { SettingRoutes } from "domains/setting/routing";
 export * from "./RouterView";
 
 export const routes: Array<Object> = [
-	...SettingRoutes,
 	...ContactRoutes,
 	...DashboardRoutes,
 	...ExchangeRoutes,
 	...HelpRoutes,
 	...PluginRoutes,
 	...ProfileRoutes,
+	...SettingRoutes,
 ];
