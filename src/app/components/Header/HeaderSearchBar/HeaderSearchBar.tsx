@@ -9,13 +9,14 @@ type HeaderSearchBarProps = {
 	label?: string;
 	children?: React.ReactNode;
 	onSearch?: any;
+	extra?: React.ReactNode;
 };
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 24rem;
 `;
 
-export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: HeaderSearchBarProps) => {
+export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra }: HeaderSearchBarProps) => {
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState("");
 
@@ -60,13 +61,20 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch }: Head
 					ref={ref}
 					className="absolute flex items-center px-6 py-4 bg-white shadow-xl rounded-md -bottom-4 -right-6"
 				>
+					{extra && (
+						<div className="flex items-center">
+							<div className="ml-2">{extra}</div>
+							<div className="mx-8 h-10  border-l border-theme-neutral-200" />
+						</div>
+					)}
+
 					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
 						<Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />
 					</button>
 
-					<div className="flex-1 mx-4">
+					<div className="mx-4">
 						<Input
-							className="border-none shadow-none"
+							className="border-none shadow-none pt-2"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
