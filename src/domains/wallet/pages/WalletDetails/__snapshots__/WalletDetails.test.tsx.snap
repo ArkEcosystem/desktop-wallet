@@ -364,7 +364,9 @@ exports[`WalletDetails should render 1`] = `
             >
               Address
             </p>
-            <label>
+            <label
+              class="flex"
+            >
               <input
                 class="sc-fzpans bPktWT"
                 data-testid="WalletHeader__toggle"
