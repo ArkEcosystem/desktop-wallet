@@ -14,6 +14,6 @@ export const routes: Array<Object> = [
 	...ExchangeRoutes,
 	...HelpRoutes,
 	...PluginRoutes,
-	...ProfileRoutes,
 	...SettingRoutes,
+	...ProfileRoutes,
 ];
