@@ -26,7 +26,7 @@ export const News = ({ news }: Props) => {
 					<Header title="Blockchain News" subtitle="Powered by" />
 				</div>
 
-				<div className="grid gap-4 p-10">
+				<div className="p-10 grid gap-4">
 					{news?.map((data, index) => (
 						<NewsCard key={index} {...data} />
 					))}
