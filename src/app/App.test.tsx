@@ -44,7 +44,5 @@ describe("App", () => {
 
 		const { container } = renderWithRouter(<App />);
 		expect(container).toBeTruthy();
-
-		process.env.NODE_ENV = "test";
 	});
 });
