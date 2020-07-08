@@ -20,6 +20,14 @@ describe("HeaderSearchBar", () => {
 		expect(getByTestId("header-search-bar__input")).toBeTruthy();
 	});
 
+	it("should show extra slot", () => {
+		const { getByTestId } = render(<HeaderSearchBar extra={<div data-testid="extra-slot" />} />);
+
+		fireEvent.click(getByTestId("header-search-bar__button"));
+
+		expect(getByTestId("extra-slot")).toBeTruthy();
+	});
+
 	it("should show the with custom label slot", () => {
 		const { getByTestId } = render(
 			<HeaderSearchBar>

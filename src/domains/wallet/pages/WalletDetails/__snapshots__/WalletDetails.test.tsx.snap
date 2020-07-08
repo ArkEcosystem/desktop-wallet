@@ -179,7 +179,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-sm text-theme-background"
                     />
                     <span
-                      class="sc-AxiKw hTNjkc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle absolute bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 bottom-2 -right-4 text-theme-primary-500"
+                      class="sc-AxiKw csrZac flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500"
                     >
                       <div
                         class="sc-AxirZ fttODj"
@@ -252,11 +252,11 @@ exports[`WalletDetails should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kpLzmr"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
               data-testid="Avatar"
             >
               <div
-                class="overflow-hidden rounded-full"
+                class="w-full h-full overflow-hidden rounded-full"
               >
                 <img
                   alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -364,7 +364,9 @@ exports[`WalletDetails should render 1`] = `
             >
               Address
             </p>
-            <label>
+            <label
+              class="flex"
+            >
               <input
                 class="sc-fzpans bPktWT"
                 data-testid="WalletHeader__toggle"
@@ -508,11 +510,11 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                   data-testid="Avatar"
                 >
                   <div
-                    class="overflow-hidden rounded-full"
+                    class="w-full h-full overflow-hidden rounded-full"
                   >
                     <img
                       alt="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
@@ -717,11 +719,11 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                   data-testid="Avatar"
                 >
                   <div
-                    class="overflow-hidden rounded-full"
+                    class="w-full h-full overflow-hidden rounded-full"
                   >
                     <img
                       alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -1000,11 +1002,11 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                     data-testid="Avatar"
                   >
                     <div
-                      class="overflow-hidden rounded-full"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
                       <img
                         alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -1085,11 +1087,11 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                     data-testid="Avatar"
                   >
                     <div
-                      class="overflow-hidden rounded-full"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
                       <img
                         alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -1298,11 +1300,11 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                     data-testid="Avatar"
                   >
                     <div
-                      class="overflow-hidden rounded-full"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
                       <img
                         alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -1607,11 +1609,11 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fERhyU"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
                           data-testid="Avatar"
                         >
                           <div
-                            class="overflow-hidden rounded-full"
+                            class="w-full h-full overflow-hidden rounded-full"
                           >
                             <img
                               alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
