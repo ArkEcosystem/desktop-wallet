@@ -9,7 +9,6 @@ import { FeaturedPlugins } from "domains/plugin/components/FeaturedPlugins";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import { PluginManagerControls } from "domains/plugin/components/PluginManagerControls";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -57,7 +56,6 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 
 	return (
 		<div>
-			<PluginManagerHomeBanner className="w-full mt-8" height="auto" />
 			<FeaturedPlugins isOpen={featuredModalOpen} onClose={() => setFeaturedModalOpen(false)} />
 			<BestPlugins isOpen={bestModalOpen} onClose={() => setBestModalOpen(false)} />
 
@@ -192,33 +190,37 @@ export const PluginManager = () => {
 				</div>
 			</div>
 
-			<PluginManagerNavigationBar selected={currentView} onChange={setCurrentView} />
+			<PluginManagerNavigationBar
+				selected={currentView}
+				onChange={setCurrentView}
+				selectedViewType={viewType}
+				onSelectGridView={() => setViewType("grid")}
+				onSelectListView={() => setViewType("list")}
+			/>
 
-			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-16">
-				<div className="flex items-center justify-between">
-					<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
-
-					<PluginManagerControls
-						onSelectGridView={() => setViewType("grid")}
-						onSelectListView={() => setViewType("list")}
-						selectedViewType={viewType}
-					/>
-				</div>
+			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-14">
+				<div className="flex items-center justify-between" />
 
 				{currentView === "home" && (
-					<PluginManagerHome
-						viewType={viewType}
-						onInstall={() => setInstallPlugin(true)}
-						onDelete={() => console.log("delete")}
-					/>
+					<div>
+						<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
+						<PluginManagerHome
+							viewType={viewType}
+							onInstall={() => setInstallPlugin(true)}
+							onDelete={() => console.log("delete")}
+						/>
+					</div>
 				)}
 				{currentView !== "home" && viewType === "grid" && (
-					<PluginGrid
-						plugins={plugins}
-						onSelect={() => console.log("selected")}
-						onDelete={() => console.log("delete")}
-						className="mt-6"
-					/>
+					<div>
+						<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
+						<PluginGrid
+							plugins={plugins}
+							onSelect={() => console.log("selected")}
+							onDelete={() => console.log("delete")}
+							className="mt-6"
+						/>
+					</div>
 				)}
 				{currentView !== "home" && viewType === "list" && (
 					<PluginList

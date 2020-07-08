@@ -6,7 +6,7 @@ import { PluginManager } from "./PluginManager";
 export default { title: "Domains / Plugin / Pages / PluginManager" };
 
 export const Default = () => (
-	<div>
+	<div className="-m-5">
 		<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
 
 		<PluginManager />
