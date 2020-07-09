@@ -1082,7 +1082,8 @@ export default {
     },
     MULTI_PAYMENT: {
       TOTAL_AMOUNT: 'Total amount',
-      WARNING_DUPLICATE: 'The address is already a recipient'
+      WARNING_DUPLICATE: 'The address is already a recipient',
+      TOOLTIP: 'A multiple recipient transaction allows up to {0} recipients in one transaction'
     },
     MULTI_SIGNATURE: {
       ADDRESS: 'Multisignature Address',
@@ -1125,6 +1126,7 @@ export default {
     BRIDGECHAIN_NAME: 'Bridgechain Name',
     BUSINESS_NAME: 'Business Name',
     BUTTON_ADD: 'Add',
+    BUTTON_ADD_RECIPIENT: 'Add Recipient #{number}',
     CONFIRMATION_COUNT: '{confirmations} Confirmations',
     CONFIRM_SEND_ALL: 'This will enable sending all of your tokens from the current wallet in this transaction. The selected transfer fee will be deducted from the send amount.',
     CONFIRM_SEND_ALL_TITLE: 'Send all your tokens?',
@@ -1144,12 +1146,13 @@ export default {
     LOAD_FROM_URI: 'Load transaction from URI',
     MULTIPLE: 'Multiple',
     NONCE: 'Nonce',
-    NO_RECIPIENTS: 'There are no recipient(s)',
+    NO_RECIPIENTS: 'There are no recipients',
     OPEN_IN_EXPLORER: 'Open in Explorer',
     PASSPHRASE: 'Passphrase',
     PASSWORD: 'Encryption Password',
     RECIPIENT: 'Recipient',
     RECIPIENTS: 'Recipients',
+    RECIPIENTS_TITLE_MINIMUM: 'Recipients (minimum 2)',
     RESEND: 'Resend',
     RESENT_NOTICE: 'Transaction {transactionId} has been resent',
     SAVE_OFFLINE: 'Save transaction offline',

@@ -58,7 +58,7 @@
     </p>
 
     <div
-      v-if="isStaticFee && !isAdvancedFee"
+      v-if="!hideStaticFeeNotice && isStaticFee && !isAdvancedFee"
       class="mt-6 mb-4"
     >
       {{ $t(`INPUT_FEE.UNIQUE`, { fee: parseFloat(fee) }) }}
@@ -121,6 +121,12 @@ export default {
       type: Object,
       required: false,
       default: null
+    },
+
+    hideStaticFeeNotice: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
 
@@ -260,15 +266,17 @@ export default {
     }
   },
 
+  watch: {
+    transactionType () {
+      this.triggerTypeUpdate()
+    }
+  },
+
   created () {
     // Fees should be synchronized only when this component is active
     this.$synchronizer.appendFocus('fees')
 
-    if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
-      this.onChoice(this.session_profile.defaultChosenFee)
-    } else {
-      this.emitFee(this.feeChoices.AVERAGE)
-    }
+    this.triggerTypeUpdate()
   },
 
   beforeDestroy () {
@@ -276,6 +284,13 @@ export default {
   },
 
   methods: {
+    triggerTypeUpdate () {
+      if (this.lastFee && this.session_profile.defaultChosenFee === 'LAST') {
+        this.onChoice(this.session_profile.defaultChosenFee)
+      } else {
+        this.emitFee(this.feeChoices.AVERAGE)
+      }
+    },
     focusInput () {
       this.$refs.input.focus()
     },

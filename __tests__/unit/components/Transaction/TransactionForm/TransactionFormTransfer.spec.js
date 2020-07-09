@@ -184,7 +184,12 @@ describe('TransactionFormTransfer', () => {
       expect(wrapper.contains('.TransactionFormTransfer__amount')).toBe(true)
     })
 
-    it('should have add button', () => {
+    it('should have add button on multiple tab', async () => {
+      expect(wrapper.contains('.TransactionFormTransfer__add')).toBe(false)
+
+      wrapper.vm.onSendTypeChange('Multiple')
+      await wrapper.vm.$nextTick()
+
       expect(wrapper.contains('.TransactionFormTransfer__add')).toBe(true)
     })
 
@@ -233,7 +238,20 @@ describe('TransactionFormTransfer', () => {
     })
 
     describe('next button', () => {
-      it('should be enabled if recipients form is valid', async () => {
+      it('should be enabled for single if recipients form is valid', async () => {
+        wrapper.vm.$v.recipientId.$model = 'address-1'
+        wrapper.vm.$v.amount.$model = 10
+        wrapper.vm.$v.form.fee.$model = 0.1
+        wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
+        wrapper.vm.$v.form.passphrase.$model = 'passphrase'
+
+        await wrapper.vm.$nextTick()
+
+        expect(wrapper.find('.TransactionFormTransfer__next').attributes('disabled')).toBeFalsy()
+      })
+
+      it('should be enabled for multiple if recipients form is valid', async () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -284,6 +302,7 @@ describe('TransactionFormTransfer', () => {
       })
 
       it('should return true if it is multipayment transaction', () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -394,7 +413,11 @@ describe('TransactionFormTransfer', () => {
         expect(wrapper.vm.maximumAvailableAmount).toEqual((new BigNumber(1000)).minus(0.1))
       })
 
-      it('should return value including all recipients', async () => {
+      it('should return value including all recipients for multiple', async () => {
+        wrapper.vm.onSendTypeChange('Multiple')
+
+        await wrapper.vm.$nextTick()
+
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.recipientId.$model = Identities.Address.fromPassphrase('test')
         wrapper.vm.$v.amount.$model = 10
@@ -812,7 +835,7 @@ describe('TransactionFormTransfer', () => {
 
   describe('methods', () => {
     describe('getTransactionData', () => {
-      it('should return correct data with passphrase for normal transaction', () => {
+      it('should return correct data with passphrase for normal transaction', async () => {
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
@@ -820,14 +843,18 @@ describe('TransactionFormTransfer', () => {
           address: 'address-2',
           amount: (1 * 1e8).toString()
         }]
-        wrapper.vm.$v.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
-        wrapper.vm.$v.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
+        wrapper.vm.$v.recipientId.$model = 'address-1'
+        wrapper.vm.$v.amount.$model = 50
+        // wrapper.vm.$v.recipientId.$model = wrapper.vm.$v.form.recipients.$model[0].address
+        // wrapper.vm.$v.amount.$model = wrapper.vm.$v.form.recipients.$model[0].amount
+
+        await wrapper.vm.$nextTick()
 
         expect(wrapper.vm.getTransactionData()).toEqual({
           address: 'address-1',
           passphrase: 'passphrase',
-          recipientId: 'address-2',
-          amount: (1 * 1e8).toString(),
+          recipientId: 'address-1',
+          amount: new BigNumber(50 * 1e8),
           fee: new BigNumber(0.1 * 1e8),
           vendorField: 'vendorfield test',
           wif: undefined,
@@ -838,6 +865,7 @@ describe('TransactionFormTransfer', () => {
       })
 
       it('should return correct data with passphrase for multipayment transaction', () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
@@ -874,6 +902,7 @@ describe('TransactionFormTransfer', () => {
           secondPublicKey: Identities.PublicKey.fromPassphrase('second passphrase')
         })
 
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.fee.$model = 0.1
         wrapper.vm.$v.form.vendorField.$model = 'vendorfield test'
         wrapper.vm.$v.form.passphrase.$model = 'passphrase'
@@ -920,6 +949,7 @@ describe('TransactionFormTransfer', () => {
       })
 
       it('should build multipayment transaction', async () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -952,6 +982,7 @@ describe('TransactionFormTransfer', () => {
       })
 
       it('should build multipayment transaction with default arguments', async () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -994,8 +1025,8 @@ describe('TransactionFormTransfer', () => {
 
         wrapper.vm.populateSchema()
 
-        expect(wrapper.vm.form.recipients[0].address).toBe('address-5')
-        expect(wrapper.vm.form.recipients[0].amount).toEqual(new BigNumber(100 * 1e8))
+        expect(wrapper.vm.recipientId).toBe('address-5')
+        expect(wrapper.vm.amount).toEqual(100)
         expect(wrapper.vm.form.vendorField).toBe('test vendorfield')
       })
 
@@ -1129,6 +1160,7 @@ describe('TransactionFormTransfer', () => {
       })
 
       it('should generate error for multipayment transaction', () => {
+        wrapper.vm.onSendTypeChange('Multiple')
         wrapper.vm.$v.form.recipients.$model = [{
           address: 'address-2',
           amount: 10
@@ -1395,9 +1427,9 @@ describe('TransactionFormTransfer', () => {
       it('should submit form data', async () => {
         const spy = jest.spyOn(wrapper.vm, 'onSubmit').mockImplementation()
 
-        wrapper.vm.nextStep()
+        await wrapper.vm.nextStep()
 
-        expect(spy).toHaveBeenCalledTimes(0)
+        expect(spy).toHaveBeenCalledTimes(1)
       })
     })
 
@@ -1606,7 +1638,11 @@ describe('TransactionFormTransfer', () => {
         })
 
         it('should be above minimum if set', () => {
+          wrapper.vm.onSendTypeChange('Multiple')
           wrapper.vm.$v.form.recipients.$model = [{
+            address: 'address-1',
+            amount: 10
+          }, {
             address: 'address-1',
             amount: 10
           }]

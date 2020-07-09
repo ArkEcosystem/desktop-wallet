@@ -3,6 +3,28 @@
     class="TransactionFormTransfer flex flex-col"
     @submit.prevent
   >
+    <div v-if="hasAip11">
+      <div class="text-sm text-theme-page-text-light">
+        Select a Single or Multiple Recipient Transaction
+      </div>
+
+      <div class="flex items-center mt-2">
+        <InputToggle
+          v-model="sendType"
+          :choices="sendTypes"
+          :selected-choice="sendType"
+          @select="onSendTypeChange"
+        />
+
+        <div
+          v-tooltip="{ content: $tc('TRANSACTION.MULTI_PAYMENT.TOOLTIP', maximumRecipients, [maximumRecipients]), toggle: 'hover' }"
+          class="TransactionFormTransfer__single-multiple-tooltip"
+        >
+          ?
+        </div>
+      </div>
+    </div>
+
     <ListDivided
       v-if="senderLabel"
       :is-floating-label="true"
@@ -32,57 +54,59 @@
       @select="ensureAvailableAmount"
     />
 
-    <InputAddress
-      ref="recipient"
-      v-model="$v.recipientId.$model"
-      :label="$t('TRANSACTION.RECIPIENT')"
-      :pub-key-hash="walletNetwork.version"
-      :show-suggestions="true"
-      :is-disabled="!currentWallet"
-      :warning-text="recipientWarning"
-      name="recipientId"
-      class="TransactionFormTransfer__recipient mb-5"
-    />
-
-    <div class="flex items-baseline mb-5">
-      <InputCurrency
-        ref="amount"
-        v-model="$v.amount.$model"
-        :alternative-currency="alternativeCurrency"
-        :currency="walletNetwork.token"
-        :is-invalid="$v.amount.$dirty && $v.amount.$invalid"
-        :label="$t('TRANSACTION.AMOUNT')"
-        :minimum-error="amountTooLowError"
-        :minimum-amount="minimumAmount"
-        :maximum-amount="maximumAvailableAmount"
-        :maximum-error="notEnoughBalanceError"
-        :required="true"
+    <div :class="{ 'rounded-lg bg-theme-input-toggle-choice -mx-6 p-6 pt-4 mb-2': isMultiPayment }">
+      <InputAddress
+        ref="recipient"
+        v-model="$v.recipientId.$model"
+        :label="recipientFieldLabel"
+        :pub-key-hash="walletNetwork.version"
+        :show-suggestions="true"
         :is-disabled="!currentWallet"
-        :wallet-network="walletNetwork"
-        class="TransactionFormTransfer__amount flex-1 mr-3"
-        @blur="ensureAvailableAmount"
-        @input="setSendAll(false, false)"
+        :warning-text="recipientWarning"
+        name="recipientId"
+        class="TransactionFormTransfer__recipient mb-5"
       />
+
+      <div class="flex items-baseline mb-5">
+        <InputCurrency
+          ref="amount"
+          v-model="$v.amount.$model"
+          :alternative-currency="alternativeCurrency"
+          :currency="walletNetwork.token"
+          :is-invalid="$v.amount.$dirty && $v.amount.$invalid"
+          :label="$t('TRANSACTION.AMOUNT')"
+          :minimum-error="amountTooLowError"
+          :minimum-amount="minimumAmount"
+          :maximum-amount="maximumAvailableAmount"
+          :maximum-error="notEnoughBalanceError"
+          :required="true"
+          :is-disabled="!currentWallet"
+          :wallet-network="walletNetwork"
+          class="TransactionFormTransfer__amount flex-1 mr-3"
+          @blur="ensureAvailableAmount"
+          @input="setSendAll(false, false)"
+        />
+
+        <InputSwitch
+          v-model="isSendAllActive"
+          :text="$t('TRANSACTION.SEND_ALL')"
+          :is-disabled="isRecipientSendAll || !canSendAll || !currentWallet"
+          class="TransactionFormTransfer__send-all"
+          @change="setSendAll"
+        />
+      </div>
 
       <ButtonGeneric
-        v-if="hasAip11"
+        v-if="isMultiPayment"
         :disabled="!isValidRecipient"
-        :label="$t('TRANSACTION.BUTTON_ADD')"
-        class="TransactionFormTransfer__add py-1 flex-inline h-8 mt-4 mr-3"
+        :label="addRecipientLabel"
+        class="TransactionFormTransfer__add py-1 w-full h-8"
         @click="addRecipient"
-      />
-
-      <InputSwitch
-        v-model="isSendAllActive"
-        :text="$t('TRANSACTION.SEND_ALL')"
-        :is-disabled="isRecipientSendAll || !canSendAll || !currentWallet"
-        class="TransactionFormTransfer__send-all"
-        @change="setSendAll"
       />
     </div>
 
     <TransactionRecipientList
-      v-if="hasAip11"
+      v-if="isMultiPayment"
       :items="$v.form.recipients.$model"
       :max-items="maximumRecipients"
       :show-count="true"
@@ -111,6 +135,7 @@
         :is-disabled="!currentWallet"
         :wallet="currentWallet"
         :wallet-network="walletNetwork"
+        :hide-static-fee-notice="isMultiPayment"
         class="TransactionFormTransfer__fee"
         :class="{
           'TransactionFormTransfer__fee--helper': isMultiPayment && insufficientFundsError
@@ -216,7 +241,7 @@
 import { required } from 'vuelidate/lib/validators'
 import { TRANSACTION_TYPES, VENDOR_FIELD } from '@config'
 import { ButtonGeneric } from '@/components/Button'
-import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputFee } from '@/components/Input'
+import { InputAddress, InputCurrency, InputPassword, InputSwitch, InputText, InputToggle, InputFee } from '@/components/Input'
 import { ListDivided, ListDividedItem } from '@/components/ListDivided'
 import { ModalConfirmation, ModalLoader } from '@/components/Modal'
 import { PassphraseInput } from '@/components/Passphrase'
@@ -238,6 +263,7 @@ export default {
     InputPassword,
     InputSwitch,
     InputText,
+    InputToggle,
     InputFee,
     ListDivided,
     ListDividedItem,
@@ -260,6 +286,11 @@ export default {
   },
 
   data: () => ({
+    sendType: 'Single',
+    sendTypes: [
+      'Single',
+      'Multiple'
+    ],
     recipientId: '',
     amount: '',
     isSendAllActive: false,
@@ -300,9 +331,9 @@ export default {
       return !this.$v.form.$invalid
     },
 
-    isMultiPayment () {
-      return this.form.recipients.length > 1
-    },
+    // isMultiPayment () {
+    //   return this.isMultiPayment // && this.form.recipients.length > 1
+    // },
 
     isLedger () {
       return this.currentWallet && !!this.currentWallet.isLedger
@@ -349,7 +380,7 @@ export default {
         return this.currency_subToUnit(0)
       }
 
-      if (!this.hasAip11) {
+      if (!this.isMultiPayment) {
         return this.currency_subToUnit(this.currentWallet.balance).minus(this.form.fee)
       }
 
@@ -477,6 +508,26 @@ export default {
       }
 
       return this.session_network.constants.multiPaymentLimit
+    },
+
+    isMultiPayment () {
+      return this.hasAip11 && this.sendType === 'Multiple'
+    },
+
+    recipientFieldLabel () {
+      const label = this.$t('TRANSACTION.RECIPIENT')
+
+      if (this.isMultiPayment) {
+        return `${label} #${this.form.recipients.length + 1}`
+      }
+
+      return label
+    },
+
+    addRecipientLabel () {
+      return this.$tc('TRANSACTION.BUTTON_ADD_RECIPIENT', this.form.recipients.length + 1, {
+        number: this.form.recipients.length + 1
+      })
     }
   },
 
@@ -512,14 +563,8 @@ export default {
       if (this.isMultiPayment) {
         transactionData.recipients = this.form.recipients
       } else {
-        if (this.hasAip11) {
-          transactionData.recipientId = this.form.recipients[0].address
-          transactionData.amount = this.getAmountNormalTransaction()
-        } else {
-          transactionData.recipientId = this.recipientId
-          transactionData.amount = this.currency_unitToSub(this.amount)
-        }
-
+        transactionData.recipientId = this.recipientId
+        transactionData.amount = this.currency_unitToSub(this.amount)
         transactionData.networkId = this.walletNetwork.id
       }
 
@@ -560,22 +605,18 @@ export default {
       }
 
       try {
-        if (this.schema.address && this.schema.amount) {
-          if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
-            this.$v.form.recipients.$model = []
-            this.$v.form.recipients.$model.push({
-              address: this.schema.address,
-              amount: this.currency_unitToSub(this.schema.amount),
-              sendAll: false
-            })
-          } else {
-            throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
-              this.wallet_truncate(this.schema.address)
-            ]))
-          }
-        }
+        if (WalletService.validateAddress(this.schema.address, this.session_network.version)) {
+          this.$set(this, 'recipientId', this.schema.address || '')
+          this.$set(this.form, 'vendorField', this.schema.vendorField || '')
 
-        this.$set(this.form, 'vendorField', this.schema.vendorField || '')
+          if (this.schema.amount) {
+            this.$set(this, 'amount', this.schema.amount || '')
+          }
+        } else {
+          throw new Error(this.$t('VALIDATION.RECIPIENT_DIFFERENT_NETWORK', [
+            this.wallet_truncate(this.schema.address)
+          ]))
+        }
       } catch (error) {
         this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_URI')}: ${error.message}`)
       }
@@ -699,7 +740,7 @@ export default {
     },
 
     async nextStep () {
-      if (this.hasAip11) {
+      if (this.isMultiPayment) {
         for await (const recipient of this.$v.form.recipients.$model) {
           if (recipient.sendAll) {
             recipient.amount = this.currency_unitToSub(this.maximumAvailableAmount)
@@ -735,7 +776,7 @@ export default {
               throw new Error(this.$t('VALIDATION.INVALID_TYPE'))
             }
 
-            if (this.hasAip11 && Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
+            if (this.isMultiPayment && Object.prototype.hasOwnProperty.call(transaction, 'asset') && Object.prototype.hasOwnProperty.call(transaction.asset, 'payments')) {
               this.$refs.recipient.reset()
               this.$refs.amount.reset()
               this.$v.form.recipients.$model = []
@@ -790,6 +831,10 @@ export default {
       } catch (error) {
         this.$error(`${this.$t('TRANSACTION.ERROR.LOAD_FROM_FILE')}: ${error.message}`)
       }
+    },
+
+    onSendTypeChange (choice) {
+      this.sendType = choice
     }
   },
 
@@ -818,11 +863,15 @@ export default {
     form: {
       recipients: {
         aboveMinimum () {
-          if (!this.hasAip11) {
-            return true
+          if (!this.isMultiPayment) {
+            if (this.$refs.recipient && this.$refs.amount) {
+              return !this.$refs.recipient.$v.$invalid && !this.$refs.amount.$v.$invalid
+            }
+
+            return false
           }
 
-          return this.form.recipients.length >= 1
+          return this.form.recipients.length > 1
         },
         belowOrEqualMaximum () {
           return this.form.recipients.length <= this.maximumRecipients
@@ -853,5 +902,12 @@ export default {
 .SendAllConfirmation .ModalConfirmation__container {
   min-width: calc(var(--contact-identicon-xl) + 74px * 2);
   max-width: calc(var(--contact-identicon-xl) + 74px * 2 + 50px);
+}
+
+.TransactionFormTransfer__single-multiple-tooltip {
+  @apply flex items-center justify-center ml-2 rounded-full bg-theme-tooltip-icon text-theme-tooltip-icon-text w-4 h-4 cursor-pointer select-none text-xs font-bold;
+}
+.TransactionFormTransfer__single-multiple-tooltip:hover {
+  @apply bg-theme-tooltip-icon-hover text-theme-tooltip-icon-hover-text;
 }
 </style>

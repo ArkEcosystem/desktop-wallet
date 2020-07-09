@@ -122,6 +122,7 @@ let colors = {
   'theme-option-heading-button-text': 'var(--theme-option-heading-button-text)',
   'theme-input-field-border': 'var(--theme-input-field-border)',
   'theme-input-toggle-choice': 'var(--theme-input-toggle-choice)',
+  'theme-input-toggle-choice-hover': 'var(--theme-input-toggle-choice-hover)',
   'theme-input-toggle-choice-text': 'var(--theme-input-toggle-choice-text)',
   'theme-modal-footer-button': 'var(--theme-modal-footer-button)',
   'theme-modal-footer-button-text': 'var(--theme-modal-footer-button-text)',
@@ -158,6 +159,11 @@ let colors = {
   'theme-banner-text': 'var(--theme-banner-text)',
 
   'theme-footer-text': '#a4acb8',
+
+  'theme-tooltip-icon': 'var(--theme-tooltip-icon)',
+  'theme-tooltip-icon-hover': 'var(--theme-tooltip-icon-hover)',
+  'theme-tooltip-icon-text': 'var(--theme-tooltip-icon-text)',
+  'theme-tooltip-icon-hover-text': 'var(--theme-tooltip-icon-hover-text)',
 
   'transparent': 'transparent',
   'inherit': 'inherit',
