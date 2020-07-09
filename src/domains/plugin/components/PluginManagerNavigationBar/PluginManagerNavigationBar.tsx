@@ -27,7 +27,7 @@ export const PluginManagerNavigationBar = ({
 }: PluginManagerNavigationBar) => {
 	return (
 		<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-100">
-			<div className="container flex items-center justify-between mx-auto">
+			<div className="container flex items-center justify-between mx-auto px-14">
 				<div>
 					<ul className="flex h-24">
 						{menu &&
@@ -37,7 +37,7 @@ export const PluginManagerNavigationBar = ({
 										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
-										className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+										className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 											selected === menuItem.name ? "active" : ""
 										}`}
 									>
@@ -60,7 +60,7 @@ export const PluginManagerNavigationBar = ({
 						data-testid={`PluginManagerNavigationBar__my-plugins`}
 						onClick={() => onChange("my-plugins")}
 						title="My Plugins"
-						className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+						className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 							selected === "my-plugins" ? "active" : ""
 						}`}
 					>

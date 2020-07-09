@@ -7,7 +7,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex items-center justify-between mx-auto"
+      class="container flex items-center justify-between mx-auto px-14"
     >
       <div>
         <ul
@@ -17,7 +17,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
               title="Home"
             >
@@ -33,7 +33,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
               title="Game"
             >
@@ -54,7 +54,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
               title="Utility"
             >
@@ -75,7 +75,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
               title="Themes"
             >
@@ -96,7 +96,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
               title="Other"
             >
@@ -116,7 +116,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
         class="flex h-24"
       >
         <button
-          class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
           title="My Plugins"
         >
@@ -188,7 +188,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex items-center justify-between mx-auto"
+      class="container flex items-center justify-between mx-auto px-14"
     >
       <div>
         <ul
@@ -198,7 +198,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
               title="Home"
             >
@@ -214,7 +214,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
               title="Game"
             >
@@ -235,7 +235,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
               title="Utility"
             >
@@ -256,7 +256,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
               title="Themes"
             >
@@ -277,7 +277,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="flex"
           >
             <button
-              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
               title="Other"
             >
@@ -297,7 +297,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
         class="flex h-24"
       >
         <button
-          class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
           title="My Plugins"
         >
