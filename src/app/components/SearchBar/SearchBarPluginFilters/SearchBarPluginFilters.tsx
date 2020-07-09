@@ -1,7 +1,7 @@
 import { Checkbox } from "app/components/Checkbox";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
-import React from "react";
+import React, { useState } from "react";
 
 type Category = {
 	label: string;
@@ -15,6 +15,9 @@ type FilterProps = {
 	claimedLabel?: string;
 	resetFiltersLabel?: string;
 	ratings?: number[];
+	initialValues?: any;
+	onChange?: any;
+	onReset?: any;
 };
 
 const Stars = ({ length = 5, value }: any) => {
@@ -32,7 +35,7 @@ const Stars = ({ length = 5, value }: any) => {
 	);
 };
 
-const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
+const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => {
 	return (
 		<fieldset>
 			{ratings &&
@@ -46,6 +49,8 @@ const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
 								<Checkbox
 									name="test"
 									type="radio"
+									checked={value === rating}
+									onChange={() => onChange(rating)}
 									className="rounded-lg mt-px"
 									data-testid={`SearchBarPluginFilters-rating-${rating}`}
 								/>
@@ -61,7 +66,23 @@ const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
 	);
 };
 
-const CategoryCheckboxes = ({ categories }: any) => {
+const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
+	const isSelected = (categoryValue: any, list: string[]) => {
+		return list?.some((item) => item === categoryValue);
+	};
+
+	const updateCategories = (isChecked: boolean, categoryValue: any) => {
+		const values = selected.concat();
+
+		if (isChecked) values.push(categoryValue);
+		else {
+			const index = selected.findIndex((item: string) => item === categoryValue);
+			values.splice(index, 1);
+		}
+
+		onChange?.(values);
+	};
+
 	return (
 		<fieldset>
 			{categories &&
@@ -73,6 +94,8 @@ const CategoryCheckboxes = ({ categories }: any) => {
 						>
 							<span>
 								<Checkbox
+									checked={isSelected(category.value, selected)}
+									onChange={(ev: any) => updateCategories(ev.target.checked, category.value)}
 									name="category"
 									data-testid={`SearchBarPluginFilters-category-${category.value}`}
 								/>
@@ -91,7 +114,48 @@ export const SearchBarPluginFilters = ({
 	ratingsLabel,
 	ratingsSuffix,
 	categoriesLabel,
+	initialValues,
+	onReset,
+	onChange,
 }: FilterProps) => {
+	const [rating, setRating] = useState(initialValues.rating);
+	const [claimed, setClaimed] = useState(initialValues.claimed);
+	const [selectedCategories, setSelectedCategories] = useState(initialValues.categories);
+
+	const onResetFilters = () => {
+		setClaimed(false);
+		setRating(null);
+		setSelectedCategories([]);
+		onReset?.();
+	};
+
+	const onChangeRating = (value: number) => {
+		setRating(value);
+		onChange?.({
+			rating: value,
+			categories: selectedCategories,
+			claimed,
+		});
+	};
+
+	const onChangeCategory = (selected: any) => {
+		setSelectedCategories(selected);
+		onChange?.({
+			categories: selected,
+			rating,
+			claimed,
+		});
+	};
+
+	const onChangeClaimed = (value: boolean) => {
+		setClaimed(value);
+		onChange?.({
+			claimed: value,
+			categories: selectedCategories,
+			rating,
+		});
+	};
+
 	return (
 		<div data-testid="SearchBarPluginFilters" className="relative flex items-center text-theme-primary-400 z-20">
 			<Dropdown
@@ -108,7 +172,9 @@ export const SearchBarPluginFilters = ({
 							<Checkbox
 								name="claim"
 								className="rounded-lg"
-								data-testid={`SearchBarPluginFilters-claim`}
+								checked={claimed}
+								onChange={(ev: any) => onChangeClaimed(ev.target.checked)}
+								data-testid={`SearchBarPluginFilters-claimed`}
 							/>
 						</span>
 						<span className="ml-1 mt-1">Claimed</span>
@@ -116,15 +182,28 @@ export const SearchBarPluginFilters = ({
 
 					<div className="mt-3 mb-4 border-b border-dashed border-theme-neutral-200" />
 					<div className="mb-1 font-semibold text-theme-neutral-700">{categoriesLabel}</div>
-					<CategoryCheckboxes categories={categories} />
+					<CategoryCheckboxes
+						categories={categories}
+						selected={selectedCategories}
+						onChange={onChangeCategory}
+					/>
 
 					<div className="my-4 border-b border-dashed border-theme-neutral-200" />
 
 					<div className="font-semibold text-theme-neutral-700">{ratingsLabel}</div>
-					<RatingsCheckboxes ratings={ratings} suffixLabel={ratingsSuffix} />
+					<RatingsCheckboxes
+						ratings={ratings}
+						suffixLabel={ratingsSuffix}
+						value={rating}
+						onChange={onChangeRating}
+					/>
 
 					<div className="my-4 border-b border-dashed border-theme-neutral-200" />
-					<div className="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline">
+					<div
+						data-testid="SearchBarPluginFilters-reset"
+						onClick={onResetFilters}
+						className="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+					>
 						<Icon name="Reset" />
 						<span className="pl-2">Reset Filters</span>
 					</div>
@@ -159,4 +238,9 @@ SearchBarPluginFilters.defaultProps = {
 	ratingsSuffix: "& up",
 	claimedLabel: "Claimed",
 	resetFiltersLabel: "Reset Filters",
+	initialValues: {
+		claimed: false,
+		categories: [],
+		rating: null,
+	},
 };
