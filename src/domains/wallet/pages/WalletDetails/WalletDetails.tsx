@@ -70,6 +70,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		},
 	];
 
+	/* istanbul ignore next */
 	return (
 		<div className="relative">
 			<Breadcrumbs crumbs={crumbs} />
@@ -85,7 +86,6 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				hasStarred={wallet?.hasStarred}
 			/>
 			<Divider />
-
 			<WalletVote delegates={wallet?.delegates || []} />
 			<Divider />
 

@@ -32,6 +32,7 @@ describe("App", () => {
 	});
 
 	it("should render mock", () => {
+		process.env.NODE_ENV = "development";
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
 		const { container } = renderWithRouter(<App />);
