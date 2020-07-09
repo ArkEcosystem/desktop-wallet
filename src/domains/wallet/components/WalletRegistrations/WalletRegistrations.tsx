@@ -35,7 +35,7 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 };
 
 type Props = {
-	address: string;
+	address: string | undefined;
 	hasBridgechains?: boolean;
 	hasPlugins?: boolean;
 	hasSecondSignature?: boolean;
