@@ -4,11 +4,11 @@ import tw, { styled } from "twin.macro";
 type Props = {
 	children: React.ReactNode;
 	type?: "radio" | "checkbox";
+	name?: string | number;
+	value?: string | number;
 	checked?: boolean;
 	defaultChecked?: boolean;
-	readonly?: boolean;
-	value?: string | number;
-	name?: string | number;
+	disabled?: boolean;
 } & React.HTMLProps<any>;
 
 const Input = styled.input`
@@ -23,18 +23,18 @@ const CustomButton = styled.div`
 `;
 
 export const SelectCategory = React.forwardRef<HTMLInputElement, Props>(
-	({ children, type, checked, defaultChecked, onChange, readonly, value, name, ...props }: Props, ref) => (
-		<label htmlFor={name} className="cursor-pointer" {...props}>
+	({ children, type, name, value, checked, defaultChecked, disabled, onChange, ...props }: Props, ref) => (
+		<label htmlFor={name} tw="cursor-pointer" {...props}>
 			<Input
 				data-testid={`SelectCategory__${name}`}
 				ref={ref}
 				type={type}
-				checked={checked}
-				onChange={onChange}
-				defaultChecked={defaultChecked}
-				readOnly={readonly}
-				value={value}
 				name={name}
+				value={value}
+				checked={checked}
+				defaultChecked={defaultChecked}
+				disabled={disabled}
+				onChange={onChange}
 			/>
 			<CustomButton>{children}</CustomButton>
 		</label>
