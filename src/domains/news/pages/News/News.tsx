@@ -1,8 +1,8 @@
-
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Icon } from "app/components/Icon";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
+import BlockfolioBanner from "domains/news/images/blockfolio-banner.jpg";
 import React, { useState } from "react";
 
 type Props = {
@@ -38,6 +38,8 @@ export const News = ({ news, categories, assets }: Props) => {
 						{news?.map((data, index) => (
 							<NewsCard key={index} {...data} />
 						))}
+
+						<img src={BlockfolioBanner} alt="Blockfolio Banner" />
 					</div>
 					<div className="w-3/5">
 						<NewsOptions categories={categories} selectedAssets={assets} />
