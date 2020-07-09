@@ -10,6 +10,10 @@ export default {
 
 export const Default = () => {
 	const color = select("Color", ["primary", "success", "danger", "warning"], "success");
-
 	return <Checkbox color={color} />;
+};
+
+export const Thick = () => {
+	const color = select("Color", ["primary", "success", "danger", "warning"], "success");
+	return <Checkbox color={color} variant="thick" />;
 };
