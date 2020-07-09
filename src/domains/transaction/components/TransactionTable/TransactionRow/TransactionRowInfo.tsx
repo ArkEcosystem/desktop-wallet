@@ -17,7 +17,7 @@ const MultiSignature = () => {
 	return (
 		<Tippy content="MultiSignature">
 			<span className="p-1">
-				<Icon data-testid="TransactionRowInfo__multiSignature" name="Smartbridge" />
+				<Icon data-testid="TransactionRowInfo__multiSignature" name="Multisig" />
 			</span>
 		</Tippy>
 	);

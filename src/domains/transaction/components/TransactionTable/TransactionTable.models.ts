@@ -9,6 +9,7 @@ export type Transaction = {
 	amount: string;
 	fee: string;
 	isSent: boolean;
+	vendorField?: string;
 	isUnvote?: boolean;
 	isSignaturePending?: boolean;
 	isMultiSignature?: boolean;

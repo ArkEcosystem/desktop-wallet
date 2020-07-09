@@ -10,11 +10,12 @@ type Props = {
 	className?: string;
 };
 
-const Wrapper = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string }) => {
 	return (
 		<Circle
 			data-testid="TransactionRowRecipientIcon"
-			className={className ? className : "bg-theme-background border-theme-neutral-900 text-theme-neutral-900"}
+			className={"bg-theme-background border-theme-neutral-900 text-theme-neutral-900"}
+			{...props}
 		>
 			{children}
 		</Circle>

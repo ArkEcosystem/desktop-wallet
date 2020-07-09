@@ -18,8 +18,8 @@ type Props = {
 
 export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => {
 	return (
-		<tr className="border-b border-dotted border-theme-neutral-300">
-			<td className="w-16 py-5">
+		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300">
+			<td className="w-16 py-6">
 				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id} isExternal />
 			</td>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600">
@@ -41,15 +41,15 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 				<TransactionRowAmount {...transaction} />
 			</td>
 			{transaction.isSignaturePending && (
-				<td className="w-32">
-					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
+				<td className="w-32 text-center">
+					<Button size="sm" data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>
 				</td>
 			)}
 			{currencyRate && !transaction.isSignaturePending && (
-				<td className="text-right">
+				<td data-testid="TransactionRow__currency" className="text-right">
 					<TransactionRowAmount {...transaction} currencyRate={currencyRate} />
 				</td>
 			)}

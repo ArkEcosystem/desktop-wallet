@@ -26,10 +26,14 @@ export const TransactionRowAmount = ({ amount, fee, isSent, currencyRate }: Prop
 	}, [amount, fee, isSent, currencyRate]);
 
 	if (currencyRate) {
-		return <span data-testid="TransactionRowAmount">{total}</span>;
+		return (
+			<span className="text-theme-neutral-dark" data-testid="TransactionRowAmount">
+				{total}
+			</span>
+		);
 	}
 
-	const color = isSent ? "success" : "danger";
+	const color = isSent ? "danger" : "success";
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color}>
