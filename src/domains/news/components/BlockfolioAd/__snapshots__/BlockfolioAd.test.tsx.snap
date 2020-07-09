@@ -26,13 +26,19 @@ exports[`BlockfolioAd should render 1`] = `
       <div
         class="flex flex-col space-y-5 text-theme-background"
       >
-        <svg
-          class="-mx-8"
-          height="47"
-          width="238"
+        <a
+          href="https://blockfolio.com/"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          blockfolio.svg
-        </svg>
+          <svg
+            class="-mx-8"
+            height="47"
+            width="238"
+          >
+            blockfolio.svg
+          </svg>
+        </a>
         <p
           class="w-3/4 text-lg font-medium"
         >
@@ -42,16 +48,28 @@ exports[`BlockfolioAd should render 1`] = `
       <div
         class="flex mt-12 space-x-2"
       >
-        <svg
-          class="w-32 h-10 b-0"
+        <a
+          href="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          download-app-store.svg
-        </svg>
-        <svg
-          class="w-32 h-10"
+          <svg
+            class="w-32 h-10 b-0"
+          >
+            download-app-store.svg
+          </svg>
+        </a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          download-google-play.svg
-        </svg>
+          <svg
+            class="w-32 h-10"
+          >
+            download-google-play.svg
+          </svg>
+        </a>
       </div>
     </div>
   </div>
