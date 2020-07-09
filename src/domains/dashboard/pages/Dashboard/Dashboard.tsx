@@ -1,8 +1,10 @@
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
+import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
@@ -22,6 +24,8 @@ const Section = styled.div`
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
 
 	// Wallet controls data
 	const filterProperties = {
@@ -64,7 +68,14 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 			)}
 
 			<Section>
-				<Wallets viewType="grid" title="Wallets" wallets={wallets} filterProperties={filterProperties} />
+				<Wallets
+					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
+					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
+					viewType="grid"
+					title="Wallets"
+					wallets={wallets}
+					filterProperties={filterProperties}
+				/>
 			</Section>
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
