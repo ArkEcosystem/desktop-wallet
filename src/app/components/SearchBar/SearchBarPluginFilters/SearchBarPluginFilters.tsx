@@ -22,7 +22,7 @@ const Stars = ({ length = 5, value }: any) => {
 			{stars.map((_, index: number) => {
 				return (
 					<span key={index} className={`${index < value ? "text-theme-warning-300" : ""}`}>
-						<Icon name="Star" width={20} height={20} />
+						<Icon name={`${index < value ? "Star" : "StarOutline"}`} width={20} height={20} stroke="none" />
 					</span>
 				);
 			})}
@@ -42,14 +42,15 @@ const RatingsCheckboxes = ({ ratings, suffixLabel }: any) => {
 						>
 							<span>
 								<Checkbox
-									className="w-2"
-									name="rating"
+									name="test"
+									type="radio"
+									className="rounded-lg"
 									data-testid={`SearchBarPluginFilters-rating-${rating}`}
 								/>
 							</span>
 							<span className="flex items-center mt-1 space-x-2">
 								<Stars value={rating} />
-								{rating > 1 && <span>{suffixLabel}</span>}
+								<span>{suffixLabel}</span>
 							</span>
 						</label>
 					);
@@ -81,7 +82,6 @@ const CategoryCheckboxes = ({ categories }: any) => {
 		</fieldset>
 	);
 };
-
 export const SearchBarPluginFilters = ({
 	categories,
 	ratings,
@@ -90,8 +90,15 @@ export const SearchBarPluginFilters = ({
 	categoriesLabel,
 }: FilterProps) => {
 	return (
-		<div data-testid="SearchBarPluginFilters" className="relative flex items-center pr-8 text-theme-primary-400">
-			<Dropdown position="left" toggleIcon="Filters">
+		<div data-testid="SearchBarPluginFilters" className="relative flex items-center text-theme-primary-400 z-20">
+			<Dropdown
+				position="right"
+				toggleContent={
+					<div className="cursor-pointer mr-8">
+						<Icon name="Filters" width={20} height={20} />
+					</div>
+				}
+			>
 				<div className="w-64 px-8 py-6">
 					<div className="mb-2 font-semibold text-theme-neutral-700">{categoriesLabel}</div>
 					<CategoryCheckboxes categories={categories} />
@@ -127,6 +134,6 @@ SearchBarPluginFilters.defaultProps = {
 			value: "other",
 		},
 	],
-	ratings: [5, 4, 3, 2, 1],
+	ratings: [4, 3, 2, 1],
 	ratingsSuffix: "& up",
 };
