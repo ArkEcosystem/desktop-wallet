@@ -48,7 +48,7 @@ export const PluginManagerNavigationBar = ({
 									</button>
 
 									{index < menu.length - 1 && (
-										<div className="w-px h-4 my-auto mx-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
+										<div className="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
 									)}
 								</li>
 							))}
