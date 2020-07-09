@@ -37,7 +37,7 @@ export const PluginManagerNavigationBar = ({
 										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
-										className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+										className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 											selected === menuItem.name ? "active" : ""
 										}`}
 									>
@@ -60,7 +60,7 @@ export const PluginManagerNavigationBar = ({
 						data-testid={`PluginManagerNavigationBar__my-plugins`}
 						onClick={() => onChange("my-plugins")}
 						title="My Plugins"
-						className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+						className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 							selected === "my-plugins" ? "active" : ""
 						}`}
 					>
