@@ -5,6 +5,7 @@ import { getStyles } from "./Checkbox.styles";
 
 type CheckboxProps = {
 	color?: "primary" | "success" | "danger" | "warning";
+	variant?: "thick";
 } & React.InputHTMLAttributes<any>;
 
 export const Checkbox = styled.input<CheckboxProps>(getStyles);
