@@ -31,3 +31,41 @@ export const news = [
 		coverImage: "https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png",
 	},
 ];
+
+export const categories = [
+	{
+		name: "All",
+		isSelected: false,
+	},
+	{
+		name: "Technical",
+		isSelected: true,
+	},
+	{
+		name: "Marketing",
+		isSelected: true,
+	},
+	{
+		name: "Community",
+		isSelected: false,
+	},
+	{
+		name: "Emergency",
+		isSelected: true,
+	},
+];
+
+export const assets = [
+	{
+		name: "Ark",
+		isSelected: true,
+	},
+	{
+		name: "Ethereum",
+		isSelected: true,
+	},
+	{
+		name: "Bitcoin",
+		isSelected: true,
+	},
+];

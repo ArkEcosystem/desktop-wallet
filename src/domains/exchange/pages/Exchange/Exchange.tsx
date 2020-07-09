@@ -98,35 +98,21 @@ export const Exchange = (props: ExchangeProps) => {
 
 	return (
 		<div data-testid="Exchange">
-			<div>
-				<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 
-				<div className="pt-16 border-t-20 border-theme-neutral-contrast">
-					<div className="container mx-auto">
-						<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
+			<div className="pt-16 border-t-20 border-theme-neutral-contrast">
+				<div className="container mx-auto">
+					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
-						{props.exchanges.length ? (
-							<ExchangesList
-								exchanges={props.exchanges}
-								selectedExchange={selectedExchange}
-								onAddExchange={() => setModalIsOpen(true)}
-								onSelect={(exchange: any) => setSelectedExchange(exchange)}
-							/>
-						) : (
-							<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
-						)}
-					</div>
-				</div>
-
-				<div className="border-t-20 border-theme-neutral-contrast">
 					{props.exchanges.length ? (
-						<div className="text-center">
-							<ExchangeCardsBanner className="mx-auto mt-20" />
-
-							<div className="mt-6 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
-						</div>
+						<ExchangesList
+							exchanges={props.exchanges}
+							selectedExchange={selectedExchange}
+							onAddExchange={() => setModalIsOpen(true)}
+							onSelect={(exchange: any) => setSelectedExchange(exchange)}
+						/>
 					) : (
-						<NoExchangesBanner className="mx-auto mt-16" />
+						<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
 					)}
 				</div>
 			</div>

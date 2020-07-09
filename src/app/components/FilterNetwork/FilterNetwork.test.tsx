@@ -53,4 +53,9 @@ describe("FilterNetwork", () => {
 
 		expect(onChange).not.toHaveBeenCalled();
 	});
+
+	it("should hide view all", () => {
+		const { container } = render(<FilterNetwork networks={networks} hideViewAll />);
+		expect(container).toMatchSnapshot();
+	});
 });

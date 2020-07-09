@@ -64,7 +64,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 					{extra && (
 						<div className="flex items-center">
 							<div className="ml-2">{extra}</div>
-							<div className="h-10 mx-8 border-l  border-theme-neutral-200" />
+							<div className="h-10 mx-8 border-l border-theme-neutral-200" />
 						</div>
 					)}
 

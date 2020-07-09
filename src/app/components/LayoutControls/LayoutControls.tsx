@@ -11,7 +11,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 	const getViewTypeIconClass = (viewType: any) => {
 		return selectedViewType === viewType
 			? "text-theme-danger-300 border-theme-danger-contrast"
-			: "text-theme-primary-400 border-theme-background";
+			: "text-theme-primary-400 border-transparent";
 	};
 
 	return (
