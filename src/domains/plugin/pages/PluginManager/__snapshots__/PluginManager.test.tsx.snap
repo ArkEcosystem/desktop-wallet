@@ -86,7 +86,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -99,27 +99,25 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -130,18 +128,17 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -152,18 +149,17 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -174,18 +170,17 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -196,20 +191,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -220,7 +211,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -4342,7 +4333,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -4355,27 +4346,25 @@ exports[`PluginManager should close install plugin modal 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -4386,18 +4375,17 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -4408,18 +4396,17 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -4430,18 +4417,17 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -4452,20 +4438,16 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -4476,7 +4458,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -8598,7 +8580,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -8611,27 +8593,25 @@ exports[`PluginManager should delete plugin on game 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -8642,18 +8622,17 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -8664,18 +8643,17 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -8686,18 +8664,17 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -8708,20 +8685,16 @@ exports[`PluginManager should delete plugin on game 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -8732,7 +8705,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -10533,7 +10506,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -10546,27 +10519,25 @@ exports[`PluginManager should delete plugin on home 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -10577,18 +10548,17 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -10599,18 +10569,17 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -10621,18 +10590,17 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -10643,20 +10611,16 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -10667,7 +10631,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -10755,7 +10719,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -10831,7 +10795,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -10929,7 +10893,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -11005,7 +10969,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -11103,7 +11067,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -11179,7 +11143,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -11277,7 +11241,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -11353,7 +11317,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -11476,7 +11440,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -11552,7 +11516,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -11650,7 +11614,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -11726,7 +11690,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -11824,7 +11788,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -11900,7 +11864,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -11998,7 +11962,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -12074,7 +12038,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -12189,7 +12153,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -12265,7 +12229,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -12363,7 +12327,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -12439,7 +12403,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -12537,7 +12501,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -12613,7 +12577,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -12711,7 +12675,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -12787,7 +12751,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -13135,7 +13099,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -13148,27 +13112,25 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -13179,18 +13141,17 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -13201,18 +13162,17 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -13223,18 +13183,17 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -13245,20 +13204,16 @@ exports[`PluginManager should download & install plugin on game 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -13269,7 +13224,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -15225,7 +15180,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -15238,27 +15193,25 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -15269,18 +15222,17 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -15291,18 +15243,17 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -15313,18 +15264,17 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -15335,20 +15285,16 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -15359,7 +15305,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -19481,7 +19427,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -19494,27 +19440,25 @@ exports[`PluginManager should open & close featured modal 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -19525,18 +19469,17 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -19547,18 +19490,17 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -19569,18 +19511,17 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -19591,20 +19532,16 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -19615,7 +19552,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -19703,7 +19640,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -19779,7 +19716,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -19877,7 +19814,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -19953,7 +19890,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -20051,7 +19988,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -20127,7 +20064,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -20225,7 +20162,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -20301,7 +20238,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -20424,7 +20361,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -20500,7 +20437,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -20598,7 +20535,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -20674,7 +20611,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -20772,7 +20709,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -20848,7 +20785,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -20946,7 +20883,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -21022,7 +20959,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -21137,7 +21074,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -21213,7 +21150,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -21311,7 +21248,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -21387,7 +21324,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -21485,7 +21422,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -21561,7 +21498,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -21659,7 +21596,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -21735,7 +21672,7 @@ exports[`PluginManager should open & close featured modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -21928,7 +21865,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -21941,27 +21878,25 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -21972,18 +21907,17 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -21994,18 +21928,17 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -22016,18 +21949,17 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -22038,20 +21970,16 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -22062,7 +21990,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -22150,7 +22078,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -22226,7 +22154,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -22324,7 +22252,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -22400,7 +22328,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -22498,7 +22426,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -22574,7 +22502,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -22672,7 +22600,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -22748,7 +22676,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -22871,7 +22799,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -22947,7 +22875,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -23045,7 +22973,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -23121,7 +23049,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -23219,7 +23147,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -23295,7 +23223,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -23393,7 +23321,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -23469,7 +23397,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -23584,7 +23512,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -23660,7 +23588,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -23758,7 +23686,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -23834,7 +23762,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -23932,7 +23860,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -24008,7 +23936,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -24106,7 +24034,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -24182,7 +24110,7 @@ exports[`PluginManager should open & close top rated modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -24375,7 +24303,7 @@ exports[`PluginManager should render 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -24388,27 +24316,25 @@ exports[`PluginManager should render 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -24419,18 +24345,17 @@ exports[`PluginManager should render 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -24441,18 +24366,17 @@ exports[`PluginManager should render 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -24463,18 +24387,17 @@ exports[`PluginManager should render 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -24485,20 +24408,16 @@ exports[`PluginManager should render 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -24509,7 +24428,7 @@ exports[`PluginManager should render 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -24597,7 +24516,7 @@ exports[`PluginManager should render 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -24673,7 +24592,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -24771,7 +24690,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -24847,7 +24766,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -24945,7 +24864,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -25021,7 +24940,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -25119,7 +25038,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -25195,7 +25114,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -25318,7 +25237,7 @@ exports[`PluginManager should render 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -25394,7 +25313,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -25492,7 +25411,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -25568,7 +25487,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -25666,7 +25585,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -25742,7 +25661,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -25840,7 +25759,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -25916,7 +25835,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -26031,7 +25950,7 @@ exports[`PluginManager should render 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -26107,7 +26026,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -26205,7 +26124,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -26281,7 +26200,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -26379,7 +26298,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -26455,7 +26374,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -26553,7 +26472,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -26629,7 +26548,7 @@ exports[`PluginManager should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -26840,7 +26759,7 @@ exports[`PluginManager should search for plugin 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -26853,27 +26772,25 @@ exports[`PluginManager should search for plugin 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -26884,18 +26801,17 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -26906,18 +26822,17 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -26928,18 +26843,17 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -26950,20 +26864,16 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -26974,7 +26884,7 @@ exports[`PluginManager should search for plugin 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -27062,7 +26972,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -27138,7 +27048,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -27236,7 +27146,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -27312,7 +27222,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -27410,7 +27320,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -27486,7 +27396,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -27584,7 +27494,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -27660,7 +27570,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -27783,7 +27693,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -27859,7 +27769,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -27957,7 +27867,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -28033,7 +27943,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -28131,7 +28041,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -28207,7 +28117,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -28305,7 +28215,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -28381,7 +28291,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -28496,7 +28406,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -28572,7 +28482,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -28670,7 +28580,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -28746,7 +28656,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -28844,7 +28754,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -28920,7 +28830,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -29018,7 +28928,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -29094,7 +29004,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -29287,7 +29197,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -29300,27 +29210,25 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -29331,18 +29239,17 @@ exports[`PluginManager should select plugin on game grid 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -29353,18 +29260,17 @@ exports[`PluginManager should select plugin on game grid 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -29375,18 +29281,17 @@ exports[`PluginManager should select plugin on game grid 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -29397,20 +29302,16 @@ exports[`PluginManager should select plugin on game grid 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -29421,7 +29322,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -29489,7 +29390,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
             class="grid grid-cols-4 gap-5 mt-6"
           >
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-0"
             >
               <div
@@ -29565,7 +29466,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-0"
             >
               <div
@@ -29663,7 +29564,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-1"
             >
               <div
@@ -29739,7 +29640,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-1"
             >
               <div
@@ -29837,7 +29738,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-2"
             >
               <div
@@ -29913,7 +29814,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-2"
             >
               <div
@@ -30011,7 +29912,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-3"
             >
               <div
@@ -30087,7 +29988,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-3"
             >
               <div
@@ -30185,7 +30086,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-4"
             >
               <div
@@ -30261,7 +30162,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-4"
             >
               <div
@@ -30359,7 +30260,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-5"
             >
               <div
@@ -30435,7 +30336,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-5"
             >
               <div
@@ -30533,7 +30434,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-6"
             >
               <div
@@ -30609,7 +30510,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-6"
             >
               <div
@@ -30707,7 +30608,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-7"
             >
               <div
@@ -30783,7 +30684,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-7"
             >
               <div
@@ -30881,7 +30782,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-8"
             >
               <div
@@ -30957,7 +30858,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-8"
             >
               <div
@@ -31055,7 +30956,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-9"
             >
               <div
@@ -31131,7 +31032,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-9"
             >
               <div
@@ -31406,7 +31307,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -31419,27 +31320,25 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -31450,18 +31349,17 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -31472,18 +31370,17 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -31494,18 +31391,17 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -31516,20 +31412,16 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -31540,7 +31432,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -31628,7 +31520,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -31704,7 +31596,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -31802,7 +31694,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -31878,7 +31770,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -31976,7 +31868,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -32052,7 +31944,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -32150,7 +32042,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -32226,7 +32118,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -32349,7 +32241,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -32425,7 +32317,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -32523,7 +32415,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -32599,7 +32491,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -32697,7 +32589,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -32773,7 +32665,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -32871,7 +32763,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -32947,7 +32839,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -33062,7 +32954,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -33138,7 +33030,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -33236,7 +33128,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -33312,7 +33204,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -33410,7 +33302,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -33486,7 +33378,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -33584,7 +33476,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -33660,7 +33552,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -33853,7 +33745,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -33866,27 +33758,25 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -33897,18 +33787,17 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -33919,18 +33808,17 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -33941,18 +33829,17 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -33963,20 +33850,16 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -33987,7 +33870,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -34055,7 +33938,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             class="grid grid-cols-4 gap-5 mt-6"
           >
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-0"
             >
               <div
@@ -34131,7 +34014,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-0"
             >
               <div
@@ -34229,7 +34112,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-1"
             >
               <div
@@ -34305,7 +34188,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-1"
             >
               <div
@@ -34403,7 +34286,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-2"
             >
               <div
@@ -34479,7 +34362,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-2"
             >
               <div
@@ -34577,7 +34460,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-3"
             >
               <div
@@ -34653,7 +34536,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-3"
             >
               <div
@@ -34751,7 +34634,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-4"
             >
               <div
@@ -34827,7 +34710,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-4"
             >
               <div
@@ -34925,7 +34808,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-5"
             >
               <div
@@ -35001,7 +34884,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-5"
             >
               <div
@@ -35099,7 +34982,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-6"
             >
               <div
@@ -35175,7 +35058,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-6"
             >
               <div
@@ -35273,7 +35156,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-7"
             >
               <div
@@ -35349,7 +35232,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-7"
             >
               <div
@@ -35447,7 +35330,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-8"
             >
               <div
@@ -35523,7 +35406,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-8"
             >
               <div
@@ -35621,7 +35504,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-explorer-9"
             >
               <div
@@ -35697,7 +35580,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
               </div>
             </div>
             <div
-              class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+              class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
               data-testid="PluginCard--ark-avatars-9"
             >
               <div
@@ -35972,7 +35855,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
       </div>
     </div>
     <nav
-      class="sc-fzoXzr dkyLjt sticky md:top-24 top-20 bg-theme-neutral-100"
+      class="sc-fzoXzr gJHSCD sticky md:top-24 top-20 bg-theme-neutral-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -35985,27 +35868,25 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
                 data-testid="PluginManagerNavigationBar__home"
-                href="/"
                 title="Home"
               >
                 <span>
                   Home
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__game"
-                href="/"
                 title="Game"
               >
                 <span>
@@ -36016,18 +35897,17 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   48
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__utility"
-                href="/"
                 title="Utility"
               >
                 <span>
@@ -36038,18 +35918,17 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   264
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__themes"
-                href="/"
                 title="Themes"
               >
                 <span>
@@ -36060,18 +35939,17 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   96
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
+              <div
+                class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
             </li>
             <li
               class="flex"
             >
-              <a
-                class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              <button
+                class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
                 data-testid="PluginManagerNavigationBar__other"
-                href="/"
                 title="Other"
               >
                 <span>
@@ -36082,20 +35960,16 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 >
                   27
                 </span>
-                <div
-                  class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-                />
-              </a>
+              </button>
             </li>
           </ul>
         </div>
         <div
           class="flex h-24"
         >
-          <a
-            class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          <button
+            class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
             data-testid="PluginManagerNavigationBar__my-plugins"
-            href="/"
             title="My Plugins"
           >
             <span>
@@ -36106,7 +35980,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             >
               8
             </span>
-          </a>
+          </button>
           <div
             class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
           />
@@ -36194,7 +36068,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -36270,7 +36144,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -36368,7 +36242,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -36444,7 +36318,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -36542,7 +36416,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -36618,7 +36492,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -36716,7 +36590,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -36792,7 +36666,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -36915,7 +36789,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -36991,7 +36865,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -37089,7 +36963,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -37165,7 +37039,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -37263,7 +37137,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -37339,7 +37213,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -37437,7 +37311,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -37513,7 +37387,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
@@ -37628,7 +37502,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                 class="grid grid-cols-4 gap-5 undefined"
               >
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-0"
                 >
                   <div
@@ -37704,7 +37578,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-0"
                 >
                   <div
@@ -37802,7 +37676,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-1"
                 >
                   <div
@@ -37878,7 +37752,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-1"
                 >
                   <div
@@ -37976,7 +37850,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-2"
                 >
                   <div
@@ -38052,7 +37926,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-2"
                 >
                   <div
@@ -38150,7 +38024,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-explorer-3"
                 >
                   <div
@@ -38226,7 +38100,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fzoLag jVNBI border-theme-primary-100 hover:border-theme-background"
+                  class="sc-fzoLag iZiyTC border-theme-primary-100 hover:border-theme-background"
                   data-testid="PluginCard--ark-avatars-3"
                 >
                   <div
