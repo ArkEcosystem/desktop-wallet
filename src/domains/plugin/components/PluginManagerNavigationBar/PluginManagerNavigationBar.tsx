@@ -27,7 +27,7 @@ export const PluginManagerNavigationBar = ({
 }: PluginManagerNavigationBar) => {
 	return (
 		<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-100">
-			<div className="container px-14 flex items-center justify-between mx-auto">
+			<div className="container flex items-center justify-between mx-auto px-14">
 				<div>
 					<ul className="flex h-24">
 						{menu &&

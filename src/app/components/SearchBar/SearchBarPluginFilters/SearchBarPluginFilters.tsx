@@ -51,7 +51,7 @@ const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => {
 									type="radio"
 									checked={value === rating}
 									onChange={() => onChange(rating)}
-									className="rounded-lg mt-px"
+									className="mt-px rounded-lg"
 									data-testid={`SearchBarPluginFilters-rating-${rating}`}
 								/>
 							</span>
@@ -157,11 +157,11 @@ export const SearchBarPluginFilters = ({
 	};
 
 	return (
-		<div data-testid="SearchBarPluginFilters" className="relative flex items-center text-theme-primary-400 z-20">
+		<div data-testid="SearchBarPluginFilters" className="relative z-20 flex items-center text-theme-primary-400">
 			<Dropdown
 				position="right"
 				toggleContent={
-					<div className="cursor-pointer mr-8">
+					<div className="mr-8 cursor-pointer">
 						<Icon name="Filters" width={20} height={20} />
 					</div>
 				}
@@ -177,7 +177,7 @@ export const SearchBarPluginFilters = ({
 								data-testid={`SearchBarPluginFilters-claimed`}
 							/>
 						</span>
-						<span className="ml-1 mt-1">Claimed</span>
+						<span className="mt-1 ml-1">Claimed</span>
 					</label>
 
 					<div className="mt-3 mb-4 border-b border-dashed border-theme-neutral-200" />
@@ -202,7 +202,7 @@ export const SearchBarPluginFilters = ({
 					<div
 						data-testid="SearchBarPluginFilters-reset"
 						onClick={onResetFilters}
-						className="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+						className="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
 					>
 						<Icon name="Reset" />
 						<span className="pl-2">Reset Filters</span>

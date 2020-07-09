@@ -3,7 +3,7 @@
 exports[`SearchBarPluginFilters should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex items-center text-theme-primary-400 z-20"
+    class="relative z-20 flex items-center text-theme-primary-400"
     data-testid="SearchBarPluginFilters"
   >
     <div
@@ -11,7 +11,7 @@ exports[`SearchBarPluginFilters should render 1`] = `
       data-testid="dropdown__toggle"
     >
       <div
-        class="cursor-pointer mr-8"
+        class="mr-8 cursor-pointer"
       >
         <div
           class="sc-AxirZ eEbZjj"
@@ -31,7 +31,7 @@ exports[`SearchBarPluginFilters should render 1`] = `
 exports[`SearchBarPluginFilters should render categories 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex items-center text-theme-primary-400 z-20"
+    class="relative z-20 flex items-center text-theme-primary-400"
     data-testid="SearchBarPluginFilters"
   >
     <div
@@ -39,7 +39,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
     >
       <span>
         <div
-          class="cursor-pointer mr-8"
+          class="mr-8 cursor-pointer"
         >
           <div
             class="sc-AxirZ eEbZjj"
@@ -53,7 +53,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxiKw bvzlGg right-0 undefined"
+        class="sc-AxiKw icyLii right-0 undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -79,7 +79,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
                 />
               </span>
               <span
-                class="ml-1 mt-1"
+                class="mt-1 ml-1"
               >
                 Claimed
               </span>
@@ -126,7 +126,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-5"
                     name="test"
@@ -215,7 +215,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -304,7 +304,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -393,7 +393,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -482,7 +482,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -571,7 +571,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
               class="my-4 border-b border-dashed border-theme-neutral-200"
             />
             <div
-              class="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+              class="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
               data-testid="SearchBarPluginFilters-reset"
             >
               <div
@@ -600,7 +600,7 @@ exports[`SearchBarPluginFilters should render categories 1`] = `
 exports[`SearchBarPluginFilters should render ratings 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex items-center text-theme-primary-400 z-20"
+    class="relative z-20 flex items-center text-theme-primary-400"
     data-testid="SearchBarPluginFilters"
   >
     <div
@@ -608,7 +608,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
     >
       <span>
         <div
-          class="cursor-pointer mr-8"
+          class="mr-8 cursor-pointer"
         >
           <div
             class="sc-AxirZ eEbZjj"
@@ -622,7 +622,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxiKw bvzlGg right-0 undefined"
+        class="sc-AxiKw icyLii right-0 undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -648,7 +648,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
                 />
               </span>
               <span
-                class="ml-1 mt-1"
+                class="mt-1 ml-1"
               >
                 Claimed
               </span>
@@ -749,7 +749,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-5"
                     name="test"
@@ -838,7 +838,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -927,7 +927,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -1016,7 +1016,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -1105,7 +1105,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -1194,7 +1194,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
               class="my-4 border-b border-dashed border-theme-neutral-200"
             />
             <div
-              class="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+              class="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
               data-testid="SearchBarPluginFilters-reset"
             >
               <div
@@ -1223,7 +1223,7 @@ exports[`SearchBarPluginFilters should render ratings 1`] = `
 exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex items-center text-theme-primary-400 z-20"
+    class="relative z-20 flex items-center text-theme-primary-400"
     data-testid="SearchBarPluginFilters"
   >
     <div
@@ -1231,7 +1231,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
     >
       <span>
         <div
-          class="cursor-pointer mr-8"
+          class="mr-8 cursor-pointer"
         >
           <div
             class="sc-AxirZ eEbZjj"
@@ -1245,7 +1245,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxiKw bvzlGg right-0 undefined"
+        class="sc-AxiKw icyLii right-0 undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -1272,7 +1272,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
                 />
               </span>
               <span
-                class="ml-1 mt-1"
+                class="mt-1 ml-1"
               >
                 Claimed
               </span>
@@ -1337,7 +1337,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -1426,7 +1426,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -1515,7 +1515,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -1604,7 +1604,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -1693,7 +1693,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
               class="my-4 border-b border-dashed border-theme-neutral-200"
             />
             <div
-              class="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+              class="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
               data-testid="SearchBarPluginFilters-reset"
             >
               <div
@@ -1722,7 +1722,7 @@ exports[`SearchBarPluginFilters should render with null initialValues 1`] = `
 exports[`SearchBarPluginFilters should render with selected values 1`] = `
 <DocumentFragment>
   <div
-    class="relative flex items-center text-theme-primary-400 z-20"
+    class="relative z-20 flex items-center text-theme-primary-400"
     data-testid="SearchBarPluginFilters"
   >
     <div
@@ -1730,7 +1730,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
     >
       <span>
         <div
-          class="cursor-pointer mr-8"
+          class="mr-8 cursor-pointer"
         >
           <div
             class="sc-AxirZ eEbZjj"
@@ -1744,7 +1744,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
         </div>
       </span>
       <div
-        class="sc-AxiKw bvzlGg right-0 undefined"
+        class="sc-AxiKw icyLii right-0 undefined"
       >
         <div
           data-testid="dropdown__content"
@@ -1771,7 +1771,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                 />
               </span>
               <span
-                class="ml-1 mt-1"
+                class="mt-1 ml-1"
               >
                 Claimed
               </span>
@@ -1819,7 +1819,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-4"
                     name="test"
@@ -1908,7 +1908,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-3"
                     name="test"
@@ -1997,7 +1997,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               >
                 <span>
                   <input
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-2"
                     name="test"
@@ -2087,7 +2087,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
                 <span>
                   <input
                     checked=""
-                    class="sc-AxjAm gykLhk rounded-lg mt-px"
+                    class="sc-AxjAm gykLhk mt-px rounded-lg"
                     color="success"
                     data-testid="SearchBarPluginFilters-rating-1"
                     name="test"
@@ -2176,7 +2176,7 @@ exports[`SearchBarPluginFilters should render with selected values 1`] = `
               class="my-4 border-b border-dashed border-theme-neutral-200"
             />
             <div
-              class="flex items-center text-theme-primary-500 hover:text-theme-primary-600 cursor-pointer pl-2 hover:underline"
+              class="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
               data-testid="SearchBarPluginFilters-reset"
             >
               <div
