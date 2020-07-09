@@ -14,6 +14,15 @@ const getColor = (color: string) => {
 	`;
 };
 
-export const getStyles = ({ color }: { color?: string }) => {
-	return [...baseStyle, ...getColor(color!)];
+const getVariant = (name?: any) => {
+	switch (name) {
+		case "thick":
+			return [tw`border-2`];
+		default:
+			return [];
+	}
+};
+
+export const getStyles = ({ color, variant }: { color?: string; variant?: string }) => {
+	return [...baseStyle, ...getColor(color!), ...getVariant(variant!)];
 };
