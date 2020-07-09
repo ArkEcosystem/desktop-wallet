@@ -1,5 +1,6 @@
+
 import { Breadcrumbs } from "app/components/Breadcrumbs";
-import { Header } from "app/components/Header";
+import { Icon } from "app/components/Icon";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
 import React, { useState } from "react";
@@ -25,7 +26,11 @@ export const News = ({ news, categories, assets }: Props) => {
 
 			<div className="flex flex-col flex-1 space-y-5">
 				<div className="px-10 py-16 bg-theme-background">
-					<Header title="Blockchain News" subtitle="Powered by" />
+					<h1 className="mb-0 md:text-4xl">Blockchain News</h1>
+					<div className="flex items-center space-x-2">
+						<span className="font-semibold text-theme-neutral-dark">Powered by</span>
+						<Icon name="Blockfolio" width={100} height={27} />
+					</div>
 				</div>
 
 				<div className="flex p-10 space-x-10">

@@ -18,7 +18,7 @@ const Input = styled.input`
 const CustomButton = styled.div`
 	${tw`p-2 px-5 font-semibold text-center transition-colors duration-200 border-2 rounded-md border-theme-primary-contrast text-theme-primary-light`}
 	${Input}:checked + & {
-		${tw`bg-theme-success-contrast border-theme-success text-theme-success`}
+		${tw`border-theme-success text-theme-success`}
 	}
 `;
 

@@ -7,6 +7,7 @@ import { ReactComponent as ArrowUp } from "./arrowup.svg";
 import { ReactComponent as Article } from "./article.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as BitBucket } from "./bitbucket.svg";
+import { ReactComponent as Blockfolio } from "./blockfolio.svg";
 import { ReactComponent as Bridgechain } from "./bridgechain.svg";
 import { ReactComponent as Business } from "./business.svg";
 import { ReactComponent as ChartActiveDot } from "./chart-active-dot.svg";
@@ -101,6 +102,7 @@ export const SvgCollection: any = {
 	ArrowUp,
 	Back,
 	BitBucket,
+	Blockfolio,
 	Bitcoin,
 	Lisk,
 	Ripple,
