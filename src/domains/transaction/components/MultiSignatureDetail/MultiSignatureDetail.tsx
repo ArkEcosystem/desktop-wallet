@@ -84,7 +84,7 @@ export const FirstStep = () => {
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
 					<Circle className="border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>

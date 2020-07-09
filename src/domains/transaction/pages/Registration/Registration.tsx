@@ -364,8 +364,8 @@ export const FifthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-200">
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				</div>
 			}
