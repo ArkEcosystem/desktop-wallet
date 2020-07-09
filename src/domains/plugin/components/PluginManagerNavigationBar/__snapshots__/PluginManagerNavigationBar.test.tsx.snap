@@ -2,214 +2,380 @@
 
 exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sticky z-40 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
+  <nav
+    class="sc-AxirZ jSCgBq sticky md:top-24 top-20 bg-theme-neutral-100"
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex justify-between h-full mx-auto text-theme-neutral-400"
+      class="container flex items-center justify-between mx-auto"
     >
-      <div
-        class="flex h-full space-x-6"
-      >
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
-          data-testid="PluginManagerNavigationBar__home"
+      <div>
+        <ul
+          class="flex h-24"
         >
-          Home
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__game"
-        >
-          Game
-          <span
-            class="ml-1 text-theme-neutral-700"
+          <li
+            class="flex"
           >
-            48
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__utility"
-        >
-          Utility
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              data-testid="PluginManagerNavigationBar__home"
+              href="/"
+              title="Home"
+            >
+              <span>
+                Home
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            264
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__themes"
-        >
-          Themes
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__game"
+              href="/"
+              title="Game"
+            >
+              <span>
+                Game
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                48
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            96
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__other"
-        >
-          Other
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__utility"
+              href="/"
+              title="Utility"
+            >
+              <span>
+                Utility
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                264
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            27
-          </span>
-        </div>
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__themes"
+              href="/"
+              title="Themes"
+            >
+              <span>
+                Themes
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                96
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__other"
+              href="/"
+              title="Other"
+            >
+              <span>
+                Other
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                27
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
       <div
-        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-        data-testid="PluginManagerNavigationBar__my-plugins"
+        class="flex h-24"
       >
-        My Plugins
-        <span
-          class="ml-1 text-theme-neutral-700"
+        <a
+          class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          data-testid="PluginManagerNavigationBar__my-plugins"
+          href="/"
+          title="My Plugins"
         >
-          8
-        </span>
+          <span>
+            MyPlugin
+          </span>
+          <span
+            class="ml-1 text-theme-neutral-400"
+          >
+            8
+          </span>
+        </a>
+        <div
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
+        />
+        <div
+          class="flex items-center"
+          data-testid="PluginManagerControls"
+        >
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__grid"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-AxjAm jEKiJj"
+                height="14"
+                width="28"
+              >
+                <svg>
+                  grid.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-AxjAm eFgodT"
+                height="14"
+                width="24"
+              >
+                <svg>
+                  list.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
-  <div
-    class="sticky z-40 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
+  <nav
+    class="sc-AxirZ jSCgBq sticky md:top-24 top-20 bg-theme-neutral-100"
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex justify-between h-full mx-auto text-theme-neutral-400"
+      class="container flex items-center justify-between mx-auto"
     >
-      <div
-        class="flex h-full space-x-6"
-      >
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
-          data-testid="PluginManagerNavigationBar__home"
+      <div>
+        <ul
+          class="flex h-24"
         >
-          Home
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__game"
-        >
-          Game
-          <span
-            class="ml-1 text-theme-neutral-700"
+          <li
+            class="flex"
           >
-            48
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__utility"
-        >
-          Utility
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              data-testid="PluginManagerNavigationBar__home"
+              href="/"
+              title="Home"
+            >
+              <span>
+                Home
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            264
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__themes"
-        >
-          Themes
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__game"
+              href="/"
+              title="Game"
+            >
+              <span>
+                Game
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                48
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            96
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__other"
-        >
-          Other
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__utility"
+              href="/"
+              title="Utility"
+            >
+              <span>
+                Utility
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                264
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
           >
-            27
-          </span>
-        </div>
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__themes"
+              href="/"
+              title="Themes"
+            >
+              <span>
+                Themes
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                96
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+          <li
+            class="flex"
+          >
+            <a
+              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__other"
+              href="/"
+              title="Other"
+            >
+              <span>
+                Other
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-400"
+              >
+                27
+              </span>
+              <div
+                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
       <div
-        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-        data-testid="PluginManagerNavigationBar__my-plugins"
+        class="flex h-24"
       >
-        My Plugins
-        <span
-          class="ml-1 text-theme-neutral-700"
+        <a
+          class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+          data-testid="PluginManagerNavigationBar__my-plugins"
+          href="/"
+          title="My Plugins"
         >
-          8
-        </span>
+          <span>
+            MyPlugin
+          </span>
+          <span
+            class="ml-1 text-theme-neutral-400"
+          >
+            8
+          </span>
+        </a>
+        <div
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
+        />
+        <div
+          class="flex items-center"
+          data-testid="PluginManagerControls"
+        >
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__grid"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-AxjAm jEKiJj"
+                height="14"
+                width="28"
+              >
+                <svg>
+                  grid.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-AxjAm eFgodT"
+                height="14"
+                width="24"
+              >
+                <svg>
+                  list.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
