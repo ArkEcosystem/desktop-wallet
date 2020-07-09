@@ -1,7 +1,8 @@
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
-import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Icon } from "app/components/Icon";
+import { Input } from "app/components/Input";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -16,10 +17,11 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="p-8 border-2 rounded-lg border-theme-primary-contrast" data-testid="NewsOptions">
+		<div className="p-8 bg-white border-2 rounded-lg border-theme-primary-contrast" data-testid="NewsOptions">
 			<div className="flex flex-col space-y-10">
-				<div className="flex justify-end">
-					<HeaderSearchBar />
+				<div className="flex items-center px-4 py-6 bg-white rounded shadow-xl">
+					<Input className="border-none shadow-none" placeholder="Search" />
+					<Icon name="Search" className="w-4 mr-4 text-theme-neutral-300" />
 				</div>
 
 				<Divider dashed />
