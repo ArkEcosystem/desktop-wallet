@@ -7,6 +7,8 @@ export const useActiveProfile = () => {
 	const { profileId } = useParams();
 
 	return React.useMemo(() => {
+		if (process.env.NODE_ENV === "test") return profileId ? { id: () => profileId } : undefined;
+
 		if (env) {
 			try {
 				return env.profiles().get(profileId);
