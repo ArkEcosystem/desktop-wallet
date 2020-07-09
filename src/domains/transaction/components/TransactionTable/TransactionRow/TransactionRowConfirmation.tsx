@@ -46,7 +46,7 @@ export const TransactionRowConfirmation = ({ confirmations, isSignaturePending }
 
 	return (
 		<Tippy content={tooltipContent}>
-			<div data-testid="TransactionRowConfirmation" className="inline-flex align-middle p-1">
+			<div data-testid="TransactionRowConfirmation" className="inline-flex p-1 align-middle">
 				<Icon
 					data-testid={`TransactionRowConfirmation__${status}`}
 					name={iconName[status]}

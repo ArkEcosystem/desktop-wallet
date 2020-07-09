@@ -273,7 +273,7 @@ exports[`TransactionTable should render 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-flex align-middle p-1"
+              class="inline-flex p-1 align-middle"
               data-testid="TransactionRowConfirmation"
             >
               <div
@@ -378,7 +378,7 @@ exports[`TransactionTable should render 1`] = `
           </td>
           <td>
             <span
-              class="text-theme-text font-semibold"
+              class="font-semibold text-theme-text"
               data-testid="TransactionRowRecipientLabel"
             >
               2nd Signature Creation
@@ -396,7 +396,7 @@ exports[`TransactionTable should render 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-flex align-middle p-1"
+              class="inline-flex p-1 align-middle"
               data-testid="TransactionRowConfirmation"
             >
               <div
@@ -736,7 +736,7 @@ exports[`TransactionTable should render with sign 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-flex align-middle p-1"
+              class="inline-flex p-1 align-middle"
               data-testid="TransactionRowConfirmation"
             >
               <div

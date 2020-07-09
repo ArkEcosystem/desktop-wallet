@@ -34,7 +34,7 @@ export const TransactionRowRecipientLabel = ({ type, recipient, walletName }: Pr
 	}
 
 	return (
-		<span data-testid="TransactionRowRecipientLabel" className="text-theme-text font-semibold">
+		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
 			{transactionLabel[type]}
 		</span>
 	);
