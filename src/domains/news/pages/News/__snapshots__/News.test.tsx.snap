@@ -38,22 +38,27 @@ exports[`News should render 1`] = `
       <div
         class="px-10 py-16 bg-theme-background"
       >
-        <div
-          class="flex items-end justify-between bg-theme-background"
+        <h1
+          class="mb-0 md:text-4xl"
         >
-          <div>
-            <h1
-              class="mb-0 md:text-4xl"
-              data-testid="header__title"
-            >
-              Blockchain News
-            </h1>
-            <div
-              class="text-theme-neutral-dark"
-              data-testid="header__subtitle"
-            >
-              Powered by
-            </div>
+          Blockchain News
+        </h1>
+        <div
+          class="flex items-center space-x-2"
+        >
+          <span
+            class="font-semibold text-theme-neutral-dark"
+          >
+            Powered by
+          </span>
+          <div
+            class="sc-AxirZ fAoGlD"
+            height="27"
+            width="100"
+          >
+            <svg>
+              blockfolio.svg
+            </svg>
           </div>
         </div>
       </div>
@@ -239,6 +244,10 @@ exports[`News should render 1`] = `
               </div>
             </div>
           </div>
+          <img
+            alt="Blockfolio Banner"
+            src="blockfolio-banner.jpg"
+          />
         </div>
         <div
           class="w-3/5"
