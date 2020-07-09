@@ -20,7 +20,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -40,7 +40,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -60,7 +60,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  invisible"
+              class="flex flex-inline align-top invisible"
             >
               <div
                 class="mr-2"
@@ -80,7 +80,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -100,7 +100,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top justify-center"
             >
               <div
                 class="mr-2"
@@ -120,7 +120,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  justify-center"
+              class="flex flex-inline align-top justify-center"
             >
               <div
                 class="mr-2"
@@ -140,7 +140,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  justify-end"
+              class="flex flex-inline align-top justify-end"
             >
               <div
                 class="mr-2"
@@ -165,24 +165,28 @@ exports[`TransactionTable should render 1`] = `
           <td
             class="w-16 py-6"
           >
-            <a
-              class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-              data-testid="TransactionRow__ID"
-              href=""
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              class="inline-block align-middle"
             >
-              <div
-                class="sc-AxjAm cpczEI flex-shrink-0 "
-                data-testid="Link__external"
-                height="1em"
-                width="1em"
+              <a
+                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                data-testid="TransactionRow__ID"
+                href=""
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg>
-                  redirect.svg
-                </svg>
-              </div>
-            </a>
+                <div
+                  class="sc-AxjAm cpczEI flex-shrink-0 "
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
           </td>
           <td
             class="w-48 py-1 text-sm text-theme-neutral-600"
@@ -235,16 +239,18 @@ exports[`TransactionTable should render 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxheI fniENP text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 ASuusX…GQ3kqT
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="text-center"
+          >
             <div
-              class="flex items-center space-x-2"
+              class="inline-flex align-middle space-x-1"
               data-testid="TransactionRowInfo"
             >
               <span
@@ -267,7 +273,7 @@ exports[`TransactionTable should render 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-block p-1"
+              class="inline-flex align-middle p-1"
               data-testid="TransactionRowConfirmation"
             >
               <div
@@ -301,24 +307,28 @@ exports[`TransactionTable should render 1`] = `
           <td
             class="w-16 py-6"
           >
-            <a
-              class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-              data-testid="TransactionRow__ID"
-              href=""
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              class="inline-block align-middle"
             >
-              <div
-                class="sc-AxjAm cpczEI flex-shrink-0 "
-                data-testid="Link__external"
-                height="1em"
-                width="1em"
+              <a
+                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                data-testid="TransactionRow__ID"
+                href=""
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg>
-                  redirect.svg
-                </svg>
-              </div>
-            </a>
+                <div
+                  class="sc-AxjAm cpczEI flex-shrink-0 "
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
           </td>
           <td
             class="w-48 py-1 text-sm text-theme-neutral-600"
@@ -368,15 +378,17 @@ exports[`TransactionTable should render 1`] = `
           </td>
           <td>
             <span
-              class="font-semibold"
+              class="text-theme-text font-semibold"
               data-testid="TransactionRowRecipientLabel"
             >
               2nd Signature Creation
             </span>
           </td>
-          <td>
+          <td
+            class="text-center"
+          >
             <div
-              class="flex items-center space-x-2"
+              class="inline-flex align-middle space-x-1"
               data-testid="TransactionRowInfo"
             />
           </td>
@@ -384,7 +396,7 @@ exports[`TransactionTable should render 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-block p-1"
+              class="inline-flex align-middle p-1"
               data-testid="TransactionRowConfirmation"
             >
               <div
@@ -437,7 +449,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -457,7 +469,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -477,7 +489,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  invisible"
+              class="flex flex-inline align-top invisible"
             >
               <div
                 class="mr-2"
@@ -497,7 +509,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
               <div
                 class="mr-2"
@@ -517,7 +529,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top justify-center"
             >
               <div
                 class="mr-2"
@@ -537,7 +549,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  justify-center"
+              class="flex flex-inline align-top justify-center"
             >
               <div
                 class="mr-2"
@@ -557,7 +569,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  justify-end"
+              class="flex flex-inline align-top justify-end"
             >
               <div
                 class="mr-2"
@@ -577,7 +589,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top  invisible"
+              class="flex flex-inline align-top invisible"
             >
               <div
                 class="mr-2"
@@ -602,24 +614,28 @@ exports[`TransactionTable should render with sign 1`] = `
           <td
             class="w-16 py-6"
           >
-            <a
-              class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-              data-testid="TransactionRow__ID"
-              href=""
-              rel="noopener noreferrer"
-              target="_blank"
+            <div
+              class="inline-block align-middle"
             >
-              <div
-                class="sc-AxjAm cpczEI flex-shrink-0 "
-                data-testid="Link__external"
-                height="1em"
-                width="1em"
+              <a
+                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                data-testid="TransactionRow__ID"
+                href=""
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                <svg>
-                  redirect.svg
-                </svg>
-              </div>
-            </a>
+                <div
+                  class="sc-AxjAm cpczEI flex-shrink-0 "
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
           </td>
           <td
             class="w-48 py-1 text-sm text-theme-neutral-600"
@@ -672,16 +688,18 @@ exports[`TransactionTable should render with sign 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxheI fniENP text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxheI fniENP text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 ASuusX…GQ3kqT
               </span>
             </div>
           </td>
-          <td>
+          <td
+            class="text-center"
+          >
             <div
-              class="flex items-center space-x-2"
+              class="inline-flex align-middle space-x-1"
               data-testid="TransactionRowInfo"
             >
               <span
@@ -718,7 +736,7 @@ exports[`TransactionTable should render with sign 1`] = `
             class="w-16 text-center"
           >
             <div
-              class="inline-block p-1"
+              class="inline-flex align-middle p-1"
               data-testid="TransactionRowConfirmation"
             >
               <div

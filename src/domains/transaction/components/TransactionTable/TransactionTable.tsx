@@ -26,6 +26,7 @@ const commonColumns = [
 	},
 	{
 		Header: "Info",
+		className: "justify-center",
 	},
 	{
 		Header: "Status",
