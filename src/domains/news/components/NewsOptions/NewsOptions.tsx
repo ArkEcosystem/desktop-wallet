@@ -17,9 +17,12 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="p-8 bg-white border-2 rounded-lg border-theme-primary-contrast" data-testid="NewsOptions">
+		<div
+			className="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+			data-testid="NewsOptions"
+		>
 			<div className="flex flex-col space-y-10">
-				<div className="flex items-center px-4 py-6 bg-white rounded shadow-xl">
+				<div className="flex items-center px-4 py-6 rounded shadow-xl">
 					<Input className="border-none shadow-none" placeholder="Search" />
 					<Icon name="Search" className="w-4 mr-4 text-theme-neutral-300" />
 				</div>
@@ -46,7 +49,7 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 					<p className="text-sm text-theme-neutral">{t("NEWS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={selectedAssets} />
+						<FilterNetwork networks={selectedAssets} hideViewAll />
 					</div>
 
 					<Button className="w-full" variant="plain">

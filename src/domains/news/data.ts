@@ -68,4 +68,8 @@ export const assets = [
 		name: "Bitcoin",
 		isSelected: true,
 	},
+	{
+		name: "Lisk",
+		isSelected: true,
+	},
 ];

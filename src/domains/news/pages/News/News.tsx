@@ -1,14 +1,16 @@
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Header } from "app/components/Header";
-import { Pagination } from "app/components/Pagination";
 import { NewsCard } from "domains/news/components/NewsCard";
+import { NewsOptions } from "domains/news/components/NewsOptions";
 import React, { useState } from "react";
 
 type Props = {
 	news?: any[];
+	categories?: any[];
+	assets?: any[];
 };
 
-export const News = ({ news }: Props) => {
+export const News = ({ news, categories, assets }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const crumbs = [
 		{
@@ -26,19 +28,14 @@ export const News = ({ news }: Props) => {
 					<Header title="Blockchain News" subtitle="Powered by" />
 				</div>
 
-				<div className="p-10 grid gap-4">
-					{news?.map((data, index) => (
-						<NewsCard key={index} {...data} />
-					))}
-
-					<div className="flex justify-center w-full">
-						<Pagination
-							totalCount={12}
-							itemsPerPage={4}
-							onSelectPage={setCurrentPage}
-							currentPage={currentPage}
-							size="md"
-						/>
+				<div className="flex p-10 space-x-10">
+					<div className="grid gap-4">
+						{news?.map((data, index) => (
+							<NewsCard key={index} {...data} />
+						))}
+					</div>
+					<div className="w-3/5">
+						<NewsOptions categories={categories} selectedAssets={assets} />
 					</div>
 				</div>
 			</div>
@@ -48,4 +45,6 @@ export const News = ({ news }: Props) => {
 
 News.defaultProps = {
 	news: [],
+	categories: [],
+	assets: [],
 };
