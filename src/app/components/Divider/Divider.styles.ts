@@ -5,19 +5,9 @@ const baseStyle = [tw`border-t border-solid`];
 const getType = (type: string): any => {
 	switch (type) {
 		case "horizontal":
-			return [
-				tw`flex clear-both w-full min-w-full`,
-				css`
-					margin: 24px 0;
-				`,
-			];
+			return tw`flex clear-both w-full min-w-full my-6`;
 		case "vertical":
-			return [
-				tw`relative inline-block align-middle border-t-0 border-l border-solid`,
-				css`
-					margin: 0 8px;
-				`,
-			];
+			return tw`relative inline-block align-middle border-t-0 border-l border-solid mx-2`;
 	}
 };
 
