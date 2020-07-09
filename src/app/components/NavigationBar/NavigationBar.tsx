@@ -115,7 +115,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(activeProfile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -150,8 +150,8 @@ export const NavigationBar = ({
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral-500">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+							<div className="text-xs text-theme-neutral">Your balance</div>
+							<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
 						</div>
 
 						<div className="flex p-1 cusror-pointer">

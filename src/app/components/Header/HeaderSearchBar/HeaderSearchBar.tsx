@@ -14,6 +14,9 @@ type HeaderSearchBarProps = {
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 24rem;
+	input.pt-2 {
+		padding: 11px 15px;
+	}
 `;
 
 export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra }: HeaderSearchBarProps) => {
@@ -64,7 +67,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 					{extra && (
 						<div className="flex items-center">
 							<div className="ml-2">{extra}</div>
-							<div className="h-10 mx-8 border-l border-theme-neutral-200" />
+							<div className="h-10 mr-8 border-l border-theme-neutral-200" />
 						</div>
 					)}
 

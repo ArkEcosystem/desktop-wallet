@@ -67,7 +67,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 	const { t } = useTranslation();
 	return (
 		<div>
-			<div className="bg-theme-neutral-100">
+			<div className="bg-theme-neutral-contrast">
 				<div className="py-16 mb-5 bg-white px-13">
 					<Header
 						title={t("HELP.PAGE_SUPPORT.TITLE")}
