@@ -34,7 +34,7 @@ export const News = ({ news, categories, assets }: Props) => {
 				</div>
 
 				<div className="flex p-10 space-x-10">
-					<div className="grid gap-4">
+					<div className="grid w-full gap-4">
 						{news?.map((data, index) => (
 							<NewsCard key={index} {...data} />
 						))}
@@ -51,7 +51,7 @@ export const News = ({ news, categories, assets }: Props) => {
 							/>
 						</div>
 					</div>
-					<div className="w-3/5">
+					<div className="max-w-xl">
 						<NewsOptions categories={categories} selectedAssets={assets} />
 					</div>
 				</div>
