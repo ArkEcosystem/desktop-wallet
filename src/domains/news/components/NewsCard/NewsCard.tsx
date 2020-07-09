@@ -35,9 +35,9 @@ export const NewsCard = ({ asset, author, dateCreated, category, content, coverI
 					</Circle>
 
 					<div>
-						<p className="text-lg font-semibold" data-testid={`NewsCard__asset-${asset?.name}`}>
+						<h4 className="text-lg font-semibold" data-testid={`NewsCard__asset-${asset?.name}`}>
 							{asset?.name}
-						</p>
+						</h4>
 						<div className="flex items-center space-x-4">
 							<p className="text-sm font-semibold text-theme-neutral" data-testid="NewsCard__author">
 								{author?.name}, {author?.role}
