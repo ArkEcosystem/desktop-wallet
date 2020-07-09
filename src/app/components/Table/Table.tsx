@@ -62,7 +62,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 										<div>{column.render("Header")}</div>
 										{column.canSort && (
 											<div
-												className="flex items-center text-theme-color-neutral-500 ml-2"
+												className="flex items-center ml-2 text-theme-color-neutral-500"
 												data-testid={`table__${getSortIconName(
 													column.isSorted,
 													column.isSortedDesc,

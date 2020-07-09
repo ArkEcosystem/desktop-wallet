@@ -2194,15 +2194,13 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Asset Type
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2226,15 +2224,13 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Wallet Address
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2256,17 +2252,11 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Wallet Type
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
@@ -2278,15 +2268,13 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Balance
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2310,15 +2298,13 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Fiat Value
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div

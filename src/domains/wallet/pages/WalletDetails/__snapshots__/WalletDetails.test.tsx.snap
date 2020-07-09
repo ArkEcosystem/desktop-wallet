@@ -680,17 +680,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  undefined"
+                  class="flex flex-inline align-top undefined"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Date
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -700,17 +694,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  invisible"
+                  class="flex flex-inline align-top invisible"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Type
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -720,17 +708,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  undefined"
+                  class="flex flex-inline align-top undefined"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Wallet Address
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -740,17 +722,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  float-right"
+                  class="flex flex-inline align-top float-right"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Amount
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -760,17 +736,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  float-right"
+                  class="flex flex-inline align-top float-right"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Fiat Value
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
             </tr>
@@ -978,17 +948,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  undefined"
+                  class="flex flex-inline align-top undefined"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Date
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -998,17 +962,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  invisible"
+                  class="flex flex-inline align-top invisible"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Type
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -1018,17 +976,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  undefined"
+                  class="flex flex-inline align-top undefined"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Wallet Address
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -1038,17 +990,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  float-right"
+                  class="flex flex-inline align-top float-right"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Amount
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
               <th
@@ -1058,17 +1004,11 @@ exports[`WalletDetails should render 1`] = `
                 role="columnheader"
               >
                 <div
-                  class="flex flex-inline align-top  float-right"
+                  class="flex flex-inline align-top float-right"
                 >
-                  <div
-                    class="mr-2"
-                  >
+                  <div>
                     Fiat Value
                   </div>
-                  <div
-                    class="flex items-center text-theme-color-neutral-500"
-                    data-testid="table__Sort"
-                  />
                 </div>
               </th>
             </tr>
@@ -1247,15 +1187,13 @@ exports[`WalletDetails should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-2"
-                        >
+                        <div>
                           Asset Type
                         </div>
                         <div
-                          class="flex items-center text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1279,15 +1217,13 @@ exports[`WalletDetails should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-2"
-                        >
+                        <div>
                           Wallet Address
                         </div>
                         <div
-                          class="flex items-center text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1309,17 +1245,11 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-2"
-                        >
+                        <div>
                           Wallet Type
                         </div>
-                        <div
-                          class="flex items-center text-theme-color-neutral-500"
-                          data-testid="table__Sort"
-                        />
                       </div>
                     </th>
                     <th
@@ -1331,15 +1261,13 @@ exports[`WalletDetails should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  float-right"
+                        class="flex flex-inline align-top float-right"
                       >
-                        <div
-                          class="mr-2"
-                        >
+                        <div>
                           Balance
                         </div>
                         <div
-                          class="flex items-center text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1363,15 +1291,13 @@ exports[`WalletDetails should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  float-right"
+                        class="flex flex-inline align-top float-right"
                       >
-                        <div
-                          class="mr-2"
-                        >
+                        <div>
                           Fiat Value
                         </div>
                         <div
-                          class="flex items-center text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral-500"
                           data-testid="table__Sort"
                         >
                           <div
