@@ -33,12 +33,11 @@ export const PluginManagerNavigationBar = ({
 						{menu &&
 							menu.map((menuItem: any, index: number) => (
 								<li key={index} className="flex">
-									<a
-										href="/"
+									<button
 										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
-										className={`PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer ${
+										className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 											selected === menuItem.name ? "active" : ""
 										}`}
 									>
@@ -46,26 +45,31 @@ export const PluginManagerNavigationBar = ({
 										{menuItem.count && (
 											<span className="ml-1 text-theme-neutral-400">{menuItem.count}</span>
 										)}
-										<div className="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
-									</a>
+									</button>
+
+									{index < menu.length - 1 && (
+										<div className="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300" />
+									)}
 								</li>
 							))}
 					</ul>
 				</div>
+
 				<div className="flex h-24">
-					<a
-						href="/"
+					<button
 						data-testid={`PluginManagerNavigationBar__my-plugins`}
 						onClick={() => onChange("my-plugins")}
 						title="My Plugins"
-						className={`PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer ${
+						className={`PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
 							selected === "my-plugins" ? "active" : ""
 						}`}
 					>
 						<span>MyPlugin</span>
 						<span className="ml-1 text-theme-neutral-400">8</span>
-					</a>
+					</button>
+
 					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />
+
 					<PluginManagerControls
 						onSelectGridView={onSelectGridView}
 						onSelectListView={onSelectListView}
