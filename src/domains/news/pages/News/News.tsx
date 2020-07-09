@@ -20,7 +20,7 @@ export const News = ({ news, categories, assets }: Props) => {
 	];
 
 	return (
-		<div data-testid="News" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-100">
+		<div data-testid="News" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast">
 			<Breadcrumbs crumbs={crumbs} className="py-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
