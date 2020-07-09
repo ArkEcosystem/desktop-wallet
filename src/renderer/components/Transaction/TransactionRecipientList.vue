@@ -82,7 +82,7 @@ export default {
       type: String,
       required: false,
       default: function () {
-        return this.$t('TRANSACTION.RECIPIENTS')
+        return this.$t('TRANSACTION.RECIPIENTS_TITLE_MINIMUM')
       }
     },
 
