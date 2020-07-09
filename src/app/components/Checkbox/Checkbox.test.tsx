@@ -19,6 +19,12 @@ describe("Checkbox", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render thick variant", () => {
+		const { container } = render(<Checkbox variant="thick" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render if something went wrong", () => {
 		const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
 			return (
