@@ -5,6 +5,8 @@ import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
 import tw, { styled } from "twin.macro";
 
+import { balances, portfolioPercentages, transactions, wallets } from "../../data";
+
 type DashboardProps = {
 	balances?: any;
 	transactions?: any;
@@ -71,4 +73,11 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 			)}
 		</div>
 	);
+};
+
+Dashboard.defaultProps = {
+	balances,
+	portfolioPercentages,
+	transactions,
+	wallets,
 };
