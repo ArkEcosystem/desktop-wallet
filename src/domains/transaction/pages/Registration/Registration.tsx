@@ -248,12 +248,7 @@ const ThirdStep = () => {
 				</TransactionDetail>
 
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">

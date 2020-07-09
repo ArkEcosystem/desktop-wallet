@@ -83,7 +83,7 @@ export const SecondStep = () => (
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<div className="mb-2 font-semibold text-theme-neutral-500">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
