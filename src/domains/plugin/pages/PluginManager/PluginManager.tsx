@@ -170,7 +170,7 @@ export const PluginManager = () => {
 			/>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				<div className="container py-16 mx-auto bg-theme-background">
+				<div className="container px-14 py-16 mx-auto bg-theme-background">
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
@@ -198,7 +198,7 @@ export const PluginManager = () => {
 				onSelectListView={() => setViewType("list")}
 			/>
 
-			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto mt-14">
+			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto px-14 mt-14">
 				<div className="flex items-center justify-between" />
 
 				{currentView === "home" && (
