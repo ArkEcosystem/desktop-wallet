@@ -1,9 +1,10 @@
+import { SvgCollection } from "app/assets/svg";
 import { Breadcrumbs } from "app/components/Breadcrumbs";
-import { Icon } from "app/components/Icon";
+import { Pagination } from "app/components/Pagination";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
 import BlockfolioBanner from "domains/news/images/blockfolio-banner.jpg";
-import React, { useState } from "react";
+import React from "react";
 
 type Props = {
 	news?: any[];
@@ -12,7 +13,6 @@ type Props = {
 };
 
 export const News = ({ news, categories, assets }: Props) => {
-	const [currentPage, setCurrentPage] = useState(1);
 	const crumbs = [
 		{
 			route: "portfolio",
@@ -29,7 +29,7 @@ export const News = ({ news, categories, assets }: Props) => {
 					<h1 className="mb-0 md:text-4xl">Blockchain News</h1>
 					<div className="flex items-center space-x-2">
 						<span className="font-semibold text-theme-neutral-dark">Powered by</span>
-						<Icon name="Blockfolio" width={100} height={27} />
+						<SvgCollection.Blockfolio width={100} height={27} />
 					</div>
 				</div>
 
@@ -39,7 +39,39 @@ export const News = ({ news, categories, assets }: Props) => {
 							<NewsCard key={index} {...data} />
 						))}
 
-						<img src={BlockfolioBanner} alt="Blockfolio Banner" />
+						<div className="relative pt-6">
+							<div
+								className="absolute text-center rounded-b-full bg-theme-primary-contrast right-4"
+								style={{ width: 28, height: 29 }}
+							>
+								<span className="text-sm font-semibold text-theme-primary">Ad</span>
+							</div>
+							<img
+								src={BlockfolioBanner}
+								className="w-full border-2 rounded-xl border-theme-primary-contrast"
+								alt="Blockfolio Banner"
+							/>
+							<div className="absolute top-24 left-10 text-theme-background">
+								<div className="flex flex-col space-y-5">
+									<SvgCollection.Blockfolio className="-mx-8" width={238} height={47} />
+									<p className="w-3/4 text-lg font-medium">
+										{
+											"The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free."
+										}
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div className="flex justify-center w-full pt-10">
+							<Pagination
+								totalCount={12}
+								itemsPerPage={4}
+								onSelectPage={console.log}
+								currentPage={1}
+								size="md"
+							/>
+						</div>
 					</div>
 					<div className="w-3/5">
 						<NewsOptions categories={categories} selectedAssets={assets} />
