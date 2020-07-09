@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
+import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { BestPlugins } from "domains/plugin/components/BestPlugins";
 import { FeaturedPlugins } from "domains/plugin/components/FeaturedPlugins";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
@@ -176,7 +177,11 @@ export const PluginManager = () => {
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
 						extra={
 							<div className="flex justify-end items-top">
-								<HeaderSearchBar label="" onSearch={() => console.log("search")} />
+								<HeaderSearchBar
+									label=""
+									onSearch={() => console.log("search")}
+									extra={<SearchBarPluginFilters />}
+								/>
 								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 								<Button>
 									<div className="flex items-center whitespace-no-wrap space-x-2">
