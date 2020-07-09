@@ -10,12 +10,6 @@ export const defaultStyle = `
 
 	}
 
-	li:last-child {
-	   .PluginManagerNavigationBar__menu-divider {
-		   display: none;
-	   }
-    }
-
 	li:first-child {
 	   a {
 		   padding-left: 0;

@@ -3,7 +3,7 @@
 exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxirZ jSCgBq sticky md:top-24 top-20 bg-theme-neutral-contrast"
+    class="sc-AxirZ hgOUPI sticky md:top-24 top-20 bg-theme-neutral-contrast"
     data-testid="PluginManagerNavigationBar"
   >
     <div
@@ -16,27 +16,25 @@ exports[`PluginManagerNavigationBar should render 1`] = `
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
-              href="/"
               title="Home"
             >
               <span>
                 Home
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
-              href="/"
               title="Game"
             >
               <span>
@@ -47,18 +45,17 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               >
                 48
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
-              href="/"
               title="Utility"
             >
               <span>
@@ -69,18 +66,17 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               >
                 264
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
-              href="/"
               title="Themes"
             >
               <span>
@@ -91,18 +87,17 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               >
                 96
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
-              href="/"
               title="Other"
             >
               <span>
@@ -113,20 +108,16 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               >
                 27
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
           </li>
         </ul>
       </div>
       <div
         class="flex h-24"
       >
-        <a
-          class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+        <button
+          class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
-          href="/"
           title="My Plugins"
         >
           <span>
@@ -137,7 +128,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
           >
             8
           </span>
-        </a>
+        </button>
         <div
           class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
         />
@@ -193,7 +184,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
   <nav
-    class="sc-AxirZ jSCgBq sticky md:top-24 top-20 bg-theme-neutral-contrast"
+    class="sc-AxirZ hgOUPI sticky md:top-24 top-20 bg-theme-neutral-contrast"
     data-testid="PluginManagerNavigationBar"
   >
     <div
@@ -206,27 +197,25 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer active"
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
               data-testid="PluginManagerNavigationBar__home"
-              href="/"
               title="Home"
             >
               <span>
                 Home
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__game"
-              href="/"
               title="Game"
             >
               <span>
@@ -237,18 +226,17 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 48
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__utility"
-              href="/"
               title="Utility"
             >
               <span>
@@ -259,18 +247,17 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 264
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__themes"
-              href="/"
               title="Themes"
             >
               <span>
@@ -281,18 +268,17 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 96
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
           </li>
           <li
             class="flex"
           >
-            <a
-              class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+            <button
+              class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
               data-testid="PluginManagerNavigationBar__other"
-              href="/"
               title="Other"
             >
               <span>
@@ -303,20 +289,16 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               >
                 27
               </span>
-              <div
-                class="w-px h-4 pl-6 border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
-              />
-            </a>
+            </button>
           </li>
         </ul>
       </div>
       <div
         class="flex h-24"
       >
-        <a
-          class="PluginManagerNavigationBar__item flex items-center pl-6 font-bold text-md text-theme-neutral-600 cursor-pointer "
+        <button
+          class="PluginManagerNavigationBar__item flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
           data-testid="PluginManagerNavigationBar__my-plugins"
-          href="/"
           title="My Plugins"
         >
           <span>
@@ -327,7 +309,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
           >
             8
           </span>
-        </a>
+        </button>
         <div
           class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
         />
