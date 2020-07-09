@@ -115,7 +115,6 @@ export const WithSign = () => (
 				recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 				amount: "52",
 				fee: "0.2",
-				vendorField: null,
 				isSent: true,
 				isMultiSignature: true,
 				isSignaturePending: false,
