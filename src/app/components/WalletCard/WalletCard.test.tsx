@@ -13,9 +13,8 @@ import { WalletCard } from "./WalletCard";
 describe("Formatted Address", () => {
 	const history = createMemoryHistory();
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Jane Doe");
+	const dashboardURL = `/profiles/qwe123/dashboard`;
 
-	const dashboardURL = `/profiles/${profile.id()}/dashboard`;
 	history.push(dashboardURL);
 
 	it("should render", () => {
@@ -80,7 +79,6 @@ describe("Formatted Address", () => {
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
 					<WalletCard
-						id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
 						coinIcon="Bitcoin"
 						coinClass="border-theme-warning-200"
 						avatarId="test"

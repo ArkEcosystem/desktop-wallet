@@ -14,9 +14,8 @@ import { Dashboard } from "./Dashboard";
 describe("Dashboard", () => {
 	const history = createMemoryHistory();
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Jane Doe");
 
-	const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+	const dashboardURL = `/profiles/qwe123/dashboard`;
 	history.push(dashboardURL);
 
 	it("should render", () => {
