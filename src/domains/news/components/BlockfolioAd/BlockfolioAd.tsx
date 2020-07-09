@@ -20,14 +20,28 @@ export const BlockfolioAd = () => (
 		/>
 		<div className="absolute top-24 left-10">
 			<div className="flex flex-col space-y-5 text-theme-background">
-				<SvgCollection.Blockfolio className="-mx-8" width={238} height={47} />
+				<a href="https://blockfolio.com/" rel="noopener noreferrer" target="_blank">
+					<SvgCollection.Blockfolio className="-mx-8" width={238} height={47} />
+				</a>
 				<p className="w-3/4 text-lg font-medium">
 					{"The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free."}
 				</p>
 			</div>
 			<div className="flex mt-12 space-x-2">
-				<DownloadAppStoreButton className="w-32 h-10 b-0" />
-				<DownloadGooglePlayButton className="w-32 h-10" />
+				<a
+					href="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<DownloadAppStoreButton className="w-32 h-10 b-0" />
+				</a>
+				<a
+					href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&amp;hl=en_US"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					<DownloadGooglePlayButton className="w-32 h-10" />
+				</a>
 			</div>
 		</div>
 	</div>
