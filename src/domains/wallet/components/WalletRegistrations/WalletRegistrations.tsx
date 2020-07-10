@@ -99,7 +99,7 @@ export const WalletRegistrations = ({
 								<p className="text-sm font-semibold text-theme-neutral">Type Registrations</p>
 								<p className="font-semibold text-theme-neutral-900">
 									You haven&apos;t registered more than one type of registration.
-									<a href="#" className="px-2 text-theme-primary">
+									<a href="/#" className="px-2 text-theme-primary">
 										Learn More
 									</a>
 								</p>

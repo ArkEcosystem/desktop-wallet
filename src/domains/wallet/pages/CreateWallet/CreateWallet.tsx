@@ -111,6 +111,10 @@ export const SecondStep = ({
 export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string[] }) => {
 	const { register, unregister, setValue } = useFormContext();
 
+	const handleComplete = React.useCallback(() => {
+		setValue("verification", true, true);
+	}, [setValue]);
+
 	React.useEffect(() => {
 		register({ name: "verification", type: "custom" }, { required: true });
 
@@ -120,10 +124,6 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 
 		return () => unregister("verification");
 	}, [register, unregister, skipVerification, handleComplete]);
-
-	const handleComplete = React.useCallback(() => {
-		setValue("verification", true, true);
-	}, [setValue]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
