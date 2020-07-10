@@ -1,4 +1,5 @@
 import { styled } from "twin.macro";
+import { Size } from "types";
 
 import { getStyles } from "./Circle.styles";
 
@@ -6,7 +7,7 @@ type CircleProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	avatarId?: string | null;
-	size?: "small" | "large" | "default";
+	size?: Size;
 	className?: string | null;
 	noShadow?: boolean;
 };
@@ -14,6 +15,5 @@ type CircleProps = {
 export const Circle = styled.div<CircleProps>(getStyles);
 
 Circle.defaultProps = {
-	size: "default",
 	noShadow: false,
 };

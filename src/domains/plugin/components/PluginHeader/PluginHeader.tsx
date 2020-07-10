@@ -25,7 +25,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 						<Icon name="Update" />
 					</Button>
 					<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
-						<Icon name="AlertDanger" />
+						<Icon name="Report" width={20} height={20} />
 					</Button>
 					<Button className="ml-3" data-testid="PluginHeader__button--uninstall" variant="plain">
 						<Icon name="Trash" />
@@ -38,7 +38,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 			<>
 				<Button data-testid="PluginHeader__button--install">Install</Button>
 				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
-					<Icon name="AlertDanger" />
+					<Icon name="Report" width={20} height={20} />
 				</Button>
 			</>
 		);
@@ -47,12 +47,12 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 	return (
 		<div className="w-full px-10 py-5 bg-theme-background">
 			<div className="flex w-full">
-				<img className="w-40 h-40 rounded-lg" alt="plugin-image" src={Placeholder} />
+				<img className="w-40 h-40 rounded-lg" alt="Plugin" src={Placeholder} />
 				<div className="flex flex-col justify-center w-full px-5">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-col">
 							<span className="text-2xl font-bold">ARK Explorer</span>
-							<span className="text-medium text-theme-neutral-500">
+							<span className="text-medium text-theme-neutral">
 								Use the ARK Mainnet explorer directly within the wallet
 							</span>
 						</div>

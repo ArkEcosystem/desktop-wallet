@@ -9,7 +9,7 @@ exports[`PluginGrid should render 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -25,7 +25,7 @@ exports[`PluginGrid should render 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -43,7 +43,7 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -63,13 +63,13 @@ exports[`PluginGrid should render 1`] = `
                     style="width: 80%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -85,14 +85,14 @@ exports[`PluginGrid should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -123,7 +123,7 @@ exports[`PluginGrid should render 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -141,7 +141,7 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -161,13 +161,13 @@ exports[`PluginGrid should render 1`] = `
                     style="width: 70%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -184,7 +184,7 @@ exports[`PluginGrid should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw gyRyAH mt-5"
+      class="sc-AxhCb gSLQTX mt-5"
       data-testid="Pagination"
     >
       <button
@@ -226,7 +226,7 @@ exports[`PluginGrid should render 1`] = `
         class="flex px-2 rounded bg-theme-primary-contrast"
       >
         <div
-          class="sc-AxhCb kpDFcC current-page"
+          class="sc-AxhUy bxYQX current-page"
         >
           1
         </div>
@@ -280,7 +280,7 @@ exports[`PluginGrid should render without pagination 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -296,7 +296,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -314,7 +314,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -334,13 +334,13 @@ exports[`PluginGrid should render without pagination 1`] = `
                     style="width: 80%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -356,14 +356,14 @@ exports[`PluginGrid should render without pagination 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -394,7 +394,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -412,7 +412,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -432,13 +432,13 @@ exports[`PluginGrid should render without pagination 1`] = `
                     style="width: 70%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -467,14 +467,14 @@ exports[`PluginGrid should split by page 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -505,7 +505,7 @@ exports[`PluginGrid should split by page 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -523,7 +523,7 @@ exports[`PluginGrid should split by page 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -543,13 +543,13 @@ exports[`PluginGrid should split by page 1`] = `
                     style="width: 70%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -566,7 +566,7 @@ exports[`PluginGrid should split by page 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw gyRyAH mt-5"
+      class="sc-AxhCb gSLQTX mt-5"
       data-testid="Pagination"
     >
       <button
@@ -606,12 +606,12 @@ exports[`PluginGrid should split by page 1`] = `
         class="flex px-2 rounded bg-theme-primary-contrast"
       >
         <div
-          class="sc-AxhCb kpDFcC"
+          class="sc-AxhUy bxYQX"
         >
           1
         </div>
         <div
-          class="sc-AxhCb kpDFcC current-page"
+          class="sc-AxhUy bxYQX current-page"
         >
           2
         </div>
@@ -665,7 +665,7 @@ exports[`PluginGrid should trigger delete 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -681,7 +681,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -699,7 +699,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -719,13 +719,13 @@ exports[`PluginGrid should trigger delete 1`] = `
                     style="width: 80%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -741,14 +741,14 @@ exports[`PluginGrid should trigger delete 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -779,7 +779,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -797,7 +797,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -817,13 +817,13 @@ exports[`PluginGrid should trigger delete 1`] = `
                     style="width: 70%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -840,7 +840,7 @@ exports[`PluginGrid should trigger delete 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw gyRyAH mt-5"
+      class="sc-AxhCb gSLQTX mt-5"
       data-testid="Pagination"
     >
       <button
@@ -882,7 +882,7 @@ exports[`PluginGrid should trigger delete 1`] = `
         class="flex px-2 rounded bg-theme-primary-contrast"
       >
         <div
-          class="sc-AxhCb kpDFcC current-page"
+          class="sc-AxhUy bxYQX current-page"
         >
           1
         </div>
@@ -936,7 +936,7 @@ exports[`PluginGrid should trigger select 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -952,7 +952,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -970,7 +970,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -990,13 +990,13 @@ exports[`PluginGrid should trigger select 1`] = `
                     style="width: 80%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -1012,14 +1012,14 @@ exports[`PluginGrid should trigger select 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxgMl gHoUWi border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI dgnzGu border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -1050,7 +1050,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -1068,7 +1068,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -1088,13 +1088,13 @@ exports[`PluginGrid should trigger select 1`] = `
                     style="width: 70%;"
                   >
                     <svg
-                      class="text-theme-warning-300 w-5"
+                      class="text-theme-warning-400 w-5"
                     >
                       star.svg
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -1111,7 +1111,7 @@ exports[`PluginGrid should trigger select 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw gyRyAH mt-5"
+      class="sc-AxhCb gSLQTX mt-5"
       data-testid="Pagination"
     >
       <button
@@ -1153,7 +1153,7 @@ exports[`PluginGrid should trigger select 1`] = `
         class="flex px-2 rounded bg-theme-primary-contrast"
       >
         <div
-          class="sc-AxhCb kpDFcC current-page"
+          class="sc-AxhUy bxYQX current-page"
         >
           1
         </div>

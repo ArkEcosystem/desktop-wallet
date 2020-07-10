@@ -1,24 +1,26 @@
 import tw, { css } from "twin.macro";
 
-const baseStyle = [tw`border-t border-solid border-theme-neutral-300`];
+const baseStyle = [tw`border-t border-solid`];
 
 const getType = (type: string): any => {
 	switch (type) {
 		case "horizontal":
-			return [
-				tw`flex clear-both w-full min-w-full`,
-				css`
-					margin: 24px 0;
-				`,
-			];
+			return tw`flex clear-both w-full min-w-full my-6`;
 		case "vertical":
-			return [
-				tw`relative h-4 inline-block align-middle border-t-0 border-l border-solid border-theme-neutral-300`,
-				css`
-					top: -0.06em;
-					margin: 0 8px;
-				`,
-			];
+			return tw`relative inline-block align-middle border-t-0 border-l border-solid mx-2`;
+	}
+};
+
+const getSize = (type: string, size: string): any => {
+	if (type === "vertical") {
+		switch (size) {
+			case "sm":
+				return tw`h-2`;
+			case "lg":
+				return tw`h-8`;
+			default:
+				return tw`h-4`;
+		}
 	}
 };
 
@@ -36,6 +38,6 @@ const isDashed = (dashed: boolean): any => {
 	return null;
 };
 
-export const getStyles = ({ type, dashed }: { type?: string; dashed?: boolean }) => {
-	return [...baseStyle, getType(type!), isDashed(dashed!)];
+export const getStyles = ({ size, type, dashed }: { size?: string; type?: string; dashed?: boolean }) => {
+	return [getSize(type!, size!), ...baseStyle, getType(type!), isDashed(dashed!)];
 };

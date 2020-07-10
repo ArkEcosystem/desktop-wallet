@@ -17,11 +17,11 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 	const { t } = useTranslation();
 
 	return (
-		<div data-testid="SearchBar" className={`bg-theme-neutral-100 px-12 pt-8 pb-10 ${className}`}>
-			<div className="flex items-center px-6 py-4 bg-white rounded shadow-xl">
-				{children ? children : <Icon name="Search" className="w-4 mr-6 text-theme-neutral-300" />}
+		<div data-testid="SearchBar" className={`bg-theme-neutral-contrast px-12 pt-8 pb-8 ${className}`}>
+			<div className="flex items-center px-10 py-6 bg-white rounded shadow-xl">
+				{children ? children : <Icon name="Search" className="w-4 mr-8 text-theme-neutral-300" />}
 
-				<div className="flex-1 pl-2 mr-4 border-l border-theme-neutral-200">
+				<div className="flex-1 pl-4 mr-4 border-l border-theme-neutral-200">
 					<Input
 						className="border-none shadow-none"
 						placeholder={placeholder || t("COMMON.SEARCH.PLACEHOLDER")}
@@ -29,7 +29,7 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 					/>
 				</div>
 
-				<Button data-testid="SearchBar__button" onClick={() => onSearch(query)} size="small" className="my-1">
+				<Button data-testid="SearchBar__button" onClick={() => onSearch(query)} className="my-1">
 					<span className="px-2 text-sm">{t("COMMON.SEARCH.FIND_IT")}</span>
 				</Button>
 			</div>

@@ -1,6 +1,6 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { WalletsControls } from "./WalletsControls";
 
@@ -18,7 +18,7 @@ describe("WalletsControls", () => {
 	it("should emit event for grid view selection and call callback if provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="list" onSelectGridView={fn} />);
-		const toggle = getByTestId("controls__grid");
+		const toggle = getByTestId("LayoutControls__grid--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -30,7 +30,7 @@ describe("WalletsControls", () => {
 	it("should ignore event emition for grid view if callback not provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="list" />);
-		const toggle = getByTestId("controls__grid");
+		const toggle = getByTestId("LayoutControls__grid--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -42,7 +42,7 @@ describe("WalletsControls", () => {
 	it("should ignore grid event if already on grid view", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="grid" onSelectGridView={fn} />);
-		const toggle = getByTestId("controls__grid");
+		const toggle = getByTestId("LayoutControls__grid--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -54,7 +54,7 @@ describe("WalletsControls", () => {
 	it("should emit event for list view selection and call callback if provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="grid" onSelectListView={fn} />);
-		const toggle = getByTestId("controls__list");
+		const toggle = getByTestId("LayoutControls__list--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -66,7 +66,7 @@ describe("WalletsControls", () => {
 	it("should ignore event emition for list view if callback not provided", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="grid" />);
-		const toggle = getByTestId("controls__list");
+		const toggle = getByTestId("LayoutControls__list--icon");
 
 		act(() => {
 			fireEvent.click(toggle);
@@ -78,7 +78,7 @@ describe("WalletsControls", () => {
 	it("should ignore list event if already on grid view", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<WalletsControls viewType="list" />);
-		const toggle = getByTestId("controls__list");
+		const toggle = getByTestId("LayoutControls__list--icon");
 
 		act(() => {
 			fireEvent.click(toggle);

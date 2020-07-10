@@ -30,6 +30,10 @@ export const translations: { [key: string]: any } = {
 			"ARK is an open-source blockchain ecosystem that provides users with innovate and easy-to-use blockchain thechnologies. Our supportive community, extensive range of products.",
 	},
 
+	PAGE_PLUGINS_CATEGORY: {
+		LAYOUT_TITLE: "Plugin list",
+	},
+
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
 		DESCRIPTION: "Easy way to find, manage and install plugins",

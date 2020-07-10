@@ -31,7 +31,7 @@ export const DeleteResource = ({
 	return (
 		<Modal
 			title={title}
-			image={<DeleteBanner className="w-3/5 m-auto mb-8" />}
+			image={<DeleteBanner className="w-3/5 m-auto my-8" />}
 			description={description}
 			isOpen={isOpen}
 			onClose={onClose}

@@ -2,16 +2,18 @@
 
 exports[`Toggle should render 1`] = `
 <DocumentFragment>
-  <label>
+  <label
+    class="flex"
+  >
     <input
       class="sc-AxjAm ftHPqI"
       type="checkbox"
     />
     <div
-      class="sc-AxirZ flGSyF"
+      class="sc-AxirZ ekgzTe"
     >
       <span
-        class="sc-AxiKw dXTVH"
+        class="sc-AxiKw khAQLc"
       />
     </div>
   </label>
@@ -20,16 +22,18 @@ exports[`Toggle should render 1`] = `
 
 exports[`Toggle should toggle checked 1`] = `
 <DocumentFragment>
-  <label>
+  <label
+    class="flex"
+  >
     <input
       class="sc-AxjAm ftHPqI"
       type="checkbox"
     />
     <div
-      class="sc-AxirZ flGSyF"
+      class="sc-AxirZ ekgzTe"
     >
       <span
-        class="sc-AxiKw dXTVH"
+        class="sc-AxiKw khAQLc"
       />
     </div>
   </label>

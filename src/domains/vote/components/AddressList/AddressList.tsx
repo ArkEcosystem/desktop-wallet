@@ -5,6 +5,7 @@ import { AddressListItem } from "../AddressListItem";
 
 type AddressListProps = {
 	data?: any;
+	onSelect?: (address: string) => void;
 };
 
 export const AddressList = (props: AddressListProps) => {
@@ -61,9 +62,12 @@ export const AddressList = (props: AddressListProps) => {
 	];
 
 	return (
-		<Table columns={columns} data={props.data}>
-			{(rowData: any) => <AddressListItem {...rowData} />}
-		</Table>
+		<div data-testid="AddressList">
+			<h2 className="py-5 text-2xl font-bold">Select Address</h2>
+			<Table columns={columns} data={props.data}>
+				{(rowData: any) => <AddressListItem {...rowData} onSelect={props.onSelect} />}
+			</Table>
+		</div>
 	);
 };
 

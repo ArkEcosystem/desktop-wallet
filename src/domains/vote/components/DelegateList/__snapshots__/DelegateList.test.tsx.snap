@@ -2,9 +2,16 @@
 
 exports[`DelegateList should render 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -15,25 +22,19 @@ exports[`DelegateList should render 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                <div />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -41,21 +42,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Delegate Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -65,7 +64,7 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -73,21 +72,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Rank
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -97,7 +94,7 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -105,21 +102,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Votes
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -129,27 +124,21 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Profile
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -157,21 +146,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Comm.
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -181,7 +168,7 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -189,21 +176,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Payout
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -213,7 +198,7 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -221,21 +206,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Min
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -245,7 +228,7 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -253,21 +236,19 @@ exports[`DelegateList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Commission (Daily)
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -277,21 +258,33 @@ exports[`DelegateList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top justify-end"
               >
+                <div>
+                  Vote
+                </div>
                 <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -300,15 +293,25 @@ exports[`DelegateList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -394,15 +397,25 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                    title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -488,15 +501,25 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -546,15 +569,25 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -640,15 +673,25 @@ exports[`DelegateList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -706,9 +749,16 @@ exports[`DelegateList should render 1`] = `
 
 exports[`DelegateList should render with empty list 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -719,25 +769,19 @@ exports[`DelegateList should render with empty list 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                <div />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -745,21 +789,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Delegate Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -769,7 +811,7 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -777,21 +819,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Rank
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -801,7 +841,7 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -809,21 +849,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Votes
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -833,27 +871,21 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Profile
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -861,21 +893,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Comm.
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -885,7 +915,7 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -893,21 +923,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Payout
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -917,7 +945,7 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -925,21 +953,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Min
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -949,7 +975,7 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -957,21 +983,19 @@ exports[`DelegateList should render with empty list 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Commission (Daily)
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -981,21 +1005,33 @@ exports[`DelegateList should render with empty list 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top justify-end"
               >
+                <div>
+                  Vote
+                </div>
                 <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -1011,9 +1047,16 @@ exports[`DelegateList should render with empty list 1`] = `
 
 exports[`DelegateList should select a delegate 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -1024,25 +1067,19 @@ exports[`DelegateList should select a delegate 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                <div />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1050,21 +1087,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Delegate Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1074,7 +1109,7 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1082,21 +1117,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Rank
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1106,7 +1139,7 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1114,21 +1147,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Votes
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1138,27 +1169,21 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Profile
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1166,21 +1191,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Comm.
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1190,7 +1213,7 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1198,21 +1221,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Payout
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1222,7 +1243,7 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1230,21 +1251,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Min
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1254,7 +1273,7 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -1262,21 +1281,19 @@ exports[`DelegateList should select a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Commission (Daily)
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1286,21 +1303,33 @@ exports[`DelegateList should select a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top justify-end"
               >
+                <div>
+                  Vote
+                </div>
                 <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -1309,15 +1338,25 @@ exports[`DelegateList should select a delegate 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-contrast"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -1403,15 +1442,25 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                    title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -1497,15 +1546,25 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -1555,15 +1614,25 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -1649,15 +1718,25 @@ exports[`DelegateList should select a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -1720,12 +1799,12 @@ exports[`DelegateList should select a delegate 1`] = `
           class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
         >
           <div
-            class="text-sm text-theme-neutral-500"
+            class="text-sm text-theme-neutral"
           >
             Quantity
           </div>
           <div
-            class="text-theme-neutral-700"
+            class="text-theme-neutral-dark"
           >
             1/50
           </div>
@@ -1743,19 +1822,29 @@ exports[`DelegateList should select a delegate 1`] = `
                 class="inline-flex"
               >
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz mr-4"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ mr-4"
                   data-testid="Avatar"
-                />
+                >
+                  <div
+                    class="w-full h-full overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
+                </div>
                 <div
                   class="flex flex-col"
                 >
                   <div
-                    class="text-sm text-theme-neutral-700"
+                    class="text-sm text-theme-neutral-dark"
                   >
                     Address Delegate
                   </div>
                   <div
-                    class="text-theme-neutral-500"
+                    class="text-theme-neutral"
                   >
                     Delegate 1 - ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
                   </div>
@@ -1779,9 +1868,16 @@ exports[`DelegateList should select a delegate 1`] = `
 
 exports[`DelegateList should select multiple delegates 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -1792,25 +1888,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                <div />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1818,21 +1908,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Delegate Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1842,7 +1930,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1850,21 +1938,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Rank
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1874,7 +1960,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1882,21 +1968,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Votes
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1906,27 +1990,21 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Profile
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1934,21 +2012,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Comm.
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1958,7 +2034,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1966,21 +2042,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Payout
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -1990,7 +2064,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -1998,21 +2072,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Min
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2022,7 +2094,7 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -2030,21 +2102,19 @@ exports[`DelegateList should select multiple delegates 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Commission (Daily)
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2054,21 +2124,33 @@ exports[`DelegateList should select multiple delegates 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top justify-end"
               >
+                <div>
+                  Vote
+                </div>
                 <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -2077,15 +2159,25 @@ exports[`DelegateList should select multiple delegates 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-contrast"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -2171,15 +2263,25 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-contrast"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                    title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -2265,15 +2367,25 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 bg-theme-success-contrast"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -2323,15 +2435,25 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -2417,15 +2539,25 @@ exports[`DelegateList should select multiple delegates 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -2488,12 +2620,12 @@ exports[`DelegateList should select multiple delegates 1`] = `
           class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
         >
           <div
-            class="text-sm text-theme-neutral-500"
+            class="text-sm text-theme-neutral"
           >
             Quantity
           </div>
           <div
-            class="text-theme-neutral-700"
+            class="text-theme-neutral-dark"
           >
             3/50
           </div>
@@ -2515,22 +2647,42 @@ exports[`DelegateList should select multiple delegates 1`] = `
                   data-testid="DelegateAvatarList__avatar-list"
                 >
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
                     data-testid="Avatar"
-                  />
+                  >
+                    <div
+                      class="w-full h-full overflow-hidden rounded-full"
+                    >
+                      <img
+                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
+                  </div>
                   <div
-                    class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
                     data-testid="Avatar"
-                  />
+                  >
+                    <div
+                      class="w-full h-full overflow-hidden rounded-full"
+                    >
+                      <img
+                        alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                        title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      />
+                    </div>
+                  </div>
                   <div
-                    class="sc-AxirZ cZokSJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
+                    class="sc-AxirZ cZokSJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
                     data-testid="DelegateAvatarList__avatar-list__rest"
                   >
                     +1
                   </div>
                 </div>
                 <div
-                  class="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+                  class="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
                   data-testid="DelegateList__toggle-show-selected"
                 >
                   Hide List
@@ -2555,16 +2707,26 @@ exports[`DelegateList should select multiple delegates 1`] = `
                 class="flex flex-1"
               >
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz mr-8"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ mr-8"
                   data-testid="Avatar"
-                />
+                >
+                  <div
+                    class="w-full h-full overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
+                </div>
                 <div
                   class="mr-2"
                 >
                   Delegate 1
                 </div>
                 <div
-                  class="text-theme-neutral-500"
+                  class="text-theme-neutral"
                 >
                   ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
                 </div>
@@ -2578,16 +2740,26 @@ exports[`DelegateList should select multiple delegates 1`] = `
                 class="flex flex-1"
               >
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz mr-8"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ mr-8"
                   data-testid="Avatar"
-                />
+                >
+                  <div
+                    class="w-full h-full overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                      title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
+                </div>
                 <div
                   class="mr-2"
                 >
                   Delegate 2
                 </div>
                 <div
-                  class="text-theme-neutral-500"
+                  class="text-theme-neutral"
                 >
                   FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
                 </div>
@@ -2601,16 +2773,26 @@ exports[`DelegateList should select multiple delegates 1`] = `
                 class="flex flex-1"
               >
                 <div
-                  class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz mr-8"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ mr-8"
                   data-testid="Avatar"
-                />
+                >
+                  <div
+                    class="w-full h-full overflow-hidden rounded-full"
+                  >
+                    <img
+                      alt="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                      title="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    />
+                  </div>
+                </div>
                 <div
                   class="mr-2"
                 >
                   Delegate 3
                 </div>
                 <div
-                  class="text-theme-neutral-500"
+                  class="text-theme-neutral"
                 >
                   ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
                 </div>
@@ -2627,9 +2809,16 @@ exports[`DelegateList should select multiple delegates 1`] = `
 
 exports[`DelegateList should unselect a delegate 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="DelegateList"
+  >
+    <h2
+      class="py-5 text-2xl font-bold"
+    >
+      Select a Delegate
+    </h2>
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -2640,25 +2829,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
+                <div />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2666,21 +2849,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Delegate Name
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2690,7 +2871,7 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2698,21 +2879,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Rank
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2722,7 +2901,7 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2730,21 +2909,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Votes
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2754,27 +2931,21 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Profile
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2782,21 +2953,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Comm.
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2806,7 +2975,7 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -2814,21 +2983,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Payout
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2838,7 +3005,7 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
@@ -2846,21 +3013,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Min
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2870,7 +3035,7 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
@@ -2878,21 +3043,19 @@ exports[`DelegateList should unselect a delegate 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Commission (Daily)
                 </div>
                 <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
-                    class="sc-AxiKw ksjdLL"
-                    height="10"
-                    width="10"
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
                   >
                     <svg>
                       sort.svg
@@ -2902,21 +3065,33 @@ exports[`DelegateList should unselect a delegate 1`] = `
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top justify-end"
               >
+                <div>
+                  Vote
+                </div>
                 <div
-                  class="mr-1"
-                />
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
-                />
+                >
+                  <div
+                    class="sc-AxiKw GMmVY"
+                    height="12"
+                    width="15"
+                  >
+                    <svg>
+                      sort.svg
+                    </svg>
+                  </div>
+                </div>
               </div>
             </th>
           </tr>
@@ -2925,15 +3100,25 @@ exports[`DelegateList should unselect a delegate 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -3019,15 +3204,25 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                    title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -3113,15 +3308,25 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                    title="ATuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -3171,15 +3376,25 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"
@@ -3265,15 +3480,25 @@ exports[`DelegateList should unselect a delegate 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-theme-neutral-200 false"
           >
             <td
               class="py-5"
             >
               <div
-                class="Avatar__AvatarStyled-sc-1vsy2s2-0 jZYOhz"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jTOQUP"
                 data-testid="Avatar"
-              />
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="AAuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
             </td>
             <td
               class="py-5 font-bold"

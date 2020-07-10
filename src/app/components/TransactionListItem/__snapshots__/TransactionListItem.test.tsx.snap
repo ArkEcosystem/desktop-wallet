@@ -19,39 +19,54 @@ exports[`TransactionListItem should render a received transaction 1`] = `
           class="w-32 py-5 mt-1"
         >
           <div
-            class="sc-AxjAm bDDbwS border-theme-success-300 text-theme-success-400 -mr-1"
+            class="flex"
           >
             <div
-              class="sc-AxirZ RbXVX"
-              height="40"
-              width="40"
+              class="sc-AxirZ cZokSJ border-theme-success-300 text-theme-success-light -mr-1"
             >
-              <svg>
-                received.svg
-              </svg>
+              <div
+                class="sc-AxiKw jXNNYH"
+                height="40"
+                width="40"
+              >
+                <svg>
+                  received.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
-          <div
-            class="sc-AxjAm dSWFkr"
-          />
         </td>
         <td
           class="w-56"
         >
           <div
-            class="inline-block truncate"
+            class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My Wallet
             </span>
             <span
-              class="text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              ASuusXSW9k...P6T9GQ3kqT
+              ASuusXSW9k…P6T9GQ3kqT
             </span>
           </div>
         </td>
@@ -62,14 +77,14 @@ exports[`TransactionListItem should render a received transaction 1`] = `
           class="text-sm text-right w-36"
         >
           <div
-            class="sc-AxiKw djbzVd"
+            class="sc-AxhCb jEeydN"
             color="success"
           >
             100 BTC
           </div>
         </td>
         <td
-          class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+          class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
         >
           <div>
             1,000,000 USD
@@ -100,39 +115,54 @@ exports[`TransactionListItem should render a send transaction 1`] = `
           class="w-32 py-5 mt-1"
         >
           <div
-            class="sc-AxjAm bDDbwS border-theme-danger-200 text-theme-danger-400 -mr-1"
+            class="flex"
           >
             <div
-              class="sc-AxirZ RbXVX"
-              height="40"
-              width="40"
+              class="sc-AxirZ cZokSJ border-theme-danger-light text-theme-danger-400 -mr-1"
             >
-              <svg>
-                sent.svg
-              </svg>
+              <div
+                class="sc-AxiKw jXNNYH"
+                height="40"
+                width="40"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
-          <div
-            class="sc-AxjAm dSWFkr"
-          />
         </td>
         <td
           class="w-56"
         >
           <div
-            class="inline-block truncate"
+            class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My Wallet
             </span>
             <span
-              class="text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              ASuusXSW9k...P6T9GQ3kqT
+              ASuusXSW9k…P6T9GQ3kqT
             </span>
           </div>
         </td>
@@ -143,14 +173,14 @@ exports[`TransactionListItem should render a send transaction 1`] = `
           class="text-sm text-right w-36"
         >
           <div
-            class="sc-AxiKw BrXzA"
+            class="sc-AxhCb fgIdEA"
             color="danger"
           >
             100 BTC
           </div>
         </td>
         <td
-          class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+          class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
         >
           <div>
             1,000,000 USD
@@ -174,39 +204,54 @@ exports[`TransactionListItem should render compact variant 1`] = `
           class="w-20 py-4 mt-1"
         >
           <div
-            class="sc-AxjAm IjnG border-theme-success-300 text-theme-success-400 -mr-1"
+            class="flex"
           >
             <div
-              class="sc-AxirZ RbXVX"
-              height="40"
-              width="40"
+              class="sc-AxirZ dVFFmZ border-theme-success-300 text-theme-success-light -mr-1"
             >
-              <svg>
-                received.svg
-              </svg>
+              <div
+                class="sc-AxiKw jXNNYH"
+                height="40"
+                width="40"
+              >
+                <svg>
+                  received.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
-          <div
-            class="sc-AxjAm gecWwX"
-          />
         </td>
         <td
           class="w-56 py-1"
         >
           <div
-            class="inline-block truncate"
+            class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-sm"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-sm"
               data-testid="address__wallet-name"
             >
               My Wallet
             </span>
             <span
-              class="text-theme-neutral-400 font-semibold text-sm"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-sm"
               data-testid="address__wallet-address"
             >
-              ASuusX...GQ3kqT
+              ASuusX…GQ3kqT
             </span>
           </div>
         </td>
@@ -214,7 +259,7 @@ exports[`TransactionListItem should render compact variant 1`] = `
           class="py-1 text-sm text-right"
         >
           <div
-            class="sc-AxiKw djbzVd"
+            class="sc-AxhCb jEeydN"
             color="success"
           >
             100 BTC

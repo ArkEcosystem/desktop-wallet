@@ -1,5 +1,5 @@
 // UI Elements
-import { Circle } from "app/components/Circle";
+import { Avatar } from "app/components/Avatar";
 import { Label } from "app/components/Label";
 import React from "react";
 
@@ -16,9 +16,8 @@ export const Recipient = (props: RecipientProps) => (
 			!props.border || "border-t border-dashed border-theme-neutral-300"
 		} ${props.className}`}
 	>
-		<div>
-			<Circle avatarId="test" size="small" />
-
+		<div className="flex items-center">
+			<Avatar address="test" size="sm" noShadow />
 			<span className="ml-4">{props.address}</span>
 		</div>
 

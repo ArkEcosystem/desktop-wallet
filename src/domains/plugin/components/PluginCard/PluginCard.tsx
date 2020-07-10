@@ -3,7 +3,6 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { ReviewRating } from "app/components/ReviewRating";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 type PluginCardProps = {
@@ -20,7 +19,6 @@ const PluginCardStyled = styled.div`
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
 export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardProps) => {
-	const { t } = useTranslation();
 	const options = [
 		{ label: "View", value: "view" },
 		{ label: "Delete", value: "delete" },
@@ -29,12 +27,12 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 	return (
 		<PluginCardStyled
 			data-testid={`PluginCard--${plugin.id}`}
-			className="border-theme-primary-100 hover:border-theme-background"
+			className="border-theme-primary-contrast hover:border-theme-background"
 			onClick={onClick}
 		>
 			<div className="my-auto font-semibold">
 				{plugin.isInstalled && (
-					<div className="absolute top-4 right-2 text-theme-primary-200">
+					<div className="absolute top-4 right-2 text-theme-primary-light">
 						<Dropdown
 							toggleIcon="Settings"
 							options={options}
@@ -51,7 +49,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					<ChangeNowLogo className="w-12 h-12" />
 				</div>
 
-				<div className="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600">
+				<div className="flex items-center mb-2 text-lg space-x-2 text-theme-primary">
 					<div>{plugin.name}</div>
 
 					<div>
@@ -60,7 +58,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 					</div>
 				</div>
 
-				<div className="flex text-sm text-theme-neutral-400 space-x-4">
+				<div className="flex text-sm text-theme-neutral-light space-x-4">
 					<div className="pr-4 border-r border-theme-neutral-300">{plugin.author}</div>
 
 					<div>

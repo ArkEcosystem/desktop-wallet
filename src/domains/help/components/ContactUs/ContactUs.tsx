@@ -5,7 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 // UI Elements
 import { Modal } from "app/components/Modal";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { TextArea } from "app/components/TextArea";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -29,7 +29,7 @@ export const ContactUs = (props: ContactUsProps) => {
 			isOpen={props.isOpen}
 			onClose={props.onClose}
 		>
-			<div className="flex px-12 pb-8 mt-2 mb-8 -mx-12 text-black border-b border-gray-500">
+			<div className="flex px-12 pb-8 mt-4 mb-8 -mx-12 text-black border-b border-gray-500">
 				<a href="https://twitter.ark.io" className="mr-2 rounded-full hover:bg-theme-neutral-300">
 					<Circle className="border-black hover:bg-transparent" noShadow={true}>
 						<Icon name="Twitter" />
@@ -76,11 +76,13 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED").toString(),
 						})}
-					>
-						<option value="">{t("COMMON.SELECT")}</option>
-						<option value="security">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY")}</option>
-						<option value="other">{t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER")}</option>
-					</Select>
+						placeholder={t("COMMON.SELECT")}
+						options={[
+							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY"), value: "security" },
+							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER"), value: "other" },
+						]}
+					/>
+					<FormHelperText />
 				</FormField>
 
 				<FormField name="message">
@@ -92,7 +94,7 @@ export const ContactUs = (props: ContactUsProps) => {
 					/>
 				</FormField>
 
-				<div className="mt-4 space-x-3">
+				<div className="flex justify-end mt-4 space-x-3">
 					<Button variant="plain" onClick={props.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>

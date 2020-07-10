@@ -5,15 +5,15 @@ exports[`CreateContact should not render if not open 1`] = `<DocumentFragment />
 exports[`CreateContact should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw cTRlJa absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw cTRlJa fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -22,27 +22,33 @@ exports[`CreateContact should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Add Contact
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Enter your contacts name and addresses and add them to your list.
         </div>
@@ -50,78 +56,98 @@ exports[`CreateContact should render a modal 1`] = `
           class="mt-8"
         >
           <form
-            class="space-y-6"
+            class="space-y-8"
             data-testid="contact-form"
           >
             <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
               </label>
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxheI jbyOzK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="contact-form__name-input"
                 name="name"
+                value=""
               />
             </fieldset>
             <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="network"
               >
                 Network
               </label>
               <div
-                class="sc-fzozJi OgXfh"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label"
+                class="relative"
+                role="combobox"
               >
-                <select
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                  data-testid="contact-form__network-select"
-                  name="network"
-                >
-                  <option
-                    disabled=""
-                    selected=""
-                    value=""
-                  >
-                    Select network...
-                  </option>
-                </select>
+                <label
+                  for="downshift-0-input"
+                  id="downshift-0-label"
+                />
                 <div
-                  class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  class="relative flex items-center w-full flex-inline"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
+                    <div
+                      class="px-4 py-2 flex-0 w-14"
+                    >
+                      <div
+                        class="sc-AxhUy iJOgmr border-theme-neutral-200"
+                      />
+                    </div>
+                    <div
+                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                    >
+                      <div
+                        class="relative z-10 w-full"
+                        data-testid="select-network__typeahead-"
+                      >
+                        <div
+                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                        />
+                      </div>
+                      <input
+                        aria-autocomplete="list"
+                        aria-labelledby="downshift-0-label"
+                        autocomplete="off"
+                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                        data-testid="select-asset__input"
+                        id="downshift-0-input"
+                        placeholder="Enter a network name"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </fieldset>
             <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="address"
               >
                 Address
               </label>
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxheI jbyOzK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="contact-form__address-input"
                 name="address"
               />

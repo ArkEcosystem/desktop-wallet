@@ -1,5 +1,5 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -7,13 +7,14 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
 import { useSelectionState } from "app/components/SelectionBar";
-import { Spinner } from "app/components/Spinner";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
+import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
@@ -24,38 +25,36 @@ type UpdateRegistrationProps = {
 	onDownload: any;
 };
 
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
-
 const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
 	const selectionBarState = useSelectionState(1);
 
 	return (
 		<div data-testid="UpdateRegistration__first-step">
-			<h1>Update Business</h1>
-			<div className="text-theme-neutral-700">
+			<h1 className="mb-0">Update Business</h1>
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
 			<div>
-				<TransactionDetail border={false} className="mb-8">
-					<FormField name="name">
+				<TransactionDetail border={false} className="pb-8">
+					<FormField name="name" className="font-normal">
 						<FormLabel required>Name</FormLabel>
 						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
 					</FormField>
 
-					<FormField name="description" className="mt-8">
+					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel required>Description</FormLabel>
 						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
 					</FormField>
 
-					<FormField name="website" className="mt-8">
+					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>Website</FormLabel>
 						<Input type="website" ref={register} defaultValue="http://robank.com" />
 					</FormField>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Repository"
 						description="Show your projects through your repository"
@@ -68,7 +67,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Social Media"
 						description="Tell people more about yourself through social media"
@@ -81,7 +80,7 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Photo and Video"
 						description="Get more users and add more information about yourself"
@@ -96,81 +95,116 @@ const FirstStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail label="Fee ARK" className="mt-4">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+				<TransactionDetail className="pt-6 pb-0">
+					<FormField name="name" className="font-normal">
+						<FormLabel>Fee ARK</FormLabel>
+						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+					</FormField>
 				</TransactionDetail>
 			</div>
 		</div>
 	);
 };
 
-const SecondStep = () => (
-	<div data-testid="UpdateRegistration__second-step" className="space-y-8">
-		<div>
-			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the information again before voting</p>
-		</div>
-		<div className="grid grid-flow-row gap-2">
-			<TransactionDetail
-				border={false}
-				label="Network"
-				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="large">
-							<Icon name="Ark" width={20} height={20} />
-						</Circle>
+const SecondStep = () => {
+	const links = [
+		{
+			link: "http://github.com/robank",
+			type: "github",
+		},
+		{
+			link: "http://gitlab.com/robank",
+			type: "gitlab",
+		},
+		{
+			link: "http://bitbucket.com/robank",
+			type: "bitbucket",
+		},
+		{
+			link: "http://npmjs.com/robank",
+			type: "npm",
+		},
+	];
+
+	return (
+		<div data-testid="UpdateRegistration__second-step">
+			<div>
+				<h1 className="mb-0">Transaction Review</h1>
+				<p className="text-theme-neutral-dark">Check the information again before voting</p>
+			</div>
+			<div className="mt-4 grid grid-flow-row">
+				<TransactionDetail
+					border={false}
+					label="Network"
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+						ARK Ecosystem
 					</div>
-				}
-			>
-				<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
-					ARK Ecosystem
+				</TransactionDetail>
+
+				<TransactionDetail
+					label=" "
+					extra={
+						<div className="mt-2">
+							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+						</div>
+					}
+					className="pt-4"
+				>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
+						<span className="mr-1">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+				</TransactionDetail>
+
+				<TransactionDetail
+					label="Type"
+					extra={
+						<div>
+							<Circle className="border-black bg-theme-background" size="lg">
+								<Icon name="Business" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					Update Business
+				</TransactionDetail>
+
+				<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
+
+				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
+
+				<TransactionDetail label="Website">
+					<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
+						https://ark.io
+					</a>
+				</TransactionDetail>
+
+				<TransactionDetail className="pb-8">
+					<LinkList
+						title="Repository"
+						description="Show your projects through the repository"
+						links={links}
+					/>
+				</TransactionDetail>
+
+				<div className="my-4">
+					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 				</div>
-			</TransactionDetail>
-
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
-					<span className="mr-1">Sender</span>
-					<Label color="warning">Your address</Label>
-				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
-			</TransactionDetail>
-
-			<TransactionDetail
-				label="Type"
-				extra={
-					<div>
-						<Circle className="border-black bg-theme-background" size="large">
-							<Icon name="Business" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				Update Business
-			</TransactionDetail>
-
-			<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-
-			<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-
-			<TransactionDetail label="Website">
-				<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
-					https://ark.io
-				</a>
-			</TransactionDetail>
-
-			<div className="my-4">
-				<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
@@ -179,12 +213,12 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 		<div data-testid="UpdateRegistration__third-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1>Authenticate</h1>
-					<div className="text-sm text-theme-neutral-700">
+					<h1 className="mb-0">Authenticate</h1>
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
-					<div className="mt-5">
+					<div className="mt-8">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
@@ -200,18 +234,8 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 
 			{passwordType === "ledger" && (
 				<div>
-					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner />
-
-					<div className="mt-8 text-theme-neutral-700">
-						Please review and verify the information on your Ledger device. Choose Accept to complete your
-						transaction.
-					</div>
-
-					<div className="inline-flex items-center mt-5 space-x-3">
-						<Spinner color="primary" size="default" />
-						<span className="text-black">Waiting for confirmation...</span>
-					</div>
+					<h1 className="mb-0">Confirm Your Transaction</h1>
+					<LedgerConfirmation />
 				</div>
 			)}
 		</div>
@@ -223,7 +247,7 @@ export const FourthStep = () => (
 		<TransactionDetail
 			label="Transaction Type"
 			extra={
-				<Circle className="border-black" size="large">
+				<Circle className="border-black" size="lg">
 					<Icon name="Business" width={20} height={20} />
 				</Circle>
 			}
@@ -241,8 +265,8 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="large">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -267,12 +291,12 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 	};
 
 	return (
-		<div data-testid="UpdateRegistration" className="max-w-xl mx-auto">
+		<div data-testid="UpdateRegistration" className="max-w-xl py-16 mx-auto">
 			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
 				<Tabs activeId={activeTab}>
 					<StepIndicator size={6} activeIndex={activeTab} />
 
-					<div className="mt-4">
+					<div className="mt-8">
 						<TabPanel tabId={1}>
 							<FirstStep form={form} />
 						</TabPanel>

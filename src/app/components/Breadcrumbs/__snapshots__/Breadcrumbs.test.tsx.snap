@@ -5,17 +5,23 @@ exports[`Breadcrumbs should not render without crumbs 1`] = `<DocumentFragment /
 exports[`Breadcrumbs should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-3 font-semibold text-theme-neutral-700"
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
     data-testid="breadcrumbs__wrapper"
   >
-    <span>
-       &lt;- 
-    </span>
     <div
-      class="space-x-3"
+      class="sc-AxirZ hVzDKK"
+      height="10"
+      width="19"
+    >
+      <svg>
+        arrow-back.svg
+      </svg>
+    </div>
+    <div
+      class="space-x-2"
     >
       <a
-        class="text-theme-neutral-700"
+        class="text-theme-neutral-dark"
         href="/dashboard"
       >
         <span>
@@ -30,14 +36,20 @@ exports[`Breadcrumbs should render 1`] = `
 exports[`Breadcrumbs should render with custom classes 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-3 class-name text-theme-neutral-500"
+    class="flex items-center space-x-2 class-name text-theme-neutral"
     data-testid="breadcrumbs__wrapper"
   >
-    <span>
-       &lt;- 
-    </span>
     <div
-      class="space-x-3"
+      class="sc-AxirZ hVzDKK"
+      height="10"
+      width="19"
+    >
+      <svg>
+        arrow-back.svg
+      </svg>
+    </div>
+    <div
+      class="space-x-2"
     >
       <a
         class=""
@@ -48,14 +60,17 @@ exports[`Breadcrumbs should render with custom classes 1`] = `
         </span>
       </a>
       <span>
-         | 
+        <div
+          class="sc-AxjAm gHUxAL border-1 border-theme-neutral"
+          type="vertical"
+        />
       </span>
     </div>
     <div
-      class="space-x-3"
+      class="space-x-2"
     >
       <a
-        class="text-theme-neutral-700"
+        class="text-theme-neutral-dark"
         href="/wallets/my_wallet"
       >
         <span>

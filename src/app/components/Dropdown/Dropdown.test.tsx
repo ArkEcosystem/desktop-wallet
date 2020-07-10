@@ -1,13 +1,23 @@
-import { fireEvent, render } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
 import { clickOutsideHandler } from "app/hooks/click-outside";
 import React from "react";
+import { fireEvent, render } from "testing-library";
 
 import { Dropdown } from "./Dropdown";
 
 describe("Dropdown", () => {
 	it("should render", () => {
 		const { container } = render(<Dropdown />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a small one", () => {
+		const { container } = render(<Dropdown toggleSize="sm" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render a large one", () => {
+		const { container } = render(<Dropdown toggleSize="lg" />);
 		expect(container).toMatchSnapshot();
 	});
 

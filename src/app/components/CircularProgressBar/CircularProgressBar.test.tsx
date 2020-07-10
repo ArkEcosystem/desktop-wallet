@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "testing-library";
 
 import { CircularProgressBar } from "./CircularProgressBar";
 
@@ -9,6 +9,6 @@ describe("CircularProgressBar", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-		expect(getByTestId("circular-progress-bar__percentage")).toHaveTextContent("50%");
+		expect(getByTestId("CircularProgressBar__percentage")).toHaveTextContent("50%");
 	});
 });

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "testing-library";
 
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
@@ -18,6 +18,24 @@ describe("HeaderSearchBar", () => {
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
 		expect(getByTestId("header-search-bar__input")).toBeTruthy();
+	});
+
+	it("should show extra slot", () => {
+		const { getByTestId } = render(<HeaderSearchBar extra={<div data-testid="extra-slot" />} />);
+
+		fireEvent.click(getByTestId("header-search-bar__button"));
+
+		expect(getByTestId("extra-slot")).toBeTruthy();
+	});
+
+	it("should show the with custom label slot", () => {
+		const { getByTestId } = render(
+			<HeaderSearchBar>
+				<div data-testid="custom-content">custom</div>
+			</HeaderSearchBar>,
+		);
+
+		expect(getByTestId("custom-content")).toBeTruthy();
 	});
 
 	it("should hide the searchbar when clicked outside", () => {
@@ -52,7 +70,7 @@ describe("HeaderSearchBar", () => {
 
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
-		const input = getByTestId("Input");
+		const input = getByTestId("Input") as HTMLInputElement;
 
 		act(() => {
 			fireEvent.change(input, {

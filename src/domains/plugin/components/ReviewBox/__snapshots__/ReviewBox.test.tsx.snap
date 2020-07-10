@@ -5,224 +5,305 @@ exports[`ReviewBox should render properly 1`] = `
   <div
     class="w-full"
   >
-    <button
-      class="sc-AxjAm ddQVWI"
-      color="primary"
-      data-testid="ReviewBox__button--comment"
-      type="button"
-    >
-      Leave a comment
-    </button>
     <div
-      class="flex flex-col mt-5"
+      class="flex flex-col"
     >
       <div
-        class="flex items-center"
+        class="flex items-center text-2xl whitespace-no-wrap"
       >
         <div
-          class="pr-3 text-theme-warning-300"
+          class="sc-AxjAm DqMiL mr-1 -mt-1"
+          height="19"
+          width="34"
         >
-          <div
-            class="sc-AxirZ dCVESD"
-            height="25"
-            width="25"
-          >
-            <svg>
-              star.svg
-            </svg>
-          </div>
+          <svg>
+            stars-outline.svg
+          </svg>
         </div>
-        <div
-          class="text-2xl"
+        <span
+          class="font-bold"
         >
+          Avg. Rating: 4.3 
           <span
-            class="font-bold"
+            class="font-bold text-theme-neutral-light"
           >
-            4.3
+             / 5
           </span>
-          <span
-            class="font-bold text-theme-neutral-400"
-          >
-            /5
-          </span>
-        </div>
+        </span>
       </div>
       <span
-        class="pb-5 mt-2 text-sm font-bold border-b border-dashed text-theme-neutral-400 border-theme-neutral"
+        class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
       >
-        Averaging rating for 347 reviews
+        Out of 347 reviews
       </span>
-      <div>
+      <div
+        class="space-y-6"
+      >
         <div
-          class="flex flex-col mt-7"
+          class="flex flex-col"
         >
           <div
             class="flex justify-between"
             data-testid="5-stars__rating-row"
           >
+            <div
+              class="flex items-center space-x-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
             <span
               class="font-bold"
             >
-              5 stars
+              156
             </span>
-            <div
-              class="font-bold"
-            >
-              <span>
-                156
-              </span>
-              <span
-                class="text-theme-neutral-400"
-              >
-                /347
-              </span>
-            </div>
           </div>
           <div
             class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="sc-AxiKw bXMXxe h-2 rounded-lg bg-theme-warning-300"
+              class="sc-AxirZ mlndi h-2 rounded-lg bg-theme-warning-400"
               data-testid="5-stars__rating-count"
               width="44.95677233429395"
             />
           </div>
         </div>
         <div
-          class="flex flex-col mt-7"
+          class="flex flex-col"
         >
           <div
             class="flex justify-between"
             data-testid="4-stars__rating-row"
           >
+            <div
+              class="flex items-center space-x-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
             <span
               class="font-bold"
             >
-              4 stars
+              194
             </span>
-            <div
-              class="font-bold"
-            >
-              <span>
-                194
-              </span>
-              <span
-                class="text-theme-neutral-400"
-              >
-                /347
-              </span>
-            </div>
           </div>
           <div
             class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="sc-AxiKw iODzLR h-2 rounded-lg bg-theme-warning-300"
+              class="sc-AxirZ egZVvx h-2 rounded-lg bg-theme-warning-400"
               data-testid="4-stars__rating-count"
               width="55.907780979827095"
             />
           </div>
         </div>
         <div
-          class="flex flex-col mt-7"
+          class="flex flex-col"
         >
           <div
             class="flex justify-between"
             data-testid="3-stars__rating-row"
           >
+            <div
+              class="flex items-center space-x-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
             <span
               class="font-bold"
             >
-              3 stars
+              25
             </span>
-            <div
-              class="font-bold"
-            >
-              <span>
-                25
-              </span>
-              <span
-                class="text-theme-neutral-400"
-              >
-                /347
-              </span>
-            </div>
           </div>
           <div
             class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="sc-AxiKw bnftiF h-2 rounded-lg bg-theme-warning-300"
+              class="sc-AxirZ jYUNLN h-2 rounded-lg bg-theme-warning-400"
               data-testid="3-stars__rating-count"
               width="7.204610951008646"
             />
           </div>
         </div>
         <div
-          class="flex flex-col mt-7"
+          class="flex flex-col"
         >
           <div
             class="flex justify-between"
             data-testid="2-stars__rating-row"
           >
+            <div
+              class="flex items-center space-x-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
             <span
               class="font-bold"
             >
-              2 stars
+              42
             </span>
-            <div
-              class="font-bold"
-            >
-              <span>
-                42
-              </span>
-              <span
-                class="text-theme-neutral-400"
-              >
-                /347
-              </span>
-            </div>
           </div>
           <div
             class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="sc-AxiKw fFcspn h-2 rounded-lg bg-theme-warning-300"
+              class="sc-AxirZ kcWzzP h-2 rounded-lg bg-theme-warning-400"
               data-testid="2-stars__rating-count"
               width="12.103746397694524"
             />
           </div>
         </div>
         <div
-          class="flex flex-col mt-7"
+          class="flex flex-col"
         >
           <div
             class="flex justify-between"
             data-testid="1-stars__rating-row"
           >
+            <div
+              class="flex items-center space-x-1 text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm bRfKHw"
+                height="13"
+                width="13"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+            </div>
             <span
               class="font-bold"
             >
-              1 stars
+              7
             </span>
-            <div
-              class="font-bold"
-            >
-              <span>
-                7
-              </span>
-              <span
-                class="text-theme-neutral-400"
-              >
-                /347
-              </span>
-            </div>
           </div>
           <div
             class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
           >
             <div
-              class="sc-AxiKw QtSUg h-2 rounded-lg bg-theme-warning-300"
+              class="sc-AxirZ hrWENE h-2 rounded-lg bg-theme-warning-400"
               data-testid="1-stars__rating-count"
               width="2.0172910662824206"
             />

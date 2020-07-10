@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "testing-library";
 
 import { Label } from "./Label";
 
@@ -41,13 +41,13 @@ describe("Label", () => {
 	});
 
 	it("should render a small one", () => {
-		const { container } = render(<Label size="small" />);
+		const { container } = render(<Label size="sm" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
-		const { container } = render(<Label size="large" />);
+		const { container } = render(<Label size="lg" />);
 
 		expect(container).toMatchSnapshot();
 	});

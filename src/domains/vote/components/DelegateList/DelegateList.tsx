@@ -23,7 +23,7 @@ const SelectedDelegateList = ({ delegates, className }: { delegates: any[]; clas
 				<div className="flex flex-1">
 					<Avatar address={delegate.address} className="mr-8" />
 					<div className="mr-2">{delegate.username}</div>
-					<div className="text-theme-neutral-500">{delegate.address}</div>
+					<div className="text-theme-neutral">{delegate.address}</div>
 				</div>
 				#{delegate.rank}
 			</div>,
@@ -45,8 +45,8 @@ const DelegateAvatarList = ({ delegates, limit }: { delegates: any[]; limit: num
 			{rest > 0 && (
 				<Circle
 					data-testid="DelegateAvatarList__avatar-list__rest"
-					size="large"
-					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
+					size="lg"
+					className="text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
 				>
 					+{rest}
 				</Circle>
@@ -100,9 +100,9 @@ export const DelegateList = (props: DelegateListProps) => {
 			accessor: "commissionDaily",
 		},
 		{
-			Header: "",
+			Header: "Vote",
 			accessor: "onSelect",
-			disableSortBy: true,
+			className: "justify-end",
 		},
 	];
 
@@ -117,7 +117,8 @@ export const DelegateList = (props: DelegateListProps) => {
 	};
 
 	return (
-		<div>
+		<div data-testid="DelegateList">
+			<h2 className="py-5 text-2xl font-bold">Select a Delegate</h2>
 			<Table columns={columns} data={props.data}>
 				{(rowData: any) => <DelegateListItem {...rowData} selected={selected} onSelect={toggleSelected} />}
 			</Table>
@@ -129,8 +130,8 @@ export const DelegateList = (props: DelegateListProps) => {
 				>
 					<div className="flex">
 						<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
-							<div className="text-sm text-theme-neutral-500">{t("COMMON.QUANTITY")}</div>
-							<div className="text-theme-neutral-700">{selected.length}/50</div>
+							<div className="text-sm text-theme-neutral">{t("COMMON.QUANTITY")}</div>
+							<div className="text-theme-neutral-dark">{selected.length}/50</div>
 						</div>
 
 						<div className="flex-1">
@@ -141,10 +142,10 @@ export const DelegateList = (props: DelegateListProps) => {
 											<div className="inline-flex">
 												<Avatar address={selected[0].address} className="mr-4" />
 												<div className="flex flex-col">
-													<div className="text-sm text-theme-neutral-700">
+													<div className="text-sm text-theme-neutral-dark">
 														Address Delegate
 													</div>
-													<div className="text-theme-neutral-500">
+													<div className="text-theme-neutral">
 														{selected[0].username} - {selected[0].address}
 													</div>
 												</div>
@@ -155,7 +156,7 @@ export const DelegateList = (props: DelegateListProps) => {
 											<DelegateAvatarList delegates={selected} limit={2} />
 											<div
 												data-testid="DelegateList__toggle-show-selected"
-												className="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
 											>
 												{showSelectedList ? "Hide" : "Show"} List

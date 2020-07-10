@@ -8,32 +8,32 @@ export default {
 
 export const Primary = () => (
 	<div className="inline-flex space-x-4">
-		<Spinner color="primary" size="small" />
-		<Spinner color="primary" size="default" />
-		<Spinner color="primary" size="large" />
+		<Spinner color="primary" size="sm" />
+		<Spinner color="primary" />
+		<Spinner color="primary" size="lg" />
 	</div>
 );
 
 export const Success = () => (
 	<div className="inline-flex space-x-4">
-		<Spinner color="success" size="small" />
-		<Spinner color="success" size="default" />
-		<Spinner color="success" size="large" />
+		<Spinner color="success" size="sm" />
+		<Spinner color="success" />
+		<Spinner color="success" size="lg" />
 	</div>
 );
 
 export const Danger = () => (
 	<div className="inline-flex space-x-4">
-		<Spinner color="danger" size="small" />
-		<Spinner color="danger" size="default" />
-		<Spinner color="danger" size="large" />
+		<Spinner color="danger" size="sm" />
+		<Spinner color="danger" />
+		<Spinner color="danger" size="lg" />
 	</div>
 );
 
 export const Warning = () => (
 	<div className="inline-flex space-x-4">
-		<Spinner color="warning" size="small" />
-		<Spinner color="warning" size="default" />
-		<Spinner color="warning" size="large" />
+		<Spinner color="warning" size="sm" />
+		<Spinner color="warning" />
+		<Spinner color="warning" size="lg" />
 	</div>
 );

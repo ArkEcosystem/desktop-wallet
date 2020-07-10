@@ -53,4 +53,23 @@ export const translations: { [key: string]: any } = {
 	MODAL_IPFS_DETAIL: {
 		TITLE: "Transaction IPFS Hash",
 	},
+
+	LEDGER_CONFIRMATION: {
+		DESCRIPTION:
+			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
+		LOADING_MESSAGE: "Waiting for confirmation ...",
+	},
+
+	LINK_TYPES: {
+		BITBUCKET: "BitBucket",
+		FACEBOOK: "Facebook",
+		FLICKR: "Flickr",
+		GITHUB: "GitHub",
+		GITLAB: "GitLab",
+		LINKEDIN: "LinkedIn",
+		NPM: "Npm",
+		TWITTER: "Twitter",
+		VIMEO: "Vimeo",
+		YOUTUBE: "YouTube",
+	},
 };

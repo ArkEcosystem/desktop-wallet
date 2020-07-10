@@ -1,3 +1,31 @@
+export const networks = [
+	{
+		icon: "Ark",
+		name: "ARK Ecosystem",
+		className: "text-theme-danger-400 border-theme-danger-light",
+	},
+	{
+		icon: "Bitcoin",
+		name: "Bitcoin",
+		className: "text-theme-warning-400 border-theme-warning-200",
+	},
+	{
+		icon: "Ethereum",
+		name: "Ethereum",
+		className: "text-theme-neutral-800 border-theme-neutral-600",
+	},
+	{
+		icon: "Lisk",
+		name: "Lisk",
+		className: "text-theme-primary border-theme-primary-400",
+	},
+	{
+		icon: "Ripple",
+		name: "Ripple",
+		className: "text-theme-primary-dark border-theme-primary-500",
+	},
+];
+
 export const addressListData = [
 	{
 		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -11,7 +39,7 @@ export const addressListData = [
 		isActive: true,
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		type: "Ledger",
 		balance: "8,523.3884504 ARK",
 		delegateAddress: "DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq",
@@ -20,11 +48,11 @@ export const addressListData = [
 		isActive: true,
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		balance: "0.000462 ARK",
 	},
 	{
-		walletAddress: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		walletAddress: "HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		balance: "0.00 ARK",
 	},
 ];

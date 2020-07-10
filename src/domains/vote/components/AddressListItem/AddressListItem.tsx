@@ -36,10 +36,10 @@ export const AddressListItem = ({
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-5">
-				<Avatar address={walletAddress!} />
+				<Avatar address={walletAddress} />
 			</td>
 
-			<td className="py-5">
+			<td className="w-20 py-5">
 				<Address walletName={walletName} address={walletAddress} maxChars={22} />
 			</td>
 
@@ -57,12 +57,12 @@ export const AddressListItem = ({
 				{delegateAddress ? (
 					<Avatar address={delegateAddress} />
 				) : (
-					<Circle className="border-theme-neutral-200" />
+					<Circle className="border-theme-neutral-300" />
 				)}
 			</td>
 
 			<td className="py-5 font-bold">
-				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-400">N/A</span>}
+				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-light">N/A</span>}
 			</td>
 
 			<td className="py-5 font-bold text-theme-neutral-dark">{rank && <span>#{rank}</span>}</td>

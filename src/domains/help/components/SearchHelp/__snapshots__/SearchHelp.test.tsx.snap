@@ -5,15 +5,15 @@ exports[`SearchHelp should not render if not open 1`] = `<DocumentFragment />`;
 exports[`SearchHelp should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhCb hthldP fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxiKw ha-DbdM"
@@ -22,27 +22,33 @@ exports[`SearchHelp should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxjAm iepfoc"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Search
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Quickly find the right answers to any questions
         </div>
@@ -50,14 +56,14 @@ exports[`SearchHelp should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
-                class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+                class="flex items-center pr-8 my-1"
                 data-testid="SearchBarOptions"
               >
                 <div
@@ -77,16 +83,16 @@ exports[`SearchHelp should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="What would you like to search for?"
                 />
               </div>
               <button
-                class="sc-AxiKw bgBAcm my-1"
+                class="sc-AxiKw wFYj my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -107,7 +113,7 @@ exports[`SearchHelp should render a modal 1`] = `
             class="mt-8"
           >
             <div
-              class="sc-fzplWN kLNDrH"
+              class="sc-fzplWN kEUFYN"
               role="table"
             >
               <table
@@ -118,7 +124,7 @@ exports[`SearchHelp should render a modal 1`] = `
                     role="row"
                   >
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -126,21 +132,19 @@ exports[`SearchHelp should render a modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-1"
-                        >
+                        <div>
                           Title
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -150,7 +154,7 @@ exports[`SearchHelp should render a modal 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -158,21 +162,19 @@ exports[`SearchHelp should render a modal 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-1"
-                        >
+                        <div>
                           Category
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -198,7 +200,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         How do I install the plugin?
                       </div>
                       <div
-                        class="mt-2 text-sm text-theme-neutral-700"
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
                         ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                       </div>
@@ -223,7 +225,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         Installing the side plugin
                       </div>
                       <div
-                        class="mt-2 text-sm text-theme-neutral-700"
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
                         ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                       </div>
@@ -248,7 +250,7 @@ exports[`SearchHelp should render a modal 1`] = `
                         If the plugin is not installed, what do we do?
                       </div>
                       <div
-                        class="mt-2 text-sm text-theme-neutral-700"
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
                         ARK Core is written in TypeScript, and it has been using Lerna to manage the development and publication of its packages and uses Node.js as the bla bla bla
                       </div>
@@ -275,15 +277,15 @@ exports[`SearchHelp should render a modal 1`] = `
 exports[`SearchHelp should render a modal 2`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhCb hthldP absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhCb hthldP fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxiKw ha-DbdM"
@@ -292,27 +294,33 @@ exports[`SearchHelp should render a modal 2`] = `
         type="button"
       >
         <div
-          class="sc-AxjAm iepfoc"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Search
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Quickly find the right answers to any questions
         </div>
@@ -320,14 +328,14 @@ exports[`SearchHelp should render a modal 2`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
-                class="flex items-center pl-2 pr-6 my-1 border-r border-theme-neutral-200"
+                class="flex items-center pr-8 my-1"
                 data-testid="SearchBarOptions"
               >
                 <div
@@ -347,16 +355,16 @@ exports[`SearchHelp should render a modal 2`] = `
                 </div>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="What would you like to search for?"
                 />
               </div>
               <button
-                class="sc-AxiKw bgBAcm my-1"
+                class="sc-AxiKw wFYj my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -377,7 +385,7 @@ exports[`SearchHelp should render a modal 2`] = `
             class="mt-8"
           >
             <div
-              class="sc-fzplWN kLNDrH"
+              class="sc-fzplWN kEUFYN"
               role="table"
             >
               <table
@@ -388,7 +396,7 @@ exports[`SearchHelp should render a modal 2`] = `
                     role="row"
                   >
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -396,21 +404,19 @@ exports[`SearchHelp should render a modal 2`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-1"
-                        >
+                        <div>
                           Title
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg
@@ -420,7 +426,7 @@ exports[`SearchHelp should render a modal 2`] = `
                       </div>
                     </th>
                     <th
-                      class="text-xs text-left select-none text-theme-neutral-400"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -428,21 +434,19 @@ exports[`SearchHelp should render a modal 2`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top  undefined"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div
-                          class="mr-1"
-                        >
+                        <div>
                           Category
                         </div>
                         <div
-                          class="mt-1 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
-                            class="sc-AxjAm iepfoc"
-                            height="10"
-                            width="10"
+                            class="sc-AxjAm hdgaLj"
+                            height="12"
+                            width="15"
                           >
                             <svg>
                               sort.svg

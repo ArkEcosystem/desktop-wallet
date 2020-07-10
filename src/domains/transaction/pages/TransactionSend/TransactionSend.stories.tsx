@@ -1,5 +1,6 @@
 import React from "react";
 
+import { networks } from "../../data";
 import { TransactionSend } from "./TransactionSend";
 
 export default { title: "Domains / Transaction / Pages / Transaction Send" };
@@ -11,23 +12,7 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	assets: [
-		{
-			icon: "Ark",
-			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-	],
+	networks,
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
@@ -66,7 +51,7 @@ const defaultFormValues = {
 };
 
 export const Default = () => (
-	<div className="mt-15">
+	<div>
 		<TransactionSend formValues={defaultFormValues} />
 	</div>
 );

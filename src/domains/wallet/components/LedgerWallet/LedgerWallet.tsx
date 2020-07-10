@@ -17,12 +17,12 @@ export const LedgerWallet = ({ isOpen, onClose }: LedgerWalletProps) => {
 	return (
 		<Modal title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")} isOpen={isOpen} onClose={onClose}>
 			<div className="container">
-				<p className="text-sm text-theme-neutral-dark md:text-base">
+				<p className="mt-1 text-sm text-theme-neutral-dark md:text-base">
 					{t("WALLETS.MODAL_LEDGER_WALLET.DESCRIPTION")}
 				</p>
 				<WaitingLedger className="my-8" />
 				<div className="inline-flex items-center space-x-4">
-					<Spinner color="primary" size="default" />
+					<Spinner color="primary" />
 					<span className="font-semibold text-black">
 						{t("WALLETS.MODAL_LEDGER_WALLET.WAITING_FOR_LEDGER")}
 					</span>

@@ -4,7 +4,7 @@ exports[`PeerList should add peer 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw fOxXaG"
+      class="sc-AxiKw bvfChE"
       role="table"
     >
       <table
@@ -15,83 +15,59 @@ exports[`PeerList should add peer 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Network
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Name
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Peer IP
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Type
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -106,7 +82,7 @@ exports[`PeerList should add peer 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj eisocE text-logo border-theme-danger-200"
+                class="sc-fznKkj eisocE text-logo border-theme-danger-light"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -139,7 +115,7 @@ exports[`PeerList should add peer 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -155,7 +131,9 @@ exports[`PeerList should add peer 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -216,7 +194,7 @@ exports[`PeerList should add peer 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -232,7 +210,9 @@ exports[`PeerList should add peer 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -293,7 +273,7 @@ exports[`PeerList should add peer 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -309,7 +289,9 @@ exports[`PeerList should add peer 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -334,7 +316,7 @@ exports[`PeerList should add peer 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm ddJBbC w-full mt-3 mb-2"
+      class="sc-AxjAm ddJBbC w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"
@@ -342,15 +324,15 @@ exports[`PeerList should add peer 1`] = `
       Add Peer
     </button>
     <div
-      class="fixed inset-0 z-30 bg-black opacity-50"
+      class="fixed inset-0 z-50 bg-black opacity-50"
       data-testid="modal__overlay"
     />
     <div
-      class="sc-fznyAO dWLwOg absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+      class="sc-fznyAO dWLwOg fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
       data-testid="modal__inner"
     >
       <div
-        class="absolute top-0 right-0 z-10 mt-4 mr-4"
+        class="absolute top-0 right-0 z-50 mt-5 mr-5"
       >
         <button
           class="sc-AxjAm bThAoP"
@@ -359,70 +341,92 @@ exports[`PeerList should add peer 1`] = `
           type="button"
         >
           <div
-            class="sc-AxirZ fttODj"
-            height="10"
-            width="10"
+            class="p-1"
           >
-            <svg>
-              cross-slim.svg
-            </svg>
+            <div
+              class="sc-AxirZ hDwaov"
+              height="12"
+              width="12"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
           </div>
         </button>
       </div>
       <div
         class="py-4"
       >
-        <h2>
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
           Custom Peers
         </h2>
         <div
-          class="flex-1 "
+          class="flex-1"
         >
           <form
-            class="space-y-6"
+            class="space-y-8"
             data-testid="Form"
           >
             <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              class="sc-AxhUy dJlYTe mt-8"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="network"
               >
                 Network
               </label>
               <div
-                class="sc-fzozJi OgXfh"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label"
+                class="relative"
+                role="combobox"
               >
-                <select
-                  class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                  data-testid="Select"
-                  name="network"
-                >
-                  <option
-                    selected=""
-                    value=""
-                  >
-                    Select
-                  </option>
-                  <option
-                    value="ark-ecosystem"
-                  >
-                    ARK Ecosystem
-                  </option>
-                </select>
+                <label
+                  for="downshift-0-input"
+                  id="downshift-0-label"
+                />
                 <div
-                  class="sc-AxheI sc-AxmLO ecniej w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                  class="relative flex items-center w-full flex-inline"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
-                    height="1em"
-                    width="1em"
+                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                   >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
+                    <div
+                      class="px-4 py-2 flex-0 w-14"
+                    >
+                      <div
+                        class="sc-fznKkj bnRNAS border-theme-neutral-200"
+                      />
+                    </div>
+                    <div
+                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                    >
+                      <div
+                        class="relative z-10 w-full"
+                        data-testid="select-network__typeahead-"
+                      >
+                        <div
+                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                        />
+                      </div>
+                      <input
+                        aria-autocomplete="list"
+                        aria-labelledby="downshift-0-label"
+                        autocomplete="off"
+                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                        data-testid="select-asset__input"
+                        id="downshift-0-input"
+                        name="network"
+                        placeholder="Enter a network name"
+                        value=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -431,14 +435,14 @@ exports[`PeerList should add peer 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="name"
               >
                 Name
               </label>
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="Input"
                 name="name"
               />
@@ -447,14 +451,14 @@ exports[`PeerList should add peer 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="peer-ip"
               >
                 Peer IP http://
               </label>
               <input
-                class="sc-AxgMl cMCunF overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="Input"
                 name="peer-ip"
               />
@@ -463,7 +467,7 @@ exports[`PeerList should add peer 1`] = `
               class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
-                class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="peer-type"
               >
@@ -509,7 +513,7 @@ exports[`PeerList should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw fOxXaG"
+      class="sc-AxiKw bvfChE"
       role="table"
     >
       <table
@@ -520,83 +524,59 @@ exports[`PeerList should render 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Network
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Name
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Peer IP
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Type
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -611,7 +591,7 @@ exports[`PeerList should render 1`] = `
               class="inline-flex items-center py-4 mt-1"
             >
               <div
-                class="sc-fznKkj eisocE text-logo border-theme-danger-200"
+                class="sc-fznKkj eisocE text-logo border-theme-danger-light"
               >
                 <div
                   class="sc-AxirZ iQaTP"
@@ -644,7 +624,7 @@ exports[`PeerList should render 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -660,7 +640,9 @@ exports[`PeerList should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -721,7 +703,7 @@ exports[`PeerList should render 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -737,7 +719,9 @@ exports[`PeerList should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -798,7 +782,7 @@ exports[`PeerList should render 1`] = `
               </span>
             </td>
             <td
-              class="py-1 text-theme-primary-300"
+              class="py-1 text-theme-neutral"
             >
               <div
                 class="flex justify-center h-full"
@@ -814,7 +798,9 @@ exports[`PeerList should render 1`] = `
                 </div>
               </div>
             </td>
-            <td>
+            <td
+              class="text-theme-neutral-300"
+            >
               <div
                 class="relative"
                 data-testid="dropdown__toggle"
@@ -839,7 +825,7 @@ exports[`PeerList should render 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm ddJBbC w-full mt-3 mb-2"
+      class="sc-AxjAm ddJBbC w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"
@@ -854,7 +840,7 @@ exports[`PeerList should render with empty peer list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw fOxXaG"
+      class="sc-AxiKw bvfChE"
       role="table"
     >
       <table
@@ -865,83 +851,59 @@ exports[`PeerList should render with empty peer list 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Network
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Name
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Peer IP
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  flex justify-center"
+                class="flex flex-inline align-top flex justify-center"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Type
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -952,7 +914,7 @@ exports[`PeerList should render with empty peer list 1`] = `
       </table>
     </div>
     <button
-      class="sc-AxjAm ddJBbC w-full mt-3 mb-2"
+      class="sc-AxjAm ddJBbC w-full mt-8 mb-2"
       color="primary"
       data-testid="peer-list__add-button"
       type="button"

@@ -1,10 +1,11 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { Select } from "app/components/Select";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -21,10 +22,12 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 			className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
 		>
 			<div className="mr-4">
-				<Circle className="-mr-2">
-					<Icon name={address.coin} />
-				</Circle>
-				<Circle avatarId={address.avatar} />
+				<div className="flex items-center -space-x-1">
+					<Circle className={`-mr-1 ${address.coinClassName}`}>
+						<Icon name={address.coin} />
+					</Circle>
+					<Avatar address={address.address} />
+				</div>
 			</div>
 
 			<span className="font-semibold">
@@ -80,21 +83,22 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		return contact ? contact.addresses() : [];
 	});
 
-	useEffect(() => {
-		form.setValue("name", contact ? contact.name() : "", !!contact);
-	}, [contact]);
-
-	const form = useForm({ mode: "onChange" });
-	const { name, network, address } = form.watch();
-
 	const { t } = useTranslation();
+	const form = useForm({ mode: "onChange" });
+	const { watch, register } = form;
+	const { name, network, address } = watch();
 
-	const handleAddAddress = (network: string, address: string) => {
+	useEffect(() => {
+		register({ name: "network" });
+	}, [register]);
+
+	const handleAddAddress = (network: any, address: string) => {
 		setContactAddresses(
 			contactAddresses.concat({
-				network,
+				network: network.name,
 				address,
-				coin: "xxx", // TODO
+				coin: network.icon,
+				coinClassName: network.className,
 			}),
 		);
 
@@ -126,24 +130,14 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<Input
 					data-testid="contact-form__name-input"
 					ref={form.register({ required: t("COMMON.VALIDATION.REQUIRED").toString() })}
+					defaultValue={contact?.name?.()}
 				/>
 				<FormHelperText />
 			</FormField>
 
 			<FormField name="network">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<Select
-					data-testid="contact-form__network-select"
-					placeholder="Select network..."
-					ref={form.register({})}
-				>
-					{networks &&
-						networks.map((network: any, index: number) => (
-							<option data-testid="contact-form__network-option" key={index} value={network.value}>
-								{network.label}
-							</option>
-						))}
-				</Select>
+				<SelectNetwork networks={networks} onSelect={(selected: any) => form.setValue("network", selected)} />
 				<FormHelperText />
 			</FormField>
 

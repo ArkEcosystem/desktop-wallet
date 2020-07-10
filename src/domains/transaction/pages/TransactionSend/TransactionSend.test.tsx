@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { fireEvent, render, RenderResult, waitFor } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
+import { fireEvent, render, RenderResult, waitFor } from "testing-library";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
@@ -18,7 +18,7 @@ const defaultFormValues = {
 		{
 			icon: "Ark",
 			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
+			className: "text-theme-danger-400 border-theme-danger-light",
 		},
 		{
 			icon: "Bitcoin",

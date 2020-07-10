@@ -1,7 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render } from "testing-library";
 
 import { PluginListItem } from "./PluginListItem";
 
@@ -19,13 +17,11 @@ describe("PluginListItem", () => {
 		};
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<table>
-					<tbody>
-						<PluginListItem plugin={plugin} />
-					</tbody>
-				</table>
-			</I18nextProvider>,
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} />
+				</tbody>
+			</table>,
 		);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
@@ -47,13 +43,11 @@ describe("PluginListItem", () => {
 		const onInstall = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<table>
-					<tbody>
-						<PluginListItem plugin={plugin} onInstall={onInstall} />
-					</tbody>
-				</table>
-			</I18nextProvider>,
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onInstall={onInstall} />
+				</tbody>
+			</table>,
 		);
 
 		fireEvent.click(getByTestId("PluginListItem__install"));
@@ -77,13 +71,11 @@ describe("PluginListItem", () => {
 		const onDelete = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<table>
-					<tbody>
-						<PluginListItem plugin={plugin} onDelete={onDelete} />
-					</tbody>
-				</table>
-			</I18nextProvider>,
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} onDelete={onDelete} />
+				</tbody>
+			</table>,
 		);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
@@ -112,13 +104,11 @@ describe("PluginListItem", () => {
 		};
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<table>
-					<tbody>
-						<PluginListItem plugin={plugin} />
-					</tbody>
-				</table>
-			</I18nextProvider>,
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} />
+				</tbody>
+			</table>,
 		);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("official-ark-plugin.svg");
@@ -139,13 +129,11 @@ describe("PluginListItem", () => {
 		};
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<table>
-					<tbody>
-						<PluginListItem plugin={plugin} />
-					</tbody>
-				</table>
-			</I18nextProvider>,
+			<table>
+				<tbody>
+					<PluginListItem plugin={plugin} />
+				</tbody>
+			</table>,
 		);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("grant.svg");

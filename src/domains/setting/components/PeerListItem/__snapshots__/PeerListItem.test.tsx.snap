@@ -40,7 +40,7 @@ exports[`PeerListItem should render 1`] = `
           <span />
         </td>
         <td
-          class="py-1 text-theme-primary-300"
+          class="py-1 text-theme-neutral"
         >
           <div
             class="flex justify-center h-full"
@@ -52,7 +52,9 @@ exports[`PeerListItem should render 1`] = `
             />
           </div>
         </td>
-        <td>
+        <td
+          class="text-theme-neutral-300"
+        >
           0
         </td>
       </tr>

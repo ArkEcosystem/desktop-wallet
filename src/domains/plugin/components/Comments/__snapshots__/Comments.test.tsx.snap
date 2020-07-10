@@ -1,374 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comments should handle sortBy properly 1`] = `
-<DocumentFragment>
-  <div
-    class="w-full"
-  >
-    <p
-      class="text-xl font-bold"
-    >
-      Reviews ARK Explorer
-    </p>
-    <div
-      class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
-    >
-      <span>
-        Sort by:
-      </span>
-      <div
-        class="flex items-center"
-      >
-        <span
-          class="ml-2"
-        >
-          Date
-        </span>
-        <div
-          class="ml-1"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
-            >
-              <div
-                class="sc-AxjAm iepfoc"
-                height="10"
-                width="10"
-              >
-                <svg>
-                  arrowdown.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div
-        class="flex flex-col mt-5 text-sm"
-      >
-        <div
-          class="w-2/4"
-        >
-          <div
-            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
-          >
-            <div>
-              <span
-                class="text-base font-semibold"
-              >
-                Rok Cernec
-              </span>
-            </div>
-            <div
-              class="flex items-center pl-3 text-theme-warning-300"
-            >
-              <div
-                class="sc-AxjAm iepfoc"
-                height="10"
-                width="10"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-              <span
-                class="flex ml-1 text-theme-neutral-600"
-              >
-                4.6
-              </span>
-            </div>
-            <div
-              class="px-3"
-            >
-              <span
-                class="text-theme-neutral-400"
-              >
-                3 days ago
-              </span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-11/12 mt-2"
-        >
-          <p
-            class="text-theme-neutral-600"
-          >
-            As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
-          </p>
-        </div>
-      </div>
-      <div
-        class="flex flex-col mt-5 text-sm"
-      >
-        <div
-          class="w-2/4"
-        >
-          <div
-            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
-          >
-            <div>
-              <span
-                class="text-base font-semibold"
-              >
-                Gerard Blezer
-              </span>
-            </div>
-            <div
-              class="flex items-center pl-3 text-theme-warning-300"
-            >
-              <div
-                class="sc-AxjAm iepfoc"
-                height="10"
-                width="10"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-              <span
-                class="flex ml-1 text-theme-neutral-600"
-              >
-                4.6
-              </span>
-            </div>
-            <div
-              class="px-3"
-            >
-              <span
-                class="text-theme-neutral-400"
-              >
-                3 days ago
-              </span>
-            </div>
-          </div>
-        </div>
-        <div
-          class="w-11/12 mt-2"
-        >
-          <p
-            class="text-theme-neutral-600"
-          >
-            As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
-          </p>
-          <div
-            class="flex flex-col mt-3 ml-3"
-          >
-            <div
-              class="flex items-center text-theme-neutral-500"
-            >
-              <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  reply-arrow.svg
-                </svg>
-              </div>
-              <div
-                class="grid grid-cols-2 divide-x"
-              >
-                <span
-                  class="px-3 font-semibold text-theme-neutral-900"
-                >
-                  Developer response
-                </span>
-                <span
-                  class="px-3"
-                >
-                  3 days ago
-                </span>
-              </div>
-            </div>
-            <div
-              class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
-            >
-              <a
-                href="#"
-              >
-                @Gerard Blezer
-              </a>
-               Our GitHub bount reward program utlilizes a tiered structure.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="mt-7"
-    >
-      <div
-        class="sc-AxhCb gSLQTX"
-        data-testid="Pagination"
-      >
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          data-testid="Pagination__first"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-first.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          data-testid="Pagination__previous"
-          disabled=""
-          type="button"
-        >
-          <div
-            class="sc-AxjAm iepfoc mr-2"
-            height="10"
-            width="10"
-          >
-            <svg>
-              back.svg
-            </svg>
-          </div>
-          Previous
-        </button>
-        <div
-          class="flex px-2 rounded bg-theme-primary-contrast"
-        >
-          <div
-            class="sc-AxhUy bxYQX current-page"
-          >
-            1
-          </div>
-          <div
-            class="sc-AxhUy bxYQX"
-          >
-            2
-          </div>
-          <div
-            class="sc-AxhUy bxYQX"
-          >
-            3
-          </div>
-        </div>
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          data-testid="Pagination__next"
-          type="button"
-        >
-          Next
-          <div
-            class="sc-AxjAm HWmvM ml-2"
-            height="12"
-            width="12"
-          >
-            <svg>
-              forward.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxiKw gFzSt"
-          color="primary"
-          data-testid="Pagination__last"
-          type="button"
-        >
-          <div
-            class="sc-AxjAm HWmvM"
-            height="12"
-            width="12"
-          >
-            <svg>
-              pagination-last.svg
-            </svg>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-  ,
-</DocumentFragment>
-`;
-
 exports[`Comments should render properly 1`] = `
 <DocumentFragment>
   <div
     class="w-full"
   >
-    <p
-      class="text-xl font-bold"
-    >
-      Reviews ARK Explorer
-    </p>
     <div
-      class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
+      class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
     >
-      <span>
+      <span
+        class="text-theme-neutral-900"
+      >
         Sort by:
       </span>
       <div
-        class="flex items-center"
+        class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
       >
         <span
-          class="ml-2"
+          class="cursor-pointer null"
         >
-          Best
-        </span>
-        <div
-          class="ml-1"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
+          <span
+            class="flex items-center text-theme-neutral-900 space-x-1"
           >
+            <span>
+              Best
+            </span>
             <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
+              class="sc-AxjAm bccTmi"
+              height="5"
+              width="7"
             >
-              <div
-                class="sc-AxjAm iepfoc"
-                height="10"
-                width="10"
-              >
-                <svg>
-                  arrowdown.svg
-                </svg>
-              </div>
+              <svg>
+                arrowdown.svg
+              </svg>
             </div>
-          </div>
-        </div>
+          </span>
+        </span>
+        <span
+          class="cursor-pointer pl-3"
+        >
+          <span>
+            Date
+          </span>
+        </span>
+        <span
+          class="cursor-pointer pl-3"
+        >
+          <span>
+            Most Popular
+          </span>
+        </span>
       </div>
     </div>
     <div>
       <div
-        class="flex flex-col mt-5 text-sm"
+        class="flex flex-col mt-5"
       >
         <div
-          class="w-2/4"
+          class="flex items-center justify-between"
         >
           <div
-            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+            class="relative flex items-center divide-x divide-theme-neutral-light"
           >
-            <div>
-              <span
-                class="text-base font-semibold"
-              >
-                Rok Cernec
-              </span>
-            </div>
+            <span
+              class="pr-3 text-lg font-semibold"
+            >
+              Rok Cernec
+            </span>
             <div
-              class="flex items-center pl-3 text-theme-warning-300"
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -380,50 +80,75 @@ exports[`Comments should render properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex ml-1 text-theme-neutral-600"
+                class="ml-1 text-theme-neutral-dark"
               >
                 4.6
               </span>
             </div>
-            <div
-              class="px-3"
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
             >
               <span
-                class="text-theme-neutral-400"
+                data-testid="timeago"
               >
-                3 days ago
+                11 days ago
               </span>
+            </span>
+          </div>
+          <div
+            class="flex items-center font-semibold space-x-2"
+          >
+            <span
+              class="text-theme-neutral-light"
+            >
+              0
+            </span>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
             </div>
           </div>
         </div>
         <div
-          class="w-11/12 mt-2"
+          class="mt-2"
         >
           <p
             class="text-theme-neutral-600"
           >
-            As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+            The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
           </p>
         </div>
       </div>
       <div
-        class="flex flex-col mt-5 text-sm"
+        class="flex flex-col mt-5"
       >
         <div
-          class="w-2/4"
+          class="flex items-center justify-between"
         >
           <div
-            class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+            class="relative flex items-center divide-x divide-theme-neutral-light"
           >
-            <div>
-              <span
-                class="text-base font-semibold"
-              >
-                Gerard Blezer
-              </span>
-            </div>
+            <span
+              class="pr-3 text-lg font-semibold"
+            >
+              Gerard Blezer
+            </span>
             <div
-              class="flex items-center pl-3 text-theme-warning-300"
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
             >
               <div
                 class="sc-AxjAm iepfoc"
@@ -435,71 +160,266 @@ exports[`Comments should render properly 1`] = `
                 </svg>
               </div>
               <span
-                class="flex ml-1 text-theme-neutral-600"
+                class="ml-1 text-theme-neutral-dark"
               >
                 4.6
               </span>
             </div>
-            <div
-              class="px-3"
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
             >
               <span
-                class="text-theme-neutral-400"
+                data-testid="timeago"
               >
-                3 days ago
+                11 days ago
               </span>
+            </span>
+          </div>
+          <div
+            class="flex items-center font-semibold space-x-2"
+          >
+            <span
+              class="text-theme-success"
+            >
+              +28
+            </span>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
             </div>
           </div>
         </div>
         <div
-          class="w-11/12 mt-2"
+          class="mt-2"
         >
           <p
             class="text-theme-neutral-600"
           >
-            As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+            It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
           </p>
           <div
-            class="flex flex-col mt-3 ml-3"
+            class="flex flex-col mt-3"
           >
             <div
-              class="flex items-center text-theme-neutral-500"
+              class="flex items-center text-theme-neutral-light"
             >
               <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
+                class="flex items-center w-10"
               >
-                <svg>
-                  reply-arrow.svg
-                </svg>
+                <div
+                  class="sc-AxjAm gvXdNR mx-auto -mt-2"
+                  height="18"
+                  width="15"
+                >
+                  <svg>
+                    reply-arrow.svg
+                  </svg>
+                </div>
               </div>
               <div
-                class="grid grid-cols-2 divide-x"
+                class="flex items-center divide-x divide-theme-neutral-light space-x-3"
               >
                 <span
-                  class="px-3 font-semibold text-theme-neutral-900"
+                  class="text-lg font-semibold text-theme-neutral-900"
                 >
                   Developer response
                 </span>
                 <span
-                  class="px-3"
+                  class="pl-3 text-sm font-semibold text-theme-neutral"
                 >
-                  3 days ago
+                  <span
+                    data-testid="timeago"
+                  >
+                    11 days ago
+                  </span>
                 </span>
               </div>
             </div>
             <div
-              class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+              class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
             >
               <a
                 href="#"
               >
                 @Gerard Blezer
               </a>
-               Our GitHub bount reward program utlilizes a tiered structure.
+               You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col mt-5"
+      >
+        <div
+          class="flex items-center justify-between"
+        >
+          <div
+            class="relative flex items-center divide-x divide-theme-neutral-light"
+          >
+            <span
+              class="pr-3 text-lg font-semibold"
+            >
+              Rok Cernec
+            </span>
+            <div
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="ml-1 text-theme-neutral-dark"
+              >
+                4.6
+              </span>
+            </div>
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
+            </span>
+          </div>
+          <div
+            class="flex items-center font-semibold space-x-2"
+          >
+            <span
+              class="text-theme-neutral-light"
+            >
+              0
+            </span>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col mt-5"
+      >
+        <div
+          class="flex items-center justify-between"
+        >
+          <div
+            class="relative flex items-center divide-x divide-theme-neutral-light"
+          >
+            <span
+              class="pr-3 text-lg font-semibold"
+            >
+              Rok Cernec
+            </span>
+            <div
+              class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+            >
+              <div
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  star.svg
+                </svg>
+              </div>
+              <span
+                class="ml-1 text-theme-neutral-dark"
+              >
+                4.6
+              </span>
+            </div>
+            <span
+              class="pl-3 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                data-testid="timeago"
+              >
+                11 days ago
+              </span>
+            </span>
+          </div>
+          <div
+            class="flex items-center font-semibold space-x-2"
+          >
+            <span
+              class="text-theme-danger-dark"
+            >
+              -5
+            </span>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-up.svg
+              </svg>
+            </div>
+            <div
+              class="sc-AxjAm pXfjM text-theme-primary-light"
+              height="15"
+              width="15"
+            >
+              <svg>
+                chevron-down.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-2"
+        >
+          <p
+            class="text-theme-neutral-600"
+          >
+            Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
+          </p>
         </div>
       </div>
     </div>
@@ -511,7 +431,7 @@ exports[`Comments should render properly 1`] = `
         data-testid="Pagination"
       >
         <button
-          class="sc-AxiKw gFzSt"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="Pagination__first"
           disabled=""
@@ -528,7 +448,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </button>
         <button
-          class="sc-AxiKw gFzSt"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="Pagination__previous"
           disabled=""
@@ -565,7 +485,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </div>
         <button
-          class="sc-AxiKw gFzSt"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="Pagination__next"
           type="button"
@@ -582,7 +502,7 @@ exports[`Comments should render properly 1`] = `
           </div>
         </button>
         <button
-          class="sc-AxiKw gFzSt"
+          class="sc-AxirZ fhzkRl"
           color="primary"
           data-testid="Pagination__last"
           type="button"

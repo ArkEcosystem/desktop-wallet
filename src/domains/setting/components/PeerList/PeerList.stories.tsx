@@ -1,8 +1,10 @@
 import React from "react";
 
-import { peers } from "../../data";
+import { networks, peers } from "../../data";
 import { PeerList } from "./PeerList";
 
 export default { title: "Domains / Setting / Components / PeerList" };
 
-export const Default = () => <PeerList peers={peers} />;
+export const Default = () => {
+	return <PeerList networks={networks} peers={peers} />;
+};

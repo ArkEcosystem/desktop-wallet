@@ -1,5 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { act, fireEvent, render } from "testing-library";
 
 import { LinkCollection } from "./LinkCollection";
 
@@ -67,16 +67,37 @@ describe("LinkCollection", () => {
 		);
 
 		fireEvent.click(getByTestId("LinkCollection__header"));
-		fireEvent.click(getByTestId("select-dropdown__toggle"));
-		fireEvent.click(getByTestId("select-dropdown__option-1"));
-		fireEvent.change(getByTestId("LinkCollection__input-link"), {
-			target: {
-				value: "testing link",
-			},
-		});
-		fireEvent.click(getByTestId("LinkCollection__add-link"));
 
-		expect(getByTestId("LinkCollection")).toHaveTextContent("twitter");
+		const toggle = getByTestId("select-list__toggle-button");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+		const firstOption = getByTestId("select-list__toggle-option-1");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("twitter");
+
+		const linkField = getByTestId("LinkCollection__input-link");
+		act(() => {
+			fireEvent.change(linkField, {
+				target: {
+					value: "testing link",
+				},
+			});
+		});
+
+		expect(linkField).toHaveValue("testing link");
+
+		act(() => {
+			fireEvent.click(getByTestId("LinkCollection__add-link"));
+		});
+
+		expect(getByTestId("LinkCollection")).toHaveTextContent("Twitter");
 		expect(getByTestId("LinkCollection")).toHaveTextContent("testing link");
 
 		fireEvent.click(getByTestId("LinkCollection__remove-link"));
@@ -92,7 +113,10 @@ describe("LinkCollection", () => {
 				title="Social Media"
 				description="Tell people more about yourself through social media"
 				types={types}
-				data={[{ link: "testing link", type: "twitter" }]}
+				data={[
+					{ link: "testing link", type: "twitter" },
+					{ link: "testing link 2", type: "facebook" },
+				]}
 				typeName="media"
 				selectionTypes={["twitter"]}
 				selectionTypeTitle="Primary"

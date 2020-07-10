@@ -1,5 +1,6 @@
 // UI Elements
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -39,8 +40,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<div className="relative">
 					<Input type="text" disabled />
 					<div className="absolute top-0 flex items-center mt-2 ml-4">
-						<Circle avatarId="test" size="small" noShadow />
-						<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+						<div className="flex items-center">
+							<Avatar address="test" size="sm" noShadow />
+							<span className="ml-3 font-semibold ">{signatoryAddress}</span>
+						</div>
 					</div>
 				</div>
 			</FormField>
@@ -69,22 +72,22 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				border={false}
 				label="Signatory"
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" size="sm" />
 					</div>
 				}
 			>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail border label="Message">
+			<TransactionDetail border label="Message" className="text-lg">
 				Oleg Happy in the Oleg Bank
 			</TransactionDetail>
 			<TransactionDetail border label="Signature">
 				<TextArea
-					className="mt-2"
+					className="mt-2 rounded-lg"
 					name="signature"
 					wrap="hard"
 					ref={messageRef}
@@ -110,7 +113,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			description={!isSigned ? "Insert a message below to sign using your private key" : ""}
 			onClose={() => handleClose()}
 		>
-			<div className="mt-5">{renderSignedMessageContent()}</div>
+			<div className="mt-2">{renderSignedMessageContent()}</div>
 		</Modal>
 	);
 };

@@ -1,20 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render, waitFor } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
 
-import { contacts } from "../../data";
+import { contacts, networks } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
 describe("Contacts", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={[]} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={[]} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -25,11 +19,7 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={contacts} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={contacts} />);
 
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
@@ -44,10 +34,8 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (buttonName, buttonId) => {
-		const { asFragment, getAllByTestId, getByTestId, queryByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Contacts contacts={[]} />
-			</I18nextProvider>,
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+			<Contacts contacts={[]} networks={networks} />,
 		);
 
 		fireEvent.click(getByTestId("contacts__add-contact-btn"));
@@ -56,29 +44,33 @@ describe("Contacts", () => {
 			expect(getByTestId("contact-form__save-btn")).toBeDisabled();
 			expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
+			const assetInput = getByTestId("select-asset__input");
+
 			expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-			act(() => {
+			await act(async () => {
+				await fireEvent.change(getByTestId("contact-form__address-input"), {
+					target: { value: "address" },
+				});
+
 				fireEvent.change(getByTestId("contact-form__name-input"), {
 					target: { value: "name" },
 				});
 
-				fireEvent.change(getByTestId("contact-form__network-select"), {
-					target: { value: "ark" },
+				fireEvent.change(assetInput, { target: { value: "Bitco" } });
+
+				fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+
+				await waitFor(() => {
+					expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 				});
 
-				fireEvent.change(getByTestId("contact-form__address-input"), {
-					target: { value: "address" },
+				fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+				await waitFor(() => {
+					expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 				});
 			});
-
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
-
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 		}
 
 		await waitFor(() => {

@@ -4,7 +4,7 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
 
@@ -20,11 +20,11 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			isFloatingLabel: true,
 			label: "Personal Details",
 			labelDescription: "Select Profile Image",
-			labelClass: "text-3xl font-bold",
-			labelDescriptionClass: "mt-3",
+			labelClass: "text-2xl font-semibold",
+			labelDescriptionClass: "mt-1",
 			content: (
 				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-light">
+					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
 						<button
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
@@ -51,13 +51,15 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Screenshot Protection",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<span className="mt-1 text-sm text-theme-neutral">
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
-					<div className="-mt-2">
+
+					<div className="-mt-7">
 						<Toggle />
 					</div>
 				</div>
@@ -66,30 +68,36 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Advanced Mode",
-			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "py-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<span className="mt-1 text-sm text-theme-neutral">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-					<div className="-mt-2">
-						<Toggle className="-mt-3" />
+
+					<div className="-mt-7">
+						<Toggle />
 					</div>
 				</div>
 			),
 		},
 		{
-			isFloatingLabel: true,
-			label: "Auto-logoff",
-			labelClass:
-				"FormLabel transition-colors duration-100 inline-block text-sm font-semibold text-theme-neutral-dark",
+			wrapperClass: "pt-8",
 			content: (
-				<Select name="auto-logoff" placeholder="Select Language" ref={formConfig.register({ required: true })}>
-					<option value="option1">Option 1</option>
-					<option value="option2">Option 2</option>
-					<option value="option3">Option 3</option>
-				</Select>
+				<FormField name="price-source">
+					<FormLabel label="Auto-logoff" />
+					<Select
+						placeholder="Select Language"
+						ref={formConfig.register({ required: true })}
+						options={[
+							{ label: "Option 1", value: "option1" },
+							{ label: "Option 2", value: "option2" },
+						]}
+					/>
+					<FormHelperText />
+				</FormField>
 			),
 		},
 	];
@@ -98,11 +106,13 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Dark Theme",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
-					<div className="-mt-2">
+					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
+
+					<div className="-mt-7">
 						<Toggle />
 					</div>
 				</div>
@@ -111,15 +121,17 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Update Ledger in Background",
-			labelClass: "text-xl font-bold text-theme-neutral-dark -mt-5",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="w-3/4 text-sm text-theme-neutral-dark">
+					<span className="mt-1 text-sm text-theme-neutral">
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-					<div className="-mt-2">
-						<Toggle className="-mt-3" />
+
+					<div className="-mt-7">
+						<Toggle />
 					</div>
 				</div>
 			),
@@ -128,41 +140,40 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 
 	return (
 		<>
-			<Header title={pageConfig?.title} subtitle={pageConfig?.subheader} />
+			<Header title="Wallet Settings" subtitle="Customize your wallet to suit your needs." />
 			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
-				<div className="mt-5">
+				<div className="mt-8">
 					<ListDivided items={personalDetails} />
-					<div className="flex justify-between w-full">
+
+					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
 							<FormField name="profile-name">
 								<FormLabel label="Profile Name" />
 								<Input type="text" ref={formConfig.register({ required: true })} />
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-3" name="passphrase-language">
+							<FormField className="mt-8" name="passphrase-language">
 								<FormLabel label="Passphrase Language" />
 								<Select
-									name="passphrase-language"
 									placeholder="Select Language"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-3" name="currency">
+							<FormField className="mt-8" name="currency">
 								<FormLabel label="Currency" />
 								<Select
 									placeholder="Select Language"
-									name="currency"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 						</div>
@@ -171,53 +182,50 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								<FormLabel label="Language" />
 								<Select
 									placeholder="Select Language"
-									name="language"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-3" name="price-source">
+							<FormField className="mt-8" name="price-source">
 								<FormLabel label="Price Source" />
 								<Select
 									placeholder="Select Language"
-									name="price-source"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-3" name="time-format">
+							<FormField className="mt-8" name="time-format">
 								<FormLabel label="Time Format" />
 								<Select
 									placeholder="Select Language"
-									name="time-format"
 									ref={formConfig.register({ required: true })}
-								>
-									<option value="option1">Option 1</option>
-									<option value="option2">Option 2</option>
-									<option value="option3">Option 3</option>
-								</Select>
+									options={[
+										{ label: "Option 1", value: "option1" },
+										{ label: "Option 2", value: "option2" },
+									]}
+								/>
 								<FormHelperText />
 							</FormField>
 						</div>
 					</div>
 				</div>
-				<div className="relative mt-5">
-					<Header title="Security" />
+				<div className="relative mt-10">
+					<h2>Security</h2>
 					<ListDivided items={securityItems} />
 				</div>
-				<div className="relative mt-5">
-					<Header title="Other" />
+				<div className="relative mt-10">
+					<h2>Other</h2>
 					<ListDivided items={otherItems} />
 				</div>
-				<div className="flex justify-between w-full">
+				<div className="flex justify-between w-full pt-2">
 					<Button color="danger" variant="plain">
 						<Icon name="Reset" />
 						<span>Reset Data</span>

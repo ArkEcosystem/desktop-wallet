@@ -1,7 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render } from "testing-library";
 
 import { Pagination } from "./Pagination";
 
@@ -10,9 +8,7 @@ describe("Pagination", () => {
 
 	it("should render properly", () => {
 		const { asFragment } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -20,9 +16,7 @@ describe("Pagination", () => {
 
 	it("should handle page selection properly", () => {
 		const { asFragment, getByText } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
 		fireEvent.click(getByText("2"));
@@ -33,9 +27,7 @@ describe("Pagination", () => {
 
 	it("should render previous buttons as disabled on last page", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
 		expect(getByTestId("Pagination__previous")).toBeDisabled();
@@ -45,9 +37,7 @@ describe("Pagination", () => {
 
 	it("should handle first page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__first"));
@@ -58,9 +48,7 @@ describe("Pagination", () => {
 
 	it("should handle previous page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={2} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={2} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__previous"));
@@ -71,9 +59,7 @@ describe("Pagination", () => {
 
 	it("should handle next page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={2} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={2} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__next"));
@@ -84,9 +70,7 @@ describe("Pagination", () => {
 
 	it("should handle last page click properly", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);
 
 		fireEvent.click(getByTestId("Pagination__last"));
@@ -97,9 +81,7 @@ describe("Pagination", () => {
 
 	it("should render next buttons as disabled on last page", () => {
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />
-			</I18nextProvider>,
+			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={3} />,
 		);
 
 		expect(getByTestId("Pagination__next")).toBeDisabled();

@@ -1,9 +1,9 @@
+import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
+import { Circle } from "app/components/Circle";
+import { Icon } from "app/components/Icon";
+import { Table } from "app/components/Table";
 import React from "react";
-
-import { Address } from "../Address";
-import { Circle } from "../Circle";
-import { Icon } from "../Icon";
-import { Table } from "./Table";
 
 export default {
 	title: "App / Components / Table",
@@ -56,10 +56,12 @@ export const Default = () => {
 					{(rowData: any) => (
 						<tr className="border-b border-theme-neutral-200">
 							<td className="py-4 mt-1">
-								<Circle>
-									<Icon name={rowData.coin} />
-								</Circle>
-								<Circle avatarId={rowData.avatarId} />
+								<div className="flex">
+									<Circle>
+										<Icon name={rowData.coin} />
+									</Circle>
+									<Avatar address={rowData.address} />
+								</div>
 							</td>
 							<td className="py-1">
 								<Address walletName={rowData.walletName} address={rowData.address} />
@@ -67,7 +69,7 @@ export const Default = () => {
 							<td className="py-1 text-right text-bold">
 								<div>{rowData.balance}</div>
 							</td>
-							<td className="py-1 text-right text-bold text-theme-neutral-400">
+							<td className="py-1 text-right text-bold text-theme-neutral-light">
 								<div>{rowData.fiat}</div>
 							</td>
 						</tr>

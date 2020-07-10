@@ -5,15 +5,15 @@ exports[`AdvancedMode should not render if not open 1`] = `<DocumentFragment />`
 exports[`AdvancedMode should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw Zauxd absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw Zauxd fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -22,32 +22,38 @@ exports[`AdvancedMode should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Advanced Mode Disclaimer
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
         </div>
         <div
-          class="flex justify-end pb-5 mt-8 space-x-3"
+          class="flex justify-end mt-8 space-x-3"
         >
           <button
             class="sc-AxjAm ddJBbC"

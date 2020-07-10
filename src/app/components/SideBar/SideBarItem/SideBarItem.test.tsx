@@ -1,6 +1,5 @@
-import { act, fireEvent, render } from "@testing-library/react";
 import React from "react";
-import { MemoryRouter } from "react-router-dom";
+import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { SideBarItem } from "./SideBarItem";
 
@@ -14,14 +13,14 @@ describe("SideBarItem", () => {
 	};
 
 	it("should render", () => {
-		const { container, asFragment } = render(<SideBarItem {...item} />, { wrapper: MemoryRouter });
+		const { container, asFragment } = renderWithRouter(<SideBarItem {...item} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render as active", () => {
-		const { container, asFragment } = render(<SideBarItem {...item} isActive={true} />, { wrapper: MemoryRouter });
+		const { container, asFragment } = renderWithRouter(<SideBarItem {...item} isActive={true} />);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -30,9 +29,7 @@ describe("SideBarItem", () => {
 	it("should fire click event", () => {
 		const handleActiveItem = jest.fn();
 
-		const { getByTestId } = render(<SideBarItem {...item} handleActiveItem={handleActiveItem} />, {
-			wrapper: MemoryRouter,
-		});
+		const { getByTestId } = renderWithRouter(<SideBarItem {...item} handleActiveItem={handleActiveItem} />);
 		const menuItem = getByTestId("side-menu__item--plugin");
 
 		act(() => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { contact2 as contact } from "../../data";
+import { contact2 as contact, networks } from "../../data";
 import { UpdateContact } from "./UpdateContact";
 
 export default {
@@ -8,24 +8,6 @@ export default {
 };
 
 export const Default = () => {
-	const networks = [
-		{
-			label: "Ark Ecosystem",
-			value: "ark",
-			icon: "Ark",
-		},
-		{
-			label: "Bitcoin",
-			value: "btc",
-			icon: "Bitcoin",
-		},
-		{
-			label: "Ethereum",
-			value: "eth",
-			icon: "Ethereum",
-		},
-	];
-
 	return (
 		<UpdateContact
 			isOpen={true}

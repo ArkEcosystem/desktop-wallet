@@ -1,7 +1,5 @@
-import { fireEvent, render, within } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render, within } from "testing-library";
 
 import { PluginList } from "./PluginList";
 
@@ -32,11 +30,7 @@ describe("PluginList", () => {
 	];
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginList plugins={plugins} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginList plugins={plugins} />);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(getByTestId("PluginListItem--ark-avatars")).toHaveTextContent("ARK Avatars");
@@ -45,11 +39,7 @@ describe("PluginList", () => {
 	});
 
 	it("should render without pagination", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginList plugins={plugins} withPagination={false} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginList plugins={plugins} withPagination={false} />);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(getByTestId("PluginListItem--ark-avatars")).toHaveTextContent("ARK Avatars");
@@ -58,11 +48,7 @@ describe("PluginList", () => {
 	});
 
 	it("should split by page", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginList plugins={plugins} itemsPerPage={1} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginList plugins={plugins} itemsPerPage={1} />);
 
 		expect(getByTestId("PluginListItem--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(() => getByTestId("PluginListItem--ark-avatars")).toThrow(/Unable to find an element by/);
@@ -77,11 +63,7 @@ describe("PluginList", () => {
 	it("should trigger install", () => {
 		const onInstall = jest.fn();
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginList plugins={plugins} onInstall={onInstall} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginList plugins={plugins} onInstall={onInstall} />);
 
 		fireEvent.click(within(getByTestId("PluginListItem--ark-explorer")).getByRole("button"));
 
@@ -92,11 +74,7 @@ describe("PluginList", () => {
 	it("should trigger delete", () => {
 		const onDelete = jest.fn();
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginList plugins={plugins} onDelete={onDelete} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginList plugins={plugins} onDelete={onDelete} />);
 
 		fireEvent.click(within(getByTestId("PluginListItem--ark-avatars")).getByTestId("dropdown__toggle"));
 		fireEvent.click(within(getByTestId("PluginListItem--ark-avatars")).getByTestId("dropdown__option--1"));

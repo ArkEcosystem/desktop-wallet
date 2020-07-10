@@ -1,7 +1,7 @@
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { Dropdown } from "app/components/Dropdown";
+import { LayoutControls } from "app/components/LayoutControls";
 import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
 import React, { useState } from "react";
 
@@ -24,10 +24,6 @@ export const WalletsControls = ({
 }: WalletsControlsProps) => {
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
-	const getViewTypeIconClass = (viewType: any) => {
-		return walletsViewType === viewType ? "text-theme-danger-400" : "text-theme-primary-400";
-	};
-
 	const onClickGridView = () => {
 		if (walletsViewType === "grid") return;
 
@@ -43,25 +39,16 @@ export const WalletsControls = ({
 	};
 
 	return (
-		<div>
-			<div
-				data-testid="controls__grid"
-				className={`mr-4 px-1 inline-block cursor-pointer ${getViewTypeIconClass("grid")}`}
-				onClick={onClickGridView}
-			>
-				<Icon name="Grid" width={20} height={20} />
-			</div>
-			<div
-				data-testid="controls__list"
-				className={`mr-6 px-1 inline-block cursor-pointer ${getViewTypeIconClass("list")}`}
-				onClick={onClickListview}
-			>
-				<Icon name="List" width={20} height={20} />
+		<div className="flex">
+			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
+				<LayoutControls
+					onSelectGridView={onClickGridView}
+					onSelectListView={onClickListview}
+					selectedViewType={walletsViewType}
+				/>
 			</div>
 
-			<Divider type="vertical" />
-
-			<div className="relative inline-block px-3 text-theme-primary-400">
+			<div className="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast">
 				<Dropdown toggleIcon="Filters">
 					<div className="px-10 py-7 w-128">
 						<FilterWallets {...filterProperties} />
@@ -69,20 +56,21 @@ export const WalletsControls = ({
 				</Dropdown>
 			</div>
 
-			<Divider type="vertical" />
+			<div className="space-x-3">
+				<Button onClick={onCreateWallet} variant="plain">
+					<div className="flex items-center justify-center mr-2 text-sm align-middle">
+						<Icon name="Plus" width={10} />
+						<span className="ml-2">Create</span>
+					</div>
+				</Button>
 
-			<Button onClick={onCreateWallet} variant="plain" className="ml-8 mr-3">
-				<div className="flex items-center justify-center mr-2 text-sm align-middle">
-					<Icon name="Plus" width={10} />
-					<span className="ml-2">Create</span>
-				</div>
-			</Button>
-			<Button onClick={onImportWallet} variant="plain">
-				<div className="flex items-center justify-center mr-2 text-sm align-middle">
-					<Icon name="Import" />
-					<span className="ml-2">Import</span>
-				</div>
-			</Button>
+				<Button onClick={onImportWallet} variant="plain">
+					<div className="flex items-center justify-center mr-2 text-sm align-middle">
+						<Icon name="Import" />
+						<span className="ml-2">Import</span>
+					</div>
+				</Button>
+			</div>
 		</div>
 	);
 };

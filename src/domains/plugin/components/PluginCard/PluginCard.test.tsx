@@ -1,7 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render } from "testing-library";
 
 import { PluginCard } from "./PluginCard";
 
@@ -18,11 +16,7 @@ describe("PluginCard", () => {
 			isInstalled: false,
 		};
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginCard plugin={plugin} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(asFragment()).toMatchSnapshot();
@@ -42,11 +36,7 @@ describe("PluginCard", () => {
 
 		const onDelete = jest.fn();
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginCard plugin={plugin} onDelete={onDelete} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} onDelete={onDelete} />);
 
 		fireEvent.click(getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("dropdown__option--0"));
@@ -73,11 +63,7 @@ describe("PluginCard", () => {
 			isOfficial: true,
 		};
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginCard plugin={plugin} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("official-ark-plugin.svg");
 		expect(asFragment()).toMatchSnapshot();
@@ -96,11 +82,7 @@ describe("PluginCard", () => {
 			isGrant: true,
 		};
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginCard plugin={plugin} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("grant.svg");
 		expect(asFragment()).toMatchSnapshot();

@@ -1,5 +1,4 @@
-import { NavigationBar } from "app/components/NavigationBar";
-import { NavigationHeader } from "app/components/NavigationHeader";
+import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Table } from "app/components/Table";
 import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
@@ -31,7 +30,7 @@ const columns = [
 	},
 ];
 
-const Divider = () => <div className="h-4 bg-theme-neutral-100" />;
+const Divider = () => <div className="h-4 bg-theme-neutral-contrast" />;
 
 type Wallet = WalletListItemProps & {
 	address: string;
@@ -59,10 +58,16 @@ type Props = {
 };
 
 export const WalletDetails = ({ wallet, wallets }: Props) => {
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
 		<div className="relative">
-			<NavigationBar currencyIcon={wallet.coinIcon} />
-			<NavigationHeader title="Go back to portofolio" />
+			<Breadcrumbs crumbs={crumbs} />
 			<WalletHeader
 				coin={wallet.coinIcon}
 				address={wallet.address}

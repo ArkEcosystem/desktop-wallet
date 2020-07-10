@@ -1,5 +1,6 @@
-import { Badge } from "app/components/Badge";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { Dropdown } from "app/components/Dropdown";
+import { FilterNetwork } from "app/components/FilterNetwork";
+import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
 
@@ -42,59 +43,70 @@ export const FilterWallets = ({
 	};
 
 	return (
-		<div className="text-left">
+		<div className="flex flex-col text-left">
 			<div className="mb-8">
-				<div className="mb-3 font-semibold text-theme-neutral-700">Filter Network</div>
-				<div className="text-sm text-theme-neutral-500">Select the types of networks</div>
+				<div className="font-semibold text-theme-neutral-dark">Filter Network</div>
+				<div className="mt-1 text-sm text-theme-neutral">Select the types of networks</div>
 			</div>
-			<SelectNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
-			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
-			<div className="flex flex-row mb-8">
-				<div className="w-4/5">
-					<div className="mb-3 font-semibold text-theme-neutral-700">Your Wallets</div>
-					<div className="text-sm text-theme-neutral-500">Select the display of your wallets</div>
-				</div>
-				<div className="w-1/5 text-right">
-					<div
-						data-testid="filter-wallets__wallets"
-						className="relative h-6 mt-3 mr-5 cursor-pointer text-theme-neutral-700"
-						onClick={onWalletClick}
-					>
-						<span className="inline-block pr-1 font-semibold">All</span>
-						<Badge icon="ChevronDown" className="top-1 -right-6" iconWidth={19} iconHeight={19} />
-					</div>
-				</div>
-			</div>
+			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
 
 			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
-			<div className="flex flex-row mb-6">
-				<div className="w-4/5">
-					<div className="mb-3 font-semibold text-theme-neutral-700">Portfolio Chart</div>
-					<div className="text-sm text-theme-neutral-500">You an hide this unit if you like</div>
+			<div className="flex flex-col">
+				<div className="flex items-center justify-between">
+					<div className="font-semibold text-theme-neutral-dark">Your Wallets</div>
+
+					<Dropdown
+						toggleIcon="ChevronDown"
+						options={[
+							{ label: "Option 1", value: "option1" },
+							{ label: "Option 2", value: "option2" },
+						]}
+						onSelect={onWalletClick}
+						toggleContent={
+							<div
+								data-testid="filter-wallets__wallets"
+								className="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
+							>
+								<span className="inline-block mr-2 font-semibold">All</span>
+								<Icon name="ChevronDown" width={12} height={12} />
+							</div>
+						}
+					/>
 				</div>
-				<div className="w-1/5 pt-3 text-right">
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">Select the display of your wallets</div>
+			</div>
+
+			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
+
+			<div className="flex flex-col mb-6">
+				<div className="flex items-center justify-between">
+					<div className="font-semibold text-theme-neutral-dark">Portfolio Chart</div>
+
 					<Toggle
 						checked={showPortfolio}
 						data-testid="filter-wallets_toggle--portfolio"
 						onChange={(e) => togglePortfolio(e.target.checked)}
 					/>
 				</div>
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
 			</div>
 
-			<div className="flex flex-row mb-4">
-				<div className="w-4/5">
-					<div className="mb-3 font-semibold text-theme-neutral-700">Transaction History</div>
-					<div className="text-sm text-theme-neutral-500">You can hide this unit if you like</div>
-				</div>
-				<div className="w-1/5 pt-3 text-right">
+			<div className="flex flex-col">
+				<div className="flex items-center justify-between">
+					<div className="font-semibold text-theme-neutral-dark">Transaction History</div>
+
 					<Toggle
 						checked={showTransactions}
 						data-testid="filter-wallets_toggle--transactions"
 						onChange={(e) => toggleTransactions(e.target.checked)}
 					/>
 				</div>
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
 			</div>
 		</div>
 	);

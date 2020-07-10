@@ -1,11 +1,13 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
-import { EnvironmentContext } from "app/contexts";
+import { useEnvironment } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 const commonAssets = images.common;
 const { WelcomeBanner } = images.profile.pages.welcome;
@@ -15,12 +17,13 @@ export const Welcome = () => {
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-	const { env }: any = useContext(EnvironmentContext);
+	const env = useEnvironment();
 	const { t } = useTranslation();
-	const [profiles, setProfiles] = useState([]);
+	const history = useHistory();
+	const [profiles, setProfiles] = useState<Profile[]>([]);
 
 	useEffect(() => {
-		setProfiles(env.profiles().all());
+		setProfiles(env!.profiles().all());
 	}, [env]);
 
 	return (
@@ -34,7 +37,7 @@ export const Welcome = () => {
 			</div>
 
 			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
-				<h1 className="mb-8 font-bold">{t("COMMON.WELCOME")}</h1>
+				<h1 className="mb-8">{t("COMMON.WELCOME")}</h1>
 				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>
@@ -48,12 +51,11 @@ export const Welcome = () => {
 							</p>
 
 							<div className="mt-6 mb-8 space-y-3">
-								{profiles.map((profile: any) => (
+								{profiles.map((profile: any, index: number) => (
 									<ProfileCard
-										name={profile.name()}
-										avatar={profile.avatar()}
-										balance="0"
-										key={profile.id()}
+										handleClick={() => history.push(`/profiles/${profile.id()}/dashboard`)}
+										key={index}
+										profile={profile}
 										actions={profileCardActions}
 									/>
 								))}
@@ -70,7 +72,11 @@ export const Welcome = () => {
 							<Icon name="Msq" width={20} height={20} />
 							<span className="ml-2">Sign in to MarketSquare</span>
 						</Button>
-						<Button variant="plain" className="w-full mt-2 md:mt-0">
+						<Button
+							variant="plain"
+							className="w-full mt-2 md:mt-0"
+							onClick={() => history.push("/profiles/create")}
+						>
 							Create Profile
 						</Button>
 					</div>

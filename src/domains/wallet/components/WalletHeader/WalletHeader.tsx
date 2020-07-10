@@ -1,6 +1,7 @@
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
@@ -17,7 +18,6 @@ type Props = {
 	publicKey?: string;
 	onCopy?: () => void;
 	onSend?: () => void;
-	onMore?: () => void;
 	onStar?: () => void;
 };
 
@@ -28,7 +28,6 @@ export const WalletHeader = ({
 	address,
 	publicKey,
 	onSend,
-	onMore,
 	onStar,
 	onCopy,
 	balance,
@@ -40,42 +39,62 @@ export const WalletHeader = ({
 
 	return (
 		<header data-testid="WalletHeader">
-			<div className="flex items-center justify-between px-12 py-6 theme-dark bg-theme-background text-theme-text">
+			<div className="flex items-center justify-between px-12 py-6 bg-theme-neutral-900">
 				<div className="flex items-center space-x-4">
 					<div className="flex">
-						<Circle className="-mr-1 border-theme-neutral-light">
-							<Icon name={coin} className="text-theme-neutral-light" />
+						<Circle className="-mr-1 border-theme-neutral-dark" noShadow={true}>
+							<Icon name={coin} className="text-theme-neutral-dark" />
 						</Circle>
-						<Avatar address={address} />
+						<Avatar address={address} shadowColor="--theme-color-neutral-900" />
 					</div>
-					<h2 data-testid="WalletHeader__name" className="mb-0 text-theme-neutral-900">
+					<h2 data-testid="WalletHeader__name" className="mb-0 text-white">
 						{name}
 					</h2>
 					{isLedger && (
 						<span data-testid="WalletHeader__ledger">
-							<Icon name="Ledger" className="text-theme-neutral-light" />
+							<Icon name="Ledger" className="text-theme-neutral-dark" />
 						</span>
 					)}
 					{isMultisig && (
 						<span data-testid="WalletHeader__multisig">
-							<Icon name="Multisig" className="text-theme-neutral-light" />
+							<Icon name="Multisig" className="text-theme-neutral-dark" />
 						</span>
 					)}
 				</div>
 				<div className="flex items-stretch space-x-2">
 					<button
 						data-testid="WalletHeader__star-button"
-						className="px-3 text-theme-neutral"
+						className="px-3 text-theme-neutral-dark"
 						onClick={onStar}
 					>
 						<Icon name={hasStarred ? "Star" : "StarOutline"} />
 					</button>
+
 					<Button data-testid="WalletHeader__send-button" onClick={onSend}>
 						Send
 					</Button>
-					<Button data-testid="WalletHeader__more-button" onClick={onMore} variant="plain">
-						<Icon name="Settings" />
-					</Button>
+
+					<div data-testid="WalletHeader__more-button">
+						<Dropdown
+							toggleContent={
+								<Button variant="plain" size="icon" className="text-left">
+									<Icon name="Settings" width={20} height={20} />
+								</Button>
+							}
+							options={[
+								{ label: "Wallet Name", value: "wallet-name" },
+								{ label: "Sign Message", value: "sign-message" },
+								{ label: "Store Hash", value: "store-hash" },
+								{ label: "Delete", value: "delete" },
+							]}
+							onSelect={(option: any) => {
+								if (option.value === "delete") {
+									console.log(option);
+								}
+							}}
+							dropdownClass="top-5 right-3 text-left bg-white"
+						/>
+					</div>
 				</div>
 			</div>
 

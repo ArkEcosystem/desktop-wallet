@@ -1,8 +1,7 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "testing-library";
 
 import { Address } from "./Address";
-import { truncateStringMiddle } from "./utils";
 
 describe("Formatted Address", () => {
 	const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
@@ -23,7 +22,7 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render a small one", () => {
-		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="small" />);
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="sm" />);
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-sm");
 	});
 
@@ -33,38 +32,14 @@ describe("Formatted Address", () => {
 	});
 
 	it("should render a large one", () => {
-		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="large" />);
+		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size="lg" />);
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-xl");
 	});
 
 	it("should render with custom class for address", () => {
 		const { getByTestId } = render(
-			<Address
-				addressClass="text-theme-primary"
-				address={sampleAddress}
-				walletName="Sample Wallet"
-				size="large"
-			/>,
+			<Address addressClass="text-theme-primary" address={sampleAddress} walletName="Sample Wallet" size="lg" />,
 		);
 		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary");
-	});
-});
-
-describe("Truncate string utility", () => {
-	const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
-
-	it("should truncate with default maxChars", () => {
-		const string = truncateStringMiddle(sampleAddress);
-		expect(string).toEqual("ASuusXSW...T9GQ3kqT");
-	});
-
-	it("should truncate with maxChars 20", () => {
-		const string = truncateStringMiddle(sampleAddress, 28);
-		expect(string).toEqual("ASuusXSW9kfW...ttP6T9GQ3kqT");
-	});
-
-	it("should not truncate if string is less than maxChars", () => {
-		const string = truncateStringMiddle("1234");
-		expect(string).toEqual("1234");
 	});
 });

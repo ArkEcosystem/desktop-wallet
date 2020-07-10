@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
 import { Button } from "app/components/Button";
 import React from "react";
+import { render } from "testing-library";
 
 import { Header } from "./Header";
 

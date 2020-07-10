@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "testing-library";
 
 import { Divider } from "./Divider";
 
@@ -19,6 +19,18 @@ describe("Divider", () => {
 
 	it("should render vertical type", () => {
 		const { container } = render(<Divider type="vertical" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render vertical type and small", () => {
+		const { container } = render(<Divider type="vertical" size="sm" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render vertical type and large", () => {
+		const { container } = render(<Divider type="vertical" size="lg" />);
 
 		expect(container).toMatchSnapshot();
 	});

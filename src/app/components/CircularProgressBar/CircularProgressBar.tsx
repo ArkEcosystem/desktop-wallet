@@ -1,5 +1,4 @@
 import React from "react";
-import twConfig from "tailwind.config";
 
 type CircularProgressBarProps = {
 	size: number;
@@ -18,9 +17,9 @@ export const CircularProgressBar = ({
 	value,
 	fontSize,
 }: CircularProgressBarProps) => {
-	// Enclose circle in a circumscribing square
+	// Enclose circle in a circumscribed square
 	const viewBox = `0 0 ${size} ${size}`;
-	// SVG centers the stroke width on the radius, subtract out so circle fits in square
+	// SVG centers the stroke width in the radius and subtracts so that the circle fits the square
 	const radius = (size - strokeWidth) / 2;
 	// Arc length at 100% coverage is the circle circumference
 	const dashArray = radius * Math.PI * 2;
@@ -59,9 +58,14 @@ export const CircularProgressBar = ({
 				fontSize={`${fontSize}rem`}
 				fontWeight="600"
 				textAnchor="middle"
-				data-testid="circular-progress-bar__percentage"
+				data-testid="CircularProgressBar__percentage"
 			>
-				{`${value}%`}
+				<tspan>
+					{value}
+					<tspan dy="-0.6em" fontSize={`${fontSize! / 2}rem`} fontWeight="bold">
+						%
+					</tspan>
+				</tspan>
 			</text>
 		</svg>
 	);
@@ -70,8 +74,8 @@ export const CircularProgressBar = ({
 CircularProgressBar.defaultProps = {
 	size: 130,
 	strokeWidth: 10,
-	strokeColor: twConfig.theme.colors["theme-success-200"],
-	progressColor: twConfig.theme.colors["theme-success-600"],
+	strokeColor: "var(--theme-color-success-200)",
+	progressColor: "var(--theme-color-success)",
 	value: 0,
 	fontSize: 2,
 };

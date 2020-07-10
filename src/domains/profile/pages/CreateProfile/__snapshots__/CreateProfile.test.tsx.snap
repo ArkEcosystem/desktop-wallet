@@ -29,20 +29,20 @@ exports[`CreateProfile should render 1`] = `
         class="max-w-lg mx-auto xl:max-w-xl"
       >
         <h1
-          class="mx-4 md:mx-8 xl:mx-16"
+          class="mb-0 md:text-4xl"
         >
           Create Profile
         </h1>
         <div
-          class="mx-4 text-theme-neutral-dark md:mx-8 xl:mx-16"
+          class="text-theme-neutral-dark"
         >
           Create a new Profile or login with your MarketSquare account to get started.
         </div>
         <div
-          class="mx-4 mt-8 md:mx-8 xl:mx-16"
+          class="pb-4 mt-8"
         >
           <button
-            class="sc-AxjAm ddQVWI w-full mb-6"
+            class="sc-AxjAm ddQVWI w-full"
             color="primary"
             type="button"
           >
@@ -61,42 +61,42 @@ exports[`CreateProfile should render 1`] = `
               Login with MarketSquare
             </span>
           </button>
-          <div
-            class="sc-AxirZ jzxvZY"
-            type="horizontal"
-          />
         </div>
+        <div
+          class="sc-AxirZ jjvtQn border-theme-neutral-300"
+          type="horizontal"
+        />
         <form
-          class="-mt-6"
+          class="mt-4"
           data-testid="Form"
           id="create-profile__form"
         >
           <div
-            class="mx-4 md:mx-8 xl:mx-16"
+            class=""
           >
             <ul
-              class="sc-fzplWN krwTau"
+              class="sc-fzplWN tTUfL"
               data-testid="list-divided__items"
             >
               <li
-                class="flex flex-col w-full py-4"
+                class="flex flex-col w-full "
                 data-testid="list-divided-item__wrapper"
               >
                 <div
-                  class="flex justify-between flex-col items-start mt-5"
+                  class="flex justify-between flex-col items-start"
                   data-testid="list-divided-item__inner-wrapper"
                 >
                   <div
                     class="flex flex-col"
                   >
                     <span
-                      class="mr-5 text-xl font-bold"
+                      class="mr-5 text-2xl font-semibold"
                       data-testid="list-divided-item__label"
                     >
                       New Profile
                     </span>
                     <span
-                      class="text-sm text-theme-neutral font-semibold mt-3 text-theme-neutral-dark"
+                      class="text-sm text-theme-neutral-dark my-1 text-theme-neutral-dark"
                       data-testid="list-divided-item__label--description"
                     >
                       Select Profile Image
@@ -104,11 +104,11 @@ exports[`CreateProfile should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="mt-4"
+                  class=""
                   data-testid="list-divided-item__content"
                 >
                   <div
-                    class="flex flex-row mb-4 -mt-2"
+                    class="flex flex-row mt-4 mb-8"
                   >
                     <div
                       class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
@@ -155,13 +155,13 @@ exports[`CreateProfile should render 1`] = `
               </li>
             </ul>
             <div
-              class="flex flex-col space-y-8"
+              class="relative space-y-8"
             >
               <fieldset
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="name"
                   label="Name"
@@ -169,7 +169,7 @@ exports[`CreateProfile should render 1`] = `
                   Name
                 </label>
                 <input
-                  class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                  class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="Input"
                   name="name"
                 />
@@ -178,7 +178,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="market-provider"
                   label="Market Provider"
@@ -186,47 +186,51 @@ exports[`CreateProfile should render 1`] = `
                   Market Provider
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="relative w-full"
                 >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
+                  <input
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                    data-testid="select-list__input"
                     name="market-provider"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Market Provider
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="relative w-full cursor-pointer"
                   >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                        class="sc-fznyAO jxxAar   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-0-toggle-button"
+                        type="button"
+                      >
+                        Select Market Provider
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-0-label"
+                        class="sc-fznKkj hCMtWS"
+                        id="downshift-0-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
                     <div
-                      class="sc-AxhCb fxrKLH"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -235,7 +239,7 @@ exports[`CreateProfile should render 1`] = `
                 class="sc-AxiKw iQzisX flex flex-col space-y-2"
               >
                 <label
-                  class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="currency"
                   label="Currency"
@@ -243,65 +247,69 @@ exports[`CreateProfile should render 1`] = `
                   Currency
                 </label>
                 <div
-                  class="sc-AxmLO kuiknc"
+                  class="relative w-full"
                 >
-                  <select
-                    class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
-                    data-testid="Select"
+                  <input
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                    data-testid="select-list__input"
                     name="currency"
-                  >
-                    <option
-                      disabled=""
-                      selected=""
-                      value=""
-                    >
-                      Select Currency
-                    </option>
-                    <option
-                      value="option1"
-                    >
-                      Option 1
-                    </option>
-                    <option
-                      value="option2"
-                    >
-                      Option 2
-                    </option>
-                    <option
-                      value="option3"
-                    >
-                      Option 3
-                    </option>
-                  </select>
+                    readonly=""
+                    type="text"
+                    value=""
+                  />
                   <div
-                    class="sc-AxgMl sc-Axmtr cPxyjO w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                    class="relative w-full cursor-pointer"
                   >
+                    <div>
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                        class="sc-fznyAO jxxAar   "
+                        data-testid="select-list__toggle-button"
+                        id="downshift-1-toggle-button"
+                        type="button"
+                      >
+                        Select Currency
+                      </button>
+                      <ul
+                        aria-labelledby="downshift-1-label"
+                        class="sc-fznKkj hCMtWS"
+                        id="downshift-1-menu"
+                        role="listbox"
+                        tabindex="-1"
+                      />
+                    </div>
                     <div
-                      class="sc-AxhCb fxrKLH"
-                      height="1em"
-                      width="1em"
+                      class="sc-AxgMl sc-Axmtr cPxyjO w-10 pointer-events-none text-theme-neutral"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
+                      <div
+                        class="sc-AxhCb dxfUlj"
+                        height="8"
+                        width="8"
+                      >
+                        <svg>
+                          arrowdown.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </fieldset>
             </div>
             <div
-              class="mb-4"
+              class="mt-8"
             >
               <ul
-                class="sc-fzplWN krwTau"
+                class="sc-fzplWN tTUfL"
                 data-testid="list-divided__items"
               >
                 <li
-                  class="flex flex-col w-full py-4"
+                  class="flex flex-col w-full "
                   data-testid="list-divided-item__wrapper"
                 >
                   <div
-                    class="flex justify-between flex-col items-start mt-5"
+                    class="flex justify-between flex-col items-start"
                     data-testid="list-divided-item__inner-wrapper"
                   >
                     <div
@@ -316,30 +324,32 @@ exports[`CreateProfile should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="mt-4"
+                    class=""
                     data-testid="list-divided-item__content"
                   >
                     <div
-                      class="flex flex-row justify-between"
+                      class="flex flex-row items-center justify-between"
                     >
                       <span
-                        class="w-3/4 -mt-4 text-sm text-theme-neutral-dark"
+                        class="mt-2 text-sm text-theme-neutral-dark"
                       >
                         Want to set the wallet to dark mode?
                       </span>
                       <div
-                        class="-mt-11"
+                        class="-mt-8"
                       >
-                        <label>
+                        <label
+                          class="flex"
+                        >
                           <input
-                            class="sc-fznyAO htyfyy"
+                            class="sc-fznZeY gFDxaj"
                             type="checkbox"
                           />
                           <div
-                            class="sc-fznKkj iTYdAh"
+                            class="sc-fzokOt diusSt"
                           >
                             <span
-                              class="sc-fznZeY izeqLb"
+                              class="sc-fzqBZW kedYqi"
                             />
                           </div>
                         </label>
@@ -350,12 +360,12 @@ exports[`CreateProfile should render 1`] = `
               </ul>
             </div>
             <div
-              class="sc-AxirZ iZJyTO"
+              class="sc-AxirZ jJscrd border-theme-neutral-300"
               type="horizontal"
             />
           </div>
           <div
-            class="flex justify-end mx-4 mt-12 mb-16 space-x-3 md:mx-8 xl:mx-16"
+            class="flex justify-end mt-8 mb-16 space-x-3"
           >
             <button
               class="sc-AxjAm ddJBbC"

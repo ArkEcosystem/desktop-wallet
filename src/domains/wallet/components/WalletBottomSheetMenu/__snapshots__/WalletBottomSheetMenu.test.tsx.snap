@@ -40,9 +40,9 @@ exports[`WalletBottomSheetMenu should render 1`] = `
               class="sc-AxirZ lfYXqR"
             >
               <div
-                class="sc-AxjAm cpczEI"
-                height="1em"
-                width="1em"
+                class="sc-AxjAm iepfoc"
+                height="10"
+                width="10"
               >
                 <svg>
                   chevron-down.svg
@@ -65,7 +65,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="max-w-4xl mx-auto"
         >
           <div
-            class="sc-AxiKw fOxXaG"
+            class="sc-AxiKw bvfChE"
             role="table"
           >
             <table
@@ -76,7 +76,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -84,21 +84,19 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Asset Type
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxjAm iepfoc"
-                          height="10"
-                          width="10"
+                          class="sc-AxjAm hdgaLj"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -108,7 +106,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -116,21 +114,19 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Wallet Address
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxjAm iepfoc"
-                          height="10"
-                          width="10"
+                          class="sc-AxjAm hdgaLj"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -140,27 +136,21 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Wallet Type
                       </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -168,21 +158,19 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Balance
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxjAm iepfoc"
-                          height="10"
-                          width="10"
+                          class="sc-AxjAm hdgaLj"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -192,7 +180,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -200,21 +188,19 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Fiat Value
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxjAm iepfoc"
-                          height="10"
-                          width="10"
+                          class="sc-AxjAm hdgaLj"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -232,42 +218,57 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                   class="border-b border-theme-neutral-200"
                 >
                   <td
-                    class="py-4 mt-1"
+                    class="py-6 mt-1"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc"
+                      class="flex"
                     >
                       <div
-                        class="sc-AxjAm buCJuk"
-                        height="20"
-                        width="20"
+                        class="sc-AxgMl daFHdi"
                       >
-                        <svg>
-                          ark.svg
-                        </svg>
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
                       </div>
                     </div>
-                    <div
-                      class="sc-AxhUy bZEzx"
-                    />
                   </td>
                   <td
                     class="py-1"
                   >
                     <div
-                      class="inline-block truncate"
+                      class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         ARK Wallet 1
                       </span>
                       <span
-                        class="text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
-                        ASuusXSW9...6T9GQ3kqT
+                        ASuusXSW9…6T9GQ3kqT
                       </span>
                     </div>
                   </td>
@@ -275,14 +276,14 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     class="py-1 text-sm font-bold"
                   />
                   <td
-                    class="py-1 font-bold text-right"
+                    class="font-semibold text-right"
                   >
                     <div>
                       120 ARK
                     </div>
                   </td>
                   <td
-                    class="py-1 font-semibold text-right text-theme-neutral-400"
+                    class="text-right text-theme-neutral-light"
                   >
                     <div />
                   </td>

@@ -1,7 +1,5 @@
-import { fireEvent, render, within } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render, within } from "testing-library";
 
 import { PluginGrid } from "./PluginGrid";
 
@@ -32,11 +30,7 @@ describe("PluginGrid", () => {
 	];
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginGrid plugins={plugins} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(getByTestId("PluginCard--ark-avatars")).toHaveTextContent("ARK Avatars");
@@ -45,11 +39,7 @@ describe("PluginGrid", () => {
 	});
 
 	it("should render without pagination", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginGrid plugins={plugins} withPagination={false} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} withPagination={false} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(getByTestId("PluginCard--ark-avatars")).toHaveTextContent("ARK Avatars");
@@ -58,11 +48,7 @@ describe("PluginGrid", () => {
 	});
 
 	it("should split by page", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginGrid plugins={plugins} itemsPerPage={1} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} itemsPerPage={1} />);
 
 		expect(getByTestId("PluginCard--ark-explorer")).toHaveTextContent("ARK Explorer");
 		expect(() => getByTestId("PluginCard--ark-avatars")).toThrow(/Unable to find an element by/);
@@ -77,11 +63,7 @@ describe("PluginGrid", () => {
 	it("should trigger select", () => {
 		const onSelect = jest.fn();
 
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginGrid plugins={plugins} onSelect={onSelect} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} onSelect={onSelect} />);
 
 		fireEvent.click(getByTestId("PluginCard--ark-explorer"));
 
@@ -94,9 +76,7 @@ describe("PluginGrid", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} />
-			</I18nextProvider>,
+			<PluginGrid plugins={plugins} onSelect={onSelect} onDelete={onDelete} />,
 		);
 
 		fireEvent.click(within(getByTestId("PluginCard--ark-avatars")).getByTestId("dropdown__toggle"));

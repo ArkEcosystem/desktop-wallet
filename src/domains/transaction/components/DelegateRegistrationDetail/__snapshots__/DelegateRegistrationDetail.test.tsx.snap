@@ -5,15 +5,15 @@ exports[`DelegateRegistrationDetail should not render if not open 1`] = `<Docume
 exports[`DelegateRegistrationDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxhUy fXfatb absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxhUy fXfatb fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxhCb idLVlI"
@@ -22,48 +22,56 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Delegate Registration
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="flex items-center py-4 true "
+          class="flex items-center py-6 true "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Account Nickname
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               ROBank
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 ADDR...ESSS
               </span>
             </div>
           </div>
-          <div>
+          <div
+            class="flex items-center"
+          >
             <div
               class="sc-AxjAm bLfakz -mr-2 border-black"
             >
@@ -78,23 +86,34 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxjAm ikTVPy"
-            />
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="test"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                  title="test"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Amount
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="sc-AxiKw BrXzA"
@@ -103,19 +122,19 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
                 -5 ARK
               </div>
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 50.00 USD
               </span>
             </div>
           </div>
           <div
-            class="sc-AxjAm bLfakz border-theme-danger-100 text-theme-danger-400"
+            class="sc-AxjAm bLfakz border-theme-danger-contrast text-theme-danger-400"
           >
             <div
-              class="sc-AxirZ RbXVX"
-              height="40"
-              width="40"
+              class="sc-AxirZ hPsuTj"
+              height="16"
+              width="16"
             >
               <svg>
                 sent.svg
@@ -124,54 +143,54 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction Fee
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               0.09812015 ARK
             </div>
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Timestamp
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               14.04.2020 21:42:40
             </div>
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Confirmations
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex"
@@ -199,21 +218,21 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>
@@ -234,21 +253,21 @@ exports[`DelegateRegistrationDetail should render a modal 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+          class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>

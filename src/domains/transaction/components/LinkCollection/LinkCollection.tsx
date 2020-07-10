@@ -3,9 +3,11 @@ import { FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputGroup } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
-import { SelectDropdown } from "app/components/SelectDropdown";
+import { Select } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
 
 type Link = {
 	link: string;
@@ -27,6 +29,12 @@ type LinkCollectionProps = {
 	types: Type[];
 };
 
+const Wrapper = styled.div`
+	table th {
+		padding-bottom: 0;
+	}
+`;
+
 export const LinkCollection = ({
 	data,
 	title,
@@ -36,6 +44,8 @@ export const LinkCollection = ({
 	selectionTypes,
 	selectionTypeTitle,
 }: LinkCollectionProps) => {
+	const { t } = useTranslation();
+
 	const [isExpanded, setIsExpanded] = React.useState(false);
 	const [links, setLinks] = React.useState(data || []);
 	const [selected, setSelected] = React.useState((null as unknown) as Link);
@@ -73,32 +83,32 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<div data-testid="LinkCollection" className="font-normal">
+		<Wrapper data-testid="LinkCollection" className="font-normal">
 			<div
 				data-testid="LinkCollection__header"
 				className="flex justify-between cursor-pointer"
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<div>
-					<span className="font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-700">{description}</div>
+					<span className="text-lg font-semibold">{title}</span>
+					<div className="mt-2 text-theme-neutral-dark">{description}</div>
 				</div>
 
 				<div>
 					{isExpanded && (
 						<Icon
 							name="ChevronUp"
-							width={9}
-							height={9}
-							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+							width={10}
+							height={10}
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
 					)}
 					{!isExpanded && (
 						<Icon
 							name="ChevronDown"
-							width={18}
-							height={18}
-							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+							width={10}
+							height={10}
+							className="flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
 						/>
 					)}
 				</div>
@@ -108,34 +118,12 @@ export const LinkCollection = ({
 				<div className="mt-4">
 					<div>
 						<div className="flex space-x-2">
-							<div className="flex flex-col w-1/4">
-								<div className="w-full mb-2">
+							<div className="flex flex-col w-2/5">
+								<div className="w-full">
 									<FormLabel label={`Add ${typeName}`} />
 								</div>
 								<InputGroup className="flex flex-1">
-									<SelectDropdown
-										option={(type: Type) => {
-											return <div className="p-2 border-b link">{type.label}</div>;
-										}}
-										toggle={(selected: Type) => {
-											if (selected) {
-												return (
-													<div className="flex items-center flex-inline">
-														<div>{selected.label}</div>
-													</div>
-												);
-											}
-
-											return (
-												<div className="flex items-center flex-inline">
-													<div className="font-semibold text-theme-neutral-800">&nbsp;</div>
-												</div>
-											);
-										}}
-										options={types}
-										className="w-full"
-										onChange={(selected: Type) => setSelectedType(selected)}
-									/>
+									<Select options={types} onChange={(selected: any) => setSelectedType(selected)} />
 								</InputGroup>
 							</div>
 
@@ -167,11 +155,11 @@ export const LinkCollection = ({
 						</Button>
 					</div>
 
-					<div className="mt-8 mb-2 text-sm text-theme-neutral-700">Your {typeName}</div>
+					<div className="mt-8 mb-2 text-sm text-theme-neutral-dark">Your {typeName}</div>
 
 					<Table columns={columns} data={links}>
-						{(rowData: any) => (
-							<tr className="border-b border-theme-neutral-200">
+						{(rowData: any, rowIndex: any) => (
+							<tr className="font-semibold border-b border-theme-neutral-200">
 								{selectionTypeTitle && (
 									<td className="w-16 text-center">
 										{selectionTypes && selectionTypes.includes(rowData.type) && (
@@ -186,14 +174,17 @@ export const LinkCollection = ({
 									</td>
 								)}
 
-								<td className="w-40 py-6">{rowData.type}</td>
+								<td className={`w-40 ${rowIndex > 0 ? "py-6" : "pb-6 pt-2"}`}>
+									{t(`TRANSACTION.LINK_TYPES.${rowData.type.toUpperCase()}`)}
+								</td>
 
-								<td className="py-6">{rowData.link}</td>
+								<td className={rowIndex > 0 ? "py-6" : "pb-6 pt-2"}>{rowData.link}</td>
 
-								<td className="w-16 text-right">
+								<td className={`w-16 text-right ${rowIndex === 0 && "pb-4"}`}>
 									<Button
 										data-testid="LinkCollection__remove-link"
 										size="icon"
+										variant="plain"
 										onClick={() => removeLink({ link: rowData.link, type: rowData.type })}
 									>
 										<Icon name="Trash" />
@@ -204,6 +195,6 @@ export const LinkCollection = ({
 					</Table>
 				</div>
 			)}
-		</div>
+		</Wrapper>
 	);
 };

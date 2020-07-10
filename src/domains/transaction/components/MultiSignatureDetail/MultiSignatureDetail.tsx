@@ -1,4 +1,5 @@
 import { images } from "app/assets/images";
+import { Avatar } from "app/components/Avatar";
 // UI Elements
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -31,48 +32,34 @@ const Signatures = () => {
 
 			<div className="flex">
 				<div>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.YOU")}</div>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
 					<div className="pr-4 mr-2 border-r border-theme-neutral-300">
-						<Circle avatarId="test" className="relative ml-2">
-							<Badge
-								className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
-								icon="Checkmark"
-							/>
-						</Circle>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-success-200 text-theme-success-500" icon="Checkmark" />
+						</Avatar>
 					</div>
 				</div>
 
 				<div>
-					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.OTHER")}</div>
+					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral">{t("COMMON.OTHER")}</div>
+					<div className="flex ml-2 space-x-4">
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-2">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-success-200 text-theme-success-500" icon="Checkmark" />
+						</Avatar>
 
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-success-200 text-theme-success-500"
-							icon="Checkmark"
-						/>
-					</Circle>
-
-					<Circle avatarId="test" className="relative ml-4">
-						<Badge
-							className="bottom-0 -right-1 bg-theme-danger-100 text-theme-danger-400"
-							icon="StatusClock"
-						/>
-					</Circle>
+						<Avatar address="test" noShadow>
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
+						</Avatar>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -84,26 +71,26 @@ export const FirstStep = () => {
 
 	return (
 		<section data-testid="MultiSignatureDetail__first-step">
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Avatar address="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Circle avatarId="test" />}>
+			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Avatar address="test" />}>
 				Bank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+					<Circle className="border-theme-danger-contrast text-theme-danger-400">
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>
 				<Label color="danger">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>

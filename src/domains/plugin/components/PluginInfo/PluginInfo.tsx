@@ -44,7 +44,7 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
 								<div
 									data-testid="plugin-info__screenshot"
 									key={idx}
-									className="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+									className="w-1/3 h-56 rounded-lg bg-theme-neutral"
 								/>
 							))}
 						</div>

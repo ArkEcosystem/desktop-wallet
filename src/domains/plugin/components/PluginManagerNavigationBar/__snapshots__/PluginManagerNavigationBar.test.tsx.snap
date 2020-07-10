@@ -2,214 +2,362 @@
 
 exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
-  <div
-    class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
+  <nav
+    class="sc-AxirZ csROug sticky md:top-24 top-20 bg-theme-neutral-contrast"
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex justify-between h-full mx-auto text-theme-neutral-400"
+      class="container flex items-center justify-between mx-auto px-14"
     >
-      <div
-        class="flex h-full space-x-6"
-      >
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
-          data-testid="PluginManagerNavigationBar__home"
+      <div>
+        <ul
+          class="flex h-24"
         >
-          Home
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__game"
-        >
-          Game 
-          <span
-            class="ml-1 text-theme-neutral-700"
+          <li
+            class="flex"
           >
-            48
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__utility"
-        >
-          Utility 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              data-testid="PluginManagerNavigationBar__home"
+              title="Home"
+            >
+              <span>
+                Home
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            264
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__themes"
-        >
-          Themes 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__game"
+              title="Game"
+            >
+              <span>
+                Game
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                48
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            96
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__other"
-        >
-          Other 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__utility"
+              title="Utility"
+            >
+              <span>
+                Utility
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                264
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            27
-          </span>
-        </div>
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__themes"
+              title="Themes"
+            >
+              <span>
+                Themes
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                96
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
+          >
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__other"
+              title="Other"
+            >
+              <span>
+                Other
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                27
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
       <div
-        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-        data-testid="PluginManagerNavigationBar__my-plugins"
+        class="flex h-24"
       >
-        My Plugins 
-        <span
-          class="ml-1 text-theme-neutral-700"
+        <button
+          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+          data-testid="PluginManagerNavigationBar__my-plugins"
+          title="My Plugins"
         >
-          8
-        </span>
+          <span>
+            MyPlugin
+          </span>
+          <span
+            class="ml-1 text-theme-neutral-light"
+          >
+            8
+          </span>
+        </button>
+        <div
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
+        />
+        <div
+          class="flex items-center"
+          data-testid="PluginManagerControls"
+        >
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__grid"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-AxjAm jEKiJj"
+                height="14"
+                width="28"
+              >
+                <svg>
+                  grid.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-AxjAm eFgodT"
+                height="14"
+                width="24"
+              >
+                <svg>
+                  list.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
-  <div
-    class="sticky z-20 h-20 shadow-md top-20 bg-theme-neutral-900 md:top-24"
+  <nav
+    class="sc-AxirZ csROug sticky md:top-24 top-20 bg-theme-neutral-contrast"
     data-testid="PluginManagerNavigationBar"
   >
     <div
-      class="container flex justify-between h-full mx-auto text-theme-neutral-400"
+      class="container flex items-center justify-between mx-auto px-14"
     >
-      <div
-        class="flex h-full space-x-6"
-      >
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-primary-500"
-          data-testid="PluginManagerNavigationBar__home"
+      <div>
+        <ul
+          class="flex h-24"
         >
-          Home
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__game"
-        >
-          Game 
-          <span
-            class="ml-1 text-theme-neutral-700"
+          <li
+            class="flex"
           >
-            48
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__utility"
-        >
-          Utility 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer active"
+              data-testid="PluginManagerNavigationBar__home"
+              title="Home"
+            >
+              <span>
+                Home
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            264
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__themes"
-        >
-          Themes 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__game"
+              title="Game"
+            >
+              <span>
+                Game
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                48
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            96
-          </span>
-        </div>
-        <div
-          class="flex items-center"
-        >
-          <div
-            class="w-px h-4 bg-theme-neutral-700"
-          />
-        </div>
-        <div
-          class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-          data-testid="PluginManagerNavigationBar__other"
-        >
-          Other 
-          <span
-            class="ml-1 text-theme-neutral-700"
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__utility"
+              title="Utility"
+            >
+              <span>
+                Utility
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                264
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
           >
-            27
-          </span>
-        </div>
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__themes"
+              title="Themes"
+            >
+              <span>
+                Themes
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                96
+              </span>
+            </button>
+            <div
+              class="w-px h-4 mx-6 my-auto border-r PluginManagerNavigationBar__menu-divider border-theme-neutral-300"
+            />
+          </li>
+          <li
+            class="flex"
+          >
+            <button
+              class="PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+              data-testid="PluginManagerNavigationBar__other"
+              title="Other"
+            >
+              <span>
+                Other
+              </span>
+              <span
+                class="ml-1 text-theme-neutral-light"
+              >
+                27
+              </span>
+            </button>
+          </li>
+        </ul>
       </div>
       <div
-        class="flex items-center cursor-pointer border-b-3 border-theme-neutral-900"
-        data-testid="PluginManagerNavigationBar__my-plugins"
+        class="flex h-24"
       >
-        My Plugins 
-        <span
-          class="ml-1 text-theme-neutral-700"
+        <button
+          class="PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer "
+          data-testid="PluginManagerNavigationBar__my-plugins"
+          title="My Plugins"
         >
-          8
-        </span>
+          <span>
+            MyPlugin
+          </span>
+          <span
+            class="ml-1 text-theme-neutral-light"
+          >
+            8
+          </span>
+        </button>
+        <div
+          class="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300"
+        />
+        <div
+          class="flex items-center"
+          data-testid="PluginManagerControls"
+        >
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__grid"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-AxjAm jEKiJj"
+                height="14"
+                width="28"
+              >
+                <svg>
+                  grid.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            class="inline-block"
+            data-testid="LayoutControls__list"
+          >
+            <div
+              class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+              data-testid="LayoutControls__list--icon"
+            >
+              <div
+                class="sc-AxjAm eFgodT"
+                height="14"
+                width="24"
+              >
+                <svg>
+                  list.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;

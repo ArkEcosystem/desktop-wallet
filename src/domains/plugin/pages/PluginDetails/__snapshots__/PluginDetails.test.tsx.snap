@@ -3,7 +3,7 @@
 exports[`PluginDetails should render properly 1`] = `
 <DocumentFragment>
   <section
-    class="h-full bg-theme-neutral-100"
+    class="h-full -m-5 bg-theme-neutral-contrast"
     data-testid="plugin-details__header"
   >
     <div
@@ -13,7 +13,7 @@ exports[`PluginDetails should render properly 1`] = `
         class="flex w-full"
       >
         <img
-          alt="plugin-image"
+          alt="Plugin"
           class="w-40 h-40 rounded-lg"
           src="placeholder.png"
         />
@@ -32,7 +32,7 @@ exports[`PluginDetails should render properly 1`] = `
                 ARK Explorer
               </span>
               <span
-                class="text-medium text-theme-neutral-500"
+                class="text-medium text-theme-neutral"
               >
                 Use the ARK Mainnet explorer directly within the wallet
               </span>
@@ -41,7 +41,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxiKw wFYj"
+                class="sc-AxjAm ddQVWI"
                 color="primary"
                 data-testid="PluginHeader__button--install"
                 type="button"
@@ -49,52 +49,69 @@ exports[`PluginDetails should render properly 1`] = `
                 Install
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxjAm ddJBbC ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    alert-danger.svg
+                    report.svg
                   </svg>
                 </div>
               </button>
             </div>
           </div>
           <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
           >
             <div
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6"
             >
               <div
                 class="flex flex-col undefined"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Category
                 </span>
@@ -106,45 +123,62 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6 -ml-5"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   URL
                 </span>
                 <span
-                  class="font-bold text-theme-neutral-600"
+                  class="font-bold text-theme-primary"
                 >
                   github.com
                 </span>
               </div>
             </div>
             <div
-              class="flex col-span-2 justify-between px-8"
+              class="flex col-span-2 justify-between px-6 -ml-8"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Rating
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  4.6
-                </span>
+                  <div
+                    class="pr-1 text-theme-warning-400"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    4.6
+                  </span>
+                </div>
               </div>
               <div
                 class="flex flex-col text-right"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Version
                 </span>
@@ -156,13 +190,13 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex pl-8"
+              class="flex pl-6"
             >
               <div
                 class="flex flex-col text-right"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Size
                 </span>
@@ -242,36 +276,15 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex pb-10 mt-3 mr-3 space-x-4"
                   >
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                   </div>
@@ -284,15 +297,36 @@ exports[`PluginDetails should render properly 1`] = `
                     class="flex pb-10 mt-3 mr-3 space-x-4"
                   >
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 180px;"
+                >
+                  <div
+                    class="flex pb-10 mt-3 mr-3 space-x-4"
+                  >
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                   </div>
@@ -319,7 +353,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
-                class="sc-AxjAm bIZXgI"
+                class="sc-AxirZ bMjbpr"
                 height="30"
                 width="30"
               >
@@ -344,11 +378,28 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </div>
     <div
-      class="mt-5 bg-theme-background"
+      class="flex p-10 mt-5 bg-theme-background"
     >
       <div
-        class="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="flex flex-col"
       >
+        <div
+          class="flex items-center justify-between"
+        >
+          <h2
+            class="mb-0"
+          >
+            Reviews ARK Explorer
+          </h2>
+          <button
+            class="sc-AxjAm ddJBbC"
+            color="primary"
+            data-testid="ReviewBox__button--comment"
+            type="button"
+          >
+            Leave a comment
+          </button>
+        </div>
         <div
           class="col-span-2"
           data-testid="plugin-details__comments"
@@ -356,71 +407,73 @@ exports[`PluginDetails should render properly 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
-              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
+              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
             >
-              <span>
+              <span
+                class="text-theme-neutral-900"
+              >
                 Sort by:
               </span>
               <div
-                class="flex items-center"
+                class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
               >
                 <span
-                  class="ml-2"
+                  class="cursor-pointer null"
                 >
-                  Best
-                </span>
-                <div
-                  class="ml-1"
-                >
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                  <span
+                    class="flex items-center text-theme-neutral-900 space-x-1"
                   >
+                    <span>
+                      Best
+                    </span>
                     <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
+                      class="sc-AxirZ eRmuSF"
+                      height="5"
+                      width="7"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          arrowdown.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        arrowup.svg
+                      </svg>
                     </div>
-                  </div>
-                </div>
+                  </span>
+                </span>
+                <span
+                  class="cursor-pointer pl-3"
+                >
+                  <span>
+                    Date
+                  </span>
+                </span>
+                <span
+                  class="cursor-pointer pl-3"
+                >
+                  <span>
+                    Most Popular
+                  </span>
+                </span>
               </div>
             </div>
             <div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -429,53 +482,78 @@ exports[`PluginDetails should render properly 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-neutral-light"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
                   </p>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Gerard Blezer
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Gerard Blezer
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -484,94 +562,127 @@ exports[`PluginDetails should render properly 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-success"
+                    >
+                      +28
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+                    It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
                   </p>
                   <div
-                    class="flex flex-col mt-3 ml-3"
+                    class="flex flex-col mt-3"
                   >
                     <div
-                      class="flex items-center text-theme-neutral-500"
+                      class="flex items-center text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="flex items-center w-10"
                       >
-                        <svg>
-                          reply-arrow.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ gNHFnS mx-auto -mt-2"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            reply-arrow.svg
+                          </svg>
+                        </div>
                       </div>
                       <div
-                        class="grid grid-cols-2 divide-x"
+                        class="flex items-center divide-x divide-theme-neutral-light space-x-3"
                       >
                         <span
-                          class="px-3 font-semibold text-theme-neutral-900"
+                          class="text-lg font-semibold text-theme-neutral-900"
                         >
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="pl-3 text-sm font-semibold text-theme-neutral"
                         >
-                          3 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            11 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
                       >
                         @Gerard Blezer
                       </a>
-                       Our GitHub bount reward program utlilizes a tiered structure.
+                       You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -580,53 +691,78 @@ exports[`PluginDetails should render properly 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-neutral-light"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
                   </p>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -635,29 +771,56 @@ exports[`PluginDetails should render properly 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-danger-dark"
+                    >
+                      -5
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
                   </p>
                 </div>
               </div>
@@ -670,14 +833,14 @@ exports[`PluginDetails should render properly 1`] = `
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm HWmvM"
+                    class="sc-AxirZ hDwaov"
                     height="12"
                     width="12"
                   >
@@ -687,14 +850,14 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm iepfoc mr-2"
+                    class="sc-AxirZ fttODj mr-2"
                     height="10"
                     width="10"
                   >
@@ -724,14 +887,14 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </div>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
                 >
                   Next
                   <div
-                    class="sc-AxjAm HWmvM ml-2"
+                    class="sc-AxirZ hDwaov ml-2"
                     height="12"
                     width="12"
                   >
@@ -741,13 +904,13 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm HWmvM"
+                    class="sc-AxirZ hDwaov"
                     height="12"
                     width="12"
                   >
@@ -760,235 +923,316 @@ exports[`PluginDetails should render properly 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
+        data-testid="plugin-details__review-box"
+      >
         <div
-          class="pl-10"
-          data-testid="plugin-details__review-box"
+          class="w-full"
         >
           <div
-            class="w-full"
+            class="flex flex-col"
           >
-            <button
-              class="sc-AxiKw wFYj"
-              color="primary"
-              data-testid="ReviewBox__button--comment"
-              type="button"
-            >
-              Leave a comment
-            </button>
             <div
-              class="flex flex-col mt-5"
+              class="flex items-center text-2xl whitespace-no-wrap"
             >
               <div
-                class="flex items-center"
+                class="sc-AxirZ jouqAA mr-1 -mt-1"
+                height="19"
+                width="34"
+              >
+                <svg>
+                  stars-outline.svg
+                </svg>
+              </div>
+              <span
+                class="font-bold"
+              >
+                Avg. Rating: 4.6 
+                <span
+                  class="font-bold text-theme-neutral-light"
+                >
+                   / 5
+                </span>
+              </span>
+            </div>
+            <span
+              class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+            >
+              Out of 347 reviews
+            </span>
+            <div
+              class="space-y-6"
+            >
+              <div
+                class="flex flex-col"
               >
                 <div
-                  class="pr-3 text-theme-warning-300"
+                  class="flex justify-between"
+                  data-testid="5-stars__rating-row"
                 >
                   <div
-                    class="sc-AxjAm jDLXpo"
-                    height="25"
-                    width="25"
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <svg>
-                      star.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="text-2xl"
-                >
                   <span
                     class="font-bold"
                   >
-                    4.6
+                    156
                   </span>
-                  <span
-                    class="font-bold text-theme-neutral-400"
-                  >
-                    /5
-                  </span>
+                </div>
+                <div
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                >
+                  <div
+                    class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="5-stars__rating-count"
+                    width="44.95677233429395"
+                  />
                 </div>
               </div>
-              <span
-                class="pb-5 mt-2 text-sm font-bold border-b border-dashed text-theme-neutral-400 border-theme-neutral"
+              <div
+                class="flex flex-col"
               >
-                Averaging rating for 347 reviews
-              </span>
-              <div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="flex justify-between"
+                  data-testid="4-stars__rating-row"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="5-stars__rating-row"
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      5 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        156
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="5-stars__rating-count"
-                      width="44.95677233429395"
-                    />
-                  </div>
+                    194
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="4-stars__rating-row"
+                    class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="4-stars__rating-count"
+                    width="55.907780979827095"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="3-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      4 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        194
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="4-stars__rating-count"
-                      width="55.907780979827095"
-                    />
-                  </div>
+                    25
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="3-stars__rating-row"
+                    class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="3-stars__rating-count"
+                    width="7.204610951008646"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="2-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      3 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        25
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="3-stars__rating-count"
-                      width="7.204610951008646"
-                    />
-                  </div>
+                    42
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="2-stars__rating-row"
+                    class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="2-stars__rating-count"
+                    width="12.103746397694524"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="1-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      2 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        42
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="2-stars__rating-count"
-                      width="12.103746397694524"
-                    />
-                  </div>
+                    7
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="1-stars__rating-row"
-                  >
-                    <span
-                      class="font-bold"
-                    >
-                      1 stars
-                    </span>
-                    <div
-                      class="font-bold"
-                    >
-                      <span>
-                        7
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                  >
-                    <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="1-stars__rating-count"
-                      width="2.0172910662824206"
-                    />
-                  </div>
+                    class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="1-stars__rating-count"
+                    width="2.0172910662824206"
+                  />
                 </div>
               </div>
             </div>
@@ -1003,7 +1247,7 @@ exports[`PluginDetails should render properly 1`] = `
 exports[`PluginDetails should render properly as installed 1`] = `
 <DocumentFragment>
   <section
-    class="h-full bg-theme-neutral-100"
+    class="h-full -m-5 bg-theme-neutral-contrast"
     data-testid="plugin-details__header"
   >
     <div
@@ -1013,7 +1257,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
         class="flex w-full"
       >
         <img
-          alt="plugin-image"
+          alt="Plugin"
           class="w-40 h-40 rounded-lg"
           src="placeholder.png"
         />
@@ -1032,7 +1276,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 ARK Explorer
               </span>
               <span
-                class="text-medium text-theme-neutral-500"
+                class="text-medium text-theme-neutral"
               >
                 Use the ARK Mainnet explorer directly within the wallet
               </span>
@@ -1041,7 +1285,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxiKw wFYj"
+                class="sc-AxjAm ddQVWI"
                 color="primary"
                 data-testid="PluginHeader__button--open"
                 type="button"
@@ -1049,13 +1293,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 Open
               </button>
               <button
-                class="sc-AxiKw wFYj ml-3"
+                class="sc-AxjAm ddQVWI ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--update"
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
+                  class="sc-AxirZ iQaTP"
                   height="1em"
                   width="1em"
                 >
@@ -1065,29 +1309,29 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxjAm ddJBbC ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
-                  height="1em"
-                  width="1em"
+                  class="sc-AxirZ eEbZjj"
+                  height="20"
+                  width="20"
                 >
                   <svg>
-                    alert-danger.svg
+                    report.svg
                   </svg>
                 </div>
               </button>
               <button
-                class="sc-AxiKw gFzSt ml-3"
+                class="sc-AxjAm ddJBbC ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--uninstall"
                 type="button"
               >
                 <div
-                  class="sc-AxjAm cpczEI"
+                  class="sc-AxirZ iQaTP"
                   height="1em"
                   width="1em"
                 >
@@ -1099,34 +1343,51 @@ exports[`PluginDetails should render properly as installed 1`] = `
             </div>
           </div>
           <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-gray-400 grid-flow-col border-theme-neutral"
+            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
           >
             <div
               class="flex"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Author
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  ARK Ecosystem
-                </span>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    ARK Ecosystem
+                  </span>
+                  <div
+                    class="ml-3"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6"
             >
               <div
                 class="flex flex-col undefined"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Category
                 </span>
@@ -1138,45 +1399,62 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex px-8"
+              class="flex px-6 -ml-5"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   URL
                 </span>
                 <span
-                  class="font-bold text-theme-neutral-600"
+                  class="font-bold text-theme-primary"
                 >
                   github.com
                 </span>
               </div>
             </div>
             <div
-              class="flex col-span-2 justify-between px-8"
+              class="flex col-span-2 justify-between px-6 -ml-8"
             >
               <div
-                class="flex flex-col undefined"
+                class="flex flex-col"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Rating
                 </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
+                <div
+                  class="flex items-center"
                 >
-                  4.6
-                </span>
+                  <div
+                    class="pr-1 text-theme-warning-400"
+                  >
+                    <div
+                      class="sc-AxirZ iQaTP"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <span
+                    class="font-bold text-theme-neutral-600"
+                  >
+                    4.6
+                  </span>
+                </div>
               </div>
               <div
                 class="flex flex-col text-right"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Version
                 </span>
@@ -1188,13 +1466,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="flex pl-8"
+              class="flex pl-6"
             >
               <div
                 class="flex flex-col text-right"
               >
                 <span
-                  class="font-bold text-theme-neutral-400"
+                  class="font-bold text-theme-neutral-light"
                 >
                   Size
                 </span>
@@ -1274,36 +1552,15 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex pb-10 mt-3 mr-3 space-x-4"
                   >
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                   </div>
@@ -1316,15 +1573,36 @@ exports[`PluginDetails should render properly as installed 1`] = `
                     class="flex pb-10 mt-3 mr-3 space-x-4"
                   >
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                     <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="swiper-slide"
+                  style="height: 180px;"
+                >
+                  <div
+                    class="flex pb-10 mt-3 mr-3 space-x-4"
+                  >
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                      data-testid="plugin-info__screenshot"
+                    />
+                    <div
+                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
                       data-testid="plugin-info__screenshot"
                     />
                   </div>
@@ -1351,7 +1629,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
-                class="sc-AxjAm bIZXgI"
+                class="sc-AxirZ bMjbpr"
                 height="30"
                 width="30"
               >
@@ -1376,11 +1654,28 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </div>
     <div
-      class="mt-5 bg-theme-background"
+      class="flex p-10 mt-5 bg-theme-background"
     >
       <div
-        class="py-24 mx-10 grid grid-cols-2 grid-flow-col divide-x divide-theme-neutral-300"
+        class="flex flex-col"
       >
+        <div
+          class="flex items-center justify-between"
+        >
+          <h2
+            class="mb-0"
+          >
+            Reviews ARK Explorer
+          </h2>
+          <button
+            class="sc-AxjAm ddJBbC"
+            color="primary"
+            data-testid="ReviewBox__button--comment"
+            type="button"
+          >
+            Leave a comment
+          </button>
+        </div>
         <div
           class="col-span-2"
           data-testid="plugin-details__comments"
@@ -1388,71 +1683,73 @@ exports[`PluginDetails should render properly as installed 1`] = `
           <div
             class="w-full"
           >
-            <p
-              class="text-xl font-bold"
-            >
-              Reviews ARK Explorer
-            </p>
             <div
-              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral-900"
+              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
             >
-              <span>
+              <span
+                class="text-theme-neutral-900"
+              >
                 Sort by:
               </span>
               <div
-                class="flex items-center"
+                class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
               >
                 <span
-                  class="ml-2"
+                  class="cursor-pointer null"
                 >
-                  Best
-                </span>
-                <div
-                  class="ml-1"
-                >
-                  <div
-                    class="relative"
-                    data-testid="dropdown__toggle"
+                  <span
+                    class="flex items-center text-theme-neutral-900 space-x-1"
                   >
+                    <span>
+                      Best
+                    </span>
                     <div
-                      class="float-right outline-none cursor-pointer focus:outline-none"
+                      class="sc-AxirZ eRmuSF"
+                      height="5"
+                      width="7"
                     >
-                      <div
-                        class="sc-AxjAm iepfoc"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          arrowdown.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        arrowup.svg
+                      </svg>
                     </div>
-                  </div>
-                </div>
+                  </span>
+                </span>
+                <span
+                  class="cursor-pointer pl-3"
+                >
+                  <span>
+                    Date
+                  </span>
+                </span>
+                <span
+                  class="cursor-pointer pl-3"
+                >
+                  <span>
+                    Most Popular
+                  </span>
+                </span>
               </div>
             </div>
             <div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -1461,53 +1758,78 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-neutral-light"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
                   </p>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Gerard Blezer
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Gerard Blezer
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -1516,94 +1838,127 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-success"
+                    >
+                      +28
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As an open-source platform, the entire ARK codebase is readily available on GitHub providing blockchain developers with a convenient location for all ARK technologies and repositories.
+                    It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
                   </p>
                   <div
-                    class="flex flex-col mt-3 ml-3"
+                    class="flex flex-col mt-3"
                   >
                     <div
-                      class="flex items-center text-theme-neutral-500"
+                      class="flex items-center text-theme-neutral-light"
                     >
                       <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
+                        class="flex items-center w-10"
                       >
-                        <svg>
-                          reply-arrow.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ gNHFnS mx-auto -mt-2"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            reply-arrow.svg
+                          </svg>
+                        </div>
                       </div>
                       <div
-                        class="grid grid-cols-2 divide-x"
+                        class="flex items-center divide-x divide-theme-neutral-light space-x-3"
                       >
                         <span
-                          class="px-3 font-semibold text-theme-neutral-900"
+                          class="text-lg font-semibold text-theme-neutral-900"
                         >
                           Developer response
                         </span>
                         <span
-                          class="px-3"
+                          class="pl-3 text-sm font-semibold text-theme-neutral"
                         >
-                          3 days ago
+                          <span
+                            data-testid="timeago"
+                          >
+                            11 days ago
+                          </span>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-7 text-theme-neutral-600"
+                      class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
                       >
                         @Gerard Blezer
                       </a>
-                       Our GitHub bount reward program utlilizes a tiered structure.
+                       You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -1612,53 +1967,78 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-neutral-light"
+                    >
+                      0
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
                   </p>
                 </div>
               </div>
               <div
-                class="flex flex-col mt-5 text-sm"
+                class="flex flex-col mt-5"
               >
                 <div
-                  class="w-2/4"
+                  class="flex items-center justify-between"
                 >
                   <div
-                    class="flex items-center divide-x space-x-3 divide-theme-neutral-400"
+                    class="relative flex items-center divide-x divide-theme-neutral-light"
                   >
-                    <div>
-                      <span
-                        class="text-base font-semibold"
-                      >
-                        Rok Cernec
-                      </span>
-                    </div>
+                    <span
+                      class="pr-3 text-lg font-semibold"
+                    >
+                      Rok Cernec
+                    </span>
                     <div
-                      class="flex items-center pl-3 text-theme-warning-300"
+                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
                     >
                       <div
-                        class="sc-AxjAm iepfoc"
+                        class="sc-AxirZ fttODj"
                         height="10"
                         width="10"
                       >
@@ -1667,29 +2047,56 @@ exports[`PluginDetails should render properly as installed 1`] = `
                         </svg>
                       </div>
                       <span
-                        class="flex ml-1 text-theme-neutral-600"
+                        class="ml-1 text-theme-neutral-dark"
                       >
                         4.6
                       </span>
                     </div>
-                    <div
-                      class="px-3"
+                    <span
+                      class="pl-3 text-sm font-semibold text-theme-neutral"
                     >
                       <span
-                        class="text-theme-neutral-400"
+                        data-testid="timeago"
                       >
-                        3 days ago
+                        11 days ago
                       </span>
+                    </span>
+                  </div>
+                  <div
+                    class="flex items-center font-semibold space-x-2"
+                  >
+                    <span
+                      class="text-theme-danger-dark"
+                    >
+                      -5
+                    </span>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-up.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ fkjLBb text-theme-primary-light"
+                      height="15"
+                      width="15"
+                    >
+                      <svg>
+                        chevron-down.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div
-                  class="w-11/12 mt-2"
+                  class="mt-2"
                 >
                   <p
                     class="text-theme-neutral-600"
                   >
-                    As ARK Core is written exclusively in Node.js, the server-side framework for JavaScript and Typescript, installing Node.js is a necessity for core development. The code below installs Node.js from the source.
+                    Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
                   </p>
                 </div>
               </div>
@@ -1702,14 +2109,14 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm HWmvM"
+                    class="sc-AxirZ hDwaov"
                     height="12"
                     width="12"
                   >
@@ -1719,14 +2126,14 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm iepfoc mr-2"
+                    class="sc-AxirZ fttODj mr-2"
                     height="10"
                     width="10"
                   >
@@ -1756,14 +2163,14 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </div>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
                 >
                   Next
                   <div
-                    class="sc-AxjAm HWmvM ml-2"
+                    class="sc-AxirZ hDwaov ml-2"
                     height="12"
                     width="12"
                   >
@@ -1773,13 +2180,13 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxiKw gFzSt"
+                  class="sc-AxjAm ddJBbC"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
                 >
                   <div
-                    class="sc-AxjAm HWmvM"
+                    class="sc-AxirZ hDwaov"
                     height="12"
                     width="12"
                   >
@@ -1792,235 +2199,316 @@ exports[`PluginDetails should render properly as installed 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
+        data-testid="plugin-details__review-box"
+      >
         <div
-          class="pl-10"
-          data-testid="plugin-details__review-box"
+          class="w-full"
         >
           <div
-            class="w-full"
+            class="flex flex-col"
           >
-            <button
-              class="sc-AxiKw wFYj"
-              color="primary"
-              data-testid="ReviewBox__button--comment"
-              type="button"
-            >
-              Leave a comment
-            </button>
             <div
-              class="flex flex-col mt-5"
+              class="flex items-center text-2xl whitespace-no-wrap"
             >
               <div
-                class="flex items-center"
+                class="sc-AxirZ jouqAA mr-1 -mt-1"
+                height="19"
+                width="34"
+              >
+                <svg>
+                  stars-outline.svg
+                </svg>
+              </div>
+              <span
+                class="font-bold"
+              >
+                Avg. Rating: 4.6 
+                <span
+                  class="font-bold text-theme-neutral-light"
+                >
+                   / 5
+                </span>
+              </span>
+            </div>
+            <span
+              class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+            >
+              Out of 347 reviews
+            </span>
+            <div
+              class="space-y-6"
+            >
+              <div
+                class="flex flex-col"
               >
                 <div
-                  class="pr-3 text-theme-warning-300"
+                  class="flex justify-between"
+                  data-testid="5-stars__rating-row"
                 >
                   <div
-                    class="sc-AxjAm jDLXpo"
-                    height="25"
-                    width="25"
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <svg>
-                      star.svg
-                    </svg>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="text-2xl"
-                >
                   <span
                     class="font-bold"
                   >
-                    4.6
+                    156
                   </span>
-                  <span
-                    class="font-bold text-theme-neutral-400"
-                  >
-                    /5
-                  </span>
+                </div>
+                <div
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                >
+                  <div
+                    class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="5-stars__rating-count"
+                    width="44.95677233429395"
+                  />
                 </div>
               </div>
-              <span
-                class="pb-5 mt-2 text-sm font-bold border-b border-dashed text-theme-neutral-400 border-theme-neutral"
+              <div
+                class="flex flex-col"
               >
-                Averaging rating for 347 reviews
-              </span>
-              <div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="flex justify-between"
+                  data-testid="4-stars__rating-row"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="5-stars__rating-row"
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      5 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        156
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="5-stars__rating-count"
-                      width="44.95677233429395"
-                    />
-                  </div>
+                    194
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="4-stars__rating-row"
+                    class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="4-stars__rating-count"
+                    width="55.907780979827095"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="3-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      4 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        194
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="4-stars__rating-count"
-                      width="55.907780979827095"
-                    />
-                  </div>
+                    25
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="3-stars__rating-row"
+                    class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="3-stars__rating-count"
+                    width="7.204610951008646"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="2-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      3 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        25
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
+                    >
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="3-stars__rating-count"
-                      width="7.204610951008646"
-                    />
-                  </div>
+                    42
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="2-stars__rating-row"
+                    class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="2-stars__rating-count"
+                    width="12.103746397694524"
+                  />
+                </div>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex justify-between"
+                  data-testid="1-stars__rating-row"
+                >
+                  <div
+                    class="flex items-center space-x-1 text-theme-warning-400"
                   >
-                    <span
-                      class="font-bold"
-                    >
-                      2 stars
-                    </span>
                     <div
-                      class="font-bold"
+                      class="sc-AxirZ eyApFr"
+                      height="13"
+                      width="13"
                     >
-                      <span>
-                        42
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
+                      <svg>
+                        star.svg
+                      </svg>
                     </div>
                   </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                  <span
+                    class="font-bold"
                   >
-                    <div
-                      class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="2-stars__rating-count"
-                      width="12.103746397694524"
-                    />
-                  </div>
+                    7
+                  </span>
                 </div>
                 <div
-                  class="flex flex-col mt-7"
+                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="flex justify-between"
-                    data-testid="1-stars__rating-row"
-                  >
-                    <span
-                      class="font-bold"
-                    >
-                      1 stars
-                    </span>
-                    <div
-                      class="font-bold"
-                    >
-                      <span>
-                        7
-                      </span>
-                      <span
-                        class="text-theme-neutral-400"
-                      >
-                        /347
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                  >
-                    <div
-                      class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-300"
-                      data-testid="1-stars__rating-count"
-                      width="2.0172910662824206"
-                    />
-                  </div>
+                    class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-400"
+                    data-testid="1-stars__rating-count"
+                    width="2.0172910662824206"
+                  />
                 </div>
               </div>
             </div>
@@ -2029,6 +2517,5 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </div>
   </section>
-  ,
 </DocumentFragment>
 `;

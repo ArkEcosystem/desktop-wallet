@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render } from "testing-library";
 
-import { Registration } from "../Registration";
+import { Registration } from "./Registration";
 
 let defaultFormValues = {};
 
@@ -14,7 +12,7 @@ beforeEach(() => {
 			{
 				icon: "Ark",
 				name: "Ark Ecosystem",
-				className: "text-theme-danger-400 border-theme-danger-200",
+				className: "text-theme-danger-400 border-theme-danger-light",
 			},
 			{
 				icon: "Bitcoin",
@@ -51,11 +49,7 @@ beforeEach(() => {
 
 describe("Registration", () => {
 	it("should render 1st step", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
@@ -63,11 +57,7 @@ describe("Registration", () => {
 	});
 
 	it("should should go back", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -82,11 +72,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 2nd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -98,11 +84,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 3rd step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -117,11 +99,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 4th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -139,11 +117,7 @@ describe("Registration", () => {
 	});
 
 	it("should render 5th step", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -170,11 +144,7 @@ describe("Registration", () => {
 	});
 
 	it("should submit", async () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -203,26 +173,22 @@ describe("Registration", () => {
 	});
 
 	it("should select registration type", async () => {
-		const { asFragment, container } = render(
-			<I18nextProvider i18n={i18n}>
-				<Registration {...defaultFormValues} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
-		const initialOption = container.querySelectorAll("select[name=registrationType] option")[0];
-		const businessOption = container.querySelectorAll("select[name=registrationType] option")[1];
+		const toggle = getByTestId("select-list__toggle-button");
 
-		expect(initialOption.selected).toBe(true);
-		expect(businessOption.selected).toBe(false);
-
-		await act(async () => {
-			fireEvent.change(container.querySelector("select[name=registrationType]"), {
-				target: { value: "business" },
-			});
+		act(() => {
+			fireEvent.click(toggle);
 		});
 
-		expect(initialOption.selected).toBe(false);
-		expect(businessOption.selected).toBe(true);
+		const firstOption = getByTestId("select-list__toggle-option-0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(firstOption);
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("business");
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

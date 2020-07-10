@@ -1,5 +1,6 @@
 import { Numeral } from "@arkecosystem/platform-sdk-intl";
 import { SvgCollection } from "app/assets/svg";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
@@ -32,10 +33,10 @@ const SelectedDelegateList = (props: SelectedDelegateListProps) => {
 				className="flex items-center py-4 font-semibold border-b border-dashed border-theme-neutral-200 last:border-0"
 			>
 				<div className="flex flex-1">
-					<Circle avatarId="test" className="mr-8" />
+					<Avatar address="test" size="sm" className="mr-8" />
 
 					<div className="mr-2">{delegate.username}</div>
-					<div className="text-theme-neutral-500">{delegate.address}</div>
+					<div className="text-theme-neutral">{delegate.address}</div>
 				</div>
 				#{delegate.rank}
 			</div>,
@@ -173,7 +174,7 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 						return (
 							<tr
 								className={`border-b border-dashed border-theme-neutral-200 ${
-									isSelected && "bg-theme-success-100"
+									isSelected && "bg-theme-success-contrast"
 								}`}
 							>
 								<td className="w-16 text-center">
@@ -193,14 +194,14 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 								</td>
 
 								<td className="w-16 px-4">
-									<Circle avatarId="test" noShadow={true} />
+									<Avatar address="test" noShadow />
 								</td>
 
 								<td className="py-6 font-semibold">
 									<div>{rowData.username}</div>
 								</td>
 
-								<td className="py-6 font-semibold text-theme-neutral-700">#{rowData.rank}</td>
+								<td className="py-6 font-semibold text-theme-neutral-dark">#{rowData.rank}</td>
 
 								<td className="py-6 text-center text-theme-primary-500">
 									{rowData.marketsquare && (
@@ -210,12 +211,12 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 									)}
 								</td>
 
-								<td className="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700">
+								<td className="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark">
 									<div>{Numeral.make("en").format(rowData.forged_ark)} A</div>
 								</td>
 
-								<td className="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700">
-									<span className="mr-1 text-sm text-theme-neutral-500">
+								<td className="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark">
+									<span className="mr-1 text-sm text-theme-neutral">
 										{Numeral.make("en").format((rowData.votes / totalSupply) * 100)}%
 									</span>
 
@@ -224,9 +225,9 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 
 								<td className="w-16">
 									{rowData.voting ? (
-										<Circle avatarId="test" noShadow={true} />
+										<Avatar address="test" noShadow />
 									) : (
-										<Circle className=" border-theme-primary-100" noShadow={true} />
+										<Circle className=" border-theme-primary-contrast" noShadow={true} />
 									)}
 								</td>
 							</tr>
@@ -243,18 +244,18 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 					{!props.allowMultiple && Object.keys(selected).length ? (
 						<div className="flex">
 							<div className="px-8 mr-8 border-r border-theme-neutral-300">
-								<div className="text-sm text-theme-neutral-500">{t("COMMON.RANK")}</div>
+								<div className="text-sm text-theme-neutral">{t("COMMON.RANK")}</div>
 
-								<div className="font-semibold text-theme-neutral-700">#3</div>
+								<div className="font-semibold text-theme-neutral-dark">#3</div>
 							</div>
 
 							<div className="flex flex-1">
-								<Circle avatarId="test" className="mr-2" />
+								<Avatar address="test" className="mr-2" />
 
 								<div>
-									<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATE_ADDRESS")}</div>
+									<div className="text-sm text-theme-neutral">{t("COMMON.DELEGATE_ADDRESS")}</div>
 
-									<div className="font-semibold text-theme-neutral-700">
+									<div className="font-semibold text-theme-neutral-dark">
 										{selected[0].username} - {selected[0].address}
 									</div>
 								</div>
@@ -269,19 +270,19 @@ export const SelectDelegate = (props: SelectDelegateProps) => {
 					{props.allowMultiple && selected.length ? (
 						<div className="flex">
 							<div className="px-8 mr-8 font-semibold border-r border-theme-neutral-300">
-								<div className="text-sm text-theme-neutral-500">{t("COMMON.QUANTITY")}</div>
+								<div className="text-sm text-theme-neutral">{t("COMMON.QUANTITY")}</div>
 
-								<div className="text-theme-neutral-700">{selected.length}/50</div>
+								<div className="text-theme-neutral-dark">{selected.length}/50</div>
 							</div>
 
 							<div className="flex-1">
 								<div className="flex justify-between">
 									<div className="font-semibold">
-										<div className="text-sm text-theme-neutral-500">{t("COMMON.DELEGATES")}</div>
+										<div className="text-sm text-theme-neutral">{t("COMMON.DELEGATES")}</div>
 
 										<div
 											data-testid="SelectedDelegateModal__toggle-show-selected"
-											className="cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+											className="cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
 											onClick={() => setShowSelectedList(!showSelectedList)}
 										>
 											{showSelectedList ? "Hide" : "Show"} List

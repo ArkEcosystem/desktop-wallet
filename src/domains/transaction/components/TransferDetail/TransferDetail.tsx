@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -17,36 +18,36 @@ export const TransferDetail = (props: TransferDetailProps) => {
 
 	return (
 		<Modal title={t("TRANSACTION.MODAL_TRANSFER_DETAIL.TITLE")} isOpen={props.isOpen} onClose={props.onClose}>
-			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Circle avatarId="test" />} border={false}>
+			<TransactionDetail label={t("TRANSACTION.SENDER")} extra={<Avatar address="test" />} border={false}>
 				<div className="mt-2 font-semibold">ADDRESS</div>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.RECIPIENT")}
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 			>
 				ROBank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="border-theme-success-200 text-theme-success-700">
+					<Circle className="border-theme-success-200 text-theme-success-dark">
 						<Icon name="Received" width={40} height={40} />
 					</Circle>
 				}
 			>
 				<Label color="success">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
@@ -72,7 +73,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -80,7 +81,7 @@ export const TransferDetail = (props: TransferDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

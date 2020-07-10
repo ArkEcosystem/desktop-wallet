@@ -3,11 +3,11 @@
 exports[`UpdateRegistration should render 1st step 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -34,7 +34,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -42,29 +42,31 @@ exports[`UpdateRegistration should render 1st step 1`] = `
             <div
               data-testid="UpdateRegistration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Update Business
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Select the type of registration and the address you want to register with.
               </div>
               <div>
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex items-center py-6 true pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                        class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -76,7 +78,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -84,10 +86,10 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -99,7 +101,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -107,17 +109,17 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         </textarea>
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
                           Website
                         </label>
                         <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -128,16 +130,16 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -146,21 +148,21 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Repository
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Show your projects through your repository
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -173,16 +175,16 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -191,21 +193,21 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Social Media
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Tell people more about yourself through social media
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -218,16 +220,16 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -236,21 +238,21 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Photo and Video
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Get more users and add more information about yourself
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -263,100 +265,107 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="font-semibold"
                     >
-                      Fee ARK
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <div
-                        class="flex space-x-2"
+                      <fieldset
+                        class="sc-AxhCb ckQmOL font-normal"
                       >
+                        <label
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Fee ARK
+                        </label>
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-fzozJi OgXfh"
                             >
+                              <input
+                                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                data-testid="InputCurrency"
+                                name="name"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzoLsD gcqOdX"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzpans fDmiZy"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzplWN eSQZBV"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -367,7 +376,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxirZ fhzkRl"
               color="primary"
               data-testid="UpdateRegistration__back-button"
               disabled=""
@@ -376,7 +385,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxirZ dPtiuf"
               color="primary"
               data-testid="UpdateRegistration__continue-button"
               type="button"
@@ -394,11 +403,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
 exports[`UpdateRegistration should render 2nd step 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -425,13 +434,12 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
           >
             <div
-              class="space-y-8"
               data-testid="UpdateRegistration__second-step"
             >
               <div>
@@ -447,37 +455,37 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                 </p>
               </div>
               <div
-                class="grid grid-flow-row gap-2"
+                class="mt-4 grid grid-flow-row"
               >
                 <div
-                  class="flex items-center py-4 true "
+                  class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Network
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24"
+                        class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
                       >
                         ARK Ecosystem
                       </div>
                     </div>
                   </div>
                   <div
-                    class="ml-1 text-theme-danger-500"
+                    class="ml-1 text-theme-danger"
                   >
                     <div
-                      class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                      class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxhUy hSYVGy"
                         height="20"
                         width="20"
                       >
@@ -489,21 +497,21 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                        
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -511,59 +519,76 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           Sender
                         </span>
                         <div
-                          class="sc-fzplWN gpwIyi"
+                          class="sc-fznyAO dkNXHq"
                           color="warning"
                         >
-                          Your address
+                          <span
+                            class="text-sm"
+                          >
+                            Your address
+                          </span>
                         </div>
                       </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                           data-testid="address__wallet-name"
                         >
                           ROBank
                         </span>
                         <span
-                          class="text-theme-neutral-400 font-semibold text-xl"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AUexKj...EVTQWK
+                          AUexKj…EVTQWK
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div
+                    class="mt-2"
+                  >
                     <div
-                      class="sc-AxirZ hTKBId"
-                    />
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full overflow-hidden rounded-full"
+                      >
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Type
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Update Business
                     </div>
                   </div>
                   <div>
                     <div
-                      class="sc-AxirZ cZokSJ border-black bg-theme-background"
+                      class="sc-AxiKw jQtkkF border-black bg-theme-background"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxhUy hSYVGy"
                         height="20"
                         width="20"
                       >
@@ -575,54 +600,54 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Name
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       ROBank Eco
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Description
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Not a trustworthy bank
                     </div>
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Website
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <a
                         class="link"
@@ -632,6 +657,50 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       >
                         https://ark.io
                       </a>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
+                >
+                  <div
+                    class="flex-1 space-y-2"
+                  >
+                    <div
+                      class="font-semibold"
+                    >
+                      <div
+                        data-testid="LinkList"
+                      >
+                        <div
+                          class="flex justify-between cursor-pointer"
+                          data-testid="LinkList__header"
+                        >
+                          <div>
+                            <span
+                              class="text-lg font-semibold"
+                            >
+                              Repository
+                            </span>
+                            <div
+                              class="mt-2 text-theme-neutral-dark"
+                            >
+                              Show your projects through the repository
+                            </div>
+                          </div>
+                          <div>
+                            <div
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -651,12 +720,12 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction(s) Amount
                           </span>
                           <span
-                            class="mt-3"
+                            class="mt-2 font-semibold"
                             data-testid="total-amount-box__transaction-amount"
                           >
                             0.00 ARK
@@ -666,12 +735,12 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5 text-right"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction fee
                           </span>
                           <span
-                            class="mt-3 mr-2"
+                            class="mt-2 text-lg font-semibold"
                             data-testid="total-amount-box__transaction-fee"
                           >
                             0.09660435 ARK
@@ -685,7 +754,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="px-1 py-2 bg-white"
                         >
                           <div
-                            class="sc-AxhCb cMyoID"
+                            class="sc-AxhUy cIoObu"
                             height="15"
                             width="15"
                           >
@@ -697,10 +766,10 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
                     >
                       <span
-                        class="text-sm text-theme-neutral-500"
+                        class="text-sm text-theme-neutral"
                       >
                         Total Amount
                       </span>
@@ -720,7 +789,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxirZ fhzkRl"
               color="primary"
               data-testid="UpdateRegistration__back-button"
               type="button"
@@ -728,7 +797,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxirZ dPtiuf"
               color="primary"
               data-testid="UpdateRegistration__continue-button"
               type="button"
@@ -746,11 +815,11 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
 exports[`UpdateRegistration should render 3rd step 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -777,7 +846,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -786,38 +855,40 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
               data-testid="UpdateRegistration__third-step"
             >
               <div>
-                <h1>
+                <h1
+                  class="mb-0"
+                >
                   Authenticate
                 </h1>
                 <div
-                  class="text-sm text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
                 <div
-                  class="mt-5"
+                  class="mt-8"
                 >
                   <fieldset
-                    class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                    class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
                       Mnemonic
                     </label>
                     <div
-                      class="sc-AxmLO kuiknc max-w-20"
+                      class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                        class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -825,7 +896,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxhCb fxrKLH"
+                            class="sc-AxhUy cPXLjK"
                             height="1em"
                             width="1em"
                           >
@@ -838,26 +909,26 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                     </div>
                   </fieldset>
                   <fieldset
-                    class="sc-AxiKw iQzisX mt-8"
+                    class="sc-AxhCb ckQmOL mt-8"
                   >
                     <label
-                      class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                      class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                       data-testid="FormLabel"
                       for="name"
                     >
                       2nd Mnemonic
                     </label>
                     <div
-                      class="sc-AxmLO kuiknc max-w-20"
+                      class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary pr-12"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
                       />
                       <div
-                        class="sc-AxgMl sc-Axmtr cPxyjO mr-4"
+                        class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
                       >
                         <button
                           class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -865,7 +936,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                           type="button"
                         >
                           <div
-                            class="sc-AxhCb fxrKLH"
+                            class="sc-AxhUy cPXLjK"
                             height="1em"
                             width="1em"
                           >
@@ -885,7 +956,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxirZ fhzkRl"
               color="primary"
               data-testid="UpdateRegistration__back-button"
               type="button"
@@ -893,13 +964,13 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxirZ dPtiuf"
               color="primary"
               data-testid="UpdateRegistration__send-button"
               type="button"
             >
               <div
-                class="sc-AxhCb VoPpj mr-2"
+                class="sc-AxhUy hSYVGy mr-2"
                 height="20"
                 width="20"
               >
@@ -920,11 +991,11 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
 exports[`UpdateRegistration should render 4th step 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -951,7 +1022,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -984,18 +1055,18 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                   </p>
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex items-center py-6 true "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1005,13 +1076,13 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1019,7 +1090,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxhUy cPXLjK"
                               height="1em"
                               width="1em"
                             >
@@ -1033,18 +1104,18 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1054,13 +1125,13 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1068,7 +1139,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxhUy cPXLjK"
                               height="1em"
                               width="1em"
                             >
@@ -1082,45 +1153,45 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxhCb VoPpj"
+                          class="sc-AxhUy hSYVGy"
                           height="20"
                           width="20"
                         >
@@ -1132,16 +1203,16 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1149,58 +1220,71 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fzplWN gpwIyi"
+                            class="sc-fznyAO dkNXHq"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                      data-testid="Avatar"
+                    >
                       <div
-                        class="sc-AxirZ hTKBId"
-                      />
+                        class="w-full h-full overflow-hidden rounded-full"
+                      >
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Update Business
                       </div>
                     </div>
                     <div
-                      class="sc-AxirZ cZokSJ border-black"
+                      class="sc-AxiKw jQtkkF border-black"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxhUy hSYVGy"
                         height="20"
                         width="20"
                       >
@@ -1211,54 +1295,54 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Name
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         ROBank Eco
                       </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Description
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Not a trustworthy bank
                       </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Website
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <a
                           class="link"
@@ -1272,18 +1356,18 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         1.09660435 ARK
                       </div>
@@ -1292,12 +1376,12 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxhCb liaKlj"
-                          height="50"
-                          width="50"
+                          class="sc-AxhUy gwxBWy"
+                          height="22"
+                          width="22"
                         >
                           <svg>
                             sent.svg
@@ -1317,7 +1401,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="UpdateRegistration__wallet-button"
                 type="button"
@@ -1325,13 +1409,13 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                 Back to wallet
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="UpdateRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxhCb fxrKLH mr-2"
+                  class="sc-AxhUy cPXLjK mr-2"
                   height="1em"
                   width="1em"
                 >
@@ -1353,11 +1437,11 @@ exports[`UpdateRegistration should render 4th step 1`] = `
 exports[`UpdateRegistration should should go back 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1384,7 +1468,7 @@ exports[`UpdateRegistration should should go back 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1392,29 +1476,31 @@ exports[`UpdateRegistration should should go back 1`] = `
             <div
               data-testid="UpdateRegistration__first-step"
             >
-              <h1>
+              <h1
+                class="mb-0"
+              >
                 Update Business
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Select the type of registration and the address you want to register with.
               </div>
               <div>
                 <div
-                  class="flex items-center py-4 true mb-8"
+                  class="flex items-center py-6 true pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <fieldset
-                        class="sc-AxiKw iQzisX flex flex-col space-y-2"
+                        class="sc-AxhCb ckQmOL font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="name"
                           required=""
@@ -1426,7 +1512,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -1434,10 +1520,10 @@ exports[`UpdateRegistration should should go back 1`] = `
                         />
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="description"
                           required=""
@@ -1449,7 +1535,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -1457,17 +1543,17 @@ exports[`UpdateRegistration should should go back 1`] = `
                         </textarea>
                       </fieldset>
                       <fieldset
-                        class="sc-AxiKw iQzisX mt-8"
+                        class="sc-AxhCb ckQmOL mt-8 font-normal"
                       >
                         <label
-                          class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="website"
                         >
                           Website
                         </label>
                         <input
-                          class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -1478,16 +1564,16 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -1496,21 +1582,21 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Repository
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Show your projects through your repository
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -1523,16 +1609,16 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -1541,21 +1627,21 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Social Media
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Tell people more about yourself through social media
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -1568,16 +1654,16 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mb-2"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="font-normal"
+                        class="sc-fzpjYC iEuhrU font-normal"
                         data-testid="LinkCollection"
                       >
                         <div
@@ -1586,21 +1672,21 @@ exports[`UpdateRegistration should should go back 1`] = `
                         >
                           <div>
                             <span
-                              class="font-semibold"
+                              class="text-lg font-semibold"
                             >
                               Photo and Video
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Get more users and add more information about yourself
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhCb eHGcDb flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
-                              height="18"
-                              width="18"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
+                              height="10"
+                              width="10"
                             >
                               <svg>
                                 chevron-down.svg
@@ -1613,100 +1699,107 @@ exports[`UpdateRegistration should should go back 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 mt-4"
+                  class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="font-semibold"
                     >
-                      Fee ARK
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
-                    >
-                      <div
-                        class="flex space-x-2"
+                      <fieldset
+                        class="sc-AxhCb ckQmOL font-normal"
                       >
+                        <label
+                          class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                          data-testid="FormLabel"
+                          for="name"
+                        >
+                          Fee ARK
+                        </label>
                         <div
-                          class="flex-1"
+                          class="flex space-x-2"
                         >
                           <div
-                            class="sc-AxmLO kuiknc"
+                            class="flex-1"
                           >
-                            <input
-                              class="sc-AxhUy fvuHTn overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
-                              data-testid="InputCurrency"
-                              type="text"
-                              value="25"
-                            />
                             <div
-                              class="absolute bottom-0 w-full px-1"
+                              class="sc-fzozJi OgXfh"
                             >
+                              <input
+                                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                data-testid="InputCurrency"
+                                name="name"
+                                type="text"
+                                value="25"
+                              />
                               <div
-                                class="flex flex-wrap justify-center"
-                                data-testid="Range"
+                                class="absolute bottom-0 w-full px-1"
                               >
                                 <div
-                                  class="sc-fzozJi cRbOfl"
-                                  data-testid="Range__track"
-                                  style="transform: scale(1); cursor: pointer;"
+                                  class="flex flex-wrap justify-center"
+                                  data-testid="Range"
                                 >
                                   <div
-                                    class="sc-fzoLsD ckpTMK"
-                                    data-testid="Range__track__filled"
+                                    class="sc-fzoLsD gcqOdX"
+                                    data-testid="Range__track"
+                                    style="transform: scale(1); cursor: pointer;"
                                   >
                                     <div
-                                      aria-valuemax="100"
-                                      aria-valuemin="1"
-                                      aria-valuenow="25"
-                                      class="sc-fzpans dtzHyc"
-                                      data-testid="Range__thumb"
-                                      draggable="false"
-                                      role="slider"
-                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                      tabindex="0"
-                                    />
+                                      class="sc-fzpans fDmiZy"
+                                      data-testid="Range__track__filled"
+                                    >
+                                      <div
+                                        aria-valuemax="100"
+                                        aria-valuemin="1"
+                                        aria-valuenow="25"
+                                        class="sc-fzplWN eSQZBV"
+                                        data-testid="Range__thumb"
+                                        draggable="false"
+                                        role="slider"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        tabindex="0"
+                                      />
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                            data-testid="SelectionBar"
-                            role="radiogroup"
-                          >
-                            <button
-                              aria-checked="true"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
+                          <div>
+                            <div
+                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                              data-testid="SelectionBar"
+                              role="radiogroup"
                             >
-                              Last
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Min
-                            </button>
-                            <button
-                              aria-checked="false"
-                              class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                              data-testid="SelectionBarOption"
-                              role="radio"
-                            >
-                              Average
-                            </button>
+                              <button
+                                aria-checked="true"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Last
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Min
+                              </button>
+                              <button
+                                aria-checked="false"
+                                class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                data-testid="SelectionBarOption"
+                                role="radio"
+                              >
+                                Average
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -1717,7 +1810,7 @@ exports[`UpdateRegistration should should go back 1`] = `
             class="flex justify-end mt-8 space-x-3"
           >
             <button
-              class="sc-AxjAm ddJBbC"
+              class="sc-AxirZ fhzkRl"
               color="primary"
               data-testid="UpdateRegistration__back-button"
               disabled=""
@@ -1726,7 +1819,7 @@ exports[`UpdateRegistration should should go back 1`] = `
               Back
             </button>
             <button
-              class="sc-AxjAm ddQVWI"
+              class="sc-AxirZ dPtiuf"
               color="primary"
               data-testid="UpdateRegistration__continue-button"
               type="button"
@@ -1744,11 +1837,11 @@ exports[`UpdateRegistration should should go back 1`] = `
 exports[`UpdateRegistration should submit 1`] = `
 <DocumentFragment>
   <div
-    class="max-w-xl mx-auto"
+    class="max-w-xl py-16 mx-auto"
     data-testid="UpdateRegistration"
   >
     <form
-      class="space-y-6"
+      class="space-y-8"
       data-testid="Form"
     >
       <div>
@@ -1775,7 +1868,7 @@ exports[`UpdateRegistration should submit 1`] = `
           />
         </ul>
         <div
-          class="mt-4"
+          class="mt-8"
         >
           <div
             data-testid="tab-pabel__active-panel"
@@ -1808,18 +1901,18 @@ exports[`UpdateRegistration should submit 1`] = `
                     Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:
                   </p>
                   <div
-                    class="flex items-center py-4 true "
+                    class="flex items-center py-6 true "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1829,13 +1922,13 @@ exports[`UpdateRegistration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1843,7 +1936,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxhUy cPXLjK"
                               height="1em"
                               width="1em"
                             >
@@ -1857,18 +1950,18 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1878,13 +1971,13 @@ exports[`UpdateRegistration should submit 1`] = `
                             data-testid="clipboard__wrapper"
                           >
                             <div
-                              class="inline-block truncate"
+                              class="inline-block truncate align-middle"
                             >
                               <span
-                                class="text-theme-primary font-semibold text-base"
+                                class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                AUexKjGtgsSpVz...MM6vJ6znEVTQWK
+                                AUexKjGtgsSpVz…MM6vJ6znEVTQWK
                               </span>
                             </div>
                           </div>
@@ -1892,7 +1985,7 @@ exports[`UpdateRegistration should submit 1`] = `
                             class="mb-1 ml-5 text-theme-primary-300"
                           >
                             <div
-                              class="sc-AxhCb fxrKLH"
+                              class="sc-AxhUy cPXLjK"
                               height="1em"
                               width="1em"
                             >
@@ -1906,45 +1999,45 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxhCb VoPpj"
+                          class="sc-AxhUy hSYVGy"
                           height="20"
                           width="20"
                         >
@@ -1956,16 +2049,16 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1973,58 +2066,71 @@ exports[`UpdateRegistration should submit 1`] = `
                             Sender
                           </span>
                           <div
-                            class="sc-fzplWN gpwIyi"
+                            class="sc-fznyAO dkNXHq"
                             color="warning"
                           >
-                            Your address
+                            <span
+                              class="text-sm"
+                            >
+                              Your address
+                            </span>
                           </div>
                         </div>
                         <div
-                          class="inline-block truncate"
+                          class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-xl"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="text-theme-neutral-400 font-semibold text-xl"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            AUexKj...EVTQWK
+                            AUexKj…EVTQWK
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div>
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                      data-testid="Avatar"
+                    >
                       <div
-                        class="sc-AxirZ hTKBId"
-                      />
+                        class="w-full h-full overflow-hidden rounded-full"
+                      >
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
+                      </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Update Business
                       </div>
                     </div>
                     <div
-                      class="sc-AxirZ cZokSJ border-black"
+                      class="sc-AxiKw jQtkkF border-black"
                     >
                       <div
-                        class="sc-AxhCb VoPpj"
+                        class="sc-AxhUy hSYVGy"
                         height="20"
                         width="20"
                       >
@@ -2035,54 +2141,54 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Name
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         ROBank Eco
                       </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Description
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Not a trustworthy bank
                       </div>
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Website
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <a
                           class="link"
@@ -2096,18 +2202,18 @@ exports[`UpdateRegistration should submit 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex items-center py-4 border-t border-dashed border-theme-neutral-300 "
+                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         1.09660435 ARK
                       </div>
@@ -2116,12 +2222,12 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxirZ cZokSJ bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxhCb liaKlj"
-                          height="50"
-                          width="50"
+                          class="sc-AxhUy gwxBWy"
+                          height="22"
+                          width="22"
                         >
                           <svg>
                             sent.svg
@@ -2141,7 +2247,7 @@ exports[`UpdateRegistration should submit 1`] = `
               class="flex justify-end space-x-3"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="UpdateRegistration__wallet-button"
                 type="button"
@@ -2149,13 +2255,13 @@ exports[`UpdateRegistration should submit 1`] = `
                 Back to wallet
               </button>
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="UpdateRegistration__download-button"
                 type="submit"
               >
                 <div
-                  class="sc-AxhCb fxrKLH mr-2"
+                  class="sc-AxhUy cPXLjK mr-2"
                   height="1em"
                   width="1em"
                 >

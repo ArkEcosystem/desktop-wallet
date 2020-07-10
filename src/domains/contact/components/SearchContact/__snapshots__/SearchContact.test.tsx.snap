@@ -5,15 +5,15 @@ exports[`SearchContact should not render if not open 1`] = `<DocumentFragment />
 exports[`SearchContact should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jCpCzv absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jCpCzv fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -22,27 +22,33 @@ exports[`SearchContact should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Search Contact
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Find the contact you need quickly and conveniently
         </div>
@@ -50,14 +56,14 @@ exports[`SearchContact should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-10 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
-              class="flex items-center px-6 py-4 bg-white rounded shadow-xl"
+              class="flex items-center px-10 py-6 bg-white rounded shadow-xl"
             >
               <div
-                class="sc-AxirZ iQaTP w-4 mr-6 text-theme-neutral-300"
+                class="sc-AxirZ iQaTP w-4 mr-8 text-theme-neutral-300"
                 height="1em"
                 width="1em"
               >
@@ -66,16 +72,16 @@ exports[`SearchContact should render a modal 1`] = `
                 </svg>
               </div>
               <div
-                class="flex-1 pl-2 mr-4 border-l border-theme-neutral-200"
+                class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxhCb clCjoe overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary border-none shadow-none"
+                  class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search..."
                 />
               </div>
               <button
-                class="sc-AxjAm cCtLft my-1"
+                class="sc-AxjAm ddQVWI my-1"
                 color="primary"
                 data-testid="SearchBar__button"
                 type="button"
@@ -93,7 +99,7 @@ exports[`SearchContact should render a modal 1`] = `
           class="mt-8"
         >
           <div
-            class="sc-fzpans ljooBW"
+            class="sc-fzpans isbmKM"
             role="table"
           >
             <table
@@ -104,7 +110,7 @@ exports[`SearchContact should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -112,21 +118,19 @@ exports[`SearchContact should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  pl-13"
+                      class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Nickname
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
-                          height="10"
-                          width="10"
+                          class="sc-AxirZ jMwzyA"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -136,43 +140,31 @@ exports[`SearchContact should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-center"
+                      class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Network
                       </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  pl-13"
+                      class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Address
                       </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -188,7 +180,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -207,7 +199,7 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fzplWN iVxRgF border-ark-mainnet"
+                      class="sc-fznyAO gQONjx border-ark-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ark-mainnet"
@@ -227,16 +219,27 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN cwoIPg"
-                      />
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          ASuusXSW9k...P6T9GQ3kqT
+                          ASuusXSW9k…P6T9GQ3kqT
                         </span>
                       </div>
                     </div>
@@ -278,7 +281,7 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN iVxRgF bg-theme-primary-600 border-theme-primary-600"
+                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
                       >
                         <span
                           class="text-sm text-theme-background"
@@ -297,7 +300,7 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fzplWN iVxRgF border-ark-mainnet"
+                      class="sc-fznyAO gQONjx border-ark-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ark-mainnet"
@@ -317,16 +320,27 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN cwoIPg"
-                      />
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          ASuusXSW9k...P6T9GQ3kqT
+                          ASuusXSW9k…P6T9GQ3kqT
                         </span>
                       </div>
                     </div>
@@ -368,7 +382,7 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center "
                   >
                     <div
-                      class="sc-fzplWN iVxRgF border-bitcoin-mainnet"
+                      class="sc-fznyAO gQONjx border-bitcoin-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-bitcoin-mainnet"
@@ -388,16 +402,27 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN cwoIPg"
-                      />
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
+                            title="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
+                          />
+                        </div>
+                      </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          15pyr1HRAx...myCtXXu9G8
+                          15pyr1HRAx…myCtXXu9G8
                         </span>
                       </div>
                     </div>
@@ -414,7 +439,7 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fzplWN iVxRgF border-ethereum-mainnet"
+                      class="sc-fznyAO gQONjx border-ethereum-mainnet"
                     >
                       <div
                         class="sc-AxirZ iQaTP text-ethereum-mainnet"
@@ -434,16 +459,27 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fzplWN cwoIPg"
-                      />
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
+                          />
+                        </div>
+                      </div>
                       <div
-                        class="inline-block truncate"
+                        class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 font-semibold text-base"
+                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          0x5e8f7a63...8b380d7c33
+                          0x5e8f7a63…8b380d7c33
                         </span>
                       </div>
                     </div>

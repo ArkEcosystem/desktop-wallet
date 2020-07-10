@@ -1,30 +1,13 @@
-// Styles
 import "./styles/app.css";
 
-// Context
-import { EnvironmentProvider } from "app/contexts";
-// React
+import { App } from "app";
 import React from "react";
 import ReactDOM from "react-dom";
-import { I18nextProvider } from "react-i18next";
-import { renderRoutes } from "react-router-config";
-import { HashRouter } from "react-router-dom";
-
-// i18n
-import { i18n } from "./app/i18n";
-// Routes
-import { LedgerListener } from "./domains/transaction/components/LedgerListener";
-import { routes } from "./router";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-	<HashRouter>
-		<LedgerListener />
-
-		<I18nextProvider i18n={i18n}>
-			<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
-				<EnvironmentProvider>{renderRoutes(routes)}</EnvironmentProvider>
-			</main>
-		</I18nextProvider>
-	</HashRouter>,
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
 	document.getElementById("root"),
 );

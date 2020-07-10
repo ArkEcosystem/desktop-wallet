@@ -1,3 +1,4 @@
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 // UI Elements
@@ -20,23 +21,23 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 				label={t("TRANSACTION.SENDER")}
 				border={false}
 				extra={
-					<div>
+					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Circle avatarId="test" />
+						<Avatar address="test" />
 					</div>
 				}
 			>
 				ROBank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+					<Circle className="border-theme-danger-contrast text-theme-danger-400">
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>
@@ -70,7 +71,7 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -78,7 +79,7 @@ export const IpfsDetail = (props: IpfsDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

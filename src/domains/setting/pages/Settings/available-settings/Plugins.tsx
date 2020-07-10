@@ -3,7 +3,7 @@ import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
-import { Select } from "app/components/Select";
+import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
@@ -22,19 +22,20 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Apply Blacklist",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pb-6",
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
+						<span className="text-sm text-theme-neutral">
 							This list is selected safely by ARK Ecosystem. You can view it and add to the list of
 							plugins that you find suspicious.
 						</span>
-						<div className="-mt-11">
+						<div className="-mt-7">
 							<Toggle />
 						</div>
 					</div>
-					<div className="flex justify-end w-full py-6 space-x-3">
+					<div className="flex justify-end w-full pt-6 space-x-3">
 						<Button
 							variant="plain"
 							onClick={() => setModalOpenListIsOpen(true)}
@@ -59,23 +60,21 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 		{
 			isFloatingLabel: true,
 			label: "Plugin Source",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
+			wrapperClass: "pt-6",
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
-						<span className="w-3/4 -mt-4 text-sm text-theme-neutral">
+						<span className="text-sm text-theme-neutral">
 							Turn this feature on, you can upload plugins to your wallet from third-party sources.
 						</span>
-						<div className="-mt-11">
+						<div className="-mt-7">
 							<Toggle />
 						</div>
 					</div>
 					<FormField name="load-plugins">
 						<FormLabel>Load plugins from</FormLabel>
-						<Select>
-							<option value="">Select</option>
-							<option value="github">GitHub</option>
-						</Select>
+						<Select placeholder="Select" options={[{ label: "Github", value: "github" }]} />
 					</FormField>
 				</>
 			),
@@ -85,7 +84,8 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 	return (
 		<>
 			<Header title="Plugin Settings" subtitle="Customize your wallet to suit your needs." />
-			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit}>
+
+			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
 				<ListDivided items={pluginItems} />
 				<Divider dashed />
 				<div className="flex justify-end w-full pt-2">

@@ -3,7 +3,7 @@
 exports[`Table should render 1`] = `
 <div>
   <div
-    class="sc-AxirZ gQslMC"
+    class="sc-AxirZ dyYkHQ"
     role="table"
   >
     <table
@@ -14,7 +14,7 @@ exports[`Table should render 1`] = `
           role="row"
         >
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -22,21 +22,19 @@ exports[`Table should render 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
-              <div
-                class="mr-1"
-              >
+              <div>
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center ml-2 text-theme-color-neutral"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -46,7 +44,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -54,21 +52,19 @@ exports[`Table should render 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
-              <div
-                class="mr-1"
-              >
+              <div>
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center ml-2 text-theme-color-neutral"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -99,7 +95,7 @@ exports[`Table should render 1`] = `
 exports[`Table should render empty rows if template not provided 1`] = `
 <div>
   <div
-    class="sc-AxirZ gQslMC"
+    class="sc-AxirZ dyYkHQ"
     role="table"
   >
     <table
@@ -110,7 +106,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
           role="row"
         >
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -118,21 +114,19 @@ exports[`Table should render empty rows if template not provided 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
-              <div
-                class="mr-1"
-              >
+              <div>
                 Header 1
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center ml-2 text-theme-color-neutral"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg
@@ -142,7 +136,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="text-xs text-left select-none text-theme-neutral-400"
+            class="text-sm text-left select-none text-theme-neutral"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -150,21 +144,19 @@ exports[`Table should render empty rows if template not provided 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top  undefined"
+              class="flex flex-inline align-top undefined"
             >
-              <div
-                class="mr-1"
-              >
+              <div>
                 Header 2
               </div>
               <div
-                class="mt-1 text-theme-color-neutral-500"
+                class="flex items-center ml-2 text-theme-color-neutral"
                 data-testid="table__Sort"
               >
                 <div
-                  class="sc-AxjAm iepfoc"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
                 >
                   <svg>
                     sort.svg

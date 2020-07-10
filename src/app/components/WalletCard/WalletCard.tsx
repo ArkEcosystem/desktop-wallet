@@ -1,10 +1,10 @@
+import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
+import { Card } from "app/components/Card";
+import { Circle } from "app/components/Circle";
+import { Dropdown } from "app/components/Dropdown";
+import { Icon } from "app/components/Icon";
 import React from "react";
-
-import { Address } from "../Address";
-import { Card } from "../Card";
-import { Circle } from "../Circle";
-import { Dropdown } from "../Dropdown";
-import { Icon } from "../Icon";
 
 type WalletCardProps = {
 	className?: string;
@@ -13,7 +13,6 @@ type WalletCardProps = {
 	blankTitleClass?: string;
 	blankSubtitleClass?: string;
 	blankSubtitle: string;
-	avatarId?: string;
 	coinIcon?: string;
 	coinClass?: string;
 	walletName?: string;
@@ -39,7 +38,6 @@ export const WalletCard = ({
 	address,
 	walletName,
 	balance,
-	avatarId,
 	coinIcon,
 	coinClass,
 	actions,
@@ -57,8 +55,8 @@ export const WalletCard = ({
 				<Card>
 					<div className="p-2">
 						<div>
-							<Circle size="large" className="-mr-2 bg-white border-theme-primary-contrast" />
-							<Circle size="large" className="bg-white border-theme-primary-contrast" />
+							<Circle size="lg" className="-mr-2 bg-white border-theme-primary-contrast" />
+							<Circle size="lg" className="bg-white border-theme-primary-contrast" />
 						</div>
 
 						<div className={`mt-6 text-md text-theme-primary-contrast ${blankTitleClass}`}>
@@ -77,7 +75,7 @@ export const WalletCard = ({
 		<div className={`w-64 inline-block ${className}`}>
 			<Card>
 				<div className="relative p-2">
-					<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+					<div className="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral">
 						<Dropdown options={actions} onSelect={onSelect} />
 					</div>
 					<div className="absolute right-3 -top-1">
@@ -90,11 +88,11 @@ export const WalletCard = ({
 								);
 							})}
 					</div>
-					<div>
-						<Circle size="large" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
+					<div className="flex">
+						<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
 							{renderCoin(coinIcon)}
 						</Circle>
-						<Circle size="large" avatarId={avatarId} className="border-theme-primary-contrast" />
+						<Avatar size="lg" address={address as string} />
 					</div>
 
 					<div className="mt-6 truncate max-w-12">
@@ -111,4 +109,5 @@ WalletCard.defaultProps = {
 	isBlank: false,
 	blankTitle: "New wallet",
 	blankSubtitle: "Balance",
+	address: "",
 };

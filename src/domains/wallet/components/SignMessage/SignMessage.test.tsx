@@ -1,5 +1,5 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
+import { fireEvent, render } from "testing-library";
 
 import { SignMessage } from "./SignMessage";
 

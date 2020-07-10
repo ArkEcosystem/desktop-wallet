@@ -10,6 +10,7 @@ type BlacklistPluginsProps = {
 	onClose?: any;
 };
 
+const { BestPluginsBanner } = images.plugin.common;
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
 export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
@@ -61,8 +62,13 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 
 	return (
 		<Modal
-			title={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
+			title={
+				<div className="mb-5 text-5xl font-bold leading-tight text-white">
+					{t("PLUGINS.MODAL_BLACKLIST_PLUGINS.TITLE")}
+				</div>
+			}
 			description={t("PLUGINS.MODAL_BLACKLIST_PLUGINS.DESCRIPTION")}
+			banner={<BestPluginsBanner className="w-full" />}
 			size="4xl"
 			isOpen={props.isOpen}
 			onClose={props.onClose}
@@ -80,13 +86,13 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-700">{rowData.description}</span>
+									<span className="text-theme-neutral-dark">{rowData.description}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-right text-theme-neutral-700">{rowData.category}</td>
+							<td className="py-10 text-right text-theme-neutral-dark">{rowData.category}</td>
 						</tr>
 					)}
 				</Table>

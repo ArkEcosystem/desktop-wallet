@@ -1,6 +1,6 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { fireEvent, render } from "testing-library";
 
 import { Checkbox } from "./Checkbox";
 
@@ -15,6 +15,12 @@ describe("Checkbox", () => {
 
 	it("should render", () => {
 		const { container } = render(<Checkbox />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render thick variant", () => {
+		const { container } = render(<Checkbox variant="thick" />);
 
 		expect(container).toMatchSnapshot();
 	});

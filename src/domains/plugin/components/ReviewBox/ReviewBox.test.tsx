@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from "testing-library";
 
 import { ReviewBox } from "./ReviewBox";
 
@@ -32,8 +32,8 @@ describe("ReviewBox", () => {
 			<ReviewBox averageScore="4.3" ratings={ratings} totalAvaliations={347} />,
 		);
 
-		expect(getByText("4.3")).toBeTruthy();
-		expect(getByText("Averaging rating for 347 reviews")).toBeTruthy();
+		expect(getByText("Avg. Rating: 4.3")).toBeTruthy();
+		expect(getByText("Out of 347 reviews")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

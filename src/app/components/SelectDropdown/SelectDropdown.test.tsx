@@ -1,161 +1,71 @@
-import { fireEvent, render } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
 import React from "react";
+import { fireEvent, render } from "testing-library";
 
-import { SelectDropdown } from "./SelectDropdown";
+import { Select } from "./SelectDropdown";
+
+const options = [
+	{
+		label: "Option 1",
+		value: "1",
+	},
+	{
+		label: "Option 2",
+		value: "2",
+	},
+	{
+		label: "Option 3",
+		value: "3",
+	},
+];
 
 describe("SelectDropdown", () => {
 	it("should render", () => {
-		const options = [
-			{
-				label: "Option 1",
-				value: "1",
-			},
-			{
-				label: "Option 2",
-				value: "2",
-			},
-			{
-				label: "Option 3",
-				value: "3",
-			},
-		];
-		const { container } = render(<SelectDropdown options={options} />);
+		const { container } = render(<Select options={options} />);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with initial value", () => {
-		const options = [
-			{
-				label: "Option 1",
-				value: "1",
-			},
-			{
-				label: "Option 2",
-				value: "2",
-			},
-			{
-				label: "Option 3",
-				value: "3",
-			},
-		];
-		const { container } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				selected={{ label: "Option 1", value: "1" }}
-				options={options}
-			/>,
-		);
+	it("should render invalid", () => {
+		const { container } = render(<Select options={options} isInvalid />);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render with custom toggle and option templates", () => {
-		const options = [
-			{
-				label: "Option 1",
-				value: "1",
-			},
-			{
-				label: "Option 2",
-				value: "2",
-			},
-			{
-				label: "Option 3",
-				value: "3",
-			},
-		];
-		const { container } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
+	it("should render disabled", () => {
+		const { container } = render(<Select options={options} disabled />);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should close if clicked outside", () => {
-		const options = [
-			{
-				label: "Test Option 1",
-				value: "1",
-			},
-			{
-				label: "Test Option 2",
-				value: "2",
-			},
-			{
-				label: "Test Option 3",
-				value: "3",
-			},
-		];
-		const { container, getByTestId } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
-
-		const toggle = getByTestId("select-dropdown__toggle");
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(getByTestId("select-dropdown__content")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(() => getByTestId("select-dropdown__content")).toThrow(/Unable to find an element by/);
-		expect(container).not.toHaveTextContent("Test Option");
+	it("should render with initial default value", () => {
+		const { container } = render(<Select options={options} defaultValue="3" />);
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should toggle dropdown content", () => {
+	it("should render with wrong default value", () => {
+		const { container } = render(<Select options={options} defaultValue="4" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with empty options", () => {
+		const { container } = render(<Select options={[]} defaultValue="4" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with options values as numbers", () => {
+		const { container } = render(<Select options={[{ label: "Value 1", value: 1 }]} defaultValue="4" />);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should toggle select list options", () => {
 		const options = [{ label: "Option 1", value: "1" }];
-		const { getByTestId } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
-		const toggle = getByTestId("select-dropdown__toggle");
+		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
+
+		const toggle = getByTestId("select-list__toggle-button");
 
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(getByTestId("select-dropdown__content")).toBeTruthy();
-
-		const firstOption = getByTestId("select-dropdown__option-0");
+		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -163,131 +73,77 @@ describe("SelectDropdown", () => {
 		});
 	});
 
-	it("should call on change callback if provided", () => {
-		const fn = jest.fn();
+	it("should select option", () => {
 		const options = [{ label: "Option 1", value: "1" }];
-		const { getByTestId } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-				onChange={fn}
-			/>,
-		);
-		const toggle = getByTestId("select-dropdown__toggle");
+		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
+
+		const toggle = getByTestId("select-list__toggle-button");
 
 		act(() => {
 			fireEvent.click(toggle);
 		});
 
-		expect(getByTestId("select-dropdown__content")).toBeTruthy();
-
-		const firstOption = getByTestId("select-dropdown__option-0");
-
-		act(() => {
-			fireEvent.click(firstOption);
-		});
-
-		expect(fn).toHaveBeenCalled();
-	});
-
-	it("should ignore on change callback if not provided", () => {
-		const fn = jest.fn();
-		const options = [{ label: "Option 1", value: "1" }];
-		const { getByTestId } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
-		const toggle = getByTestId("select-dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(getByTestId("select-dropdown__content")).toBeTruthy();
-
-		const firstOption = getByTestId("select-dropdown__option-0");
-
-		act(() => {
-			fireEvent.click(firstOption);
-		});
-
-		expect(fn).not.toHaveBeenCalled();
-	});
-
-	it("should render without option content", () => {
-		const options = [
-			{
-				label: "Option 1",
-				value: "1",
-			},
-			{
-				label: "Option 2",
-				value: "2",
-			},
-			{
-				label: "Option 3",
-				value: "3",
-			},
-		];
-		const { container } = render(
-			<SelectDropdown
-				option={(option: any) => <div>{option.label}</div>}
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should toggle dropdown content without option content", () => {
-		const options = [{ label: "Option 1", value: "1" }];
-		const { getByTestId } = render(
-			<SelectDropdown
-				toggle={() => {
-					return (
-						<div className="flex items-center flex-inline">
-							<div className="font-semibold text-theme-neutral-800">Select Option</div>
-						</div>
-					);
-				}}
-				options={options}
-			/>,
-		);
-		const toggle = getByTestId("select-dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(getByTestId("select-dropdown__content")).toBeTruthy();
-
-		const firstOption = getByTestId("select-dropdown__option-0");
+		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(firstOption);
 		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("1");
+	});
+
+	it("should highlight option", () => {
+		const options = [{ label: "Option 1", value: "1" }];
+		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
+
+		const toggle = getByTestId("select-list__toggle-button");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		const firstOption = getByTestId("select-list__toggle-option-0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.mouseOver(firstOption);
+		});
+
+		act(() => {
+			fireEvent.keyDown(toggle, { key: "ArrowDown", code: 40 });
+		});
+
+		expect(firstOption).toHaveClass("is-highlighted");
+	});
+
+	it("should select options with arrow keys", () => {
+		const options = [{ label: "Option 1", value: "1" }];
+		const { getByTestId } = render(<Select options={options} defaultValue="3" />);
+
+		const toggle = getByTestId("select-list__toggle-button");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		const firstOption = getByTestId("select-list__toggle-option-0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.mouseOver(firstOption);
+		});
+
+		act(() => {
+			fireEvent.keyDown(toggle, { key: "ArrowDown", code: 40 });
+		});
+
+		expect(firstOption).toHaveClass("is-highlighted");
+
+		act(() => {
+			fireEvent.keyDown(firstOption, { key: "Enter", code: 13 });
+		});
+
+		expect(getByTestId("select-list__input")).toHaveValue("1");
 	});
 });

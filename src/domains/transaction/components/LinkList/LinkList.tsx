@@ -1,6 +1,7 @@
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Link = {
 	link: string;
@@ -26,23 +27,29 @@ const linkIcons: Record<string, string> = {
 	youtube: "YouTube",
 };
 
-const LinkItem = ({ link }: { link: Link }) => (
-	<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
-		<div className="flex justify-between flex-1">
-			<div>
-				<div className="text-sm font-semibold text-theme-neutral-500">{link.type}</div>
+const LinkItem = ({ link }: { link: Link }) => {
+	const { t } = useTranslation();
 
-				<a href={link.link} className="mt-2 font-semibold link">
-					{link.link}
-				</a>
+	return (
+		<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
+			<div className="flex justify-between flex-1">
+				<div>
+					<div className="text-sm font-semibold text-theme-neutral">
+						{t(`TRANSACTION.LINK_TYPES.${link.type.toUpperCase()}`)}
+					</div>
+
+					<a href={link.link} className="inline-block mt-2 font-semibold link">
+						{link.link}
+					</a>
+				</div>
+
+				<Circle className="my-auto border-black bg-theme-background" size="lg">
+					<Icon name={linkIcons[link.type]} width={20} height={20} />
+				</Circle>
 			</div>
-
-			<Circle className="border-black bg-theme-background" size="large">
-				<Icon name={linkIcons[link.type]} width={20} height={20} />
-			</Circle>
 		</div>
-	</div>
-);
+	);
+};
 
 export const LinkList = ({ description, links, title }: LinkListProps) => {
 	const [isExpanded, setIsExpanded] = React.useState(false);
@@ -60,25 +67,25 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<div>
-					<span className="font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-700">{description}</div>
+					<span className="text-lg font-semibold">{title}</span>
+					<div className="mt-2 text-theme-neutral-dark">{description}</div>
 				</div>
 
 				<div>
 					{isExpanded && (
 						<Icon
 							name="ChevronUp"
-							width={9}
-							height={9}
-							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+							width={10}
+							height={10}
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
 					)}
 					{!isExpanded && (
 						<Icon
 							name="ChevronDown"
-							width={18}
-							height={18}
-							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+							width={10}
+							height={10}
+							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
 						/>
 					)}
 				</div>

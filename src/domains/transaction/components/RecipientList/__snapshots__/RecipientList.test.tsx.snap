@@ -6,7 +6,7 @@ exports[`SendTransactionForm should render editable 1`] = `
     class="pt-2"
   >
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -17,83 +17,59 @@ exports[`SendTransactionForm should render editable 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible w-2"
+                class="flex flex-inline align-top invisible w-2"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Avatar
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Address
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  float-right"
+                class="flex flex-inline align-top float-right"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Amount
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible"
+                class="flex flex-inline align-top invisible"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Action
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -109,24 +85,35 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA...SJKDFJ
+                  FJKDSA…SJKDFJ
                 </span>
               </div>
             </td>
@@ -141,7 +128,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-16 text-right"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -170,24 +157,35 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD...SJKDFJ
+                  AhFJKD…SJKDFJ
                 </span>
               </div>
             </td>
@@ -202,7 +200,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-16 text-right"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -231,24 +229,35 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK...SJKDFJ
+                  FAhFJK…SJKDFJ
                 </span>
               </div>
             </td>
@@ -263,7 +272,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-16 text-right"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -292,24 +301,35 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 4
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK...SJKDFJ
+                  FAhFJK…SJKDFJ
                 </span>
               </div>
             </td>
@@ -324,7 +344,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               class="w-16 text-right"
             >
               <button
-                class="sc-AxjAm ddJBbC"
+                class="sc-AxirZ fhzkRl"
                 color="primary"
                 data-testid="recipient-list__remove-recipient"
                 type="button"
@@ -358,7 +378,7 @@ exports[`SendTransactionForm should render non-editable 1`] = `
     class="pt-2"
   >
     <div
-      class="sc-AxhCb gfJeeC"
+      class="sc-AxhCb brtxRQ"
       role="table"
     >
       <table
@@ -369,63 +389,45 @@ exports[`SendTransactionForm should render non-editable 1`] = `
             role="row"
           >
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible w-2"
+                class="flex flex-inline align-top invisible w-2"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Avatar
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Address
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-xs text-left select-none text-theme-neutral-400"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  float-right"
+                class="flex flex-inline align-top float-right"
               >
-                <div
-                  class="mr-1"
-                >
+                <div>
                   Amount
                 </div>
-                <div
-                  class="mt-1 text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -441,24 +443,35 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FJKDSA...SJKDFJ
+                  FJKDSA…SJKDFJ
                 </span>
               </div>
             </td>
@@ -478,24 +491,35 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  AhFJKD...SJKDFJ
+                  AhFJKD…SJKDFJ
                 </span>
               </div>
             </td>
@@ -515,24 +539,35 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK...SJKDFJ
+                  FAhFJK…SJKDFJ
                 </span>
               </div>
             </td>
@@ -552,24 +587,35 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               class="w-12 py-4"
             >
               <div
-                class="sc-AxirZ sHsrA"
-              />
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full overflow-hidden rounded-full"
+                >
+                  <img
+                    alt="test"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                    title="test"
+                  />
+                </div>
+              </div>
             </td>
             <td>
               <div
-                class="inline-block truncate"
+                class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 4
                 </span>
                 <span
-                  class="text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  FAhFJK...SJKDFJ
+                  FAhFJK…SJKDFJ
                 </span>
               </div>
             </td>

@@ -5,15 +5,15 @@ exports[`AddExchange should not render if not open 1`] = `<DocumentFragment />`;
 exports[`AddExchange should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-AxiKw jRkhhQ absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-AxiKw jRkhhQ fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -22,13 +22,17 @@ exports[`AddExchange should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-AxirZ fttODj"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
@@ -36,7 +40,7 @@ exports[`AddExchange should render a modal 1`] = `
       class="py-4"
     >
       <div
-        class="absolute top-0 left-0 right-0"
+        class="relative mb-10 -mx-10 -mt-10"
       >
         <svg
           class="w-full"
@@ -50,10 +54,10 @@ exports[`AddExchange should render a modal 1`] = `
         </h1>
       </div>
       <div
-        class="flex-1 mt-40"
+        class="flex-1"
       >
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Buy ARK directly from the ARK Desktop Wallet or through one of 20+ exchanges supplying ARK tokens using BTC, ETH or other trading pairs.
         </div>
@@ -61,7 +65,7 @@ exports[`AddExchange should render a modal 1`] = `
           class="mt-8 -mb-6"
         >
           <div
-            class="sc-AxhCb gfJeeC"
+            class="sc-AxhCb brtxRQ"
             role="table"
           >
             <table
@@ -72,27 +76,21 @@ exports[`AddExchange should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                          
                       </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -100,21 +98,19 @@ exports[`AddExchange should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Name
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
-                          height="10"
-                          width="10"
+                          class="sc-AxirZ jMwzyA"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -124,7 +120,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -132,21 +128,19 @@ exports[`AddExchange should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Category
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
-                          height="10"
-                          width="10"
+                          class="sc-AxirZ jMwzyA"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -156,7 +150,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -164,21 +158,19 @@ exports[`AddExchange should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Rating
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
-                          height="10"
-                          width="10"
+                          class="sc-AxirZ jMwzyA"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -188,7 +180,7 @@ exports[`AddExchange should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -196,21 +188,19 @@ exports[`AddExchange should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                         Version
                       </div>
                       <div
-                        class="mt-1 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
-                          class="sc-AxirZ fttODj"
-                          height="10"
-                          width="10"
+                          class="sc-AxirZ jMwzyA"
+                          height="12"
+                          width="15"
                         >
                           <svg>
                             sort.svg
@@ -220,23 +210,17 @@ exports[`AddExchange should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-xs text-left select-none text-theme-neutral-400"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-1"
-                      >
+                      <div>
                           
                       </div>
-                      <div
-                        class="mt-1 text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -286,13 +270,13 @@ exports[`AddExchange should render a modal 1`] = `
                           style="width: 89.99999999999999%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-400 w-5"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral w-5"
                         >
                           star.svg
                         </svg>
@@ -363,13 +347,13 @@ exports[`AddExchange should render a modal 1`] = `
                           style="width: 89.99999999999999%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-400 w-5"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral w-5"
                         >
                           star.svg
                         </svg>
@@ -440,13 +424,13 @@ exports[`AddExchange should render a modal 1`] = `
                           style="width: 95%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-400 w-5"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral w-5"
                         >
                           star.svg
                         </svg>
@@ -517,13 +501,13 @@ exports[`AddExchange should render a modal 1`] = `
                           style="width: 40%;"
                         >
                           <svg
-                            class="text-theme-warning-300 w-5"
+                            class="text-theme-warning-400 w-5"
                           >
                             star.svg
                           </svg>
                         </div>
                         <svg
-                          class="text-theme-neutral-500 w-5"
+                          class="text-theme-neutral w-5"
                         >
                           star.svg
                         </svg>

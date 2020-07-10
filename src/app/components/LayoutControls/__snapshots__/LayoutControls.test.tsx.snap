@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LayoutControls should render 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-block"
+    data-testid="LayoutControls__grid"
+  >
+    <div
+      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+      data-testid="LayoutControls__grid--icon"
+    >
+      <div
+        class="sc-AxjAm jEKiJj"
+        height="14"
+        width="28"
+      >
+        <svg>
+          grid.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="inline-block"
+    data-testid="LayoutControls__list"
+  >
+    <div
+      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+      data-testid="LayoutControls__list--icon"
+    >
+      <div
+        class="sc-AxjAm eFgodT"
+        height="14"
+        width="24"
+      >
+        <svg>
+          list.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

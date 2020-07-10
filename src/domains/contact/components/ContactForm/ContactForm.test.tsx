@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { contact2 as contact } from "../../data";
 import { translations } from "../../i18n";
@@ -11,9 +9,19 @@ import { ContactForm } from "./ContactForm";
 describe("ContactForm", () => {
 	const networks = [
 		{
-			label: "Ark Ecosystem",
-			value: "ark",
 			icon: "Ark",
+			name: "Ark Ecosystem",
+			className: "text-theme-danger-400 border-theme-danger-light",
+		},
+		{
+			icon: "Bitcoin",
+			name: "Bitcoin",
+			className: "text-theme-warning-400 border-theme-warning-200",
+		},
+		{
+			icon: "Ethereum",
+			name: "Ethereum",
+			className: "text-theme-neutral-800 border-theme-neutral-600",
 		},
 	];
 
@@ -21,49 +29,54 @@ describe("ContactForm", () => {
 	const onSave = jest.fn();
 	const onCancel = jest.fn();
 
-	it("should select network", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
-		);
+	it("should select network", () => {
+		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
-		await act(async () => {
-			fireEvent.change(getByTestId("contact-form__network-select"), {
-				target: { value: "ark" },
-			});
+		const input = getByTestId("select-asset__input");
+		act(() => {
+			fireEvent.change(input, { target: { value: "Bitco" } });
 		});
 
-		const options = getAllByTestId("contact-form__network-option");
+		act(() => {
+			fireEvent.keyDown(input, { key: "Enter", code: 13 });
+		});
 
-		expect((options[0] as HTMLOptionElement).selected).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
 	});
 
 	it("should add an address", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />
-			</I18nextProvider>,
+		const { getAllByTestId, getByTestId, queryByTestId } = render(
+			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		await act(async () => {
-			fireEvent.change(getByTestId("contact-form__network-select"), {
-				target: { value: "ark" },
-			});
+		const assetInput = getByTestId("select-asset__input");
+		const addressInput = getByTestId("contact-form__address-input");
 
-			fireEvent.change(getByTestId("contact-form__address-input"), {
+		await act(async () => {
+			await fireEvent.change(getByTestId("contact-form__address-input"), {
 				target: { value: "address" },
 			});
-		});
 
-		expect(() => queryByTestId("contact-form__add-address-btn").not.toHaveAttribute("disabled"));
+			fireEvent.change(getByTestId("contact-form__name-input"), {
+				target: { value: "name" },
+			});
+
+			fireEvent.change(assetInput, { target: { value: "Bitco" } });
+
+			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+
+			await waitFor(() => {
+				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+			});
+		});
 
 		await act(async () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+		expect(() => getAllByTestId("contact-form__address-list-item").toHaveLength(1));
 	});
 
 	it("should remove an address", async () => {
@@ -105,9 +118,7 @@ describe("ContactForm", () => {
 	describe("when creating a new contact", () => {
 		it("should render the form", () => {
 			const { asFragment, getAllByTestId, getByTestId } = render(
-				<I18nextProvider i18n={i18n}>
-					<ContactForm onCancel={onCancel} onSave={onSave} />
-				</I18nextProvider>,
+				<ContactForm onCancel={onCancel} onSave={onSave} />,
 			);
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
@@ -125,11 +136,7 @@ describe("ContactForm", () => {
 			let renderContext;
 
 			await act(async () => {
-				renderContext = render(
-					<I18nextProvider i18n={i18n}>
-						<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />
-					</I18nextProvider>,
-				);
+				renderContext = render(<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />);
 			});
 
 			const { asFragment, getAllByTestId, getByTestId } = renderContext;
@@ -145,7 +152,7 @@ describe("ContactForm", () => {
 		});
 
 		it("should call onDelete callback", async () => {
-			let renderContext;
+			let renderContext: any;
 
 			await act(async () => {
 				renderContext = render(

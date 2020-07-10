@@ -21,11 +21,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex items-center justify-end space-x-5">
+		<div className="flex justify-end items-top">
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="h-12 my-auto border-l border-1 border-theme-primary-100" />
+					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 				</>
 			)}
 
@@ -38,10 +38,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 type ContactsProps = {
 	contacts: any[];
+	networks: any[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
+export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
 	const { t } = useTranslation();
@@ -73,25 +74,16 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 		},
 	];
 
-	// TODO: replace after design phase
-	const networks = [
-		{
-			label: "Ark Ecosystem",
-			value: "ark",
-			icon: "Ark",
-		},
-	];
-
 	const handleOnSave = () => {
 		setCreateIsOpen(false);
 	};
 
 	return (
 		<div data-testid="contacts" className="flex flex-col min-h-screen -m-5 bg-theme-neutral-200">
-			<Breadcrumbs crumbs={crumbs} className="p-5 font-semibold" />
+			<Breadcrumbs crumbs={crumbs} className="p-5 pl-10 font-semibold" />
 
 			<div className="flex flex-col flex-1 space-y-5">
-				<div className="p-10 bg-theme-background">
+				<div className="px-10 py-16 bg-theme-background">
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
@@ -105,14 +97,19 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 					/>
 				</div>
 
-				<div className="flex flex-1 p-10 bg-theme-background">
+				<div className="flex items-start flex-1 px-10 py-16 bg-theme-background">
 					{contacts.length === 0 && (
-						<div data-testid="contacts__banner" className="flex flex-col items-center justify-center mx-auto">
-							<div className="max-w-4xl mx-auto">
-								<ContactsBanner />
+						<div
+							data-testid="contacts__banner"
+							className="flex flex-col items-center justify-center w-full"
+						>
+							<div className="mx-auto">
+								<ContactsBanner height={175} />
 							</div>
-							<div className="mt-6">
-								<span className="text-theme-neutral-dark">{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}</span>
+							<div className="mt-8">
+								<span className="text-theme-neutral-dark">
+									{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
+								</span>
 							</div>
 						</div>
 					)}
@@ -140,4 +137,5 @@ export const Contacts = ({ contacts, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
+	networks: [],
 };

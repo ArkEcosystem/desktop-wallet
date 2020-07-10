@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -8,7 +9,6 @@ import { TransactionListItemProps } from "./models";
 
 export const TransactionListItem = ({
 	date,
-	avatarId,
 	type,
 	address,
 	walletName,
@@ -24,8 +24,8 @@ export const TransactionListItem = ({
 	};
 
 	const iconClasses: any = {
-		send: "border-theme-danger-200 text-theme-danger-400",
-		receive: "border-theme-success-300 text-theme-success-400",
+		send: "border-theme-danger-light text-theme-danger-400",
+		receive: "border-theme-success-300 text-theme-success-light",
 	};
 
 	const amountLabelColor: any = {
@@ -45,16 +45,18 @@ export const TransactionListItem = ({
 				data-testid="transaction__row"
 			>
 				<td className="w-20 py-4 mt-1">
-					<Circle size="small" className={`${iconClasses[type]} -mr-1`}>
-						<Icon name={iconName[type]} width={40} height={40} />
-					</Circle>
-					<Circle size="small" avatarId={avatarId} />
+					<div className="flex">
+						<Circle size="sm" className={`${iconClasses[type]} -mr-1`}>
+							<Icon name={iconName[type]} width={40} height={40} />
+						</Circle>
+						<Avatar size="sm" address={address as string} />
+					</div>
 				</td>
 				<td className="w-56 py-1">
-					<Address walletName={walletName} address={address} maxChars={16} size="small" />
+					<Address walletName={walletName} address={address} maxChars={16} size="sm" />
 				</td>
 				<td className="py-1 text-sm text-right">
-					<Label color={amountLabelColor[type]} size="small">
+					<Label color={amountLabelColor[type]} size="sm">
 						{amount}
 					</Label>
 				</td>
@@ -70,10 +72,12 @@ export const TransactionListItem = ({
 		>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600"> {date} </td>
 			<td className="w-32 py-5 mt-1">
-				<Circle className={`${iconClasses[type]} -mr-1`} size="large">
-					<Icon name={iconName[type]} width={40} height={40} />
-				</Circle>
-				<Circle avatarId={avatarId} size="large" />
+				<div className="flex">
+					<Circle className={`${iconClasses[type]} -mr-1`} size="lg">
+						<Icon name={iconName[type]} width={40} height={40} />
+					</Circle>
+					<Avatar size="lg" address={address as string} />
+				</div>
 			</td>
 			<td className="w-56">
 				<Address walletName={walletName} address={address} maxChars={24} />
@@ -83,18 +87,18 @@ export const TransactionListItem = ({
 				{transactionInfoIcons &&
 					transactionInfoIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 text text-theme-neutral-400`}>
+							<div key={index} className={`inline-block mr-2 align-middle text-theme-neutral-light`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
 					})}
 			</td>
 			<td className="text-sm text-right w-36">
-				<Label color={amountLabelColor[type]} size="small">
+				<Label color={amountLabelColor[type]} size="sm">
 					{amount}
 				</Label>
 			</td>
-			<td className="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500">
+			<td className="w-32 py-1 text-sm font-semibold text-right text-theme-neutral">
 				<div>{fiat}</div>
 			</td>
 		</tr>
@@ -104,4 +108,5 @@ export const TransactionListItem = ({
 TransactionListItem.defaultProps = {
 	walletTypeIcons: [],
 	actions: [],
+	address: "",
 };

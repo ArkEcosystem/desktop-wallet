@@ -6,13 +6,13 @@ exports[`Formatted Address should render 1`] = `
     class="w-64 inline-block undefined"
   >
     <div
-      class="sc-AxjAm hQFgsK"
+      class="sc-AxirZ PHAyy"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -22,7 +22,7 @@ exports[`Formatted Address should render 1`] = `
               class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
-                class="sc-AxirZ eEbZjj"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -36,13 +36,26 @@ exports[`Formatted Address should render 1`] = `
         <div
           class="absolute right-3 -top-1"
         />
-        <div>
+        <div
+          class="flex"
+        >
           <div
-            class="sc-AxiKw jQtkkF border-theme-primary-contrast -mr-2 undefined"
+            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
           />
           <div
-            class="sc-AxiKw jQtkkF border-theme-primary-contrast"
-          />
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+            data-testid="Avatar"
+          >
+            <div
+              class="w-full h-full overflow-hidden rounded-full"
+            >
+              <img
+                alt=""
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                title=""
+              />
+            </div>
+          </div>
         </div>
         <div
           class="mt-6 truncate max-w-12"
@@ -62,17 +75,17 @@ exports[`Formatted Address should render blank 1`] = `
     class="w-64 inline-block undefined"
   >
     <div
-      class="sc-AxjAm hQFgsK"
+      class="sc-AxirZ PHAyy"
     >
       <div
         class="p-2"
       >
         <div>
           <div
-            class="sc-AxiKw jQtkkF -mr-2 bg-white border-theme-primary-contrast"
+            class="sc-AxhCb bzWLYJ -mr-2 bg-white border-theme-primary-contrast"
           />
           <div
-            class="sc-AxiKw jQtkkF bg-white border-theme-primary-contrast"
+            class="sc-AxhCb bzWLYJ bg-white border-theme-primary-contrast"
           />
         </div>
         <div
@@ -97,13 +110,13 @@ exports[`Formatted Address should render with wallet data 1`] = `
     class="w-64 inline-block undefined"
   >
     <div
-      class="sc-AxjAm hQFgsK"
+      class="sc-AxirZ PHAyy"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -113,7 +126,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
               class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
-                class="sc-AxirZ eEbZjj"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -127,12 +140,14 @@ exports[`Formatted Address should render with wallet data 1`] = `
         <div
           class="absolute right-3 -top-1"
         />
-        <div>
+        <div
+          class="flex"
+        >
           <div
-            class="sc-AxiKw jQtkkF border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
           >
             <div
-              class="sc-AxirZ eViLYR"
+              class="sc-AxiKw ccPfUV"
               height="16"
               width="18"
             >
@@ -142,26 +157,37 @@ exports[`Formatted Address should render with wallet data 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxiKw bNqZRo border-theme-primary-contrast"
-          />
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+            data-testid="Avatar"
+          >
+            <div
+              class="w-full h-full overflow-hidden rounded-full"
+            >
+              <img
+                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+              />
+            </div>
+          </div>
         </div>
         <div
           class="mt-6 truncate max-w-12"
         >
           <div
-            class="inline-block truncate"
+            class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              ASuu...3kqT
+              ASuu…3kqT
             </span>
           </div>
         </div>
@@ -182,13 +208,13 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
     class="w-64 inline-block undefined"
   >
     <div
-      class="sc-AxjAm hQFgsK"
+      class="sc-AxirZ PHAyy"
     >
       <div
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -198,7 +224,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
               class="float-right outline-none cursor-pointer focus:outline-none"
             >
               <div
-                class="sc-AxirZ eEbZjj"
+                class="sc-AxiKw dklFyP"
                 height="20"
                 width="20"
               >
@@ -212,12 +238,14 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
         <div
           class="absolute right-3 -top-1"
         />
-        <div>
+        <div
+          class="flex"
+        >
           <div
-            class="sc-AxiKw jQtkkF border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
           >
             <div
-              class="sc-AxirZ eViLYR"
+              class="sc-AxiKw ccPfUV"
               height="16"
               width="18"
             >
@@ -227,26 +255,37 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
             </div>
           </div>
           <div
-            class="sc-AxiKw bNqZRo border-theme-primary-contrast"
-          />
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+            data-testid="Avatar"
+          >
+            <div
+              class="w-full h-full overflow-hidden rounded-full"
+            >
+              <img
+                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+              />
+            </div>
+          </div>
         </div>
         <div
           class="mt-6 truncate max-w-12"
         >
           <div
-            class="inline-block truncate"
+            class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              ASuu...3kqT
+              ASuu…3kqT
             </span>
           </div>
         </div>

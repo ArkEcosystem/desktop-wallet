@@ -1,6 +1,6 @@
-import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import { act } from "react-dom/test-utils";
+import { fireEvent, render } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -9,7 +9,7 @@ describe("WalletListItem", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Bitcoin" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
+					<WalletListItem coinIcon="Bitcoin" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
 				</tbody>
 			</table>,
 		);
@@ -22,7 +22,7 @@ describe("WalletListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<WalletListItem actions={actions} variant="singleAction" />
+					<WalletListItem coinIcon="Bitcoin" actions={actions} variant="singleAction" />
 				</tbody>
 			</table>,
 		);

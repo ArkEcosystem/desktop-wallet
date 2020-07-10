@@ -7,6 +7,7 @@ module.exports = {
 		"@storybook/addon-knobs/register",
 		"storybook-addon-i18next/register",
 		"@storybook/preset-create-react-app",
+		"storybook-addon-themes",
 	],
 	webpackFinal: (storybookConfig) => {
 		const customConfig = configOverrides(storybookConfig);

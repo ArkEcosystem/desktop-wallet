@@ -1,5 +1,6 @@
 import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Icon } from "app/components/Icon";
@@ -35,6 +36,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					</div>
 				</TransactionDetail>
+
 				<TransactionDetail label="Block ID">
 					<div className="flex items-center">
 						<Clipboard>
@@ -49,30 +51,28 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					</div>
 				</TransactionDetail>
+
 				<TransactionDetail
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
-				<TransactionDetail
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+
+				<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				{children}

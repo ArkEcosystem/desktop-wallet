@@ -20,27 +20,25 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 	return (
 		<tr
 			data-testid={`PluginListItem--${plugin.id}`}
-			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
 		>
-			<td className="text-center">
+			<td className="w-16 text-center">
 				<ChangeNowLogo className="w-12 h-12" />
 			</td>
 
 			<td>
-				<a href="#" className="font-semibold text-theme-primary-500 hover:text-theme-primary-400">
-					{plugin.name}
-				</a>
+				<div className="flex items-center space-x-2">
+					<a href="/" className="font-semibold link">
+						{plugin.name}
+					</a>
+
+					{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
+					{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
+				</div>
 			</td>
 
 			<td>
-				<div className="flex items-center justify-between pr-16">
-					<span>{plugin.author}</span>
-
-					<div>
-						{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
-						{plugin.isGrant && <Icon name="Grant" width={20} height={20} />}
-					</div>
-				</div>
+				<div className="flex items-center justify-between pr-16">{plugin.author}</div>
 			</td>
 
 			<td className="py-10">{t(`PLUGINS.CATEGORY.${plugin.category.toUpperCase()}`)}</td>
@@ -64,7 +62,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 				{!plugin.isInstalled && (
 					<div className="flex w-6 h-6 mx-auto">
-						<div className="m-auto text-theme-neutral-500">
+						<div className="m-auto text-theme-neutral">
 							<Icon name="Dash" width={15} height={15} />
 						</div>
 					</div>
@@ -79,22 +77,23 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				)}
 
 				{plugin.isInstalled && (
-					<Button variant="plain" size="icon" className="text-left">
-						<div className="text-left">
-							<Dropdown
-								toggleIcon="Settings"
-								options={[
-									{ label: "View", value: "view" },
-									{ label: "Delete", value: "delete" },
-								]}
-								onSelect={(option: any) => {
-									if (option.value === "delete") {
-										onDelete(plugin);
-									}
-								}}
-							/>
-						</div>
-					</Button>
+					<Dropdown
+						toggleContent={
+							<Button variant="plain" size="icon" className="text-left">
+								<Icon name="Settings" width={20} height={20} />
+							</Button>
+						}
+						options={[
+							{ label: "View", value: "view" },
+							{ label: "Delete", value: "delete" },
+						]}
+						onSelect={(option: any) => {
+							if (option.value === "delete") {
+								onDelete(plugin);
+							}
+						}}
+						dropdownClass="top-3 text-left"
+					/>
 				)}
 			</td>
 		</tr>

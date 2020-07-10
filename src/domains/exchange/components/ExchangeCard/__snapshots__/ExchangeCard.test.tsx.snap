@@ -3,14 +3,14 @@
 exports[`ExchangeCard should render Add Exchange card 1`] = `
 <div>
   <div
-    class="sc-AxiKw gsaGVU col-span-2 border-theme-primary-100"
+    class="sc-AxiKw zaMrG col-span-2 border-theme-primary-contrast"
     data-testid="Exchange__add-exchange-card"
   >
     <div
-      class="flex items-center px-12 my-auto font-semibold text-theme-primary-600"
+      class="flex items-center px-12 my-auto font-semibold text-theme-primary"
     >
       <div
-        class="sc-AxjAm cpczEI p-4 mr-4 rounded-lg bg-theme-primary-100"
+        class="sc-AxjAm cpczEI p-4 mr-4 rounded-lg bg-theme-primary-contrast"
         height="1em"
         width="1em"
       >
@@ -27,14 +27,14 @@ exports[`ExchangeCard should render Add Exchange card 1`] = `
 exports[`ExchangeCard should render Blank Exchange card 1`] = `
 <div>
   <div
-    class="sc-AxiKw gsaGVU border-theme-primary-100"
+    class="sc-AxiKw zaMrG border-theme-primary-contrast"
     data-testid="Exchange__blank-card"
   >
     <div
-      class="flex items-center px-12 my-auto font-semibold text-theme-primary-100"
+      class="flex items-center px-12 my-auto font-semibold text-theme-primary-contrast"
     >
       <div
-        class="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-100"
+        class="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-contrast"
       />
       Exchange Name
     </div>
@@ -45,7 +45,7 @@ exports[`ExchangeCard should render Blank Exchange card 1`] = `
 exports[`ExchangeCard should render Exchange card 1`] = `
 <div>
   <div
-    class="sc-AxiKw gsaGVU border-theme-primary-100 hover:border-theme-background"
+    class="sc-AxiKw zaMrG border-theme-primary-contrast hover:border-theme-background"
     data-testid="Exchange__exchange-card-test-exchange"
   >
     <div
@@ -55,7 +55,7 @@ exports[`ExchangeCard should render Exchange card 1`] = `
         class="flex items-center"
       >
         <div
-          class="absolute top-4 right-2 text-theme-primary-200"
+          class="absolute top-4 right-2 text-theme-primary-light"
         >
           <div
             class="relative"

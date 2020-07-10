@@ -14,16 +14,18 @@ import { ReactComponent as Checkmark } from "./checkmark.svg";
 import { ReactComponent as ChevronDown } from "./chevron-down.svg";
 import { ReactComponent as ChevronUp } from "./chevron-up.svg";
 import { ReactComponent as Close } from "./close.svg";
-import { ReactComponent as Confirmed } from "./confirmed.svg";
 import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
 import { ReactComponent as Ark } from "./currencies/ark.svg";
 import { ReactComponent as Bitcoin } from "./currencies/btc.svg";
 import { ReactComponent as Ethereum } from "./currencies/eth.svg";
+import { ReactComponent as Lisk } from "./currencies/lsk.svg";
+import { ReactComponent as Ripple } from "./currencies/xrp.svg";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as Discord } from "./discord.svg";
 import { ReactComponent as Download } from "./download.svg";
+import { ReactComponent as Edit } from "./edit.svg";
 import { ReactComponent as Exchange } from "./exchange.svg";
 import { ReactComponent as Explorer } from "./explorer.svg";
 import { ReactComponent as EyeOff } from "./eye-off.svg";
@@ -31,6 +33,7 @@ import { ReactComponent as EyeTag } from "./eye-tag.svg";
 import { ReactComponent as Eye } from "./eye.svg";
 import { ReactComponent as Facebook } from "./facebook.svg";
 import { ReactComponent as FilePassword } from "./file-password.svg";
+import { ReactComponent as File } from "./file.svg";
 import { ReactComponent as Filters } from "./filters.svg";
 import { ReactComponent as Forward } from "./forward.svg";
 import { ReactComponent as General } from "./general.svg";
@@ -47,7 +50,6 @@ import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 import { ReactComponent as List } from "./list.svg";
 import { ReactComponent as Medium } from "./medium.svg";
-import { ReactComponent as Mistake } from "./mistake.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
@@ -69,8 +71,8 @@ import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reddit } from "./reddit.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
-import { ReactComponent as RegistrationsIllustration } from "./register.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
+import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
@@ -81,6 +83,7 @@ import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
 import { ReactComponent as Star } from "./star.svg";
+import { ReactComponent as StarsOutline } from "./stars-outline.svg";
 import { ReactComponent as StatusClock } from "./status-clock.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Twitter } from "./twitter.svg";
@@ -100,24 +103,27 @@ export const SvgCollection: any = {
 	Back,
 	BitBucket,
 	Bitcoin,
+	Lisk,
+	Ripple,
 	Bridgechain,
 	Business,
 	Checkmark,
 	ChevronDown,
 	ChevronUp,
 	Close,
-	Confirmed,
 	Copy,
 	CrossSlim,
 	Dash,
 	Delegate,
 	Discord,
 	Download,
+	Edit,
 	Ethereum,
 	Explorer,
 	Eye,
 	EyeOff,
 	Facebook,
+	File,
 	FilePassword,
 	Filters,
 	Forward,
@@ -135,7 +141,6 @@ export const SvgCollection: any = {
 	LinkedIn,
 	List,
 	Medium,
-	Mistake,
 	Msq,
 	Multisig,
 	Npm,
@@ -151,8 +156,8 @@ export const SvgCollection: any = {
 	Received,
 	Reddit,
 	Redirect,
-	RegistrationsIllustration,
 	ReplyArrow,
+	Report,
 	Reset,
 	Search,
 	Send,
@@ -163,6 +168,7 @@ export const SvgCollection: any = {
 	Sort,
 	Star,
 	StarOutline,
+	StarsOutline,
 	StatusClock,
 	Trash,
 	Twitter,

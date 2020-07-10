@@ -1,4 +1,5 @@
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -9,7 +10,6 @@ import { Dropdown } from "../Dropdown";
 export type WalletListItemProps = {
 	coinIcon: string;
 	coinClass?: string;
-	avatarId?: string;
 	address?: string;
 	walletName?: string;
 	balance?: string;
@@ -23,7 +23,6 @@ export type WalletListItemProps = {
 export const WalletListItem = ({
 	coinIcon,
 	coinClass,
-	avatarId,
 	address,
 	walletName,
 	balance,
@@ -44,11 +43,13 @@ export const WalletListItem = ({
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
-			<td className="py-4 mt-1">
-				<Circle className={coinClass} size="large">
-					<Icon name={coinIcon} width={20} height={20} />
-				</Circle>
-				<Circle avatarId={avatarId} size="large" />
+			<td className="py-6 mt-1">
+				<div className="flex">
+					<Circle className={coinClass} size="lg">
+						<Icon name={coinIcon} width={20} height={20} />
+					</Circle>
+					<Avatar size="lg" address={address as string} />
+				</div>
 			</td>
 			<td className="py-1">
 				<Address walletName={walletName} address={address} maxChars={22} />
@@ -57,17 +58,17 @@ export const WalletListItem = ({
 				<td className="py-1 text-sm font-bold">
 					{walletTypeIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
+							<div key={index} className={`inline-block mr-2 align-middle ${getIconTypeClass(type)}`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
 					})}
 				</td>
 			)}
-			<td className="py-1 font-bold text-right">
+			<td className="font-semibold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="py-1 font-semibold text-right text-theme-neutral-400">
+			<td className="text-right text-theme-neutral-light">
 				<div>{fiat}</div>
 			</td>
 			<td>
@@ -85,7 +86,7 @@ export const WalletListItem = ({
 						}
 
 						return (
-							<div className="text-theme-neutral-400 hover:text-theme-neutral-500">
+							<div className="text-theme-neutral-light hover:text-theme-neutral">
 								<Dropdown options={actions} onSelect={onDropdownAction} />
 							</div>
 						);
@@ -98,4 +99,5 @@ export const WalletListItem = ({
 WalletListItem.defaultProps = {
 	walletTypeIcons: [],
 	actions: [],
+	address: "",
 };

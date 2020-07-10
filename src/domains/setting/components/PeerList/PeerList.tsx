@@ -8,9 +8,10 @@ import { PeerListItem } from "../PeerListItem";
 type PeerListProps = {
 	listColumns?: any;
 	peers?: any;
+	networks?: any;
 };
 
-export const PeerList = ({ listColumns, peers }: PeerListProps) => {
+export const PeerList = ({ listColumns, peers, networks }: PeerListProps) => {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 
 	return (
@@ -21,14 +22,14 @@ export const PeerList = ({ listColumns, peers }: PeerListProps) => {
 
 			<Button
 				variant="plain"
-				className="w-full mt-3 mb-2"
+				className="w-full mt-8 mb-2"
 				onClick={() => setModalIsOpen(true)}
 				data-testid="peer-list__add-button"
 			>
 				Add Peer
 			</Button>
 
-			<CustomPeers isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+			<CustomPeers networks={networks} isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 		</div>
 	);
 };

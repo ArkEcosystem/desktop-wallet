@@ -11,8 +11,8 @@ export const VoteList = ({ votes }: VoteListProps) => {
 	return (
 		<div className="-my-5">
 			{votes?.map((vote: any, index: number) => (
-				<TransactionDetail key={index} border={index !== 0} label=" " extra={<Avatar address={vote.address} />}>
-					<Address address={vote.address} walletName={vote.delegateName} size="large" />
+				<TransactionDetail key={index} border={index !== 0} extra={<Avatar size="lg" address={vote.address} />}>
+					<Address address={vote.address} walletName={vote.delegateName} />
 				</TransactionDetail>
 			))}
 		</div>

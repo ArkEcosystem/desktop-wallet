@@ -5,15 +5,15 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="fixed inset-0 z-30 bg-black opacity-50"
+    class="fixed inset-0 z-50 bg-black opacity-50"
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzpans hGJZle absolute top-0 left-0 right-0 z-30 flex flex-col px-12 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzpans hGJZle fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
-      class="absolute top-0 right-0 z-10 mt-4 mr-4"
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
     >
       <button
         class="sc-AxjAm bThAoP"
@@ -22,57 +22,63 @@ exports[`UpdateWalletName should render a modal 1`] = `
         type="button"
       >
         <div
-          class="sc-Axmtr fmuEnd"
-          height="10"
-          width="10"
+          class="p-1"
         >
-          <svg>
-            cross-slim.svg
-          </svg>
+          <div
+            class="sc-Axmtr jcIrzJ"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
         </div>
       </button>
     </div>
     <div
       class="py-4"
     >
-      <h2>
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
         Name Wallet
       </h2>
       <div
-        class="flex-1 "
+        class="flex-1"
       >
         <svg
-          class="mb-8"
+          class="my-8"
         >
           name-wallet.svg
         </svg>
         <div
-          class="text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           You can enter the name of your wallet for a quick search in your wallet.
         </div>
         <form
-          class="mt-4"
+          class="mt-8"
           data-testid="Form"
         >
           <fieldset
             class="sc-AxirZ izhStr flex flex-col space-y-2"
           >
             <label
-              class="flex inline-block text-sm FormLabel transition-colors duration-100 text-theme-neutral-dark"
+              class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
               data-testid="FormLabel"
               for="name"
             >
               Enter a name
             </label>
             <input
-              class="sc-AxiKw jrntKW overflow-hidden shadow-sm w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 py-3 px-4 text-theme-neutral-900 transition-colors duration-200 focus:outline-none focus:border-theme-primary "
+              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="name"
             />
           </fieldset>
           <div
-            class="flex justify-end mt-4 space-x-3"
+            class="flex justify-end mt-8 space-x-3"
           >
             <button
               class="sc-AxjAm ddJBbC"

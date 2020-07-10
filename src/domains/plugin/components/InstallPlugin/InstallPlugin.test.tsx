@@ -1,58 +1,67 @@
-import { act, fireEvent, render } from "@testing-library/react";
-import { i18n } from "app/i18n";
-import { translations as COMMON } from "app/i18n/common/i18n";
-import React from "react";
-import { I18nextProvider } from "react-i18next";
+/* eslint-disable @typescript-eslint/require-await */
 
-import { translations as PLUGINS } from "../../i18n";
-import { InstallPlugin } from "./InstallPlugin";
+import { act } from "@testing-library/react-hooks";
+import React from "react";
+import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+
+import { FirstStep, InstallPlugin, SecondStep, ThirdStep } from "./InstallPlugin";
 
 describe("InstallPlugin", () => {
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<InstallPlugin isOpen={false} />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<InstallPlugin isOpen={false} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<InstallPlugin isOpen={true} />
-			</I18nextProvider>,
-		);
+	it("should render 1st step", async () => {
+		const { getByTestId, asFragment } = render(<FirstStep />);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(PLUGINS.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		expect(getByTestId("InstallPlugin__step--first")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should handle download action", () => {
-		const handleDownload = jest.fn();
+	it("should render 2st step", async () => {
+		const { getByTestId, asFragment } = render(<SecondStep />);
 
-		const { asFragment, getByTestId, rerender } = render(
-			<InstallPlugin step={1} isOpen={true} onDownload={handleDownload} />,
-		);
+		expect(getByTestId("InstallPlugin__step--second")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
 
-		act(() => {
-			fireEvent.click(getByTestId("install-plugin__download-button"));
+	it("should render 3st step", async () => {
+		const { getByTestId, asFragment } = render(<ThirdStep />);
+
+		expect(getByTestId("InstallPlugin__step--third")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render", async () => {
+		let rendered: RenderResult;
+
+		await act(async () => {
+			rendered = render(<InstallPlugin isOpen={true} />);
+			await waitFor(() => expect(rendered.getByTestId(`InstallPlugin__step--first`)).toBeTruthy());
 		});
 
-		expect(handleDownload).toHaveBeenCalled();
-		expect(getByTestId("modal__inner")).toHaveTextContent(COMMON.ATTENTION);
+		const { getByTestId, asFragment } = rendered!;
+
 		expect(asFragment()).toMatchSnapshot();
 
-		rerender(<InstallPlugin step={2} isOpen={true} />);
+		await act(async () => {
+			const downloadButton = getByTestId(`InstallPlugin__download-button`);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(COMMON.DOWNLOADED);
-		expect(asFragment()).toMatchSnapshot();
+			// Navigation between steps
+			fireEvent.click(downloadButton);
+			expect(getByTestId(`InstallPlugin__step--second`)).toBeTruthy();
 
-		rerender(<InstallPlugin step={3} isOpen={true} />);
+			const continueButton = getByTestId(`InstallPlugin__continue-button`);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(COMMON.DOWNLOADED);
-		expect(asFragment()).toMatchSnapshot();
+			fireEvent.click(continueButton);
+			expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+
+			// Back
+			fireEvent.click(getByTestId(`InstallPlugin__cancel-button`));
+			expect(getByTestId(`InstallPlugin__step--second`)).toBeTruthy();
+		});
 	});
 });

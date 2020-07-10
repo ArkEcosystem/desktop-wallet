@@ -11,16 +11,17 @@ type TabsProps = {
 
 export function Tabs({ children, activeId, onChange }: TabsProps) {
 	const context = useTab({ initialId: activeId });
+	const { currentId, setCurrentId } = context;
 
 	React.useEffect(() => {
-		if (context.currentId) {
-			onChange?.(context.currentId);
+		if (currentId) {
+			onChange?.(currentId);
 		}
-	}, [context.currentId, onChange, context]);
+	}, [currentId, onChange]);
 
 	React.useEffect(() => {
-		context.setCurrentId(activeId);
-	}, [activeId]);
+		setCurrentId(activeId);
+	}, [setCurrentId, activeId]);
 
 	return (
 		<TabContext.Provider value={context}>

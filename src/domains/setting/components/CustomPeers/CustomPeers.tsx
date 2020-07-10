@@ -3,7 +3,7 @@ import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { Select } from "app/components/Select";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import React from "react";
 import { useForm } from "react-hook-form";
 
@@ -11,20 +11,18 @@ type CustomPeersProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onAddPeer?: any;
+	networks?: any[];
 };
 
-export const CustomPeers = ({ isOpen, onClose, onAddPeer }: CustomPeersProps) => {
+export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeersProps) => {
 	const form = useForm({ mode: "onChange" });
 
 	return (
 		<Modal title="Custom Peers" size="xl" isOpen={isOpen} onClose={onClose}>
 			<Form context={form} onSubmit={onAddPeer}>
-				<FormField name="network">
+				<FormField name="network" className="mt-8">
 					<FormLabel>Network</FormLabel>
-					<Select ref={form.register({ required: "Field required" })}>
-						<option value="">Select</option>
-						<option value="ark-ecosystem">ARK Ecosystem</option>
-					</Select>
+					<SelectNetwork networks={networks} name="network" value="ARK" />
 					<FormHelperText />
 				</FormField>
 

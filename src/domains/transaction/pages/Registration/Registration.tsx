@@ -1,21 +1,21 @@
-import { images } from "app/assets/images";
 import { Address } from "app/components/Address";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
-import { Select } from "app/components/Select";
-import { SelectAsset } from "app/components/SelectAsset";
+import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
-import { Spinner } from "app/components/Spinner";
+import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { InputFee } from "domains/transaction/components/InputFee";
+import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
 import { LinkList } from "domains/transaction/components/LinkList";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -35,8 +35,6 @@ type RegistrationProps = {
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
 
-const { ConfirmTransactionLedgerBanner } = images.transaction.common;
-
 const FormWrapper = styled.div`
 	.select-transparent {
 		> div:first-child {
@@ -55,29 +53,18 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => (
-	<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
-		<div className="mb-2">
-			<FormLabel label="Registration Type" />
-		</div>
-		<div>
-			<Select placeholder=" " ref={register} data-testid="Registration__type-select">
-				{registrationTypes &&
-					registrationTypes.map((registrationType: any, index: number) => (
-						<option key={index} value={registrationType.value} data-testid="Registration__type-option">
-							{registrationType.label}
-						</option>
-					))}
-			</Select>
-
-			{selectedType && (
-				<div data-testid="Registration__type-selected" className="flex items-center ml-4 leading-tight -mt-9">
-					{selectedType.label}
-				</div>
-			)}
-		</div>
-	</FormField>
-);
+const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+	return (
+		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
+			<div className="mb-2">
+				<FormLabel label="Registration Type" />
+			</div>
+			<div>
+				<Select ref={register} data-testid="Registration__type-select" options={registrationTypes} />
+			</div>
+		</FormField>
+	);
+};
 
 const getAddressInfo = (addresses: any[], address: string) => {
 	return addresses.find((profile: any) => profile.address === address);
@@ -103,13 +90,16 @@ const FirstStep = ({
 
 	return (
 		<div data-testid="Registration__first-step">
-			<h1>Registration</h1>
-			<div className="text-theme-neutral-700">
+			<h1 className="mb-0">Registration</h1>
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
-			<FormWrapper className="mt-5">
-				<SelectAsset assets={networks} />
+			<FormWrapper className="mt-8">
+				<FormField name="network">
+					<FormLabel>Network</FormLabel>
+					<SelectNetwork networks={networks} />
+				</FormField>
 
 				<ProfileFormField
 					formName="address"
@@ -138,30 +128,30 @@ const SecondStep = ({ form }: { form: any }) => {
 
 	return (
 		<div data-testid="Registration__second-step">
-			<h1>Register Business</h1>
-			<div className="text-theme-neutral-700">
+			<h1 className="mb-0">Register Business</h1>
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
 			<div>
-				<TransactionDetail border={false} className="mb-8">
-					<FormField name="name">
+				<TransactionDetail border={false} className="pb-8">
+					<FormField name="name" className="font-normal">
 						<FormLabel required>Name</FormLabel>
 						<Input type="text" ref={register} />
 					</FormField>
 
-					<FormField name="description" className="mt-8">
+					<FormField name="description" className="mt-8 font-normal">
 						<FormLabel required>Description</FormLabel>
 						<TextArea ref={register} />
 					</FormField>
 
-					<FormField name="website" className="mt-8">
+					<FormField name="website" className="mt-8 font-normal">
 						<FormLabel>Website</FormLabel>
 						<Input type="website" ref={register} />
 					</FormField>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Repository"
 						description="Show your projects through your repository"
@@ -174,7 +164,7 @@ const SecondStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Social Media"
 						description="Tell people more about yourself through social media"
@@ -187,7 +177,7 @@ const SecondStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail className="mb-2">
+				<TransactionDetail className="pb-8">
 					<LinkCollection
 						title="Photo and Video"
 						description="Get more users and add more information about yourself"
@@ -202,8 +192,12 @@ const SecondStep = ({ form }: { form: any }) => {
 					/>
 				</TransactionDetail>
 
-				<TransactionDetail label="Fee ARK" className="mt-4">
-					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+				<TransactionDetail className="pt-6 pb-0">
+					<FormField name="fee">
+						<FormLabel>Fee ARK</FormLabel>
+
+						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
+					</FormField>
 				</TransactionDetail>
 			</div>
 		</div>
@@ -231,48 +225,46 @@ const ThirdStep = () => {
 	];
 
 	return (
-		<div data-testid="Registration__third-step" className="space-y-8">
+		<div data-testid="Registration__third-step">
 			<div>
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="grid grid-flow-row gap-2">
+			<div className="mt-4">
 				<TransactionDetail
 					border={false}
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="large">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
 					}
 				>
-					<div className="flex-auto text-xl font-semibold truncate text-theme-neutral-800 max-w-24">
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
 						ARK Ecosystem
 					</div>
 				</TransactionDetail>
 
 				<TransactionDetail
-					label=" "
-					extra={
-						<div>
-							<Circle avatarId="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
+					className="pt-4"
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
-						<Label color="warning">Your address</Label>
+						<Label color="warning">
+							<span className="text-sm">Your address</span>
+						</Label>
 					</div>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} size="large" />
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				<TransactionDetail
 					label="Type"
 					extra={
 						<div>
-							<Circle className="border-black bg-theme-background" size="large">
+							<Circle className="border-black bg-theme-background" size="lg">
 								<Icon name="Business" width={20} height={20} />
 							</Circle>
 						</div>
@@ -299,7 +291,7 @@ const ThirdStep = () => {
 					/>
 				</TransactionDetail>
 
-				<div className="my-4">
+				<div>
 					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 				</div>
 			</div>
@@ -314,12 +306,12 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 		<div data-testid="Registration__fourth-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1>Authenticate</h1>
-					<div className="text-sm text-theme-neutral-700">
+					<h1 className="mb-0">Authenticate</h1>
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
-					<div className="mt-5">
+					<div className="mt-8">
 						<FormField name="name">
 							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
@@ -336,17 +328,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 			{passwordType === "ledger" && (
 				<div>
 					<h1>Confirm Your Transaction</h1>
-					<ConfirmTransactionLedgerBanner />
-
-					<div className="mt-8 text-theme-neutral-700">
-						Please review and verify the information on your Ledger device. Choose Accept to complete your
-						transaction.
-					</div>
-
-					<div className="inline-flex items-center mt-5 space-x-3">
-						<Spinner color="primary" size="default" />
-						<span className="text-black">Waiting for confirmation...</span>
-					</div>
+					<LedgerConfirmation />
 				</div>
 			)}
 		</div>
@@ -358,7 +340,7 @@ export const FifthStep = () => (
 		<TransactionDetail
 			label="Transaction Type"
 			extra={
-				<Circle className="border-black" size="large">
+				<Circle className="border-black" size="lg">
 					<Icon name="Business" width={20} height={20} />
 				</Circle>
 			}
@@ -374,10 +356,11 @@ export const FifthStep = () => (
 		</TransactionDetail>
 		<TransactionDetail
 			label="Amount"
+			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="large">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -408,88 +391,94 @@ export const Registration = ({
 	};
 
 	return (
-		<div data-testid="Registration" className="max-w-xl mx-auto">
-			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={7} activeIndex={activeTab} />
+		<div data-testid="Registration">
+			<div className="max-w-xl py-16 mx-auto">
+				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={7} activeIndex={activeTab} />
 
-					<div className="mt-4">
-						<TabPanel tabId={1}>
-							<FirstStep
-								addresses={addresses}
-								form={form}
-								networks={networks}
-								registrationTypes={registrationTypes}
-							/>
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep form={form} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep form={form} passwordType="mnemonic" />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<FourthStep form={form} passwordType="password" />
-						</TabPanel>
-						<TabPanel tabId={6}>
-							<FourthStep form={form} passwordType="ledger" />
-						</TabPanel>
-						<TabPanel tabId={7}>
-							<FifthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep
+									addresses={addresses}
+									form={form}
+									networks={networks}
+									registrationTypes={registrationTypes}
+								/>
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep form={form} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep form={form} passwordType="mnemonic" />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<FourthStep form={form} passwordType="password" />
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<FourthStep form={form} passwordType="ledger" />
+							</TabPanel>
+							<TabPanel tabId={7}>
+								<FifthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 7 && (
-								<Button
-									disabled={activeTab === 1}
-									data-testid="Registration__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-							)}
-
-							{activeTab < 4 && (
-								<Button
-									data-testid="Registration__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							)}
-
-							{activeTab >= 4 && activeTab < 7 && (
-								<Button
-									data-testid="Registration__send-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									<Icon name="Send" className="mr-2" width={20} height={20} />
-									Send
-								</Button>
-							)}
-
-							{activeTab === 7 && (
-								<div className="flex justify-end space-x-3">
-									<Button data-testid="Registration__wallet-button" variant="plain">
-										Back to wallet
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 7 && (
+									<Button
+										disabled={activeTab === 1}
+										data-testid="Registration__back-button"
+										variant="plain"
+										onClick={handleBack}
+									>
+										Back
 									</Button>
+								)}
 
-									<Button type="submit" data-testid="Registration__download-button" variant="plain">
-										<Icon name="Download" className="mr-2" />
-										Download
+								{activeTab < 4 && (
+									<Button
+										data-testid="Registration__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
 									</Button>
-								</div>
-							)}
+								)}
+
+								{activeTab >= 4 && activeTab < 7 && (
+									<Button
+										data-testid="Registration__send-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										<Icon name="Send" className="mr-2" width={20} height={20} />
+										Send
+									</Button>
+								)}
+
+								{activeTab === 7 && (
+									<div className="flex justify-end space-x-3">
+										<Button data-testid="Registration__wallet-button" variant="plain">
+											Back to wallet
+										</Button>
+
+										<Button
+											type="submit"
+											data-testid="Registration__download-button"
+											variant="plain"
+										>
+											<Icon name="Download" className="mr-2" />
+											Download
+										</Button>
+									</div>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
+					</Tabs>
+				</Form>
+			</div>
 		</div>
 	);
 };

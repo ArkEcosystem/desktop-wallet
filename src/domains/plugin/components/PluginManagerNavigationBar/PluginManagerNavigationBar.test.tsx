@@ -1,18 +1,12 @@
-import { fireEvent, render } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { i18n } from "app/i18n";
 import React from "react";
-import { I18nextProvider } from "react-i18next";
+import { fireEvent, render } from "testing-library";
 
 import { PluginManagerNavigationBar } from "./PluginManagerNavigationBar";
 
 describe("PluginManagerNavigationBar", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManagerNavigationBar />
-			</I18nextProvider>,
-		);
+		const { asFragment, getByTestId } = render(<PluginManagerNavigationBar />);
 
 		expect(getByTestId("PluginManagerNavigationBar")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -29,12 +23,10 @@ describe("PluginManagerNavigationBar", () => {
 		});
 
 		const { asFragment, getByTestId, rerender } = render(
-			<I18nextProvider i18n={i18n}>
-				<PluginManagerNavigationBar
-					selected={result.current.currentView}
-					onChange={result.current.setCurrentView}
-				/>
-			</I18nextProvider>,
+			<PluginManagerNavigationBar
+				selected={result.current.currentView}
+				onChange={result.current.setCurrentView}
+			/>,
 		);
 
 		const navIds = ["game", "utility", "themes", "other", "my-plugins", "home"];
@@ -47,16 +39,14 @@ describe("PluginManagerNavigationBar", () => {
 			});
 
 			rerender(
-				<I18nextProvider i18n={i18n}>
-					<PluginManagerNavigationBar
-						selected={result.current.currentView}
-						onChange={result.current.setCurrentView}
-					/>
-				</I18nextProvider>,
+				<PluginManagerNavigationBar
+					selected={result.current.currentView}
+					onChange={result.current.setCurrentView}
+				/>,
 			);
 
 			expect(result.current.currentView).toBe(navId);
-			expect(getByTestId(`PluginManagerNavigationBar__${navId}`)).toHaveClass("border-theme-primary-500");
+			expect(getByTestId(`PluginManagerNavigationBar__${navId}`)).toHaveClass("active");
 		}
 
 		expect(asFragment()).toMatchSnapshot();
