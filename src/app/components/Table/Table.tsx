@@ -59,22 +59,22 @@ export const Table = ({ children, data, columns }: TableProps) => {
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
 									<div className={`flex flex-inline align-top ${column.className}`}>
-										<div className="mr-2">{column.render("Header")}</div>
-										<div
-											className="flex items-center text-theme-color-neutral-500"
-											data-testid={`table__${getSortIconName(
-												column.isSorted,
-												column.isSortedDesc,
-											)}`}
-										>
-											{column.canSort && (
+										<div>{column.render("Header")}</div>
+										{column.canSort && (
+											<div
+												className="flex items-center ml-2 text-theme-color-neutral-500"
+												data-testid={`table__${getSortIconName(
+													column.isSorted,
+													column.isSortedDesc,
+												)}`}
+											>
 												<Icon
 													name={getSortIconName(column.isSorted, column.isSortedDesc)}
 													width={column.isSorted ? 10 : 15}
 													height={column.isSorted ? 10 : 12}
 												/>
-											)}
-										</div>
+											</div>
+										)}
 									</div>
 								</th>
 							))}
