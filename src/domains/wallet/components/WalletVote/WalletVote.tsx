@@ -75,7 +75,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 												data-testid="WalletVote__delegate__explorer"
 												href={explorerUrl}
 												target="_blank"
-												rel="noreferrer"
+												rel="noopener noreferrer"
 											>
 												<Icon name="Explorer" className="text-2xl text-theme-primary" />
 											</a>
@@ -89,7 +89,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 												data-testid="WalletVote__delegate__msq"
 												href={msqUrl}
 												target="_blank"
-												rel="noreferrer"
+												rel="noopener noreferrer"
 											>
 												<Icon name="Link" className="text-xl text-theme-primary" />
 											</a>

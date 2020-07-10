@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout should hide navigation bar 1`] = `
+exports[`Layout should hide the navigation bar 1`] = `
+<DocumentFragment>
+  <h1>
+    Test
+  </h1>
+</DocumentFragment>
+`;
+
+exports[`Layout should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
@@ -26,7 +34,52 @@ exports[`Layout should hide navigation bar 1`] = `
           </div>
           <ul
             class="flex h-20 md:h-24"
-          />
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/1/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/1/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/1/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/1/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
         </div>
         <div
           class="flex items-center"
@@ -152,14 +205,6 @@ exports[`Layout should hide navigation bar 1`] = `
       </div>
     </div>
   </nav>
-  <h1>
-    Test
-  </h1>
-</DocumentFragment>
-`;
-
-exports[`Layout should render 1`] = `
-<DocumentFragment>
   <h1>
     Test
   </h1>

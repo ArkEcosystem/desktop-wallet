@@ -3,6 +3,32 @@
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
   <div
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
+    data-testid="breadcrumbs__wrapper"
+  >
+    <div
+      class="sc-AxjAm jMosRN"
+      height="10"
+      width="19"
+    >
+      <svg>
+        arrow-back.svg
+      </svg>
+    </div>
+    <div
+      class="space-x-2"
+    >
+      <a
+        class="text-theme-neutral-dark"
+        href="/profiles/qwe123/dashboard"
+      >
+        <span>
+          Go back to Portfolio
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
     class="max-w-xl py-16 mx-auto"
   >
     <form
@@ -87,7 +113,7 @@ exports[`CreateWallet should render 1`] = `
                         class="px-4 py-2 flex-0 w-14"
                       >
                         <div
-                          class="sc-AxhUy iJOgmr border-theme-neutral-200"
+                          class="sc-AxgMl hdkviZ border-theme-neutral-200"
                         />
                       </div>
                       <div
@@ -128,7 +154,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
+                        class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -148,7 +174,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
+                        class="sc-AxgMl jZnvrW text-theme-warning-400 border-theme-warning-200"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -168,7 +194,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
+                        class="sc-AxgMl jZnvrW text-theme-neutral-800 border-theme-neutral-600"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -188,7 +214,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
+                        class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -208,7 +234,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
+                        class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -230,7 +256,7 @@ exports[`CreateWallet should render 1`] = `
             class="flex justify-end mt-10 space-x-3"
           >
             <button
-              class="sc-AxhCb BegvR"
+              class="sc-AxhUy hiyDSc"
               color="primary"
               data-testid="CreateWallet__back-button"
               disabled=""
@@ -239,7 +265,7 @@ exports[`CreateWallet should render 1`] = `
               Back
             </button>
             <button
-              class="sc-AxhCb gBCygf"
+              class="sc-AxhUy hMFbHm"
               color="primary"
               data-testid="CreateWallet__continue-button"
               disabled=""
@@ -312,7 +338,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               class="px-4 py-2 flex-0 w-14"
             >
               <div
-                class="sc-AxhUy iJOgmr border-theme-neutral-200"
+                class="sc-AxgMl hdkviZ border-theme-neutral-200"
               />
             </div>
             <div
@@ -353,7 +379,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
+              class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -373,7 +399,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
+              class="sc-AxgMl jZnvrW text-theme-warning-400 border-theme-warning-200"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -393,7 +419,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
+              class="sc-AxgMl jZnvrW text-theme-neutral-800 border-theme-neutral-600"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -413,7 +439,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
+              class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -433,7 +459,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
+              class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -597,7 +623,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex justify-end w-full"
       >
         <button
-          class="sc-AxhCb BegvR"
+          class="sc-AxhUy hiyDSc"
           color="primary"
           data-testid="CreateWallet__copy"
           type="button"
@@ -618,7 +644,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhCb euqDGV border-theme-neutral-300"
       type="horizontal"
     />
     <div
@@ -653,7 +679,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex justify-end w-full"
       >
         <button
-          class="sc-AxhCb BegvR flex items-center mt-4 space-x-2"
+          class="sc-AxhUy hiyDSc flex items-center mt-4 space-x-2"
           color="primary"
           data-testid="CreateWallet__download"
           type="button"
@@ -674,7 +700,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhCb euqDGV border-theme-neutral-300"
       type="horizontal"
     />
   </section>
@@ -726,7 +752,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxhUy fHeTTV"
+          class="sc-AxgMl hjpKRL"
         >
           <div
             class="sc-AxjAm cpczEI"
@@ -741,7 +767,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
       <li>
         <div
-          class="sc-AxgMl fHSugy border-theme-neutral-300"
+          class="sc-AxhCb euqDGV border-theme-neutral-300"
           type="horizontal"
         />
       </li>
@@ -761,12 +787,12 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxhUy fHeTTV"
+          class="sc-AxgMl hjpKRL"
         />
       </li>
     </ul>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhCb euqDGV border-theme-neutral-300"
       type="horizontal"
     />
     <fieldset
