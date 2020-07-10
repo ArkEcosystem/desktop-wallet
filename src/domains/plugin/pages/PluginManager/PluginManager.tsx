@@ -163,7 +163,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	}
 
 	return (
-		<div data-testid="PluginManager">
+		<div data-testid="PluginManager" className="pb-14">
 			<InstallPlugin
 				isOpen={installPlugin}
 				onClose={() => setInstallPlugin(false)}
