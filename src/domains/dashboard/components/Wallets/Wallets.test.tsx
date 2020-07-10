@@ -45,7 +45,7 @@ describe("Wallets", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets wallets={wallets} filterProperties={filterProperties} />)
+					<Wallets wallets={wallets} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
@@ -61,7 +61,7 @@ describe("Wallets", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets wallets={[]} filterProperties={filterProperties} />)
+					<Wallets wallets={[]} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
@@ -77,7 +77,7 @@ describe("Wallets", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />)
+					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
@@ -93,7 +93,7 @@ describe("Wallets", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />)
+					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
@@ -109,7 +109,7 @@ describe("Wallets", () => {
 		const { getByTestId } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />)
+					<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
@@ -130,7 +130,7 @@ describe("Wallets", () => {
 		const { getByTestId } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />)
+					<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
