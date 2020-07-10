@@ -41,12 +41,7 @@ const FirstStep = ({ form }: { form: any }) => {
 
 			<div>
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					border={false}
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
@@ -92,14 +87,7 @@ const SecondStep = () => (
 				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
 			</TransactionDetail>
 
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
+			<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
 					<span className="mr-1">Account</span>
 					<Label color="warning">

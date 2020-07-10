@@ -15,10 +15,10 @@ export const TransactionDetail = ({ border, children, className, extra, label, p
 			!border || "border-t border-dashed border-theme-neutral-300"
 		} ${className}`}
 	>
-		<div className="flex-1">
+		<div className="flex-1 space-y-2">
 			{label && <div className="text-sm font-semibold text-theme-neutral-500">{label}</div>}
 
-			<div className="mt-2 font-semibold">{children}</div>
+			<div className="font-semibold">{children}</div>
 		</div>
 
 		{extra ? extra : null}

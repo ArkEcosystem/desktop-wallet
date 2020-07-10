@@ -411,10 +411,10 @@ exports[`Registration should render 2nd step 1`] = `
                     class="flex items-center py-6 true pb-8"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <fieldset
                           class="sc-AxhCb ckQmOL font-normal"
@@ -483,10 +483,10 @@ exports[`Registration should render 2nd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="sc-fznxsB eBubjr font-normal"
@@ -528,10 +528,10 @@ exports[`Registration should render 2nd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="sc-fznxsB eBubjr font-normal"
@@ -573,10 +573,10 @@ exports[`Registration should render 2nd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="sc-fznxsB eBubjr font-normal"
@@ -618,10 +618,10 @@ exports[`Registration should render 2nd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <fieldset
                           class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -816,7 +816,7 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 true "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
@@ -824,7 +824,7 @@ exports[`Registration should render 3rd step 1`] = `
                         Network
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
@@ -855,15 +855,10 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-4"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
-                      >
-                         
-                      </div>
-                      <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="mb-2 text-sm font-semibold text-theme-neutral-500"
@@ -903,21 +898,17 @@ exports[`Registration should render 3rd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="mt-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                      data-testid="Avatar"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                        data-testid="Avatar"
+                        class="w-full h-full overflow-hidden rounded-full"
                       >
-                        <div
-                          class="w-full h-full overflow-hidden rounded-full"
-                        >
-                          <img
-                            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          />
-                        </div>
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
                       </div>
                     </div>
                   </div>
@@ -925,7 +916,7 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
@@ -933,7 +924,7 @@ exports[`Registration should render 3rd step 1`] = `
                         Type
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Business Registration
                       </div>
@@ -958,7 +949,7 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
@@ -966,7 +957,7 @@ exports[`Registration should render 3rd step 1`] = `
                         Name
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         ROBank Eco
                       </div>
@@ -976,7 +967,7 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
@@ -984,7 +975,7 @@ exports[`Registration should render 3rd step 1`] = `
                         Description
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Not a trustworthy bank
                       </div>
@@ -994,7 +985,7 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
                         class="text-sm font-semibold text-theme-neutral-500"
@@ -1002,7 +993,7 @@ exports[`Registration should render 3rd step 1`] = `
                         Website
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <a
                           class="link"
@@ -1019,10 +1010,10 @@ exports[`Registration should render 3rd step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 mb-2"
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           data-testid="LinkList"
@@ -1423,7 +1414,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 true "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1431,7 +1422,7 @@ exports[`Registration should render 5th step 1`] = `
                           ID
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="flex items-center"
@@ -1472,7 +1463,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1480,7 +1471,7 @@ exports[`Registration should render 5th step 1`] = `
                           Block ID
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="flex items-center"
@@ -1521,7 +1512,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1529,7 +1520,7 @@ exports[`Registration should render 5th step 1`] = `
                           Network
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -1571,10 +1562,10 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="mb-2 text-sm font-semibold text-theme-neutral-500"
@@ -1614,21 +1605,17 @@ exports[`Registration should render 5th step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="mt-2"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                          data-testid="Avatar"
+                          class="w-full h-full overflow-hidden rounded-full"
                         >
-                          <div
-                            class="w-full h-full overflow-hidden rounded-full"
-                          >
-                            <img
-                              alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                              title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            />
-                          </div>
+                          <img
+                            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          />
                         </div>
                       </div>
                     </div>
@@ -1636,7 +1623,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1644,7 +1631,7 @@ exports[`Registration should render 5th step 1`] = `
                           Transaction Type
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           Business Registration
                         </div>
@@ -1667,7 +1654,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1675,7 +1662,7 @@ exports[`Registration should render 5th step 1`] = `
                           Name
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           ROBank Eco
                         </div>
@@ -1685,7 +1672,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1693,7 +1680,7 @@ exports[`Registration should render 5th step 1`] = `
                           Description
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           Not a trustworthy bank
                         </div>
@@ -1703,7 +1690,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1711,7 +1698,7 @@ exports[`Registration should render 5th step 1`] = `
                           Website
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <a
                             class="link"
@@ -1728,7 +1715,7 @@ exports[`Registration should render 5th step 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -1736,7 +1723,7 @@ exports[`Registration should render 5th step 1`] = `
                           Amount
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           1.09660435 ARK
                         </div>
@@ -2579,7 +2566,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 true "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2587,7 +2574,7 @@ exports[`Registration should submit 1`] = `
                           ID
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="flex items-center"
@@ -2628,7 +2615,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2636,7 +2623,7 @@ exports[`Registration should submit 1`] = `
                           Block ID
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="flex items-center"
@@ -2677,7 +2664,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2685,7 +2672,7 @@ exports[`Registration should submit 1`] = `
                           Network
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="inline-block truncate align-middle"
@@ -2727,10 +2714,10 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <div
                             class="mb-2 text-sm font-semibold text-theme-neutral-500"
@@ -2770,21 +2757,17 @@ exports[`Registration should submit 1`] = `
                         </div>
                       </div>
                       <div
-                        class="mt-2"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                          data-testid="Avatar"
+                          class="w-full h-full overflow-hidden rounded-full"
                         >
-                          <div
-                            class="w-full h-full overflow-hidden rounded-full"
-                          >
-                            <img
-                              alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                              title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            />
-                          </div>
+                          <img
+                            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          />
                         </div>
                       </div>
                     </div>
@@ -2792,7 +2775,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2800,7 +2783,7 @@ exports[`Registration should submit 1`] = `
                           Transaction Type
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           Business Registration
                         </div>
@@ -2823,7 +2806,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2831,7 +2814,7 @@ exports[`Registration should submit 1`] = `
                           Name
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           ROBank Eco
                         </div>
@@ -2841,7 +2824,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2849,7 +2832,7 @@ exports[`Registration should submit 1`] = `
                           Description
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           Not a trustworthy bank
                         </div>
@@ -2859,7 +2842,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2867,7 +2850,7 @@ exports[`Registration should submit 1`] = `
                           Website
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           <a
                             class="link"
@@ -2884,7 +2867,7 @@ exports[`Registration should submit 1`] = `
                       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
                     >
                       <div
-                        class="flex-1"
+                        class="flex-1 space-y-2"
                       >
                         <div
                           class="text-sm font-semibold text-theme-neutral-500"
@@ -2892,7 +2875,7 @@ exports[`Registration should submit 1`] = `
                           Amount
                         </div>
                         <div
-                          class="mt-2 font-semibold"
+                          class="font-semibold"
                         >
                           1.09660435 ARK
                         </div>
