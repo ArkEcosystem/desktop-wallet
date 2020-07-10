@@ -2,11 +2,11 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
+import { LayoutControls } from "app/components/LayoutControls";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import { PluginManagerControls } from "domains/plugin/components/PluginManagerControls";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -143,7 +143,8 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 				<div data-testid={`PluginsCategoryHome__container`} className="container pt-8 mx-auto px-14 ">
 					<div className="flex items-center justify-between mt-8 mb-6">
 						<h2>{t("PLUGINS.PAGE_PLUGINS_CATEGORY.LAYOUT_TITLE")}</h2>
-						<PluginManagerControls
+						<LayoutControls
+							data-testid="PluginManagerControls"
 							selectedViewType={viewType}
 							onSelectGridView={() => setViewType("grid")}
 							onSelectListView={() => setViewType("list")}
