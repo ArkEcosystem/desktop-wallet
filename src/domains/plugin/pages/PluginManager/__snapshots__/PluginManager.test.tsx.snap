@@ -3,6 +3,7 @@
 exports[`PluginManager should cancel install plugin 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -4168,6 +4169,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
 exports[`PluginManager should close install plugin modal 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -8333,6 +8335,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
 exports[`PluginManager should delete plugin on game 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -10134,91 +10137,95 @@ exports[`PluginManager should delete plugin on game 1`] = `
           </table>
         </div>
         <div
-          class="sc-fzqNJr htwJFc mt-5"
-          data-testid="Pagination"
+          class="flex justify-center"
         >
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__first"
-            disabled=""
-            type="button"
-          >
-            <div
-              class="sc-AxirZ hDwaov"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-first.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__previous"
-            disabled=""
-            type="button"
-          >
-            <div
-              class="sc-AxirZ fttODj mr-2"
-              height="10"
-              width="10"
-            >
-              <svg>
-                back.svg
-              </svg>
-            </div>
-            Previous
-          </button>
           <div
-            class="flex px-2 rounded bg-theme-primary-contrast"
+            class="sc-fzqNJr htwJFc mt-5"
+            data-testid="Pagination"
           >
-            <div
-              class="sc-fzoyAV eVatnf current-page"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__first"
+              disabled=""
+              type="button"
             >
-              1
-            </div>
-            <div
-              class="sc-fzoyAV eVatnf"
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  pagination-first.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__previous"
+              disabled=""
+              type="button"
             >
-              2
+              <div
+                class="sc-AxirZ fttODj mr-2"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  back.svg
+                </svg>
+              </div>
+              Previous
+            </button>
+            <div
+              class="flex px-2 rounded bg-theme-primary-contrast"
+            >
+              <div
+                class="sc-fzoyAV eVatnf current-page"
+              >
+                1
+              </div>
+              <div
+                class="sc-fzoyAV eVatnf"
+              >
+                2
+              </div>
             </div>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__next"
+              type="button"
+            >
+              Next
+              <div
+                class="sc-AxirZ hDwaov ml-2"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  forward.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__last"
+              type="button"
+            >
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  pagination-last.svg
+                </svg>
+              </div>
+            </button>
           </div>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__next"
-            type="button"
-          >
-            Next
-            <div
-              class="sc-AxirZ hDwaov ml-2"
-              height="12"
-              width="12"
-            >
-              <svg>
-                forward.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__last"
-            type="button"
-          >
-            <div
-              class="sc-AxirZ hDwaov"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-last.svg
-              </svg>
-            </div>
-          </button>
         </div>
       </div>
     </div>
@@ -10229,6 +10236,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
 exports[`PluginManager should delete plugin on home 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -12675,6 +12683,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
 exports[`PluginManager should download & install plugin on game 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -14631,91 +14640,95 @@ exports[`PluginManager should download & install plugin on game 1`] = `
           </table>
         </div>
         <div
-          class="sc-fzqNJr htwJFc mt-5"
-          data-testid="Pagination"
+          class="flex justify-center"
         >
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__first"
-            disabled=""
-            type="button"
-          >
-            <div
-              class="sc-AxirZ hDwaov"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-first.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__previous"
-            disabled=""
-            type="button"
-          >
-            <div
-              class="sc-AxirZ fttODj mr-2"
-              height="10"
-              width="10"
-            >
-              <svg>
-                back.svg
-              </svg>
-            </div>
-            Previous
-          </button>
           <div
-            class="flex px-2 rounded bg-theme-primary-contrast"
+            class="sc-fzqNJr htwJFc mt-5"
+            data-testid="Pagination"
           >
-            <div
-              class="sc-fzoyAV eVatnf current-page"
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__first"
+              disabled=""
+              type="button"
             >
-              1
-            </div>
-            <div
-              class="sc-fzoyAV eVatnf"
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  pagination-first.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__previous"
+              disabled=""
+              type="button"
             >
-              2
+              <div
+                class="sc-AxirZ fttODj mr-2"
+                height="10"
+                width="10"
+              >
+                <svg>
+                  back.svg
+                </svg>
+              </div>
+              Previous
+            </button>
+            <div
+              class="flex px-2 rounded bg-theme-primary-contrast"
+            >
+              <div
+                class="sc-fzoyAV eVatnf current-page"
+              >
+                1
+              </div>
+              <div
+                class="sc-fzoyAV eVatnf"
+              >
+                2
+              </div>
             </div>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__next"
+              type="button"
+            >
+              Next
+              <div
+                class="sc-AxirZ hDwaov ml-2"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  forward.svg
+                </svg>
+              </div>
+            </button>
+            <button
+              class="sc-AxjAm ddJBbC"
+              color="primary"
+              data-testid="Pagination__last"
+              type="button"
+            >
+              <div
+                class="sc-AxirZ hDwaov"
+                height="12"
+                width="12"
+              >
+                <svg>
+                  pagination-last.svg
+                </svg>
+              </div>
+            </button>
           </div>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__next"
-            type="button"
-          >
-            Next
-            <div
-              class="sc-AxirZ hDwaov ml-2"
-              height="12"
-              width="12"
-            >
-              <svg>
-                forward.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddJBbC"
-            color="primary"
-            data-testid="Pagination__last"
-            type="button"
-          >
-            <div
-              class="sc-AxirZ hDwaov"
-              height="12"
-              width="12"
-            >
-              <svg>
-                pagination-last.svg
-              </svg>
-            </div>
-          </button>
         </div>
       </div>
     </div>
@@ -14726,6 +14739,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
 exports[`PluginManager should download & install plugin on home 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -19046,6 +19060,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
 exports[`PluginManager should install plugin from header install button 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -21647,6 +21662,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
 exports[`PluginManager should render 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -24093,6 +24109,7 @@ exports[`PluginManager should render 1`] = `
 exports[`PluginManager should search for plugin 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -26591,6 +26608,7 @@ exports[`PluginManager should search for plugin 1`] = `
 exports[`PluginManager should select plugin on game grid 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -28703,6 +28721,7 @@ exports[`PluginManager should select plugin on game grid 1`] = `
 exports[`PluginManager should select plugin on home grids 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -31149,6 +31168,7 @@ exports[`PluginManager should select plugin on home grids 1`] = `
 exports[`PluginManager should toggle between list and grid on game 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
@@ -33261,6 +33281,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
 exports[`PluginManager should toggle between list and grid on home 1`] = `
 <DocumentFragment>
   <div
+    class="pb-14"
     data-testid="PluginManager"
   >
     <div
