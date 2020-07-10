@@ -61,46 +61,31 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should open & close featured modal", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__home__featured__view-more"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_FEATURED_PLUGINS.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should open & close top rated modal", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__home__top-rated__view-more"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_BEST_PLUGINS.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should download & install plugin on home", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
 			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
+		});
+
+		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should install plugin from header install button", () => {
+		const { asFragment, getByTestId } = render(<PluginManager />);
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager_header--install"));
 		});
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
