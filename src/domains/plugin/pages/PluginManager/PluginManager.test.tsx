@@ -22,9 +22,9 @@ describe("PluginManager", () => {
 	const history = createMemoryHistory();
 	const pluginsURL = "/profiles/qwe123/plugins";
 
-	history.push(pluginsURL);
-
 	beforeEach(() => {
+		history.push(pluginsURL);
+
 		rendered = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/plugins">
@@ -212,15 +212,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should select plugin on home grids", () => {
-		const { asFragment, getByTestId } = rendered;
-
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__home__featured")).getByTestId("PluginCard--ark-explorer-1"),
-			);
-		});
-
-		expect(history.location.pathname).toEqual("/profiles/qwe123/plugins/ark-explorer-1");
+		const { getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(
@@ -229,14 +221,6 @@ describe("PluginManager", () => {
 		});
 
 		expect(history.location.pathname).toEqual("/profiles/qwe123/plugins/ark-explorer-1");
-
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__home__top-utilities")).getByTestId("PluginCard--ark-explorer-1"),
-			);
-		});
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select plugin on game grid", () => {
