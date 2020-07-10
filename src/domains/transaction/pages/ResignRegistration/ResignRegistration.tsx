@@ -72,7 +72,7 @@ const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
 		</div>
-		<div className="grid grid-flow-row gap-2 mt-4">
+		<div className="mt-4 grid grid-flow-row gap-2">
 			<TransactionDetail
 				border={false}
 				label="Network"
