@@ -15,6 +15,7 @@ export const networks = [
 
 export const wallets = [
 	{
+		id: "1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Ark",
 		coinClass: "text-theme-danger-400 border-theme-danger-light",
 		address: "1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -38,6 +39,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Ethereum",
 		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
 		address: "2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -61,6 +63,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -84,6 +87,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -107,6 +111,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -130,6 +135,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Ark",
 		coinClass: "text-theme-danger-400 border-theme-danger-light",
 		address: "6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -153,6 +159,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Ethereum",
 		coinClass: "text-theme-neutral-800 border-theme-neutral-600",
 		address: "7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -183,6 +190,7 @@ export const wallets = [
 		blankSubtitleClass: "text-theme-primary font-semibold cursor-pointer",
 	},
 	{
+		id: "8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -206,6 +214,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -229,6 +238,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
@@ -252,6 +262,7 @@ export const wallets = [
 		],
 	},
 	{
+		id: "10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Bitcoin",
 		coinClass: "text-theme-warning-400 border-theme-warning-200",
 		address: "10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",

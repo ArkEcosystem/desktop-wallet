@@ -1,10 +1,20 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentContext } from "app/contexts";
+import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
-import { act, fireEvent, render, RenderResult } from "testing-library";
+import { Route } from "react-router-dom";
+import { act, fireEvent, RenderResult, renderWithRouter } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { ImportWallet } from "./ImportWallet";
 
 describe("Wallet / Import", () => {
 	let rendered: RenderResult;
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	const history = createMemoryHistory();
+	const importURL = "/profiles/qwe123/wallets/import";
 	const networks = [
 		{
 			id: 1,
@@ -23,8 +33,20 @@ describe("Wallet / Import", () => {
 		},
 	];
 
+	history.push(importURL);
+
 	beforeEach(() => {
-		rendered = render(<ImportWallet networks={networks} />);
+		rendered = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet networks={networks} />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [importURL],
+				history,
+			},
+		);
 	});
 
 	it("should render", () => {

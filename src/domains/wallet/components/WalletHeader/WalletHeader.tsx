@@ -7,15 +7,15 @@ import { Toggle } from "app/components/Toggle";
 import React from "react";
 
 type Props = {
-	address: string;
-	balance: string;
+	address: string | undefined;
+	balance: string | undefined;
 	coin: string;
-	currencyBalance?: string;
+	currencyBalance?: string | undefined;
 	hasStarred?: boolean;
 	isLedger?: boolean;
 	isMultisig?: boolean;
-	name?: string;
-	publicKey?: string;
+	name?: string | undefined;
+	publicKey?: string | undefined;
 	onCopy?: () => void;
 	onSend?: () => void;
 	onStar?: () => void;

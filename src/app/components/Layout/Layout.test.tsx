@@ -7,17 +7,6 @@ import { Layout } from "./Layout";
 
 describe("Layout", () => {
 	it("should render", () => {
-		const { asFragment } = render(
-			<MemoryRouter>
-				<Layout>
-					<h1>Test</h1>
-				</Layout>
-			</MemoryRouter>,
-		);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should hide navigation bar", () => {
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId">
 				<Layout>
@@ -27,6 +16,17 @@ describe("Layout", () => {
 			{
 				routes: ["/profiles/1"],
 			},
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should hide the navigation bar", () => {
+		const { asFragment } = render(
+			<MemoryRouter>
+				<Layout>
+					<h1>Test</h1>
+				</Layout>
+			</MemoryRouter>,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
