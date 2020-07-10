@@ -1,7 +1,7 @@
+import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
 import { styled } from "twin.macro";
 
-import { PluginManagerControls } from "../PluginManagerControls";
 import { defaultStyle } from "./styles";
 
 type PluginManagerNavigationBar = {
@@ -73,7 +73,8 @@ export const PluginManagerNavigationBar = ({
 
 					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />
 
-					<PluginManagerControls
+					<LayoutControls
+						data-testid="PluginManagerControls"
 						onSelectGridView={onSelectGridView}
 						onSelectListView={onSelectListView}
 						selectedViewType={selectedViewType}
