@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { EnvironmentContext } from "app/contexts";
+import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
@@ -113,18 +120,31 @@ describe("CreateWallet", () => {
 
 	it("should render", async () => {
 		let rendered: RenderResult;
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		const history = createMemoryHistory();
+		const createURL = "/profiles/qwe123/wallets/create";
+		history.push(createURL);
 
 		await act(async () => {
-			rendered = render(
-				<CreateWallet
-					onSubmit={onSubmit}
-					onCopy={onCopy}
-					onDownload={onDownload}
-					mnemonic={mnemonic}
-					networks={networks}
-					skipMnemonicVerification={true}
-				/>,
+			rendered = renderWithRouter(
+				<EnvironmentContext.Provider value={env}>
+					<Route path="/profiles/:profileId/wallets/create">
+						<CreateWallet
+							onSubmit={onSubmit}
+							onCopy={onCopy}
+							onDownload={onDownload}
+							mnemonic={mnemonic}
+							networks={networks}
+							skipMnemonicVerification={true}
+						/>
+					</Route>
+				</EnvironmentContext.Provider>,
+				{
+					routes: [createURL],
+					history,
+				},
 			);
+
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		});
 
