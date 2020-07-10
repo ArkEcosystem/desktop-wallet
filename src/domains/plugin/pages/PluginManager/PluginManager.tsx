@@ -183,7 +183,10 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 									extra={<SearchBarPluginFilters />}
 								/>
 								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
-								<Button>
+								<Button
+									data-testid="PluginManager_header--install"
+									onClick={() => setInstallPlugin(true)}
+								>
 									<div className="flex items-center whitespace-no-wrap space-x-2">
 										<Icon name="File" width={15} height={15} />
 										<span>Install File</span>

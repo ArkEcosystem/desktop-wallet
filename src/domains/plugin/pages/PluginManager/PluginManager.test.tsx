@@ -81,6 +81,25 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should install plugin from header install button", () => {
+		const { asFragment, getByTestId } = render(<PluginManager />);
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager_header--install"));
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
+		});
+
+		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should download & install plugin on game", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
 
