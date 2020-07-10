@@ -5,7 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import  { styled } from "twin.macro";
+import { styled } from "twin.macro";
 
 import { SelectCategory } from "./components/SelectCategory";
 
