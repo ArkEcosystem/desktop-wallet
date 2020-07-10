@@ -140,7 +140,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 			</div>
 
 			<div className="border-t-20 border-theme-neutral-100">
-				<div data-testid={`PluginsCategoryHome__container`} className="container mx-auto px-14 pt-8 ">
+				<div data-testid={`PluginsCategoryHome__container`} className="container pt-8 mx-auto px-14 ">
 					<div className="flex items-center justify-between mt-8 mb-6">
 						<h2>{t("PLUGINS.PAGE_PLUGINS_CATEGORY.LAYOUT_TITLE")}</h2>
 						<PluginManagerControls
