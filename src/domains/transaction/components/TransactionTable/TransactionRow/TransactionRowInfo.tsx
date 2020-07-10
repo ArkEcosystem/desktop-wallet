@@ -30,7 +30,7 @@ type Props = {
 
 export const TransactionRowInfo = ({ vendorField, isMultiSignature }: Props) => {
 	return (
-		<div data-testid="TransactionRowInfo" className="flex items-center space-x-2">
+		<div data-testid="TransactionRowInfo" className="inline-flex align-middle space-x-1">
 			{isMultiSignature && <MultiSignature />}
 			{vendorField && <VendorField vendorField={vendorField} />}
 		</div>
