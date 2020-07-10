@@ -230,13 +230,11 @@ exports[`Contacts should render with contacts 1`] = `
                     <div
                       class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Nickname
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -260,15 +258,9 @@ exports[`Contacts should render with contacts 1`] = `
                     <div
                       class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Network
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
@@ -280,15 +272,9 @@ exports[`Contacts should render with contacts 1`] = `
                     <div
                       class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Address
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
@@ -300,15 +286,9 @@ exports[`Contacts should render with contacts 1`] = `
                     <div
                       class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Account Type
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
