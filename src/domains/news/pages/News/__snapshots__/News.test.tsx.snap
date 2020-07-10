@@ -7,7 +7,7 @@ exports[`News should render 1`] = `
     data-testid="News"
   >
     <div
-      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -23,7 +23,7 @@ exports[`News should render 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -79,7 +79,7 @@ exports[`News should render 1`] = `
                   class="flex items-center space-x-4"
                 >
                   <div
-                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-200"
+                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-light"
                     data-testid="NewsCard__asset-Ark"
                   >
                     <div
@@ -163,7 +163,7 @@ exports[`News should render 1`] = `
                   class="flex items-center space-x-4"
                 >
                   <div
-                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-200"
+                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-light"
                     data-testid="NewsCard__asset-Ark"
                   >
                     <div
@@ -423,7 +423,7 @@ exports[`News should render 1`] = `
                 class="flex items-center px-4 py-6 rounded shadow-xl"
               >
                 <input
-                  class="sc-fzoLsD fwLHdk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                  class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search"
                 />
