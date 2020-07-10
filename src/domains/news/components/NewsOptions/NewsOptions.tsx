@@ -29,7 +29,7 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-10">
-				<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
+				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
 					<InputWrapper>
 						<Input className="border-none shadow-none" placeholder="Search" />
 					</InputWrapper>
