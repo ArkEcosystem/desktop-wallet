@@ -30,7 +30,7 @@ export const Default = () => {
 	};
 
 	return (
-		<div>
+		<div className="px-40">
 			<Wallets title="Wallets" wallets={wallets} filterProperties={filterProperties} />
 		</div>
 	);
