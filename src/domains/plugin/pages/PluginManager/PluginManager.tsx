@@ -111,7 +111,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 			</div>
 
 			<div data-testid="PluginManager__home__top-utilities">
-				<h2 className="font-bold mt-8 mb-6">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
+				<h2 className="mt-8 mb-6 font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
