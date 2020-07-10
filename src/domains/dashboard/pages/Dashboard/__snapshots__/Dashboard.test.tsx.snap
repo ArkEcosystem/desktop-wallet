@@ -25,7 +25,7 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <div
-                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
               >
                 <div
                   class="flex"
@@ -66,7 +66,7 @@ exports[`Dashboard should render 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       2.16
@@ -82,7 +82,7 @@ exports[`Dashboard should render 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       8,000
@@ -134,7 +134,7 @@ exports[`Dashboard should render 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ARK
                  - 
@@ -149,7 +149,7 @@ exports[`Dashboard should render 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 BTC
                  - 
@@ -164,7 +164,7 @@ exports[`Dashboard should render 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ETH
                  - 
@@ -179,7 +179,7 @@ exports[`Dashboard should render 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 Other
                  - 
@@ -450,7 +450,7 @@ exports[`Dashboard should render 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -484,13 +484,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   1ASu…3kqT
@@ -626,13 +626,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   2ASu…3kqT
@@ -768,13 +768,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   3ASu…3kqT
@@ -910,13 +910,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   4ASu…3kqT
@@ -1052,13 +1052,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   5ASu…3kqT
@@ -1160,7 +1160,7 @@ exports[`Dashboard should render 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -1194,13 +1194,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   6ASu…3kqT
@@ -1336,13 +1336,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   7ASu…3kqT
@@ -1381,12 +1381,12 @@ exports[`Dashboard should render 1`] = `
                             />
                           </div>
                           <div
-                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-700 cursor-pointer"
+                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-dark cursor-pointer"
                           >
                             You have 8 more wallets
                           </div>
                           <div
-                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary-600 font-semibold cursor-pointer"
+                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary font-semibold cursor-pointer"
                           >
                             Look all wallet
                           </div>
@@ -1513,13 +1513,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   8ASu…3kqT
@@ -1655,13 +1655,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   9ASu…3kqT
@@ -1797,13 +1797,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   ASuu…3kqT
@@ -1939,13 +1939,13 @@ exports[`Dashboard should render 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   10AS…3kqT
@@ -2004,123 +2004,87 @@ exports[`Dashboard should render 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Date
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  invisible"
+                      class="flex flex-inline align-top invisible"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Type
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Wallet Address
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-center"
+                      class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Info
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Amount
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Fiat Value
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -2146,7 +2110,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2181,13 +2145,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         1ASuusXSW9…P6T9GQ3kqT
@@ -2198,7 +2162,7 @@ exports[`Dashboard should render 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2211,7 +2175,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2235,7 +2199,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2260,7 +2224,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2295,13 +2259,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         2ASuusXSW9…P6T9GQ3kqT
@@ -2312,7 +2276,7 @@ exports[`Dashboard should render 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2325,7 +2289,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2349,7 +2313,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2374,7 +2338,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2409,13 +2373,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         3ASuusXSW9…P6T9GQ3kqT
@@ -2426,7 +2390,7 @@ exports[`Dashboard should render 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2439,7 +2403,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2463,7 +2427,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2488,7 +2452,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2523,13 +2487,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         4ASuusXSW9…P6T9GQ3kqT
@@ -2550,7 +2514,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2575,7 +2539,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2610,13 +2574,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         5ASuusXSW9…P6T9GQ3kqT
@@ -2627,7 +2591,7 @@ exports[`Dashboard should render 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -2651,7 +2615,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2676,7 +2640,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2711,13 +2675,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -2738,7 +2702,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2763,7 +2727,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2798,13 +2762,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -2825,7 +2789,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2850,7 +2814,7 @@ exports[`Dashboard should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -2885,13 +2849,13 @@ exports[`Dashboard should render 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         7ASuusXSW9…P6T9GQ3kqT
@@ -2912,7 +2876,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -2961,7 +2925,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <div
-                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
               >
                 <div
                   class="flex"
@@ -3002,7 +2966,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       2.16
@@ -3018,7 +2982,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       8,000
@@ -3070,7 +3034,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ARK
                  - 
@@ -3085,7 +3049,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 BTC
                  - 
@@ -3100,7 +3064,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 ETH
                  - 
@@ -3115,7 +3079,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 Other
                  - 
@@ -3162,49 +3126,53 @@ exports[`Dashboard should render portfolio chart 1`] = `
               class="flex"
             >
               <div
-                class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+                class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
               >
                 <div
-                  class="inline-block"
-                  data-testid="LayoutControls__grid"
+                  class="flex items-center"
                 >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-                    data-testid="LayoutControls__grid--icon"
+                    class="inline-block"
+                    data-testid="LayoutControls__grid"
                   >
                     <div
-                      class="sc-AxjAm jEKiJj"
-                      height="14"
-                      width="28"
+                      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                      data-testid="LayoutControls__grid--icon"
                     >
-                      <svg>
-                        grid.svg
-                      </svg>
+                      <div
+                        class="sc-AxjAm jEKiJj"
+                        height="14"
+                        width="28"
+                      >
+                        <svg>
+                          grid.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="inline-block"
-                  data-testid="LayoutControls__list"
-                >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                    data-testid="LayoutControls__list--icon"
+                    class="inline-block"
+                    data-testid="LayoutControls__list"
                   >
                     <div
-                      class="sc-AxjAm eFgodT"
-                      height="14"
-                      width="24"
+                      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                      data-testid="LayoutControls__list--icon"
                     >
-                      <svg>
-                        list.svg
-                      </svg>
+                      <div
+                        class="sc-AxjAm eFgodT"
+                        height="14"
+                        width="24"
+                      >
+                        <svg>
+                          list.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
               >
                 <div
                   class="relative"
@@ -3382,7 +3350,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -3416,13 +3384,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   1ASu…3kqT
@@ -3558,13 +3526,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   2ASu…3kqT
@@ -3700,13 +3668,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   3ASu…3kqT
@@ -3842,13 +3810,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   4ASu…3kqT
@@ -3984,13 +3952,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   5ASu…3kqT
@@ -4092,7 +4060,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -4126,13 +4094,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   6ASu…3kqT
@@ -4268,13 +4236,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   7ASu…3kqT
@@ -4313,12 +4281,12 @@ exports[`Dashboard should render portfolio chart 1`] = `
                             />
                           </div>
                           <div
-                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-700 cursor-pointer"
+                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-dark cursor-pointer"
                           >
                             You have 8 more wallets
                           </div>
                           <div
-                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary-600 font-semibold cursor-pointer"
+                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary font-semibold cursor-pointer"
                           >
                             Look all wallet
                           </div>
@@ -4445,13 +4413,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   8ASu…3kqT
@@ -4587,13 +4555,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   9ASu…3kqT
@@ -4729,13 +4697,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   ASuu…3kqT
@@ -4871,13 +4839,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   10AS…3kqT
@@ -4936,123 +4904,87 @@ exports[`Dashboard should render portfolio chart 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Date
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  invisible"
+                      class="flex flex-inline align-top invisible"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Type
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Wallet Address
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-center"
+                      class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Info
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Amount
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Fiat Value
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -5078,7 +5010,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5113,13 +5045,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         1ASuusXSW9…P6T9GQ3kqT
@@ -5130,7 +5062,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5143,7 +5075,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5167,7 +5099,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5192,7 +5124,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5227,13 +5159,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         2ASuusXSW9…P6T9GQ3kqT
@@ -5244,7 +5176,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5257,7 +5189,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5281,7 +5213,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5306,7 +5238,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5341,13 +5273,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         3ASuusXSW9…P6T9GQ3kqT
@@ -5358,7 +5290,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5371,7 +5303,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5395,7 +5327,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5420,7 +5352,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5455,13 +5387,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         4ASuusXSW9…P6T9GQ3kqT
@@ -5482,7 +5414,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5507,7 +5439,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5542,13 +5474,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         5ASuusXSW9…P6T9GQ3kqT
@@ -5559,7 +5491,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -5583,7 +5515,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5608,7 +5540,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5643,13 +5575,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -5670,7 +5602,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5695,7 +5627,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5730,13 +5662,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -5757,7 +5689,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5782,7 +5714,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -5817,13 +5749,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         7ASuusXSW9…P6T9GQ3kqT
@@ -5844,7 +5776,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -5893,7 +5825,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <div
-                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+                class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
               >
                 <div
                   class="flex"
@@ -5934,7 +5866,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       2.16
@@ -5950,7 +5882,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-700"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
                   >
                     <span>
                       8,000
@@ -6047,7 +5979,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                 class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-700"
+                class="inline-block text-sm font-semibold text-theme-neutral-dark"
               >
                 Other
                  - 
@@ -6094,49 +6026,53 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
               class="flex"
             >
               <div
-                class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+                class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
               >
                 <div
-                  class="inline-block"
-                  data-testid="LayoutControls__grid"
+                  class="flex items-center"
                 >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-                    data-testid="LayoutControls__grid--icon"
+                    class="inline-block"
+                    data-testid="LayoutControls__grid"
                   >
                     <div
-                      class="sc-AxjAm jEKiJj"
-                      height="14"
-                      width="28"
+                      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+                      data-testid="LayoutControls__grid--icon"
                     >
-                      <svg>
-                        grid.svg
-                      </svg>
+                      <div
+                        class="sc-AxjAm jEKiJj"
+                        height="14"
+                        width="28"
+                      >
+                        <svg>
+                          grid.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="inline-block"
-                  data-testid="LayoutControls__list"
-                >
                   <div
-                    class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-                    data-testid="LayoutControls__list--icon"
+                    class="inline-block"
+                    data-testid="LayoutControls__list"
                   >
                     <div
-                      class="sc-AxjAm eFgodT"
-                      height="14"
-                      width="24"
+                      class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+                      data-testid="LayoutControls__list--icon"
                     >
-                      <svg>
-                        list.svg
-                      </svg>
+                      <div
+                        class="sc-AxjAm eFgodT"
+                        height="14"
+                        width="24"
+                      >
+                        <svg>
+                          list.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+                class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
               >
                 <div
                   class="relative"
@@ -6314,7 +6250,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -6348,13 +6284,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   1ASu…3kqT
@@ -6490,13 +6426,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   2ASu…3kqT
@@ -6632,13 +6568,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   3ASu…3kqT
@@ -6774,13 +6710,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   4ASu…3kqT
@@ -6916,13 +6852,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   5ASu…3kqT
@@ -7024,7 +6960,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                               class="flex"
                             >
                               <div
-                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-200"
+                                class="sc-AxgMl daFHdi border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-AxjAm juLEli"
@@ -7058,13 +6994,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   6ASu…3kqT
@@ -7200,13 +7136,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Eth
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   7ASu…3kqT
@@ -7245,12 +7181,12 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                             />
                           </div>
                           <div
-                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-700 cursor-pointer"
+                            class="mt-6 text-md text-theme-primary-contrast text-theme-neutral-dark cursor-pointer"
                           >
                             You have 8 more wallets
                           </div>
                           <div
-                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary-600 font-semibold cursor-pointer"
+                            class="mt-1 text-md text-theme-primary-contrast my-px text-theme-primary font-semibold cursor-pointer"
                           >
                             Look all wallet
                           </div>
@@ -7377,13 +7313,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   8ASu…3kqT
@@ -7519,13 +7455,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   9ASu…3kqT
@@ -7661,13 +7597,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   ASuu…3kqT
@@ -7803,13 +7739,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="inline-block truncate align-middle"
                               >
                                 <span
-                                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                                   data-testid="address__wallet-name"
                                 >
                                   My Wallet
                                 </span>
                                 <span
-                                  class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                                  class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   10AS…3kqT
@@ -7868,123 +7804,87 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Date
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  invisible"
+                      class="flex flex-inline align-top invisible"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Type
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Wallet Address
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-center"
+                      class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Info
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Amount
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  float-right"
+                      class="flex flex-inline align-top float-right"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Fiat Value
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -8010,7 +7910,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8045,13 +7945,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         1ASuusXSW9…P6T9GQ3kqT
@@ -8062,7 +7962,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8075,7 +7975,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8099,7 +7999,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8124,7 +8024,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8159,13 +8059,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         2ASuusXSW9…P6T9GQ3kqT
@@ -8176,7 +8076,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8189,7 +8089,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8213,7 +8113,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8238,7 +8138,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8273,13 +8173,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         3ASuusXSW9…P6T9GQ3kqT
@@ -8290,7 +8190,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8303,7 +8203,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </div>
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8327,7 +8227,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8352,7 +8252,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8387,13 +8287,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         4ASuusXSW9…P6T9GQ3kqT
@@ -8414,7 +8314,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8439,7 +8339,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8474,13 +8374,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         5ASuusXSW9…P6T9GQ3kqT
@@ -8491,7 +8391,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     class="py-1 text-sm font-bold text-center"
                   >
                     <div
-                      class="inline-block mr-2 align-middle text-theme-neutral-400"
+                      class="inline-block mr-2 align-middle text-theme-neutral-light"
                     >
                       <div
                         class="sc-AxjAm vZRQY"
@@ -8515,7 +8415,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8540,7 +8440,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8575,13 +8475,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -8602,7 +8502,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8627,7 +8527,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-success-300 text-theme-success-light -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8662,13 +8562,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         6ASuusXSW9…P6T9GQ3kqT
@@ -8689,7 +8589,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD
@@ -8714,7 +8614,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxgMl daFHdi border-theme-danger-200 text-theme-danger-400 -mr-1"
+                        class="sc-AxgMl daFHdi border-theme-danger-light text-theme-danger-400 -mr-1"
                       >
                         <div
                           class="sc-AxjAm hoUaGk"
@@ -8749,13 +8649,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         My Wallet
                       </span>
                       <span
-                        class="sc-AxhUy kMyssT text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxhUy kMyssT text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         7ASuusXSW9…P6T9GQ3kqT
@@ -8776,7 +8676,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </td>
                   <td
-                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                   >
                     <div>
                       1,000,000 USD

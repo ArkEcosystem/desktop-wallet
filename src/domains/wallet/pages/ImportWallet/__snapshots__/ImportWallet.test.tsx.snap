@@ -3,7 +3,7 @@
 exports[`Wallet / Import should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-100 text-theme-neutral-700"
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
     data-testid="breadcrumbs__wrapper"
   >
     <div
@@ -19,7 +19,7 @@ exports[`Wallet / Import should render 1`] = `
       class="space-x-2"
     >
       <a
-        class="text-theme-neutral-700"
+        class="text-theme-neutral-dark"
         href="/profiles/qwe123/dashboard"
       >
         <span>
@@ -61,7 +61,7 @@ exports[`Wallet / Import should render 1`] = `
                   Select a Cryptoasset
                 </h1>
                 <p
-                  class="text-medium text-theme-neutral-dark"
+                  class="text-medium text-theme-neutral-700"
                 >
                   Select a cryptoasset to import your existing wallet address
                 </p>

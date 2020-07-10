@@ -3,7 +3,7 @@
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-100 text-theme-neutral-700"
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
     data-testid="breadcrumbs__wrapper"
   >
     <div
@@ -19,7 +19,7 @@ exports[`CreateWallet should render 1`] = `
       class="space-x-2"
     >
       <a
-        class="text-theme-neutral-700"
+        class="text-theme-neutral-dark"
         href="/profiles/qwe123/dashboard"
       >
         <span>
@@ -154,7 +154,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-200"
+                        class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -214,7 +214,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxgMl jZnvrW text-theme-primary-600 border-theme-primary-400"
+                        class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -234,7 +234,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxgMl jZnvrW text-theme-primary-700 border-theme-primary-500"
+                        class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -379,7 +379,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-200"
+              class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -439,7 +439,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-primary-600 border-theme-primary-400"
+              class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -459,7 +459,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-primary-700 border-theme-primary-500"
+              class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
             >
               <div
                 class="sc-AxjAm jakjmk"
