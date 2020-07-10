@@ -58,10 +58,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 								</Circle>
 							))}
 
-							<Circle
-								size="lg"
-								className="relative m-3 ml-5 border-theme-neutral-200 text-theme-neutral-300"
-							>
+							<Circle size="lg" className="relative m-3 border-theme-neutral-200 text-theme-neutral-300">
 								<div className="text-xs text-theme-primary-500">+443</div>
 							</Circle>
 						</div>
