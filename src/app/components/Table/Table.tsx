@@ -58,7 +58,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
-									<div className={`flex flex-inline align-top  ${column.className}`}>
+									<div className={`flex flex-inline align-top ${column.className}`}>
 										<div className="mr-2">{column.render("Header")}</div>
 										<div
 											className="flex items-center text-theme-color-neutral"

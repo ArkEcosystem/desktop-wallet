@@ -248,12 +248,7 @@ const ThirdStep = () => {
 				</TransactionDetail>
 
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
@@ -365,7 +360,7 @@ export const FifthStep = () => (
 			extra={
 				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}

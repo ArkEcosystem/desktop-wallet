@@ -42,7 +42,7 @@ export const DelegateRegistrationDetail = (props: DelegateRegistrationDetailProp
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
 					<Circle className="border-theme-danger-contrast text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>

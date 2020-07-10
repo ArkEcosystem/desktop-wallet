@@ -136,13 +136,15 @@ export const NavigationBar = ({
 
 					<div className="flex items-center">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
-							<Icon name="Sent" width={42} height={42} />
+						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+							<Icon name="Sent" width={22} height={22} />
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
+
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 							<Icon name="Receive" width={22} height={22} />
 						</div>
