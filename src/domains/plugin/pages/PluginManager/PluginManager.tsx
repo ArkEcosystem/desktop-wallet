@@ -60,7 +60,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 		<div>
 			<div data-testid="PluginManager__home__featured">
 				<div className="flex items-center justify-between mt-8 mb-6">
-					<h2>{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}</h2>
+					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}</h2>
 
 					<a
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}
@@ -87,7 +87,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 			<div data-testid="PluginManager__home__top-rated">
 				<div className="flex items-center justify-between mt-8 mb-6">
-					<h2>{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}</h2>
+					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}</h2>
 					<a
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}
 						data-testid="PluginManager__home__top-rated__view-more"
@@ -111,7 +111,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 			</div>
 
 			<div data-testid="PluginManager__home__top-utilities">
-				<h2 className="mt-8 mb-6">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
+				<h2 className="mt-8 mb-6 font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
@@ -222,7 +222,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				)}
 				{currentView !== "home" && viewType === "grid" && (
 					<div>
-						<h2>{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}</h2>
+						<h2 className="font-bold">
+							{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+						</h2>
 						<PluginGrid
 							plugins={plugins}
 							onSelect={() => console.log("selected")}
