@@ -114,4 +114,48 @@ describe("Dashboard", () => {
 			fireEvent.click(toggle);
 		});
 	});
+
+	it("should navigate to import page", () => {
+		const { getByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<Dashboard />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+		const importButton = getByText("Import");
+
+		act(() => {
+			fireEvent.click(importButton);
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/qwe123/wallets/import`);
+	});
+
+	it("should navigate to create page", () => {
+		history.push(dashboardURL);
+
+		const { getByText } = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/dashboard">
+					<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+		const createButton = getByText("Create");
+
+		act(() => {
+			fireEvent.click(createButton);
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/qwe123/wallets/create`);
+	});
 });
