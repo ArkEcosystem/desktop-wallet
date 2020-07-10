@@ -23,7 +23,7 @@ type FilterProps = {
 const Stars = ({ length = 5, value }: any) => {
 	const stars = Array.from({ length });
 	return (
-		<span className="flex text-theme-neutral-dark">
+		<span className="flex text-theme-neutral-400">
 			{stars.map((_, index: number) => {
 				return (
 					<span key={index} className={`${index < value ? "text-theme-warning-300" : ""} mr-1`}>
