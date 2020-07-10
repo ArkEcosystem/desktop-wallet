@@ -63,7 +63,7 @@ const Plugins = ({ onDelete, onInstall, viewType }: PluginsProps) => {
 					/>
 				)}
 				{viewType === "list" && (
-					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={false} />
+					<PluginList plugins={plugins} onInstall={onInstall} onDelete={onDelete} withPagination={true} />
 				)}
 			</div>
 		</div>
@@ -119,7 +119,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 						extra={
 							<div className="flex justify-end items-top">
 								<HeaderSearchBar
-									label=""
+									label="Search"
 									onSearch={() => console.log("search")}
 									extra={<SearchBarPluginFilters />}
 								/>
