@@ -83,7 +83,7 @@ export const SecondStep = () => (
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 				<div className="mb-2 font-semibold text-theme-neutral-500">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
@@ -156,7 +156,7 @@ export const FifthStep = () => (
 			extra={
 				<div className="ml-1 text-theme-danger">
 					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}

@@ -94,7 +94,7 @@ exports[`Votes should render 1`] = `
             class="flex items-center py-6 true "
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -102,7 +102,7 @@ exports[`Votes should render 1`] = `
                 Cryptoasset
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="sc-fznZeY jcbHZr"
@@ -273,7 +273,7 @@ exports[`Votes should render 1`] = `
             class="flex items-center py-6 true mt-2"
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -281,7 +281,7 @@ exports[`Votes should render 1`] = `
                 Address
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="relative flex items-center pb-24"
@@ -442,7 +442,7 @@ exports[`Votes should select a cryptoasset 1`] = `
             class="flex items-center py-6 true "
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -450,7 +450,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                 Cryptoasset
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="sc-fznZeY jcbHZr"
@@ -634,7 +634,7 @@ exports[`Votes should select a cryptoasset 1`] = `
             class="flex items-center py-6 true mt-2"
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -642,7 +642,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                 Address
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="relative flex items-center pb-24"
@@ -935,13 +935,13 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                         data-testid="address__wallet-name"
                       >
                         OLEBank
                       </span>
                       <span
-                        class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                        class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         ASuusXSW9…6T9GQ3kqT
@@ -1087,7 +1087,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                        class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         FSuusXSW9…6T9GQ3kqT
@@ -1213,7 +1213,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                        class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         DSuusXSW9…6T9GQ3kqT
@@ -1298,7 +1298,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                        class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         HSuusXSW9…6T9GQ3kqT
@@ -1459,7 +1459,7 @@ exports[`Votes should select a delegate 1`] = `
             class="flex items-center py-6 true "
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -1467,7 +1467,7 @@ exports[`Votes should select a delegate 1`] = `
                 Cryptoasset
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="sc-fznZeY jcbHZr"
@@ -1651,7 +1651,7 @@ exports[`Votes should select a delegate 1`] = `
             class="flex items-center py-6 true mt-2"
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -1659,7 +1659,7 @@ exports[`Votes should select a delegate 1`] = `
                 Address
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="relative flex items-center pb-24"
@@ -1694,13 +1694,13 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                           data-testid="address__wallet-name"
                         >
                           ROBank
                         </span>
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -2659,7 +2659,7 @@ exports[`Votes should select address 1`] = `
             class="flex items-center py-6 true "
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -2667,7 +2667,7 @@ exports[`Votes should select address 1`] = `
                 Cryptoasset
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="sc-fznZeY jcbHZr"
@@ -2851,7 +2851,7 @@ exports[`Votes should select address 1`] = `
             class="flex items-center py-6 true mt-2"
           >
             <div
-              class="flex-1"
+              class="flex-1 space-y-2"
             >
               <div
                 class="text-sm font-semibold text-theme-neutral-500"
@@ -2859,7 +2859,7 @@ exports[`Votes should select address 1`] = `
                 Address
               </div>
               <div
-                class="mt-2 font-semibold"
+                class="font-semibold"
               >
                 <div
                   class="relative flex items-center pb-24"
@@ -2894,13 +2894,13 @@ exports[`Votes should select address 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                           data-testid="address__wallet-name"
                         >
                           ROBank
                         </span>
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
