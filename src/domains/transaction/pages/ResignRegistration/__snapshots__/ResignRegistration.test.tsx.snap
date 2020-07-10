@@ -48,7 +48,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                 Delegate Resignation
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Resign your delegate for always.
               </div>
@@ -89,7 +89,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                       class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -141,7 +141,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
@@ -181,7 +181,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                               class="sc-fzpans diytpf"
                             >
                               <input
-                                class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -352,7 +352,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Network
                     </div>
@@ -367,10 +367,10 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ml-1 text-theme-danger-500"
+                    class="ml-1 text-theme-danger"
                   >
                     <div
-                      class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                      class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -394,7 +394,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -446,7 +446,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
@@ -473,7 +473,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction(s) Amount
                           </span>
@@ -488,7 +488,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5 text-right"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction fee
                           </span>
@@ -519,10 +519,10 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
                     >
                       <span
-                        class="text-sm text-theme-neutral-500"
+                        class="text-sm text-theme-neutral"
                       >
                         Total Amount
                       </span>
@@ -614,7 +614,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                   Authenticate
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
@@ -635,7 +635,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
@@ -675,7 +675,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
@@ -814,7 +814,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
@@ -863,7 +863,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
@@ -912,7 +912,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
@@ -938,10 +938,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -965,7 +965,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1023,7 +1023,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
@@ -1054,7 +1054,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate Name
                       </div>
@@ -1072,7 +1072,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
@@ -1086,7 +1086,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ hmuEJr"
@@ -1192,7 +1192,7 @@ exports[`ResignRegistration should should go back 1`] = `
                 Delegate Resignation
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Resign your delegate for always.
               </div>
@@ -1233,7 +1233,7 @@ exports[`ResignRegistration should should go back 1`] = `
                       class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -1285,7 +1285,7 @@ exports[`ResignRegistration should should go back 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
@@ -1325,7 +1325,7 @@ exports[`ResignRegistration should should go back 1`] = `
                               class="sc-fzpans diytpf"
                             >
                               <input
-                                class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -1505,7 +1505,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
@@ -1554,7 +1554,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
@@ -1603,7 +1603,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
@@ -1629,10 +1629,10 @@ exports[`ResignRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1656,7 +1656,7 @@ exports[`ResignRegistration should submit 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1714,7 +1714,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
@@ -1745,7 +1745,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate Name
                       </div>
@@ -1763,7 +1763,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
@@ -1777,7 +1777,7 @@ exports[`ResignRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ hmuEJr"

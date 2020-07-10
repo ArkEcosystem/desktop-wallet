@@ -32,22 +32,13 @@ export const FirstStep = () => {
 				<TransactionDetail
 					border={false}
 					label="Account"
-					extra={
-						<div>
-							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail
 					label="Delegate"
-					extra={
-						<div>
-							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-					className="pb-0"
+					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 				</TransactionDetail>
@@ -86,8 +77,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -97,21 +88,13 @@ export const SecondStep = () => (
 			</TransactionDetail>
 			<TransactionDetail
 				label="Account"
-				extra={
-					<div>
-						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
+				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Delegate"
-				extra={
-					<div>
-						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
+				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
@@ -146,14 +129,7 @@ export const ThirdStep = () => {
 
 export const FourthStep = () => (
 	<TransactionSuccessful>
-		<TransactionDetail
-			label="Delegate"
-			extra={
-				<div>
-					<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-				</div>
-			}
-		>
+		<TransactionDetail label="Delegate" extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 		</TransactionDetail>
 		<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>

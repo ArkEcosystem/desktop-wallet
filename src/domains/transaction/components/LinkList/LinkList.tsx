@@ -34,7 +34,7 @@ const LinkItem = ({ link }: { link: Link }) => {
 		<div className="flex items-center py-4 border-t border-dashed border-theme-neutral-300 first:border-0">
 			<div className="flex justify-between flex-1">
 				<div>
-					<div className="text-sm font-semibold text-theme-neutral-500">
+					<div className="text-sm font-semibold text-theme-neutral">
 						{t(`TRANSACTION.LINK_TYPES.${link.type.toUpperCase()}`)}
 					</div>
 
@@ -68,7 +68,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 			>
 				<div>
 					<span className="text-lg font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-700">{description}</div>
+					<div className="mt-2 text-theme-neutral-dark">{description}</div>
 				</div>
 
 				<div>
@@ -77,7 +77,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 							name="ChevronUp"
 							width={10}
 							height={10}
-							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+							className="flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
 						/>
 					)}
 					{!isExpanded && (
@@ -85,7 +85,7 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 							name="ChevronDown"
 							width={10}
 							height={10}
-							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+							className="flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
 						/>
 					)}
 				</div>

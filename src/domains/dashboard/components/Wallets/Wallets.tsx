@@ -113,7 +113,7 @@ export const Wallets = ({
 								</Button>
 							</div>
 						)}
-						{wallets.length === 0 && <div className="text-theme-neutral-700">{walletsEmptyText}</div>}
+						{wallets.length === 0 && <div className="text-theme-neutral-dark">{walletsEmptyText}</div>}
 					</div>
 				)}
 			</div>

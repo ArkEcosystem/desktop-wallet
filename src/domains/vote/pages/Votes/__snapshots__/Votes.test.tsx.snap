@@ -3,11 +3,11 @@
 exports[`Votes should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast"
     data-testid="MyVotes"
   >
     <div
-      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -23,7 +23,7 @@ exports[`Votes should render 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -60,7 +60,7 @@ exports[`Votes should render 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -97,7 +97,7 @@ exports[`Votes should render 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Cryptoasset
               </div>
@@ -139,7 +139,7 @@ exports[`Votes should render 1`] = `
                             data-testid="select-network__typeahead-"
                           >
                             <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                             />
                           </div>
                           <input
@@ -170,7 +170,7 @@ exports[`Votes should render 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-danger-400 border-theme-danger-200"
+                          class="sc-AxhCb dTATcJ text-theme-danger-400 border-theme-danger-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -230,7 +230,7 @@ exports[`Votes should render 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-primary-600 border-theme-primary-400"
+                          class="sc-AxhCb dTATcJ text-theme-primary border-theme-primary-400"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -250,7 +250,7 @@ exports[`Votes should render 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-primary-700 border-theme-primary-500"
+                          class="sc-AxhCb dTATcJ text-theme-primary-dark border-theme-primary-500"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -276,7 +276,7 @@ exports[`Votes should render 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Address
               </div>
@@ -287,7 +287,7 @@ exports[`Votes should render 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -302,7 +302,7 @@ exports[`Votes should render 1`] = `
                         class="sc-AxhCb kyaIar mr-3"
                       />
                       <span
-                        class="text-base font-semibold text-theme-neutral-400"
+                        class="text-base font-semibold text-theme-neutral-light"
                       >
                         Select address
                       </span>
@@ -351,11 +351,11 @@ exports[`Votes should render 1`] = `
 exports[`Votes should select a cryptoasset 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast"
     data-testid="MyVotes"
   >
     <div
-      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -371,7 +371,7 @@ exports[`Votes should select a cryptoasset 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -408,7 +408,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -445,7 +445,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Cryptoasset
               </div>
@@ -498,7 +498,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                             data-testid="select-network__typeahead-Bitcoin"
                           >
                             <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                             >
                               Bitcoin
                             </div>
@@ -531,7 +531,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -571,7 +571,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -591,7 +591,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -611,7 +611,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -637,7 +637,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Address
               </div>
@@ -648,7 +648,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -663,7 +663,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="sc-AxhCb kyaIar mr-3"
                       />
                       <span
-                        class="text-base font-semibold text-theme-neutral-400"
+                        class="text-base font-semibold text-theme-neutral-light"
                       >
                         Select address
                       </span>
@@ -707,7 +707,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -719,7 +719,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -733,7 +733,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         My Address
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -749,7 +749,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -761,7 +761,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -775,7 +775,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         Balance
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -791,7 +791,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -803,7 +803,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -817,7 +817,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         Delegate
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -833,7 +833,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -847,7 +847,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         Rank
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -863,7 +863,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -877,7 +877,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--8"
                     role="columnheader"
@@ -891,7 +891,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--9"
                     role="columnheader"
@@ -1239,7 +1239,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5 font-bold"
                   >
                     <span
-                      class="text-theme-neutral-400"
+                      class="text-theme-neutral-light"
                     >
                       N/A
                     </span>
@@ -1324,7 +1324,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                     class="py-5 font-bold"
                   >
                     <span
-                      class="text-theme-neutral-400"
+                      class="text-theme-neutral-light"
                     >
                       N/A
                     </span>
@@ -1368,11 +1368,11 @@ exports[`Votes should select a cryptoasset 1`] = `
 exports[`Votes should select a delegate 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast"
     data-testid="MyVotes"
   >
     <div
-      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1388,7 +1388,7 @@ exports[`Votes should select a delegate 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -1425,7 +1425,7 @@ exports[`Votes should select a delegate 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -1462,7 +1462,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Cryptoasset
               </div>
@@ -1515,7 +1515,7 @@ exports[`Votes should select a delegate 1`] = `
                             data-testid="select-network__typeahead-Bitcoin"
                           >
                             <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                             >
                               Bitcoin
                             </div>
@@ -1548,7 +1548,7 @@ exports[`Votes should select a delegate 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -1588,7 +1588,7 @@ exports[`Votes should select a delegate 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -1608,7 +1608,7 @@ exports[`Votes should select a delegate 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -1628,7 +1628,7 @@ exports[`Votes should select a delegate 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -1654,7 +1654,7 @@ exports[`Votes should select a delegate 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Address
               </div>
@@ -1665,7 +1665,7 @@ exports[`Votes should select a delegate 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -1746,7 +1746,7 @@ exports[`Votes should select a delegate 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -1758,7 +1758,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -1772,7 +1772,7 @@ exports[`Votes should select a delegate 1`] = `
                         Delegate Name
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1788,7 +1788,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -1802,7 +1802,7 @@ exports[`Votes should select a delegate 1`] = `
                         Rank
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1818,7 +1818,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -1832,7 +1832,7 @@ exports[`Votes should select a delegate 1`] = `
                         Votes
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1848,7 +1848,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -1862,7 +1862,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -1876,7 +1876,7 @@ exports[`Votes should select a delegate 1`] = `
                         Comm.
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1892,7 +1892,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -1906,7 +1906,7 @@ exports[`Votes should select a delegate 1`] = `
                         Payout
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1922,7 +1922,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -1936,7 +1936,7 @@ exports[`Votes should select a delegate 1`] = `
                         Min
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1952,7 +1952,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--8"
                     role="columnheader"
@@ -1966,7 +1966,7 @@ exports[`Votes should select a delegate 1`] = `
                         Commission (Daily)
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1982,7 +1982,7 @@ exports[`Votes should select a delegate 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--9"
                     role="columnheader"
@@ -1996,7 +1996,7 @@ exports[`Votes should select a delegate 1`] = `
                         Vote
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2017,7 +2017,7 @@ exports[`Votes should select a delegate 1`] = `
                 role="rowgroup"
               >
                 <tr
-                  class="border-b border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="py-5"
@@ -2121,7 +2121,7 @@ exports[`Votes should select a delegate 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="py-5"
@@ -2225,7 +2225,7 @@ exports[`Votes should select a delegate 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="py-5"
@@ -2478,12 +2478,12 @@ exports[`Votes should select a delegate 1`] = `
                 class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
               >
                 <div
-                  class="text-sm text-theme-neutral-500"
+                  class="text-sm text-theme-neutral"
                 >
                   Quantity
                 </div>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   3/50
                 </div>
@@ -2533,14 +2533,14 @@ exports[`Votes should select a delegate 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-700"
+                          class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-200 text-theme-primary-dark"
                           data-testid="DelegateAvatarList__avatar-list__rest"
                         >
                           +1
                         </div>
                       </div>
                       <div
-                        class="ml-4 cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+                        class="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
                         data-testid="DelegateList__toggle-show-selected"
                       >
                         Show List
@@ -2568,11 +2568,11 @@ exports[`Votes should select a delegate 1`] = `
 exports[`Votes should select address 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-100"
+    class="flex flex-col min-h-screen -m-5 bg-theme-neutral-contrast"
     data-testid="MyVotes"
   >
     <div
-      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-700"
+      class="flex items-center space-x-2 py-5 pl-10 font-semibold text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -2588,7 +2588,7 @@ exports[`Votes should select address 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -2625,7 +2625,7 @@ exports[`Votes should select address 1`] = `
               class="relative"
             >
               <button
-                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+                class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
                 data-testid="header-search-bar__button"
               >
                 <div
@@ -2662,7 +2662,7 @@ exports[`Votes should select address 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Cryptoasset
               </div>
@@ -2715,7 +2715,7 @@ exports[`Votes should select address 1`] = `
                             data-testid="select-network__typeahead-Bitcoin"
                           >
                             <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                             >
                               Bitcoin
                             </div>
@@ -2748,7 +2748,7 @@ exports[`Votes should select address 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -2788,7 +2788,7 @@ exports[`Votes should select address 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -2808,7 +2808,7 @@ exports[`Votes should select address 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -2828,7 +2828,7 @@ exports[`Votes should select address 1`] = `
                         role="option"
                       >
                         <div
-                          class="sc-AxhCb dTATcJ text-theme-neutral-400"
+                          class="sc-AxhCb dTATcJ text-theme-neutral-light"
                         >
                           <div
                             class="sc-AxiKw fubePL"
@@ -2854,7 +2854,7 @@ exports[`Votes should select address 1`] = `
               class="flex-1 space-y-2"
             >
               <div
-                class="text-sm font-semibold text-theme-neutral-500"
+                class="text-sm font-semibold text-theme-neutral"
               >
                 Address
               </div>
@@ -2865,7 +2865,7 @@ exports[`Votes should select address 1`] = `
                   class="relative flex items-center pb-24"
                 >
                   <input
-                    class="sc-AxhUy PXwRN overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxhUy cKQNOO overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="Input"
                     disabled=""
                     type="text"
@@ -2946,7 +2946,7 @@ exports[`Votes should select address 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
@@ -2958,7 +2958,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
@@ -2972,7 +2972,7 @@ exports[`Votes should select address 1`] = `
                         Delegate Name
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -2988,7 +2988,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -3002,7 +3002,7 @@ exports[`Votes should select address 1`] = `
                         Rank
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3018,7 +3018,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -3032,7 +3032,7 @@ exports[`Votes should select address 1`] = `
                         Votes
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3048,7 +3048,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
@@ -3062,7 +3062,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -3076,7 +3076,7 @@ exports[`Votes should select address 1`] = `
                         Comm.
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3092,7 +3092,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -3106,7 +3106,7 @@ exports[`Votes should select address 1`] = `
                         Payout
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3122,7 +3122,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
@@ -3136,7 +3136,7 @@ exports[`Votes should select address 1`] = `
                         Min
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3152,7 +3152,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--8"
                     role="columnheader"
@@ -3166,7 +3166,7 @@ exports[`Votes should select address 1`] = `
                         Commission (Daily)
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -3182,7 +3182,7 @@ exports[`Votes should select address 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--9"
                     role="columnheader"
@@ -3196,7 +3196,7 @@ exports[`Votes should select address 1`] = `
                         Vote
                       </div>
                       <div
-                        class="flex items-center ml-2 text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div

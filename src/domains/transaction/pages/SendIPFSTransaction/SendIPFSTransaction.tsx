@@ -67,8 +67,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -128,7 +128,7 @@ export const FourthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>

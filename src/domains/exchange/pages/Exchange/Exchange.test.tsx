@@ -87,12 +87,12 @@ describe("Exchange", () => {
 
 		const changenowCard = getByTestId("Exchange__exchange-card-changenow-plugin");
 
-		expect(changenowCard).not.toHaveClass("bg-theme-success-100");
-		expect(changenowCard).toHaveClass("border-theme-primary-100");
+		expect(changenowCard).not.toHaveClass("bg-theme-success-contrast");
+		expect(changenowCard).toHaveClass("border-theme-primary-contrast");
 
 		fireEvent.click(changenowCard);
 
-		expect(changenowCard).toHaveClass("bg-theme-success-100");
+		expect(changenowCard).toHaveClass("bg-theme-success-contrast");
 		expect(changenowCard).toHaveClass("border-theme-success-300");
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -53,7 +53,7 @@ exports[`Registration should render 1st step 1`] = `
                   Registration
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Select the type of registration and the address you want to register with.
                 </div>
@@ -102,7 +102,7 @@ exports[`Registration should render 1st step 1`] = `
                               data-testid="select-network__typeahead-"
                             >
                               <div
-                                class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                               />
                             </div>
                             <input
@@ -132,7 +132,7 @@ exports[`Registration should render 1st step 1`] = `
                           role="option"
                         >
                           <div
-                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
+                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-light"
                           >
                             <div
                               class="sc-AxhUy gkBhrK"
@@ -210,7 +210,7 @@ exports[`Registration should render 1st step 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-address"
                           name="address"
                         >
@@ -272,7 +272,7 @@ exports[`Registration should render 1st step 1`] = `
                         class="relative w-full"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -287,21 +287,21 @@ exports[`Registration should render 1st step 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                              class="sc-fznKkj euPWra   "
+                              class="sc-fznKkj jPdGcK   "
                               data-testid="select-list__toggle-button"
                               id="downshift-1-toggle-button"
                               type="button"
                             />
                             <ul
                               aria-labelledby="downshift-1-label"
-                              class="sc-fznZeY FsNrS"
+                              class="sc-fznZeY kiQkNK"
                               id="downshift-1-menu"
                               role="listbox"
                               tabindex="-1"
                             />
                           </div>
                           <div
-                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
+                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral"
                           >
                             <div
                               class="sc-AxhUy ctWTwa"
@@ -402,7 +402,7 @@ exports[`Registration should render 2nd step 1`] = `
                   Register Business
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Select the type of registration and the address you want to register with.
                 </div>
@@ -432,7 +432,7 @@ exports[`Registration should render 2nd step 1`] = `
                             />
                           </label>
                           <input
-                            class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                            class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                             data-testid="Input"
                             name="name"
                             type="text"
@@ -454,7 +454,7 @@ exports[`Registration should render 2nd step 1`] = `
                             />
                           </label>
                           <textarea
-                            class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                            class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                             data-testid="TextArea"
                             name="description"
                           />
@@ -470,7 +470,7 @@ exports[`Registration should render 2nd step 1`] = `
                             Website
                           </label>
                           <input
-                            class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                            class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                             data-testid="Input"
                             name="website"
                             type="website"
@@ -503,14 +503,14 @@ exports[`Registration should render 2nd step 1`] = `
                                 Repository
                               </span>
                               <div
-                                class="mt-2 text-theme-neutral-700"
+                                class="mt-2 text-theme-neutral-dark"
                               >
                                 Show your projects through your repository
                               </div>
                             </div>
                             <div>
                               <div
-                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                                 height="10"
                                 width="10"
                               >
@@ -548,14 +548,14 @@ exports[`Registration should render 2nd step 1`] = `
                                 Social Media
                               </span>
                               <div
-                                class="mt-2 text-theme-neutral-700"
+                                class="mt-2 text-theme-neutral-dark"
                               >
                                 Tell people more about yourself through social media
                               </div>
                             </div>
                             <div>
                               <div
-                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                                 height="10"
                                 width="10"
                               >
@@ -593,14 +593,14 @@ exports[`Registration should render 2nd step 1`] = `
                                 Photo and Video
                               </span>
                               <div
-                                class="mt-2 text-theme-neutral-700"
+                                class="mt-2 text-theme-neutral-dark"
                               >
                                 Get more users and add more information about yourself
                               </div>
                             </div>
                             <div>
                               <div
-                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                                 height="10"
                                 width="10"
                               >
@@ -643,7 +643,7 @@ exports[`Registration should render 2nd step 1`] = `
                                 class="sc-fzozJi OgXfh"
                               >
                                 <input
-                                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                   data-testid="InputCurrency"
                                   name="fee"
                                   type="text"
@@ -819,7 +819,7 @@ exports[`Registration should render 3rd step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
@@ -834,10 +834,10 @@ exports[`Registration should render 3rd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxhUy hSYVGy"
@@ -861,7 +861,7 @@ exports[`Registration should render 3rd step 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -919,7 +919,7 @@ exports[`Registration should render 3rd step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Type
                       </div>
@@ -952,7 +952,7 @@ exports[`Registration should render 3rd step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Name
                       </div>
@@ -970,7 +970,7 @@ exports[`Registration should render 3rd step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Description
                       </div>
@@ -988,7 +988,7 @@ exports[`Registration should render 3rd step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Website
                       </div>
@@ -1029,14 +1029,14 @@ exports[`Registration should render 3rd step 1`] = `
                                 Repository
                               </span>
                               <div
-                                class="mt-2 text-theme-neutral-700"
+                                class="mt-2 text-theme-neutral-dark"
                               >
                                 Show your projects through the repository
                               </div>
                             </div>
                             <div>
                               <div
-                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+                                class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
                                 height="10"
                                 width="10"
                               >
@@ -1064,7 +1064,7 @@ exports[`Registration should render 3rd step 1`] = `
                             class="flex flex-col justify-center px-6 py-5"
                           >
                             <span
-                              class="text-sm text-theme-neutral-500"
+                              class="text-sm text-theme-neutral"
                             >
                               Transaction(s) Amount
                             </span>
@@ -1079,7 +1079,7 @@ exports[`Registration should render 3rd step 1`] = `
                             class="flex flex-col justify-center px-6 py-5 text-right"
                           >
                             <span
-                              class="text-sm text-theme-neutral-500"
+                              class="text-sm text-theme-neutral"
                             >
                               Transaction fee
                             </span>
@@ -1110,10 +1110,10 @@ exports[`Registration should render 3rd step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                        class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
                       >
                         <span
-                          class="text-sm text-theme-neutral-500"
+                          class="text-sm text-theme-neutral"
                         >
                           Total Amount
                         </span>
@@ -1211,7 +1211,7 @@ exports[`Registration should render 4th step 1`] = `
                     Authenticate
                   </h1>
                   <div
-                    class="text-theme-neutral-700"
+                    class="text-theme-neutral-dark"
                   >
                     Enter your twelve word mnemonic to authenticate the transaction.
                   </div>
@@ -1232,7 +1232,7 @@ exports[`Registration should render 4th step 1`] = `
                         class="sc-fzozJi OgXfh max-w-20"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="Input"
                           name="mnemonic"
                           type="password"
@@ -1272,7 +1272,7 @@ exports[`Registration should render 4th step 1`] = `
                         class="sc-fzozJi OgXfh max-w-20"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="Input"
                           name="secondMnemonic"
                           type="password"
@@ -1417,7 +1417,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           ID
                         </div>
@@ -1466,7 +1466,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Block ID
                         </div>
@@ -1515,7 +1515,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Network
                         </div>
@@ -1541,10 +1541,10 @@ exports[`Registration should render 5th step 1`] = `
                         </div>
                       </div>
                       <div
-                        class="ml-1 text-theme-danger-500"
+                        class="ml-1 text-theme-danger"
                       >
                         <div
-                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                         >
                           <div
                             class="sc-AxhUy hSYVGy"
@@ -1568,7 +1568,7 @@ exports[`Registration should render 5th step 1`] = `
                           class="font-semibold"
                         >
                           <div
-                            class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                            class="mb-2 text-sm font-semibold text-theme-neutral"
                           >
                             <span
                               class="mr-1"
@@ -1626,7 +1626,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Transaction Type
                         </div>
@@ -1657,7 +1657,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Name
                         </div>
@@ -1675,7 +1675,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Description
                         </div>
@@ -1693,7 +1693,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Website
                         </div>
@@ -1718,7 +1718,7 @@ exports[`Registration should render 5th step 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Amount
                         </div>
@@ -1732,12 +1732,12 @@ exports[`Registration should render 5th step 1`] = `
                         class="ml-1 text-theme-danger"
                       >
                         <div
-                          class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-200"
+                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                         >
                           <div
-                            class="sc-AxhUy itzhkW"
-                            height="16"
-                            width="16"
+                            class="sc-AxhUy gwxBWy"
+                            height="22"
+                            width="22"
                           >
                             <svg>
                               sent.svg
@@ -1844,7 +1844,7 @@ exports[`Registration should select registration type 1`] = `
                   Registration
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Select the type of registration and the address you want to register with.
                 </div>
@@ -1893,7 +1893,7 @@ exports[`Registration should select registration type 1`] = `
                               data-testid="select-network__typeahead-"
                             >
                               <div
-                                class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                               />
                             </div>
                             <input
@@ -1923,7 +1923,7 @@ exports[`Registration should select registration type 1`] = `
                           role="option"
                         >
                           <div
-                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
+                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-light"
                           >
                             <div
                               class="sc-AxhUy gkBhrK"
@@ -2001,7 +2001,7 @@ exports[`Registration should select registration type 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-address"
                           name="address"
                         >
@@ -2063,7 +2063,7 @@ exports[`Registration should select registration type 1`] = `
                         class="relative w-full"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -2078,7 +2078,7 @@ exports[`Registration should select registration type 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-26-label downshift-26-toggle-button"
-                              class="sc-fznKkj euPWra  is-selected "
+                              class="sc-fznKkj jPdGcK  is-selected "
                               data-testid="select-list__toggle-button"
                               id="downshift-26-toggle-button"
                               type="button"
@@ -2087,14 +2087,14 @@ exports[`Registration should select registration type 1`] = `
                             </button>
                             <ul
                               aria-labelledby="downshift-26-label"
-                              class="sc-fznZeY FsNrS"
+                              class="sc-fznZeY kiQkNK"
                               id="downshift-26-menu"
                               role="listbox"
                               tabindex="-1"
                             />
                           </div>
                           <div
-                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
+                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral"
                           >
                             <div
                               class="sc-AxhUy ctWTwa"
@@ -2195,7 +2195,7 @@ exports[`Registration should should go back 1`] = `
                   Registration
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Select the type of registration and the address you want to register with.
                 </div>
@@ -2244,7 +2244,7 @@ exports[`Registration should should go back 1`] = `
                               data-testid="select-network__typeahead-"
                             >
                               <div
-                                class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                               />
                             </div>
                             <input
@@ -2274,7 +2274,7 @@ exports[`Registration should should go back 1`] = `
                           role="option"
                         >
                           <div
-                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-200"
+                            class="sc-AxiKw hbPDzJ text-theme-danger-400 border-theme-danger-light"
                           >
                             <div
                               class="sc-AxhUy gkBhrK"
@@ -2352,7 +2352,7 @@ exports[`Registration should should go back 1`] = `
                         class="sc-fzozJi OgXfh"
                       >
                         <select
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                           data-testid="ProfileFormField__select-address"
                           name="address"
                         >
@@ -2414,7 +2414,7 @@ exports[`Registration should should go back 1`] = `
                         class="relative w-full"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                           data-testid="select-list__input"
                           name="registrationType"
                           readonly=""
@@ -2429,21 +2429,21 @@ exports[`Registration should should go back 1`] = `
                               aria-expanded="false"
                               aria-haspopup="listbox"
                               aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                              class="sc-fznKkj euPWra   "
+                              class="sc-fznKkj jPdGcK   "
                               data-testid="select-list__toggle-button"
                               id="downshift-6-toggle-button"
                               type="button"
                             />
                             <ul
                               aria-labelledby="downshift-6-label"
-                              class="sc-fznZeY FsNrS"
+                              class="sc-fznZeY kiQkNK"
                               id="downshift-6-menu"
                               role="listbox"
                               tabindex="-1"
                             />
                           </div>
                           <div
-                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral-500"
+                            class="sc-AxheI sc-AxmLO ecniej w-10 pointer-events-none text-theme-neutral"
                           >
                             <div
                               class="sc-AxhUy ctWTwa"
@@ -2569,7 +2569,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           ID
                         </div>
@@ -2618,7 +2618,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Block ID
                         </div>
@@ -2667,7 +2667,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Network
                         </div>
@@ -2693,10 +2693,10 @@ exports[`Registration should submit 1`] = `
                         </div>
                       </div>
                       <div
-                        class="ml-1 text-theme-danger-500"
+                        class="ml-1 text-theme-danger"
                       >
                         <div
-                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                         >
                           <div
                             class="sc-AxhUy hSYVGy"
@@ -2720,7 +2720,7 @@ exports[`Registration should submit 1`] = `
                           class="font-semibold"
                         >
                           <div
-                            class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                            class="mb-2 text-sm font-semibold text-theme-neutral"
                           >
                             <span
                               class="mr-1"
@@ -2778,7 +2778,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Transaction Type
                         </div>
@@ -2809,7 +2809,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Name
                         </div>
@@ -2827,7 +2827,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Description
                         </div>
@@ -2845,7 +2845,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Website
                         </div>
@@ -2870,7 +2870,7 @@ exports[`Registration should submit 1`] = `
                         class="flex-1 space-y-2"
                       >
                         <div
-                          class="text-sm font-semibold text-theme-neutral-500"
+                          class="text-sm font-semibold text-theme-neutral"
                         >
                           Amount
                         </div>
@@ -2884,12 +2884,12 @@ exports[`Registration should submit 1`] = `
                         class="ml-1 text-theme-danger"
                       >
                         <div
-                          class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-200"
+                          class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                         >
                           <div
-                            class="sc-AxhUy itzhkW"
-                            height="16"
-                            width="16"
+                            class="sc-AxhUy gwxBWy"
+                            height="22"
+                            width="22"
                           >
                             <svg>
                               sent.svg

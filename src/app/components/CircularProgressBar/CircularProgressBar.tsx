@@ -75,7 +75,7 @@ CircularProgressBar.defaultProps = {
 	size: 130,
 	strokeWidth: 10,
 	strokeColor: "var(--theme-color-success-200)",
-	progressColor: "var(--theme-color-success-600)",
+	progressColor: "var(--theme-color-success)",
 	value: 0,
 	fontSize: 2,
 };

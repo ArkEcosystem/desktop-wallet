@@ -24,8 +24,8 @@ export const TransactionListItem = ({
 	};
 
 	const iconClasses: any = {
-		send: "border-theme-danger-200 text-theme-danger-400",
-		receive: "border-theme-success-300 text-theme-success-400",
+		send: "border-theme-danger-light text-theme-danger-400",
+		receive: "border-theme-success-300 text-theme-success-light",
 	};
 
 	const amountLabelColor: any = {
@@ -87,7 +87,7 @@ export const TransactionListItem = ({
 				{transactionInfoIcons &&
 					transactionInfoIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 align-middle text-theme-neutral-400`}>
+							<div key={index} className={`inline-block mr-2 align-middle text-theme-neutral-light`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
@@ -98,7 +98,7 @@ export const TransactionListItem = ({
 					{amount}
 				</Label>
 			</td>
-			<td className="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500">
+			<td className="w-32 py-1 text-sm font-semibold text-right text-theme-neutral">
 				<div>{fiat}</div>
 			</td>
 		</tr>

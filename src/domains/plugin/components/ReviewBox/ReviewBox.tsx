@@ -18,10 +18,10 @@ export const ReviewBox = ({ ratings, totalAvaliations, averageScore, maximumScor
 
 				<span className="font-bold">
 					Avg. Rating: {averageScore}{" "}
-					<span className="font-bold text-theme-neutral-400"> / {maximumScore}</span>
+					<span className="font-bold text-theme-neutral-light"> / {maximumScore}</span>
 				</span>
 			</div>
-			<span className="pb-5 mt-1 text-sm font-bold text-theme-neutral-400">
+			<span className="pb-5 mt-1 text-sm font-bold text-theme-neutral-light">
 				Out of {totalAvaliations} reviews
 			</span>
 			<StarsCounters ratings={ratings} totalAvaliations={totalAvaliations} />

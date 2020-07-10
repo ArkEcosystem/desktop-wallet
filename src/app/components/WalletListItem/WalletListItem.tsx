@@ -68,7 +68,7 @@ export const WalletListItem = ({
 			<td className="font-semibold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="text-right text-theme-neutral-400">
+			<td className="text-right text-theme-neutral-light">
 				<div>{fiat}</div>
 			</td>
 			<td>
@@ -86,7 +86,7 @@ export const WalletListItem = ({
 						}
 
 						return (
-							<div className="text-theme-neutral-400 hover:text-theme-neutral-500">
+							<div className="text-theme-neutral-light hover:text-theme-neutral">
 								<Dropdown options={actions} onSelect={onDropdownAction} />
 							</div>
 						);

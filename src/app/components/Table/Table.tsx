@@ -54,7 +54,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 							{headerGroup.headers.map((column: any, thIndex: number) => (
 								<th
 									key={thIndex}
-									className="text-sm text-left select-none text-theme-neutral-500"
+									className="text-sm text-left select-none text-theme-neutral"
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
@@ -62,7 +62,7 @@ export const Table = ({ children, data, columns }: TableProps) => {
 										<div>{column.render("Header")}</div>
 										{column.canSort && (
 											<div
-												className="flex items-center ml-2 text-theme-color-neutral-500"
+												className="flex items-center ml-2 text-theme-color-neutral"
 												data-testid={`table__${getSortIconName(
 													column.isSorted,
 													column.isSortedDesc,

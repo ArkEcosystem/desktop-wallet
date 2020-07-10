@@ -6,7 +6,7 @@ exports[`WalletDetails should render 1`] = `
     class="relative"
   >
     <div
-      class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-100 text-theme-neutral-700"
+      class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -22,7 +22,7 @@ exports[`WalletDetails should render 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-700"
+          class="text-theme-neutral-dark"
           href="/portfolio"
         >
           <span>
@@ -44,10 +44,10 @@ exports[`WalletDetails should render 1`] = `
             class="flex"
           >
             <div
-              class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-700"
+              class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-dark"
             >
               <div
-                class="sc-AxirZ iQaTP text-theme-neutral-700"
+                class="sc-AxirZ iQaTP text-theme-neutral-dark"
                 height="1em"
                 width="1em"
               >
@@ -81,7 +81,7 @@ exports[`WalletDetails should render 1`] = `
             data-testid="WalletHeader__ledger"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-neutral-700"
+              class="sc-AxirZ iQaTP text-theme-neutral-dark"
               height="1em"
               width="1em"
             >
@@ -94,7 +94,7 @@ exports[`WalletDetails should render 1`] = `
             data-testid="WalletHeader__multisig"
           >
             <div
-              class="sc-AxirZ iQaTP text-theme-neutral-700"
+              class="sc-AxirZ iQaTP text-theme-neutral-dark"
               height="1em"
               width="1em"
             >
@@ -108,7 +108,7 @@ exports[`WalletDetails should render 1`] = `
           class="flex items-stretch space-x-2"
         >
           <button
-            class="px-3 text-theme-neutral-700"
+            class="px-3 text-theme-neutral-dark"
             data-testid="WalletHeader__star-button"
           >
             <div
@@ -247,7 +247,7 @@ exports[`WalletDetails should render 1`] = `
       </ul>
     </header>
     <div
-      class="h-4 bg-theme-neutral-100"
+      class="h-4 bg-theme-neutral-contrast"
     />
     <section
       class="px-12 py-8"
@@ -457,7 +457,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </section>
     <div
-      class="h-4 bg-theme-neutral-100"
+      class="h-4 bg-theme-neutral-contrast"
     />
     <section
       class="px-12 py-8"
@@ -652,7 +652,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
     </section>
     <div
-      class="h-4 bg-theme-neutral-100"
+      class="h-4 bg-theme-neutral-contrast"
     />
     <div
       class="px-12 py-8"
@@ -674,7 +674,7 @@ exports[`WalletDetails should render 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -688,7 +688,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -702,7 +702,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -716,7 +716,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -730,7 +730,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -764,7 +764,7 @@ exports[`WalletDetails should render 1`] = `
                   class="flex"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-400 -mr-1"
+                    class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-light -mr-1"
                   >
                     <div
                       class="sc-AxirZ RbXVX"
@@ -826,7 +826,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </td>
               <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
               >
                 <div>
                   1,000,000 USD
@@ -849,7 +849,7 @@ exports[`WalletDetails should render 1`] = `
                   class="flex"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc border-theme-danger-200 text-theme-danger-400 -mr-1"
+                    class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
                   >
                     <div
                       class="sc-AxirZ RbXVX"
@@ -911,7 +911,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </td>
               <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
               >
                 <div>
                   1,000,000 USD
@@ -942,7 +942,7 @@ exports[`WalletDetails should render 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -956,7 +956,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -970,7 +970,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -984,7 +984,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -998,7 +998,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--4"
                 role="columnheader"
@@ -1032,7 +1032,7 @@ exports[`WalletDetails should render 1`] = `
                   class="flex"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc border-theme-danger-200 text-theme-danger-400 -mr-1"
+                    class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
                   >
                     <div
                       class="sc-AxirZ RbXVX"
@@ -1094,7 +1094,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </td>
               <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral-500"
+                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
               >
                 <div>
                   1,000,000 USD
@@ -1179,7 +1179,7 @@ exports[`WalletDetails should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="text-sm text-left select-none text-theme-neutral-500"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1193,7 +1193,7 @@ exports[`WalletDetails should render 1`] = `
                           Asset Type
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1209,7 +1209,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral-500"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -1223,7 +1223,7 @@ exports[`WalletDetails should render 1`] = `
                           Wallet Address
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1239,7 +1239,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral-500"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -1253,7 +1253,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral-500"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -1267,7 +1267,7 @@ exports[`WalletDetails should render 1`] = `
                           Balance
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1283,7 +1283,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="text-sm text-left select-none text-theme-neutral-500"
+                      class="text-sm text-left select-none text-theme-neutral"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -1297,7 +1297,7 @@ exports[`WalletDetails should render 1`] = `
                           Fiat Value
                         </div>
                         <div
-                          class="flex items-center ml-2 text-theme-color-neutral-500"
+                          class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
                           <div
@@ -1439,7 +1439,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="text-right text-theme-neutral-400"
+                      class="text-right text-theme-neutral-light"
                     >
                       <div>
                         980 USD
@@ -1447,7 +1447,7 @@ exports[`WalletDetails should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                        class="text-theme-neutral-light hover:text-theme-neutral"
                       >
                         <div
                           class="relative"

@@ -35,7 +35,7 @@ exports[`Wallet / Import should render 1`] = `
                   Select a Cryptoasset
                 </h1>
                 <p
-                  class="text-medium text-theme-neutral-700"
+                  class="text-medium text-theme-neutral-dark"
                 >
                   Select a cryptoasset to import your existing wallet address
                 </p>
@@ -80,7 +80,7 @@ exports[`Wallet / Import should render 1`] = `
                           data-testid="select-network__typeahead-"
                         >
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                           />
                         </div>
                         <input

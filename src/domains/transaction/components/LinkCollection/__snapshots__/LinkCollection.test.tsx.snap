@@ -17,14 +17,14 @@ exports[`LinkCollection should add and remove links 1`] = `
           Social Media
         </span>
         <div
-          class="mt-2 text-theme-neutral-700"
+          class="mt-2 text-theme-neutral-dark"
         >
           Tell people more about yourself through social media
         </div>
       </div>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -62,7 +62,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                  class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                   data-testid="select-list__input"
                   readonly=""
                   type="text"
@@ -76,7 +76,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                       aria-expanded="false"
                       aria-haspopup="listbox"
                       aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                      class="sc-fzplWN eNOicT  is-selected "
+                      class="sc-fzplWN iSaRsv  is-selected "
                       data-testid="select-list__toggle-button"
                       id="downshift-1-toggle-button"
                       type="button"
@@ -85,14 +85,14 @@ exports[`LinkCollection should add and remove links 1`] = `
                     </button>
                     <ul
                       aria-labelledby="downshift-1-label"
-                      class="sc-fznyAO hzJaLD"
+                      class="sc-fznyAO fdSuXn"
                       id="downshift-1-menu"
                       role="listbox"
                       tabindex="-1"
                     />
                   </div>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral-500"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral"
                   >
                     <div
                       class="sc-AxiKw iDEwuj"
@@ -126,7 +126,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               class="sc-Axmtr jzhOwR"
             >
               <input
-                class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="LinkCollection__input-link"
                 maxlength="255"
                 placeholder=" "
@@ -145,7 +145,7 @@ exports[`LinkCollection should add and remove links 1`] = `
         </button>
       </div>
       <div
-        class="mt-8 mb-2 text-sm text-theme-neutral-700"
+        class="mt-8 mb-2 text-sm text-theme-neutral-dark"
       >
         Your media
       </div>
@@ -161,7 +161,7 @@ exports[`LinkCollection should add and remove links 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -175,7 +175,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                     Name
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral-500"
+                    class="flex items-center ml-2 text-theme-color-neutral"
                     data-testid="table__Sort"
                   >
                     <div
@@ -191,7 +191,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -205,7 +205,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                     Link
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral-500"
+                    class="flex items-center ml-2 text-theme-color-neutral"
                     data-testid="table__Sort"
                   >
                     <div
@@ -221,7 +221,7 @@ exports[`LinkCollection should add and remove links 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -263,14 +263,14 @@ exports[`LinkCollection should render 1`] = `
           Social Media
         </span>
         <div
-          class="mt-2 text-theme-neutral-700"
+          class="mt-2 text-theme-neutral-dark"
         >
           Tell people more about yourself through social media
         </div>
       </div>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >
@@ -301,14 +301,14 @@ exports[`LinkCollection should select a specific link type 1`] = `
           Social Media
         </span>
         <div
-          class="mt-2 text-theme-neutral-700"
+          class="mt-2 text-theme-neutral-dark"
         >
           Tell people more about yourself through social media
         </div>
       </div>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary-600"
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
           height="10"
           width="10"
         >
@@ -346,7 +346,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 class="relative w-full"
               >
                 <input
-                  class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
+                  class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                   data-testid="select-list__input"
                   readonly=""
                   type="text"
@@ -360,21 +360,21 @@ exports[`LinkCollection should select a specific link type 1`] = `
                       aria-expanded="false"
                       aria-haspopup="listbox"
                       aria-labelledby="downshift-8-label downshift-8-toggle-button"
-                      class="sc-fzplWN eNOicT   "
+                      class="sc-fzplWN iSaRsv   "
                       data-testid="select-list__toggle-button"
                       id="downshift-8-toggle-button"
                       type="button"
                     />
                     <ul
                       aria-labelledby="downshift-8-label"
-                      class="sc-fznyAO hzJaLD"
+                      class="sc-fznyAO fdSuXn"
                       id="downshift-8-menu"
                       role="listbox"
                       tabindex="-1"
                     />
                   </div>
                   <div
-                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral-500"
+                    class="sc-AxhUy sc-AxheI bSLhdh w-10 pointer-events-none text-theme-neutral"
                   >
                     <div
                       class="sc-AxiKw iDEwuj"
@@ -408,7 +408,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               class="sc-Axmtr jzhOwR"
             >
               <input
-                class="sc-AxhCb dhfuOU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+                class="sc-AxhCb kOIFCv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
                 data-testid="LinkCollection__input-link"
                 maxlength="255"
                 placeholder=" "
@@ -428,7 +428,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
         </button>
       </div>
       <div
-        class="mt-8 mb-2 text-sm text-theme-neutral-700"
+        class="mt-8 mb-2 text-sm text-theme-neutral-dark"
       >
         Your media
       </div>
@@ -444,7 +444,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
               role="row"
             >
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--0"
                 role="columnheader"
@@ -458,7 +458,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Primary
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral-500"
+                    class="flex items-center ml-2 text-theme-color-neutral"
                     data-testid="table__Sort"
                   >
                     <div
@@ -474,7 +474,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--1"
                 role="columnheader"
@@ -488,7 +488,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Name
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral-500"
+                    class="flex items-center ml-2 text-theme-color-neutral"
                     data-testid="table__Sort"
                   >
                     <div
@@ -504,7 +504,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--2"
                 role="columnheader"
@@ -518,7 +518,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                     Link
                   </div>
                   <div
-                    class="flex items-center ml-2 text-theme-color-neutral-500"
+                    class="flex items-center ml-2 text-theme-color-neutral"
                     data-testid="table__Sort"
                   >
                     <div
@@ -534,7 +534,7 @@ exports[`LinkCollection should select a specific link type 1`] = `
                 </div>
               </th>
               <th
-                class="text-sm text-left select-none text-theme-neutral-500"
+                class="text-sm text-left select-none text-theme-neutral"
                 colspan="1"
                 data-testid="table__th--3"
                 role="columnheader"
@@ -658,14 +658,14 @@ exports[`LinkCollection should toggle open/close of link collection 1`] = `
           Social Media
         </span>
         <div
-          class="mt-2 text-theme-neutral-700"
+          class="mt-2 text-theme-neutral-dark"
         >
           Tell people more about yourself through social media
         </div>
       </div>
       <div>
         <div
-          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+          class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
           height="10"
           width="10"
         >

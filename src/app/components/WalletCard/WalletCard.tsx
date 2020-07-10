@@ -75,7 +75,7 @@ export const WalletCard = ({
 		<div className={`w-64 inline-block ${className}`}>
 			<Card>
 				<div className="relative p-2">
-					<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+					<div className="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral">
 						<Dropdown options={actions} onSelect={onSelect} />
 					</div>
 					<div className="absolute right-3 -top-1">

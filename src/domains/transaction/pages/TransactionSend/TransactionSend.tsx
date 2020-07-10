@@ -72,8 +72,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -84,7 +84,7 @@ export const SecondStep = () => (
 				</div>
 			</TransactionDetail>
 			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 font-semibold text-theme-neutral-500">
+				<div className="mb-2 font-semibold text-theme-neutral">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -155,7 +155,7 @@ export const FifthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>

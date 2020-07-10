@@ -57,7 +57,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-medium text-theme-neutral-700"
+                      class="text-sm font-medium text-theme-neutral-dark"
                     >
                       Network
                     </div>
@@ -96,7 +96,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                 data-testid="select-network__typeahead-"
                               >
                                 <div
-                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                                 />
                               </div>
                               <input
@@ -123,7 +123,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-medium text-theme-neutral-700"
+                      class="text-sm font-medium text-theme-neutral-dark"
                     >
                       Sender
                     </div>
@@ -134,7 +134,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                         class="relative flex items-center"
                       >
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           disabled=""
                           type="text"
@@ -184,7 +184,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-medium text-theme-neutral-700"
+                      class="text-sm font-medium text-theme-neutral-dark"
                     >
                       Hash
                     </div>
@@ -192,7 +192,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                       class="mt-2"
                     >
                       <input
-                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                         data-testid="Input"
                         name="hash"
                       />
@@ -206,7 +206,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                     class="flex-1"
                   >
                     <div
-                      class="text-sm font-medium text-theme-neutral-700"
+                      class="text-sm font-medium text-theme-neutral-dark"
                     >
                       Fee ARK
                     </div>
@@ -223,7 +223,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                             class="sc-fzozJi OgXfh"
                           >
                             <input
-                              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                              class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                               data-testid="InputCurrency"
                               type="text"
                               value="25"
@@ -355,7 +355,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Network
           </div>
@@ -394,7 +394,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                       data-testid="select-network__typeahead-"
                     >
                       <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                       />
                     </div>
                     <input
@@ -421,7 +421,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Sender
           </div>
@@ -432,7 +432,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
               class="relative flex items-center"
             >
               <input
-                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                 data-testid="Input"
                 disabled=""
                 type="text"
@@ -482,7 +482,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Hash
           </div>
@@ -490,7 +490,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             class="mt-2"
           >
             <input
-              class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+              class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
               data-testid="Input"
               name="hash"
             />
@@ -504,7 +504,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Fee ARK
           </div>
@@ -521,7 +521,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   class="sc-fzozJi OgXfh"
                 >
                   <input
-                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                     data-testid="InputCurrency"
                     type="text"
                     value="25"
@@ -627,7 +627,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Network
           </div>
@@ -640,10 +640,10 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="ml-1 text-theme-danger"
         >
           <div
-            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
           >
             <div
               class="sc-AxhUy hSYVGy"
@@ -664,7 +664,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Sender
           </div>
@@ -711,7 +711,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Hash
           </div>
@@ -756,7 +756,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
               class="flex flex-col justify-center px-6 py-5"
             >
               <span
-                class="text-sm text-theme-neutral-500"
+                class="text-sm text-theme-neutral"
               >
                 Transaction(s) Amount
               </span>
@@ -771,7 +771,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
               class="flex flex-col justify-center px-6 py-5 text-right"
             >
               <span
-                class="text-sm text-theme-neutral-500"
+                class="text-sm text-theme-neutral"
               >
                 Transaction fee
               </span>
@@ -802,10 +802,10 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+          class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
         >
           <span
-            class="text-sm text-theme-neutral-500"
+            class="text-sm text-theme-neutral"
           >
             Total Amount
           </span>
@@ -849,7 +849,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Your password
             </div>
@@ -860,7 +860,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                   data-testid="Input"
                   name="passphras"
                   type="password"
@@ -930,7 +930,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
@@ -979,7 +979,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
@@ -1028,7 +1028,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Network
             </div>
@@ -1054,10 +1054,10 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger-500"
+            class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy hSYVGy"
@@ -1081,7 +1081,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
               class="font-semibold"
             >
               <div
-                class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                class="mb-2 text-sm font-semibold text-theme-neutral"
               >
                 <span
                   class="mr-1"
@@ -1139,7 +1139,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               IPFS Hash
             </div>
@@ -1161,7 +1161,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Amount
             </div>
@@ -1175,7 +1175,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy gwxBWy"

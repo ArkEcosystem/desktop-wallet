@@ -48,7 +48,7 @@ exports[`AddAssets should render a modal 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Select which assets you would like to follow
         </div>
@@ -98,7 +98,7 @@ exports[`AddAssets should render a modal 1`] = `
                       data-testid="select-network__typeahead-"
                     >
                       <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                       />
                     </div>
                     <input

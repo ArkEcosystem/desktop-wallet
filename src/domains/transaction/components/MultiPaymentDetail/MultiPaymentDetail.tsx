@@ -33,11 +33,11 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 				border={false}
 			>
 				ROBank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.RECIPIENTS")} className="last:pb-0">
-				<div className="flex justify-between text-sm font-semibold text-theme-neutral-500">
+				<div className="flex justify-between text-sm font-semibold text-theme-neutral">
 					<div className="ml-12">{t("COMMON.ADDRESS")}</div>
 					<div className="ml-12">{t("TRANSACTION.AMOUNT")}</div>
 				</div>
@@ -51,14 +51,14 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			<TransactionDetail
 				label={t("TRANSACTION.TOTAL_AMOUNT")}
 				extra={
-					<Circle className="border-theme-danger-100 text-theme-danger-400">
+					<Circle className="border-theme-danger-contrast text-theme-danger-400">
 						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>
 				<Label color="danger">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
@@ -84,7 +84,7 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -92,7 +92,7 @@ export const MultiPaymentDetail = (props: MultiPaymentDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

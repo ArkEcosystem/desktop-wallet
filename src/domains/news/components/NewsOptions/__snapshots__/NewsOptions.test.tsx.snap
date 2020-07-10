@@ -16,7 +16,7 @@ exports[`NewsOptions should render 1`] = `
           class="relative"
         >
           <button
-            class="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+            class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
             data-testid="header-search-bar__button"
           >
             <div
@@ -261,7 +261,7 @@ exports[`NewsOptions should render 1`] = `
               </li>
             </ul>
             <div
-              class="sc-AxhUy dSLmHc relative cursor-pointer border-theme-primary-100"
+              class="sc-AxhUy dSLmHc relative cursor-pointer border-theme-primary-contrast"
               data-testid="network__viewall"
             >
               <div
@@ -270,7 +270,7 @@ exports[`NewsOptions should render 1`] = `
                 All
               </div>
               <span
-                class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-100 text-theme-primary-500"
+                class="sc-AxhCb cXEepG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent border-theme-primary-contrast text-theme-primary-500"
               >
                 <div
                   class="sc-AxiKw ksjdLL"

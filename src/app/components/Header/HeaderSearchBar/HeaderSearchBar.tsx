@@ -44,7 +44,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 			{!searchbarVisible && (
 				<button
 					data-testid="header-search-bar__button"
-					className="h-full my-auto font-semibold cursor-pointer text-theme-primary-200"
+					className="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
 					onClick={() => setSearchbarVisible(true)}
 				>
 					{children ? (
@@ -72,7 +72,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 					)}
 
 					<button data-testid="header-search-bar__reset" onClick={resetQuery}>
-						<Icon className="text-theme-neutral-500" name="CrossSlim" width={12} height={12} />
+						<Icon className="text-theme-neutral" name="CrossSlim" width={12} height={12} />
 					</button>
 
 					<div className="mx-4">
@@ -84,7 +84,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 						/>
 					</div>
 
-					<Icon className="text-theme-neutral-500" name="Search" width={20} height={20} />
+					<Icon className="text-theme-neutral" name="Search" width={20} height={20} />
 				</SearchBarInputWrapper>
 			)}
 		</div>

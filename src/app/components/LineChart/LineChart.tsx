@@ -52,7 +52,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 			<div className="flex">
 				{period && (
 					<div
-						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-700"
+						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
 						onClick={onPeriodClick}
 					>
 						<div className="flex">
@@ -72,7 +72,7 @@ const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
-									<div className="inline-block text-sm font-semibold text-theme-neutral-700">
+									<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
 										{legend.formatted[item.dataKey] && (
 											<span>{legend.formatted[item.dataKey]} - </span>
 										)}

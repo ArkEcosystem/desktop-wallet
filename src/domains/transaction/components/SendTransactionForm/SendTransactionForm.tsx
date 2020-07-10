@@ -152,7 +152,7 @@ export const SendTransactionForm = ({
 
 				{addedRecipients.length > 0 && (
 					<div>
-						<div className="pb-4 mb-4 text-sm font-semibold text-theme-neutral-700">Recipients</div>
+						<div className="pb-4 mb-4 text-sm font-semibold text-theme-neutral-dark">Recipients</div>
 						<RecipientList
 							recipients={addedRecipients}
 							isEditable={true}
@@ -169,7 +169,7 @@ export const SendTransactionForm = ({
 					<InputGroup>
 						<Input type="text" placeholder=" " className="pr-20" maxLength={255} />
 						<InputAddonEnd>
-							<button className="px-4 text-theme-neutral-400 focus:outline-none">255 Max</button>
+							<button className="px-4 text-theme-neutral-light focus:outline-none">255 Max</button>
 						</InputAddonEnd>
 					</InputGroup>
 				</FormField>

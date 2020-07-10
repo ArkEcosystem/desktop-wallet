@@ -57,7 +57,7 @@ export const SearchHelp = ({ isOpen, data, onClose, onSearch }: SearchHelpProps)
 							<td className="py-4 pr-8">
 								<div className="font-semibold">{rowData.title}</div>
 
-								<div className="mt-2 text-sm text-theme-neutral-700">{rowData.description}</div>
+								<div className="mt-2 text-sm text-theme-neutral-dark">{rowData.description}</div>
 							</td>
 
 							<td className="py-4 text-sm text-right align-top">

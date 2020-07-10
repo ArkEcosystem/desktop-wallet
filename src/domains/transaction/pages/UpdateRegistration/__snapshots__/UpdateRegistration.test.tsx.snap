@@ -48,7 +48,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                 Update Business
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Select the type of registration and the address you want to register with.
               </div>
@@ -78,7 +78,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -101,7 +101,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -119,7 +119,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                           Website
                         </label>
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -153,14 +153,14 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               Repository
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Show your projects through your repository
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -198,14 +198,14 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               Social Media
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Tell people more about yourself through social media
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -243,14 +243,14 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               Photo and Video
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Get more users and add more information about yourself
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -293,7 +293,7 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                               class="sc-fzozJi OgXfh"
                             >
                               <input
-                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -464,7 +464,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Network
                     </div>
@@ -479,10 +479,10 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ml-1 text-theme-danger-500"
+                    class="ml-1 text-theme-danger"
                   >
                     <div
-                      class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                      class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                     >
                       <div
                         class="sc-AxhUy hSYVGy"
@@ -503,7 +503,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                        
                     </div>
@@ -511,7 +511,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -573,7 +573,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Type
                     </div>
@@ -606,7 +606,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Name
                     </div>
@@ -624,7 +624,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Description
                     </div>
@@ -642,7 +642,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                     class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Website
                     </div>
@@ -683,14 +683,14 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                               Repository
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Show your projects through the repository
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-100 text-theme-primary-600"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
                               height="10"
                               width="10"
                             >
@@ -720,7 +720,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction(s) Amount
                           </span>
@@ -735,7 +735,7 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5 text-right"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction fee
                           </span>
@@ -766,10 +766,10 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
                     >
                       <span
-                        class="text-sm text-theme-neutral-500"
+                        class="text-sm text-theme-neutral"
                       >
                         Total Amount
                       </span>
@@ -861,7 +861,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                   Authenticate
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
@@ -882,7 +882,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
@@ -922,7 +922,7 @@ exports[`UpdateRegistration should render 3rd step 1`] = `
                       class="sc-fzozJi OgXfh max-w-20"
                     >
                       <input
-                        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
@@ -1061,7 +1061,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
@@ -1110,7 +1110,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
@@ -1159,7 +1159,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
@@ -1185,10 +1185,10 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxhUy hSYVGy"
@@ -1212,7 +1212,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1270,7 +1270,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
@@ -1301,7 +1301,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Name
                       </div>
@@ -1319,7 +1319,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Description
                       </div>
@@ -1337,7 +1337,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Website
                       </div>
@@ -1362,7 +1362,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
@@ -1376,7 +1376,7 @@ exports[`UpdateRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxhUy gwxBWy"
@@ -1482,7 +1482,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                 Update Business
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Select the type of registration and the address you want to register with.
               </div>
@@ -1512,7 +1512,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="name"
                           type="text"
@@ -1535,7 +1535,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           />
                         </label>
                         <textarea
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="TextArea"
                           name="description"
                         >
@@ -1553,7 +1553,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                           Website
                         </label>
                         <input
-                          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                           data-testid="Input"
                           name="website"
                           type="website"
@@ -1587,14 +1587,14 @@ exports[`UpdateRegistration should should go back 1`] = `
                               Repository
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Show your projects through your repository
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -1632,14 +1632,14 @@ exports[`UpdateRegistration should should go back 1`] = `
                               Social Media
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Tell people more about yourself through social media
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -1677,14 +1677,14 @@ exports[`UpdateRegistration should should go back 1`] = `
                               Photo and Video
                             </span>
                             <div
-                              class="mt-2 text-theme-neutral-700"
+                              class="mt-2 text-theme-neutral-dark"
                             >
                               Get more users and add more information about yourself
                             </div>
                           </div>
                           <div>
                             <div
-                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary-600 bg-theme-primary-100"
+                              class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
                               height="10"
                               width="10"
                             >
@@ -1727,7 +1727,7 @@ exports[`UpdateRegistration should should go back 1`] = `
                               class="sc-fzozJi OgXfh"
                             >
                               <input
-                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -1907,7 +1907,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
@@ -1956,7 +1956,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
@@ -2005,7 +2005,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
@@ -2031,10 +2031,10 @@ exports[`UpdateRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxhUy hSYVGy"
@@ -2058,7 +2058,7 @@ exports[`UpdateRegistration should submit 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -2116,7 +2116,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
@@ -2147,7 +2147,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Name
                       </div>
@@ -2165,7 +2165,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Description
                       </div>
@@ -2183,7 +2183,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Website
                       </div>
@@ -2208,7 +2208,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
@@ -2222,7 +2222,7 @@ exports[`UpdateRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+                        class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxhUy gwxBWy"

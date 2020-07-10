@@ -30,7 +30,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 				border={false}
 			>
 				ROBank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
@@ -44,7 +44,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 					</div>
 				}
 			>
-				Delegate 3<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				Delegate 3<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>
@@ -63,7 +63,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />
@@ -71,7 +71,7 @@ export const VoteDetail = (props: VoteDetailProps) => {
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.BLOCK_ID")}>
-				<span className="text-theme-primary-700">1234678...12312313</span>
+				<span className="text-theme-primary-dark">1234678...12312313</span>
 
 				<span className="inline-block ml-4 text-theme-primary-300">
 					<Icon name="Copy" />

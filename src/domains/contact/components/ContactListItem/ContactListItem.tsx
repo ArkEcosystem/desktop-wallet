@@ -44,7 +44,7 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 					>
 						{index === 0 && (
 							<div className="flex items-center space-x-3">
-								<Circle className="bg-theme-primary-600 border-theme-primary-600">
+								<Circle className="bg-theme-primary border-theme-primary">
 									<span className="text-sm text-theme-background">{contact.name().slice(0, 2)}</span>
 								</Circle>
 								<span className="font-semibold">{contact.name()}</span>
