@@ -20,7 +20,9 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 	return (
 		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300">
 			<td className="w-16 py-6">
-				<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id} isExternal />
+				<div className="inline-block align-middle">
+					<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id} isExternal />
+				</div>
 			</td>
 			<td className="w-48 py-1 text-sm text-theme-neutral-600">
 				<span data-testid="TransactionRow__timestamp">{transaction.timestamp}</span>
@@ -31,7 +33,7 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 			<td>
 				<TransactionRowRecipientLabel {...transaction} />
 			</td>
-			<td>
+			<td className="text-center">
 				<TransactionRowInfo {...transaction} />
 			</td>
 			<td className="w-16 text-center">

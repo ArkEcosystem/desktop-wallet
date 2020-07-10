@@ -10,7 +10,7 @@ type LayoutControlsProps = {
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => {
 	const getViewTypeIconClass = (viewType: any) => {
 		return selectedViewType === viewType
-			? "text-theme-danger-300 border-theme-danger-100"
+			? "text-theme-danger-300 border-theme-danger-contrast"
 			: "text-theme-primary-400 border-transparent";
 	};
 

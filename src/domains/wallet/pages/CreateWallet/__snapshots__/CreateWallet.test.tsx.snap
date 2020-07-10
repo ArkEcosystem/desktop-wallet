@@ -98,7 +98,7 @@ exports[`CreateWallet should render 1`] = `
                           data-testid="select-network__typeahead-"
                         >
                           <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                            class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                           />
                         </div>
                         <input
@@ -128,7 +128,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-200"
+                        class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -188,7 +188,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-primary-600 border-theme-primary-400"
+                        class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -208,7 +208,7 @@ exports[`CreateWallet should render 1`] = `
                       role="option"
                     >
                       <div
-                        class="sc-AxhUy iZkFLc text-theme-primary-700 border-theme-primary-500"
+                        class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
                       >
                         <div
                           class="sc-AxjAm jakjmk"
@@ -323,7 +323,7 @@ exports[`CreateWallet should render 1st step 1`] = `
                 data-testid="select-network__typeahead-"
               >
                 <div
-                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                 />
               </div>
               <input
@@ -353,7 +353,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-200"
+              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -413,7 +413,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-primary-600 border-theme-primary-400"
+              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -433,7 +433,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-primary-700 border-theme-primary-500"
+              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -781,7 +781,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         Wallet name (optional)
       </label>
       <input
-        class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />

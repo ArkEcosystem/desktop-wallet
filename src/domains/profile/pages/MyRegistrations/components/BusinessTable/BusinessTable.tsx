@@ -70,7 +70,7 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 					<td className="py-6 text-bold text-theme-primary">
 						<span className="-ml-8">View</span>
 					</td>
-					<td className="py-6 text-theme-neutral-400">
+					<td className="py-6 text-theme-neutral-light">
 						<Icon name="Redirect" className="ml-12" />
 					</td>
 					<td className="py-6 text-bold text-theme-primary">

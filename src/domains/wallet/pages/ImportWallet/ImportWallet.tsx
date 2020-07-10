@@ -56,7 +56,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 							<div>
 								<div className="my-8">
 									<h1 className="mb-0">Select a Cryptoasset</h1>
-									<p className="text-medium text-theme-neutral-700">
+									<p className="text-medium text-theme-neutral-dark">
 										Select a cryptoasset to import your existing wallet address
 									</p>
 								</div>
@@ -89,7 +89,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								<div className="mt-8">
 									<div className="_header">
 										<h1 className="mb-0">Import Wallet</h1>
-										<p className="text-medium text-theme-neutral-700">
+										<p className="text-medium text-theme-neutral-dark">
 											Enter your wallet password in order to get full access to your money. Or you
 											can choose an address for vieweing only.
 										</p>

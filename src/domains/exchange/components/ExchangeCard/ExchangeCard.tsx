@@ -23,11 +23,11 @@ export const AddExchangeCard = ({ onAddExchange }: { onAddExchange: any }) => {
 	return (
 		<ExchangeCardStyled
 			data-testid="Exchange__add-exchange-card"
-			className="col-span-2 border-theme-primary-100"
+			className="col-span-2 border-theme-primary-contrast"
 			onClick={onAddExchange}
 		>
-			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary-600">
-				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-100" />
+			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary">
+				<Icon name="Plus" className="p-4 mr-4 rounded-lg bg-theme-primary-contrast" />
 
 				{t("EXCHANGE.ADD_EXCHANGE")}
 			</div>
@@ -39,9 +39,9 @@ export const BlankCard = () => {
 	const { t } = useTranslation();
 
 	return (
-		<ExchangeCardStyled data-testid="Exchange__blank-card" className="border-theme-primary-100">
-			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary-100">
-				<div className="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-100" />
+		<ExchangeCardStyled data-testid="Exchange__blank-card" className="border-theme-primary-contrast">
+			<div className="flex items-center px-12 my-auto font-semibold text-theme-primary-contrast">
+				<div className="w-12 h-12 mr-4 border-2 rounded-lg border-theme-primary-contrast" />
 
 				{t("EXCHANGE.EXCHANGE_NAME")}
 			</div>
@@ -57,14 +57,14 @@ export const ExchangeCard = ({ exchange, isSelected, onClick }: ExchangeCardProp
 			data-testid={`Exchange__exchange-card-${exchange.id}`}
 			className={
 				isSelected
-					? "bg-theme-success-100 border-theme-success-300 hover:border-theme-success-100"
-					: "border-theme-primary-100 hover:border-theme-background"
+					? "bg-theme-success-contrast border-theme-success-300 hover:border-theme-success-contrast"
+					: "border-theme-primary-contrast hover:border-theme-background"
 			}
 			onClick={onClick}
 		>
 			<div className="px-12 my-auto font-semibold">
 				<div className="flex items-center">
-					<div className="absolute top-4 right-2 text-theme-primary-200">
+					<div className="absolute top-4 right-2 text-theme-primary-light">
 						<Dropdown toggleIcon="Settings" options={options} />
 					</div>
 

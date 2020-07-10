@@ -12,7 +12,7 @@ exports[`Formatted Address should render 1`] = `
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -116,7 +116,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -178,13 +178,13 @@ exports[`Formatted Address should render with wallet data 1`] = `
             class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
               ASuu…3kqT
@@ -214,7 +214,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
         class="relative p-2"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="absolute -right-2 -top-1 text-theme-neutral-light hover:text-theme-neutral"
         >
           <div
             class="relative"
@@ -276,13 +276,13 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
             class="inline-block truncate align-middle"
           >
             <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+              class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
               data-testid="address__wallet-name"
             >
               My wallet
             </span>
             <span
-              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+              class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
               data-testid="address__wallet-address"
             >
               ASuu…3kqT

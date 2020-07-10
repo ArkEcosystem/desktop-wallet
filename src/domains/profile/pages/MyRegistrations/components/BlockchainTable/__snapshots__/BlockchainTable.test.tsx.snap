@@ -22,203 +22,143 @@ exports[`Welcome should render empty state 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible"
+                class="flex flex-inline align-top invisible"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Avatar
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top font-semibold text-md"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Agent
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top font-semibold text-md"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Blockchain Name
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top font-semibold text-md"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   History
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top font-semibold text-md"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Website
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md"
+                class="flex flex-inline align-top font-semibold text-md"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   MSQ
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md ml-4"
+                class="flex flex-inline align-top font-semibold text-md ml-4"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Repository
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  font-semibold text-md -ml-4"
+                class="flex flex-inline align-top font-semibold text-md -ml-4"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Seed
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible float-right"
+                class="flex flex-inline align-top invisible float-right"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Spacer
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--9"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible float-right"
+                class="flex flex-inline align-top invisible float-right"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Options
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -285,7 +225,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-6 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-light"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-4"
@@ -419,7 +359,7 @@ exports[`Welcome should render empty state 1`] = `
               </span>
             </td>
             <td
-              class="py-6 text-theme-neutral-400"
+              class="py-6 text-theme-neutral-light"
             >
               <div
                 class="sc-AxiKw dzBdqj ml-4"

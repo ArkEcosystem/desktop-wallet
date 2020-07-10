@@ -86,13 +86,13 @@ export const BlacklistPlugins = (props: BlacklistPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-700">{rowData.description}</span>
+									<span className="text-theme-neutral-dark">{rowData.description}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-right text-theme-neutral-700">{rowData.category}</td>
+							<td className="py-10 text-right text-theme-neutral-dark">{rowData.category}</td>
 						</tr>
 					)}
 				</Table>

@@ -30,7 +30,7 @@ const FirstStep = ({ form }: { form: any }) => {
 	return (
 		<div data-testid="ResignRegistration__first-step">
 			<h1 className="mb-0">Delegate Resignation</h1>
-			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
+			<div className="text-theme-neutral-dark">Resign your delegate for always.</div>
 
 			<div className="mt-6">
 				<Alert size="lg">
@@ -41,15 +41,10 @@ const FirstStep = ({ form }: { form: any }) => {
 
 			<div>
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					border={false}
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Account</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -82,8 +77,8 @@ const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -92,15 +87,8 @@ const SecondStep = () => (
 				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
 			</TransactionDetail>
 
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+			<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 text-sm font-semibold text-theme-neutral">
 					<span className="mr-1">Account</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -126,7 +114,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-700">
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -171,8 +159,8 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}

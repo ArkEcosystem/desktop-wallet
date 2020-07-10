@@ -69,7 +69,7 @@ export const Default = () => {
 							<td className="py-1 text-right text-bold">
 								<div>{rowData.balance}</div>
 							</td>
-							<td className="py-1 text-right text-bold text-theme-neutral-400">
+							<td className="py-1 text-right text-bold text-theme-neutral-light">
 								<div>{rowData.fiat}</div>
 							</td>
 						</tr>

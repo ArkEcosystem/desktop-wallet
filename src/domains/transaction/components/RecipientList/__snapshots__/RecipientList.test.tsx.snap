@@ -17,83 +17,59 @@ exports[`SendTransactionForm should render editable 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible w-2"
+                class="flex flex-inline align-top invisible w-2"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Avatar
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Address
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  float-right"
+                class="flex flex-inline align-top float-right"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Amount
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible"
+                class="flex flex-inline align-top invisible"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Action
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -128,13 +104,13 @@ exports[`SendTransactionForm should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FJKDSA…SJKDFJ
@@ -200,13 +176,13 @@ exports[`SendTransactionForm should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AhFJKD…SJKDFJ
@@ -272,13 +248,13 @@ exports[`SendTransactionForm should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FAhFJK…SJKDFJ
@@ -344,13 +320,13 @@ exports[`SendTransactionForm should render editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 4
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FAhFJK…SJKDFJ
@@ -413,63 +389,45 @@ exports[`SendTransactionForm should render non-editable 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  invisible w-2"
+                class="flex flex-inline align-top invisible w-2"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Avatar
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Address
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  float-right"
+                class="flex flex-inline align-top float-right"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Amount
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -504,13 +462,13 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 1
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FJKDSA…SJKDFJ
@@ -552,13 +510,13 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 2
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AhFJKD…SJKDFJ
@@ -600,13 +558,13 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FAhFJK…SJKDFJ
@@ -648,13 +606,13 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Recipient 4
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   FAhFJK…SJKDFJ

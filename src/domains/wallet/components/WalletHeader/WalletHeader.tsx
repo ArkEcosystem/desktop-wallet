@@ -42,8 +42,8 @@ export const WalletHeader = ({
 			<div className="flex items-center justify-between px-12 py-6 bg-theme-neutral-900">
 				<div className="flex items-center space-x-4">
 					<div className="flex">
-						<Circle className="-mr-1 border-theme-neutral-700" noShadow={true}>
-							<Icon name={coin} className="text-theme-neutral-700" />
+						<Circle className="-mr-1 border-theme-neutral-dark" noShadow={true}>
+							<Icon name={coin} className="text-theme-neutral-dark" />
 						</Circle>
 						<Avatar address={address} shadowColor="--theme-color-neutral-900" />
 					</div>
@@ -52,19 +52,19 @@ export const WalletHeader = ({
 					</h2>
 					{isLedger && (
 						<span data-testid="WalletHeader__ledger">
-							<Icon name="Ledger" className="text-theme-neutral-700" />
+							<Icon name="Ledger" className="text-theme-neutral-dark" />
 						</span>
 					)}
 					{isMultisig && (
 						<span data-testid="WalletHeader__multisig">
-							<Icon name="Multisig" className="text-theme-neutral-700" />
+							<Icon name="Multisig" className="text-theme-neutral-dark" />
 						</span>
 					)}
 				</div>
 				<div className="flex items-stretch space-x-2">
 					<button
 						data-testid="WalletHeader__star-button"
-						className="px-3 text-theme-neutral-700"
+						className="px-3 text-theme-neutral-dark"
 						onClick={onStar}
 					>
 						<Icon name={hasStarred ? "Star" : "StarOutline"} />

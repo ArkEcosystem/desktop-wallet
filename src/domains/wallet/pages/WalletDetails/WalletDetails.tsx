@@ -30,7 +30,7 @@ const columns = [
 	},
 ];
 
-const Divider = () => <div className="h-4 bg-theme-neutral-100" />;
+const Divider = () => <div className="h-4 bg-theme-neutral-contrast" />;
 
 type Wallet = WalletListItemProps & {
 	address: string;

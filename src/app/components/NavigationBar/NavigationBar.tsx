@@ -73,12 +73,12 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative bg-theme-primary-600 border-theme-primary-600 rotate-90" size="lg">
+					<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
 						<span className="text-sm text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${
 								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500`}
+							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
 							position="right"
 							icon="ChevronDown"
 							iconWidth={10}
@@ -115,7 +115,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(activeProfile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -136,13 +136,15 @@ export const NavigationBar = ({
 
 					<div className="flex items-center">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
-							<Icon name="Sent" width={42} height={42} />
+						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+							<Icon name="Sent" width={22} height={22} />
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
+
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 							<Icon name="Receive" width={22} height={22} />
 						</div>
@@ -150,8 +152,8 @@ export const NavigationBar = ({
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral-500">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+							<div className="text-xs text-theme-neutral">Your balance</div>
+							<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
 						</div>
 
 						<div className="flex p-1 cusror-pointer">

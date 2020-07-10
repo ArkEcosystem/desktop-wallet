@@ -17,7 +17,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Name
       </label>
       <input
-        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -65,7 +65,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
                 data-testid="select-network__typeahead-"
               >
                 <div
-                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                 />
               </div>
               <input
@@ -94,7 +94,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Address
       </label>
       <input
-        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -158,7 +158,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Name
       </label>
       <input
-        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
         data-testid="contact-form__name-input"
         name="name"
         value="OLEBank"
@@ -206,7 +206,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 data-testid="select-network__typeahead-"
               >
                 <div
-                  class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                 />
               </div>
               <input
@@ -235,7 +235,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Address
       </label>
       <input
-        class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -310,7 +310,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 ASuusXSW9k…P6T9GQ3kqT
@@ -380,7 +380,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 15pyr1HRAx…myCtXXu9G8
@@ -450,7 +450,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 0x5e8f7a63…8b380d7c33

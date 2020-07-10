@@ -38,7 +38,7 @@ const TypeAhead = ({ input, matches }: any) => {
 
 	return (
 		<div className="relative z-10 w-full" data-testid={`select-network__typeahead-${typeaheadFormatted}`}>
-			<div className="absolute left-0 font-semibold top-2 text-theme-neutral-400">{typeaheadFormatted}</div>
+			<div className="absolute left-0 font-semibold top-2 text-theme-neutral-light">{typeaheadFormatted}</div>
 		</div>
 	);
 };
@@ -59,7 +59,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 			return "text-theme-success-500 border-theme-success-200";
 		}
 		// Selection is made but not me. Show me disabled
-		if (selectedAsset && selectedAsset.name !== network.name) return "text-theme-neutral-400";
+		if (selectedAsset && selectedAsset.name !== network.name) return "text-theme-neutral-light";
 
 		// Initial state. Nothing entered, nothing selected
 		if (!input) return network.className;
@@ -68,7 +68,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 		if (isMatch(network, input)) return network.className;
 
 		// Disabled otherwise
-		return "text-theme-neutral-400";
+		return "text-theme-neutral-light";
 	};
 
 	return (

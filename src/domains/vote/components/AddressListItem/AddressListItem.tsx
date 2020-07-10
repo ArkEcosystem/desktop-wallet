@@ -62,7 +62,7 @@ export const AddressListItem = ({
 			</td>
 
 			<td className="py-5 font-bold">
-				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-400">N/A</span>}
+				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-light">N/A</span>}
 			</td>
 
 			<td className="py-5 font-bold text-theme-neutral-dark">{rank && <span>#{rank}</span>}</td>

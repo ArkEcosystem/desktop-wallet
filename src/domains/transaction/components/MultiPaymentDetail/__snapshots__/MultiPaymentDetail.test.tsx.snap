@@ -51,19 +51,19 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 true "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Sender
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               ROBank
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 ADDR...ESSS
               </span>
@@ -105,18 +105,18 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 last:pb-0"
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Recipients
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
-                class="flex justify-between text-sm font-semibold text-theme-neutral-500"
+                class="flex justify-between text-sm font-semibold text-theme-neutral"
               >
                 <div
                   class="ml-12"
@@ -268,15 +268,15 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Total Amount
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="sc-AxiKw BrXzA"
@@ -285,19 +285,19 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                 2,088.84557 ARK
               </div>
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 23,000.00 USD
               </span>
             </div>
           </div>
           <div
-            class="sc-AxjAm bLfakz border-theme-danger-100 text-theme-danger-400"
+            class="sc-AxjAm bLfakz border-theme-danger-contrast text-theme-danger-400"
           >
             <div
-              class="sc-AxirZ RbXVX"
-              height="40"
-              width="40"
+              class="sc-AxirZ hPsuTj"
+              height="16"
+              width="16"
             >
               <svg>
                 sent.svg
@@ -309,15 +309,15 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction Fee
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               0.09812015 ARK
             </div>
@@ -327,15 +327,15 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Smartbridge
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex justify-between"
@@ -358,15 +358,15 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Timestamp
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               14.04.2020 21:42:40
             </div>
@@ -376,15 +376,15 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Confirmations
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex"
@@ -415,18 +415,18 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>
@@ -450,18 +450,18 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>

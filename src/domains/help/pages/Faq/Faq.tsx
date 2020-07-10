@@ -19,7 +19,7 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 		<a
 			title={title}
 			href={path}
-			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-100 text-theme-neutral-800 hover:text-theme-primary-600 rounded-md"
+			className="flex px-2 py-6 -mx-3 border-3 border-theme-background hover:bg-theme-neutral-contrast text-theme-neutral-800 hover:text-theme-primary rounded-md"
 		>
 			<div>
 				<div className="pt-1 text-theme-neutral-800">
@@ -38,7 +38,7 @@ export const Faq = ({ articles }: FaqProps) => {
 	const { t } = useTranslation();
 	return (
 		<div>
-			<div className="bg-theme-neutral-100">
+			<div className="bg-theme-neutral-contrast">
 				<div className="py-16 mb-5 bg-white px-13">
 					<Header
 						title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}
@@ -47,11 +47,11 @@ export const Faq = ({ articles }: FaqProps) => {
 							<div className="flex items-center justify-end space-x-8">
 								<Icon
 									name="Search"
-									className="cursor-pointer text-theme-primary-100"
+									className="cursor-pointer text-theme-primary-contrast"
 									width={20}
 									height={20}
 								/>
-								<div className="h-10 my-auto border-l border-1 border-theme-primary-100" />
+								<div className="h-10 my-auto border-l border-1 border-theme-primary-contrast" />
 								<Button className="whitespace-no-wrap">{t("HELP.CONTACT_US")}</Button>
 							</div>
 						}

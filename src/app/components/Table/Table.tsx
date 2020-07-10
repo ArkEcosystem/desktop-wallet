@@ -54,27 +54,27 @@ export const Table = ({ children, data, columns }: TableProps) => {
 							{headerGroup.headers.map((column: any, thIndex: number) => (
 								<th
 									key={thIndex}
-									className="text-sm text-left select-none text-theme-neutral-500"
+									className="text-sm text-left select-none text-theme-neutral"
 									data-testid={`table__th--${thIndex}`}
 									{...column.getHeaderProps(column.getSortByToggleProps())}
 								>
-									<div className={`flex flex-inline align-top  ${column.className}`}>
-										<div className="mr-2">{column.render("Header")}</div>
-										<div
-											className="flex items-center text-theme-color-neutral-500"
-											data-testid={`table__${getSortIconName(
-												column.isSorted,
-												column.isSortedDesc,
-											)}`}
-										>
-											{column.canSort && (
+									<div className={`flex flex-inline align-top ${column.className}`}>
+										<div>{column.render("Header")}</div>
+										{column.canSort && (
+											<div
+												className="flex items-center ml-2 text-theme-color-neutral"
+												data-testid={`table__${getSortIconName(
+													column.isSorted,
+													column.isSortedDesc,
+												)}`}
+											>
 												<Icon
 													name={getSortIconName(column.isSorted, column.isSortedDesc)}
 													width={column.isSorted ? 10 : 15}
 													height={column.isSorted ? 10 : 12}
 												/>
-											)}
-										</div>
+											</div>
+										)}
 									</div>
 								</th>
 							))}

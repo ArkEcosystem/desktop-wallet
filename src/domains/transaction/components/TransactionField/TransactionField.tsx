@@ -16,7 +16,7 @@ export const TransactionField = ({ border, children, className, extra, label, pa
 		} ${className}`}
 	>
 		<div className="flex-1">
-			{label && <div className="text-sm font-medium text-theme-neutral-700">{label}</div>}
+			{label && <div className="text-sm font-medium text-theme-neutral-dark">{label}</div>}
 
 			<div className="mt-2">{children}</div>
 		</div>

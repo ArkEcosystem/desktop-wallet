@@ -9,7 +9,7 @@ const InputStyled = styled.input`
 	${tw`py-3 px-4`}
 
 	&:focus {
-		${tw`outline-none border-theme-primary-600 border-2`}
+		${tw`outline-none border-theme-primary border-2`}
 		padding: 11px 15px;
 	}
 	&::placeholder {

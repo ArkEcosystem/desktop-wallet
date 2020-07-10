@@ -32,7 +32,7 @@ const Signatures = () => {
 
 			<div className="flex">
 				<div>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.YOU")}</div>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">{t("COMMON.YOU")}</div>
 
 					<div className="pr-4 mr-2 border-r border-theme-neutral-300">
 						<Avatar address="test" noShadow>
@@ -42,14 +42,14 @@ const Signatures = () => {
 				</div>
 
 				<div>
-					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500">{t("COMMON.OTHER")}</div>
+					<div className="mb-2 ml-2 text-sm font-semibold text-theme-neutral">{t("COMMON.OTHER")}</div>
 					<div className="flex ml-2 space-x-4">
 						<Avatar address="test" noShadow>
-							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 
 						<Avatar address="test" noShadow>
-							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 
 						<Avatar address="test" noShadow>
@@ -57,7 +57,7 @@ const Signatures = () => {
 						</Avatar>
 
 						<Avatar address="test" noShadow>
-							<Badge className="bg-theme-danger-100 text-theme-danger-400" icon="StatusClock" />
+							<Badge className="bg-theme-danger-contrast text-theme-danger-400" icon="StatusClock" />
 						</Avatar>
 					</div>
 				</div>
@@ -77,20 +77,20 @@ export const FirstStep = () => {
 
 			<TransactionDetail label={t("TRANSACTION.RECIPIENT")} extra={<Avatar address="test" />}>
 				Bank
-				<span className="ml-2 text-theme-neutral-500">ADDR...ESSS</span>
+				<span className="ml-2 text-theme-neutral">ADDR...ESSS</span>
 			</TransactionDetail>
 
 			<TransactionDetail
 				label={t("TRANSACTION.AMOUNT")}
 				extra={
-					<Circle className="border-theme-danger-100 text-theme-danger-400">
-						<Icon name="Sent" width={40} height={40} />
+					<Circle className="border-theme-danger-contrast text-theme-danger-400">
+						<Icon name="Sent" width={16} height={16} />
 					</Circle>
 				}
 			>
 				<Label color="danger">2,088.84557 ARK</Label>
 
-				<span className="ml-2 text-theme-neutral-500">23,000.00 USD</span>
+				<span className="ml-2 text-theme-neutral">23,000.00 USD</span>
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")}>0.09812015 ARK</TransactionDetail>

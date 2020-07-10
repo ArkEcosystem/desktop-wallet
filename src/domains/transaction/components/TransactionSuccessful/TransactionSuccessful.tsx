@@ -55,8 +55,8 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				<TransactionDetail
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -65,14 +65,8 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
-				<TransactionDetail
-					extra={
-						<div className="mt-2">
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+				<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>

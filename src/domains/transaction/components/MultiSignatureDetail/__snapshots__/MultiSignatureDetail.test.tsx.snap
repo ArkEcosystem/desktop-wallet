@@ -11,15 +11,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 true "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Sender
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           <div
             class="mt-2 font-semibold"
@@ -47,19 +47,19 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Recipient
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           Bank
           <span
-            class="ml-2 text-theme-neutral-500"
+            class="ml-2 text-theme-neutral"
           >
             ADDR...ESSS
           </span>
@@ -84,15 +84,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Amount
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           <div
             class="sc-fznyAO fDRtLd"
@@ -101,19 +101,19 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
             2,088.84557 ARK
           </div>
           <span
-            class="ml-2 text-theme-neutral-500"
+            class="ml-2 text-theme-neutral"
           >
             23,000.00 USD
           </span>
         </div>
       </div>
       <div
-        class="sc-AxhCb fwVCao border-theme-danger-100 text-theme-danger-400"
+        class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger-400"
       >
         <div
-          class="sc-AxjAm hoUaGk"
-          height="40"
-          width="40"
+          class="sc-AxjAm vZRQY"
+          height="16"
+          width="16"
         >
           <svg>
             sent.svg
@@ -125,15 +125,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Transaction Fee
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           0.09812015 ARK
         </div>
@@ -143,15 +143,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Smartbridge
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           <div
             class="flex justify-between"
@@ -174,15 +174,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Timestamp
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           14.04.2020 21:42:40
         </div>
@@ -192,15 +192,15 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
       class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
     >
       <div
-        class="flex-1"
+        class="flex-1 space-y-2"
       >
         <div
-          class="text-sm font-semibold text-theme-neutral-500"
+          class="text-sm font-semibold text-theme-neutral"
         >
           Confirmations
         </div>
         <div
-          class="mt-2 font-semibold"
+          class="font-semibold"
         >
           Waiting for Signatures
         </div>
@@ -220,7 +220,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
         >
           <div>
             <div
-              class="mb-2 text-sm font-semibold text-theme-neutral-500"
+              class="mb-2 text-sm font-semibold text-theme-neutral"
             >
               You
             </div>
@@ -241,7 +241,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                  class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                 >
                   <div
                     class="sc-AxjAm HWmvM"
@@ -259,7 +259,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
           </div>
           <div>
             <div
-              class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+              class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
             >
               Other
             </div>
@@ -280,7 +280,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                  class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                 >
                   <div
                     class="sc-AxjAm HWmvM"
@@ -308,7 +308,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                  class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                 >
                   <div
                     class="sc-AxjAm HWmvM"
@@ -336,7 +336,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                  class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                 >
                   <div
                     class="sc-AxjAm HWmvM"
@@ -364,7 +364,7 @@ exports[`MultiSignatureDetail should render 1st step 1`] = `
                   />
                 </div>
                 <span
-                  class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                  class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                 >
                   <div
                     class="sc-AxjAm HWmvM"
@@ -407,7 +407,7 @@ exports[`MultiSignatureDetail should render 2nd step 1`] = `
         class="sc-fzozJi OgXfh max-w-20"
       >
         <input
-          class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+          class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
           data-testid="import-wallet__passphrase-input"
           name="passphrase"
           type="password"
@@ -454,7 +454,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
       >
         <div>
           <div
-            class="mb-2 text-sm font-semibold text-theme-neutral-500"
+            class="mb-2 text-sm font-semibold text-theme-neutral"
           >
             You
           </div>
@@ -475,7 +475,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
                 />
               </div>
               <span
-                class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
               >
                 <div
                   class="sc-AxjAm HWmvM"
@@ -493,7 +493,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
         </div>
         <div>
           <div
-            class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+            class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
           >
             Other
           </div>
@@ -514,7 +514,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
                 />
               </div>
               <span
-                class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
               >
                 <div
                   class="sc-AxjAm HWmvM"
@@ -542,7 +542,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
                 />
               </div>
               <span
-                class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
               >
                 <div
                   class="sc-AxjAm HWmvM"
@@ -570,7 +570,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
                 />
               </div>
               <span
-                class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
               >
                 <div
                   class="sc-AxjAm HWmvM"
@@ -598,7 +598,7 @@ exports[`MultiSignatureDetail should render 3rd step 1`] = `
                 />
               </div>
               <span
-                class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
               >
                 <div
                   class="sc-AxjAm HWmvM"
@@ -680,15 +680,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Sender
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="mt-2 font-semibold"
@@ -716,19 +716,19 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Recipient
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Bank
                       <span
-                        class="ml-2 text-theme-neutral-500"
+                        class="ml-2 text-theme-neutral"
                       >
                         ADDR...ESSS
                       </span>
@@ -753,15 +753,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Amount
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="sc-fznyAO fDRtLd"
@@ -770,19 +770,19 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                         2,088.84557 ARK
                       </div>
                       <span
-                        class="ml-2 text-theme-neutral-500"
+                        class="ml-2 text-theme-neutral"
                       >
                         23,000.00 USD
                       </span>
                     </div>
                   </div>
                   <div
-                    class="sc-AxhCb fwVCao border-theme-danger-100 text-theme-danger-400"
+                    class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger-400"
                   >
                     <div
-                      class="sc-AxjAm hoUaGk"
-                      height="40"
-                      width="40"
+                      class="sc-AxjAm vZRQY"
+                      height="16"
+                      width="16"
                     >
                       <svg>
                         sent.svg
@@ -794,15 +794,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Transaction Fee
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       0.09812015 ARK
                     </div>
@@ -812,15 +812,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Smartbridge
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="flex justify-between"
@@ -843,15 +843,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Timestamp
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       14.04.2020 21:42:40
                     </div>
@@ -861,15 +861,15 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Confirmations
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Waiting for Signatures
                     </div>
@@ -889,7 +889,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                     >
                       <div>
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           You
                         </div>
@@ -910,7 +910,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -928,7 +928,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                       </div>
                       <div>
                         <div
-                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
                         >
                           Other
                         </div>
@@ -949,7 +949,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -977,7 +977,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1005,7 +1005,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1033,7 +1033,7 @@ exports[`MultiSignatureDetail should render a modal and get to step 3 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1166,15 +1166,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Sender
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="mt-2 font-semibold"
@@ -1202,19 +1202,19 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Recipient
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Bank
                       <span
-                        class="ml-2 text-theme-neutral-500"
+                        class="ml-2 text-theme-neutral"
                       >
                         ADDR...ESSS
                       </span>
@@ -1239,15 +1239,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Amount
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="sc-fznyAO fDRtLd"
@@ -1256,19 +1256,19 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                         2,088.84557 ARK
                       </div>
                       <span
-                        class="ml-2 text-theme-neutral-500"
+                        class="ml-2 text-theme-neutral"
                       >
                         23,000.00 USD
                       </span>
                     </div>
                   </div>
                   <div
-                    class="sc-AxhCb fwVCao border-theme-danger-100 text-theme-danger-400"
+                    class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger-400"
                   >
                     <div
-                      class="sc-AxjAm hoUaGk"
-                      height="40"
-                      width="40"
+                      class="sc-AxjAm vZRQY"
+                      height="16"
+                      width="16"
                     >
                       <svg>
                         sent.svg
@@ -1280,15 +1280,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Transaction Fee
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       0.09812015 ARK
                     </div>
@@ -1298,15 +1298,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Smartbridge
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="flex justify-between"
@@ -1329,15 +1329,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Timestamp
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       14.04.2020 21:42:40
                     </div>
@@ -1347,15 +1347,15 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Confirmations
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Waiting for Signatures
                     </div>
@@ -1375,7 +1375,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                     >
                       <div>
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           You
                         </div>
@@ -1396,7 +1396,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1414,7 +1414,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                       </div>
                       <div>
                         <div
-                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 ml-2 text-sm font-semibold text-theme-neutral"
                         >
                           Other
                         </div>
@@ -1435,7 +1435,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1463,7 +1463,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1491,7 +1491,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-200 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"
@@ -1519,7 +1519,7 @@ exports[`MultiSignatureDetail should render a modal and go back 1`] = `
                               />
                             </div>
                             <span
-                              class="sc-AxirZ bKxtun flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-100 text-theme-danger-400"
+                              class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-danger-contrast text-theme-danger-400"
                             >
                               <div
                                 class="sc-AxjAm HWmvM"

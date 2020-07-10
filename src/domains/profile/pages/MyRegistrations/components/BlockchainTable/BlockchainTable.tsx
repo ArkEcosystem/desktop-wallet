@@ -74,7 +74,7 @@ export const BlockchainTable = ({ data, handleDropdown }: Props) => (
 					<td className="py-6 text-semibold text-theme-primary">
 						<span>View</span>
 					</td>
-					<td className="py-6 text-theme-neutral-400">
+					<td className="py-6 text-theme-neutral-light">
 						<Icon name="Redirect" className="ml-4" />
 					</td>
 					<td className="py-6 text-semibold text-theme-primary">

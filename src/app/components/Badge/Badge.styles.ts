@@ -2,7 +2,9 @@ import tw, { css } from "twin.macro";
 
 const baseStyle = [
 	css`
-		box-shadow: 0px 0px 0px 5px white;
+		& {
+			box-shadow: 0 0 0 5px var(--theme-background-color);
+		}
 	`,
 	tw`absolute transform`,
 ];

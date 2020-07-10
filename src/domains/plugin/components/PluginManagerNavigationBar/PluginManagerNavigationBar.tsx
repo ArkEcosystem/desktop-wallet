@@ -26,7 +26,10 @@ export const PluginManagerNavigationBar = ({
 	selectedViewType,
 }: PluginManagerNavigationBar) => {
 	return (
-		<NavWrapper data-testid="PluginManagerNavigationBar" className="sticky md:top-24 top-20 bg-theme-neutral-100">
+		<NavWrapper
+			data-testid="PluginManagerNavigationBar"
+			className="sticky md:top-24 top-20 bg-theme-neutral-contrast"
+		>
 			<div className="container flex items-center justify-between mx-auto px-14">
 				<div>
 					<ul className="flex h-24">
@@ -43,7 +46,7 @@ export const PluginManagerNavigationBar = ({
 									>
 										<span>{menuItem.title}</span>
 										{menuItem.count && (
-											<span className="ml-1 text-theme-neutral-400">{menuItem.count}</span>
+											<span className="ml-1 text-theme-neutral-light">{menuItem.count}</span>
 										)}
 									</button>
 
@@ -65,7 +68,7 @@ export const PluginManagerNavigationBar = ({
 						}`}
 					>
 						<span>MyPlugin</span>
-						<span className="ml-1 text-theme-neutral-400">8</span>
+						<span className="ml-1 text-theme-neutral-light">8</span>
 					</button>
 
 					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />

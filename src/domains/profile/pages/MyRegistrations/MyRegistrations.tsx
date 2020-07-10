@@ -71,7 +71,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 		});
 
 	return (
-		<section className="bg-theme-neutral-100">
+		<section className="bg-theme-neutral-contrast">
 			<div className="px-10 py-16 bg-theme-background">
 				<Header
 					title="My Registrations"

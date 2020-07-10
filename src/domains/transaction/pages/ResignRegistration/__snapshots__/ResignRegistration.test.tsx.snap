@@ -48,7 +48,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                 Delegate Resignation
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Resign your delegate for always.
               </div>
@@ -83,18 +83,13 @@ exports[`ResignRegistration should render 1st step 1`] = `
                   class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                       
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -116,7 +111,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -125,21 +120,17 @@ exports[`ResignRegistration should render 1st step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="mt-2"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                      data-testid="Avatar"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
-                      <div
-                        class="w-full h-full overflow-hidden rounded-full"
-                      >
-                        <img
-                          alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                          title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                        />
-                      </div>
+                      <img
+                        alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                      />
                     </div>
                   </div>
                 </div>
@@ -147,15 +138,15 @@ exports[`ResignRegistration should render 1st step 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Delegate 3
                     </div>
@@ -165,10 +156,10 @@ exports[`ResignRegistration should render 1st step 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <fieldset
                         class="sc-AxheI dThsOi font-normal"
@@ -190,7 +181,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                               class="sc-fzpans diytpf"
                             >
                               <input
-                                class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -358,15 +349,15 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                   class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Network
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
                         class="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24"
@@ -376,10 +367,10 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="ml-1 text-theme-danger-500"
+                    class="ml-1 text-theme-danger"
                   >
                     <div
-                      class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                      class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                     >
                       <div
                         class="sc-AxirZ eEbZjj"
@@ -397,18 +388,13 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                       
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -430,7 +416,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -438,20 +424,18 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div>
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                    data-testid="Avatar"
+                  >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                      data-testid="Avatar"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
-                      <div
-                        class="w-full h-full overflow-hidden rounded-full"
-                      >
-                        <img
-                          alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                          title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                        />
-                      </div>
+                      <img
+                        alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                      />
                     </div>
                   </div>
                 </div>
@@ -459,15 +443,15 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Delegate 3
                     </div>
@@ -489,7 +473,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction(s) Amount
                           </span>
@@ -504,7 +488,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           class="flex flex-col justify-center px-6 py-5 text-right"
                         >
                           <span
-                            class="text-sm text-theme-neutral-500"
+                            class="text-sm text-theme-neutral"
                           >
                             Transaction fee
                           </span>
@@ -535,10 +519,10 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-100"
+                      class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
                     >
                       <span
-                        class="text-sm text-theme-neutral-500"
+                        class="text-sm text-theme-neutral"
                       >
                         Total Amount
                       </span>
@@ -630,7 +614,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                   Authenticate
                 </h1>
                 <div
-                  class="text-theme-neutral-700"
+                  class="text-theme-neutral-dark"
                 >
                   Enter your twelve word mnemonic to authenticate the transaction.
                 </div>
@@ -651,7 +635,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="mnemonic"
                         type="password"
@@ -691,7 +675,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                       class="sc-fzpans diytpf max-w-20"
                     >
                       <input
-                        class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                        class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
                         data-testid="Input"
                         name="secondMnemonic"
                         type="password"
@@ -827,15 +811,15 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 true "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -876,15 +860,15 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -925,27 +909,27 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj…EVTQWK
@@ -954,10 +938,10 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -975,13 +959,13 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1003,13 +987,13 @@ exports[`ResignRegistration should render 4th step 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj…EVTQWK
@@ -1018,21 +1002,17 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       </div>
                     </div>
                     <div
-                      class="mt-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                      data-testid="Avatar"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                        data-testid="Avatar"
+                        class="w-full h-full overflow-hidden rounded-full"
                       >
-                        <div
-                          class="w-full h-full overflow-hidden rounded-full"
-                        >
-                          <img
-                            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          />
-                        </div>
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1040,15 +1020,15 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Delegate Resignation
                       </div>
@@ -1071,15 +1051,15 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate Name
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Delegate 3
                       </div>
@@ -1089,15 +1069,15 @@ exports[`ResignRegistration should render 4th step 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         1.09660435 ARK
                       </div>
@@ -1106,12 +1086,12 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxirZ iyilmn"
-                          height="50"
-                          width="50"
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
                         >
                           <svg>
                             sent.svg
@@ -1212,7 +1192,7 @@ exports[`ResignRegistration should should go back 1`] = `
                 Delegate Resignation
               </h1>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 Resign your delegate for always.
               </div>
@@ -1247,18 +1227,13 @@ exports[`ResignRegistration should should go back 1`] = `
                   class="flex items-center py-6 true "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
-                    >
-                       
-                    </div>
-                    <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <div
-                        class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                        class="mb-2 text-sm font-semibold text-theme-neutral"
                       >
                         <span
                           class="mr-1"
@@ -1280,7 +1255,7 @@ exports[`ResignRegistration should should go back 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-AxjAm StDqN text-theme-neutral-800 font-semibold text-base"
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AUexKj…EVTQWK
@@ -1289,21 +1264,17 @@ exports[`ResignRegistration should should go back 1`] = `
                     </div>
                   </div>
                   <div
-                    class="mt-2"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                      data-testid="Avatar"
+                      class="w-full h-full overflow-hidden rounded-full"
                     >
-                      <div
-                        class="w-full h-full overflow-hidden rounded-full"
-                      >
-                        <img
-                          alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                          title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                        />
-                      </div>
+                      <img
+                        alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                      />
                     </div>
                   </div>
                 </div>
@@ -1311,15 +1282,15 @@ exports[`ResignRegistration should should go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="text-sm font-semibold text-theme-neutral-500"
+                      class="text-sm font-semibold text-theme-neutral"
                     >
                       Delegate Name
                     </div>
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       Delegate 3
                     </div>
@@ -1329,10 +1300,10 @@ exports[`ResignRegistration should should go back 1`] = `
                   class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                 >
                   <div
-                    class="flex-1"
+                    class="flex-1 space-y-2"
                   >
                     <div
-                      class="mt-2 font-semibold"
+                      class="font-semibold"
                     >
                       <fieldset
                         class="sc-AxheI dThsOi font-normal"
@@ -1354,7 +1325,7 @@ exports[`ResignRegistration should should go back 1`] = `
                               class="sc-fzpans diytpf"
                             >
                               <input
-                                class="sc-Axmtr kvuvxq overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                                class="sc-Axmtr iYmxLd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                                 data-testid="InputCurrency"
                                 name="name"
                                 type="text"
@@ -1531,15 +1502,15 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 true "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1580,15 +1551,15 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Block ID
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="flex items-center"
@@ -1629,27 +1600,27 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Network
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj…EVTQWK
@@ -1658,10 +1629,10 @@ exports[`ResignRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="ml-1 text-theme-danger-500"
+                      class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -1679,13 +1650,13 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         <div
-                          class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                          class="mb-2 text-sm font-semibold text-theme-neutral"
                         >
                           <span
                             class="mr-1"
@@ -1707,13 +1678,13 @@ exports[`ResignRegistration should submit 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                             data-testid="address__wallet-name"
                           >
                             ROBank
                           </span>
                           <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                            class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             AUexKj…EVTQWK
@@ -1722,21 +1693,17 @@ exports[`ResignRegistration should submit 1`] = `
                       </div>
                     </div>
                     <div
-                      class="mt-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                      data-testid="Avatar"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                        data-testid="Avatar"
+                        class="w-full h-full overflow-hidden rounded-full"
                       >
-                        <div
-                          class="w-full h-full overflow-hidden rounded-full"
-                        >
-                          <img
-                            alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                            title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          />
-                        </div>
+                        <img
+                          alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                          title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                        />
                       </div>
                     </div>
                   </div>
@@ -1744,15 +1711,15 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Transaction Type
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Delegate Resignation
                       </div>
@@ -1775,15 +1742,15 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate Name
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         Delegate 3
                       </div>
@@ -1793,15 +1760,15 @@ exports[`ResignRegistration should submit 1`] = `
                     class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
                   >
                     <div
-                      class="flex-1"
+                      class="flex-1 space-y-2"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="text-sm font-semibold text-theme-neutral"
                       >
                         Amount
                       </div>
                       <div
-                        class="mt-2 font-semibold"
+                        class="font-semibold"
                       >
                         1.09660435 ARK
                       </div>
@@ -1810,12 +1777,12 @@ exports[`ResignRegistration should submit 1`] = `
                       class="ml-1 text-theme-danger"
                     >
                       <div
-                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-200"
+                        class="sc-AxgMl daFHdi bg-theme-background border-theme-danger-light"
                       >
                         <div
-                          class="sc-AxirZ iyilmn"
-                          height="50"
-                          width="50"
+                          class="sc-AxirZ hmuEJr"
+                          height="22"
+                          width="22"
                         >
                           <svg>
                             sent.svg

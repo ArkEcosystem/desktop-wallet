@@ -170,7 +170,7 @@ export const PluginManager = () => {
 				onCancel={() => setInstallPlugin(false)}
 			/>
 
-			<div className="border-t-20 border-theme-neutral-100">
+			<div className="border-t-20 border-theme-neutral-contrast">
 				<div className="container py-16 mx-auto px-14 bg-theme-background">
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}

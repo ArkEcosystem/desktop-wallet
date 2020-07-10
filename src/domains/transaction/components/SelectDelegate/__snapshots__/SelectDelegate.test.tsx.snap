@@ -46,7 +46,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -54,7 +54,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -73,7 +73,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                 class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                  class="sc-AxheI jbyOzK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -108,47 +108,35 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Choose
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                          
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -156,15 +144,13 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Delegate Name
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -180,7 +166,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -188,15 +174,13 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Rank
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -212,27 +196,21 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         MarketSquare
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -240,15 +218,13 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Forged ARK
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -264,7 +240,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -272,15 +248,13 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-end mr-8"
+                      class="flex flex-inline align-top justify-end mr-8"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Votes
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -296,23 +270,17 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Voting
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -359,7 +327,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #1
                   </td>
@@ -377,17 +345,17 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       225,946 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       2.43%
                     </span>
@@ -399,12 +367,12 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="w-16 text-center"
@@ -442,7 +410,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #2
                   </td>
@@ -450,17 +418,17 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       465,437 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.828%
                     </span>
@@ -472,7 +440,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -515,7 +483,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #3
                   </td>
@@ -533,17 +501,17 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -571,7 +539,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="w-16 text-center"
@@ -609,7 +577,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #4
                   </td>
@@ -617,17 +585,17 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -639,7 +607,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -658,12 +626,12 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
               class="px-8 mr-8 font-semibold border-r border-theme-neutral-300"
             >
               <div
-                class="text-sm text-theme-neutral-500"
+                class="text-sm text-theme-neutral"
               >
                 Quantity
               </div>
               <div
-                class="text-theme-neutral-700"
+                class="text-theme-neutral-dark"
               >
                 2/50
               </div>
@@ -678,12 +646,12 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="text-sm text-theme-neutral-500"
+                    class="text-sm text-theme-neutral"
                   >
                     Delegates
                   </div>
                   <div
-                    class="cursor-pointer text-theme-primary-700 hover:text-theme-primary-500"
+                    class="cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
                     data-testid="SelectedDelegateModal__toggle-show-selected"
                   >
                     Hide List
@@ -726,7 +694,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       Delegate2
                     </div>
                     <div
-                      class="text-theme-neutral-500"
+                      class="text-theme-neutral"
                     >
                       AADDDDDDDRREEEEESSSSSSS
                     </div>
@@ -759,7 +727,7 @@ exports[`SelectDelegate should allow multiple selection 1`] = `
                       Delegate4
                     </div>
                     <div
-                      class="text-theme-neutral-500"
+                      class="text-theme-neutral"
                     >
                       AADDDDDDDRREEEEESSSSSSS
                     </div>
@@ -824,7 +792,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -832,7 +800,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -851,7 +819,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                 class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                  class="sc-AxheI jbyOzK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -886,47 +854,35 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Choose
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                          
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -934,15 +890,13 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Delegate Name
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -958,7 +912,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -966,15 +920,13 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Rank
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -990,27 +942,21 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         MarketSquare
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -1018,15 +964,13 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Forged ARK
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1042,7 +986,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -1050,15 +994,13 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-end mr-8"
+                      class="flex flex-inline align-top justify-end mr-8"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Votes
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1074,23 +1016,17 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Voting
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -1137,7 +1073,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #1
                   </td>
@@ -1155,17 +1091,17 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       225,946 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       2.43%
                     </span>
@@ -1177,7 +1113,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -1220,7 +1156,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #2
                   </td>
@@ -1228,17 +1164,17 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       465,437 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.828%
                     </span>
@@ -1250,12 +1186,12 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
                 <tr
-                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-100"
+                  class="border-b border-dashed border-theme-neutral-200 bg-theme-success-contrast"
                 >
                   <td
                     class="w-16 text-center"
@@ -1293,7 +1229,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #3
                   </td>
@@ -1311,17 +1247,17 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -1387,7 +1323,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #4
                   </td>
@@ -1395,17 +1331,17 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -1417,7 +1353,7 @@ exports[`SelectDelegate should only allow one selection 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -1436,12 +1372,12 @@ exports[`SelectDelegate should only allow one selection 1`] = `
               class="px-8 mr-8 border-r border-theme-neutral-300"
             >
               <div
-                class="text-sm text-theme-neutral-500"
+                class="text-sm text-theme-neutral"
               >
                 Rank
               </div>
               <div
-                class="font-semibold text-theme-neutral-700"
+                class="font-semibold text-theme-neutral-dark"
               >
                 #3
               </div>
@@ -1465,12 +1401,12 @@ exports[`SelectDelegate should only allow one selection 1`] = `
               </div>
               <div>
                 <div
-                  class="text-sm text-theme-neutral-500"
+                  class="text-sm text-theme-neutral"
                 >
                   Delegate Address
                 </div>
                 <div
-                  class="font-semibold text-theme-neutral-700"
+                  class="font-semibold text-theme-neutral-dark"
                 >
                   Delegate3 - AADDDDDDDRREEEEESSSSSSS
                 </div>
@@ -1537,7 +1473,7 @@ exports[`SelectDelegate should render a modal 1`] = `
         class="flex-1"
       >
         <div
-          class="mt-1 text-theme-neutral-700"
+          class="mt-1 text-theme-neutral-dark"
         >
           Please select the Delegate you wish to vote for. For additional information about the delegate and/or payouts, please visit MarketSquare.
         </div>
@@ -1545,7 +1481,7 @@ exports[`SelectDelegate should render a modal 1`] = `
           class="-mx-12"
         >
           <div
-            class="bg-theme-neutral-100 px-12 pt-8 pb-8 mt-8"
+            class="bg-theme-neutral-contrast px-12 pt-8 pb-8 mt-8"
             data-testid="SearchBar"
           >
             <div
@@ -1564,7 +1500,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                 class="flex-1 pl-4 mr-4 border-l border-theme-neutral-200"
               >
                 <input
-                  class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                  class="sc-AxheI jbyOzK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
                   data-testid="Input"
                   placeholder="Search for a Delegate"
                 />
@@ -1599,47 +1535,35 @@ exports[`SelectDelegate should render a modal 1`] = `
                   role="row"
                 >
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--0"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Choose
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--1"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                          
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
@@ -1647,15 +1571,13 @@ exports[`SelectDelegate should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Delegate Name
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1671,7 +1593,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--3"
                     role="columnheader"
@@ -1679,15 +1601,13 @@ exports[`SelectDelegate should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Rank
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1703,27 +1623,21 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--4"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         MarketSquare
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--5"
                     role="columnheader"
@@ -1731,15 +1645,13 @@ exports[`SelectDelegate should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Forged ARK
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1755,7 +1667,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--6"
                     role="columnheader"
@@ -1763,15 +1675,13 @@ exports[`SelectDelegate should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top  justify-end mr-8"
+                      class="flex flex-inline align-top justify-end mr-8"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Votes
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral"
                         data-testid="table__Sort"
                       >
                         <div
@@ -1787,23 +1697,17 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </th>
                   <th
-                    class="text-sm text-left select-none text-theme-neutral-500"
+                    class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
                     data-testid="table__th--7"
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top  undefined"
+                      class="flex flex-inline align-top undefined"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Voting
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
@@ -1850,7 +1754,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #1
                   </td>
@@ -1868,17 +1772,17 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       225,946 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       2.43%
                     </span>
@@ -1890,7 +1794,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -1933,7 +1837,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #2
                   </td>
@@ -1941,17 +1845,17 @@ exports[`SelectDelegate should render a modal 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       465,437 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.828%
                     </span>
@@ -1963,7 +1867,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
@@ -2006,7 +1910,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #3
                   </td>
@@ -2024,17 +1928,17 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </a>
                   </td>
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -2100,7 +2004,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 font-semibold text-theme-neutral-700"
+                    class="py-6 font-semibold text-theme-neutral-dark"
                   >
                     #4
                   </td>
@@ -2108,17 +2012,17 @@ exports[`SelectDelegate should render a modal 1`] = `
                     class="py-6 text-center text-theme-primary-500"
                   />
                   <td
-                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 font-semibold whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <div>
                       693,236 A
                     </div>
                   </td>
                   <td
-                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-700"
+                    class="py-6 pr-8 font-semibold text-right whitespace-no-wrap text-theme-neutral-dark"
                   >
                     <span
-                      class="mr-1 text-sm text-theme-neutral-500"
+                      class="mr-1 text-sm text-theme-neutral"
                     >
                       1.528%
                     </span>
@@ -2130,7 +2034,7 @@ exports[`SelectDelegate should render a modal 1`] = `
                     class="w-16"
                   >
                     <div
-                      class="sc-AxiKw eXxQUT  border-theme-primary-100"
+                      class="sc-AxiKw eXxQUT  border-theme-primary-contrast"
                     />
                   </td>
                 </tr>
