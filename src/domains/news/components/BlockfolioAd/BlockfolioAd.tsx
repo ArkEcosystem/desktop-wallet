@@ -1,6 +1,6 @@
 import { images } from "app/assets/images";
 import { SvgCollection } from "app/assets/svg";
-import BlockfolioBanner from "domains/news/images/blockfolio-banner.jpg";
+import BlockfolioBanner from "domains/news/images/blockfolio-banner.png";
 import React from "react";
 
 const { DownloadAppStoreButton, DownloadGooglePlayButton } = images.news.common;
