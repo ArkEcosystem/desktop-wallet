@@ -5,8 +5,6 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
-import { BestPlugins } from "domains/plugin/components/BestPlugins";
-import { FeaturedPlugins } from "domains/plugin/components/FeaturedPlugins";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
@@ -18,14 +16,17 @@ type PluginManagerHomeProps = {
 	onDelete: any;
 	onInstall: any;
 	viewType: string;
+	paths?: any;
+};
+
+type PluginManagerProps = {
+	paths?: any;
 };
 
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
-const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeProps) => {
+const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
-	const [featuredModalOpen, setFeaturedModalOpen] = React.useState(false);
-	const [bestModalOpen, setBestModalOpen] = React.useState(false);
 
 	const plugins = [];
 	for (let i = 0; i < 4; i++) {
@@ -57,21 +58,20 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 
 	return (
 		<div>
-			<FeaturedPlugins isOpen={featuredModalOpen} onClose={() => setFeaturedModalOpen(false)} />
-			<BestPlugins isOpen={bestModalOpen} onClose={() => setBestModalOpen(false)} />
-
 			<div data-testid="PluginManager__home__featured">
 				<div className="flex items-center justify-between mt-8 mb-6">
 					<h2>{t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}</h2>
 
-					<span
+					<a
+						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.FEATURED_PLUGINS")}
 						data-testid="PluginManager__home__featured__view-more"
-						onClick={() => setFeaturedModalOpen(true)}
 						className="font-semibold cursor-pointer link"
+						href={paths.featured}
 					>
 						{t("COMMON.VIEW_MORE")}
-					</span>
+					</a>
 				</div>
+
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
@@ -88,14 +88,14 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 			<div data-testid="PluginManager__home__top-rated">
 				<div className="flex items-center justify-between mt-8 mb-6">
 					<h2>{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}</h2>
-
-					<span
+					<a
+						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_RATED")}
 						data-testid="PluginManager__home__top-rated__view-more"
-						onClick={() => setBestModalOpen(true)}
 						className="font-semibold cursor-pointer link"
+						href={paths.topRated}
 					>
 						{t("COMMON.VIEW_MORE")}
-					</span>
+					</a>
 				</div>
 				{viewType === "grid" && (
 					<PluginGrid
@@ -128,7 +128,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType }: PluginManagerHomeP
 	);
 };
 
-export const PluginManager = () => {
+export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
 	const [currentView, setCurrentView] = React.useState("home");
 	const [viewType, setViewType] = React.useState("grid");
@@ -170,7 +170,7 @@ export const PluginManager = () => {
 				onCancel={() => setInstallPlugin(false)}
 			/>
 
-			<div className="border-t-20 border-theme-neutral-contrast">
+			<div className="border-t-20 border-theme-neutral-100">
 				<div className="container py-16 mx-auto px-14 bg-theme-background">
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
@@ -183,7 +183,10 @@ export const PluginManager = () => {
 									extra={<SearchBarPluginFilters />}
 								/>
 								<div className="h-8 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
-								<Button>
+								<Button
+									data-testid="PluginManager_header--install"
+									onClick={() => setInstallPlugin(true)}
+								>
 									<div className="flex items-center whitespace-no-wrap space-x-2">
 										<Icon name="File" width={15} height={15} />
 										<span>Install File</span>
@@ -210,6 +213,7 @@ export const PluginManager = () => {
 					<div>
 						<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
 						<PluginManagerHome
+							paths={paths}
 							viewType={viewType}
 							onInstall={() => setInstallPlugin(true)}
 							onDelete={() => console.log("delete")}
@@ -238,4 +242,11 @@ export const PluginManager = () => {
 			</div>
 		</div>
 	);
+};
+
+PluginManager.defaultProps = {
+	paths: {
+		featured: "",
+		topRated: "",
+	},
 };
