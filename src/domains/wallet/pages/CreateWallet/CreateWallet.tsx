@@ -119,11 +119,11 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 		}
 
 		return () => unregister("verification");
-	}, [register, unregister, skipVerification]);
+	}, [register, unregister, skipVerification, handleComplete]);
 
-	const handleComplete = () => {
+	const handleComplete = React.useCallback(() => {
 		setValue("verification", true, true);
-	};
+	}, [setValue]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
