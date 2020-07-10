@@ -120,13 +120,11 @@ exports[`SearchContact should render a modal 1`] = `
                     <div
                       class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Nickname
                       </div>
                       <div
-                        class="flex items-center text-theme-color-neutral-500"
+                        class="flex items-center ml-2 text-theme-color-neutral-500"
                         data-testid="table__Sort"
                       >
                         <div
@@ -150,15 +148,9 @@ exports[`SearchContact should render a modal 1`] = `
                     <div
                       class="flex flex-inline align-top justify-center"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Network
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                   <th
@@ -170,15 +162,9 @@ exports[`SearchContact should render a modal 1`] = `
                     <div
                       class="flex flex-inline align-top pl-13"
                     >
-                      <div
-                        class="mr-2"
-                      >
+                      <div>
                         Address
                       </div>
-                      <div
-                        class="flex items-center text-theme-color-neutral-500"
-                        data-testid="table__Sort"
-                      />
                     </div>
                   </th>
                 </tr>
