@@ -14,6 +14,12 @@ type PluginCardProps = {
 
 const PluginCardStyled = styled.div`
 	${tw`relative pt-8 pb-12 px-10 flex flex-col border-2 rounded-lg cursor-pointer select-none hover:shadow-xl`}
+	.PluginCard {
+		&--image {
+			width: 4.75rem;
+			height: 4.75rem;
+		}
+	}
 `;
 
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
@@ -46,7 +52,7 @@ export const PluginCard = ({ isOwner, plugin, onClick, onDelete }: PluginCardPro
 				)}
 
 				<div className="mb-4 mr-4">
-					<ChangeNowLogo className="w-12 h-12" />
+					<ChangeNowLogo className="PluginCard--image" />
 				</div>
 
 				<div className="flex items-center mb-2 text-lg space-x-2 text-theme-primary">
