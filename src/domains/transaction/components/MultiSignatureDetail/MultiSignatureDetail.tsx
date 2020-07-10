@@ -130,15 +130,11 @@ export const SecondStep = () => {
 	);
 };
 
-export const ThirdStep = () => {
-	const { t } = useTranslation();
-
-	return (
-		<section data-testid="MultiSignatureDetail__third-step" className="my-4 text-black">
-			<Signatures />
-		</section>
-	);
-};
+export const ThirdStep = () => (
+	<section data-testid="MultiSignatureDetail__third-step" className="my-4 text-black">
+		<Signatures />
+	</section>
+);
 
 export const MultiSignatureDetail = (props: MultiSignatureDetailProps) => {
 	const { t } = useTranslation();

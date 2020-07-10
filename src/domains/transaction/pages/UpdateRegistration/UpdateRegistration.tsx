@@ -132,7 +132,7 @@ const SecondStep = () => {
 				<h1 className="mb-0">Transaction Review</h1>
 				<p className="text-theme-neutral-dark">Check the information again before voting</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row">
+			<div className="grid grid-flow-row mt-4">
 				<TransactionDetail
 					border={false}
 					label="Network"
@@ -185,7 +185,7 @@ const SecondStep = () => {
 				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 
 				<TransactionDetail label="Website">
-					<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
+					<a href="https://ark.io" target="_blank" rel="noopener noreferrer" className="link">
 						https://ark.io
 					</a>
 				</TransactionDetail>
@@ -257,7 +257,7 @@ export const FourthStep = () => (
 		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
 		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
 				http://robank.com
 			</a>
 		</TransactionDetail>

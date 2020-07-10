@@ -24,7 +24,7 @@ type ResignRegistrationProps = {
 };
 
 const FirstStep = ({ form }: { form: any }) => {
-	const { register } = form;
+	// const { register } = form;
 	const selectionBarState = useSelectionState(1);
 
 	return (
@@ -72,7 +72,7 @@ const SecondStep = () => (
 			<h1 className="mb-0">Transaction Review</h1>
 			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
 		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
+		<div className="grid grid-flow-row gap-2 mt-4">
 			<TransactionDetail
 				border={false}
 				label="Network"
