@@ -14,6 +14,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { paths } from "../../data";
+
 type PluginManagerHomeProps = {
 	onDelete: any;
 	onInstall: any;
@@ -259,8 +261,5 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 };
 
 PluginManager.defaultProps = {
-	paths: {
-		featured: "",
-		topRated: "",
-	},
+	paths,
 };
