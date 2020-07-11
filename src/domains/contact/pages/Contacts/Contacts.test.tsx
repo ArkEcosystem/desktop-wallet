@@ -10,8 +10,8 @@ describe("Contacts", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={[]} />);
 
-		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
 		expect(getByTestId("contacts__banner")).toBeTruthy();
 
@@ -21,8 +21,8 @@ describe("Contacts", () => {
 	it("should render with contacts", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Contacts contacts={contacts} />);
 
-		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("contacts")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
 		expect(() => getByTestId("contacts__banner")).toThrow(/Unable to find an element by/);
 

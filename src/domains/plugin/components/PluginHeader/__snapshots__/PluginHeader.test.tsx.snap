@@ -3,18 +3,19 @@
 exports[`PluginHeader should render as installed 1`] = `
 <DocumentFragment>
   <div
-    class="w-full px-10 py-5 bg-theme-background"
+    class="w-full bg-theme-background"
+    data-restid="plugin-details__header"
   >
     <div
       class="flex w-full"
     >
       <img
         alt="Plugin"
-        class="w-40 h-40 rounded-lg"
+        class="w-44 h-44 rounded-lg"
         src="placeholder.png"
       />
       <div
-        class="flex flex-col justify-center w-full px-5"
+        class="flex flex-col justify-center w-full pl-8"
       >
         <div
           class="flex items-center justify-between"
@@ -95,7 +96,7 @@ exports[`PluginHeader should render as installed 1`] = `
           </div>
         </div>
         <div
-          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
+          class="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
         >
           <div
             class="flex"
@@ -245,18 +246,19 @@ exports[`PluginHeader should render as installed 1`] = `
 exports[`PluginHeader should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="w-full px-10 py-5 bg-theme-background"
+    class="w-full bg-theme-background"
+    data-restid="plugin-details__header"
   >
     <div
       class="flex w-full"
     >
       <img
         alt="Plugin"
-        class="w-40 h-40 rounded-lg"
+        class="w-44 h-44 rounded-lg"
         src="placeholder.png"
       />
       <div
-        class="flex flex-col justify-center w-full px-5"
+        class="flex flex-col justify-center w-full pl-8"
       >
         <div
           class="flex items-center justify-between"
@@ -305,7 +307,7 @@ exports[`PluginHeader should render properly 1`] = `
           </div>
         </div>
         <div
-          class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
+          class="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
         >
           <div
             class="flex"

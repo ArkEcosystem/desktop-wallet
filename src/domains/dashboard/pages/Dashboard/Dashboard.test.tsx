@@ -5,7 +5,7 @@ import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
+import { act, fireEvent, renderWithRouter, within } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
@@ -35,7 +35,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
 					<Dashboard wallets={wallets} transactions={transactions} />
@@ -46,11 +46,11 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
-		// const transactionsView = getByTestId("dashboard__transactions-view");
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--transactions");
@@ -92,7 +92,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide portfolio view", () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/dashboard">
 					<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
@@ -103,10 +103,11 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");

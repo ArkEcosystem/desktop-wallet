@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
+import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -42,19 +43,14 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 );
 
 const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
-	<a
-		href={path}
-		title={title}
-		className="flex flex-row w-64 cursor-pointer border-r-1 last:border-r-0 border-theme-neutral-200"
-	>
-		<div className="flex flex-row w-full p-5 mx-2 bg-white px-7 hover:shadow-xl rounded-md">
-			<div className="w-2/5 my-auto">
-				<Circle className="border-theme-neutral-800" size="lg">
-					<div className="text-theme-neutral-800">
-						<Icon name={icon} width={20} height={20} />
-					</div>
-				</Circle>
-			</div>
+	<a href={path} title={title} className="flex flex-1 cursor-pointer">
+		<div className="flex flex-row w-full bg-white p-8 ml-2 mx-2 hover:shadow-xl rounded-md">
+			<Circle className="border-theme-neutral-800 mr-3" size="xl">
+				<div className="text-theme-neutral-800">
+					<Icon name={icon} width={20} height={20} />
+				</div>
+			</Circle>
+
 			<div className="flex-auto my-auto">
 				<div className="font-bold text-theme-neutral-800">{title}</div>
 				<div className="text-sm text-theme-neutral">{subtitle}</div>
@@ -65,64 +61,71 @@ const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 
 export const Main = ({ categories, helpfulArticles, popularArticles, newestArticles }: SupportProps) => {
 	const { t } = useTranslation();
-	return (
-		<div>
-			<div className="bg-theme-neutral-contrast">
-				<div className="py-16 mb-5 bg-white px-13">
-					<Header
-						title={t("HELP.PAGE_SUPPORT.TITLE")}
-						subtitle={t("HELP.PAGE_SUPPORT.SUBTITLE")}
-						extra={<Button>{t("HELP.CONTACT_US")}</Button>}
-					/>
-				</div>
 
-				<div className="mb-5 bg-white p-13">
-					<div className="flex flex-row">
-						{categories &&
-							categories.map((category: CategoryItemProps, index: number) => {
-								return (
-									<CategoryItem
-										title={category.title}
-										subtitle={category.subtitle}
-										icon={category.icon}
-										key={index}
-									/>
-								);
-							})}
+	const crumbs = [
+		{
+			route: "help",
+			label: "Go back to Help & Support",
+		},
+	];
+
+	return (
+		<Page crumbs={crumbs}>
+			<Section>
+				<Header
+					title={t("HELP.PAGE_SUPPORT.TITLE")}
+					subtitle={t("HELP.PAGE_SUPPORT.SUBTITLE")}
+					extra={<Button>{t("HELP.CONTACT_US")}</Button>}
+				/>
+			</Section>
+
+			<Section>
+				<div className="flex flex-row -mx-2 divide-x divide-theme-neutral-200">
+					{categories &&
+						categories.map((category: CategoryItemProps, index: number) => {
+							return (
+								<CategoryItem
+									title={category.title}
+									subtitle={category.subtitle}
+									icon={category.icon}
+									key={index}
+								/>
+							);
+						})}
+				</div>
+			</Section>
+
+			<Section>
+				<div className="flex flex-row space-x-10">
+					<div className="w-1/3">
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h2>
+						<ul>
+							{helpfulArticles &&
+								helpfulArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
+									<ArticleListItem title={title} path={path} key={index} />
+								))}
+						</ul>
+					</div>
+					<div className="w-1/3">
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h2>
+						<ul>
+							{popularArticles &&
+								popularArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
+									<ArticleListItem title={title} path={path} key={index} />
+								))}
+						</ul>
+					</div>
+					<div className="w-1/3">
+						<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h2>
+						<ul>
+							{newestArticles &&
+								newestArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
+									<ArticleListItem title={title} path={path} key={index} />
+								))}
+						</ul>
 					</div>
 				</div>
-				<div className="py-10 mb-10 bg-white px-14">
-					<div className="flex flex-row">
-						<div className="w-1/3 mr-10">
-							<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.HELPFUL")}</h2>
-							<ul>
-								{helpfulArticles &&
-									helpfulArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
-										<ArticleListItem title={title} path={path} key={index} />
-									))}
-							</ul>
-						</div>
-						<div className="w-1/3 mr-10">
-							<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.POPULAR")}</h2>
-							<ul>
-								{popularArticles &&
-									popularArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
-										<ArticleListItem title={title} path={path} key={index} />
-									))}
-							</ul>
-						</div>
-						<div className="w-1/3 mr-10">
-							<h2>{t("HELP.PAGE_SUPPORT.CATEGORIES.NEWEST")}</h2>
-							<ul>
-								{newestArticles &&
-									newestArticles.map(({ title, path }: ArticleListItemProps, index: number) => (
-										<ArticleListItem title={title} path={path} key={index} />
-									))}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

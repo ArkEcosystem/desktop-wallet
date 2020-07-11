@@ -1,4 +1,3 @@
-import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 
 import { PluginManager } from "./PluginManager";
@@ -11,11 +10,5 @@ export const Default = () => {
 		topRated: "/?path=/story/domains-plugin-pages-plugins-category--top-rated",
 	};
 
-	return (
-		<div className="-m-5">
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
-			<PluginManager paths={paths} />
-		</div>
-	);
+	return <PluginManager paths={paths} />;
 };

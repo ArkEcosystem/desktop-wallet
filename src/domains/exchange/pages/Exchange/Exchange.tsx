@@ -1,9 +1,10 @@
 import { images } from "app/assets/images";
 import { Header } from "app/components/Header";
+import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type ExchangeProps = {
@@ -17,8 +18,8 @@ const NoExchangesList = ({ onAddExchange }: { onAddExchange: any }) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="mt-8 mb-16 grid grid-cols-8 gap-4">
-			<div className="flex flex-col h-32 border-2 rounded-lg border-theme-primary-contrast col-span-6">
+		<div className="mt-8 grid grid-cols-8">
+			<div className="flex flex-col h-32 mr-5 border-2 rounded-lg border-theme-primary-contrast col-span-6">
 				<div className="flex flex-col m-auto text-center">
 					<span className="font-semibold">{t("EXCHANGE.YOUR_EXCHANGE_LIST")}</span>
 
@@ -63,7 +64,7 @@ const ExchangesList = ({
 	};
 
 	return (
-		<div className="mt-8 mb-16">
+		<div className="mt-8">
 			<Slider
 				data={sliderGridData(exchanges)}
 				options={sliderOptions}
@@ -93,15 +94,13 @@ const ExchangesList = ({
 export const Exchange = (props: ExchangeProps) => {
 	const { t } = useTranslation();
 
-	const [modalIsOpen, setModalIsOpen] = React.useState(false);
-	const [selectedExchange, setSelectedExchange] = React.useState(null);
+	const [modalIsOpen, setModalIsOpen] = useState(false);
+	const [selectedExchange, setSelectedExchange] = useState(null);
 
 	return (
-		<div data-testid="Exchange">
-			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
-
-			<div className="pt-16 border-t-20 border-theme-neutral-contrast">
-				<div className="container mx-auto">
+		<>
+			<Page data-testid="Exchange">
+				<Section>
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
 					{props.exchanges.length ? (
@@ -114,21 +113,23 @@ export const Exchange = (props: ExchangeProps) => {
 					) : (
 						<NoExchangesList onAddExchange={() => setModalIsOpen(true)} />
 					)}
-				</div>
-			</div>
+				</Section>
 
-			<div className="border-t-20 border-theme-neutral-contrast">
-				{props.exchanges.length ? (
-					<div className="text-center">
-						<ExchangeCardsBanner className="mx-auto mt-16" />
+				<Section className="flex-1">
+					{props.exchanges.length ? (
+						<div className="text-center">
+							<ExchangeCardsBanner className="mx-auto" />
 
-						<div className="mt-8 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
-					</div>
-				) : (
-					<NoExchangesBanner className="mx-auto mt-16" />
-				)}
-			</div>
-		</div>
+							<div className="mt-8 text-theme-neutral-dark">{t("EXCHANGE.SELECT_EXCHANGE_MESSAGE")}</div>
+						</div>
+					) : (
+						<NoExchangesBanner className="mx-auto" />
+					)}
+				</Section>
+			</Page>
+
+			<AddExchange isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+		</>
 	);
 };
 

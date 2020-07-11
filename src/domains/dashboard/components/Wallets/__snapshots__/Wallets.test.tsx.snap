@@ -15,7 +15,8 @@ exports[`Wallets should render 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex"
+          class="flex justify-end"
+          data-testid="WalletControls"
         >
           <div
             class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
@@ -1786,7 +1787,8 @@ exports[`Wallets should render with empty wallets list 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex"
+          class="flex justify-end"
+          data-testid="WalletControls"
         >
           <div
             class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
@@ -2100,7 +2102,8 @@ exports[`Wallets should render with list view enabled as default 1`] = `
         class="w-2/4 text-right"
       >
         <div
-          class="flex"
+          class="flex justify-end"
+          data-testid="WalletControls"
         >
           <div
             class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
@@ -3952,7 +3955,8 @@ exports[`Wallets should render with list view enabled as default and empty walle
         class="w-2/4 text-right"
       >
         <div
-          class="flex"
+          class="flex justify-end"
+          data-testid="WalletControls"
         >
           <div
             class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"

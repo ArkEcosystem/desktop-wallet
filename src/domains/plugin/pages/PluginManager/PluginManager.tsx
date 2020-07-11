@@ -4,6 +4,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
+import { Page, Section } from "app/components/Layout";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
@@ -130,6 +131,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
+
 	const [currentView, setCurrentView] = React.useState("home");
 	const [viewType, setViewType] = React.useState("grid");
 	const [installPlugin, setInstallPlugin] = React.useState(false);
@@ -163,15 +165,9 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	}
 
 	return (
-		<div data-testid="PluginManager" className="pb-14">
-			<InstallPlugin
-				isOpen={installPlugin}
-				onClose={() => setInstallPlugin(false)}
-				onCancel={() => setInstallPlugin(false)}
-			/>
-
-			<div className="border-t-20 border-theme-neutral-100">
-				<div className="container py-16 mx-auto px-14 bg-theme-background">
+		<>
+			<Page>
+				<Section>
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
@@ -195,54 +191,66 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 							</div>
 						}
 					/>
-				</div>
-			</div>
+				</Section>
 
-			<PluginManagerNavigationBar
-				selected={currentView}
-				onChange={setCurrentView}
-				selectedViewType={viewType}
-				onSelectGridView={() => setViewType("grid")}
-				onSelectListView={() => setViewType("list")}
-			/>
-
-			<div data-testid={`PluginManager__container--${currentView}`} className="container mx-auto px-14 mt-14">
-				<div className="flex items-center justify-between" />
-
-				{currentView === "home" && (
-					<div>
-						<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
-						<PluginManagerHome
-							paths={paths}
-							viewType={viewType}
-							onInstall={() => setInstallPlugin(true)}
-							onDelete={() => console.log("delete")}
+				<div>
+					<div className="-my-5">
+						<PluginManagerNavigationBar
+							selected={currentView}
+							onChange={setCurrentView}
+							selectedViewType={viewType}
+							onSelectGridView={() => setViewType("grid")}
+							onSelectListView={() => setViewType("list")}
 						/>
 					</div>
-				)}
-				{currentView !== "home" && viewType === "grid" && (
-					<div>
-						<h2 className="font-bold">
-							{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-						</h2>
-						<PluginGrid
+				</div>
+
+				<Section className="-mt-5">
+					<div className="flex items-center justify-between" />
+
+					{currentView === "home" && (
+						<div>
+							<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
+							<PluginManagerHome
+								paths={paths}
+								viewType={viewType}
+								onInstall={() => setInstallPlugin(true)}
+								onDelete={() => console.log("delete")}
+							/>
+						</div>
+					)}
+
+					{currentView !== "home" && viewType === "grid" && (
+						<div>
+							<h2 className="font-bold">
+								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+							</h2>
+							<PluginGrid
+								plugins={plugins}
+								onSelect={() => console.log("selected")}
+								onDelete={() => console.log("delete")}
+								className="mt-6"
+							/>
+						</div>
+					)}
+
+					{currentView !== "home" && viewType === "list" && (
+						<PluginList
 							plugins={plugins}
-							onSelect={() => console.log("selected")}
+							onInstall={() => setInstallPlugin(true)}
 							onDelete={() => console.log("delete")}
 							className="mt-6"
 						/>
-					</div>
-				)}
-				{currentView !== "home" && viewType === "list" && (
-					<PluginList
-						plugins={plugins}
-						onInstall={() => setInstallPlugin(true)}
-						onDelete={() => console.log("delete")}
-						className="mt-6"
-					/>
-				)}
-			</div>
-		</div>
+					)}
+				</Section>
+			</Page>
+
+			<InstallPlugin
+				isOpen={installPlugin}
+				onClose={() => setInstallPlugin(false)}
+				onCancel={() => setInstallPlugin(false)}
+			/>
+		</>
 	);
 };
 
