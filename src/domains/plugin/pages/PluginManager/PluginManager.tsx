@@ -219,7 +219,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 					</div>
 				</div>
 
-				<Section className="-mt-5">
+				<Section>
 					<div data-testid={`PluginManager__container--${currentView}`}>
 						<div className="flex items-center justify-between" />
 

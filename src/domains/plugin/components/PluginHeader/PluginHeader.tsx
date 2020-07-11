@@ -47,7 +47,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 	return (
 		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<img className="w-44 h-44 rounded-lg" alt="Plugin" src={Placeholder} />
+				<img className="rounded-lg w-44 h-44" alt="Plugin" src={Placeholder} />
 				<div className="flex flex-col justify-center w-full pl-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-col">

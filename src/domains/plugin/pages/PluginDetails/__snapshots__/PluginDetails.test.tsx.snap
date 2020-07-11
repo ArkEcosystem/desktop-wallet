@@ -202,7 +202,7 @@ exports[`PluginDetails should render properly 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container mx-auto py-5 px-14 font-semibold text-theme-neutral-dark"
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -246,7 +246,7 @@ exports[`PluginDetails should render properly 1`] = `
             >
               <img
                 alt="Plugin"
-                class="w-44 h-44 rounded-lg"
+                class="rounded-lg w-44 h-44"
                 src="placeholder.png"
               />
               <div
@@ -1689,7 +1689,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
       </div>
     </nav>
     <div
-      class="flex items-center space-x-2 container mx-auto py-5 px-14 font-semibold text-theme-neutral-dark"
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
@@ -1733,7 +1733,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             >
               <img
                 alt="Plugin"
-                class="w-44 h-44 rounded-lg"
+                class="rounded-lg w-44 h-44"
                 src="placeholder.png"
               />
               <div

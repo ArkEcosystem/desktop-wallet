@@ -44,8 +44,8 @@ const ArticleListItem = ({ title, path }: ArticleListItemProps) => (
 
 const CategoryItem = ({ icon, title, subtitle, path }: CategoryItemProps) => (
 	<a href={path} title={title} className="flex flex-1 cursor-pointer">
-		<div className="flex flex-row w-full bg-white p-8 ml-2 mx-2 hover:shadow-xl rounded-md">
-			<Circle className="border-theme-neutral-800 mr-3" size="xl">
+		<div className="flex flex-row w-full p-8 mx-2 ml-2 bg-white hover:shadow-xl rounded-md">
+			<Circle className="mr-3 border-theme-neutral-800" size="xl">
 				<div className="text-theme-neutral-800">
 					<Icon name={icon} width={20} height={20} />
 				</div>

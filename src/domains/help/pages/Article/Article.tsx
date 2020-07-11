@@ -110,7 +110,7 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 						})}
 				</div>
 
-				<div className="mt-16 pt-16 border-t-1 border-theme-neutral-300">
+				<div className="pt-16 mt-16 border-t-1 border-theme-neutral-300">
 					<div className="max-w-2xl mx-auto">
 						<div className="flex">
 							<div className="w-3/4">
