@@ -43,8 +43,8 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 				<TransactionRowAmount {...transaction} />
 			</td>
 			{transaction.isSignaturePending && (
-				<td className="w-32 text-center">
-					<Button size="sm" data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
+				<td className="text-right">
+					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>

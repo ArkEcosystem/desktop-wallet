@@ -16,6 +16,7 @@ const commonColumns = [
 	},
 	{
 		Header: "Date",
+		accessor: "timestamp",
 	},
 	{
 		Header: "Type",
@@ -35,6 +36,7 @@ const commonColumns = [
 	{
 		Header: "Amount",
 		className: "justify-end",
+		accessor: "amount",
 	},
 ];
 

@@ -32,12 +32,28 @@ exports[`TransactionTable should render 1`] = `
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top undefined"
             >
               <div>
                 Date
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -102,12 +118,28 @@ exports[`TransactionTable should render 1`] = `
             colspan="1"
             data-testid="table__th--6"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top justify-end"
             >
               <div>
                 Amount
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -419,12 +451,28 @@ exports[`TransactionTable should render with sign 1`] = `
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top undefined"
             >
               <div>
                 Date
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -489,12 +537,28 @@ exports[`TransactionTable should render with sign 1`] = `
             colspan="1"
             data-testid="table__th--6"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top justify-end"
             >
               <div>
                 Amount
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -673,10 +737,10 @@ exports[`TransactionTable should render with sign 1`] = `
             </div>
           </td>
           <td
-            class="w-32 text-center"
+            class="text-right"
           >
             <button
-              class="sc-AxiKw cxCNeM"
+              class="sc-AxiKw gFzSt"
               color="primary"
               data-testid="TransactionRow__sign"
               type="button"
