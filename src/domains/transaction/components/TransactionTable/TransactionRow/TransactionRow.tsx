@@ -14,9 +14,10 @@ type Props = {
 	transaction: Transaction;
 	currencyRate?: string;
 	onSign?: () => void;
+	walletName?: string;
 };
 
-export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => {
+export const TransactionRow = ({ currencyRate, transaction, onSign, walletName }: Props) => {
 	return (
 		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300">
 			<td className="w-16 py-6">
@@ -31,7 +32,7 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 				<TransactionRowMode {...transaction} />
 			</td>
 			<td>
-				<TransactionRowRecipientLabel {...transaction} />
+				<TransactionRowRecipientLabel {...transaction} walletName={walletName} />
 			</td>
 			<td className="text-center">
 				<TransactionRowInfo {...transaction} />
