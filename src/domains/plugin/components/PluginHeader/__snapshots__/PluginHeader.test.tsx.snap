@@ -4,7 +4,7 @@ exports[`PluginHeader should render as installed 1`] = `
 <DocumentFragment>
   <div
     class="w-full bg-theme-background"
-    data-restid="plugin-details__header"
+    data-testid="plugin-details__header"
   >
     <div
       class="flex w-full"
@@ -247,7 +247,7 @@ exports[`PluginHeader should render properly 1`] = `
 <DocumentFragment>
   <div
     class="w-full bg-theme-background"
-    data-restid="plugin-details__header"
+    data-testid="plugin-details__header"
   >
     <div
       class="flex w-full"

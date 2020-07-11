@@ -220,42 +220,44 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 				</div>
 
 				<Section className="-mt-5">
-					<div className="flex items-center justify-between" />
+					<div data-testid={`PluginManager__container--${currentView}`}>
+						<div className="flex items-center justify-between" />
 
-					{currentView === "home" && (
-						<div>
-							<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
-							<PluginManagerHome
-								paths={paths}
-								viewType={viewType}
-								onInstall={() => setInstallPlugin(true)}
-								onDelete={() => console.log("delete")}
-							/>
-						</div>
-					)}
+						{currentView === "home" && (
+							<div>
+								<PluginManagerHomeBanner className="w-full mb-8" height="auto" />
+								<PluginManagerHome
+									paths={paths}
+									viewType={viewType}
+									onInstall={() => setInstallPlugin(true)}
+									onDelete={() => console.log("delete")}
+								/>
+							</div>
+						)}
 
-					{currentView !== "home" && viewType === "grid" && (
-						<div>
-							<h2 className="font-bold">
-								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
-							</h2>
-							<PluginGrid
+						{currentView !== "home" && viewType === "grid" && (
+							<div>
+								<h2 className="font-bold">
+									{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
+								</h2>
+								<PluginGrid
+									plugins={plugins}
+									onSelect={handleSelectPlugin}
+									onDelete={() => console.log("delete")}
+									className="mt-6"
+								/>
+							</div>
+						)}
+
+						{currentView !== "home" && viewType === "list" && (
+							<PluginList
 								plugins={plugins}
-								onSelect={() => console.log("selected")}
+								onInstall={() => setInstallPlugin(true)}
 								onDelete={() => console.log("delete")}
 								className="mt-6"
 							/>
-						</div>
-					)}
-
-					{currentView !== "home" && viewType === "list" && (
-						<PluginList
-							plugins={plugins}
-							onSelect={handleSelectPlugin}
-							onDelete={() => console.log("delete")}
-							className="mt-6"
-						/>
-					)}
+						)}
+					</div>
 				</Section>
 			</Page>
 
