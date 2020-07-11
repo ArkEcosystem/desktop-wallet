@@ -67,4 +67,12 @@ describe("TransactionTable", () => {
 		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render compact", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			<TransactionTable transactions={transactions} isCompact />,
+		);
+		expect(getAllByTestId("TransactionCompactRow")).toHaveLength(transactions.length);
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

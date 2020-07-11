@@ -1,6 +1,7 @@
 import { Table } from "app/components/Table";
 import React from "react";
 
+import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 import { Transaction } from "./TransactionTable.models";
 
@@ -8,6 +9,8 @@ type Props = {
 	transactions: Transaction[];
 	currencyRate?: string;
 	showSignColumn?: boolean;
+	hideHeader?: boolean;
+	isCompact?: boolean;
 };
 
 const commonColumns = [
@@ -27,7 +30,6 @@ const commonColumns = [
 	},
 	{
 		Header: "Info",
-		className: "justify-center",
 	},
 	{
 		Header: "Status",
@@ -40,8 +42,25 @@ const commonColumns = [
 	},
 ];
 
-export const TransactionTable = ({ transactions, currencyRate, showSignColumn }: Props) => {
+export const TransactionTable = ({ transactions, currencyRate, showSignColumn, hideHeader, isCompact }: Props) => {
 	const columns = React.useMemo(() => {
+		if (isCompact) {
+			return [
+				{
+					Header: "Type",
+					className: "invisible",
+				},
+				{
+					Header: "Recipient",
+				},
+				{
+					Header: "Amount",
+					className: "justify-end",
+					accessor: "amount",
+				},
+			];
+		}
+
 		if (currencyRate) {
 			return [...commonColumns, { Header: "Currency", className: "justify-end" }];
 		}
@@ -51,11 +70,23 @@ export const TransactionTable = ({ transactions, currencyRate, showSignColumn }:
 		}
 
 		return commonColumns;
-	}, [currencyRate, showSignColumn]);
+	}, [currencyRate, showSignColumn, isCompact]);
 
 	return (
-		<Table columns={columns} data={transactions}>
-			{(row: Transaction) => <TransactionRow transaction={row} currencyRate={currencyRate} />}
+		<Table hideColumns={hideHeader} columns={columns} data={transactions}>
+			{(row: Transaction) =>
+				isCompact ? (
+					<TransactionCompactRow transaction={row} />
+				) : (
+					<TransactionRow transaction={row} currencyRate={currencyRate} />
+				)
+			}
 		</Table>
 	);
+};
+
+TransactionTable.defaultProps = {
+	showSignColumn: false,
+	isCompact: false,
+	hideColumns: false,
 };
