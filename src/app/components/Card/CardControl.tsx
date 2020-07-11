@@ -1,7 +1,7 @@
+import { Icon } from "app/components/Icon";
 import React from "react";
 import tw, { styled } from "twin.macro";
 
-import { Icon } from "../Icon";
 import { Card } from "./Card";
 
 type CardControlProps = {
@@ -9,7 +9,7 @@ type CardControlProps = {
 	type?: "radio" | "checkbox";
 	checked?: boolean;
 	defaultChecked?: boolean;
-	readonly?: boolean;
+	disabled?: boolean;
 	value?: string | number;
 	name?: string | number;
 } & React.HTMLProps<any>;
@@ -23,13 +23,16 @@ const CustomCard = styled(Card)`
 	${Input}:checked + & {
 		${tw`bg-theme-success-contrast border-theme-success`}
 	}
+	${Input}:disabled + & {
+		${tw`cursor-not-allowed`}
+	}
 `;
 
 const StateStyle = styled.div`
-    ${tw`rounded-full w-4 h-4 border-2 border-theme-primary-contrast inline-flex items-center justify-center text-transparent`}
-    ${Input}:checked + ${CustomCard} & {
-        ${tw`bg-theme-success border-transparent text-theme-success-contrast`}
-    }
+	${tw`inline-flex items-center justify-center w-4 h-4 text-transparent border-2 rounded-full border-theme-primary-contrast`}
+	${Input}:checked + ${CustomCard} & {
+		${tw`border-transparent bg-theme-success text-theme-success-contrast`}
+	}
 `;
 
 export const CardControlState = () => {
@@ -41,7 +44,7 @@ export const CardControlState = () => {
 };
 
 export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
-	({ children, type, checked, defaultChecked, onChange, readOnly, value, name, ...props }: CardControlProps, ref) => {
+	({ children, type, checked, defaultChecked, onChange, disabled, value, name, ...props }: CardControlProps, ref) => {
 		return (
 			<label tw="cursor-pointer" {...props}>
 				<Input
@@ -51,7 +54,7 @@ export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
 					checked={checked}
 					onChange={onChange}
 					defaultChecked={defaultChecked}
-					readOnly={readOnly}
+					disabled={disabled}
 					value={value}
 					name={name}
 				/>
