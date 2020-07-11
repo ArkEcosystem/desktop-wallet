@@ -70,7 +70,7 @@ export const AddressListItem = ({
 			<td className="py-5">
 				{msqUrl && (
 					<div className="flex justify-center h-full">
-						<a href={msqUrl} target="_blank" rel="noreferrer">
+						<a href={msqUrl} target="_blank" rel="noopener noreferrer">
 							<Icon name="Msq" className="text-xl text-theme-primary" />
 						</a>
 					</div>

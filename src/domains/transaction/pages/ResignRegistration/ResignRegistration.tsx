@@ -24,7 +24,7 @@ type ResignRegistrationProps = {
 };
 
 const FirstStep = ({ form }: { form: any }) => {
-	const { register } = form;
+	// const { register } = form;
 	const selectionBarState = useSelectionState(1);
 
 	return (

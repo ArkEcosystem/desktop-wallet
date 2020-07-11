@@ -51,3 +51,50 @@ export const comments = [
 		},
 	},
 ];
+
+export const ratings = [
+	{
+		rating: 5,
+		votes: 156,
+	},
+	{
+		rating: 4,
+		votes: 194,
+	},
+	{
+		rating: 3,
+		votes: 25,
+	},
+	{
+		rating: 2,
+		votes: 42,
+	},
+	{
+		rating: 1,
+		votes: 7,
+	},
+];
+
+export const pluginData = {
+	author: "ARK Ecosystem",
+	about:
+		"Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.",
+	permissions: ["Embedded Webpages", "API Requests", "Access to Profiles"],
+	screenshots: [1, 2, 3],
+	category: "Utility",
+	url: "github.com",
+	averageRating: "4.6",
+	version: "1.3.8",
+	size: "4.2",
+};
+
+export const reviewData = {
+	comments,
+	ratings,
+	totalAvaliations: 347,
+};
+
+export const paths = {
+	featured: "/?path=/story/domains-plugin-pages-plugins-category--featured",
+	topRated: "/?path=/story/domains-plugin-pages-plugins-category--top-rated",
+};

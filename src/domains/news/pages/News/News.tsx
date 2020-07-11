@@ -2,10 +2,13 @@ import { SvgCollection } from "app/assets/svg";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Pagination } from "app/components/Pagination";
+import { useActiveProfile } from "app/hooks/env";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
 import React from "react";
+
+import { assets, categories, news } from "../../data";
 
 type Props = {
 	news?: any[];
@@ -14,9 +17,11 @@ type Props = {
 };
 
 export const News = ({ news, categories, assets }: Props) => {
+	const activeProfile = useActiveProfile();
+
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -64,7 +69,7 @@ export const News = ({ news, categories, assets }: Props) => {
 };
 
 News.defaultProps = {
-	news: [],
-	categories: [],
-	assets: [],
+	news,
+	categories,
+	assets,
 };

@@ -1,10 +1,13 @@
 import { Button } from "app/components/Button";
 import { Page, Section } from "app/components/Layout";
+import { useActiveProfile } from "app/hooks/env";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { ReviewBox } from "domains/plugin/components/ReviewBox";
 import React from "react";
+
+import { pluginData, reviewData } from "../../data";
 
 const commentsSortOptions = {
 	type: "Best",
@@ -12,19 +15,20 @@ const commentsSortOptions = {
 };
 
 type PluginDetailsProps = {
-	pluginData: any;
-	reviewData: any;
+	pluginData?: any;
+	reviewData?: any;
 	isInstalled?: boolean;
 };
 
 export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDetailsProps) => {
 	const { author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
+	const activeProfile = useActiveProfile();
 
 	const crumbs = [
 		{
-			route: "plugin-manager",
-			label: "Go back to Plugin Manager",
+			route: `/profiles/${activeProfile?.id()}/plugins`,
+			label: "Go back to plugin store",
 		},
 	];
 
@@ -75,4 +79,6 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 
 PluginDetails.defaultProps = {
 	isInstalled: false,
+	pluginData,
+	reviewData,
 };

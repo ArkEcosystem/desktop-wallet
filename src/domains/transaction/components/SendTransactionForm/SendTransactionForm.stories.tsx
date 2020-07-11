@@ -7,8 +7,6 @@ export default {
 	title: "Domains / Transaction / Components / SendTransactionForm",
 };
 
-console.log("networks", networks);
-
 const defaultFormValues = {
 	maxAvailableAmount: 80,
 	assetSymbol: "ARK",

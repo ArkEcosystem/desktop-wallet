@@ -2,8 +2,35 @@
 
 exports[`PluginDetails should render properly 1`] = `
 <DocumentFragment>
+  <div
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
+    data-testid="breadcrumbs__wrapper"
+  >
+    <div
+      class="sc-AxirZ hVzDKK"
+      height="10"
+      width="19"
+    >
+      <svg>
+        arrow-back.svg
+      </svg>
+    </div>
+    <div
+      class="space-x-2"
+    >
+      <a
+        aria-current="page"
+        class="text-theme-neutral-dark active"
+        href="/profiles/qwe123/plugins"
+      >
+        <span>
+          Go back to plugin store
+        </span>
+      </a>
+    </div>
+  </div>
   <section
-    class="h-full -m-5 bg-theme-neutral-contrast"
+    class="h-full mx-10 bg-theme-neutral-contrast"
     data-testid="plugin-details__header"
   >
     <div
@@ -41,7 +68,7 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxiKw wFYj"
                 color="primary"
                 data-testid="PluginHeader__button--install"
                 type="button"
@@ -49,7 +76,7 @@ exports[`PluginDetails should render properly 1`] = `
                 Install
               </button>
               <button
-                class="sc-AxjAm ddJBbC ml-3"
+                class="sc-AxiKw gFzSt ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
@@ -350,7 +377,7 @@ exports[`PluginDetails should render properly 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxirZ bMjbpr"
@@ -363,7 +390,7 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -392,7 +419,7 @@ exports[`PluginDetails should render properly 1`] = `
             Reviews ARK Explorer
           </h2>
           <button
-            class="sc-AxjAm ddJBbC"
+            class="sc-AxiKw gFzSt"
             color="primary"
             data-testid="ReviewBox__button--comment"
             type="button"
@@ -652,7 +679,7 @@ exports[`PluginDetails should render properly 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -829,11 +856,11 @@ exports[`PluginDetails should render properly 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
@@ -850,7 +877,7 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
@@ -871,23 +898,23 @@ exports[`PluginDetails should render properly 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
                 </div>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
@@ -904,7 +931,7 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
@@ -1031,7 +1058,7 @@ exports[`PluginDetails should render properly 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-400"
                     data-testid="5-stars__rating-count"
                     width="44.95677233429395"
                   />
@@ -1094,7 +1121,7 @@ exports[`PluginDetails should render properly 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-400"
                     data-testid="4-stars__rating-count"
                     width="55.907780979827095"
                   />
@@ -1148,7 +1175,7 @@ exports[`PluginDetails should render properly 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-400"
                     data-testid="3-stars__rating-count"
                     width="7.204610951008646"
                   />
@@ -1193,7 +1220,7 @@ exports[`PluginDetails should render properly 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-400"
                     data-testid="2-stars__rating-count"
                     width="12.103746397694524"
                   />
@@ -1229,7 +1256,7 @@ exports[`PluginDetails should render properly 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-400"
                     data-testid="1-stars__rating-count"
                     width="2.0172910662824206"
                   />
@@ -1246,8 +1273,35 @@ exports[`PluginDetails should render properly 1`] = `
 
 exports[`PluginDetails should render properly as installed 1`] = `
 <DocumentFragment>
+  <div
+    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
+    data-testid="breadcrumbs__wrapper"
+  >
+    <div
+      class="sc-AxirZ hVzDKK"
+      height="10"
+      width="19"
+    >
+      <svg>
+        arrow-back.svg
+      </svg>
+    </div>
+    <div
+      class="space-x-2"
+    >
+      <a
+        aria-current="page"
+        class="text-theme-neutral-dark active"
+        href="/profiles/qwe123/plugins"
+      >
+        <span>
+          Go back to plugin store
+        </span>
+      </a>
+    </div>
+  </div>
   <section
-    class="h-full -m-5 bg-theme-neutral-contrast"
+    class="h-full mx-10 bg-theme-neutral-contrast"
     data-testid="plugin-details__header"
   >
     <div
@@ -1285,7 +1339,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="flex"
             >
               <button
-                class="sc-AxjAm ddQVWI"
+                class="sc-AxiKw wFYj"
                 color="primary"
                 data-testid="PluginHeader__button--open"
                 type="button"
@@ -1293,7 +1347,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 Open
               </button>
               <button
-                class="sc-AxjAm ddQVWI ml-3"
+                class="sc-AxiKw wFYj ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--update"
                 type="button"
@@ -1309,7 +1363,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxjAm ddJBbC ml-3"
+                class="sc-AxiKw gFzSt ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--warning"
                 type="button"
@@ -1325,7 +1379,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxjAm ddJBbC ml-3"
+                class="sc-AxiKw gFzSt ml-3"
                 color="primary"
                 data-testid="PluginHeader__button--uninstall"
                 type="button"
@@ -1626,7 +1680,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             class="flex rounded-lg overflow-hidden bg-theme-warning"
           >
             <div
-              class="sc-Axmtr dmCHuV flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
             >
               <div
                 class="sc-AxirZ bMjbpr"
@@ -1639,7 +1693,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
               </div>
             </div>
             <div
-              class="sc-AxheI jVDBvm flex-1 bg-theme-warning-100"
+              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
             >
               <p
                 class="text-xl font-bold text-theme-warning"
@@ -1668,7 +1722,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
             Reviews ARK Explorer
           </h2>
           <button
-            class="sc-AxjAm ddJBbC"
+            class="sc-AxiKw gFzSt"
             color="primary"
             data-testid="ReviewBox__button--comment"
             type="button"
@@ -1928,7 +1982,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                       </div>
                     </div>
                     <div
-                      class="sc-AxgMl fBXLvj mt-2 ml-10 text-theme-neutral-600"
+                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
                     >
                       <a
                         href="#"
@@ -2105,11 +2159,11 @@ exports[`PluginDetails should render properly as installed 1`] = `
               class="mt-7"
             >
               <div
-                class="sc-AxhCb gSLQTX"
+                class="sc-AxhUy jaOXDK"
                 data-testid="Pagination"
               >
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__first"
                   disabled=""
@@ -2126,7 +2180,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__previous"
                   disabled=""
@@ -2147,23 +2201,23 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="flex px-2 rounded bg-theme-primary-contrast"
                 >
                   <div
-                    class="sc-AxhUy bxYQX current-page"
+                    class="sc-AxgMl fXLMnx current-page"
                   >
                     1
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     2
                   </div>
                   <div
-                    class="sc-AxhUy bxYQX"
+                    class="sc-AxgMl fXLMnx"
                   >
                     3
                   </div>
                 </div>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__next"
                   type="button"
@@ -2180,7 +2234,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                 </button>
                 <button
-                  class="sc-AxjAm ddJBbC"
+                  class="sc-AxiKw gFzSt"
                   color="primary"
                   data-testid="Pagination__last"
                   type="button"
@@ -2307,7 +2361,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO idNujh h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-400"
                     data-testid="5-stars__rating-count"
                     width="44.95677233429395"
                   />
@@ -2370,7 +2424,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO eGBqsC h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-400"
                     data-testid="4-stars__rating-count"
                     width="55.907780979827095"
                   />
@@ -2424,7 +2478,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO grsgIS h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-400"
                     data-testid="3-stars__rating-count"
                     width="7.204610951008646"
                   />
@@ -2469,7 +2523,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO iQzyro h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-400"
                     data-testid="2-stars__rating-count"
                     width="12.103746397694524"
                   />
@@ -2505,7 +2559,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                 >
                   <div
-                    class="sc-AxmLO bCFoDH h-2 rounded-lg bg-theme-warning-400"
+                    class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-400"
                     data-testid="1-stars__rating-count"
                     width="2.0172910662824206"
                   />
