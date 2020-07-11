@@ -28,7 +28,9 @@ export const Page = ({ navbarStyle = "full", crumbs, children }: PageProps) => {
 
 			{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}
 
-			<div className={`flex flex-col flex-1 space-y-5 ${navbarStyle === "full" && !crumbs?.length ? "mt-5" : ""}`}>
+			<div
+				className={`flex flex-col flex-1 space-y-5 ${navbarStyle === "full" && !crumbs?.length ? "mt-5" : ""}`}
+			>
 				{children}
 			</div>
 		</div>
