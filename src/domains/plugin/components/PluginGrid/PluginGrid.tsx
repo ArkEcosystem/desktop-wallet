@@ -28,7 +28,7 @@ export const PluginGrid = ({
 			<PluginCard
 				key={plugin.id}
 				plugin={plugin}
-				onClick={() => onSelect(plugin)}
+				onClick={() => onSelect(plugin.id)}
 				onDelete={() => onDelete(plugin)}
 			/>,
 		);

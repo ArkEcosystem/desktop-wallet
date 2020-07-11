@@ -5,12 +5,16 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Icon } from "app/components/Icon";
 import { SearchBarPluginFilters } from "app/components/SearchBar/SearchBarPluginFilters";
+import { useActiveProfile } from "app/hooks/env";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
+
+import { paths } from "../../data";
 
 type PluginManagerHomeProps = {
 	onDelete: any;
@@ -27,6 +31,11 @@ const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
 	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
+
+	const handleSelectPlugin = (pluginId: string) =>
+		history.push(`/profiles/${activeProfile?.id()}/plugins/${pluginId}`);
 
 	const plugins = [];
 	for (let i = 0; i < 4; i++) {
@@ -75,7 +84,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
-						onSelect={() => console.log("selected")}
+						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
@@ -100,7 +109,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
-						onSelect={() => console.log("selected")}
+						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
@@ -115,7 +124,7 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}
-						onSelect={() => console.log("selected")}
+						onSelect={handleSelectPlugin}
 						onDelete={onDelete}
 						withPagination={false}
 					/>
@@ -133,6 +142,11 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const [currentView, setCurrentView] = React.useState("home");
 	const [viewType, setViewType] = React.useState("grid");
 	const [installPlugin, setInstallPlugin] = React.useState(false);
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
+
+	const handleSelectPlugin = (pluginId: string) =>
+		history.push(`/profiles/${activeProfile?.id()}/plugins/${pluginId}`);
 
 	const plugins = [];
 	for (let i = 0; i < 10; i++) {
@@ -227,7 +241,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 						</h2>
 						<PluginGrid
 							plugins={plugins}
-							onSelect={() => console.log("selected")}
+							onSelect={handleSelectPlugin}
 							onDelete={() => console.log("delete")}
 							className="mt-6"
 						/>
@@ -247,8 +261,5 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 };
 
 PluginManager.defaultProps = {
-	paths: {
-		featured: "",
-		topRated: "",
-	},
+	paths,
 };
