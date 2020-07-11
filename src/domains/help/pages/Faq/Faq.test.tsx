@@ -13,18 +13,22 @@ import { faqArticles } from "../../data";
 import { Faq } from "./Faq";
 
 describe("Faq", () => {
-	const history = createMemoryHistory();
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+	const history = createMemoryHistory();
+	const categoryURL = "/profiles/qwe123/support/categories/portfolio";
+
+	history.push(categoryURL);
 
 	it("should render faq portfolio category page", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
+				<Route path="/profiles/:profileId/support/categories/:categoryId">
 					<Faq articles={faqArticles} />
 				</Route>
 			</EnvironmentContext.Provider>,
 			{
-				routes: [],
+				routes: [categoryURL],
 				history,
 			},
 		);

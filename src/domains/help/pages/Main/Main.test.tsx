@@ -3,6 +3,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentContext } from "app/contexts";
 import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { renderWithRouter } from "testing-library";
@@ -14,6 +15,11 @@ import { Main } from "./Main";
 describe("SupportPage", () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
+	const history = createMemoryHistory();
+	const supportURL = "/profiles/qwe123/support";
+
+	history.push(supportURL);
+
 	it("should render empty main support page", () => {
 		const { container } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
@@ -21,6 +27,10 @@ describe("SupportPage", () => {
 					<Main />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [supportURL],
+				history,
+			},
 		);
 
 		expect(container).toMatchSnapshot();
@@ -33,6 +43,10 @@ describe("SupportPage", () => {
 					<Main categories={categories} />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [supportURL],
+				history,
+			},
 		);
 
 		expect(container).toMatchSnapshot();
@@ -45,6 +59,10 @@ describe("SupportPage", () => {
 					<Main helpfulArticles={helpfulArticles} />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [supportURL],
+				history,
+			},
 		);
 
 		expect(container).toMatchSnapshot();
@@ -57,6 +75,10 @@ describe("SupportPage", () => {
 					<Main popularArticles={popularArticles} />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [supportURL],
+				history,
+			},
 		);
 
 		expect(container).toMatchSnapshot();
@@ -69,6 +91,10 @@ describe("SupportPage", () => {
 					<Main newestArticles={newestArticles} />
 				</Route>
 			</EnvironmentContext.Provider>,
+			{
+				routes: [supportURL],
+				history,
+			},
 		);
 
 		expect(container).toMatchSnapshot();
