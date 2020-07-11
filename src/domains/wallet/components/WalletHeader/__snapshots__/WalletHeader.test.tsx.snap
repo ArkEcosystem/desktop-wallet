@@ -6,16 +6,51 @@ exports[`WalletHeader should delete wallet 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
+      class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="flex items-center space-x-4"
+        class="container flex items-center px-14 mx-auto justify-between"
       >
         <div
-          class="flex"
+          class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            class="flex"
+          >
+            <div
+              class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="abc"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                  title="abc"
+                />
+              </div>
+            </div>
+          </div>
+          <h2
+            class="mb-0 text-white"
+            data-testid="WalletHeader__name"
+          />
+          <span
+            data-testid="WalletHeader__ledger"
           >
             <div
               class="sc-AxiKw dzBdqj text-theme-neutral-dark"
@@ -23,183 +58,160 @@ exports[`WalletHeader should delete wallet 1`] = `
               width="1em"
             >
               <svg>
-                ark.svg
+                ledger.svg
               </svg>
             </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
-            data-testid="Avatar"
+          </span>
+          <span
+            data-testid="WalletHeader__multisig"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="abc"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                title="abc"
-              />
-            </div>
-          </div>
-        </div>
-        <h2
-          class="mb-0 text-white"
-          data-testid="WalletHeader__name"
-        />
-        <span
-          data-testid="WalletHeader__ledger"
-        >
-          <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              ledger.svg
-            </svg>
-          </div>
-        </span>
-        <span
-          data-testid="WalletHeader__multisig"
-        >
-          <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </span>
-      </div>
-      <div
-        class="flex items-stretch space-x-2"
-      >
-        <button
-          class="px-3 text-theme-neutral-dark"
-          data-testid="WalletHeader__star-button"
-        >
-          <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              star.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="WalletHeader__send-button"
-          type="button"
-        >
-          Send
-        </button>
-        <div
-          data-testid="WalletHeader__more-button"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <button
-              class="sc-AxjAm kwTlRm text-left"
-              color="primary"
-              type="button"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ul
-      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
-    >
-      <li
-        class="space-y-2"
-      >
-        <div
-          class="inline-flex items-center space-x-2"
-        >
-          <p
-            class="font-semibold text-sm text-theme-neutral-dark"
-          >
-            Address
-          </p>
-          <label
-            class="flex"
-          >
-            <input
-              class="sc-AxhUy rBBWa"
-              data-testid="WalletHeader__toggle"
-              disabled=""
-              type="checkbox"
-            />
-            <div
-              class="sc-AxgMl hwTgHl"
-            >
-              <span
-                class="sc-AxheI hZHhjt"
-              />
-            </div>
-          </label>
-          <p
-            class="font-semibold text-sm text-theme-neutral-light"
-          >
-            Public Key
-          </p>
-        </div>
-        <div>
-          <p
-            class="inline-block text-lg font-medium"
-            data-testid="WalletHeader__address-publickey"
-          >
-            abc
-          </p>
-          <button
-            class="inline-block px-3 text-theme-neutral focus:outline-none"
-            data-testid="WalletHeader__copy-button"
-          >
-            <div
-              class="sc-AxiKw dzBdqj text-theme-primary-400"
+              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
               height="1em"
               width="1em"
             >
               <svg>
-                copy.svg
+                multisig.svg
+              </svg>
+            </div>
+          </span>
+        </div>
+        <div
+          class="flex items-stretch space-x-2"
+        >
+          <button
+            class="px-3 text-theme-neutral-dark"
+            data-testid="WalletHeader__star-button"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                star.svg
               </svg>
             </div>
           </button>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            data-testid="WalletHeader__send-button"
+            type="button"
+          >
+            Send
+          </button>
+          <div
+            data-testid="WalletHeader__more-button"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="sc-AxjAm kwTlRm text-left"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
-      </li>
-      <li
-        class="pl-8 space-y-2"
+      </div>
+    </div>
+    <div
+      class="sc-fzoLsD eOOSMs"
+    >
+      <div
+        class="container py-16 mx-auto px-14"
       >
-        <p
-          class="text-sm font-semibold text-theme-neutral-dark"
+        <ul
+          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
         >
-          Balance
-        </p>
-        <p
-          class="text-lg font-medium"
-          data-testid="WalletHeader__balance"
-        >
-          0
-        </p>
-      </li>
-    </ul>
+          <li
+            class="space-y-2"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <p
+                class="font-semibold text-sm text-theme-neutral-dark"
+              >
+                Address
+              </p>
+              <label
+                class="flex"
+              >
+                <input
+                  class="sc-fzpans bPktWT"
+                  data-testid="WalletHeader__toggle"
+                  disabled=""
+                  type="checkbox"
+                />
+                <div
+                  class="sc-fzplWN gYRoqz"
+                >
+                  <span
+                    class="sc-fznyAO fvzGyp"
+                  />
+                </div>
+              </label>
+              <p
+                class="font-semibold text-sm text-theme-neutral-light"
+              >
+                Public Key
+              </p>
+            </div>
+            <div>
+              <p
+                class="inline-block text-lg font-medium"
+                data-testid="WalletHeader__address-publickey"
+              >
+                abc
+              </p>
+              <button
+                class="inline-block px-3 text-theme-neutral focus:outline-none"
+                data-testid="WalletHeader__copy-button"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    copy.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </li>
+          <li
+            class="pl-8 space-y-2"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral-dark"
+            >
+              Balance
+            </p>
+            <p
+              class="text-lg font-medium"
+              data-testid="WalletHeader__balance"
+            >
+              0
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </DocumentFragment>
 `;
@@ -210,174 +222,186 @@ exports[`WalletHeader should render 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
+      class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="flex items-center space-x-4"
+        class="container flex items-center px-14 mx-auto justify-between"
       >
         <div
-          class="flex"
+          class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            class="flex"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+              class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="abc"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                  title="abc"
+                />
+              </div>
+            </div>
+          </div>
+          <h2
+            class="mb-0 text-white"
+            data-testid="WalletHeader__name"
+          />
+        </div>
+        <div
+          class="flex items-stretch space-x-2"
+        >
+          <button
+            class="px-3 text-theme-neutral-dark"
+            data-testid="WalletHeader__star-button"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
               height="1em"
               width="1em"
             >
               <svg>
-                ark.svg
+                star-outline.svg
               </svg>
             </div>
-          </div>
+          </button>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            data-testid="WalletHeader__send-button"
+            type="button"
+          >
+            Send
+          </button>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
-            data-testid="Avatar"
+            data-testid="WalletHeader__more-button"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              <img
-                alt="abc"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                title="abc"
-              />
-            </div>
-          </div>
-        </div>
-        <h2
-          class="mb-0 text-white"
-          data-testid="WalletHeader__name"
-        />
-      </div>
-      <div
-        class="flex items-stretch space-x-2"
-      >
-        <button
-          class="px-3 text-theme-neutral-dark"
-          data-testid="WalletHeader__star-button"
-        >
-          <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              star-outline.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="WalletHeader__send-button"
-          type="button"
-        >
-          Send
-        </button>
-        <div
-          data-testid="WalletHeader__more-button"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <button
-              class="sc-AxjAm kwTlRm text-left"
-              color="primary"
-              type="button"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
+              <button
+                class="sc-AxjAm kwTlRm text-left"
+                color="primary"
+                type="button"
               >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <ul
-      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
+    <div
+      class="sc-fzoLsD eOOSMs"
     >
-      <li
-        class="space-y-2"
+      <div
+        class="container py-16 mx-auto px-14"
       >
-        <div
-          class="inline-flex items-center space-x-2"
+        <ul
+          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
         >
-          <p
-            class="font-semibold text-sm text-theme-neutral-dark"
-          >
-            Address
-          </p>
-          <label
-            class="flex"
-          >
-            <input
-              class="sc-AxhUy rBBWa"
-              data-testid="WalletHeader__toggle"
-              disabled=""
-              type="checkbox"
-            />
-            <div
-              class="sc-AxgMl hwTgHl"
-            >
-              <span
-                class="sc-AxheI hZHhjt"
-              />
-            </div>
-          </label>
-          <p
-            class="font-semibold text-sm text-theme-neutral-light"
-          >
-            Public Key
-          </p>
-        </div>
-        <div>
-          <p
-            class="inline-block text-lg font-medium"
-            data-testid="WalletHeader__address-publickey"
-          >
-            abc
-          </p>
-          <button
-            class="inline-block px-3 text-theme-neutral focus:outline-none"
-            data-testid="WalletHeader__copy-button"
+          <li
+            class="space-y-2"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-primary-400"
-              height="1em"
-              width="1em"
+              class="inline-flex items-center space-x-2"
             >
-              <svg>
-                copy.svg
-              </svg>
+              <p
+                class="font-semibold text-sm text-theme-neutral-dark"
+              >
+                Address
+              </p>
+              <label
+                class="flex"
+              >
+                <input
+                  class="sc-fzpans bPktWT"
+                  data-testid="WalletHeader__toggle"
+                  disabled=""
+                  type="checkbox"
+                />
+                <div
+                  class="sc-fzplWN gYRoqz"
+                >
+                  <span
+                    class="sc-fznyAO fvzGyp"
+                  />
+                </div>
+              </label>
+              <p
+                class="font-semibold text-sm text-theme-neutral-light"
+              >
+                Public Key
+              </p>
             </div>
-          </button>
-        </div>
-      </li>
-      <li
-        class="pl-8 space-y-2"
-      >
-        <p
-          class="text-sm font-semibold text-theme-neutral-dark"
-        >
-          Balance
-        </p>
-        <p
-          class="text-lg font-medium"
-          data-testid="WalletHeader__balance"
-        >
-          0
-        </p>
-      </li>
-    </ul>
+            <div>
+              <p
+                class="inline-block text-lg font-medium"
+                data-testid="WalletHeader__address-publickey"
+              >
+                abc
+              </p>
+              <button
+                class="inline-block px-3 text-theme-neutral focus:outline-none"
+                data-testid="WalletHeader__copy-button"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    copy.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </li>
+          <li
+            class="pl-8 space-y-2"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral-dark"
+            >
+              Balance
+            </p>
+            <p
+              class="text-lg font-medium"
+              data-testid="WalletHeader__balance"
+            >
+              0
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </DocumentFragment>
 `;
@@ -388,16 +412,51 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
+      class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="flex items-center space-x-4"
+        class="container flex items-center px-14 mx-auto justify-between"
       >
         <div
-          class="flex"
+          class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            class="flex"
+          >
+            <div
+              class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="abc"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                  title="abc"
+                />
+              </div>
+            </div>
+          </div>
+          <h2
+            class="mb-0 text-white"
+            data-testid="WalletHeader__name"
+          />
+          <span
+            data-testid="WalletHeader__ledger"
           >
             <div
               class="sc-AxiKw dzBdqj text-theme-neutral-dark"
@@ -405,183 +464,160 @@ exports[`WalletHeader should show modifiers 1`] = `
               width="1em"
             >
               <svg>
-                ark.svg
+                ledger.svg
               </svg>
             </div>
-          </div>
-          <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
-            data-testid="Avatar"
+          </span>
+          <span
+            data-testid="WalletHeader__multisig"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="abc"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                title="abc"
-              />
-            </div>
-          </div>
-        </div>
-        <h2
-          class="mb-0 text-white"
-          data-testid="WalletHeader__name"
-        />
-        <span
-          data-testid="WalletHeader__ledger"
-        >
-          <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              ledger.svg
-            </svg>
-          </div>
-        </span>
-        <span
-          data-testid="WalletHeader__multisig"
-        >
-          <div
-            class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              multisig.svg
-            </svg>
-          </div>
-        </span>
-      </div>
-      <div
-        class="flex items-stretch space-x-2"
-      >
-        <button
-          class="px-3 text-theme-neutral-dark"
-          data-testid="WalletHeader__star-button"
-        >
-          <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              star.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="WalletHeader__send-button"
-          type="button"
-        >
-          Send
-        </button>
-        <div
-          data-testid="WalletHeader__more-button"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <button
-              class="sc-AxjAm kwTlRm text-left"
-              color="primary"
-              type="button"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ul
-      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
-    >
-      <li
-        class="space-y-2"
-      >
-        <div
-          class="inline-flex items-center space-x-2"
-        >
-          <p
-            class="font-semibold text-sm text-theme-neutral-dark"
-          >
-            Address
-          </p>
-          <label
-            class="flex"
-          >
-            <input
-              class="sc-AxhUy rBBWa"
-              data-testid="WalletHeader__toggle"
-              disabled=""
-              type="checkbox"
-            />
-            <div
-              class="sc-AxgMl hwTgHl"
-            >
-              <span
-                class="sc-AxheI hZHhjt"
-              />
-            </div>
-          </label>
-          <p
-            class="font-semibold text-sm text-theme-neutral-light"
-          >
-            Public Key
-          </p>
-        </div>
-        <div>
-          <p
-            class="inline-block text-lg font-medium"
-            data-testid="WalletHeader__address-publickey"
-          >
-            abc
-          </p>
-          <button
-            class="inline-block px-3 text-theme-neutral focus:outline-none"
-            data-testid="WalletHeader__copy-button"
-          >
-            <div
-              class="sc-AxiKw dzBdqj text-theme-primary-400"
+              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
               height="1em"
               width="1em"
             >
               <svg>
-                copy.svg
+                multisig.svg
+              </svg>
+            </div>
+          </span>
+        </div>
+        <div
+          class="flex items-stretch space-x-2"
+        >
+          <button
+            class="px-3 text-theme-neutral-dark"
+            data-testid="WalletHeader__star-button"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                star.svg
               </svg>
             </div>
           </button>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            data-testid="WalletHeader__send-button"
+            type="button"
+          >
+            Send
+          </button>
+          <div
+            data-testid="WalletHeader__more-button"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <button
+                class="sc-AxjAm kwTlRm text-left"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
-      </li>
-      <li
-        class="pl-8 space-y-2"
+      </div>
+    </div>
+    <div
+      class="sc-fzoLsD eOOSMs"
+    >
+      <div
+        class="container py-16 mx-auto px-14"
       >
-        <p
-          class="text-sm font-semibold text-theme-neutral-dark"
+        <ul
+          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
         >
-          Balance
-        </p>
-        <p
-          class="text-lg font-medium"
-          data-testid="WalletHeader__balance"
-        >
-          0
-        </p>
-      </li>
-    </ul>
+          <li
+            class="space-y-2"
+          >
+            <div
+              class="inline-flex items-center space-x-2"
+            >
+              <p
+                class="font-semibold text-sm text-theme-neutral-dark"
+              >
+                Address
+              </p>
+              <label
+                class="flex"
+              >
+                <input
+                  class="sc-fzpans bPktWT"
+                  data-testid="WalletHeader__toggle"
+                  disabled=""
+                  type="checkbox"
+                />
+                <div
+                  class="sc-fzplWN gYRoqz"
+                >
+                  <span
+                    class="sc-fznyAO fvzGyp"
+                  />
+                </div>
+              </label>
+              <p
+                class="font-semibold text-sm text-theme-neutral-light"
+              >
+                Public Key
+              </p>
+            </div>
+            <div>
+              <p
+                class="inline-block text-lg font-medium"
+                data-testid="WalletHeader__address-publickey"
+              >
+                abc
+              </p>
+              <button
+                class="inline-block px-3 text-theme-neutral focus:outline-none"
+                data-testid="WalletHeader__copy-button"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    copy.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </li>
+          <li
+            class="pl-8 space-y-2"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral-dark"
+            >
+              Balance
+            </p>
+            <p
+              class="text-lg font-medium"
+              data-testid="WalletHeader__balance"
+            >
+              0
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </DocumentFragment>
 `;
@@ -592,158 +628,170 @@ exports[`WalletHeader should show publicKey 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
+      class="py-8 bg-theme-neutral-900"
     >
       <div
-        class="flex items-center space-x-4"
+        class="container flex items-center px-14 mx-auto justify-between"
       >
         <div
-          class="flex"
+          class="flex items-center space-x-4"
         >
           <div
-            class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            class="flex"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+              class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
+            >
+              <div
+                class="sc-AxiKw dzBdqj text-theme-neutral-dark"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full overflow-hidden rounded-full"
+              >
+                <img
+                  alt="abc"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
+                  title="abc"
+                />
+              </div>
+            </div>
+          </div>
+          <h2
+            class="mb-0 text-white"
+            data-testid="WalletHeader__name"
+          />
+        </div>
+        <div
+          class="flex items-stretch space-x-2"
+        >
+          <button
+            class="px-3 text-theme-neutral-dark"
+            data-testid="WalletHeader__star-button"
+          >
+            <div
+              class="sc-AxiKw dzBdqj"
               height="1em"
               width="1em"
             >
               <svg>
-                ark.svg
+                star-outline.svg
               </svg>
             </div>
-          </div>
+          </button>
+          <button
+            class="sc-AxjAm ddQVWI"
+            color="primary"
+            data-testid="WalletHeader__send-button"
+            type="button"
+          >
+            Send
+          </button>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
-            data-testid="Avatar"
+            data-testid="WalletHeader__more-button"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              <img
-                alt="abc"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                title="abc"
-              />
-            </div>
-          </div>
-        </div>
-        <h2
-          class="mb-0 text-white"
-          data-testid="WalletHeader__name"
-        />
-      </div>
-      <div
-        class="flex items-stretch space-x-2"
-      >
-        <button
-          class="px-3 text-theme-neutral-dark"
-          data-testid="WalletHeader__star-button"
-        >
-          <div
-            class="sc-AxiKw dzBdqj"
-            height="1em"
-            width="1em"
-          >
-            <svg>
-              star-outline.svg
-            </svg>
-          </div>
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="WalletHeader__send-button"
-          type="button"
-        >
-          Send
-        </button>
-        <div
-          data-testid="WalletHeader__more-button"
-        >
-          <div
-            class="relative"
-            data-testid="dropdown__toggle"
-          >
-            <button
-              class="sc-AxjAm kwTlRm text-left"
-              color="primary"
-              type="button"
-            >
-              <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
+              <button
+                class="sc-AxjAm kwTlRm text-left"
+                color="primary"
+                type="button"
               >
-                <svg>
-                  settings.svg
-                </svg>
-              </div>
-            </button>
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <ul
-      class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
+    <div
+      class="sc-fzoLsD eOOSMs"
     >
-      <li
-        class="space-y-2"
+      <div
+        class="container py-16 mx-auto px-14"
       >
-        <div
-          class="inline-flex items-center space-x-2"
+        <ul
+          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
         >
-          <p
-            class="font-semibold text-sm text-theme-neutral-light"
-          >
-            Address
-          </p>
-          <label
-            class="flex"
-          >
-            <input
-              class="sc-AxhUy rBBWa"
-              data-testid="WalletHeader__toggle"
-              type="checkbox"
-            />
-            <div
-              class="sc-AxgMl hwTgHl"
-            >
-              <span
-                class="sc-AxheI hZHhjt"
-              />
-            </div>
-          </label>
-          <p
-            class="font-semibold text-sm text-theme-neutral-dark"
-          >
-            Public Key
-          </p>
-        </div>
-        <div>
-          <p
-            class="inline-block text-lg font-medium"
-            data-testid="WalletHeader__address-publickey"
-          >
-            123
-          </p>
-          <button
-            class="inline-block px-3 text-theme-neutral focus:outline-none"
-            data-testid="WalletHeader__copy-button"
+          <li
+            class="space-y-2"
           >
             <div
-              class="sc-AxiKw dzBdqj text-theme-primary-400"
-              height="1em"
-              width="1em"
+              class="inline-flex items-center space-x-2"
             >
-              <svg>
-                copy.svg
-              </svg>
+              <p
+                class="font-semibold text-sm text-theme-neutral-light"
+              >
+                Address
+              </p>
+              <label
+                class="flex"
+              >
+                <input
+                  class="sc-fzpans bPktWT"
+                  data-testid="WalletHeader__toggle"
+                  type="checkbox"
+                />
+                <div
+                  class="sc-fzplWN gYRoqz"
+                >
+                  <span
+                    class="sc-fznyAO fvzGyp"
+                  />
+                </div>
+              </label>
+              <p
+                class="font-semibold text-sm text-theme-neutral-dark"
+              >
+                Public Key
+              </p>
             </div>
-          </button>
-        </div>
-      </li>
-    </ul>
+            <div>
+              <p
+                class="inline-block text-lg font-medium"
+                data-testid="WalletHeader__address-publickey"
+              >
+                123
+              </p>
+              <button
+                class="inline-block px-3 text-theme-neutral focus:outline-none"
+                data-testid="WalletHeader__copy-button"
+              >
+                <div
+                  class="sc-AxiKw dzBdqj text-theme-primary-400"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    copy.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </DocumentFragment>
 `;

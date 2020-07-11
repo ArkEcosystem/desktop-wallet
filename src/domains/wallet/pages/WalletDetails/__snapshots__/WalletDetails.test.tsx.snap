@@ -3,14 +3,164 @@
 exports[`WalletDetails should render 1`] = `
 <DocumentFragment>
   <div
-    class="relative"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLsD jXsxtN"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            />
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxjAm jmgDQY"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-fzozJi kyQIPj flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div
-      class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
       data-testid="breadcrumbs__wrapper"
     >
       <div
-        class="sc-AxirZ hVzDKK"
+        class="sc-AxjAm jMosRN"
         height="10"
         width="19"
       >
@@ -31,500 +181,39 @@ exports[`WalletDetails should render 1`] = `
         </a>
       </div>
     </div>
-    <header
-      data-testid="WalletHeader"
-    >
-      <div
-        class="flex items-center justify-between px-12 py-6 bg-theme-neutral-900"
-      >
-        <div
-          class="flex items-center space-x-4"
-        >
-          <div
-            class="flex"
-          >
-            <div
-              class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-dark"
-            >
-              <div
-                class="sc-AxirZ iQaTP text-theme-neutral-dark"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full overflow-hidden rounded-full"
-              >
-                <img
-                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                />
-              </div>
-            </div>
-          </div>
-          <h2
-            class="mb-0 text-white"
-            data-testid="WalletHeader__name"
-          >
-            ARK Wallet 1
-          </h2>
-          <span
-            data-testid="WalletHeader__ledger"
-          >
-            <div
-              class="sc-AxirZ iQaTP text-theme-neutral-dark"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </span>
-          <span
-            data-testid="WalletHeader__multisig"
-          >
-            <div
-              class="sc-AxirZ iQaTP text-theme-neutral-dark"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </span>
-        </div>
-        <div
-          class="flex items-stretch space-x-2"
-        >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
-          >
-            <div
-              class="sc-AxirZ iQaTP"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-Axmtr BZusx"
-            color="primary"
-            data-testid="WalletHeader__send-button"
-            type="button"
-          >
-            Send
-          </button>
-          <div
-            data-testid="WalletHeader__more-button"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <button
-                class="sc-Axmtr bgzyQn text-left"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    settings.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <ul
-        class="flex items-stretch px-12 py-10 divide-x-1 divide-theme-neutral-300 space-x-8"
-      >
-        <li
-          class="space-y-2"
-        >
-          <div
-            class="inline-flex items-center space-x-2"
-          >
-            <p
-              class="font-semibold text-sm text-theme-neutral-dark"
-            >
-              Address
-            </p>
-            <label
-              class="flex"
-            >
-              <input
-                class="sc-fzozJi ffhyTJ"
-                data-testid="WalletHeader__toggle"
-                type="checkbox"
-              />
-              <div
-                class="sc-fzoLsD iIErui"
-              >
-                <span
-                  class="sc-fzpans cHEAkY"
-                />
-              </div>
-            </label>
-            <p
-              class="font-semibold text-sm text-theme-neutral-light"
-            >
-              Public Key
-            </p>
-          </div>
-          <div>
-            <p
-              class="inline-block text-lg font-medium"
-              data-testid="WalletHeader__address-publickey"
-            >
-              ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-            </p>
-            <button
-              class="inline-block px-3 text-theme-neutral focus:outline-none"
-              data-testid="WalletHeader__copy-button"
-            >
-              <div
-                class="sc-AxirZ iQaTP text-theme-primary-400"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  copy.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </li>
-        <li
-          class="pl-8 space-y-2"
-        >
-          <p
-            class="text-sm font-semibold text-theme-neutral-dark"
-          >
-            Balance
-          </p>
-          <p
-            class="text-lg font-medium"
-            data-testid="WalletHeader__balance"
-          >
-            120 ARK
-          </p>
-        </li>
-        <li
-          class="pl-8 space-y-2"
-        >
-          <p
-            class="text-sm font-semibold text-theme-neutral-dark"
-          >
-            Fiat
-          </p>
-          <p
-            class="text-lg font-medium"
-            data-testid="WalletHeader__currency-balance"
-          >
-            980 USD
-          </p>
-        </li>
-      </ul>
-    </header>
     <div
-      class="h-4 bg-theme-neutral-contrast"
-    />
-    <section
-      class="px-12 py-8"
-      data-testid="WalletVote"
+      class="flex flex-col flex-1 space-y-5 "
     >
-      <div
-        class="flex items-center justify-between"
-      >
-        <h2
-          class="font-bold"
-        >
-          My Vote
-        </h2>
-        <button
-          class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
-          data-testid="WalletVote__toggle"
-        >
-          <span>
-            Hide
-          </span>
-          <span
-            class="sc-AxheI iRQbgq"
-          >
-            <div
-              class="sc-AxirZ fttODj"
-              height="10"
-              width="10"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </span>
-        </button>
-      </div>
-      <div
-        aria-hidden="false"
-        data-testid="Collapse"
-        style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+      <header
+        data-testid="WalletHeader"
       >
         <div
-          class="px-1 py-4 grid grid-flow-row row-gap-6"
+          class="py-8 bg-theme-neutral-900"
         >
           <div
-            class="flex items-center justify-between"
-            data-testid="WalletVote__delegate"
+            class="container flex items-center px-14 mx-auto justify-between"
           >
             <div
               class="flex items-center space-x-4"
             >
               <div
-                class="flex items-center -space-x-2"
+                class="flex"
               >
                 <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                  class="sc-AxhCb dtyYr -mr-1 border-theme-neutral-dark"
                 >
                   <div
-                    class="sc-AxirZ iQaTP"
+                    class="sc-AxjAm cpczEI text-theme-neutral-dark"
                     height="1em"
                     width="1em"
                   >
                     <svg>
-                      voted.svg
+                      ark.svg
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full overflow-hidden rounded-full"
-                  >
-                    <img
-                      alt="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
-                      title="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p
-                  class="text-sm font-semibold text-theme-neutral space-y-1"
-                >
-                  Address Delegate
-                </p>
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
-                  >
-                    Delegate 3
-                  </span>
-                  <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    Abuzhu…FgETuW
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center"
-            >
-              <ul
-                class="flex items-stretch divide-x-1 divide-theme-neutral-300"
-              >
-                <li
-                  class="flex flex-col items-center px-10 space-y-1"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Rank
-                  </p>
-                  <span
-                    class="font-bold text-theme-neutral-dark"
-                    data-testid="WalletVote__delegate__rank"
-                  >
-                    #1
-                  </span>
-                </li>
-                <li
-                  class="flex flex-col items-center px-10 space-y-1"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Explorer
-                  </p>
-                  <a
-                    data-testid="WalletVote__delegate__explorer"
-                    href="https://dexplorer.ark.io"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP text-2xl text-theme-primary"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        explorer.svg
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-                <li
-                  class="flex flex-col items-center px-10 space-y-1"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Marketpl.
-                  </p>
-                  <a
-                    data-testid="WalletVote__delegate__msq"
-                    href="https://marketsquare.ark.io"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP text-xl text-theme-primary"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        link.svg
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-                <li
-                  class="flex flex-col items-center px-10 space-y-1"
-                >
-                  <p
-                    class="text-sm font-semibold text-theme-neutral"
-                  >
-                    Status
-                  </p>
-                  <div
-                    class="sc-AxirZ iQaTP text-theme-success"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      ok.svg
-                    </svg>
-                  </div>
-                </li>
-              </ul>
-              <button
-                class="sc-Axmtr gOjuLj"
-                color="primary"
-                data-testid="WalletVote__delegate__unvote"
-                type="button"
-              >
-                Unvote
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div
-      class="h-4 bg-theme-neutral-contrast"
-    />
-    <section
-      class="px-12 py-8"
-      data-testid="WalletRegistrations"
-    >
-      <div
-        class="flex items-center justify-between"
-      >
-        <h2
-          class="font-bold"
-        >
-          Registrations
-        </h2>
-        <button
-          class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
-          data-testid="WalletRegistrations__toggle"
-        >
-          <span>
-            Hide
-          </span>
-          <span
-            class="sc-AxheI iRQbgq"
-          >
-            <div
-              class="sc-AxirZ fttODj"
-              height="10"
-              width="10"
-            >
-              <svg>
-                chevron-down.svg
-              </svg>
-            </div>
-          </span>
-        </button>
-      </div>
-      <div
-        aria-hidden="false"
-        data-testid="Collapse"
-        style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
-      >
-        <div
-          class="flex items-center justify-between px-1 py-4"
-        >
-          <div
-            class="flex items-center divide-x-1 divide-theme-neutral-light"
-          >
-            <div
-              class="flex items-center pr-8 space-x-4"
-            >
-              <div
-                class="flex items-center -space-x-2"
-              >
-                <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP text-xl"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      delegate.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 hWnxij"
                   data-testid="Avatar"
                 >
                   <div
@@ -538,637 +227,889 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                 </div>
               </div>
-              <div>
-                <p
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Delegate
-                </p>
-                <p
-                  class="font-semibold"
-                  data-testid="WalletRegistrations__delegate"
-                >
-                  Delegate 3
-                </p>
-              </div>
-            </div>
-            <div
-              class="flex items-center px-8 space-x-4"
-            >
-              <div
-                class="flex items-center"
+              <h2
+                class="mb-0 text-white"
+                data-testid="WalletHeader__name"
               >
-                <div
-                  class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP text-xl"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      business.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <p
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Business
-                </p>
-                <p
-                  class="font-semibold"
-                  data-testid="WalletRegistrations__business"
-                >
-                  ROBank Eco
-                </p>
-              </div>
-            </div>
-            <div
-              class="px-8"
-            >
-              <div
-                class="flex items-center -space-x-2"
-                data-testid="WalletRegistrations__icon-list"
-              >
-                <div
-                  class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                  data-testid="WalletRegistrations__icon-list__icon"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP text-xl"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      key.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                  data-testid="WalletRegistrations__icon-list__icon"
-                >
-                  <div
-                    class="sc-AxirZ iQaTP text-xl"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      bridgechain.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                  data-testid="WalletRegistrations__icon-list__rest"
-                >
-                  +1
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="space-x-2"
-          >
-            <button
-              class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
-              data-testid="WalletRegistrations__show-all"
-            >
-              Show all
-            </button>
-            <button
-              class="sc-Axmtr gOjuLj"
-              color="primary"
-              data-testid="WalletRegistrations__register"
-              type="button"
-            >
-              Register
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div
-      class="h-4 bg-theme-neutral-contrast"
-    />
-    <div
-      class="px-12 py-8"
-    >
-      <h2
-        class="font-bold"
-      >
-        Pending Transactions
-      </h2>
-      <div
-        class="sc-AxiKw bvfChE"
-        role="table"
-      >
-        <table
-          class="table-auto"
-        >
-          <thead>
-            <tr
-              role="row"
-            >
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--0"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top undefined"
-                >
-                  <div>
-                    Date
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--1"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top invisible"
-                >
-                  <div>
-                    Type
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--2"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top undefined"
-                >
-                  <div>
-                    Wallet Address
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--3"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top float-right"
-                >
-                  <div>
-                    Amount
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--4"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top float-right"
-                >
-                  <div>
-                    Fiat Value
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            role="rowgroup"
-          >
-            <tr
-              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-              data-testid="transaction__row"
-            >
-              <td
-                class="w-48 py-1 text-sm text-theme-neutral-600"
-              >
-                 17 Mar 2020 22:02:10 
-              </td>
-              <td
-                class="w-32 py-5 mt-1"
-              >
-                <div
-                  class="flex"
-                >
-                  <div
-                    class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-light -mr-1"
-                  >
-                    <div
-                      class="sc-AxirZ RbXVX"
-                      height="40"
-                      width="40"
-                    >
-                      <svg>
-                        received.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full overflow-hidden rounded-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td
-                class="w-56"
-              >
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
-                  >
-                    My Wallet
-                  </span>
-                  <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    ASuusXSW9k…P6T9GQ3kqT
-                  </span>
-                </div>
-              </td>
-              <td
-                class="py-1 text-sm font-bold text-center"
-              />
-              <td
-                class="text-sm text-right w-36"
-              >
-                <div
-                  class="sc-AxgMl bNYTxW"
-                  color="success"
-                >
-                  100 ARK
-                </div>
-              </td>
-              <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <div>
-                  1,000,000 USD
-                </div>
-              </td>
-            </tr>
-            <tr
-              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-              data-testid="transaction__row"
-            >
-              <td
-                class="w-48 py-1 text-sm text-theme-neutral-600"
-              >
-                 17 Mar 2020 22:02:10 
-              </td>
-              <td
-                class="w-32 py-5 mt-1"
-              >
-                <div
-                  class="flex"
-                >
-                  <div
-                    class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
-                  >
-                    <div
-                      class="sc-AxirZ RbXVX"
-                      height="40"
-                      width="40"
-                    >
-                      <svg>
-                        sent.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full overflow-hidden rounded-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td
-                class="w-56"
-              >
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
-                  >
-                    My Wallet
-                  </span>
-                  <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    ASuusXSW9k…P6T9GQ3kqT
-                  </span>
-                </div>
-              </td>
-              <td
-                class="py-1 text-sm font-bold text-center"
-              />
-              <td
-                class="text-sm text-right w-36"
-              >
-                <div
-                  class="sc-AxgMl eXChH"
-                  color="danger"
-                >
-                  - 100 ARK
-                </div>
-              </td>
-              <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <div>
-                  1,000,000 USD
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div
-      class="px-12 pt-4 pb-20"
-    >
-      <h2
-        class="font-bold"
-      >
-        Transaction History
-      </h2>
-      <div
-        class="sc-AxiKw bvfChE"
-        role="table"
-      >
-        <table
-          class="table-auto"
-        >
-          <thead>
-            <tr
-              role="row"
-            >
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--0"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top undefined"
-                >
-                  <div>
-                    Date
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--1"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top invisible"
-                >
-                  <div>
-                    Type
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--2"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top undefined"
-                >
-                  <div>
-                    Wallet Address
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--3"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top float-right"
-                >
-                  <div>
-                    Amount
-                  </div>
-                </div>
-              </th>
-              <th
-                class="text-sm text-left select-none text-theme-neutral"
-                colspan="1"
-                data-testid="table__th--4"
-                role="columnheader"
-              >
-                <div
-                  class="flex flex-inline align-top float-right"
-                >
-                  <div>
-                    Fiat Value
-                  </div>
-                </div>
-              </th>
-            </tr>
-          </thead>
-          <tbody
-            role="rowgroup"
-          >
-            <tr
-              class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-              data-testid="transaction__row"
-            >
-              <td
-                class="w-48 py-1 text-sm text-theme-neutral-600"
-              >
-                 17 Mar 2020 22:02:10 
-              </td>
-              <td
-                class="w-32 py-5 mt-1"
-              >
-                <div
-                  class="flex"
-                >
-                  <div
-                    class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
-                  >
-                    <div
-                      class="sc-AxirZ RbXVX"
-                      height="40"
-                      width="40"
-                    >
-                      <svg>
-                        sent.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-                    data-testid="Avatar"
-                  >
-                    <div
-                      class="w-full h-full overflow-hidden rounded-full"
-                    >
-                      <img
-                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td
-                class="w-56"
-              >
-                <div
-                  class="inline-block truncate align-middle"
-                >
-                  <span
-                    class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                    data-testid="address__wallet-name"
-                  >
-                    My Wallet
-                  </span>
-                  <span
-                    class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    ASuusXSW9k…P6T9GQ3kqT
-                  </span>
-                </div>
-              </td>
-              <td
-                class="py-1 text-sm font-bold text-center"
-              />
-              <td
-                class="text-sm text-right w-36"
-              >
-                <div
-                  class="sc-AxgMl eXChH"
-                  color="danger"
-                >
-                  - 100 ARK
-                </div>
-              </td>
-              <td
-                class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
-              >
-                <div>
-                  1,000,000 USD
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <aside
-      class="absolute bottom-0 z-50 w-full"
-      data-testid="WalletBottomSheetMenu"
-    >
-      <div
-        class="px-6 py-4 theme-dark bg-theme-background"
-        data-testid="WalletBottomSheetMenu__header"
-      >
-        <div
-          class="flex items-center justify-between max-w-4xl mx-auto"
-        >
-          <div>
-            <span
-              class="text-lg font-bold text-theme-neutral-dark"
-            >
-              Your wallets
-            </span>
-            <span
-              class="ml-1 font-bold text-theme-neutral-light"
-              data-testid="WalletBottomSheetMenu__counter"
-            >
-              1
-            </span>
-          </div>
-          <div
-            class="inline-flex items-center space-x-1"
-          >
-            <button
-              class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
-              data-testid="WalletBottomSheetMenu__toggle"
-            >
-              <span>
-                Show
-              </span>
+                ARK Wallet 1
+              </h2>
               <span
-                class="sc-AxheI chvtGo"
+                data-testid="WalletHeader__ledger"
               >
                 <div
-                  class="sc-AxirZ fttODj"
-                  height="10"
-                  width="10"
+                  class="sc-AxjAm cpczEI text-theme-neutral-dark"
+                  height="1em"
+                  width="1em"
                 >
                   <svg>
-                    chevron-down.svg
+                    ledger.svg
                   </svg>
                 </div>
               </span>
-            </button>
+              <span
+                data-testid="WalletHeader__multisig"
+              >
+                <div
+                  class="sc-AxjAm cpczEI text-theme-neutral-dark"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    multisig.svg
+                  </svg>
+                </div>
+              </span>
+            </div>
+            <div
+              class="flex items-stretch space-x-2"
+            >
+              <button
+                class="px-3 text-theme-neutral-dark"
+                data-testid="WalletHeader__star-button"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    star.svg
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="sc-AxheI cqeDRe"
+                color="primary"
+                data-testid="WalletHeader__send-button"
+                type="button"
+              >
+                Send
+              </button>
+              <div
+                data-testid="WalletHeader__more-button"
+              >
+                <div
+                  class="relative"
+                  data-testid="dropdown__toggle"
+                >
+                  <button
+                    class="sc-AxheI gUIVyQ text-left"
+                    color="primary"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxjAm buCJuk"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div
+          class="sc-fzpans ctLZwQ"
+        >
+          <div
+            class="container py-16 mx-auto px-14"
+          >
+            <ul
+              class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+            >
+              <li
+                class="space-y-2"
+              >
+                <div
+                  class="inline-flex items-center space-x-2"
+                >
+                  <p
+                    class="font-semibold text-sm text-theme-neutral-dark"
+                  >
+                    Address
+                  </p>
+                  <label
+                    class="flex"
+                  >
+                    <input
+                      class="sc-fzplWN PCuGu"
+                      data-testid="WalletHeader__toggle"
+                      type="checkbox"
+                    />
+                    <div
+                      class="sc-fznyAO bGwYOL"
+                    >
+                      <span
+                        class="sc-fznKkj kKApaI"
+                      />
+                    </div>
+                  </label>
+                  <p
+                    class="font-semibold text-sm text-theme-neutral-light"
+                  >
+                    Public Key
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="inline-block text-lg font-medium"
+                    data-testid="WalletHeader__address-publickey"
+                  >
+                    ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
+                  </p>
+                  <button
+                    class="inline-block px-3 text-theme-neutral focus:outline-none"
+                    data-testid="WalletHeader__copy-button"
+                  >
+                    <div
+                      class="sc-AxjAm cpczEI text-theme-primary-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        copy.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </li>
+              <li
+                class="pl-8 space-y-2"
+              >
+                <p
+                  class="text-sm font-semibold text-theme-neutral-dark"
+                >
+                  Balance
+                </p>
+                <p
+                  class="text-lg font-medium"
+                  data-testid="WalletHeader__balance"
+                >
+                  120 ARK
+                </p>
+              </li>
+              <li
+                class="pl-8 space-y-2"
+              >
+                <p
+                  class="text-sm font-semibold text-theme-neutral-dark"
+                >
+                  Fiat
+                </p>
+                <p
+                  class="text-lg font-medium"
+                  data-testid="WalletHeader__currency-balance"
+                >
+                  980 USD
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div
+        class="sc-fzpans ctLZwQ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <section
+            data-testid="WalletVote"
+          >
+            <div
+              class="flex items-center justify-between"
+            >
+              <h2
+                class="font-bold"
+              >
+                My Vote
+              </h2>
+              <button
+                class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+                data-testid="WalletVote__toggle"
+              >
+                <span>
+                  Hide
+                </span>
+                <span
+                  class="sc-AxgMl hoQVgY"
+                >
+                  <div
+                    class="sc-AxjAm iepfoc"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+            <div
+              aria-hidden="false"
+              data-testid="Collapse"
+              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+            >
+              <div
+                class="px-1 py-4 grid grid-flow-row row-gap-6"
+              >
+                <div
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
+                >
+                  <div
+                    class="flex items-center space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                            title="AbuzhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p
+                        class="text-sm font-semibold text-theme-neutral space-y-1"
+                      >
+                        Address Delegate
+                      </p>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          Delegate 3
+                        </span>
+                        <span
+                          class="sc-AxiKw bOTXee text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          Abuzhu…FgETuW
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center"
+                  >
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
+                    >
+                      <li
+                        class="flex flex-col items-center px-10 space-y-1"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </p>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #1
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center px-10 space-y-1"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </p>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://dexplorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center px-10 space-y-1"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Marketpl.
+                        </p>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxjAm cpczEI text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center px-10 space-y-1"
+                      >
+                        <p
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </p>
+                        <div
+                          class="sc-AxjAm cpczEI text-theme-success"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ok.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxheI hoJyac"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
       <div
-        aria-hidden="true"
-        data-testid="Collapse"
-        style="height: 0px; opacity: 0; overflow: hidden;"
+        class="sc-fzpans ctLZwQ"
       >
         <div
-          class="px-6 py-8 bg-theme-background"
+          class="container py-16 mx-auto px-14"
         >
-          <div
-            class="max-w-4xl mx-auto"
+          <section
+            data-testid="WalletRegistrations"
           >
             <div
-              class="sc-AxiKw bvfChE"
+              class="flex items-center justify-between"
+            >
+              <h2
+                class="font-bold"
+              >
+                Registrations
+              </h2>
+              <button
+                class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+                data-testid="WalletRegistrations__toggle"
+              >
+                <span>
+                  Hide
+                </span>
+                <span
+                  class="sc-AxgMl hoQVgY"
+                >
+                  <div
+                    class="sc-AxjAm iepfoc"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+            <div
+              aria-hidden="false"
+              data-testid="Collapse"
+              style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+            >
+              <div
+                class="flex items-center justify-between px-1 py-4"
+              >
+                <div
+                  class="flex items-center divide-x-1 divide-theme-neutral-light"
+                >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </p>
+                      <p
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        Delegate 3
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center px-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Business
+                      </p>
+                      <p
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__business"
+                      >
+                        ROBank Eco
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="px-8"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                      data-testid="WalletRegistrations__icon-list"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__icon"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__icon"
+                      >
+                        <div
+                          class="sc-AxjAm cpczEI text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            bridgechain.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__rest"
+                      >
+                        +1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="space-x-2"
+                >
+                  <button
+                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+                    data-testid="WalletRegistrations__show-all"
+                  >
+                    Show all
+                  </button>
+                  <button
+                    class="sc-AxheI hoJyac"
+                    color="primary"
+                    data-testid="WalletRegistrations__register"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div
+        class="sc-fzpans ctLZwQ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <h2
+            class="font-bold"
+          >
+            Pending Transactions
+          </h2>
+          <div
+            class="sc-AxirZ dyYkHQ"
+            role="table"
+          >
+            <table
+              class="table-auto"
+            >
+              <thead>
+                <tr
+                  role="row"
+                >
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--0"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top undefined"
+                    >
+                      <div>
+                        Date
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--1"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top invisible"
+                    >
+                      <div>
+                        Type
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--2"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top undefined"
+                    >
+                      <div>
+                        Wallet Address
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top float-right"
+                    >
+                      <div>
+                        Amount
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--4"
+                    role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top float-right"
+                    >
+                      <div>
+                        Fiat Value
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                role="rowgroup"
+              >
+                <tr
+                  class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+                  data-testid="transaction__row"
+                >
+                  <td
+                    class="w-48 py-1 text-sm text-theme-neutral-600"
+                  >
+                     17 Mar 2020 22:02:10 
+                  </td>
+                  <td
+                    class="w-32 py-5 mt-1"
+                  >
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ border-theme-success-300 text-theme-success-light -mr-1"
+                      >
+                        <div
+                          class="sc-AxjAm hoUaGk"
+                          height="40"
+                          width="40"
+                        >
+                          <svg>
+                            received.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="w-56"
+                  >
+                    <div
+                      class="inline-block truncate align-middle"
+                    >
+                      <span
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        data-testid="address__wallet-name"
+                      >
+                        My Wallet
+                      </span>
+                      <span
+                        class="sc-AxiKw bOTXee text-theme-neutral-light font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        ASuusXSW9k…P6T9GQ3kqT
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1 text-sm font-bold text-center"
+                  />
+                  <td
+                    class="text-sm text-right w-36"
+                  >
+                    <div
+                      class="sc-AxhUy eCrePA"
+                      color="success"
+                    >
+                      100 ARK
+                    </div>
+                  </td>
+                  <td
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
+                  >
+                    <div>
+                      1,000,000 USD
+                    </div>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+                  data-testid="transaction__row"
+                >
+                  <td
+                    class="w-48 py-1 text-sm text-theme-neutral-600"
+                  >
+                     17 Mar 2020 22:02:10 
+                  </td>
+                  <td
+                    class="w-32 py-5 mt-1"
+                  >
+                    <div
+                      class="flex"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ border-theme-danger-light text-theme-danger-400 -mr-1"
+                      >
+                        <div
+                          class="sc-AxjAm hoUaGk"
+                          height="40"
+                          width="40"
+                        >
+                          <svg>
+                            sent.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full overflow-hidden rounded-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="w-56"
+                  >
+                    <div
+                      class="inline-block truncate align-middle"
+                    >
+                      <span
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        data-testid="address__wallet-name"
+                      >
+                        My Wallet
+                      </span>
+                      <span
+                        class="sc-AxiKw bOTXee text-theme-neutral-light font-semibold text-base"
+                        data-testid="address__wallet-address"
+                      >
+                        ASuusXSW9k…P6T9GQ3kqT
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-1 text-sm font-bold text-center"
+                  />
+                  <td
+                    class="text-sm text-right w-36"
+                  >
+                    <div
+                      class="sc-AxhUy gRLEpJ"
+                      color="danger"
+                    >
+                      - 100 ARK
+                    </div>
+                  </td>
+                  <td
+                    class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
+                  >
+                    <div>
+                      1,000,000 USD
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          class="sc-fzpans ctLZwQ mb-20"
+        >
+          <div
+            class="container py-16 mx-auto px-14"
+          >
+            <h2
+              class="font-bold"
+            >
+              Transaction History
+            </h2>
+            <div
+              class="sc-AxirZ dyYkHQ"
               role="table"
             >
               <table
@@ -1183,28 +1124,12 @@ exports[`WalletDetails should render 1`] = `
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Asset Type
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxirZ jMwzyA"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
+                          Date
                         </div>
                       </div>
                     </th>
@@ -1213,28 +1138,12 @@ exports[`WalletDetails should render 1`] = `
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top invisible"
                       >
                         <div>
-                          Wallet Address
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxirZ jMwzyA"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
+                          Type
                         </div>
                       </div>
                     </th>
@@ -1248,7 +1157,7 @@ exports[`WalletDetails should render 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Wallet Type
+                          Wallet Address
                         </div>
                       </div>
                     </th>
@@ -1257,28 +1166,12 @@ exports[`WalletDetails should render 1`] = `
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top float-right"
                       >
                         <div>
-                          Balance
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxirZ jMwzyA"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
+                          Amount
                         </div>
                       </div>
                     </th>
@@ -1287,28 +1180,12 @@ exports[`WalletDetails should render 1`] = `
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
                     >
                       <div
                         class="flex flex-inline align-top float-right"
                       >
                         <div>
                           Fiat Value
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxirZ jMwzyA"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
                         </div>
                       </div>
                     </th>
@@ -1318,24 +1195,30 @@ exports[`WalletDetails should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-theme-neutral-200"
+                    class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+                    data-testid="transaction__row"
                   >
                     <td
-                      class="py-6 mt-1"
+                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                    >
+                       17 Mar 2020 22:02:10 
+                    </td>
+                    <td
+                      class="w-32 py-5 mt-1"
                     >
                       <div
                         class="flex"
                       >
                         <div
-                          class="sc-AxhUy dSLmHc"
+                          class="sc-AxhCb bzWLYJ border-theme-danger-light text-theme-danger-400 -mr-1"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="sc-AxjAm hoUaGk"
+                            height="40"
+                            width="40"
                           >
                             <svg>
-                              ark.svg
+                              sent.svg
                             </svg>
                           </div>
                         </div>
@@ -1356,7 +1239,7 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="py-1"
+                      class="w-56"
                     >
                       <div
                         class="inline-block truncate align-middle"
@@ -1365,108 +1248,34 @@ exports[`WalletDetails should render 1`] = `
                           class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                           data-testid="address__wallet-name"
                         >
-                          ARK Wallet 1
+                          My Wallet
                         </span>
                         <span
-                          class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxiKw bOTXee text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          ASuusXSW9…6T9GQ3kqT
+                          ASuusXSW9k…P6T9GQ3kqT
                         </span>
                       </div>
                     </td>
                     <td
-                      class="py-1 text-sm font-bold"
+                      class="py-1 text-sm font-bold text-center"
+                    />
+                    <td
+                      class="text-sm text-right w-36"
                     >
                       <div
-                        class="inline-block mr-2 align-middle text-theme-neutral-600"
+                        class="sc-AxhUy gRLEpJ"
+                        color="danger"
                       >
-                        <div
-                          class="sc-AxirZ hPsuTj"
-                          height="16"
-                          width="16"
-                        >
-                          <svg>
-                            multisig.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block mr-2 align-middle text-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxirZ hPsuTj"
-                          height="16"
-                          width="16"
-                        >
-                          <svg>
-                            ledger.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block mr-2 align-middle text-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxirZ hPsuTj"
-                          height="16"
-                          width="16"
-                        >
-                          <svg>
-                            key.svg
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block mr-2 align-middle text-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxirZ hPsuTj"
-                          height="16"
-                          width="16"
-                        >
-                          <svg>
-                            bridgechain.svg
-                          </svg>
-                        </div>
+                        - 100 ARK
                       </div>
                     </td>
                     <td
-                      class="font-semibold text-right"
+                      class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
                     >
                       <div>
-                        120 ARK
-                      </div>
-                    </td>
-                    <td
-                      class="text-right text-theme-neutral-light"
-                    >
-                      <div>
-                        980 USD
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="text-theme-neutral-light hover:text-theme-neutral"
-                      >
-                        <div
-                          class="relative"
-                          data-testid="dropdown__toggle"
-                        >
-                          <div
-                            class="float-right outline-none cursor-pointer focus:outline-none"
-                          >
-                            <div
-                              class="sc-AxirZ eEbZjj"
-                              height="20"
-                              width="20"
-                            >
-                              <svg>
-                                settings.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
+                        1,000,000 USD
                       </div>
                     </td>
                   </tr>
@@ -1476,7 +1285,379 @@ exports[`WalletDetails should render 1`] = `
           </div>
         </div>
       </div>
-    </aside>
+      <aside
+        class="absolute bottom-0 z-50 w-full"
+        data-testid="WalletBottomSheetMenu"
+      >
+        <div
+          class="flex items-center h-20 px-6 theme-dark bg-theme-background"
+          data-testid="WalletBottomSheetMenu__header"
+        >
+          <div
+            class="flex items-center justify-between container px-14 mx-auto"
+          >
+            <div>
+              <span
+                class="text-lg font-bold text-theme-neutral-dark"
+              >
+                Your wallets
+              </span>
+              <span
+                class="ml-1 font-bold text-theme-neutral-light"
+                data-testid="WalletBottomSheetMenu__counter"
+              >
+                1
+              </span>
+            </div>
+            <div
+              class="inline-flex items-center space-x-1"
+            >
+              <button
+                class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+                data-testid="WalletBottomSheetMenu__toggle"
+              >
+                <span>
+                  Show
+                </span>
+                <span
+                  class="sc-AxgMl bDidZW"
+                >
+                  <div
+                    class="sc-AxjAm iepfoc"
+                    height="10"
+                    width="10"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          data-testid="Collapse"
+          style="height: 0px; opacity: 0; overflow: hidden;"
+        >
+          <div
+            class="py-8 bg-theme-background"
+          >
+            <div
+              class="container px-14 mx-auto"
+            >
+              <div
+                class="sc-AxirZ dyYkHQ"
+                role="table"
+              >
+                <table
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      role="row"
+                    >
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Asset Type
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxjAm hdgaLj"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Wallet Address
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxjAm hdgaLj"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Wallet Type
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top float-right"
+                        >
+                          <div>
+                            Balance
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxjAm hdgaLj"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--4"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top float-right"
+                        >
+                          <div>
+                            Fiat Value
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxjAm hdgaLj"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-theme-neutral-200"
+                    >
+                      <td
+                        class="py-6 mt-1"
+                      >
+                        <div
+                          class="flex"
+                        >
+                          <div
+                            class="sc-AxhCb bzWLYJ"
+                          >
+                            <div
+                              class="sc-AxjAm buCJuk"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full overflow-hidden rounded-full"
+                            >
+                              <img
+                                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="py-1"
+                      >
+                        <div
+                          class="inline-block truncate align-middle"
+                        >
+                          <span
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            data-testid="address__wallet-name"
+                          >
+                            ARK Wallet 1
+                          </span>
+                          <span
+                            class="sc-AxiKw bOTXee text-theme-neutral-light font-semibold text-base"
+                            data-testid="address__wallet-address"
+                          >
+                            ASuusXSW9…6T9GQ3kqT
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="py-1 text-sm font-bold"
+                      >
+                        <div
+                          class="inline-block mr-2 align-middle text-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="inline-block mr-2 align-middle text-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              ledger.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="inline-block mr-2 align-middle text-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="inline-block mr-2 align-middle text-theme-neutral-600"
+                        >
+                          <div
+                            class="sc-AxjAm vZRQY"
+                            height="16"
+                            width="16"
+                          >
+                            <svg>
+                              bridgechain.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="font-semibold text-right"
+                      >
+                        <div>
+                          120 ARK
+                        </div>
+                      </td>
+                      <td
+                        class="text-right text-theme-neutral-light"
+                      >
+                        <div>
+                          980 USD
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="text-theme-neutral-light hover:text-theme-neutral"
+                        >
+                          <div
+                            class="relative"
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="float-right outline-none cursor-pointer focus:outline-none"
+                            >
+                              <div
+                                class="sc-AxjAm buCJuk"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
 </DocumentFragment>
 `;

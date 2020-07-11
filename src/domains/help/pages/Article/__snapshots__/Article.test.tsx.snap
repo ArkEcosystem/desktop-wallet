@@ -3,7 +3,7 @@
 exports[`Article should render article support page 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
@@ -408,7 +408,7 @@ exports[`Article should render article support page 1`] = `
 exports[`Article should render article support page with main image 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"

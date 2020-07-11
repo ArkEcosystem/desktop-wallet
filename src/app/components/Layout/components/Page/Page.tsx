@@ -10,7 +10,7 @@ type PageProps = {
 
 export const Page = ({ hideNavigation, crumbs, children }: PageProps) => {
 	return (
-		<div className="flex flex-col min-h-screen bg-theme-neutral-contrast">
+		<div className="relative flex flex-col min-h-screen bg-theme-neutral-contrast">
 			{!hideNavigation && <NavigationBar />}
 
 			{crumbs?.length && <Breadcrumbs crumbs={crumbs} className="container py-5 mx-auto font-semibold px-14" />}

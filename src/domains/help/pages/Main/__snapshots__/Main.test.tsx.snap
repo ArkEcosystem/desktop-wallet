@@ -3,7 +3,7 @@
 exports[`SupportPage should render empty main support page 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
@@ -319,7 +319,7 @@ exports[`SupportPage should render empty main support page 1`] = `
 exports[`SupportPage should render main support page with categories 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
@@ -796,7 +796,7 @@ exports[`SupportPage should render main support page with categories 1`] = `
 exports[`SupportPage should render main support page with helpful articles 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
@@ -1263,7 +1263,7 @@ exports[`SupportPage should render main support page with helpful articles 1`] =
 exports[`SupportPage should render main support page with newest articles 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"
@@ -1730,7 +1730,7 @@ exports[`SupportPage should render main support page with newest articles 1`] = 
 exports[`SupportPage should render main support page with popular articles 1`] = `
 <div>
   <div
-    class="flex flex-col min-h-screen bg-theme-neutral-contrast"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
     <nav
       aria-labelledby="main menu"

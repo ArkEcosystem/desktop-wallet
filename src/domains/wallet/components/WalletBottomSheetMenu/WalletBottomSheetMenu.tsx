@@ -66,8 +66,11 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 			<Backdrop isVisible={isOpen} />
 
 			<aside data-testid="WalletBottomSheetMenu" className="absolute bottom-0 z-50 w-full">
-				<div data-testid="WalletBottomSheetMenu__header" className="px-6 py-4 theme-dark bg-theme-background">
-					<div className="flex items-center justify-between max-w-4xl mx-auto">
+				<div
+					data-testid="WalletBottomSheetMenu__header"
+					className="flex items-center h-20 px-6 theme-dark bg-theme-background"
+				>
+					<div className="flex items-center justify-between container px-14 mx-auto">
 						<div>
 							<span className="text-lg font-bold text-theme-neutral-dark">Your wallets</span>
 							<span
@@ -96,8 +99,8 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 				</div>
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
-					<div className="px-6 py-8 bg-theme-background">
-						<div className="max-w-4xl mx-auto">
+					<div className="py-8 bg-theme-background">
+						<div className="container px-14 mx-auto">
 							<WalletTable data={walletsData} />
 						</div>
 					</div>
