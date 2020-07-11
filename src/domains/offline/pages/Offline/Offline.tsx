@@ -11,7 +11,7 @@ export const Offline = () => {
 
 	return (
 		<Page navbarStyle="logo-only">
-			<Section className="flex flex-col flex-1 justify-center">
+			<Section className="flex flex-col justify-center flex-1">
 				<div className="sm:mx-auto sm:w-full sm:max-w-md">
 					<CannotConnectBanner />
 				</div>
