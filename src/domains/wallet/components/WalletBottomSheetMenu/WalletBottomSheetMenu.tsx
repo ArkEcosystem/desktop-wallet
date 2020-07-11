@@ -70,7 +70,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 					data-testid="WalletBottomSheetMenu__header"
 					className="flex items-center h-20 px-6 theme-dark bg-theme-background"
 				>
-					<div className="flex items-center justify-between container px-14 mx-auto">
+					<div className="container flex items-center justify-between mx-auto px-14">
 						<div>
 							<span className="text-lg font-bold text-theme-neutral-dark">Your wallets</span>
 							<span
@@ -100,7 +100,7 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
 					<div className="py-8 bg-theme-background">
-						<div className="container px-14 mx-auto">
+						<div className="container mx-auto px-14">
 							<WalletTable data={walletsData} />
 						</div>
 					</div>

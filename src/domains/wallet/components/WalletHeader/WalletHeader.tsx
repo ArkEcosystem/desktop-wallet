@@ -41,7 +41,7 @@ export const WalletHeader = ({
 	return (
 		<header data-testid="WalletHeader">
 			<div className="py-8 bg-theme-neutral-900">
-				<div className="container flex items-center px-14 mx-auto justify-between">
+				<div className="container flex items-center justify-between mx-auto px-14">
 					<div className="flex items-center space-x-4">
 						<div className="flex">
 							<Circle className="-mr-1 border-theme-neutral-dark" noShadow={true}>
