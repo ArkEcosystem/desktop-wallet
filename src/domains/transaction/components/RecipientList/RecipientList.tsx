@@ -25,16 +25,16 @@ const RecipientListItem = ({
 	listIndex,
 }: RecipientListItemProps) => (
 	<tr className="border-b border-dotted border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
-		<td className="w-14 py-6">
+		<td className="py-6 w-14">
 			<Avatar address="test" />
 		</td>
 		<td>
-			<div className="text-sm text-theme-neutral mb-1 font-semibold">Recipient #{listIndex}</div>
+			<div className="mb-1 text-sm font-semibold text-theme-neutral">Recipient #{listIndex}</div>
 			<Address address={address} walletName={walletName} />
 		</td>
 
 		<td>
-			<div className="text-sm text-theme-neutral mb-1 text-right font-semibold">Amount</div>
+			<div className="mb-1 text-sm font-semibold text-right text-theme-neutral">Amount</div>
 			<div className="font-bold text-right text-theme-neutral-800">
 				{amount} {assetSymbol}
 			</div>
