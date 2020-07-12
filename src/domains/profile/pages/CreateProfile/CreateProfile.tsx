@@ -73,7 +73,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 	return (
 		<Page navbarStyle="logo-only">
-			<Section className="flex flex-col justify-center text-center flex-1">
+			<Section className="flex flex-col justify-center flex-1 text-center">
 				<div className="max-w-lg mx-auto md:max-w-xl">
 					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
 					<div className="text-theme-neutral-dark">

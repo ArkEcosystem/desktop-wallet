@@ -29,7 +29,7 @@ export const Welcome = () => {
 
 	return (
 		<Page navbarStyle="logo-only">
-			<Section className="flex flex-col justify-center text-center flex-1">
+			<Section className="flex flex-col justify-center flex-1 text-center">
 				<h1 className="mb-8">{t("COMMON.WELCOME")}</h1>
 				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
