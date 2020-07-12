@@ -3,6 +3,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
+import { Page, Section } from "app/components/Layout";
 import { useEnvironment } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React, { useEffect, useState } from "react";
@@ -27,22 +28,14 @@ export const Welcome = () => {
 	}, [env]);
 
 	return (
-		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
-					</div>
-				</div>
-			</div>
-
-			<div className="container px-4 mx-auto text-center sm:px-6 lg:px-0">
+		<Page navbarStyle="logo-only">
+			<Section className="flex flex-col justify-center text-center flex-1">
 				<h1 className="mb-8">{t("COMMON.WELCOME")}</h1>
 				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>
 
-				<div className="max-w-lg mx-auto my-8 md:max-w-xl">
+				<div className="max-w-lg mx-auto mt-8 md:max-w-xl">
 					{profiles.length > 0 && (
 						<>
 							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
@@ -81,7 +74,7 @@ export const Welcome = () => {
 						</Button>
 					</div>
 				</div>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

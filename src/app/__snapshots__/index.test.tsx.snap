@@ -10,10 +10,10 @@ exports[`App should render 1`] = `
       data-testid="RouterView__wrapper"
     >
       <div
-        class="w-full h-full"
+        class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
       >
         <div
-          class="px-4 sm:px-6 lg:px-8"
+          class="px-4 sm:px-6 lg:px-8 bg-theme-background"
         >
           <div
             class="flex items-center flex-shrink-0 h-20 md:h-24"
@@ -30,58 +30,66 @@ exports[`App should render 1`] = `
           </div>
         </div>
         <div
-          class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
+          class="flex flex-col flex-1 space-y-5 "
         >
-          <h1
-            class="mb-8"
-          >
-            Welcome to ARK
-          </h1>
           <div
-            class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+            class="sc-fzoyAV kUEPnl flex flex-col justify-center text-center flex-1"
           >
-            <svg>
-              welcome-banner.svg
-            </svg>
-          </div>
-          <div
-            class="max-w-lg mx-auto my-8 md:max-w-xl"
-          >
-            <p
-              class="mb-4 text-sm text-theme-neutral-dark md:text-base"
-            >
-              Create a new Profile or login with your MarketSquare account to get started
-            </p>
             <div
-              class="flex flex-col md:space-x-3 md:flex-row"
+              class="container py-16 mx-auto px-14"
             >
-              <button
-                class="sc-AxjAm ddQVWI w-full"
-                color="primary"
-                type="button"
+              <h1
+                class="mb-8"
               >
+                Welcome to ARK
+              </h1>
+              <div
+                class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+              >
+                <svg>
+                  welcome-banner.svg
+                </svg>
+              </div>
+              <div
+                class="max-w-lg mx-auto mt-8 md:max-w-xl"
+              >
+                <p
+                  class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+                >
+                  Create a new Profile or login with your MarketSquare account to get started
+                </p>
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
+                  class="flex flex-col md:space-x-3 md:flex-row"
                 >
-                  <svg>
-                    msq.svg
-                  </svg>
+                  <button
+                    class="sc-AxjAm ddQVWI w-full"
+                    color="primary"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        msq.svg
+                      </svg>
+                    </div>
+                    <span
+                      class="ml-2"
+                    >
+                      Sign in to MarketSquare
+                    </span>
+                  </button>
+                  <button
+                    class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+                    color="primary"
+                    type="button"
+                  >
+                    Create Profile
+                  </button>
                 </div>
-                <span
-                  class="ml-2"
-                >
-                  Sign in to MarketSquare
-                </span>
-              </button>
-              <button
-                class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
-                color="primary"
-                type="button"
-              >
-                Create Profile
-              </button>
+              </div>
             </div>
           </div>
         </div>
