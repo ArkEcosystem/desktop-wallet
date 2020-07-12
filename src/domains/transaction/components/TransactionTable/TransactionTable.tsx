@@ -11,6 +11,7 @@ type Props = {
 	showSignColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
+	onRowClick?: (row: Transaction) => void;
 };
 
 const commonColumns = [
@@ -42,7 +43,14 @@ const commonColumns = [
 	},
 ];
 
-export const TransactionTable = ({ transactions, currencyRate, showSignColumn, hideHeader, isCompact }: Props) => {
+export const TransactionTable = ({
+	transactions,
+	currencyRate,
+	showSignColumn,
+	hideHeader,
+	isCompact,
+	onRowClick,
+}: Props) => {
 	const columns = React.useMemo(() => {
 		if (isCompact) {
 			return [
@@ -73,12 +81,12 @@ export const TransactionTable = ({ transactions, currencyRate, showSignColumn, h
 	}, [currencyRate, showSignColumn, isCompact]);
 
 	return (
-		<Table hideColumns={hideHeader} columns={columns} data={transactions}>
+		<Table hideHeader={hideHeader} columns={columns} data={transactions}>
 			{(row: Transaction) =>
 				isCompact ? (
-					<TransactionCompactRow transaction={row} />
+					<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 				) : (
-					<TransactionRow transaction={row} currencyRate={currencyRate} />
+					<TransactionRow onClick={() => onRowClick?.(row)} transaction={row} currencyRate={currencyRate} />
 				)
 			}
 		</Table>
@@ -88,5 +96,5 @@ export const TransactionTable = ({ transactions, currencyRate, showSignColumn, h
 TransactionTable.defaultProps = {
 	showSignColumn: false,
 	isCompact: false,
-	hideColumns: false,
+	hideHeader: false,
 };

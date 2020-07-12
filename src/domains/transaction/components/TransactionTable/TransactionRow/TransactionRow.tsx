@@ -15,11 +15,11 @@ type Props = {
 	currencyRate?: string;
 	onSign?: () => void;
 	walletName?: string;
-};
+} & React.HTMLProps<any>;
 
-export const TransactionRow = ({ currencyRate, transaction, onSign, walletName }: Props) => {
+export const TransactionRow = ({ currencyRate, transaction, onSign, walletName, ...props }: Props) => {
 	return (
-		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300">
+		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id} isExternal />

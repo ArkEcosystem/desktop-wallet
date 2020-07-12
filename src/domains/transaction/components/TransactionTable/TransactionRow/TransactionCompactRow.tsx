@@ -8,11 +8,11 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 type Props = {
 	transaction: Transaction;
 	walletName?: string;
-};
+} & React.HTMLProps<any>;
 
-export const TransactionCompactRow = ({ transaction, walletName }: Props) => {
+export const TransactionCompactRow = ({ transaction, walletName, ...props }: Props) => {
 	return (
-		<tr data-testid="TransactionCompactRow" className="border-b border-dotted border-theme-neutral-300">
+		<tr data-testid="TransactionCompactRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 			<td className="w-32 py-3">
 				<TransactionRowMode {...transaction} />
 			</td>
