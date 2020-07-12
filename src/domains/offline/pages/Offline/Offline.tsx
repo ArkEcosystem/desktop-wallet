@@ -3,7 +3,6 @@ import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const commonAssets = images.common;
 const { CannotConnectBanner } = images.offline.pages.Offline;
 
 export const Offline = () => {

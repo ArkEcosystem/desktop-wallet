@@ -1,4 +1,3 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -15,8 +14,6 @@ import { useHistory } from "react-router-dom";
 type CreateProfileProps = {
 	onSubmit?: any;
 };
-
-const commonAssets = images.common;
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const form = useForm();
