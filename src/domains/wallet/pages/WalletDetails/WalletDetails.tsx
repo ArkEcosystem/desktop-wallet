@@ -99,19 +99,21 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				/>
 			</Section>
 
-			<Section>
-				<h2 className="font-bold">Pending Transactions</h2>
-				<Table columns={columns} data={wallet?.pendingTransactions || []}>
-					{(rowData: any) => <TransactionListItem {...rowData} />}
-				</Table>
-			</Section>
-
 			<div>
 				<Section className="mb-20">
-					<h2 className="font-bold">Transaction History</h2>
-					<Table columns={columns} data={wallet?.transactions || []}>
-						{(rowData: any) => <TransactionListItem {...rowData} />}
-					</Table>
+					<div className="mb-16">
+						<h2 className="font-bold">Pending Transactions</h2>
+						<Table columns={columns} data={wallet?.pendingTransactions || []}>
+							{(rowData: any) => <TransactionListItem {...rowData} />}
+						</Table>
+					</div>
+
+					<div>
+						<h2 className="font-bold">Transaction History</h2>
+						<Table columns={columns} data={wallet?.transactions || []}>
+							{(rowData: any) => <TransactionListItem {...rowData} />}
+						</Table>
+					</div>
 				</Section>
 			</div>
 
