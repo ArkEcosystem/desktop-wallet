@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act,fireEvent, render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
