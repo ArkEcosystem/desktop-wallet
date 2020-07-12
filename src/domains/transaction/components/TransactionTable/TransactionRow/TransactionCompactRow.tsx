@@ -13,7 +13,7 @@ type Props = {
 export const TransactionCompactRow = ({ transaction, walletName, ...props }: Props) => {
 	return (
 		<tr data-testid="TransactionCompactRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
-			<td className="w-32 py-3">
+			<td className="w-24 py-3">
 				<TransactionRowMode {...transaction} />
 			</td>
 			<td>
