@@ -1,6 +1,7 @@
 import React from "react";
 import { MemoryRouter, Route } from "react-router-dom";
 import { render } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 import { renderWithRouter } from "utils/testing-library";
 
 import { Layout } from "./Layout";
@@ -14,7 +15,7 @@ describe("Layout", () => {
 				</Layout>
 			</Route>,
 			{
-				routes: ["/profiles/1"],
+				routes: [`/profiles/${identity.profiles.bob.id}`],
 			},
 		);
 		expect(asFragment()).toMatchSnapshot();

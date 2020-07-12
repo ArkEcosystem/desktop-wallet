@@ -5,7 +5,7 @@ import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { useEnvironment } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -20,10 +20,12 @@ export const Welcome = () => {
 	const env = useEnvironment();
 	const { t } = useTranslation();
 	const history = useHistory();
-	const [profiles, setProfiles] = useState<Profile[]>([]);
+	const [profiles, setProfiles] = React.useState<Profile[]>([]);
 
-	useEffect(() => {
-		setProfiles(env!.profiles().all());
+	React.useEffect(() => {
+		if (env) {
+			setProfiles(env.profiles().all());
+		}
 	}, [env]);
 
 	return (

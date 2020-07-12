@@ -1,20 +1,24 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { Route } from "react-router-dom";
 import { fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { env } from "utils/testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Jane Doe");
+	let profile: Profile;
+
+	beforeAll(() => {
+		profile = env.profiles().create("Jane Doe");
+	});
+
+	afterAll(() => {
+		env.profiles().forget(profile.id());
+	});
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar />);
@@ -45,11 +49,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -64,11 +66,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -94,11 +94,9 @@ describe("NavigationBar", () => {
 		];
 
 		const { getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar menu={menu} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar menu={menu} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -131,11 +129,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -158,11 +154,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -185,11 +179,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -212,11 +204,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
