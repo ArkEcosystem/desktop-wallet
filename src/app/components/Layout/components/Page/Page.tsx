@@ -35,9 +35,9 @@ export const Page = ({ navbarStyle = "full", crumbs, sidebar, children }: PagePr
 				{sidebar ? (
 					<div className="flex flex-1 bg-theme-background">
 						<div className="flex container mx-auto">
-							<div className="py-16 px-10">{sidebar}</div>
+							<div className="my-16 px-10 border-r-1 border-theme-primary-contrast">{sidebar}</div>
 
-							<div>{children}</div>
+							<div className="ml-16">{children}</div>
 						</div>
 					</div>
 				) : (

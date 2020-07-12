@@ -57,9 +57,7 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 			crumbs={crumbs}
 			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
 		>
-			<Section className="-ml-16">
-				<div className="pl-32 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
-			</Section>
+			<Section>{renderSettings()}</Section>
 		</Page>
 	);
 };
