@@ -4,12 +4,17 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table } from "app/components/Table";
 import React from "react";
+import { styled } from "twin.macro";
 
 import {
 	RecipientList as RecipientListProps,
 	RecipientListItem as RecipientListItemProps,
 } from "./RecipientList.models";
+import { defaultStyle } from "./RecipientList.styles";
 
+const RecipientListWrapper = styled.div`
+	${defaultStyle}
+`;
 const RecipientListItem = ({
 	amount,
 	address,
@@ -17,20 +22,25 @@ const RecipientListItem = ({
 	assetSymbol,
 	onRemove,
 	isEditable,
+	listIndex,
 }: RecipientListItemProps) => (
-	<tr className="border-b border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
-		<td className="w-12 py-4">
-			<Avatar address="test" size="sm" />
+	<tr className="border-b border-dotted border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
+		<td className="w-14 py-6">
+			<Avatar address="test" />
 		</td>
 		<td>
+			<div className="text-sm text-theme-neutral mb-1 font-semibold">Recipient #{listIndex}</div>
 			<Address address={address} walletName={walletName} />
 		</td>
 
-		<td className="font-bold text-right text-theme-neutral-800">
-			{amount} {assetSymbol}
+		<td>
+			<div className="text-sm text-theme-neutral mb-1 text-right font-semibold">Amount</div>
+			<div className="font-bold text-right text-theme-neutral-800">
+				{amount} {assetSymbol}
+			</div>
 		</td>
 		{isEditable && (
-			<td className="w-16 text-right">
+			<td className="w-20 text-right">
 				<Button
 					variant="plain"
 					onClick={() => typeof onRemove === "function" && onRemove(address)}
@@ -50,17 +60,17 @@ export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }:
 		if (typeof onRemove === "function") return onRemove(address);
 	};
 	const columns = [
-		{ Header: "Avatar", className: "invisible w-2" },
-		{ Header: "Address" },
-		{ Header: "Amount", className: "float-right" },
+		{ Header: "Avatar", className: "hidden" },
+		{ Header: "Address", className: "hidden" },
+		{ Header: "Amount", className: "hidden" },
 	];
 
-	if (isEditable) columns.push({ Header: "Action", className: "invisible" });
+	if (isEditable) columns.push({ Header: "Action", className: "hidden" });
 
 	return (
-		<div className="pt-2">
+		<RecipientListWrapper>
 			<Table columns={columns} data={recipients}>
-				{(recipient: RecipientListItemProps) => (
+				{(recipient: RecipientListItemProps, index: number) => (
 					<RecipientListItem
 						assetSymbol={assetSymbol}
 						amount={recipient.amount}
@@ -68,10 +78,11 @@ export const RecipientList = ({ recipients, onRemove, assetSymbol, isEditable }:
 						walletName={recipient.walletName}
 						onRemove={() => onRemoveRecipient(recipient?.address)}
 						isEditable={isEditable}
+						listIndex={index + 1}
 					/>
 				)}
 			</Table>
-		</div>
+		</RecipientListWrapper>
 	);
 };
 
