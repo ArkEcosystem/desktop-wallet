@@ -1,3 +1,4 @@
+import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -44,12 +45,21 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 		return <ActiveSettings formConfig={{ context: form, register, errors }} onSubmit={submitSettings} />;
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div className="flex w-full h-full">
-			<div className="w-1/4 h-full">
-				<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />
-			</div>
-			<div className="w-3/5 pl-20 mx-12 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
-		</div>
+		<Page
+			crumbs={crumbs}
+			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
+		>
+			<Section className="-ml-16">
+				<div className="pl-32 border-l-1 border-theme-primary-contrast">{renderSettings()}</div>
+			</Section>
+		</Page>
 	);
 };

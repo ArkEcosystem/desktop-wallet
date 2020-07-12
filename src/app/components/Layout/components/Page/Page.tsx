@@ -8,10 +8,11 @@ const commonAssets = images.common;
 type PageProps = {
 	navbarStyle?: string;
 	crumbs?: any;
+	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };
 
-export const Page = ({ navbarStyle = "full", crumbs, children }: PageProps) => {
+export const Page = ({ navbarStyle = "full", crumbs, sidebar, children }: PageProps) => {
 	return (
 		<div className="relative flex flex-col min-h-screen bg-theme-neutral-contrast">
 			{navbarStyle === "full" && <NavigationBar />}
@@ -31,7 +32,17 @@ export const Page = ({ navbarStyle = "full", crumbs, children }: PageProps) => {
 			<div
 				className={`flex flex-col flex-1 space-y-5 ${navbarStyle === "full" && !crumbs?.length ? "mt-5" : ""}`}
 			>
-				{children}
+				{sidebar ? (
+					<div className="flex flex-1 bg-theme-background">
+						<div className="flex container mx-auto">
+							<div className="py-16 px-10">{sidebar}</div>
+
+							<div>{children}</div>
+						</div>
+					</div>
+				) : (
+					children
+				)}
 			</div>
 		</div>
 	);
