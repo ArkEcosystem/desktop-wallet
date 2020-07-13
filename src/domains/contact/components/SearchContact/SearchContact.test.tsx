@@ -20,4 +20,16 @@ describe("SearchContact", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SEARCH_CONTACT.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render a modal with custom title and description", () => {
+		const title = "Modal title";
+		const description = "Modal description";
+		const { asFragment, getByTestId } = render(
+			<SearchContact isOpen={true} contacts={contacts} title={title} description={description} />,
+		);
+
+		expect(getByTestId("modal__inner")).toHaveTextContent("Modal title");
+		expect(getByTestId("modal__inner")).toHaveTextContent("Modal description");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
