@@ -7,7 +7,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -125,15 +125,22 @@ exports[`Exchange should not render filler exchange cards 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -162,7 +169,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -179,7 +186,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -210,7 +217,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -255,7 +262,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-changenow-plugin"
                     >
                       <div
@@ -309,7 +316,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-binance"
                     >
                       <div
@@ -363,7 +370,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-atomars"
                     >
                       <div
@@ -417,7 +424,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
                       data-testid="Exchange__add-exchange-card"
                     >
                       <div
@@ -448,7 +455,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -481,7 +488,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -599,15 +606,22 @@ exports[`Exchange should open & close add exchange modal 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -636,7 +650,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -653,7 +667,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -684,7 +698,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -729,7 +743,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-changenow-plugin"
                     >
                       <div
@@ -783,7 +797,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-binance"
                     >
                       <div
@@ -837,7 +851,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-atomars"
                     >
                       <div
@@ -891,7 +905,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
                       data-testid="Exchange__add-exchange-card"
                     >
                       <div
@@ -922,7 +936,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -955,7 +969,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1073,15 +1087,22 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1110,7 +1131,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1127,7 +1148,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -1158,7 +1179,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1203,7 +1224,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
               </div>
             </div>
             <div
-              class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+              class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
               data-testid="Exchange__add-exchange-card"
             >
               <div
@@ -1225,7 +1246,7 @@ exports[`Exchange should open & close add exchange modal when no existing exchan
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1249,7 +1270,7 @@ exports[`Exchange should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1367,15 +1388,22 @@ exports[`Exchange should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1404,7 +1432,7 @@ exports[`Exchange should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1421,7 +1449,7 @@ exports[`Exchange should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -1452,7 +1480,7 @@ exports[`Exchange should render 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1497,7 +1525,7 @@ exports[`Exchange should render 1`] = `
               </div>
             </div>
             <div
-              class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+              class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
               data-testid="Exchange__add-exchange-card"
             >
               <div
@@ -1519,7 +1547,7 @@ exports[`Exchange should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1543,7 +1571,7 @@ exports[`Exchange should render with exchanges 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1661,15 +1689,22 @@ exports[`Exchange should render with exchanges 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1698,7 +1733,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1715,7 +1750,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -1746,7 +1781,7 @@ exports[`Exchange should render with exchanges 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1791,7 +1826,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-changenow-plugin"
                     >
                       <div
@@ -1845,7 +1880,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-binance"
                     >
                       <div
@@ -1899,7 +1934,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-atomars"
                     >
                       <div
@@ -1953,7 +1988,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-okex"
                     >
                       <div
@@ -2007,7 +2042,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
                       data-testid="Exchange__add-exchange-card"
                     >
                       <div
@@ -2031,7 +2066,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast"
                       data-testid="Exchange__blank-card"
                     >
                       <div
@@ -2049,7 +2084,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast"
                       data-testid="Exchange__blank-card"
                     >
                       <div
@@ -2067,7 +2102,7 @@ exports[`Exchange should render with exchanges 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast"
                       data-testid="Exchange__blank-card"
                     >
                       <div
@@ -2092,7 +2127,7 @@ exports[`Exchange should render with exchanges 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2125,7 +2160,7 @@ exports[`Exchange should select exchange 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -2243,15 +2278,22 @@ exports[`Exchange should select exchange 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2280,7 +2322,7 @@ exports[`Exchange should select exchange 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -2297,7 +2339,7 @@ exports[`Exchange should select exchange 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -2328,7 +2370,7 @@ exports[`Exchange should select exchange 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2373,7 +2415,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl bg-theme-success-contrast border-theme-success-300 hover:border-theme-success-contrast"
+                      class="sc-fzoLag ggYnWl bg-theme-success-contrast border-theme-success-300 hover:border-theme-success-contrast"
                       data-testid="Exchange__exchange-card-changenow-plugin"
                     >
                       <div
@@ -2427,7 +2469,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-binance"
                     >
                       <div
@@ -2481,7 +2523,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl border-theme-primary-contrast hover:border-theme-background"
+                      class="sc-fzoLag ggYnWl border-theme-primary-contrast hover:border-theme-background"
                       data-testid="Exchange__exchange-card-atomars"
                     >
                       <div
@@ -2535,7 +2577,7 @@ exports[`Exchange should select exchange 1`] = `
                     style="height: 155px;"
                   >
                     <div
-                      class="sc-fznyAO hZOPhl col-span-2 border-theme-primary-contrast"
+                      class="sc-fzoLag ggYnWl col-span-2 border-theme-primary-contrast"
                       data-testid="Exchange__add-exchange-card"
                     >
                       <div
@@ -2566,7 +2608,7 @@ exports[`Exchange should select exchange 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ flex-1"
+        class="sc-fzoyAV kUEPnl flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"

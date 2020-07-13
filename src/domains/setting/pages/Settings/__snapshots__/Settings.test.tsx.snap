@@ -7,7 +7,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -79,15 +79,22 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -116,7 +123,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -133,7 +140,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -199,7 +206,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="px-10 my-16 border-r-1 border-theme-primary-contrast"
           >
             <div
-              class="sc-fznyAO ka-dYuO"
+              class="sc-fzoXzr iRLxmE"
             >
               <ul>
                 <div
@@ -261,7 +268,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <div
-                    class="sc-fzplWN ixsKTz absolute top-0 left-0 rounded-lg bg-theme-primary"
+                    class="sc-fzoLag cxnHnj absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
                     class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -296,7 +303,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             class="ml-16"
           >
             <div
-              class="sc-fzpans ctLZwQ"
+              class="sc-fzoyAV kUEPnl"
             >
               <div
                 class="container py-16 mx-auto px-14"
@@ -383,7 +390,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxmLO ipkzTu"
+                            class="sc-AxhCb BegvR"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -391,7 +398,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxmLO ipkzTu"
+                            class="sc-AxhCb BegvR"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -453,7 +460,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                           </div>
                         </div>
                         <fieldset
-                          class="sc-fznKkj kSgktX flex flex-col space-y-2"
+                          class="sc-fzpjYC iKLGrv flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -466,7 +473,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="load-plugins"
                               readonly=""
@@ -497,7 +504,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -523,7 +530,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb gBCygf"
                       color="primary"
                       type="button"
                     >
@@ -548,7 +555,7 @@ exports[`Settings should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -620,15 +627,22 @@ exports[`Settings should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -657,7 +671,7 @@ exports[`Settings should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -674,7 +688,7 @@ exports[`Settings should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -740,7 +754,7 @@ exports[`Settings should render 1`] = `
             class="px-10 my-16 border-r-1 border-theme-primary-contrast"
           >
             <div
-              class="sc-fznyAO ka-dYuO"
+              class="sc-fzoXzr iRLxmE"
             >
               <ul>
                 <div
@@ -748,7 +762,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <div
-                    class="sc-fzplWN ixsKTz absolute top-0 left-0 rounded-lg bg-theme-primary"
+                    class="sc-fzoLag cxnHnj absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
                     class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -837,7 +851,7 @@ exports[`Settings should render 1`] = `
             class="ml-16"
           >
             <div
-              class="sc-fzpans ctLZwQ"
+              class="sc-fzoyAV kUEPnl"
             >
               <div
                 class="container py-16 mx-auto px-14"
@@ -955,7 +969,7 @@ exports[`Settings should render 1`] = `
                         class="flex flex-col w-2/4"
                       >
                         <fieldset
-                          class="sc-fznKkj kSgktX flex flex-col space-y-2"
+                          class="sc-fzpjYC iKLGrv flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -966,14 +980,14 @@ exports[`Settings should render 1`] = `
                             Profile Name
                           </label>
                           <input
-                            class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                             data-testid="Input"
                             name="profile-name"
                             type="text"
                           />
                         </fieldset>
                         <fieldset
-                          class="sc-fznKkj kSgktX mt-8"
+                          class="sc-fzpjYC iKLGrv mt-8"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -987,7 +1001,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="passphrase-language"
                               readonly=""
@@ -1018,7 +1032,7 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -1034,7 +1048,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-fznKkj kSgktX mt-8"
+                          class="sc-fzpjYC iKLGrv mt-8"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1048,7 +1062,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="currency"
                               readonly=""
@@ -1079,7 +1093,7 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -1099,7 +1113,7 @@ exports[`Settings should render 1`] = `
                         class="flex flex-col w-2/4 ml-5"
                       >
                         <fieldset
-                          class="sc-fznKkj kSgktX flex flex-col space-y-2"
+                          class="sc-fzpjYC iKLGrv flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1113,7 +1127,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="language"
                               readonly=""
@@ -1144,7 +1158,7 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -1160,7 +1174,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-fznKkj kSgktX mt-8"
+                          class="sc-fzpjYC iKLGrv mt-8"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1174,7 +1188,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="price-source"
                               readonly=""
@@ -1205,7 +1219,7 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -1221,7 +1235,7 @@ exports[`Settings should render 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-fznKkj kSgktX mt-8"
+                          class="sc-fzpjYC iKLGrv mt-8"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1235,7 +1249,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="time-format"
                               readonly=""
@@ -1266,7 +1280,7 @@ exports[`Settings should render 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -1422,7 +1436,7 @@ exports[`Settings should render 1`] = `
                           data-testid="list-divided-item__content"
                         >
                           <fieldset
-                            class="sc-fznKkj kSgktX flex flex-col space-y-2"
+                            class="sc-fzpjYC iKLGrv flex flex-col space-y-2"
                           >
                             <label
                               class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1436,7 +1450,7 @@ exports[`Settings should render 1`] = `
                               class="relative w-full"
                             >
                               <input
-                                class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                                class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                                 data-testid="select-list__input"
                                 name="price-source"
                                 readonly=""
@@ -1467,7 +1481,7 @@ exports[`Settings should render 1`] = `
                                   />
                                 </div>
                                 <div
-                                  class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                  class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                                 >
                                   <div
                                     class="sc-AxirZ ZmpmT"
@@ -1608,7 +1622,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO iJEjRZ"
+                      class="sc-AxhCb clvjJS"
                       color="danger"
                       type="button"
                     >
@@ -1629,14 +1643,14 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="sc-AxmLO ipkzTu"
+                        class="sc-AxhCb BegvR"
                         color="primary"
                         type="button"
                       >
                         Cancel
                       </button>
                       <button
-                        class="sc-AxmLO hCnZlU"
+                        class="sc-AxhCb gBCygf"
                         color="primary"
                         type="button"
                       >
@@ -1662,7 +1676,7 @@ exports[`Settings should render peer settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1734,15 +1748,22 @@ exports[`Settings should render peer settings 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1771,7 +1792,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1788,7 +1809,7 @@ exports[`Settings should render peer settings 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -1854,7 +1875,7 @@ exports[`Settings should render peer settings 1`] = `
             class="px-10 my-16 border-r-1 border-theme-primary-contrast"
           >
             <div
-              class="sc-fznyAO ka-dYuO"
+              class="sc-fzoXzr iRLxmE"
             >
               <ul>
                 <div
@@ -1889,7 +1910,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <div
-                    class="sc-fzplWN ixsKTz absolute top-0 left-0 rounded-lg bg-theme-primary"
+                    class="sc-fzoLag cxnHnj absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
                     class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -1951,7 +1972,7 @@ exports[`Settings should render peer settings 1`] = `
             class="ml-16"
           >
             <div
-              class="sc-fzpans ctLZwQ"
+              class="sc-fzoyAV kUEPnl"
             >
               <div
                 class="container py-16 mx-auto px-14"
@@ -2095,7 +2116,7 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <div>
                       <div
-                        class="sc-AxgMl hJWcEH"
+                        class="sc-AxheI bjlCjh"
                         role="table"
                       >
                         <table
@@ -2173,7 +2194,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao text-logo border-theme-danger-light"
+                                  class="sc-AxhUy fHeTTV text-logo border-theme-danger-light"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -2252,7 +2273,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao border-theme-neutral-300"
+                                  class="sc-AxhUy fHeTTV border-theme-neutral-300"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -2331,7 +2352,7 @@ exports[`Settings should render peer settings 1`] = `
                                 class="inline-flex items-center py-4 mt-1"
                               >
                                 <div
-                                  class="sc-AxhCb fwVCao text-theme-warning-400 border-theme-warning-200"
+                                  class="sc-AxhUy fHeTTV text-theme-warning-400 border-theme-warning-200"
                                 >
                                   <div
                                     class="sc-AxirZ iQaTP"
@@ -2407,7 +2428,7 @@ exports[`Settings should render peer settings 1`] = `
                         </table>
                       </div>
                       <button
-                        class="sc-AxmLO ipkzTu w-full mt-8 mb-2"
+                        class="sc-AxhCb BegvR w-full mt-8 mb-2"
                         color="primary"
                         data-testid="peer-list__add-button"
                         type="button"
@@ -2428,7 +2449,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex justify-end w-full"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb gBCygf"
                       color="primary"
                       type="button"
                     >
@@ -2453,7 +2474,7 @@ exports[`Settings should render plugin settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -2525,15 +2546,22 @@ exports[`Settings should render plugin settings 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2562,7 +2590,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -2579,7 +2607,7 @@ exports[`Settings should render plugin settings 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -2645,7 +2673,7 @@ exports[`Settings should render plugin settings 1`] = `
             class="px-10 my-16 border-r-1 border-theme-primary-contrast"
           >
             <div
-              class="sc-fznyAO ka-dYuO"
+              class="sc-fzoXzr iRLxmE"
             >
               <ul>
                 <div
@@ -2707,7 +2735,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <div
-                    class="sc-fzplWN ixsKTz absolute top-0 left-0 rounded-lg bg-theme-primary"
+                    class="sc-fzoLag cxnHnj absolute top-0 left-0 rounded-lg bg-theme-primary"
                   />
                   <li
                     class="rounded-lg py-5 pl-10 pr-8 flex 
@@ -2742,7 +2770,7 @@ exports[`Settings should render plugin settings 1`] = `
             class="ml-16"
           >
             <div
-              class="sc-fzpans ctLZwQ"
+              class="sc-fzoyAV kUEPnl"
             >
               <div
                 class="container py-16 mx-auto px-14"
@@ -2829,7 +2857,7 @@ exports[`Settings should render plugin settings 1`] = `
                           class="flex justify-end w-full pt-6 space-x-3"
                         >
                           <button
-                            class="sc-AxmLO ipkzTu"
+                            class="sc-AxhCb BegvR"
                             color="primary"
                             data-testid="plugins__open-list"
                             type="button"
@@ -2837,7 +2865,7 @@ exports[`Settings should render plugin settings 1`] = `
                             Open List
                           </button>
                           <button
-                            class="sc-AxmLO ipkzTu"
+                            class="sc-AxhCb BegvR"
                             color="primary"
                             data-testid="plugins__add-plugin"
                             type="button"
@@ -2899,7 +2927,7 @@ exports[`Settings should render plugin settings 1`] = `
                           </div>
                         </div>
                         <fieldset
-                          class="sc-fznKkj kSgktX flex flex-col space-y-2"
+                          class="sc-fzpjYC iKLGrv flex flex-col space-y-2"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -2912,7 +2940,7 @@ exports[`Settings should render plugin settings 1`] = `
                             class="relative w-full"
                           >
                             <input
-                              class="sc-fznZeY eEHaXh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 sr-only"
+                              class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 sr-only"
                               data-testid="select-list__input"
                               name="load-plugins"
                               readonly=""
@@ -2943,7 +2971,7 @@ exports[`Settings should render plugin settings 1`] = `
                                 />
                               </div>
                               <div
-                                class="sc-fzokOt sc-fzqNJr iVtotz w-10 pointer-events-none text-theme-neutral"
+                                class="sc-fzpans sc-fznyAO jhCHMJ w-10 pointer-events-none text-theme-neutral"
                               >
                                 <div
                                   class="sc-AxirZ ZmpmT"
@@ -2969,7 +2997,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex justify-end w-full pt-2"
                   >
                     <button
-                      class="sc-AxmLO hCnZlU"
+                      class="sc-AxhCb gBCygf"
                       color="primary"
                       type="button"
                     >
