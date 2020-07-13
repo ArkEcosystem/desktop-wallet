@@ -81,11 +81,7 @@ describe("SelectAddress", () => {
 
 	it("should not open contacts modal if disabled", () => {
 		const { getByTestId } = render(
-			<SelectAddress
-				contacts={contacts}
-				disabled
-				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
-			 />,
+			<SelectAddress contacts={contacts} disabled address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -100,11 +96,7 @@ describe("SelectAddress", () => {
 	it("should call onChange prop if provided", () => {
 		const fn = jest.fn();
 		const { getByTestId, getAllByTestId } = render(
-			<SelectAddress
-				contacts={contacts}
-				onChange={fn}
-				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
-			 />,
+			<SelectAddress contacts={contacts} onChange={fn} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
