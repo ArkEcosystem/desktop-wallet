@@ -9,8 +9,8 @@ describe("Offline", () => {
 		const { container, asFragment, getByTestId } = render(<Offline />);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("Offline")).toHaveTextContent(translations.TITLE);
-		expect(getByTestId("Offline")).toHaveTextContent(translations.DESCRIPTION);
+		expect(getByTestId("Offline__text")).toHaveTextContent(translations.TITLE);
+		expect(getByTestId("Offline__text")).toHaveTextContent(translations.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

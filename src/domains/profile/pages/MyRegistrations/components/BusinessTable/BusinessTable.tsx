@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
 
@@ -48,8 +49,9 @@ const options = [
 ];
 
 export const BusinessTable = ({ data, handleDropdown }: Props) => (
-	<div className="flex flex-col px-10 mt-4 bg-theme-background">
-		<span className="py-10 text-2xl font-bold">Business</span>
+	<Section>
+		<h2 className="mb-8 font-bold">Business</h2>
+
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
@@ -92,5 +94,5 @@ export const BusinessTable = ({ data, handleDropdown }: Props) => (
 				</tr>
 			)}
 		</Table>
-	</div>
+	</Section>
 );

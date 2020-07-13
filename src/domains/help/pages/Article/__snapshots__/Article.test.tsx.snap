@@ -1,104 +1,329 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SupportPage should render article support page 1`] = `
+exports[`Article should render article support page 1`] = `
 <div>
-  <div>
-    <div
-      class="-m-5"
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzozJi iaCFUP"
     >
       <div
-        class="px-12 py-10 mb-10 bg-white"
+        class="px-4 sm:px-6 lg:px-"
       >
         <div
-          class="sc-AxiKw hQruXM sticky float-right w-32 top-2"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300"
+            class="flex items-center flex-shrink-0"
           >
-            Fast navigation
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li
-              class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 active"
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              <a
-                class="block px-3 py-2 whitespace-no-wrap"
-                href="#introduction"
-                title="1. Introduction"
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
-                1. Introduction
-              </a>
-            </li>
-            <li
-              class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 "
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <a
-                class="block px-3 py-2 whitespace-no-wrap"
-                href="#account"
-                title="2. Create Account"
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
               >
-                2. Create Account
-              </a>
-            </li>
-          </ul>
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/qwe123/support/articles/help"
+        >
+          <span>
+            Go back to Help & Support
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
         <div
-          class="max-w-xl mx-auto"
+          class="container py-16 mx-auto px-14"
         >
           <div
-            class="flex mb-4 text-sm"
+            class="sc-fzpans hxKBuM sticky float-right w-40 top-2"
           >
             <div
-              class="flex"
+              class="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300"
             >
-              <div
-                class="my-auto mr-2"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    portfolio-tag.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="font-bold font-sm text-theme-neutral-dark"
-              >
-                Portfolio
-              </div>
+              Fast navigation
             </div>
-            <div
-              class="flex ml-5"
-            >
-              <div
-                class="my-auto mr-2"
+            <ul>
+              <li
+                class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 active"
               >
-                <div
-                  class="sc-AxirZ iOZZCn"
-                  height="18"
-                  width="18"
+                <a
+                  class="block px-3 py-2 whitespace-no-wrap"
+                  href="#introduction"
+                  title="1. Introduction"
                 >
-                  <svg>
-                    eye-tag.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="font-bold font-sm text-theme-neutral-dark"
+                  1. Introduction
+                </a>
+              </li>
+              <li
+                class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 "
               >
-                32 908
-              </div>
-            </div>
+                <a
+                  class="block px-3 py-2 whitespace-no-wrap"
+                  href="#account"
+                  title="2. Create Account"
+                >
+                  2. Create Account
+                </a>
+              </li>
+            </ul>
           </div>
-          <h1
-            class="leading-tight"
+          <div
+            class="max-w-2xl mx-auto"
           >
-            Setup Your Own Blockchain Explorer
-          </h1>
-          <div>
+            <div
+              class="flex mb-4 text-sm"
+            >
+              <div
+                class="flex"
+              >
+                <div
+                  class="my-auto mr-2"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      portfolio-tag.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="font-bold font-sm text-theme-neutral-dark"
+                >
+                  Portfolio
+                </div>
+              </div>
+              <div
+                class="flex ml-5"
+              >
+                <div
+                  class="my-auto mr-2"
+                >
+                  <div
+                    class="sc-AxirZ iOZZCn"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      eye-tag.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="font-bold font-sm text-theme-neutral-dark"
+                >
+                  32 908
+                </div>
+              </div>
+            </div>
+            <h1
+              class="leading-tight"
+            >
+              Setup Your Own Blockchain Explorer
+            </h1>
             <div
               class="mt-8"
               id="introduction"
@@ -134,42 +359,42 @@ exports[`SupportPage should render article support page 1`] = `
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="px-12 py-10 bg-white border-t-1 border-theme-neutral-300"
-      >
-        <div
-          class="max-w-xl mx-auto"
-        >
           <div
-            class="flex"
+            class="pt-16 mt-16 border-t-1 border-theme-neutral-300"
           >
             <div
-              class="w-3/4"
-            >
-              <h3>
-                Do you still need help with your question?
-              </h3>
-              <p
-                class="text-theme-neutral-600"
-              >
-                Write us a letter and we will reply as soon as possible.
-              </p>
-            </div>
-            <div
-              class="flex justify-end w-1/4"
+              class="max-w-2xl mx-auto"
             >
               <div
-                class="my-auto"
+                class="flex"
               >
-                <button
-                  class="sc-AxjAm ddQVWI"
-                  color="primary"
-                  type="button"
+                <div
+                  class="w-3/4"
                 >
-                  Contact us
-                </button>
+                  <h3>
+                    Do you still need help with your question?
+                  </h3>
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    Write us a letter and we will reply as soon as possible.
+                  </p>
+                </div>
+                <div
+                  class="flex justify-end w-1/4"
+                >
+                  <div
+                    class="my-auto"
+                  >
+                    <button
+                      class="sc-AxjAm ddQVWI"
+                      color="primary"
+                      type="button"
+                    >
+                      Contact us
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -180,109 +405,334 @@ exports[`SupportPage should render article support page 1`] = `
 </div>
 `;
 
-exports[`SupportPage should render article support page with main image 1`] = `
+exports[`Article should render article support page with main image 1`] = `
 <div>
-  <div>
-    <div
-      class="-m-5"
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzozJi iaCFUP"
     >
       <div
-        class="px-12 py-10 mb-10 bg-white"
+        class="px-4 sm:px-6 lg:px-"
       >
         <div
-          class="sc-AxiKw hQruXM sticky float-right w-32 top-2"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300"
+            class="flex items-center flex-shrink-0"
           >
-            Fast navigation
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul>
-            <li
-              class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 active"
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              <a
-                class="block px-3 py-2 whitespace-no-wrap"
-                href="#introduction"
-                title="1. Introduction"
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
-                1. Introduction
-              </a>
-            </li>
-            <li
-              class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 "
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <a
-                class="block px-3 py-2 whitespace-no-wrap"
-                href="#account"
-                title="2. Create Account"
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
               >
-                2. Create Account
-              </a>
-            </li>
-          </ul>
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/qwe123/support/articles/help"
+        >
+          <span>
+            Go back to Help & Support
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
         <div
-          class="max-w-xl mx-auto"
+          class="container py-16 mx-auto px-14"
         >
           <div
-            class="flex mb-4 text-sm"
+            class="sc-fzpans hxKBuM sticky float-right w-40 top-2"
           >
             <div
-              class="flex"
+              class="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300"
             >
-              <div
-                class="my-auto mr-2"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    portfolio-tag.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="font-bold font-sm text-theme-neutral-dark"
-              >
-                Portfolio
-              </div>
+              Fast navigation
             </div>
-            <div
-              class="flex ml-5"
-            >
-              <div
-                class="my-auto mr-2"
+            <ul>
+              <li
+                class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 active"
               >
-                <div
-                  class="sc-AxirZ iOZZCn"
-                  height="18"
-                  width="18"
+                <a
+                  class="block px-3 py-2 whitespace-no-wrap"
+                  href="#introduction"
+                  title="1. Introduction"
                 >
-                  <svg>
-                    eye-tag.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="font-bold font-sm text-theme-neutral-dark"
+                  1. Introduction
+                </a>
+              </li>
+              <li
+                class="text-sm border-l-1 border-theme-neutral-300 text-theme-neutral-800 "
               >
-                32 908
-              </div>
-            </div>
+                <a
+                  class="block px-3 py-2 whitespace-no-wrap"
+                  href="#account"
+                  title="2. Create Account"
+                >
+                  2. Create Account
+                </a>
+              </li>
+            </ul>
           </div>
-          <h1
-            class="leading-tight"
+          <div
+            class="max-w-2xl mx-auto"
           >
-            Setup Your Own Blockchain Explorer
-          </h1>
-          <img
-            alt="Setup Your Own Blockchain Explorer"
-            src="https://picsum.photos/seed/picsum/800/400"
-          />
-          <div>
+            <div
+              class="flex mb-4 text-sm"
+            >
+              <div
+                class="flex"
+              >
+                <div
+                  class="my-auto mr-2"
+                >
+                  <div
+                    class="sc-AxirZ iQaTP"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      portfolio-tag.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="font-bold font-sm text-theme-neutral-dark"
+                >
+                  Portfolio
+                </div>
+              </div>
+              <div
+                class="flex ml-5"
+              >
+                <div
+                  class="my-auto mr-2"
+                >
+                  <div
+                    class="sc-AxirZ iOZZCn"
+                    height="18"
+                    width="18"
+                  >
+                    <svg>
+                      eye-tag.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="font-bold font-sm text-theme-neutral-dark"
+                >
+                  32 908
+                </div>
+              </div>
+            </div>
+            <h1
+              class="leading-tight"
+            >
+              Setup Your Own Blockchain Explorer
+            </h1>
+            <img
+              alt="Setup Your Own Blockchain Explorer"
+              src="https://picsum.photos/seed/picsum/800/400"
+            />
             <div
               class="mt-8"
               id="introduction"
@@ -318,42 +768,42 @@ exports[`SupportPage should render article support page with main image 1`] = `
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div
-        class="px-12 py-10 bg-white border-t-1 border-theme-neutral-300"
-      >
-        <div
-          class="max-w-xl mx-auto"
-        >
           <div
-            class="flex"
+            class="pt-16 mt-16 border-t-1 border-theme-neutral-300"
           >
             <div
-              class="w-3/4"
-            >
-              <h3>
-                Do you still need help with your question?
-              </h3>
-              <p
-                class="text-theme-neutral-600"
-              >
-                Write us a letter and we will reply as soon as possible.
-              </p>
-            </div>
-            <div
-              class="flex justify-end w-1/4"
+              class="max-w-2xl mx-auto"
             >
               <div
-                class="my-auto"
+                class="flex"
               >
-                <button
-                  class="sc-AxjAm ddQVWI"
-                  color="primary"
-                  type="button"
+                <div
+                  class="w-3/4"
                 >
-                  Contact us
-                </button>
+                  <h3>
+                    Do you still need help with your question?
+                  </h3>
+                  <p
+                    class="text-theme-neutral-600"
+                  >
+                    Write us a letter and we will reply as soon as possible.
+                  </p>
+                </div>
+                <div
+                  class="flex justify-end w-1/4"
+                >
+                  <div
+                    class="my-auto"
+                  >
+                    <button
+                      class="sc-AxjAm ddQVWI"
+                      color="primary"
+                      type="button"
+                    >
+                      Contact us
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

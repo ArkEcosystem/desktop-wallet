@@ -1,7 +1,14 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
+import { EnvironmentContext } from "app/contexts";
+import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
-import { fireEvent, render, within } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 // i18n
 import { translations } from "../../i18n";
@@ -10,29 +17,48 @@ import { PluginsCategory } from "./PluginsCategory";
 jest.useFakeTimers();
 
 describe("PluginsCategory", () => {
-	it("should render", () => {
-		const { asFragment, getByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+	let rendered = RenderResult;
 
-		expect(getByTestId("PluginsCategory")).toHaveTextContent("Top Rated plugins");
-		expect(getByTestId("PluginsCategory")).toHaveTextContent("Easy way to find, manage and install plugins");
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+	const history = createMemoryHistory();
+	const pluginsCategoryURL = "/profiles/qwe123/plugins/categories/game";
+
+	history.push(pluginsCategoryURL);
+
+	beforeEach(() => {
+		history.push(pluginsCategoryURL);
+
+		rendered = renderWithRouter(
+			<EnvironmentContext.Provider value={env}>
+				<Route path="/profiles/:profileId/plugins/categories/:categoryId">
+					<PluginsCategory
+						title="Top Rated plugins"
+						description="Easy way to find, manage and install plugins"
+						initialViewType="grid"
+					/>
+				</Route>
+			</EnvironmentContext.Provider>,
+			{
+				routes: [pluginsCategoryURL],
+				history,
+			},
+		);
+	});
+
+	it("should render", () => {
+		const { asFragment, getByTestId } = rendered;
+
+		expect(getByTestId("header__title")).toHaveTextContent("Top Rated plugins");
+		expect(getByTestId("header__subtitle")).toHaveTextContent("Easy way to find, manage and install plugins");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should toggle between list and grid", () => {
-		const { asFragment, getByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+	it("should toggle between grid and list", () => {
+		const { asFragment, getByTestId } = rendered;
 
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
-		expect(within(pluginsContainer).getByTestId("PluginList")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		expect(within(pluginsContainer).getByTestId("PluginList")).toBeTruthy();
+		expect(within(pluginsContainer).getByTestId("PluginGrid")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
@@ -40,13 +66,17 @@ describe("PluginsCategory", () => {
 
 		expect(within(pluginsContainer).getByTestId("PluginGrid")).toBeTruthy();
 
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		expect(within(pluginsContainer).getByTestId("PluginList")).toBeTruthy();
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should install plugin from header install button", () => {
-		const { asFragment, getByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginsCategory_header--install"));
@@ -65,9 +95,7 @@ describe("PluginsCategory", () => {
 	});
 
 	it("should download & install plugin", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -87,9 +115,7 @@ describe("PluginsCategory", () => {
 	});
 
 	it("should close install plugin modal", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -107,9 +133,7 @@ describe("PluginsCategory", () => {
 	});
 
 	it("should cancel install plugin", () => {
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -129,9 +153,7 @@ describe("PluginsCategory", () => {
 	it("should search for plugin", (done) => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -157,13 +179,7 @@ describe("PluginsCategory", () => {
 	it("should select plugin on grid", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId } = render(
-			<PluginsCategory
-				title="Top Rated plugins"
-				description="Easy way to find, manage and install plugins"
-				initialViewType="grid"
-			/>,
-		);
+		const { asFragment, getByTestId } = rendered;
 
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
 
@@ -193,9 +209,8 @@ describe("PluginsCategory", () => {
 	it("should delete plugin", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId, getAllByTestId } = render(
-			<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />,
-		);
+		const { asFragment, getByTestId } = rendered;
+
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
 
 		act(() => {
