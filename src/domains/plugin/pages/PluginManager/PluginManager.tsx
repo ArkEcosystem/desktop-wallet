@@ -120,7 +120,17 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 			</div>
 
 			<div data-testid="PluginManager__home__top-utilities">
-				<h2 className="mt-8 mb-6 font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
+				<div className="flex items-center justify-between mt-8 mb-6">
+					<h2 className="font-bold">{t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}</h2>
+					<a
+						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TOP_UTILITIES")}
+						data-testid="PluginManager__home__top-utilities__view-more"
+						className="font-semibold cursor-pointer link"
+						href={paths.topUtilities}
+					>
+						{t("COMMON.VIEW_MORE")}
+					</a>
+				</div>
 				{viewType === "grid" && (
 					<PluginGrid
 						plugins={plugins}

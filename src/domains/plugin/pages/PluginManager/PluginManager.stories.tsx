@@ -9,6 +9,7 @@ export const Default = () => {
 	const paths = {
 		featured: "/?path=/story/domains-plugin-pages-plugins-category--featured",
 		topRated: "/?path=/story/domains-plugin-pages-plugins-category--top-rated",
+		topUtilities: "/?path=/story/domains-plugin-pages-plugins-category--top-utilities",
 	};
 
 	return (
