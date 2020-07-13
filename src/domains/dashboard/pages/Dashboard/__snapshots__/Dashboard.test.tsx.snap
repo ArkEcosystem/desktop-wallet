@@ -104,15 +104,20 @@ exports[`Dashboard should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/qwe123/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3308,15 +3313,20 @@ exports[`Dashboard should render portfolio chart 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/qwe123/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -6512,15 +6522,20 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/qwe123/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"

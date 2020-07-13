@@ -55,15 +55,20 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -210,15 +215,20 @@ exports[`NavigationBar should render 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -365,15 +375,20 @@ exports[`NavigationBar should render with custom menu 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
