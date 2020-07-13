@@ -200,7 +200,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep form={form} />
+								<FirstStep />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
