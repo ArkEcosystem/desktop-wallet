@@ -48,6 +48,11 @@ const getVariant = (name: string, colorName: string, color: ReturnType<typeof ge
 					border-color: ${color.light};
 				}
 			`;
+		case "transparent":
+			return css`
+				background-color: transparent;
+				border: 0px none;
+			`;
 	}
 };
 
