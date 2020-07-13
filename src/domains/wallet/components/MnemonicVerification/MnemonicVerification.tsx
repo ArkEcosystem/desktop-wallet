@@ -15,11 +15,9 @@ const randomWordPositions = () => {
 	const positions: number[] = [];
 	while (positions.length < 3) {
 		const randomNumber = Math.floor(Math.random() * 12) + 1;
-		if (positions.includes(randomNumber)) {
-			continue;
+		if (!positions.includes(randomNumber)) {
+			positions.push(randomNumber);
 		}
-
-		positions.push(randomNumber);
 	}
 
 	return positions;
@@ -30,11 +28,9 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 	const [positions, setPositions] = React.useState([] as number[]);
 	const mnemonicWords = mnemonic.split(" ");
 
-	if (!wordPositions?.length) {
-		wordPositions = randomWordPositions();
-	}
-
-	if (activeTab === 0 && !positions.length) {
+	if (!wordPositions?.length && activeTab === 0 && !positions.length) {
+		setPositions(randomWordPositions());
+	} else if (activeTab === 0 && !positions.length) {
 		setPositions(wordPositions);
 	}
 
