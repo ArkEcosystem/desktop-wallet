@@ -18,16 +18,12 @@ export const Default = () => {
 				<SelectAddress contacts={contacts} disabled />
 			</div>
 			<div>
-				<div className="mb-3">Selected address</div>
-				<SelectAddress contacts={contacts} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
+				<div className="mb-3">Selected address (verified)</div>
+				<SelectAddress contacts={contacts} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" isVerified />
 			</div>
 			<div>
 				<div className="mb-3">Selected address (disabled)</div>
-				<SelectAddress
-					disabled
-					contacts={contacts}
-					address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
-				 />
+				<SelectAddress disabled contacts={contacts} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
 			</div>
 		</div>
 	);
