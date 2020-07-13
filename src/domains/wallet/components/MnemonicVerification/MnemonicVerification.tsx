@@ -31,7 +31,7 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 	if (!wordPositions?.length && activeTab === 0 && !positions.length) {
 		setPositions(randomWordPositions());
 	} else if (activeTab === 0 && !positions.length) {
-		setPositions(wordPositions);
+		setPositions(wordPositions as number[]);
 	}
 
 	const currentAnswer = React.useMemo(() => mnemonicWords[positions[activeTab] - 1], [
