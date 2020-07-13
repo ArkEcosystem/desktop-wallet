@@ -283,7 +283,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mt-8"
                     >
                       <div
-                        class="sc-fznJRM bzdcQx"
+                        class="sc-fznWqX hGbOkm"
                       >
                         <form
                           class="space-y-8"
@@ -711,7 +711,7 @@ exports[`Transaction Send should render 1`] = `
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -719,7 +719,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -727,7 +727,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -795,7 +795,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="sc-fznJRM bzdcQx"
+        class="sc-fznWqX hGbOkm"
       >
         <form
           class="space-y-8"
@@ -1223,7 +1223,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1231,7 +1231,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1239,7 +1239,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1410,7 +1410,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="pt-2"
+              class="sc-fznxsB cfmSFu"
             >
               <div
                 class="sc-fzqBZW cBnliu"
@@ -1430,7 +1430,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top invisible w-2"
+                          class="flex flex-inline align-top hidden"
                         >
                           <div>
                             Avatar
@@ -1444,7 +1444,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top hidden"
                         >
                           <div>
                             Address
@@ -1458,7 +1458,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top float-right"
+                          class="flex flex-inline align-top hidden"
                         >
                           <div>
                             Amount
@@ -1471,14 +1471,14 @@ exports[`Transaction Send should render 2nd step 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="border-b border-dotted border-theme-neutral-200"
                       data-testid="recipient-list__recipient-list-item"
                     >
                       <td
-                        class="w-12 py-4"
+                        class="py-6 w-14"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                           data-testid="Avatar"
                         >
                           <div
@@ -1493,6 +1493,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         </div>
                       </td>
                       <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-neutral"
+                        >
+                          Recipient #1
+                        </div>
                         <div
                           class="inline-block truncate align-middle"
                         >
@@ -1510,21 +1515,28 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           </span>
                         </div>
                       </td>
-                      <td
-                        class="font-bold text-right text-theme-neutral-800"
-                      >
-                        100 ARK
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                        >
+                          Amount
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-neutral-800"
+                        >
+                          100 ARK
+                        </div>
                       </td>
                     </tr>
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="border-b border-dotted border-theme-neutral-200"
                       data-testid="recipient-list__recipient-list-item"
                     >
                       <td
-                        class="w-12 py-4"
+                        class="py-6 w-14"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                           data-testid="Avatar"
                         >
                           <div
@@ -1539,6 +1551,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         </div>
                       </td>
                       <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-neutral"
+                        >
+                          Recipient #2
+                        </div>
                         <div
                           class="inline-block truncate align-middle"
                         >
@@ -1556,21 +1573,28 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           </span>
                         </div>
                       </td>
-                      <td
-                        class="font-bold text-right text-theme-neutral-800"
-                      >
-                        100 ARK
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                        >
+                          Amount
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-neutral-800"
+                        >
+                          100 ARK
+                        </div>
                       </td>
                     </tr>
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="border-b border-dotted border-theme-neutral-200"
                       data-testid="recipient-list__recipient-list-item"
                     >
                       <td
-                        class="w-12 py-4"
+                        class="py-6 w-14"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                           data-testid="Avatar"
                         >
                           <div
@@ -1585,6 +1609,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         </div>
                       </td>
                       <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-neutral"
+                        >
+                          Recipient #3
+                        </div>
                         <div
                           class="inline-block truncate align-middle"
                         >
@@ -1602,21 +1631,28 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           </span>
                         </div>
                       </td>
-                      <td
-                        class="font-bold text-right text-theme-neutral-800"
-                      >
-                        100 ARK
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                        >
+                          Amount
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-neutral-800"
+                        >
+                          100 ARK
+                        </div>
                       </td>
                     </tr>
                     <tr
-                      class="border-b border-theme-neutral-200"
+                      class="border-b border-dotted border-theme-neutral-200"
                       data-testid="recipient-list__recipient-list-item"
                     >
                       <td
-                        class="w-12 py-4"
+                        class="py-6 w-14"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                           data-testid="Avatar"
                         >
                           <div
@@ -1631,6 +1667,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
                         </div>
                       </td>
                       <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-theme-neutral"
+                        >
+                          Recipient #4
+                        </div>
                         <div
                           class="inline-block truncate align-middle"
                         >
@@ -1648,10 +1689,17 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           </span>
                         </div>
                       </td>
-                      <td
-                        class="font-bold text-right text-theme-neutral-800"
-                      >
-                        100 ARK
+                      <td>
+                        <div
+                          class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+                        >
+                          Amount
+                        </div>
+                        <div
+                          class="font-bold text-right text-theme-neutral-800"
+                        >
+                          100 ARK
+                        </div>
                       </td>
                     </tr>
                   </tbody>

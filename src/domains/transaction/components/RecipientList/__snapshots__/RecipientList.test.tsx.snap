@@ -3,7 +3,7 @@
 exports[`SendTransactionForm should render editable 1`] = `
 <div>
   <div
-    class="pt-2"
+    class="sc-AxhUy bDdNbc"
   >
     <div
       class="sc-AxhCb brtxRQ"
@@ -23,7 +23,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-2"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -37,7 +37,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top undefined"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -51,7 +51,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top float-right"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -65,7 +65,7 @@ exports[`SendTransactionForm should render editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Action
@@ -78,14 +78,14 @@ exports[`SendTransactionForm should render editable 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -100,6 +100,12 @@ exports[`SendTransactionForm should render editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                1
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -117,15 +123,22 @@ exports[`SendTransactionForm should render editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
             <td
-              class="w-16 text-right"
+              class="w-20 text-right"
             >
               <button
                 class="sc-AxirZ fhzkRl"
@@ -150,14 +163,14 @@ exports[`SendTransactionForm should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -172,6 +185,12 @@ exports[`SendTransactionForm should render editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                2
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -189,15 +208,22 @@ exports[`SendTransactionForm should render editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
             <td
-              class="w-16 text-right"
+              class="w-20 text-right"
             >
               <button
                 class="sc-AxirZ fhzkRl"
@@ -222,14 +248,14 @@ exports[`SendTransactionForm should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -244,6 +270,12 @@ exports[`SendTransactionForm should render editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                3
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -261,15 +293,22 @@ exports[`SendTransactionForm should render editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
             <td
-              class="w-16 text-right"
+              class="w-20 text-right"
             >
               <button
                 class="sc-AxirZ fhzkRl"
@@ -294,14 +333,14 @@ exports[`SendTransactionForm should render editable 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -316,6 +355,12 @@ exports[`SendTransactionForm should render editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                4
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -333,15 +378,22 @@ exports[`SendTransactionForm should render editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
             <td
-              class="w-16 text-right"
+              class="w-20 text-right"
             >
               <button
                 class="sc-AxirZ fhzkRl"
@@ -375,7 +427,7 @@ exports[`SendTransactionForm should render editable 1`] = `
 exports[`SendTransactionForm should render non-editable 1`] = `
 <div>
   <div
-    class="pt-2"
+    class="sc-AxhUy bDdNbc"
   >
     <div
       class="sc-AxhCb brtxRQ"
@@ -395,7 +447,7 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top invisible w-2"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -409,7 +461,7 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top undefined"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -423,7 +475,7 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top float-right"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -436,14 +488,14 @@ exports[`SendTransactionForm should render non-editable 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -458,6 +510,12 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                1
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -475,23 +533,30 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -506,6 +571,12 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                2
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -523,23 +594,30 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -554,6 +632,12 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                3
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -571,23 +655,30 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
           </tr>
           <tr
-            class="border-b border-theme-neutral-200"
+            class="border-b border-dotted border-theme-neutral-200"
             data-testid="recipient-list__recipient-list-item"
           >
             <td
-              class="w-12 py-4"
+              class="py-6 w-14"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
@@ -602,6 +693,12 @@ exports[`SendTransactionForm should render non-editable 1`] = `
               </div>
             </td>
             <td>
+              <div
+                class="mb-1 text-sm font-semibold text-theme-neutral"
+              >
+                Recipient #
+                4
+              </div>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -619,12 +716,19 @@ exports[`SendTransactionForm should render non-editable 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="font-bold text-right text-theme-neutral-800"
-            >
-              100
-               
-              ARK
+            <td>
+              <div
+                class="mb-1 text-sm font-semibold text-right text-theme-neutral"
+              >
+                Amount
+              </div>
+              <div
+                class="font-bold text-right text-theme-neutral-800"
+              >
+                100
+                 
+                ARK
+              </div>
             </td>
           </tr>
         </tbody>
