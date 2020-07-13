@@ -3,7 +3,7 @@
 exports[`AddRecipient should render 1`] = `
 <div>
   <div
-    class="sc-fzokOt OZRXp"
+    class="sc-fzqNJr bVIZOB"
   >
     <div
       class="flex items-stretch select-buttons"
@@ -30,7 +30,7 @@ exports[`AddRecipient should render 1`] = `
       data-testid="add-recipient__form-wrapper"
     >
       <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
+        class="sc-AxirZ izhStr relative mt-1"
       >
         <div
           class="mb-2"
@@ -44,62 +44,16 @@ exports[`AddRecipient should render 1`] = `
             Recipient
           </label>
         </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
+        <div>
+          <button
+            class="sc-fzokOt dprUuD SelectAddress  "
+            data-testid="SelectAddress__wrapper"
           >
-            <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
-              data-testid="ProfileFormField__select-recipientAddress"
-              name="recipientAddress"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                 Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+              class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-Axmtr hdGCex"
@@ -110,31 +64,15 @@ exports[`AddRecipient should render 1`] = `
                   user.svg
                 </svg>
               </div>
-            </button>
-            <div
-              class="sc-fznyAO ggGjwF border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
+            </div>
+          </button>
+          <input
+            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hidden"
+            data-testid="SelectAddress__input"
+            name="recipientAddress"
+            readonly=""
+            type="text"
+            value=""
           />
         </div>
       </fieldset>
@@ -167,7 +105,7 @@ exports[`AddRecipient should render 1`] = `
             class="sc-AxhCb sc-AxgMl brbBur"
           >
             <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
+              class="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
               data-testid="add-recipient__send-all"
             >
               Send All
@@ -183,7 +121,7 @@ exports[`AddRecipient should render 1`] = `
 exports[`AddRecipient should render with multiple recipients tab 1`] = `
 <div>
   <div
-    class="sc-fzokOt OZRXp"
+    class="sc-fzqNJr bVIZOB"
   >
     <div
       class="flex items-stretch select-buttons"
@@ -210,7 +148,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
       data-testid="add-recipient__form-wrapper"
     >
       <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
+        class="sc-AxirZ izhStr relative mt-1"
       >
         <div
           class="mb-2"
@@ -224,62 +162,16 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             Recipient
           </label>
         </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
+        <div>
+          <button
+            class="sc-fzokOt dprUuD SelectAddress  "
+            data-testid="SelectAddress__wrapper"
           >
-            <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
-              data-testid="ProfileFormField__select-recipientAddress"
-              name="recipientAddress"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                 Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+              class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-Axmtr hdGCex"
@@ -290,31 +182,15 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                   user.svg
                 </svg>
               </div>
-            </button>
-            <div
-              class="sc-fznyAO ggGjwF border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
+            </div>
+          </button>
+          <input
+            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hidden"
+            data-testid="SelectAddress__input"
+            name="recipientAddress"
+            readonly=""
+            type="text"
+            value=""
           />
         </div>
       </fieldset>
@@ -347,7 +223,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             class="sc-AxhCb sc-AxgMl brbBur"
           >
             <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
+              class="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
               data-testid="add-recipient__send-all"
             >
               Send All
@@ -363,7 +239,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
 exports[`AddRecipient should render without recipients 1`] = `
 <div>
   <div
-    class="sc-fzokOt OZRXp"
+    class="sc-fzqNJr bVIZOB"
   >
     <div
       class="flex items-stretch select-buttons"
@@ -390,7 +266,7 @@ exports[`AddRecipient should render without recipients 1`] = `
       data-testid="add-recipient__form-wrapper"
     >
       <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
+        class="sc-AxirZ izhStr relative mt-1"
       >
         <div
           class="mb-2"
@@ -404,44 +280,16 @@ exports[`AddRecipient should render without recipients 1`] = `
             Recipient
           </label>
         </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
+        <div>
+          <button
+            class="sc-fzokOt dprUuD SelectAddress  "
+            data-testid="SelectAddress__wrapper"
           >
-            <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
-              data-testid="ProfileFormField__select-recipientAddress"
-              name="recipientAddress"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+              class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-Axmtr hdGCex"
@@ -452,31 +300,15 @@ exports[`AddRecipient should render without recipients 1`] = `
                   user.svg
                 </svg>
               </div>
-            </button>
-            <div
-              class="sc-fznyAO ggGjwF border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
+            </div>
+          </button>
+          <input
+            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hidden"
+            data-testid="SelectAddress__input"
+            name="recipientAddress"
+            readonly=""
+            type="text"
+            value=""
           />
         </div>
       </fieldset>
@@ -509,207 +341,7 @@ exports[`AddRecipient should render without recipients 1`] = `
             class="sc-AxhCb sc-AxgMl brbBur"
           >
             <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="add-recipient__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AddRecipient should select recipient 1`] = `
-<div>
-  <div
-    class="sc-fzokOt OZRXp"
-  >
-    <div
-      class="flex items-stretch select-buttons"
-    >
-      <button
-        class="sc-AxjAm ddQVWI flex-1"
-        color="primary"
-        data-testid="add-recipient-is-single-toggle"
-        type="button"
-      >
-        Single
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC flex-1 border-l-0"
-        color="primary"
-        data-testid="add-recipient-is-multiple-toggle"
-        type="button"
-      >
-        Multiple
-      </button>
-    </div>
-    <div
-      class="space-y-8 mt-12 rounded-sm "
-      data-testid="add-recipient__form-wrapper"
-    >
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipientAddress"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
-              data-testid="ProfileFormField__select-recipientAddress"
-              name="recipientAddress"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                 Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznyAO ggGjwF border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="flex ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN hVkhiO bg-theme-neutral-300 border-theme-neutral-300"
-          />
-          <div
-            class="mt-1 ml-4 text-theme-neutral-800"
-          >
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-normal text-base"
-                data-testid="address__wallet-name"
-              >
-                Recipient Wallet
-              </span>
-              <span
-                class="sc-fzpans kkFAbe text-theme-neutral-light font-normal text-base"
-                data-testid="address__wallet-address"
-              >
-                FJKDSALJFKASL…SAJFKLASJKDFJ
-              </span>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
-            data-testid="add-recipient__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
+              class="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
               data-testid="add-recipient__send-all"
             >
               Send All
@@ -725,7 +357,7 @@ exports[`AddRecipient should select recipient 1`] = `
 exports[`AddRecipient should set available amount 1`] = `
 <div>
   <div
-    class="sc-fzokOt OZRXp"
+    class="sc-fzqNJr bVIZOB"
   >
     <div
       class="flex items-stretch select-buttons"
@@ -752,7 +384,7 @@ exports[`AddRecipient should set available amount 1`] = `
       data-testid="add-recipient__form-wrapper"
     >
       <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
+        class="sc-AxirZ izhStr relative mt-1"
       >
         <div
           class="mb-2"
@@ -766,62 +398,16 @@ exports[`AddRecipient should set available amount 1`] = `
             Recipient
           </label>
         </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
+        <div>
+          <button
+            class="sc-fzokOt dprUuD SelectAddress  "
+            data-testid="SelectAddress__wrapper"
           >
-            <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
-              data-testid="ProfileFormField__select-recipientAddress"
-              name="recipientAddress"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                 Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl brbBur"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+              class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+            />
+            <div
+              class="absolute flex items-center right-4 space-x-3"
             >
               <div
                 class="sc-Axmtr hdGCex"
@@ -832,31 +418,15 @@ exports[`AddRecipient should set available amount 1`] = `
                   user.svg
                 </svg>
               </div>
-            </button>
-            <div
-              class="sc-fznyAO ggGjwF border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
+            </div>
+          </button>
+          <input
+            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 hidden"
+            data-testid="SelectAddress__input"
+            name="recipientAddress"
+            readonly=""
+            type="text"
+            value=""
           />
         </div>
       </fieldset>
@@ -889,7 +459,7 @@ exports[`AddRecipient should set available amount 1`] = `
             class="sc-AxhCb sc-AxgMl brbBur"
           >
             <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
+              class="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
               data-testid="add-recipient__send-all"
             >
               Send All
