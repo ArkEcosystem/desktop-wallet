@@ -6,6 +6,8 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchContactProps = {
+	title?: string;
+	description?: string;
 	isOpen: boolean;
 	contacts: any[];
 	options?: any[];
@@ -14,7 +16,16 @@ type SearchContactProps = {
 	onAction?: (action: Option, address: any) => void;
 };
 
-export const SearchContact = ({ isOpen, contacts, onClose, onSearch, onAction, options }: SearchContactProps) => {
+export const SearchContact = ({
+	isOpen,
+	contacts,
+	onClose,
+	onSearch,
+	onAction,
+	options,
+	title,
+	description,
+}: SearchContactProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -36,8 +47,8 @@ export const SearchContact = ({ isOpen, contacts, onClose, onSearch, onAction, o
 	return (
 		<SearchResource
 			isOpen={isOpen}
-			title={t("CONTACTS.MODAL_SEARCH_CONTACT.TITLE")}
-			description={t("CONTACTS.MODAL_SEARCH_CONTACT.DESCRIPTION")}
+			title={title || t("CONTACTS.MODAL_SEARCH_CONTACT.TITLE")}
+			description={description || t("CONTACTS.MODAL_SEARCH_CONTACT.DESCRIPTION")}
 			placeholder="Search..."
 			onClose={onClose}
 			onSearch={onSearch}
