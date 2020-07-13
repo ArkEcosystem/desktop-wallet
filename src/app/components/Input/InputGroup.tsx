@@ -6,12 +6,12 @@ const InputAddon = styled.div`
 	${tw`absolute inset-y-0 flex items-center justify-center overflow-hidden`};
 `;
 
-export const InputAddonStart = styled(InputAddon)`
-	${tw`left-0 rounded-l border border-transparent`}
+export const InputAddonStart = styled.div`
+	${tw`border border-r-0 rounded-l`}
 `;
 
 export const InputAddonEnd = styled(InputAddon)`
-	${tw`right-0 rounded-r border border-transparent`}
+	${tw`right-0 border border-transparent rounded-r`}
 `;
 
 export const InputGroup = styled.div`

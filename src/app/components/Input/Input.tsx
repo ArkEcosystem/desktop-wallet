@@ -6,10 +6,10 @@ import { useFormField } from "../Form/useFormField";
 type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLProps<any>;
 
 const InputStyled = styled.input`
-	${tw`py-3 px-4`}
+	${tw`px-4 py-3`}
 
 	&:focus {
-		${tw`outline-none border-theme-primary border-2`}
+		${tw`border-2 outline-none border-theme-primary`}
 		padding: 11px 15px;
 	}
 	&::placeholder {
