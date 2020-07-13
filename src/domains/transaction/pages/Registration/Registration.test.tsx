@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { Registration } from "./Registration";
 
@@ -48,12 +48,12 @@ beforeEach(() => {
 });
 
 describe("Registration", () => {
-	it("should render 1st step", () => {
+	it("should render 1st step", async () => {
 		const { asFragment, getByTestId } = render(<Registration {...defaultFormValues} />);
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should should go back", async () => {
@@ -68,7 +68,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 2nd step", async () => {
@@ -80,7 +80,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 3rd step", async () => {
@@ -95,7 +95,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 4th step", async () => {
@@ -113,7 +113,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("Registration__fourth-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 5th step", async () => {
@@ -140,7 +140,7 @@ describe("Registration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should submit", async () => {
@@ -169,7 +169,7 @@ describe("Registration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should select registration type", async () => {
@@ -189,6 +189,6 @@ describe("Registration", () => {
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("business");
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 });

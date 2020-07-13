@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
-let defaultFormValues = {};
+let defaultFormValues: any = {};
 
 beforeEach(() => {
 	defaultFormValues = {
@@ -13,12 +13,12 @@ beforeEach(() => {
 });
 
 describe("UpdateRegistration", () => {
-	it("should render 1st step", () => {
+	it("should render 1st step", async () => {
 		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should should go back", async () => {
@@ -33,17 +33,11 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 2nd step", async () => {
-		let context;
-
-		await act(async () => {
-			context = render(<UpdateRegistration {...defaultFormValues} />);
-		});
-
-		const { asFragment, getByTestId } = context;
+		const { asFragment, getByTestId } = render(<UpdateRegistration {...defaultFormValues} />);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("UpdateRegistration__continue-button"));
@@ -51,7 +45,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 3rd step", async () => {
@@ -66,7 +60,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 4th step", async () => {
@@ -90,7 +84,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should submit", async () => {
@@ -116,6 +110,6 @@ describe("UpdateRegistration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 });
