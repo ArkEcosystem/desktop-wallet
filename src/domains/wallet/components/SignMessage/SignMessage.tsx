@@ -18,7 +18,7 @@ type Props = {
 	isSigned?: boolean;
 	handleClose?: any;
 	handleSign?: any;
-	signatoryAddress: string;
+	signatoryAddress?: string;
 };
 
 const mockSignature = {
