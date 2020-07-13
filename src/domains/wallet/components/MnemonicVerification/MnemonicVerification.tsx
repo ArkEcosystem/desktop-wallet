@@ -6,23 +6,46 @@ import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 
 type Props = {
 	mnemonic: string;
-	wordPositions: number[];
+	wordPositions?: number[];
 	optionsLimit: number;
 	handleComplete: () => void;
 };
 
+const randomWordPositions = () => {
+	const positions: number[] = [];
+	while (positions.length < 3) {
+		const randomNumber = Math.floor(Math.random() * 12) + 1;
+		if (positions.includes(randomNumber)) {
+			continue;
+		}
+
+		positions.push(randomNumber);
+	}
+
+	return positions;
+};
+
 export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete }: Props) {
 	const [activeTab, setActiveTab] = React.useState(0);
+	const [positions, setPositions] = React.useState([] as number[]);
 	const mnemonicWords = mnemonic.split(" ");
+
+	if (!wordPositions?.length) {
+		wordPositions = randomWordPositions();
+	}
+
+	if (activeTab === 0 && !positions.length) {
+		setPositions(wordPositions);
+	}
 
 	const currentAnswer = React.useMemo(() => mnemonicWords[positions[activeTab] - 1], [
 		activeTab,
-		wordPositions,
+		positions,
 		mnemonicWords,
 	]);
 
 	const handleNext = () => {
-		if (activeTab === wordPositions.length - 1) {
+		if (activeTab === positions.length - 1) {
 			handleComplete();
 		}
 		setActiveTab(activeTab + 1);
@@ -36,10 +59,10 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 
 	return (
 		<Tabs activeId={activeTab}>
-			<MnemonicVerificationProgress activeTab={activeTab} wordPositions={wordPositions} />
+			<MnemonicVerificationProgress activeTab={activeTab} wordPositions={positions} />
 
 			<div className="mt-10">
-				{wordPositions.map((position, index) => (
+				{positions.map((position, index) => (
 					<TabPanel key={position} tabId={index}>
 						<MnemonicVerificationOptions
 							limit={optionsLimit}
@@ -54,3 +77,7 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 		</Tabs>
 	);
 }
+
+MnemonicVerification.defaultProps = {
+	wordPositions: [],
+};
