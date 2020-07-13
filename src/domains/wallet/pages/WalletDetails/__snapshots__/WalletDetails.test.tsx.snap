@@ -7,7 +7,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzqNJr dmjVNe"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -79,15 +79,21 @@ exports[`WalletDetails should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb kMxKUa"
+                color="primary"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -116,7 +122,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -133,7 +139,7 @@ exports[`WalletDetails should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -205,7 +211,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex"
               >
                 <div
-                  class="sc-AxhCb dtyYr -mr-1 border-theme-neutral-dark"
+                  class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-theme-neutral-dark"
@@ -283,7 +289,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxmLO hCnZlU"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -298,7 +304,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxmLO iaPZRe text-left"
+                    class="sc-AxhCb bFTKKh text-left"
                     color="primary"
                     type="button"
                   >
@@ -318,7 +324,7 @@ exports[`WalletDetails should render 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzpans ctLZwQ"
+          class="sc-fzoyAV kUEPnl"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -341,15 +347,15 @@ exports[`WalletDetails should render 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fzoXzr hKGpbk"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj kIzRLe"
+                      class="sc-fzpjYC homzFa"
                     >
                       <span
-                        class="sc-fznZeY esYqtc"
+                        class="sc-fznxsB cYsqyX"
                       />
                     </div>
                   </label>
@@ -417,7 +423,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -441,7 +447,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzoLag kAiVQe"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -474,7 +480,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -616,7 +622,7 @@ exports[`WalletDetails should render 1`] = `
                       </li>
                     </ul>
                     <button
-                      class="sc-AxmLO ipkzTu"
+                      class="sc-AxhCb BegvR"
                       color="primary"
                       data-testid="WalletVote__delegate__unvote"
                       type="button"
@@ -631,7 +637,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoyAV kUEPnl"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -655,7 +661,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzoLag kAiVQe"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -687,7 +693,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -735,7 +741,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -770,7 +776,7 @@ exports[`WalletDetails should render 1`] = `
                       data-testid="WalletRegistrations__icon-list"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -784,7 +790,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -798,7 +804,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__rest"
                       >
                         +1
@@ -816,7 +822,7 @@ exports[`WalletDetails should render 1`] = `
                     Show all
                   </button>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -831,7 +837,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
       <div>
         <div
-          class="sc-fzpans ctLZwQ mb-20"
+          class="sc-fzoyAV kUEPnl mb-20"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -845,7 +851,7 @@ exports[`WalletDetails should render 1`] = `
                 Pending Transactions
               </h2>
               <div
-                class="sc-AxgMl hJWcEH"
+                class="sc-AxheI bjlCjh"
                 role="table"
               >
                 <table
@@ -1051,7 +1057,7 @@ exports[`WalletDetails should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                            class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-light -mr-1"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1085,7 +1091,13 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            data-testid="address__wallet-name"
+                          >
+                            My Wallet
+                          </span>
+                          <span
+                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             ASuusX…GQ3kqT
@@ -1093,14 +1105,44 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </td>
                       <td
-                        class="text-center"
+                        class="py-1 text-sm font-bold text-center"
+                      />
+                      <td
+                        class="text-sm text-right w-36"
+                      >
+                        <div
+                          class="sc-AxmLO jmixdy"
+                          color="success"
+                        >
+                          100 ARK
+                        </div>
+                      </td>
+                      <td
+                        class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
+                      >
+                        <div>
+                          1,000,000 USD
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-dotted cursor-pointer border-theme-neutral-300"
+                      data-testid="transaction__row"
+                    >
+                      <td
+                        class="w-48 py-1 text-sm text-theme-neutral-600"
+                      >
+                         17 Mar 2020 22:02:10 
+                      </td>
+                      <td
+                        class="w-32 py-5 mt-1"
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
                           data-testid="TransactionRowInfo"
                         >
-                          <span
-                            class="p-1"
+                          <div
+                            class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1136,11 +1178,15 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-flex p-1 align-middle"
                           data-testid="TransactionRowConfirmation"
                         >
-                          <div
-                            class="sc-AxirZ iQaTP text-theme-danger-400"
-                            data-testid="TransactionRowConfirmation__actionRequired"
-                            height="1em"
-                            width="1em"
+                          <span
+                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                            data-testid="address__wallet-name"
+                          >
+                            My Wallet
+                          </span>
+                          <span
+                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                            data-testid="address__wallet-address"
                           >
                             <svg>
                               edit.svg
@@ -1152,7 +1198,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-AxheI kinEEx"
+                          class="sc-AxmLO gDEWID"
                           color="danger"
                           data-testid="TransactionRowAmount"
                         >
@@ -1194,7 +1240,7 @@ exports[`WalletDetails should render 1`] = `
                 Transaction History
               </h2>
               <div
-                class="sc-AxgMl hJWcEH"
+                class="sc-AxheI bjlCjh"
                 role="table"
               >
                 <table
@@ -1400,7 +1446,7 @@ exports[`WalletDetails should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                            class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1458,51 +1504,11 @@ exports[`WalletDetails should render 1`] = `
                             height="1em"
                             width="1em"
                           >
-                            <svg>
-                              ok.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </td>
-                      <td
-                        class="text-right"
-                      >
-                        <div
-                          class="sc-AxheI kinEEx"
-                          color="danger"
-                          data-testid="TransactionRowAmount"
-                        >
-                          0.10000000
-                        </div>
-                      </td>
-                      <td
-                        class="text-right"
-                        data-testid="TransactionRow__currency"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                          data-testid="TransactionRowAmount"
-                        >
-                          0.20
-                        </span>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dotted border-theme-neutral-300"
-                      data-testid="TransactionRow"
-                    >
-                      <td
-                        class="w-16 py-6"
-                      >
-                        <div
-                          class="inline-block align-middle"
-                        >
-                          <a
-                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-                            data-testid="TransactionRow__ID"
-                            href=""
-                            rel="noopener noreferrer"
-                            target="_blank"
+                            My Wallet
+                          </span>
+                          <span
+                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                            data-testid="address__wallet-address"
                           >
                             <div
                               class="sc-AxirZ iQaTP flex-shrink-0 "
@@ -1602,7 +1608,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-AxheI kinEEx"
+                          class="sc-AxmLO gDEWID"
                           color="danger"
                           data-testid="TransactionRowAmount"
                         >
@@ -1797,7 +1803,7 @@ exports[`WalletDetails should render 1`] = `
                   Show
                 </span>
                 <span
-                  class="sc-fzplWN cCDGwI"
+                  class="sc-fzoLag ezBkXg"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -1825,7 +1831,7 @@ exports[`WalletDetails should render 1`] = `
               class="container mx-auto px-14"
             >
               <div
-                class="sc-AxgMl hJWcEH"
+                class="sc-AxheI bjlCjh"
                 role="table"
               >
                 <table
@@ -1984,7 +1990,7 @@ exports[`WalletDetails should render 1`] = `
                           class="flex"
                         >
                           <div
-                            class="sc-AxhCb bzWLYJ"
+                            class="sc-AxhUy dSLmHc"
                           >
                             <div
                               class="sc-AxirZ eEbZjj"

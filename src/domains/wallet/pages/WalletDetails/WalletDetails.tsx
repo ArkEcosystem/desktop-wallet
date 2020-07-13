@@ -7,6 +7,7 @@ import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeade
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { wallet, wallets } from "./data";
 
@@ -37,6 +38,7 @@ type Props = {
 
 export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const activeProfile = useActiveProfile();
+	const history = useHistory();
 
 	const crumbs = [
 		{
@@ -73,6 +75,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 					hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
 					hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
 					hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
+					onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
 				/>
 			</Section>
 
