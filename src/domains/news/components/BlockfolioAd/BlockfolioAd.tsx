@@ -6,7 +6,7 @@ import React from "react";
 const { DownloadAppStoreButton, DownloadGooglePlayButton } = images.news.common;
 
 export const BlockfolioAd = () => (
-	<div className="relative pt-6">
+	<div className="relative">
 		<div
 			className="absolute text-center rounded-b-full bg-theme-primary-contrast right-4"
 			style={{ width: 28, height: 29 }}
@@ -15,7 +15,7 @@ export const BlockfolioAd = () => (
 		</div>
 		<img
 			src={BlockfolioBanner}
-			className="w-full border-2 rounded-xl border-theme-primary-contrast"
+			className="w-full border-2 rounded-lg border-theme-primary-contrast"
 			alt="Blockfolio Banner"
 		/>
 		<div className="absolute top-24 left-10">

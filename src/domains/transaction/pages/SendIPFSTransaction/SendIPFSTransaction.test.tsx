@@ -1,8 +1,15 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { EnvironmentContext } from "app/contexts";
+import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
@@ -54,10 +61,28 @@ describe("SendIPFSTransaction", () => {
 	});
 
 	it("should render", async () => {
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		const history = createMemoryHistory();
+		const ipfsURL = "/profiles/qwe123/transactions/ipfs";
+
+		history.push(ipfsURL);
+
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<SendIPFSTransaction onCopy={onCopy} />);
+			rendered = renderWithRouter(
+				<EnvironmentContext.Provider value={env}>
+					<Route path="/profiles/:profileId/transactions/ipfs">
+						<SendIPFSTransaction onCopy={onCopy} />
+					</Route>
+				</EnvironmentContext.Provider>,
+				{
+					routes: [ipfsURL],
+					history,
+				},
+			);
+
 			await waitFor(() => expect(rendered.getByTestId(`SendIPFSTransaction__step--first`)).toBeTruthy());
 		});
 

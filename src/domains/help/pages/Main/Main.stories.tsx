@@ -9,13 +9,11 @@ export default {
 
 export const Default = () => {
 	return (
-		<div className="-m-5">
-			<Main
-				categories={categories}
-				helpfulArticles={helpfulArticles}
-				popularArticles={popularArticles}
-				newestArticles={newestArticles}
-			/>
-		</div>
+		<Main
+			categories={categories}
+			helpfulArticles={helpfulArticles}
+			popularArticles={popularArticles}
+			newestArticles={newestArticles}
+		/>
 	);
 };

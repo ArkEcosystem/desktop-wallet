@@ -1,8 +1,7 @@
-// UI Elements
-import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputPassword } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -57,10 +56,9 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	];
 
 	return (
-		<>
-			<Breadcrumbs crumbs={crumbs} />
-			<div className="max-w-xl py-16 mx-auto">
-				<Tabs activeId={activeIndex}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Tabs className="max-w-xl mx-auto" activeId={activeIndex}>
 					<TabPanel tabId={1}>
 						<div className="flex justify-center w-full">
 							<div className="w-full">
@@ -142,8 +140,8 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 						</div>
 					</TabPanel>
 				</Tabs>
-			</div>
-		</>
+			</Section>
+		</Page>
 	);
 };
 

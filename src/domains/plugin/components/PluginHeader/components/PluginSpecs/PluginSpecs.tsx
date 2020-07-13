@@ -46,7 +46,7 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 };
 
 export const PluginSpecs = ({ author, category, url, rating, version, size }: Props) => (
-	<div className="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
+	<div className="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
 		<GridCol>
 			<div className="flex flex-col">
 				<span className="font-bold text-theme-neutral-light">Author</span>

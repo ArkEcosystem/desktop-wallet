@@ -21,7 +21,7 @@ export const CreateContact = ({ isOpen, networks, onClose, onCancel, onSave }: C
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<div className="mt-8">
+			<div className="">
 				<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />
 			</div>
 		</Modal>

@@ -18,6 +18,7 @@ jest.useFakeTimers();
 
 describe("PluginManager", () => {
 	let rendered: RenderResult;
+
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const history = createMemoryHistory();
 	const pluginsURL = "/profiles/qwe123/plugins";
@@ -41,8 +42,8 @@ describe("PluginManager", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = rendered;
 
-		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
-		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
+		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

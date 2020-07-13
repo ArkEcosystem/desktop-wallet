@@ -3,7 +3,8 @@
 exports[`WalletsControls should render 1`] = `
 <div>
   <div
-    class="flex"
+    class="flex justify-end"
+    data-testid="WalletControls"
   >
     <div
       class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
@@ -132,7 +133,8 @@ exports[`WalletsControls should render 1`] = `
 exports[`WalletsControls should render with networks selection 1`] = `
 <div>
   <div
-    class="flex"
+    class="flex justify-end"
+    data-testid="WalletControls"
   >
     <div
       class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"

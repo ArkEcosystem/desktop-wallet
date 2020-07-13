@@ -75,7 +75,7 @@ export const WalletRegistrations = ({
 	const hasNoRegistrations = !delegate && !business && iconsList.length === 0;
 
 	return (
-		<section data-testid="WalletRegistrations" className="px-12 py-8">
+		<section data-testid="WalletRegistrations">
 			<div className="flex items-center justify-between">
 				<h2 className="font-bold">Registrations</h2>
 				<CollapseToggleButton
