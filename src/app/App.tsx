@@ -5,7 +5,6 @@ import { I18nextProvider } from "react-i18next";
 
 import { RouterView, routes } from "../router";
 import { identity } from "../tests/fixtures/identity";
-import { Layout } from "./components/Layout";
 import { EnvironmentProvider, useEnvironment } from "./contexts";
 import { i18n } from "./i18n";
 
@@ -28,7 +27,7 @@ const Main = () => {
 
 	return (
 		<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
-			<RouterView routes={routes} wrapper={Layout} />
+			<RouterView routes={routes} />
 		</main>
 	);
 };
