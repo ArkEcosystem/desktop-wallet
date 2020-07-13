@@ -39,7 +39,7 @@ describe("UpdateRegistration", () => {
 		);
 	});
 
-	it("should render 1st step", () => {
+	it("should render 1st step", async () => {
 		const { asFragment, getByTestId } = rendered;
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
