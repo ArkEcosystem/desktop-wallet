@@ -11,3 +11,9 @@ export const Featured = () => (
 export const TopRated = () => (
 	<PluginsCategory title="Top Rated plugins" description="Easy way to find, manage and install plugins" />
 );
+
+export const TopUtilities = () => (
+	<div className="pb-10 -m-5">
+		<PluginsCategory title="Top Utilities" description="Easy way to find, manage and install plugins" />
+	</div>
+);

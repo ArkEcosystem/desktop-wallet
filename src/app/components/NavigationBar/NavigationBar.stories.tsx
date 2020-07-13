@@ -48,7 +48,7 @@ export const Default = () => {
 			userInitials="IO"
 			onUserAction={(action: any) => alert(action.label)}
 			notifications={notifications}
-			onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
+			onNotificationAction={(actionName: string) => alert(actionName)}
 		/>
 	);
 };
@@ -66,7 +66,7 @@ export const EmptyNotifications = () => {
 			userInitials="IO"
 			onUserAction={(action: any) => alert(action.label)}
 			notifications={notifications}
-			onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
+			onNotificationAction={(actionName: string) => alert(actionName)}
 		/>
 	);
 };
