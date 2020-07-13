@@ -2,11 +2,12 @@ import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
+import { SignMessage } from "domains/wallet/components/SignMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { wallet, wallets } from "./data";
@@ -39,6 +40,8 @@ type Props = {
 export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+	const [isSigningMessage, setIsSigningMessage] = useState(false);
+	const [isSigned, setIsSigned] = useState(false);
 
 	const crumbs = [
 		{
@@ -60,6 +63,8 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				isLedger={wallet?.walletTypeIcons?.includes("Ledger")}
 				isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
 				hasStarred={wallet?.hasStarred}
+				onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
+				onSignMessage={() => setIsSigningMessage(true)}
 			/>
 
 			<Section>
@@ -76,6 +81,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 					hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
 					hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
 					onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
+					onRegister={() => history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)}
 				/>
 			</Section>
 
@@ -94,6 +100,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			</div>
 
 			<WalletBottomSheetMenu walletsData={wallets!} />
+			<SignMessage
+				isOpen={isSigningMessage}
+				handleClose={() => setIsSigningMessage(false)}
+				signatoryAddress={wallet?.address}
+				handleSign={() => setIsSigned(true)}
+				isSigned={isSigned}
+			/>
 		</Page>
 	);
 };
