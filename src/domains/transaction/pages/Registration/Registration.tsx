@@ -54,7 +54,7 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+const RegistrationTypeDropdown = ({ className, register, registrationTypes }: any) => {
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<div className="mb-2">

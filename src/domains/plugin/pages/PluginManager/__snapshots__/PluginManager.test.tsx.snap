@@ -3085,11 +3085,22 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginList"
                   >
@@ -7463,11 +7474,22 @@ exports[`PluginManager should close install plugin modal 1`] = `
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginList"
                   >
@@ -12078,6 +12100,9 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
@@ -12803,16 +12828,30 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginGrid"
                   >
@@ -13516,6 +13555,9 @@ exports[`PluginManager should delete plugin on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -18881,11 +18923,22 @@ exports[`PluginManager should download & install plugin on home 1`] = `
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginList"
                   >
@@ -21538,6 +21591,9 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
@@ -22263,16 +22319,30 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginGrid"
                   >
@@ -22976,6 +23046,9 @@ exports[`PluginManager should install plugin from header install button 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -24352,6 +24425,9 @@ exports[`PluginManager should render 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
@@ -25077,16 +25153,30 @@ exports[`PluginManager should render 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginGrid"
                   >
@@ -25790,6 +25880,9 @@ exports[`PluginManager should render 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -27063,6 +27156,9 @@ exports[`PluginManager should search for plugin 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
@@ -27788,16 +27884,30 @@ exports[`PluginManager should search for plugin 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginGrid"
                   >
@@ -28501,6 +28611,9 @@ exports[`PluginManager should search for plugin 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
               </div>
@@ -30747,88 +30860,92 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
                   </div>
                 </div>
                 <div
-                  class="sc-fznWqX jmJfBD mt-5"
-                  data-testid="Pagination"
+                  class="flex justify-center mt-4"
                 >
-                  <button
-                    class="sc-AxjAm ddJBbC"
-                    color="primary"
-                    data-testid="Pagination__first"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-first.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxjAm ddJBbC"
-                    color="primary"
-                    data-testid="Pagination__previous"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ fttODj mr-2"
-                      height="10"
-                      width="10"
-                    >
-                      <svg>
-                        back.svg
-                      </svg>
-                    </div>
-                    Previous
-                  </button>
                   <div
-                    class="flex px-2 rounded bg-theme-primary-contrast"
+                    class="sc-fznWqX jmJfBD mt-5"
+                    data-testid="Pagination"
                   >
-                    <div
-                      class="sc-fzoiQi ehRnVk current-page"
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      data-testid="Pagination__first"
+                      disabled=""
+                      type="button"
                     >
-                      1
+                      <div
+                        class="sc-AxirZ hDwaov"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          pagination-first.svg
+                        </svg>
+                      </div>
+                    </button>
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      data-testid="Pagination__previous"
+                      disabled=""
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj mr-2"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          back.svg
+                        </svg>
+                      </div>
+                      Previous
+                    </button>
+                    <div
+                      class="flex px-2 rounded bg-theme-primary-contrast"
+                    >
+                      <div
+                        class="sc-fzoiQi ehRnVk current-page"
+                      >
+                        1
+                      </div>
                     </div>
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      data-testid="Pagination__next"
+                      disabled=""
+                      type="button"
+                    >
+                      Next
+                      <div
+                        class="sc-AxirZ hDwaov ml-2"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          forward.svg
+                        </svg>
+                      </div>
+                    </button>
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      data-testid="Pagination__last"
+                      disabled=""
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxirZ hDwaov"
+                        height="12"
+                        width="12"
+                      >
+                        <svg>
+                          pagination-last.svg
+                        </svg>
+                      </div>
+                    </button>
                   </div>
-                  <button
-                    class="sc-AxjAm ddJBbC"
-                    color="primary"
-                    data-testid="Pagination__next"
-                    disabled=""
-                    type="button"
-                  >
-                    Next
-                    <div
-                      class="sc-AxirZ hDwaov ml-2"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        forward.svg
-                      </svg>
-                    </div>
-                  </button>
-                  <button
-                    class="sc-AxjAm ddJBbC"
-                    color="primary"
-                    data-testid="Pagination__last"
-                    disabled=""
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxirZ hDwaov"
-                      height="12"
-                      width="12"
-                    >
-                      <svg>
-                        pagination-last.svg
-                      </svg>
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
@@ -32049,6 +32166,9 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
@@ -32774,16 +32894,30 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
                 <div
                   data-testid="PluginManager__home__top-utilities"
                 >
-                  <h2
-                    class="mt-8 mb-6 font-bold"
+                  <div
+                    class="flex items-center justify-between mt-8 mb-6"
                   >
-                    Top Utilities
-                  </h2>
+                    <h2
+                      class="font-bold"
+                    >
+                      Top Utilities
+                    </h2>
+                    <a
+                      class="font-semibold cursor-pointer link"
+                      data-testid="PluginManager__home__top-utilities__view-more"
+                      title="Top Utilities"
+                    >
+                      View More
+                    </a>
+                  </div>
                   <div
                     data-testid="PluginGrid"
                   >
@@ -33487,6 +33621,9 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
                         </div>
                       </div>
                     </div>
+                    <div
+                      class="flex justify-center mt-4"
+                    />
                   </div>
                 </div>
               </div>

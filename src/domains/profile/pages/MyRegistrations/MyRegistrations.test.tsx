@@ -74,7 +74,7 @@ describe("Welcome", () => {
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
 		const handleDropdown = jest.fn();
 
-		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentContext.Provider value={env}>
 				<Route path="/profiles/:profileId/registrations">
 					<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />

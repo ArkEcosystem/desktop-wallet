@@ -209,7 +209,7 @@ describe("PluginsCategory", () => {
 	it("should delete plugin", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
+		const { asFragment, getByTestId } = rendered;
 
 		const pluginsContainer = getByTestId("PluginsCategory__plugins");
 
