@@ -11,7 +11,7 @@ exports[`SelectAddress should render disabled 1`] = `
         class="sc-AxirZ HSPq mx-3 bg-theme-neutral-200 border-theme-neutral-200"
       />
       <div
-        class="absolute right-4 flex items-center space-x-3"
+        class="absolute flex items-center right-4 space-x-3"
       >
         <div
           class="sc-AxiKw dklFyP"
@@ -46,7 +46,7 @@ exports[`SelectAddress should render empty 1`] = `
         class="sc-AxirZ HSPq mx-3 bg-theme-neutral-200 border-theme-neutral-200"
       />
       <div
-        class="absolute right-4 flex items-center space-x-3"
+        class="absolute flex items-center right-4 space-x-3"
       >
         <div
           class="sc-AxiKw dklFyP"
@@ -81,7 +81,7 @@ exports[`SelectAddress should render invalid 1`] = `
         class="sc-AxirZ HSPq mx-3 bg-theme-neutral-200 border-theme-neutral-200"
       />
       <div
-        class="absolute right-4 flex items-center space-x-3"
+        class="absolute flex items-center right-4 space-x-3"
       >
         <div
           class="sc-AxiKw dklFyP"
@@ -114,11 +114,11 @@ exports[`SelectAddress should render with preselected address 1`] = `
       data-testid="SelectAddress__wrapper"
     >
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPulhL mx-3"
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 laNXvc mx-3"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full overflow-hidden rounded-full"
+          class="w-full h-full"
         >
           <img
             alt="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
@@ -138,7 +138,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
         </span>
       </div>
       <div
-        class="absolute right-4 flex items-center space-x-3"
+        class="absolute flex items-center right-4 space-x-3"
       >
         <div
           class="sc-AxiKw dklFyP"
@@ -173,10 +173,10 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
         class="sc-AxirZ HSPq mx-3 bg-theme-neutral-200 border-theme-neutral-200"
       />
       <div
-        class="absolute right-4 flex items-center space-x-3"
+        class="absolute flex items-center right-4 space-x-3"
       >
         <div
-          class="text-theme-success-400 bg-theme-success-100 rounded-full"
+          class="rounded-full text-theme-success-400 bg-theme-success-100"
         >
           <div
             class="sc-AxiKw cytFlT"

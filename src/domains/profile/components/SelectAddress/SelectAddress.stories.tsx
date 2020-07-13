@@ -7,7 +7,7 @@ export default { title: "Domains / Profile / Components / SelectAddress" };
 
 export const Default = () => {
 	return (
-		<div className="space-y-8 max-w-lg">
+		<div className="max-w-lg space-y-8">
 			<div>
 				<SelectAddress contacts={contacts} />
 			</div>

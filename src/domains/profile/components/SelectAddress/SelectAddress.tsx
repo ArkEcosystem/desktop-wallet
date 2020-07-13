@@ -67,9 +67,9 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 				>
 					<ProfileAvatar address={selectedAddress} />
 					<Address maxChars={30} address={selectedAddress} />
-					<div className="absolute right-4 flex items-center space-x-3">
+					<div className="absolute flex items-center right-4 space-x-3">
 						{isVerified && (
-							<div className="text-theme-success-400 bg-theme-success-100 rounded-full">
+							<div className="rounded-full text-theme-success-400 bg-theme-success-100">
 								<Icon name="Checkmark" width={18} height={18} />
 							</div>
 						)}
