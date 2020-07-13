@@ -38,4 +38,22 @@ describe("MnemonicVerification", () => {
 
 		expect(handleComplete).toHaveBeenCalled();
 	});
+
+	it("should ask for random words", () => {
+		const firstElement = render(
+			<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />,
+		);
+		const firstOptions = firstElement
+			.getAllByTestId("MnemonicVerificationProgress__Tab")
+			.map((element: any) => element.innerHTML);
+
+		const secondElement = render(
+			<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />,
+		);
+		const secondOptions = secondElement
+			.getAllByTestId("MnemonicVerificationProgress__Tab")
+			.map((element: any) => element.innerHTML);
+
+		expect(firstOptions).not.toEqual(secondOptions);
+	});
 });
