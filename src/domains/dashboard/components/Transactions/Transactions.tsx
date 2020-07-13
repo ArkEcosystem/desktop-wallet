@@ -4,12 +4,11 @@ import React from "react";
 
 type TransactionsProps = {
 	title: string;
-	columns: any;
 	transactions?: any;
 	emptyText?: string;
 };
 
-export const Transactions = ({ transactions, columns, title, emptyText }: TransactionsProps) => {
+export const Transactions = ({ transactions, title, emptyText }: TransactionsProps) => {
 	return (
 		<div className="bg-white">
 			<div className="text-4xl font-bold">{title}</div>
