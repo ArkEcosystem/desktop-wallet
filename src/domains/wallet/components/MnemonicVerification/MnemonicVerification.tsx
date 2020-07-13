@@ -5,7 +5,7 @@ import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
 import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 
 type Props = {
-	mnemonic: string[];
+	mnemonic: string;
 	wordPositions: number[];
 	optionsLimit: number;
 	handleComplete: () => void;
@@ -13,11 +13,12 @@ type Props = {
 
 export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete }: Props) {
 	const [activeTab, setActiveTab] = React.useState(0);
+	const mnemonicWords = mnemonic.split(" ");
 
-	const currentAnswer = React.useMemo(() => mnemonic[wordPositions[activeTab] - 1], [
+	const currentAnswer = React.useMemo(() => mnemonicWords[positions[activeTab] - 1], [
 		activeTab,
 		wordPositions,
-		mnemonic,
+		mnemonicWords,
 	]);
 
 	const handleNext = () => {
@@ -43,7 +44,7 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 						<MnemonicVerificationOptions
 							limit={optionsLimit}
 							answer={currentAnswer}
-							options={mnemonic}
+							options={mnemonicWords}
 							handleChange={handleChange}
 							position={position}
 						/>
