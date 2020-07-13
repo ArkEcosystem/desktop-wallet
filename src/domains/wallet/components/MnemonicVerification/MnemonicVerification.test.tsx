@@ -56,4 +56,28 @@ describe("MnemonicVerification", () => {
 
 		expect(firstOptions).not.toEqual(secondOptions);
 	});
+
+	it("should ask for unique words", () => {
+		let wordCounter = 0;
+		const randomNumber = null;
+
+		// @ts-ignore
+		const arrayIncludesSpy = jest.spyOn(Array.prototype, "includes").mockImplementation(function () {
+			if (wordCounter === 3) {
+				return false;
+			}
+
+			wordCounter++;
+
+			return true;
+		});
+
+		const { asFragment } = render(
+			<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />,
+		);
+
+		expect(arrayIncludesSpy).toHaveBeenCalledTimes(6);
+
+		arrayIncludesSpy.mockRestore();
+	});
 });
