@@ -140,7 +140,12 @@ export const NavigationBar = ({
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-							<Icon name="Sent" width={22} height={22} />
+							<NavLink
+								to={`/profiles/${activeProfile?.id()}/transactions/transfer`}
+								data-testid="navbar__buttons--send"
+							>
+								<Icon name="Sent" width={22} height={22} />
+							</NavLink>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
