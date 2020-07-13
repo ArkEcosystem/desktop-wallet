@@ -8,7 +8,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ContactListItemProps,Option } from "./ContactListItem.models";
+import { ContactListItemProps, Option } from "./ContactListItem.models";
 
 export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
