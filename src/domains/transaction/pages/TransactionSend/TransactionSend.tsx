@@ -6,6 +6,7 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
@@ -182,67 +183,82 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Tabs activeId={activeTab}>
-				<StepIndicator size={5} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<div className="max-w-xl mx-auto">
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={5} activeIndex={activeTab} />
 
-				<div className="mt-8">
-					<TabPanel tabId={1}>
-						<FirstStep onSubmit={handleNext} formValues={formValues} />
-					</TabPanel>
-					<TabPanel tabId={2}>
-						<SecondStep />
-					</TabPanel>
-					<TabPanel tabId={3}>
-						<ThirdStep />
-					</TabPanel>
-					<TabPanel tabId={4}>
-						<FourthStep />
-					</TabPanel>
-					<TabPanel tabId={5}>
-						<FifthStep />
-					</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep onSubmit={handleNext} formValues={formValues} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<FifthStep />
+							</TabPanel>
 
-					<div className="flex justify-end mt-8 space-x-3">
-						{activeTab > 1 && activeTab < 5 && (
-							<>
-								<Button
-									disabled={activeTab === 1}
-									data-testid="TransactionSend__button--back"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-								<Button
-									data-testid="TransactionSend__button--continue"
-									// disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							</>
-						)}
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab > 1 && activeTab < 5 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="TransactionSend__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="TransactionSend__button--continue"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
 
-						{activeTab === 5 && (
-							<>
-								<Button
-									data-testid="TransactionSend__button--back-to-wallet"
-									variant="plain"
-									className={"block"}
-								>
-									Back to wallet
-								</Button>
-								<Button onClick={onCopy} data-testid="TransactionSend__button--copy" variant="plain">
-									<Icon name="Copy" />
-									<span>Copy</span>
-								</Button>
-							</>
-						)}
-					</div>
+								{activeTab === 5 && (
+									<>
+										<Button
+											data-testid="TransactionSend__button--back-to-wallet"
+											variant="plain"
+											className={"block"}
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="TransactionSend__button--copy"
+											variant="plain"
+										>
+											<Icon name="Copy" />
+											<span>Copy</span>
+										</Button>
+									</>
+								)}
+							</div>
+						</div>
+					</Tabs>
 				</div>
-			</Tabs>
-		</div>
+			</Section>
+		</Page>
 	);
 };

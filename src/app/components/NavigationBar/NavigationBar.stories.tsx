@@ -42,25 +42,14 @@ export const Default = () => {
 	};
 
 	return (
-		<div className="-m-5">
-			<NavigationBar
-				currencyIcon="Ark"
-				balance="34,253.75"
-				userInitials="IO"
-				onUserAction={(action: any) => alert(action.label)}
-				notifications={notifications}
-				onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
-			/>
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-		</div>
+		<NavigationBar
+			currencyIcon="Ark"
+			balance="34,253.75"
+			userInitials="IO"
+			onUserAction={(action: any) => alert(action.label)}
+			notifications={notifications}
+			onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
+		/>
 	);
 };
 
@@ -71,24 +60,13 @@ export const EmptyNotifications = () => {
 	};
 
 	return (
-		<div className="-m-5">
-			<NavigationBar
-				currencyIcon="Ark"
-				balance="34,253.75"
-				userInitials="IO"
-				onUserAction={(action: any) => alert(action.label)}
-				notifications={notifications}
-				onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
-			/>
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-			<div className="h-64 border-b" />
-		</div>
+		<NavigationBar
+			currencyIcon="Ark"
+			balance="34,253.75"
+			userInitials="IO"
+			onUserAction={(action: any) => alert(action.label)}
+			notifications={notifications}
+			onNotificationAction={(actionName: string, actionData: any) => alert(actionName)}
+		/>
 	);
 };

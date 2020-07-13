@@ -23,7 +23,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
 	return (
-		<section data-testid="WalletVote" className="px-12 py-8">
+		<section data-testid="WalletVote">
 			<div className="flex items-center justify-between">
 				<h2 className="font-bold">My Vote</h2>
 				<CollapseToggleButton
