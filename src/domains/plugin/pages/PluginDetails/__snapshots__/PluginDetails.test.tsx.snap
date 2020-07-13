@@ -3,1263 +3,1479 @@
 exports[`PluginDetails should render properly 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
-    data-testid="breadcrumbs__wrapper"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="sc-AxirZ hVzDKK"
-      height="10"
-      width="19"
-    >
-      <svg>
-        arrow-back.svg
-      </svg>
-    </div>
-    <div
-      class="space-x-2"
-    >
-      <a
-        aria-current="page"
-        class="text-theme-neutral-dark active"
-        href="/profiles/qwe123/plugins"
-      >
-        <span>
-          Go back to plugin store
-        </span>
-      </a>
-    </div>
-  </div>
-  <section
-    class="h-full mx-10 bg-theme-neutral-contrast"
-    data-testid="plugin-details__header"
-  >
-    <div
-      class="w-full px-10 py-5 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzozJi iaCFUP"
     >
       <div
-        class="flex w-full"
+        class="px-4 sm:px-6 lg:px-"
       >
-        <img
-          alt="Plugin"
-          class="w-40 h-40 rounded-lg"
-          src="placeholder.png"
-        />
         <div
-          class="flex flex-col justify-center w-full px-5"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center justify-between"
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  aria-current="page"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw ksjdLL"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxiKw bGpsrC"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-dark active"
+          href="/profiles/qwe123/plugins"
+        >
+          <span>
+            Go back to plugin store
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="w-full bg-theme-background"
+            data-testid="plugin-details__header"
+          >
+            <div
+              class="flex w-full"
+            >
+              <img
+                alt="Plugin"
+                class="rounded-lg w-44 h-44"
+                src="placeholder.png"
+              />
+              <div
+                class="flex flex-col justify-center w-full pl-8"
+              >
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="text-2xl font-bold"
+                    >
+                      ARK Explorer
+                    </span>
+                    <span
+                      class="text-medium text-theme-neutral"
+                    >
+                      Use the ARK Mainnet explorer directly within the wallet
+                    </span>
+                  </div>
+                  <div
+                    class="flex"
+                  >
+                    <button
+                      class="sc-AxjAm ddQVWI"
+                      color="primary"
+                      data-testid="PluginHeader__button--install"
+                      type="button"
+                    >
+                      Install
+                    </button>
+                    <button
+                      class="sc-AxjAm ddJBbC ml-3"
+                      color="primary"
+                      data-testid="PluginHeader__button--warning"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          report.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
+                >
+                  <div
+                    class="flex"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Author
+                      </span>
+                      <div
+                        class="flex items-center"
+                      >
+                        <span
+                          class="font-bold text-theme-neutral-600"
+                        >
+                          ARK Ecosystem
+                        </span>
+                        <div
+                          class="ml-3"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              official-ark-plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex px-6"
+                  >
+                    <div
+                      class="flex flex-col undefined"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Category
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        Utility
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex px-6 -ml-5"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        URL
+                      </span>
+                      <span
+                        class="font-bold text-theme-primary"
+                      >
+                        github.com
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex col-span-2 justify-between px-6 -ml-8"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Rating
+                      </span>
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="pr-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold text-theme-neutral-600"
+                        >
+                          4.6
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col text-right"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Version
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        v.1.3.8
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex pl-6"
+                  >
+                    <div
+                      class="flex flex-col text-right"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Size
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        4.2 Mb
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div>
+            <p
+              class="font-bold"
+            >
+              About the plugin
+            </p>
+            <p
+              class="mt-3 text-theme-neutral-600"
+              data-testid="plugin-info__about"
+            >
+              Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.
+            </p>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <p
+              class="font-bold"
+            >
+              Permissions
+            </p>
+            <p
+              class="mt-3 text-theme-neutral-600"
+              data-testid="plugin-info__permissions"
+            >
+              Embedded Webpages, API Requests, Access to Profiles
+            </p>
+          </div>
+          <div
+            class="relative mt-8"
+          >
+            <p
+              class="font-bold"
+            >
+              Screenshots
+            </p>
+            <div
+              class="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination swiper-pagination-clickable swiper-pagination-bullets"
+              data-testid="plugin-info__screenshots--pagination"
+            />
+            <div
+              class="pb-8"
+            >
+              <div
+                class="relative"
+              >
+                <div
+                  class="swiper-container swiper-container-initialized swiper-container-horizontal"
+                  style="height: 234px;"
+                >
+                  <div
+                    class="h-full swiper-wrapper "
+                    style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                  >
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-pagination"
+                  />
+                  <span
+                    aria-atomic="true"
+                    aria-live="assertive"
+                    class="swiper-notification"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex rounded-lg overflow-hidden bg-theme-warning"
+            >
+              <div
+                class="sc-fzokOt fRBwmo flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              >
+                <div
+                  class="sc-AxiKw iRsrJT"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    alert-default.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-fznZeY eTxOdn flex-1 bg-theme-warning-100"
+              >
+                <p
+                  class="text-xl font-bold text-theme-warning"
+                  data-testid="alert__title"
+                >
+                  Disclaimer
+                </p>
+                The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex"
           >
             <div
               class="flex flex-col"
             >
-              <span
-                class="text-2xl font-bold"
+              <div
+                class="flex items-center justify-between"
               >
-                ARK Explorer
-              </span>
-              <span
-                class="text-medium text-theme-neutral"
-              >
-                Use the ARK Mainnet explorer directly within the wallet
-              </span>
-            </div>
-            <div
-              class="flex"
-            >
-              <button
-                class="sc-AxiKw wFYj"
-                color="primary"
-                data-testid="PluginHeader__button--install"
-                type="button"
-              >
-                Install
-              </button>
-              <button
-                class="sc-AxiKw gFzSt ml-3"
-                color="primary"
-                data-testid="PluginHeader__button--warning"
-                type="button"
+                <h2
+                  class="mb-0"
+                >
+                  Reviews ARK Explorer
+                </h2>
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  data-testid="ReviewBox__button--comment"
+                  type="button"
+                >
+                  Leave a comment
+                </button>
+              </div>
+              <div
+                class="col-span-2"
+                data-testid="plugin-details__comments"
               >
                 <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    report.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
-          >
-            <div
-              class="flex"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Author
-                </span>
-                <div
-                  class="flex items-center"
-                >
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    ARK Ecosystem
-                  </span>
-                  <div
-                    class="ml-3"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        official-ark-plugin.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex px-6"
-            >
-              <div
-                class="flex flex-col undefined"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Category
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  Utility
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex px-6 -ml-5"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  URL
-                </span>
-                <span
-                  class="font-bold text-theme-primary"
-                >
-                  github.com
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex col-span-2 justify-between px-6 -ml-8"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Rating
-                </span>
-                <div
-                  class="flex items-center"
+                  class="w-full"
                 >
                   <div
-                    class="pr-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    4.6
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Version
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  v.1.3.8
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex pl-6"
-            >
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Size
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  4.2 Mb
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="p-10 mt-5 bg-theme-background"
-    >
-      <div>
-        <p
-          class="font-bold"
-        >
-          About the plugin
-        </p>
-        <p
-          class="mt-3 text-theme-neutral-600"
-          data-testid="plugin-info__about"
-        >
-          Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.
-        </p>
-      </div>
-      <div
-        class="mt-10"
-      >
-        <p
-          class="font-bold"
-        >
-          Permissions
-        </p>
-        <p
-          class="mt-3 text-theme-neutral-600"
-          data-testid="plugin-info__permissions"
-        >
-          Embedded Webpages, API Requests, Access to Profiles
-        </p>
-      </div>
-      <div
-        class="relative mt-10"
-      >
-        <p
-          class="font-bold"
-        >
-          Screenshots
-        </p>
-        <div
-          class="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination swiper-pagination-clickable swiper-pagination-bullets"
-          data-testid="plugin-info__screenshots--pagination"
-        />
-        <div
-          class="pb-10"
-        >
-          <div
-            class="relative"
-          >
-            <div
-              class="swiper-container swiper-container-initialized swiper-container-horizontal"
-              style="height: 234px;"
-            >
-              <div
-                class="h-full swiper-wrapper "
-                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
-              >
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-pagination"
-              />
-              <span
-                aria-atomic="true"
-                aria-live="assertive"
-                class="swiper-notification"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="pb-10"
-        >
-          <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
-          >
-            <div
-              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
-            >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
-              >
-                <svg>
-                  alert-default.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
-            >
-              <p
-                class="text-xl font-bold text-theme-warning"
-                data-testid="alert__title"
-              >
-                Disclaimer
-              </p>
-              The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex p-10 mt-5 bg-theme-background"
-    >
-      <div
-        class="flex flex-col"
-      >
-        <div
-          class="flex items-center justify-between"
-        >
-          <h2
-            class="mb-0"
-          >
-            Reviews ARK Explorer
-          </h2>
-          <button
-            class="sc-AxiKw gFzSt"
-            color="primary"
-            data-testid="ReviewBox__button--comment"
-            type="button"
-          >
-            Leave a comment
-          </button>
-        </div>
-        <div
-          class="col-span-2"
-          data-testid="plugin-details__comments"
-        >
-          <div
-            class="w-full"
-          >
-            <div
-              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
-            >
-              <span
-                class="text-theme-neutral-900"
-              >
-                Sort by:
-              </span>
-              <div
-                class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
-              >
-                <span
-                  class="cursor-pointer null"
-                >
-                  <span
-                    class="flex items-center text-theme-neutral-900 space-x-1"
-                  >
-                    <span>
-                      Best
-                    </span>
-                    <div
-                      class="sc-AxirZ eRmuSF"
-                      height="5"
-                      width="7"
-                    >
-                      <svg>
-                        arrowup.svg
-                      </svg>
-                    </div>
-                  </span>
-                </span>
-                <span
-                  class="cursor-pointer pl-3"
-                >
-                  <span>
-                    Date
-                  </span>
-                </span>
-                <span
-                  class="cursor-pointer pl-3"
-                >
-                  <span>
-                    Most Popular
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
+                    class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
                   >
                     <span
-                      class="pr-3 text-lg font-semibold"
+                      class="text-theme-neutral-900"
                     >
-                      Rok Cernec
+                      Sort by:
                     </span>
                     <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
+                    >
+                      <span
+                        class="cursor-pointer null"
+                      >
+                        <span
+                          class="flex items-center text-theme-neutral-900 space-x-1"
+                        >
+                          <span>
+                            Best
+                          </span>
+                          <div
+                            class="sc-AxiKw jNSjzx"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              arrowup.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </span>
+                      <span
+                        class="cursor-pointer pl-3"
+                      >
+                        <span>
+                          Date
+                        </span>
+                      </span>
+                      <span
+                        class="cursor-pointer pl-3"
+                      >
+                        <span>
+                          Most Popular
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex flex-col mt-5"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
-                      >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-neutral-light"
-                    >
-                      0
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Gerard Blezer
-                    </span>
-                    <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
-                      >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-success"
-                    >
-                      +28
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
-                  </p>
-                  <div
-                    class="flex flex-col mt-3"
-                  >
-                    <div
-                      class="flex items-center text-theme-neutral-light"
-                    >
-                      <div
-                        class="flex items-center w-10"
+                        class="flex items-center justify-between"
                       >
                         <div
-                          class="sc-AxirZ gNHFnS mx-auto -mt-2"
-                          height="18"
-                          width="15"
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
                         >
-                          <svg>
-                            reply-arrow.svg
-                          </svg>
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-light"
+                          >
+                            0
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center divide-x divide-theme-neutral-light space-x-3"
+                        class="mt-2"
                       >
-                        <span
-                          class="text-lg font-semibold text-theme-neutral-900"
+                        <p
+                          class="text-theme-neutral-600"
                         >
-                          Developer response
-                        </span>
-                        <span
-                          class="pl-3 text-sm font-semibold text-theme-neutral"
+                          The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
                         >
                           <span
-                            data-testid="timeago"
+                            class="pr-3 text-lg font-semibold"
                           >
-                            11 days ago
+                            Gerard Blezer
                           </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-success"
+                          >
+                            +28
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+                        </p>
+                        <div
+                          class="flex flex-col mt-3"
+                        >
+                          <div
+                            class="flex items-center text-theme-neutral-light"
+                          >
+                            <div
+                              class="flex items-center w-10"
+                            >
+                              <div
+                                class="sc-AxiKw jFtMMC mx-auto -mt-2"
+                                height="18"
+                                width="15"
+                              >
+                                <svg>
+                                  reply-arrow.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="flex items-center divide-x divide-theme-neutral-light space-x-3"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-900"
+                              >
+                                Developer response
+                              </span>
+                              <span
+                                class="pl-3 text-sm font-semibold text-theme-neutral"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  11 days ago
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="sc-fznKkj fPa-DHw mt-2 ml-10 text-theme-neutral-600"
+                          >
+                            <a
+                              href="#"
+                            >
+                              @Gerard Blezer
+                            </a>
+                             You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
+                        >
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-light"
+                          >
+                            0
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
+                        >
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-danger-dark"
+                          >
+                            -5
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-7"
+                  >
+                    <div
+                      class="sc-fzplWN dBsyri"
+                      data-testid="Pagination"
+                    >
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__first"
+                        disabled=""
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw bopxJn"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            pagination-first.svg
+                          </svg>
+                        </div>
+                      </button>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__previous"
+                        disabled=""
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw ksjdLL mr-2"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            back.svg
+                          </svg>
+                        </div>
+                        Previous
+                      </button>
+                      <div
+                        class="flex px-2 rounded bg-theme-primary-contrast"
+                      >
+                        <div
+                          class="sc-fznyAO kcFfqr current-page"
+                        >
+                          1
+                        </div>
+                        <div
+                          class="sc-fznyAO kcFfqr"
+                        >
+                          2
+                        </div>
+                        <div
+                          class="sc-fznyAO kcFfqr"
+                        >
+                          3
+                        </div>
+                      </div>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__next"
+                        type="button"
+                      >
+                        Next
+                        <div
+                          class="sc-AxiKw bopxJn ml-2"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            forward.svg
+                          </svg>
+                        </div>
+                      </button>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__last"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw bopxJn"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            pagination-last.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
+              data-testid="plugin-details__review-box"
+            >
+              <div
+                class="w-full"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="flex items-center text-2xl whitespace-no-wrap"
+                  >
+                    <div
+                      class="sc-AxiKw cMZpXY mr-1 -mt-1"
+                      height="19"
+                      width="34"
+                    >
+                      <svg>
+                        stars-outline.svg
+                      </svg>
+                    </div>
+                    <span
+                      class="font-bold"
+                    >
+                      Avg. Rating: 4.6 
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                         / 5
+                      </span>
+                    </span>
+                  </div>
+                  <span
+                    class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+                  >
+                    Out of 347 reviews
+                  </span>
+                  <div
+                    class="space-y-6"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <div
+                        class="flex justify-between"
+                        data-testid="5-stars__rating-row"
+                      >
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          156
                         </span>
                       </div>
-                    </div>
-                    <div
-                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
-                    >
-                      <a
-                        href="#"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        @Gerard Blezer
-                      </a>
-                       You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+                        <div
+                          class="sc-fzqBZW coDHfA h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="5-stars__rating-count"
+                          width="44.95677233429395"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Rok Cernec
-                    </span>
                     <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex flex-col"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
+                        class="flex justify-between"
+                        data-testid="4-stars__rating-row"
                       >
-                        <svg>
-                          star.svg
-                        </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          194
+                        </span>
                       </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-neutral-light"
-                    >
-                      0
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
+                        <div
+                          class="sc-fzqBZW gSiOcP h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="4-stars__rating-count"
+                          width="55.907780979827095"
+                        />
+                      </div>
                     </div>
                     <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Rok Cernec
-                    </span>
-                    <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex flex-col"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
+                        class="flex justify-between"
+                        data-testid="3-stars__rating-row"
                       >
-                        <svg>
-                          star.svg
-                        </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          25
+                        </span>
                       </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        4.6
-                      </span>
+                        <div
+                          class="sc-fzqBZW dqWLhf h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="3-stars__rating-count"
+                          width="7.204610951008646"
+                        />
+                      </div>
                     </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
+                    <div
+                      class="flex flex-col"
                     >
-                      <span
-                        data-testid="timeago"
+                      <div
+                        class="flex justify-between"
+                        data-testid="2-stars__rating-row"
                       >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-danger-dark"
-                    >
-                      -5
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          42
+                        </span>
+                      </div>
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                      >
+                        <div
+                          class="sc-fzqBZW gQfXmx h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="2-stars__rating-count"
+                          width="12.103746397694524"
+                        />
+                      </div>
                     </div>
                     <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
+                      class="flex flex-col"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mt-7"
-            >
-              <div
-                class="sc-AxhUy jaOXDK"
-                data-testid="Pagination"
-              >
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__first"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ hDwaov"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      pagination-first.svg
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__previous"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ fttODj mr-2"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      back.svg
-                    </svg>
-                  </div>
-                  Previous
-                </button>
-                <div
-                  class="flex px-2 rounded bg-theme-primary-contrast"
-                >
-                  <div
-                    class="sc-AxgMl fXLMnx current-page"
-                  >
-                    1
-                  </div>
-                  <div
-                    class="sc-AxgMl fXLMnx"
-                  >
-                    2
-                  </div>
-                  <div
-                    class="sc-AxgMl fXLMnx"
-                  >
-                    3
-                  </div>
-                </div>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__next"
-                  type="button"
-                >
-                  Next
-                  <div
-                    class="sc-AxirZ hDwaov ml-2"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      forward.svg
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__last"
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ hDwaov"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      pagination-last.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
-        data-testid="plugin-details__review-box"
-      >
-        <div
-          class="w-full"
-        >
-          <div
-            class="flex flex-col"
-          >
-            <div
-              class="flex items-center text-2xl whitespace-no-wrap"
-            >
-              <div
-                class="sc-AxirZ jouqAA mr-1 -mt-1"
-                height="19"
-                width="34"
-              >
-                <svg>
-                  stars-outline.svg
-                </svg>
-              </div>
-              <span
-                class="font-bold"
-              >
-                Avg. Rating: 4.6 
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                   / 5
-                </span>
-              </span>
-            </div>
-            <span
-              class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
-            >
-              Out of 347 reviews
-            </span>
-            <div
-              class="space-y-6"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="5-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
+                      <div
+                        class="flex justify-between"
+                        data-testid="1-stars__rating-row"
+                      >
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          7
+                        </span>
+                      </div>
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                      >
+                        <div
+                          class="sc-fzqBZW gNxEgy h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="1-stars__rating-count"
+                          width="2.0172910662824206"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <span
-                    class="font-bold"
-                  >
-                    156
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="5-stars__rating-count"
-                    width="44.95677233429395"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="4-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    194
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="4-stars__rating-count"
-                    width="55.907780979827095"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="3-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    25
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="3-stars__rating-count"
-                    width="7.204610951008646"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="2-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    42
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="2-stars__rating-count"
-                    width="12.103746397694524"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="1-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    7
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="1-stars__rating-count"
-                    width="2.0172910662824206"
-                  />
                 </div>
               </div>
             </div>
@@ -1267,1302 +1483,1518 @@ exports[`PluginDetails should render properly 1`] = `
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
 exports[`PluginDetails should render properly as installed 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
-    data-testid="breadcrumbs__wrapper"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="sc-AxirZ hVzDKK"
-      height="10"
-      width="19"
-    >
-      <svg>
-        arrow-back.svg
-      </svg>
-    </div>
-    <div
-      class="space-x-2"
-    >
-      <a
-        aria-current="page"
-        class="text-theme-neutral-dark active"
-        href="/profiles/qwe123/plugins"
-      >
-        <span>
-          Go back to plugin store
-        </span>
-      </a>
-    </div>
-  </div>
-  <section
-    class="h-full mx-10 bg-theme-neutral-contrast"
-    data-testid="plugin-details__header"
-  >
-    <div
-      class="w-full px-10 py-5 bg-theme-background"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzozJi iaCFUP"
     >
       <div
-        class="flex w-full"
+        class="px-4 sm:px-6 lg:px-"
       >
-        <img
-          alt="Plugin"
-          class="w-40 h-40 rounded-lg"
-          src="placeholder.png"
-        />
         <div
-          class="flex flex-col justify-center w-full px-5"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="flex items-center justify-between"
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  aria-current="page"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxiKw fFXzuz"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw ksjdLL"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxiKw bGpsrC"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          aria-current="page"
+          class="text-theme-neutral-dark active"
+          href="/profiles/qwe123/plugins"
+        >
+          <span>
+            Go back to plugin store
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="w-full bg-theme-background"
+            data-testid="plugin-details__header"
+          >
+            <div
+              class="flex w-full"
+            >
+              <img
+                alt="Plugin"
+                class="rounded-lg w-44 h-44"
+                src="placeholder.png"
+              />
+              <div
+                class="flex flex-col justify-center w-full pl-8"
+              >
+                <div
+                  class="flex items-center justify-between"
+                >
+                  <div
+                    class="flex flex-col"
+                  >
+                    <span
+                      class="text-2xl font-bold"
+                    >
+                      ARK Explorer
+                    </span>
+                    <span
+                      class="text-medium text-theme-neutral"
+                    >
+                      Use the ARK Mainnet explorer directly within the wallet
+                    </span>
+                  </div>
+                  <div
+                    class="flex"
+                  >
+                    <button
+                      class="sc-AxjAm ddQVWI"
+                      color="primary"
+                      data-testid="PluginHeader__button--open"
+                      type="button"
+                    >
+                      Open
+                    </button>
+                    <button
+                      class="sc-AxjAm ddQVWI ml-3"
+                      color="primary"
+                      data-testid="PluginHeader__button--update"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          update.svg
+                        </svg>
+                      </div>
+                    </button>
+                    <button
+                      class="sc-AxjAm ddJBbC ml-3"
+                      color="primary"
+                      data-testid="PluginHeader__button--warning"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxiKw dklFyP"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          report.svg
+                        </svg>
+                      </div>
+                    </button>
+                    <button
+                      class="sc-AxjAm ddJBbC ml-3"
+                      color="primary"
+                      data-testid="PluginHeader__button--uninstall"
+                      type="button"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          trash.svg
+                        </svg>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
+                >
+                  <div
+                    class="flex"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Author
+                      </span>
+                      <div
+                        class="flex items-center"
+                      >
+                        <span
+                          class="font-bold text-theme-neutral-600"
+                        >
+                          ARK Ecosystem
+                        </span>
+                        <div
+                          class="ml-3"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              official-ark-plugin.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex px-6"
+                  >
+                    <div
+                      class="flex flex-col undefined"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Category
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        Utility
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex px-6 -ml-5"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        URL
+                      </span>
+                      <span
+                        class="font-bold text-theme-primary"
+                      >
+                        github.com
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex col-span-2 justify-between px-6 -ml-8"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Rating
+                      </span>
+                      <div
+                        class="flex items-center"
+                      >
+                        <div
+                          class="pr-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold text-theme-neutral-600"
+                        >
+                          4.6
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col text-right"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Version
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        v.1.3.8
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex pl-6"
+                  >
+                    <div
+                      class="flex flex-col text-right"
+                    >
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                        Size
+                      </span>
+                      <span
+                        class="font-bold text-theme-neutral-600"
+                      >
+                        4.2 Mb
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div>
+            <p
+              class="font-bold"
+            >
+              About the plugin
+            </p>
+            <p
+              class="mt-3 text-theme-neutral-600"
+              data-testid="plugin-info__about"
+            >
+              Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.
+            </p>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <p
+              class="font-bold"
+            >
+              Permissions
+            </p>
+            <p
+              class="mt-3 text-theme-neutral-600"
+              data-testid="plugin-info__permissions"
+            >
+              Embedded Webpages, API Requests, Access to Profiles
+            </p>
+          </div>
+          <div
+            class="relative mt-8"
+          >
+            <p
+              class="font-bold"
+            >
+              Screenshots
+            </p>
+            <div
+              class="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination swiper-pagination-clickable swiper-pagination-bullets"
+              data-testid="plugin-info__screenshots--pagination"
+            />
+            <div
+              class="pb-8"
+            >
+              <div
+                class="relative"
+              >
+                <div
+                  class="swiper-container swiper-container-initialized swiper-container-horizontal"
+                  style="height: 234px;"
+                >
+                  <div
+                    class="h-full swiper-wrapper "
+                    style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                  >
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-slide"
+                      style="height: 180px;"
+                    >
+                      <div
+                        class="flex pb-10 mt-3 mr-3 space-x-4"
+                      >
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                        <div
+                          class="w-1/3 h-56 rounded-lg bg-theme-neutral"
+                          data-testid="plugin-info__screenshot"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-pagination"
+                  />
+                  <span
+                    aria-atomic="true"
+                    aria-live="assertive"
+                    class="swiper-notification"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex rounded-lg overflow-hidden bg-theme-warning"
+            >
+              <div
+                class="sc-fzokOt fRBwmo flex items-center justify-center text-theme-warning bg-theme-warning-200"
+              >
+                <div
+                  class="sc-AxiKw iRsrJT"
+                  height="30"
+                  width="30"
+                >
+                  <svg>
+                    alert-default.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-fznZeY eTxOdn flex-1 bg-theme-warning-100"
+              >
+                <p
+                  class="text-xl font-bold text-theme-warning"
+                  data-testid="alert__title"
+                >
+                  Disclaimer
+                </p>
+                The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLsD eOOSMs"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex"
           >
             <div
               class="flex flex-col"
             >
-              <span
-                class="text-2xl font-bold"
-              >
-                ARK Explorer
-              </span>
-              <span
-                class="text-medium text-theme-neutral"
-              >
-                Use the ARK Mainnet explorer directly within the wallet
-              </span>
-            </div>
-            <div
-              class="flex"
-            >
-              <button
-                class="sc-AxiKw wFYj"
-                color="primary"
-                data-testid="PluginHeader__button--open"
-                type="button"
-              >
-                Open
-              </button>
-              <button
-                class="sc-AxiKw wFYj ml-3"
-                color="primary"
-                data-testid="PluginHeader__button--update"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    update.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="sc-AxiKw gFzSt ml-3"
-                color="primary"
-                data-testid="PluginHeader__button--warning"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ eEbZjj"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    report.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="sc-AxiKw gFzSt ml-3"
-                color="primary"
-                data-testid="PluginHeader__button--uninstall"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    trash.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-          <div
-            class="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300"
-          >
-            <div
-              class="flex"
-            >
               <div
-                class="flex flex-col"
+                class="flex items-center justify-between"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
+                <h2
+                  class="mb-0"
                 >
-                  Author
-                </span>
-                <div
-                  class="flex items-center"
+                  Reviews ARK Explorer
+                </h2>
+                <button
+                  class="sc-AxjAm ddJBbC"
+                  color="primary"
+                  data-testid="ReviewBox__button--comment"
+                  type="button"
                 >
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    ARK Ecosystem
-                  </span>
-                  <div
-                    class="ml-3"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        official-ark-plugin.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+                  Leave a comment
+                </button>
               </div>
-            </div>
-            <div
-              class="flex px-6"
-            >
               <div
-                class="flex flex-col undefined"
+                class="col-span-2"
+                data-testid="plugin-details__comments"
               >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Category
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  Utility
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex px-6 -ml-5"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  URL
-                </span>
-                <span
-                  class="font-bold text-theme-primary"
-                >
-                  github.com
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex col-span-2 justify-between px-6 -ml-8"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Rating
-                </span>
                 <div
-                  class="flex items-center"
+                  class="w-full"
                 >
                   <div
-                    class="pr-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold text-theme-neutral-600"
-                  >
-                    4.6
-                  </span>
-                </div>
-              </div>
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Version
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  v.1.3.8
-                </span>
-              </div>
-            </div>
-            <div
-              class="flex pl-6"
-            >
-              <div
-                class="flex flex-col text-right"
-              >
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                  Size
-                </span>
-                <span
-                  class="font-bold text-theme-neutral-600"
-                >
-                  4.2 Mb
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="p-10 mt-5 bg-theme-background"
-    >
-      <div>
-        <p
-          class="font-bold"
-        >
-          About the plugin
-        </p>
-        <p
-          class="mt-3 text-theme-neutral-600"
-          data-testid="plugin-info__about"
-        >
-          Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.
-        </p>
-      </div>
-      <div
-        class="mt-10"
-      >
-        <p
-          class="font-bold"
-        >
-          Permissions
-        </p>
-        <p
-          class="mt-3 text-theme-neutral-600"
-          data-testid="plugin-info__permissions"
-        >
-          Embedded Webpages, API Requests, Access to Profiles
-        </p>
-      </div>
-      <div
-        class="relative mt-10"
-      >
-        <p
-          class="font-bold"
-        >
-          Screenshots
-        </p>
-        <div
-          class="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination swiper-pagination-clickable swiper-pagination-bullets"
-          data-testid="plugin-info__screenshots--pagination"
-        />
-        <div
-          class="pb-10"
-        >
-          <div
-            class="relative"
-          >
-            <div
-              class="swiper-container swiper-container-initialized swiper-container-horizontal"
-              style="height: 234px;"
-            >
-              <div
-                class="h-full swiper-wrapper "
-                style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
-              >
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="swiper-slide"
-                  style="height: 180px;"
-                >
-                  <div
-                    class="flex pb-10 mt-3 mr-3 space-x-4"
-                  >
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                    <div
-                      class="w-1/3 h-56 rounded-lg bg-theme-neutral"
-                      data-testid="plugin-info__screenshot"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-pagination"
-              />
-              <span
-                aria-atomic="true"
-                aria-live="assertive"
-                class="swiper-notification"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class="pb-10"
-        >
-          <div
-            class="flex rounded-lg overflow-hidden bg-theme-warning"
-          >
-            <div
-              class="sc-AxmLO fmYfwI flex items-center justify-center text-theme-warning bg-theme-warning-200"
-            >
-              <div
-                class="sc-AxirZ bMjbpr"
-                height="30"
-                width="30"
-              >
-                <svg>
-                  alert-default.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="sc-Axmtr BLpZJ flex-1 bg-theme-warning-100"
-            >
-              <p
-                class="text-xl font-bold text-theme-warning"
-                data-testid="alert__title"
-              >
-                Disclaimer
-              </p>
-              The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in the development or affiliated with the developer providing this plugin. By installing it on your wallet, you assume every responsibility
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="flex p-10 mt-5 bg-theme-background"
-    >
-      <div
-        class="flex flex-col"
-      >
-        <div
-          class="flex items-center justify-between"
-        >
-          <h2
-            class="mb-0"
-          >
-            Reviews ARK Explorer
-          </h2>
-          <button
-            class="sc-AxiKw gFzSt"
-            color="primary"
-            data-testid="ReviewBox__button--comment"
-            type="button"
-          >
-            Leave a comment
-          </button>
-        </div>
-        <div
-          class="col-span-2"
-          data-testid="plugin-details__comments"
-        >
-          <div
-            class="w-full"
-          >
-            <div
-              class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
-            >
-              <span
-                class="text-theme-neutral-900"
-              >
-                Sort by:
-              </span>
-              <div
-                class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
-              >
-                <span
-                  class="cursor-pointer null"
-                >
-                  <span
-                    class="flex items-center text-theme-neutral-900 space-x-1"
-                  >
-                    <span>
-                      Best
-                    </span>
-                    <div
-                      class="sc-AxirZ eRmuSF"
-                      height="5"
-                      width="7"
-                    >
-                      <svg>
-                        arrowup.svg
-                      </svg>
-                    </div>
-                  </span>
-                </span>
-                <span
-                  class="cursor-pointer pl-3"
-                >
-                  <span>
-                    Date
-                  </span>
-                </span>
-                <span
-                  class="cursor-pointer pl-3"
-                >
-                  <span>
-                    Most Popular
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
+                    class="flex items-center mt-5 text-sm font-semibold text-theme-neutral"
                   >
                     <span
-                      class="pr-3 text-lg font-semibold"
+                      class="text-theme-neutral-900"
                     >
-                      Rok Cernec
+                      Sort by:
                     </span>
                     <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3"
+                    >
+                      <span
+                        class="cursor-pointer null"
+                      >
+                        <span
+                          class="flex items-center text-theme-neutral-900 space-x-1"
+                        >
+                          <span>
+                            Best
+                          </span>
+                          <div
+                            class="sc-AxiKw jNSjzx"
+                            height="5"
+                            width="7"
+                          >
+                            <svg>
+                              arrowup.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </span>
+                      <span
+                        class="cursor-pointer pl-3"
+                      >
+                        <span>
+                          Date
+                        </span>
+                      </span>
+                      <span
+                        class="cursor-pointer pl-3"
+                      >
+                        <span>
+                          Most Popular
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex flex-col mt-5"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
-                      >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-neutral-light"
-                    >
-                      0
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Gerard Blezer
-                    </span>
-                    <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
-                      >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-success"
-                    >
-                      +28
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
-                  </p>
-                  <div
-                    class="flex flex-col mt-3"
-                  >
-                    <div
-                      class="flex items-center text-theme-neutral-light"
-                    >
-                      <div
-                        class="flex items-center w-10"
+                        class="flex items-center justify-between"
                       >
                         <div
-                          class="sc-AxirZ gNHFnS mx-auto -mt-2"
-                          height="18"
-                          width="15"
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
                         >
-                          <svg>
-                            reply-arrow.svg
-                          </svg>
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-light"
+                          >
+                            0
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
                       <div
-                        class="flex items-center divide-x divide-theme-neutral-light space-x-3"
+                        class="mt-2"
                       >
-                        <span
-                          class="text-lg font-semibold text-theme-neutral-900"
+                        <p
+                          class="text-theme-neutral-600"
                         >
-                          Developer response
-                        </span>
-                        <span
-                          class="pl-3 text-sm font-semibold text-theme-neutral"
+                          The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant. The way I see it, every life is a pile of good things and bad things.…hey.…the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them unimportant.
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
                         >
                           <span
-                            data-testid="timeago"
+                            class="pr-3 text-lg font-semibold"
                           >
-                            11 days ago
+                            Gerard Blezer
                           </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-success"
+                          >
+                            +28
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          It's a fez. I wear a fez now. Fezes are cool. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? I am the Doctor, and you are the Daleks! Father Christmas. Santa Claus. Or as I've always known him: Jeff.
+                        </p>
+                        <div
+                          class="flex flex-col mt-3"
+                        >
+                          <div
+                            class="flex items-center text-theme-neutral-light"
+                          >
+                            <div
+                              class="flex items-center w-10"
+                            >
+                              <div
+                                class="sc-AxiKw jFtMMC mx-auto -mt-2"
+                                height="18"
+                                width="15"
+                              >
+                                <svg>
+                                  reply-arrow.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="flex items-center divide-x divide-theme-neutral-light space-x-3"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-neutral-900"
+                              >
+                                Developer response
+                              </span>
+                              <span
+                                class="pl-3 text-sm font-semibold text-theme-neutral"
+                              >
+                                <span
+                                  data-testid="timeago"
+                                >
+                                  11 days ago
+                                </span>
+                              </span>
+                            </div>
+                          </div>
+                          <div
+                            class="sc-fznKkj fPa-DHw mt-2 ml-10 text-theme-neutral-600"
+                          >
+                            <a
+                              href="#"
+                            >
+                              @Gerard Blezer
+                            </a>
+                             You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
+                        >
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-neutral-light"
+                          >
+                            0
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col mt-5"
+                    >
+                      <div
+                        class="flex items-center justify-between"
+                      >
+                        <div
+                          class="relative flex items-center divide-x divide-theme-neutral-light"
+                        >
+                          <span
+                            class="pr-3 text-lg font-semibold"
+                          >
+                            Rok Cernec
+                          </span>
+                          <div
+                            class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                          >
+                            <div
+                              class="sc-AxiKw ksjdLL"
+                              height="10"
+                              width="10"
+                            >
+                              <svg>
+                                star.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="ml-1 text-theme-neutral-dark"
+                            >
+                              4.6
+                            </span>
+                          </div>
+                          <span
+                            class="pl-3 text-sm font-semibold text-theme-neutral"
+                          >
+                            <span
+                              data-testid="timeago"
+                            >
+                              11 days ago
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          class="flex items-center font-semibold space-x-2"
+                        >
+                          <span
+                            class="text-theme-danger-dark"
+                          >
+                            -5
+                          </span>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-up.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw eDCpIH text-theme-primary-light"
+                            height="15"
+                            width="15"
+                          >
+                            <svg>
+                              chevron-down.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="mt-2"
+                      >
+                        <p
+                          class="text-theme-neutral-600"
+                        >
+                          Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-7"
+                  >
+                    <div
+                      class="sc-fzplWN dBsyri"
+                      data-testid="Pagination"
+                    >
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__first"
+                        disabled=""
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw bopxJn"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            pagination-first.svg
+                          </svg>
+                        </div>
+                      </button>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__previous"
+                        disabled=""
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw ksjdLL mr-2"
+                          height="10"
+                          width="10"
+                        >
+                          <svg>
+                            back.svg
+                          </svg>
+                        </div>
+                        Previous
+                      </button>
+                      <div
+                        class="flex px-2 rounded bg-theme-primary-contrast"
+                      >
+                        <div
+                          class="sc-fznyAO kcFfqr current-page"
+                        >
+                          1
+                        </div>
+                        <div
+                          class="sc-fznyAO kcFfqr"
+                        >
+                          2
+                        </div>
+                        <div
+                          class="sc-fznyAO kcFfqr"
+                        >
+                          3
+                        </div>
+                      </div>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__next"
+                        type="button"
+                      >
+                        Next
+                        <div
+                          class="sc-AxiKw bopxJn ml-2"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            forward.svg
+                          </svg>
+                        </div>
+                      </button>
+                      <button
+                        class="sc-AxjAm ddJBbC"
+                        color="primary"
+                        data-testid="Pagination__last"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxiKw bopxJn"
+                          height="12"
+                          width="12"
+                        >
+                          <svg>
+                            pagination-last.svg
+                          </svg>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
+              data-testid="plugin-details__review-box"
+            >
+              <div
+                class="w-full"
+              >
+                <div
+                  class="flex flex-col"
+                >
+                  <div
+                    class="flex items-center text-2xl whitespace-no-wrap"
+                  >
+                    <div
+                      class="sc-AxiKw cMZpXY mr-1 -mt-1"
+                      height="19"
+                      width="34"
+                    >
+                      <svg>
+                        stars-outline.svg
+                      </svg>
+                    </div>
+                    <span
+                      class="font-bold"
+                    >
+                      Avg. Rating: 4.6 
+                      <span
+                        class="font-bold text-theme-neutral-light"
+                      >
+                         / 5
+                      </span>
+                    </span>
+                  </div>
+                  <span
+                    class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
+                  >
+                    Out of 347 reviews
+                  </span>
+                  <div
+                    class="space-y-6"
+                  >
+                    <div
+                      class="flex flex-col"
+                    >
+                      <div
+                        class="flex justify-between"
+                        data-testid="5-stars__rating-row"
+                      >
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          156
                         </span>
                       </div>
-                    </div>
-                    <div
-                      class="sc-AxheI emNSdd mt-2 ml-10 text-theme-neutral-600"
-                    >
-                      <a
-                        href="#"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        @Gerard Blezer
-                      </a>
-                       You've swallowed a planet! Sorry, checking all the water in this area; there's an escaped fish. Aw, you're all Mr. Grumpy Face today. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship.
+                        <div
+                          class="sc-fzqBZW coDHfA h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="5-stars__rating-count"
+                          width="44.95677233429395"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Rok Cernec
-                    </span>
                     <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex flex-col"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
+                        class="flex justify-between"
+                        data-testid="4-stars__rating-row"
                       >
-                        <svg>
-                          star.svg
-                        </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          194
+                        </span>
                       </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        4.6
-                      </span>
-                    </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
-                    >
-                      <span
-                        data-testid="timeago"
-                      >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-neutral-light"
-                    >
-                      0
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
+                        <div
+                          class="sc-fzqBZW gSiOcP h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="4-stars__rating-count"
+                          width="55.907780979827095"
+                        />
+                      </div>
                     </div>
                     <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    I hate yogurt. It's just stuff with bits in. You know how I sometimes have really brilliant ideas? You know how I sometimes have really brilliant ideas? You hate me; you want to kill me! Well, go on! Kill me! KILL ME!
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col mt-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-                  <div
-                    class="relative flex items-center divide-x divide-theme-neutral-light"
-                  >
-                    <span
-                      class="pr-3 text-lg font-semibold"
-                    >
-                      Rok Cernec
-                    </span>
-                    <div
-                      class="flex items-center px-3 text-sm font-semibold text-theme-warning-400"
+                      class="flex flex-col"
                     >
                       <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
+                        class="flex justify-between"
+                        data-testid="3-stars__rating-row"
                       >
-                        <svg>
-                          star.svg
-                        </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          25
+                        </span>
                       </div>
-                      <span
-                        class="ml-1 text-theme-neutral-dark"
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
                       >
-                        4.6
-                      </span>
+                        <div
+                          class="sc-fzqBZW dqWLhf h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="3-stars__rating-count"
+                          width="7.204610951008646"
+                        />
+                      </div>
                     </div>
-                    <span
-                      class="pl-3 text-sm font-semibold text-theme-neutral"
+                    <div
+                      class="flex flex-col"
                     >
-                      <span
-                        data-testid="timeago"
+                      <div
+                        class="flex justify-between"
+                        data-testid="2-stars__rating-row"
                       >
-                        11 days ago
-                      </span>
-                    </span>
-                  </div>
-                  <div
-                    class="flex items-center font-semibold space-x-2"
-                  >
-                    <span
-                      class="text-theme-danger-dark"
-                    >
-                      -5
-                    </span>
-                    <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
-                    >
-                      <svg>
-                        chevron-up.svg
-                      </svg>
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          42
+                        </span>
+                      </div>
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                      >
+                        <div
+                          class="sc-fzqBZW gQfXmx h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="2-stars__rating-count"
+                          width="12.103746397694524"
+                        />
+                      </div>
                     </div>
                     <div
-                      class="sc-AxirZ fkjLBb text-theme-primary-light"
-                      height="15"
-                      width="15"
+                      class="flex flex-col"
                     >
-                      <svg>
-                        chevron-down.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="mt-2"
-                >
-                  <p
-                    class="text-theme-neutral-600"
-                  >
-                    Aw, you're all Mr. Grumpy Face today. I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. Stop talking, brain thinking. Hush. Did I mention we have comfy chairs?
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="mt-7"
-            >
-              <div
-                class="sc-AxhUy jaOXDK"
-                data-testid="Pagination"
-              >
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__first"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ hDwaov"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      pagination-first.svg
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__previous"
-                  disabled=""
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ fttODj mr-2"
-                    height="10"
-                    width="10"
-                  >
-                    <svg>
-                      back.svg
-                    </svg>
-                  </div>
-                  Previous
-                </button>
-                <div
-                  class="flex px-2 rounded bg-theme-primary-contrast"
-                >
-                  <div
-                    class="sc-AxgMl fXLMnx current-page"
-                  >
-                    1
-                  </div>
-                  <div
-                    class="sc-AxgMl fXLMnx"
-                  >
-                    2
-                  </div>
-                  <div
-                    class="sc-AxgMl fXLMnx"
-                  >
-                    3
-                  </div>
-                </div>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__next"
-                  type="button"
-                >
-                  Next
-                  <div
-                    class="sc-AxirZ hDwaov ml-2"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      forward.svg
-                    </svg>
-                  </div>
-                </button>
-                <button
-                  class="sc-AxiKw gFzSt"
-                  color="primary"
-                  data-testid="Pagination__last"
-                  type="button"
-                >
-                  <div
-                    class="sc-AxirZ hDwaov"
-                    height="12"
-                    width="12"
-                  >
-                    <svg>
-                      pagination-last.svg
-                    </svg>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="p-8 mb-auto ml-32 border-2 border-theme-neutral-200 rounded-xl"
-        data-testid="plugin-details__review-box"
-      >
-        <div
-          class="w-full"
-        >
-          <div
-            class="flex flex-col"
-          >
-            <div
-              class="flex items-center text-2xl whitespace-no-wrap"
-            >
-              <div
-                class="sc-AxirZ jouqAA mr-1 -mt-1"
-                height="19"
-                width="34"
-              >
-                <svg>
-                  stars-outline.svg
-                </svg>
-              </div>
-              <span
-                class="font-bold"
-              >
-                Avg. Rating: 4.6 
-                <span
-                  class="font-bold text-theme-neutral-light"
-                >
-                   / 5
-                </span>
-              </span>
-            </div>
-            <span
-              class="pb-5 mt-1 text-sm font-bold text-theme-neutral-light"
-            >
-              Out of 347 reviews
-            </span>
-            <div
-              class="space-y-6"
-            >
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="5-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
+                      <div
+                        class="flex justify-between"
+                        data-testid="1-stars__rating-row"
+                      >
+                        <div
+                          class="flex items-center space-x-1 text-theme-warning-400"
+                        >
+                          <div
+                            class="sc-AxiKw djOSKP"
+                            height="13"
+                            width="13"
+                          >
+                            <svg>
+                              star.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <span
+                          class="font-bold"
+                        >
+                          7
+                        </span>
+                      </div>
+                      <div
+                        class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
+                      >
+                        <div
+                          class="sc-fzqBZW gNxEgy h-2 rounded-lg bg-theme-warning-400"
+                          data-testid="1-stars__rating-count"
+                          width="2.0172910662824206"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <span
-                    class="font-bold"
-                  >
-                    156
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi cRQcyM h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="5-stars__rating-count"
-                    width="44.95677233429395"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="4-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    194
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi cszPGj h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="4-stars__rating-count"
-                    width="55.907780979827095"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="3-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    25
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi gzdTDv h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="3-stars__rating-count"
-                    width="7.204610951008646"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="2-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    42
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi eGUgh h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="2-stars__rating-count"
-                    width="12.103746397694524"
-                  />
-                </div>
-              </div>
-              <div
-                class="flex flex-col"
-              >
-                <div
-                  class="flex justify-between"
-                  data-testid="1-stars__rating-row"
-                >
-                  <div
-                    class="flex items-center space-x-1 text-theme-warning-400"
-                  >
-                    <div
-                      class="sc-AxirZ eyApFr"
-                      height="13"
-                      width="13"
-                    >
-                      <svg>
-                        star.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <span
-                    class="font-bold"
-                  >
-                    7
-                  </span>
-                </div>
-                <div
-                  class="w-full h-2 mt-1 rounded-lg bg-theme-neutral-200"
-                >
-                  <div
-                    class="sc-fzozJi bjsazK h-2 rounded-lg bg-theme-warning-400"
-                    data-testid="1-stars__rating-count"
-                    width="2.0172910662824206"
-                  />
                 </div>
               </div>
             </div>
@@ -2570,6 +3002,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;

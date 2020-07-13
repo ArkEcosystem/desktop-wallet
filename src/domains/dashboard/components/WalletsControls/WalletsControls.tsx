@@ -39,7 +39,7 @@ export const WalletsControls = ({
 	};
 
 	return (
-		<div className="flex">
+		<div data-testid="WalletControls" className="flex justify-end">
 			<div className="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast">
 				<LayoutControls
 					onSelectGridView={onClickGridView}

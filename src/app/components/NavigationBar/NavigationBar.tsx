@@ -125,7 +125,7 @@ export const NavigationBar = ({
 	};
 	return (
 		<NavWrapper aria-labelledby="main menu">
-			<div className="px-4 sm:px-6 lg:px-8">
+			<div className="px-4 sm:px-6 lg:px-">
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center flex-shrink-0">
 						<div className="flex p-2 mr-4 rounded-lg bg-logo">
