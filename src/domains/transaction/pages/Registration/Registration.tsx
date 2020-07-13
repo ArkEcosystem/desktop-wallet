@@ -14,6 +14,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -25,12 +26,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { styled } from "twin.macro";
 
+// Dummy data
+import { networks } from "../../data";
+
 type RegistrationProps = {
-	addresses: any;
-	formDefaultData: any;
-	onDownload: any;
-	networks: any;
-	registrationTypes: any;
+	addresses?: any;
+	formDefaultData?: any;
+	onDownload?: any;
+	networks?: any;
+	registrationTypes?: any;
 };
 
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
@@ -379,6 +383,7 @@ export const Registration = ({
 	registrationTypes,
 }: RegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const activeProfile = useActiveProfile();
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
@@ -393,7 +398,7 @@ export const Registration = ({
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -489,4 +494,26 @@ export const Registration = ({
 			</Section>
 		</Page>
 	);
+};
+
+Registration.defaultProps = {
+	networks,
+	registrationTypes: [
+		{
+			value: "business",
+			label: "Business",
+		},
+	],
+	formDefaultData: {
+		network: null,
+		address: null,
+	},
+	addresses: [
+		{
+			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
+			walletName: "My Wallet",
+			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
+			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
+		},
+	],
 };
