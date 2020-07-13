@@ -31,12 +31,10 @@ export const End = () => {
 export const Both = () => {
 	return (
 		<InputGroup className="max-w-xs">
-			<InputAddonStart>
-				<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
-					$
-				</span>
+			<InputAddonStart className="flex items-center justify-center w-12 h-auto border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
+				<span>$</span>
 			</InputAddonStart>
-			<Input type="text" placeholder="Amount" defaultValue="0.01" className="pr-20 pl-13" />
+			<Input type="text" placeholder="Amount" defaultValue="0.01" className="pr-20 rounded-l-none" />
 			<InputAddonEnd>
 				<button className="px-4 text-theme-primary focus:outline-none">Send All</button>
 			</InputAddonEnd>

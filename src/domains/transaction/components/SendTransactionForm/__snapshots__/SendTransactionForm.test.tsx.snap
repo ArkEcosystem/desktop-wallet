@@ -206,7 +206,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -219,7 +219,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -233,7 +233,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -297,7 +297,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -310,7 +310,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -324,7 +324,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -385,14 +385,14 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -422,7 +422,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -430,7 +430,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -464,7 +464,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -771,7 +771,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -784,7 +784,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -798,7 +798,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -862,7 +862,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -875,7 +875,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -889,7 +889,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -950,14 +950,14 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -987,7 +987,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -995,7 +995,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -1029,7 +1029,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -1336,7 +1336,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -1349,7 +1349,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -1363,7 +1363,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -1427,7 +1427,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -1440,7 +1440,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -1454,7 +1454,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -1515,14 +1515,14 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -1552,7 +1552,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -1560,7 +1560,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -1594,7 +1594,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -1793,7 +1793,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -1806,7 +1806,7 @@ exports[`SendTransactionForm should render 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -1820,7 +1820,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -1884,7 +1884,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -1897,7 +1897,7 @@ exports[`SendTransactionForm should render 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -1911,7 +1911,7 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -1972,14 +1972,14 @@ exports[`SendTransactionForm should render 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -2009,7 +2009,7 @@ exports[`SendTransactionForm should render 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -2017,7 +2017,7 @@ exports[`SendTransactionForm should render 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -2051,7 +2051,7 @@ exports[`SendTransactionForm should render 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -2358,7 +2358,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -2377,7 +2377,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -2391,7 +2391,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -2455,7 +2455,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -2474,7 +2474,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -2488,7 +2488,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -2569,14 +2569,14 @@ exports[`SendTransactionForm should select recipient 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -2606,7 +2606,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -2614,7 +2614,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -2648,7 +2648,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -2955,7 +2955,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -2974,7 +2974,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -2988,7 +2988,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -3072,7 +3072,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -3085,7 +3085,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -3099,7 +3099,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -3160,14 +3160,14 @@ exports[`SendTransactionForm should select sender 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -3197,7 +3197,7 @@ exports[`SendTransactionForm should select sender 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -3205,7 +3205,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -3239,7 +3239,7 @@ exports[`SendTransactionForm should select sender 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -3438,7 +3438,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -3451,7 +3451,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -3465,7 +3465,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -3529,7 +3529,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -3542,7 +3542,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -3556,7 +3556,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -3617,14 +3617,14 @@ exports[`SendTransactionForm should set available amount 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -3654,7 +3654,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -3662,7 +3662,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -3696,7 +3696,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
@@ -4003,7 +4003,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-sender"
               name="sender"
             >
@@ -4016,7 +4016,7 @@ exports[`SendTransactionForm should submit form 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -4030,7 +4030,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -4094,7 +4094,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             class="sc-AxheI IkGcK"
           >
             <select
-              class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+              class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
               data-testid="ProfileFormField__select-recipient"
               name="recipient"
             >
@@ -4107,7 +4107,7 @@ exports[`SendTransactionForm should submit form 1`] = `
               </option>
             </select>
             <div
-              class="sc-AxhCb sc-AxgMl brbBur w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
             >
               <div
                 class="sc-Axmtr bgBpcp"
@@ -4121,7 +4121,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
@@ -4182,14 +4182,14 @@ exports[`SendTransactionForm should submit form 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="send-transaction__amount-input"
             name="amount"
             placeholder="Amount"
             type="number"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
@@ -4219,7 +4219,7 @@ exports[`SendTransactionForm should submit form 1`] = `
           class="sc-AxheI IkGcK"
         >
           <input
-            class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
+            class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-20"
             data-testid="Input"
             maxlength="255"
             name="smartbridge"
@@ -4227,7 +4227,7 @@ exports[`SendTransactionForm should submit form 1`] = `
             type="text"
           />
           <div
-            class="sc-AxhCb sc-AxgMl brbBur"
+            class="sc-AxhCb sc-AxgMl jreOpL"
           >
             <button
               class="px-4 text-theme-neutral-light focus:outline-none"
@@ -4261,7 +4261,7 @@ exports[`SendTransactionForm should submit form 1`] = `
                 class="sc-AxheI IkGcK"
               >
                 <input
-                  class="sc-AxiKw SVpUH overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxiKw fXRsJT overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
