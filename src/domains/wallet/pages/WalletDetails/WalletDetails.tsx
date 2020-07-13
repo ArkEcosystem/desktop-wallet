@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "app/components/Breadcrumbs";
+import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import { TransactionListItem } from "app/components/TransactionListItem";
 import { TransactionListItemProps } from "app/components/TransactionListItem/models";
@@ -32,8 +32,6 @@ const columns = [
 		className: "float-right",
 	},
 ];
-
-const Divider = () => <div className="h-4 bg-theme-neutral-contrast" />;
 
 type Wallet = WalletListItemProps & {
 	address: string;
@@ -72,8 +70,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 	/* istanbul ignore next */
 	return (
-		<div className="relative">
-			<Breadcrumbs crumbs={crumbs} />
+		<Page crumbs={crumbs}>
 			<WalletHeader
 				coin={wallet?.coinIcon || "Ark"}
 				address={wallet?.address}
@@ -85,36 +82,43 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
 				hasStarred={wallet?.hasStarred}
 			/>
-			<Divider />
-			<WalletVote delegates={wallet?.delegates || []} />
-			<Divider />
 
-			<WalletRegistrations
-				address={wallet?.address}
-				delegate={wallet?.delegates?.[0]}
-				business={wallet?.business}
-				isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
-				hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
-				hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
-				hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
-			/>
-			<Divider />
+			<Section>
+				<WalletVote delegates={wallet?.delegates || []} />
+			</Section>
 
-			<div className="px-12 py-8">
-				<h2 className="font-bold">Pending Transactions</h2>
-				<Table columns={columns} data={wallet?.pendingTransactions || []}>
-					{(rowData: any) => <TransactionListItem {...rowData} />}
-				</Table>
-			</div>
-			<div className="px-12 pt-4 pb-20">
-				<h2 className="font-bold">Transaction History</h2>
-				<Table columns={columns} data={wallet?.transactions || []}>
-					{(rowData: any) => <TransactionListItem {...rowData} />}
-				</Table>
+			<Section>
+				<WalletRegistrations
+					address={wallet?.address}
+					delegate={wallet?.delegates?.[0]}
+					business={wallet?.business}
+					isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
+					hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
+					hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
+					hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
+				/>
+			</Section>
+
+			<div>
+				<Section className="mb-20">
+					<div className="mb-16">
+						<h2 className="font-bold">Pending Transactions</h2>
+						<Table columns={columns} data={wallet?.pendingTransactions || []}>
+							{(rowData: any) => <TransactionListItem {...rowData} />}
+						</Table>
+					</div>
+
+					<div>
+						<h2 className="font-bold">Transaction History</h2>
+						<Table columns={columns} data={wallet?.transactions || []}>
+							{(rowData: any) => <TransactionListItem {...rowData} />}
+						</Table>
+					</div>
+				</Section>
 			</div>
 
 			<WalletBottomSheetMenu walletsData={wallets!} />
-		</div>
+		</Page>
 	);
 };
 

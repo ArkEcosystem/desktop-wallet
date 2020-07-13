@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { useSelectionState } from "app/components/SelectionBar";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -160,73 +161,82 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={onSubmit}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep networks={networks} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep networks={networks} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-2">
-							{activeTab < 4 && (
-								<>
-									<Button
-										disabled={activeTab === 1}
-										data-testid="SendIPFSTransaction__button--back"
-										variant="plain"
-										onClick={handleBack}
-									>
-										Back
-									</Button>
-									<Button
-										data-testid="SendIPFSTransaction__button--continue"
-										variant="solid"
-										// disabled={!isValid}
-										onClick={handleNext}
-									>
-										Continue
-									</Button>
-								</>
-							)}
+							<div className="flex justify-end mt-8 space-x-2">
+								{activeTab < 4 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="SendIPFSTransaction__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="SendIPFSTransaction__button--continue"
+											variant="solid"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
 
-							{activeTab === 4 && (
-								<>
-									<Button
-										data-testid="SendIPFSTransaction__button--back-to-wallet"
-										variant="plain"
-										className={"block"}
-									>
-										Back to wallet
-									</Button>
-									<Button
-										onClick={onCopy}
-										data-testid="SendIPFSTransaction__button--copy"
-										variant="plain"
-									>
-										<div className="flex items-center justify-between px-1">
-											<Icon name="Copy" />
-											<span className="ml-2">Copy</span>
-										</div>
-									</Button>
-								</>
-							)}
+								{activeTab === 4 && (
+									<>
+										<Button
+											data-testid="SendIPFSTransaction__button--back-to-wallet"
+											variant="plain"
+											className={"block"}
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="SendIPFSTransaction__button--copy"
+											variant="plain"
+										>
+											<div className="flex items-center justify-between px-1">
+												<Icon name="Copy" />
+												<span className="ml-2">Copy</span>
+											</div>
+										</Button>
+									</>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
-		</div>
+					</Tabs>
+				</Form>
+			</Section>
+		</Page>
 	);
 };

@@ -6,6 +6,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
 import { SelectNetwork } from "app/components/SelectNetwork";
@@ -53,7 +54,7 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+const RegistrationTypeDropdown = ({ className, register, registrationTypes }: any) => {
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<div className="mb-2">
@@ -390,10 +391,17 @@ export const Registration = ({
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div data-testid="Registration">
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={7} activeIndex={activeTab} />
 
@@ -478,7 +486,7 @@ export const Registration = ({
 						</div>
 					</Tabs>
 				</Form>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

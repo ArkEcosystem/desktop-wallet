@@ -1,9 +1,9 @@
-import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
@@ -14,8 +14,6 @@ import { useHistory } from "react-router-dom";
 type CreateProfileProps = {
 	onSubmit?: any;
 };
-
-const commonAssets = images.common;
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const form = useForm();
@@ -71,17 +69,9 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	];
 
 	return (
-		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
-					</div>
-				</div>
-			</div>
-
-			<div className="container mx-auto">
-				<div className="max-w-lg mx-auto xl:max-w-xl">
+		<Page navbarStyle="logo-only">
+			<Section className="flex flex-col justify-center flex-1 text-center">
+				<div className="max-w-lg mx-auto md:max-w-xl">
 					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
 					<div className="text-theme-neutral-dark">
 						Create a new Profile or login with your MarketSquare account to get started.
@@ -140,7 +130,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							<Divider dashed />
 						</div>
 
-						<div className="flex justify-end mt-8 mb-16 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								Back
 							</Button>
@@ -148,7 +138,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 						</div>
 					</Form>
 				</div>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

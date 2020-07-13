@@ -1,5 +1,4 @@
 import { Alert } from "app/components/Alert";
-import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Divider } from "app/components/Divider";
@@ -7,6 +6,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -222,10 +222,9 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 	];
 
 	return (
-		<>
-			<Breadcrumbs crumbs={crumbs} />
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onSubmit(data)}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -272,7 +271,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 						</div>
 					</Tabs>
 				</Form>
-			</div>
-		</>
+			</Section>
+		</Page>
 	);
 };

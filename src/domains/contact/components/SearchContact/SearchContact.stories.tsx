@@ -13,7 +13,26 @@ export default {
 export const Default = () => {
 	return (
 		<div>
-			<SearchContact isOpen={boolean("isOpen", true)} contacts={contacts} onClose={action("onClose")} />
+			<SearchContact
+				isOpen={boolean("isOpen", true)}
+				contacts={contacts}
+				onClose={action("onClose")}
+				onAction={console.log}
+			/>
+		</div>
+	);
+};
+
+export const OneAction = () => {
+	return (
+		<div>
+			<SearchContact
+				isOpen={boolean("isOpen", true)}
+				contacts={contacts}
+				onClose={action("onClose")}
+				onAction={console.log}
+				options={[{ value: "select", label: "Select" }]}
+			/>
 		</div>
 	);
 };

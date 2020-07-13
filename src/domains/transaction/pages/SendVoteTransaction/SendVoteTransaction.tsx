@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -169,10 +170,17 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div>
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={onSubmit}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -233,7 +241,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 						</div>
 					</Tabs>
 				</Form>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };
