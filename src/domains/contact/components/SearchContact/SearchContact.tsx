@@ -1,17 +1,20 @@
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
+import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchContactProps = {
 	isOpen: boolean;
 	contacts: any[];
+	options?: any[];
 	onClose?: any;
 	onSearch?: any;
+	onAction?: (action: Option, address: any) => void;
 };
 
-export const SearchContact = ({ isOpen, contacts, onClose, onSearch }: SearchContactProps) => {
+export const SearchContact = ({ isOpen, contacts, onClose, onSearch, onAction, options }: SearchContactProps) => {
 	const { t } = useTranslation();
 
 	const columns = [
@@ -40,7 +43,9 @@ export const SearchContact = ({ isOpen, contacts, onClose, onSearch }: SearchCon
 			onSearch={onSearch}
 		>
 			<Table columns={columns} data={contacts}>
-				{(contact: any) => <ContactListItem contact={contact} variant="condensed" />}
+				{(contact: any) => (
+					<ContactListItem contact={contact} variant="condensed" onAction={onAction} options={options} />
+				)}
 			</Table>
 		</SearchResource>
 	);
