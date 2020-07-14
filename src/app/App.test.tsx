@@ -1,6 +1,6 @@
 import nock from "nock";
 import React from "react";
-import { renderWithRouter, screen, waitFor } from "testing-library";
+import { renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { App } from "./App";
 
@@ -19,7 +19,7 @@ beforeAll(() => {
 
 describe("App", () => {
 	it("should render", async () => {
-		const { container, asFragment } = renderWithRouter(<App />);
+		const { container, asFragment } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(async () => {
 			await expect(
@@ -34,15 +34,7 @@ describe("App", () => {
 	it("should render mock", () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		const { container } = renderWithRouter(<App />);
-		expect(container).toBeTruthy();
-	});
-
-	it("should render tailwind debug", () => {
-		process.env.NODE_ENV = "development";
-		process.env.REACT_APP_BUILD_MODE = "demo";
-
-		const { container } = renderWithRouter(<App />);
+		const { container } = renderWithRouter(<App />, { withProviders: false });
 		expect(container).toBeTruthy();
 	});
 });

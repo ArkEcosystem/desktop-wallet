@@ -1,15 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
@@ -61,10 +57,8 @@ describe("Vote For Delegate", () => {
 	});
 
 	it("should render", async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
 		const history = createMemoryHistory();
-		const voteURL = "/profiles/qwe123/transactions/vote";
+		const voteURL = `/profiles/${identity.profiles.bob.id}/transactions/vote`;
 
 		history.push(voteURL);
 
@@ -72,11 +66,9 @@ describe("Vote For Delegate", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentContext.Provider value={env}>
-					<Route path="/profiles/:profileId/transactions/vote">
-						<SendVoteTransaction onCopy={onCopy} />
-					</Route>
-				</EnvironmentContext.Provider>,
+				<Route path="/profiles/:profileId/transactions/vote">
+					<SendVoteTransaction onCopy={onCopy} />
+				</Route>,
 				{
 					routes: [voteURL],
 					history,

@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
@@ -15,9 +11,8 @@ describe("UpdateRegistration", () => {
 	let rendered: RenderResult;
 	let defaultFormValues = {};
 
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const history = createMemoryHistory();
-	const updateRegistrationURL = "/profiles/qwe123/transactions/update";
+	const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
 
 	history.push(updateRegistrationURL);
 
@@ -27,11 +22,9 @@ describe("UpdateRegistration", () => {
 		};
 
 		rendered = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/transactions/update">
-					<UpdateRegistration {...defaultFormValues} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/transactions/update">
+				<UpdateRegistration {...defaultFormValues} />
+			</Route>,
 			{
 				routes: [updateRegistrationURL],
 				history,

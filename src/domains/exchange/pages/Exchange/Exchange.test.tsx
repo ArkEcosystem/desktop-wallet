@@ -1,31 +1,23 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
-// i18n
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
 describe("Exchange", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-	const exchangeURL = `/profiles/qwe123/exchange`;
+	const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
 	history.push(exchangeURL);
 
 	it("should render", () => {
 		const { container, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={[]} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={[]} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
@@ -58,11 +50,9 @@ describe("Exchange", () => {
 		];
 
 		const { container, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={exchanges} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
@@ -91,11 +81,9 @@ describe("Exchange", () => {
 		];
 
 		const { container, getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={exchanges} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
@@ -127,11 +115,9 @@ describe("Exchange", () => {
 		];
 
 		const { container, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={exchanges} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
@@ -167,11 +153,9 @@ describe("Exchange", () => {
 		];
 
 		const { container, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={exchanges} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
@@ -192,11 +176,9 @@ describe("Exchange", () => {
 
 	it("should open & close add exchange modal when no existing exchanges", () => {
 		const { container, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/exchange">
-					<Exchange exchanges={[]} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={[]} />
+			</Route>,
 			{
 				routes: [exchangeURL],
 				history,
