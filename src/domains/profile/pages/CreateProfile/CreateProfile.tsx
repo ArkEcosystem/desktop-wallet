@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 type CreateProfileProps = {
-	onSubmit?: (profile: any) => void;
+	onSubmit?: (profile: Profile) => void;
 };
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
