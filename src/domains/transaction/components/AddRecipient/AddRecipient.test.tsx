@@ -60,12 +60,15 @@ describe("AddRecipient", () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(() => {
-			expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+		waitFor(
+			() => {
+				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+			},
+			{ timeout: 2000 },
+		);
 
-			const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
-			expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
-		});
+		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
+		expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
@@ -201,7 +204,12 @@ describe("AddRecipient", () => {
 			fireEvent.click(getByTestId("SelectAddress__wrapper"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		waitFor(
+			() => {
+				expect(getByTestId("modal__inner")).toBeTruthy();
+			},
+			{ timeout: 2000 },
+		);
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 		act(() => {
