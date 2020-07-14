@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SendTransactionForm should emit goBack button click 1`] = `
+exports[`SendTransactionForm should not call onBack callback if not provided 1`] = `
 <div>
   <div
-    class="sc-fzqBZW bgzVmA"
+    class="sc-fzoXzr WYvOR"
   >
     <form
       class="space-y-8"
@@ -28,13 +28,13 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="downshift-8-label"
+          aria-labelledby="downshift-7-label"
           class="relative"
           role="combobox"
         >
           <label
-            for="downshift-8-input"
-            id="downshift-8-label"
+            for="downshift-7-input"
+            id="downshift-7-label"
           />
           <div
             class="relative flex items-center w-full flex-inline"
@@ -62,11 +62,11 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
                 </div>
                 <input
                   aria-autocomplete="list"
-                  aria-labelledby="downshift-8-label"
+                  aria-labelledby="downshift-7-label"
                   autocomplete="off"
                   class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                   data-testid="select-asset__input"
-                  id="downshift-8-input"
+                  id="downshift-7-input"
                   name="network"
                   placeholder="Enter a network name"
                   value=""
@@ -75,16 +75,16 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             </div>
           </div>
           <div
-            aria-labelledby="downshift-8-label"
+            aria-labelledby="downshift-7-label"
             class="select-asset__items"
             data-testid="select-asset__items"
-            id="downshift-8-menu"
+            id="downshift-7-menu"
             role="listbox"
           >
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-8-item-0"
+              id="downshift-7-item-0"
               role="option"
             >
               <div
@@ -104,7 +104,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-8-item-1"
+              id="downshift-7-item-1"
               role="option"
             >
               <div
@@ -124,7 +124,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-8-item-2"
+              id="downshift-7-item-2"
               role="option"
             >
               <div
@@ -144,7 +144,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-8-item-3"
+              id="downshift-7-item-3"
               role="option"
             >
               <div
@@ -164,7 +164,7 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-8-item-4"
+              id="downshift-7-item-4"
               role="option"
             >
               <div
@@ -275,699 +275,149 @@ exports[`SendTransactionForm should emit goBack button click 1`] = `
           />
         </div>
       </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
+      <div>
         <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
+          class="sc-fzoLag iDWDrw"
         >
           <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="smartbridge"
-            label="Smartbridge"
-          >
-            Smartbridge
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="Input"
-            maxlength="255"
-            name="smartbridge"
-            placeholder=" "
-            type="text"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-4 text-theme-neutral-light focus:outline-none"
-            >
-              255 Max
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <div
-        class="flex"
-      >
-        <div
-          class="w-2/4"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr relative mt-1"
+            class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="mb-2"
+              class="flex mb-2 space-x-2"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-                label="Fee ARK"
-              >
-                Fee ARK
-              </label>
               <div
-                class="sc-AxheI IkGcK"
+                class="text-sm font-medium transition-colors duration-100"
               >
-                <input
-                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="InputCurrency"
-                  name="fee"
-                  type="text"
-                  value="0"
-                />
+                Select a Single or Multiple Recipient Transaction
+              </div>
+              <div>
                 <div
-                  class="absolute bottom-0 w-full px-1"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
-                    class="flex flex-wrap justify-center"
-                    data-testid="Range"
+                    class="sc-Axmtr hdGCex"
+                    height="20"
+                    width="20"
                   >
-                    <div
-                      class="sc-AxmLO fErXAA"
-                      data-testid="Range__track"
-                      style="transform: scale(1); cursor: pointer;"
-                    >
-                      <div
-                        class="sc-fzozJi fxOiEw"
-                        data-testid="Range__track__filled"
-                      >
-                        <div
-                          aria-valuemax="100"
-                          aria-valuemin="0"
-                          aria-valuenow="0"
-                          class="sc-fzoLsD iBGNss"
-                          data-testid="Range__thumb"
-                          draggable="false"
-                          role="slider"
-                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                          tabindex="0"
-                        />
-                      </div>
-                    </div>
+                    <svg>
+                      questionmark.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
-          </fieldset>
-        </div>
-        <div
-          class="w-2/4 text-right mt-7"
-        >
-          <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-            data-testid="SelectionBar"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Last
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Min
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Average
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex justify-end space-x-3"
-      >
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
-          data-testid="send-transaction-click-back"
-          type="button"
-        >
-          Back
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="send-transaction-click-submit"
-          type="submit"
-        >
-          Continue
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`SendTransactionForm should not call onBack callback if not provided 1`] = `
-<div>
-  <div
-    class="sc-fzqBZW bgzVmA"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
-      id="send-transaction__form"
-    >
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="network"
-            label="Network"
-          >
-            Network
-          </label>
-        </div>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-11-label"
-          class="relative"
-          role="combobox"
-        >
-          <label
-            for="downshift-11-input"
-            id="downshift-11-label"
-          />
-          <div
-            class="relative flex items-center w-full flex-inline"
-          >
             <div
-              class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+              class="flex items-stretch select-buttons"
+            >
+              <button
+                class="sc-AxjAm ddQVWI flex-1"
+                color="primary"
+                data-testid="add-recipient-is-single-toggle"
+                type="button"
+              >
+                Single
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC flex-1 border-l-0"
+                color="primary"
+                data-testid="add-recipient-is-multiple-toggle"
+                type="button"
+              >
+                Multiple
+              </button>
+            </div>
+          </div>
+          <div
+            class="space-y-8 mt-8 mb-2 "
+            data-testid="add-recipient__form-wrapper"
+          >
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="px-4 py-2 flex-0 w-14"
+                class="mb-2"
               >
-                <div
-                  class="sc-fzplWN exzsOf border-theme-neutral-200"
-                />
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="recipientAddress"
+                  label="Recipient"
+                >
+                  Recipient
+                </label>
               </div>
-              <div
-                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-              >
-                <div
-                  class="relative z-10 w-full"
-                  data-testid="select-network__typeahead-"
+              <div>
+                <button
+                  class="sc-fzqNJr Uxstz SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
                 >
                   <div
-                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                    class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
                   />
-                </div>
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-Axmtr hdGCex"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
                 <input
-                  aria-autocomplete="list"
-                  aria-labelledby="downshift-11-label"
-                  autocomplete="off"
-                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                  data-testid="select-asset__input"
-                  id="downshift-11-input"
-                  name="network"
-                  placeholder="Enter a network name"
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
+                  name="recipientAddress"
+                  readonly=""
+                  type="text"
                   value=""
                 />
               </div>
-            </div>
-          </div>
-          <div
-            aria-labelledby="downshift-11-label"
-            class="select-asset__items"
-            data-testid="select-asset__items"
-            id="downshift-11-menu"
-            role="listbox"
-          >
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-11-item-0"
-              role="option"
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-fzplWN iCUCxM text-theme-danger-400 border-theme-danger-light"
+                class="mb-2"
               >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="amount"
+                  label="Amount ARK"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  Amount ARK
+                </label>
+              </div>
+              <div
+                class="sc-AxheI IkGcK"
+              >
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                  data-testid="add-recipient__amount-input"
+                  name="amount"
+                  placeholder="Amount"
+                  type="number"
+                />
+                <div
+                  class="sc-AxhCb sc-AxgMl jreOpL"
+                >
+                  <button
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                    data-testid="add-recipient__send-all"
+                  >
+                    Send All
+                  </button>
                 </div>
               </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-11-item-1"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-warning-400 border-theme-warning-200"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    btc.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-11-item-2"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-neutral-800 border-theme-neutral-600"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    eth.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-11-item-3"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-primary border-theme-primary-400"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    lsk.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-11-item-4"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-primary-dark border-theme-primary-500"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    xrp.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
+            </fieldset>
           </div>
         </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="sender"
-            label="Sender"
-          >
-            Sender
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-sender"
-              name="sender"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
+      </div>
       <fieldset
         class="sc-AxirZ izhStr relative mt-1"
       >
@@ -1133,7 +583,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
 exports[`SendTransactionForm should not call onSubmit callback if not provided 1`] = `
 <div>
   <div
-    class="sc-fzqBZW bgzVmA"
+    class="sc-fzoXzr WYvOR"
   >
     <form
       class="space-y-8"
@@ -1158,13 +608,13 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="downshift-10-label"
+          aria-labelledby="downshift-6-label"
           class="relative"
           role="combobox"
         >
           <label
-            for="downshift-10-input"
-            id="downshift-10-label"
+            for="downshift-6-input"
+            id="downshift-6-label"
           />
           <div
             class="relative flex items-center w-full flex-inline"
@@ -1192,11 +642,11 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
                 </div>
                 <input
                   aria-autocomplete="list"
-                  aria-labelledby="downshift-10-label"
+                  aria-labelledby="downshift-6-label"
                   autocomplete="off"
                   class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                   data-testid="select-asset__input"
-                  id="downshift-10-input"
+                  id="downshift-6-input"
                   name="network"
                   placeholder="Enter a network name"
                   value=""
@@ -1205,16 +655,16 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             </div>
           </div>
           <div
-            aria-labelledby="downshift-10-label"
+            aria-labelledby="downshift-6-label"
             class="select-asset__items"
             data-testid="select-asset__items"
-            id="downshift-10-menu"
+            id="downshift-6-menu"
             role="listbox"
           >
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-10-item-0"
+              id="downshift-6-item-0"
               role="option"
             >
               <div
@@ -1234,7 +684,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-10-item-1"
+              id="downshift-6-item-1"
               role="option"
             >
               <div
@@ -1254,7 +704,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-10-item-2"
+              id="downshift-6-item-2"
               role="option"
             >
               <div
@@ -1274,7 +724,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-10-item-3"
+              id="downshift-6-item-3"
               role="option"
             >
               <div
@@ -1294,7 +744,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-10-item-4"
+              id="downshift-6-item-4"
               role="option"
             >
               <div
@@ -1405,134 +855,149 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
           />
         </div>
       </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
+      <div>
         <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
+          class="sc-fzoLag iDWDrw"
         >
           <div
-            class="sc-AxheI IkGcK"
+            class="text-theme-neutral-dark hover:text-theme-primary"
           >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="flex mb-2 space-x-2"
             >
               <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
+                class="text-sm font-medium transition-colors duration-100"
               >
-                <svg>
-                  chevron-down.svg
-                </svg>
+                Select a Single or Multiple Recipient Transaction
               </div>
+              <div>
+                <div
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
+                >
+                  <div
+                    class="sc-Axmtr hdGCex"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      questionmark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-stretch select-buttons"
+            >
+              <button
+                class="sc-AxjAm ddQVWI flex-1"
+                color="primary"
+                data-testid="add-recipient-is-single-toggle"
+                type="button"
+              >
+                Single
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC flex-1 border-l-0"
+                color="primary"
+                data-testid="add-recipient-is-multiple-toggle"
+                type="button"
+              >
+                Multiple
+              </button>
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
+            class="space-y-8 mt-8 mb-2 "
+            data-testid="add-recipient__form-wrapper"
           >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  user.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="recipientAddress"
+                  label="Recipient"
+                >
+                  Recipient
+                </label>
               </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
+              <div>
+                <button
+                  class="sc-fzqNJr Uxstz SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
+                >
+                  <div
+                    class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                  />
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-Axmtr hdGCex"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
+                  name="recipientAddress"
+                  readonly=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  receive.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="amount"
+                  label="Amount ARK"
+                >
+                  Amount ARK
+                </label>
               </div>
-            </button>
+              <div
+                class="sc-AxheI IkGcK"
+              >
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                  data-testid="add-recipient__amount-input"
+                  name="amount"
+                  placeholder="Amount"
+                  type="number"
+                />
+                <div
+                  class="sc-AxhCb sc-AxgMl jreOpL"
+                >
+                  <button
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                    data-testid="add-recipient__send-all"
+                  >
+                    Send All
+                  </button>
+                </div>
+              </div>
+            </fieldset>
           </div>
         </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
+      </div>
       <fieldset
         class="sc-AxirZ izhStr relative mt-1"
       >
@@ -1698,7 +1163,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
 exports[`SendTransactionForm should render 1`] = `
 <div>
   <div
-    class="sc-fzqBZW bgzVmA"
+    class="sc-fzoXzr WYvOR"
   >
     <form
       class="space-y-8"
@@ -1769,474 +1234,17 @@ exports[`SendTransactionForm should render 1`] = `
               </div>
             </div>
           </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="sender"
-            label="Sender"
-          >
-            Sender
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
           <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-sender"
-              name="sender"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="smartbridge"
-            label="Smartbridge"
-          >
-            Smartbridge
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="Input"
-            maxlength="255"
-            name="smartbridge"
-            placeholder=" "
-            type="text"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-4 text-theme-neutral-light focus:outline-none"
-            >
-              255 Max
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <div
-        class="flex"
-      >
-        <div
-          class="w-2/4"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr relative mt-1"
-          >
-            <div
-              class="mb-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-                label="Fee ARK"
-              >
-                Fee ARK
-              </label>
-              <div
-                class="sc-AxheI IkGcK"
-              >
-                <input
-                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="InputCurrency"
-                  name="fee"
-                  type="text"
-                  value="0"
-                />
-                <div
-                  class="absolute bottom-0 w-full px-1"
-                >
-                  <div
-                    class="flex flex-wrap justify-center"
-                    data-testid="Range"
-                  >
-                    <div
-                      class="sc-AxmLO fErXAA"
-                      data-testid="Range__track"
-                      style="transform: scale(1); cursor: pointer;"
-                    >
-                      <div
-                        class="sc-fzozJi fxOiEw"
-                        data-testid="Range__track__filled"
-                      >
-                        <div
-                          aria-valuemax="100"
-                          aria-valuemin="0"
-                          aria-valuenow="0"
-                          class="sc-fzoLsD iBGNss"
-                          data-testid="Range__thumb"
-                          draggable="false"
-                          role="slider"
-                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                          tabindex="0"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-        <div
-          class="w-2/4 text-right mt-7"
-        >
-          <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-            data-testid="SelectionBar"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Last
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Min
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Average
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex justify-end space-x-3"
-      >
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
-          data-testid="send-transaction-click-back"
-          type="button"
-        >
-          Back
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="send-transaction-click-submit"
-          type="submit"
-        >
-          Continue
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`SendTransactionForm should select recipient 1`] = `
-<div>
-  <div
-    class="sc-fzqBZW bgzVmA"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
-      id="send-transaction__form"
-    >
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="network"
-            label="Network"
-          >
-            Network
-          </label>
-        </div>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-2-label"
-          class="relative"
-          role="combobox"
-        >
-          <label
-            for="downshift-2-input"
-            id="downshift-2-label"
-          />
-          <div
-            class="relative flex items-center w-full flex-inline"
-          >
-            <div
-              class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-            >
-              <div
-                class="px-4 py-2 flex-0 w-14"
-              >
-                <div
-                  class="sc-fzplWN exzsOf border-theme-neutral-200"
-                />
-              </div>
-              <div
-                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-              >
-                <div
-                  class="relative z-10 w-full"
-                  data-testid="select-network__typeahead-"
-                >
-                  <div
-                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                  />
-                </div>
-                <input
-                  aria-autocomplete="list"
-                  aria-labelledby="downshift-2-label"
-                  autocomplete="off"
-                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                  data-testid="select-asset__input"
-                  id="downshift-2-input"
-                  name="network"
-                  placeholder="Enter a network name"
-                  value=""
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            aria-labelledby="downshift-2-label"
+            aria-labelledby="downshift-0-label"
             class="select-asset__items"
             data-testid="select-asset__items"
-            id="downshift-2-menu"
+            id="downshift-0-menu"
             role="listbox"
           >
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-2-item-0"
+              id="downshift-0-item-0"
               role="option"
             >
               <div
@@ -2256,7 +1264,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-2-item-1"
+              id="downshift-0-item-1"
               role="option"
             >
               <div
@@ -2276,7 +1284,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-2-item-2"
+              id="downshift-0-item-2"
               role="option"
             >
               <div
@@ -2296,7 +1304,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-2-item-3"
+              id="downshift-0-item-3"
               role="option"
             >
               <div
@@ -2316,7 +1324,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
             <div
               aria-selected="false"
               class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-2-item-4"
+              id="downshift-0-item-4"
               role="option"
             >
               <div
@@ -2369,12 +1377,6 @@ exports[`SendTransactionForm should select recipient 1`] = `
               >
                  
               </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
             </select>
             <div
               class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
@@ -2433,160 +1435,149 @@ exports[`SendTransactionForm should select recipient 1`] = `
           />
         </div>
       </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
+      <div>
         <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
+          class="sc-fzoLag iDWDrw"
         >
           <div
-            class="sc-AxheI IkGcK"
+            class="text-theme-neutral-dark hover:text-theme-primary"
           >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-              <option
-                data-testid="ProfileFormField__profile-select"
-                value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-              >
-                My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="flex mb-2 space-x-2"
             >
               <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
+                class="text-sm font-medium transition-colors duration-100"
               >
-                <svg>
-                  chevron-down.svg
-                </svg>
+                Select a Single or Multiple Recipient Transaction
               </div>
+              <div>
+                <div
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
+                >
+                  <div
+                    class="sc-Axmtr hdGCex"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      questionmark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-stretch select-buttons"
+            >
+              <button
+                class="sc-AxjAm ddQVWI flex-1"
+                color="primary"
+                data-testid="add-recipient-is-single-toggle"
+                type="button"
+              >
+                Single
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC flex-1 border-l-0"
+                color="primary"
+                data-testid="add-recipient-is-multiple-toggle"
+                type="button"
+              >
+                Multiple
+              </button>
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
+            class="space-y-8 mt-8 mb-2 "
+            data-testid="add-recipient__form-wrapper"
           >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  user.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="recipientAddress"
+                  label="Recipient"
+                >
+                  Recipient
+                </label>
               </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
+              <div>
+                <button
+                  class="sc-fzqNJr Uxstz SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
+                >
+                  <div
+                    class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                  />
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-Axmtr hdGCex"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
+                  name="recipientAddress"
+                  readonly=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  receive.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="amount"
+                  label="Amount ARK"
+                >
+                  Amount ARK
+                </label>
               </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="flex ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN hVkhiO bg-theme-neutral-300 border-theme-neutral-300"
-          />
-          <div
-            class="mt-1 ml-4 text-theme-neutral-800"
-          >
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-normal text-base"
-                data-testid="address__wallet-name"
+              <div
+                class="sc-AxheI IkGcK"
               >
-                My Wallet
-              </span>
-              <span
-                class="sc-fznyAO hdDwJr text-theme-neutral-light font-normal text-base"
-                data-testid="address__wallet-address"
-              >
-                FJKDSALJFKASL…SAJFKLASJKDFJ
-              </span>
-            </div>
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                  data-testid="add-recipient__amount-input"
+                  name="amount"
+                  placeholder="Amount"
+                  type="number"
+                />
+                <div
+                  class="sc-AxhCb sc-AxgMl jreOpL"
+                >
+                  <button
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                    data-testid="add-recipient__send-all"
+                  >
+                    Send All
+                  </button>
+                </div>
+              </div>
+            </fieldset>
           </div>
         </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
+      </div>
       <fieldset
         class="sc-AxirZ izhStr relative mt-1"
       >
@@ -2752,7 +1743,7 @@ exports[`SendTransactionForm should select recipient 1`] = `
 exports[`SendTransactionForm should select sender 1`] = `
 <div>
   <div
-    class="sc-fzqBZW bgzVmA"
+    class="sc-fzoXzr WYvOR"
   >
     <form
       class="space-y-8"
@@ -3050,134 +2041,149 @@ exports[`SendTransactionForm should select sender 1`] = `
           </div>
         </div>
       </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
+      <div>
         <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
+          class="sc-fzoLag iDWDrw"
         >
           <div
-            class="sc-AxheI IkGcK"
+            class="text-theme-neutral-dark hover:text-theme-primary"
           >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
             <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
+              class="flex mb-2 space-x-2"
             >
               <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
+                class="text-sm font-medium transition-colors duration-100"
               >
-                <svg>
-                  chevron-down.svg
-                </svg>
+                Select a Single or Multiple Recipient Transaction
               </div>
+              <div>
+                <div
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
+                >
+                  <div
+                    class="sc-Axmtr hdGCex"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      questionmark.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-stretch select-buttons"
+            >
+              <button
+                class="sc-AxjAm ddQVWI flex-1"
+                color="primary"
+                data-testid="add-recipient-is-single-toggle"
+                type="button"
+              >
+                Single
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC flex-1 border-l-0"
+                color="primary"
+                data-testid="add-recipient-is-multiple-toggle"
+                type="button"
+              >
+                Multiple
+              </button>
             </div>
           </div>
           <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
+            class="space-y-8 mt-8 mb-2 "
+            data-testid="add-recipient__form-wrapper"
           >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  user.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="recipientAddress"
+                  label="Recipient"
+                >
+                  Recipient
+                </label>
               </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
+              <div>
+                <button
+                  class="sc-fzqNJr Uxstz SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
+                >
+                  <div
+                    class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                  />
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-Axmtr hdGCex"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
+                  name="recipientAddress"
+                  readonly=""
+                  type="text"
+                  value=""
+                />
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
+                class="mb-2"
               >
-                <svg>
-                  receive.svg
-                </svg>
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="amount"
+                  label="Amount ARK"
+                >
+                  Amount ARK
+                </label>
               </div>
-            </button>
+              <div
+                class="sc-AxheI IkGcK"
+              >
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                  data-testid="add-recipient__amount-input"
+                  name="amount"
+                  placeholder="Amount"
+                  type="number"
+                />
+                <div
+                  class="sc-AxhCb sc-AxgMl jreOpL"
+                >
+                  <button
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                    data-testid="add-recipient__send-all"
+                  >
+                    Send All
+                  </button>
+                </div>
+              </div>
+            </fieldset>
           </div>
         </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
+      </div>
       <fieldset
         class="sc-AxirZ izhStr relative mt-1"
       >
@@ -3343,7 +2349,7 @@ exports[`SendTransactionForm should select sender 1`] = `
 exports[`SendTransactionForm should set available amount 1`] = `
 <div>
   <div
-    class="sc-fzqBZW bgzVmA"
+    class="sc-fzoXzr WYvOR"
   >
     <form
       class="space-y-8"
@@ -3507,699 +2513,149 @@ exports[`SendTransactionForm should set available amount 1`] = `
           />
         </div>
       </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
+      <div>
         <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
+          class="sc-fzoLag iDWDrw"
         >
           <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="smartbridge"
-            label="Smartbridge"
-          >
-            Smartbridge
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="Input"
-            maxlength="255"
-            name="smartbridge"
-            placeholder=" "
-            type="text"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-4 text-theme-neutral-light focus:outline-none"
-            >
-              255 Max
-            </button>
-          </div>
-        </div>
-      </fieldset>
-      <div
-        class="flex"
-      >
-        <div
-          class="w-2/4"
-        >
-          <fieldset
-            class="sc-AxirZ izhStr relative mt-1"
+            class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="mb-2"
+              class="flex mb-2 space-x-2"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="fee"
-                label="Fee ARK"
-              >
-                Fee ARK
-              </label>
               <div
-                class="sc-AxheI IkGcK"
+                class="text-sm font-medium transition-colors duration-100"
               >
-                <input
-                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="InputCurrency"
-                  name="fee"
-                  type="text"
-                  value="0"
-                />
+                Select a Single or Multiple Recipient Transaction
+              </div>
+              <div>
                 <div
-                  class="absolute bottom-0 w-full px-1"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
-                    class="flex flex-wrap justify-center"
-                    data-testid="Range"
+                    class="sc-Axmtr hdGCex"
+                    height="20"
+                    width="20"
                   >
-                    <div
-                      class="sc-AxmLO fErXAA"
-                      data-testid="Range__track"
-                      style="transform: scale(1); cursor: pointer;"
-                    >
-                      <div
-                        class="sc-fzozJi fxOiEw"
-                        data-testid="Range__track__filled"
-                      >
-                        <div
-                          aria-valuemax="100"
-                          aria-valuemin="0"
-                          aria-valuenow="0"
-                          class="sc-fzoLsD iBGNss"
-                          data-testid="Range__thumb"
-                          draggable="false"
-                          role="slider"
-                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                          tabindex="0"
-                        />
-                      </div>
-                    </div>
+                    <svg>
+                      questionmark.svg
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
-          </fieldset>
-        </div>
-        <div
-          class="w-2/4 text-right mt-7"
-        >
-          <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-            data-testid="SelectionBar"
-            role="radiogroup"
-          >
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Last
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Min
-            </button>
-            <button
-              aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-              data-testid="SelectionBarOption"
-              role="radio"
-            >
-              Average
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex justify-end space-x-3"
-      >
-        <button
-          class="sc-AxjAm ddJBbC"
-          color="primary"
-          data-testid="send-transaction-click-back"
-          type="button"
-        >
-          Back
-        </button>
-        <button
-          class="sc-AxjAm ddQVWI"
-          color="primary"
-          data-testid="send-transaction-click-submit"
-          type="submit"
-        >
-          Continue
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-`;
-
-exports[`SendTransactionForm should submit form 1`] = `
-<div>
-  <div
-    class="sc-fzqBZW bgzVmA"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
-      id="send-transaction__form"
-    >
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="network"
-            label="Network"
-          >
-            Network
-          </label>
-        </div>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-9-label"
-          class="relative"
-          role="combobox"
-        >
-          <label
-            for="downshift-9-input"
-            id="downshift-9-label"
-          />
-          <div
-            class="relative flex items-center w-full flex-inline"
-          >
             <div
-              class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+              class="flex items-stretch select-buttons"
+            >
+              <button
+                class="sc-AxjAm ddQVWI flex-1"
+                color="primary"
+                data-testid="add-recipient-is-single-toggle"
+                type="button"
+              >
+                Single
+              </button>
+              <button
+                class="sc-AxjAm ddJBbC flex-1 border-l-0"
+                color="primary"
+                data-testid="add-recipient-is-multiple-toggle"
+                type="button"
+              >
+                Multiple
+              </button>
+            </div>
+          </div>
+          <div
+            class="space-y-8 mt-8 mb-2 "
+            data-testid="add-recipient__form-wrapper"
+          >
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="px-4 py-2 flex-0 w-14"
+                class="mb-2"
               >
-                <div
-                  class="sc-fzplWN exzsOf border-theme-neutral-200"
-                />
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="recipientAddress"
+                  label="Recipient"
+                >
+                  Recipient
+                </label>
               </div>
-              <div
-                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-              >
-                <div
-                  class="relative z-10 w-full"
-                  data-testid="select-network__typeahead-"
+              <div>
+                <button
+                  class="sc-fzqNJr Uxstz SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
                 >
                   <div
-                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                    class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
                   />
-                </div>
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-Axmtr hdGCex"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
                 <input
-                  aria-autocomplete="list"
-                  aria-labelledby="downshift-9-label"
-                  autocomplete="off"
-                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                  data-testid="select-asset__input"
-                  id="downshift-9-input"
-                  name="network"
-                  placeholder="Enter a network name"
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
+                  name="recipientAddress"
+                  readonly=""
+                  type="text"
                   value=""
                 />
               </div>
-            </div>
-          </div>
-          <div
-            aria-labelledby="downshift-9-label"
-            class="select-asset__items"
-            data-testid="select-asset__items"
-            id="downshift-9-menu"
-            role="listbox"
-          >
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-9-item-0"
-              role="option"
+            </fieldset>
+            <fieldset
+              class="sc-AxirZ izhStr relative mt-1"
             >
               <div
-                class="sc-fzplWN iCUCxM text-theme-danger-400 border-theme-danger-light"
+                class="mb-2"
               >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="amount"
+                  label="Amount ARK"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  Amount ARK
+                </label>
+              </div>
+              <div
+                class="sc-AxheI IkGcK"
+              >
+                <input
+                  class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                  data-testid="add-recipient__amount-input"
+                  name="amount"
+                  placeholder="Amount"
+                  type="number"
+                />
+                <div
+                  class="sc-AxhCb sc-AxgMl jreOpL"
+                >
+                  <button
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                    data-testid="add-recipient__send-all"
+                  >
+                    Send All
+                  </button>
                 </div>
               </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-9-item-1"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-warning-400 border-theme-warning-200"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    btc.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-9-item-2"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-neutral-800 border-theme-neutral-600"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    eth.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-9-item-3"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-primary border-theme-primary-400"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    lsk.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-9-item-4"
-              role="option"
-            >
-              <div
-                class="sc-fzplWN iCUCxM text-theme-primary-dark border-theme-primary-500"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    xrp.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
+            </fieldset>
           </div>
         </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="sender"
-            label="Sender"
-          >
-            Sender
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-sender"
-              name="sender"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative h-20 "
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="recipient"
-            label="Recipient"
-          >
-            Recipient
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK ProfileFormField__select-contact select-transparent"
-        >
-          <div
-            class="sc-AxheI IkGcK"
-          >
-            <select
-              class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-              data-testid="ProfileFormField__select-recipient"
-              name="recipient"
-            >
-              <option
-                disabled=""
-                selected=""
-                value=""
-              >
-                 
-              </option>
-            </select>
-            <div
-              class="sc-AxhCb sc-AxgMl jreOpL w-12 text-lg pointer-events-none text-theme-neutral-dark"
-            >
-              <div
-                class="sc-Axmtr bgBpcp"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  user.svg
-                </svg>
-              </div>
-            </button>
-            <div
-              class="sc-fznKkj kZHPHw border-theme-neutral-300"
-              type="vertical"
-            />
-            <button
-              class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-            >
-              <div
-                class="sc-Axmtr hdGCex"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
-            </button>
-          </div>
-        </div>
-        <div
-          class="absolute ml-4 -mt-10"
-        >
-          <div
-            class="sc-fzplWN exzsOf mt-px bg-theme-neutral-200 border-theme-neutral-200"
-          />
-        </div>
-      </fieldset>
-      <fieldset
-        class="sc-AxirZ izhStr relative mt-1"
-      >
-        <div
-          class="mb-2"
-        >
-          <label
-            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-            data-testid="FormLabel"
-            for="amount"
-            label="Amount ARK"
-          >
-            Amount ARK
-          </label>
-        </div>
-        <div
-          class="sc-AxheI IkGcK"
-        >
-          <input
-            class="sc-AxiKw dRuQsB overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-            data-testid="send-transaction__amount-input"
-            name="amount"
-            placeholder="Amount"
-            type="number"
-          />
-          <div
-            class="sc-AxhCb sc-AxgMl jreOpL"
-          >
-            <button
-              class="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-              data-testid="send-transaction__send-all"
-            >
-              Send All
-            </button>
-          </div>
-        </div>
-      </fieldset>
+      </div>
       <fieldset
         class="sc-AxirZ izhStr relative mt-1"
       >

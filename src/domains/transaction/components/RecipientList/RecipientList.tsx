@@ -26,7 +26,7 @@ const RecipientListItem = ({
 }: RecipientListItemProps) => (
 	<tr className="border-b border-dotted border-theme-neutral-200" data-testid="recipient-list__recipient-list-item">
 		<td className="py-6 w-14">
-			<Avatar address="test" />
+			<Avatar address={address} />
 		</td>
 		<td>
 			<div className="mb-1 text-sm font-semibold text-theme-neutral">Recipient #{listIndex}</div>
