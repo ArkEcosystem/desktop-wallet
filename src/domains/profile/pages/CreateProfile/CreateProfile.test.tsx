@@ -1,11 +1,21 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
 describe("CreateProfile", () => {
+	let env: any = null;
+
+	beforeEach(() => {
+		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	});
+
 	it("should render", () => {
 		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile />, {
 			routes: ["/", "/profile/create"],
@@ -22,7 +32,7 @@ describe("CreateProfile", () => {
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider>
+			<EnvironmentProvider env={env}>
 				<CreateProfile onSubmit={onSubmit} />
 			</EnvironmentProvider>,
 			{
@@ -63,12 +73,13 @@ describe("CreateProfile", () => {
 			THEME: "dark",
 		});
 
+		expect(env.profiles().all().length).toEqual(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should store profile without callback", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider>
+			<EnvironmentProvider env={env}>
 				<CreateProfile />
 			</EnvironmentProvider>,
 			{
@@ -86,6 +97,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
+		expect(env.profiles().all().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
