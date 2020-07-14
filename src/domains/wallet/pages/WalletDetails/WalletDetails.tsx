@@ -8,6 +8,8 @@ import { WalletRegistrations } from "domains/wallet/components/WalletRegistratio
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React from "react";
 
+import { wallet, wallets } from "../../data";
+
 type Wallet = WalletListItemProps & {
 	address: string;
 	balance: string;
@@ -91,4 +93,9 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			{wallets && wallets.length > 1 && <WalletBottomSheetMenu walletsData={wallets} />}
 		</>
 	);
+};
+
+WalletDetails.defaultProps = {
+	wallets,
+	wallet,
 };
