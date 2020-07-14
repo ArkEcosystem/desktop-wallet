@@ -59,24 +59,6 @@ describe("Welcome", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should redirect to registartion page", () => {
-		const { asFragment, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/registrations">
-				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
-			</Route>,
-			{
-				routes: [registrationsURL],
-				history,
-			},
-		);
-
-		const registerButton = getByText("Register");
-		act(() => fireEvent.click(registerButton));
-
-		expect(asFragment()).toMatchSnapshot();
-		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
-	});
-
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
 		const handleDropdown = jest.fn();
 
@@ -104,5 +86,23 @@ describe("Welcome", () => {
 		});
 
 		expect(handleDropdown).toHaveBeenCalled();
+	});
+
+	it("should redirect to registartion page", () => {
+		const { asFragment, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		const registerButton = getByText("Register");
+		act(() => fireEvent.click(registerButton));
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
 	});
 });
