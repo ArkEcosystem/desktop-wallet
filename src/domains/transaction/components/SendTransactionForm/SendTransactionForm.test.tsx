@@ -1,14 +1,15 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { contacts } from "domains/contact/data";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, waitFor } from "testing-library";
 
 import { networks } from "../../data";
 import { SendTransactionForm } from "./";
 
 describe("SendTransactionForm", () => {
 	it("should render", () => {
-		const { container } = render(<SendTransactionForm />);
+		const { container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -23,7 +24,7 @@ describe("SendTransactionForm", () => {
 		];
 
 		const { getByTestId, getAllByTestId, container } = render(
-			<SendTransactionForm senderList={senderList} networks={networks} />,
+			<SendTransactionForm contacts={contacts} senderList={senderList} networks={networks} />,
 		);
 		fireEvent.change(getByTestId("ProfileFormField__select-sender"), {
 			target: { value: senderList[0].address },
@@ -35,40 +36,35 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should select recipient", () => {
-		const senderList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-		const contactList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
+		const { getByTestId, getAllByTestId } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
 
-		const { getByTestId, getAllByTestId, container } = render(
-			<SendTransactionForm networks={networks} senderList={senderList} contactList={contactList} />,
-		);
-		fireEvent.change(getByTestId("ProfileFormField__select-recipient"), {
-			target: { value: contactList[0].address },
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByTestId("SelectAddress__wrapper"));
 		});
-		const options = getAllByTestId("ProfileFormField__profile-select");
 
-		expect((options[1] as HTMLOptionElement).selected).toBeTruthy();
-		expect(container).toMatchSnapshot();
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+
+		act(() => {
+			fireEvent.click(firstAddress);
+		});
+
+		waitFor(() => {
+			expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+
+			const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
+			expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
+		});
 	});
 
-	it("should set available amount", async () => {
-		const { getByTestId, container } = render(<SendTransactionForm maxAvailableAmount={100} />);
-		const sendAll = getByTestId("send-transaction__send-all");
-		const amountInput = getByTestId("send-transaction__amount-input");
-		await act(async () => {
+	it("should set available amount", () => {
+		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} maxAvailableAmount={100} />);
+		const sendAll = getByTestId("add-recipient__send-all");
+		const amountInput = getByTestId("add-recipient__amount-input");
+		act(() => {
 			fireEvent.click(sendAll);
 		});
 
@@ -76,173 +72,36 @@ describe("SendTransactionForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should show add recipient button when recipient and amount are set", async () => {
-		const contactList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-
-		const { getByTestId } = render(<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />);
-
-		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
-
-		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		const addedRecipientBtn = getByTestId("send-transaction__add-recipient");
-		expect(addedRecipientBtn).toBeTruthy();
-	});
-
-	it("should add recipient", async () => {
-		const contactList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-
-		const { getByTestId } = render(<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />);
-
-		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
-
-		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		const addedRecipientBtn = getByTestId("send-transaction__add-recipient");
-		await act(async () => {
-			fireEvent.click(addedRecipientBtn);
-		});
-		const addedRecipient = getByTestId("recipient-list__recipient-list-item");
-		expect(addedRecipient).toBeTruthy();
-	});
-
-	it("should add secondary recipient", async () => {
-		const contactList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-			{
-				address: "BFJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "BFJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet 2 FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-
-		const { getByTestId, getAllByTestId } = render(
-			<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />,
-		);
-
-		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
-		// 1st recipient
-		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		const addedRecipientBtn1 = getByTestId("send-transaction__add-recipient");
-		await act(async () => {
-			fireEvent.click(addedRecipientBtn1);
-		});
-
-		// 2nd recipient
-		fireEvent.change(recipientSelect, { target: { value: contactList[1].address } });
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		const addedRecipientBtn2 = getByTestId("send-transaction__add-recipient");
-		await act(async () => {
-			fireEvent.click(addedRecipientBtn2);
-		});
-
-		const addedRecipients = getAllByTestId("recipient-list__recipient-list-item");
-		expect(addedRecipients).toHaveLength(2);
-	});
-
-	it("should remove added recipient", async () => {
-		const contactList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-
-		const { getByTestId, queryByText } = render(
-			<SendTransactionForm contactList={contactList} maxAvailableAmount={100} />,
-		);
-
-		const sendAll = getByTestId("send-transaction__send-all");
-		const recipientSelect = getByTestId("ProfileFormField__select-recipient");
-		// 1st recipient
-		fireEvent.change(recipientSelect, { target: { value: contactList[0].address } });
-		await act(async () => {
-			fireEvent.click(sendAll);
-		});
-
-		const addedRecipientBtn = getByTestId("send-transaction__add-recipient");
-		await act(async () => {
-			fireEvent.click(addedRecipientBtn);
-		});
-
-		const removeBtn = getByTestId("recipient-list__remove-recipient");
-		expect(removeBtn).toBeTruthy();
-		await act(async () => {
-			fireEvent.click(removeBtn);
-		});
-
-		const addedRecipient = queryByText("Recipient wallet");
-		expect(addedRecipient).toBeFalsy();
-	});
-
-	it("should emit goBack button click", async () => {
+	it("should emit goBack button click", () => {
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm onBack={fn} networks={networks} />);
+		const { getByTestId } = render(<SendTransactionForm onBack={fn} contacts={contacts} networks={networks} />);
 		const backBtn = getByTestId("send-transaction-click-back");
+
 		act(() => {
 			fireEvent.click(backBtn);
 		});
 
-		expect(container).toMatchSnapshot();
 		expect(fn).toBeCalled();
 	});
 
-	it("should submit form", async () => {
-		// Select network to enable buttons
+	it("should submit form", () => {
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm onSubmit={fn} networks={networks} />);
+		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} contacts={contacts} networks={networks} />);
 		const submit = getByTestId("send-transaction-click-submit");
-		await act(async () => {
+		act(() => {
 			fireEvent.click(submit);
 		});
 
-		expect(container).toMatchSnapshot();
-		expect(fn).toBeCalled();
+		waitFor(() => {
+			expect(fn).toBeCalled();
+		});
 	});
 
 	it("should not call onSubmit callback if not provided", async () => {
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm networks={networks} />);
+		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
 		const submit = getByTestId("send-transaction-click-submit");
 		await act(async () => {
 			fireEvent.click(submit);
@@ -255,7 +114,7 @@ describe("SendTransactionForm", () => {
 	it("should not call onBack callback if not provided", async () => {
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm networks={networks} />);
+		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
 		const back = getByTestId("send-transaction-click-back");
 		await act(async () => {
 			fireEvent.click(back);
