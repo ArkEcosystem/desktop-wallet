@@ -50,6 +50,7 @@ const defaultFormValues = {
 		},
 	],
 	contacts,
+	profiles: contacts,
 };
 
 export const Default = () => (
