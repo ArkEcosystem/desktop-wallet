@@ -40,15 +40,17 @@ export const PluginGrid = ({
 		<div data-testid="PluginGrid">
 			<div className={`grid grid-cols-4 gap-5 ${className}`}>{pageEntries}</div>
 
-			{withPagination && (
-				<Pagination
-					currentPage={currentPage}
-					itemsPerPage={itemsPerPage}
-					totalCount={entries.length}
-					onSelectPage={setCurrentPage}
-					className="mt-5"
-				/>
-			)}
+			<div className="flex justify-center mt-4">
+				{withPagination && (
+					<Pagination
+						currentPage={currentPage}
+						itemsPerPage={itemsPerPage}
+						totalCount={entries.length}
+						onSelectPage={setCurrentPage}
+						className="mt-5"
+					/>
+				)}
+			</div>
 		</div>
 	);
 };

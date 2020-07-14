@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
@@ -54,10 +57,24 @@ describe("Vote For Delegate", () => {
 	});
 
 	it("should render", async () => {
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${identity.profiles.bob.id}/transactions/vote`;
+
+		history.push(voteURL);
+
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<SendVoteTransaction onCopy={onCopy} />);
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/vote">
+					<SendVoteTransaction onCopy={onCopy} />
+				</Route>,
+				{
+					routes: [voteURL],
+					history,
+				},
+			);
+
 			await waitFor(() => expect(rendered.getByTestId(`SendVoteTransaction__step--first`)).toBeTruthy());
 		});
 

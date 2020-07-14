@@ -1,17 +1,32 @@
+import { createMemoryHistory } from "history";
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, renderWithRouter } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
-// i18n
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
 describe("Exchange", () => {
-	it("should render", () => {
-		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
+	const history = createMemoryHistory();
 
-		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
-		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
-		expect(asFragment()).toMatchSnapshot();
+	const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
+	history.push(exchangeURL);
+
+	it("should render", () => {
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={[]} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("header__title")).toHaveTextContent(translations.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.DESCRIPTION);
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with exchanges", () => {
@@ -34,11 +49,19 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
 
-		expect(getByTestId("Exchange")).toHaveTextContent(translations.TITLE);
-		expect(getByTestId("Exchange")).toHaveTextContent(translations.DESCRIPTION);
-		expect(asFragment()).toMatchSnapshot();
+		expect(getByTestId("header__title")).toHaveTextContent(translations.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.DESCRIPTION);
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should not render filler exchange cards", () => {
@@ -57,14 +80,22 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
+		const { container, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
 
-		expect(getByTestId("Exchange")).toHaveTextContent("ChangeNOW Plugin");
-		expect(getByTestId("Exchange")).toHaveTextContent("Binance");
-		expect(getByTestId("Exchange")).toHaveTextContent("Atomars");
-		expect(getByTestId("Exchange")).toHaveTextContent(translations.ADD_EXCHANGE);
-		expect(getByTestId("Exchange")).not.toHaveTextContent(translations.EXCHANGE_NAME);
-		expect(asFragment()).toMatchSnapshot();
+		expect(getByText("ChangeNOW Plugin")).toBeTruthy();
+		expect(getByText("Binance")).toBeTruthy();
+		expect(getByText("Atomars")).toBeTruthy();
+		expect(getByText(translations.ADD_EXCHANGE)).toBeTruthy();
+		expect(() => getByText(translations.EXCHANGE_NAME)).toThrow(/Unable to find an element/);
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should select exchange", () => {
@@ -83,7 +114,15 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
 
 		const changenowCard = getByTestId("Exchange__exchange-card-changenow-plugin");
 
@@ -94,7 +133,7 @@ describe("Exchange", () => {
 
 		expect(changenowCard).toHaveClass("bg-theme-success-contrast");
 		expect(changenowCard).toHaveClass("border-theme-success-300");
-		expect(asFragment()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should open & close add exchange modal", () => {
@@ -113,7 +152,15 @@ describe("Exchange", () => {
 			},
 		];
 
-		const { asFragment, getByTestId } = render(<Exchange exchanges={exchanges} />);
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={exchanges} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 
@@ -124,11 +171,19 @@ describe("Exchange", () => {
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		expect(asFragment()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should open & close add exchange modal when no existing exchanges", () => {
-		const { asFragment, getByTestId } = render(<Exchange exchanges={[]} />);
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/exchange">
+				<Exchange exchanges={[]} />
+			</Route>,
+			{
+				routes: [exchangeURL],
+				history,
+			},
+		);
 
 		fireEvent.click(getByTestId("Exchange__add-exchange-card"));
 
@@ -139,6 +194,6 @@ describe("Exchange", () => {
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		expect(asFragment()).toMatchSnapshot();
+		expect(container).toMatchSnapshot();
 	});
 });

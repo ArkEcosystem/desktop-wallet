@@ -1,8 +1,8 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
 import { identity } from "tests/fixtures/identity";
+import { act, fireEvent, renderWithRouter, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
@@ -37,11 +37,11 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
-		// const transactionsView = getByTestId("dashboard__transactions-view");
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--transactions");
@@ -79,7 +79,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide portfolio view", () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
 			</Route>,
@@ -88,10 +88,11 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");

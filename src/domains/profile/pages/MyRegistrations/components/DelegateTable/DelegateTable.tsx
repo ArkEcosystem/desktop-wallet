@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
 
@@ -54,8 +55,9 @@ const getStatusIcon = (confirmed: boolean) => {
 };
 
 export const DelegateTable = ({ data, handleDropdown }: Props) => (
-	<div className="flex flex-col px-10 mt-4 bg-theme-background">
-		<span className="py-10 text-2xl font-bold">Delegate</span>
+	<Section>
+		<h2 className="mb-8 font-bold">Delegate</h2>
+
 		<Table columns={columns} data={data}>
 			{(rowData: any) => (
 				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
@@ -80,16 +82,14 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 					<td>
 						<div className="flex float-right text-semibold text-theme-neutral-800">
 							<div className="flex items-center">
-								<span className="ml-16">2,450.643</span>
-								<Icon name="Ark" className="ml-2" />
+								<span className="ml-16">2,450.643 Ѧ</span>
 							</div>
 						</div>
 					</td>
 					<td className="w-1/12 text-semibold text-theme-neutral-800">
 						<div className="flex items-center ml-5 -mr-10">
 							<small className="text-theme-neutral">2,43%</small>
-							<span className="ml-1">2,450.643</span>
-							<Icon name="Ark" className="ml-2" />
+							<span className="ml-1">2,450.643 Ѧ</span>
 						</div>
 					</td>
 					<td className="flex items-center justify-center float-right py-6 mt-1">
@@ -104,5 +104,5 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => (
 				</tr>
 			)}
 		</Table>
-	</div>
+	</Section>
 );

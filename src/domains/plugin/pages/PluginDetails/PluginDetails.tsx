@@ -1,5 +1,5 @@
-import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { Button } from "app/components/Button";
+import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
 import { Comments } from "domains/plugin/components/Comments";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
@@ -33,9 +33,8 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 	];
 
 	return (
-		<>
-			<Breadcrumbs crumbs={crumbs} />
-			<section className="h-full mx-10 bg-theme-neutral-contrast" data-testid="plugin-details__header">
+		<Page crumbs={crumbs}>
+			<Section>
 				<PluginHeader
 					author={author}
 					category={category}
@@ -45,10 +44,14 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 					size={size}
 					isInstalled={isInstalled}
 				/>
+			</Section>
 
+			<Section>
 				<PluginInfo about={about} permissions={permissions} screenshots={screenshots} />
+			</Section>
 
-				<div className="flex p-10 mt-5 bg-theme-background">
+			<Section>
+				<div className="flex">
 					<div className="flex flex-col">
 						<div className="flex items-center justify-between">
 							<h2 className="mb-0">Reviews ARK Explorer</h2>
@@ -69,8 +72,8 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 						<ReviewBox averageScore={averageRating} ratings={ratings} totalAvaliations={totalAvaliations} />
 					</div>
 				</div>
-			</section>
-		</>
+			</Section>
+		</Page>
 	);
 };
 

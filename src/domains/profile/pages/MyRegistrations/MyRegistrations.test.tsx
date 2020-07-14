@@ -1,155 +1,81 @@
 import { createMemoryHistory } from "history";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { Route } from "react-router-dom";
+import { act, fireEvent, renderWithRouter, within } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
+import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 describe("Welcome", () => {
 	const history = createMemoryHistory();
+	const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
-	const registrations = [
-		{
-			type: "business",
-			registrations: [
-				{
-					agent: "OLEBank",
-					businessName: "ARK Ecosystem",
-					history: [],
-					website: "",
-					msq: true,
-					repository: [],
-				},
-				{
-					agent: "OLEBank",
-					businessName: "ARK Ecosystem",
-					history: [],
-					website: "",
-					msq: true,
-					repository: [],
-				},
-			],
-		},
-		{
-			type: "blockchain",
-			registrations: [
-				{
-					agent: "OLEBank",
-					blockchainName: "ARK Ecosystem",
-					history: [],
-					website: "",
-					msq: true,
-					repository: [],
-				},
-				{
-					agent: "OLEBank",
-					blockchainName: "ARK Ecosystem",
-					history: [],
-					website: "",
-					msq: true,
-					repository: [],
-				},
-			],
-		},
-		{
-			type: "delegate",
-			registrations: [
-				{
-					delegate: "OLEBank",
-					rank: "#2",
-					history: [],
-					website: "",
-					msq: true,
-					confirmed: true,
-					repository: [],
-				},
-				{
-					delegate: "OLEBank",
-					rank: "#352",
-					history: [],
-					website: "",
-					confirmed: false,
-					repository: [],
-				},
-			],
-		},
-	];
+	history.push(registrationsURL);
 
 	it("should render empty state", () => {
-		const { getByTestId, asFragment } = render(<MyRegistrations />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
 
-		expect(asFragment()).toMatchSnapshot();
 		expect(getByTestId("my-registrations__empty-state")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render properly", () => {
-		const { getAllByTestId, asFragment } = render(<MyRegistrations registrations={registrations} />);
+		const { asFragment, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={registrations} />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
 
-		expect(asFragment()).toMatchSnapshot();
 		expect(getAllByTestId("business-table__row").length).toEqual(2);
 		expect(getAllByTestId("blockchain-table__row").length).toEqual(2);
 		expect(getAllByTestId("delegate-table__row").length).toEqual(2);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render null for a not knwown type of table", () => {
-		const { asFragment } = render(<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />);
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should handle business dropdown", () => {
+	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
 		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
+
+		const { getAllByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
 		);
 
-		const toggle = getAllByTestId("dropdown__toggle");
+		const toggle = within(getAllByTestId(`${type}-table__row`)[0]).getAllByTestId("dropdown__toggle");
 
 		act(() => {
 			fireEvent.click(toggle[0]);
-		});
-
-		const secondOption = getByTestId("dropdown__option--1");
-		expect(secondOption).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(secondOption);
-		});
-
-		expect(handleDropdown).toHaveBeenCalled();
-	});
-
-	it("should handle blockchain dropdown", () => {
-		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
-		);
-
-		const toggle = getAllByTestId("dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(toggle[2]);
-		});
-
-		const secondOption = getByTestId("dropdown__option--1");
-		expect(secondOption).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(secondOption);
-		});
-
-		expect(handleDropdown).toHaveBeenCalled();
-	});
-
-	it("should handle delegate dropdown", () => {
-		const handleDropdown = jest.fn();
-		const { getAllByTestId, getByTestId } = render(
-			<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />,
-		);
-
-		const toggle = getAllByTestId("dropdown__toggle");
-
-		act(() => {
-			fireEvent.click(toggle[4]);
 		});
 
 		const secondOption = getByTestId("dropdown__option--1");

@@ -6,7 +6,6 @@ import { StubStorage } from "tests/mocks";
 
 import { RouterView, routes } from "../router";
 import { identity } from "../tests/fixtures/identity";
-import { Layout } from "./components/Layout";
 import { EnvironmentProvider, useEnvironment } from "./contexts";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -33,7 +32,7 @@ const Main = () => {
 
 	return (
 		<main className={className}>
-			<RouterView routes={routes} wrapper={Layout} />
+			<RouterView routes={routes} />
 		</main>
 	);
 };
