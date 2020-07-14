@@ -2,6 +2,7 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Page, Section } from "app/components/Layout";
 import React from "react";
 
 import { BlockchainTable } from "./components/BlockchainTable";
@@ -21,15 +22,15 @@ type RegistrationProps = {
 const { RegisterBanner } = images.common;
 
 const EmptyRegistrations = (
-	<div
-		data-testid="my-registrations__empty-state"
-		className="flex flex-col items-center justify-center px-10 py-20 mt-4 bg-theme-background"
-	>
-		<RegisterBanner />
-		<span className="text-sm mt-7 text-theme-neutral-600">
-			Register Business, Bridgechain and Delegate in the most convenient way.
-		</span>
-	</div>
+	<Section className="flex-1">
+		<div data-testid="my-registrations__empty-state" className="text-center">
+			<RegisterBanner className="mx-auto" />
+
+			<div className="mt-8 text-theme-neutral-dark">
+				Register Business, Bridgechain and Delegate in the most convenient way.
+			</div>
+		</div>
+	</Section>
 );
 
 const renderRegistration = ({ type, registrations }: RegistrationProps, handleDropdown: any) => {
@@ -71,8 +72,8 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 		});
 
 	return (
-		<section className="bg-theme-neutral-contrast">
-			<div className="px-10 py-16 bg-theme-background">
+		<Page>
+			<Section>
 				<Header
 					title="My Registrations"
 					subtitle="You can register a Delagate, Business and Bridgechain."
@@ -85,9 +86,10 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 						</div>
 					}
 				/>
-			</div>
+			</Section>
+
 			{!registrations.length ? EmptyRegistrations : mountRegistrations()}
-		</section>
+		</Page>
 	);
 };
 

@@ -3,280 +3,487 @@
 exports[`CreateWallet should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
-    data-testid="breadcrumbs__wrapper"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="sc-AxjAm jMosRN"
-      height="10"
-      width="19"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoXzr jIqCXK"
     >
-      <svg>
-        arrow-back.svg
-      </svg>
-    </div>
-    <div
-      class="space-x-2"
-    >
-      <a
-        class="text-theme-neutral-dark"
-        href="/profiles/qwe123/dashboard"
+      <div
+        class="px-4 sm:px-6 lg:px-"
       >
-        <span>
-          Go back to Portfolio
-        </span>
-      </a>
-    </div>
-  </div>
-  <div
-    class="max-w-xl py-16 mx-auto"
-  >
-    <form
-      class="space-y-8"
-      data-testid="Form"
-    >
-      <div>
-        <ul
-          class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-        >
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-          <li
-            class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-          />
-        </ul>
         <div
-          class="mt-4"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            data-testid="tab-pabel__active-panel"
+            class="flex items-center flex-shrink-0"
           >
-            <section
-              class="space-y-8"
-              data-testid="CreateWallet__first-step"
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <div
-                class="my-8"
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
               >
-                <div
-                  class="flex items-end justify-between bg-theme-background"
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
                 >
-                  <div>
-                    <h1
-                      class="mb-0 md:text-4xl"
-                      data-testid="header__title"
-                    >
-                      Select a Cryptoasset
-                    </h1>
-                    <div
-                      class="text-theme-neutral-dark"
-                      data-testid="header__subtitle"
-                    >
-                      Select a cryptoasset to create your new wallet address
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="space-y-2"
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
               >
-                <span
-                  class="text-sm font-medium text-theme-neutral-dark"
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
                 >
-                  Network
-                </span>
-                <div
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-labelledby="downshift-1-label"
-                  class="relative"
-                  role="combobox"
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
                 >
-                  <label
-                    for="downshift-1-input"
-                    id="downshift-1-label"
-                  />
-                  <div
-                    class="relative flex items-center w-full flex-inline"
-                  >
-                    <div
-                      class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                    >
-                      <div
-                        class="px-4 py-2 flex-0 w-14"
-                      >
-                        <div
-                          class="sc-AxgMl hdkviZ border-theme-neutral-200"
-                        />
-                      </div>
-                      <div
-                        class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                      >
-                        <div
-                          class="relative z-10 w-full"
-                          data-testid="select-network__typeahead-"
-                        >
-                          <div
-                            class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                          />
-                        </div>
-                        <input
-                          aria-autocomplete="list"
-                          aria-labelledby="downshift-1-label"
-                          autocomplete="off"
-                          class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                          data-testid="select-asset__input"
-                          id="downshift-1-input"
-                          placeholder="Enter a network name"
-                          value=""
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    aria-labelledby="downshift-1-label"
-                    class="select-asset__items"
-                    data-testid="select-asset__items"
-                    id="downshift-1-menu"
-                    role="listbox"
-                  >
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-1-item-0"
-                      role="option"
-                    >
-                      <div
-                        class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
-                      >
-                        <div
-                          class="sc-AxjAm jakjmk"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-1-item-1"
-                      role="option"
-                    >
-                      <div
-                        class="sc-AxgMl jZnvrW text-theme-warning-400 border-theme-warning-200"
-                      >
-                        <div
-                          class="sc-AxjAm jakjmk"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-1-item-2"
-                      role="option"
-                    >
-                      <div
-                        class="sc-AxgMl jZnvrW text-theme-neutral-800 border-theme-neutral-600"
-                      >
-                        <div
-                          class="sc-AxjAm jakjmk"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-1-item-3"
-                      role="option"
-                    >
-                      <div
-                        class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
-                      >
-                        <div
-                          class="sc-AxjAm jakjmk"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            lsk.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-selected="false"
-                      class="inline-block pt-6 mr-6 cursor-pointer"
-                      id="downshift-1-item-4"
-                      role="option"
-                    >
-                      <div
-                        class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
-                      >
-                        <div
-                          class="sc-AxjAm jakjmk"
-                          height="26"
-                          width="26"
-                        >
-                          <svg>
-                            xrp.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
           <div
-            class="flex justify-end mt-10 space-x-3"
+            class="flex items-center"
           >
-            <button
-              class="sc-AxhUy hiyDSc"
-              color="primary"
-              data-testid="CreateWallet__back-button"
-              disabled=""
-              type="button"
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
             >
-              Back
-            </button>
-            <button
-              class="sc-AxhUy hMFbHm"
-              color="primary"
-              data-testid="CreateWallet__continue-button"
-              disabled=""
-              type="button"
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxjAm jmgDQY"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              Continue
-            </button>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxjAm iepfoc"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </form>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxjAm jMosRN"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/qwe123/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzpjYC deOkAw flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <form
+            class="max-w-xl mx-auto"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+              </ul>
+              <div
+                class="mt-4"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    class="space-y-8"
+                    data-testid="CreateWallet__first-step"
+                  >
+                    <div
+                      class="my-8"
+                    >
+                      <div
+                        class="flex items-end justify-between bg-theme-background"
+                      >
+                        <div>
+                          <h1
+                            class="mb-0 md:text-4xl"
+                            data-testid="header__title"
+                          >
+                            Select a Cryptoasset
+                          </h1>
+                          <div
+                            class="text-theme-neutral-dark"
+                            data-testid="header__subtitle"
+                          >
+                            Select a cryptoasset to create your new wallet address
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="space-y-2"
+                    >
+                      <span
+                        class="text-sm font-medium text-theme-neutral-dark"
+                      >
+                        Network
+                      </span>
+                      <div
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                        aria-labelledby="downshift-1-label"
+                        class="relative"
+                        role="combobox"
+                      >
+                        <label
+                          for="downshift-1-input"
+                          id="downshift-1-label"
+                        />
+                        <div
+                          class="relative flex items-center w-full flex-inline"
+                        >
+                          <div
+                            class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                          >
+                            <div
+                              class="px-4 py-2 flex-0 w-14"
+                            >
+                              <div
+                                class="sc-AxhUy iJOgmr border-theme-neutral-200"
+                              />
+                            </div>
+                            <div
+                              class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                            >
+                              <div
+                                class="relative z-10 w-full"
+                                data-testid="select-network__typeahead-"
+                              >
+                                <div
+                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                                />
+                              </div>
+                              <input
+                                aria-autocomplete="list"
+                                aria-labelledby="downshift-1-label"
+                                autocomplete="off"
+                                class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                                data-testid="select-asset__input"
+                                id="downshift-1-input"
+                                placeholder="Enter a network name"
+                                value=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          aria-labelledby="downshift-1-label"
+                          class="select-asset__items"
+                          data-testid="select-asset__items"
+                          id="downshift-1-menu"
+                          role="listbox"
+                        >
+                          <div
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="downshift-1-item-0"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="downshift-1-item-1"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  btc.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="downshift-1-item-2"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  eth.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="downshift-1-item-3"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="downshift-1-item-4"
+                            role="option"
+                          >
+                            <div
+                              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  xrp.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex justify-end mt-10 space-x-3"
+                >
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="CreateWallet__back-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-AxhCb gBCygf"
+                    color="primary"
+                    data-testid="CreateWallet__continue-button"
+                    disabled=""
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -338,7 +545,7 @@ exports[`CreateWallet should render 1st step 1`] = `
               class="px-4 py-2 flex-0 w-14"
             >
               <div
-                class="sc-AxgMl hdkviZ border-theme-neutral-200"
+                class="sc-AxhUy iJOgmr border-theme-neutral-200"
               />
             </div>
             <div
@@ -379,7 +586,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-danger-400 border-theme-danger-light"
+              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -399,7 +606,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-warning-400 border-theme-warning-200"
+              class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -419,7 +626,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-neutral-800 border-theme-neutral-600"
+              class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -439,7 +646,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-primary border-theme-primary-400"
+              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -459,7 +666,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxgMl jZnvrW text-theme-primary-dark border-theme-primary-500"
+              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -623,7 +830,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex justify-end w-full"
       >
         <button
-          class="sc-AxhUy hiyDSc"
+          class="sc-AxhCb BegvR"
           color="primary"
           data-testid="CreateWallet__copy"
           type="button"
@@ -644,7 +851,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb euqDGV border-theme-neutral-300"
+      class="sc-AxgMl fHSugy border-theme-neutral-300"
       type="horizontal"
     />
     <div
@@ -679,7 +886,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
         class="flex justify-end w-full"
       >
         <button
-          class="sc-AxhUy hiyDSc flex items-center mt-4 space-x-2"
+          class="sc-AxhCb BegvR flex items-center mt-4 space-x-2"
           color="primary"
           data-testid="CreateWallet__download"
           type="button"
@@ -700,7 +907,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb euqDGV border-theme-neutral-300"
+      class="sc-AxgMl fHSugy border-theme-neutral-300"
       type="horizontal"
     />
   </section>
@@ -752,7 +959,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxgMl hjpKRL"
+          class="sc-AxhUy fHeTTV"
         >
           <div
             class="sc-AxjAm cpczEI"
@@ -767,7 +974,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
       <li>
         <div
-          class="sc-AxhCb euqDGV border-theme-neutral-300"
+          class="sc-AxgMl fHSugy border-theme-neutral-300"
           type="horizontal"
         />
       </li>
@@ -787,12 +994,12 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
         </div>
         <div
-          class="sc-AxgMl hjpKRL"
+          class="sc-AxhUy fHeTTV"
         />
       </li>
     </ul>
     <div
-      class="sc-AxhCb euqDGV border-theme-neutral-300"
+      class="sc-AxgMl fHSugy border-theme-neutral-300"
       type="horizontal"
     />
     <fieldset

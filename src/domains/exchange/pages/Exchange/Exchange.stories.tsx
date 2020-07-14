@@ -1,17 +1,10 @@
-import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 
 import { Exchange } from "./Exchange";
 
 export default { title: "Domains / Exchange / Pages / Exchange" };
 
-export const Default = () => (
-	<div>
-		<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
-		<Exchange exchanges={[]} />
-	</div>
-);
+export const Default = () => <Exchange exchanges={[]} />;
 
 export const WithExchanges = () => {
 	const exchanges = [
@@ -33,11 +26,5 @@ export const WithExchanges = () => {
 		},
 	];
 
-	return (
-		<div>
-			<NavigationBar currencyIcon="Ark" balance="34,253.75" userInitials="IO" />
-
-			<Exchange exchanges={exchanges} />
-		</div>
-	);
+	return <Exchange exchanges={exchanges} />;
 };

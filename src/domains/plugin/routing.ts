@@ -1,6 +1,11 @@
-import { PluginDetails, PluginManager } from "./pages";
+import { PluginDetails, PluginManager, PluginsCategory } from "./pages";
 
 export const PluginRoutes = [
+	{
+		path: "/profiles/:profileId/plugins/categories/:categoryId",
+		exact: true,
+		component: PluginsCategory,
+	},
 	{
 		path: "/profiles/:profileId/plugins/:pluginId",
 		exact: true,

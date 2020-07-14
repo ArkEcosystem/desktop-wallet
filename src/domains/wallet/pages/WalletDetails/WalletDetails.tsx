@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "app/components/Breadcrumbs";
+import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
@@ -9,8 +9,6 @@ import { WalletVote } from "domains/wallet/components/WalletVote";
 import React from "react";
 
 import { wallet, wallets } from "./data";
-
-const Divider = () => <div className="h-4 bg-theme-neutral-contrast" />;
 
 type Wallet = WalletListItemProps & {
 	address: string;
@@ -49,8 +47,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 	/* istanbul ignore next */
 	return (
-		<div className="relative">
-			<Breadcrumbs crumbs={crumbs} />
+		<Page crumbs={crumbs}>
 			<WalletHeader
 				coin={wallet?.coinIcon || "Ark"}
 				address={wallet?.address}
@@ -62,32 +59,39 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
 				hasStarred={wallet?.hasStarred}
 			/>
-			<Divider />
-			<WalletVote delegates={wallet?.delegates || []} />
-			<Divider />
 
-			<WalletRegistrations
-				address={wallet?.address}
-				delegate={wallet?.delegates?.[0]}
-				business={wallet?.business}
-				isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
-				hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
-				hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
-				hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
-			/>
-			<Divider />
+			<Section>
+				<WalletVote delegates={wallet?.delegates || []} />
+			</Section>
 
-			<div className="px-12 py-8">
-				<h2 className="font-bold">Pending Transactions</h2>
-				<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
-			</div>
-			<div className="px-12 pt-4 pb-20">
-				<h2 className="font-bold">Transaction History</h2>
-				<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
+			<Section>
+				<WalletRegistrations
+					address={wallet?.address}
+					delegate={wallet?.delegates?.[0]}
+					business={wallet?.business}
+					isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
+					hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
+					hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
+					hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
+				/>
+			</Section>
+
+			<div>
+				<Section className="mb-20">
+					<div className="mb-16">
+						<h2 className="font-bold">Pending Transactions</h2>
+						<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
+					</div>
+
+					<div>
+						<h2 className="font-bold">Transaction History</h2>
+						<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
+					</div>
+				</Section>
 			</div>
 
 			<WalletBottomSheetMenu walletsData={wallets!} />
-		</div>
+		</Page>
 	);
 };
 

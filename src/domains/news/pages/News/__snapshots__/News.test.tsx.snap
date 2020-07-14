@@ -1,715 +1,945 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`News should render 1`] = `
-<DocumentFragment>
+<div>
   <div
-    class="flex items-center space-x-2 px-20 py-5 font-semibold bg-theme-neutral-contrast text-theme-neutral-dark"
-    data-testid="breadcrumbs__wrapper"
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
   >
-    <div
-      class="sc-AxirZ hVzDKK"
-      height="10"
-      width="19"
-    >
-      <svg>
-        arrow-back.svg
-      </svg>
-    </div>
-    <div
-      class="space-x-2"
-    >
-      <a
-        class="text-theme-neutral-dark"
-        href="/profiles/undefined/dashboard"
-      >
-        <span>
-          Go back to Portfolio
-        </span>
-      </a>
-    </div>
-  </div>
-  <section
-    class="flex flex-col min-h-screen py-16 mx-10"
-    data-testid="News"
-  >
-    <div
-      class="flex flex-col flex-1 space-y-5"
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLsD jXsxtN"
     >
       <div
-        class="px-10 py-16 bg-theme-background"
-      >
-        <h1
-          class="mb-0 md:text-4xl"
-        >
-          Blockchain News
-        </h1>
-        <div
-          class="flex items-center space-x-2"
-        >
-          <span
-            class="font-semibold text-theme-neutral-dark"
-          >
-            Powered by
-          </span>
-          <svg
-            height="27"
-            width="100"
-          >
-            blockfolio.svg
-          </svg>
-        </div>
-      </div>
-      <div
-        class="flex p-10 space-x-10"
+        class="px-4 sm:px-6 lg:px-"
       >
         <div
-          class="w-full grid gap-4"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
-            class="sc-AxheI jQWqsv bg-theme-background"
+            class="flex items-center flex-shrink-0"
           >
             <div
-              class="flex flex-col p-4 space-y-8"
-              data-testid="NewsCard"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <div
-                class="flex justify-between w-full"
-              >
-                <div
-                  class="flex items-center space-x-4"
-                >
-                  <div
-                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-light"
-                    data-testid="NewsCard__asset-Ark"
-                  >
-                    <div
-                      class="sc-AxirZ eEbZjj"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4
-                      class="text-lg font-semibold"
-                      data-testid="NewsCard__asset-ARK Ecosystem"
-                    >
-                      ARK Ecosystem
-                    </h4>
-                    <div
-                      class="flex items-center space-x-4"
-                    >
-                      <p
-                        class="text-sm font-semibold text-theme-neutral"
-                        data-testid="NewsCard__author"
-                      >
-                        Travis Walker, Co-Founder
-                      </p>
-                      <div
-                        class="sc-AxjAm gHUxAL border-theme-neutral-300"
-                        type="vertical"
-                      />
-                      <p
-                        class="text-sm font-semibold text-theme-neutral"
-                        data-testid="NewsCard__date-created"
-                      >
-                        2 days ago
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col justify-end"
-                >
-                  <div
-                    class="sc-AxmLO hRohEE"
-                    color="warning"
-                  >
-                    <span
-                      class="text-sm"
-                      data-testid="NewsCard__category"
-                    >
-                      #Technical
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="sc-AxjAm dnkyDE border-theme-neutral-300"
-                type="horizontal"
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
               />
-              <p
-                class="text-theme-neutral-dark"
-                data-testid="NewsCard__content"
-              >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.
-              </p>
             </div>
-          </div>
-          <div
-            class="sc-AxheI jQWqsv bg-theme-background"
-          >
-            <div
-              class="flex flex-col p-4 space-y-8"
-              data-testid="NewsCard"
+            <ul
+              class="flex h-20 md:h-24"
             >
-              <div
-                class="flex justify-between w-full"
-              >
-                <div
-                  class="flex items-center space-x-4"
-                >
-                  <div
-                    class="sc-Axmtr eWaPDL text-theme-danger-400 border-theme-danger-light"
-                    data-testid="NewsCard__asset-Ark"
-                  >
-                    <div
-                      class="sc-AxirZ eEbZjj"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        ark.svg
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4
-                      class="text-lg font-semibold"
-                      data-testid="NewsCard__asset-ARK Ecosystem"
-                    >
-                      ARK Ecosystem
-                    </h4>
-                    <div
-                      class="flex items-center space-x-4"
-                    >
-                      <p
-                        class="text-sm font-semibold text-theme-neutral"
-                        data-testid="NewsCard__author"
-                      >
-                        Travis Walker, Co-Founder
-                      </p>
-                      <div
-                        class="sc-AxjAm gHUxAL border-theme-neutral-300"
-                        type="vertical"
-                      />
-                      <p
-                        class="text-sm font-semibold text-theme-neutral"
-                        data-testid="NewsCard__date-created"
-                      >
-                        2 days ago
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col justify-end"
-                >
-                  <div
-                    class="sc-AxmLO hRohEE"
-                    color="warning"
-                  >
-                    <span
-                      class="text-sm"
-                      data-testid="NewsCard__category"
-                    >
-                      #Technical
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="sc-AxjAm dnkyDE border-theme-neutral-300"
-                type="horizontal"
-              />
-              <p
-                class="text-theme-neutral-dark"
-                data-testid="NewsCard__content"
-              >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.
-              </p>
-              <div
-                class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-contrast"
-              >
-                <img
-                  alt="ARK Banner"
-                  src="https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            class="relative pt-6"
-          >
-            <div
-              class="absolute text-center rounded-b-full bg-theme-primary-contrast right-4"
-              style="width: 28px; height: 29px;"
-            >
-              <span
-                class="text-xs font-semibold text-theme-primary"
-              >
-                Ad
-              </span>
-            </div>
-            <img
-              alt="Blockfolio Banner"
-              class="w-full border-2 rounded-xl border-theme-primary-contrast"
-              src="blockfolio-banner.png"
-            />
-            <div
-              class="absolute top-24 left-10"
-            >
-              <div
-                class="flex flex-col space-y-5 text-theme-background"
+              <li
+                class="flex"
               >
                 <a
-                  href="https://blockfolio.com/"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/dashboard"
+                  title="Portfolio"
                 >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/qwe123/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  aria-current="page"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                  href="/profiles/qwe123/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <div
+                class="sc-AxirZ hmuEJr"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxirZ fttODj"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxirZ hVzDKK"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/qwe123/dashboard"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzpans ctLZwQ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                Blockchain News
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                <div
+                  class="flex items-center space-x-2"
+                >
+                  <span
+                    class="font-semibold text-theme-neutral-dark"
+                  >
+                    Powered by
+                  </span>
                   <svg
-                    class="-mx-8"
-                    height="47"
-                    width="238"
+                    height="27"
+                    width="100"
                   >
                     blockfolio.svg
                   </svg>
-                </a>
-                <p
-                  class="w-3/4 text-lg font-medium"
-                >
-                  The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
-                </p>
-              </div>
-              <div
-                class="flex mt-12 space-x-2"
-              >
-                <a
-                  href="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <svg
-                    class="w-32 h-10 b-0"
-                  >
-                    download-app-store.svg
-                  </svg>
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <svg
-                    class="w-32 h-10"
-                  >
-                    download-google-play.svg
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex justify-center w-full pt-10"
-          >
-            <div
-              class="sc-AxhUy jaOXDK"
-              data-testid="Pagination"
-            >
-              <button
-                class="sc-AxiKw gFzSt"
-                color="primary"
-                data-testid="Pagination__first"
-                disabled=""
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ hDwaov"
-                  height="12"
-                  width="12"
-                >
-                  <svg>
-                    pagination-first.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="sc-AxiKw gFzSt"
-                color="primary"
-                data-testid="Pagination__previous"
-                disabled=""
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ fttODj mr-2"
-                  height="10"
-                  width="10"
-                >
-                  <svg>
-                    back.svg
-                  </svg>
-                </div>
-                Previous
-              </button>
-              <div
-                class="flex px-2 rounded bg-theme-primary-contrast"
-              >
-                <div
-                  class="sc-AxgMl fXLMnx current-page"
-                >
-                  1
-                </div>
-                <div
-                  class="sc-AxgMl fXLMnx"
-                >
-                  2
-                </div>
-                <div
-                  class="sc-AxgMl fXLMnx"
-                >
-                  3
                 </div>
               </div>
-              <button
-                class="sc-AxiKw gFzSt"
-                color="primary"
-                data-testid="Pagination__next"
-                type="button"
-              >
-                Next
-                <div
-                  class="sc-AxirZ hDwaov ml-2"
-                  height="12"
-                  width="12"
-                >
-                  <svg>
-                    forward.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="sc-AxiKw gFzSt"
-                color="primary"
-                data-testid="Pagination__last"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ hDwaov"
-                  height="12"
-                  width="12"
-                >
-                  <svg>
-                    pagination-last.svg
-                  </svg>
-                </div>
-              </button>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        class="sc-fzpans bOOrfx"
+      >
         <div
-          class="max-w-xl"
+          class="container py-16 mx-auto px-14"
         >
           <div
-            class="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
-            data-testid="NewsOptions"
+            class="flex space-x-8"
           >
             <div
-              class="flex flex-col space-y-10"
+              class="w-full grid gap-5"
             >
               <div
-                class="flex items-center justify-between px-2 py-4 shadow-xl rounded-md"
+                class="sc-fznZeY dzfwFi bg-theme-background"
               >
                 <div
-                  class="sc-fzqNJr jqZDyh"
+                  class="flex flex-col p-4 space-y-8"
+                  data-testid="NewsCard"
                 >
-                  <input
-                    class="sc-fzoLsD irttxX overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
-                    data-testid="Input"
-                    placeholder="Search"
+                  <div
+                    class="flex justify-between w-full"
+                  >
+                    <div
+                      class="flex items-center space-x-4"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ text-theme-danger-400 border-theme-danger-light"
+                        data-testid="NewsCard__asset-Ark"
+                      >
+                        <div
+                          class="sc-AxirZ eEbZjj"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div>
+                        <h4
+                          class="text-lg font-semibold"
+                          data-testid="NewsCard__asset-ARK Ecosystem"
+                        >
+                          ARK Ecosystem
+                        </h4>
+                        <div
+                          class="flex items-center space-x-4"
+                        >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                            data-testid="NewsCard__author"
+                          >
+                            Travis Walker
+                            , 
+                            Co-Founder
+                          </p>
+                          <div
+                            class="sc-AxjAm gHUxAL border-theme-neutral-300"
+                            type="vertical"
+                          />
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                            data-testid="NewsCard__date-created"
+                          >
+                            2 days ago
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col justify-end"
+                    >
+                      <div
+                        class="sc-AxheI jcILwK"
+                        color="warning"
+                      >
+                        <span
+                          class="text-sm"
+                          data-testid="NewsCard__category"
+                        >
+                          #
+                          Technical
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxjAm dnkyDE border-theme-neutral-300"
+                    type="horizontal"
                   />
-                </div>
-                <div
-                  class="sc-AxirZ eEbZjj mr-4 text-theme-neutral"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    search.svg
-                  </svg>
+                  <p
+                    class="text-theme-neutral-dark"
+                    data-testid="NewsCard__content"
+                  >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.
+                  </p>
                 </div>
               </div>
               <div
-                class="sc-AxjAm iUsVaG border-theme-neutral-300"
-                type="horizontal"
-              />
-              <div
-                class="flex flex-col space-y-3"
+                class="sc-fznZeY dzfwFi bg-theme-background"
               >
-                <h5
-                  class="font-semibold"
-                >
-                  Category
-                </h5>
-                <p
-                  class="text-sm text-theme-neutral"
-                >
-                  Select your categories
-                </p>
                 <div
-                  class="flex flex-wrap -mx-1"
+                  class="flex flex-col p-4 space-y-8"
+                  data-testid="NewsCard"
                 >
-                  <label
-                    class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                  <div
+                    class="flex justify-between w-full"
                   >
-                    <input
-                      class="SelectCategory__Input-k7qbth-0 dbODum"
-                      data-testid="SelectCategory__undefined"
-                      type="checkbox"
-                      value=""
-                    />
                     <div
-                      class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                      class="flex items-center space-x-4"
                     >
-                      #All
-                    </div>
-                  </label>
-                  <label
-                    class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
-                  >
-                    <input
-                      checked=""
-                      class="SelectCategory__Input-k7qbth-0 dbODum"
-                      data-testid="SelectCategory__undefined"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
-                    >
-                      #Technical
-                    </div>
-                  </label>
-                  <label
-                    class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
-                  >
-                    <input
-                      checked=""
-                      class="SelectCategory__Input-k7qbth-0 dbODum"
-                      data-testid="SelectCategory__undefined"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
-                    >
-                      #Marketing
-                    </div>
-                  </label>
-                  <label
-                    class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
-                  >
-                    <input
-                      class="SelectCategory__Input-k7qbth-0 dbODum"
-                      data-testid="SelectCategory__undefined"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
-                    >
-                      #Community
-                    </div>
-                  </label>
-                  <label
-                    class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
-                  >
-                    <input
-                      checked=""
-                      class="SelectCategory__Input-k7qbth-0 dbODum"
-                      data-testid="SelectCategory__undefined"
-                      type="checkbox"
-                      value=""
-                    />
-                    <div
-                      class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
-                    >
-                      #Emergency
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <div
-                class="sc-AxjAm iUsVaG border-theme-neutral-300"
-                type="horizontal"
-              />
-              <div
-                class="flex flex-col space-y-3"
-              >
-                <h5
-                  class="font-semibold"
-                >
-                  Filter Assets
-                </h5>
-                <p
-                  class="text-sm text-theme-neutral"
-                >
-                  Your current selections
-                </p>
-                <div
-                  class="pb-4"
-                >
-                  <div>
-                    <ul
-                      class="inline-block"
-                      data-testid="network__option"
-                    >
-                      <li
-                        class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--0"
+                      <div
+                        class="sc-AxhCb bzWLYJ text-theme-danger-400 border-theme-danger-light"
+                        data-testid="NewsCard__asset-Ark"
                       >
                         <div
-                          class="sc-Axmtr eWaPDL relative border-theme-success-500 text-theme-success-500"
+                          class="sc-AxirZ eEbZjj"
+                          height="20"
+                          width="20"
                         >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                          >
-                            <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
-                            >
-                              <svg>
-                                checkmark.svg
-                              </svg>
-                            </div>
-                            <span />
-                          </span>
+                          <svg>
+                            ark.svg
+                          </svg>
                         </div>
-                      </li>
-                      <li
-                        class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--1"
-                      >
+                      </div>
+                      <div>
+                        <h4
+                          class="text-lg font-semibold"
+                          data-testid="NewsCard__asset-ARK Ecosystem"
+                        >
+                          ARK Ecosystem
+                        </h4>
                         <div
-                          class="sc-Axmtr eWaPDL relative border-theme-success-500 text-theme-success-500"
+                          class="flex items-center space-x-4"
                         >
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                            data-testid="NewsCard__author"
+                          >
+                            Travis Walker
+                            , 
+                            Co-Founder
+                          </p>
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="sc-AxjAm gHUxAL border-theme-neutral-300"
+                            type="vertical"
+                          />
+                          <p
+                            class="text-sm font-semibold text-theme-neutral"
+                            data-testid="NewsCard__date-created"
                           >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                          >
-                            <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
-                            >
-                              <svg>
-                                checkmark.svg
-                              </svg>
-                            </div>
-                            <span />
-                          </span>
+                            2 days ago
+                          </p>
                         </div>
-                      </li>
-                      <li
-                        class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--2"
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col justify-end"
+                    >
+                      <div
+                        class="sc-AxheI jcILwK"
+                        color="warning"
                       >
-                        <div
-                          class="sc-Axmtr eWaPDL relative border-theme-success-500 text-theme-success-500"
+                        <span
+                          class="text-sm"
+                          data-testid="NewsCard__category"
                         >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                          >
-                            <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
-                            >
-                              <svg>
-                                checkmark.svg
-                              </svg>
-                            </div>
-                            <span />
-                          </span>
-                        </div>
-                      </li>
-                      <li
-                        class="inline-block mr-5 cursor-pointer"
-                        data-testid="network__option--3"
-                      >
-                        <div
-                          class="sc-Axmtr eWaPDL relative border-theme-success-500 text-theme-success-500"
-                        >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                          <span
-                            class="sc-fzozJi eDFubI flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
-                          >
-                            <div
-                              class="sc-AxirZ hDwaov"
-                              height="12"
-                              width="12"
-                            >
-                              <svg>
-                                checkmark.svg
-                              </svg>
-                            </div>
-                            <span />
-                          </span>
-                        </div>
-                      </li>
-                    </ul>
+                          #
+                          Technical
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxjAm dnkyDE border-theme-neutral-300"
+                    type="horizontal"
+                  />
+                  <p
+                    class="text-theme-neutral-dark"
+                    data-testid="NewsCard__content"
+                  >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.
+                  </p>
+                  <div
+                    class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-contrast"
+                  >
+                    <img
+                      alt="ARK Banner"
+                      src="https://miro.medium.com/max/1000/1*vMM0Z7qfGgA8a8NRhB_ZQA.png"
+                    />
                   </div>
                 </div>
-                <button
-                  class="sc-AxiKw gFzSt w-full"
-                  color="primary"
-                  type="button"
+              </div>
+              <div
+                class="relative"
+              >
+                <div
+                  class="absolute text-center rounded-b-full bg-theme-primary-contrast right-4"
+                  style="width: 28px; height: 29px;"
                 >
-                  Update Filter
-                </button>
+                  <span
+                    class="text-xs font-semibold text-theme-primary"
+                  >
+                    Ad
+                  </span>
+                </div>
+                <img
+                  alt="Blockfolio Banner"
+                  class="w-full border-2 rounded-lg border-theme-primary-contrast"
+                  src="blockfolio-banner.png"
+                />
+                <div
+                  class="absolute top-24 left-10"
+                >
+                  <div
+                    class="flex flex-col space-y-5 text-theme-background"
+                  >
+                    <a
+                      href="https://blockfolio.com/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg
+                        class="-mx-8"
+                        height="47"
+                        width="238"
+                      >
+                        blockfolio.svg
+                      </svg>
+                    </a>
+                    <p
+                      class="w-3/4 text-lg font-medium"
+                    >
+                      The world's most popular Bitcoin & cryptocurrency portfolio tracker. 100% free.
+                    </p>
+                  </div>
+                  <div
+                    class="flex mt-12 space-x-2"
+                  >
+                    <a
+                      href="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg
+                        class="w-32 h-10 b-0"
+                      >
+                        download-app-store.svg
+                      </svg>
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg
+                        class="w-32 h-10"
+                      >
+                        download-google-play.svg
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex justify-center w-full pt-10"
+              >
+                <div
+                  class="sc-fznyAO bYbamW"
+                  data-testid="Pagination"
+                >
+                  <button
+                    class="sc-AxmLO ipkzTu"
+                    color="primary"
+                    data-testid="Pagination__first"
+                    disabled=""
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ hDwaov"
+                      height="12"
+                      width="12"
+                    >
+                      <svg>
+                        pagination-first.svg
+                      </svg>
+                    </div>
+                  </button>
+                  <button
+                    class="sc-AxmLO ipkzTu"
+                    color="primary"
+                    data-testid="Pagination__previous"
+                    disabled=""
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ fttODj mr-2"
+                      height="10"
+                      width="10"
+                    >
+                      <svg>
+                        back.svg
+                      </svg>
+                    </div>
+                    Previous
+                  </button>
+                  <div
+                    class="flex px-2 rounded bg-theme-primary-contrast"
+                  >
+                    <div
+                      class="sc-fznKkj keFDOS current-page"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="sc-fznKkj keFDOS"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="sc-fznKkj keFDOS"
+                    >
+                      3
+                    </div>
+                  </div>
+                  <button
+                    class="sc-AxmLO ipkzTu"
+                    color="primary"
+                    data-testid="Pagination__next"
+                    type="button"
+                  >
+                    Next
+                    <div
+                      class="sc-AxirZ hDwaov ml-2"
+                      height="12"
+                      width="12"
+                    >
+                      <svg>
+                        forward.svg
+                      </svg>
+                    </div>
+                  </button>
+                  <button
+                    class="sc-AxmLO ipkzTu"
+                    color="primary"
+                    data-testid="Pagination__last"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ hDwaov"
+                      height="12"
+                      width="12"
+                    >
+                      <svg>
+                        pagination-last.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="max-w-xl"
+            >
+              <div
+                class="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+                data-testid="NewsOptions"
+              >
+                <div
+                  class="flex flex-col space-y-8"
+                >
+                  <div
+                    class="flex items-center justify-between px-2 py-4 shadow-xl rounded-md"
+                  >
+                    <div
+                      class="sc-fznJRM eVyLul"
+                    >
+                      <input
+                        class="sc-fzokOt loFbzI overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 border-none shadow-none"
+                        data-testid="Input"
+                        placeholder="Search"
+                      />
+                    </div>
+                    <div
+                      class="sc-AxirZ eEbZjj mr-4 text-theme-neutral"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxjAm iUsVaG border-theme-neutral-300"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <h5
+                      class="font-semibold"
+                    >
+                      Category
+                    </h5>
+                    <p
+                      class="text-sm text-theme-neutral"
+                    >
+                      Select your categories
+                    </p>
+                    <div
+                      class="flex flex-wrap -mx-1"
+                    >
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                      >
+                        <input
+                          class="SelectCategory__Input-k7qbth-0 dbODum"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                        >
+                          #
+                          All
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 dbODum"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                        >
+                          #
+                          Technical
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 dbODum"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                        >
+                          #
+                          Marketing
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                      >
+                        <input
+                          class="SelectCategory__Input-k7qbth-0 dbODum"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                        >
+                          #
+                          Community
+                        </div>
+                      </label>
+                      <label
+                        class="SelectCategory___StyledLabel-k7qbth-2 gnTFFA p-1"
+                      >
+                        <input
+                          checked=""
+                          class="SelectCategory__Input-k7qbth-0 dbODum"
+                          data-testid="SelectCategory__undefined"
+                          type="checkbox"
+                          value=""
+                        />
+                        <div
+                          class="SelectCategory__CustomButton-k7qbth-1 idPDIy"
+                        >
+                          #
+                          Emergency
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-AxjAm iUsVaG border-theme-neutral-300"
+                    type="horizontal"
+                  />
+                  <div
+                    class="flex flex-col space-y-3"
+                  >
+                    <h5
+                      class="font-semibold"
+                    >
+                      Filter Assets
+                    </h5>
+                    <p
+                      class="text-sm text-theme-neutral"
+                    >
+                      Your current selections
+                    </p>
+                    <div
+                      class="pb-4"
+                    >
+                      <div>
+                        <ul
+                          class="inline-block"
+                          data-testid="network__option"
+                        >
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="network__option--0"
+                          >
+                            <div
+                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                              >
+                                <div
+                                  class="sc-AxirZ hDwaov"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="network__option--1"
+                          >
+                            <div
+                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  eth.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                              >
+                                <div
+                                  class="sc-AxirZ hDwaov"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="network__option--2"
+                          >
+                            <div
+                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  btc.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                              >
+                                <div
+                                  class="sc-AxirZ hDwaov"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                          <li
+                            class="inline-block mr-5 cursor-pointer"
+                            data-testid="network__option--3"
+                          >
+                            <div
+                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                            >
+                              <div
+                                class="sc-AxirZ eEbZjj"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  lsk.svg
+                                </svg>
+                              </div>
+                              <span
+                                class="sc-AxiKw hKaGKG flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                              >
+                                <div
+                                  class="sc-AxirZ hDwaov"
+                                  height="12"
+                                  width="12"
+                                >
+                                  <svg>
+                                    checkmark.svg
+                                  </svg>
+                                </div>
+                                <span />
+                              </span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button
+                      class="sc-AxmLO ipkzTu w-full"
+                      color="primary"
+                      type="button"
+                    >
+                      Update Filter
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-</DocumentFragment>
+  </div>
+</div>
 `;

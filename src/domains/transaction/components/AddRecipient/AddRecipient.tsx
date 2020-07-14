@@ -1,7 +1,7 @@
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
-import { ProfileFormField } from "domains/profile/components/ProfileFormField";
+import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
@@ -12,7 +12,6 @@ import { defaultStyle } from "./AddRecipient.styles";
 
 type AddRecipientProps = {
 	maxAvailableAmount: number;
-	recipients: any;
 	availableAmount: number;
 	assetSymbol: string;
 	onSubmit?: any;
@@ -20,6 +19,7 @@ type AddRecipientProps = {
 	isSingleRecipient?: boolean;
 	singleLabel?: string;
 	multipleLabel?: string;
+	contacts?: any;
 };
 
 const FormWrapper = styled.div`
@@ -29,11 +29,11 @@ const FormWrapper = styled.div`
 export const AddRecipient = ({
 	maxAvailableAmount,
 	availableAmount,
-	recipients,
 	assetSymbol,
 	isSingleRecipient,
 	singleLabel,
 	multipleLabel,
+	contacts,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
@@ -44,14 +44,8 @@ export const AddRecipient = ({
 	const { setValue, register } = form;
 	const { recipientAddress, amount } = form.watch();
 
-	const getProfileInfo = (address: string) => {
-		const profiles = [...recipients];
-		return profiles.find((profile: any) => profile.address === address);
-	};
-
-	const onAddRecipient = (recipientAddress: string, amount: number) => {
-		const { walletName, address } = getProfileInfo(recipientAddress);
-		addedRecipients.push({ amount, walletName, address });
+	const onAddRecipient = (address: string, amount: number) => {
+		addedRecipients.push({ amount, address });
 		setAddressRecipients(addedRecipients);
 
 		form.setValue("amount", 0);
@@ -64,12 +58,6 @@ export const AddRecipient = ({
 		newRecipients.splice(index, 1);
 		setAddressRecipients(newRecipients);
 	};
-
-	const availableRecipients = recipients.filter((contact: any) => {
-		if (addedRecipients.length === 0) return true;
-		const added = addedRecipients.map(({ address }: any) => address);
-		return !added.includes(contact.address);
-	});
 
 	return (
 		<FormWrapper>
@@ -96,13 +84,17 @@ export const AddRecipient = ({
 				data-testid="add-recipient__form-wrapper"
 				className={`space-y-8 mt-12 rounded-sm ${!isSingle ? "MultiRecipientWrapper" : ""}`}
 			>
-				<ProfileFormField
-					formName="recipientAddress"
-					formLabel="Recipient"
-					profiles={availableRecipients}
-					selectedProfile={getProfileInfo(recipientAddress as any)}
-					register={register}
-				/>
+				<FormField name="recipientAddress" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label="Recipient" />
+					</div>
+					<SelectAddress
+						address={recipientAddress as any}
+						ref={register}
+						contacts={contacts}
+						onChange={(address: any) => setValue("recipientAddress", address)}
+					/>
+				</FormField>
 
 				<FormField name="amount" className="relative mt-1">
 					<div className="mb-2">
@@ -121,7 +113,7 @@ export const AddRecipient = ({
 							<button
 								data-testid="add-recipient__send-all"
 								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
+								className="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
 							>
 								Send All
 							</button>
@@ -159,7 +151,6 @@ AddRecipient.defaultProps = {
 	maxAvailableAmount: 0,
 	assetSymbol: "ARK",
 	availableAmount: null,
-	recipients: [],
 	isSingleRecipient: true,
 	singleLabel: "Single",
 	multipleLabel: "Multiple",

@@ -184,88 +184,92 @@ exports[`PluginGrid should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -454,6 +458,9 @@ exports[`PluginGrid should render without pagination 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="flex justify-center mt-4"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -566,91 +573,95 @@ exports[`PluginGrid should split by page 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          type="button"
         >
-          1
-        </div>
-        <div
-          class="sc-AxhUy bxYQX current-page"
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          type="button"
         >
-          2
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            1
+          </div>
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            2
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -840,88 +851,92 @@ exports[`PluginGrid should trigger delete 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -1111,88 +1126,92 @@ exports[`PluginGrid should trigger select 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>

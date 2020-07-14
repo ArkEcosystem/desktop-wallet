@@ -1,3 +1,4 @@
+import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
 import { useActiveProfile } from "app/hooks/env";
@@ -5,7 +6,6 @@ import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import tw, { styled } from "twin.macro";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 
@@ -16,10 +16,6 @@ type DashboardProps = {
 	networks?: any;
 	portfolioPercentages?: any[];
 };
-
-const Section = styled.div`
-	${tw`px-13 py-16 mt-5 bg-white`}
-`;
 
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
@@ -57,7 +53,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 		"This will display the history of your transactions. But you don't have more than one transaction at the moment.";
 
 	return (
-		<div>
+		<Page>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
@@ -67,7 +63,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 				</Section>
 			)}
 
-			<Section>
+			<Section className="flex-1">
 				<Wallets
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
@@ -77,12 +73,13 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 					filterProperties={filterProperties}
 				/>
 			</Section>
+
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
 					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
 				</Section>
 			)}
-		</div>
+		</Page>
 	);
 };
 
