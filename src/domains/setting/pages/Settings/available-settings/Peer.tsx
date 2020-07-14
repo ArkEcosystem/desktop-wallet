@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { PeerList } from "domains/setting/components/PeerList";
-import { networks,peers } from "domains/setting/data";
+import { networks, peers } from "domains/setting/data";
 import React from "react";
 
 type PeerProps = {
