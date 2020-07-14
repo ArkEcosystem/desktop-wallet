@@ -7,7 +7,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzqNJr dmjVNe"
+      class="sc-fzoyAV bqFbiw"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -325,7 +325,7 @@ exports[`WalletDetails should render 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzoyAV kUEPnl"
+          class="sc-fzoLag fvqzEZ"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -348,15 +348,15 @@ exports[`WalletDetails should render 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fzpjYC iBFgBv"
+                      class="sc-fznxsB dVTXMU"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznxsB bYlYIt"
+                      class="sc-fznJRM cjWbrJ"
                     >
                       <span
-                        class="sc-fznJRM cUwfxX"
+                        class="sc-fznWqX kLTWXY"
                       />
                     </div>
                   </label>
@@ -424,7 +424,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzoyAV kUEPnl"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -448,7 +448,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzoXzr eqLuvc"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -524,7 +524,7 @@ exports[`WalletDetails should render 1`] = `
                           Delegate 3
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           Abuzhu…FgETuW
@@ -638,7 +638,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoyAV kUEPnl"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -662,7 +662,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzoXzr eqLuvc"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -838,7 +838,7 @@ exports[`WalletDetails should render 1`] = `
       </div>
       <div>
         <div
-          class="sc-fzoyAV kUEPnl mb-20"
+          class="sc-fzoLag fvqzEZ mb-20"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -1058,7 +1058,7 @@ exports[`WalletDetails should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy dSLmHc border-theme-success-300 text-theme-success-light -mr-1"
+                            class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1092,13 +1092,7 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-block truncate align-middle"
                         >
                           <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            My Wallet
-                          </span>
-                          <span
-                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             ASuusX…GQ3kqT
@@ -1106,44 +1100,14 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </td>
                       <td
-                        class="py-1 text-sm font-bold text-center"
-                      />
-                      <td
-                        class="text-sm text-right w-36"
-                      >
-                        <div
-                          class="sc-AxmLO jmixdy"
-                          color="success"
-                        >
-                          100 ARK
-                        </div>
-                      </td>
-                      <td
-                        class="w-32 py-1 text-sm font-semibold text-right text-theme-neutral"
-                      >
-                        <div>
-                          1,000,000 USD
-                        </div>
-                      </td>
-                    </tr>
-                    <tr
-                      class="border-b border-dotted cursor-pointer border-theme-neutral-300"
-                      data-testid="transaction__row"
-                    >
-                      <td
-                        class="w-48 py-1 text-sm text-theme-neutral-600"
-                      >
-                         17 Mar 2020 22:02:10 
-                      </td>
-                      <td
-                        class="w-32 py-5 mt-1"
+                        class="text-center"
                       >
                         <div
                           class="inline-flex align-middle space-x-1"
                           data-testid="TransactionRowInfo"
                         >
-                          <div
-                            class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
+                          <span
+                            class="p-1"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1179,15 +1143,11 @@ exports[`WalletDetails should render 1`] = `
                           class="inline-flex p-1 align-middle"
                           data-testid="TransactionRowConfirmation"
                         >
-                          <span
-                            class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            My Wallet
-                          </span>
-                          <span
-                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="sc-AxirZ iQaTP text-theme-danger-400"
+                            data-testid="TransactionRowConfirmation__actionRequired"
+                            height="1em"
+                            width="1em"
                           >
                             <svg>
                               edit.svg
@@ -1199,7 +1159,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-AxmLO gDEWID"
+                          class="sc-Axmtr cYWaUi"
                           color="danger"
                           data-testid="TransactionRowAmount"
                         >
@@ -1210,7 +1170,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-AxmLO ipkzTu"
+                          class="sc-AxhCb BegvR"
                           color="primary"
                           data-testid="TransactionRow__sign"
                           type="button"
@@ -1447,7 +1407,7 @@ exports[`WalletDetails should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhUy dSLmHc border-theme-danger-light text-theme-danger-400 -mr-1"
+                            class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1461,7 +1421,7 @@ exports[`WalletDetails should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                            class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                             data-testid="TransactionRowRecipientIcon"
                           >
                             <div
@@ -1505,100 +1465,6 @@ exports[`WalletDetails should render 1`] = `
                             height="1em"
                             width="1em"
                           >
-                            My Wallet
-                          </span>
-                          <span
-                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            <div
-                              class="sc-AxirZ iQaTP flex-shrink-0 "
-                              data-testid="Link__external"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                redirect.svg
-                              </svg>
-                            </div>
-                          </a>
-                        </div>
-                      </td>
-                      <td
-                        class="w-48 py-1 text-sm text-theme-neutral-600"
-                      >
-                        <span
-                          data-testid="TransactionRow__timestamp"
-                        >
-                          17 Mar 2020 10:22:05
-                        </span>
-                      </td>
-                      <td
-                        class="w-32"
-                      >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
-                        >
-                          <div
-                            class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
-                          >
-                            <div
-                              class="sc-AxirZ iQaTP"
-                              data-testid="TransactionRowMode__Sent"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                sent.svg
-                              </svg>
-                            </div>
-                          </div>
-                          <div
-                            class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                            data-testid="TransactionRowRecipientIcon"
-                          >
-                            <div
-                              class="sc-AxirZ iQaTP"
-                              height="1em"
-                              width="1em"
-                            >
-                              <svg>
-                                key.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <span
-                          class="font-semibold text-theme-text"
-                          data-testid="TransactionRowRecipientLabel"
-                        >
-                          2nd Signature Creation
-                        </span>
-                      </td>
-                      <td
-                        class="text-center"
-                      >
-                        <div
-                          class="inline-flex align-middle space-x-1"
-                          data-testid="TransactionRowInfo"
-                        />
-                      </td>
-                      <td
-                        class="w-16 text-center"
-                      >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
-                        >
-                          <div
-                            class="sc-AxirZ iQaTP text-theme-success"
-                            data-testid="TransactionRowConfirmation__confirmed"
-                            height="1em"
-                            width="1em"
-                          >
                             <svg>
                               ok.svg
                             </svg>
@@ -1609,7 +1475,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-AxmLO gDEWID"
+                          class="sc-Axmtr cYWaUi"
                           color="danger"
                           data-testid="TransactionRowAmount"
                         >
@@ -1675,7 +1541,7 @@ exports[`WalletDetails should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                            class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                           >
                             <div
                               class="sc-AxirZ iQaTP"
@@ -1689,7 +1555,141 @@ exports[`WalletDetails should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                            class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                            data-testid="TransactionRowRecipientIcon"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                key.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span
+                          class="font-semibold text-theme-text"
+                          data-testid="TransactionRowRecipientLabel"
+                        >
+                          2nd Signature Creation
+                        </span>
+                      </td>
+                      <td
+                        class="text-center"
+                      >
+                        <div
+                          class="inline-flex align-middle space-x-1"
+                          data-testid="TransactionRowInfo"
+                        />
+                      </td>
+                      <td
+                        class="w-16 text-center"
+                      >
+                        <div
+                          class="inline-flex p-1 align-middle"
+                          data-testid="TransactionRowConfirmation"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-theme-success"
+                            data-testid="TransactionRowConfirmation__confirmed"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              ok.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                      >
+                        <div
+                          class="sc-Axmtr cYWaUi"
+                          color="danger"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.10000000
+                        </div>
+                      </td>
+                      <td
+                        class="text-right"
+                        data-testid="TransactionRow__currency"
+                      >
+                        <span
+                          class="text-theme-neutral-dark"
+                          data-testid="TransactionRowAmount"
+                        >
+                          0.20
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-dotted border-theme-neutral-300"
+                      data-testid="TransactionRow"
+                    >
+                      <td
+                        class="w-16 py-6"
+                      >
+                        <div
+                          class="inline-block align-middle"
+                        >
+                          <a
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            href=""
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP flex-shrink-0 "
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </a>
+                        </div>
+                      </td>
+                      <td
+                        class="w-48 py-1 text-sm text-theme-neutral-600"
+                      >
+                        <span
+                          data-testid="TransactionRow__timestamp"
+                        >
+                          17 Mar 2020 10:22:05
+                        </span>
+                      </td>
+                      <td
+                        class="w-32"
+                      >
+                        <div
+                          class="flex items-center -space-x-1"
+                          data-testid="TransactionRowMode"
+                        >
+                          <div
+                            class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
+                          >
+                            <div
+                              class="sc-AxirZ iQaTP"
+                              data-testid="TransactionRowMode__Sent"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                sent.svg
+                              </svg>
+                            </div>
+                          </div>
+                          <div
+                            class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                             data-testid="TransactionRowRecipientIcon"
                           >
                             <div
@@ -1743,7 +1743,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-AxheI kinEEx"
+                          class="sc-Axmtr cYWaUi"
                           color="danger"
                           data-testid="TransactionRowAmount"
                         >
@@ -1804,7 +1804,7 @@ exports[`WalletDetails should render 1`] = `
                   Show
                 </span>
                 <span
-                  class="sc-fzoXzr hgNVDm"
+                  class="sc-fzpjYC eysiUh"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -2032,7 +2032,7 @@ exports[`WalletDetails should render 1`] = `
                             ARK Wallet 1
                           </span>
                           <span
-                            class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                            class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
                             ASuusXSW9…6T9GQ3kqT

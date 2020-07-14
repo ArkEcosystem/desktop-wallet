@@ -7,7 +7,7 @@ exports[`Registration should render 1st step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -105,7 +105,7 @@ exports[`Registration should render 1st step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -230,7 +230,7 @@ exports[`Registration should render 1st step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -242,7 +242,7 @@ exports[`Registration should render 1st step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -297,7 +297,7 @@ exports[`Registration should render 1st step 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -488,11 +488,7 @@ exports[`Registration should render 1st step 1`] = `
                           <div
                             class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
                           />
-                        </div>
-                      </fieldset>
-                      <fieldset
-                        class="sc-AxhCb ckQmOL relative h-20 mt-8"
-                        data-testid="Registration__type"
+                       </fieldset>   cration__type"
                       >
                         <div
                           class="mb-2"
@@ -533,7 +529,7 @@ exports[`Registration should render 1st step 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-1-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-1-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -597,7 +593,7 @@ exports[`Registration should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -695,7 +691,7 @@ exports[`Registration should render 2nd step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -820,7 +816,7 @@ exports[`Registration should render 2nd step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -832,7 +828,7 @@ exports[`Registration should render 2nd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -969,7 +965,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1014,13 +1010,9 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
-                            >
-                              <div
-                                class="flex justify-between cursor-pointer"
-                                data-testid="LinkCollection__header"
-                              >
+                               <di   t
                                 <div>
                                   <span
                                     class="text-lg font-semibold"
@@ -1059,7 +1051,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1081,11 +1073,7 @@ exports[`Registration should render 2nd step 1`] = `
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
-                                    height="10"
-                                    width="10"
-                                  >
-                                    <svg>
-                                      chevron-down.svg
+                                    width="10"   >on-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -1150,11 +1138,7 @@ exports[`Registration should render 2nd step 1`] = `
                                               aria-valuemin="1"
                                               aria-valuenow="25"
                                               class="sc-fzplWN eSQZBV"
-                                              data-testid="Range__thumb"
-                                              draggable="false"
-                                              role="slider"
-                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                              tabindex="0"
+                                              draggable="       tabindex="0"
                                             />
                                           </div>
                                         </div>
@@ -1170,7 +1154,7 @@ exports[`Registration should render 2nd step 1`] = `
                                   >
                                     <button
                                       aria-checked="true"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1178,7 +1162,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1186,7 +1170,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1215,11 +1199,7 @@ exports[`Registration should render 2nd step 1`] = `
                   </button>
                   <button
                     class="sc-AxirZ dPtiuf"
-                    color="primary"
-                    data-testid="Registration__continue-button"
-                    type="button"
-                  >
-                    Continue
+                     data-testid="egistration__continue-b   
                   </button>
                 </div>
               </div>
@@ -1239,7 +1219,7 @@ exports[`Registration should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1280,11 +1260,7 @@ exports[`Registration should render 3rd step 1`] = `
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/plugins"
                   title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
+                   Plugins   
                 class="flex"
               >
                 <a
@@ -1337,7 +1313,7 @@ exports[`Registration should render 3rd step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -1462,7 +1438,7 @@ exports[`Registration should render 3rd step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1474,7 +1450,7 @@ exports[`Registration should render 3rd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1485,11 +1461,7 @@ exports[`Registration should render 3rd step 1`] = `
           >
             <div>
               <ul
-                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-              >
-                <li
-                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-                />
+               >   e
                 <li
                   class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
                 />
@@ -1887,7 +1859,7 @@ exports[`Registration should render 4th step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1985,7 +1957,7 @@ exports[`Registration should render 4th step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -2110,7 +2082,7 @@ exports[`Registration should render 4th step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2122,7 +2094,7 @@ exports[`Registration should render 4th step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2310,7 +2282,7 @@ exports[`Registration should render 5th step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -2408,7 +2380,7 @@ exports[`Registration should render 5th step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -2533,7 +2505,7 @@ exports[`Registration should render 5th step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2545,7 +2517,7 @@ exports[`Registration should render 5th step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2979,11 +2951,7 @@ exports[`Registration should render 5th step 1`] = `
                         width="1em"
                       >
                         <svg>
-                          download.svg
-                        </svg>
-                      </div>
-                      Download
-                    </button>
+                         </svg>   
                   </div>
                 </div>
               </div>
@@ -3003,7 +2971,7 @@ exports[`Registration should select registration type 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -3101,7 +3069,7 @@ exports[`Registration should select registration type 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -3226,7 +3194,7 @@ exports[`Registration should select registration type 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3238,7 +3206,7 @@ exports[`Registration should select registration type 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3293,7 +3261,7 @@ exports[`Registration should select registration type 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -3531,7 +3499,7 @@ exports[`Registration should select registration type 1`] = `
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-26-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-26-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -3595,7 +3563,7 @@ exports[`Registration should should go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -3693,7 +3661,7 @@ exports[`Registration should should go back 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -3818,7 +3786,7 @@ exports[`Registration should should go back 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3830,7 +3798,7 @@ exports[`Registration should should go back 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3885,7 +3853,7 @@ exports[`Registration should should go back 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -4121,7 +4089,7 @@ exports[`Registration should should go back 1`] = `
                                 />
                                 <ul
                                   aria-labelledby="downshift-6-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-6-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4185,7 +4153,7 @@ exports[`Registration should submit 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -4283,7 +4251,7 @@ exports[`Registration should submit 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/qwe123/transactions/transfer"
+                href="/profiles/bob/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -4408,7 +4376,7 @@ exports[`Registration should submit 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/qwe123/dashboard"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -4420,7 +4388,7 @@ exports[`Registration should submit 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
