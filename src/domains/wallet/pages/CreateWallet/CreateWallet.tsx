@@ -55,7 +55,7 @@ export const SecondStep = ({
 	onCopy,
 	onDownload,
 }: {
-	mnemonic: string[];
+	mnemonic: string;
 	onCopy: () => void;
 	onDownload: () => void;
 }) => {
@@ -108,7 +108,7 @@ export const SecondStep = ({
 	);
 };
 
-export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string[] }) => {
+export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string }) => {
 	const { register, unregister, setValue } = useFormContext();
 
 	const handleComplete = React.useCallback(() => {
@@ -191,7 +191,7 @@ type Network = { name: string; icon: string };
 
 type Props = {
 	networks: Network[];
-	mnemonic: string[];
+	mnemonic: string;
 	onSubmit: (data: { network: string; name: string }) => void;
 	onCopy: () => void;
 	onDownload: () => void;
