@@ -1,30 +1,52 @@
+import Tippy from "@tippyjs/react";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
+import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { styled } from "twin.macro";
 
-import { defaultStyle } from "./AddRecipient.styles";
+import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
+import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-type AddRecipientProps = {
-	maxAvailableAmount: number;
-	availableAmount: number;
-	assetSymbol: string;
-	onSubmit?: any;
-	onBack?: any;
-	isSingleRecipient?: boolean;
-	singleLabel?: string;
-	multipleLabel?: string;
-	contacts?: any;
+const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLabel, onChange }: ToggleButtonProps) => {
+	return (
+		<div className="text-theme-neutral-dark hover:text-theme-primary">
+			<div className="flex mb-2 space-x-2">
+				<div className="text-sm font-medium transition-colors duration-100">{labelText}</div>
+				<div>
+					<Tippy content={helpText}>
+						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
+							<Icon name="QuestionMark" width={20} height={20} />
+						</div>
+					</Tippy>
+				</div>
+			</div>
+
+			<div className="flex items-stretch select-buttons">
+				<Button
+					variant={isSingle ? "solid" : "plain"}
+					className="flex-1"
+					data-testid="add-recipient-is-single-toggle"
+					onClick={() => onChange?.(true)}
+				>
+					{singleLabel}
+				</Button>
+				<Button
+					variant={!isSingle ? "solid" : "plain"}
+					className="flex-1 border-l-0"
+					data-testid="add-recipient-is-multiple-toggle"
+					onClick={() => onChange?.(false)}
+				>
+					{multipleLabel}
+				</Button>
+			</div>
+		</div>
+	);
 };
-
-const FormWrapper = styled.div`
-	${defaultStyle}
-`;
 
 export const AddRecipient = ({
 	maxAvailableAmount,
@@ -34,22 +56,31 @@ export const AddRecipient = ({
 	singleLabel,
 	multipleLabel,
 	contacts,
+	recipients,
+	onChange,
+	labelText,
+	helpText,
 }: AddRecipientProps) => {
-	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
+	const [addedRecipients, setAddressRecipients] = useState(recipients as RecipientListItem[]);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
 
 	const form = useForm({
 		defaultValues: { amount: availableAmount, recipientAddress: null, isSingle: isSingleRecipient },
 	});
+
 	const { setValue, register } = form;
 	const { recipientAddress, amount } = form.watch();
+
+	const clearFields = () => {
+		setValue("amount", 0);
+		setValue("recipientAddress", null);
+	};
 
 	const onAddRecipient = (address: string, amount: number) => {
 		addedRecipients.push({ amount, address });
 		setAddressRecipients(addedRecipients);
-
-		form.setValue("amount", 0);
-		form.setValue("recipientAddress", null);
+		onChange?.(addedRecipients);
+		clearFields();
 	};
 
 	const onRemoveRecipient = (address: string) => {
@@ -57,37 +88,29 @@ export const AddRecipient = ({
 		const newRecipients = addedRecipients.concat();
 		newRecipients.splice(index, 1);
 		setAddressRecipients(newRecipients);
+		onChange?.(addedRecipients);
 	};
 
 	return (
-		<FormWrapper>
-			<div className="flex items-stretch select-buttons">
-				<Button
-					variant={isSingle ? "solid" : "plain"}
-					className="flex-1"
-					data-testid="add-recipient-is-single-toggle"
-					onClick={() => setIsSingle(true)}
-				>
-					{singleLabel}
-				</Button>
-				<Button
-					variant={!isSingle ? "solid" : "plain"}
-					className="flex-1 border-l-0"
-					data-testid="add-recipient-is-multiple-toggle"
-					onClick={() => setIsSingle(false)}
-				>
-					{multipleLabel}
-				</Button>
-			</div>
+		<AddRecipientWrapper>
+			<ToggleButtons
+				isSingle={isSingle}
+				labelText={labelText}
+				helpText={helpText}
+				singleLabel={singleLabel}
+				multipleLabel={multipleLabel}
+				onChange={(isSingle) => setIsSingle(isSingle)}
+			/>
 
 			<div
 				data-testid="add-recipient__form-wrapper"
-				className={`space-y-8 mt-12 rounded-sm ${!isSingle ? "MultiRecipientWrapper" : ""}`}
+				className={`space-y-8 mt-8 mb-2 ${!isSingle ? "MultiRecipientWrapper" : ""}`}
 			>
 				<FormField name="recipientAddress" className="relative mt-1">
 					<div className="mb-2">
-						<FormLabel label="Recipient" />
+						<FormLabel label={isSingle ? "Recipient" : `Recipient #${addedRecipients.length + 1}`} />
 					</div>
+
 					<SelectAddress
 						address={recipientAddress as any}
 						ref={register}
@@ -113,7 +136,7 @@ export const AddRecipient = ({
 							<button
 								data-testid="add-recipient__send-all"
 								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="pl-6 pr-3 mr-1 bg-white text-theme-primary bg-theme-background focus:outline-none"
+								className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
 							>
 								Send All
 							</button>
@@ -134,7 +157,7 @@ export const AddRecipient = ({
 			</div>
 
 			{!isSingle && addedRecipients.length > 0 && (
-				<div className="mt-12">
+				<div className="border-b border-dotted border-theme-neutral-200">
 					<RecipientList
 						recipients={addedRecipients}
 						isEditable={true}
@@ -143,7 +166,7 @@ export const AddRecipient = ({
 					/>
 				</div>
 			)}
-		</FormWrapper>
+		</AddRecipientWrapper>
 	);
 };
 
@@ -154,4 +177,7 @@ AddRecipient.defaultProps = {
 	isSingleRecipient: true,
 	singleLabel: "Single",
 	multipleLabel: "Multiple",
+	recipients: [],
+	labelText: "Select a Single or Multiple Recipient Transaction",
+	helpText: "A multiple recipient transaction allows up to 64 recipients in one transaction",
 };
