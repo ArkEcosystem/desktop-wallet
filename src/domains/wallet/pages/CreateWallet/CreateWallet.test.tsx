@@ -15,7 +15,7 @@ import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
-	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
+	const mnemonic = "lorem ipsum dolor sit amet consectetur";
 
 	const onSubmit = jest.fn();
 	const onCopy = jest.fn();
