@@ -1,17 +1,29 @@
-export const defaultStyle = `
-    .ProfileFormField {
-        &__select-contact {
-            > div:first-child {
-                width: 100%;
-                svg {
-                    display: none;
-                }
-            }
-        }
-    }
+import { styled } from "twin.macro";
 
-	.MultiRecipientWrapper {
-		background: var(--theme-color-neutral-100);
-		box-shadow: 0 1px 1px 1rem var(--theme-color-neutral-100);
+const defaultStyle = `
+	& {
+		.MultiRecipientWrapper {
+			background: var(--theme-color-neutral-100);
+			border-radius: 0.625rem;
+			border: 1.5rem solid var(--theme-color-neutral-100);
+			margin-left: -1.25rem;
+			margin-right: -1.25rem;
+		}
+
+		.select-buttons {
+			button:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			button:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+		}
 	}
+`;
+
+export const AddRecipientWrapper = styled.div`
+	${defaultStyle}
 `;
