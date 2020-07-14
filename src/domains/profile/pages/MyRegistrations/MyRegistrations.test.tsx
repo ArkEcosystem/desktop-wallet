@@ -7,11 +7,13 @@ import { identity } from "tests/fixtures/identity";
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-describe("Welcome", () => {
-	const history = createMemoryHistory();
-	const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
+const history = createMemoryHistory();
+const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
-	history.push(registrationsURL);
+describe("Welcome", () => {
+	beforeAll(() => {
+		history.push(registrationsURL);
+	});
 
 	it("should render empty state", () => {
 		const { asFragment, getByTestId } = renderWithRouter(

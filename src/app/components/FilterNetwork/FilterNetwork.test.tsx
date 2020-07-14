@@ -4,22 +4,22 @@ import { fireEvent, render } from "testing-library";
 
 import { FilterNetwork } from "./FilterNetwork";
 
-describe("FilterNetwork", () => {
-	const networks = [
-		{
-			name: "Ark",
-			isSelected: false,
-		},
-		{
-			name: "Ethereum",
-			isSelected: true,
-		},
-		{
-			name: "Bitcoin",
-			isSelected: false,
-		},
-	];
+const networks = [
+	{
+		name: "Ark",
+		isSelected: false,
+	},
+	{
+		name: "Ethereum",
+		isSelected: true,
+	},
+	{
+		name: "Bitcoin",
+		isSelected: false,
+	},
+];
 
+describe("FilterNetwork", () => {
 	it("should render", () => {
 		const { container } = render(<FilterNetwork />);
 		expect(container).toMatchSnapshot();

@@ -3,9 +3,9 @@ import { fireEvent, render } from "testing-library";
 
 import { Pagination } from "./Pagination";
 
-describe("Pagination", () => {
-	const handleSelectPage = jest.fn();
+const handleSelectPage = jest.fn();
 
+describe("Pagination", () => {
 	it("should render properly", () => {
 		const { asFragment } = render(
 			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,

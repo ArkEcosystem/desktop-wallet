@@ -8,11 +8,14 @@ import { identity } from "tests/fixtures/identity";
 import { article } from "../../data";
 import { Article } from "./Article";
 
-describe("Article", () => {
-	const history = createMemoryHistory();
-	const articleURL = `/profiles/${identity.profiles.bob.id}/support/articles/art123`;
+const history = createMemoryHistory();
 
-	history.push(articleURL);
+const articleURL = `/profiles/${identity.profiles.bob.id}/support/articles/art123`;
+
+describe("Article", () => {
+	beforeAll(() => {
+		history.push(articleURL);
+	});
 
 	it("should render article support page", () => {
 		const { container } = renderWithRouter(

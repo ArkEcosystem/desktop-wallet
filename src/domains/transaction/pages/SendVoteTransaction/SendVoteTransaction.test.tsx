@@ -9,9 +9,9 @@ import { identity } from "tests/fixtures/identity";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
-describe("Vote For Delegate", () => {
-	const onCopy = jest.fn();
+const onCopy = jest.fn();
 
+describe("Vote For Delegate", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(

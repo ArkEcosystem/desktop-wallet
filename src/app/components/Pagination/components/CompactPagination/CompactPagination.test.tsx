@@ -3,9 +3,9 @@ import { fireEvent, render } from "testing-library";
 
 import { CompactPagination } from "./CompactPagination";
 
-describe("CompactPagination", () => {
-	const handleSelectPage = jest.fn();
+const handleSelectPage = jest.fn();
 
+describe("CompactPagination", () => {
 	it("should render properly", () => {
 		const { asFragment } = render(
 			<CompactPagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
