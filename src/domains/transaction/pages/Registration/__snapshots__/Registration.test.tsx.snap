@@ -488,7 +488,11 @@ exports[`Registration should render 1st step 1`] = `
                           <div
                             class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
                           />
-                       </fieldset>   cration__type"
+                        </div>
+                      </fieldset>
+                      <fieldset
+                        class="sc-AxhCb ckQmOL relative h-20 mt-8"
+                        data-testid="Registration__type"
                       >
                         <div
                           class="mb-2"
@@ -522,7 +526,7 @@ exports[`Registration should render 1st step 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                                  class="sc-fzoXzr hZotGJ   "
+                                  class="sc-fzpjYC gvgELO   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-1-toggle-button"
                                   type="button"
@@ -1012,7 +1016,11 @@ exports[`Registration should render 2nd step 1`] = `
                             <div
                               class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
-                               <di   t
+                            >
+                              <div
+                                class="flex justify-between cursor-pointer"
+                                data-testid="LinkCollection__header"
+                              >
                                 <div>
                                   <span
                                     class="text-lg font-semibold"
@@ -1073,7 +1081,11 @@ exports[`Registration should render 2nd step 1`] = `
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
-                                    width="10"   >on-down.svg
+                                    height="10"
+                                    width="10"
+                                  >
+                                    <svg>
+                                      chevron-down.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -1138,7 +1150,11 @@ exports[`Registration should render 2nd step 1`] = `
                                               aria-valuemin="1"
                                               aria-valuenow="25"
                                               class="sc-fzplWN eSQZBV"
-                                              draggable="       tabindex="0"
+                                              data-testid="Range__thumb"
+                                              draggable="false"
+                                              role="slider"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                              tabindex="0"
                                             />
                                           </div>
                                         </div>
@@ -1199,7 +1215,11 @@ exports[`Registration should render 2nd step 1`] = `
                   </button>
                   <button
                     class="sc-AxirZ dPtiuf"
-                     data-testid="egistration__continue-b   
+                    color="primary"
+                    data-testid="Registration__continue-button"
+                    type="button"
+                  >
+                    Continue
                   </button>
                 </div>
               </div>
@@ -1260,7 +1280,11 @@ exports[`Registration should render 3rd step 1`] = `
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/plugins"
                   title="Plugins"
-                   Plugins   
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
                 class="flex"
               >
                 <a
@@ -1461,7 +1485,11 @@ exports[`Registration should render 3rd step 1`] = `
           >
             <div>
               <ul
-               >   e
+                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                />
                 <li
                   class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
                 />
@@ -2951,7 +2979,11 @@ exports[`Registration should render 5th step 1`] = `
                         width="1em"
                       >
                         <svg>
-                         </svg>   
+                          download.svg
+                        </svg>
+                      </div>
+                      Download
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3490,7 +3522,7 @@ exports[`Registration should select registration type 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-26-label downshift-26-toggle-button"
-                                  class="sc-fzoXzr hZotGJ  is-selected "
+                                  class="sc-fzpjYC gvgELO  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-26-toggle-button"
                                   type="button"
@@ -4082,7 +4114,7 @@ exports[`Registration should should go back 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                                  class="sc-fzoXzr hZotGJ   "
+                                  class="sc-fzpjYC gvgELO   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-6-toggle-button"
                                   type="button"
