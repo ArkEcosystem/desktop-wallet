@@ -14,14 +14,10 @@ const recipients = [
 	{
 		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient Multisig",
-		formatted: " Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ",
-		isMultisig: true,
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient in Ark",
-		formatted: "Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ",
-		isInArkNetwork: true,
 	},
 ];
 
@@ -40,26 +36,14 @@ describe("AddRecipient", () => {
 
 	it("should render with multiple recipients tab", () => {
 		const { container } = render(
-			<AddRecipient
-				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
-				recipients={recipients}
-				isSingleRecipient={false}
-			/>,
+			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} isSingleRecipient={false} />,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should select recipient", () => {
 		const { getByTestId, getAllByTestId, container } = render(
-			<AddRecipient
-				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
-				recipients={recipients}
-				contacts={contacts}
-			/>,
+			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} contacts={contacts} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -86,7 +70,7 @@ describe("AddRecipient", () => {
 
 	it("should set available amount", async () => {
 		const { getByTestId, container } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} recipients={recipients} />,
+			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
@@ -123,7 +107,6 @@ describe("AddRecipient", () => {
 				assetSymbol="ARK"
 				maxAvailableAmount={80}
 				availableAmount={0}
-				recipients={recipients}
 				isSingleRecipient={false}
 				contacts={contacts}
 			/>,
@@ -159,7 +142,6 @@ describe("AddRecipient", () => {
 				assetSymbol="ARK"
 				maxAvailableAmount={80}
 				availableAmount={0}
-				recipients={recipients}
 				isSingleRecipient={false}
 				contacts={contacts}
 			/>,
@@ -202,13 +184,12 @@ describe("AddRecipient", () => {
 		});
 	});
 
-	it("should remove added recipient", async () => {
+	it("should add and remove recipient", async () => {
 		const { getByTestId, getAllByTestId, queryByText } = render(
 			<AddRecipient
 				assetSymbol="ARK"
 				maxAvailableAmount={80}
 				availableAmount={0}
-				recipients={recipients}
 				isSingleRecipient={false}
 				contacts={contacts}
 			/>,
@@ -221,21 +202,20 @@ describe("AddRecipient", () => {
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
+		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
 
-		const addedRecipientBtn1 = getByTestId("add-recipient__add-btn");
 		act(() => {
-			fireEvent.click(addedRecipientBtn1);
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
 		});
 
-		const removeBtn = getByTestId("recipient-list__remove-recipient");
-		expect(removeBtn).toBeTruthy();
+		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
+		expect(removeBtn[0]).toBeTruthy();
 		act(() => {
-			fireEvent.click(removeBtn);
+			fireEvent.click(removeBtn[0]);
 		});
 
 		const addedRecipient = queryByText("Recipient wallet");

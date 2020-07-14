@@ -1,3 +1,4 @@
+import { contacts } from "domains/contact/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -51,9 +52,10 @@ const defaultFormValues = {
 			isInArkNetwork: true,
 		},
 	],
+	contacts,
 };
 
-export const Step1 = () => (
+export const Default = () => (
 	<div>
 		<SendTransactionForm {...defaultFormValues} />
 	</div>

@@ -5,7 +5,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { SearchContact } from "domains/contact/components/SearchContact";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { SelectAddressWrapper } from "./SelectAddress.styles";
 
@@ -43,6 +43,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 	) => {
 		const [isContactSearchOpen, setIsContactSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
+		useEffect(() => setSelectedAddress(address), [address]);
 
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;

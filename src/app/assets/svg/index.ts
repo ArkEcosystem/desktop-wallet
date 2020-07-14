@@ -68,6 +68,7 @@ import { ReactComponent as PortfolioTag } from "./portfolio-tag.svg";
 import { ReactComponent as Portfolio } from "./portfolio.svg";
 import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as Qrcode } from "./qrcode.svg";
+import { ReactComponent as QuestionMark } from "./questionmark.svg";
 import { ReactComponent as Receive } from "./receive.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Reddit } from "./reddit.svg";
@@ -188,4 +189,5 @@ export const SvgCollection: any = {
 	EyeTag,
 	ChartActiveDot,
 	Placeholder,
+	QuestionMark,
 };
