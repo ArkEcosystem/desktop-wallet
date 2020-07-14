@@ -1,3 +1,4 @@
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -7,15 +8,17 @@ import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironment } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 type CreateProfileProps = {
-	onSubmit?: any;
+	onSubmit: (profile: Profile) => void;
 };
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
+	const env: any = useEnvironment();
 	const form = useForm();
 	const history = useHistory();
 	const { register } = form;
@@ -61,12 +64,23 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 				<div className="flex flex-row items-center justify-between">
 					<span className="mt-2 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
 					<div className="-mt-8">
-						<Toggle />
+						<Toggle ref={register()} name="isDarkMode" />
 					</div>
 				</div>
 			),
 		},
 	];
+
+	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
+		const profile = env.profiles().create(name);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ChartCurrency, currency);
+		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+
+		await env.persist();
+
+		onSubmit(profile);
+	};
 
 	return (
 		<Page navbarStyle="logo-only">
@@ -85,7 +99,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 					</div>
 					<Divider />
 
-					<Form id="create-profile__form" className="mt-4" context={form} onSubmit={onSubmit}>
+					<Form data-testid="CreateProfile__form" className="mt-4" context={form} onSubmit={submitForm}>
 						<div className="">
 							<ListDivided items={personalDetails} />
 
@@ -96,7 +110,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 									<FormHelperText />
 								</FormField>
 
-								<FormField name="market-provider">
+								<FormField name="marketProvider">
 									<FormLabel label="Market Provider" />
 									<Select
 										placeholder="Select Market Provider"
@@ -134,7 +148,9 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								Back
 							</Button>
-							<Button>Complete</Button>
+							<Button data-testid="CreateProfile__submit-button" type="submit">
+								Complete
+							</Button>
 						</div>
 					</Form>
 				</div>
