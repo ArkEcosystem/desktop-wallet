@@ -21,13 +21,27 @@ export const Default = () => {
 
 	const transactions = [
 		{
-			date: "17 Mar 2020 22:02:10",
-			avatarId: "test",
-			type: "receive",
-			address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-			walletName: "My Wallet",
-			amount: "100 BTC",
-			fiat: "1,000,000 USD",
+			id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			confirmations: "10",
+			timestamp: "17 Mar 2020 22:02:10",
+			type: "transfer",
+			sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+			recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+			amount: "100",
+			fee: "21",
+			vendorField: "Test",
+			isSent: true,
+		},
+		{
+			id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+			confirmations: "100",
+			timestamp: "17 Mar 2020 10:22:05",
+			type: "secondSignature",
+			sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+			recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+			amount: "0",
+			fee: "0.1",
+			isSent: true,
 		},
 	];
 

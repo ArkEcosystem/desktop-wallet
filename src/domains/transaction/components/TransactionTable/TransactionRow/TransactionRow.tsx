@@ -14,11 +14,12 @@ type Props = {
 	transaction: Transaction;
 	currencyRate?: string;
 	onSign?: () => void;
-};
+	walletName?: string;
+} & React.HTMLProps<any>;
 
-export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => {
+export const TransactionRow = ({ currencyRate, transaction, onSign, walletName, ...props }: Props) => {
 	return (
-		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300">
+		<tr data-testid="TransactionRow" className="border-b border-dotted border-theme-neutral-300" {...props}>
 			<td className="w-16 py-6">
 				<div className="inline-block align-middle">
 					<Link data-testid="TransactionRow__ID" to={{ pathname: "" }} tooltip={transaction.id} isExternal />
@@ -31,7 +32,7 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 				<TransactionRowMode {...transaction} />
 			</td>
 			<td>
-				<TransactionRowRecipientLabel {...transaction} />
+				<TransactionRowRecipientLabel {...transaction} walletName={walletName} />
 			</td>
 			<td className="text-center">
 				<TransactionRowInfo {...transaction} />
@@ -43,8 +44,8 @@ export const TransactionRow = ({ currencyRate, transaction, onSign }: Props) => 
 				<TransactionRowAmount {...transaction} />
 			</td>
 			{transaction.isSignaturePending && (
-				<td className="w-32 text-center">
-					<Button size="sm" data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
+				<td className="text-right">
+					<Button data-testid="TransactionRow__sign" variant="plain" onClick={onSign}>
 						<Icon name="Edit" />
 						<span>Sign</span>
 					</Button>

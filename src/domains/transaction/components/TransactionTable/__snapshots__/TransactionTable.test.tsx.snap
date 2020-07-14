@@ -32,12 +32,28 @@ exports[`TransactionTable should render 1`] = `
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top undefined"
             >
               <div>
                 Date
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -76,7 +92,7 @@ exports[`TransactionTable should render 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-center"
+              class="flex flex-inline align-top undefined"
             >
               <div>
                 Info
@@ -102,12 +118,28 @@ exports[`TransactionTable should render 1`] = `
             colspan="1"
             data-testid="table__th--6"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top justify-end"
             >
               <div>
                 Amount
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -127,7 +159,7 @@ exports[`TransactionTable should render 1`] = `
               class="inline-block align-middle"
             >
               <a
-                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                 data-testid="TransactionRow__ID"
                 href=""
                 rel="noopener noreferrer"
@@ -163,7 +195,7 @@ exports[`TransactionTable should render 1`] = `
               data-testid="TransactionRowMode"
             >
               <div
-                class="sc-AxgMl hjpKRL border-theme-danger-contrast text-theme-danger"
+                class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
               >
                 <div
                   class="sc-AxjAm cpczEI"
@@ -197,7 +229,7 @@ exports[`TransactionTable should render 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                class="sc-AxhUy kMyssT text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 ASuusX…GQ3kqT
@@ -250,7 +282,7 @@ exports[`TransactionTable should render 1`] = `
             class="text-right"
           >
             <div
-              class="sc-AxhUy gRLEpJ"
+              class="sc-AxiKw BrXzA"
               color="danger"
               data-testid="TransactionRowAmount"
             >
@@ -269,7 +301,7 @@ exports[`TransactionTable should render 1`] = `
               class="inline-block align-middle"
             >
               <a
-                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                 data-testid="TransactionRow__ID"
                 href=""
                 rel="noopener noreferrer"
@@ -305,7 +337,7 @@ exports[`TransactionTable should render 1`] = `
               data-testid="TransactionRowMode"
             >
               <div
-                class="sc-AxgMl hjpKRL border-theme-danger-contrast text-theme-danger"
+                class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
               >
                 <div
                   class="sc-AxjAm cpczEI"
@@ -319,7 +351,7 @@ exports[`TransactionTable should render 1`] = `
                 </div>
               </div>
               <div
-                class="sc-AxgMl hjpKRL bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                 data-testid="TransactionRowRecipientIcon"
               >
                 <div
@@ -373,7 +405,215 @@ exports[`TransactionTable should render 1`] = `
             class="text-right"
           >
             <div
-              class="sc-AxhUy gRLEpJ"
+              class="sc-AxiKw BrXzA"
+              color="danger"
+              data-testid="TransactionRowAmount"
+            >
+              0.10000000
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`TransactionTable should render compact 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxirZ dyYkHQ"
+    role="table"
+  >
+    <table
+      class="table-auto"
+    >
+      <thead>
+        <tr
+          role="row"
+        >
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--0"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top invisible"
+            >
+              <div>
+                Type
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--1"
+            role="columnheader"
+          >
+            <div
+              class="flex flex-inline align-top undefined"
+            >
+              <div>
+                Recipient
+              </div>
+            </div>
+          </th>
+          <th
+            class="text-sm text-left select-none text-theme-neutral"
+            colspan="1"
+            data-testid="table__th--2"
+            role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
+          >
+            <div
+              class="flex flex-inline align-top justify-end"
+            >
+              <div>
+                Amount
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        role="rowgroup"
+      >
+        <tr
+          class="border-b border-dotted border-theme-neutral-300"
+          data-testid="TransactionCompactRow"
+        >
+          <td
+            class="w-24 py-3"
+          >
+            <div
+              class="flex items-center -space-x-1"
+              data-testid="TransactionRowMode"
+            >
+              <div
+                class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  data-testid="TransactionRowMode__Sent"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full"
+                >
+                  <img
+                    alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                    title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  />
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxhUy kMyssT text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuusX…GQ3kqT
+              </span>
+            </div>
+          </td>
+          <td
+            class="text-right"
+          >
+            <div
+              class="sc-AxiKw BrXzA"
+              color="danger"
+              data-testid="TransactionRowAmount"
+            >
+              121.00000000
+            </div>
+          </td>
+        </tr>
+        <tr
+          class="border-b border-dotted border-theme-neutral-300"
+          data-testid="TransactionCompactRow"
+        >
+          <td
+            class="w-24 py-3"
+          >
+            <div
+              class="flex items-center -space-x-1"
+              data-testid="TransactionRowMode"
+            >
+              <div
+                class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  data-testid="TransactionRowMode__Sent"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                data-testid="TransactionRowRecipientIcon"
+              >
+                <div
+                  class="sc-AxjAm cpczEI"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    key.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td>
+            <span
+              class="font-semibold text-theme-text"
+              data-testid="TransactionRowRecipientLabel"
+            >
+              2nd Signature Creation
+            </span>
+          </td>
+          <td
+            class="text-right"
+          >
+            <div
+              class="sc-AxiKw BrXzA"
               color="danger"
               data-testid="TransactionRowAmount"
             >
@@ -419,12 +659,28 @@ exports[`TransactionTable should render with sign 1`] = `
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top undefined"
             >
               <div>
                 Date
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -463,7 +719,7 @@ exports[`TransactionTable should render with sign 1`] = `
             role="columnheader"
           >
             <div
-              class="flex flex-inline align-top justify-center"
+              class="flex flex-inline align-top undefined"
             >
               <div>
                 Info
@@ -489,12 +745,28 @@ exports[`TransactionTable should render with sign 1`] = `
             colspan="1"
             data-testid="table__th--6"
             role="columnheader"
+            style="cursor: pointer;"
+            title="Toggle SortBy"
           >
             <div
               class="flex flex-inline align-top justify-end"
             >
               <div>
                 Amount
+              </div>
+              <div
+                class="flex items-center ml-2 text-theme-color-neutral"
+                data-testid="table__Sort"
+              >
+                <div
+                  class="sc-AxjAm hdgaLj"
+                  height="12"
+                  width="15"
+                >
+                  <svg>
+                    sort.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </th>
@@ -528,7 +800,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="inline-block align-middle"
             >
               <a
-                class="sc-AxhCb kJzNmV inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                class="sc-AxheI bALhgA inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
                 data-testid="TransactionRow__ID"
                 href=""
                 rel="noopener noreferrer"
@@ -564,7 +836,7 @@ exports[`TransactionTable should render with sign 1`] = `
               data-testid="TransactionRowMode"
             >
               <div
-                class="sc-AxgMl hjpKRL border-theme-danger-contrast text-theme-danger"
+                class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
               >
                 <div
                   class="sc-AxjAm cpczEI"
@@ -598,7 +870,7 @@ exports[`TransactionTable should render with sign 1`] = `
               class="inline-block truncate align-middle"
             >
               <span
-                class="sc-AxheI fniENP text-theme-text font-semibold text-base"
+                class="sc-AxhUy kMyssT text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 ASuusX…GQ3kqT
@@ -665,7 +937,7 @@ exports[`TransactionTable should render with sign 1`] = `
             class="text-right"
           >
             <div
-              class="sc-AxhUy gRLEpJ"
+              class="sc-AxiKw BrXzA"
               color="danger"
               data-testid="TransactionRowAmount"
             >
@@ -673,10 +945,10 @@ exports[`TransactionTable should render with sign 1`] = `
             </div>
           </td>
           <td
-            class="w-32 text-center"
+            class="text-right"
           >
             <button
-              class="sc-AxiKw cxCNeM"
+              class="sc-AxgMl fcsZQi"
               color="primary"
               data-testid="TransactionRow__sign"
               type="button"
