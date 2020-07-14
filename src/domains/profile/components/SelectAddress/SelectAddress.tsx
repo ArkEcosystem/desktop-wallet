@@ -5,7 +5,7 @@ import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { SearchContact } from "domains/contact/components/SearchContact";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { SelectAddressWrapper } from "./SelectAddress.styles";
 
