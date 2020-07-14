@@ -229,11 +229,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -254,11 +252,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText, getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -281,6 +277,43 @@ describe("NavigationBar", () => {
 		});
 
 		expect(await findByText("Receive Funds")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
+	});
+
+	it("should close the search wallet modal", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--receive");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(await findByText("Select Account")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
 	});
 
 	it("should not render if no active profile", () => {
