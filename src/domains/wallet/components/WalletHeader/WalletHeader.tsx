@@ -18,7 +18,7 @@ type Props = {
 	name?: string | undefined;
 	publicKey?: string | undefined;
 	onCopy?: () => void;
-	onSignMessage?: () => void;
+	onSignMessage: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
 };
@@ -93,7 +93,7 @@ export const WalletHeader = ({
 								]}
 								onSelect={(option: any) => {
 									if (option.value === "sign-message") {
-										return onSignMessage && onSignMessage();
+										return onSignMessage();
 									}
 
 									if (option.value === "delete") {
