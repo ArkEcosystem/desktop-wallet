@@ -1,5 +1,5 @@
 import React from "react";
-import { renderWithRouter } from "utils/testing-library";
+import { fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { TransactionTable } from "./TransactionTable";
 import { Transaction } from "./TransactionTable.models";
@@ -66,5 +66,23 @@ describe("TransactionTable", () => {
 		);
 		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render compact", () => {
+		const { getAllByTestId, asFragment } = renderWithRouter(
+			<TransactionTable transactions={transactions} isCompact />,
+		);
+		expect(getAllByTestId("TransactionCompactRow")).toHaveLength(transactions.length);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should emit action on the row click", () => {
+		const onClick = jest.fn();
+		const { getAllByTestId } = renderWithRouter(
+			<TransactionTable transactions={transactions} onRowClick={onClick} />,
+		);
+		const rows = getAllByTestId("TransactionRow");
+		fireEvent.click(rows[0]);
+		expect(onClick).toHaveBeenCalledWith(transactions[0]);
 	});
 });

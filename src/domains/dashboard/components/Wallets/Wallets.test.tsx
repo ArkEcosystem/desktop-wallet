@@ -1,22 +1,24 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
+import { act, env, fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
 
 describe("Wallets", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-	const dashboardURL = `/profiles/qwe123/dashboard`;
-	history.push(dashboardURL);
+	let profile: Profile;
+	let dashboardURL: string;
+
+	beforeAll(() => {
+		profile = env.profiles().get(identity.profiles.bob.id);
+		dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+	});
 
 	// Wallet filter properties
 	const filterProperties = {
@@ -43,27 +45,23 @@ describe("Wallets", () => {
 
 	it("should render", () => {
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets wallets={wallets} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={wallets} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		expect(container).toBeTruthy();
 	});
 
 	it("should render with empty wallets list", () => {
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets wallets={[]} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={[]} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -75,11 +73,9 @@ describe("Wallets", () => {
 
 	it("should render with list view enabled as default", () => {
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -91,11 +87,9 @@ describe("Wallets", () => {
 
 	it("should render with list view enabled as default and empty wallet list", () => {
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -107,11 +101,9 @@ describe("Wallets", () => {
 
 	it("should change wallet view type from list to grid", () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets viewType="list" wallets={[]} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -128,11 +120,9 @@ describe("Wallets", () => {
 
 	it("should change wallet view type from grid to list", () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets viewType="grid" wallets={[]} filterProperties={filterProperties} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,

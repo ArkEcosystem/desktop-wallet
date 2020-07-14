@@ -28,7 +28,6 @@ describe("TransactionRow", () => {
 		expect(getByTestId("TransactionRow__ID")).toBeTruthy();
 		expect(getByTestId("TransactionRow__timestamp")).toBeTruthy();
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
-		expect(getByTestId("TransactionRowMode")).toBeTruthy();
 		expect(getByTestId("address__wallet-address")).toBeTruthy();
 		expect(getByTestId("TransactionRowInfo")).toBeTruthy();
 		expect(getByTestId("TransactionRowConfirmation")).toBeTruthy();

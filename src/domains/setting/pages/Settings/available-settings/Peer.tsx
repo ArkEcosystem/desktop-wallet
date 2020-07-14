@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { PeerList } from "domains/setting/components/PeerList";
-import { peers } from "domains/setting/data";
+import { networks, peers } from "domains/setting/data";
 import React from "react";
 
 type PeerProps = {
@@ -58,7 +58,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 				<ListDivided items={peerItems} />
 
 				<div className="pt-8">
-					<PeerList peers={peers} />
+					<PeerList networks={networks} peers={peers} />
 				</div>
 
 				<div className="pt-2 pb-4">

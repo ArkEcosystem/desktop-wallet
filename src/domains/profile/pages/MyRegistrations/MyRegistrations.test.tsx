@@ -1,31 +1,23 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter, within } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
 describe("Welcome", () => {
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
 	const history = createMemoryHistory();
-	const registrationsURL = "/profiles/qwe123/registrations";
+	const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
 	history.push(registrationsURL);
 
 	it("should render empty state", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/registrations">
-					<MyRegistrations />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations />
+			</Route>,
 			{
 				routes: [registrationsURL],
 				history,
@@ -38,11 +30,9 @@ describe("Welcome", () => {
 
 	it("should render properly", () => {
 		const { asFragment, getAllByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/registrations">
-					<MyRegistrations registrations={registrations} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={registrations} />
+			</Route>,
 			{
 				routes: [registrationsURL],
 				history,
@@ -57,11 +47,9 @@ describe("Welcome", () => {
 
 	it("should render null for a not knwown type of table", () => {
 		const { asFragment } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/registrations">
-					<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+			</Route>,
 			{
 				routes: [registrationsURL],
 				history,
@@ -75,11 +63,9 @@ describe("Welcome", () => {
 		const handleDropdown = jest.fn();
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/registrations">
-					<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={registrations} handleDropdown={handleDropdown} />
+			</Route>,
 			{
 				routes: [registrationsURL],
 				history,

@@ -1,16 +1,11 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
 import { Route } from "react-router-dom";
 import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
-// i18n
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
@@ -18,20 +13,16 @@ jest.useFakeTimers();
 
 describe("PluginManager", () => {
 	let rendered: RenderResult;
-
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const history = createMemoryHistory();
-	const pluginsURL = "/profiles/qwe123/plugins";
+	const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
 
 	beforeEach(() => {
 		history.push(pluginsURL);
 
 		rendered = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/plugins">
-					<PluginManager />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/plugins">
+				<PluginManager />
+			</Route>,
 			{
 				routes: [pluginsURL],
 				history,
@@ -221,7 +212,7 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual("/profiles/qwe123/plugins/ark-explorer-1");
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
 	});
 
 	it("should select plugin on game grid", () => {
@@ -232,7 +223,7 @@ describe("PluginManager", () => {
 			fireEvent.click(getAllByTestId("PluginCard--ark-explorer-1")[0]);
 		});
 
-		expect(history.location.pathname).toEqual("/profiles/qwe123/plugins/ark-explorer-1");
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

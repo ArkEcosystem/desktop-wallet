@@ -56,7 +56,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={option} />
+					<ContactListItem contact={contact} onAction={onAction} options={options} />
 				</tbody>
 			</table>,
 		);

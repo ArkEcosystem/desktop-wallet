@@ -1,16 +1,11 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
 import { Route } from "react-router-dom";
 import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
-// i18n
 import { translations } from "../../i18n";
 import { PluginsCategory } from "./PluginsCategory";
 
@@ -18,11 +13,8 @@ jest.useFakeTimers();
 
 describe("PluginsCategory", () => {
 	let rendered = RenderResult;
-
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
 	const history = createMemoryHistory();
-	const pluginsCategoryURL = "/profiles/qwe123/plugins/categories/game";
+	const pluginsCategoryURL = `/profiles/${identity.profiles.bob.id}/plugins/categories/game`;
 
 	history.push(pluginsCategoryURL);
 
@@ -30,15 +22,13 @@ describe("PluginsCategory", () => {
 		history.push(pluginsCategoryURL);
 
 		rendered = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/plugins/categories/:categoryId">
-					<PluginsCategory
-						title="Top Rated plugins"
-						description="Easy way to find, manage and install plugins"
-						initialViewType="grid"
-					/>
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/plugins/categories/:categoryId">
+				<PluginsCategory
+					title="Top Rated plugins"
+					description="Easy way to find, manage and install plugins"
+					initialViewType="grid"
+				/>
+			</Route>,
 			{
 				routes: [pluginsCategoryURL],
 				history,

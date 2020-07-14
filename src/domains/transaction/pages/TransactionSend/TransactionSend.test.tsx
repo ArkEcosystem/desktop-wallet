@@ -1,15 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { identity } from "tests/fixtures/identity";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
@@ -135,10 +131,8 @@ describe("Transaction Send", () => {
 	});
 
 	it("should render", async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
 		const history = createMemoryHistory();
-		const transferURL = "/profiles/qwe123/transactions/transfer";
+		const transferURL = `/profiles/${identity.profiles.bob.id}/transactions/transfer`;
 
 		history.push(transferURL);
 
@@ -146,11 +140,9 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentContext.Provider value={env}>
-					<Route path="/profiles/:profileId/transactions/transfer">
-						<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
-					</Route>
-				</EnvironmentContext.Provider>,
+				<Route path="/profiles/:profileId/transactions/transfer">
+					<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
+				</Route>,
 				{
 					routes: [transferURL],
 					history,

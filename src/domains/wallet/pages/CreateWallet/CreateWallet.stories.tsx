@@ -6,20 +6,7 @@ import { CreateWallet } from "./CreateWallet";
 
 export default { title: "Domains / Wallet / Pages / CreateWallet" };
 
-const mnemonic = [
-	"lorem",
-	"ipsum",
-	"dolor",
-	"sit",
-	"amet",
-	"consectetur",
-	"adipisicing",
-	"elit",
-	"nihil",
-	"nisi",
-	"natus",
-	"adipisci",
-];
+const mnemonic = "lorem ipsum dolor sit amet consectetur adipisicing elit nihil nisi natus adipisci";
 
 export const Default = () => (
 	<CreateWallet

@@ -4,8 +4,8 @@ import { Storage } from "@arkecosystem/platform-sdk-profiles";
 export class StubStorage implements Storage {
 	storage: Record<string, unknown> = {};
 
-	public constructor() {
-		this.storage = {};
+	public constructor(data?: any) {
+		this.storage = data || {};
 	}
 
 	public async all(): Promise<object> {

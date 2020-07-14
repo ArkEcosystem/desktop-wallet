@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
@@ -15,9 +11,8 @@ describe("UpdateRegistration", () => {
 	let rendered: RenderResult;
 	let defaultFormValues = {};
 
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const history = createMemoryHistory();
-	const updateRegistrationURL = "/profiles/qwe123/transactions/update";
+	const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
 
 	history.push(updateRegistrationURL);
 
@@ -27,11 +22,9 @@ describe("UpdateRegistration", () => {
 		};
 
 		rendered = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/transactions/update">
-					<UpdateRegistration {...defaultFormValues} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/transactions/update">
+				<UpdateRegistration {...defaultFormValues} />
+			</Route>,
 			{
 				routes: [updateRegistrationURL],
 				history,
@@ -39,12 +32,12 @@ describe("UpdateRegistration", () => {
 		);
 	});
 
-	it("should render 1st step", () => {
+	it("should render 1st step", async () => {
 		const { asFragment, getByTestId } = rendered;
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should should go back", async () => {
@@ -59,7 +52,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__first-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 2nd step", async () => {
@@ -77,7 +70,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__second-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 3rd step", async () => {
@@ -92,7 +85,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("UpdateRegistration__third-step")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render 4th step", async () => {
@@ -116,7 +109,7 @@ describe("UpdateRegistration", () => {
 
 		expect(getByTestId("TransactionSuccessful")).toBeTruthy();
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(0);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should submit", async () => {
@@ -142,6 +135,6 @@ describe("UpdateRegistration", () => {
 		});
 
 		expect(defaultFormValues.onDownload).toHaveBeenCalledTimes(1);
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 });

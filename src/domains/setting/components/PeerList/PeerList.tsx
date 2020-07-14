@@ -16,6 +16,8 @@ export const PeerList = ({ listColumns, peers, networks }: PeerListProps) => {
 
 	return (
 		<div>
+			<CustomPeers networks={networks} isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+
 			<Table columns={listColumns} data={peers}>
 				{(rowData: any) => <PeerListItem {...rowData} />}
 			</Table>
@@ -28,8 +30,6 @@ export const PeerList = ({ listColumns, peers, networks }: PeerListProps) => {
 			>
 				Add Peer
 			</Button>
-
-			<CustomPeers networks={networks} isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
 		</div>
 	);
 };
