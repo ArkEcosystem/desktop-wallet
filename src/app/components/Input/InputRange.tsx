@@ -22,15 +22,11 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const handleInput = (value: string) => {
 			const fraction = Math.pow(10, magnitude! * -1);
 			const amount = BigNumber.make(value).times(fraction);
-
-			if (amount.isGreaterThan(max)) {
-				return setValues([max]);
-			}
-
-			return setValues([amount.toNumber()]);
+			setValues([amount.toNumber()]);
 		};
 
 		const trackBackgroundMinValue = Math.max(values[0], 3);
+		const rangeValues = [Math.min(values[0], max)];
 
 		return (
 			<InputGroup>
@@ -45,7 +41,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					}}
 					magnitude={magnitude}
 					type="text"
-					value={values[0]}
+					value={rangeValues[0]}
 					ref={ref}
 					onChange={handleInput}
 				/>
@@ -56,7 +52,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						min={min}
 						max={max}
 						onChange={setValues}
-						values={values}
+						values={rangeValues}
 					/>
 				</div>
 			</InputGroup>
