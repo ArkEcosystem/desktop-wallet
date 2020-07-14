@@ -10,13 +10,14 @@ type TableProps = {
 	className?: string;
 	data: any[];
 	columns: any[];
+	hideHeader?: boolean;
 };
 
 const TableWrapper = styled.div`
 	${defaultTableStyle}
 `;
 
-export const Table = ({ children, data, columns }: TableProps) => {
+export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
 	const tableData = useMemo(() => data, [data]);
 	const tableColumns = useMemo(() => columns, [columns]);
 
@@ -48,39 +49,41 @@ export const Table = ({ children, data, columns }: TableProps) => {
 	return (
 		<TableWrapper {...getTableProps()}>
 			<table className="table-auto">
-				<thead>
-					{headerGroups.map((headerGroup: any, index: number) => (
-						<tr key={index} {...headerGroup.getHeaderGroupProps()}>
-							{headerGroup.headers.map((column: any, thIndex: number) => (
-								<th
-									key={thIndex}
-									className="text-sm text-left select-none text-theme-neutral"
-									data-testid={`table__th--${thIndex}`}
-									{...column.getHeaderProps(column.getSortByToggleProps())}
-								>
-									<div className={`flex flex-inline align-top ${column.className}`}>
-										<div>{column.render("Header")}</div>
-										{column.canSort && (
-											<div
-												className="flex items-center ml-2 text-theme-color-neutral"
-												data-testid={`table__${getSortIconName(
-													column.isSorted,
-													column.isSortedDesc,
-												)}`}
-											>
-												<Icon
-													name={getSortIconName(column.isSorted, column.isSortedDesc)}
-													width={column.isSorted ? 10 : 15}
-													height={column.isSorted ? 10 : 12}
-												/>
-											</div>
-										)}
-									</div>
-								</th>
-							))}
-						</tr>
-					))}
-				</thead>
+				{!hideHeader && (
+					<thead>
+						{headerGroups.map((headerGroup: any, index: number) => (
+							<tr key={index} {...headerGroup.getHeaderGroupProps()}>
+								{headerGroup.headers.map((column: any, thIndex: number) => (
+									<th
+										key={thIndex}
+										className="text-sm text-left select-none text-theme-neutral"
+										data-testid={`table__th--${thIndex}`}
+										{...column.getHeaderProps(column.getSortByToggleProps())}
+									>
+										<div className={`flex flex-inline align-top ${column.className}`}>
+											<div>{column.render("Header")}</div>
+											{column.canSort && (
+												<div
+													className="flex items-center ml-2 text-theme-color-neutral"
+													data-testid={`table__${getSortIconName(
+														column.isSorted,
+														column.isSortedDesc,
+													)}`}
+												>
+													<Icon
+														name={getSortIconName(column.isSorted, column.isSortedDesc)}
+														width={column.isSorted ? 10 : 15}
+														height={column.isSorted ? 10 : 12}
+													/>
+												</div>
+											)}
+										</div>
+									</th>
+								))}
+							</tr>
+						))}
+					</thead>
+				)}
 
 				<tbody {...getTableBodyProps()}>
 					{rows.map((row: any) => {
@@ -96,4 +99,5 @@ export const Table = ({ children, data, columns }: TableProps) => {
 Table.defaultProps = {
 	data: [],
 	columns: [],
+	hideColumns: false,
 };

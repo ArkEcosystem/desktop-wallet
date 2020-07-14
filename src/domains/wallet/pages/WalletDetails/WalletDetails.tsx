@@ -1,9 +1,7 @@
 import { Page, Section } from "app/components/Layout";
-import { Table } from "app/components/Table";
-import { TransactionListItem } from "app/components/TransactionListItem";
-import { TransactionListItemProps } from "app/components/TransactionListItem/models";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
+import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
@@ -12,34 +10,13 @@ import React from "react";
 
 import { wallet, wallets } from "./data";
 
-const columns = [
-	{
-		Header: "Date",
-	},
-	{
-		Header: "Type",
-		className: "invisible",
-	},
-	{
-		Header: "Wallet Address",
-	},
-	{
-		Header: "Amount",
-		className: "float-right",
-	},
-	{
-		Header: "Fiat Value",
-		className: "float-right",
-	},
-];
-
 type Wallet = WalletListItemProps & {
 	address: string;
 	balance: string;
 	publicKey?: string;
 	hasStarred?: boolean;
-	transactions?: TransactionListItemProps[];
-	pendingTransactions?: TransactionListItemProps[];
+	transactions?: Transaction[];
+	pendingTransactions?: Transaction[];
 	delegates: {
 		username: string;
 		address: string;
@@ -103,16 +80,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				<Section className="mb-20">
 					<div className="mb-16">
 						<h2 className="font-bold">Pending Transactions</h2>
-						<Table columns={columns} data={wallet?.pendingTransactions || []}>
-							{(rowData: any) => <TransactionListItem {...rowData} />}
-						</Table>
+						<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
 					</div>
 
 					<div>
 						<h2 className="font-bold">Transaction History</h2>
-						<Table columns={columns} data={wallet?.transactions || []}>
-							{(rowData: any) => <TransactionListItem {...rowData} />}
-						</Table>
+						<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
 					</div>
 				</Section>
 			</div>
