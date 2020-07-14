@@ -1,13 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import tw, { styled } from "twin.macro";
 
 const InputAddon = styled.div`
 	${tw`absolute inset-y-0 flex items-center justify-center overflow-hidden`};
 `;
 
-export const InputAddonStart = styled.div`
-	${tw`border border-r-0 rounded-l`}
+export const InputAddonStart = styled(InputAddon)`
+	${tw`left-0 border border-transparent rounded-l`}
 `;
 
 export const InputAddonEnd = styled(InputAddon)`
