@@ -17,7 +17,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should render", () => {
-		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile />, {
+		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile onSubmit={() => void 0} />, {
 			routes: ["/", "/profile/create"],
 		});
 
@@ -74,30 +74,6 @@ describe("CreateProfile", () => {
 		});
 
 		expect(env.profiles().all().length).toEqual(2);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should store profile without callback", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<CreateProfile />
-			</EnvironmentProvider>,
-			{
-				routes: ["/", "/profile/create"],
-			},
-		);
-
-		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
-
-		await act(async () => {
-			fireEvent.click(getByTestId("CreateProfile__submit-button"));
-		});
-
-		expect(env.profiles().all().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

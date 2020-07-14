@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 type CreateProfileProps = {
-	onSubmit?: (profile: Profile) => void;
+	onSubmit: (profile: Profile) => void;
 };
 
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
@@ -79,9 +79,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 		await env.persist();
 
-		if (onSubmit) {
-			onSubmit(profile);
-		}
+		onSubmit(profile);
 	};
 
 	return (
