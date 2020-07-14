@@ -1,3 +1,4 @@
+import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 
 import { CreateProfile } from "./CreateProfile";
@@ -7,7 +8,9 @@ export default {
 };
 
 export const Default = () => (
-	<div className="w-full h-full">
-		<CreateProfile />
-	</div>
+	<EnvironmentProvider>
+		<div className="w-full h-full">
+			<CreateProfile />
+		</div>
+	</EnvironmentProvider>
 );
