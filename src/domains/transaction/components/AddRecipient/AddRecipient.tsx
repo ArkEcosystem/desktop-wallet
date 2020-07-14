@@ -15,11 +15,11 @@ import { AddRecipientWrapper } from "./AddRecipient.styles";
 const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLabel, onChange }: ToggleButtonProps) => {
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
-			<div className="flex space-x-2 mb-2">
+			<div className="flex mb-2 space-x-2">
 				<div className="text-sm font-medium transition-colors duration-100">{labelText}</div>
 				<div>
 					<Tippy content={helpText}>
-						<div className="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full">
+						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
 							<Icon name="QuestionMark" width={20} height={20} />
 						</div>
 					</Tippy>
@@ -136,7 +136,7 @@ export const AddRecipient = ({
 							<button
 								data-testid="add-recipient__send-all"
 								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+								className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
 							>
 								Send All
 							</button>

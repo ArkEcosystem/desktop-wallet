@@ -283,7 +283,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex space-x-2 mb-2"
+              class="flex mb-2 space-x-2"
             >
               <div
                 class="text-sm font-medium transition-colors duration-100"
@@ -292,7 +292,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
               </div>
               <div>
                 <div
-                  class="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
                     class="sc-Axmtr hdGCex"
@@ -407,7 +407,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
                   class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
-                    class="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
                     data-testid="add-recipient__send-all"
                   >
                     Send All
@@ -863,7 +863,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex space-x-2 mb-2"
+              class="flex mb-2 space-x-2"
             >
               <div
                 class="text-sm font-medium transition-colors duration-100"
@@ -872,7 +872,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
               </div>
               <div>
                 <div
-                  class="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
                     class="sc-Axmtr hdGCex"
@@ -987,7 +987,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
                   class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
-                    class="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
                     data-testid="add-recipient__send-all"
                   >
                     Send All
@@ -1443,7 +1443,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex space-x-2 mb-2"
+              class="flex mb-2 space-x-2"
             >
               <div
                 class="text-sm font-medium transition-colors duration-100"
@@ -1452,7 +1452,7 @@ exports[`SendTransactionForm should render 1`] = `
               </div>
               <div>
                 <div
-                  class="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
                     class="sc-Axmtr hdGCex"
@@ -1567,7 +1567,7 @@ exports[`SendTransactionForm should render 1`] = `
                   class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
-                    class="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
                     data-testid="add-recipient__send-all"
                   >
                     Send All
@@ -2049,7 +2049,7 @@ exports[`SendTransactionForm should select sender 1`] = `
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex space-x-2 mb-2"
+              class="flex mb-2 space-x-2"
             >
               <div
                 class="text-sm font-medium transition-colors duration-100"
@@ -2058,7 +2058,7 @@ exports[`SendTransactionForm should select sender 1`] = `
               </div>
               <div>
                 <div
-                  class="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
                     class="sc-Axmtr hdGCex"
@@ -2173,7 +2173,7 @@ exports[`SendTransactionForm should select sender 1`] = `
                   class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
-                    class="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
                     data-testid="add-recipient__send-all"
                   >
                     Send All
@@ -2521,7 +2521,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex space-x-2 mb-2"
+              class="flex mb-2 space-x-2"
             >
               <div
                 class="text-sm font-medium transition-colors duration-100"
@@ -2530,7 +2530,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
               </div>
               <div>
                 <div
-                  class="cursor-pointer bg-theme-primary-100 text-theme-primary-500 rounded-full"
+                  class="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500"
                 >
                   <div
                     class="sc-Axmtr hdGCex"
@@ -2645,7 +2645,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
                   class="sc-AxhCb sc-AxgMl jreOpL"
                 >
                   <button
-                    class="pl-6 pr-3 mr-1 h-12 bg-white text-theme-primary focus:outline-none"
+                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
                     data-testid="add-recipient__send-all"
                   >
                     Send All
