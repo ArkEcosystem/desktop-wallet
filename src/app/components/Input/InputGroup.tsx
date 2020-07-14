@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import tw, { styled } from "twin.macro";
 
 const InputAddon = styled.div`
@@ -7,11 +5,11 @@ const InputAddon = styled.div`
 `;
 
 export const InputAddonStart = styled(InputAddon)`
-	${tw`left-0 rounded-l border border-transparent`}
+	${tw`left-0 border border-transparent rounded-l`}
 `;
 
 export const InputAddonEnd = styled(InputAddon)`
-	${tw`right-0 rounded-r border border-transparent`}
+	${tw`right-0 border border-transparent rounded-r`}
 `;
 
 export const InputGroup = styled.div`
