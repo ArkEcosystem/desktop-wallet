@@ -55,7 +55,7 @@ export const WalletListItem = ({
 				<Address walletName={walletName} address={address} maxChars={22} />
 			</td>
 			{walletTypeIcons && (
-				<td className="py-1 text-sm text-center font-bold space-x-2">
+				<td className="py-1 text-sm font-bold text-center space-x-2">
 					{walletTypeIcons.map((type: string, index: number) => {
 						return (
 							<div key={index} className={`inline-block align-middle ${getIconTypeClass(type)}`}>
