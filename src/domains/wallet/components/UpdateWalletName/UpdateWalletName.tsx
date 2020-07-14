@@ -2,7 +2,6 @@ import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
-// UI Elements
 import { Modal } from "app/components/Modal";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +14,7 @@ type UpdateWalletNameProps = {
 	onSave: any;
 };
 
-const NameWalletBanner = images.wallet.components.updateWalletName.NameWalletBanner;
+const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange" });
