@@ -1,11 +1,14 @@
 import React from "react";
-import { act, fireEvent, render, within } from "testing-library";
+import { act, fireEvent, render,  within } from "testing-library";
 
 import { WalletHeader } from "./WalletHeader";
 
 describe("WalletHeader", () => {
+	const onSignMessage = jest.fn();
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<WalletHeader address="abc" balance="0" coin="Ark" />);
+		const { getByTestId, asFragment } = render(
+			<WalletHeader address="abc" balance="0" coin="Ark" onSignMessage={onSignMessage} />,
+		);
 		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -16,7 +19,15 @@ describe("WalletHeader", () => {
 		const onCopy = jest.fn();
 
 		const { getByTestId } = render(
-			<WalletHeader address="abc" balance="0" coin="Ark" onCopy={onCopy} onStar={onStar} onSend={onSend} />,
+			<WalletHeader
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onCopy={onCopy}
+				onStar={onStar}
+				onSend={onSend}
+				onSignMessage={onSignMessage}
+			/>,
 		);
 		fireEvent.click(getByTestId("WalletHeader__copy-button"));
 		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
@@ -31,7 +42,15 @@ describe("WalletHeader", () => {
 
 	it("should show modifiers", () => {
 		const { getByTestId, asFragment } = render(
-			<WalletHeader hasStarred isLedger isMultisig address="abc" balance="0" coin="Ark" />,
+			<WalletHeader
+				hasStarred
+				isLedger
+				isMultisig
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onSignMessage={onSignMessage}
+			/>,
 		);
 		expect(getByTestId("WalletHeader__ledger")).toBeTruthy();
 		expect(getByTestId("WalletHeader__multisig")).toBeTruthy();
@@ -42,7 +61,15 @@ describe("WalletHeader", () => {
 		const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
 		const { getByTestId, asFragment } = render(
-			<WalletHeader hasStarred isLedger isMultisig address="abc" balance="0" coin="Ark" />,
+			<WalletHeader
+				hasStarred
+				isLedger
+				isMultisig
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onSignMessage={onSignMessage}
+			/>,
 		);
 
 		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
@@ -64,7 +91,14 @@ describe("WalletHeader", () => {
 		const address = "abc";
 		const publicKey = "123";
 		const { getByTestId, asFragment } = render(
-			<WalletHeader currencyBalance="10" publicKey={publicKey} address={address} balance="0" coin="Ark" />,
+			<WalletHeader
+				currencyBalance="10"
+				publicKey={publicKey}
+				address={address}
+				balance="0"
+				coin="Ark"
+				onSignMessage={onSignMessage}
+			/>,
 		);
 
 		expect(getByTestId("WalletHeader__balance")).toBeTruthy();
@@ -79,5 +113,36 @@ describe("WalletHeader", () => {
 		expect(() => getByTestId("WalletHeader__balance")).toThrowError();
 		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle sign message", () => {
+		const address = "abc";
+		const publicKey = "123";
+		const { getByTestId } = render(
+			<WalletHeader
+				currencyBalance="10"
+				publicKey={publicKey}
+				address={address}
+				balance="0"
+				coin="Ark"
+				onSignMessage={onSignMessage}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const signOption = getByTestId("dropdown__option--1");
+		expect(signOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(signOption);
+		});
+
+		expect(onSignMessage).toHaveBeenCalled();
 	});
 });
