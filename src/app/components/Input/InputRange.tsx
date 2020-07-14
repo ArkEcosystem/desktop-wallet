@@ -22,7 +22,12 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const handleInput = (value: string) => {
 			const fraction = Math.pow(10, magnitude! * -1);
 			const amount = BigNumber.make(value).times(fraction);
-			setValues([amount.toNumber()]);
+
+			if (amount.isGreaterThan(max)) {
+				setValues([max]);
+			} else {
+				setValues([amount.toNumber()]);
+			}
 		};
 
 		const trackBackgroundMinValue = Math.max(values[0], 3);
