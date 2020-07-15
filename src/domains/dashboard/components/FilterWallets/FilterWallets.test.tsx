@@ -4,22 +4,22 @@ import { fireEvent, render } from "testing-library";
 
 import { FilterWallets } from "./FilterWallets";
 
-describe("FilterWallets", () => {
-	const networks = [
-		{
-			name: "Ark",
-			isSelected: true,
-		},
-		{
-			name: "Ethereum",
-			isSelected: true,
-		},
-		{
-			name: "Bitcoin",
-			isSelected: false,
-		},
-	];
+const networks = [
+	{
+		name: "Ark",
+		isSelected: true,
+	},
+	{
+		name: "Ethereum",
+		isSelected: true,
+	},
+	{
+		name: "Bitcoin",
+		isSelected: false,
+	},
+];
 
+describe("FilterWallets", () => {
 	it("should render", () => {
 		const { container } = render(<FilterWallets />);
 		expect(container).toMatchSnapshot();

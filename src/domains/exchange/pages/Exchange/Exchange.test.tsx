@@ -7,11 +7,14 @@ import { identity } from "tests/fixtures/identity";
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
-describe("Exchange", () => {
-	const history = createMemoryHistory();
+const history = createMemoryHistory();
 
-	const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
-	history.push(exchangeURL);
+const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
+
+describe("Exchange", () => {
+	beforeAll(() => {
+		history.push(exchangeURL);
+	});
 
 	it("should render", () => {
 		const { container, getByTestId } = renderWithRouter(

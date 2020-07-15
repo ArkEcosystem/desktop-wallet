@@ -11,13 +11,11 @@ import { PluginsCategory } from "./PluginsCategory";
 
 jest.useFakeTimers();
 
+let rendered = RenderResult;
+const history = createMemoryHistory();
+const pluginsCategoryURL = `/profiles/${identity.profiles.bob.id}/plugins/categories/game`;
+
 describe("PluginsCategory", () => {
-	let rendered = RenderResult;
-	const history = createMemoryHistory();
-	const pluginsCategoryURL = `/profiles/${identity.profiles.bob.id}/plugins/categories/game`;
-
-	history.push(pluginsCategoryURL);
-
 	beforeEach(() => {
 		history.push(pluginsCategoryURL);
 

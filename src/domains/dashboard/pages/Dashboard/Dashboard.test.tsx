@@ -7,11 +7,14 @@ import { act, fireEvent, renderWithRouter, within } from "utils/testing-library"
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
-describe("Dashboard", () => {
-	const history = createMemoryHistory();
+const history = createMemoryHistory();
 
-	const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
-	history.push(dashboardURL);
+const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+
+describe("Dashboard", () => {
+	beforeAll(() => {
+		history.push(dashboardURL);
+	});
 
 	it("should render", () => {
 		const { container } = renderWithRouter(

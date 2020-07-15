@@ -9,9 +9,9 @@ import { identity } from "tests/fixtures/identity";
 
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
-describe("SendIPFSTransaction", () => {
-	const onCopy = jest.fn();
+const onCopy = jest.fn();
 
+describe("SendIPFSTransaction", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
