@@ -161,7 +161,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							<FormField className="mt-8" name="passphrase-language">
 								<FormLabel label="Passphrase Language" />
 								<Select
-									placeholder="Select Language"
+									placeholder="Select Passphrase Language"
 									ref={formConfig.register({ required: true })}
 									options={[
 										{ label: "Option 1", value: "option1" },
@@ -173,7 +173,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							<FormField className="mt-8" name="currency">
 								<FormLabel label="Currency" />
 								<Select
-									placeholder="Select Language"
+									placeholder="Select Currency"
 									ref={formConfig.register({ required: true })}
 									options={[
 										{ label: "Option 1", value: "option1" },
@@ -197,9 +197,9 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormHelperText />
 							</FormField>
 							<FormField className="mt-8" name="price-source">
-								<FormLabel label="Price Source" />
+								<FormLabel label="Market Provider" />
 								<Select
-									placeholder="Select Language"
+									placeholder="Select Market Provider"
 									ref={formConfig.register({ required: true })}
 									options={[
 										{ label: "Option 1", value: "option1" },
@@ -211,7 +211,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							<FormField className="mt-8" name="time-format">
 								<FormLabel label="Time Format" />
 								<Select
-									placeholder="Select Language"
+									placeholder="Select Time Format"
 									ref={formConfig.register({ required: true })}
 									options={[
 										{ label: "Option 1", value: "option1" },
