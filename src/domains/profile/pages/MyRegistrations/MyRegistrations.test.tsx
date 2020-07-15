@@ -74,7 +74,9 @@ describe("Welcome", () => {
 		);
 
 		const registerButton = getByText("Register");
-		act(() => fireEvent.click(registerButton));
+		act(() => {
+			fireEvent.click(registerButton);
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
