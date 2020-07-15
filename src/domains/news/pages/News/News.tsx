@@ -6,9 +6,8 @@ import { useActiveProfile } from "app/hooks/env";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
-import { useTranslation } from "react-i18next";
-
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { assets, categories, news } from "../../data";
 

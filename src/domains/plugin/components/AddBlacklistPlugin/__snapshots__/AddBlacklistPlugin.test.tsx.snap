@@ -248,6 +248,93 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     <div
                       class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                     >
+                      ARK Explorer
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span
+                        class="text-theme-neutral-dark"
+                      >
+                        ARK Ecosystem
+                      </span>
+                      <div
+                        class="sc-AxirZ fkjLBb"
+                        height="15"
+                        width="15"
+                      >
+                        <svg>
+                          official-ark-plugin.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-center text-theme-neutral-dark"
+                  >
+                    Utility
+                  </td>
+                  <td
+                    class="py-10 text-theme-neutral-dark"
+                  >
+                    <div
+                      class="flex"
+                      data-testid="ReviewRating"
+                    >
+                      <div
+                        class="relative my-auto"
+                      >
+                        <div
+                          class="absolute overflow-hidden"
+                          style="width: 89.99999999999999%;"
+                        >
+                          <svg
+                            class="text-theme-warning-400 w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <svg
+                          class="text-theme-neutral w-3"
+                        >
+                          star.svg
+                        </svg>
+                      </div>
+                      <span
+                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                      >
+                        4.6
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-16"
+                  >
+                    <svg
+                      class="w-12 h-12"
+                    >
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
                       Animal Avatars
                     </div>
                     <div
@@ -326,7 +413,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     <div
                       class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                     >
-                      ARK Explorer
+                      ChangeNOW Plugin
                     </div>
                     <div
                       class="inline-flex items-center space-x-2"
@@ -334,23 +421,14 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       <span
                         class="text-theme-neutral-dark"
                       >
-                        ARK Ecosystem
+                        ChangeNOW
                       </span>
-                      <div
-                        class="sc-AxirZ fkjLBb"
-                        height="15"
-                        width="15"
-                      >
-                        <svg>
-                          official-ark-plugin.svg
-                        </svg>
-                      </div>
                     </div>
                   </td>
                   <td
                     class="py-10 text-center text-theme-neutral-dark"
                   >
-                    Utility
+                    Other
                   </td>
                   <td
                     class="py-10 text-theme-neutral-dark"
@@ -364,7 +442,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       >
                         <div
                           class="absolute overflow-hidden"
-                          style="width: 89.99999999999999%;"
+                          style="width: 95%;"
                         >
                           <svg
                             class="text-theme-warning-400 w-3"
@@ -381,7 +459,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                       <span
                         class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                       >
-                        4.6
+                        4.8
                       </span>
                     </div>
                   </td>

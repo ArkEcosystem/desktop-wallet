@@ -1,9 +1,10 @@
 import { Icon } from "app/components/Icon";
 import { Pagination } from "app/components/Pagination";
+import { TimeAgo } from "app/components/TimeAgo";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Reply } from "./components/Reply";
-import { TimeAgo } from "app/components/TimeAgo";
 
 type Comment = {
 	author: string;
@@ -42,16 +43,22 @@ const Votes = ({ votes }: any) => {
 export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 	const [sortBy] = useState(sortOptions);
 
+	const { t } = useTranslation();
+
+	const transformType = (type: string) => {
+		return type.replace(" ", "_").toUpperCase();
+	};
+
 	return (
 		<div className="w-full">
 			<div className="flex items-center mt-5 text-sm font-semibold text-theme-neutral">
-				<span className="text-theme-neutral-900">Sort by:</span>
+				<span className="text-theme-neutral-900">{t("COMMON.SORT_BY")}:</span>
 				<div className="flex items-center ml-2 divide-x divide-theme-neutral-light space-x-3">
 					{["Best", "Date", "Most Popular"].map((sortType: string, index: number) => (
 						<span className={`cursor-pointer ${index > 0 ? "pl-3" : null}`} key={index}>
 							{sortBy.type === sortType ? (
 								<span className="flex items-center text-theme-neutral-900 space-x-1">
-									<span>{sortType}</span>
+									<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 									<Icon
 										name={sortBy.direction === "asc" ? "ArrowUp" : "ArrowDown"}
 										width={7}
@@ -59,7 +66,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 									/>
 								</span>
 							) : (
-								<span>{sortType}</span>
+								<span>{t(`COMMON.${transformType(sortType)}`)}</span>
 							)}
 						</span>
 					))}

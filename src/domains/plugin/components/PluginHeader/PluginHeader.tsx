@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import Placeholder from "domains/plugin/images/placeholder.png";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { PluginSpecs } from "./components/PluginSpecs";
 
@@ -16,11 +17,13 @@ type Props = {
 };
 
 export const PluginHeader = ({ author, category, url, rating, version, size, isInstalled }: Props) => {
+	const { t } = useTranslation();
+
 	const getPluginButtons = () => {
 		if (isInstalled) {
 			return (
 				<>
-					<Button data-testid="PluginHeader__button--open">Open</Button>
+					<Button data-testid="PluginHeader__button--open">{t("COMMON.OPEN")}</Button>
 					<Button className="ml-3" data-testid="PluginHeader__button--update">
 						<Icon name="Update" />
 					</Button>
@@ -36,7 +39,7 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 
 		return (
 			<>
-				<Button data-testid="PluginHeader__button--install">Install</Button>
+				<Button data-testid="PluginHeader__button--install">{t("COMMON.INSTALL")}</Button>
 				<Button className="ml-3" data-testid="PluginHeader__button--warning" variant="plain">
 					<Icon name="Report" width={20} height={20} />
 				</Button>

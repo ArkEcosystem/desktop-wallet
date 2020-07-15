@@ -4,9 +4,8 @@ import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { TimeAgo } from "app/components/TimeAgo";
-import { useTranslation } from "react-i18next";
-
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Asset = {
 	icon: string;
