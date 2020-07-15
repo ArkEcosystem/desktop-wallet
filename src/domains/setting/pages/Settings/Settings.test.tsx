@@ -1,10 +1,21 @@
+/* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
+import { StubStorage } from "tests/mocks";
 
 import { Settings } from "./Settings";
 
+let env: any;
+
 describe("Settings", () => {
+	beforeEach(() => {
+		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<Settings />);
 
