@@ -17,6 +17,27 @@ exports[`Formatted Address should render address only 1`] = `
 </div>
 `;
 
+exports[`Formatted Address should render with normal font 1`] = `
+<div>
+  <div
+    class="inline-block truncate align-middle"
+  >
+    <span
+      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-normal text-base"
+      data-testid="address__wallet-name"
+    >
+      Sample Wallet
+    </span>
+    <span
+      class="sc-AxjAm StDqN text-theme-neutral-light font-normal text-base"
+      data-testid="address__wallet-address"
+    >
+      ASuusX…GQ3kqT
+    </span>
+  </div>
+</div>
+`;
+
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
   <div
