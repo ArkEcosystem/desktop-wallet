@@ -193,7 +193,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Profile Name" />
 								<Input
 									type="text"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Profile Name is required" })}
 									data-testid="General-settings__input--name"
 								/>
 								<FormHelperText />
@@ -203,7 +203,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Passphrase Language" />
 								<Select
 									placeholder="Select Passphrase Language"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Passphrase Language is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -216,7 +216,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Currency" />
 								<Select
 									placeholder="Select Currency"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Currency is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -231,7 +231,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Language" />
 								<Select
 									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Language is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -244,7 +244,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Market Provider" />
 								<Select
 									placeholder="Select Market Provider"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Market Provider is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -257,7 +257,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormLabel label="Time Format" />
 								<Select
 									placeholder="Select Time Format"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Time Format is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
