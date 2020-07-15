@@ -9,6 +9,7 @@ import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 const { WelcomeBanner } = images.profile.pages.welcome;
 
@@ -23,6 +24,8 @@ export const Welcome = () => {
 	const [profiles, setProfiles] = React.useState<Profile[]>([]);
 
 	React.useEffect(() => {
+		setScreenshotProtection(true);
+
 		if (env) {
 			setProfiles(env.profiles().all());
 		}
