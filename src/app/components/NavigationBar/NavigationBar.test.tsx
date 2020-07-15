@@ -8,10 +8,10 @@ import { env } from "utils/testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
-describe("NavigationBar", () => {
-	const history = createMemoryHistory();
-	let profile: Profile;
+const history = createMemoryHistory();
+let profile: Profile;
 
+describe("NavigationBar", () => {
 	beforeAll(() => {
 		profile = env.profiles().create("Jane Doe");
 	});

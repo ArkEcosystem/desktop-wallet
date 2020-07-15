@@ -3,12 +3,12 @@ import { fireEvent, render } from "testing-library";
 
 import { MnemonicVerification } from "./MnemonicVerification";
 
-describe("MnemonicVerification", () => {
-	const mnemonic = "ark btc usd bnb eth ltc";
-	const mnemonicWords = mnemonic.split(" ");
-	const limit = 6;
-	const handleComplete = jest.fn();
+const mnemonic = "ark btc usd bnb eth ltc";
+const mnemonicWords = mnemonic.split(" ");
+const limit = 6;
+const handleComplete = jest.fn();
 
+describe("MnemonicVerification", () => {
 	it("should verify mnemonic", () => {
 		const wordPositions = [1, 2, 3];
 

@@ -74,7 +74,7 @@ exports[`AddRecipient should render 1`] = `
         </div>
         <div>
           <div
-            class="text-left w-full flex items-center relative"
+            class="relative flex items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -92,7 +92,7 @@ exports[`AddRecipient should render 1`] = `
               value=""
             />
             <div
-              class="absolute flex items-center right-4 space-x-3 cursor-pointer"
+              class="absolute flex items-center cursor-pointer right-4 space-x-3"
               data-testid="SelectRecipient__select-contact"
             >
               <div
@@ -224,7 +224,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         </div>
         <div>
           <div
-            class="text-left w-full flex items-center relative"
+            class="relative flex items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -242,7 +242,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
               value=""
             />
             <div
-              class="absolute flex items-center right-4 space-x-3 cursor-pointer"
+              class="absolute flex items-center cursor-pointer right-4 space-x-3"
               data-testid="SelectRecipient__select-contact"
             >
               <div
@@ -374,7 +374,7 @@ exports[`AddRecipient should render without recipients 1`] = `
         </div>
         <div>
           <div
-            class="text-left w-full flex items-center relative"
+            class="relative flex items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -392,7 +392,7 @@ exports[`AddRecipient should render without recipients 1`] = `
               value=""
             />
             <div
-              class="absolute flex items-center right-4 space-x-3 cursor-pointer"
+              class="absolute flex items-center cursor-pointer right-4 space-x-3"
               data-testid="SelectRecipient__select-contact"
             >
               <div
@@ -524,7 +524,7 @@ exports[`AddRecipient should set available amount 1`] = `
         </div>
         <div>
           <div
-            class="text-left w-full flex items-center relative"
+            class="relative flex items-center w-full text-left"
             data-testid="SelectRecipient__wrapper"
           >
             <div
@@ -542,7 +542,7 @@ exports[`AddRecipient should set available amount 1`] = `
               value=""
             />
             <div
-              class="absolute flex items-center right-4 space-x-3 cursor-pointer"
+              class="absolute flex items-center cursor-pointer right-4 space-x-3"
               data-testid="SelectRecipient__select-contact"
             >
               <div

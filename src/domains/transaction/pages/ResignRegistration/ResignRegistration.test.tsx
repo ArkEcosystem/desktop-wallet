@@ -6,14 +6,16 @@ import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { ResignRegistration } from "../ResignRegistration";
 
+let rendered: RenderResult;
+let defaultFormValues = {};
+
+const history = createMemoryHistory();
+const resignRegistrationURL = "/profiles/qwe123/transactions/resignation";
+
 describe("ResignRegistration", () => {
-	let rendered: RenderResult;
-	let defaultFormValues = {};
-
-	const history = createMemoryHistory();
-	const resignRegistrationURL = "/profiles/qwe123/transactions/resignation";
-
-	history.push(resignRegistrationURL);
+	beforeAll(() => {
+		history.push(resignRegistrationURL);
+	});
 
 	beforeEach(() => {
 		defaultFormValues = {
