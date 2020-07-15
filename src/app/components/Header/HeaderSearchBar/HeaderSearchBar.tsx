@@ -77,7 +77,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 
 					<div className="mx-4">
 						<Input
-							className="HeaderSearchBar__input pt-2 border-none shadow-none"
+							className="pt-2 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
