@@ -8,16 +8,16 @@ import { identity } from "tests/fixtures/identity";
 
 import { Registration } from "./Registration";
 
+let rendered: RenderResult;
+let defaultFormValues = {};
+
 describe("Registration", () => {
-	let rendered: RenderResult;
-	let defaultFormValues = {};
-
-	const history = createMemoryHistory();
-	const registrationURL = `/profiles/${identity.profiles.bob.id}/transactions/registration`;
-
-	history.push(registrationURL);
-
 	beforeEach(() => {
+		const history = createMemoryHistory();
+		const registrationURL = `/profiles/${identity.profiles.bob.id}/transactions/registration`;
+
+		history.push(registrationURL);
+
 		defaultFormValues = {
 			networks: [
 				{

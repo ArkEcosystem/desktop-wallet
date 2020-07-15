@@ -3,11 +3,11 @@ import { fireEvent, render } from "testing-library";
 
 import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
 
-describe("MnemonicVerificationOptions", () => {
-	const options = ["a", "b", "c", "d"];
-	const answer = "b";
-	const limit = 2;
+const options = ["a", "b", "c", "d"];
+const answer = "b";
+const limit = 2;
 
+describe("MnemonicVerificationOptions", () => {
 	it("should render options", () => {
 		const handleChange = jest.fn();
 		const { getAllByTestId } = render(

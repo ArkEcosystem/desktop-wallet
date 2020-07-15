@@ -3,9 +3,9 @@ import { render } from "testing-library";
 
 import { DeleteResource } from "./DeleteResource";
 
-describe("DeleteResource", () => {
-	const onDelete = jest.fn();
+const onDelete = jest.fn();
 
+describe("DeleteResource", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<DeleteResource title="Title" isOpen={false} onDelete={onDelete} />);
 
