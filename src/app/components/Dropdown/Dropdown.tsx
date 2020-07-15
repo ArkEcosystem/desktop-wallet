@@ -40,6 +40,7 @@ const renderOptions = (options: any[], onSelect: any) => (
 				data-testid={`dropdown__option--${key}`}
 				onClick={(e: any) => {
 					onSelect(option);
+					e.preventDefault();
 					e.stopPropagation();
 				}}
 			>
@@ -93,6 +94,7 @@ export const Dropdown = ({
 
 	const toggle = (e: any) => {
 		setIsOpen(!isOpen);
+		e.preventDefault();
 		e.stopPropagation();
 	};
 	const hide = () => setIsOpen(false);

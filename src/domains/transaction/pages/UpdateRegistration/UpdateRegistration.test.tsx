@@ -7,16 +7,16 @@ import { identity } from "tests/fixtures/identity";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
+let rendered: RenderResult;
+let defaultFormValues = {};
+
 describe("UpdateRegistration", () => {
-	let rendered: RenderResult;
-	let defaultFormValues = {};
-
-	const history = createMemoryHistory();
-	const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
-
-	history.push(updateRegistrationURL);
-
 	beforeEach(() => {
+		const history = createMemoryHistory();
+		const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
+
+		history.push(updateRegistrationURL);
+
 		defaultFormValues = {
 			onDownload: jest.fn(),
 		};

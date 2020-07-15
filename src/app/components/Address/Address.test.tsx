@@ -3,9 +3,9 @@ import { render } from "testing-library";
 
 import { Address } from "./Address";
 
-describe("Formatted Address", () => {
-	const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
+const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
 
+describe("Formatted Address", () => {
 	it("should render address only", () => {
 		const { container } = render(<Address address={sampleAddress} />);
 		expect(container).toMatchSnapshot();

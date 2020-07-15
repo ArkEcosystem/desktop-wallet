@@ -297,7 +297,7 @@ exports[`Registration should render 1st step 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoNJl gWfKwl mt-8"
+                      class="sc-fzoXWK hFpznB mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -428,7 +428,7 @@ exports[`Registration should render 1st step 1`] = `
                         </div>
                       </fieldset>
                       <fieldset
-                        class="sc-AxhCb ckQmOL relative h-20 mt-8"
+                        class="sc-AxhCb ckQmOL relative mt-8"
                       >
                         <div
                           class="mb-2"
@@ -443,51 +443,40 @@ exports[`Registration should render 1st step 1`] = `
                           </label>
                         </div>
                         <div
-                          class="sc-fzozJi OgXfh ProfileFormField__select-contact select-transparent"
+                          data-testid="Registration__address-field"
                         >
-                          <div
-                            class="sc-fzozJi OgXfh"
-                          >
-                            <select
-                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="ProfileFormField__select-address"
-                              name="address"
-                            >
-                              <option
-                                disabled=""
-                                selected=""
-                                value=""
-                              >
-                                 
-                              </option>
-                              <option
-                                data-testid="ProfileFormField__profile-select"
-                                value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                              >
-                                My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                              </option>
-                            </select>
-                            <div
-                              class="sc-AxheI sc-AxmLO jcthaj w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                          <div>
+                            <button
+                              class="sc-fzqARJ dKMWCk SelectAddress  "
+                              data-testid="SelectAddress__wrapper"
+                              type="button"
                             >
                               <div
-                                class="sc-AxhUy cPXLjK"
-                                height="1em"
-                                width="1em"
+                                class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                              />
+                              <div
+                                class="absolute flex items-center right-4 space-x-3"
                               >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
+                                <div
+                                  class="sc-AxhUy hSYVGy"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    user.svg
+                                  </svg>
+                                </div>
                               </div>
-                            </div>
+                            </button>
+                            <input
+                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                              data-testid="SelectAddress__input"
+                              name="address"
+                              readonly=""
+                              type="text"
+                              value=""
+                            />
                           </div>
-                        </div>
-                        <div
-                          class="absolute ml-4 -mt-10"
-                        >
-                          <div
-                            class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                          />
                         </div>
                       </fieldset>
                       <fieldset
@@ -969,7 +958,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoNJl arQzH font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1014,7 +1003,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoNJl arQzH font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1059,7 +1048,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoNJl arQzH font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -3293,7 +3282,7 @@ exports[`Registration should select registration type 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoNJl gWfKwl mt-8"
+                      class="sc-fzoXWK hFpznB mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -3424,7 +3413,7 @@ exports[`Registration should select registration type 1`] = `
                         </div>
                       </fieldset>
                       <fieldset
-                        class="sc-AxhCb ckQmOL relative h-20 mt-8"
+                        class="sc-AxhCb ckQmOL relative mt-8"
                       >
                         <div
                           class="mb-2"
@@ -3439,51 +3428,40 @@ exports[`Registration should select registration type 1`] = `
                           </label>
                         </div>
                         <div
-                          class="sc-fzozJi OgXfh ProfileFormField__select-contact select-transparent"
+                          data-testid="Registration__address-field"
                         >
-                          <div
-                            class="sc-fzozJi OgXfh"
-                          >
-                            <select
-                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="ProfileFormField__select-address"
-                              name="address"
-                            >
-                              <option
-                                disabled=""
-                                selected=""
-                                value=""
-                              >
-                                 
-                              </option>
-                              <option
-                                data-testid="ProfileFormField__profile-select"
-                                value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                              >
-                                My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                              </option>
-                            </select>
-                            <div
-                              class="sc-AxheI sc-AxmLO jcthaj w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                          <div>
+                            <button
+                              class="sc-fzqARJ dKMWCk SelectAddress  "
+                              data-testid="SelectAddress__wrapper"
+                              type="button"
                             >
                               <div
-                                class="sc-AxhUy cPXLjK"
-                                height="1em"
-                                width="1em"
+                                class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                              />
+                              <div
+                                class="absolute flex items-center right-4 space-x-3"
                               >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
+                                <div
+                                  class="sc-AxhUy hSYVGy"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    user.svg
+                                  </svg>
+                                </div>
                               </div>
-                            </div>
+                            </button>
+                            <input
+                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                              data-testid="SelectAddress__input"
+                              name="address"
+                              readonly=""
+                              type="text"
+                              value=""
+                            />
                           </div>
-                        </div>
-                        <div
-                          class="absolute ml-4 -mt-10"
-                        >
-                          <div
-                            class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                          />
                         </div>
                       </fieldset>
                       <fieldset
@@ -3885,7 +3863,7 @@ exports[`Registration should should go back 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoNJl gWfKwl mt-8"
+                      class="sc-fzoXWK hFpznB mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -4016,7 +3994,7 @@ exports[`Registration should should go back 1`] = `
                         </div>
                       </fieldset>
                       <fieldset
-                        class="sc-AxhCb ckQmOL relative h-20 mt-8"
+                        class="sc-AxhCb ckQmOL relative mt-8"
                       >
                         <div
                           class="mb-2"
@@ -4031,51 +4009,40 @@ exports[`Registration should should go back 1`] = `
                           </label>
                         </div>
                         <div
-                          class="sc-fzozJi OgXfh ProfileFormField__select-contact select-transparent"
+                          data-testid="Registration__address-field"
                         >
-                          <div
-                            class="sc-fzozJi OgXfh"
-                          >
-                            <select
-                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                              data-testid="ProfileFormField__select-address"
-                              name="address"
-                            >
-                              <option
-                                disabled=""
-                                selected=""
-                                value=""
-                              >
-                                 
-                              </option>
-                              <option
-                                data-testid="ProfileFormField__profile-select"
-                                value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                              >
-                                My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                              </option>
-                            </select>
-                            <div
-                              class="sc-AxheI sc-AxmLO jcthaj w-12 text-lg pointer-events-none text-theme-neutral-dark"
+                          <div>
+                            <button
+                              class="sc-fzqARJ dKMWCk SelectAddress  "
+                              data-testid="SelectAddress__wrapper"
+                              type="button"
                             >
                               <div
-                                class="sc-AxhUy cPXLjK"
-                                height="1em"
-                                width="1em"
+                                class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                              />
+                              <div
+                                class="absolute flex items-center right-4 space-x-3"
                               >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
+                                <div
+                                  class="sc-AxhUy hSYVGy"
+                                  height="20"
+                                  width="20"
+                                >
+                                  <svg>
+                                    user.svg
+                                  </svg>
+                                </div>
                               </div>
-                            </div>
+                            </button>
+                            <input
+                              class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                              data-testid="SelectAddress__input"
+                              name="address"
+                              readonly=""
+                              type="text"
+                              value=""
+                            />
                           </div>
-                        </div>
-                        <div
-                          class="absolute ml-4 -mt-10"
-                        >
-                          <div
-                            class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                          />
                         </div>
                       </fieldset>
                       <fieldset
