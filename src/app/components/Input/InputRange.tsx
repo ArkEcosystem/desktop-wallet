@@ -41,7 +41,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 					}}
 					magnitude={magnitude}
 					type="text"
-					value={rangeValues[0]}
+					value={values[0]}
 					ref={ref}
 					onChange={handleInput}
 				/>
