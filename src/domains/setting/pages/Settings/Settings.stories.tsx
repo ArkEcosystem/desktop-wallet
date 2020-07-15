@@ -9,7 +9,7 @@ import { Settings } from "./Settings";
 
 export default { title: "Domains / Setting / Pages / Settings" };
 
-export const GeneralSettings = () => {
+export const Default = () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 	return (
