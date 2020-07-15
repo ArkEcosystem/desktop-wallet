@@ -74,7 +74,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
 		const profile = env.profiles().create(name);
 		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
-		profile.settings().set(ProfileSetting.ChartCurrency, currency);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
 		await env.persist();

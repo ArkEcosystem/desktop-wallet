@@ -7,7 +7,7 @@ exports[`Transaction Send should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -103,15 +103,22 @@ exports[`Transaction Send should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                aria-current="page"
+                class="active"
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -119,15 +126,22 @@ exports[`Transaction Send should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -218,7 +232,7 @@ exports[`Transaction Send should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -230,7 +244,7 @@ exports[`Transaction Send should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -357,7 +371,7 @@ exports[`Transaction Send should render 1`] = `
                             </div>
                           </fieldset>
                           <fieldset
-                            class="sc-AxhCb ckQmOL relative h-20 "
+                            class="sc-AxhCb ckQmOL relative mt-1"
                           >
                             <div
                               class="mb-2"
@@ -372,88 +386,44 @@ exports[`Transaction Send should render 1`] = `
                               </label>
                             </div>
                             <div
-                              class="sc-fzozJi OgXfh ProfileFormField__select-contact select-transparent"
+                              data-testid="sender-address"
                             >
-                              <div
-                                class="sc-fzozJi OgXfh"
-                              >
-                                <select
-                                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                                  data-testid="ProfileFormField__select-sender"
+                              <div>
+                                <button
+                                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                                  data-testid="SelectAddress__wrapper"
+                                >
+                                  <div
+                                    class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                  />
+                                  <div
+                                    class="absolute flex items-center right-4 space-x-3"
+                                  >
+                                    <div
+                                      class="sc-AxhUy hSYVGy"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        user.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                                <input
+                                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                                  data-testid="SelectAddress__input"
                                   name="sender"
-                                >
-                                  <option
-                                    disabled=""
-                                    selected=""
-                                    value=""
-                                  >
-                                     
-                                  </option>
-                                  <option
-                                    data-testid="ProfileFormField__profile-select"
-                                    value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                                  >
-                                    My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                                  </option>
-                                </select>
-                                <div
-                                  class="sc-AxheI sc-AxmLO jcthaj w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                                >
-                                  <div
-                                    class="sc-AxhUy cPXLjK"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      chevron-down.svg
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                class="sc-AxheI sc-AxmLO jcthaj"
-                              >
-                                <button
-                                  class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-                                >
-                                  <div
-                                    class="sc-AxhUy hSYVGy"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      user.svg
-                                    </svg>
-                                  </div>
-                                </button>
-                                <div
-                                  class="sc-fznKkj kZHPHw border-theme-neutral-300"
-                                  type="vertical"
+                                  readonly=""
+                                  type="text"
+                                  value=""
                                 />
-                                <button
-                                  class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-                                >
-                                  <div
-                                    class="sc-AxhUy hSYVGy"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      receive.svg
-                                    </svg>
-                                  </div>
-                                </button>
                               </div>
-                            </div>
-                            <div
-                              class="absolute ml-4 -mt-10"
-                            >
-                              <div
-                                class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
-                              />
                             </div>
                           </fieldset>
-                          <div>
+                          <div
+                            data-testid="recipient-address"
+                          >
                             <div
                               class="sc-fzqNqU dvvARi"
                             >
@@ -708,7 +678,7 @@ exports[`Transaction Send should render 1`] = `
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -716,7 +686,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -724,7 +694,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -866,7 +836,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="sc-AxhCb ckQmOL relative h-20 "
+            class="sc-AxhCb ckQmOL relative mt-1"
           >
             <div
               class="mb-2"
@@ -881,88 +851,44 @@ exports[`Transaction Send should render 1st step 1`] = `
               </label>
             </div>
             <div
-              class="sc-fzozJi OgXfh ProfileFormField__select-contact select-transparent"
+              data-testid="sender-address"
             >
-              <div
-                class="sc-fzozJi OgXfh"
-              >
-                <select
-                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                  data-testid="ProfileFormField__select-sender"
+              <div>
+                <button
+                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                  data-testid="SelectAddress__wrapper"
+                >
+                  <div
+                    class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                  />
+                  <div
+                    class="absolute flex items-center right-4 space-x-3"
+                  >
+                    <div
+                      class="sc-AxhUy hSYVGy"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <input
+                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  data-testid="SelectAddress__input"
                   name="sender"
-                >
-                  <option
-                    disabled=""
-                    selected=""
-                    value=""
-                  >
-                     
-                  </option>
-                  <option
-                    data-testid="ProfileFormField__profile-select"
-                    value="FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ"
-                  >
-                    My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ
-                  </option>
-                </select>
-                <div
-                  class="sc-AxheI sc-AxmLO jcthaj w-12 text-lg pointer-events-none text-theme-neutral-dark"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="sc-AxheI sc-AxmLO jcthaj"
-              >
-                <button
-                  class="px-3 pr-2 text-theme-primary-300 focus:outline-none"
-                >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      user.svg
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  class="sc-fznKkj kZHPHw border-theme-neutral-300"
-                  type="vertical"
+                  readonly=""
+                  type="text"
+                  value=""
                 />
-                <button
-                  class="pl-2 pr-4 text-theme-primary-300 focus:outline-none"
-                >
-                  <div
-                    class="sc-AxhUy hSYVGy"
-                    height="20"
-                    width="20"
-                  >
-                    <svg>
-                      receive.svg
-                    </svg>
-                  </div>
-                </button>
               </div>
-            </div>
-            <div
-              class="absolute ml-4 -mt-10"
-            >
-              <div
-                class="sc-AxiKw cxOZEi mt-px bg-theme-neutral-200 border-theme-neutral-200"
-              />
             </div>
           </fieldset>
-          <div>
+          <div
+            data-testid="recipient-address"
+          >
             <div
               class="sc-fzqNqU dvvARi"
             >
@@ -1217,7 +1143,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1225,7 +1151,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1233,7 +1159,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1383,7 +1309,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           >
             <img
               alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
               title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
             />
           </div>
@@ -1404,7 +1330,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="sc-fznJRM clPBLO"
+              class="sc-fznWqX bzgpXZ"
             >
               <div
                 class="sc-fzqBZW cBnliu"
@@ -1480,7 +1406,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
                               title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1538,7 +1464,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1596,7 +1522,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1654,7 +1580,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1919,7 +1845,7 @@ exports[`Transaction Send should render 4th step 1`] = `
         class="inline-flex items-center justify-center w-full mt-8 space-x-3"
       >
         <div
-          class="sc-fznxsB cntyly"
+          class="sc-fznJRM ffCWyi"
           color="primary"
         />
         <span
@@ -2166,7 +2092,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             >
               <img
                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
               />
             </div>

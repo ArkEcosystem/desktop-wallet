@@ -35,7 +35,7 @@ exports[`WalletListItem should render 1`] = `
               >
                 <img
                   alt=""
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                   title=""
                 />
               </div>
@@ -46,10 +46,10 @@ exports[`WalletListItem should render 1`] = `
           class="py-1"
         />
         <td
-          class="py-1 text-sm font-bold"
+          class="py-1 text-sm font-bold text-center space-x-2"
         >
           <div
-            class="inline-block mr-2 align-middle text-theme-warning-400"
+            class="inline-block align-middle text-theme-warning-400"
           >
             <div
               class="sc-AxhCb kAKLDr"
@@ -62,7 +62,7 @@ exports[`WalletListItem should render 1`] = `
             </div>
           </div>
           <div
-            class="inline-block mr-2 align-middle text-theme-neutral-600"
+            class="inline-block align-middle text-theme-neutral-600"
           >
             <div
               class="sc-AxhCb kAKLDr"
@@ -125,7 +125,7 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
               >
                 <img
                   alt=""
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                   title=""
                 />
               </div>
@@ -136,7 +136,7 @@ exports[`WalletListItem should render a button if variant is 'singleAction' 1`] 
           class="py-1"
         />
         <td
-          class="py-1 text-sm font-bold"
+          class="py-1 text-sm font-bold text-center space-x-2"
         />
         <td
           class="font-semibold text-right"

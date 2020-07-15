@@ -3,7 +3,9 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { BlockchainTable } from "./components/BlockchainTable";
 import { BusinessTable } from "./components/BusinessTable";
@@ -66,13 +68,22 @@ const renderRegistration = ({ type, registrations }: RegistrationProps, handleDr
 };
 
 export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
 	const mountRegistrations = () =>
 		registrations.map((registrationsBlock: any) => {
 			return renderRegistration(registrationsBlock, handleDropdown);
 		});
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<Page>
+		<Page crumbs={crumbs}>
 			<Section>
 				<Header
 					title="My Registrations"
@@ -81,7 +92,13 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 						<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
 							<HeaderSearchBar onSearch={console.log} />
 							<div className="pl-10">
-								<Button>Register</Button>
+								<Button
+									onClick={() =>
+										history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
+									}
+								>
+									Register
+								</Button>
 							</div>
 						</div>
 					}

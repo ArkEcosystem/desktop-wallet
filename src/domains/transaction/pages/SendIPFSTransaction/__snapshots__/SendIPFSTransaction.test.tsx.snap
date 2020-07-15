@@ -7,7 +7,7 @@ exports[`SendIPFSTransaction should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -103,15 +103,20 @@ exports[`SendIPFSTransaction should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -119,15 +124,22 @@ exports[`SendIPFSTransaction should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -230,7 +242,7 @@ exports[`SendIPFSTransaction should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -381,7 +393,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   >
                                     <img
                                       alt="test"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                                       title="test"
                                     />
                                   </div>
@@ -499,7 +511,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                 >
                                   <button
                                     aria-checked="true"
-                                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                   >
@@ -507,7 +519,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                   >
@@ -515,7 +527,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                                   </button>
                                   <button
                                     aria-checked="false"
-                                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                     data-testid="SelectionBarOption"
                                     role="radio"
                                   >
@@ -682,7 +694,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   >
                     <img
                       alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                       title="test"
                     />
                   </div>
@@ -800,7 +812,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -808,7 +820,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -816,7 +828,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fzoXzr gbFrGb relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -931,7 +943,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           >
             <img
               alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
               title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
             />
           </div>
@@ -1359,7 +1371,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             >
               <img
                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
               />
             </div>

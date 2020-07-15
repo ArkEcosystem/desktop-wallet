@@ -18,6 +18,7 @@ type Props = {
 	name?: string | undefined;
 	publicKey?: string | undefined;
 	onCopy?: () => void;
+	onSignMessage: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
 };
@@ -31,6 +32,7 @@ export const WalletHeader = ({
 	onSend,
 	onStar,
 	onCopy,
+	onSignMessage,
 	balance,
 	currencyBalance,
 	isLedger,
@@ -90,6 +92,10 @@ export const WalletHeader = ({
 									{ label: "Delete", value: "delete" },
 								]}
 								onSelect={(option: any) => {
+									if (option.value === "sign-message") {
+										return onSignMessage();
+									}
+
 									if (option.value === "delete") {
 										console.log(option);
 									}

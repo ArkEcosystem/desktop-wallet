@@ -10,6 +10,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
@@ -174,6 +175,7 @@ type Props = {
 
 export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
+	const activeProfile = useActiveProfile();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -185,7 +187,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];

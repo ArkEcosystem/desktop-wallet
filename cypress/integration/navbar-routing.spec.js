@@ -20,6 +20,11 @@ describe("NavBar Routing", () => {
 		cy.get("h1").contains("Blockchain News");
 	});
 
+	it("should navigate to transaction send page", () => {
+		cy.get("[data-testid=navbar__buttons--send]").click();
+		cy.get("p").contains("Enter details to send your money");
+	});
+
 	it("should navigate to portfolio", () => {
 		cy.get("a").contains("Go back to Portfolio").click();
 		cy.get("div").contains("Wallets");

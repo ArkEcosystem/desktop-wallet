@@ -7,11 +7,12 @@ import { identity } from "tests/fixtures/identity";
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-const history = createMemoryHistory();
+let history;
 const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
 describe("Welcome", () => {
-	beforeAll(() => {
+	beforeEach(() => {
+		history = createMemoryHistory();
 		history.push(registrationsURL);
 	});
 
@@ -59,6 +60,26 @@ describe("Welcome", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should redirect to registration page", () => {
+		const { asFragment, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/registrations">
+				<MyRegistrations registrations={[{ type: "unknow", registrations: [] }]} />
+			</Route>,
+			{
+				routes: [registrationsURL],
+				history,
+			},
+		);
+
+		const registerButton = getByText("Register");
+		act(() => {
+			fireEvent.click(registerButton);
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
 	});
 
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {

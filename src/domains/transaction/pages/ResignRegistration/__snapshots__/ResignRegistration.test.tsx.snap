@@ -7,7 +7,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -58,15 +58,20 @@ exports[`ResignRegistration should render 1st step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -74,15 +79,22 @@ exports[`ResignRegistration should render 1st step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -185,7 +197,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -312,7 +324,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                           >
                             <img
                               alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                               title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                             />
                           </div>
@@ -412,7 +424,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                   >
                                     <button
                                       aria-checked="true"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -420,7 +432,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -428,7 +440,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -482,7 +494,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -533,15 +545,20 @@ exports[`ResignRegistration should render 2nd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -549,15 +566,22 @@ exports[`ResignRegistration should render 2nd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -660,7 +684,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -804,7 +828,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                           >
                             <img
                               alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                               title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                             />
                           </div>
@@ -946,7 +970,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -997,15 +1021,20 @@ exports[`ResignRegistration should render 3rd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1013,15 +1042,22 @@ exports[`ResignRegistration should render 3rd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1124,7 +1160,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1309,7 +1345,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1360,15 +1396,20 @@ exports[`ResignRegistration should render 4th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1376,15 +1417,22 @@ exports[`ResignRegistration should render 4th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1487,7 +1535,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1755,7 +1803,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             >
                               <img
                                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                               />
                             </div>
@@ -1899,7 +1947,7 @@ exports[`ResignRegistration should should go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1950,15 +1998,20 @@ exports[`ResignRegistration should should go back 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1966,15 +2019,22 @@ exports[`ResignRegistration should should go back 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2077,7 +2137,7 @@ exports[`ResignRegistration should should go back 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2204,7 +2264,7 @@ exports[`ResignRegistration should should go back 1`] = `
                           >
                             <img
                               alt="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                               title="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                             />
                           </div>
@@ -2304,7 +2364,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                   >
                                     <button
                                       aria-checked="true"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -2312,7 +2372,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -2320,7 +2380,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -2374,7 +2434,7 @@ exports[`ResignRegistration should submit 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -2425,15 +2485,20 @@ exports[`ResignRegistration should submit 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2441,15 +2506,22 @@ exports[`ResignRegistration should submit 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhUy gdidrx"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2552,7 +2624,7 @@ exports[`ResignRegistration should submit 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2820,7 +2892,7 @@ exports[`ResignRegistration should submit 1`] = `
                             >
                               <img
                                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                               />
                             </div>

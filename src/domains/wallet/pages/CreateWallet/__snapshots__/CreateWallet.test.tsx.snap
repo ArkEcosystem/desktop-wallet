@@ -7,7 +7,7 @@ exports[`CreateWallet should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoXzr jIqCXK"
+      class="sc-fzpjYC ljKpBB"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -103,15 +103,20 @@ exports[`CreateWallet should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxjAm jmgDQY"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxjAm jmgDQY"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -119,15 +124,22 @@ exports[`CreateWallet should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxjAm jmgDQY"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxjAm jmgDQY"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -230,7 +242,7 @@ exports[`CreateWallet should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpjYC deOkAw flex-1"
+        class="sc-fznxsB dCHLWP flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"

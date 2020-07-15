@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 type ReceiveFundsProps = {
 	isOpen: boolean;
 	wallet: any;
-	qrCode: string;
-	onCopy: () => void;
+	qrCode?: string;
+	onCopy?: () => void;
 	handleClose?: any;
 };
 

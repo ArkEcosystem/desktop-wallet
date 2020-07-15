@@ -7,7 +7,7 @@ exports[`Registration should render 1st step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -103,15 +103,20 @@ exports[`Registration should render 1st step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -119,15 +124,22 @@ exports[`Registration should render 1st step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -218,7 +230,7 @@ exports[`Registration should render 1st step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -230,7 +242,7 @@ exports[`Registration should render 1st step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -285,7 +297,7 @@ exports[`Registration should render 1st step 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -514,14 +526,14 @@ exports[`Registration should render 1st step 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                                  class="sc-fzoXzr hZotGJ   "
+                                  class="sc-fzpjYC gvgELO   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-1-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-1-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-1-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -585,7 +597,7 @@ exports[`Registration should render 2nd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -681,15 +693,20 @@ exports[`Registration should render 2nd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -697,15 +714,22 @@ exports[`Registration should render 2nd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -796,7 +820,7 @@ exports[`Registration should render 2nd step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -808,7 +832,7 @@ exports[`Registration should render 2nd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -945,7 +969,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -990,7 +1014,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1035,7 +1059,7 @@ exports[`Registration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzqNqU kDja-dn font-normal"
+                              class="sc-fzoyTs jtaqfF font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
@@ -1146,7 +1170,7 @@ exports[`Registration should render 2nd step 1`] = `
                                   >
                                     <button
                                       aria-checked="true"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1154,7 +1178,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1162,7 +1186,7 @@ exports[`Registration should render 2nd step 1`] = `
                                     </button>
                                     <button
                                       aria-checked="false"
-                                      class="sc-fznxsB eeiEez relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      class="sc-fznJRM GEwlz relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                       data-testid="SelectionBarOption"
                                       role="radio"
                                     >
@@ -1215,7 +1239,7 @@ exports[`Registration should render 3rd step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1311,15 +1335,20 @@ exports[`Registration should render 3rd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1327,15 +1356,22 @@ exports[`Registration should render 3rd step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1426,7 +1462,7 @@ exports[`Registration should render 3rd step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1438,7 +1474,7 @@ exports[`Registration should render 3rd step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1591,7 +1627,7 @@ exports[`Registration should render 3rd step 1`] = `
                           >
                             <img
                               alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                               title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                             />
                           </div>
@@ -1851,7 +1887,7 @@ exports[`Registration should render 4th step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1947,15 +1983,20 @@ exports[`Registration should render 4th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1963,15 +2004,22 @@ exports[`Registration should render 4th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2062,7 +2110,7 @@ exports[`Registration should render 4th step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2074,7 +2122,7 @@ exports[`Registration should render 4th step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2262,7 +2310,7 @@ exports[`Registration should render 5th step 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -2358,15 +2406,20 @@ exports[`Registration should render 5th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2374,15 +2427,22 @@ exports[`Registration should render 5th step 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -2473,7 +2533,7 @@ exports[`Registration should render 5th step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2485,7 +2545,7 @@ exports[`Registration should render 5th step 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2756,7 +2816,7 @@ exports[`Registration should render 5th step 1`] = `
                             >
                               <img
                                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                               />
                             </div>
@@ -2943,7 +3003,7 @@ exports[`Registration should select registration type 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -3039,15 +3099,20 @@ exports[`Registration should select registration type 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3055,15 +3120,22 @@ exports[`Registration should select registration type 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3154,7 +3226,7 @@ exports[`Registration should select registration type 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3166,7 +3238,7 @@ exports[`Registration should select registration type 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3221,7 +3293,7 @@ exports[`Registration should select registration type 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -3450,7 +3522,7 @@ exports[`Registration should select registration type 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-26-label downshift-26-toggle-button"
-                                  class="sc-fzoXzr hZotGJ  is-selected "
+                                  class="sc-fzpjYC gvgELO  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-26-toggle-button"
                                   type="button"
@@ -3459,7 +3531,7 @@ exports[`Registration should select registration type 1`] = `
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-26-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-26-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -3523,7 +3595,7 @@ exports[`Registration should should go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -3619,15 +3691,20 @@ exports[`Registration should should go back 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3635,15 +3712,22 @@ exports[`Registration should should go back 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3734,7 +3818,7 @@ exports[`Registration should should go back 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3746,7 +3830,7 @@ exports[`Registration should should go back 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3801,7 +3885,7 @@ exports[`Registration should should go back 1`] = `
                       Select the type of registration and the address you want to register with.
                     </div>
                     <div
-                      class="sc-fzoyTs lelLlP mt-8"
+                      class="sc-fzoNJl gWfKwl mt-8"
                     >
                       <fieldset
                         class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -4030,14 +4114,14 @@ exports[`Registration should should go back 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-6-label downshift-6-toggle-button"
-                                  class="sc-fzoXzr hZotGJ   "
+                                  class="sc-fzpjYC gvgELO   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-6-toggle-button"
                                   type="button"
                                 />
                                 <ul
                                   aria-labelledby="downshift-6-label"
-                                  class="sc-fzpjYC bqlRsk"
+                                  class="sc-fznxsB fjFRav"
                                   id="downshift-6-menu"
                                   role="listbox"
                                   tabindex="-1"
@@ -4101,7 +4185,7 @@ exports[`Registration should submit 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -4197,15 +4281,20 @@ exports[`Registration should submit 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -4213,15 +4302,22 @@ exports[`Registration should submit 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -4312,7 +4408,7 @@ exports[`Registration should submit 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -4324,7 +4420,7 @@ exports[`Registration should submit 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4595,7 +4691,7 @@ exports[`Registration should submit 1`] = `
                             >
                               <img
                                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
                               />
                             </div>

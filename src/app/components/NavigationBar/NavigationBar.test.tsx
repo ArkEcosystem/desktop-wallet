@@ -224,6 +224,98 @@ describe("NavigationBar", () => {
 		expect(history.location.pathname).toMatch(`/`);
 	});
 
+	it("should handle click to send button", () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--send");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/transactions/transfer`);
+	});
+
+	it("should handle receive funds", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--receive");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(await findByText("Select Account")).toBeTruthy();
+
+		const findItButton = getByText("Find it");
+		expect(findItButton).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(findItButton);
+		});
+
+		expect(await findByText("Receive Funds")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
+	});
+
+	it("should close the search wallet modal", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--receive");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(await findByText("Select Account")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
+	});
+
 	it("should not render if no active profile", () => {
 		const menu = [
 			{

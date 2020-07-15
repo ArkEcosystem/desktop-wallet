@@ -7,7 +7,7 @@ exports[`News should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzoyAV bqFbiw"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -104,15 +104,20 @@ exports[`News should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -120,15 +125,22 @@ exports[`News should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -157,7 +169,7 @@ exports[`News should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -174,7 +186,7 @@ exports[`News should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -231,7 +243,7 @@ exports[`News should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -271,7 +283,7 @@ exports[`News should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans bOOrfx"
+        class="sc-fzoLag jWToXo"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -283,7 +295,7 @@ exports[`News should render 1`] = `
               class="w-full grid gap-5"
             >
               <div
-                class="sc-fznZeY dzfwFi bg-theme-background"
+                class="sc-fznJRM bTIrrd bg-theme-background"
               >
                 <div
                   class="flex flex-col p-4 space-y-8"
@@ -296,7 +308,7 @@ exports[`News should render 1`] = `
                       class="flex items-center space-x-4"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ text-theme-danger-400 border-theme-danger-light"
+                        class="sc-AxhUy dSLmHc text-theme-danger-400 border-theme-danger-light"
                         data-testid="NewsCard__asset-Ark"
                       >
                         <div
@@ -344,7 +356,7 @@ exports[`News should render 1`] = `
                       class="flex flex-col justify-end"
                     >
                       <div
-                        class="sc-AxheI jcILwK"
+                        class="sc-Axmtr fNmZph"
                         color="warning"
                       >
                         <span
@@ -370,7 +382,7 @@ exports[`News should render 1`] = `
                 </div>
               </div>
               <div
-                class="sc-fznZeY dzfwFi bg-theme-background"
+                class="sc-fznJRM bTIrrd bg-theme-background"
               >
                 <div
                   class="flex flex-col p-4 space-y-8"
@@ -383,7 +395,7 @@ exports[`News should render 1`] = `
                       class="flex items-center space-x-4"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ text-theme-danger-400 border-theme-danger-light"
+                        class="sc-AxhUy dSLmHc text-theme-danger-400 border-theme-danger-light"
                         data-testid="NewsCard__asset-Ark"
                       >
                         <div
@@ -431,7 +443,7 @@ exports[`News should render 1`] = `
                       class="flex flex-col justify-end"
                     >
                       <div
-                        class="sc-AxheI jcILwK"
+                        class="sc-Axmtr fNmZph"
                         color="warning"
                       >
                         <span
@@ -539,11 +551,11 @@ exports[`News should render 1`] = `
                 class="flex justify-center w-full pt-10"
               >
                 <div
-                  class="sc-fznyAO bYbamW"
+                  class="sc-fzpjYC eZZpsH"
                   data-testid="Pagination"
                 >
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="Pagination__first"
                     disabled=""
@@ -560,7 +572,7 @@ exports[`News should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="Pagination__previous"
                     disabled=""
@@ -581,23 +593,23 @@ exports[`News should render 1`] = `
                     class="flex px-2 rounded bg-theme-primary-contrast"
                   >
                     <div
-                      class="sc-fznKkj keFDOS current-page"
+                      class="sc-fznxsB PIgKV current-page"
                     >
                       1
                     </div>
                     <div
-                      class="sc-fznKkj keFDOS"
+                      class="sc-fznxsB PIgKV"
                     >
                       2
                     </div>
                     <div
-                      class="sc-fznKkj keFDOS"
+                      class="sc-fznxsB PIgKV"
                     >
                       3
                     </div>
                   </div>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="Pagination__next"
                     type="button"
@@ -614,7 +626,7 @@ exports[`News should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="Pagination__last"
                     type="button"
@@ -646,10 +658,10 @@ exports[`News should render 1`] = `
                     class="flex items-center justify-between px-2 py-4 shadow-xl rounded-md"
                   >
                     <div
-                      class="sc-fznJRM eVyLul"
+                      class="sc-fznWqX fhAVeG"
                     >
                       <input
-                        class="sc-fzokOt lmWKce overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
+                        class="sc-fzpans gSBzfl overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none"
                         data-testid="Input"
                         placeholder="Search"
                       />
@@ -799,7 +811,7 @@ exports[`News should render 1`] = `
                             data-testid="network__option--0"
                           >
                             <div
-                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                              class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxirZ eEbZjj"
@@ -831,7 +843,7 @@ exports[`News should render 1`] = `
                             data-testid="network__option--1"
                           >
                             <div
-                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                              class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxirZ eEbZjj"
@@ -863,7 +875,7 @@ exports[`News should render 1`] = `
                             data-testid="network__option--2"
                           >
                             <div
-                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                              class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxirZ eEbZjj"
@@ -895,7 +907,7 @@ exports[`News should render 1`] = `
                             data-testid="network__option--3"
                           >
                             <div
-                              class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                              class="sc-AxhUy dSLmHc relative border-theme-success-500 text-theme-success-500"
                             >
                               <div
                                 class="sc-AxirZ eEbZjj"
@@ -926,7 +938,7 @@ exports[`News should render 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-AxmLO ipkzTu w-full"
+                      class="sc-AxhCb BegvR w-full"
                       color="primary"
                       type="button"
                     >

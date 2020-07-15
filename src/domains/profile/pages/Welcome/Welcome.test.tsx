@@ -15,7 +15,7 @@ describe("Welcome", () => {
 
 	it("should render with profiles", async () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
-		const profile = env.profiles().get(identity.profiles.bob.id);
+		const profile = env.profiles().findById(identity.profiles.bob.id);
 
 		await waitFor(async () => {
 			await expect(
