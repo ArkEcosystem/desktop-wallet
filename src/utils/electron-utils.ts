@@ -14,6 +14,10 @@ const defaultFilters = [
 ];
 
 const setScreenshotProtection = (enabled: boolean) => {
+	if (!electron.remote) {
+		return;
+	}
+
 	electron.remote.getCurrentWindow().setContentProtection(enabled);
 };
 
