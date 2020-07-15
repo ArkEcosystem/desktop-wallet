@@ -4,4 +4,9 @@ export const identity = {
 	address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 	wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
 	mnemonic: "this is a top secret passphrase",
+	profiles: {
+		bob: {
+			id: "bob",
+		},
+	},
 };

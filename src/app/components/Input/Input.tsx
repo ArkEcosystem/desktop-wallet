@@ -6,11 +6,8 @@ import { useFormField } from "../Form/useFormField";
 type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLProps<any>;
 
 const InputStyled = styled.input`
-	${tw`py-3 px-4`}
-
 	&:focus {
-		${tw`outline-none border-theme-primary border-2`}
-		padding: 11px 15px;
+		${tw`border-2 outline-none border-theme-primary`}
 	}
 	&::placeholder {
 		${tw`text-theme-neutral-light`}
@@ -32,7 +29,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		return (
 			<InputStyled
 				data-testid="Input"
-				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 ${
+				className={`overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 ${
 					className || ""
 				}`}
 				name={fieldContext?.name}

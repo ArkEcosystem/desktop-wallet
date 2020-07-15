@@ -6,9 +6,11 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
 
@@ -53,7 +55,7 @@ export const SecondStep = ({
 	onCopy,
 	onDownload,
 }: {
-	mnemonic: string[];
+	mnemonic: string;
 	onCopy: () => void;
 	onDownload: () => void;
 }) => {
@@ -106,8 +108,12 @@ export const SecondStep = ({
 	);
 };
 
-export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string[] }) => {
+export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string }) => {
 	const { register, unregister, setValue } = useFormContext();
+
+	const handleComplete = React.useCallback(() => {
+		setValue("verification", true, true);
+	}, [setValue]);
 
 	React.useEffect(() => {
 		register({ name: "verification", type: "custom" }, { required: true });
@@ -117,11 +123,7 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 		}
 
 		return () => unregister("verification");
-	}, [register, unregister, skipVerification]);
-
-	const handleComplete = () => {
-		setValue("verification", true, true);
-	};
+	}, [register, unregister, skipVerification, handleComplete]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
@@ -189,7 +191,7 @@ type Network = { name: string; icon: string };
 
 type Props = {
 	networks: Network[];
-	mnemonic: string[];
+	mnemonic: string;
 	onSubmit: (data: { network: string; name: string }) => void;
 	onCopy: () => void;
 	onDownload: () => void;
@@ -198,6 +200,7 @@ type Props = {
 
 export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload, skipMnemonicVerification }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
+	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
@@ -211,55 +214,64 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onSubmit(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={4} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onSubmit(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={4} activeIndex={activeTab} />
 
-					<div className="mt-4">
-						<TabPanel tabId={1}>
-							<FirstStep networks={networks} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-4">
+							<TabPanel tabId={1}>
+								<FirstStep networks={networks} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-10 space-x-3">
-							<Button
-								disabled={activeTab === 1}
-								data-testid="CreateWallet__back-button"
-								variant="plain"
-								onClick={handleBack}
-							>
-								Back
-							</Button>
-
-							{activeTab < 4 && (
+							<div className="flex justify-end mt-10 space-x-3">
 								<Button
-									data-testid="CreateWallet__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
+									disabled={activeTab === 1}
+									data-testid="CreateWallet__back-button"
+									variant="plain"
+									onClick={handleBack}
 								>
-									Continue
+									Back
 								</Button>
-							)}
 
-							{activeTab === 4 && (
-								<Button type="submit" data-testid="CreateWallet__save-button">
-									Save & Finish
-								</Button>
-							)}
+								{activeTab < 4 && (
+									<Button
+										data-testid="CreateWallet__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
+									</Button>
+								)}
+
+								{activeTab === 4 && (
+									<Button type="submit" data-testid="CreateWallet__save-button">
+										Save & Finish
+									</Button>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
-		</div>
+					</Tabs>
+				</Form>
+			</Section>
+		</Page>
 	);
 };

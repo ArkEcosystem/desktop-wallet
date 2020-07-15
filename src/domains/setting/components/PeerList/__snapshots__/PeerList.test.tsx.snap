@@ -4,6 +4,188 @@ exports[`PeerList should add peer 1`] = `
 <DocumentFragment>
   <div>
     <div
+      class="fixed inset-0 z-50 bg-black opacity-50"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="sc-fznyAO dWLwOg fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5"
+      >
+        <button
+          class="sc-AxjAm bThAoP"
+          color="neutral"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="p-1"
+          >
+            <div
+              class="sc-AxirZ hDwaov"
+              height="12"
+              width="12"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="py-4"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Custom Peers
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <form
+            class="space-y-8"
+            data-testid="Form"
+          >
+            <fieldset
+              class="sc-AxhUy dJlYTe mt-8"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="network"
+              >
+                Network
+              </label>
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="downshift-0-label"
+                class="relative"
+                role="combobox"
+              >
+                <label
+                  for="downshift-0-input"
+                  id="downshift-0-label"
+                />
+                <div
+                  class="relative flex items-center w-full flex-inline"
+                >
+                  <div
+                    class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  >
+                    <div
+                      class="px-4 py-2 flex-0 w-14"
+                    >
+                      <div
+                        class="sc-fznKkj bnRNAS border-theme-neutral-200"
+                      />
+                    </div>
+                    <div
+                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
+                    >
+                      <div
+                        class="relative z-10 w-full"
+                        data-testid="select-network__typeahead-"
+                      >
+                        <div
+                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                        />
+                      </div>
+                      <input
+                        aria-autocomplete="list"
+                        aria-labelledby="downshift-0-label"
+                        autocomplete="off"
+                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                        data-testid="select-asset__input"
+                        id="downshift-0-input"
+                        name="network"
+                        placeholder="Enter a network name"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="name"
+              >
+                Name
+              </label>
+              <input
+                class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                name="name"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="peer-ip"
+              >
+                Peer IP http://
+              </label>
+              <input
+                class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="Input"
+                name="peer-ip"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="peer-type"
+              >
+                Peer Type
+              </label>
+              <label
+                class="inline-flex items-center"
+                for="multisig"
+              >
+                <input
+                  class="sc-AxhCb ioKoGj"
+                  color="success"
+                  type="checkbox"
+                />
+                <span
+                  class="ml-2 text-sm font-semibold text-theme-neutral-dark"
+                >
+                  Multisig
+                </span>
+              </label>
+            </fieldset>
+            <div
+              class="float-right mt-4"
+            >
+              <button
+                class="sc-AxjAm ddQVWI"
+                color="primary"
+                data-testid="peer-list__add-button"
+                type="submit"
+              >
+                Add Peer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
       class="sc-AxiKw bvfChE"
       role="table"
     >
@@ -323,188 +505,6 @@ exports[`PeerList should add peer 1`] = `
     >
       Add Peer
     </button>
-    <div
-      class="fixed inset-0 z-50 bg-black opacity-50"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="sc-fznyAO dWLwOg fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5"
-      >
-        <button
-          class="sc-AxjAm bThAoP"
-          color="neutral"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="p-1"
-          >
-            <div
-              class="sc-AxirZ hDwaov"
-              height="12"
-              width="12"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="py-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Custom Peers
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <form
-            class="space-y-8"
-            data-testid="Form"
-          >
-            <fieldset
-              class="sc-AxhUy dJlYTe mt-8"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="network"
-              >
-                Network
-              </label>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-labelledby="downshift-0-label"
-                class="relative"
-                role="combobox"
-              >
-                <label
-                  for="downshift-0-input"
-                  id="downshift-0-label"
-                />
-                <div
-                  class="relative flex items-center w-full flex-inline"
-                >
-                  <div
-                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                  >
-                    <div
-                      class="px-4 py-2 flex-0 w-14"
-                    >
-                      <div
-                        class="sc-fznKkj bnRNAS border-theme-neutral-200"
-                      />
-                    </div>
-                    <div
-                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                    >
-                      <div
-                        class="relative z-10 w-full"
-                        data-testid="select-network__typeahead-"
-                      >
-                        <div
-                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                        />
-                      </div>
-                      <input
-                        aria-autocomplete="list"
-                        aria-labelledby="downshift-0-label"
-                        autocomplete="off"
-                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                        data-testid="select-asset__input"
-                        id="downshift-0-input"
-                        name="network"
-                        placeholder="Enter a network name"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="name"
-              >
-                Name
-              </label>
-              <input
-                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
-                data-testid="Input"
-                name="name"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="peer-ip"
-              >
-                Peer IP http://
-              </label>
-              <input
-                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
-                data-testid="Input"
-                name="peer-ip"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="peer-type"
-              >
-                Peer Type
-              </label>
-              <label
-                class="inline-flex items-center"
-                for="multisig"
-              >
-                <input
-                  class="sc-AxhCb ioKoGj"
-                  color="success"
-                  type="checkbox"
-                />
-                <span
-                  class="ml-2 text-sm font-semibold text-theme-neutral-dark"
-                >
-                  Multisig
-                </span>
-              </label>
-            </fieldset>
-            <div
-              class="float-right mt-4"
-            >
-              <button
-                class="sc-AxjAm ddQVWI"
-                color="primary"
-                data-testid="peer-list__add-button"
-                type="submit"
-              >
-                Add Peer
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
   </div>
 </DocumentFragment>
 `;

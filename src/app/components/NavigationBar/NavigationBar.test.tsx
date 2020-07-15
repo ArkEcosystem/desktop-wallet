@@ -1,20 +1,24 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentContext } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { Route } from "react-router-dom";
 import { fireEvent, renderWithRouter } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { env } from "utils/testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 describe("NavigationBar", () => {
 	const history = createMemoryHistory();
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	const profile = env.profiles().create("Jane Doe");
+	let profile: Profile;
+
+	beforeAll(() => {
+		profile = env.profiles().create("Jane Doe");
+	});
+
+	afterAll(() => {
+		env.profiles().forget(profile.id());
+	});
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<NavigationBar />);
@@ -45,11 +49,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { container } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -64,11 +66,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -94,11 +94,9 @@ describe("NavigationBar", () => {
 		];
 
 		const { getByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar menu={menu} />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar menu={menu} />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -131,11 +129,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -158,11 +154,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -185,11 +179,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -212,11 +204,9 @@ describe("NavigationBar", () => {
 		history.push(dashboardURL);
 
 		const { getByTestId, findByText } = renderWithRouter(
-			<EnvironmentContext.Provider value={env}>
-				<Route path="/profiles/:profileId/dashboard">
-					<NavigationBar />
-				</Route>
-			</EnvironmentContext.Provider>,
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
 			{
 				routes: [dashboardURL],
 				history,
@@ -232,6 +222,98 @@ describe("NavigationBar", () => {
 		expect(await findByText("Exit")).toBeTruthy();
 		fireEvent.click(await findByText("Exit"));
 		expect(history.location.pathname).toMatch(`/`);
+	});
+
+	it("should handle click to send button", () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--send");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/transactions/transfer`);
+	});
+
+	it("should handle receive funds", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--receive");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(await findByText("Select Account")).toBeTruthy();
+
+		const findItButton = getByText("Find it");
+		expect(findItButton).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(findItButton);
+		});
+
+		expect(await findByText("Receive Funds")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
+	});
+
+	it("should close the search wallet modal", async () => {
+		const dashboardURL = `/profiles/${profile.id()}/dashboard`;
+		history.push(dashboardURL);
+
+		const { getByTestId, findByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<NavigationBar />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const sendButton = getByTestId("navbar__buttons--receive");
+
+		act(() => {
+			fireEvent.click(sendButton);
+		});
+
+		expect(await findByText("Select Account")).toBeTruthy();
+
+		const modalCloseBtn = getByTestId("modal__close-btn");
+		expect(modalCloseBtn).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(modalCloseBtn);
+		});
 	});
 
 	it("should not render if no active profile", () => {

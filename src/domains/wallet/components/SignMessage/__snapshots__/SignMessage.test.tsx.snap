@@ -98,11 +98,11 @@ exports[`SignMessage should render as signed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full overflow-hidden rounded-full"
+                    class="w-full h-full"
                   >
                     <img
                       alt="test"
@@ -146,7 +146,7 @@ exports[`SignMessage should render as signed 1`] = `
                   class="font-semibold"
                 >
                   <textarea
-                    class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 mt-2 rounded-lg"
+                    class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 mt-2 rounded-lg"
                     data-testid="TextArea"
                     name="signature"
                     style="height: 4px;"
@@ -238,7 +238,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
           Insert a message below to sign using your private key
         </div>
         <div
-          class="mt-2"
+          class="mt-8"
         >
           <form
             class="space-y-8"
@@ -260,7 +260,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="relative"
               >
                 <input
-                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                   data-testid="Input"
                   disabled=""
                   name="signatory-address"
@@ -273,11 +273,11 @@ exports[`SignMessage should render the SignMessage 1`] = `
                     class="flex items-center"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jPulhL"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 laNXvc"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full overflow-hidden rounded-full"
+                        class="w-full h-full"
                       >
                         <img
                           alt="test"
@@ -307,7 +307,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 Message
               </label>
               <input
-                class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="Input"
                 name="message"
                 type="text"
@@ -328,13 +328,13 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                   data-testid="Input"
                   name="passphrase"
                   type="password"
                 />
                 <div
-                  class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
+                  class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                 >
                   <button
                     class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"

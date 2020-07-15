@@ -6,10 +6,11 @@ import { TabContext, TabId, useTab } from "./useTab";
 type TabsProps = {
 	children: React.ReactNode;
 	activeId?: TabId;
+	className?: string;
 	onChange?: (id: TabId) => void;
 };
 
-export function Tabs({ children, activeId, onChange }: TabsProps) {
+export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 	const context = useTab({ initialId: activeId });
 	const { currentId, setCurrentId } = context;
 
@@ -25,7 +26,7 @@ export function Tabs({ children, activeId, onChange }: TabsProps) {
 
 	return (
 		<TabContext.Provider value={context}>
-			<div>{children}</div>
+			<div className={className}>{children}</div>
 		</TabContext.Provider>
 	);
 }
@@ -96,4 +97,5 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>((props: TabPa
 		</div>
 	);
 });
+
 TabPanel.displayName = "TabPanel";

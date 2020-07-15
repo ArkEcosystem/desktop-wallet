@@ -1,5 +1,6 @@
 import { contacts } from "domains/contact/images";
 import { exchange } from "domains/exchange/images";
+import { news } from "domains/news/images";
 import { offline } from "domains/offline/images";
 import { plugin } from "domains/plugin/images";
 import { profile } from "domains/profile/images";
@@ -25,6 +26,7 @@ export const images = {
 	},
 	contacts,
 	exchange,
+	news,
 	offline,
 	plugin,
 	profile,

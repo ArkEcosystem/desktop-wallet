@@ -3,7 +3,6 @@
 exports[`WalletVote should render 1`] = `
 <DocumentFragment>
   <section
-    class="px-12 py-8"
     data-testid="WalletVote"
   >
     <div
@@ -15,7 +14,7 @@ exports[`WalletVote should render 1`] = `
         My Vote
       </h2>
       <button
-        class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
         data-testid="WalletVote__toggle"
       >
         <span>
@@ -68,11 +67,11 @@ exports[`WalletVote should render 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
                 data-testid="Avatar"
               >
                 <div
-                  class="w-full h-full overflow-hidden rounded-full"
+                  class="w-full h-full"
                 >
                   <img
                     alt="test1"
@@ -138,7 +137,7 @@ exports[`WalletVote should render 1`] = `
                 <a
                   data-testid="WalletVote__delegate__explorer"
                   href="https://dexplorer.ark.io"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <div
@@ -163,7 +162,7 @@ exports[`WalletVote should render 1`] = `
                 <a
                   data-testid="WalletVote__delegate__msq"
                   href="https://marketsquare.ark.io"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   <div
@@ -230,11 +229,11 @@ exports[`WalletVote should render 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
                 data-testid="Avatar"
               >
                 <div
-                  class="w-full h-full overflow-hidden rounded-full"
+                  class="w-full h-full"
                 >
                   <img
                     alt="test2"

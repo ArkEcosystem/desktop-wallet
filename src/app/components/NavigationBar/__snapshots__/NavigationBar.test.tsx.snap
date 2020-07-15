@@ -4,10 +4,10 @@ exports[`NavigationBar should not render if no active profile 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-Axmtr eCKhIX"
+    class="sc-fzoyAV bqFbiw"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="px-4 sm:px-6 lg:px-"
     >
       <div
         class="relative flex justify-between h-20 md:h-24"
@@ -55,15 +55,20 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -71,15 +76,22 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <button
+              class="sc-AxiKw bMHbXM"
+              color="primary"
+              data-testid="navbar__buttons--receive"
+              type="button"
             >
-              <svg>
-                receive.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </button>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -108,7 +120,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -125,7 +137,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxiKw jQtkkF relative bg-theme-primary border-theme-primary rotate-90"
+                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
                 >
                   <span
                     class="text-sm text-theme-background"
@@ -159,10 +171,10 @@ exports[`NavigationBar should render 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-Axmtr eCKhIX"
+    class="sc-fzoyAV bqFbiw"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="px-4 sm:px-6 lg:px-"
     >
       <div
         class="relative flex justify-between h-20 md:h-24"
@@ -210,15 +222,20 @@ exports[`NavigationBar should render 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -226,15 +243,22 @@ exports[`NavigationBar should render 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <button
+              class="sc-AxiKw bMHbXM"
+              color="primary"
+              data-testid="navbar__buttons--receive"
+              type="button"
             >
-              <svg>
-                receive.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </button>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -263,7 +287,7 @@ exports[`NavigationBar should render 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -280,7 +304,7 @@ exports[`NavigationBar should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxiKw jQtkkF relative bg-theme-primary border-theme-primary rotate-90"
+                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
                 >
                   <span
                     class="text-sm text-theme-background"
@@ -314,10 +338,10 @@ exports[`NavigationBar should render with custom menu 1`] = `
 <DocumentFragment>
   <nav
     aria-labelledby="main menu"
-    class="sc-Axmtr eCKhIX"
+    class="sc-fzoyAV bqFbiw"
   >
     <div
-      class="px-4 sm:px-6 lg:px-8"
+      class="px-4 sm:px-6 lg:px-"
     >
       <div
         class="relative flex justify-between h-20 md:h-24"
@@ -365,15 +389,20 @@ exports[`NavigationBar should render with custom menu 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <a
+              data-testid="navbar__buttons--send"
+              href="/profiles/undefined/transactions/transfer"
             >
-              <svg>
-                sent.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  sent.svg
+                </svg>
+              </div>
+            </a>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -381,15 +410,22 @@ exports[`NavigationBar should render with custom menu 1`] = `
           <div
             class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
           >
-            <div
-              class="sc-AxjAm jmgDQY"
-              height="22"
-              width="22"
+            <button
+              class="sc-AxiKw bMHbXM"
+              color="primary"
+              data-testid="navbar__buttons--receive"
+              type="button"
             >
-              <svg>
-                receive.svg
-              </svg>
-            </div>
+              <div
+                class="sc-AxjAm jmgDQY"
+                height="22"
+                width="22"
+              >
+                <svg>
+                  receive.svg
+                </svg>
+              </div>
+            </button>
           </div>
           <div
             class="h-8 border-r border-theme-neutral-200"
@@ -418,7 +454,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -435,7 +471,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxiKw jQtkkF relative bg-theme-primary border-theme-primary rotate-90"
+                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
                 >
                   <span
                     class="text-sm text-theme-background"

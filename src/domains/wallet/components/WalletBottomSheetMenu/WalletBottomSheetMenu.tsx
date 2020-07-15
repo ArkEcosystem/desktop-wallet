@@ -33,6 +33,7 @@ const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
 		},
 		{
 			Header: "Wallet Type",
+			className: "justify-center",
 		},
 		{
 			Header: "Balance",
@@ -65,14 +66,14 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 		<>
 			<Backdrop isVisible={isOpen} />
 
-			<aside data-testid="WalletBottomSheetMenu" className="absolute bottom-0 z-50 w-full">
-				<div data-testid="WalletBottomSheetMenu__header" className="px-6 py-4 theme-dark bg-theme-background">
-					<div className="flex items-center justify-between max-w-4xl mx-auto">
+			<aside data-testid="WalletBottomSheetMenu" className="sticky bottom-0 z-50 w-full">
+				<div data-testid="WalletBottomSheetMenu__header" className="flex items-center bg-theme-neutral-900">
+					<div className="container flex items-center justify-between mx-auto px-14 py-7">
 						<div>
-							<span className="text-lg font-bold text-theme-neutral-dark">Your wallets</span>
+							<span className="text-lg font-bold text-theme-neutral-light">Your wallets</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
-								className="ml-1 font-bold text-theme-neutral-light"
+								className="ml-1 font-bold text-theme-neutral-dark"
 							>
 								{walletsData.length}
 							</span>
@@ -81,14 +82,15 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="flex items-center px-5 py-1 font-medium border-r text-theme-neutral border-theme-neutral-light focus:outline-none"
+									className="flex items-center px-5 py-1 font-medium border-r text-theme-neutral-dark border-theme-neutral-800 focus:outline-none"
 								>
-									<Icon name="Filters" />
+									<Icon name="Filters" width={16} height={20} />
 								</button>
 							)}
 							<CollapseToggleButton
 								data-testid="WalletBottomSheetMenu__toggle"
 								isOpen={isOpen}
+								className="text-theme-neutral-dark"
 								onClick={() => setIsOpen(!isOpen)}
 							/>
 						</div>
@@ -96,8 +98,8 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 				</div>
 
 				<Collapse isOpen={isOpen} maxHeight="20rem">
-					<div className="px-6 py-8 bg-theme-background">
-						<div className="max-w-4xl mx-auto">
+					<div className="py-8 bg-theme-background">
+						<div className="container mx-auto px-14">
 							<WalletTable data={walletsData} />
 						</div>
 					</div>

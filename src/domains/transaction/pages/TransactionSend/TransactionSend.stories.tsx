@@ -1,3 +1,4 @@
+import { contacts } from "domains/contact/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -48,6 +49,8 @@ const defaultFormValues = {
 			isInArkNetwork: true,
 		},
 	],
+	contacts,
+	profiles: contacts,
 };
 
 export const Default = () => (

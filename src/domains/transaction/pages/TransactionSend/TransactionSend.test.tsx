@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
@@ -128,10 +131,24 @@ describe("Transaction Send", () => {
 	});
 
 	it("should render", async () => {
+		const history = createMemoryHistory();
+		const transferURL = `/profiles/${identity.profiles.bob.id}/transactions/transfer`;
+
+		history.push(transferURL);
+
 		let rendered: RenderResult;
 
 		await act(async () => {
-			rendered = render(<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />);
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/transactions/transfer">
+					<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
+				</Route>,
+				{
+					routes: [transferURL],
+					history,
+				},
+			);
+
 			await waitFor(() => expect(rendered.getByTestId(`TransactionSend__step--first`)).toBeTruthy());
 		});
 

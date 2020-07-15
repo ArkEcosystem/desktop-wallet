@@ -1,22 +1,47 @@
+import { createMemoryHistory } from "history";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { Route } from "react-router-dom";
+import { identity } from "tests/fixtures/identity";
+import { act, fireEvent, renderWithRouter, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 describe("Dashboard", () => {
+	const history = createMemoryHistory();
+
+	const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+	history.push(dashboardURL);
+
 	it("should render", () => {
-		const { container } = render(<Dashboard />);
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide transaction view", () => {
-		const { getByTestId, getAllByTestId } = render(<Dashboard wallets={wallets} transactions={transactions} />);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
-		// const transactionsView = getByTestId("dashboard__transactions-view");
+		const { getByTestId, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard wallets={wallets} transactions={transactions} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--transactions");
@@ -26,28 +51,93 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio percentage bar", () => {
-		const { container } = render(<Dashboard portfolioPercentages={portfolioPercentages} />);
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard portfolioPercentages={portfolioPercentages} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", () => {
-		const { container } = render(<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />);
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should hide portfolio view", () => {
-		const { getByTestId, getAllByTestId } = render(
-			<Dashboard balances={balances} wallets={wallets} transactions={transactions} />,
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
-		const filterNetwork = getAllByTestId("dropdown__toggle");
+
+		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
 		act(() => {
-			fireEvent.click(filterNetwork[0]);
+			fireEvent.click(filterNetwork);
 		});
 
 		const toggle = getByTestId("filter-wallets_toggle--portfolio");
 		act(() => {
 			fireEvent.click(toggle);
 		});
+	});
+
+	it("should navigate to import page", () => {
+		const { getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+		const importButton = getByText("Import");
+
+		act(() => {
+			fireEvent.click(importButton);
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/import`);
+	});
+
+	it("should navigate to create page", () => {
+		history.push(dashboardURL);
+
+		const { getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+		const createButton = getByText("Create");
+
+		act(() => {
+			fireEvent.click(createButton);
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/create`);
 	});
 });

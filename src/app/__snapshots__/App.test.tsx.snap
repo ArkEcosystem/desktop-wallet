@@ -3,81 +3,94 @@
 exports[`App should render 1`] = `
 <DocumentFragment>
   <main
-    class=""
+    class="debug-screens"
   >
     <div
-      class="w-full h-full"
+      class="sc-fzoJus cXGpQF"
+      data-testid="RouterView__wrapper"
     >
       <div
-        class="px-4 sm:px-6 lg:px-8"
+        class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
       >
         <div
-          class="flex items-center flex-shrink-0 h-20 md:h-24"
+          class="px-4 sm:px-6 lg:px-8 bg-theme-background"
         >
           <div
-            class="flex p-2 rounded-lg bg-logo"
+            class="flex items-center flex-shrink-0 h-20 md:h-24"
           >
-            <img
-              alt="ARK Logo"
-              class="h-6 md:h-8 lg:h-10"
-              src="ark-logo.png"
-            />
+            <div
+              class="flex p-2 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="container px-4 mx-auto text-center sm:px-6 lg:px-0"
-      >
-        <h1
-          class="mb-8"
-        >
-          Welcome to ARK
-        </h1>
         <div
-          class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+          class="flex flex-col flex-1 space-y-5 "
         >
-          <svg>
-            welcome-banner.svg
-          </svg>
-        </div>
-        <div
-          class="max-w-lg mx-auto my-8 md:max-w-xl"
-        >
-          <p
-            class="mb-4 text-sm text-theme-neutral-dark md:text-base"
-          >
-            Create a new Profile or login with your MarketSquare account to get started
-          </p>
           <div
-            class="flex flex-col md:space-x-3 md:flex-row"
+            class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
           >
-            <button
-              class="sc-AxiKw wFYj w-full"
-              color="primary"
-              type="button"
+            <div
+              class="container py-16 mx-auto px-14"
             >
+              <h1
+                class="mb-8"
+              >
+                Welcome to ARK
+              </h1>
               <div
-                class="sc-AxirZ eEbZjj"
-                height="20"
-                width="20"
+                class="w-full mx-auto lg:w-4/5 xl:w-2/3"
               >
                 <svg>
-                  msq.svg
+                  welcome-banner.svg
                 </svg>
               </div>
-              <span
-                class="ml-2"
+              <div
+                class="max-w-lg mx-auto mt-8 md:max-w-xl"
               >
-                Sign in to MarketSquare
-              </span>
-            </button>
-            <button
-              class="sc-AxiKw gFzSt w-full mt-2 md:mt-0"
-              color="primary"
-              type="button"
-            >
-              Create Profile
-            </button>
+                <p
+                  class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+                >
+                  Create a new Profile or login with your MarketSquare account to get started
+                </p>
+                <div
+                  class="flex flex-col md:space-x-3 md:flex-row"
+                >
+                  <button
+                    class="sc-AxjAm ddQVWI w-full"
+                    color="primary"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxirZ eEbZjj"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        msq.svg
+                      </svg>
+                    </div>
+                    <span
+                      class="ml-2"
+                    >
+                      Sign in to MarketSquare
+                    </span>
+                  </button>
+                  <button
+                    class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+                    color="primary"
+                    type="button"
+                  >
+                    Create Profile
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

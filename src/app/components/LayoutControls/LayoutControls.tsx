@@ -15,7 +15,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 	};
 
 	return (
-		<>
+		<div className="flex items-center">
 			<div data-testid="LayoutControls__grid" className="inline-block">
 				<div
 					data-testid="LayoutControls__grid--icon"
@@ -35,7 +35,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 					<Icon name="List" width={24} height={14} />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

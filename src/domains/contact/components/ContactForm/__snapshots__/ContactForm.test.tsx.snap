@@ -17,7 +17,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Name
       </label>
       <input
-        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
@@ -48,7 +48,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           class="relative flex items-center w-full flex-inline"
         >
           <div
-            class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+            class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
           >
             <div
               class="px-4 py-2 flex-0 w-14"
@@ -94,7 +94,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Address
       </label>
       <input
-        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -158,7 +158,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Name
       </label>
       <input
-        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value="OLEBank"
@@ -189,7 +189,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           class="relative flex items-center w-full flex-inline"
         >
           <div
-            class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+            class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
           >
             <div
               class="px-4 py-2 flex-0 w-14"
@@ -235,7 +235,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Address
       </label>
       <input
-        class="sc-AxgMl eVjlWk overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+        class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -288,11 +288,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
-                  class="w-full h-full overflow-hidden rounded-full"
+                  class="w-full h-full"
                 >
                   <img
                     alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
@@ -358,11 +358,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
-                  class="w-full h-full overflow-hidden rounded-full"
+                  class="w-full h-full"
                 >
                   <img
                     alt="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
@@ -428,11 +428,11 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
               >
                 <div
-                  class="w-full h-full overflow-hidden rounded-full"
+                  class="w-full h-full"
                 >
                   <img
                     alt="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"

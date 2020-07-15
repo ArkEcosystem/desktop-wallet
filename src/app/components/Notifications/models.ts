@@ -1,4 +1,4 @@
-import { TransactionListItemProps } from "app/components/TransactionListItem/models";
+import { Transaction } from "domains/transaction/components/TransactionTable";
 
 export type EmptyPlaceholderProps = {
 	title?: string;
@@ -21,7 +21,7 @@ export type PluginNotification = {
 export type NotificationsProps = {
 	plugins?: PluginNotification[];
 	pluginsHeader?: string;
-	transactions?: TransactionListItemProps[];
+	transactions?: Transaction[];
 	transactionsHeader?: string;
 	onAction?: any;
 	emptyText?: string;

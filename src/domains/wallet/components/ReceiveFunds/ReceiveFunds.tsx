@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 type ReceiveFundsProps = {
 	isOpen: boolean;
 	wallet: any;
-	qrCode: string;
-	onCopy: () => void;
+	qrCode?: string;
+	onCopy?: () => void;
 	handleClose?: any;
 };
 
@@ -77,7 +77,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 			</Wrapper>
 
 			<div className="mt-8">
-				<img src={qrCode} className="w-64 h-64 mx-auto" />
+				<img src={qrCode} className="w-64 h-64 mx-auto" alt="QR Code" />
 			</div>
 		</Modal>
 	);

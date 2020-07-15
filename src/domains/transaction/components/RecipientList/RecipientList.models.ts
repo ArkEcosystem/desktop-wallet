@@ -7,6 +7,7 @@ export type RecipientListItem = {
 	isInArkNetwork?: boolean;
 	isEditable?: boolean;
 	onRemove?: (address: string) => void;
+	listIndex?: number;
 };
 
 export type RecipientList = {

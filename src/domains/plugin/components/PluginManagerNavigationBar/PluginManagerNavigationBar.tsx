@@ -1,7 +1,7 @@
+import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
 import { styled } from "twin.macro";
 
-import { PluginManagerControls } from "../PluginManagerControls";
 import { defaultStyle } from "./styles";
 
 type PluginManagerNavigationBar = {
@@ -40,7 +40,7 @@ export const PluginManagerNavigationBar = ({
 										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
-										className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+										className={`PluginManagerNavigationBar__item focus:outline-none lex items-center font-semibold text-md text-theme-neutral-600 cursor-pointer ${
 											selected === menuItem.name ? "active" : ""
 										}`}
 									>
@@ -63,7 +63,7 @@ export const PluginManagerNavigationBar = ({
 						data-testid={`PluginManagerNavigationBar__my-plugins`}
 						onClick={() => onChange("my-plugins")}
 						title="My Plugins"
-						className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-bold text-md text-theme-neutral-600 cursor-pointer ${
+						className={`PluginManagerNavigationBar__item focus:outline-none flex items-center font-semibold text-md text-theme-neutral-600 cursor-pointer ${
 							selected === "my-plugins" ? "active" : ""
 						}`}
 					>
@@ -73,7 +73,8 @@ export const PluginManagerNavigationBar = ({
 
 					<div className="w-px h-10 mx-8 my-auto border-r border-theme-neutral-300" />
 
-					<PluginManagerControls
+					<LayoutControls
+						data-testid="PluginManagerControls"
 						onSelectGridView={onSelectGridView}
 						onSelectListView={onSelectListView}
 						selectedViewType={selectedViewType}

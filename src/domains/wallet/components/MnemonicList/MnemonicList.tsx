@@ -1,13 +1,13 @@
 import React from "react";
 
 type Props = {
-	mnemonic: string[];
+	mnemonic: string;
 };
 
 export function MnemonicList({ mnemonic }: Props) {
 	return (
 		<ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 row-gap-5 col-gap-3">
-			{mnemonic.map((word, index) => (
+			{mnemonic.split(" ").map((word, index) => (
 				<li
 					data-testid="MnemonicList__item"
 					key={word}

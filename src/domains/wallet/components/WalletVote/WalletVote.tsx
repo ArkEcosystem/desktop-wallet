@@ -23,7 +23,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
 	return (
-		<section data-testid="WalletVote" className="px-12 py-8">
+		<section data-testid="WalletVote">
 			<div className="flex items-center justify-between">
 				<h2 className="font-bold">My Vote</h2>
 				<CollapseToggleButton
@@ -75,7 +75,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 												data-testid="WalletVote__delegate__explorer"
 												href={explorerUrl}
 												target="_blank"
-												rel="noreferrer"
+												rel="noopener noreferrer"
 											>
 												<Icon name="Explorer" className="text-2xl text-theme-primary" />
 											</a>
@@ -89,7 +89,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 												data-testid="WalletVote__delegate__msq"
 												href={msqUrl}
 												target="_blank"
-												rel="noreferrer"
+												rel="noopener noreferrer"
 											>
 												<Icon name="Link" className="text-xl text-theme-primary" />
 											</a>

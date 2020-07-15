@@ -17,7 +17,7 @@ const sizeOptions: Record<string, Size | undefined> = {
 	icon: "icon",
 };
 
-const variants: ButtonVariant[] = ["solid", "plain", "outline"];
+const variants: ButtonVariant[] = ["solid", "plain", "outline", "transparent"];
 
 export const Default = () => {
 	const color = select("Color", ["primary", "success", "danger", "warning"], "primary");

@@ -1,54 +1,27 @@
+import { createMemoryHistory } from "history";
 import React from "react";
-import { render } from "testing-library";
+import { Route } from "react-router-dom";
+import { renderWithRouter } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
-import { comments } from "../../data";
 import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
-	const ratings = [
-		{
-			rating: 5,
-			votes: 156,
-		},
-		{
-			rating: 4,
-			votes: 194,
-		},
-		{
-			rating: 3,
-			votes: 25,
-		},
-		{
-			rating: 2,
-			votes: 42,
-		},
-		{
-			rating: 1,
-			votes: 7,
-		},
-	];
+	const history = createMemoryHistory();
+	const pluginDetailsURL = `/profiles/${identity.profiles.bob.id}/plugins/wsx123`;
 
-	const pluginData = {
-		author: "ARK Ecosystem",
-		about:
-			"Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.",
-		permissions: ["Embedded Webpages", "API Requests", "Access to Profiles"],
-		screenshots: [1, 2, 3],
-		category: "Utility",
-		url: "github.com",
-		averageRating: "4.6",
-		version: "1.3.8",
-		size: "4.2",
-	};
-
-	const reviewData = {
-		comments,
-		ratings,
-		totalAvaliations: 347,
-	};
+	history.push(pluginDetailsURL);
 
 	it("should render properly", () => {
-		const { asFragment, getByTestId } = render(<PluginDetails pluginData={pluginData} reviewData={reviewData} />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/:pluginId">
+				<PluginDetails />
+			</Route>,
+			{
+				routes: [pluginDetailsURL],
+				history,
+			},
+		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();
 		expect(getByTestId("plugin-details__comments")).toBeTruthy();
@@ -58,8 +31,14 @@ describe("PluginDetails", () => {
 	});
 
 	it("should render properly as installed", () => {
-		const { asFragment, getByTestId } = render(
-			<PluginDetails pluginData={pluginData} reviewData={reviewData} isInstalled />,
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/:pluginId">
+				<PluginDetails isInstalled />
+			</Route>,
+			{
+				routes: [pluginDetailsURL],
+				history,
+			},
 		);
 
 		expect(getByTestId("plugin-details__header")).toBeTruthy();

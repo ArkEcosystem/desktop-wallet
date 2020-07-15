@@ -5,4 +5,8 @@ import { NewsOptions } from "./NewsOptions";
 
 export default { title: "Domains / News / Components / News Options" };
 
-export const Default = () => <NewsOptions categories={categories} selectedAssets={assets} />;
+export const Default = () => (
+	<div className="max-w-sm">
+		<NewsOptions categories={categories} selectedAssets={assets} />
+	</div>
+);

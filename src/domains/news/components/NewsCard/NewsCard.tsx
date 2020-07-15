@@ -26,7 +26,7 @@ type Props = {
 };
 
 export const NewsCard = ({ asset, author, dateCreated, category, content, coverImage }: Props) => (
-	<Card>
+	<Card className="bg-theme-background">
 		<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard">
 			<div className="flex justify-between w-full">
 				<div className="flex items-center space-x-4">

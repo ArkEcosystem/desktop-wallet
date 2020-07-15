@@ -32,9 +32,11 @@ export const Wallets = ({
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
 	const walletSliderOptions = {
-		slideHeight: 220, // Wallet card height, including margin-bottom
+		slideHeight: 185,
 		slidesPerView: 4,
 		slidesPerColumn: 2,
+		slidesPerGroup: 4,
+		spaceBetween: 20,
 
 		// Responsive breakpoints
 		// breakpoints: {
@@ -76,9 +78,9 @@ export const Wallets = ({
 
 	return (
 		<div>
-			<div className="flex w-full pb-8">
-				<div className="w-2/4 -mt-1 text-4xl font-bold">{title}</div>
-				<div className="w-2/4 text-right">
+			<div className="flex justify-between pb-8">
+				<div className="-mt-1 text-4xl font-bold">{title}</div>
+				<div className="text-right">
 					<WalletsControls
 						onCreateWallet={onCreateWallet}
 						onImportWallet={onImportWallet}
@@ -91,12 +93,14 @@ export const Wallets = ({
 			</div>
 			<div className="mt-1">
 				{walletsViewType === "grid" && (
-					<div style={{ width: 1100 }}>
+					<div className="w-full">
 						<Slider
 							data={walletsGridData(wallets, walletSliderOptions.slidesPerView)}
 							options={walletSliderOptions}
 						>
-							{(walletData: any) => <WalletCard {...walletData} onSelect={onWalletAction} />}
+							{(walletData: any) => (
+								<WalletCard {...walletData} onSelect={onWalletAction} className="w-full" />
+							)}
 						</Slider>
 					</div>
 				)}

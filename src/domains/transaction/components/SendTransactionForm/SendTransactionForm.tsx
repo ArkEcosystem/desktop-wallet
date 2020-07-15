@@ -5,8 +5,8 @@ import { InputRange } from "app/components/Input/InputRange";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
 import { SelectNetwork } from "app/components/SelectNetwork";
-import { ProfileFormField } from "domains/profile/components/ProfileFormField";
-import { RecipientList } from "domains/transaction/components/RecipientList";
+import { SelectAddress } from "domains/profile/components/SelectAddress";
+import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -16,8 +16,6 @@ import { defaultStyle } from "./SendTransactionForm.styles";
 
 type SendTransactionFormProps = {
 	maxAvailableAmount: number;
-	contactList: any;
-	senderList: any;
 	formDefaultData: any;
 	feeRange: any;
 	defaultFee: number;
@@ -26,6 +24,8 @@ type SendTransactionFormProps = {
 	onSubmit?: any;
 	onBack?: any;
 	networks: any;
+	contacts: any[];
+	profiles: any[];
 };
 
 const FormWrapper = styled.div`
@@ -36,57 +36,25 @@ export const SendTransactionForm = ({
 	feeRange,
 	maxAvailableAmount,
 	formDefaultData,
-	contactList,
-	senderList,
 	maxFee,
 	onSubmit,
 	onBack,
 	assetSymbol,
 	networks,
+	contacts,
+	profiles,
 }: SendTransactionFormProps) => {
-	const [addedRecipients, setAddressRecipients] = useState([] as RecipientListItem[]);
+	const [addedRecipients] = useState([] as RecipientListItem[]);
 
 	const form = useForm({ defaultValues: formDefaultData });
-	const { setValue, register } = form;
-	const { network, fee, sender, recipient, amount } = form.watch();
+	const { register } = form;
+	const { network, fee, sender, amount } = form.watch();
 	const feeRangeValue = useSelectionState(0);
-
-	const onClickBack = () => {
-		if (typeof onBack === "function") onBack();
-	};
 
 	const onFormSubmit = () => {
 		const formResult = { ...form.getValues(), ...{ recipients: addedRecipients } };
-		if (typeof onSubmit === "function") onSubmit(formResult);
+		onSubmit?.(formResult);
 	};
-
-	const getProfileInfo = (address: string) => {
-		const profiles = [...contactList, ...senderList];
-		return profiles.find((profile: any) => profile.address === address);
-	};
-
-	const onAddRecipient = (recipient: string, amount: number) => {
-		const { walletName, address } = getProfileInfo(recipient);
-		addedRecipients.push({ amount, walletName, address });
-		setAddressRecipients(addedRecipients);
-
-		// Reset values
-		form.setValue("amount", 0);
-		form.setValue("recipient", null);
-	};
-
-	const onRemoveRecipient = (address: string) => {
-		const index = addedRecipients.findIndex((addedRecipient: any) => addedRecipient.address === address);
-		const newRecipients = addedRecipients.concat();
-		newRecipients.splice(index, 1);
-		setAddressRecipients(newRecipients);
-	};
-
-	const availableContacts = contactList.filter((contact: any) => {
-		if (addedRecipients.length === 0) return true;
-		const added = addedRecipients.map(({ address }: any) => address);
-		return !added.includes(contact.address);
-	});
 
 	return (
 		<FormWrapper>
@@ -98,69 +66,30 @@ export const SendTransactionForm = ({
 					<SelectNetwork networks={networks} name="network" value={network} />
 				</FormField>
 
-				<ProfileFormField
-					formName="sender"
-					formLabel="Sender"
-					profiles={senderList}
-					selectedProfile={getProfileInfo(sender)}
-					register={register}
-				/>
-
-				<ProfileFormField
-					formName="recipient"
-					formLabel="Recipient"
-					profiles={availableContacts}
-					selectedProfile={getProfileInfo(recipient)}
-					register={register}
-				/>
-
-				<FormField name="amount" className="relative mt-1">
+				<FormField name="sender" className="relative mt-1">
 					<div className="mb-2">
-						<FormLabel label="Amount ARK" />
+						<FormLabel label="Sender" />
 					</div>
-					<InputGroup>
-						<Input
-							data-testid="send-transaction__amount-input"
-							type="number"
-							name="amount"
-							placeholder="Amount"
-							className="pr-20"
+
+					<div data-testid="sender-address">
+						<SelectAddress
+							contactSearchTitle="My addresses"
+							contactSearchDescription="Find and select preferred address from you saved profiles"
+							address={sender}
 							ref={register}
+							contacts={profiles}
 						/>
-						<InputAddonEnd>
-							<button
-								data-testid="send-transaction__send-all"
-								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="pl-6 pr-4 bg-white text-theme-primary bg-theme-background focus:outline-none"
-							>
-								Send All
-							</button>
-						</InputAddonEnd>
-					</InputGroup>
+					</div>
 				</FormField>
 
-				{amount > 0 && !!recipient && (
-					<Button
-						data-testid="send-transaction__add-recipient"
-						variant="plain"
-						className="w-full"
-						onClick={() => onAddRecipient(recipient, amount)}
-					>
-						Add Recipient
-					</Button>
-				)}
-
-				{addedRecipients.length > 0 && (
-					<div>
-						<div className="pb-4 mb-4 text-sm font-semibold text-theme-neutral-dark">Recipients</div>
-						<RecipientList
-							recipients={addedRecipients}
-							isEditable={true}
-							onRemove={onRemoveRecipient}
-							assetSymbol={assetSymbol}
-						/>
-					</div>
-				)}
+				<div data-testid="recipient-address">
+					<AddRecipient
+						assetSymbol={assetSymbol}
+						maxAvailableAmount={maxAvailableAmount}
+						availableAmount={amount}
+						contacts={contacts}
+					/>
+				</div>
 
 				<FormField name="smartbridge" className="relative mt-1">
 					<div className="mb-2">
@@ -198,7 +127,7 @@ export const SendTransactionForm = ({
 					</div>
 				</div>
 				<div className="flex justify-end space-x-3">
-					<Button data-testid="send-transaction-click-back" variant="plain" onClick={onClickBack}>
+					<Button data-testid="send-transaction-click-back" variant="plain" onClick={() => onBack?.()}>
 						Back
 					</Button>
 					<Button data-testid="send-transaction-click-submit" type="submit" onClick={onFormSubmit}>
@@ -228,6 +157,5 @@ SendTransactionForm.defaultProps = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [],
-	contactList: [],
+	profiles: [],
 };

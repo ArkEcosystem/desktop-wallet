@@ -81,7 +81,7 @@ exports[`AddAssets should render a modal 1`] = `
                 class="relative flex items-center w-full flex-inline"
               >
                 <div
-                  class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                 >
                   <div
                     class="px-4 py-2 flex-0 w-14"
@@ -211,6 +211,38 @@ exports[`AddAssets should render a modal 1`] = `
                         >
                           <svg>
                             btc.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="sc-AxirZ deTCNy flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-contrast"
+                        >
+                          <div
+                            class="sc-AxjAm HWmvM"
+                            height="12"
+                            width="12"
+                          >
+                            <svg>
+                              checkmark.svg
+                            </svg>
+                          </div>
+                          <span />
+                        </span>
+                      </div>
+                    </li>
+                    <li
+                      class="inline-block mr-5 cursor-pointer"
+                      data-testid="network__option--3"
+                    >
+                      <div
+                        class="sc-AxhCb bzWLYJ relative border-theme-success-500 text-theme-success-500"
+                      >
+                        <div
+                          class="sc-AxjAm buCJuk"
+                          height="20"
+                          width="20"
+                        >
+                          <svg>
+                            lsk.svg
                           </svg>
                         </div>
                         <span
