@@ -18,7 +18,8 @@ describe("Profile Routing", () => {
 		cy.get("h1").contains("Welcome");
 	});
 
-	it("should navigate to dashboard", () => {
+	it("should list multiple profiles & navigate to dashboard", () => {
+		cy.get("p").contains("Anne Doe");
 		cy.get("p").contains("Test Profile").click();
 		cy.get("div").contains("Wallets");
 	});
