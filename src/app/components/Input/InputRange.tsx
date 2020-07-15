@@ -26,6 +26,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		const trackBackgroundMinValue = Math.max(values[0], 3);
+		const rangeValues = [Math.min(values[0], max)];
 
 		return (
 			<InputGroup>
@@ -51,7 +52,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						min={min}
 						max={max}
 						onChange={setValues}
-						values={values}
+						values={rangeValues}
 					/>
 				</div>
 			</InputGroup>
