@@ -61,7 +61,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
 					<div className="-mt-7">
-						<Toggle ref={formConfig.register()} name="isScreenshotProtection" />
+						<Toggle
+							ref={formConfig.register()}
+							name="isScreenshotProtection"
+							data-testid="General-settings__toggle--isScreenshotProtection"
+						/>
 					</div>
 				</div>
 			),
@@ -78,7 +82,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						direct URL link.
 					</span>
 					<div className="-mt-7">
-						<Toggle ref={formConfig.register()} name="isAdvancedMode" />
+						<Toggle
+							ref={formConfig.register()}
+							name="isAdvancedMode"
+							data-testid="General-settings__toggle--isAdvancedMode"
+						/>
 					</div>
 				</div>
 			),
@@ -112,7 +120,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
 					<div className="-mt-7">
-						<Toggle ref={formConfig.register()} name="isDarkMode" />
+						<Toggle
+							ref={formConfig.register()}
+							name="isDarkMode"
+							data-testid="General-settings__toggle--isDarkMode"
+						/>
 					</div>
 				</div>
 			),
@@ -129,7 +141,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						direct URL link.
 					</span>
 					<div className="-mt-7">
-						<Toggle ref={formConfig.register()} name="isUpdateLedger" />
+						<Toggle
+							ref={formConfig.register()}
+							name="isUpdateLedger"
+							data-testid="General-settings__toggle--isUpdateLedger"
+						/>
 					</div>
 				</div>
 			),
@@ -175,7 +191,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label="Profile Name" />
-								<Input type="text" ref={formConfig.register({ required: true })} />
+								<Input
+									type="text"
+									ref={formConfig.register({ required: true })}
+									data-testid="General-settings__input--name"
+								/>
 								<FormHelperText />
 							</FormField>
 

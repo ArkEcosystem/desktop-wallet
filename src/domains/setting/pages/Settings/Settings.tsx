@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import * as availableSettings from "./available-settings";
 
 type SettingsProps = {
-	submitSettings?: any;
+	onSubmit?: any;
 };
 
 type AvailableSettings = {
@@ -32,7 +32,7 @@ const settingsItems = [
 	},
 ];
 
-export const Settings = ({ submitSettings }: SettingsProps) => {
+export const Settings = ({ onSubmit }: SettingsProps) => {
 	const env: any = useEnvironment();
 	const form = useForm();
 	const { register, errors } = form;
@@ -44,7 +44,7 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 	const renderSettings = () => {
 		const ActiveSettings = providedSettings[activeSettings];
 
-		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={submitSettings} />;
+		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={onSubmit} />;
 	};
 
 	const crumbs = [
