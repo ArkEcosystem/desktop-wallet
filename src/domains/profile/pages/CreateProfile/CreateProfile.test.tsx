@@ -17,7 +17,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should render", () => {
-		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile onSubmit={() => void 0} />, {
+		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile />, {
 			routes: ["/", "/profile/create"],
 		});
 
@@ -28,12 +28,9 @@ describe("CreateProfile", () => {
 	});
 
 	it("should store profile", async () => {
-		let savedProfile: any = null;
-		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
-
 		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
-				<CreateProfile onSubmit={onSubmit} />
+				<CreateProfile />
 			</EnvironmentProvider>,
 			{
 				routes: ["/", "/profile/create"],
@@ -50,9 +47,10 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile");
-		expect(savedProfile.settings().all()).toEqual({
+		let profiles = env.profiles().all();
+		expect(profiles.length).toEqual(1);
+		expect(profiles[0].name()).toEqual("test profile");
+		expect(profiles[0].settings().all()).toEqual({
 			EXCHANGE_CURRENCY: "option1",
 			MARKET_PROVIDER: "option1",
 			THEME: "light",
@@ -65,15 +63,15 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
-		expect(savedProfile.name()).toEqual("test profile 2");
-		expect(savedProfile.settings().all()).toEqual({
+		profiles = env.profiles().all();
+		expect(profiles.length).toEqual(2);
+		expect(profiles[1].name()).toEqual("test profile 2");
+		expect(profiles[1].settings().all()).toEqual({
 			EXCHANGE_CURRENCY: "option1",
 			MARKET_PROVIDER: "option1",
 			THEME: "dark",
 		});
 
-		expect(env.profiles().all().length).toEqual(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import {  ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -13,11 +13,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
-type CreateProfileProps = {
-	onSubmit: (profile: Profile) => void;
-};
-
-export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
+export const CreateProfile = () => {
 	const env: any = useEnvironment();
 	const form = useForm();
 	const history = useHistory();
@@ -79,7 +75,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 		await env.persist();
 
-		onSubmit(profile);
+		history.push("/");
 	};
 
 	return (
