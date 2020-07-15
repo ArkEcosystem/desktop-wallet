@@ -36,6 +36,13 @@ describe("Formatted Address", () => {
 		expect(getByTestId("address__wallet-name")).toHaveClass("text-xl");
 	});
 
+	it("should render with normal font", () => {
+		const { container } = render(
+			<Address fontWeight="normal" address={sampleAddress} walletName="Sample Wallet" />,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render with custom class for address", () => {
 		const { getByTestId } = render(
 			<Address addressClass="text-theme-primary" address={sampleAddress} walletName="Sample Wallet" size="lg" />,
