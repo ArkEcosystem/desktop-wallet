@@ -8,11 +8,13 @@ import { identity } from "tests/fixtures/identity";
 import { faqArticles } from "../../data";
 import { Faq } from "./Faq";
 
-describe("Faq", () => {
-	const history = createMemoryHistory();
-	const categoryURL = `/profiles/${identity.profiles.bob.id}/support/categories/portfolio`;
+const history = createMemoryHistory();
+const categoryURL = `/profiles/${identity.profiles.bob.id}/support/categories/portfolio`;
 
-	history.push(categoryURL);
+describe("Faq", () => {
+	beforeAll(() => {
+		history.push(categoryURL);
+	});
 
 	it("should render faq portfolio category page", () => {
 		const { container } = renderWithRouter(

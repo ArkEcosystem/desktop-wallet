@@ -10,13 +10,13 @@ import { identity } from "tests/fixtures/identity";
 import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
+const mnemonic = "lorem ipsum dolor sit amet consectetur";
+
+const onSubmit = jest.fn();
+const onCopy = jest.fn();
+const onDownload = jest.fn();
+
 describe("CreateWallet", () => {
-	const mnemonic = "lorem ipsum dolor sit amet consectetur";
-
-	const onSubmit = jest.fn();
-	const onCopy = jest.fn();
-	const onDownload = jest.fn();
-
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(

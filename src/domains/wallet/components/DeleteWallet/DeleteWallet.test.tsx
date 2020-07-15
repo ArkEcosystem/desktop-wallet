@@ -5,9 +5,9 @@ import { render } from "testing-library";
 import { translations } from "../../i18n";
 import { DeleteWallet } from "./DeleteWallet";
 
-describe("DeleteWallet", () => {
-	const onDelete = jest.fn();
+const onDelete = jest.fn();
 
+describe("DeleteWallet", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<DeleteWallet isOpen={false} onDelete={onDelete} />);
 

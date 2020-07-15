@@ -3,32 +3,32 @@ import { fireEvent, render, within } from "testing-library";
 
 import { PluginGrid } from "./PluginGrid";
 
-describe("PluginGrid", () => {
-	const plugins = [
-		{
-			id: "ark-explorer",
-			name: "ARK Explorer",
-			author: "ARK.io",
-			category: "utility",
-			rating: 4.2,
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: false,
-			isOfficial: true,
-		},
-		{
-			id: "ark-avatars",
-			name: "ARK Avatars",
-			author: "ARK.io",
-			category: "other",
-			rating: 3.8,
-			version: "1.3.8",
-			size: "163 KB",
-			isInstalled: true,
-			isGrant: true,
-		},
-	];
+const plugins = [
+	{
+		id: "ark-explorer",
+		name: "ARK Explorer",
+		author: "ARK.io",
+		category: "utility",
+		rating: 4.2,
+		version: "1.3.8",
+		size: "4.2 MB",
+		isInstalled: false,
+		isOfficial: true,
+	},
+	{
+		id: "ark-avatars",
+		name: "ARK Avatars",
+		author: "ARK.io",
+		category: "other",
+		rating: 3.8,
+		version: "1.3.8",
+		size: "163 KB",
+		isInstalled: true,
+		isGrant: true,
+	},
+];
 
+describe("PluginGrid", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(<PluginGrid plugins={plugins} />);
 
