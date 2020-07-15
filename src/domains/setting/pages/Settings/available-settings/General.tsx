@@ -90,7 +90,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 					<FormLabel label="Auto-logoff" />
 					<Select
 						placeholder="Select Auto-logoff"
-						ref={formConfig.register({ required: true })}
+						ref={formConfig.register()}
 						options={[
 							{ label: "Option 1", value: "option1" },
 							{ label: "Option 2", value: "option2" },
@@ -112,7 +112,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
 					<div className="-mt-7">
-						<Toggle ref={formConfig.register()} name="isDarkTheme" />
+						<Toggle ref={formConfig.register()} name="isDarkMode" />
 					</div>
 				</div>
 			),
@@ -136,13 +136,28 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		},
 	];
 
-	const submitForm = async ({ name, language, passphraseLanguage, marketProvider, currency, timeFormat }: any) => {
+	const submitForm = async ({
+		name,
+		language,
+		passphraseLanguage,
+		marketProvider,
+		currency,
+		timeFormat,
+		isScreenshotProtection,
+		isAdvancedMode,
+		isDarkMode,
+		isUpdateLedger,
+	}: any) => {
 		const profile = env.profiles().create(name);
 		profile.settings().set(ProfileSetting.Locale, language);
 		profile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
 		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.TimeFormat, timeFormat);
+		profile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
+		profile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
+		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 
 		await env.persist();
 
@@ -251,7 +266,9 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 					</Button>
 					<div className="space-x-3">
 						<Button variant="plain">Cancel</Button>
-						<Button>Save</Button>
+						<Button type="submit" data-testid="General-settings__submit-button">
+							Save
+						</Button>
 					</div>
 				</div>
 			</Form>
