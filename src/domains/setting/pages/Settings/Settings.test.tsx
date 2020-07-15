@@ -18,7 +18,9 @@ describe("Settings", () => {
 	});
 
 	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(<Settings />);
+		const { container, asFragment } = renderWithRouter(<Settings />, {
+			routes: ["/", "/profiles/1/settings"],
+		});
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -32,6 +34,9 @@ describe("Settings", () => {
 			<EnvironmentProvider env={env}>
 				<Settings onSubmit={onSubmit} />
 			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profiles/1/settings"],
+			},
 		);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
@@ -101,7 +106,9 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />);
+		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
+			routes: ["/", "/profiles/1/settings"],
+		});
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Peer"));
@@ -109,7 +116,9 @@ describe("Settings", () => {
 	});
 
 	it("should render plugin settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />);
+		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
+			routes: ["/", "/profiles/1/settings"],
+		});
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Plugins"));
@@ -117,7 +126,9 @@ describe("Settings", () => {
 	});
 
 	it("should open & close modals in the plugin settings", async () => {
-		const { container, asFragment, getByTestId, findByText } = renderWithRouter(<Settings />);
+		const { container, asFragment, getByTestId, findByText } = renderWithRouter(<Settings />, {
+			routes: ["/", "/profiles/1/settings"],
+		});
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Plugins"));
