@@ -1,3 +1,4 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
@@ -6,6 +7,7 @@ import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 
@@ -22,6 +24,12 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
+	React.useEffect(() => {
+		if (activeProfile) {
+			setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
+		}
+	}, [activeProfile]);
 
 	// Wallet controls data
 	const filterProperties = {
