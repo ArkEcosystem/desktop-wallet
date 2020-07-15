@@ -6,6 +6,16 @@ describe("Profile Routing", () => {
 		cy.get("h1").contains("Create Profile");
 	});
 
+	it("should error without required fields", () => {
+		cy.get("button").contains("Complete").click();
+
+		cy.get("fieldset p").contains("Name is required");
+		cy.get("fieldset p").contains("Market Provider is required");
+		cy.get("fieldset p").contains("Currency is required");
+
+		cy.get("h1").contains("Create Profile");
+	});
+
 	it("should create profile & navigate to welcome screen", () => {
 		cy.get("input[name=name]").type("Test Profile");
 		cy.get("button").contains("Select Market Provider").click();

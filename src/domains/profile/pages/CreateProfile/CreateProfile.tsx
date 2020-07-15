@@ -102,7 +102,7 @@ export const CreateProfile = () => {
 							<div className="relative space-y-8">
 								<FormField name="name">
 									<FormLabel label="Name" />
-									<Input ref={register({ required: true })} />
+									<Input ref={register({ required: "Name is required" })} />
 									<FormHelperText />
 								</FormField>
 
@@ -110,7 +110,7 @@ export const CreateProfile = () => {
 									<FormLabel label="Market Provider" />
 									<Select
 										placeholder="Select Market Provider"
-										ref={register({ required: true })}
+										ref={register({ required: "Market Provider is required" })}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },
@@ -123,7 +123,7 @@ export const CreateProfile = () => {
 									<FormLabel label="Currency" />
 									<Select
 										placeholder="Select Currency"
-										ref={register({ required: true })}
+										ref={register({ required: "Currency is required" })}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },
