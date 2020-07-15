@@ -61,7 +61,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
 					<div className="-mt-7">
-						<Toggle name="isScreenshotProtection" />
+						<Toggle ref={formConfig.register()} name="isScreenshotProtection" />
 					</div>
 				</div>
 			),
@@ -78,7 +78,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						direct URL link.
 					</span>
 					<div className="-mt-7">
-						<Toggle name="isAdvancedMode" />
+						<Toggle ref={formConfig.register()} name="isAdvancedMode" />
 					</div>
 				</div>
 			),
@@ -112,7 +112,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
 					<div className="-mt-7">
-						<Toggle name="isDarkTheme" />
+						<Toggle ref={formConfig.register()} name="isDarkTheme" />
 					</div>
 				</div>
 			),
@@ -129,7 +129,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						direct URL link.
 					</span>
 					<div className="-mt-7">
-						<Toggle name="isUpdateLedger" />
+						<Toggle ref={formConfig.register()} name="isUpdateLedger" />
 					</div>
 				</div>
 			),
