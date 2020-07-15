@@ -13,6 +13,10 @@ const defaultFilters = [
 	{ name: "All Files", extensions: ["*"] },
 ];
 
+const setScreenshotProtection = (enabled: boolean) => {
+	electron.remote.getCurrentWindow().setContentProtection(enabled);
+};
+
 const validatePath = (parentPath: string, filePath: string) => {
 	const relative = path.relative(parentPath, filePath);
 	return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
@@ -59,4 +63,4 @@ const openFile = async (defaultPath?: string, options?: DialogOptions) => {
 	return readFileSync(filePaths[0], "utf8");
 };
 
-export { openFile, saveFile };
+export { openFile, saveFile, setScreenshotProtection };
