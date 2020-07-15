@@ -14,13 +14,15 @@ const ToggleIcon = styled.span<{ isOpen: boolean }>`
 
 type Props = { isOpen?: boolean } & React.ButtonHTMLAttributes<any>;
 
-export const CollapseToggleButton = ({ isOpen, ...props }: Props) => {
+export const CollapseToggleButton = ({ isOpen, className, ...props }: Props) => {
 	const { t } = useTranslation();
 
 	return (
 		<button
 			data-testid="CollapseToggleButton"
-			className="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+			className={`flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 ${
+				className || "text-theme-neutral"
+			}`}
 			{...props}
 		>
 			<span>{isOpen ? t("COMMON.HIDE") : t("COMMON.SHOW")}</span>

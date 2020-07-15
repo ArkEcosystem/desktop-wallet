@@ -3,24 +3,24 @@
 exports[`WalletBottomSheetMenu should render 1`] = `
 <DocumentFragment>
   <aside
-    class="absolute bottom-0 z-50 w-full"
+    class="sticky bottom-0 z-50 w-full"
     data-testid="WalletBottomSheetMenu"
   >
     <div
-      class="flex items-center h-20 px-6 theme-dark bg-theme-background"
+      class="flex items-center bg-theme-neutral-900"
       data-testid="WalletBottomSheetMenu__header"
     >
       <div
-        class="container flex items-center justify-between mx-auto px-14"
+        class="container flex items-center justify-between mx-auto px-14 py-7"
       >
         <div>
           <span
-            class="text-lg font-bold text-theme-neutral-dark"
+            class="text-lg font-bold text-theme-neutral-light"
           >
             Your wallets
           </span>
           <span
-            class="ml-1 font-bold text-theme-neutral-light"
+            class="ml-1 font-bold text-theme-neutral-dark"
             data-testid="WalletBottomSheetMenu__counter"
           >
             1
@@ -30,7 +30,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
           class="inline-flex items-center space-x-1"
         >
           <button
-            class="flex items-center px-4 py-2 font-medium rounded text-theme-neutral focus:outline-none focus:shadow-outline space-x-2"
+            class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral-dark"
             data-testid="WalletBottomSheetMenu__toggle"
           >
             <span>
@@ -142,7 +142,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top undefined"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Wallet Type
@@ -273,7 +273,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold"
+                    class="py-1 text-sm font-bold text-center space-x-2"
                   />
                   <td
                     class="font-semibold text-right"
