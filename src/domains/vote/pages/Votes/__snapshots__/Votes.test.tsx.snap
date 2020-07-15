@@ -7,7 +7,7 @@ exports[`Votes should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -58,15 +58,20 @@ exports[`Votes should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -74,15 +79,22 @@ exports[`Votes should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <button
+                class="sc-fznKkj guwYPQ"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -185,7 +197,7 @@ exports[`Votes should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -258,7 +270,7 @@ exports[`Votes should render 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fzoXzr iZsTg"
+                  class="sc-fzpjYC kDocuf"
                 >
                   <div
                     aria-expanded="false"
@@ -477,7 +489,7 @@ exports[`Votes should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -512,7 +524,7 @@ exports[`Votes should select a cryptoasset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -563,15 +575,20 @@ exports[`Votes should select a cryptoasset 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -579,15 +596,22 @@ exports[`Votes should select a cryptoasset 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <button
+                class="sc-fznKkj guwYPQ"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -690,7 +714,7 @@ exports[`Votes should select a cryptoasset 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -763,7 +787,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fzoXzr iZsTg"
+                  class="sc-fzpjYC kDocuf"
                 >
                   <div
                     aria-expanded="false"
@@ -995,7 +1019,7 @@ exports[`Votes should select a cryptoasset 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1009,7 +1033,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               Select Address
             </h2>
             <div
-              class="sc-fznZeY dcDttg"
+              class="sc-fzokOt bVpfTX"
               role="table"
             >
               <table
@@ -1362,7 +1386,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1488,7 +1512,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1573,7 +1597,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1658,7 +1682,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="AddressListItem__button--select"
                           type="button"
@@ -1686,7 +1710,7 @@ exports[`Votes should select a delegate 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1737,15 +1761,20 @@ exports[`Votes should select a delegate 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1753,15 +1782,22 @@ exports[`Votes should select a delegate 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <button
+                class="sc-fznKkj guwYPQ"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1864,7 +1900,7 @@ exports[`Votes should select a delegate 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -1937,7 +1973,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fzoXzr iZsTg"
+                  class="sc-fzpjYC kDocuf"
                 >
                   <div
                     aria-expanded="false"
@@ -2191,7 +2227,7 @@ exports[`Votes should select a delegate 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2205,7 +2241,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fznZeY dcDttg"
+              class="sc-fzokOt bVpfTX"
               role="table"
             >
               <table
@@ -2580,7 +2616,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznKkj guLhWa"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2684,7 +2720,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznKkj guLhWa"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2752,7 +2788,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW iOkWkI"
+                          class="sc-fznKkj guLhWa"
                           color="danger"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2856,7 +2892,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -2924,7 +2960,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -3018,7 +3054,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                     <button
-                      class="sc-fzqBZW cNBvVZ"
+                      class="sc-fznKkj bgQeL"
                       color="primary"
                       type="button"
                     >
@@ -3043,7 +3079,7 @@ exports[`Votes should select address 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -3094,15 +3130,20 @@ exports[`Votes should select address 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3110,15 +3151,22 @@ exports[`Votes should select address 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxiKw fFXzuz"
-                height="22"
-                width="22"
+              <button
+                class="sc-fznKkj guwYPQ"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -3221,7 +3269,7 @@ exports[`Votes should select address 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3294,7 +3342,7 @@ exports[`Votes should select address 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fzoXzr iZsTg"
+                  class="sc-fzpjYC kDocuf"
                 >
                   <div
                     aria-expanded="false"
@@ -3548,7 +3596,7 @@ exports[`Votes should select address 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -3562,7 +3610,7 @@ exports[`Votes should select address 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fznZeY dcDttg"
+              class="sc-fzokOt bVpfTX"
               role="table"
             >
               <table
@@ -3937,7 +3985,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4041,7 +4089,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4109,7 +4157,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4213,7 +4261,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"
@@ -4281,7 +4329,7 @@ exports[`Votes should select address 1`] = `
                         class="text-right"
                       >
                         <button
-                          class="sc-fzqBZW jRoAML"
+                          class="sc-fznKkj iOlpkV"
                           color="primary"
                           data-testid="DelegateListItem__button--toggle"
                           type="button"

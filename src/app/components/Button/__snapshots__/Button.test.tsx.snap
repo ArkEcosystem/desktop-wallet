@@ -60,6 +60,16 @@ exports[`Button should render as plain 1`] = `
 </div>
 `;
 
+exports[`Button should render as transparent 1`] = `
+<div>
+  <button
+    class="sc-AxjAm JgGpT"
+    color="primary"
+    type="button"
+  />
+</div>
+`;
+
 exports[`Button should render contrast text if not primary 1`] = `
 <div>
   <button

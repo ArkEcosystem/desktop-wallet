@@ -7,7 +7,7 @@ exports[`Transaction Send should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -103,15 +103,22 @@ exports[`Transaction Send should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <a
+                aria-current="page"
+                class="active"
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -119,15 +126,22 @@ exports[`Transaction Send should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxhUy gwxBWy"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -218,7 +232,7 @@ exports[`Transaction Send should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/transactions/portfolio"
+          href="/profiles/bob/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -230,7 +244,7 @@ exports[`Transaction Send should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoLag fvqzEZ flex-1"
+        class="sc-fzoXzr imWwrn flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -664,7 +678,7 @@ exports[`Transaction Send should render 1`] = `
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -672,7 +686,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -680,7 +694,7 @@ exports[`Transaction Send should render 1`] = `
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
                                 >
@@ -1129,7 +1143,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               >
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1137,7 +1151,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1145,7 +1159,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fznWqX fdwnJY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
                 >
@@ -1316,7 +1330,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="sc-fznJRM clPBLO"
+              class="sc-fznWqX bzgpXZ"
             >
               <div
                 class="sc-fzqBZW cBnliu"
@@ -1831,7 +1845,7 @@ exports[`Transaction Send should render 4th step 1`] = `
         class="inline-flex items-center justify-center w-full mt-8 space-x-3"
       >
         <div
-          class="sc-fznxsB cntyly"
+          class="sc-fznJRM ffCWyi"
           color="primary"
         />
         <span

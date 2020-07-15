@@ -7,7 +7,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzoyAV bqFbiw"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -58,15 +58,20 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -74,15 +79,22 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -111,7 +123,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -128,7 +140,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -200,7 +212,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="flex"
               >
                 <div
-                  class="sc-AxhCb dtyYr -mr-1 border-theme-neutral-dark"
+                  class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-theme-neutral-dark"
@@ -278,7 +290,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 </div>
               </button>
               <button
-                class="sc-AxmLO hCnZlU"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -293,7 +305,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxmLO iaPZRe text-left"
+                    class="sc-AxhCb bFTKKh text-left"
                     color="primary"
                     type="button"
                   >
@@ -313,7 +325,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
           </div>
         </div>
         <div
-          class="sc-fzpans ctLZwQ"
+          class="sc-fzoLag fvqzEZ"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -336,15 +348,15 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     class="flex"
                   >
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznxsB dVTXMU"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj kIzRLe"
+                      class="sc-fznJRM cjWbrJ"
                     >
                       <span
-                        class="sc-fznZeY esYqtc"
+                        class="sc-fznWqX kLTWXY"
                       />
                     </div>
                   </label>
@@ -412,7 +424,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </header>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -436,7 +448,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -469,7 +481,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -512,7 +524,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           Delegate 3
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           Abuzhu…FgETuW
@@ -611,7 +623,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </li>
                     </ul>
                     <button
-                      class="sc-AxmLO ipkzTu"
+                      class="sc-AxhCb BegvR"
                       color="primary"
                       data-testid="WalletVote__delegate__unvote"
                       type="button"
@@ -626,7 +638,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -650,7 +662,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -682,7 +694,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -730,7 +742,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="flex items-center"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -765,7 +777,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       data-testid="WalletRegistrations__icon-list"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -779,7 +791,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -793,7 +805,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__rest"
                       >
                         +1
@@ -811,7 +823,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     Show all
                   </button>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -825,7 +837,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -839,7 +851,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               Pending Transactions
             </h2>
             <div
-              class="sc-AxgMl hJWcEH"
+              class="sc-AxheI bjlCjh"
               role="table"
             >
               <table
@@ -1045,7 +1057,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -1079,7 +1091,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           ASuusX…GQ3kqT
@@ -1146,7 +1158,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -1157,7 +1169,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="text-right"
                     >
                       <button
-                        class="sc-AxmLO ipkzTu"
+                        class="sc-AxhCb BegvR"
                         color="primary"
                         data-testid="TransactionRow__sign"
                         type="button"
@@ -1188,7 +1200,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
               Transaction History
             </h2>
             <div
-              class="sc-AxgMl hJWcEH"
+              class="sc-AxheI bjlCjh"
               role="table"
             >
               <table
@@ -1394,7 +1406,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -1408,7 +1420,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -1462,7 +1474,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -1528,7 +1540,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -1542,7 +1554,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -1596,7 +1608,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -1662,7 +1674,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -1676,7 +1688,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -1730,7 +1742,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -1767,7 +1779,7 @@ exports[`WalletDetails should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoLsD jXsxtN"
+      class="sc-fzoyAV bqFbiw"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -1818,15 +1830,20 @@ exports[`WalletDetails should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1834,15 +1851,22 @@ exports[`WalletDetails should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -1871,7 +1895,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -1888,7 +1912,7 @@ exports[`WalletDetails should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
@@ -1960,7 +1984,7 @@ exports[`WalletDetails should render 1`] = `
                 class="flex"
               >
                 <div
-                  class="sc-AxhCb dtyYr -mr-1 border-theme-neutral-dark"
+                  class="sc-AxhUy bjgvrq -mr-1 border-theme-neutral-dark"
                 >
                   <div
                     class="sc-AxirZ iQaTP text-theme-neutral-dark"
@@ -2038,7 +2062,7 @@ exports[`WalletDetails should render 1`] = `
                 </div>
               </button>
               <button
-                class="sc-AxmLO hCnZlU"
+                class="sc-AxhCb gBCygf"
                 color="primary"
                 data-testid="WalletHeader__send-button"
                 type="button"
@@ -2053,7 +2077,7 @@ exports[`WalletDetails should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <button
-                    class="sc-AxmLO iaPZRe text-left"
+                    class="sc-AxhCb bFTKKh text-left"
                     color="primary"
                     type="button"
                   >
@@ -2073,7 +2097,7 @@ exports[`WalletDetails should render 1`] = `
           </div>
         </div>
         <div
-          class="sc-fzpans ctLZwQ"
+          class="sc-fzoLag fvqzEZ"
         >
           <div
             class="container py-16 mx-auto px-14"
@@ -2096,15 +2120,15 @@ exports[`WalletDetails should render 1`] = `
                     class="flex"
                   >
                     <input
-                      class="sc-fznyAO htyfyy"
+                      class="sc-fznxsB dVTXMU"
                       data-testid="WalletHeader__toggle"
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznKkj kIzRLe"
+                      class="sc-fznJRM cjWbrJ"
                     >
                       <span
-                        class="sc-fznZeY esYqtc"
+                        class="sc-fznWqX kLTWXY"
                       />
                     </div>
                   </label>
@@ -2172,7 +2196,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </header>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2196,7 +2220,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -2229,7 +2253,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -2272,7 +2296,7 @@ exports[`WalletDetails should render 1`] = `
                           Delegate 3
                         </span>
                         <span
-                          class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           Abuzhu…FgETuW
@@ -2371,7 +2395,7 @@ exports[`WalletDetails should render 1`] = `
                       </li>
                     </ul>
                     <button
-                      class="sc-AxmLO ipkzTu"
+                      class="sc-AxhCb BegvR"
                       color="primary"
                       data-testid="WalletVote__delegate__unvote"
                       type="button"
@@ -2386,7 +2410,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2410,7 +2434,7 @@ exports[`WalletDetails should render 1`] = `
                   Hide
                 </span>
                 <span
-                  class="sc-fzplWN hMBkum"
+                  class="sc-fzpjYC iMzJTf"
                 >
                   <div
                     class="sc-AxirZ fttODj"
@@ -2442,7 +2466,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -2490,7 +2514,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex items-center"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
                         <div
                           class="sc-AxirZ iQaTP text-xl"
@@ -2525,7 +2549,7 @@ exports[`WalletDetails should render 1`] = `
                       data-testid="WalletRegistrations__icon-list"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -2539,7 +2563,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__icon"
                       >
                         <div
@@ -2553,7 +2577,7 @@ exports[`WalletDetails should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-AxhCb bzWLYJ text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                         data-testid="WalletRegistrations__icon-list__rest"
                       >
                         +1
@@ -2571,7 +2595,7 @@ exports[`WalletDetails should render 1`] = `
                     Show all
                   </button>
                   <button
-                    class="sc-AxmLO ipkzTu"
+                    class="sc-AxhCb BegvR"
                     color="primary"
                     data-testid="WalletRegistrations__register"
                     type="button"
@@ -2585,7 +2609,7 @@ exports[`WalletDetails should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzpans ctLZwQ"
+        class="sc-fzoLag fvqzEZ"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -2599,7 +2623,7 @@ exports[`WalletDetails should render 1`] = `
               Pending Transactions
             </h2>
             <div
-              class="sc-AxgMl hJWcEH"
+              class="sc-AxheI bjlCjh"
               role="table"
             >
               <table
@@ -2805,7 +2829,7 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -2839,7 +2863,7 @@ exports[`WalletDetails should render 1`] = `
                         class="inline-block truncate align-middle"
                       >
                         <span
-                          class="sc-Axmtr hBVTto text-theme-text font-semibold text-base"
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           ASuusX…GQ3kqT
@@ -2906,7 +2930,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -2917,7 +2941,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-right"
                     >
                       <button
-                        class="sc-AxmLO ipkzTu"
+                        class="sc-AxhCb BegvR"
                         color="primary"
                         data-testid="TransactionRow__sign"
                         type="button"
@@ -2948,7 +2972,7 @@ exports[`WalletDetails should render 1`] = `
               Transaction History
             </h2>
             <div
-              class="sc-AxgMl hJWcEH"
+              class="sc-AxheI bjlCjh"
               role="table"
             >
               <table
@@ -3154,7 +3178,7 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -3168,7 +3192,7 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -3222,7 +3246,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -3288,7 +3312,7 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -3302,7 +3326,7 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -3356,7 +3380,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -3422,7 +3446,7 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowMode"
                       >
                         <div
-                          class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
                         >
                           <div
                             class="sc-AxirZ iQaTP"
@@ -3436,7 +3460,7 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhCb fwVCao bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                           data-testid="TransactionRowRecipientIcon"
                         >
                           <div
@@ -3490,7 +3514,7 @@ exports[`WalletDetails should render 1`] = `
                       class="text-right"
                     >
                       <div
-                        class="sc-AxheI kinEEx"
+                        class="sc-Axmtr cYWaUi"
                         color="danger"
                         data-testid="TransactionRowAmount"
                       >
@@ -3552,7 +3576,7 @@ exports[`WalletDetails should render 1`] = `
               Show
             </span>
             <span
-              class="sc-fzplWN cCDGwI"
+              class="sc-fzpjYC eysiUh"
             >
               <div
                 class="sc-AxirZ fttODj"
@@ -3580,7 +3604,7 @@ exports[`WalletDetails should render 1`] = `
           class="container mx-auto px-14"
         >
           <div
-            class="sc-AxgMl hJWcEH"
+            class="sc-AxheI bjlCjh"
             role="table"
           >
             <table
@@ -3739,7 +3763,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ"
+                        class="sc-AxhUy dSLmHc"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -3780,7 +3804,7 @@ exports[`WalletDetails should render 1`] = `
                         ARK Wallet 1
                       </span>
                       <span
-                        class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                        class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         ASuusXSW9…6T9GQ3kqT
@@ -3892,7 +3916,7 @@ exports[`WalletDetails should render 1`] = `
                       class="flex"
                     >
                       <div
-                        class="sc-AxhCb bzWLYJ"
+                        class="sc-AxhUy dSLmHc"
                       >
                         <div
                           class="sc-AxirZ eEbZjj"
@@ -3933,7 +3957,7 @@ exports[`WalletDetails should render 1`] = `
                         ARK Wallet 2
                       </span>
                       <span
-                        class="sc-Axmtr hBVTto text-theme-neutral-light font-semibold text-base"
+                        class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         ASuusXSW9…6T9GQ3kqT

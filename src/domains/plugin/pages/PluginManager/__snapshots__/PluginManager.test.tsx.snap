@@ -7,7 +7,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -104,15 +104,20 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -120,15 +125,22 @@ exports[`PluginManager should cancel install plugin 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -205,7 +217,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -467,7 +479,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4396,7 +4408,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -4493,15 +4505,20 @@ exports[`PluginManager should close install plugin modal 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -4509,15 +4526,22 @@ exports[`PluginManager should close install plugin modal 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -4594,7 +4618,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -4856,7 +4880,7 @@ exports[`PluginManager should close install plugin modal 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -8785,7 +8809,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -8882,15 +8906,20 @@ exports[`PluginManager should delete plugin on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -8898,15 +8927,22 @@ exports[`PluginManager should delete plugin on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -8983,7 +9019,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -9245,7 +9281,7 @@ exports[`PluginManager should delete plugin on game 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -10898,7 +10934,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -10995,15 +11031,20 @@ exports[`PluginManager should delete plugin on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -11011,15 +11052,22 @@ exports[`PluginManager should delete plugin on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -11096,7 +11144,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -11358,7 +11406,7 @@ exports[`PluginManager should delete plugin on home 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -13577,7 +13625,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -13674,15 +13722,20 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -13690,15 +13743,22 @@ exports[`PluginManager should download & install plugin on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -13775,7 +13835,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -14037,7 +14097,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -15685,7 +15745,7 @@ exports[`PluginManager should download & install plugin on game 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzpjYC eAYFYJ fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzoyAV dUeOFU fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -15845,7 +15905,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -15942,15 +16002,20 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -15958,15 +16023,22 @@ exports[`PluginManager should download & install plugin on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -16043,7 +16115,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -16305,7 +16377,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -20229,7 +20301,7 @@ exports[`PluginManager should download & install plugin on home 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzpjYC eAYFYJ fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzoyAV dUeOFU fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -20389,7 +20461,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -20486,15 +20558,20 @@ exports[`PluginManager should install plugin from header install button 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -20502,15 +20579,22 @@ exports[`PluginManager should install plugin from header install button 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -20587,7 +20671,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -20849,7 +20933,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -23063,7 +23147,7 @@ exports[`PluginManager should install plugin from header install button 1`] = `
     data-testid="modal__overlay"
   />
   <div
-    class="sc-fzpjYC eAYFYJ fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    class="sc-fzoyAV dUeOFU fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
     data-testid="modal__inner"
   >
     <div
@@ -23223,7 +23307,7 @@ exports[`PluginManager should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -23320,15 +23404,20 @@ exports[`PluginManager should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -23336,15 +23425,22 @@ exports[`PluginManager should render 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -23421,7 +23517,7 @@ exports[`PluginManager should render 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -23683,7 +23779,7 @@ exports[`PluginManager should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -25902,7 +25998,7 @@ exports[`PluginManager should search for plugin 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -25999,15 +26095,20 @@ exports[`PluginManager should search for plugin 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -26015,15 +26116,22 @@ exports[`PluginManager should search for plugin 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -26100,7 +26208,7 @@ exports[`PluginManager should search for plugin 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -26414,7 +26522,7 @@ exports[`PluginManager should search for plugin 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -28635,7 +28743,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -28732,15 +28840,20 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -28748,15 +28861,22 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -28833,7 +28953,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -29095,7 +29215,7 @@ exports[`PluginManager should toggle between list and grid on game 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -30964,7 +31084,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="sc-fzoyAV bqFbiw"
+      class="sc-fzoLag iezQBg"
     >
       <div
         class="px-4 sm:px-6 lg:px-"
@@ -31061,15 +31181,20 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
               >
-                <svg>
-                  sent.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -31077,15 +31202,22 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
             <div
               class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
-              <div
-                class="sc-AxirZ hmuEJr"
-                height="22"
-                width="22"
+              <button
+                class="sc-AxjAm JgGpT"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
               >
-                <svg>
-                  receive.svg
-                </svg>
-              </div>
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
             </div>
             <div
               class="h-8 border-r border-theme-neutral-200"
@@ -31162,7 +31294,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
       class="flex flex-col flex-1 space-y-5 mt-5"
     >
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"
@@ -31424,7 +31556,7 @@ exports[`PluginManager should toggle between list and grid on home 1`] = `
         </div>
       </div>
       <div
-        class="sc-fzoLag fvqzEZ"
+        class="sc-fzoXzr imWwrn"
       >
         <div
           class="container py-16 mx-auto px-14"

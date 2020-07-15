@@ -1,12 +1,15 @@
 import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
 import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
+import { SearchWallet } from "domains/wallet/components/SearchWallet";
+import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -102,6 +105,8 @@ export const NavigationBar = ({
 }: NavigationBarProps) => {
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
+	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
+	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const renderMenu = () => {
 		if (!activeProfile?.id()) {
@@ -123,6 +128,12 @@ export const NavigationBar = ({
 			))
 		);
 	};
+
+	const handleSearchWallet = () => {
+		setIsSearchingWallet(false);
+
+		return setReceiveFundsIsOpen(true);
+	};
 	return (
 		<NavWrapper aria-labelledby="main menu">
 			<div className="px-4 sm:px-6 lg:px-">
@@ -140,13 +151,24 @@ export const NavigationBar = ({
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-							<Icon name="Sent" width={22} height={22} />
+							<NavLink
+								to={`/profiles/${activeProfile?.id()}/transactions/transfer`}
+								data-testid="navbar__buttons--send"
+							>
+								<Icon name="Sent" width={22} height={22} />
+							</NavLink>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-							<Icon name="Receive" width={22} height={22} />
+							<Button
+								variant="transparent"
+								onClick={() => setIsSearchingWallet(true)}
+								data-testid="navbar__buttons--receive"
+							>
+								<Icon name="Receive" width={22} height={22} />
+							</Button>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
@@ -167,6 +189,12 @@ export const NavigationBar = ({
 					</div>
 				</div>
 			</div>
+			<SearchWallet
+				isOpen={isSearchingWallet}
+				onSearch={handleSearchWallet}
+				onClose={() => setIsSearchingWallet(false)}
+			/>
+			<ReceiveFunds isOpen={receiveFundsIsOpen} handleClose={() => setReceiveFundsIsOpen(false)} />
 		</NavWrapper>
 	);
 };
