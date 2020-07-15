@@ -60,9 +60,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 					<span className="mt-1 text-sm text-theme-neutral">
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle name="isScreenshotProtection" />
 					</div>
 				</div>
 			),
@@ -78,9 +77,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle name="isAdvancedMode" />
 					</div>
 				</div>
 			),
@@ -88,10 +86,10 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		{
 			wrapperClass: "pt-8",
 			content: (
-				<FormField name="price-source">
+				<FormField name="autoLogoff">
 					<FormLabel label="Auto-logoff" />
 					<Select
-						placeholder="Select Language"
+						placeholder="Select Auto-logoff"
 						ref={formConfig.register({ required: true })}
 						options={[
 							{ label: "Option 1", value: "option1" },
@@ -113,9 +111,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle name="isDarkTheme" />
 					</div>
 				</div>
 			),
@@ -131,9 +128,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle name="isUpdateLedger" />
 					</div>
 				</div>
 			),
@@ -162,11 +158,12 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
-							<FormField name="profile-name">
+							<FormField name="name">
 								<FormLabel label="Profile Name" />
 								<Input type="text" ref={formConfig.register({ required: true })} />
 								<FormHelperText />
 							</FormField>
+
 							<FormField className="mt-8" name="passphraseLanguage">
 								<FormLabel label="Passphrase Language" />
 								<Select
@@ -179,6 +176,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								/>
 								<FormHelperText />
 							</FormField>
+
 							<FormField className="mt-8" name="currency">
 								<FormLabel label="Currency" />
 								<Select
@@ -192,6 +190,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<FormHelperText />
 							</FormField>
 						</div>
+
 						<div className="flex flex-col w-2/4 ml-5">
 							<FormField name="language">
 								<FormLabel label="Language" />
@@ -205,6 +204,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								/>
 								<FormHelperText />
 							</FormField>
+
 							<FormField className="mt-8" name="marketProvider">
 								<FormLabel label="Market Provider" />
 								<Select
@@ -217,6 +217,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								/>
 								<FormHelperText />
 							</FormField>
+
 							<FormField className="mt-8" name="timeFormat">
 								<FormLabel label="Time Format" />
 								<Select
@@ -232,14 +233,17 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						</div>
 					</div>
 				</div>
+
 				<div className="relative mt-10">
 					<h2>Security</h2>
 					<ListDivided items={securityItems} />
 				</div>
+
 				<div className="relative mt-10">
 					<h2>Other</h2>
 					<ListDivided items={otherItems} />
 				</div>
+
 				<div className="flex justify-between w-full pt-2">
 					<Button color="danger" variant="plain">
 						<Icon name="Reset" />
