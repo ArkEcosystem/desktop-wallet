@@ -10,6 +10,7 @@ module.exports = override(
 		config.node = {
 			fs: "empty",
 		};
+		config.target = "electron-renderer";
 		return config;
 	},
 );
