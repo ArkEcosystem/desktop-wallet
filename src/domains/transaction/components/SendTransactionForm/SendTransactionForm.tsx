@@ -5,7 +5,7 @@ import { InputRange } from "app/components/Input/InputRange";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
 import { SelectNetwork } from "app/components/SelectNetwork";
-import { ProfileFormField } from "domains/profile/components/ProfileFormField";
+import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
@@ -16,8 +16,6 @@ import { defaultStyle } from "./SendTransactionForm.styles";
 
 type SendTransactionFormProps = {
 	maxAvailableAmount: number;
-	contactList: any;
-	senderList: any;
 	formDefaultData: any;
 	feeRange: any;
 	defaultFee: number;
@@ -27,6 +25,7 @@ type SendTransactionFormProps = {
 	onBack?: any;
 	networks: any;
 	contacts: any[];
+	profiles: any[];
 };
 
 const FormWrapper = styled.div`
@@ -37,14 +36,13 @@ export const SendTransactionForm = ({
 	feeRange,
 	maxAvailableAmount,
 	formDefaultData,
-	contactList,
-	senderList,
 	maxFee,
 	onSubmit,
 	onBack,
 	assetSymbol,
 	networks,
 	contacts,
+	profiles,
 }: SendTransactionFormProps) => {
 	const [addedRecipients] = useState([] as RecipientListItem[]);
 
@@ -58,11 +56,6 @@ export const SendTransactionForm = ({
 		onSubmit?.(formResult);
 	};
 
-	const getProfileInfo = (address: string) => {
-		const profiles = [...contactList, ...senderList];
-		return profiles.find((profile: any) => profile.address === address);
-	};
-
 	return (
 		<FormWrapper>
 			<Form id="send-transaction__form" context={form} onSubmit={() => void 0}>
@@ -73,15 +66,23 @@ export const SendTransactionForm = ({
 					<SelectNetwork networks={networks} name="network" value={network} />
 				</FormField>
 
-				<ProfileFormField
-					formName="sender"
-					formLabel="Sender"
-					profiles={senderList}
-					selectedProfile={getProfileInfo(sender)}
-					register={register}
-				/>
+				<FormField name="sender" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label="Sender" />
+					</div>
 
-				<div>
+					<div data-testid="sender-address">
+						<SelectAddress
+							contactSearchTitle="My addresses"
+							contactSearchDescription="Find and select preferred address from you saved profiles"
+							address={sender}
+							ref={register}
+							contacts={profiles}
+						/>
+					</div>
+				</FormField>
+
+				<div data-testid="recipient-address">
 					<AddRecipient
 						assetSymbol={assetSymbol}
 						maxAvailableAmount={maxAvailableAmount}
@@ -156,6 +157,5 @@ SendTransactionForm.defaultProps = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [],
-	contactList: [],
+	profiles: [],
 };

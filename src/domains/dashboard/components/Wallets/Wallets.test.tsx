@@ -15,7 +15,7 @@ describe("Wallets", () => {
 	let dashboardURL: string;
 
 	beforeAll(() => {
-		profile = env.profiles().get(identity.profiles.bob.id);
+		profile = env.profiles().findById(identity.profiles.bob.id);
 		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 	});

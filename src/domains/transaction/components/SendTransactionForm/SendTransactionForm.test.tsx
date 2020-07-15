@@ -2,7 +2,7 @@
 import { contacts } from "domains/contact/data";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render, waitFor } from "testing-library";
+import { fireEvent, render, waitFor, within } from "testing-library";
 
 import { networks } from "../../data";
 import { SendTransactionForm } from "./";
@@ -13,35 +13,15 @@ describe("SendTransactionForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should select sender", () => {
-		const senderList = [
-			{
-				address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "My Wallet",
-				avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-				formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-			},
-		];
-
-		const { getByTestId, getAllByTestId, container } = render(
-			<SendTransactionForm contacts={contacts} senderList={senderList} networks={networks} />,
+	it("should select sender and recipient", () => {
+		const { getByTestId, getAllByTestId } = render(
+			<SendTransactionForm profiles={contacts} contacts={contacts} networks={networks} />,
 		);
-		fireEvent.change(getByTestId("ProfileFormField__select-sender"), {
-			target: { value: senderList[0].address },
-		});
-		const options = getAllByTestId("ProfileFormField__profile-select");
-
-		expect((options[0] as HTMLOptionElement).selected).toBeTruthy();
-		expect(container).toMatchSnapshot();
-	});
-
-	it("should select recipient", () => {
-		const { getByTestId, getAllByTestId } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -52,12 +32,40 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(() => {
-			expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+		waitFor(
+			() => {
+				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+			},
+			{ timeout: 2000 },
+		);
+		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
+		expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__input")).toHaveValue(
+			selectedAddressValue,
+		);
 
-			const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
-			expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
+		// Select recipient
+		act(() => {
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectAddress__wrapper"));
 		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		const address = getAllByTestId("ContactListItem__one-option-button-0")[0];
+
+		act(() => {
+			fireEvent.click(address);
+		});
+
+		waitFor(
+			() => {
+				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+			},
+			{ timeout: 2000 },
+		);
+		const recipientSelectedAddress = contacts[0]?.addresses()[0]?.address;
+		expect(within(getByTestId("recipient-address")).getByTestId("SelectAddress__input")).toHaveValue(
+			recipientSelectedAddress,
+		);
 	});
 
 	it("should set available amount", () => {

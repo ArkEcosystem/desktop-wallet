@@ -25,4 +25,11 @@ describe("InputRange", () => {
 		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "6");
 		expect(getByTestId("InputCurrency")).toHaveValue("6");
 	});
+
+	it("should not allow a value greater than the maximum", () => {
+		const { getByTestId } = render(<InputRange defaultValue={5} min={1} max={10} step={1} />);
+		const input = getByTestId("InputCurrency");
+		fireEvent.change(input, { target: { value: "11" } });
+		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "10");
+	});
 });
