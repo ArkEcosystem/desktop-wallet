@@ -35,7 +35,7 @@ const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 };
 
 type Props = {
-	address: string;
+	address: string | undefined;
 	hasBridgechains?: boolean;
 	hasPlugins?: boolean;
 	hasSecondSignature?: boolean;
@@ -75,7 +75,7 @@ export const WalletRegistrations = ({
 	const hasNoRegistrations = !delegate && !business && iconsList.length === 0;
 
 	return (
-		<section data-testid="WalletRegistrations" className="px-12 py-8">
+		<section data-testid="WalletRegistrations">
 			<div className="flex items-center justify-between">
 				<h2 className="font-bold">Registrations</h2>
 				<CollapseToggleButton
@@ -99,7 +99,7 @@ export const WalletRegistrations = ({
 								<p className="text-sm font-semibold text-theme-neutral">Type Registrations</p>
 								<p className="font-semibold text-theme-neutral-900">
 									You haven&apos;t registered more than one type of registration.
-									<a href="#" className="px-2 text-theme-primary">
+									<a href="/#" className="px-2 text-theme-primary">
 										Learn More
 									</a>
 								</p>

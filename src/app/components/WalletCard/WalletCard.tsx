@@ -4,7 +4,9 @@ import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
+import { Link } from "react-router-dom";
 
 type WalletCardProps = {
 	className?: string;
@@ -16,6 +18,7 @@ type WalletCardProps = {
 	coinIcon?: string;
 	coinClass?: string;
 	walletName?: string;
+	id?: string;
 	address?: string;
 	balance?: string;
 	actions?: any;
@@ -35,6 +38,7 @@ export const WalletCard = ({
 	blankTitleClass,
 	blankSubtitleClass,
 	className,
+	id,
 	address,
 	walletName,
 	balance,
@@ -48,6 +52,7 @@ export const WalletCard = ({
 		if (icon === "Star") return "text-theme-warning-400";
 		return "text-theme-neutral-600";
 	};
+	const activeProfile = useActiveProfile();
 
 	if (isBlank) {
 		return (
@@ -72,36 +77,38 @@ export const WalletCard = ({
 	}
 
 	return (
-		<div className={`w-64 inline-block ${className}`}>
-			<Card>
-				<div className="relative p-2">
-					<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
-						<Dropdown options={actions} onSelect={onSelect} />
-					</div>
-					<div className="absolute right-3 -top-1">
-						{walletTypeIcons &&
-							walletTypeIcons.map((type: string, index: number) => {
-								return (
-									<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
-										<Icon name={type} width={18} />
-									</div>
-								);
-							})}
-					</div>
-					<div className="flex">
-						<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
-							{renderCoin(coinIcon)}
-						</Circle>
-						<Avatar size="lg" address={address as string} />
-					</div>
+		<Link to={`/profiles/${activeProfile?.id()}/wallets/${id}`}>
+			<div className={`w-64 inline-block ${className}`}>
+				<Card>
+					<div className="relative p-2">
+						<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
+							<Dropdown options={actions} onSelect={onSelect} />
+						</div>
+						<div className="absolute right-3 -top-1">
+							{walletTypeIcons &&
+								walletTypeIcons.map((type: string, index: number) => {
+									return (
+										<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
+											<Icon name={type} width={18} />
+										</div>
+									);
+								})}
+						</div>
+						<div className="flex">
+							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
+								{renderCoin(coinIcon)}
+							</Circle>
+							<Avatar size="lg" address={address as string} />
+						</div>
 
-					<div className="mt-6 truncate max-w-12">
-						<Address walletName={walletName} address={address} maxChars={13} />
+						<div className="mt-6 truncate max-w-12">
+							<Address walletName={walletName} address={address} maxChars={13} />
+						</div>
+						<div className="font-bold text-theme-neutral-900">{balance}</div>
 					</div>
-					<div className="font-bold text-theme-neutral-900">{balance}</div>
-				</div>
-			</Card>
-		</div>
+				</Card>
+			</div>
+		</Link>
 	);
 };
 

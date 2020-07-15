@@ -20,10 +20,10 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 	return (
 		<tr
 			data-testid={`PluginListItem--${plugin.id}`}
-			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+			className="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
 		>
-			<td className="w-16 text-center">
-				<ChangeNowLogo className="w-12 h-12" />
+			<td className="w-20 text-center">
+				<ChangeNowLogo className="w-15 h-15" />
 			</td>
 
 			<td>
@@ -62,7 +62,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 
 				{!plugin.isInstalled && (
 					<div className="flex w-6 h-6 mx-auto">
-						<div className="m-auto text-theme-neutral-500">
+						<div className="m-auto text-theme-neutral">
 							<Icon name="Dash" width={15} height={15} />
 						</div>
 					</div>

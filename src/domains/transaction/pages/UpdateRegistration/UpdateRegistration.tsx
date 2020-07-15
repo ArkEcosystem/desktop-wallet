@@ -6,6 +6,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -32,7 +33,7 @@ const FirstStep = ({ form }: { form: any }) => {
 	return (
 		<div data-testid="UpdateRegistration__first-step">
 			<h1 className="mb-0">Update Business</h1>
-			<div className="text-theme-neutral-700">
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
@@ -137,8 +138,8 @@ const SecondStep = () => {
 					border={false}
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -158,7 +159,7 @@ const SecondStep = () => {
 					}
 					className="pt-4"
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -185,7 +186,7 @@ const SecondStep = () => {
 				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 
 				<TransactionDetail label="Website">
-					<a href="https://ark.io" target="_blank" rel="noreferrer" className="link">
+					<a href="https://ark.io" target="_blank" rel="noopener noreferrer" className="link">
 						https://ark.io
 					</a>
 				</TransactionDetail>
@@ -214,7 +215,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-700">
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -257,7 +258,7 @@ export const FourthStep = () => (
 		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
 		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
 				http://robank.com
 			</a>
 		</TransactionDetail>
@@ -265,8 +266,8 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -290,86 +291,95 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div data-testid="UpdateRegistration" className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={6} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={6} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep form={form} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep form={form} passwordType="mnemonic" />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<ThirdStep form={form} passwordType="password" />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<ThirdStep form={form} passwordType="ledger" />
-						</TabPanel>
-						<TabPanel tabId={6}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep form={form} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep form={form} passwordType="mnemonic" />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<ThirdStep form={form} passwordType="password" />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<ThirdStep form={form} passwordType="ledger" />
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 6 && (
-								<Button
-									disabled={activeTab === 1}
-									data-testid="UpdateRegistration__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-							)}
-
-							{activeTab < 3 && (
-								<Button
-									data-testid="UpdateRegistration__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							)}
-
-							{activeTab >= 3 && activeTab < 6 && (
-								<Button
-									data-testid="UpdateRegistration__send-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									<Icon name="Send" className="mr-2" width={20} height={20} />
-									Send
-								</Button>
-							)}
-
-							{activeTab === 6 && (
-								<div className="flex justify-end space-x-3">
-									<Button data-testid="UpdateRegistration__wallet-button" variant="plain">
-										Back to wallet
-									</Button>
-
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 6 && (
 									<Button
-										type="submit"
-										data-testid="UpdateRegistration__download-button"
+										disabled={activeTab === 1}
+										data-testid="UpdateRegistration__back-button"
 										variant="plain"
+										onClick={handleBack}
 									>
-										<Icon name="Download" className="mr-2" />
-										Download
+										Back
 									</Button>
-								</div>
-							)}
+								)}
+
+								{activeTab < 3 && (
+									<Button
+										data-testid="UpdateRegistration__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
+									</Button>
+								)}
+
+								{activeTab >= 3 && activeTab < 6 && (
+									<Button
+										data-testid="UpdateRegistration__send-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										<Icon name="Send" className="mr-2" width={20} height={20} />
+										Send
+									</Button>
+								)}
+
+								{activeTab === 6 && (
+									<div className="flex justify-end space-x-3">
+										<Button data-testid="UpdateRegistration__wallet-button" variant="plain">
+											Back to wallet
+										</Button>
+
+										<Button
+											type="submit"
+											data-testid="UpdateRegistration__download-button"
+											variant="plain"
+										>
+											<Icon name="Download" className="mr-2" />
+											Download
+										</Button>
+									</div>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
-		</div>
+					</Tabs>
+				</Form>
+			</Section>
+		</Page>
 	);
 };
 

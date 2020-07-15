@@ -1,14 +1,17 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
-import { fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
 import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 describe("CreateWallet", () => {
-	const mnemonic = ["lorem", "ipsum", "dolor", "sit", "amet", "consectetur"];
+	const mnemonic = "lorem ipsum dolor sit amet consectetur";
 
 	const onSubmit = jest.fn();
 	const onCopy = jest.fn();
@@ -113,18 +116,28 @@ describe("CreateWallet", () => {
 
 	it("should render", async () => {
 		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const createURL = `/profiles/${identity.profiles.bob.id}/wallets/create`;
+		history.push(createURL);
 
 		await act(async () => {
-			rendered = render(
-				<CreateWallet
-					onSubmit={onSubmit}
-					onCopy={onCopy}
-					onDownload={onDownload}
-					mnemonic={mnemonic}
-					networks={networks}
-					skipMnemonicVerification={true}
-				/>,
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/create">
+					<CreateWallet
+						onSubmit={onSubmit}
+						onCopy={onCopy}
+						onDownload={onDownload}
+						mnemonic={mnemonic}
+						networks={networks}
+						skipMnemonicVerification={true}
+					/>
+				</Route>,
+				{
+					routes: [createURL],
+					history,
+				},
 			);
+
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		});
 

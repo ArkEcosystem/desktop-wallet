@@ -2,280 +2,519 @@
 
 exports[`Vote For Delegate should render 1`] = `
 <DocumentFragment>
-  <div>
-    <div
-      class="max-w-xl py-16 mx-auto"
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag iezQBg"
     >
-      <form
-        class="space-y-8"
-        data-testid="Form"
+      <div
+        class="px-4 sm:px-6 lg:px-"
       >
-        <div>
-          <ul
-            class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
-          >
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-            <li
-              class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-            />
-          </ul>
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
           <div
-            class="mt-8"
+            class="flex items-center flex-shrink-0"
           >
             <div
-              data-testid="tab-pabel__active-panel"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
-              <section
-                data-testid="SendVoteTransaction__step--first"
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
               >
-                <div>
-                  <h1
-                    class="mb-0"
-                  >
-                    Vote for delegate
-                  </h1>
-                  <p
-                    class="text-theme-neutral-dark"
-                  >
-                    Enter details to send your money
-                  </p>
-                </div>
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
                 <div
-                  class="mt-4 grid grid-flow-row gap-2"
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxirZ dACfZY"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy gwxBWy"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="flex items-center py-6 true "
+                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
                   >
-                    <div
-                      class="flex-1"
+                    <span
+                      class="text-theme-neutral-600"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
                       >
-                        Account
+                        <svg>
+                          btc.svg
+                        </svg>
                       </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            ROBank
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            AUexKj…EVTQWK
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full overflow-hidden rounded-full"
-                        >
-                          <img
-                            alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                    </span>
                   </div>
                   <div
-                    class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+                    class="sc-AxiKw jQtkkF relative bg-theme-primary border-theme-primary rotate-90"
                   >
-                    <div
-                      class="flex-1"
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
-                        class="text-sm font-semibold text-theme-neutral-500"
+                        class="sc-AxhUy gKrfcW"
+                        height="10"
+                        width="10"
                       >
-                        Delegate
+                        <svg>
+                          chevron-down.svg
+                        </svg>
                       </div>
-                      <div
-                        class="mt-2 font-semibold"
-                      >
-                        <div
-                          class="inline-block truncate align-middle"
-                        >
-                          <span
-                            class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                            data-testid="address__wallet-name"
-                          >
-                            Delegate 3
-                          </span>
-                          <span
-                            class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-                            data-testid="address__wallet-address"
-                          >
-                            AUexKj…EVTQWK
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full overflow-hidden rounded-full"
-                        >
-                          <img
-                            alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                          />
-                        </div>
-                      </div>
-                    </div>
+                      <span />
+                    </span>
                   </div>
-                  <div
-                    class="flex items-center py-4 true pb-0"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxhUy deKzQP"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/profiles/bob/transactions/portfolio"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <form
+            class="max-w-xl mx-auto"
+            data-testid="Form"
+          >
+            <div>
+              <ul
+                class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+              >
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+                <li
+                  class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                />
+              </ul>
+              <div
+                class="mt-8"
+              >
+                <div
+                  data-testid="tab-pabel__active-panel"
+                >
+                  <section
+                    data-testid="SendVoteTransaction__step--first"
                   >
+                    <div>
+                      <h1
+                        class="mb-0"
+                      >
+                        Vote for delegate
+                      </h1>
+                      <p
+                        class="text-theme-neutral-dark"
+                      >
+                        Enter details to send your money
+                      </p>
+                    </div>
                     <div
-                      class="flex-1"
+                      class="mt-4 grid grid-flow-row gap-2"
                     >
                       <div
-                        class="text-sm font-medium text-theme-neutral-700"
-                      >
-                        Fee ARK
-                      </div>
-                      <div
-                        class="mt-2"
+                        class="flex items-center py-6 true "
                       >
                         <div
-                          class="flex"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="w-3/5 mr-2"
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Account
+                          </div>
+                          <div
+                            class="font-semibold"
                           >
                             <div
-                              class="sc-fzozJi OgXfh"
+                              class="inline-block truncate align-middle"
                             >
-                              <input
-                                class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
-                                data-testid="InputCurrency"
-                                type="text"
-                                value="25"
-                              />
+                              <span
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                data-testid="address__wallet-name"
+                              >
+                                ROBank
+                              </span>
+                              <span
+                                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKj…EVTQWK
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-neutral"
+                          >
+                            Delegate
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="inline-block truncate align-middle"
+                            >
+                              <span
+                                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                data-testid="address__wallet-name"
+                              >
+                                Delegate 3
+                              </span>
+                              <span
+                                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                                data-testid="address__wallet-address"
+                              >
+                                AUexKj…EVTQWK
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-4 true pb-0"
+                      >
+                        <div
+                          class="flex-1"
+                        >
+                          <div
+                            class="text-sm font-medium text-theme-neutral-dark"
+                          >
+                            Fee ARK
+                          </div>
+                          <div
+                            class="mt-2"
+                          >
+                            <div
+                              class="flex"
+                            >
                               <div
-                                class="absolute bottom-0 w-full px-1"
+                                class="w-3/5 mr-2"
                               >
                                 <div
-                                  class="flex flex-wrap justify-center"
-                                  data-testid="Range"
+                                  class="sc-fzozJi OgXfh"
                                 >
+                                  <input
+                                    class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                    data-testid="InputCurrency"
+                                    type="text"
+                                    value="25"
+                                  />
                                   <div
-                                    class="sc-fzoLsD gcqOdX"
-                                    data-testid="Range__track"
-                                    style="transform: scale(1); cursor: pointer;"
+                                    class="absolute bottom-0 w-full px-1"
                                   >
                                     <div
-                                      class="sc-fzpans fDmiZy"
-                                      data-testid="Range__track__filled"
+                                      class="flex flex-wrap justify-center"
+                                      data-testid="Range"
                                     >
                                       <div
-                                        aria-valuemax="100"
-                                        aria-valuemin="1"
-                                        aria-valuenow="25"
-                                        class="sc-fzplWN eSQZBV"
-                                        data-testid="Range__thumb"
-                                        draggable="false"
-                                        role="slider"
-                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                        tabindex="0"
-                                      />
+                                        class="sc-fzoLsD gcqOdX"
+                                        data-testid="Range__track"
+                                        style="transform: scale(1); cursor: pointer;"
+                                      >
+                                        <div
+                                          class="sc-fzpans fDmiZy"
+                                          data-testid="Range__track__filled"
+                                        >
+                                          <div
+                                            aria-valuemax="100"
+                                            aria-valuemin="1"
+                                            aria-valuenow="25"
+                                            class="sc-fzplWN eSQZBV"
+                                            data-testid="Range__thumb"
+                                            draggable="false"
+                                            role="slider"
+                                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                            tabindex="0"
+                                          />
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          <div
-                            class="ml-2"
-                          >
-                            <div
-                              class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                              data-testid="SelectionBar"
-                              role="radiogroup"
-                            >
-                              <button
-                                aria-checked="true"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
+                              <div
+                                class="ml-2"
                               >
-                                Last
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                              >
-                                Min
-                              </button>
-                              <button
-                                aria-checked="false"
-                                class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                data-testid="SelectionBarOption"
-                                role="radio"
-                              >
-                                Average
-                              </button>
+                                <div
+                                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                                  data-testid="SelectionBar"
+                                  role="radiogroup"
+                                >
+                                  <button
+                                    aria-checked="true"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                  >
+                                    Last
+                                  </button>
+                                  <button
+                                    aria-checked="false"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                  >
+                                    Min
+                                  </button>
+                                  <button
+                                    aria-checked="false"
+                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                    data-testid="SelectionBarOption"
+                                    role="radio"
+                                  >
+                                    Average
+                                  </button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </section>
                 </div>
-              </section>
+                <div
+                  class="flex justify-end mt-8 space-x-3"
+                >
+                  <button
+                    class="sc-AxirZ fhzkRl"
+                    color="primary"
+                    data-testid="SendVoteTransaction__button--back"
+                    disabled=""
+                    type="button"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="sc-AxirZ dPtiuf"
+                    color="primary"
+                    data-testid="SendVoteTransaction__button--continue"
+                    type="button"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </div>
             </div>
-            <div
-              class="flex justify-end mt-8 space-x-3"
-            >
-              <button
-                class="sc-AxirZ fhzkRl"
-                color="primary"
-                data-testid="SendVoteTransaction__button--back"
-                disabled=""
-                type="button"
-              >
-                Back
-              </button>
-              <button
-                class="sc-AxirZ dPtiuf"
-                color="primary"
-                data-testid="SendVoteTransaction__button--continue"
-                type="button"
-              >
-                Continue
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -305,27 +544,27 @@ exports[`Vote For Delegate should render 1st step 1`] = `
         class="flex items-center py-6 true "
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Account
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             <div
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -333,48 +572,46 @@ exports[`Vote For Delegate should render 1st step 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          data-testid="Avatar"
+        >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-            data-testid="Avatar"
+            class="w-full h-full"
           >
-            <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              />
-            </div>
+            <img
+              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            />
           </div>
         </div>
       </div>
       <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Delegate
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             <div
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 Delegate 3
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -382,20 +619,18 @@ exports[`Vote For Delegate should render 1st step 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          data-testid="Avatar"
+        >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-            data-testid="Avatar"
+            class="w-full h-full"
           >
-            <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              />
-            </div>
+            <img
+              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            />
           </div>
         </div>
       </div>
@@ -406,7 +641,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           class="flex-1"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-700"
+            class="text-sm font-medium text-theme-neutral-dark"
           >
             Fee ARK
           </div>
@@ -423,7 +658,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   class="sc-fzozJi OgXfh"
                 >
                   <input
-                    class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                    class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                     data-testid="InputCurrency"
                     type="text"
                     value="25"
@@ -471,7 +706,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -479,7 +714,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -487,7 +722,7 @@ exports[`Vote For Delegate should render 1st step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznyAO hWIpjZ relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
                   >
@@ -528,27 +763,27 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         class="flex items-center py-6 true "
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Network
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             <div
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -557,10 +792,10 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="ml-1 text-theme-danger-500"
+          class="ml-1 text-theme-danger"
         >
           <div
-            class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-200"
+            class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-light"
           >
             <div
               class="sc-AxhUy hSYVGy"
@@ -578,27 +813,27 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Account
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             <div
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -606,20 +841,18 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          data-testid="Avatar"
+        >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-            data-testid="Avatar"
+            class="w-full h-full"
           >
-            <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              />
-            </div>
+            <img
+              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            />
           </div>
         </div>
       </div>
@@ -627,27 +860,27 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Delegate
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             <div
               class="inline-block truncate align-middle"
             >
               <span
-                class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
                 ROBank
               </span>
               <span
-                class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 AUexKj…EVTQWK
@@ -655,20 +888,18 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
             </div>
           </div>
         </div>
-        <div>
+        <div
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+          data-testid="Avatar"
+        >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-            data-testid="Avatar"
+            class="w-full h-full"
           >
-            <div
-              class="w-full h-full overflow-hidden rounded-full"
-            >
-              <img
-                alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              />
-            </div>
+            <img
+              alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+              title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+            />
           </div>
         </div>
       </div>
@@ -676,15 +907,15 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral-500"
+            class="text-sm font-semibold text-theme-neutral"
           >
             Transaction fee
           </div>
           <div
-            class="mt-2 font-semibold"
+            class="font-semibold"
           >
             0.09660435 ARK
           </div>
@@ -718,27 +949,27 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
           class="flex items-center py-6 true pb-0"
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Your password
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="sc-fzozJi OgXfh max-w-20"
               >
                 <input
-                  class="sc-AxgMl fypGbn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 pr-12"
+                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                   data-testid="Input"
                   name="passphras"
                   type="password"
                 />
                 <div
-                  class="sc-AxheI sc-AxmLO ecniej my-px mr-4"
+                  class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
                 >
                   <button
                     class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
@@ -799,15 +1030,15 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 true "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex items-center"
@@ -848,15 +1079,15 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex items-center"
@@ -897,27 +1128,27 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Network
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -926,10 +1157,10 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="ml-1 text-theme-danger-500"
+            class="ml-1 text-theme-danger"
           >
             <div
-              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-200"
+              class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
             >
               <div
                 class="sc-AxhUy hSYVGy"
@@ -947,13 +1178,13 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
-                class="mb-2 text-sm font-semibold text-theme-neutral-500"
+                class="mb-2 text-sm font-semibold text-theme-neutral"
               >
                 <span
                   class="mr-1"
@@ -961,7 +1192,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   Sender
                 </span>
                 <div
-                  class="sc-fzokOt bvPuXE"
+                  class="sc-fzqBZW gkKxDF"
                   color="warning"
                 >
                   <span
@@ -975,13 +1206,13 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   ROBank
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -990,21 +1221,17 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             </div>
           </div>
           <div
-            class="mt-2"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            data-testid="Avatar"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-              data-testid="Avatar"
+              class="w-full h-full"
             >
-              <div
-                class="w-full h-full overflow-hidden rounded-full"
-              >
-                <img
-                  alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                  title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                />
-              </div>
+              <img
+                alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              />
             </div>
           </div>
         </div>
@@ -1012,27 +1239,27 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Delegate
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                   data-testid="address__wallet-name"
                 >
                   Delegate 3
                 </span>
                 <span
-                  class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
+                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   AUexKj…EVTQWK
@@ -1040,20 +1267,18 @@ exports[`Vote For Delegate should render 4th step 1`] = `
               </div>
             </div>
           </div>
-          <div>
+          <div
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+            data-testid="Avatar"
+          >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
-              data-testid="Avatar"
+              class="w-full h-full"
             >
-              <div
-                class="w-full h-full overflow-hidden rounded-full"
-              >
-                <img
-                  alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                  title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                />
-              </div>
+              <img
+                alt="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                title="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+              />
             </div>
           </div>
         </div>
@@ -1061,15 +1286,15 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction fee
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               0.09660435 ARK
             </div>
@@ -1079,15 +1304,15 @@ exports[`Vote For Delegate should render 4th step 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction type
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               Vote
             </div>

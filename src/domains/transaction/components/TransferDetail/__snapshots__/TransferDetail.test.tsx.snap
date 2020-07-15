@@ -51,15 +51,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 true "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Sender
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="mt-2 font-semibold"
@@ -69,15 +69,15 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="w-full h-full"
             >
               <img
                 alt="test"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                 title="test"
               />
             </div>
@@ -87,19 +87,19 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Recipient
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               ROBank
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 ADDR...ESSS
               </span>
@@ -122,15 +122,15 @@ exports[`TransferDetail should render a modal 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jfYOFQ"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full overflow-hidden rounded-full"
+                class="w-full h-full"
               >
                 <img
                   alt="test"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
                   title="test"
                 />
               </div>
@@ -141,15 +141,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Amount
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="sc-AxiKw djbzVd"
@@ -158,14 +158,14 @@ exports[`TransferDetail should render a modal 1`] = `
                 2,088.84557 ARK
               </div>
               <span
-                class="ml-2 text-theme-neutral-500"
+                class="ml-2 text-theme-neutral"
               >
                 23,000.00 USD
               </span>
             </div>
           </div>
           <div
-            class="sc-AxjAm bLfakz border-theme-success-200 text-theme-success-700"
+            class="sc-AxjAm bLfakz border-theme-success-200 text-theme-success-dark"
           >
             <div
               class="sc-AxirZ RbXVX"
@@ -182,15 +182,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Transaction Fee
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               0.09812015 ARK
             </div>
@@ -200,15 +200,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Smartbridge
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex justify-between"
@@ -231,15 +231,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Timestamp
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               14.04.2020 21:42:40
             </div>
@@ -249,15 +249,15 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Confirmations
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <div
                 class="flex"
@@ -288,18 +288,18 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>
@@ -323,18 +323,18 @@ exports[`TransferDetail should render a modal 1`] = `
           class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
         >
           <div
-            class="flex-1"
+            class="flex-1 space-y-2"
           >
             <div
-              class="text-sm font-semibold text-theme-neutral-500"
+              class="text-sm font-semibold text-theme-neutral"
             >
               Block ID
             </div>
             <div
-              class="mt-2 font-semibold"
+              class="font-semibold"
             >
               <span
-                class="text-theme-primary-700"
+                class="text-theme-primary-dark"
               >
                 1234678...12312313
               </span>

@@ -55,10 +55,10 @@ export const WalletListItem = ({
 				<Address walletName={walletName} address={address} maxChars={22} />
 			</td>
 			{walletTypeIcons && (
-				<td className="py-1 text-sm font-bold">
+				<td className="py-1 text-sm font-bold text-center space-x-2">
 					{walletTypeIcons.map((type: string, index: number) => {
 						return (
-							<div key={index} className={`inline-block mr-2 align-middle ${getIconTypeClass(type)}`}>
+							<div key={index} className={`inline-block align-middle ${getIconTypeClass(type)}`}>
 								<Icon name={type} width={16} height={16} />
 							</div>
 						);
@@ -68,7 +68,7 @@ export const WalletListItem = ({
 			<td className="font-semibold text-right">
 				<div>{balance}</div>
 			</td>
-			<td className="text-right text-theme-neutral-400">
+			<td className="text-right text-theme-neutral-light">
 				<div>{fiat}</div>
 			</td>
 			<td>
@@ -86,7 +86,7 @@ export const WalletListItem = ({
 						}
 
 						return (
-							<div className="text-theme-neutral-400 hover:text-theme-neutral-500">
+							<div className="text-theme-neutral-light hover:text-theme-neutral">
 								<Dropdown options={actions} onSelect={onDropdownAction} />
 							</div>
 						);

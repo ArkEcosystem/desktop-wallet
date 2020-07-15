@@ -7,7 +7,7 @@ describe("WalletBottomSheetMenu", () => {
 	const data = [
 		{
 			coinIcon: "Ark",
-			coinClassName: "text-theme-danger-400 border-theme-danger-200",
+			coinClassName: "text-theme-danger-400 border-theme-danger-light",
 			avatarId: "test1",
 			address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 			walletName: "ARK Wallet 1",

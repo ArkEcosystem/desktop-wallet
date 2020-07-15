@@ -4,7 +4,7 @@ exports[`Notifications should render 1`] = `
 <div>
   <div>
     <div
-      class="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-700"
+      class="p-6 mb-5 border-2 border-theme-neutral-200 text-md rounded-xl text-theme-neutral-dark"
     >
       You have no notifications at this time.
     </div>
@@ -20,7 +20,7 @@ exports[`Notifications should render 1`] = `
       </div>
     </div>
     <div
-      class="my-3 border-2 border-b border-theme-neutral-100"
+      class="my-3 border-2 border-b border-theme-neutral-contrast"
     />
     <div>
       <div
@@ -41,7 +41,7 @@ exports[`Notifications should render plugins 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-500"
+      class="mb-2 text-sm font-bold text-theme-neutral"
     >
       Plugins
     </div>
@@ -52,32 +52,6 @@ exports[`Notifications should render plugins 1`] = `
       <table
         class="table-auto"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-sm text-left select-none text-theme-neutral-500"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-2"
-                >
-                  -
-                </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
         <tbody
           role="rowgroup"
         >
@@ -120,7 +94,7 @@ exports[`Notifications should render plugins 1`] = `
       </table>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
+      class="mb-2 text-sm font-bold mt-9 text-theme-neutral"
     />
     <div
       class="sc-AxirZ dyYkHQ"
@@ -129,32 +103,6 @@ exports[`Notifications should render plugins 1`] = `
       <table
         class="table-auto"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-sm text-left select-none text-theme-neutral-500"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-2"
-                >
-                  -
-                </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
         <tbody
           role="rowgroup"
         />
@@ -168,7 +116,7 @@ exports[`Notifications should render transactions 1`] = `
 <div>
   <div>
     <div
-      class="text-sm font-bold text-theme-neutral-500"
+      class="mb-2 text-sm font-bold text-theme-neutral"
     >
       Transactions
     </div>
@@ -179,39 +127,13 @@ exports[`Notifications should render transactions 1`] = `
       <table
         class="table-auto"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-sm text-left select-none text-theme-neutral-500"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-2"
-                >
-                  -
-                </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
         <tbody
           role="rowgroup"
         />
       </table>
     </div>
     <div
-      class="-mb-2 text-sm font-bold mt-9 text-theme-neutral-500"
+      class="mb-2 text-sm font-bold mt-9 text-theme-neutral"
     />
     <div
       class="sc-AxirZ dyYkHQ"
@@ -220,88 +142,56 @@ exports[`Notifications should render transactions 1`] = `
       <table
         class="table-auto"
       >
-        <thead>
-          <tr
-            role="row"
-          >
-            <th
-              class="text-sm text-left select-none text-theme-neutral-500"
-              colspan="1"
-              data-testid="table__th--0"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top  hidden"
-              >
-                <div
-                  class="mr-2"
-                >
-                  -
-                </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
-              </div>
-            </th>
-          </tr>
-        </thead>
         <tbody
           role="rowgroup"
         >
           <tr
-            class="border-b cursor-pointer border-theme-neutral-200"
-            data-testid="transaction__row"
+            class="border-b border-dotted border-theme-neutral-300"
+            data-testid="TransactionCompactRow"
           >
             <td
-              class="w-20 py-4 mt-1"
+              class="w-24 py-3"
             >
               <div
-                class="flex"
+                class="flex items-center -space-x-1"
+                data-testid="TransactionRowMode"
               >
                 <div
-                  class="sc-AxhCb jSOIkt border-theme-success-300 text-theme-success-400 -mr-1"
+                  class="sc-AxhCb fwVCao border-theme-danger-contrast text-theme-danger"
                 >
                   <div
-                    class="sc-AxjAm hoUaGk"
-                    height="40"
-                    width="40"
+                    class="sc-AxjAm cpczEI"
+                    data-testid="TransactionRowMode__Sent"
+                    height="1em"
+                    width="1em"
                   >
                     <svg>
-                      received.svg
+                      sent.svg
                     </svg>
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gxxcVQ"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full overflow-hidden rounded-full"
+                    class="w-full h-full"
                   >
                     <img
                       alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
                       title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                     />
                   </div>
                 </div>
               </div>
             </td>
-            <td
-              class="w-56 py-1"
-            >
+            <td>
               <div
                 class="inline-block truncate align-middle"
               >
                 <span
-                  class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-sm"
-                  data-testid="address__wallet-name"
-                >
-                  My Wallet
-                </span>
-                <span
-                  class="sc-AxiKw bOTXee text-theme-neutral-400 font-semibold text-sm"
+                  class="sc-AxhUy kMyssT text-theme-text font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
                   ASuusX…GQ3kqT
@@ -309,13 +199,14 @@ exports[`Notifications should render transactions 1`] = `
               </div>
             </td>
             <td
-              class="py-1 text-sm text-right"
+              class="text-right"
             >
               <div
-                class="sc-AxhUy eCrePA"
-                color="success"
+                class="sc-AxiKw BrXzA"
+                color="danger"
+                data-testid="TransactionRowAmount"
               >
-                100 BTC
+                121.00000000
               </div>
             </td>
           </tr>

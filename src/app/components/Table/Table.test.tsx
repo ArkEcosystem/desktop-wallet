@@ -57,4 +57,9 @@ describe("Table", () => {
 
 		expect(getByTestId("table__ArrowDown")).toBeTruthy();
 	});
+
+	it("should hide header", () => {
+		const { queryAllByRole } = render(<Table hideHeader columns={columns} data={data} />);
+		expect(queryAllByRole("columnheader")).toHaveLength(0);
+	});
 });

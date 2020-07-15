@@ -134,6 +134,7 @@ module.exports = {
 				"1/3": "33.333333%",
 			},
 			width: {
+				"44": "11rem",
 				"128": "32rem",
 				"144": "36rem",
 				"125": "31.25rem",
@@ -172,7 +173,7 @@ module.exports = {
 				default: "0 1px 3px 0 var(--theme-color-neutral-200), 0 1px 2px 0 var(--theme-color-neutral-100)",
 				md: "0 4px 6px -1px var(--theme-color-neutral-200), 0 2px 4px -1px var(--theme-color-neutral-100)",
 				lg: "0 10px 15px -3px var(--theme-color-neutral-200), 0 4px 6px -2px var(--theme-color-neutral-100)",
-				xl: "0 15px 15px -7px var(--theme-color-neutral-300)",
+				xl: "0 15px 29px rgba(var(--theme-color-neutral-rgb), 0.17)",
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 			},
 			listStyleType: {

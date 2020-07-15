@@ -26,7 +26,7 @@ type GridItemProps = {
 
 const GridItem = ({ label, value, textDirection }: GridItemProps) => (
 	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`}>
-		<span className="font-bold text-theme-neutral-400">{label}</span>
+		<span className="font-bold text-theme-neutral-light">{label}</span>
 		<span className="font-bold text-theme-neutral-600">{value}</span>
 	</div>
 );
@@ -46,10 +46,10 @@ const GridCol = ({ children, colSpan, justify, padding }: GridColProps) => {
 };
 
 export const PluginSpecs = ({ author, category, url, rating, version, size }: Props) => (
-	<div className="pt-5 mt-5 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
+	<div className="pt-8 mt-8 text-sm border-t border-dashed grid grid-cols-5 divide-x divide-theme-neutral-300 grid-flow-col border-theme-neutral-300">
 		<GridCol>
 			<div className="flex flex-col">
-				<span className="font-bold text-theme-neutral-400">Author</span>
+				<span className="font-bold text-theme-neutral-light">Author</span>
 				<div className="flex items-center">
 					<span className="font-bold text-theme-neutral-600">{author}</span>
 					<div className="ml-3">
@@ -63,13 +63,13 @@ export const PluginSpecs = ({ author, category, url, rating, version, size }: Pr
 		</GridCol>
 		<GridCol padding="px-6 -ml-5">
 			<div className="flex flex-col">
-				<span className="font-bold text-theme-neutral-400">URL</span>
+				<span className="font-bold text-theme-neutral-light">URL</span>
 				<span className="font-bold text-theme-primary">{url}</span>
 			</div>
 		</GridCol>
 		<GridCol colSpan={2} justify="between" padding="px-6 -ml-8">
 			<div className="flex flex-col">
-				<span className="font-bold text-theme-neutral-400">Rating</span>
+				<span className="font-bold text-theme-neutral-light">Rating</span>
 				<div className="flex items-center">
 					<div className="pr-1 text-theme-warning-400">
 						<Icon name="Star" />

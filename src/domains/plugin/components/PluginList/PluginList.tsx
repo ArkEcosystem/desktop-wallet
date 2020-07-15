@@ -76,13 +76,15 @@ export const PluginList = ({
 			</Table>
 
 			{withPagination && (
-				<Pagination
-					currentPage={currentPage}
-					itemsPerPage={itemsPerPage}
-					totalCount={plugins.length}
-					onSelectPage={setCurrentPage}
-					className="mt-5"
-				/>
+				<div className="flex justify-center">
+					<Pagination
+						currentPage={currentPage}
+						itemsPerPage={itemsPerPage}
+						totalCount={plugins.length}
+						onSelectPage={setCurrentPage}
+						className="mt-5"
+					/>
+				</div>
 			)}
 		</div>
 	);

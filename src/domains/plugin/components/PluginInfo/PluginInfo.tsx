@@ -9,26 +9,28 @@ type Props = {
 };
 
 export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
-	<div className="p-10 mt-5 bg-theme-background">
+	<>
 		<div>
 			<p className="font-bold">About the plugin</p>
 			<p className="mt-3 text-theme-neutral-600" data-testid="plugin-info__about">
 				{about}
 			</p>
 		</div>
-		<div className="mt-10">
+
+		<div className="mt-8">
 			<p className="font-bold">Permissions</p>
 			<p className="mt-3 text-theme-neutral-600" data-testid="plugin-info__permissions">
 				{permissions.join(", ")}
 			</p>
 		</div>
-		<div className="relative mt-10">
+
+		<div className="relative mt-8">
 			<p className="font-bold">Screenshots</p>
 			<div
 				className="absolute top-0 right-0 flex pr-4 space-x-3 screenshots-pagination"
 				data-testid="plugin-info__screenshots--pagination"
 			/>
-			<div className="pb-10">
+			<div className="pb-8">
 				<Slider
 					data={[screenshots, screenshots, screenshots]}
 					options={{
@@ -44,20 +46,19 @@ export const PluginInfo = ({ about, permissions, screenshots }: Props) => (
 								<div
 									data-testid="plugin-info__screenshot"
 									key={idx}
-									className="w-1/3 h-56 rounded-lg bg-theme-neutral-500"
+									className="w-1/3 h-56 rounded-lg bg-theme-neutral"
 								/>
 							))}
 						</div>
 					)}
 				</Slider>
 			</div>
-			<div className="pb-10">
-				<Alert variant="warning" title="Disclaimer">
-					The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK
-					SCIC is directly involved in the development or affiliated with the developer providing this plugin.
-					By installing it on your wallet, you assume every responsibility
-				</Alert>
-			</div>
+
+			<Alert variant="warning" title="Disclaimer">
+				The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC
+				is directly involved in the development or affiliated with the developer providing this plugin. By
+				installing it on your wallet, you assume every responsibility
+			</Alert>
 		</div>
-	</div>
+	</>
 );

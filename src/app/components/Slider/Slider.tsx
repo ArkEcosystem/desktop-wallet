@@ -32,7 +32,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 	// Swiper needs container height to be defined.
 	// `slideHeight` is required.
 	const getContainerHeight = () => {
-		const bottomOffsetRatio = swiperOptions.slidesPerView > 1 ? 1.1 : 1.3;
+		const bottomOffsetRatio = swiperOptions.slidesPerView > 1 ? 1.2 : 1.3;
 		const paginationOffset = paginationPosition === "bottom-center" ? bottomOffsetRatio : 1; // offset for pagination.
 
 		// If items are less than slidesPerView, use 1 row

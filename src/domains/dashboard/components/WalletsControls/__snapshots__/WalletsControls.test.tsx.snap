@@ -3,52 +3,57 @@
 exports[`WalletsControls should render 1`] = `
 <div>
   <div
-    class="flex"
+    class="flex justify-end"
+    data-testid="WalletControls"
   >
     <div
-      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
     >
       <div
-        class="inline-block"
-        data-testid="LayoutControls__grid"
+        class="flex items-center"
       >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-          data-testid="LayoutControls__grid--icon"
+          class="inline-block"
+          data-testid="LayoutControls__grid"
         >
           <div
-            class="sc-AxjAm jEKiJj"
-            height="14"
-            width="28"
+            class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+            data-testid="LayoutControls__grid--icon"
           >
-            <svg>
-              grid.svg
-            </svg>
+            <div
+              class="sc-AxjAm jEKiJj"
+              height="14"
+              width="28"
+            >
+              <svg>
+                grid.svg
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="inline-block"
-        data-testid="LayoutControls__list"
-      >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-          data-testid="LayoutControls__list--icon"
+          class="inline-block"
+          data-testid="LayoutControls__list"
         >
           <div
-            class="sc-AxjAm eFgodT"
-            height="14"
-            width="24"
+            class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+            data-testid="LayoutControls__list--icon"
           >
-            <svg>
-              list.svg
-            </svg>
+            <div
+              class="sc-AxjAm eFgodT"
+              height="14"
+              width="24"
+            >
+              <svg>
+                list.svg
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
     >
       <div
         class="relative"
@@ -128,52 +133,57 @@ exports[`WalletsControls should render 1`] = `
 exports[`WalletsControls should render with networks selection 1`] = `
 <div>
   <div
-    class="flex"
+    class="flex justify-end"
+    data-testid="WalletControls"
   >
     <div
-      class="flex items-center pr-4 mr-6 border-r border-theme-primary-100"
+      class="flex items-center pr-4 mr-6 border-r border-theme-primary-contrast"
     >
       <div
-        class="inline-block"
-        data-testid="LayoutControls__grid"
+        class="flex items-center"
       >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-100"
-          data-testid="LayoutControls__grid--icon"
+          class="inline-block"
+          data-testid="LayoutControls__grid"
         >
           <div
-            class="sc-AxjAm jEKiJj"
-            height="14"
-            width="28"
+            class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
+            data-testid="LayoutControls__grid--icon"
           >
-            <svg>
-              grid.svg
-            </svg>
+            <div
+              class="sc-AxjAm jEKiJj"
+              height="14"
+              width="28"
+            >
+              <svg>
+                grid.svg
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="inline-block"
-        data-testid="LayoutControls__list"
-      >
         <div
-          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
-          data-testid="LayoutControls__list--icon"
+          class="inline-block"
+          data-testid="LayoutControls__list"
         >
           <div
-            class="sc-AxjAm eFgodT"
-            height="14"
-            width="24"
+            class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-primary-400 border-transparent"
+            data-testid="LayoutControls__list--icon"
           >
-            <svg>
-              list.svg
-            </svg>
+            <div
+              class="sc-AxjAm eFgodT"
+              height="14"
+              width="24"
+            >
+              <svg>
+                list.svg
+              </svg>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-100"
+      class="relative flex items-center pr-6 mr-8 border-r text-theme-primary-400 border-theme-primary-contrast"
     >
       <div
         class="relative"

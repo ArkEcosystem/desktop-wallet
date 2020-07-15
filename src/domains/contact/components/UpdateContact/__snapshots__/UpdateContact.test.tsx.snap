@@ -65,7 +65,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                class="sc-AxheI xavPU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__name-input"
                 name="name"
                 value=""
@@ -96,7 +96,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   class="relative flex items-center w-full flex-inline"
                 >
                   <div
-                    class="flex w-full border rounded transition-colors duration-200 shadow-sm bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                    class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                   >
                     <div
                       class="px-4 py-2 flex-0 w-14"
@@ -113,7 +113,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         data-testid="select-network__typeahead-"
                       >
                         <div
-                          class="absolute left-0 font-semibold top-2 text-theme-neutral-400"
+                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
                         />
                       </div>
                       <input
@@ -142,7 +142,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 Address
               </label>
               <input
-                class="sc-AxheI exWDOt overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 "
+                class="sc-AxheI xavPU overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__address-input"
                 name="address"
               />

@@ -6,9 +6,11 @@ import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
@@ -72,8 +74,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -83,8 +85,8 @@ export const SecondStep = () => (
 					ARK Ecosystem
 				</div>
 			</TransactionDetail>
-			<TransactionDetail label=" " extra={<Avatar address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 font-semibold text-theme-neutral-500">
+			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 font-semibold text-theme-neutral">
 					<span className="mr-1 text-sm">Sender</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -155,8 +157,8 @@ export const FifthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -173,6 +175,7 @@ type Props = {
 
 export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
+	const activeProfile = useActiveProfile();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -182,67 +185,82 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div className="max-w-xl py-16 mx-auto">
-			<Tabs activeId={activeTab}>
-				<StepIndicator size={5} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<div className="max-w-xl mx-auto">
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={5} activeIndex={activeTab} />
 
-				<div className="mt-8">
-					<TabPanel tabId={1}>
-						<FirstStep onSubmit={handleNext} formValues={formValues} />
-					</TabPanel>
-					<TabPanel tabId={2}>
-						<SecondStep />
-					</TabPanel>
-					<TabPanel tabId={3}>
-						<ThirdStep />
-					</TabPanel>
-					<TabPanel tabId={4}>
-						<FourthStep />
-					</TabPanel>
-					<TabPanel tabId={5}>
-						<FifthStep />
-					</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep onSubmit={handleNext} formValues={formValues} />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<FourthStep />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<FifthStep />
+							</TabPanel>
 
-					<div className="flex justify-end mt-8 space-x-3">
-						{activeTab > 1 && activeTab < 5 && (
-							<>
-								<Button
-									disabled={activeTab === 1}
-									data-testid="TransactionSend__button--back"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-								<Button
-									data-testid="TransactionSend__button--continue"
-									// disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							</>
-						)}
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab > 1 && activeTab < 5 && (
+									<>
+										<Button
+											disabled={activeTab === 1}
+											data-testid="TransactionSend__button--back"
+											variant="plain"
+											onClick={handleBack}
+										>
+											Back
+										</Button>
+										<Button
+											data-testid="TransactionSend__button--continue"
+											// disabled={!isValid}
+											onClick={handleNext}
+										>
+											Continue
+										</Button>
+									</>
+								)}
 
-						{activeTab === 5 && (
-							<>
-								<Button
-									data-testid="TransactionSend__button--back-to-wallet"
-									variant="plain"
-									className={"block"}
-								>
-									Back to wallet
-								</Button>
-								<Button onClick={onCopy} data-testid="TransactionSend__button--copy" variant="plain">
-									<Icon name="Copy" />
-									<span>Copy</span>
-								</Button>
-							</>
-						)}
-					</div>
+								{activeTab === 5 && (
+									<>
+										<Button
+											data-testid="TransactionSend__button--back-to-wallet"
+											variant="plain"
+											className={"block"}
+										>
+											Back to wallet
+										</Button>
+										<Button
+											onClick={onCopy}
+											data-testid="TransactionSend__button--copy"
+											variant="plain"
+										>
+											<Icon name="Copy" />
+											<span>Copy</span>
+										</Button>
+									</>
+								)}
+							</div>
+						</div>
+					</Tabs>
 				</div>
-			</Tabs>
-		</div>
+			</Section>
+		</Page>
 	);
 };

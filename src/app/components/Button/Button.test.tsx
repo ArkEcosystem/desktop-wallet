@@ -36,6 +36,12 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render as transparent", () => {
+		const { container } = render(<Button variant="transparent" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render a small one", () => {
 		const { container } = render(<Button size="sm" />);
 

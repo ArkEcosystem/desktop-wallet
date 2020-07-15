@@ -23,7 +23,7 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 									<div
 										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 									/>
-									<div className="inline-block text-sm font-semibold text-theme-neutral-700">
+									<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
 										{item.label} - {item.value}%
 									</div>
 								</div>

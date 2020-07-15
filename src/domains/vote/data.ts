@@ -2,7 +2,7 @@ export const networks = [
 	{
 		icon: "Ark",
 		name: "ARK Ecosystem",
-		className: "text-theme-danger-400 border-theme-danger-200",
+		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
 		icon: "Bitcoin",
@@ -17,12 +17,12 @@ export const networks = [
 	{
 		icon: "Lisk",
 		name: "Lisk",
-		className: "text-theme-primary-600 border-theme-primary-400",
+		className: "text-theme-primary border-theme-primary-400",
 	},
 	{
 		icon: "Ripple",
 		name: "Ripple",
-		className: "text-theme-primary-700 border-theme-primary-500",
+		className: "text-theme-primary-dark border-theme-primary-500",
 	},
 ];
 

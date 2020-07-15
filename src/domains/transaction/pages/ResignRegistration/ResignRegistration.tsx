@@ -7,6 +7,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -23,14 +24,13 @@ type ResignRegistrationProps = {
 	onDownload: any;
 };
 
-const FirstStep = ({ form }: { form: any }) => {
-	const { register } = form;
+const FirstStep = () => {
 	const selectionBarState = useSelectionState(1);
 
 	return (
 		<div data-testid="ResignRegistration__first-step">
 			<h1 className="mb-0">Delegate Resignation</h1>
-			<div className="text-theme-neutral-700">Resign your delegate for always.</div>
+			<div className="text-theme-neutral-dark">Resign your delegate for always.</div>
 
 			<div className="mt-6">
 				<Alert size="lg">
@@ -41,15 +41,10 @@ const FirstStep = ({ form }: { form: any }) => {
 
 			<div>
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					border={false}
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Account</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -82,8 +77,8 @@ const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -92,15 +87,8 @@ const SecondStep = () => (
 				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
 			</TransactionDetail>
 
-			<TransactionDetail
-				label=" "
-				extra={
-					<div>
-						<Avatar address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
-			>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+			<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+				<div className="mb-2 text-sm font-semibold text-theme-neutral">
 					<span className="mr-1">Account</span>
 					<Label color="warning">
 						<span className="text-sm">Your address</span>
@@ -126,7 +114,7 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-700">
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -171,8 +159,8 @@ export const FourthStep = () => (
 			label="Amount"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -196,86 +184,95 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div data-testid="ResignRegistration" className="max-w-xl py-16 mx-auto">
-			<Form context={form} onSubmit={(data: any) => onDownload(data)}>
-				<Tabs activeId={activeTab}>
-					<StepIndicator size={6} activeIndex={activeTab} />
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={6} activeIndex={activeTab} />
 
-					<div className="mt-8">
-						<TabPanel tabId={1}>
-							<FirstStep form={form} />
-						</TabPanel>
-						<TabPanel tabId={2}>
-							<SecondStep />
-						</TabPanel>
-						<TabPanel tabId={3}>
-							<ThirdStep form={form} passwordType="mnemonic" />
-						</TabPanel>
-						<TabPanel tabId={4}>
-							<ThirdStep form={form} passwordType="password" />
-						</TabPanel>
-						<TabPanel tabId={5}>
-							<ThirdStep form={form} passwordType="ledger" />
-						</TabPanel>
-						<TabPanel tabId={6}>
-							<FourthStep />
-						</TabPanel>
+						<div className="mt-8">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+							<TabPanel tabId={3}>
+								<ThirdStep form={form} passwordType="mnemonic" />
+							</TabPanel>
+							<TabPanel tabId={4}>
+								<ThirdStep form={form} passwordType="password" />
+							</TabPanel>
+							<TabPanel tabId={5}>
+								<ThirdStep form={form} passwordType="ledger" />
+							</TabPanel>
+							<TabPanel tabId={6}>
+								<FourthStep />
+							</TabPanel>
 
-						<div className="flex justify-end mt-8 space-x-3">
-							{activeTab < 6 && (
-								<Button
-									disabled={activeTab === 1}
-									data-testid="ResignRegistration__back-button"
-									variant="plain"
-									onClick={handleBack}
-								>
-									Back
-								</Button>
-							)}
-
-							{activeTab < 3 && (
-								<Button
-									data-testid="ResignRegistration__continue-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									Continue
-								</Button>
-							)}
-
-							{activeTab >= 3 && activeTab < 6 && (
-								<Button
-									data-testid="ResignRegistration__send-button"
-									disabled={!isValid}
-									onClick={handleNext}
-								>
-									<Icon name="Send" className="mr-2" width={20} height={20} />
-									Send
-								</Button>
-							)}
-
-							{activeTab === 6 && (
-								<div className="flex justify-end space-x-3">
-									<Button data-testid="ResignRegistration__wallet-button" variant="plain">
-										Back to wallet
-									</Button>
-
+							<div className="flex justify-end mt-8 space-x-3">
+								{activeTab < 6 && (
 									<Button
-										type="submit"
-										data-testid="ResignRegistration__download-button"
+										disabled={activeTab === 1}
+										data-testid="ResignRegistration__back-button"
 										variant="plain"
+										onClick={handleBack}
 									>
-										<Icon name="Download" className="mr-2" />
-										Download
+										Back
 									</Button>
-								</div>
-							)}
+								)}
+
+								{activeTab < 3 && (
+									<Button
+										data-testid="ResignRegistration__continue-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										Continue
+									</Button>
+								)}
+
+								{activeTab >= 3 && activeTab < 6 && (
+									<Button
+										data-testid="ResignRegistration__send-button"
+										disabled={!isValid}
+										onClick={handleNext}
+									>
+										<Icon name="Send" className="mr-2" width={20} height={20} />
+										Send
+									</Button>
+								)}
+
+								{activeTab === 6 && (
+									<div className="flex justify-end space-x-3">
+										<Button data-testid="ResignRegistration__wallet-button" variant="plain">
+											Back to wallet
+										</Button>
+
+										<Button
+											type="submit"
+											data-testid="ResignRegistration__download-button"
+											variant="plain"
+										>
+											<Icon name="Download" className="mr-2" />
+											Download
+										</Button>
+									</div>
+								)}
+							</div>
 						</div>
-					</div>
-				</Tabs>
-			</Form>
-		</div>
+					</Tabs>
+				</Form>
+			</Section>
+		</Page>
 	);
 };
 

@@ -12,7 +12,7 @@ const actions = [
 export const peers = [
 	{
 		coin: "Ark",
-		coinClass: "text-logo border-theme-danger-200",
+		coinClass: "text-logo border-theme-danger-light",
 		name: "ROBank",
 		peerIp: "194.168.4.67:800",
 		type: "Multisig",
@@ -40,7 +40,7 @@ export const networks = [
 	{
 		icon: "Ark",
 		name: "ARK Ecosystem",
-		className: "text-theme-danger-400 border-theme-danger-200",
+		className: "text-theme-danger-400 border-theme-danger-light",
 	},
 	{
 		icon: "Bitcoin",
@@ -55,11 +55,11 @@ export const networks = [
 	{
 		icon: "Lisk",
 		name: "Lisk",
-		className: "text-theme-primary-600 border-theme-primary-400",
+		className: "text-theme-primary border-theme-primary-400",
 	},
 	{
 		icon: "Ripple",
 		name: "Ripple",
-		className: "text-theme-primary-700 border-theme-primary-500",
+		className: "text-theme-primary-dark border-theme-primary-500",
 	},
 ];

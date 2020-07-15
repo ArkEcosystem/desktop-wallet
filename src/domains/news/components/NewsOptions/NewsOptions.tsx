@@ -1,9 +1,11 @@
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
-import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
+import { Icon } from "app/components/Icon";
+import { Input } from "app/components/Input";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { styled } from "twin.macro";
 
 import { SelectCategory } from "./components/SelectCategory";
 
@@ -12,14 +14,26 @@ type Props = {
 	selectedAssets?: any[];
 };
 
+const InputWrapper = styled.div`
+	input {
+		padding: 11px 15px;
+	}
+`;
+
 export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="p-8 border-2 rounded-lg border-theme-primary-contrast" data-testid="NewsOptions">
-			<div className="flex flex-col space-y-10">
-				<div className="flex justify-end">
-					<HeaderSearchBar />
+		<div
+			className="p-8 border-2 rounded-lg bg-theme-background border-theme-primary-contrast"
+			data-testid="NewsOptions"
+		>
+			<div className="flex flex-col space-y-8">
+				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
+					<InputWrapper>
+						<Input className="border-none shadow-none" placeholder="Search" />
+					</InputWrapper>
+					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
 				</div>
 
 				<Divider dashed />
@@ -44,7 +58,7 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 					<p className="text-sm text-theme-neutral">{t("NEWS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
-						<FilterNetwork networks={selectedAssets} />
+						<FilterNetwork networks={selectedAssets} hideViewAll />
 					</div>
 
 					<Button className="w-full" variant="plain">

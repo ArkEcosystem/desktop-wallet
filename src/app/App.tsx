@@ -2,19 +2,20 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
+import { StubStorage } from "tests/mocks";
 
 import { RouterView, routes } from "../router";
 import { identity } from "../tests/fixtures/identity";
-import { Layout } from "./components/Layout";
 import { EnvironmentProvider, useEnvironment } from "./contexts";
 import { i18n } from "./i18n";
+import { httpClient } from "./services";
+
+const __DEV__ = process.env.NODE_ENV !== "production";
 
 const buildMockEnvironment = async (env: Environment) => {
 	const profile = env.profiles().create("Anne Doe");
 
-	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
-	/* istanbul ignore next */
-	env.persist();
+	await profile.wallets().import(identity.mnemonic, "ARK", "devnet");
 };
 
 const Main = () => {
@@ -26,17 +27,26 @@ const Main = () => {
 		}
 	}, [env]);
 
+	/* istanbul ignore next */
+	const className = __DEV__ ? "debug-screens" : "";
+
 	return (
-		<main className={process.env.NODE_ENV === "development" ? "debug-screens" : ""}>
-			<RouterView routes={routes} wrapper={Layout} />
+		<main className={className}>
+			<RouterView routes={routes} />
 		</main>
 	);
 };
 
-export const App = () => (
-	<I18nextProvider i18n={i18n}>
-		<EnvironmentProvider>
-			<Main />
-		</EnvironmentProvider>
-	</I18nextProvider>
-);
+export const App = () => {
+	/* istanbul ignore next */
+	const storage = __DEV__ ? new StubStorage() : "indexeddb";
+	const env = new Environment({ coins: { ARK }, httpClient, storage });
+
+	return (
+		<I18nextProvider i18n={i18n}>
+			<EnvironmentProvider env={env}>
+				<Main />
+			</EnvironmentProvider>
+		</I18nextProvider>
+	);
+};

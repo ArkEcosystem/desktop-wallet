@@ -8,24 +8,10 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type ContactListItemProps = {
-	contact: any;
-	variant?: "condensed";
-	onAction?: any;
-};
+import { ContactListItemProps, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ contact, variant, onAction }: ContactListItemProps) => {
+export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
-
-	const onDropdownAction = (action: any) => {
-		if (typeof onAction === "function") onAction(action);
-	};
-
-	const options = [
-		{ label: "Send", value: "send" },
-		{ label: "Edit", value: "edit" },
-		{ label: "Delete", value: "send" },
-	];
 
 	const isCondensed = () => {
 		return variant === "condensed";
@@ -44,7 +30,7 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 					>
 						{index === 0 && (
 							<div className="flex items-center space-x-3">
-								<Circle className="bg-theme-primary-600 border-theme-primary-600">
+								<Circle className="bg-theme-primary border-theme-primary">
 									<span className="text-sm text-theme-background">{contact.name().slice(0, 2)}</span>
 								</Circle>
 								<span className="font-semibold">{contact.name()}</span>
@@ -85,7 +71,7 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 						</td>
 					)}
 					<td className="border-b border-dashed border-theme-neutral-200">
-						{index === 0 && options && options.length && (
+						{index === 0 && options && options.length > 1 && (
 							<Dropdown
 								toggleContent={
 									<div className="float-right">
@@ -95,12 +81,31 @@ export const ContactListItem = ({ contact, variant, onAction }: ContactListItemP
 									</div>
 								}
 								options={options}
-								onSelect={onDropdownAction}
+								onSelect={(action: Option) => onAction?.(action, address)}
 							/>
+						)}
+
+						{index === 0 && options && options.length === 1 && (
+							<Button
+								data-testid={`ContactListItem__one-option-button-${index}`}
+								className="float-right"
+								variant="plain"
+								onClick={() => onAction?.(options[0], address)}
+							>
+								{options[0]?.label}
+							</Button>
 						)}
 					</td>
 				</tr>
 			))}
 		</>
 	);
+};
+
+ContactListItem.defaultProps = {
+	options: [
+		{ label: "Send", value: "send" },
+		{ label: "Edit", value: "edit" },
+		{ label: "Delete", value: "send" },
+	],
 };

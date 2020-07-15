@@ -1,23 +1,24 @@
-import { images } from "app/assets/images";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironment } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 type CreateProfileProps = {
-	onSubmit?: any;
+	onSubmit: (profile: Profile) => void;
 };
 
-const commonAssets = images.common;
-
 export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
+	const env: any = useEnvironment();
 	const form = useForm();
 	const history = useHistory();
 	const { register } = form;
@@ -63,25 +64,28 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 				<div className="flex flex-row items-center justify-between">
 					<span className="mt-2 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
 					<div className="-mt-8">
-						<Toggle />
+						<Toggle ref={register()} name="isDarkMode" />
 					</div>
 				</div>
 			),
 		},
 	];
 
-	return (
-		<div className="w-full h-full">
-			<div className="px-4 sm:px-6 lg:px-8">
-				<div className="flex items-center flex-shrink-0 h-20 md:h-24">
-					<div className="flex p-2 rounded-lg bg-logo">
-						<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
-					</div>
-				</div>
-			</div>
+	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
+		const profile = env.profiles().create(name);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-			<div className="container mx-auto">
-				<div className="max-w-lg mx-auto xl:max-w-xl">
+		await env.persist();
+
+		onSubmit(profile);
+	};
+
+	return (
+		<Page navbarStyle="logo-only">
+			<Section className="flex flex-col justify-center flex-1 text-center">
+				<div className="max-w-lg mx-auto md:max-w-xl">
 					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
 					<div className="text-theme-neutral-dark">
 						Create a new Profile or login with your MarketSquare account to get started.
@@ -95,7 +99,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 					</div>
 					<Divider />
 
-					<Form id="create-profile__form" className="mt-4" context={form} onSubmit={onSubmit}>
+					<Form data-testid="CreateProfile__form" className="mt-4" context={form} onSubmit={submitForm}>
 						<div className="">
 							<ListDivided items={personalDetails} />
 
@@ -106,7 +110,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 									<FormHelperText />
 								</FormField>
 
-								<FormField name="market-provider">
+								<FormField name="marketProvider">
 									<FormLabel label="Market Provider" />
 									<Select
 										placeholder="Select Market Provider"
@@ -140,15 +144,17 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							<Divider dashed />
 						</div>
 
-						<div className="flex justify-end mt-8 mb-16 space-x-3">
+						<div className="flex justify-end mt-8 space-x-3">
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								Back
 							</Button>
-							<Button>Complete</Button>
+							<Button data-testid="CreateProfile__submit-button" type="submit">
+								Complete
+							</Button>
 						</div>
 					</Form>
 				</div>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

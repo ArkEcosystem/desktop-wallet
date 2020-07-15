@@ -20,7 +20,7 @@ exports[`ReviewRating should render 1`] = `
         </svg>
       </div>
       <svg
-        class="text-theme-neutral-500 w-5"
+        class="text-theme-neutral w-5"
       >
         star.svg
       </svg>
@@ -44,7 +44,7 @@ exports[`ReviewRating should render dash if no rating 1`] = `
       class="relative my-auto"
     >
       <svg
-        class="text-theme-neutral-500 w-5"
+        class="text-theme-neutral w-5"
       >
         star.svg
       </svg>
@@ -55,7 +55,7 @@ exports[`ReviewRating should render dash if no rating 1`] = `
       -
     </span>
     <span
-      class="text-theme-neutral-500"
+      class="text-theme-neutral"
     >
       /5
     </span>
@@ -83,7 +83,7 @@ exports[`ReviewRating should render with total 1`] = `
         </svg>
       </div>
       <svg
-        class="text-theme-neutral-500 w-5"
+        class="text-theme-neutral w-5"
       >
         star.svg
       </svg>
@@ -94,7 +94,7 @@ exports[`ReviewRating should render with total 1`] = `
       1.5
     </span>
     <span
-      class="text-theme-neutral-500"
+      class="text-theme-neutral"
     >
       /5
     </span>

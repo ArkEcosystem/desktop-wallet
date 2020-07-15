@@ -17,27 +17,21 @@ exports[`PluginList should render 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  w-18"
+                class="flex flex-inline align-top w-18"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                    
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -45,15 +39,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -69,7 +61,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -77,15 +69,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -101,7 +91,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -109,15 +99,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Category
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -133,7 +121,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -141,15 +129,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Rating
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -165,7 +151,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -173,15 +159,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -197,7 +181,7 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -205,15 +189,13 @@ exports[`PluginList should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -229,43 +211,31 @@ exports[`PluginList should render 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  justify-center"
+                class="flex flex-inline align-top justify-center"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Status
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                     
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -274,14 +244,14 @@ exports[`PluginList should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-explorer"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -340,7 +310,7 @@ exports[`PluginList should render 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -369,7 +339,7 @@ exports[`PluginList should render 1`] = `
                 class="flex w-6 h-6 mx-auto"
               >
                 <div
-                  class="m-auto text-theme-neutral-500"
+                  class="m-auto text-theme-neutral"
                 >
                   <div
                     class="sc-AxirZ fkjLBb"
@@ -397,14 +367,14 @@ exports[`PluginList should render 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-avatars"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -463,7 +433,7 @@ exports[`PluginList should render 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -535,88 +505,92 @@ exports[`PluginList should render 1`] = `
       </table>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -639,27 +613,21 @@ exports[`PluginList should render without pagination 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  w-18"
+                class="flex flex-inline align-top w-18"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                    
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -667,15 +635,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -691,7 +657,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -699,15 +665,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -723,7 +687,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -731,15 +695,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Category
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -755,7 +717,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -763,15 +725,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Rating
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -787,7 +747,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -795,15 +755,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -819,7 +777,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -827,15 +785,13 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -851,43 +807,31 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  justify-center"
+                class="flex flex-inline align-top justify-center"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Status
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                     
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -896,14 +840,14 @@ exports[`PluginList should render without pagination 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-explorer"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -962,7 +906,7 @@ exports[`PluginList should render without pagination 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -991,7 +935,7 @@ exports[`PluginList should render without pagination 1`] = `
                 class="flex w-6 h-6 mx-auto"
               >
                 <div
-                  class="m-auto text-theme-neutral-500"
+                  class="m-auto text-theme-neutral"
                 >
                   <div
                     class="sc-AxirZ fkjLBb"
@@ -1019,14 +963,14 @@ exports[`PluginList should render without pagination 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-avatars"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -1085,7 +1029,7 @@ exports[`PluginList should render without pagination 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -1177,27 +1121,21 @@ exports[`PluginList should split by page 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  w-18"
+                class="flex flex-inline align-top w-18"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                    
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1205,15 +1143,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1229,7 +1165,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1237,15 +1173,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1261,7 +1195,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1269,15 +1203,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Category
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1293,7 +1225,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1301,15 +1233,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Rating
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1325,7 +1255,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1333,15 +1263,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1357,7 +1285,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1365,15 +1293,13 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1389,43 +1315,31 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  justify-center"
+                class="flex flex-inline align-top justify-center"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Status
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                     
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -1434,14 +1348,14 @@ exports[`PluginList should split by page 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-avatars"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -1500,7 +1414,7 @@ exports[`PluginList should split by page 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -1572,91 +1486,95 @@ exports[`PluginList should split by page 1`] = `
       </table>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          type="button"
         >
-          1
-        </div>
-        <div
-          class="sc-AxhUy bxYQX current-page"
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          type="button"
         >
-          2
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            1
+          </div>
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            2
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -1679,27 +1597,21 @@ exports[`PluginList should trigger delete 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  w-18"
+                class="flex flex-inline align-top w-18"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                    
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1707,15 +1619,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1731,7 +1641,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1739,15 +1649,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1763,7 +1671,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1771,15 +1679,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Category
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1795,7 +1701,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -1803,15 +1709,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Rating
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1827,7 +1731,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -1835,15 +1739,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1859,7 +1761,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -1867,15 +1769,13 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -1891,43 +1791,31 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  justify-center"
+                class="flex flex-inline align-top justify-center"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Status
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                     
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -1936,14 +1824,14 @@ exports[`PluginList should trigger delete 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-explorer"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -2002,7 +1890,7 @@ exports[`PluginList should trigger delete 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -2031,7 +1919,7 @@ exports[`PluginList should trigger delete 1`] = `
                 class="flex w-6 h-6 mx-auto"
               >
                 <div
-                  class="m-auto text-theme-neutral-500"
+                  class="m-auto text-theme-neutral"
                 >
                   <div
                     class="sc-AxirZ fkjLBb"
@@ -2059,14 +1947,14 @@ exports[`PluginList should trigger delete 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-avatars"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -2125,7 +2013,7 @@ exports[`PluginList should trigger delete 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -2197,88 +2085,92 @@ exports[`PluginList should trigger delete 1`] = `
       </table>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -2301,27 +2193,21 @@ exports[`PluginList should trigger install 1`] = `
             role="row"
           >
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  w-18"
+                class="flex flex-inline align-top w-18"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                    
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2329,15 +2215,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2353,7 +2237,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2361,15 +2245,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2385,7 +2267,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2393,15 +2275,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Category
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2417,7 +2297,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
@@ -2425,15 +2305,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Rating
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2449,7 +2327,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
@@ -2457,15 +2335,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2481,7 +2357,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
@@ -2489,15 +2365,13 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-color-neutral-500"
+                  class="flex items-center ml-2 text-theme-color-neutral"
                   data-testid="table__Sort"
                 >
                   <div
@@ -2513,43 +2387,31 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--7"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  justify-center"
+                class="flex flex-inline align-top justify-center"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                   Status
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
             <th
-              class="text-sm text-left select-none text-theme-neutral-500"
+              class="text-sm text-left select-none text-theme-neutral"
               colspan="1"
               data-testid="table__th--8"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top  undefined"
+                class="flex flex-inline align-top undefined"
               >
-                <div
-                  class="mr-2"
-                >
+                <div>
                     
                 </div>
-                <div
-                  class="flex items-center text-theme-color-neutral-500"
-                  data-testid="table__Sort"
-                />
               </div>
             </th>
           </tr>
@@ -2558,14 +2420,14 @@ exports[`PluginList should trigger install 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-explorer"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -2624,7 +2486,7 @@ exports[`PluginList should trigger install 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -2653,7 +2515,7 @@ exports[`PluginList should trigger install 1`] = `
                 class="flex w-6 h-6 mx-auto"
               >
                 <div
-                  class="m-auto text-theme-neutral-500"
+                  class="m-auto text-theme-neutral"
                 >
                   <div
                     class="sc-AxirZ fkjLBb"
@@ -2681,14 +2543,14 @@ exports[`PluginList should trigger install 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-700"
+            class="border-b border-dashed border-theme-neutral-200 text-theme-neutral-dark"
             data-testid="PluginListItem--ark-avatars"
           >
             <td
-              class="w-16 text-center"
+              class="w-20 text-center"
             >
               <svg
-                class="w-12 h-12"
+                class="w-15 h-15"
               >
                 changenow-logo.svg
               </svg>
@@ -2747,7 +2609,7 @@ exports[`PluginList should trigger install 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-3"
+                    class="text-theme-neutral w-3"
                   >
                     star.svg
                   </svg>
@@ -2819,88 +2681,92 @@ exports[`PluginList should trigger install 1`] = `
       </table>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>

@@ -18,7 +18,7 @@ export const RepositoryLink = ({ provider, url }: RepositoryLinkProps) => {
 				<Icon name={provider} width={22} height={22} data-testid="repository-link__icon" />
 			</Circle>
 			<div className="flex flex-col space-y-1">
-				<span className="text-sm text-theme-neutral-400">{t(`PROFILE.MODAL_REPOSITORIES.${provider}`)}</span>
+				<span className="text-sm text-theme-neutral-light">{t(`PROFILE.MODAL_REPOSITORIES.${provider}`)}</span>
 				<Link className="text-theme-primary" to={{ pathname: url }} target="_blank">
 					{url}
 				</Link>

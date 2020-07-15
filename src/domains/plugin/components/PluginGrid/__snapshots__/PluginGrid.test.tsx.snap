@@ -9,7 +9,7 @@ exports[`PluginGrid should render 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -19,13 +19,13 @@ exports[`PluginGrid should render 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -43,7 +43,7 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -69,7 +69,7 @@ exports[`PluginGrid should render 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -85,14 +85,14 @@ exports[`PluginGrid should render 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -117,13 +117,13 @@ exports[`PluginGrid should render 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -141,7 +141,7 @@ exports[`PluginGrid should render 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -167,7 +167,7 @@ exports[`PluginGrid should render 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -184,88 +184,92 @@ exports[`PluginGrid should render 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -280,7 +284,7 @@ exports[`PluginGrid should render without pagination 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -290,13 +294,13 @@ exports[`PluginGrid should render without pagination 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -314,7 +318,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -340,7 +344,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -356,14 +360,14 @@ exports[`PluginGrid should render without pagination 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -388,13 +392,13 @@ exports[`PluginGrid should render without pagination 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -412,7 +416,7 @@ exports[`PluginGrid should render without pagination 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -438,7 +442,7 @@ exports[`PluginGrid should render without pagination 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -454,6 +458,9 @@ exports[`PluginGrid should render without pagination 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="flex justify-center mt-4"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -467,14 +474,14 @@ exports[`PluginGrid should split by page 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -499,13 +506,13 @@ exports[`PluginGrid should split by page 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -523,7 +530,7 @@ exports[`PluginGrid should split by page 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -549,7 +556,7 @@ exports[`PluginGrid should split by page 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -566,91 +573,95 @@ exports[`PluginGrid should split by page 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          type="button"
         >
-          1
-        </div>
-        <div
-          class="sc-AxhUy bxYQX current-page"
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          type="button"
         >
-          2
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX"
+          >
+            1
+          </div>
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            2
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -665,7 +676,7 @@ exports[`PluginGrid should trigger delete 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -675,13 +686,13 @@ exports[`PluginGrid should trigger delete 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -699,7 +710,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -725,7 +736,7 @@ exports[`PluginGrid should trigger delete 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -741,14 +752,14 @@ exports[`PluginGrid should trigger delete 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -773,13 +784,13 @@ exports[`PluginGrid should trigger delete 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -797,7 +808,7 @@ exports[`PluginGrid should trigger delete 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -823,7 +834,7 @@ exports[`PluginGrid should trigger delete 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -840,88 +851,92 @@ exports[`PluginGrid should trigger delete 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -936,7 +951,7 @@ exports[`PluginGrid should trigger select 1`] = `
       class="grid grid-cols-4 gap-5 undefined"
     >
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-explorer"
       >
         <div
@@ -946,13 +961,13 @@ exports[`PluginGrid should trigger select 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Explorer
@@ -970,7 +985,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -996,7 +1011,7 @@ exports[`PluginGrid should trigger select 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -1012,14 +1027,14 @@ exports[`PluginGrid should trigger select 1`] = `
         </div>
       </div>
       <div
-        class="sc-AxheI dgnzGu border-theme-primary-100 hover:border-theme-background"
+        class="sc-AxheI kPerZj border-theme-primary-contrast hover:border-theme-background"
         data-testid="PluginCard--ark-avatars"
       >
         <div
           class="my-auto font-semibold"
         >
           <div
-            class="absolute top-4 right-2 text-theme-primary-200"
+            class="absolute top-4 right-2 text-theme-primary-light"
           >
             <div
               class="relative"
@@ -1044,13 +1059,13 @@ exports[`PluginGrid should trigger select 1`] = `
             class="mb-4 mr-4"
           >
             <svg
-              class="w-12 h-12"
+              class="PluginCard--image"
             >
               changenow-logo.svg
             </svg>
           </div>
           <div
-            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary-600"
+            class="flex items-center mb-2 text-lg space-x-2 text-theme-primary"
           >
             <div>
               ARK Avatars
@@ -1068,7 +1083,7 @@ exports[`PluginGrid should trigger select 1`] = `
             </div>
           </div>
           <div
-            class="flex text-sm text-theme-neutral-400 space-x-4"
+            class="flex text-sm text-theme-neutral-light space-x-4"
           >
             <div
               class="pr-4 border-r border-theme-neutral-300"
@@ -1094,7 +1109,7 @@ exports[`PluginGrid should trigger select 1`] = `
                     </svg>
                   </div>
                   <svg
-                    class="text-theme-neutral-500 w-5"
+                    class="text-theme-neutral w-5"
                   >
                     star.svg
                   </svg>
@@ -1111,88 +1126,92 @@ exports[`PluginGrid should trigger select 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxhCb gSLQTX mt-5"
-      data-testid="Pagination"
+      class="flex justify-center mt-4"
     >
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__first"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-first.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__previous"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ fttODj mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </button>
       <div
-        class="flex px-2 rounded bg-theme-primary-contrast"
+        class="sc-AxhCb gSLQTX mt-5"
+        data-testid="Pagination"
       >
-        <div
-          class="sc-AxhUy bxYQX current-page"
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__first"
+          disabled=""
+          type="button"
         >
-          1
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-first.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__previous"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ fttODj mr-2"
+            height="10"
+            width="10"
+          >
+            <svg>
+              back.svg
+            </svg>
+          </div>
+          Previous
+        </button>
+        <div
+          class="flex px-2 rounded bg-theme-primary-contrast"
+        >
+          <div
+            class="sc-AxhUy bxYQX current-page"
+          >
+            1
+          </div>
         </div>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__next"
+          disabled=""
+          type="button"
+        >
+          Next
+          <div
+            class="sc-AxirZ hDwaov ml-2"
+            height="12"
+            width="12"
+          >
+            <svg>
+              forward.svg
+            </svg>
+          </div>
+        </button>
+        <button
+          class="sc-AxjAm ddJBbC"
+          color="primary"
+          data-testid="Pagination__last"
+          disabled=""
+          type="button"
+        >
+          <div
+            class="sc-AxirZ hDwaov"
+            height="12"
+            width="12"
+          >
+            <svg>
+              pagination-last.svg
+            </svg>
+          </div>
+        </button>
       </div>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__next"
-        disabled=""
-        type="button"
-      >
-        Next
-        <div
-          class="sc-AxirZ hDwaov ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </button>
-      <button
-        class="sc-AxjAm ddJBbC"
-        color="primary"
-        data-testid="Pagination__last"
-        disabled=""
-        type="button"
-      >
-        <div
-          class="sc-AxirZ hDwaov"
-          height="12"
-          width="12"
-        >
-          <svg>
-            pagination-last.svg
-          </svg>
-        </div>
-      </button>
     </div>
   </div>
 </DocumentFragment>

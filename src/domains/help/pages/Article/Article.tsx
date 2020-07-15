@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { Page, Section } from "app/components/Layout";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -35,8 +36,8 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 	};
 
 	return (
-		<NavWrapper className="sticky float-right w-32 top-2">
-			<div className="pl-3 text-xs font-bold text-theme-neutral-400 border-l-1 border-theme-neutral-300">
+		<NavWrapper className="sticky float-right w-40 top-2">
+			<div className="pl-3 text-xs font-bold text-theme-neutral-light border-l-1 border-theme-neutral-300">
 				Fast navigation
 			</div>
 			<ul>
@@ -67,46 +68,50 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 export const Article = ({ title, category, categoryIcon, views, sections, image }: ArticleProps) => {
 	const { t } = useTranslation();
 
-	return (
-		<div>
-			<div className="-m-5">
-				<div className="px-12 py-10 mb-10 bg-white">
-					<FastNavigation sections={sections} />
+	const crumbs = [
+		{
+			route: "help",
+			label: "Go back to Help & Support",
+		},
+	];
 
-					<div className="max-w-xl mx-auto">
-						<div className="flex mb-4 text-sm">
-							<div className="flex">
-								<div className="my-auto mr-2">
-									<Icon name={categoryIcon} />
-								</div>
-								<div className="font-bold font-sm text-theme-neutral-700">{category}</div>
+	return (
+		<Page crumbs={crumbs}>
+			<Section>
+				<FastNavigation sections={sections} />
+
+				<div className="max-w-2xl mx-auto">
+					<div className="flex mb-4 text-sm">
+						<div className="flex">
+							<div className="my-auto mr-2">
+								<Icon name={categoryIcon} />
 							</div>
-							{views && (
-								<div className="flex ml-5">
-									<div className="my-auto mr-2">
-										<Icon name="EyeTag" width={18} height={18} />
-									</div>
-									<div className="font-bold font-sm text-theme-neutral-700">{views}</div>
+							<div className="font-bold font-sm text-theme-neutral-dark">{category}</div>
+						</div>
+						{views && (
+							<div className="flex ml-5">
+								<div className="my-auto mr-2">
+									<Icon name="EyeTag" width={18} height={18} />
 								</div>
-							)}
-						</div>
-						<h1 className="leading-tight">{title}</h1>
-						{image && <img alt={title} src={image} />}
-						<div>
-							{sections &&
-								sections.map((section: SectionItem, index) => {
-									return (
-										<div className="mt-8" id={section.id} key={index}>
-											<h3 className="text-lg">{section.title}</h3>
-											<p className="whitespace-pre-line text-theme-neutral-700">{section.body}</p>
-										</div>
-									);
-								})}
-						</div>
+								<div className="font-bold font-sm text-theme-neutral-dark">{views}</div>
+							</div>
+						)}
 					</div>
+					<h1 className="leading-tight">{title}</h1>
+					{image && <img alt={title} src={image} />}
+					{sections &&
+						sections.map((section: SectionItem, index) => {
+							return (
+								<div className="mt-8" id={section.id} key={index}>
+									<h3 className="text-lg">{section.title}</h3>
+									<p className="whitespace-pre-line text-theme-neutral-dark">{section.body}</p>
+								</div>
+							);
+						})}
 				</div>
-				<div className="px-12 py-10 bg-white border-t-1 border-theme-neutral-300">
-					<div className="max-w-xl mx-auto">
+
+				<div className="pt-16 mt-16 border-t-1 border-theme-neutral-300">
+					<div className="max-w-2xl mx-auto">
 						<div className="flex">
 							<div className="w-3/4">
 								<h3>{t("HELP.PAGE_ARTICLE.FOOTER.TITLE")}</h3>
@@ -120,7 +125,7 @@ export const Article = ({ title, category, categoryIcon, views, sections, image 
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

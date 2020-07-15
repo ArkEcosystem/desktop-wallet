@@ -9,7 +9,7 @@ export default {
 };
 
 export const Default = () => {
-	const className = text("className", "p-10 font-semibold bg-theme-neutral-100");
+	const className = text("className", "p-10 font-semibold bg-theme-neutral-contrast");
 
 	return (
 		<div className="space-y-4">

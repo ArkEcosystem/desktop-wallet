@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputPassword, InputRange } from "app/components/Input";
+import { Page, Section } from "app/components/Layout";
 import { SelectionBar, SelectionBarOption, useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -32,22 +33,13 @@ export const FirstStep = () => {
 				<TransactionDetail
 					border={false}
 					label="Account"
-					extra={
-						<div>
-							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 				<TransactionDetail
 					label="Delegate"
-					extra={
-						<div>
-							<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
-					className="pb-0"
+					extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 				>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 				</TransactionDetail>
@@ -86,8 +78,8 @@ export const SecondStep = () => (
 				border={false}
 				label="Network"
 				extra={
-					<div className="ml-1 text-theme-danger-500">
-						<Circle className="bg-theme-background border-theme-danger-200">
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light">
 							<Icon name="Ark" width={20} height={20} />
 						</Circle>
 					</div>
@@ -97,21 +89,13 @@ export const SecondStep = () => (
 			</TransactionDetail>
 			<TransactionDetail
 				label="Account"
-				extra={
-					<div>
-						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
+				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
 			<TransactionDetail
 				label="Delegate"
-				extra={
-					<div>
-						<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-					</div>
-				}
+				extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
@@ -146,14 +130,7 @@ export const ThirdStep = () => {
 
 export const FourthStep = () => (
 	<TransactionSuccessful>
-		<TransactionDetail
-			label="Delegate"
-			extra={
-				<div>
-					<Avatar address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-				</div>
-			}
-		>
+		<TransactionDetail label="Delegate" extra={<Avatar size="lg" address="AEUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
 			<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"Delegate 3"} />
 		</TransactionDetail>
 		<TransactionDetail label="Transaction fee">0.09660435 ARK</TransactionDetail>
@@ -193,10 +170,17 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: "portfolio",
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div>
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={onSubmit}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -257,7 +241,7 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 						</div>
 					</Tabs>
 				</Form>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
 };

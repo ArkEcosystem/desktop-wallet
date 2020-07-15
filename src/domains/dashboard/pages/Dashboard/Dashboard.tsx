@@ -1,10 +1,14 @@
+import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
+import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import tw, { styled } from "twin.macro";
+import { useHistory } from "react-router-dom";
+
+import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
@@ -14,13 +18,11 @@ type DashboardProps = {
 	portfolioPercentages?: any[];
 };
 
-const Section = styled.div`
-	${tw`px-13 py-16 mt-5 bg-white`}
-`;
-
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const activeProfile = useActiveProfile();
+	const history = useHistory();
 
 	const { t } = useTranslation();
 
@@ -51,7 +53,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	];
 
 	return (
-		<div>
+		<Page>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
@@ -64,14 +66,29 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 				</Section>
 			)}
 
-			<Section>
-				<Wallets viewType="grid" wallets={wallets} filterProperties={filterProperties} />
+			<Section className="flex-1">
+				<Wallets
+					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
+					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
+					viewType="grid"
+					title="Wallets"
+					wallets={wallets}
+					filterProperties={filterProperties}
+				/>
 			</Section>
+
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
 					<Transactions transactions={transactions} />
 				</Section>
 			)}
-		</div>
+		</Page>
 	);
+};
+
+Dashboard.defaultProps = {
+	balances,
+	portfolioPercentages,
+	transactions,
+	wallets,
 };

@@ -9,8 +9,8 @@ import { useTranslation } from "react-i18next";
 type ReceiveFundsProps = {
 	isOpen: boolean;
 	wallet: any;
-	qrCode: string;
-	onCopy: () => void;
+	qrCode?: string;
+	onCopy?: () => void;
 	handleClose?: any;
 };
 
@@ -27,7 +27,7 @@ const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps
 		<div className={className}>
 			<div className="flex items-center mt-6 mb-6">
 				<div className="flex-1">
-					<div className="text-sm font-semibold text-theme-neutral-500">{label}</div>
+					<div className="text-sm font-semibold text-theme-neutral">{label}</div>
 					<div className="flex items-center font-semibold">
 						{value}
 						{copyButton}
@@ -77,7 +77,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 			</Wrapper>
 
 			<div className="mt-8">
-				<img src={qrCode} className="w-64 h-64 mx-auto" />
+				<img src={qrCode} className="w-64 h-64 mx-auto" alt="QR Code" />
 			</div>
 		</Modal>
 	);

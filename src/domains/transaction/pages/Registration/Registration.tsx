@@ -6,6 +6,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Label } from "app/components/Label";
+import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
 import { SelectNetwork } from "app/components/SelectNetwork";
@@ -13,6 +14,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { ProfileFormField } from "domains/profile/components/ProfileFormField";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -24,12 +26,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { styled } from "twin.macro";
 
+// Dummy data
+import { networks } from "../../data";
+
 type RegistrationProps = {
-	addresses: any;
-	formDefaultData: any;
-	onDownload: any;
-	networks: any;
-	registrationTypes: any;
+	addresses?: any;
+	formDefaultData?: any;
+	onDownload?: any;
+	networks?: any;
+	registrationTypes?: any;
 };
 
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
@@ -53,7 +58,7 @@ const FormWrapper = styled.div`
 	}
 `;
 
-const RegistrationTypeDropdown = ({ className, register, registrationTypes, selectedType }: any) => {
+const RegistrationTypeDropdown = ({ className, register, registrationTypes }: any) => {
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<div className="mb-2">
@@ -91,7 +96,7 @@ const FirstStep = ({
 	return (
 		<div data-testid="Registration__first-step">
 			<h1 className="mb-0">Registration</h1>
-			<div className="text-theme-neutral-700">
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
@@ -129,7 +134,7 @@ const SecondStep = ({ form }: { form: any }) => {
 	return (
 		<div data-testid="Registration__second-step">
 			<h1 className="mb-0">Register Business</h1>
-			<div className="text-theme-neutral-700">
+			<div className="text-theme-neutral-dark">
 				Select the type of registration and the address you want to register with.
 			</div>
 
@@ -235,8 +240,8 @@ const ThirdStep = () => {
 					border={false}
 					label="Network"
 					extra={
-						<div className="ml-1 text-theme-danger-500">
-							<Circle className="bg-theme-background border-theme-danger-200" size="lg">
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
 								<Icon name="Ark" width={20} height={20} />
 							</Circle>
 						</div>
@@ -248,15 +253,10 @@ const ThirdStep = () => {
 				</TransactionDetail>
 
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
-					<div className="mb-2 text-sm font-semibold text-theme-neutral-500">
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
 						<span className="mr-1">Sender</span>
 						<Label color="warning">
 							<span className="text-sm">Your address</span>
@@ -283,7 +283,7 @@ const ThirdStep = () => {
 				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 
 				<TransactionDetail label="Website">
-					<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+					<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
 						http://robank.com
 					</a>
 				</TransactionDetail>
@@ -312,7 +312,7 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 			{passwordType !== "ledger" && (
 				<div>
 					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-700">
+					<div className="text-theme-neutral-dark">
 						Enter your twelve word mnemonic to authenticate the transaction.
 					</div>
 
@@ -355,7 +355,7 @@ export const FifthStep = () => (
 		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
 		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
 		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noreferrer" className="link">
+			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
 				http://robank.com
 			</a>
 		</TransactionDetail>
@@ -364,8 +364,8 @@ export const FifthStep = () => (
 			className="pb-0"
 			extra={
 				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-200" size="lg">
-						<Icon name="Sent" width={50} height={50} />
+					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+						<Icon name="Sent" width={22} height={22} />
 					</Circle>
 				</div>
 			}
@@ -383,6 +383,7 @@ export const Registration = ({
 	registrationTypes,
 }: RegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const activeProfile = useActiveProfile();
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
@@ -395,10 +396,17 @@ export const Registration = ({
 		setActiveTab(activeTab + 1);
 	};
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
 	return (
-		<div data-testid="Registration">
-			<div className="max-w-xl py-16 mx-auto">
-				<Form context={form} onSubmit={(data: any) => onDownload(data)}>
+		<Page crumbs={crumbs}>
+			<Section className="flex-1">
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={7} activeIndex={activeTab} />
 
@@ -483,7 +491,29 @@ export const Registration = ({
 						</div>
 					</Tabs>
 				</Form>
-			</div>
-		</div>
+			</Section>
+		</Page>
 	);
+};
+
+Registration.defaultProps = {
+	networks,
+	registrationTypes: [
+		{
+			value: "business",
+			label: "Business",
+		},
+	],
+	formDefaultData: {
+		network: null,
+		address: null,
+	},
+	addresses: [
+		{
+			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
+			walletName: "My Wallet",
+			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
+			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
+		},
+	],
 };

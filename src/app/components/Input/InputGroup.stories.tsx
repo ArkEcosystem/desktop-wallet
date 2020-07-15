@@ -10,7 +10,7 @@ export const Start = () => {
 	return (
 		<InputGroup className="max-w-xs">
 			<InputAddonStart>
-				<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-100 border-theme-neutral-300 text-theme-neutral-dark">
+				<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
 					$
 				</span>
 			</InputAddonStart>
@@ -34,7 +34,7 @@ export const Both = () => {
 	return (
 		<InputGroup className="max-w-xs">
 			<InputAddonStart>
-				<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-100 border-theme-neutral-300 text-theme-neutral-dark">
+				<span className="flex items-center justify-center w-10 h-full border-r bg-theme-neutral-contrast border-theme-neutral-300 text-theme-neutral-dark">
 					$
 				</span>
 			</InputAddonStart>

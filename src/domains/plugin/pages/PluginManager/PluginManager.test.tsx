@@ -1,25 +1,45 @@
 import { act } from "@testing-library/react-hooks";
+import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
-import { fireEvent, render, within } from "testing-library";
+import { Route } from "react-router-dom";
+import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
-// i18n
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
 jest.useFakeTimers();
 
 describe("PluginManager", () => {
-	it("should render", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
+	let rendered: RenderResult;
+	const history = createMemoryHistory();
+	const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
 
-		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
-		expect(getByTestId("PluginManager")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
+	beforeEach(() => {
+		history.push(pluginsURL);
+
+		rendered = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginManager />
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
+	});
+
+	it("should render", () => {
+		const { asFragment, getByTestId } = rendered;
+
+		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
+		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle between list and grid on home", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
+		const { asFragment, getByTestId } = rendered;
 
 		expect(within(getByTestId("PluginManager__home__featured")).getByTestId("PluginGrid")).toBeTruthy();
 
@@ -39,7 +59,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should toggle between list and grid on game", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -61,42 +81,8 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should open & close featured modal", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__home__featured__view-more"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_FEATURED_PLUGINS.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should open & close top rated modal", () => {
-		const { asFragment, getByTestId } = render(<PluginManager />);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__home__top-rated__view-more"));
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_BEST_PLUGINS.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
-	});
-
 	it("should download & install plugin on home", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -115,8 +101,27 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should install plugin from header install button", () => {
+		const { asFragment, getByTestId } = rendered;
+
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager_header--install"));
+		});
+
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+
+		act(() => {
+			fireEvent.click(getByTestId("InstallPlugin__download-button"));
+			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
+			fireEvent.click(getByTestId("InstallPlugin__install-button"));
+		});
+
+		expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should download & install plugin on game", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
@@ -137,7 +142,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should close install plugin modal", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -155,7 +160,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should cancel install plugin", () => {
-		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("LayoutControls__list--icon"));
@@ -175,7 +180,7 @@ describe("PluginManager", () => {
 	it("should search for plugin", (done) => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId } = render(<PluginManager />);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("header-search-bar__button"));
@@ -199,17 +204,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should select plugin on home grids", () => {
-		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-
-		const { asFragment, getByTestId } = render(<PluginManager />);
-
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__home__featured")).getByTestId("PluginCard--ark-explorer-1"),
-			);
-		});
-
-		expect(consoleSpy).toHaveBeenLastCalledWith("selected");
+		const { getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(
@@ -217,42 +212,25 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(consoleSpy).toHaveBeenLastCalledWith("selected");
-
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__home__top-utilities")).getByTestId("PluginCard--ark-explorer-1"),
-			);
-		});
-
-		expect(consoleSpy).toHaveBeenLastCalledWith("selected");
-		expect(consoleSpy).toHaveBeenCalledTimes(3);
-		expect(asFragment()).toMatchSnapshot();
-
-		consoleSpy.mockRestore();
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
 	});
 
 	it("should select plugin on game grid", () => {
-		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-
-		const { asFragment, getAllByTestId, getByTestId } = render(<PluginManager />);
+		const { asFragment, getAllByTestId, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));
 			fireEvent.click(getAllByTestId("PluginCard--ark-explorer-1")[0]);
 		});
 
-		expect(consoleSpy).toHaveBeenCalledTimes(1);
-		expect(consoleSpy).toHaveBeenCalledWith("selected");
+		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
 		expect(asFragment()).toMatchSnapshot();
-
-		consoleSpy.mockRestore();
 	});
 
 	it("should delete plugin on home", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId } = render(<PluginManager />);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(within(getByTestId("PluginManager__home__featured")).getAllByTestId("dropdown__toggle")[0]);
@@ -269,7 +247,7 @@ describe("PluginManager", () => {
 	it("should delete plugin on game", () => {
 		const consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 
-		const { asFragment, getByTestId } = render(<PluginManager />);
+		const { asFragment, getByTestId } = rendered;
 
 		act(() => {
 			fireEvent.click(getByTestId("PluginManagerNavigationBar__game"));

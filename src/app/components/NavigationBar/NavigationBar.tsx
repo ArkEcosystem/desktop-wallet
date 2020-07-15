@@ -1,12 +1,15 @@
 import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
+import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
 import { useActiveProfile } from "app/hooks/env";
-import React from "react";
+import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
+import { SearchWallet } from "domains/wallet/components/SearchWallet";
+import React, { useState } from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -73,12 +76,12 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 							<Icon name={currencyIcon} />
 						</span>
 					</Circle>
-					<Circle className="relative bg-theme-primary-600 border-theme-primary-600 rotate-90" size="lg">
+					<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
 						<span className="text-sm text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${
 								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-100 border-theme-primary-100 text-theme-primary-500`}
+							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
 							position="right"
 							icon="ChevronDown"
 							iconWidth={10}
@@ -102,6 +105,8 @@ export const NavigationBar = ({
 }: NavigationBarProps) => {
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
+	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
+	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const renderMenu = () => {
 		if (!activeProfile?.id()) {
@@ -115,7 +120,7 @@ export const NavigationBar = ({
 					<NavLink
 						to={menuItem.mountPath(activeProfile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral-500"
+						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -123,9 +128,15 @@ export const NavigationBar = ({
 			))
 		);
 	};
+
+	const handleSearchWallet = () => {
+		setIsSearchingWallet(false);
+
+		return setReceiveFundsIsOpen(true);
+	};
 	return (
 		<NavWrapper aria-labelledby="main menu">
-			<div className="px-4 sm:px-6 lg:px-8">
+			<div className="px-4 sm:px-6 lg:px-">
 				<div className="relative flex justify-between h-20 md:h-24">
 					<div className="flex items-center flex-shrink-0">
 						<div className="flex p-2 mr-4 rounded-lg bg-logo">
@@ -136,22 +147,35 @@ export const NavigationBar = ({
 
 					<div className="flex items-center">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
+
 						<div className="h-8 border-r border-theme-neutral-200" />
 
-						<div className="flex items-center h-full px-3 -mt-1 cursor-pointer text-theme-primary-300">
-							<Icon name="Sent" width={42} height={42} />
+						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+							<NavLink
+								to={`/profiles/${activeProfile?.id()}/transactions/transfer`}
+								data-testid="navbar__buttons--send"
+							>
+								<Icon name="Sent" width={22} height={22} />
+							</NavLink>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
+
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
-							<Icon name="Receive" width={22} height={22} />
+							<Button
+								variant="transparent"
+								onClick={() => setIsSearchingWallet(true)}
+								data-testid="navbar__buttons--receive"
+							>
+								<Icon name="Receive" width={22} height={22} />
+							</Button>
 						</div>
 
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral-500">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-700">{balance}</div>
+							<div className="text-xs text-theme-neutral">Your balance</div>
+							<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
 						</div>
 
 						<div className="flex p-1 cusror-pointer">
@@ -165,6 +189,12 @@ export const NavigationBar = ({
 					</div>
 				</div>
 			</div>
+			<SearchWallet
+				isOpen={isSearchingWallet}
+				onSearch={handleSearchWallet}
+				onClose={() => setIsSearchingWallet(false)}
+			/>
+			<ReceiveFunds isOpen={receiveFundsIsOpen} handleClose={() => setReceiveFundsIsOpen(false)} />
 		</NavWrapper>
 	);
 };

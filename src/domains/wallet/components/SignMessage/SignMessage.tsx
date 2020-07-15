@@ -1,4 +1,3 @@
-// UI Elements
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -18,7 +17,7 @@ type Props = {
 	isSigned?: boolean;
 	handleClose?: any;
 	handleSign?: any;
-	signatoryAddress: string;
+	signatoryAddress?: string;
 };
 
 const mockSignature = {
@@ -113,7 +112,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			description={!isSigned ? "Insert a message below to sign using your private key" : ""}
 			onClose={() => handleClose()}
 		>
-			<div className="mt-2">{renderSignedMessageContent()}</div>
+			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
 		</Modal>
 	);
 };

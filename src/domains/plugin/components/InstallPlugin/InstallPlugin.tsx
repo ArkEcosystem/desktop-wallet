@@ -93,15 +93,15 @@ export const ThirdStep = () => {
 									size="lg"
 									className="relative z-10 bg-theme-background border-theme-neutral-300"
 								>
-									<span className="text-theme-success-600">
+									<span className="text-theme-success">
 										<Icon name="Checkmark" width={28} height={28} />
 									</span>
 								</Circle>
 								<Circle
 									size="lg"
-									className="relative z-0 -ml-1 bg-theme-background border-theme-success-600"
+									className="relative z-0 -ml-1 bg-theme-background border-theme-success"
 								>
-									<span className="text-xs font-semibold text-theme-success-600">100%</span>
+									<span className="text-xs font-semibold text-theme-success">100%</span>
 								</Circle>
 							</div>
 						</div>

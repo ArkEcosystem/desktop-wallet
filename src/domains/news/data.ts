@@ -3,7 +3,7 @@ export const news = [
 		asset: {
 			icon: "Ark",
 			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
+			className: "text-theme-danger-400 border-theme-danger-light",
 		},
 		author: {
 			name: "Travis Walker",
@@ -18,7 +18,7 @@ export const news = [
 		asset: {
 			icon: "Ark",
 			name: "ARK Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-200",
+			className: "text-theme-danger-400 border-theme-danger-light",
 		},
 		author: {
 			name: "Travis Walker",
@@ -66,6 +66,10 @@ export const assets = [
 	},
 	{
 		name: "Bitcoin",
+		isSelected: true,
+	},
+	{
+		name: "Lisk",
 		isSelected: true,
 	},
 ];

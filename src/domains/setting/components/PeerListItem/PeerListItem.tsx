@@ -27,7 +27,7 @@ export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onA
 		<td className="py-1">
 			<span>{peerIp}</span>
 		</td>
-		<td className="py-1 text-theme-neutral-500">
+		<td className="py-1 text-theme-neutral">
 			<div className="flex justify-center h-full">
 				<Icon name={type!} />
 			</div>

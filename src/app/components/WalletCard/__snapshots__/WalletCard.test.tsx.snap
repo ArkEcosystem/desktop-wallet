@@ -2,70 +2,74 @@
 
 exports[`Formatted Address should render 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
+  <a
+    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
   >
     <div
-      class="sc-AxirZ PHAyy"
+      class="w-64 inline-block undefined"
     >
       <div
-        class="relative p-2"
+        class="sc-AxirZ PHAyy"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="relative p-2"
         >
           <div
-            class="relative"
-            data-testid="dropdown__toggle"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
+                class="float-right outline-none cursor-pointer focus:outline-none"
               >
-                <svg>
-                  settings.svg
-                </svg>
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        />
-        <div
-          class="flex"
-        >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
+            class="absolute right-3 -top-1"
           />
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-            data-testid="Avatar"
+            class="flex"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 undefined"
+            />
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="Avatar"
             >
-              <img
-                alt=""
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                title=""
-              />
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt=""
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title=""
+                />
+              </div>
             </div>
           </div>
+          <div
+            class="mt-6 truncate max-w-12"
+          />
+          <div
+            class="font-bold text-theme-neutral-900"
+          />
         </div>
-        <div
-          class="mt-6 truncate max-w-12"
-        />
-        <div
-          class="font-bold text-theme-neutral-900"
-        />
       </div>
     </div>
-  </div>
+  </a>
 </div>
 `;
 
@@ -106,196 +110,205 @@ exports[`Formatted Address should render blank 1`] = `
 
 exports[`Formatted Address should render with wallet data 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
+  <a
+    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
   >
     <div
-      class="sc-AxirZ PHAyy"
+      class="w-64 inline-block undefined"
     >
       <div
-        class="relative p-2"
+        class="sc-AxirZ PHAyy"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="relative p-2"
         >
           <div
-            class="relative"
-            data-testid="dropdown__toggle"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
+                class="float-right outline-none cursor-pointer focus:outline-none"
               >
-                <svg>
-                  settings.svg
-                </svg>
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        />
-        <div
-          class="flex"
-        >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="absolute right-3 -top-1"
+          />
+          <div
+            class="flex"
           >
             <div
-              class="sc-AxiKw ccPfUV"
-              height="16"
-              width="18"
+              class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
             >
-              <svg>
-                btc.svg
-              </svg>
+              <div
+                class="sc-AxiKw ccPfUV"
+                height="16"
+                width="18"
+              >
+                <svg>
+                  btc.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-            data-testid="Avatar"
+            class="mt-6 truncate max-w-12"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="inline-block truncate align-middle"
             >
-              <img
-                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-              />
+              <span
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                My wallet
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuu…3kqT
+              </span>
             </div>
           </div>
-        </div>
-        <div
-          class="mt-6 truncate max-w-12"
-        >
           <div
-            class="inline-block truncate align-middle"
+            class="font-bold text-theme-neutral-900"
           >
-            <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-              data-testid="address__wallet-name"
-            >
-              My wallet
-            </span>
-            <span
-              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              ASuu…3kqT
-            </span>
+            100,000 BTC
           </div>
-        </div>
-        <div
-          class="font-bold text-theme-neutral-900"
-        >
-          100,000 BTC
         </div>
       </div>
     </div>
-  </div>
+  </a>
+  ,
 </div>
 `;
 
 exports[`Formatted Address should render with wallet data and optional icon 1`] = `
 <div>
-  <div
-    class="w-64 inline-block undefined"
+  <a
+    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
   >
     <div
-      class="sc-AxirZ PHAyy"
+      class="w-64 inline-block undefined"
     >
       <div
-        class="relative p-2"
+        class="sc-AxirZ PHAyy"
       >
         <div
-          class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+          class="relative p-2"
         >
           <div
-            class="relative"
-            data-testid="dropdown__toggle"
+            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
           >
             <div
-              class="float-right outline-none cursor-pointer focus:outline-none"
+              class="relative"
+              data-testid="dropdown__toggle"
             >
               <div
-                class="sc-AxiKw dklFyP"
-                height="20"
-                width="20"
+                class="float-right outline-none cursor-pointer focus:outline-none"
               >
-                <svg>
-                  settings.svg
-                </svg>
+                <div
+                  class="sc-AxiKw dklFyP"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div
-          class="absolute right-3 -top-1"
-        />
-        <div
-          class="flex"
-        >
           <div
-            class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
+            class="absolute right-3 -top-1"
+          />
+          <div
+            class="flex"
           >
             <div
-              class="sc-AxiKw ccPfUV"
-              height="16"
-              width="18"
+              class="sc-AxhCb bzWLYJ border-theme-primary-contrast -mr-2 border-theme-warning-200"
             >
-              <svg>
-                btc.svg
-              </svg>
+              <div
+                class="sc-AxiKw ccPfUV"
+                height="16"
+                width="18"
+              >
+                <svg>
+                  btc.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 bJdIns"
-            data-testid="Avatar"
+            class="mt-6 truncate max-w-12"
           >
             <div
-              class="w-full h-full overflow-hidden rounded-full"
+              class="inline-block truncate align-middle"
             >
-              <img
-                alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-              />
+              <span
+                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                data-testid="address__wallet-name"
+              >
+                My wallet
+              </span>
+              <span
+                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                ASuu…3kqT
+              </span>
             </div>
           </div>
-        </div>
-        <div
-          class="mt-6 truncate max-w-12"
-        >
           <div
-            class="inline-block truncate align-middle"
+            class="font-bold text-theme-neutral-900"
           >
-            <span
-              class="text-theme-neutral-800 max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-              data-testid="address__wallet-name"
-            >
-              My wallet
-            </span>
-            <span
-              class="sc-AxjAm StDqN text-theme-neutral-400 font-semibold text-base"
-              data-testid="address__wallet-address"
-            >
-              ASuu…3kqT
-            </span>
+            100,000 BTC
           </div>
-        </div>
-        <div
-          class="font-bold text-theme-neutral-900"
-        >
-          100,000 BTC
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </div>
 `;

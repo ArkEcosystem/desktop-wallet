@@ -1,10 +1,15 @@
+import { createMemoryHistory } from "history";
 import React from "react";
-import { act, fireEvent, render, RenderResult } from "testing-library";
+import { Route } from "react-router-dom";
+import { act, fireEvent, RenderResult, renderWithRouter } from "testing-library";
+import { identity } from "tests/fixtures/identity";
 
 import { ImportWallet } from "./ImportWallet";
 
 describe("Wallet / Import", () => {
 	let rendered: RenderResult;
+	const history = createMemoryHistory();
+	const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
 	const networks = [
 		{
 			id: 1,
@@ -23,8 +28,18 @@ describe("Wallet / Import", () => {
 		},
 	];
 
+	history.push(importURL);
+
 	beforeEach(() => {
-		rendered = render(<ImportWallet networks={networks} />);
+		rendered = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/import">
+				<ImportWallet networks={networks} />
+			</Route>,
+			{
+				routes: [importURL],
+				history,
+			},
+		);
 	});
 
 	it("should render", () => {

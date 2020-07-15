@@ -45,14 +45,14 @@ export const PluginHeader = ({ author, category, url, rating, version, size, isI
 	};
 
 	return (
-		<div className="w-full px-10 py-5 bg-theme-background">
+		<div data-testid="plugin-details__header" className="w-full bg-theme-background">
 			<div className="flex w-full">
-				<img className="w-40 h-40 rounded-lg" alt="Plugin" src={Placeholder} />
-				<div className="flex flex-col justify-center w-full px-5">
+				<img className="rounded-lg w-44 h-44" alt="Plugin" src={Placeholder} />
+				<div className="flex flex-col justify-center w-full pl-8">
 					<div className="flex items-center justify-between">
 						<div className="flex flex-col">
 							<span className="text-2xl font-bold">ARK Explorer</span>
-							<span className="text-medium text-theme-neutral-500">
+							<span className="text-medium text-theme-neutral">
 								Use the ARK Mainnet explorer directly within the wallet
 							</span>
 						</div>

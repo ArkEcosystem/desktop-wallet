@@ -10,12 +10,12 @@ type LayoutControlsProps = {
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => {
 	const getViewTypeIconClass = (viewType: any) => {
 		return selectedViewType === viewType
-			? "text-theme-danger-300 border-theme-danger-100"
+			? "text-theme-danger-300 border-theme-danger-contrast"
 			: "text-theme-primary-400 border-transparent";
 	};
 
 	return (
-		<>
+		<div className="flex items-center">
 			<div data-testid="LayoutControls__grid" className="inline-block">
 				<div
 					data-testid="LayoutControls__grid--icon"
@@ -35,7 +35,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 					<Icon name="List" width={24} height={14} />
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

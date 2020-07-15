@@ -7,36 +7,28 @@ export default { title: "Domains / Dashboard / Pages / Dashboard" };
 
 export const Default = () => {
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
-			<Dashboard
-				balances={balances}
-				networks={networks}
-				wallets={wallets}
-				transactions={transactions}
-				portfolioPercentages={portfolioPercentages}
-			/>
-		</div>
+		<Dashboard
+			balances={balances}
+			networks={networks}
+			wallets={wallets}
+			transactions={transactions}
+			portfolioPercentages={portfolioPercentages}
+		/>
 	);
 };
 
 export const FewerWallets = () => {
 	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
-			<Dashboard
-				balances={balances}
-				networks={networks}
-				wallets={wallets.concat().splice(0, 2)}
-				transactions={transactions}
-				portfolioPercentages={portfolioPercentages}
-			/>
-		</div>
+		<Dashboard
+			balances={balances}
+			networks={networks}
+			wallets={wallets.concat().splice(0, 2)}
+			transactions={transactions}
+			portfolioPercentages={portfolioPercentages}
+		/>
 	);
 };
 
 export const Empty = () => {
-	return (
-		<div className="pt-1 -m-5 -mt-6 bg-theme-neutral-100">
-			<Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />
-		</div>
-	);
+	return <Dashboard wallets={[]} networks={networks} portfolioPercentages={portfolioPercentages} />;
 };

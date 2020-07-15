@@ -1,3 +1,4 @@
+import { contacts } from "domains/contact/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -7,8 +8,6 @@ export default {
 	title: "Domains / Transaction / Components / SendTransactionForm",
 };
 
-console.log("networks", networks);
-
 const defaultFormValues = {
 	maxAvailableAmount: 80,
 	assetSymbol: "ARK",
@@ -17,7 +16,6 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	networks,
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
@@ -26,36 +24,12 @@ const defaultFormValues = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
-	contactList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Wallet",
-			formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-		{
-			address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Multisig",
-			formatted: " Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ",
-			isMultisig: true,
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient in Ark",
-			formatted: "Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ",
-			isInArkNetwork: true,
-		},
-	],
+	networks,
+	contacts,
+	profiles: contacts,
 };
 
-export const Step1 = () => (
+export const Default = () => (
 	<div>
 		<SendTransactionForm {...defaultFormValues} />
 	</div>
