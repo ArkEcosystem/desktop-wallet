@@ -8,6 +8,7 @@ import { Modal } from "app/components/Modal";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	selectedAssets?: any[];
@@ -21,31 +22,35 @@ type Props = {
 export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel, onUpdate }: Props) => {
 	const form = useForm({ mode: "onChange" });
 
+	const { t } = useTranslation();
+
 	return (
 		<Modal
-			title="Add Assets"
-			description="Select which assets you would like to follow"
+			title={t("NEWS.ADD_ASSETS.TITLE")}
+			description={t("NEWS.ADD_ASSETS.DESCRIPTION")}
 			size="xl"
 			isOpen={isOpen}
 			onClose={onClose}
 		>
 			<Form context={form} onSubmit={onUpdate}>
 				<FormField name="network" className="mt-8">
-					<FormLabel>Cryptoasset</FormLabel>
-					<SelectNetwork networks={[]} placeholder="Enter the asset name" />
+					<FormLabel>{t("COMMON.CRYPTOASSET")}</FormLabel>
+					<SelectNetwork networks={[]} placeholder={t("NEWS.ADD_ASSETS.PLACEHOLDER")} />
 					<FormHelperText />
 				</FormField>
 
 				<div className="flex flex-col space-y-10">
 					<div>
-						<span className="font-semibold text-theme-neutral-dark">Your Selections</span>
+						<span className="font-semibold text-theme-neutral-dark">{t("NEWS.ADD_ASSETS.SELECTIONS")}</span>
 						<div className="mt-3">
 							<FilterNetwork networks={selectedAssets} hideViewAll />
 						</div>
 					</div>
 
 					<div>
-						<span className="mb-3 font-semibold text-theme-neutral-dark">All Cryptoassets</span>
+						<span className="mb-3 font-semibold text-theme-neutral-dark">
+							{t("NEWS.ADD_ASSETS.ALL_ASSETS")}
+						</span>
 						<div className="flex flex-wrap mt-3 -mx-3">
 							{allAssets?.map((asset, index) => (
 								<Circle
@@ -65,11 +70,9 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 					</div>
 				</div>
 
-				<div className="float-right mt-4">
-					<Button className="mr-3" variant="plain">
-						Cancel
-					</Button>
-					<Button type="submit">Update</Button>
+				<div className="flex justify-end mt-4 space-x-3">
+					<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+					<Button type="submit">{t("COMMON.UPDATE")}</Button>
 				</div>
 			</Form>
 		</Modal>

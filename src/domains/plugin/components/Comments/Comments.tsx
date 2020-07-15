@@ -3,7 +3,7 @@ import { Pagination } from "app/components/Pagination";
 import React, { useState } from "react";
 
 import { Reply } from "./components/Reply";
-import { TimeAgo } from "./components/TimeAgo";
+import { TimeAgo } from "app/components/TimeAgo";
 
 type Comment = {
 	author: string;

@@ -2,7 +2,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import styled from "styled-components";
 
-import { TimeAgo } from "../TimeAgo";
+import { TimeAgo } from "app/components/TimeAgo";
 
 const ReplyContent = styled.div`
 	a {

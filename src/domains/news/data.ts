@@ -9,7 +9,7 @@ export const news = [
 			name: "Travis Walker",
 			role: "Co-Founder",
 		},
-		dateCreated: "2 days ago",
+		dateCreated: "2020-06-30T23:00:00.000Z",
 		category: "Technical",
 		content:
 			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.",
@@ -24,7 +24,7 @@ export const news = [
 			name: "Travis Walker",
 			role: "Co-Founder",
 		},
-		dateCreated: "2 days ago",
+		dateCreated: "2020-06-30T23:00:00.000Z",
 		category: "Technical",
 		content:
 			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, voluptate! Rem molestiae mollitia error quidem nostrum saepe explicabo quas velit ipsum facere, excepturi iste. Minus dolore alias modi recusandae ab.",
