@@ -3,26 +3,26 @@ import { act, fireEvent, render } from "testing-library";
 
 import { DelegateTable } from "./DelegateTable";
 
-describe("Welcome", () => {
-	const registrations = [
-		{
-			agent: "OLEBank",
-			delegate: "ARK Ecosystem",
-			history: [],
-			website: "",
-			msq: true,
-			repository: [],
-		},
-		{
-			agent: "OLEBank",
-			delegate: "ARK Ecosystem",
-			history: [],
-			website: "",
-			msq: true,
-			repository: [],
-		},
-	];
+const registrations = [
+	{
+		agent: "OLEBank",
+		delegate: "ARK Ecosystem",
+		history: [],
+		website: "",
+		msq: true,
+		repository: [],
+	},
+	{
+		agent: "OLEBank",
+		delegate: "ARK Ecosystem",
+		history: [],
+		website: "",
+		msq: true,
+		repository: [],
+	},
+];
 
+describe("Welcome", () => {
 	it("should render empty state", () => {
 		const { getAllByTestId, asFragment } = render(<DelegateTable data={registrations} />);
 

@@ -3,61 +3,61 @@ import { render } from "testing-library";
 
 import { Slider } from "./Slider";
 
+const data = [
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+];
+
+const multiple = [
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+];
+
 describe("Slider", () => {
-	const data = [
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-	];
-
-	const multiple = [
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-	];
-
 	it("should render", () => {
 		const { container } = render(<Slider data={data}>{() => <div>Slider item</div>}</Slider>);
 		expect(container).toMatchSnapshot();

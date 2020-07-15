@@ -9,9 +9,9 @@ import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
-describe("CreateProfile", () => {
-	let env: any = null;
+let env: any;
 
+describe("CreateProfile", () => {
 	beforeEach(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	});

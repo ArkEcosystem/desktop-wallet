@@ -4,25 +4,25 @@ import { fireEvent, render } from "testing-library";
 
 import { SelectNetwork } from "./SelectNetwork";
 
-describe("SelectNetwork", () => {
-	const networks = [
-		{
-			icon: "Ark",
-			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-light",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-	];
+const networks = [
+	{
+		icon: "Ark",
+		name: "Ark Ecosystem",
+		className: "text-theme-danger-400 border-theme-danger-light",
+	},
+	{
+		icon: "Bitcoin",
+		name: "Bitcoin",
+		className: "text-theme-warning-400 border-theme-warning-200",
+	},
+	{
+		icon: "Ethereum",
+		name: "Ethereum",
+		className: "text-theme-neutral-800 border-theme-neutral-600",
+	},
+];
 
+describe("SelectNetwork", () => {
 	it("should render", () => {
 		const { container } = render(<SelectNetwork />);
 		expect(container).toMatchSnapshot();

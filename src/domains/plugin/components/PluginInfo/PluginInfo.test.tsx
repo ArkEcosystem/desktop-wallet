@@ -4,11 +4,10 @@ import { render } from "testing-library";
 import { PluginInfo } from "./PluginInfo";
 
 describe("PluginInfo", () => {
-	const about =
-		"Use the ARK Explorer to get full visibility of critical data from the ARK network. Data such as the latest blocks, wallet addresses and transactions. Plus monitor delegate status, their position and more.";
-	const permissions = ["Embedded Webpages", "API Requests", "Access to Profiles"];
-
 	it("should render properly", () => {
+		const about = "Testing About text content";
+		const permissions = ["Embedded Webpages", "API Requests", "Access to Profiles"];
+
 		const { asFragment, getByTestId, getAllByTestId } = render(
 			<PluginInfo about={about} permissions={permissions} screenshots={[1, 2, 3]} />,
 		);

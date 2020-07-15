@@ -3,9 +3,9 @@ import { render } from "testing-library";
 
 import { SearchResource } from "./SearchResource";
 
-describe("SearchResource", () => {
-	const onClose = jest.fn();
+const onClose = jest.fn();
 
+describe("SearchResource", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<SearchResource title="Title" isOpen={false} onClose={onClose} />);
 
