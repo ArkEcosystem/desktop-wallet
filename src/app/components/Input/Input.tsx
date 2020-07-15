@@ -7,7 +7,7 @@ type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLPr
 
 const InputStyled = styled.input`
 	&:focus {
-		${tw`border-2 outline-none border-theme-primary`}
+		${tw`border-2 outline-none border-theme-primary -m-px`}
 	}
 	&::placeholder {
 		${tw`text-theme-neutral-light`}
