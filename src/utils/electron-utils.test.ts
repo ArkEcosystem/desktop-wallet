@@ -56,11 +56,11 @@ describe("Electron utils", () => {
 			});
 
 			it("should parse an array of FileFilters correctly", async () => {
-				await saveFile("raw", "path", { filters: defaultFilters });
+				await saveFile("raw", "path", { filters: [defaultFilters[1]] });
 
 				expect(showSaveDialogMock).toHaveBeenCalledWith({
 					defaultPath: "path",
-					filters: defaultFilters,
+					filters: [defaultFilters[1]],
 				});
 			});
 
@@ -112,6 +112,38 @@ describe("Electron utils", () => {
 			}));
 
 			await expect(openFile()).resolves.toEqual(undefined);
+		});
+
+		describe("with filter parameter", () => {
+			it("should parse a single FileFilter correctly", async () => {
+				await openFile("path", { filters: defaultFilters[0] });
+
+				expect(showOpenDialogMock).toHaveBeenCalledWith({
+					defaultPath: "path",
+					properties: ["openFile"],
+					filters: [defaultFilters[0]],
+				});
+			});
+
+			it("should parse an array of FileFilters correctly", async () => {
+				await openFile("path", { filters: [defaultFilters[1]] });
+
+				expect(showOpenDialogMock).toHaveBeenCalledWith({
+					defaultPath: "path",
+					properties: ["openFile"],
+					filters: [defaultFilters[1]],
+				});
+			});
+
+			it.each([null, undefined])("should fallback to the default filters when filters is %s", async (filters) => {
+				await openFile("path", { filters });
+
+				expect(showOpenDialogMock).toHaveBeenCalledWith({
+					defaultPath: "path",
+					properties: ["openFile"],
+					filters: defaultFilters,
+				});
+			});
 		});
 
 		describe("when restricting the file path", () => {
