@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -9,12 +10,13 @@ import { Toggle } from "app/components/Toggle";
 import React from "react";
 
 type GeneralProps = {
+	env: any;
 	formConfig: any;
 	pageConfig: any;
-	onSubmit?: any;
+	onSubmit: (profile: Profile) => void;
 };
 
-export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
@@ -138,10 +140,14 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		},
 	];
 
+	const submitForm = ({ name }: any) => {
+		const profile = env.profiles().create(name);
+	};
+
 	return (
 		<>
 			<Header title="Wallet Settings" subtitle="Customize your wallet to suit your needs." />
-			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
+			<Form data-testid="General-settings__form" context={formConfig.context} onSubmit={submitForm}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 

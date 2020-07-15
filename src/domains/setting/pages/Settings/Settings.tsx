@@ -1,5 +1,6 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
+import { useEnvironment } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -32,9 +33,10 @@ const settingsItems = [
 ];
 
 export const Settings = ({ submitSettings }: SettingsProps) => {
+	const env: any = useEnvironment();
 	const form = useForm();
-	const [activeSettings, setActiveSettings] = useState("General");
 	const { register, errors } = form;
+	const [activeSettings, setActiveSettings] = useState("General");
 
 	let providedSettings: AvailableSettings = {};
 	providedSettings = availableSettings;
@@ -42,7 +44,7 @@ export const Settings = ({ submitSettings }: SettingsProps) => {
 	const renderSettings = () => {
 		const ActiveSettings = providedSettings[activeSettings];
 
-		return <ActiveSettings formConfig={{ context: form, register, errors }} onSubmit={submitSettings} />;
+		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={submitSettings} />;
 	};
 
 	const crumbs = [
