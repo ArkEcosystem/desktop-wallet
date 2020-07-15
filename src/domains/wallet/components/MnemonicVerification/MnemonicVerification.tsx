@@ -59,7 +59,7 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 
 			<div className="mt-10">
 				{positions.map((position, index) => (
-					<TabPanel key={position} tabId={index}>
+					<TabPanel key={index} tabId={index}>
 						<MnemonicVerificationOptions
 							limit={optionsLimit}
 							answer={currentAnswer}

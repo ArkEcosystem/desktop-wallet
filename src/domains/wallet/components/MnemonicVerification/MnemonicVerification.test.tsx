@@ -59,7 +59,6 @@ describe("MnemonicVerification", () => {
 
 	it("should ask for unique words", () => {
 		let wordCounter = 0;
-		const randomNumber = null;
 
 		// @ts-ignore
 		const arrayIncludesSpy = jest.spyOn(Array.prototype, "includes").mockImplementation(function () {
@@ -72,9 +71,7 @@ describe("MnemonicVerification", () => {
 			return true;
 		});
 
-		const { asFragment } = render(
-			<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />,
-		);
+		render(<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />);
 
 		expect(arrayIncludesSpy).toHaveBeenCalledTimes(6);
 
