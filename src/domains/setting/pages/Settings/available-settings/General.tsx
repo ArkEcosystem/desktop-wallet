@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -140,8 +140,17 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		},
 	];
 
-	const submitForm = ({ name }: any) => {
+	const submitForm = async ({ name, language, passphraseLanguage, marketProvider, currency, timeFormat }: any) => {
 		const profile = env.profiles().create(name);
+		profile.settings().set(ProfileSetting.Locale, language);
+		profile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.TimeFormat, timeFormat);
+
+		await env.persist();
+
+		onSubmit(profile);
 	};
 
 	return (
@@ -158,7 +167,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								<Input type="text" ref={formConfig.register({ required: true })} />
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="passphrase-language">
+							<FormField className="mt-8" name="passphraseLanguage">
 								<FormLabel label="Passphrase Language" />
 								<Select
 									placeholder="Select Passphrase Language"
@@ -196,7 +205,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="price-source">
+							<FormField className="mt-8" name="marketProvider">
 								<FormLabel label="Market Provider" />
 								<Select
 									placeholder="Select Market Provider"
@@ -208,7 +217,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="time-format">
+							<FormField className="mt-8" name="timeFormat">
 								<FormLabel label="Time Format" />
 								<Select
 									placeholder="Select Time Format"
