@@ -9,7 +9,7 @@ export const useActiveProfile = () => {
 	return React.useMemo(() => {
 		if (env) {
 			try {
-				return env.profiles().get(profileId);
+				return env.profiles().findById(profileId);
 			} catch {
 				return undefined;
 			}
