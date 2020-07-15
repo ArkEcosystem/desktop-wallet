@@ -15,7 +15,7 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useActiveProfile } from "app/hooks/env";
-import { ProfileFormField } from "domains/profile/components/ProfileFormField";
+import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
@@ -30,11 +30,11 @@ import { styled } from "twin.macro";
 import { networks } from "../../data";
 
 type RegistrationProps = {
-	addresses?: any;
 	formDefaultData?: any;
 	onDownload?: any;
 	networks?: any;
 	registrationTypes?: any;
+	profiles: any[];
 };
 
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
@@ -71,24 +71,20 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes }: an
 	);
 };
 
-const getAddressInfo = (addresses: any[], address: string) => {
-	return addresses.find((profile: any) => profile.address === address);
-};
-
 const getRegistrationByName = (registrationTypes: any[], registrationType: string) => {
 	return registrationTypes.find((type: any) => type.value === registrationType);
 };
 
 const FirstStep = ({
-	addresses,
 	form,
 	networks,
 	registrationTypes,
+	profiles,
 }: {
-	addresses: any;
 	form: any;
 	networks: Network[];
 	registrationTypes: RegistrationType[];
+	profiles: any[];
 }) => {
 	const { register } = form;
 	const { address, registrationType } = form.watch();
@@ -106,15 +102,21 @@ const FirstStep = ({
 					<SelectNetwork networks={networks} />
 				</FormField>
 
-				<ProfileFormField
-					formName="address"
-					formLabel="Address"
-					profiles={addresses}
-					selectedProfile={getAddressInfo(addresses, address)}
-					register={register}
-					withoutAdditional={true}
-					className="mt-8"
-				/>
+				<FormField name="address" className="relative mt-8">
+					<div className="mb-2">
+						<FormLabel label="Address" />
+					</div>
+
+					<div data-testid="Registration__address-field">
+						<SelectAddress
+							contactSearchTitle="My addresses"
+							contactSearchDescription="Find and select preferred address from you saved profiles"
+							address={address}
+							ref={register}
+							contacts={profiles}
+						/>
+					</div>
+				</FormField>
 
 				<RegistrationTypeDropdown
 					selectedType={getRegistrationByName(registrationTypes, registrationType)}
@@ -376,10 +378,10 @@ export const FifthStep = () => (
 );
 
 export const Registration = ({
-	addresses,
 	formDefaultData,
 	onDownload,
 	networks,
+	profiles,
 	registrationTypes,
 }: RegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
@@ -413,7 +415,7 @@ export const Registration = ({
 						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep
-									addresses={addresses}
+									profiles={profiles}
 									form={form}
 									networks={networks}
 									registrationTypes={registrationTypes}
@@ -508,12 +510,5 @@ Registration.defaultProps = {
 		network: null,
 		address: null,
 	},
-	addresses: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
+	profiles: [],
 };
