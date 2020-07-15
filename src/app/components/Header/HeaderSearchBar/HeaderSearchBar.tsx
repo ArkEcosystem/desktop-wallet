@@ -2,7 +2,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { clickOutsideHandler, useDebounce } from "app/hooks";
 import React, { useEffect, useRef, useState } from "react";
-import { styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 
 type HeaderSearchBarProps = {
 	placeholder?: string;
@@ -14,8 +14,8 @@ type HeaderSearchBarProps = {
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 24rem;
-	input.pt-2 {
-		padding: 11px 15px;
+	.HeaderSearchBar__input {
+		${tw`m-0`}
 	}
 `;
 
@@ -77,7 +77,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 
 					<div className="mx-4">
 						<Input
-							className="pt-2 border-none shadow-none"
+							className="HeaderSearchBar__input pt-2 border-none shadow-none"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
