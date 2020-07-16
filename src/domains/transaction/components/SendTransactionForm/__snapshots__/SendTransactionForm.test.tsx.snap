@@ -246,10 +246,10 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex mb-2 space-x-2 items-center"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="text-md font-normal transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -793,10 +793,10 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex mb-2 space-x-2 items-center"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="text-md font-normal transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -1340,10 +1340,10 @@ exports[`SendTransactionForm should render 1`] = `
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex mb-2 space-x-2 items-center"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="text-md font-normal transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -1779,10 +1779,10 @@ exports[`SendTransactionForm should set available amount 1`] = `
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex mb-2 space-x-2 items-center"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="text-md font-normal transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
