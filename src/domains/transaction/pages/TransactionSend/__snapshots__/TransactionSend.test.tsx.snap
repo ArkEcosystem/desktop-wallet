@@ -432,10 +432,10 @@ exports[`Transaction Send should render 1`] = `
                                 class="text-theme-neutral-dark hover:text-theme-primary"
                               >
                                 <div
-                                  class="flex mb-2 space-x-2 items-center"
+                                  class="flex items-center mb-2 space-x-2"
                                 >
                                   <div
-                                    class="text-md font-normal transition-colors duration-100"
+                                    class="font-normal text-md transition-colors duration-100"
                                   >
                                     Select a Single or Multiple Recipient Transaction
                                   </div>
@@ -902,10 +902,10 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="text-theme-neutral-dark hover:text-theme-primary"
               >
                 <div
-                  class="flex mb-2 space-x-2 items-center"
+                  class="flex items-center mb-2 space-x-2"
                 >
                   <div
-                    class="text-md font-normal transition-colors duration-100"
+                    class="font-normal text-md transition-colors duration-100"
                   >
                     Select a Single or Multiple Recipient Transaction
                   </div>
