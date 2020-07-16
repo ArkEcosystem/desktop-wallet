@@ -19,7 +19,7 @@ type SearchContactProps = {
 
 const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index, selectActionLabel }: any) => {
 	return (
-		<tr className="border-theme-neutral-200 border-b">
+		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
 				<Avatar size="lg" address={address} />
 			</td>
