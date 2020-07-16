@@ -23,9 +23,7 @@ const recipients = [
 
 describe("AddRecipient", () => {
 	it("should render", () => {
-		const { container } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} recipients={recipients} />,
-		);
+		const { container } = render(<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -42,14 +40,14 @@ describe("AddRecipient", () => {
 	});
 
 	it("should select recipient", () => {
-		const { getByTestId, getAllByTestId, container } = render(
+		const { getByTestId, getAllByTestId } = render(
 			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} contacts={contacts} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -68,7 +66,7 @@ describe("AddRecipient", () => {
 		);
 
 		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
-		expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
@@ -118,7 +116,7 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -153,7 +151,7 @@ describe("AddRecipient", () => {
 		const sendAll = getByTestId("add-recipient__send-all");
 		act(() => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -172,7 +170,7 @@ describe("AddRecipient", () => {
 
 		act(() => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -201,7 +199,7 @@ describe("AddRecipient", () => {
 		const sendAll = getByTestId("add-recipient__send-all");
 		act(() => {
 			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
 		waitFor(
