@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
-import { SelectAddress } from "domains/profile/components/SelectAddress";
+import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
@@ -111,7 +111,7 @@ export const AddRecipient = ({
 						<FormLabel label={isSingle ? "Recipient" : `Recipient #${addedRecipients.length + 1}`} />
 					</div>
 
-					<SelectAddress
+					<SelectRecipient
 						address={recipientAddress as any}
 						ref={register}
 						contacts={contacts}
