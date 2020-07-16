@@ -3,8 +3,12 @@ import tw, { styled } from "twin.macro";
 export const SelectToggleButton = styled.button`
 	& {
 		min-height: 50px;
-		${tw`text-left w-full inline-block bg-theme-background appearance-none rounded border py-3 px-4 transition-colors duration-200 outline-none text-theme-neutral pr-12`}
+		${tw`outline-none text-left w-full inline-block bg-theme-background appearance-none rounded border py-3 px-4 transition-colors duration-200 outline-none text-theme-neutral pr-12`}
 		${tw`border-theme-neutral-300`}
+	}
+
+	&:focus {
+		${tw`outline-none`}
 	}
 
 	&:disabled {
@@ -13,10 +17,14 @@ export const SelectToggleButton = styled.button`
 
 	&.is-open {
 		${tw`border-theme-primary`}
+		box-shadow: 0 0 0 1px var(--theme-color-primary);
 	}
 
 	&.is-invalid {
 		${tw`border-theme-danger`}
+		&.is-open {
+			box-shadow: 0 0 0 1px var(--theme-color-danger);
+		}
 	}
 
 	&.is-selected {
