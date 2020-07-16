@@ -30,7 +30,7 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 				</div>
 
 				<Button data-testid="SearchBar__button" onClick={() => onSearch(query)} className="my-1">
-					<span className="px-2 text-sm">{t("COMMON.SEARCH.FIND_IT")}</span>
+					<span className="px-2 text-md">{t("COMMON.SEARCH.FIND_IT")}</span>
 				</Button>
 			</div>
 		</div>
