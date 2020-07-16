@@ -4,14 +4,10 @@ import { useEnvironment } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import * as availableSettings from "./available-settings";
+import { availableSettings } from "./available-settings";
 
 type SettingsProps = {
 	onSubmit?: any;
-};
-
-type AvailableSettings = {
-	[index: string]: any;
 };
 
 const settingsItems = [
@@ -38,11 +34,8 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 	const { register, errors } = form;
 	const [activeSettings, setActiveSettings] = useState("General");
 
-	let providedSettings: AvailableSettings = {};
-	providedSettings = availableSettings;
-
 	const renderSettings = () => {
-		const ActiveSettings = providedSettings[activeSettings];
+		const ActiveSettings = availableSettings[activeSettings];
 
 		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={onSubmit} />;
 	};
