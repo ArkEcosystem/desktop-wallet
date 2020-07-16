@@ -1,1 +1,1 @@
-export * from "./SearchContact";
+export * from "./SearchAddress";

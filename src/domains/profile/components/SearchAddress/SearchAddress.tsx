@@ -13,10 +13,11 @@ type SearchContactProps = {
 	wallets: any[];
 	onClose?: any;
 	onSearch?: any;
+	selectActionLabel?: string;
 	onAction?: (actionName: string, address: any) => void;
 };
 
-const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index }: any) => {
+const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index, selectActionLabel }: any) => {
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
@@ -38,7 +39,7 @@ const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, i
 					variant="plain"
 					onClick={() => onAction?.("select" as any, address)}
 				>
-					Select
+					{selectActionLabel}
 				</Button>
 			</td>
 		</tr>
@@ -52,6 +53,7 @@ export const SearchAddress = ({
 	onAction,
 	title,
 	description,
+	selectActionLabel,
 }: SearchContactProps) => {
 	const { t } = useTranslation();
 
@@ -91,6 +93,7 @@ export const SearchAddress = ({
 						balance={balance}
 						fiat={fiat}
 						index={index}
+						selectActionLabel={selectActionLabel}
 						onAction={onAction}
 					/>
 				)}
@@ -101,4 +104,5 @@ export const SearchAddress = ({
 
 SearchAddress.defaultProps = {
 	wallets: [],
+	selectActionLabel: "Select",
 };
