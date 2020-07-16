@@ -3,6 +3,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import Downshift from "downshift";
 import React from "react";
+import { styled } from "twin.macro";
 
 type Network = {
 	icon: string;
@@ -42,6 +43,12 @@ const TypeAhead = ({ input, matches }: any) => {
 		</div>
 	);
 };
+
+const InputWrapper = styled.div`
+	&:hover {
+		box-shadow: 0 0 0 1px var(--theme-color-primary);
+	}
+`;
 
 export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectNetworkProps) => {
 	const isMatch = (network: Network, input: InputValue) => {
@@ -86,7 +93,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<div className="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
+						<InputWrapper className="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<IconPlaceholder {...selectedItem} />
 							</div>
@@ -119,7 +126,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 									className="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
 								/>
 							</div>
-						</div>
+						</InputWrapper>
 					</div>
 					{networks && networks.length > 0 && (
 						<div data-testid="select-asset__items" className="select-asset__items" {...getMenuProps()}>
