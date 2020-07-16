@@ -7,7 +7,8 @@ type InputProps = { as?: React.ElementType; isInvalid?: boolean } & React.HTMLPr
 
 const InputStyled = styled.input`
 	&:focus {
-		${tw`border-2 outline-none border-theme-primary -m-px`}
+		${tw`outline-none border-theme-primary`}
+		box-shadow: 0 0 0 1px var(--theme-color-primary);
 	}
 	&::placeholder {
 		${tw`text-theme-neutral-light`}
@@ -17,6 +18,12 @@ const InputStyled = styled.input`
 	}
 	&[aria-invalid="true"] {
 		${tw`border-theme-danger`}
+		&:focus {
+			box-shadow: 0 0 0 1px var(--theme-color-danger);
+		}
+	}
+	&.shadow-none {
+		${tw`shadow-none`}
 	}
 `;
 
