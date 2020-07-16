@@ -1,6 +1,6 @@
 import { wallets } from "domains/wallet/data";
 import React from "react";
-import { act, fireEvent,render } from "testing-library";
+import { act, fireEvent, render } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SearchAddress } from "./SearchAddress";
