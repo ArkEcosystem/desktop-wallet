@@ -26,7 +26,9 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const history = useHistory();
 
 	React.useEffect(() => {
-		setScreenshotProtection(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === false ? false : true);
+		setScreenshotProtection(
+			activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === false ? false : true,
+		);
 	}, [activeProfile]);
 
 	// Wallet controls data
