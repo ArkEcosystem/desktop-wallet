@@ -3,15 +3,15 @@ import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { SideBarItem } from "./SideBarItem";
 
-describe("SideBarItem", () => {
-	const item = {
-		label: "General",
-		itemKey: "plugin",
-		icon: "Plugin",
-		route: "/settings/general",
-		isActive: false,
-	};
+const item = {
+	label: "General",
+	itemKey: "plugin",
+	icon: "Plugin",
+	route: "/settings/general",
+	isActive: false,
+};
 
+describe("SideBarItem", () => {
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(<SideBarItem {...item} />);
 

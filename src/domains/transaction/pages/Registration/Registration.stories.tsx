@@ -1,3 +1,4 @@
+import { contacts } from "domains/contact/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -25,6 +26,7 @@ const defaultFormValues = {
 			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
 		},
 	],
+	profiles: contacts,
 };
 
 export const Default = () => <Registration {...defaultFormValues} onDownload={() => alert("download")} />;

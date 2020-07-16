@@ -392,6 +392,7 @@ exports[`Transaction Send should render 1`] = `
                                 <button
                                   class="sc-fzqARJ dKMWCk SelectAddress  "
                                   data-testid="SelectAddress__wrapper"
+                                  type="button"
                                 >
                                   <div
                                     class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
@@ -495,15 +496,27 @@ exports[`Transaction Send should render 1`] = `
                                     </label>
                                   </div>
                                   <div>
-                                    <button
-                                      class="sc-fzqARJ dKMWCk SelectAddress  "
-                                      data-testid="SelectAddress__wrapper"
+                                    <div
+                                      class="relative flex items-center w-full text-left"
+                                      data-testid="SelectRecipient__wrapper"
                                     >
                                       <div
-                                        class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                        class="absolute left-1"
+                                      >
+                                        <div
+                                          class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                        />
+                                      </div>
+                                      <input
+                                        class="sc-AxgMl idsnv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        data-testid="SelectRecipient__input"
+                                        name="recipientAddress"
+                                        type="text"
+                                        value=""
                                       />
                                       <div
-                                        class="absolute flex items-center right-4 space-x-3"
+                                        class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                                        data-testid="SelectRecipient__select-contact"
                                       >
                                         <div
                                           class="sc-AxhUy hSYVGy"
@@ -515,15 +528,7 @@ exports[`Transaction Send should render 1`] = `
                                           </svg>
                                         </div>
                                       </div>
-                                    </button>
-                                    <input
-                                      class="sc-AxgMl idsnv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-                                      data-testid="SelectAddress__input"
-                                      name="recipientAddress"
-                                      readonly=""
-                                      type="text"
-                                      value=""
-                                    />
+                                    </div>
                                   </div>
                                 </fieldset>
                                 <fieldset
@@ -857,6 +862,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 <button
                   class="sc-fzqARJ dKMWCk SelectAddress  "
                   data-testid="SelectAddress__wrapper"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
@@ -960,15 +966,27 @@ exports[`Transaction Send should render 1st step 1`] = `
                     </label>
                   </div>
                   <div>
-                    <button
-                      class="sc-fzqARJ dKMWCk SelectAddress  "
-                      data-testid="SelectAddress__wrapper"
+                    <div
+                      class="relative flex items-center w-full text-left"
+                      data-testid="SelectRecipient__wrapper"
                     >
                       <div
-                        class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                        class="absolute left-1"
+                      >
+                        <div
+                          class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                        />
+                      </div>
+                      <input
+                        class="sc-AxgMl idsnv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                        data-testid="SelectRecipient__input"
+                        name="recipientAddress"
+                        type="text"
+                        value=""
                       />
                       <div
-                        class="absolute flex items-center right-4 space-x-3"
+                        class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                        data-testid="SelectRecipient__select-contact"
                       >
                         <div
                           class="sc-AxhUy hSYVGy"
@@ -980,15 +998,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                           </svg>
                         </div>
                       </div>
-                    </button>
-                    <input
-                      class="sc-AxgMl idsnv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-                      data-testid="SelectAddress__input"
-                      name="recipientAddress"
-                      readonly=""
-                      type="text"
-                      value=""
-                    />
+                    </div>
                   </div>
                 </fieldset>
                 <fieldset

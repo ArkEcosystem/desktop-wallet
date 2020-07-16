@@ -11,11 +11,11 @@ import { PluginManager } from "./PluginManager";
 
 jest.useFakeTimers();
 
-describe("PluginManager", () => {
-	let rendered: RenderResult;
-	const history = createMemoryHistory();
-	const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
+let rendered: RenderResult;
+const history = createMemoryHistory();
+const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
 
+describe("PluginManager", () => {
 	beforeEach(() => {
 		history.push(pluginsURL);
 

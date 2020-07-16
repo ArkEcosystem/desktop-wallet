@@ -3,9 +3,9 @@ import { render } from "testing-library";
 
 import { MnemonicList } from "./MnemonicList";
 
-describe("MnemonicList", () => {
-	const mnemonic = "lorem ipsum dolor sit amet";
+const mnemonic = "lorem ipsum dolor sit amet";
 
+describe("MnemonicList", () => {
 	it("should contain mnemonic words", () => {
 		const { getAllByTestId, asFragment } = render(<MnemonicList mnemonic={mnemonic} />);
 		const words = getAllByTestId("MnemonicList__item");

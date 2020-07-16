@@ -17,7 +17,7 @@ export const Default = () => {
 	return (
 		<EnvironmentProvider env={env}>
 			<div className="w-full h-full">
-				<CreateProfile onSubmit={() => void 0} />
+				<CreateProfile />
 			</div>
 		</EnvironmentProvider>
 	);

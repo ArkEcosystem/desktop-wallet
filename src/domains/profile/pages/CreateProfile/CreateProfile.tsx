@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
@@ -13,11 +13,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
-type CreateProfileProps = {
-	onSubmit: (profile: Profile) => void;
-};
-
-export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
+export const CreateProfile = () => {
 	const env: any = useEnvironment();
 	const form = useForm();
 	const history = useHistory();
@@ -79,7 +75,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 
 		await env.persist();
 
-		onSubmit(profile);
+		history.push("/");
 	};
 
 	return (
@@ -106,7 +102,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 							<div className="relative space-y-8">
 								<FormField name="name">
 									<FormLabel label="Name" />
-									<Input ref={register({ required: true })} />
+									<Input ref={register({ required: "Name is required" })} />
 									<FormHelperText />
 								</FormField>
 
@@ -114,7 +110,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 									<FormLabel label="Market Provider" />
 									<Select
 										placeholder="Select Market Provider"
-										ref={register({ required: true })}
+										ref={register({ required: "Market Provider is required" })}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },
@@ -127,7 +123,7 @@ export const CreateProfile = ({ onSubmit }: CreateProfileProps) => {
 									<FormLabel label="Currency" />
 									<Select
 										placeholder="Select Currency"
-										ref={register({ required: true })}
+										ref={register({ required: "Currency is required" })}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },

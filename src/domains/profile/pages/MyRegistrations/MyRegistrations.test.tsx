@@ -7,10 +7,10 @@ import { identity } from "tests/fixtures/identity";
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-describe("Welcome", () => {
-	let history = createMemoryHistory();
-	const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
+let history;
+const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
+describe("Welcome", () => {
 	beforeEach(() => {
 		history = createMemoryHistory();
 		history.push(registrationsURL);
