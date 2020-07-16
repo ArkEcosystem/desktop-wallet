@@ -8,40 +8,40 @@ import { act, env, fireEvent, renderWithRouter } from "utils/testing-library";
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
 
+const history = createMemoryHistory();
+
+let profile: Profile;
+let dashboardURL: string;
+
+// Wallet filter properties
+const filterProperties = {
+	visibleTransactionsView: true,
+	visiblePortfolioView: true,
+	networks,
+	onNetworkChange: (changedNetwork: any, newNetworksList: any) => {
+		console.log("changed network", changedNetwork);
+		console.log("changed network new list", newNetworksList);
+	},
+	togglePortfolioView: (isChecked: boolean) => {
+		console.log("show portfolio view", isChecked);
+	},
+	toggleTransactionsView: (isChecked: boolean) => {
+		console.log("show transactions view", isChecked);
+	},
+	onWalletsDisplay: () => {
+		alert("on Wallet display");
+	},
+	onViewAllNetworks: () => {
+		alert("on view all networks");
+	},
+};
+
 describe("Wallets", () => {
-	const history = createMemoryHistory();
-
-	let profile: Profile;
-	let dashboardURL: string;
-
 	beforeAll(() => {
 		profile = env.profiles().findById(identity.profiles.bob.id);
 		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 	});
-
-	// Wallet filter properties
-	const filterProperties = {
-		visibleTransactionsView: true,
-		visiblePortfolioView: true,
-		networks,
-		onNetworkChange: (changedNetwork: any, newNetworksList: any) => {
-			console.log("changed network", changedNetwork);
-			console.log("changed network new list", newNetworksList);
-		},
-		togglePortfolioView: (isChecked: boolean) => {
-			console.log("show portfolio view", isChecked);
-		},
-		toggleTransactionsView: (isChecked: boolean) => {
-			console.log("show transactions view", isChecked);
-		},
-		onWalletsDisplay: () => {
-			alert("on Wallet display");
-		},
-		onViewAllNetworks: () => {
-			alert("on view all networks");
-		},
-	};
 
 	it("should render", () => {
 		const { container } = renderWithRouter(

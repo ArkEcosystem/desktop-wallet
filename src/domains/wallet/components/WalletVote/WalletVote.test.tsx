@@ -3,23 +3,23 @@ import { act, fireEvent, render } from "testing-library";
 
 import { WalletVote } from "./WalletVote";
 
-describe("WalletVote", () => {
-	const data = [
-		{
-			username: "Test",
-			address: "test1",
-			rank: 1,
-			explorerUrl: "https://dexplorer.ark.io",
-			msqUrl: "https://marketsquare.ark.io",
-			isActive: true,
-		},
-		{
-			username: "Test 2",
-			address: "test2",
-			rank: 2,
-		},
-	];
+const data = [
+	{
+		username: "Test",
+		address: "test1",
+		rank: 1,
+		explorerUrl: "https://dexplorer.ark.io",
+		msqUrl: "https://marketsquare.ark.io",
+		isActive: true,
+	},
+	{
+		username: "Test 2",
+		address: "test2",
+		rank: 2,
+	},
+];
 
+describe("WalletVote", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<WalletVote delegates={data} />);
 		expect(getByTestId("WalletVote")).toBeTruthy();

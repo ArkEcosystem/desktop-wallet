@@ -3,30 +3,30 @@ import { render } from "testing-library";
 
 import { StarsCounters } from "./StarsCounters";
 
-describe("StarsCounters", () => {
-	const ratings = [
-		{
-			rating: 5,
-			votes: 156,
-		},
-		{
-			rating: 4,
-			votes: 194,
-		},
-		{
-			rating: 3,
-			votes: 25,
-		},
-		{
-			rating: 2,
-			votes: 42,
-		},
-		{
-			rating: 1,
-			votes: 7,
-		},
-	];
+const ratings = [
+	{
+		rating: 5,
+		votes: 156,
+	},
+	{
+		rating: 4,
+		votes: 194,
+	},
+	{
+		rating: 3,
+		votes: 25,
+	},
+	{
+		rating: 2,
+		votes: 42,
+	},
+	{
+		rating: 1,
+		votes: 7,
+	},
+];
 
+describe("StarsCounters", () => {
 	it("should render properly", () => {
 		const { asFragment, getByTestId } = render(<StarsCounters ratings={ratings} totalAvaliations={347} />);
 

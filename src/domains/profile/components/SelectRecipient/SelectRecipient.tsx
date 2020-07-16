@@ -1,4 +1,3 @@
-import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
@@ -7,11 +6,8 @@ import { Input } from "app/components/Input";
 import { SearchContact } from "domains/contact/components/SearchContact";
 import React, { useEffect, useState } from "react";
 
-import { SelectAddressWrapper } from "./SelectAddress.styles";
-
-type SelectAddressProps = {
+type SelectRecipientProps = {
 	address?: string;
-	isVerified?: boolean;
 	contacts: any[];
 	disabled?: boolean;
 	isInvalid?: boolean;
@@ -26,7 +22,7 @@ const ProfileAvatar = ({ address }: any) => {
 	return <Avatar address={address} size="sm" className="mx-3" noShadow />;
 };
 
-export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
+export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
 	(
 		{
 			contactSearchTitle,
@@ -37,8 +33,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			disabled,
 			isInvalid,
 			onChange,
-			isVerified,
-		}: SelectAddressProps,
+		}: SelectRecipientProps,
 		ref,
 	) => {
 		const [isContactSearchOpen, setIsContactSearchOpen] = useState(false);
@@ -59,35 +54,36 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			setIsContactSearchOpen(true);
 		};
 
+		const onInputChange = (value: string) => {
+			setSelectedAddress(value);
+			onChange?.(value);
+		};
+
 		return (
 			<div>
-				<SelectAddressWrapper
-					data-testid="SelectAddress__wrapper"
-					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
-					type="button"
-					onClick={openContacts}
-				>
-					<ProfileAvatar address={selectedAddress} />
-					<Address maxChars={30} address={selectedAddress} />
-					<div className="absolute flex items-center right-4 space-x-3">
-						{isVerified && (
-							<div className="rounded-full text-theme-success-400 bg-theme-success-100">
-								<Icon name="Checkmark" width={18} height={18} />
-							</div>
-						)}
+				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
+					<div className="absolute left-1">
+						<ProfileAvatar address={selectedAddress} />
+					</div>
+					<Input
+						className="pl-14 pr-11"
+						data-testid="SelectRecipient__input"
+						type="text"
+						ref={ref}
+						value={selectedAddress || ""}
+						onChange={(ev: any) => onInputChange?.(ev.target.value)}
+						disabled={disabled}
+						isInvalid={isInvalidField}
+					/>
+
+					<div
+						data-testid="SelectRecipient__select-contact"
+						className="absolute flex items-center cursor-pointer right-4 space-x-3"
+						onClick={openContacts}
+					>
 						<Icon name="User" width={20} height={20} />
 					</div>
-				</SelectAddressWrapper>
-
-				<Input
-					data-testid="SelectAddress__input"
-					type="text"
-					ref={ref}
-					value={selectedAddress || ""}
-					className="hidden"
-					readOnly
-					isInvalid={isInvalidField}
-				/>
+				</div>
 
 				<SearchContact
 					title={contactSearchTitle}
@@ -103,10 +99,10 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 	},
 );
 
-SelectAddress.defaultProps = {
+SelectRecipient.defaultProps = {
 	contactSearchTitle: "Recipient search",
 	contactSearchDescription: "Find and select the recipient from your contacts",
 	selectActionLabel: "Select",
 };
 
-SelectAddress.displayName = "SelectAddress";
+SelectRecipient.displayName = "SelectRecipient";

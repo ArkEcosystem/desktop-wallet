@@ -3,26 +3,26 @@ import { act, fireEvent, render } from "testing-library";
 
 import { BusinessTable } from "./BusinessTable";
 
-describe("Welcome", () => {
-	const registrations = [
-		{
-			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
-			history: [],
-			website: "",
-			msq: true,
-			repository: [],
-		},
-		{
-			agent: "OLEBank",
-			businessName: "ARK Ecosystem",
-			history: [],
-			website: "",
-			msq: true,
-			repository: [],
-		},
-	];
+const registrations = [
+	{
+		agent: "OLEBank",
+		businessName: "ARK Ecosystem",
+		history: [],
+		website: "",
+		msq: true,
+		repository: [],
+	},
+	{
+		agent: "OLEBank",
+		businessName: "ARK Ecosystem",
+		history: [],
+		website: "",
+		msq: true,
+		repository: [],
+	},
+];
 
+describe("Welcome", () => {
 	it("should render empty state", () => {
 		const { getAllByTestId, asFragment } = render(<BusinessTable data={registrations} />);
 

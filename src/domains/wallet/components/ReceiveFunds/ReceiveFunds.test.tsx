@@ -4,13 +4,13 @@ import { fireEvent, render } from "testing-library";
 // i18n
 import { ReceiveFunds } from "./ReceiveFunds";
 
-describe("ReceiveFunds", () => {
-	const wallet = {
-		coinIcon: "Ark",
-		avatarId: "test",
-		address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-	};
+const wallet = {
+	coinIcon: "Ark",
+	avatarId: "test",
+	address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+};
 
+describe("ReceiveFunds", () => {
 	it("should not render if not open", () => {
 		const { asFragment } = render(<ReceiveFunds />);
 

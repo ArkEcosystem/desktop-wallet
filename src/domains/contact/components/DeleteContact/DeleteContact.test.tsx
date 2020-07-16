@@ -4,9 +4,9 @@ import { render } from "testing-library";
 import { translations } from "../../i18n";
 import { DeleteContact } from "./DeleteContact";
 
-describe("DeleteContact", () => {
-	const onDelete = jest.fn();
+const onDelete = jest.fn();
 
+describe("DeleteContact", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<DeleteContact isOpen={false} onDelete={onDelete} />);
 

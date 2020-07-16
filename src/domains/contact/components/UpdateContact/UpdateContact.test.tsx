@@ -4,9 +4,9 @@ import { render } from "testing-library";
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
-describe("UpdateContact", () => {
-	const onSave = jest.fn();
+const onSave = jest.fn();
 
+describe("UpdateContact", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(<UpdateContact isOpen={false} onSave={onSave} />);
 

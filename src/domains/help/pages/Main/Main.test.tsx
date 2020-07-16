@@ -8,11 +8,13 @@ import { identity } from "tests/fixtures/identity";
 import { categories, helpfulArticles, newestArticles, popularArticles } from "../../data";
 import { Main } from "./Main";
 
-describe("SupportPage", () => {
-	const history = createMemoryHistory();
-	const supportURL = `/profiles/${identity.profiles.bob.id}/support`;
+const history = createMemoryHistory();
+const supportURL = `/profiles/${identity.profiles.bob.id}/support`;
 
-	history.push(supportURL);
+describe("SupportPage", () => {
+	beforeAll(() => {
+		history.push(supportURL);
+	});
 
 	it("should render empty main support page", () => {
 		const { container } = renderWithRouter(

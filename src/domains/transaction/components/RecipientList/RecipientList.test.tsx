@@ -5,37 +5,37 @@ import { fireEvent, render } from "testing-library";
 
 import { RecipientList } from "./";
 
-describe("SendTransactionForm", () => {
-	const recipients = [
-		{
-			address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient 1",
-			amount: "100",
-			assetSymbol: "ARK",
-		},
-		{
-			address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient 2",
-			isMultisig: true,
-			amount: "100",
-			assetSymbol: "ARK",
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient 3",
-			isInArkNetwork: true,
-			amount: "100",
-			assetSymbol: "ARK",
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient 4",
-			isInArkNetwork: true,
-			amount: "100",
-			assetSymbol: "ARK",
-		},
-	];
+const recipients = [
+	{
+		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 1",
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 2",
+		isMultisig: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 3",
+		isInArkNetwork: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+	{
+		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
+		walletName: "Recipient 4",
+		isInArkNetwork: true,
+		amount: "100",
+		assetSymbol: "ARK",
+	},
+];
 
+describe("SendTransactionForm", () => {
 	it("should render editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />);
 		expect(container).toMatchSnapshot();
