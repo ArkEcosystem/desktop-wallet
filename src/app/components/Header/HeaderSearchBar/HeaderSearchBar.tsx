@@ -14,9 +14,6 @@ type HeaderSearchBarProps = {
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 24rem;
-	input.pt-2 {
-		padding: 11px 15px;
-	}
 `;
 
 export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra }: HeaderSearchBarProps) => {
@@ -77,7 +74,7 @@ export const HeaderSearchBar = ({ placeholder, children, label, onSearch, extra 
 
 					<div className="mx-4">
 						<Input
-							className="pt-2 border-none shadow-none"
+							className="pt-2 border-none shadow-none HeaderSearchBar__input"
 							placeholder={placeholder}
 							value={query}
 							onChange={(e) => setQuery((e.target as HTMLInputElement).value)}
