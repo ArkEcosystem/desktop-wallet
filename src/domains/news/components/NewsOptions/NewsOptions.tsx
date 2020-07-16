@@ -5,7 +5,6 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { styled } from "twin.macro";
 
 import { SelectCategory } from "./components/SelectCategory";
 
@@ -13,12 +12,6 @@ type Props = {
 	categories?: any[];
 	selectedAssets?: any[];
 };
-
-const InputWrapper = styled.div`
-	input {
-		padding: 11px 15px;
-	}
-`;
 
 export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 	const { t } = useTranslation();
@@ -30,9 +23,7 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 		>
 			<div className="flex flex-col space-y-8">
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
-					<InputWrapper>
-						<Input className="border-none shadow-none" placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")} />
-					</InputWrapper>
+					<Input className="border-none shadow-none NewsOptions__search" placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")} />
 					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
 				</div>
 

@@ -1,16 +1,13 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
+import { useEnvironment } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-import * as availableSettings from "./available-settings";
+import { availableSettings } from "./available-settings";
 
 type SettingsProps = {
-	submitSettings?: any;
-};
-
-type AvailableSettings = {
-	[index: string]: any;
+	onSubmit?: any;
 };
 
 const settingsItems = [
@@ -31,18 +28,16 @@ const settingsItems = [
 	},
 ];
 
-export const Settings = ({ submitSettings }: SettingsProps) => {
+export const Settings = ({ onSubmit }: SettingsProps) => {
+	const env: any = useEnvironment();
 	const form = useForm();
-	const [activeSettings, setActiveSettings] = useState("General");
 	const { register, errors } = form;
-
-	let providedSettings: AvailableSettings = {};
-	providedSettings = availableSettings;
+	const [activeSettings, setActiveSettings] = useState("General");
 
 	const renderSettings = () => {
-		const ActiveSettings = providedSettings[activeSettings];
+		const ActiveSettings = availableSettings[activeSettings];
 
-		return <ActiveSettings formConfig={{ context: form, register, errors }} onSubmit={submitSettings} />;
+		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={onSubmit} />;
 	};
 
 	const crumbs = [

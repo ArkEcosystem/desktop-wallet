@@ -1,3 +1,4 @@
+import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -9,12 +10,13 @@ import { Toggle } from "app/components/Toggle";
 import React from "react";
 
 type GeneralProps = {
+	env: Environment;
 	formConfig: any;
 	pageConfig: any;
-	onSubmit?: any;
+	onSubmit: (profile: Profile) => void;
 };
 
-export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
@@ -58,9 +60,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 					<span className="mt-1 text-sm text-theme-neutral">
 						This protection. will protect your money from unwanted Screenshot you PC.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle
+							ref={formConfig.register()}
+							name="isScreenshotProtection"
+							data-testid="General-settings__toggle--isScreenshotProtection"
+						/>
 					</div>
 				</div>
 			),
@@ -76,9 +81,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle
+							ref={formConfig.register()}
+							name="isAdvancedMode"
+							data-testid="General-settings__toggle--isAdvancedMode"
+						/>
 					</div>
 				</div>
 			),
@@ -86,11 +94,11 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 		{
 			wrapperClass: "pt-8",
 			content: (
-				<FormField name="price-source">
+				<FormField name="autoLogoff">
 					<FormLabel label="Auto-logoff" />
 					<Select
-						placeholder="Select Language"
-						ref={formConfig.register({ required: true })}
+						placeholder="Select Auto-logoff"
+						ref={formConfig.register()}
 						options={[
 							{ label: "Option 1", value: "option1" },
 							{ label: "Option 2", value: "option2" },
@@ -111,9 +119,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle
+							ref={formConfig.register()}
+							name="isDarkMode"
+							data-testid="General-settings__toggle--isDarkMode"
+						/>
 					</div>
 				</div>
 			),
@@ -129,34 +140,70 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 						You hereby assume the risk associated with downloading files and installing said files from a
 						direct URL link.
 					</span>
-
 					<div className="-mt-7">
-						<Toggle />
+						<Toggle
+							ref={formConfig.register()}
+							name="isUpdateLedger"
+							data-testid="General-settings__toggle--isUpdateLedger"
+						/>
 					</div>
 				</div>
 			),
 		},
 	];
 
+	const submitForm = async ({
+		name,
+		language,
+		passphraseLanguage,
+		marketProvider,
+		currency,
+		timeFormat,
+		isScreenshotProtection,
+		isAdvancedMode,
+		isDarkMode,
+		isUpdateLedger,
+	}: any) => {
+		const profile = env.profiles().create(name);
+		profile.settings().set(ProfileSetting.Locale, language);
+		profile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.TimeFormat, timeFormat);
+		profile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
+		profile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
+		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+
+		await env.persist();
+
+		onSubmit(profile);
+	};
+
 	return (
 		<>
 			<Header title="Wallet Settings" subtitle="Customize your wallet to suit your needs." />
-			<Form id="general-settings__form" context={formConfig.context} onSubmit={onSubmit}>
+			<Form data-testid="General-settings__form" context={formConfig.context} onSubmit={submitForm}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
-							<FormField name="profile-name">
+							<FormField name="name">
 								<FormLabel label="Profile Name" />
-								<Input type="text" ref={formConfig.register({ required: true })} />
+								<Input
+									type="text"
+									ref={formConfig.register({ required: "Profile Name is required" })}
+									data-testid="General-settings__input--name"
+								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="passphrase-language">
+
+							<FormField className="mt-8" name="passphraseLanguage">
 								<FormLabel label="Passphrase Language" />
 								<Select
-									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									placeholder="Select Passphrase Language"
+									ref={formConfig.register({ required: "Passphrase Language is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -164,11 +211,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								/>
 								<FormHelperText />
 							</FormField>
+
 							<FormField className="mt-8" name="currency">
 								<FormLabel label="Currency" />
 								<Select
-									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									placeholder="Select Currency"
+									ref={formConfig.register({ required: "Currency is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -177,12 +225,13 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								<FormHelperText />
 							</FormField>
 						</div>
+
 						<div className="flex flex-col w-2/4 ml-5">
 							<FormField name="language">
 								<FormLabel label="Language" />
 								<Select
 									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									ref={formConfig.register({ required: "Language is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -190,11 +239,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="price-source">
-								<FormLabel label="Price Source" />
+
+							<FormField className="mt-8" name="marketProvider">
+								<FormLabel label="Market Provider" />
 								<Select
-									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									placeholder="Select Market Provider"
+									ref={formConfig.register({ required: "Market Provider is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -202,11 +252,12 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 								/>
 								<FormHelperText />
 							</FormField>
-							<FormField className="mt-8" name="time-format">
+
+							<FormField className="mt-8" name="timeFormat">
 								<FormLabel label="Time Format" />
 								<Select
-									placeholder="Select Language"
-									ref={formConfig.register({ required: true })}
+									placeholder="Select Time Format"
+									ref={formConfig.register({ required: "Time Format is required" })}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -217,14 +268,17 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 						</div>
 					</div>
 				</div>
+
 				<div className="relative mt-10">
 					<h2>Security</h2>
 					<ListDivided items={securityItems} />
 				</div>
+
 				<div className="relative mt-10">
 					<h2>Other</h2>
 					<ListDivided items={otherItems} />
 				</div>
+
 				<div className="flex justify-between w-full pt-2">
 					<Button color="danger" variant="plain">
 						<Icon name="Reset" />
@@ -232,7 +286,9 @@ export const General = ({ formConfig, pageConfig, onSubmit }: GeneralProps) => {
 					</Button>
 					<div className="space-x-3">
 						<Button variant="plain">Cancel</Button>
-						<Button>Save</Button>
+						<Button type="submit" data-testid="General-settings__submit-button">
+							Save
+						</Button>
 					</div>
 				</div>
 			</Form>
