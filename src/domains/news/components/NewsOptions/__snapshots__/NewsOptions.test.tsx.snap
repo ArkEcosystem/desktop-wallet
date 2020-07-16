@@ -12,15 +12,11 @@ exports[`NewsOptions should render 1`] = `
       <div
         class="flex items-center justify-between px-2 py-4 shadow-xl rounded-md"
       >
-        <div
-          class="sc-fznyAO dyWMcW"
-        >
-          <input
-            class="sc-AxgMl idsnv overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
-            data-testid="Input"
-            placeholder="Search"
-          />
-        </div>
+        <input
+          class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 border-none shadow-none NewsOptions__search"
+          data-testid="Input"
+          placeholder="Search"
+        />
         <div
           class="sc-AxiKw dklFyP mr-4 text-theme-neutral"
           height="20"
