@@ -9,6 +9,8 @@ import { identity } from "tests/fixtures/identity";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
+const onCopy = jest.fn();
+
 const defaultFormValues = {
 	maxAvailableAmount: 80,
 	assetSymbol: "ARK",
@@ -70,9 +72,8 @@ const defaultFormValues = {
 		},
 	],
 };
-describe("Transaction Send", () => {
-	const onCopy = jest.fn();
 
+describe("Transaction Send", () => {
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(

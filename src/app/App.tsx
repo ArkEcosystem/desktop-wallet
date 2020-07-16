@@ -16,7 +16,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const buildMockEnvironment = async (env: Environment) => {
 	const profile = env.profiles().create("Anne Doe");
 
-	await profile.wallets().import(identity.mnemonic, ARK, "devnet");
+	await profile.wallets().import(identity.mnemonic, "ARK", "devnet");
 };
 
 const Main = () => {

@@ -7,11 +7,13 @@ import { identity } from "tests/fixtures/identity";
 import { news } from "../../data";
 import { News } from "./News";
 
-describe("News", () => {
-	const history = createMemoryHistory();
-	const newsURL = `/profiles/${identity.profiles.bob.id}/news`;
+const history = createMemoryHistory();
+const newsURL = `/profiles/${identity.profiles.bob.id}/news`;
 
-	history.push(newsURL);
+describe("News", () => {
+	beforeAll(() => {
+		history.push(newsURL);
+	});
 
 	it("should render", () => {
 		const { container } = renderWithRouter(

@@ -64,6 +64,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 				<SelectAddressWrapper
 					data-testid="SelectAddress__wrapper"
 					className={`SelectAddress ${disabled ? "is-disabled" : ""} ${isInvalidField ? "is-invalid" : ""}`}
+					type="button"
 					onClick={openContacts}
 				>
 					<ProfileAvatar address={selectedAddress} />

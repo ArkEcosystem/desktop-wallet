@@ -3,12 +3,12 @@ import { fireEvent, render } from "testing-library";
 
 import { MnemonicVerification } from "./MnemonicVerification";
 
-describe("MnemonicVerification", () => {
-	const mnemonic = "ark btc usd bnb eth ltc";
-	const mnemonicWords = mnemonic.split(" ");
-	const limit = 6;
-	const handleComplete = jest.fn();
+const mnemonic = "ark btc usd bnb eth ltc";
+const mnemonicWords = mnemonic.split(" ");
+const limit = 6;
+const handleComplete = jest.fn();
 
+describe("MnemonicVerification", () => {
 	it("should verify mnemonic", () => {
 		const wordPositions = [1, 2, 3];
 
@@ -59,7 +59,6 @@ describe("MnemonicVerification", () => {
 
 	it("should ask for unique words", () => {
 		let wordCounter = 0;
-		const randomNumber = null;
 
 		// @ts-ignore
 		const arrayIncludesSpy = jest.spyOn(Array.prototype, "includes").mockImplementation(function () {
@@ -72,9 +71,7 @@ describe("MnemonicVerification", () => {
 			return true;
 		});
 
-		const { asFragment } = render(
-			<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />,
-		);
+		render(<MnemonicVerification mnemonic={mnemonic} optionsLimit={limit} handleComplete={handleComplete} />);
 
 		expect(arrayIncludesSpy).toHaveBeenCalledTimes(6);
 

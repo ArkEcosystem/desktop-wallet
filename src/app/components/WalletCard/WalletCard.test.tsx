@@ -6,11 +6,13 @@ import { identity } from "tests/fixtures/identity";
 
 import { WalletCard } from "./WalletCard";
 
-describe("Formatted Address", () => {
-	const history = createMemoryHistory();
-	const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+const history = createMemoryHistory();
+const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
 
-	history.push(dashboardURL);
+describe("Formatted Address", () => {
+	beforeAll(() => {
+		history.push(dashboardURL);
+	});
 
 	it("should render", () => {
 		const { container } = renderWithRouter(

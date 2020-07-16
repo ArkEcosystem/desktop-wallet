@@ -4,25 +4,25 @@ import { fireEvent, render } from "testing-library";
 
 import { Table } from "./Table";
 
+const data = [
+	{
+		col1: "column 1",
+		col2: "column 2",
+	},
+];
+
+const columns = [
+	{
+		Header: "Header 1",
+		accessor: "col1",
+	},
+	{
+		Header: "Header 2",
+		accessor: "col2",
+	},
+];
+
 describe("Table", () => {
-	const data = [
-		{
-			col1: "column 1",
-			col2: "column 2",
-		},
-	];
-
-	const columns = [
-		{
-			Header: "Header 1",
-			accessor: "col1",
-		},
-		{
-			Header: "Header 2",
-			accessor: "col2",
-		},
-	];
-
 	it("should render", () => {
 		const { container } = render(
 			<Table columns={columns} data={data}>

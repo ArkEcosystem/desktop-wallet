@@ -297,7 +297,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mt-8"
                     >
                       <div
-                        class="sc-fzoyTs fyIOmL"
+                        class="sc-fzoNJl ksmXph"
                       >
                         <form
                           class="space-y-8"
@@ -334,7 +334,7 @@ exports[`Transaction Send should render 1`] = `
                                 class="relative flex items-center w-full flex-inline"
                               >
                                 <div
-                                  class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                                 >
                                   <div
                                     class="px-4 py-2 flex-0 w-14"
@@ -390,8 +390,9 @@ exports[`Transaction Send should render 1`] = `
                             >
                               <div>
                                 <button
-                                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                                  class="sc-fzqNqU jiheyj SelectAddress  "
                                   data-testid="SelectAddress__wrapper"
+                                  type="button"
                                 >
                                   <div
                                     class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
@@ -411,7 +412,7 @@ exports[`Transaction Send should render 1`] = `
                                   </div>
                                 </button>
                                 <input
-                                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
                                   data-testid="SelectAddress__input"
                                   name="sender"
                                   readonly=""
@@ -425,7 +426,7 @@ exports[`Transaction Send should render 1`] = `
                             data-testid="recipient-address"
                           >
                             <div
-                              class="sc-fzqNqU dvvARi"
+                              class="sc-fzoyTs bPemlY"
                             >
                               <div
                                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -495,15 +496,27 @@ exports[`Transaction Send should render 1`] = `
                                     </label>
                                   </div>
                                   <div>
-                                    <button
-                                      class="sc-fzqARJ dKMWCk SelectAddress  "
-                                      data-testid="SelectAddress__wrapper"
+                                    <div
+                                      class="relative flex items-center w-full text-left"
+                                      data-testid="SelectRecipient__wrapper"
                                     >
                                       <div
-                                        class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                        class="absolute left-1"
+                                      >
+                                        <div
+                                          class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                                        />
+                                      </div>
+                                      <input
+                                        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                                        data-testid="SelectRecipient__input"
+                                        name="recipientAddress"
+                                        type="text"
+                                        value=""
                                       />
                                       <div
-                                        class="absolute flex items-center right-4 space-x-3"
+                                        class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                                        data-testid="SelectRecipient__select-contact"
                                       >
                                         <div
                                           class="sc-AxhUy hSYVGy"
@@ -515,15 +528,7 @@ exports[`Transaction Send should render 1`] = `
                                           </svg>
                                         </div>
                                       </div>
-                                    </button>
-                                    <input
-                                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-                                      data-testid="SelectAddress__input"
-                                      name="recipientAddress"
-                                      readonly=""
-                                      type="text"
-                                      value=""
-                                    />
+                                    </div>
                                   </div>
                                 </fieldset>
                                 <fieldset
@@ -545,7 +550,7 @@ exports[`Transaction Send should render 1`] = `
                                     class="sc-fzozJi OgXfh"
                                   >
                                     <input
-                                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                                       data-testid="add-recipient__amount-input"
                                       name="amount"
                                       placeholder="Amount"
@@ -585,7 +590,7 @@ exports[`Transaction Send should render 1`] = `
                               class="sc-fzozJi OgXfh"
                             >
                               <input
-                                class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                                 data-testid="Input"
                                 maxlength="255"
                                 name="smartbridge"
@@ -627,7 +632,7 @@ exports[`Transaction Send should render 1`] = `
                                     class="sc-fzozJi OgXfh"
                                   >
                                     <input
-                                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                                       data-testid="InputCurrency"
                                       name="fee"
                                       type="text"
@@ -762,7 +767,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="sc-fzoyTs fyIOmL"
+        class="sc-fzoNJl ksmXph"
       >
         <form
           class="space-y-8"
@@ -799,7 +804,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                 class="relative flex items-center w-full flex-inline"
               >
                 <div
-                  class="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                 >
                   <div
                     class="px-4 py-2 flex-0 w-14"
@@ -855,8 +860,9 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <div>
                 <button
-                  class="sc-fzqARJ dKMWCk SelectAddress  "
+                  class="sc-fzqNqU jiheyj SelectAddress  "
                   data-testid="SelectAddress__wrapper"
+                  type="button"
                 >
                   <div
                     class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
@@ -876,7 +882,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                   </div>
                 </button>
                 <input
-                  class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
                   data-testid="SelectAddress__input"
                   name="sender"
                   readonly=""
@@ -890,7 +896,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="recipient-address"
           >
             <div
-              class="sc-fzqNqU dvvARi"
+              class="sc-fzoyTs bPemlY"
             >
               <div
                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -960,15 +966,27 @@ exports[`Transaction Send should render 1st step 1`] = `
                     </label>
                   </div>
                   <div>
-                    <button
-                      class="sc-fzqARJ dKMWCk SelectAddress  "
-                      data-testid="SelectAddress__wrapper"
+                    <div
+                      class="relative flex items-center w-full text-left"
+                      data-testid="SelectRecipient__wrapper"
                     >
                       <div
-                        class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                        class="absolute left-1"
+                      >
+                        <div
+                          class="sc-AxiKw cxOZEi mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                        />
+                      </div>
+                      <input
+                        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                        data-testid="SelectRecipient__input"
+                        name="recipientAddress"
+                        type="text"
+                        value=""
                       />
                       <div
-                        class="absolute flex items-center right-4 space-x-3"
+                        class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                        data-testid="SelectRecipient__select-contact"
                       >
                         <div
                           class="sc-AxhUy hSYVGy"
@@ -980,15 +998,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                           </svg>
                         </div>
                       </div>
-                    </button>
-                    <input
-                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 hidden"
-                      data-testid="SelectAddress__input"
-                      name="recipientAddress"
-                      readonly=""
-                      type="text"
-                      value=""
-                    />
+                    </div>
                   </div>
                 </fieldset>
                 <fieldset
@@ -1010,7 +1020,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="sc-fzozJi OgXfh"
                   >
                     <input
-                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                       data-testid="add-recipient__amount-input"
                       name="amount"
                       placeholder="Amount"
@@ -1050,7 +1060,7 @@ exports[`Transaction Send should render 1st step 1`] = `
               class="sc-fzozJi OgXfh"
             >
               <input
-                class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
                 data-testid="Input"
                 maxlength="255"
                 name="smartbridge"
@@ -1092,7 +1102,7 @@ exports[`Transaction Send should render 1st step 1`] = `
                     class="sc-fzozJi OgXfh"
                   >
                     <input
-                      class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                       data-testid="InputCurrency"
                       name="fee"
                       type="text"
@@ -1309,7 +1319,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
           >
             <img
               alt="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
               title="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
             />
           </div>
@@ -1406,7 +1416,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
                               title="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1464,7 +1474,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1522,7 +1532,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1580,7 +1590,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                           >
                             <img
                               alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
                               title="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
                             />
                           </div>
@@ -1784,7 +1794,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
                   class="sc-fzozJi OgXfh max-w-20"
                 >
                   <input
-                    class="sc-AxgMl fmvYVK overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                     data-testid="Input"
                     name="passphrase"
                     type="password"
@@ -2092,7 +2102,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             >
               <img
                 alt="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
                 title="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
               />
             </div>

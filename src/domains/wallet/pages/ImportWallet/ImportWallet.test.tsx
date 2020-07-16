@@ -6,31 +6,32 @@ import { identity } from "tests/fixtures/identity";
 
 import { ImportWallet } from "./ImportWallet";
 
+let rendered: RenderResult;
+
 describe("Wallet / Import", () => {
-	let rendered: RenderResult;
-	const history = createMemoryHistory();
-	const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
-	const networks = [
-		{
-			id: 1,
-			name: "ARK Ecosystem",
-			icon: "Ark",
-		},
-		{
-			id: 2,
-			name: "Ethereum",
-			icon: "Ethereum",
-		},
-		{
-			id: 3,
-			name: "Bitcoin",
-			icon: "Bitcoin",
-		},
-	];
-
-	history.push(importURL);
-
 	beforeEach(() => {
+		const history = createMemoryHistory();
+		const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
+		const networks = [
+			{
+				id: 1,
+				name: "ARK Ecosystem",
+				icon: "Ark",
+			},
+			{
+				id: 2,
+				name: "Ethereum",
+				icon: "Ethereum",
+			},
+			{
+				id: 3,
+				name: "Bitcoin",
+				icon: "Bitcoin",
+			},
+		];
+
+		history.push(importURL);
+
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/import">
 				<ImportWallet networks={networks} />

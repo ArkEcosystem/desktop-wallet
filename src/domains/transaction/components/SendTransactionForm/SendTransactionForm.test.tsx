@@ -45,7 +45,7 @@ describe("SendTransactionForm", () => {
 
 		// Select recipient
 		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectAddress__wrapper"));
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
@@ -63,9 +63,7 @@ describe("SendTransactionForm", () => {
 			{ timeout: 2000 },
 		);
 		const recipientSelectedAddress = contacts[0]?.addresses()[0]?.address;
-		expect(within(getByTestId("recipient-address")).getByTestId("SelectAddress__input")).toHaveValue(
-			recipientSelectedAddress,
-		);
+		expect(getByTestId("SelectRecipient__input")).toHaveValue(recipientSelectedAddress);
 	});
 
 	it("should set available amount", () => {

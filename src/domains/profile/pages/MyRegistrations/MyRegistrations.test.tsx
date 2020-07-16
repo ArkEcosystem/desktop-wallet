@@ -7,10 +7,10 @@ import { identity } from "tests/fixtures/identity";
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-describe("Welcome", () => {
-	let history = createMemoryHistory();
-	const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
+let history;
+const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
 
+describe("Welcome", () => {
 	beforeEach(() => {
 		history = createMemoryHistory();
 		history.push(registrationsURL);
@@ -74,7 +74,9 @@ describe("Welcome", () => {
 		);
 
 		const registerButton = getByText("Register");
-		act(() => fireEvent.click(registerButton));
+		act(() => {
+			fireEvent.click(registerButton);
+		});
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
