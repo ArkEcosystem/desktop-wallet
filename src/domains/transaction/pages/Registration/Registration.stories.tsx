@@ -1,4 +1,4 @@
-import { contacts } from "domains/contact/data";
+import { wallets } from "domains/wallet/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -18,15 +18,7 @@ const defaultFormValues = {
 		network: null,
 		address: null,
 	},
-	addresses: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
-	profiles: contacts,
+	wallets,
 };
 
 export const Default = () => <Registration {...defaultFormValues} onDownload={() => alert("download")} />;
