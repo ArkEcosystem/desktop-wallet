@@ -25,7 +25,7 @@ type SendTransactionFormProps = {
 	onBack?: any;
 	networks: any;
 	contacts: any[];
-	profiles: any[];
+	wallets: any[];
 };
 
 const FormWrapper = styled.div`
@@ -42,7 +42,7 @@ export const SendTransactionForm = ({
 	assetSymbol,
 	networks,
 	contacts,
-	profiles,
+	wallets,
 }: SendTransactionFormProps) => {
 	const [addedRecipients] = useState([] as RecipientListItem[]);
 
@@ -72,13 +72,7 @@ export const SendTransactionForm = ({
 					</div>
 
 					<div data-testid="sender-address">
-						<SelectAddress
-							contactSearchTitle="My addresses"
-							contactSearchDescription="Find and select preferred address from you saved profiles"
-							address={sender}
-							ref={register}
-							contacts={profiles}
-						/>
+						<SelectAddress address={sender} ref={register} wallets={wallets} />
 					</div>
 				</FormField>
 
@@ -157,5 +151,5 @@ SendTransactionForm.defaultProps = {
 		smartbridge: null,
 		fee: 0,
 	},
-	profiles: [],
+	wallets: [],
 };
