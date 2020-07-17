@@ -370,7 +370,7 @@ exports[`CreateWallet should render 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
+                              class="sc-AxhUy iZkFLc"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -390,7 +390,7 @@ exports[`CreateWallet should render 1`] = `
                             role="option"
                           >
                             <div
-                              class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
+                              class="sc-AxhUy iZkFLc"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -398,67 +398,7 @@ exports[`CreateWallet should render 1`] = `
                                 width="26"
                               >
                                 <svg>
-                                  btc.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-1-item-2"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
-                            >
-                              <div
-                                class="sc-AxjAm jakjmk"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  eth.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-1-item-3"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
-                            >
-                              <div
-                                class="sc-AxjAm jakjmk"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-1-item-4"
-                            role="option"
-                          >
-                            <div
-                              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
-                            >
-                              <div
-                                class="sc-AxjAm jakjmk"
-                                height="26"
-                                width="26"
-                              >
-                                <svg>
-                                  xrp.svg
+                                  ark.svg
                                 </svg>
                               </div>
                             </div>
@@ -598,7 +538,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-danger-400 border-theme-danger-light"
+              class="sc-AxhUy iZkFLc"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -618,7 +558,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             role="option"
           >
             <div
-              class="sc-AxhUy iZkFLc text-theme-warning-400 border-theme-warning-200"
+              class="sc-AxhUy iZkFLc"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -626,67 +566,7 @@ exports[`CreateWallet should render 1st step 1`] = `
                 width="26"
               >
                 <svg>
-                  btc.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
-            id="downshift-0-item-2"
-            role="option"
-          >
-            <div
-              class="sc-AxhUy iZkFLc text-theme-neutral-800 border-theme-neutral-600"
-            >
-              <div
-                class="sc-AxjAm jakjmk"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  eth.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
-            id="downshift-0-item-3"
-            role="option"
-          >
-            <div
-              class="sc-AxhUy iZkFLc text-theme-primary border-theme-primary-400"
-            >
-              <div
-                class="sc-AxjAm jakjmk"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  lsk.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-selected="false"
-            class="inline-block pt-6 mr-6 cursor-pointer"
-            id="downshift-0-item-4"
-            role="option"
-          >
-            <div
-              class="sc-AxhUy iZkFLc text-theme-primary-dark border-theme-primary-500"
-            >
-              <div
-                class="sc-AxjAm jakjmk"
-                height="26"
-                width="26"
-              >
-                <svg>
-                  xrp.svg
+                  ark.svg
                 </svg>
               </div>
             </div>
@@ -759,7 +639,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
           <span
             class="font-medium text-theme-neutral-800"
           >
-            lorem
+            test
           </span>
         </li>
         <li
@@ -774,92 +654,37 @@ exports[`CreateWallet should render 2nd step 1`] = `
           <span
             class="font-medium text-theme-neutral-800"
           >
-            ipsum
-          </span>
-        </li>
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            3
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            dolor
-          </span>
-        </li>
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            4
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            sit
-          </span>
-        </li>
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            5
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            amet
-          </span>
-        </li>
-        <li
-          class="relative px-3 py-3 border rounded border-theme-neutral-light"
-          data-testid="MnemonicList__item"
-        >
-          <span
-            class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-neutral"
-          >
-            6
-          </span>
-          <span
-            class="font-medium text-theme-neutral-800"
-          >
-            consectetur
+            mnemonic
           </span>
         </li>
       </ul>
       <div
         class="flex justify-end w-full"
       >
-        <button
-          class="sc-AxhCb BegvR"
-          color="primary"
-          data-testid="CreateWallet__copy"
-          type="button"
+        <div
+          class="inline-block cursor-pointer"
+          data-testid="clipboard__wrapper"
         >
-          <div
-            class="sc-AxjAm cpczEI"
-            height="1em"
-            width="1em"
+          <button
+            class="sc-AxhCb BegvR"
+            color="primary"
+            data-testid="CreateWallet__copy"
+            type="button"
           >
-            <svg>
-              copy.svg
-            </svg>
-          </div>
-          <span>
-            Copy
-          </span>
-        </button>
+            <div
+              class="sc-AxjAm cpczEI"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </div>
+            <span>
+              Copy
+            </span>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -965,7 +790,7 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
           <p
             class="text-lg font-medium"
-            data-testid="CrateWallet__network-name"
+            data-testid="CreateWallet__network-name"
           >
             ARK Ecosystem
           </p>
@@ -1001,13 +826,25 @@ exports[`CreateWallet should render 4th step 1`] = `
           </p>
           <p
             class="text-lg font-medium"
+            data-testid="CreateWallet__wallet-address"
           >
-            D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
+            TEST-WALLET-ADDRESS
           </p>
         </div>
         <div
-          class="sc-AxhUy fHeTTV"
-        />
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+          data-testid="Avatar"
+        >
+          <div
+            class="w-full h-full"
+          >
+            <img
+              alt="TEST-WALLET-ADDRESS"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+              title="TEST-WALLET-ADDRESS"
+            />
+          </div>
+        </div>
       </li>
     </ul>
     <div
