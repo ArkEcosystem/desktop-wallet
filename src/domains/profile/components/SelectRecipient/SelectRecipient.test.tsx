@@ -102,7 +102,7 @@ describe("SelectRecipient", () => {
 		expect(fn).toBeCalledWith(address);
 	});
 
-	it("should call onChange prop if provided", () => {
+	it("should call onChange prop if provided", async () => {
 		const fn = jest.fn();
 		const { getByTestId, getAllByTestId } = render(
 			<SelectRecipient contacts={contacts} onChange={fn} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
@@ -110,7 +110,7 @@ describe("SelectRecipient", () => {
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
