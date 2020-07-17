@@ -56,7 +56,7 @@ export const ImportWallet = ({ networks }: Props) => {
 			return (
 				<FormField name="password">
 					<FormLabel label="Your Password" />
-					<InputPassword data-testid="ImportWallet__password-input" ref={register} />
+					<InputPassword ref={register} data-testid="ImportWallet__password-input" />
 				</FormField>
 			);
 		}

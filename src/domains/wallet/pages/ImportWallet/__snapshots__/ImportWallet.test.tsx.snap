@@ -35,7 +35,7 @@ exports[`Wallet / Import should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`Wallet / Import should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`Wallet / Import should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`Wallet / Import should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/news"
                   title="News"
                 >
                   News
@@ -105,7 +105,7 @@ exports[`Wallet / Import should render 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/transactions/transfer"
               >
                 <div
                   class="sc-Axmtr ldkDJ"
@@ -230,7 +230,7 @@ exports[`Wallet / Import should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/0b1b8d74-a721-4b9b-86a5-e17635345879/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -356,7 +356,7 @@ exports[`Wallet / Import should render 1`] = `
                               role="option"
                             >
                               <div
-                                class="sc-fznyAO jA-dQzA"
+                                class="sc-fznyAO jA-dQzA text-theme-danger-400 border-theme-danger-light"
                               >
                                 <div
                                   class="sc-Axmtr wZFix"
@@ -376,7 +376,27 @@ exports[`Wallet / Import should render 1`] = `
                               role="option"
                             >
                               <div
-                                class="sc-fznyAO jA-dQzA"
+                                class="sc-fznyAO jA-dQzA text-theme-warning-400 border-theme-warning-200"
+                              >
+                                <div
+                                  class="sc-Axmtr wZFix"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    btc.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              aria-selected="false"
+                              class="inline-block pt-6 mr-6 cursor-pointer"
+                              id="downshift-0-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="sc-fznyAO jA-dQzA text-theme-neutral-800 border-theme-neutral-600"
                               >
                                 <div
                                   class="sc-Axmtr wZFix"
@@ -392,11 +412,11 @@ exports[`Wallet / Import should render 1`] = `
                             <div
                               aria-selected="false"
                               class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-0-item-2"
+                              id="downshift-0-item-3"
                               role="option"
                             >
                               <div
-                                class="sc-fznyAO jA-dQzA"
+                                class="sc-fznyAO jA-dQzA text-theme-primary border-theme-primary-400"
                               >
                                 <div
                                   class="sc-Axmtr wZFix"
@@ -404,7 +424,27 @@ exports[`Wallet / Import should render 1`] = `
                                   width="26"
                                 >
                                   <svg>
-                                    btc.svg
+                                    lsk.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              aria-selected="false"
+                              class="inline-block pt-6 mr-6 cursor-pointer"
+                              id="downshift-0-item-4"
+                              role="option"
+                            >
+                              <div
+                                class="sc-fznyAO jA-dQzA text-theme-primary-dark border-theme-primary-500"
+                              >
+                                <div
+                                  class="sc-Axmtr wZFix"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    xrp.svg
                                   </svg>
                                 </div>
                               </div>

@@ -10,7 +10,7 @@ import { StubStorage } from "tests/mocks";
 
 import { Settings } from "./Settings";
 
-let env: any;
+let env: Environment;
 
 describe("Settings", () => {
 	beforeEach(() => {

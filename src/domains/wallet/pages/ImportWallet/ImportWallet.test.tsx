@@ -1,42 +1,37 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, RenderResult, renderWithRouter } from "testing-library";
 import { identity } from "tests/fixtures/identity";
+import { StubStorage } from "tests/mocks";
 
+import { networks } from "../../data";
 import { ImportWallet } from "./ImportWallet";
 
 let rendered: RenderResult;
+let env: Environment;
 
 describe("Wallet / Import", () => {
 	beforeEach(async () => {
+		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
 		const history = createMemoryHistory();
-		const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
-		const networks = [
-			{
-				id: 1,
-				name: "ARK Ecosystem",
-				icon: "Ark",
-			},
-			{
-				id: 2,
-				name: "Ethereum",
-				icon: "Ethereum",
-			},
-			{
-				id: 3,
-				name: "Bitcoin",
-				icon: "Bitcoin",
-			},
-		];
+		const profile = env.profiles().create("John Doe");
+		const importURL = `/profiles/${profile.id()}/wallets/import`;
 
 		history.push(importURL);
 
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/import">
-					<ImportWallet networks={networks} />
+					<EnvironmentProvider env={env}>
+						<ImportWallet networks={networks} />
+					</EnvironmentProvider>
 				</Route>,
 				{
 					routes: [importURL],
@@ -106,6 +101,39 @@ describe("Wallet / Import", () => {
 	});
 
 	it("should import a wallet", async () => {
-		// test
+		const { getByTestId } = rendered;
+
+		const selectAssetInput = getByTestId("select-asset__input");
+		expect(selectAssetInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectAssetInput, { target: { value: "Ark" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
+		});
+
+		// Check network is selected
+		expect(getByTestId("select-asset__selected-ARK Ecosystem")).toBeTruthy();
+
+		const continueBtn = getByTestId("ImportWallet__next-step--button");
+		expect(continueBtn).toBeTruthy();
+
+		await act(async () => {
+			// Click continue button to go to next step
+			fireEvent.click(continueBtn);
+		});
+
+		// Check if second step is rendered
+		expect(getByTestId("ImportWallet__address-toggle")).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.input(getByTestId("ImportWallet__password-input"), { target: { value: identity.mnemonic } });
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+		});
 	});
 });
