@@ -16,7 +16,7 @@ type Props = {
 };
 
 const ImportWallet = ({ networks, onSubmit }: Props) => {
-	const [activeIndex, setActiveIndex] = useState(1);
+	const [activeTab, setActiveTab] = useState(1);
 	const [selected, setSelected] = useState(null);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 	const activeProfile = useActiveProfile();
@@ -29,12 +29,6 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			label: "Go back to Portfolio",
 		},
 	];
-
-	const onPreviousBtnClick = (event: any) => {
-		// Prevent btn click event propagation to form submittion
-		event.preventDefault();
-		setActiveIndex(1);
-	};
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
@@ -58,11 +52,11 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
-				<Tabs className="max-w-xl mx-auto" activeId={activeIndex}>
+				<Tabs className="max-w-xl mx-auto" activeId={activeTab}>
 					<TabPanel tabId={1}>
 						<div className="flex justify-center w-full">
 							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeIndex} />
+								<StepIndicator size={2} activeIndex={activeTab} />
 								<div>
 									<div className="my-8">
 										<h1 className="mb-0">Select a Cryptoasset</h1>
@@ -81,7 +75,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								</div>
 								<div className="flex justify-end mt-10">
 									<Button
-										onClick={() => setActiveIndex(2)}
+										onClick={() => setActiveTab(2)}
 										data-testid="ImportWallet__next-step--button"
 									>
 										Continue
@@ -94,7 +88,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 					<TabPanel tabId={2}>
 						<div className="flex justify-center w-full">
 							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeIndex} />
+								<StepIndicator size={2} activeIndex={activeTab} />
 								<Form id="ImportWallet__form" context={form} onSubmit={onSubmit}>
 									<div className="mt-8">
 										<div className="_header">
@@ -127,7 +121,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 										<Button
 											data-testid="ImportWallet__prev-step--button"
 											variant="plain"
-											onClick={onPreviousBtnClick}
+											onClick={() => setActiveTab(1)}
 										>
 											Back
 										</Button>
