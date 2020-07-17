@@ -104,4 +104,8 @@ describe("Wallet / Import", () => {
 		// Check if previous step is rendered
 		expect(getByTestId("select-asset__input")).toBeTruthy();
 	});
+
+	it("should import a wallet", async () => {
+		// test
+	});
 });

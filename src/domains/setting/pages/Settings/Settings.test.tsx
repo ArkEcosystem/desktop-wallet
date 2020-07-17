@@ -30,7 +30,7 @@ describe("Settings", () => {
 		let savedProfile: any = null;
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
-		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<Settings onSubmit={onSubmit} />
 			</EnvironmentProvider>,
