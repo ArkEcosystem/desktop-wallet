@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SearchContact } from "domains/contact/components/SearchContact";
+import { SearchAddress } from "domains/profile/components/SearchAddress";
 import React, { useEffect, useState } from "react";
 
 import { SelectAddressWrapper } from "./SelectAddress.styles";
@@ -12,7 +12,7 @@ import { SelectAddressWrapper } from "./SelectAddress.styles";
 type SelectAddressProps = {
 	address?: string;
 	isVerified?: boolean;
-	contacts: any[];
+	wallets: any[];
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
@@ -22,8 +22,8 @@ type SelectAddressProps = {
 } & React.InputHTMLAttributes<any>;
 
 const ProfileAvatar = ({ address }: any) => {
-	if (!address) return <Circle className="mx-3 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />;
-	return <Avatar address={address} size="sm" className="mx-3" noShadow />;
+	if (!address) return <Circle className="mx-4 bg-theme-neutral-200 border-theme-neutral-200" size="sm" noShadow />;
+	return <Avatar address={address} size="sm" className="mx-4" noShadow />;
 };
 
 export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
@@ -31,9 +31,8 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 		{
 			contactSearchTitle,
 			contactSearchDescription,
-			selectActionLabel,
 			address,
-			contacts,
+			wallets,
 			disabled,
 			isInvalid,
 			onChange,
@@ -89,13 +88,12 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					isInvalid={isInvalidField}
 				/>
 
-				<SearchContact
+				<SearchAddress
 					title={contactSearchTitle}
 					description={contactSearchDescription}
 					isOpen={isContactSearchOpen}
-					contacts={contacts}
-					options={[{ value: "select", label: selectActionLabel }]}
-					onAction={(_, { address }: any) => onSelectProfile(address)}
+					wallets={wallets}
+					onAction={(_, address: any) => onSelectProfile(address)}
 					onClose={() => setIsContactSearchOpen(false)}
 				/>
 			</div>
@@ -104,9 +102,8 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 );
 
 SelectAddress.defaultProps = {
-	contactSearchTitle: "Recipient search",
-	contactSearchDescription: "Find and select the recipient from your contacts",
-	selectActionLabel: "Select",
+	contactSearchTitle: "Select sender",
+	contactSearchDescription: "Find and select the sender from your wallets",
 };
 
 SelectAddress.displayName = "SelectAddress";
