@@ -23,6 +23,13 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	const form = useForm();
 	const { register } = form;
 
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
 	const onPreviousBtnClick = (event: any) => {
 		// Prevent btn click event propagation to form submittion
 		event.preventDefault();
@@ -47,13 +54,6 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			</FormField>
 		);
 	};
-
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
-		},
-	];
 
 	return (
 		<Page crumbs={crumbs}>
