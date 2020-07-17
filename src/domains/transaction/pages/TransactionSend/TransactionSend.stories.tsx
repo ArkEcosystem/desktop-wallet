@@ -1,4 +1,5 @@
 import { contacts } from "domains/contact/data";
+import { wallets } from "domains/wallet/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -22,35 +23,8 @@ const defaultFormValues = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
-	contactList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Wallet",
-			formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-		{
-			address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Multisig",
-			formatted: " Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ",
-			isMultisig: true,
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient in Ark",
-			formatted: "Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ",
-			isInArkNetwork: true,
-		},
-	],
 	contacts,
-	profiles: contacts,
+	wallets,
 };
 
 export const Default = () => (

@@ -21,4 +21,8 @@ export const translations: { [key: string]: any } = {
 			UPDATE: "Update",
 		},
 	},
+	MODAL_SEARCH_ADDRESS: {
+		TITLE: "Select address",
+		DESCRIPTION: "Find and select an address from your wallets",
+	},
 };
