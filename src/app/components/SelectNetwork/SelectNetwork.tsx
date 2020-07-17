@@ -15,7 +15,7 @@ type SelectNetworkProps = {
 	networks: Network[];
 	placeholder?: string;
 	name?: string;
-	value?: string;
+	value?: any;
 	onSelect?: (network: any) => void;
 };
 
@@ -50,7 +50,7 @@ const InputWrapper = styled.div`
 	}
 `;
 
-export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectNetworkProps) => {
+export const SelectNetwork = ({ name, networks, onSelect, placeholder, value }: SelectNetworkProps) => {
 	const isMatch = (network: Network, input: InputValue) => {
 		if (!input) return false;
 		return network.name.toLowerCase().startsWith(input.toLowerCase());
@@ -79,7 +79,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 	};
 
 	return (
-		<Downshift itemToString={(i) => i?.name} onSelect={onSelect}>
+		<Downshift itemToString={(i) => i?.name} onSelect={onSelect} initialSelectedItem={value}>
 			{({
 				getLabelProps,
 				getInputProps,
