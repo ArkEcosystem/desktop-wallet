@@ -67,7 +67,7 @@ describe("Wallet / Import", () => {
 		// Check network is selected
 		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
 
-		const continueBtn = getByTestId("import-wallet__next-step--button");
+		const continueBtn = getByTestId("ImportWallet__next-step--button");
 		expect(continueBtn).toBeTruthy();
 
 		act(() => {
@@ -76,7 +76,7 @@ describe("Wallet / Import", () => {
 		});
 
 		// Check if second step is rendered
-		const addressToggle = getByTestId("import-wallet__address-toggle");
+		const addressToggle = getByTestId("ImportWallet__address-toggle");
 		expect(addressToggle).toBeTruthy();
 
 		act(() => {
@@ -84,14 +84,14 @@ describe("Wallet / Import", () => {
 			fireEvent.click(addressToggle);
 		});
 
-		const passwordInput = getByTestId("import-wallet__password");
+		const passwordInput = getByTestId("ImportWallet__password");
 
 		act(() => {
 			// Change password input value
 			fireEvent.keyUp(passwordInput, { key: "test" });
 		});
 
-		const previousBtn = getByTestId("import-wallet__prev-step--button");
+		const previousBtn = getByTestId("ImportWallet__prev-step--button");
 
 		act(() => {
 			// Go to previous step

@@ -34,7 +34,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			return (
 				<FormField name="password">
 					<FormLabel label="Your Password" />
-					<InputPassword data-testid="import-wallet__password-input" ref={register} />
+					<InputPassword data-testid="ImportWallet__password-input" ref={register} />
 				</FormField>
 			);
 		}
@@ -43,7 +43,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			// TODO: Change to InputAddress
 			<FormField name="address">
 				<FormLabel label="Address" />
-				<Input data-testid="import-wallet__address-input" ref={register} />
+				<Input data-testid="ImportWallet__address-input" ref={register} />
 			</FormField>
 		);
 	};
@@ -82,7 +82,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 								<div className="flex justify-end mt-10">
 									<Button
 										onClick={() => setActiveIndex(2)}
-										data-testid="import-wallet__next-step--button"
+										data-testid="ImportWallet__next-step--button"
 									>
 										Continue
 									</Button>
@@ -95,7 +95,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 						<div className="flex justify-center w-full">
 							<div className="w-full">
 								<StepIndicator size={2} activeIndex={activeIndex} />
-								<Form id="import-wallet__form" context={form} onSubmit={onSubmit}>
+								<Form id="ImportWallet__form" context={form} onSubmit={onSubmit}>
 									<div className="mt-8">
 										<div className="_header">
 											<h1 className="mb-0">Import Wallet</h1>
@@ -116,22 +116,22 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 											<Toggle
 												checked={isAddressOnly}
 												onChange={() => setIsAddressOnly(!isAddressOnly)}
-												data-testid="import-wallet__address-toggle"
+												data-testid="ImportWallet__address-toggle"
 											/>
 										</div>
-										<div className="mt-8" data-testid="import-wallet__password">
+										<div className="mt-8" data-testid="ImportWallet__password">
 											{renderImportInput()}
 										</div>
 									</div>
 									<div className="flex justify-end mt-10 space-x-3">
 										<Button
-											data-testid="import-wallet__prev-step--button"
+											data-testid="ImportWallet__prev-step--button"
 											variant="plain"
 											onClick={onPreviousBtnClick}
 										>
 											Back
 										</Button>
-										<Button form="import-wallet__form" type="submit">
+										<Button form="ImportWallet__form" type="submit">
 											Go to Wallet
 										</Button>
 									</div>
