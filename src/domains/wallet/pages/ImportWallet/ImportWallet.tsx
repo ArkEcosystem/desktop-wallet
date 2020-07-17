@@ -6,9 +6,11 @@ import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 type Network = { name: string; icon: string };
 
@@ -18,6 +20,8 @@ type Props = {
 };
 
 const ImportWallet = ({ networks, onSubmit }: Props) => {
+	const env: any = useEnvironment();
+	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
 	const [selectedNetwork, setSelectedNetwork] = useState<Network | undefined>(undefined);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
@@ -42,6 +46,12 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 		setValue("network", network, true);
 	};
 
+	const submitForm = async ({ network, password }: any) => {
+		const wallet = await activeProfile?.wallets().import(password, network.coin, "devnet");
+		await env.persist();
+		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
+	};
+
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
 			return (
@@ -64,7 +74,12 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit} data-testid="ImportWallet__form">
+				<Form
+					className="max-w-xl mx-auto"
+					context={form}
+					onSubmit={submitForm}
+					data-testid="ImportWallet__form"
+				>
 					<Tabs activeId={activeTab}>
 						<TabPanel tabId={1}>
 							<div className="flex justify-center w-full">
@@ -82,7 +97,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 											<SelectNetwork
 												name={selectedNetwork as any}
 												networks={networks}
-												onSelect={(selected) => handleSelectedNetwork(selected?.name)}
+												onSelect={(selected) => handleSelectedNetwork(selected?.coin)}
 											/>
 										</div>
 									</div>
@@ -138,7 +153,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 										>
 											Back
 										</Button>
-										<Button form="ImportWallet__form" type="submit">
+										<Button type="submit" data-testid="ImportWallet__submit-button">
 											Go to Wallet
 										</Button>
 									</div>
