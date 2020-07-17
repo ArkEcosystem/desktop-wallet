@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-// UI Elements
 import { ListDividedItem } from "./ListDividedItem";
 
 type Props = {
@@ -11,9 +10,7 @@ type Props = {
 
 const StyledList = styled.ul({
 	li: tw`border-b border-dashed border-theme-neutral-300`,
-	"li:last-child": tw`
-		border-b-0
-	`,
+	"li:last-child": tw`border-b-0 `,
 });
 
 const renderItems = (items: any) => (

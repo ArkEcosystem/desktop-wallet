@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { contacts } from "domains/contact/data";
+import { wallets } from "domains/wallet/data";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render, waitFor, within } from "testing-library";
@@ -9,13 +10,13 @@ import { SendTransactionForm } from "./";
 
 describe("SendTransactionForm", () => {
 	it("should render", () => {
-		const { container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
+		const { container } = render(<SendTransactionForm wallets={wallets} contacts={contacts} networks={networks} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should select sender and recipient", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<SendTransactionForm profiles={contacts} contacts={contacts} networks={networks} />,
+			<SendTransactionForm wallets={wallets} contacts={contacts} networks={networks} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -26,7 +27,7 @@ describe("SendTransactionForm", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		const firstAddress = getByTestId("AddressListItem__select-0");
 
 		act(() => {
 			fireEvent.click(firstAddress);
@@ -67,7 +68,9 @@ describe("SendTransactionForm", () => {
 	});
 
 	it("should set available amount", () => {
-		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} maxAvailableAmount={100} />);
+		const { getByTestId, container } = render(
+			<SendTransactionForm wallets={wallets} contacts={contacts} maxAvailableAmount={100} />,
+		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
 		act(() => {
