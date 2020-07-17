@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -9,7 +10,7 @@ import { ImportWallet } from "./ImportWallet";
 let rendered: RenderResult;
 
 describe("Wallet / Import", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		const history = createMemoryHistory();
 		const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
 		const networks = [
@@ -32,15 +33,17 @@ describe("Wallet / Import", () => {
 
 		history.push(importURL);
 
-		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/import">
-				<ImportWallet networks={networks} />
-			</Route>,
-			{
-				routes: [importURL],
-				history,
-			},
-		);
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/import">
+					<ImportWallet networks={networks} />
+				</Route>,
+				{
+					routes: [importURL],
+					history,
+				},
+			);
+		});
 	});
 
 	it("should render", () => {
@@ -50,17 +53,17 @@ describe("Wallet / Import", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should navigate between steps", () => {
+	it("should navigate between steps", async () => {
 		const { getByTestId } = rendered;
 
 		const selectAssetInput = getByTestId("select-asset__input");
 		expect(selectAssetInput).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
 		});
 
-		act(() => {
+		await act(async () => {
 			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
 		});
 
@@ -70,7 +73,7 @@ describe("Wallet / Import", () => {
 		const continueBtn = getByTestId("ImportWallet__next-step--button");
 		expect(continueBtn).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			// Click continue button to go to next step
 			fireEvent.click(continueBtn);
 		});
@@ -79,21 +82,21 @@ describe("Wallet / Import", () => {
 		const addressToggle = getByTestId("ImportWallet__address-toggle");
 		expect(addressToggle).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			// Toggle qr code (appear)
 			fireEvent.click(addressToggle);
 		});
 
 		const passwordInput = getByTestId("ImportWallet__password");
 
-		act(() => {
+		await act(async () => {
 			// Change password input value
 			fireEvent.keyUp(passwordInput, { key: "test" });
 		});
 
 		const previousBtn = getByTestId("ImportWallet__prev-step--button");
 
-		act(() => {
+		await act(async () => {
 			// Go to previous step
 			fireEvent.click(previousBtn);
 		});

@@ -247,186 +247,190 @@ exports[`Wallet / Import should render 1`] = `
         <div
           class="container py-16 mx-auto px-14"
         >
-          <div
+          <form
             class="max-w-xl mx-auto"
+            data-testid="ImportWallet__form"
           >
-            <div
-              data-testid="tab-pabel__active-panel"
-            >
+            <div>
               <div
-                class="flex justify-center w-full"
+                data-testid="tab-pabel__active-panel"
               >
                 <div
-                  class="w-full"
+                  class="flex justify-center w-full"
                 >
-                  <ul
-                    class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
+                  <div
+                    class="w-full"
                   >
-                    <li
-                      class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
-                    />
-                    <li
-                      class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
-                    />
-                  </ul>
-                  <div>
-                    <div
-                      class="my-8"
+                    <ul
+                      class="StepIndicator___StyledUl-sc-15t41is-1 dhAbBb"
                     >
-                      <h1
-                        class="mb-0"
-                      >
-                        Select a Cryptoasset
-                      </h1>
-                      <p
-                        class="text-medium text-theme-neutral-700"
-                      >
-                        Select a cryptoasset to import your existing wallet address
-                      </p>
-                    </div>
-                    <div
-                      class="space-y-2"
-                    >
-                      <span
-                        class="text-sm font-medium text-theme-neutral-dark"
-                      >
-                        Network
-                      </span>
+                      <li
+                        class="StepIndicator__StepStyled-sc-15t41is-0 crUtTP"
+                      />
+                      <li
+                        class="StepIndicator__StepStyled-sc-15t41is-0 eXvSeq"
+                      />
+                    </ul>
+                    <div>
                       <div
-                        aria-expanded="false"
-                        aria-haspopup="listbox"
-                        aria-labelledby="downshift-0-label"
-                        class="relative"
-                        role="combobox"
+                        class="my-8"
                       >
-                        <label
-                          for="downshift-0-input"
-                          id="downshift-0-label"
-                        />
-                        <div
-                          class="relative flex items-center w-full flex-inline"
+                        <h1
+                          class="mb-0"
                         >
+                          Select a Cryptoasset
+                        </h1>
+                        <p
+                          class="text-medium text-theme-neutral-700"
+                        >
+                          Select a cryptoasset to import your existing wallet address
+                        </p>
+                      </div>
+                      <div
+                        class="space-y-2"
+                      >
+                        <span
+                          class="text-sm font-medium text-theme-neutral-dark"
+                        >
+                          Network
+                        </span>
+                        <div
+                          aria-expanded="false"
+                          aria-haspopup="listbox"
+                          aria-labelledby="downshift-0-label"
+                          class="relative"
+                          role="combobox"
+                        >
+                          <label
+                            for="downshift-0-input"
+                            id="downshift-0-label"
+                          />
                           <div
-                            class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                            class="relative flex items-center w-full flex-inline"
                           >
                             <div
-                              class="px-4 py-2 flex-0 w-14"
+                              class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
                             >
                               <div
-                                class="sc-fznyAO crOapn border-theme-neutral-200"
-                              />
-                            </div>
-                            <div
-                              class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                            >
-                              <div
-                                class="relative z-10 w-full"
-                                data-testid="select-network__typeahead-"
+                                class="px-4 py-2 flex-0 w-14"
                               >
                                 <div
-                                  class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                                  class="sc-fznyAO crOapn border-theme-neutral-200"
                                 />
                               </div>
-                              <input
-                                aria-autocomplete="list"
-                                aria-labelledby="downshift-0-label"
-                                autocomplete="off"
-                                class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                data-testid="select-asset__input"
-                                id="downshift-0-input"
-                                placeholder="Enter a network name"
-                                value=""
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          aria-labelledby="downshift-0-label"
-                          class="select-asset__items"
-                          data-testid="select-asset__items"
-                          id="downshift-0-menu"
-                          role="listbox"
-                        >
-                          <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-0"
-                            role="option"
-                          >
-                            <div
-                              class="sc-fznyAO jA-dQzA"
-                            >
                               <div
-                                class="sc-Axmtr wZFix"
-                                height="26"
-                                width="26"
+                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
                               >
-                                <svg>
-                                  ark.svg
-                                </svg>
+                                <div
+                                  class="relative z-10 w-full"
+                                  data-testid="select-network__typeahead-"
+                                >
+                                  <div
+                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
+                                  />
+                                </div>
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-labelledby="downshift-0-label"
+                                  autocomplete="off"
+                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
+                                  data-testid="select-asset__input"
+                                  id="downshift-0-input"
+                                  placeholder="Enter a network name"
+                                  value=""
+                                />
                               </div>
                             </div>
                           </div>
                           <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-1"
-                            role="option"
+                            aria-labelledby="downshift-0-label"
+                            class="select-asset__items"
+                            data-testid="select-asset__items"
+                            id="downshift-0-menu"
+                            role="listbox"
                           >
                             <div
-                              class="sc-fznyAO jA-dQzA"
+                              aria-selected="false"
+                              class="inline-block pt-6 mr-6 cursor-pointer"
+                              id="downshift-0-item-0"
+                              role="option"
                             >
                               <div
-                                class="sc-Axmtr wZFix"
-                                height="26"
-                                width="26"
+                                class="sc-fznyAO jA-dQzA"
                               >
-                                <svg>
-                                  eth.svg
-                                </svg>
+                                <div
+                                  class="sc-Axmtr wZFix"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    ark.svg
+                                  </svg>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div
-                            aria-selected="false"
-                            class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-2"
-                            role="option"
-                          >
                             <div
-                              class="sc-fznyAO jA-dQzA"
+                              aria-selected="false"
+                              class="inline-block pt-6 mr-6 cursor-pointer"
+                              id="downshift-0-item-1"
+                              role="option"
                             >
                               <div
-                                class="sc-Axmtr wZFix"
-                                height="26"
-                                width="26"
+                                class="sc-fznyAO jA-dQzA"
                               >
-                                <svg>
-                                  btc.svg
-                                </svg>
+                                <div
+                                  class="sc-Axmtr wZFix"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    eth.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              aria-selected="false"
+                              class="inline-block pt-6 mr-6 cursor-pointer"
+                              id="downshift-0-item-2"
+                              role="option"
+                            >
+                              <div
+                                class="sc-fznyAO jA-dQzA"
+                              >
+                                <div
+                                  class="sc-Axmtr wZFix"
+                                  height="26"
+                                  width="26"
+                                >
+                                  <svg>
+                                    btc.svg
+                                  </svg>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="flex justify-end mt-10"
-                  >
-                    <button
-                      class="sc-AxjAm ddQVWI"
-                      color="primary"
-                      data-testid="ImportWallet__next-step--button"
-                      type="button"
+                    <div
+                      class="flex justify-end mt-10"
                     >
-                      Continue
-                    </button>
+                      <button
+                        class="sc-AxjAm ddQVWI"
+                        color="primary"
+                        data-testid="ImportWallet__next-step--button"
+                        disabled=""
+                        type="button"
+                      >
+                        Continue
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
