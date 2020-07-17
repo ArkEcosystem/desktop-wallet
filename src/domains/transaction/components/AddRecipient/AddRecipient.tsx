@@ -15,8 +15,8 @@ import { AddRecipientWrapper } from "./AddRecipient.styles";
 const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLabel, onChange }: ToggleButtonProps) => {
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
-			<div className="flex mb-2 space-x-2">
-				<div className="text-sm font-medium transition-colors duration-100">{labelText}</div>
+			<div className="flex items-center mb-2 space-x-2">
+				<div className="font-normal text-md transition-colors duration-100">{labelText}</div>
 				<div>
 					<Tippy content={helpText}>
 						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
