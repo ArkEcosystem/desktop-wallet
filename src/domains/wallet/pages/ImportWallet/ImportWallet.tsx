@@ -7,21 +7,28 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
+type Network = { name: string; icon: string };
+
 type Props = {
-	networks: any;
+	networks: Network[];
 	onSubmit?: any;
 };
 
 const ImportWallet = ({ networks, onSubmit }: Props) => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [selected, setSelected] = useState(null);
+	const [selectedNetwork, setSelectedNetwork] = useState<Network | undefined>(undefined);
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 	const activeProfile = useActiveProfile();
-	const form = useForm();
-	const { register } = form;
+	const form = useForm({ mode: "onChange" });
+	const { formState, register, setValue } = form;
+	const { isValid } = formState;
+
+	useEffect(() => {
+		register("network", { required: true });
+	}, [register]);
 
 	const crumbs = [
 		{
@@ -29,6 +36,11 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			label: "Go back to Portfolio",
 		},
 	];
+
+	const handleSelectedNetwork = (network: Network) => {
+		setSelectedNetwork(network);
+		setValue("network", network, true);
+	};
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
@@ -44,7 +56,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 			// TODO: Change to InputAddress
 			<FormField name="address">
 				<FormLabel label="Address" />
-				<Input data-testid="ImportWallet__address-input" ref={register} />
+				<Input ref={register} data-testid="ImportWallet__address-input" />
 			</FormField>
 		);
 	};
@@ -52,44 +64,45 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
-				<Tabs className="max-w-xl mx-auto" activeId={activeTab}>
-					<TabPanel tabId={1}>
-						<div className="flex justify-center w-full">
-							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeTab} />
-								<div>
-									<div className="my-8">
-										<h1 className="mb-0">Select a Cryptoasset</h1>
-										<p className="text-medium text-theme-neutral-700">
-											Select a cryptoasset to import your existing wallet address
-										</p>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit} data-testid="ImportWallet__form">
+					<Tabs activeId={activeTab}>
+						<TabPanel tabId={1}>
+							<div className="flex justify-center w-full">
+								<div className="w-full">
+									<StepIndicator size={2} activeIndex={activeTab} />
+									<div>
+										<div className="my-8">
+											<h1 className="mb-0">Select a Cryptoasset</h1>
+											<p className="text-medium text-theme-neutral-700">
+												Select a cryptoasset to import your existing wallet address
+											</p>
+										</div>
+										<div className="space-y-2">
+											<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+											<SelectNetwork
+												name={selectedNetwork as any}
+												networks={networks}
+												onSelect={(selected) => handleSelectedNetwork(selected?.name)}
+											/>
+										</div>
 									</div>
-									<div className="space-y-2">
-										<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-										<SelectNetwork
-											name={selected as any}
-											networks={networks}
-											onSelect={(selected) => setSelected(selected.name)}
-										/>
+									<div className="flex justify-end mt-10">
+										<Button
+											disabled={!isValid}
+											onClick={() => setActiveTab(2)}
+											data-testid="ImportWallet__next-step--button"
+										>
+											Continue
+										</Button>
 									</div>
-								</div>
-								<div className="flex justify-end mt-10">
-									<Button
-										onClick={() => setActiveTab(2)}
-										data-testid="ImportWallet__next-step--button"
-									>
-										Continue
-									</Button>
 								</div>
 							</div>
-						</div>
-					</TabPanel>
+						</TabPanel>
 
-					<TabPanel tabId={2}>
-						<div className="flex justify-center w-full">
-							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeTab} />
-								<Form id="ImportWallet__form" context={form} onSubmit={onSubmit}>
+						<TabPanel tabId={2}>
+							<div className="flex justify-center w-full">
+								<div className="w-full">
+									<StepIndicator size={2} activeIndex={activeTab} />
 									<div className="mt-8">
 										<div className="_header">
 											<h1 className="mb-0">Import Wallet</h1>
@@ -119,9 +132,9 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 									</div>
 									<div className="flex justify-end mt-10 space-x-3">
 										<Button
-											data-testid="ImportWallet__prev-step--button"
 											variant="plain"
 											onClick={() => setActiveTab(1)}
+											data-testid="ImportWallet__prev-step--button"
 										>
 											Back
 										</Button>
@@ -129,11 +142,11 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 											Go to Wallet
 										</Button>
 									</div>
-								</Form>
+								</div>
 							</div>
-						</div>
-					</TabPanel>
-				</Tabs>
+						</TabPanel>
+					</Tabs>
+				</Form>
 			</Section>
 		</Page>
 	);
