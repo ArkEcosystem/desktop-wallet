@@ -8,6 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type GeneralProps = {
 	env: Environment;
@@ -17,11 +18,15 @@ type GeneralProps = {
 };
 
 export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
+	const { t } = useTranslation();
+
+	const { context, register } = formConfig;
+
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
-			label: "Personal Details",
-			labelDescription: "Select Profile Image",
+			label: t("SETTINGS.GENERAL.PERSONAL.TITLE"),
+			labelDescription: t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE"),
 			labelClass: "text-2xl font-semibold",
 			labelDescriptionClass: "mt-1",
 			content: (
@@ -52,17 +57,17 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 	const securityItems = [
 		{
 			isFloatingLabel: true,
-			label: "Screenshot Protection",
+			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">
-						This protection. will protect your money from unwanted Screenshot you PC.
+						{t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
 						<Toggle
-							ref={formConfig.register()}
+							ref={register()}
 							name="isScreenshotProtection"
 							data-testid="General-settings__toggle--isScreenshotProtection"
 						/>
@@ -72,18 +77,17 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		},
 		{
 			isFloatingLabel: true,
-			label: "Advanced Mode",
+			label: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "py-6",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">
-						You hereby assume the risk associated with downloading files and installing said files from a
-						direct URL link.
+						{t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
 						<Toggle
-							ref={formConfig.register()}
+							ref={register()}
 							name="isAdvancedMode"
 							data-testid="General-settings__toggle--isAdvancedMode"
 						/>
@@ -95,10 +99,12 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			wrapperClass: "pt-8",
 			content: (
 				<FormField name="autoLogoff">
-					<FormLabel label="Auto-logoff" />
+					<FormLabel label={t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_LOGOUT.TITLE")} />
 					<Select
-						placeholder="Select Auto-logoff"
-						ref={formConfig.register()}
+						placeholder={t("COMMON.SELECT_OPTION", {
+							option: t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_LOGOUT"),
+						})}
+						ref={register()}
 						options={[
 							{ label: "Option 1", value: "option1" },
 							{ label: "Option 2", value: "option2" },
@@ -113,36 +119,33 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 	const otherItems = [
 		{
 			isFloatingLabel: true,
-			label: "Dark Theme",
+			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">Want to set the wallet to dark mode?</span>
+					<span className="mt-1 text-sm text-theme-neutral">
+						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
+					</span>
 					<div className="-mt-7">
-						<Toggle
-							ref={formConfig.register()}
-							name="isDarkMode"
-							data-testid="General-settings__toggle--isDarkMode"
-						/>
+						<Toggle ref={register()} name="isDarkMode" data-testid="General-settings__toggle--isDarkMode" />
 					</div>
 				</div>
 			),
 		},
 		{
 			isFloatingLabel: true,
-			label: "Update Ledger in Background",
+			label: t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">
-						You hereby assume the risk associated with downloading files and installing said files from a
-						direct URL link.
+						{t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
 						<Toggle
-							ref={formConfig.register()}
+							ref={register()}
 							name="isUpdateLedger"
 							data-testid="General-settings__toggle--isUpdateLedger"
 						/>
@@ -182,28 +185,38 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 
 	return (
 		<>
-			<Header title="Wallet Settings" subtitle="Customize your wallet to suit your needs." />
-			<Form data-testid="General-settings__form" context={formConfig.context} onSubmit={submitForm}>
+			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
+			<Form data-testid="General-settings__form" context={context} onSubmit={submitForm}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 
 					<div className="flex justify-between w-full mt-8">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
-								<FormLabel label="Profile Name" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 								<Input
 									type="text"
-									ref={formConfig.register({ required: "Profile Name is required" })}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+										}).toString(),
+									})}
 									data-testid="General-settings__input--name"
 								/>
 								<FormHelperText />
 							</FormField>
 
 							<FormField className="mt-8" name="passphraseLanguage">
-								<FormLabel label="Passphrase Language" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE")} />
 								<Select
-									placeholder="Select Passphrase Language"
-									ref={formConfig.register({ required: "Passphrase Language is required" })}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
+									})}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
+										}).toString(),
+									})}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -213,10 +226,16 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							</FormField>
 
 							<FormField className="mt-8" name="currency">
-								<FormLabel label="Currency" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 								<Select
-									placeholder="Select Currency"
-									ref={formConfig.register({ required: "Currency is required" })}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+									})}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+										}).toString(),
+									})}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -228,10 +247,16 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 
 						<div className="flex flex-col w-2/4 ml-5">
 							<FormField name="language">
-								<FormLabel label="Language" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.LANGUAGE")} />
 								<Select
-									placeholder="Select Language"
-									ref={formConfig.register({ required: "Language is required" })}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
+									})}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
+										}).toString(),
+									})}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -241,10 +266,16 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							</FormField>
 
 							<FormField className="mt-8" name="marketProvider">
-								<FormLabel label="Market Provider" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER")} />
 								<Select
-									placeholder="Select Market Provider"
-									ref={formConfig.register({ required: "Market Provider is required" })}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
+									})}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
+										}).toString(),
+									})}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -254,10 +285,16 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							</FormField>
 
 							<FormField className="mt-8" name="timeFormat">
-								<FormLabel label="Time Format" />
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT")} />
 								<Select
-									placeholder="Select Time Format"
-									ref={formConfig.register({ required: "Time Format is required" })}
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
+									})}
+									ref={register({
+										required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+											field: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
+										}).toString(),
+									})}
 									options={[
 										{ label: "Option 1", value: "option1" },
 										{ label: "Option 2", value: "option2" },
@@ -270,24 +307,24 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 				</div>
 
 				<div className="relative mt-10">
-					<h2>Security</h2>
+					<h2>{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
 					<ListDivided items={securityItems} />
 				</div>
 
 				<div className="relative mt-10">
-					<h2>Other</h2>
+					<h2>{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 					<ListDivided items={otherItems} />
 				</div>
 
 				<div className="flex justify-between w-full pt-2">
 					<Button color="danger" variant="plain">
 						<Icon name="Reset" />
-						<span>Reset Data</span>
+						<span>{t("COMMON.RESET_DATA")}</span>
 					</Button>
 					<div className="space-x-3">
-						<Button variant="plain">Cancel</Button>
+						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
 						<Button type="submit" data-testid="General-settings__submit-button">
-							Save
+							{t("COMMON.SAVE")}
 						</Button>
 					</div>
 				</div>

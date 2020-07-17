@@ -23,7 +23,10 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 		>
 			<div className="flex flex-col space-y-8">
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
-					<Input className="border-none shadow-none NewsOptions__search" placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")} />
+					<Input
+						className="border-none shadow-none NewsOptions__search"
+						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
+					/>
 					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
 				</div>
 
