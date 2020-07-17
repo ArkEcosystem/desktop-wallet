@@ -1,4 +1,5 @@
 import { contacts } from "domains/contact/data";
+import { wallets } from "domains/wallet/data";
 import React from "react";
 
 import { networks } from "../../data";
@@ -26,7 +27,7 @@ const defaultFormValues = {
 	},
 	networks,
 	contacts,
-	profiles: contacts,
+	wallets,
 };
 
 export const Default = () => (
