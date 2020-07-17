@@ -6,36 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
-
-const columns = [
-	{ Header: "Avatar", className: "invisible" },
-	{
-		Header: "Agent",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "Business Name",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "History",
-		className: "font-semibold text-md -ml-8",
-	},
-	{
-		Header: "Website",
-		className: "font-semibold text-md ml-8 -mr-6",
-	},
-	{
-		Header: "MSQ",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "Repository",
-		className: "font-semibold text-md ml-2",
-	},
-	{ Header: "Spacer", className: "invisible float-right" },
-	{ Header: "Options", className: "invisible float-right" },
-];
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
@@ -48,51 +19,87 @@ const options = [
 	{ label: "Resign", value: "resign" },
 ];
 
-export const BusinessTable = ({ data, handleDropdown }: Props) => (
-	<Section>
-		<h2 className="mb-8 font-bold">Business</h2>
+export const BusinessTable = ({ data, handleDropdown }: Props) => {
+	const { t } = useTranslation();
 
-		<Table columns={columns} data={data}>
-			{(rowData: any) => (
-				<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="w-24 py-6">
-						<div className="flex items-center">
-							<Circle className="border-theme-neutral-800" size="lg">
-								<Icon name="Business" width={22} height={22} />
-							</Circle>
-							<Avatar address="AaAy" size="lg" />
-						</div>
-					</td>
-					<td className="py-6 mt-1 font-semibold">
-						<span>{rowData.agent}</span>
-					</td>
-					<td className="py-6 font-semibold">
-						<span>{rowData.businessName}</span>
-					</td>
-					<td className="py-6 text-bold text-theme-primary">
-						<span className="-ml-8">View</span>
-					</td>
-					<td className="py-6 text-theme-neutral-light">
-						<Icon name="Redirect" className="ml-12" />
-					</td>
-					<td className="py-6 text-bold text-theme-primary">
-						<Icon name="Msq" width={22} height={22} className="ml-1" />
-					</td>
-					<td className="py-6 text-bold text-theme-primary">
-						<span className="ml-3">View</span>
-					</td>
-					<td className="px-1 px-12" />
-					<td className="flex items-center justify-center float-right py-6 mt-1">
-						<Button variant="plain" size="sm">
-							<Dropdown
-								toggleIcon="Settings"
-								options={options}
-								onSelect={(option: any) => handleDropdown(option)}
-							/>
-						</Button>
-					</td>
-				</tr>
-			)}
-		</Table>
-	</Section>
-);
+	const columns = [
+		{ Header: "Avatar", className: "invisible" },
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.AGENT"),
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS_NAME"),
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.HISTORY"),
+			className: "justify-center",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.WEBSITE"),
+			className: "justify-center",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.MSQ"),
+			className: "justify-center",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.REPOSITORY"),
+			className: "justify-center",
+		},
+		{ Header: "Options", className: "invisible" },
+	];
+
+	return (
+		<Section>
+			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.BUSINESS")}</h2>
+
+			<Table columns={columns} data={data}>
+				{(rowData: any) => (
+					<tr data-testid="business-table__row" className="border-b border-dashed border-theme-neutral-light">
+						<td className="w-24 py-6">
+							<div className="flex items-center">
+								<Circle className="border-theme-neutral-800" size="lg">
+									<Icon name="Business" width={22} height={22} />
+								</Circle>
+								<Avatar address="AaAy" size="lg" className="mr-4" />
+							</div>
+						</td>
+						<td className="font-semibold">
+							<span>{rowData.agent}</span>
+						</td>
+						<td className="font-semibold">
+							<span>{rowData.businessName}</span>
+						</td>
+						<td className="font-semibold text-theme-primary text-center">
+							<span>{t("COMMON.VIEW")}</span>
+						</td>
+						<td className="text-theme-neutral-light text-center">
+							<span className="flex justify-center">
+								<Icon name="Redirect" className="text-center" />
+							</span>
+						</td>
+						<td className="font-semibold text-theme-primary text-center">
+							<span className="flex justify-center">
+								<Icon name="Msq" width={22} height={22} />
+							</span>
+						</td>
+						<td className="font-semibold text-theme-primary text-center">
+							<span>{t("COMMON.VIEW")}</span>
+						</td>
+						<td className="align-middle">
+							<span className="flex justify-end">
+								<Button variant="plain" size="sm" className="ml-16">
+									<Dropdown
+										toggleIcon="Settings"
+										options={options}
+										onSelect={(option: any) => handleDropdown(option)}
+									/>
+								</Button>
+							</span>
+						</td>
+					</tr>
+				)}
+			</Table>
+		</Section>
+	);
+};

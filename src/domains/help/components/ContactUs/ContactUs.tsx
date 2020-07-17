@@ -67,7 +67,7 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("HELP.MODAL_CONTACT_US.FORM.NAME"),
-							}),
+							}).toString(),
 						})}
 					/>
 					<FormHelperText />
@@ -79,7 +79,7 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("HELP.MODAL_CONTACT_US.FORM.EMAIL"),
-							}),
+							}).toString(),
 						})}
 					/>
 					<FormHelperText />
@@ -91,7 +91,7 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("HELP.MODAL_CONTACT_US.FORM.SUBJECT"),
-							}),
+							}).toString(),
 						})}
 						placeholder={t("COMMON.SELECT")}
 						options={subjects.map((value: string) => ({
@@ -108,7 +108,7 @@ export const ContactUs = (props: ContactUsProps) => {
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("HELP.MODAL_CONTACT_US.FORM.MESSAGE"),
-							}),
+							}).toString(),
 						})}
 					/>
 				</FormField>

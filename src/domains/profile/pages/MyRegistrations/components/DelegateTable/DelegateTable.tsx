@@ -6,34 +6,7 @@ import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
 import React from "react";
-
-const columns = [
-	{ Header: "Avatar", className: "invisible" },
-	{
-		Header: "Delegate Name",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "Rank",
-		className: "font-semibold text-md -ml-14",
-	},
-	{
-		Header: "MSQ",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "Status",
-		className: "font-semibold text-md",
-	},
-	{
-		Header: "Amount",
-		className: "invisible w-3 float-right",
-	},
-	{
-		Header: "Votes",
-		className: "font-semibold text-md float-right ml-32",
-	},
-];
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	data: any;
@@ -54,55 +27,89 @@ const getStatusIcon = (confirmed: boolean) => {
 	return <Icon name="Checkmark" className="ml-1 text-theme-success" width={30} height={30} />;
 };
 
-export const DelegateTable = ({ data, handleDropdown }: Props) => (
-	<Section>
-		<h2 className="mb-8 font-bold">Delegate</h2>
+export const DelegateTable = ({ data, handleDropdown }: Props) => {
+	const { t } = useTranslation();
 
-		<Table columns={columns} data={data}>
-			{(rowData: any) => (
-				<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
-					<td className="w-24 py-6">
-						<div className="flex items-center">
-							<Circle className="border-theme-neutral-800" size="lg">
-								<Icon name="Business" width={22} height={22} />
-							</Circle>
-							<Avatar address="APTz" size="lg" />
-						</div>
-					</td>
-					<td className="py-6 mt-1 font-semibold">
-						<span>{rowData.delegate}</span>
-					</td>
-					<td className="py-6  text-theme-neutral-dark">
-						<span className="-ml-14">{rowData.rank}</span>
-					</td>
-					<td className="py-6  text-bold text-theme-primary">
-						<Icon name="Msq" width={22} height={22} />
-					</td>
-					<td className="py-6  text-theme-neutral-light">{getStatusIcon(rowData.confirmed)}</td>
-					<td>
-						<div className="flex float-right text-semibold text-theme-neutral-800">
+	const columns = [
+		{ Header: "Avatar", className: "invisible" },
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE_NAME"),
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.RANK"),
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.MSQ"),
+			className: "justify-center",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.STATUS"),
+			className: "justify-center",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.FORGED_AMOUNT"),
+			className: "justify-end",
+		},
+		{
+			Header: t("PROFILE.PAGE_MY_REGISTRATIONS.VOTES"),
+			className: "justify-end",
+		},
+	];
+
+	return (
+		<Section>
+			<h2 className="mb-8 font-bold">{t("PROFILE.PAGE_MY_REGISTRATIONS.DELEGATE")}</h2>
+
+			<Table columns={columns} data={data}>
+				{(rowData: any) => (
+					<tr data-testid="delegate-table__row" className="border-b border-dashed border-theme-neutral-light">
+						<td className="w-24 py-6">
 							<div className="flex items-center">
-								<span className="ml-16">2,450.643 Ѧ</span>
+								<Circle className="border-theme-neutral-800" size="lg">
+									<Icon name="Business" width={22} height={22} />
+								</Circle>
+								<Avatar address="APTz" size="lg" className="mr-4" />
 							</div>
-						</div>
-					</td>
-					<td className="w-1/12 text-semibold text-theme-neutral-800">
-						<div className="flex items-center ml-5 -mr-10">
-							<small className="text-theme-neutral">2,43%</small>
-							<span className="ml-1">2,450.643 Ѧ</span>
-						</div>
-					</td>
-					<td className="flex items-center justify-center float-right py-6 mt-1">
-						<Button variant="plain" size="sm">
-							<Dropdown
-								toggleIcon="Settings"
-								options={options}
-								onSelect={(option: any) => handleDropdown(option)}
-							/>
-						</Button>
-					</td>
-				</tr>
-			)}
-		</Table>
-	</Section>
-);
+						</td>
+						<td className="font-semibold">
+							<span>{rowData.delegate}</span>
+						</td>
+						<td className="font-semibold text-theme-neutral-dark">
+							<span>{rowData.rank}</span>
+						</td>
+						<td className="font-semibold text-theme-primary text-center">
+							<span className="flex justify-center">
+								<Icon name="Msq" width={22} height={22} />
+							</span>
+						</td>
+						<td className="text-theme-neutral-light">
+							<span className="flex justify-center">{getStatusIcon(rowData.confirmed)}</span>
+						</td>
+						<td className="font-semibold text-theme-neutral-dark">
+							<div className="flex items-center justify-end">
+								<span className="whitespace-no-wrap">2,450.643 Ѧ</span>
+							</div>
+						</td>
+						<td className="font-semibold text-theme-neutral-dark">
+							<div className="flex items-center justify-end">
+								<small className="text-theme-neutral">2,43%</small>
+								<span className="ml-1 whitespace-no-wrap">2,450.643 Ѧ</span>
+							</div>
+						</td>
+						<td className="align-middle">
+							<span className="flex justify-end">
+								<Button variant="plain" size="sm" className="ml-16">
+									<Dropdown
+										toggleIcon="Settings"
+										options={options}
+										onSelect={(option: any) => handleDropdown(option)}
+									/>
+								</Button>
+							</span>
+						</td>
+					</tr>
+				)}
+			</Table>
+		</Section>
+	);
+};
