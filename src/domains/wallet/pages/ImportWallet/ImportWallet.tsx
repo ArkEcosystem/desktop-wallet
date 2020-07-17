@@ -16,10 +16,9 @@ type Network = { name: string; icon: string };
 
 type Props = {
 	networks: Network[];
-	onSubmit?: any;
 };
 
-const ImportWallet = ({ networks, onSubmit }: Props) => {
+export const ImportWallet = ({ networks }: Props) => {
 	const env: any = useEnvironment();
 	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
@@ -47,7 +46,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 	};
 
 	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().import(password, network.coin, "devnet");
+		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
 		await env.persist();
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
@@ -97,7 +96,7 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 											<SelectNetwork
 												name={selectedNetwork as any}
 												networks={networks}
-												onSelect={(selected) => handleSelectedNetwork(selected?.coin)}
+												onSelect={(selected) => handleSelectedNetwork(selected)}
 											/>
 										</div>
 									</div>
@@ -166,5 +165,3 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 		</Page>
 	);
 };
-
-export { ImportWallet };
