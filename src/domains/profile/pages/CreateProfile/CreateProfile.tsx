@@ -23,11 +23,11 @@ export const CreateProfile = () => {
 		{
 			isFloatingLabel: true,
 			label: "New Profile",
+			labelClass: "text-xl font-semibold",
 			labelDescription: "Select Profile Image",
-			labelClass: "text-2xl font-semibold",
-			labelDescriptionClass: "my-1 text-theme-neutral-dark",
+			labelDescriptionClass: "mt-1 font-medium text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row mt-4 mb-8">
+				<div className="flex flex-row mt-2 mb-8">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
 						<button
 							type="button"
@@ -43,7 +43,7 @@ export const CreateProfile = () => {
 							alt="random avatar"
 						/>
 						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
-							<Icon name="Close" height={12} width={12} />
+							<Icon name="Close" width={13} height={16} />
 						</button>
 					</div>
 				</div>
@@ -55,11 +55,13 @@ export const CreateProfile = () => {
 		{
 			isFloatingLabel: true,
 			label: "Dark Theme",
-			labelClass: "text-xl font-bold text-theme-neutral-dark",
+			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			content: (
-				<div className="flex flex-row items-center justify-between">
-					<span className="mt-2 text-sm text-theme-neutral-dark">Want to set the wallet to dark mode?</span>
-					<div className="-mt-8">
+				<div className="flex flex-row justify-between">
+					<span className="mt-1 text-sm font-medium text-theme-neutral">
+						Want to set the wallet to dark mode?
+					</span>
+					<div className="-mt-4">
 						<Toggle ref={register()} name="isDarkMode" />
 					</div>
 				</div>
@@ -80,8 +82,8 @@ export const CreateProfile = () => {
 
 	return (
 		<Page navbarStyle="logo-only">
-			<Section className="flex flex-col justify-center flex-1 text-center">
-				<div className="max-w-lg mx-auto md:max-w-xl">
+			<Section className="flex flex-col justify-center flex-1">
+				<div className="max-w-md mx-auto">
 					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
 					<div className="text-theme-neutral-dark">
 						Create a new Profile or login with your MarketSquare account to get started.
@@ -93,9 +95,10 @@ export const CreateProfile = () => {
 							<span className="ml-2">Login with MarketSquare</span>
 						</Button>
 					</div>
+
 					<Divider />
 
-					<Form data-testid="CreateProfile__form" className="mt-4" context={form} onSubmit={submitForm}>
+					<Form data-testid="CreateProfile__form" className="mt-8" context={form} onSubmit={submitForm}>
 						<div className="">
 							<ListDivided items={personalDetails} />
 

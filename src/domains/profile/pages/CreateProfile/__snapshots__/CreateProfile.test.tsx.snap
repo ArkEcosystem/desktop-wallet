@@ -26,13 +26,13 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-lg mx-auto md:max-w-xl"
+            class="max-w-md mx-auto"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -73,7 +73,7 @@ exports[`CreateProfile should render 1`] = `
               type="horizontal"
             />
             <form
-              class="mt-4"
+              class="mt-8"
               data-testid="CreateProfile__form"
             >
               <div
@@ -95,13 +95,13 @@ exports[`CreateProfile should render 1`] = `
                         class="flex flex-col"
                       >
                         <span
-                          class="mr-5 text-2xl font-semibold"
+                          class="mr-5 text-xl font-semibold"
                           data-testid="list-divided-item__label"
                         >
                           New Profile
                         </span>
                         <span
-                          class="text-sm text-theme-neutral-dark my-1 text-theme-neutral-dark"
+                          class="text-sm text-theme-neutral-dark mt-1 font-medium text-theme-neutral-dark"
                           data-testid="list-divided-item__label--description"
                         >
                           Select Profile Image
@@ -113,7 +113,7 @@ exports[`CreateProfile should render 1`] = `
                       data-testid="list-divided-item__content"
                     >
                       <div
-                        class="flex flex-row mt-4 mb-8"
+                        class="flex flex-row mt-2 mb-8"
                       >
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
@@ -145,9 +145,9 @@ exports[`CreateProfile should render 1`] = `
                             class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
                           >
                             <div
-                              class="sc-AxhCb koOqYD"
-                              height="12"
-                              width="12"
+                              class="sc-AxhCb jYYSCW"
+                              height="16"
+                              width="13"
                             >
                               <svg>
                                 close.svg
@@ -321,7 +321,7 @@ exports[`CreateProfile should render 1`] = `
                           class="flex flex-col"
                         >
                           <span
-                            class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                             data-testid="list-divided-item__label"
                           >
                             Dark Theme
@@ -333,15 +333,15 @@ exports[`CreateProfile should render 1`] = `
                         data-testid="list-divided-item__content"
                       >
                         <div
-                          class="flex flex-row items-center justify-between"
+                          class="flex flex-row justify-between"
                         >
                           <span
-                            class="mt-2 text-sm text-theme-neutral-dark"
+                            class="mt-1 text-sm font-medium text-theme-neutral"
                           >
                             Want to set the wallet to dark mode?
                           </span>
                           <div
-                            class="-mt-8"
+                            class="-mt-4"
                           >
                             <label
                               class="flex"
@@ -424,13 +424,13 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1 space-y-5 "
     >
       <div
-        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1 text-center"
+        class="sc-fzoXzr imWwrn flex flex-col justify-center flex-1"
       >
         <div
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-lg mx-auto md:max-w-xl"
+            class="max-w-md mx-auto"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -471,7 +471,7 @@ exports[`CreateProfile should store profile 1`] = `
               type="horizontal"
             />
             <form
-              class="mt-4"
+              class="mt-8"
               data-testid="CreateProfile__form"
             >
               <div
@@ -493,13 +493,13 @@ exports[`CreateProfile should store profile 1`] = `
                         class="flex flex-col"
                       >
                         <span
-                          class="mr-5 text-2xl font-semibold"
+                          class="mr-5 text-xl font-semibold"
                           data-testid="list-divided-item__label"
                         >
                           New Profile
                         </span>
                         <span
-                          class="text-sm text-theme-neutral-dark my-1 text-theme-neutral-dark"
+                          class="text-sm text-theme-neutral-dark mt-1 font-medium text-theme-neutral-dark"
                           data-testid="list-divided-item__label--description"
                         >
                           Select Profile Image
@@ -511,7 +511,7 @@ exports[`CreateProfile should store profile 1`] = `
                       data-testid="list-divided-item__content"
                     >
                       <div
-                        class="flex flex-row mt-4 mb-8"
+                        class="flex flex-row mt-2 mb-8"
                       >
                         <div
                           class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
@@ -543,9 +543,9 @@ exports[`CreateProfile should store profile 1`] = `
                             class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
                           >
                             <div
-                              class="sc-AxhCb koOqYD"
-                              height="12"
-                              width="12"
+                              class="sc-AxhCb jYYSCW"
+                              height="16"
+                              width="13"
                             >
                               <svg>
                                 close.svg
@@ -719,7 +719,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class="flex flex-col"
                         >
                           <span
-                            class="mr-5 text-xl font-bold text-theme-neutral-dark"
+                            class="mr-5 text-lg font-semibold text-theme-neutral-dark"
                             data-testid="list-divided-item__label"
                           >
                             Dark Theme
@@ -731,15 +731,15 @@ exports[`CreateProfile should store profile 1`] = `
                         data-testid="list-divided-item__content"
                       >
                         <div
-                          class="flex flex-row items-center justify-between"
+                          class="flex flex-row justify-between"
                         >
                           <span
-                            class="mt-2 text-sm text-theme-neutral-dark"
+                            class="mt-1 text-sm font-medium text-theme-neutral"
                           >
                             Want to set the wallet to dark mode?
                           </span>
                           <div
-                            class="-mt-8"
+                            class="-mt-4"
                           >
                             <label
                               class="flex"
