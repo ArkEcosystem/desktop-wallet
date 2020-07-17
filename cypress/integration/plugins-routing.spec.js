@@ -1,4 +1,4 @@
-describe("NavBar Routing", () => {
+describe("Plugins Routing", () => {
 	it("should navigate to plugins manager page", () => {
 		cy.visit("/");
 
