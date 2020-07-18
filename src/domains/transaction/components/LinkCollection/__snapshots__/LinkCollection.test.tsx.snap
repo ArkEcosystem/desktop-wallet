@@ -3,25 +3,18 @@
 exports[`LinkCollection should add and remove links 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznZeY btEwYs font-normal"
+    class="sc-fznZeY btEwYs flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
-      class="flex justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
-      <div>
-        <span
-          class="text-lg font-semibold"
-        >
-          Social Media
-        </span>
-        <div
-          class="mt-2 text-theme-neutral-dark"
-        >
-          Tell people more about yourself through social media
-        </div>
-      </div>
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
       <div>
         <div
           class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
@@ -33,6 +26,11 @@ exports[`LinkCollection should add and remove links 1`] = `
           </svg>
         </div>
       </div>
+    </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
     </div>
     <div
       class="mt-4"
@@ -249,25 +247,18 @@ exports[`LinkCollection should add and remove links 1`] = `
 exports[`LinkCollection should render 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznZeY btEwYs font-normal"
+    class="sc-fznZeY btEwYs flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
-      class="flex justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
-      <div>
-        <span
-          class="text-lg font-semibold"
-        >
-          Social Media
-        </span>
-        <div
-          class="mt-2 text-theme-neutral-dark"
-        >
-          Tell people more about yourself through social media
-        </div>
-      </div>
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
       <div>
         <div
           class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -280,6 +271,11 @@ exports[`LinkCollection should render 1`] = `
         </div>
       </div>
     </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
+    </div>
   </div>
 </DocumentFragment>
 `;
@@ -287,25 +283,18 @@ exports[`LinkCollection should render 1`] = `
 exports[`LinkCollection should select a specific link type 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznZeY btEwYs font-normal"
+    class="sc-fznZeY btEwYs flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
-      class="flex justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
-      <div>
-        <span
-          class="text-lg font-semibold"
-        >
-          Social Media
-        </span>
-        <div
-          class="mt-2 text-theme-neutral-dark"
-        >
-          Tell people more about yourself through social media
-        </div>
-      </div>
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
       <div>
         <div
           class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 text-white rounded-full bg-theme-primary"
@@ -317,6 +306,11 @@ exports[`LinkCollection should select a specific link type 1`] = `
           </svg>
         </div>
       </div>
+    </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
     </div>
     <div
       class="mt-4"
@@ -644,25 +638,18 @@ exports[`LinkCollection should select a specific link type 1`] = `
 exports[`LinkCollection should toggle open/close of link collection 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fznZeY btEwYs font-normal"
+    class="sc-fznZeY btEwYs flex flex-col font-normal"
     data-testid="LinkCollection"
   >
     <div
-      class="flex justify-between cursor-pointer"
+      class="flex justify-between items-center cursor-pointer"
       data-testid="LinkCollection__header"
     >
-      <div>
-        <span
-          class="text-lg font-semibold"
-        >
-          Social Media
-        </span>
-        <div
-          class="mt-2 text-theme-neutral-dark"
-        >
-          Tell people more about yourself through social media
-        </div>
-      </div>
+      <span
+        class="text-lg font-semibold"
+      >
+        Social Media
+      </span>
       <div>
         <div
           class="sc-AxiKw ksjdLL flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -674,6 +661,11 @@ exports[`LinkCollection should toggle open/close of link collection 1`] = `
           </svg>
         </div>
       </div>
+    </div>
+    <div
+      class="mt-2 text-theme-neutral-dark"
+    >
+      Tell people more about yourself through social media
     </div>
   </div>
 </DocumentFragment>
