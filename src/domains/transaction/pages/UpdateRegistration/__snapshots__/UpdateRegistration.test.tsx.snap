@@ -380,25 +380,18 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Repository
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Show your projects through your repository
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Repository
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -410,6 +403,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Show your projects through your repository
                               </div>
                             </div>
                           </div>
@@ -425,25 +423,18 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Social Media
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Tell people more about yourself through social media
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Social Media
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -455,6 +446,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Tell people more about yourself through social media
                               </div>
                             </div>
                           </div>
@@ -470,25 +466,18 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Photo and Video
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Get more users and add more information about yourself
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Photo and Video
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -500,6 +489,11 @@ exports[`UpdateRegistration should render 1st step 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Get more users and add more information about yourself
                               </div>
                             </div>
                           </div>
@@ -1146,24 +1140,18 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                             class="font-semibold"
                           >
                             <div
+                              class="flex flex-col"
                               data-testid="LinkList"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkList__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Repository
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Show your projects through your repository
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Repository
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full bg-theme-primary-contrast text-theme-primary"
@@ -1175,6 +1163,11 @@ exports[`UpdateRegistration should render 2nd step 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Show your projects through your repository
                               </div>
                             </div>
                           </div>
@@ -2778,25 +2771,18 @@ exports[`UpdateRegistration should should go back 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Repository
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Show your projects through your repository
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Repository
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -2808,6 +2794,11 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Show your projects through your repository
                               </div>
                             </div>
                           </div>
@@ -2823,25 +2814,18 @@ exports[`UpdateRegistration should should go back 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Social Media
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Tell people more about yourself through social media
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Social Media
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -2853,6 +2837,11 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Tell people more about yourself through social media
                               </div>
                             </div>
                           </div>
@@ -2868,25 +2857,18 @@ exports[`UpdateRegistration should should go back 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="sc-fzoyTs jtaqfF font-normal"
+                              class="sc-fzoyTs jtaqfF flex flex-col font-normal"
                               data-testid="LinkCollection"
                             >
                               <div
-                                class="flex justify-between cursor-pointer"
+                                class="flex items-center justify-between cursor-pointer"
                                 data-testid="LinkCollection__header"
                               >
-                                <div>
-                                  <span
-                                    class="text-lg font-semibold"
-                                  >
-                                    Photo and Video
-                                  </span>
-                                  <div
-                                    class="mt-2 text-theme-neutral-dark"
-                                  >
-                                    Get more users and add more information about yourself
-                                  </div>
-                                </div>
+                                <span
+                                  class="text-lg font-semibold"
+                                >
+                                  Photo and Video
+                                </span>
                                 <div>
                                   <div
                                     class="sc-AxhUy gKrfcW flex items-center justify-center w-5 h-5 rounded-full text-theme-primary bg-theme-primary-contrast"
@@ -2898,6 +2880,11 @@ exports[`UpdateRegistration should should go back 1`] = `
                                     </svg>
                                   </div>
                                 </div>
+                              </div>
+                              <div
+                                class="mt-2 text-theme-neutral-dark"
+                              >
+                                Get more users and add more information about yourself
                               </div>
                             </div>
                           </div>
