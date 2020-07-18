@@ -18,6 +18,7 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type ResignRegistrationProps = {
 	formDefaultData?: any;
@@ -27,16 +28,17 @@ type ResignRegistrationProps = {
 const FirstStep = () => {
 	const selectionBarState = useSelectionState(1);
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="ResignRegistration__first-step">
-			<h1 className="mb-0">Delegate Resignation</h1>
-			<div className="text-theme-neutral-dark">Resign your delegate for always.</div>
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">
+				{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.DESCRIPTION")}
+			</div>
 
 			<div className="mt-6">
-				<Alert size="lg">
-					Keep in mind that you cannot restore your delegate after the resignation has been registered on the
-					blockchain.
-				</Alert>
+				<Alert size="lg">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FIRST_STEP.DELEGATE.WARNING")}</Alert>
 			</div>
 
 			<div>
@@ -45,19 +47,19 @@ const FirstStep = () => {
 					border={false}
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">Account</span>
+						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
-							<span className="text-sm">Your address</span>
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
 				</TransactionDetail>
 
-				<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">
-						<FormLabel>Fee ARK</FormLabel>
+						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 					</FormField>
 				</TransactionDetail>
@@ -66,75 +68,89 @@ const FirstStep = () => {
 	);
 };
 
-const SecondStep = () => (
-	<div data-testid="ResignRegistration__second-step">
-		<div>
-			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the information again before Resignation</p>
-		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
-			<TransactionDetail
-				border={false}
-				label="Network"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Ark" width={20} height={20} />
-						</Circle>
+const SecondStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<div data-testid="ResignRegistration__second-step">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.TITLE")}</h1>
+				<p className="text-theme-neutral-dark">
+					{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+				</p>
+			</div>
+			<div className="mt-4 grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label={t("TRANSACTION.NETWORK")}
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">
+						ARK Ecosystem
 					</div>
-				}
-			>
-				<div className="flex-auto font-semibold truncate text-theme-neutral-800 max-w-24">ARK Ecosystem</div>
-			</TransactionDetail>
+				</TransactionDetail>
 
-			<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 text-sm font-semibold text-theme-neutral">
-					<span className="mr-1">Account</span>
-					<Label color="warning">
-						<span className="text-sm">Your address</span>
-					</Label>
+				<TransactionDetail extra={<Avatar size="lg" address="BAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 text-sm font-semibold text-theme-neutral">
+						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
+						<Label color="warning">
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
+						</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
+				</TransactionDetail>
+
+				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
+
+				<div className="my-4">
+					<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-			</TransactionDetail>
-
-			<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
-
-			<div className="my-4">
-				<TotalAmountBox transactionAmount="0.00" transactionFee="0.09660435" />
 			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
+
+	const { t } = useTranslation();
 
 	return (
 		<div data-testid="ResignRegistration__third-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-dark">
-						Enter your twelve word mnemonic to authenticate the transaction.
-					</div>
+					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 					<div className="mt-8">
 						<FormField name="name">
-							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
+							<FormLabel>
+								{passwordType === "mnemonic"
+									? t("TRANSACTION.MNEMONIC")
+									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
+							</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						<FormField name="name" className="pb-4 mt-8">
-							<FormLabel>2nd Mnemonic</FormLabel>
-							<InputPassword name="secondMnemonic" ref={register} />
-						</FormField>
+						{passwordType === "mnemonic" && (
+							<FormField name="name" className="mt-8">
+								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+								<InputPassword name="secondMnemonic" ref={register} />
+							</FormField>
+						)}
 					</div>
 				</div>
 			)}
 
 			{passwordType === "ledger" && (
 				<div>
-					<h1>Confirm Your Transaction</h1>
+					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
 					<LedgerConfirmation />
 				</div>
 			)}
@@ -142,39 +158,45 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 	);
 };
 
-export const FourthStep = () => (
-	<TransactionSuccessful>
-		<TransactionDetail
-			label="Transaction Type"
-			extra={
-				<Circle className="border-black" size="lg">
-					<Icon name="Business" width={20} height={20} />
-				</Circle>
-			}
-		>
-			Delegate Resignation
-		</TransactionDetail>
-		<TransactionDetail label="Delegate Name">Delegate 3</TransactionDetail>
-		<TransactionDetail
-			label="Amount"
-			extra={
-				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={22} height={22} />
+export const FourthStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<TransactionSuccessful>
+			<TransactionDetail
+				label={t("TRANSACTION.TRANSACTION_TYPE")}
+				extra={
+					<Circle className="border-black" size="lg">
+						<Icon name="Business" width={20} height={20} />
 					</Circle>
-				</div>
-			}
-		>
-			1.09660435 ARK
-		</TransactionDetail>
-	</TransactionSuccessful>
-);
+				}
+			>
+				Delegate Resignation
+			</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>Delegate 3</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.AMOUNT")}
+				extra={
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+							<Icon name="Sent" width={22} height={22} />
+						</Circle>
+					</div>
+				}
+			>
+				1.09660435 ARK
+			</TransactionDetail>
+		</TransactionSuccessful>
+	);
+};
 
 export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const { t } = useTranslation();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -226,7 +248,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 										variant="plain"
 										onClick={handleBack}
 									>
-										Back
+										{t("COMMON.BACK")}
 									</Button>
 								)}
 
@@ -236,7 +258,7 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 										disabled={!isValid}
 										onClick={handleNext}
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -245,25 +267,27 @@ export const ResignRegistration = ({ formDefaultData, onDownload }: ResignRegist
 										data-testid="ResignRegistration__send-button"
 										disabled={!isValid}
 										onClick={handleNext}
+										className="space-x-2"
 									>
-										<Icon name="Send" className="mr-2" width={20} height={20} />
-										Send
+										<Icon name="Send" width={20} height={20} />
+										<span>{t("COMMON.SEND")}</span>
 									</Button>
 								)}
 
 								{activeTab === 6 && (
 									<div className="flex justify-end space-x-3">
 										<Button data-testid="ResignRegistration__wallet-button" variant="plain">
-											Back to wallet
+											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 
 										<Button
 											type="submit"
 											data-testid="ResignRegistration__download-button"
 											variant="plain"
+											className="space-x-2"
 										>
-											<Icon name="Download" className="mr-2" />
-											Download
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</div>
 								)}

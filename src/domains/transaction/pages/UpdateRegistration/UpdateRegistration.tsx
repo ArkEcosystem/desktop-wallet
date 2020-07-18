@@ -20,6 +20,7 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type UpdateRegistrationProps = {
 	formDefaultData?: any;
@@ -30,35 +31,37 @@ const FirstStep = ({ form }: { form: any }) => {
 	const { register } = form;
 	const selectionBarState = useSelectionState(1);
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="UpdateRegistration__first-step">
-			<h1 className="mb-0">Update Business</h1>
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">
-				Select the type of registration and the address you want to register with.
+				{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.FIRST_STEP.BUSINESS.DESCRIPTION")}
 			</div>
 
 			<div>
 				<TransactionDetail border={false} className="pb-8">
 					<FormField name="name" className="font-normal">
-						<FormLabel required>Name</FormLabel>
+						<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} defaultValue="ROBank Ecosystem" />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
-						<FormLabel required>Description</FormLabel>
+						<FormLabel required>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea ref={register} defaultValue="Not a trustworthy bank" />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
-						<FormLabel>Website</FormLabel>
+						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
 						<Input type="website" ref={register} defaultValue="http://robank.com" />
 					</FormField>
 				</TransactionDetail>
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Repository"
-						description="Show your projects through your repository"
+						title={t("TRANSACTION.REPOSITORIES.TITLE")}
+						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
 						types={[
 							{ label: "BitBucket", value: "bitbucket" },
 							{ label: "GitHub", value: "github" },
@@ -70,8 +73,8 @@ const FirstStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Social Media"
-						description="Tell people more about yourself through social media"
+						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
+						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
 						types={[
 							{ label: "Facebook", value: "facebook" },
 							{ label: "Twitter", value: "twitter" },
@@ -83,8 +86,8 @@ const FirstStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Photo and Video"
-						description="Get more users and add more information about yourself"
+						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
+						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
 						types={[
 							{ label: "YouTube", value: "youtube" },
 							{ label: "Vimeo", value: "vimeo" },
@@ -98,7 +101,7 @@ const FirstStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="name" className="font-normal">
-						<FormLabel>Fee ARK</FormLabel>
+						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 					</FormField>
 				</TransactionDetail>
@@ -108,6 +111,8 @@ const FirstStep = ({ form }: { form: any }) => {
 };
 
 const SecondStep = () => {
+	const { t } = useTranslation();
+
 	const links = [
 		{
 			link: "http://github.com/robank",
@@ -130,13 +135,15 @@ const SecondStep = () => {
 	return (
 		<div data-testid="UpdateRegistration__second-step">
 			<div>
-				<h1 className="mb-0">Transaction Review</h1>
-				<p className="text-theme-neutral-dark">Check the information again before voting</p>
+				<h1 className="mb-0">{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
+				<p className="text-theme-neutral-dark">
+					{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+				</p>
 			</div>
 			<div className="mt-4 grid grid-flow-row">
 				<TransactionDetail
 					border={false}
-					label="Network"
+					label={t("TRANSACTION.NETWORK")}
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
@@ -151,25 +158,20 @@ const SecondStep = () => {
 				</TransactionDetail>
 
 				<TransactionDetail
-					label=" "
-					extra={
-						<div className="mt-2">
-							<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />
-						</div>
-					}
+					extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}
 					className="pt-4"
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">Sender</span>
+						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
-							<span className="text-sm">Your address</span>
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				<TransactionDetail
-					label="Type"
+					label={t("TRANSACTION.TYPE")}
 					extra={
 						<div>
 							<Circle className="border-black bg-theme-background" size="lg">
@@ -178,14 +180,14 @@ const SecondStep = () => {
 						</div>
 					}
 				>
-					Update Business
+					{t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_UPDATE")}
 				</TransactionDetail>
 
-				<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
 
-				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
 
-				<TransactionDetail label="Website">
+				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
 					<a href="https://ark.io" target="_blank" rel="noopener noreferrer" className="link">
 						https://ark.io
 					</a>
@@ -193,8 +195,8 @@ const SecondStep = () => {
 
 				<TransactionDetail className="pb-8">
 					<LinkList
-						title="Repository"
-						description="Show your projects through the repository"
+						title={t("TRANSACTION.REPOSITORIES.TITLE")}
+						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
 						links={links}
 					/>
 				</TransactionDetail>
@@ -210,32 +212,38 @@ const SecondStep = () => {
 const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="UpdateRegistration__third-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-dark">
-						Enter your twelve word mnemonic to authenticate the transaction.
-					</div>
+					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 					<div className="mt-8">
 						<FormField name="name">
-							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
+							<FormLabel>
+								{passwordType === "mnemonic"
+									? t("TRANSACTION.MNEMONIC")
+									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
+							</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						<FormField name="name" className="mt-8">
-							<FormLabel>2nd Mnemonic</FormLabel>
-							<InputPassword name="secondMnemonic" ref={register} />
-						</FormField>
+						{passwordType === "mnemonic" && (
+							<FormField name="name" className="mt-8">
+								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+								<InputPassword name="secondMnemonic" ref={register} />
+							</FormField>
+						)}
 					</div>
 				</div>
 			)}
 
 			{passwordType === "ledger" && (
 				<div>
-					<h1 className="mb-0">Confirm Your Transaction</h1>
+					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
 					<LedgerConfirmation />
 				</div>
 			)}
@@ -243,45 +251,51 @@ const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic"
 	);
 };
 
-export const FourthStep = () => (
-	<TransactionSuccessful>
-		<TransactionDetail
-			label="Transaction Type"
-			extra={
-				<Circle className="border-black" size="lg">
-					<Icon name="Business" width={20} height={20} />
-				</Circle>
-			}
-		>
-			Update Business
-		</TransactionDetail>
-		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-				http://robank.com
-			</a>
-		</TransactionDetail>
-		<TransactionDetail
-			label="Amount"
-			extra={
-				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={22} height={22} />
+export const FourthStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<TransactionSuccessful>
+			<TransactionDetail
+				label={t("TRANSACTION.TRANSACTION_TYPE")}
+				extra={
+					<Circle className="border-black" size="lg">
+						<Icon name="Business" width={20} height={20} />
 					</Circle>
-				</div>
-			}
-		>
-			1.09660435 ARK
-		</TransactionDetail>
-	</TransactionSuccessful>
-);
+				}
+			>
+				Update Business
+			</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+				<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
+					http://robank.com
+				</a>
+			</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.AMOUNT")}
+				extra={
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+							<Icon name="Sent" width={22} height={22} />
+						</Circle>
+					</div>
+				}
+			>
+				1.09660435 ARK
+			</TransactionDetail>
+		</TransactionSuccessful>
+	);
+};
 
 export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const { t } = useTranslation();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -333,7 +347,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 										variant="plain"
 										onClick={handleBack}
 									>
-										Back
+										{t("COMMON.BACK")}
 									</Button>
 								)}
 
@@ -343,7 +357,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 										disabled={!isValid}
 										onClick={handleNext}
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -352,25 +366,27 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 										data-testid="UpdateRegistration__send-button"
 										disabled={!isValid}
 										onClick={handleNext}
+										className="space-x-2"
 									>
-										<Icon name="Send" className="mr-2" width={20} height={20} />
-										Send
+										<Icon name="Send" width={20} height={20} />
+										<span>{t("COMMON.SEND")}</span>
 									</Button>
 								)}
 
 								{activeTab === 6 && (
 									<div className="flex justify-end space-x-3">
 										<Button data-testid="UpdateRegistration__wallet-button" variant="plain">
-											Back to wallet
+											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 
 										<Button
 											type="submit"
 											data-testid="UpdateRegistration__download-button"
 											variant="plain"
+											className="space-x-2"
 										>
-											<Icon name="Download" className="mr-2" />
-											Download
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</div>
 								)}

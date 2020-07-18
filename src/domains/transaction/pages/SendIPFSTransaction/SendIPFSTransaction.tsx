@@ -17,6 +17,7 @@ import { TransactionField } from "domains/transaction/components/TransactionFiel
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 export const FirstStep = ({ networks = [] }: any) => {
 	const { register } = useFormContext();
@@ -27,17 +28,19 @@ export const FirstStep = ({ networks = [] }: any) => {
 		register("fee", { required: true });
 	}, [register]);
 
+	const { t } = useTranslation();
+
 	return (
-		<section data-testid="SendIPFSTransaction__step--first">
+		<div data-testid="SendIPFSTransaction__step--first">
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}</div>
+
 			<div>
-				<h1 className="mb-0">IPFS</h1>
-				<p className="text-theme-neutral-dark">Store an IPFS hash on the network</p>
-			</div>
-			<div className="mt-4 grid grid-flow-row">
-				<TransactionField border={false} label="Network" padding={false}>
+				<TransactionField border={false} label={t("TRANSACTION.NETWORK")} padding={false}>
 					<SelectNetwork networks={networks} />
 				</TransactionField>
-				<TransactionField border={false} label="Sender" padding={false}>
+
+				<TransactionField border={false} label={t("TRANSACTION.SENDER")} padding={false}>
 					<div className="relative flex items-center">
 						<Input type="text" disabled />
 						<div className="absolute flex items-center ml-3">
@@ -46,56 +49,67 @@ export const FirstStep = ({ networks = [] }: any) => {
 						</div>
 					</div>
 				</TransactionField>
-				<TransactionField border={false} label="Hash" padding={false}>
+
+				<TransactionField border={false} label={t("TRANSACTION.IPFS_HASH")} padding={false}>
 					<Input name="hash" />
 				</TransactionField>
-				<TransactionField border={false} label="Fee ARK" className="pb-0">
+
+				<TransactionField border={false} label={t("TRANSACTION.TRANSACTION_FEE")} className="pb-0">
 					<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 				</TransactionField>
+			</div>
+		</div>
+	);
+};
+
+export const SecondStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<section data-testid="SendIPFSTransaction__step--second">
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
+
+			<div className="mt-2 grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label={t("TRANSACTION.NETWORK")}
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<span>ARK Ecosystem</span>
+				</TransactionDetail>
+
+				<TransactionDetail
+					label="Sender"
+					extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" size="lg" />}
+				>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+				</TransactionDetail>
+
+				<TransactionDetail
+					label={t("TRANSACTION.IPFS_HASH")}
+					extra={
+						<div className="ml-1">
+							<Circle className="border-black bg-theme-background" size="lg">
+								<Icon name="Ipfs" width={23} height={23} />
+							</Circle>
+						</div>
+					}
+				>
+					<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+				</TransactionDetail>
+
+				<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
 			</div>
 		</section>
 	);
 };
-
-export const SecondStep = () => (
-	<section data-testid="SendIPFSTransaction__step--second">
-		<div>
-			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the information again before voting</p>
-		</div>
-		<div className="mt-2 grid grid-flow-row gap-2">
-			<TransactionDetail
-				border={false}
-				label="Network"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Ark" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				<span>ARK Ecosystem</span>
-			</TransactionDetail>
-			<TransactionDetail label="Sender" extra={<Avatar address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-			</TransactionDetail>
-			<TransactionDetail
-				label="Hash"
-				extra={
-					<div className="ml-1">
-						<Circle className="border-black bg-theme-background" size="lg">
-							<Icon name="Ipfs" width={23} height={23} />
-						</Circle>
-					</div>
-				}
-			>
-				<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
-			</TransactionDetail>
-			<TotalAmountBox transactionAmount="1.00" transactionFee="0.09660435" />
-		</div>
-	</section>
-);
 
 export const ThirdStep = () => {
 	const { register } = useFormContext();
@@ -104,14 +118,21 @@ export const ThirdStep = () => {
 		register("passphrase", { required: true });
 	}, [register]);
 
+	const { t } = useTranslation();
+
 	return (
-		<section data-testid="SendIPFSTransaction__step--third" className="space-y-8">
+		<section data-testid="SendIPFSTransaction__step--third">
 			<div>
-				<h1 className="mb-0">Passphrase</h1>
-				<p className="text-theme-neutral-dark">Confirm your password to continue</p>
-				<div className="mt-4 grid grid-flow-row gap-2">
-					<TransactionDetail border={false} label="Your password" className="pb-0">
-						<InputPassword name="passphras" />
+				<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
+
+				<div className="grid grid-flow-row">
+					<TransactionDetail
+						border={false}
+						label={t("TRANSACTION.ENCRYPTION_PASSWORD")}
+						className="pt-8 pb-0"
+					>
+						<InputPassword name="passphrase" ref={register({ required: true })} />
 					</TransactionDetail>
 				</div>
 			</div>
@@ -119,26 +140,31 @@ export const ThirdStep = () => {
 	);
 };
 
-export const FourthStep = () => (
-	<TransactionSuccessful>
-		<TransactionDetail label="IPFS Hash">
-			<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
-		</TransactionDetail>
-		<TransactionDetail
-			label="Amount"
-			className="pb-0"
-			extra={
-				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={22} height={22} />
-					</Circle>
-				</div>
-			}
-		>
-			1.00 ARK
-		</TransactionDetail>
-	</TransactionSuccessful>
-);
+export const FourthStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<TransactionSuccessful>
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
+				<span className="font-semibold">QmceNpwJqQm7vXUivbQeeQYeGr1ivT1VDRPaWK9Pf</span>
+			</TransactionDetail>
+
+			<TransactionDetail
+				label={t("TRANSACTION.AMOUNT")}
+				className="pb-0"
+				extra={
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+							<Icon name="Sent" width={22} height={22} />
+						</Circle>
+					</div>
+				}
+			>
+				1.00 ARK
+			</TransactionDetail>
+		</TransactionSuccessful>
+	);
+};
 
 type Props = {
 	onCopy?: () => void;
@@ -152,6 +178,8 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	const form = useForm({ mode: "onChange" });
 	// const { formState } = form;
 	// const { isValid } = formState;
+
+	const { t } = useTranslation();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -198,7 +226,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 											variant="plain"
 											onClick={handleBack}
 										>
-											Back
+											{t("COMMON.BACK")}
 										</Button>
 										<Button
 											data-testid="SendIPFSTransaction__button--continue"
@@ -206,7 +234,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 											// disabled={!isValid}
 											onClick={handleNext}
 										>
-											Continue
+											{t("COMMON.CONTINUE")}
 										</Button>
 									</>
 								)}
@@ -218,17 +246,16 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 											variant="plain"
 											className={"block"}
 										>
-											Back to wallet
+											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
 											onClick={onCopy}
 											data-testid="SendIPFSTransaction__button--copy"
 											variant="plain"
+											className="space-x-2"
 										>
-											<div className="flex items-center justify-between px-1">
-												<Icon name="Copy" />
-												<span className="ml-2">Copy</span>
-											</div>
+											<Icon name="Copy" />
+											<span>{t("COMMON.COPY")}</span>
 										</Button>
 									</>
 								)}

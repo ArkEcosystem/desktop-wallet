@@ -306,6 +306,7 @@ exports[`Registration should render 1st step 1`] = `
                           class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
+                          label="Network"
                         >
                           Network
                         </label>
@@ -877,76 +878,68 @@ exports[`Registration should render 2nd step 1`] = `
                     </div>
                     <div>
                       <div
-                        class="flex items-center py-6 true pb-8"
+                        class="sc-fzpmMD jlNepK mt-8 pb-8"
                       >
-                        <div
-                          class="flex-1 space-y-2"
+                        <fieldset
+                          class="sc-AxhCb ckQmOL font-normal"
                         >
-                          <div
-                            class="font-semibold"
+                          <label
+                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="name"
+                            required=""
                           >
-                            <fieldset
-                              class="sc-AxhCb ckQmOL font-normal"
-                            >
-                              <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                                data-testid="FormLabel"
-                                for="name"
-                                required=""
-                              >
-                                Name
-                                <div
-                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                  data-testid="FormLabel__required"
-                                />
-                              </label>
-                              <input
-                                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                data-testid="Input"
-                                name="name"
-                                type="text"
-                              />
-                            </fieldset>
-                            <fieldset
-                              class="sc-AxhCb ckQmOL mt-8 font-normal"
-                            >
-                              <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                                data-testid="FormLabel"
-                                for="description"
-                                required=""
-                              >
-                                Description
-                                <div
-                                  class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
-                                  data-testid="FormLabel__required"
-                                />
-                              </label>
-                              <textarea
-                                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                data-testid="TextArea"
-                                name="description"
-                              />
-                            </fieldset>
-                            <fieldset
-                              class="sc-AxhCb ckQmOL mt-8 font-normal"
-                            >
-                              <label
-                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                                data-testid="FormLabel"
-                                for="website"
-                              >
-                                Website
-                              </label>
-                              <input
-                                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                data-testid="Input"
-                                name="website"
-                                type="website"
-                              />
-                            </fieldset>
-                          </div>
-                        </div>
+                            Name
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <input
+                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="Input"
+                            name="name"
+                            type="text"
+                          />
+                        </fieldset>
+                        <fieldset
+                          class="sc-AxhCb ckQmOL mt-8 font-normal"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="description"
+                            required=""
+                          >
+                            Description
+                            <div
+                              class="w-1 h-1 mt-1 ml-1 rounded-full bg-theme-danger-400"
+                              data-testid="FormLabel__required"
+                            />
+                          </label>
+                          <textarea
+                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="TextArea"
+                            name="description"
+                          />
+                        </fieldset>
+                        <fieldset
+                          class="sc-AxhCb ckQmOL mt-8 font-normal"
+                        >
+                          <label
+                            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                            data-testid="FormLabel"
+                            for="website"
+                          >
+                            Website
+                          </label>
+                          <input
+                            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                            data-testid="Input"
+                            name="website"
+                            type="website"
+                          />
+                        </fieldset>
                       </div>
                       <div
                         class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-8"
@@ -1100,7 +1093,7 @@ exports[`Registration should render 2nd step 1`] = `
                                 data-testid="FormLabel"
                                 for="fee"
                               >
-                                Fee ARK
+                                Transaction Fee
                               </label>
                               <div
                                 class="flex space-x-2"
@@ -1507,17 +1500,15 @@ exports[`Registration should render 3rd step 1`] = `
                   <div
                     data-testid="Registration__third-step"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Transaction Review
-                      </h1>
-                      <p
-                        class="text-theme-neutral-dark"
-                      >
-                        Check the information again before voting
-                      </p>
+                    <h1
+                      class="mb-0"
+                    >
+                      Transaction Review
+                    </h1>
+                    <div
+                      class="text-theme-neutral-dark"
+                    >
+                      Check the information again before voting
                     </div>
                     <div
                       class="mt-4"
@@ -2265,13 +2256,13 @@ exports[`Registration should render 4th step 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxirZ dPtiuf"
+                    class="sc-AxirZ dPtiuf space-x-2"
                     color="primary"
                     data-testid="Registration__send-button"
                     type="button"
                   >
                     <div
-                      class="sc-AxhUy hSYVGy mr-2"
+                      class="sc-AxhUy hSYVGy"
                       height="20"
                       width="20"
                     >
@@ -2279,7 +2270,9 @@ exports[`Registration should render 4th step 1`] = `
                         send.svg
                       </svg>
                     </div>
-                    Send
+                    <span>
+                      Send
+                    </span>
                   </button>
                 </div>
               </div>
@@ -2620,33 +2613,37 @@ exports[`Registration should render 5th step 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxhUy cPXLjK"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -2669,33 +2666,37 @@ exports[`Registration should render 5th step 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxhUy cPXLjK"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -2714,22 +2715,7 @@ exports[`Registration should render 5th step 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ROBank
-                                </span>
-                                <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  AUexKj…EVTQWK
-                                </span>
-                              </div>
+                              ARK Ecosystem
                             </div>
                           </div>
                           <div
@@ -2954,16 +2940,16 @@ exports[`Registration should render 5th step 1`] = `
                       data-testid="Registration__wallet-button"
                       type="button"
                     >
-                      Back to wallet
+                      Back to Wallet
                     </button>
                     <button
-                      class="sc-AxirZ fhzkRl"
+                      class="sc-AxirZ fhzkRl space-x-2"
                       color="primary"
                       data-testid="Registration__download-button"
                       type="submit"
                     >
                       <div
-                        class="sc-AxhUy cPXLjK mr-2"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -2971,7 +2957,9 @@ exports[`Registration should render 5th step 1`] = `
                           download.svg
                         </svg>
                       </div>
-                      Download
+                      <span>
+                        Download
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -3291,6 +3279,7 @@ exports[`Registration should select registration type 1`] = `
                           class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
+                          label="Network"
                         >
                           Network
                         </label>
@@ -3872,6 +3861,7 @@ exports[`Registration should should go back 1`] = `
                           class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                           data-testid="FormLabel"
                           for="network"
+                          label="Network"
                         >
                           Network
                         </label>
@@ -4473,33 +4463,37 @@ exports[`Registration should submit 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxhUy cPXLjK"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -4522,33 +4516,37 @@ exports[`Registration should submit 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxhUy cPXLjK"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxhUy cPXLjK"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -4567,22 +4565,7 @@ exports[`Registration should submit 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ROBank
-                                </span>
-                                <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  AUexKj…EVTQWK
-                                </span>
-                              </div>
+                              ARK Ecosystem
                             </div>
                           </div>
                           <div
@@ -4807,16 +4790,16 @@ exports[`Registration should submit 1`] = `
                       data-testid="Registration__wallet-button"
                       type="button"
                     >
-                      Back to wallet
+                      Back to Wallet
                     </button>
                     <button
-                      class="sc-AxirZ fhzkRl"
+                      class="sc-AxirZ fhzkRl space-x-2"
                       color="primary"
                       data-testid="Registration__download-button"
                       type="submit"
                     >
                       <div
-                        class="sc-AxhUy cPXLjK mr-2"
+                        class="sc-AxhUy cPXLjK"
                         height="1em"
                         width="1em"
                       >
@@ -4824,7 +4807,9 @@ exports[`Registration should submit 1`] = `
                           download.svg
                         </svg>
                       </div>
-                      Download
+                      <span>
+                        Download
+                      </span>
                     </button>
                   </div>
                 </div>
