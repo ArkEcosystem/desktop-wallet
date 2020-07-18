@@ -7,19 +7,15 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironment } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
-type Network = { name: string; icon: string };
+type Network = { coin: string; icon: string; name: string; network: string };
 
-type Props = {
-	networks: Network[];
-};
-
-export const ImportWallet = ({ networks }: Props) => {
-	const env: any = useEnvironment();
+export const ImportWallet = () => {
+	const env = useEnvironment();
 	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
 	const [selectedNetwork, setSelectedNetwork] = useState<Network | undefined>(undefined);
@@ -28,6 +24,13 @@ export const ImportWallet = ({ networks }: Props) => {
 	const form = useForm({ mode: "onChange" });
 	const { formState, register, setValue } = form;
 	const { isValid } = formState;
+
+	const networks = useAvailableNetworks()?.map((network: any) => ({
+		name: `${network.ticker} - ${network.network}`,
+		icon: `${network.coin.charAt(0).toUpperCase()}${network.coin.slice(1).toLowerCase()}`,
+		coin: network.coin,
+		network: network.network.toLowerCase(),
+	}));
 
 	useEffect(() => {
 		register("network", { required: true });

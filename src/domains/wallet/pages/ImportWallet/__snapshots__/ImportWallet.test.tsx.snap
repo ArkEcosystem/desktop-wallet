@@ -29,52 +29,7 @@ exports[`Wallet / Import should render 1`] = `
             </div>
             <ul
               class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
+            />
           </div>
           <div
             class="flex items-center"
@@ -105,7 +60,7 @@ exports[`Wallet / Import should render 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/transactions/transfer"
+                href="/profiles/undefined/transactions/transfer"
               >
                 <div
                   class="sc-Axmtr ldkDJ"
@@ -230,7 +185,7 @@ exports[`Wallet / Import should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/842e075d-c6dc-4bf4-9007-298170f522c8/dashboard"
+          href="/profiles/undefined/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -356,7 +311,7 @@ exports[`Wallet / Import should render 1`] = `
                               role="option"
                             >
                               <div
-                                class="sc-fznyAO jA-dQzA text-theme-danger-400 border-theme-danger-light"
+                                class="sc-fznyAO jA-dQzA"
                               >
                                 <div
                                   class="sc-Axmtr wZFix"
@@ -376,7 +331,7 @@ exports[`Wallet / Import should render 1`] = `
                               role="option"
                             >
                               <div
-                                class="sc-fznyAO jA-dQzA text-theme-warning-400 border-theme-warning-200"
+                                class="sc-fznyAO jA-dQzA"
                               >
                                 <div
                                   class="sc-Axmtr wZFix"
@@ -384,67 +339,7 @@ exports[`Wallet / Import should render 1`] = `
                                   width="26"
                                 >
                                   <svg>
-                                    btc.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-0-item-2"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA text-theme-neutral-800 border-theme-neutral-600"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    eth.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-0-item-3"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA text-theme-primary border-theme-primary-400"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    lsk.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-0-item-4"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA text-theme-primary-dark border-theme-primary-500"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    xrp.svg
+                                    ark.svg
                                   </svg>
                                 </div>
                               </div>
