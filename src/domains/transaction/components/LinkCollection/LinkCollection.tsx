@@ -86,7 +86,7 @@ export const LinkCollection = ({
 		<Wrapper data-testid="LinkCollection" className="flex flex-col font-normal">
 			<div
 				data-testid="LinkCollection__header"
-				className="flex justify-between items-center cursor-pointer"
+				className="flex items-center justify-between cursor-pointer"
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<span className="text-lg font-semibold">{title}</span>
