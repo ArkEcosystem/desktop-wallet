@@ -60,16 +60,13 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 	}
 
 	return (
-		<div data-testid="LinkList">
+		<div data-testid="LinkList" className="flex flex-col">
 			<div
 				data-testid="LinkList__header"
-				className="flex justify-between cursor-pointer"
+				className="flex items-center justify-between cursor-pointer"
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
-				<div>
-					<span className="text-lg font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-dark">{description}</div>
-				</div>
+				<span className="text-lg font-semibold">{title}</span>
 
 				<div>
 					{isExpanded && (
@@ -90,6 +87,8 @@ export const LinkList = ({ description, links, title }: LinkListProps) => {
 					)}
 				</div>
 			</div>
+
+			<div className="mt-2 text-theme-neutral-dark">{description}</div>
 
 			{isExpanded && <div>{items}</div>}
 		</div>

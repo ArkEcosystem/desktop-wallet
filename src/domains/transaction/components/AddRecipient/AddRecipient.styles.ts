@@ -5,7 +5,7 @@ const defaultStyle = `
 		.MultiRecipientWrapper {
 			background: var(--theme-color-neutral-100);
 			border-radius: 0.625rem;
-			border: 1.5rem solid var(--theme-color-neutral-100);
+			padding: 1.25rem;
 			margin-left: -1.25rem;
 			margin-right: -1.25rem;
 		}
