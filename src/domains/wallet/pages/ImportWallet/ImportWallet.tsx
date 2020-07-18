@@ -1,5 +1,6 @@
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
@@ -8,22 +9,15 @@ import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironment } from "app/contexts";
 import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
-import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import React, { useState } from "react";
+import { useForm, useFormContext } from "react-hook-form";
+// import { useHistory } from "react-router-dom";
 
 type Network = { coin: string; icon: string; name: string; network: string };
 
-export const ImportWallet = () => {
-	const env = useEnvironment();
-	const history = useHistory();
-	const [activeTab, setActiveTab] = useState(1);
-	const [selectedNetwork, setSelectedNetwork] = useState<Network | undefined>(undefined);
-	const [isAddressOnly, setIsAddressOnly] = useState(false);
-	const activeProfile = useActiveProfile();
-	const form = useForm({ mode: "onChange" });
-	const { formState, register, setValue } = form;
-	const { isValid } = formState;
+export const FirstStep = () => {
+	const { getValues, register, setValue } = useFormContext();
+	const currentNetwork = getValues("network");
 
 	const networks = useAvailableNetworks()?.map((network: any) => ({
 		name: `${network.ticker} - ${network.network}`,
@@ -32,27 +26,38 @@ export const ImportWallet = () => {
 		network: network.network.toLowerCase(),
 	}));
 
-	useEffect(() => {
+	React.useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
-		},
-	];
-
-	const handleSelectedNetwork = (network: Network) => {
-		setSelectedNetwork(network);
+	const handleSelect = (network: Network) => {
 		setValue("network", network, true);
 	};
 
-	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
-		await env?.persist();
-		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
-	};
+	return (
+		<section className="space-y-8" data-testid="ImportWallet__first-step">
+			<div className="my-8">
+				<Header
+					title="Select a Cryptoasset"
+					subtitle="Select a cryptoasset to import your existing wallet address"
+				/>
+			</div>
+			<div className="space-y-2">
+				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+				<SelectNetwork
+					name={currentNetwork?.name}
+					networks={networks}
+					value={currentNetwork}
+					onSelect={(network) => handleSelect(network)}
+				/>
+			</div>
+		</section>
+	);
+};
+
+export const SecondStep = () => {
+	const { register } = useFormContext();
+	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
@@ -74,6 +79,63 @@ export const ImportWallet = () => {
 	};
 
 	return (
+		<section className="space-y-8" data-testid="ImportWallet__second-step">
+			<div className="my-8">
+				<Header
+					title="Import Wallet"
+					subtitle="Enter your wallet password in order to get full access to your money. Or you can choose an
+					address for vieweing only."
+				/>
+			</div>
+			<div className="flex flex-row items-center justify-between mt-8">
+				<div>
+					<p className="text-lg font-semibold text-theme-neutral-dark">Use the address only</p>
+					<p className="text-sm text-theme-neutral">You can only view your wallet but not send money.</p>
+				</div>
+				<Toggle
+					checked={isAddressOnly}
+					onChange={() => setIsAddressOnly(!isAddressOnly)}
+					data-testid="ImportWallet__address-toggle"
+				/>
+			</div>
+			<div className="mt-8" data-testid="ImportWallet__fields">
+				{renderImportInput()}
+			</div>
+		</section>
+	);
+};
+
+export const ImportWallet = () => {
+	const env = useEnvironment();
+	// const history = useHistory();
+	const [activeTab, setActiveTab] = useState(1);
+	const activeProfile = useActiveProfile();
+	const form = useForm({ mode: "onChange" });
+	const { formState } = form;
+
+	const crumbs = [
+		{
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			label: "Go back to Portfolio",
+		},
+	];
+
+	const handleBack = () => {
+		setActiveTab(activeTab - 1);
+	};
+
+	const handleNext = () => {
+		setActiveTab(activeTab + 1);
+	};
+
+	const submitForm = async ({ network, password }: any) => {
+		// const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
+		await activeProfile?.wallets().import(password, network.coin, network.network);
+		await env?.persist();
+		// history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
+	};
+
+	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form
@@ -83,85 +145,43 @@ export const ImportWallet = () => {
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>
-						<TabPanel tabId={1}>
-							<div className="flex justify-center w-full">
-								<div className="w-full">
-									<StepIndicator size={2} activeIndex={activeTab} />
-									<div>
-										<div className="my-8">
-											<h1 className="mb-0">Select a Cryptoasset</h1>
-											<p className="text-medium text-theme-neutral-700">
-												Select a cryptoasset to import your existing wallet address
-											</p>
-										</div>
-										<div className="space-y-2">
-											<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-											<SelectNetwork
-												name={selectedNetwork as any}
-												networks={networks}
-												onSelect={(selected) => handleSelectedNetwork(selected)}
-											/>
-										</div>
-									</div>
-									<div className="flex justify-end mt-10">
-										<Button
-											disabled={!isValid}
-											onClick={() => setActiveTab(2)}
-											data-testid="ImportWallet__next-step--button"
-										>
-											Continue
-										</Button>
-									</div>
-								</div>
-							</div>
-						</TabPanel>
+						<StepIndicator size={2} activeIndex={activeTab} />
 
-						<TabPanel tabId={2}>
-							<div className="flex justify-center w-full">
-								<div className="w-full">
-									<StepIndicator size={2} activeIndex={activeTab} />
-									<div className="mt-8">
-										<div className="_header">
-											<h1 className="mb-0">Import Wallet</h1>
-											<p className="text-medium text-theme-neutral-700">
-												Enter your wallet password in order to get full access to your money. Or
-												you can choose an address for vieweing only.
-											</p>
-										</div>
-										<div className="flex flex-row items-center justify-between mt-8">
-											<div>
-												<p className="text-lg font-semibold text-theme-neutral-dark">
-													Use the address only
-												</p>
-												<p className="text-sm text-theme-neutral">
-													You can only view your wallet but not send money.
-												</p>
-											</div>
-											<Toggle
-												checked={isAddressOnly}
-												onChange={() => setIsAddressOnly(!isAddressOnly)}
-												data-testid="ImportWallet__address-toggle"
-											/>
-										</div>
-										<div className="mt-8" data-testid="ImportWallet__password">
-											{renderImportInput()}
-										</div>
-									</div>
-									<div className="flex justify-end mt-10 space-x-3">
+						<div className="mt-4">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+
+							<div className="flex justify-end mt-10 space-x-3">
+								{activeTab === 1 && (
+									<Button
+										disabled={!formState.isValid}
+										onClick={handleNext}
+										data-testid="ImportWallet__continue-button"
+									>
+										Continue
+									</Button>
+								)}
+
+								{activeTab === 2 && (
+									<>
 										<Button
 											variant="plain"
-											onClick={() => setActiveTab(1)}
-											data-testid="ImportWallet__prev-step--button"
+											onClick={handleBack}
+											data-testid="ImportWallet__back-button"
 										>
 											Back
 										</Button>
 										<Button type="submit" data-testid="ImportWallet__submit-button">
 											Go to Wallet
 										</Button>
-									</div>
-								</div>
+									</>
+								)}
 							</div>
-						</TabPanel>
+						</div>
 					</Tabs>
 				</Form>
 			</Section>
