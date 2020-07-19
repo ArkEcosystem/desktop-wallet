@@ -93,7 +93,7 @@ export const SelectNetwork = ({ name, networks, onSelect, placeholder, value }: 
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<InputWrapper className="flex w-full transition-colors duration-200 border rounded bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
+						<InputWrapper className="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<IconPlaceholder {...selectedItem} />
 							</div>
