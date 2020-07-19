@@ -11,7 +11,7 @@ import { useEnvironment } from "app/contexts";
 import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 type Network = { coin: string; icon: string; name: string; network: string };
 
@@ -107,7 +107,7 @@ export const SecondStep = () => {
 
 export const ImportWallet = () => {
 	const env = useEnvironment();
-	// const history = useHistory();
+	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
@@ -129,10 +129,9 @@ export const ImportWallet = () => {
 	};
 
 	const submitForm = async ({ network, password }: any) => {
-		// const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
-		await activeProfile?.wallets().import(password, network.coin, network.network);
+		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
 		await env?.persist();
-		// history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
+		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
 
 	return (
