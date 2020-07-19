@@ -24,11 +24,7 @@ export const useAvailableNetworks = () => {
 
 	return useMemo(() => {
 		if (env) {
-			try {
-				return env.availableNetworks().map((network: Network) => network);
-			} catch {
-				return undefined;
-			}
+			return env.availableNetworks().map((network: Network) => network);
 		}
 	}, [env]);
 };

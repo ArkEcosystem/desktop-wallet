@@ -1,138 +1,197 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
+import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { act, RenderResult, renderWithRouter } from "testing-library";
+import TestRenderer from "react-test-renderer";
+import { act, fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { profiles } from "tests/fixtures/env/data";
 import { identity } from "tests/fixtures/identity";
 import { StubStorage } from "tests/mocks";
 
-import { ImportWallet } from "./ImportWallet";
+import { FirstStep, ImportWallet, SecondStep } from "./ImportWallet";
 
-let rendered: RenderResult;
 let env: Environment;
+let profile: Profile;
 
-describe("Wallet / Import", () => {
+describe("ImportWallet", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+
+		nock(/.+/)
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.persist();
+	});
+
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		const history = createMemoryHistory();
-		//const profile = env.profiles().create("John Doe");
-		const importURL = `/profiles/${identity.profiles.bob.id}/wallets/import`;
+		await env.boot();
+		await env.profiles().fill(profiles);
 
-		history.push(importURL);
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/import">
-					<EnvironmentProvider env={env}>
-						<ImportWallet />
-					</EnvironmentProvider>
-				</Route>,
-				{
-					routes: [importURL],
-					history,
-				},
-			);
-		});
+		profile = env.profiles().findById("bob");
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = rendered;
+	it("should render 1st step", async () => {
+		const { act } = TestRenderer;
+		const { result: form } = renderHook(() => useForm());
+		const { getByTestId, asFragment } = render(
+			<FormContext {...form.current}>
+				<FirstStep />
+			</FormContext>,
+		);
 
-		expect(container).toBeTruthy();
+		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+
+		const selectAssetsInput = getByTestId("select-asset__input");
+		expect(selectAssetsInput).toBeTruthy();
+
+		await act(async () => {
+			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		});
+
+		expect(getByTestId("select-asset__selected-ARK - Mainnet")).toBeTruthy();
 	});
 
-	/*it("should navigate between steps", async () => {
-		const { getByTestId } = rendered;
+	it("should render 2st step", async () => {
+		const { act } = TestRenderer;
+		const { result: form } = renderHook(() => useForm());
+		const { getByTestId, asFragment } = render(
+			<FormContext {...form.current}>
+				<SecondStep />
+			</FormContext>,
+		);
 
-		const selectAssetInput = getByTestId("select-asset__input");
-		expect(selectAssetInput).toBeTruthy();
+		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
 
-		await act(async () => {
-			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
-		});
-
-		await act(async () => {
-			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
-		});
-
-		// Check network is selected
-		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
-
-		const continueBtn = getByTestId("ImportWallet__next-step--button");
-		expect(continueBtn).toBeTruthy();
-
-		await act(async () => {
-			// Click continue button to go to next step
-			fireEvent.click(continueBtn);
-		});
-
-		// Check if second step is rendered
 		const addressToggle = getByTestId("ImportWallet__address-toggle");
 		expect(addressToggle).toBeTruthy();
 
+		const passwordInput = getByTestId("ImportWallet__password-input");
+		expect(passwordInput).toBeTruthy();
+
 		await act(async () => {
-			// Toggle qr code (appear)
+			fireEvent.change(passwordInput, { target: { value: identity.mnemonic } });
+		});
+
+		expect(form.current.getValues()).toEqual({ password: identity.mnemonic });
+
+		await act(async () => {
 			fireEvent.click(addressToggle);
 		});
 
-		const passwordInput = getByTestId("ImportWallet__password");
-
-		await act(async () => {
-			// Change password input value
-			fireEvent.keyUp(passwordInput, { key: "test" });
-		});
-
-		const previousBtn = getByTestId("ImportWallet__prev-step--button");
-
-		await act(async () => {
-			// Go to previous step
-			fireEvent.click(previousBtn);
-		});
-
-		// Check if previous step is rendered
-		expect(getByTestId("select-asset__input")).toBeTruthy();
+		const addressInput = getByTestId("ImportWallet__address-input");
+		expect(addressInput).toBeTruthy();
 	});
 
-	it("should import a wallet", async () => {
-		const { getByTestId } = rendered;
-
-		const selectAssetInput = getByTestId("select-asset__input");
-		expect(selectAssetInput).toBeTruthy();
+	it("should go to previous step", async () => {
+		let rendered: RenderResult;
+		const route = "/profiles/bob/wallets/import";
 
 		await act(async () => {
-			fireEvent.change(selectAssetInput, { target: { value: "Ark" } });
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/import">
+						<ImportWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			fireEvent.keyDown(selectAssetInput, { key: "Enter", code: 13 });
+			const selectAssetsInput = getByTestId("select-asset__input");
+			const continueButton = getByTestId("ImportWallet__continue-button");
+
+			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+
+			expect(getByTestId("select-asset__selected-DARK - Devnet")).toBeTruthy();
+
+			await fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			await fireEvent.click(getByTestId("ImportWallet__back-button"));
+			await waitFor(() => expect(getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
+	});
 
-		// Check network is selected
-		expect(getByTestId("select-asset__selected-ARK Ecosystem")).toBeTruthy();
+	it("should render", async () => {
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const route = "/profiles/bob/wallets/import";
 
-		const continueBtn = getByTestId("ImportWallet__next-step--button");
-		expect(continueBtn).toBeTruthy();
+		history.push(route);
 
 		await act(async () => {
-			// Click continue button to go to next step
-			fireEvent.click(continueBtn);
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/import">
+						<ImportWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		// Check if second step is rendered
-		expect(getByTestId("ImportWallet__address-toggle")).toBeTruthy();
+		const { getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			fireEvent.input(getByTestId("ImportWallet__password-input"), { target: { value: identity.mnemonic } });
-		});
+			const selectAssetsInput = getByTestId("select-asset__input");
+			const continueButton = getByTestId("ImportWallet__continue-button");
 
-		await act(async () => {
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+
+			expect(getByTestId("select-asset__selected-DARK - Devnet")).toBeTruthy();
+
+			await fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			const passwordInput = getByTestId("ImportWallet__password-input");
+			expect(passwordInput).toBeTruthy();
+
+			await fireEvent.change(passwordInput, { target: { value: identity.mnemonic } });
+
+			await fireEvent.click(getByTestId("ImportWallet__submit-button"));
+
+			await waitFor(() =>
+				expect(profile.wallets().values()[0].address()).toEqual("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"),
+			);
 		});
-	});*/
+	});
 });

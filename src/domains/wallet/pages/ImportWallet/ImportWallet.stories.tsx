@@ -3,23 +3,20 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import React from "react";
+import { MemoryRouter, Route } from "react-router";
 import { StubStorage } from "tests/mocks";
 
-import { networks } from "../../data";
 import { ImportWallet } from "./ImportWallet";
 
-export default {
-	title: "Domains / Wallet / Pages / ImportWallet",
-};
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+const profile = env.profiles().create("John Doe");
 
-export const Default = () => {
-	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+export default { title: "Domains / Wallet / Pages / ImportWallet" };
 
-	return (
-		<EnvironmentProvider env={env}>
-			<div className="w-full h-full">
-				<ImportWallet networks={networks} />
-			</div>
-		</EnvironmentProvider>
-	);
-};
+export const Default = () => (
+	<EnvironmentProvider env={env}>
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/import`]}>
+			<Route component={(routerProps: any) => <ImportWallet />} path="/profiles/:profileId/wallets/import" />
+		</MemoryRouter>
+	</EnvironmentProvider>
+);
