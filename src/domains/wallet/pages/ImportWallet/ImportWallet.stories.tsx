@@ -11,7 +11,7 @@ import { ImportWallet } from "./ImportWallet";
 const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 const profile = env.profiles().create("Anne Doe");
 
-export default { title: "Domains / Wallet / Pages / ImportWallet" };
+export default { title: "Domains / Wallet / Pages / Import Wallet" };
 
 export const Default = () => (
 	<EnvironmentProvider env={env}>
