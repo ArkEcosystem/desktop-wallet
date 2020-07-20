@@ -171,6 +171,14 @@
     web3 "^1.2.9"
     yup "^0.29.1"
 
+"@arkecosystem/platform-sdk-http-node-fetch@^0.9.159":
+  version "0.9.159"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-http-node-fetch/-/platform-sdk-http-node-fetch-0.9.159.tgz#a8c7a22d77b73cf9b58ceb9f4b00e06a62e35ddf"
+  integrity sha512-zj8PTqSK99yuRdFQnw8/z1z8RyYf7Ww3IlkHf0DL5WHKujZebZPa114JJTO3tDY54Sjlv8ghFG6qnGzum4LJnA==
+  dependencies:
+    "@arkecosystem/platform-sdk" "0.9.159"
+    node-fetch "^2.6.0"
+
 "@arkecosystem/platform-sdk-intl@0.9.152", "@arkecosystem/platform-sdk-intl@^0.9.152":
   version "0.9.152"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-0.9.152.tgz#51a1910afa3364ce17a9befd6907badb6f2b154a"
@@ -255,6 +263,19 @@
     remarkable "^2.0.1"
     yup "^0.29.1"
 
+"@arkecosystem/platform-sdk-support@0.9.159":
+  version "0.9.159"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-0.9.159.tgz#241dd76fa46de5efef5c04777bd98a097a1802f5"
+  integrity sha512-glLWynIdlbA6f8hNmebshxbbySuJs+lK3eunv2859ye9sqPMTHaqF6xsTrfkdCGKab/++hXSfTsxNXSVSmjpdw==
+  dependencies:
+    bad-words "^3.0.3"
+    bignumber.js "^9.0.0"
+    censorify-it "^3.0.1"
+    front-matter "^4.0.2"
+    qrcode "^1.4.4"
+    remarkable "^2.0.1"
+    yup "^0.29.1"
+
 "@arkecosystem/platform-sdk-trx@^0.9.152":
   version "0.9.152"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-0.9.152.tgz#eb5ede3bde76be9b16e6626fa011aab551693095"
@@ -312,6 +333,24 @@
   integrity sha512-NL5a3J1c2UbUpcIqionFEIBVfUdorsc0toDKF/MaRVENw1eW1rHwiduzHybIXmidQqhFcXyoI7PVQvApA/n7mA==
   dependencies:
     "@arkecosystem/platform-sdk-support" "0.9.152"
+    bad-words "^3.0.3"
+    bent "^7.3"
+    bignumber.js "^9.0.0"
+    bip32 "^2.0.5"
+    bip39 "^3.0.2"
+    censorify-it "^3.0.1"
+    dayjs "^1.8"
+    dot-prop "^5.2.0"
+    node-emoji "^1.10.0"
+    type-fest "^0.16.0"
+    yup "^0.29.1"
+
+"@arkecosystem/platform-sdk@0.9.159":
+  version "0.9.159"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-0.9.159.tgz#c1e46acadb2f1d7b2062bfaab7fb1dbf62182e5e"
+  integrity sha512-NqrzQm0edybI7NfN70lIlg2tMjBXDFTa92hIxaIG4VVFNKf/40T6jCKYIacA8AEYPGbU/hP3UXTxfz4dMynwpA==
+  dependencies:
+    "@arkecosystem/platform-sdk-support" "0.9.159"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.0"
@@ -3337,7 +3376,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
 
-"@types/node-fetch@*", "@types/node-fetch@^2.5.7":
+"@types/node-fetch@*":
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.7.tgz#20a2afffa882ab04d44ca786449a276f9f6bbf3c"
   integrity sha512-o2WVNf5UhWRkxlf6eq+jMZDu7kjgpgJfl4xVNlvryc95O/6F2ld8ztKX+qu+Rjyet93WAWm5LjeX9H5FGkODvw==
