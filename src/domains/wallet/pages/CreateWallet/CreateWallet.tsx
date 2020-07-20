@@ -17,6 +17,7 @@ import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
@@ -199,7 +200,7 @@ export const FourthStep = () => {
 
 export const CreateWallet = () => {
 	const env = useEnvironment();
-	// const history = useHistory();
+	const history = useHistory();
 
 	const [activeTab, setActiveTab] = React.useState(1);
 	const activeProfile = useActiveProfile();
@@ -245,8 +246,7 @@ export const CreateWallet = () => {
 
 		await env?.persist();
 
-		// TODO: Fix this being called with cypress
-		// history.push(dashboardRoute);
+		history.push(dashboardRoute);
 	};
 
 	return (
