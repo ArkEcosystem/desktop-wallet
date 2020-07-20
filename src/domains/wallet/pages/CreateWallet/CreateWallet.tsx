@@ -203,6 +203,7 @@ export const CreateWallet = () => {
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = React.useState(1);
+	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
@@ -212,16 +213,40 @@ export const CreateWallet = () => {
 		register("network", { required: true });
 		register("wallet", { required: true });
 		register("mnemonic", { required: true });
-
-		// TODO: run if not submitting
-		// return () => {
-		// 	const currentWallet = getValues("wallet");
-
-		// 	if (currentWallet) {
-		// 		profile.wallets().forget(currentWallet.id());
-		// 	}
-		// }
 	}, [register]);
+
+	const submitForm = async ({ name }: any) => {
+		console.log("update wallet");
+		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
+
+		await env?.persist();
+
+		setHasSubmitted(true);
+		console.log("submitted");
+	};
+
+	React.useEffect(() => {
+		return () => {
+			console.log("hasSubmitted", hasSubmitted);
+			if (hasSubmitted) {
+				return;
+			}
+
+			const currentWallet = getValues("wallet");
+
+			if (currentWallet) {
+				console.log("remove wallet");
+				activeProfile?.wallets().forget(currentWallet.id());
+			}
+		};
+	}, []);
+
+	React.useEffect(() => {
+		if (hasSubmitted) {
+			console.log("redirect");
+			history.push(dashboardRoute);
+		}
+	}, [hasSubmitted]);
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -237,14 +262,6 @@ export const CreateWallet = () => {
 
 	const handleNext = () => {
 		setActiveTab(activeTab + 1);
-	};
-
-	const submitForm = async ({ name }: any) => {
-		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
-
-		await env?.persist();
-
-		history.push(dashboardRoute);
 	};
 
 	return (
