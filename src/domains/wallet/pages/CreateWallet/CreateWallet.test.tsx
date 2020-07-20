@@ -44,7 +44,7 @@ describe("CreateWallet", () => {
 			storage: new StubStorage(),
 		});
 
-		await env.bootFromObject({ profiles });
+		await env.bootFromObject({ data: {}, profiles });
 
 		profile = env.profiles().findById("bob");
 
@@ -295,7 +295,7 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		});
 
-		const { getByTestId, getByText, asFragment } = rendered!;
+		const { getByTestId, asFragment } = rendered!;
 
 		expect(asFragment()).toMatchSnapshot();
 
