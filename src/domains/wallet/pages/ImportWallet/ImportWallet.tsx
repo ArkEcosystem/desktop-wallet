@@ -17,9 +17,8 @@ type Network = { coin: string; icon: string; name: string; network: string };
 
 export const FirstStep = () => {
 	const { getValues, register, setValue } = useFormContext();
-	const currentNetwork = getValues("network");
-
 	const networks = useAvailableNetworks();
+	const currentNetwork = getValues("network");
 
 	React.useEffect(() => {
 		register("network", { required: true });
