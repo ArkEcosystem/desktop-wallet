@@ -243,6 +243,36 @@ describe("CreateWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should not have a pending wallet if leaving on step 1", async () => {
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const createURL = "/profiles/bob/wallets/create";
+		history.push(createURL);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/create">
+						<CreateWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [createURL, "/"],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment } = rendered!;
+
+		history.push("/");
+		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should remove pending wallet if not submitted", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CreateWallet should not have a pending wallet if leaving on step 1 1`] = `<DocumentFragment />`;
+
 exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
 <DocumentFragment>
   <div
@@ -311,13 +313,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       <div
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-labelledby="downshift-3-label"
+                        aria-labelledby="downshift-4-label"
                         class="relative"
                         role="combobox"
                       >
                         <label
-                          for="downshift-3-input"
-                          id="downshift-3-label"
+                          for="downshift-4-input"
+                          id="downshift-4-label"
                         />
                         <div
                           class="relative flex items-center w-full flex-inline"
@@ -345,11 +347,11 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               </div>
                               <input
                                 aria-autocomplete="list"
-                                aria-labelledby="downshift-3-label"
+                                aria-labelledby="downshift-4-label"
                                 autocomplete="off"
                                 class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                                 data-testid="select-asset__input"
-                                id="downshift-3-input"
+                                id="downshift-4-input"
                                 placeholder="Enter a network name"
                                 value=""
                               />
@@ -357,16 +359,16 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           </div>
                         </div>
                         <div
-                          aria-labelledby="downshift-3-label"
+                          aria-labelledby="downshift-4-label"
                           class="select-asset__items"
                           data-testid="select-asset__items"
-                          id="downshift-3-menu"
+                          id="downshift-4-menu"
                           role="listbox"
                         >
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-3-item-0"
+                            id="downshift-4-item-0"
                             role="option"
                           >
                             <div
@@ -386,7 +388,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-3-item-1"
+                            id="downshift-4-item-1"
                             role="option"
                           >
                             <div
