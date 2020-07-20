@@ -205,6 +205,13 @@ export const CreateWallet = () => {
 	const [activeTab, setActiveTab] = React.useState(1);
 	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
+	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+	const crumbs = [
+		{
+			route: dashboardRoute,
+			label: "Go back to Portfolio",
+		},
+	];
 
 	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register } = form;
@@ -242,15 +249,7 @@ export const CreateWallet = () => {
 				}
 			}, 100);
 		};
-	}, [activeProfile, getValues, hasSubmitted, history]);
-
-	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
-	const crumbs = [
-		{
-			route: dashboardRoute,
-			label: "Go back to Portfolio",
-		},
-	];
+	}, [activeProfile, dashboardRoute, getValues, hasSubmitted, history]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
