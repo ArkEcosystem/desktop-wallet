@@ -8,7 +8,7 @@ export class StubStorage implements Storage {
 		this.storage = data || {};
 	}
 
-	public async all(): Promise<object> {
+	public async all(): Promise<Record<string, unknown>> {
 		return this.storage;
 	}
 
