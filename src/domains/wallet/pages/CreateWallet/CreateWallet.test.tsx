@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Environment, Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
@@ -18,6 +19,9 @@ import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./Cr
 
 let env: Environment;
 let profile: Profile;
+let bip39GenerateMock: any;
+
+const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 beforeAll(() => {
 	nock.disableNetConnect();
@@ -43,6 +47,12 @@ describe("CreateWallet", () => {
 		await env.bootFromObject({ profiles });
 
 		profile = env.profiles().findById("bob");
+
+		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+	});
+
+	afterEach(() => {
+		bip39GenerateMock.mockRestore();
 	});
 
 	it("should render 1st step", async () => {
@@ -200,16 +210,9 @@ describe("CreateWallet", () => {
 
 			fireEvent.click(continueButton);
 			expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
-
-			// Store mnemonic for testing
-			let walletMnemonic: string;
-			const clipboardOriginal = navigator.clipboard;
-			navigator.clipboard = { writeText: (mnemonic) => (walletMnemonic = mnemonic.split(" ")) };
-			fireEvent.click(getByTestId(`CreateWallet__copy`));
-			navigator.clipboard = clipboardOriginal;
-
 			fireEvent.click(continueButton);
 
+			const walletMnemonic = passphrase.split(" ");
 			for (let i = 0; i < 3; i++) {
 				const wordNumber = getByText(/Select word #/).innerHTML.replace(/Select word #/, "");
 
