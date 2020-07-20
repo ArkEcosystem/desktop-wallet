@@ -16,6 +16,17 @@ describe("Import Wallet", () => {
 		cy.get("h1").contains("Import Wallet");
 	});
 
+	it("should error without required fields", () => {
+		cy.get("button").contains("Go to Wallet").click();
+		cy.get("fieldset p").contains("Password is required");
+
+		cy.get("input[name=isAddressOnly]").parent().click();
+		cy.get("button").contains("Go to Wallet").click();
+		cy.get("fieldset p").contains("Address is required");
+
+		cy.get("input[name=isAddressOnly]").parent().click();
+	});
+
 	it("should import a wallet", () => {
 		cy.get("label").contains("Your Password");
 		cy.get("input[name=password]").type("this is a top secret passphrase");

@@ -98,6 +98,7 @@ export const SecondStep = () => {
 					<p className="text-sm text-theme-neutral">You can only view your wallet but not send money.</p>
 				</div>
 				<Toggle
+					name="isAddressOnly"
 					checked={isAddressOnly}
 					onChange={() => setIsAddressOnly(!isAddressOnly)}
 					data-testid="ImportWallet__address-toggle"
