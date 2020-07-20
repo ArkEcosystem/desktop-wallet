@@ -1,5 +1,5 @@
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
@@ -64,7 +64,11 @@ export const SecondStep = () => {
 			return (
 				<FormField name="password">
 					<FormLabel label="Your Password" />
-					<InputPassword ref={register} data-testid="ImportWallet__password-input" />
+					<InputPassword
+						ref={register({ required: "Password is required" })}
+						data-testid="ImportWallet__password-input"
+					/>
+					<FormHelperText />
 				</FormField>
 			);
 		}
@@ -73,7 +77,8 @@ export const SecondStep = () => {
 			// TODO: Change to InputAddress
 			<FormField name="address">
 				<FormLabel label="Address" />
-				<Input ref={register} data-testid="ImportWallet__address-input" />
+				<Input ref={register({ required: "Address is required" })} data-testid="ImportWallet__address-input" />
+				<FormHelperText />
 			</FormField>
 		);
 	};
