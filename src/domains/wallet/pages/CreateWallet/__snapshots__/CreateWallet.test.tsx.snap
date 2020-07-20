@@ -311,13 +311,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       <div
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-labelledby="downshift-0-label"
+                        aria-labelledby="downshift-3-label"
                         class="relative"
                         role="combobox"
                       >
                         <label
-                          for="downshift-0-input"
-                          id="downshift-0-label"
+                          for="downshift-3-input"
+                          id="downshift-3-label"
                         />
                         <div
                           class="relative flex items-center w-full flex-inline"
@@ -345,11 +345,11 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               </div>
                               <input
                                 aria-autocomplete="list"
-                                aria-labelledby="downshift-0-label"
+                                aria-labelledby="downshift-3-label"
                                 autocomplete="off"
                                 class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                                 data-testid="select-asset__input"
-                                id="downshift-0-input"
+                                id="downshift-3-input"
                                 placeholder="Enter a network name"
                                 value=""
                               />
@@ -357,16 +357,16 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           </div>
                         </div>
                         <div
-                          aria-labelledby="downshift-0-label"
+                          aria-labelledby="downshift-3-label"
                           class="select-asset__items"
                           data-testid="select-asset__items"
-                          id="downshift-0-menu"
+                          id="downshift-3-menu"
                           role="listbox"
                         >
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-0"
+                            id="downshift-3-item-0"
                             role="option"
                           >
                             <div
@@ -386,7 +386,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-1"
+                            id="downshift-3-item-1"
                             role="option"
                           >
                             <div
@@ -753,13 +753,13 @@ exports[`CreateWallet should render 1`] = `
                       <div
                         aria-expanded="false"
                         aria-haspopup="listbox"
-                        aria-labelledby="downshift-0-label"
+                        aria-labelledby="downshift-1-label"
                         class="relative"
                         role="combobox"
                       >
                         <label
-                          for="downshift-0-input"
-                          id="downshift-0-label"
+                          for="downshift-1-input"
+                          id="downshift-1-label"
                         />
                         <div
                           class="relative flex items-center w-full flex-inline"
@@ -787,11 +787,11 @@ exports[`CreateWallet should render 1`] = `
                               </div>
                               <input
                                 aria-autocomplete="list"
-                                aria-labelledby="downshift-0-label"
+                                aria-labelledby="downshift-1-label"
                                 autocomplete="off"
                                 class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                                 data-testid="select-asset__input"
-                                id="downshift-0-input"
+                                id="downshift-1-input"
                                 placeholder="Enter a network name"
                                 value=""
                               />
@@ -799,16 +799,16 @@ exports[`CreateWallet should render 1`] = `
                           </div>
                         </div>
                         <div
-                          aria-labelledby="downshift-0-label"
+                          aria-labelledby="downshift-1-label"
                           class="select-asset__items"
                           data-testid="select-asset__items"
-                          id="downshift-0-menu"
+                          id="downshift-1-menu"
                           role="listbox"
                         >
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-0"
+                            id="downshift-1-item-0"
                             role="option"
                           >
                             <div
@@ -828,7 +828,7 @@ exports[`CreateWallet should render 1`] = `
                           <div
                             aria-selected="false"
                             class="inline-block pt-6 mr-6 cursor-pointer"
-                            id="downshift-0-item-1"
+                            id="downshift-1-item-1"
                             role="option"
                           >
                             <div
@@ -1369,7 +1369,7 @@ exports[`CreateWallet should render 2`] = `
                             class="text-lg font-medium"
                             data-testid="CreateWallet__wallet-address"
                           >
-                            ATtnCU8TsetW1zaLCvae61cfTQGLN8A9vd
+                            ATQCpMZsK5andAjh5RfDf2uRqF4nPWrcUs
                           </p>
                         </div>
                         <div
@@ -1380,9 +1380,9 @@ exports[`CreateWallet should render 2`] = `
                             class="w-full h-full"
                           >
                             <img
-                              alt="ATtnCU8TsetW1zaLCvae61cfTQGLN8A9vd"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                              title="ATtnCU8TsetW1zaLCvae61cfTQGLN8A9vd"
+                              alt="ATQCpMZsK5andAjh5RfDf2uRqF4nPWrcUs"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="ATQCpMZsK5andAjh5RfDf2uRqF4nPWrcUs"
                             />
                           </div>
                         </div>

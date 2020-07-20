@@ -202,8 +202,8 @@ export const CreateWallet = () => {
 	const env = useEnvironment();
 	const history = useHistory();
 
+	let hasSubmitted = false;
 	const [activeTab, setActiveTab] = React.useState(1);
-	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
@@ -216,18 +216,19 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		console.log("update wallet");
 		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
 
 		await env?.persist();
 
-		setHasSubmitted(true);
-		console.log("submitted");
+		hasSubmitted = true;
 	};
 
 	React.useEffect(() => {
+		if (hasSubmitted) {
+			history.push(dashboardRoute);
+		}
+
 		return () => {
-			console.log("hasSubmitted", hasSubmitted);
 			if (hasSubmitted) {
 				return;
 			}
@@ -235,17 +236,9 @@ export const CreateWallet = () => {
 			const currentWallet = getValues("wallet");
 
 			if (currentWallet) {
-				console.log("remove wallet");
 				activeProfile?.wallets().forget(currentWallet.id());
 			}
 		};
-	}, []);
-
-	React.useEffect(() => {
-		if (hasSubmitted) {
-			console.log("redirect");
-			history.push(dashboardRoute);
-		}
 	}, [hasSubmitted]);
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
