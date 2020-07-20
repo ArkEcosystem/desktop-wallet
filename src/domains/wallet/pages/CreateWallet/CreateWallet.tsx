@@ -239,7 +239,7 @@ export const CreateWallet = () => {
 				activeProfile?.wallets().forget(currentWallet.id());
 			}
 		};
-	}, [hasSubmitted]);
+	}, [activeProfile, getValues, hasSubmitted, history]);
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
