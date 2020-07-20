@@ -15,7 +15,7 @@ type SelectNetworkProps = {
 	networks: Network[];
 	placeholder?: string;
 	name?: string;
-	value?: any;
+	value?: Network;
 	onSelect?: (network: any) => void;
 };
 
