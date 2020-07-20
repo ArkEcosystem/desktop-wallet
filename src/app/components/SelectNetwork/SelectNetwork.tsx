@@ -15,7 +15,7 @@ type SelectNetworkProps = {
 	networks: Network[];
 	placeholder?: string;
 	name?: string;
-	value?: string;
+	value?: any;
 	onSelect?: (network: any) => void;
 };
 
@@ -24,7 +24,7 @@ type InputValue = any;
 const IconPlaceholder = ({ icon, className, name }: Network) => {
 	if (!icon) return <Circle size="sm" noShadow className="border-theme-neutral-200" />;
 	return (
-		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name}`}>
+		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name.replace(/\s+/g, "")}`}>
 			<Icon name={icon} width={16} height={16} />
 		</Circle>
 	);
@@ -50,7 +50,7 @@ const InputWrapper = styled.div`
 	}
 `;
 
-export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectNetworkProps) => {
+export const SelectNetwork = ({ name, networks, onSelect, placeholder, value }: SelectNetworkProps) => {
 	const isMatch = (network: Network, input: InputValue) => {
 		if (!input) return false;
 		return network.name.toLowerCase().startsWith(input.toLowerCase());
@@ -79,7 +79,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 	};
 
 	return (
-		<Downshift itemToString={(i) => i?.name} onSelect={onSelect}>
+		<Downshift initialSelectedItem={value} itemToString={(item) => item?.name} onSelect={onSelect}>
 			{({
 				getLabelProps,
 				getInputProps,
@@ -93,7 +93,7 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name }: SelectN
 				<div className="relative">
 					<label {...getLabelProps()} />
 					<div className="relative flex items-center w-full flex-inline">
-						<InputWrapper className="flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
+						<InputWrapper className="flex w-full transition-colors duration-200 border rounded bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary">
 							<div className="px-4 py-2 flex-0 w-14">
 								<IconPlaceholder {...selectedItem} />
 							</div>
