@@ -202,8 +202,8 @@ export const CreateWallet = () => {
 	const env = useEnvironment();
 	const history = useHistory();
 
-	let hasSubmitted = false;
 	const [activeTab, setActiveTab] = React.useState(1);
+	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
 
 	const form = useForm({ mode: "onChange" });
@@ -220,7 +220,7 @@ export const CreateWallet = () => {
 
 		await env?.persist();
 
-		hasSubmitted = true;
+		setHasSubmitted(true);
 	};
 
 	React.useEffect(() => {
@@ -228,16 +228,19 @@ export const CreateWallet = () => {
 			history.push(dashboardRoute);
 		}
 
+		// TODO: Figure out a way without setTimeout
 		return () => {
-			if (hasSubmitted) {
-				return;
-			}
+			setTimeout(() => {
+				if (hasSubmitted) {
+					return;
+				}
 
-			const currentWallet = getValues("wallet");
+				const currentWallet = getValues("wallet");
 
-			if (currentWallet) {
-				activeProfile?.wallets().forget(currentWallet.id());
-			}
+				if (currentWallet) {
+					activeProfile?.wallets().forget(currentWallet.id());
+				}
+			}, 100);
 		};
 	}, [activeProfile, getValues, hasSubmitted, history]);
 
