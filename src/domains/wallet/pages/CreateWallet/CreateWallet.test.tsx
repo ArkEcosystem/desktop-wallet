@@ -196,7 +196,6 @@ describe("CreateWallet", () => {
 			expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
 
 			fireEvent.click(getByTestId(`CreateWallet__back-button`));
-
 			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 			fireEvent.click(continueButton);
@@ -231,5 +230,58 @@ describe("CreateWallet", () => {
 				expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
 			);
 		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should remove pending wallet if not submitted", async () => {
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const createURL = "/profiles/bob/wallets/create";
+		history.push(createURL);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/create">
+						<CreateWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [createURL, "/"],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		});
+
+		const { getByTestId, getByText, asFragment } = rendered!;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		const selectAssetsInput = getByTestId("select-asset__input");
+		await act(async () => {
+			const continueButton = getByTestId("CreateWallet__continue-button");
+
+			// Navigation between steps
+			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+			fireEvent.click(continueButton);
+			expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
+
+			fireEvent.click(getByTestId(`CreateWallet__back-button`));
+			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+
+			fireEvent.click(continueButton);
+			expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
+
+			history.push("/");
+			await waitFor(() => expect(profile.wallets().values().length).toBe(0));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
