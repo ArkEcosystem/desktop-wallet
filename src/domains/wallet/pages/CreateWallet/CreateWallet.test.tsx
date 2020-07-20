@@ -40,9 +40,7 @@ describe("CreateWallet", () => {
 			storage: new StubStorage(),
 		});
 
-		await env.boot();
-
-		await env.profiles().fill(profiles);
+		await env.bootFromObject({ profiles });
 
 		profile = env.profiles().findById("bob");
 	});

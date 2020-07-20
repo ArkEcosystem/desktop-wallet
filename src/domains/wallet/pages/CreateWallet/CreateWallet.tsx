@@ -29,10 +29,10 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 	const currentNetwork = getValues("network");
 
 	const networks: Network[] = env.availableNetworks().map((network: any) => ({
-		name: `${network.ticker} - ${network.network}`,
-		icon: `${network.coin.charAt(0).toUpperCase()}${network.coin.slice(1).toLowerCase()}`,
-		coin: network.coin,
-		network: network.network.toLowerCase(),
+		name: `${network.ticker()} - ${network.name()}`,
+		icon: `${network.coin().charAt(0).toUpperCase()}${network.coin().slice(1).toLowerCase()}`,
+		coin: network.coin(),
+		network: network.name().toLowerCase(),
 	}));
 
 	const handleSelect = async (network: Network) => {
