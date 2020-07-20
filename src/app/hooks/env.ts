@@ -2,8 +2,6 @@ import { useEnvironment } from "app/contexts/Environment";
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
-type Network = { coin: string; network: string; symbol: string; ticker: string };
-
 export const useActiveProfile = () => {
 	const env = useEnvironment();
 	const { profileId } = useParams();
@@ -24,7 +22,7 @@ export const useAvailableNetworks = () => {
 
 	return useMemo(() => {
 		if (env) {
-			return env.availableNetworks().map((network: Network) => network);
+			return env.availableNetworks().map((network) => network);
 		}
 	}, [env]);
 };

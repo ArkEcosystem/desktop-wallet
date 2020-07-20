@@ -29,7 +29,7 @@ const TestNetworks: React.FC = () => {
 			<ul>
 				{networks.map((network, index) => (
 					<li key={index}>
-						{network.ticker} - {network.network}
+						{network.ticker()} - {network.name()}
 					</li>
 				))}
 			</ul>

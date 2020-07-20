@@ -39,8 +39,7 @@ describe("ImportWallet", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		await env.boot();
-		await env.profiles().fill(profiles);
+		await env.bootFromObject({ data: {}, profiles });
 
 		profile = env.profiles().findById("bob");
 	});
