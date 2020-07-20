@@ -28,9 +28,7 @@ const TestNetworks: React.FC = () => {
 		return (
 			<ul>
 				{networks.map((network, index) => (
-					<li key={index}>
-						{network.ticker()} - {network.name()}
-					</li>
+					<li key={index}>{network.name}</li>
 				))}
 			</ul>
 		);

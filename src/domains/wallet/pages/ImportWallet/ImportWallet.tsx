@@ -19,12 +19,7 @@ export const FirstStep = () => {
 	const { getValues, register, setValue } = useFormContext();
 	const currentNetwork = getValues("network");
 
-	const networks = useAvailableNetworks()?.map((network) => ({
-		name: `${network.ticker()} - ${network.name()}`,
-		icon: `${network.coin().charAt(0).toUpperCase()}${network.coin().slice(1).toLowerCase()}`,
-		coin: network.coin(),
-		network: network.name().toLowerCase(),
-	}));
+	const networks = useAvailableNetworks();
 
 	React.useEffect(() => {
 		register("network", { required: true });
