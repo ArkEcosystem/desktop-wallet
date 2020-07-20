@@ -240,9 +240,7 @@ export const CreateWallet = () => {
 	};
 
 	const submitForm = async ({ name }: any) => {
-		if (name) {
-			activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
-		}
+		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
 
 		await env?.persist();
 
