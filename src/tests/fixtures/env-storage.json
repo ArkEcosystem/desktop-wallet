@@ -1,0 +1,58 @@
+{
+	"profiles": {
+		"b999d134-7a24-481e-a95d-bc47c543bfc9": {
+			"id": "b999d134-7a24-481e-a95d-bc47c543bfc9",
+			"name": "John Doe",
+			"wallets": {
+				"ac38fe6d-4b67-4ef1-85be-17c5f6841129": {
+					"id": "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
+					"coin": "ARK",
+					"coinConfig": {
+						"network": {
+							"id": "devnet",
+							"name": "Devnet",
+							"explorer": "https://dexplorer.ark.io/",
+							"currency": { "ticker": "DARK", "symbol": "DѦ" },
+							"crypto": { "slip44": 111 },
+							"hosts": [
+								"https://dexplorer.ark.io",
+								"http://167.114.29.51:4003",
+								"http://167.114.29.52:4003",
+								"http://167.114.29.53:4003",
+								"http://167.114.29.54:4003",
+								"http://167.114.29.55:4003"
+							],
+							"hostsMultiSignature": [],
+							"voting": { "enabled": true, "singular": true }
+						}
+					},
+					"network": "devnet",
+					"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+					"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+					"data": {},
+					"settings": {}
+				}
+			},
+			"contacts": {
+				"0e147f96-049f-4d89-bad4-ad3341109907": {
+					"id": "0e147f96-049f-4d89-bad4-ad3341109907",
+					"name": "Jane Doe",
+					"starred": false,
+					"addresses": []
+				}
+			},
+			"notifications": {
+				"b183aef3-2dba-471a-a588-0fcf8f01b645": {
+					"id": "b183aef3-2dba-471a-a588-0fcf8f01b645",
+					"icon": "warning",
+					"name": "Ledger Update Available",
+					"body": "...",
+					"action": "Read Changelog"
+				}
+			},
+			"data": {},
+			"settings": {}
+		}
+	},
+	"data": {}
+}
