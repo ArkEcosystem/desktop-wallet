@@ -95,11 +95,11 @@ export const WalletHeader = ({
 								]}
 								onSelect={(option: Record<string, string>) => {
 									if (option.value === "sign-message") {
-										return onSignMessage();
+										onSignMessage();
 									}
 
 									if (option.value === "delete-wallet") {
-										return onDeleteWallet();
+										onDeleteWallet();
 									}
 								}}
 								dropdownClass="top-5 right-3 text-left bg-white"
