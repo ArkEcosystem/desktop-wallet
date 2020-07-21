@@ -43,6 +43,7 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 
 	return (
 		<SelectionBarOptionStyled
+			type="button"
 			data-testid="SelectionBarOption"
 			role="radio"
 			aria-checked={isChecked}
