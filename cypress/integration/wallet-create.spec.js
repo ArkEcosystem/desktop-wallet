@@ -21,7 +21,9 @@ describe("Create Wallet", () => {
 
 	it("should go back and forth", () => {
 		cy.get("button").contains("Back").click();
+		cy.get("h1").contains("Select a Cryptoasset");
 		cy.get("button").contains("Continue").click();
+		cy.get("h1").contains("Your Passphrase");
 	});
 
 	it("it should show passphrase & go to third step", () => {
@@ -40,7 +42,9 @@ describe("Create Wallet", () => {
 
 	it("should go back and forth", () => {
 		cy.get("button").contains("Back").click();
+		cy.get("h1").contains("Your Passphrase");
 		cy.get("button").contains("Continue").click();
+		cy.get("h1").contains("Confirm your passphrase");
 	});
 
 	it("it should confirm passphrase & go to fourth step", () => {
@@ -63,7 +67,9 @@ describe("Create Wallet", () => {
 
 	it("should go back and forth", () => {
 		cy.get("button").contains("Back").click();
+		cy.get("h1").contains("Confirm your passphrase");
 		cy.get("button").contains("Continue").click();
+		cy.get("h1").contains("Completed");
 	});
 
 	it("should navigate back to portfolio page", () => {
