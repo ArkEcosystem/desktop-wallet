@@ -1,0 +1,75 @@
+{
+	"data": {
+		"constants": {
+			"activeDelegates": 51,
+			"aip11": true,
+			"block": {
+				"acceptExpiredTransactionTimestamps": false,
+				"idFullSha256": true,
+				"maxPayload": 21000000,
+				"maxTransactions": 500,
+				"version": 0
+			},
+			"blocktime": 8,
+			"epoch": "2017-03-21T13:00:00.000Z",
+			"fees": {
+				"staticFees": {
+					"delegateRegistration": 2500000000,
+					"delegateResignation": 2500000000,
+					"htlcClaim": 0,
+					"htlcLock": 10000000,
+					"htlcRefund": 0,
+					"ipfs": 500000000,
+					"multiPayment": 10000000,
+					"multiSignature": 500000000,
+					"secondSignature": 500000000,
+					"transfer": 10000000,
+					"vote": 100000000
+				}
+			},
+			"height": 4006000,
+			"htlcEnabled": true,
+			"ignoreExpiredTransactions": false,
+			"ignoreInvalidSecondSignatureField": false,
+			"multiPaymentLimit": 128,
+			"p2p": { "minimumVersions": ["^2.6 || ^2.6.0-next.9"] },
+			"reward": 200000000,
+			"vendorFieldLength": 255
+		},
+		"core": { "version": "2.6.12-next.15" },
+		"explorer": "https://dexplorer.ark.io",
+		"nethash": "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
+		"ports": { "@arkecosystem/core-api": 4003, "@arkecosystem/core-p2p": null },
+		"slip44": 1,
+		"symbol": "DѦ",
+		"token": "DARK",
+		"transactionPool": {
+			"dynamicFees": {
+				"addonBytes": {
+					"bridgechainRegistration": 4000000,
+					"bridgechainResignation": 100,
+					"bridgechainUpdate": 500,
+					"businessRegistration": 4000000,
+					"businessResignation": 100,
+					"businessUpdate": 500,
+					"delegateRegistration": 400000,
+					"delegateResignation": 100,
+					"htlcClaim": 0,
+					"htlcLock": 100,
+					"htlcRefund": 0,
+					"ipfs": 250,
+					"multiPayment": 500,
+					"multiSignature": 500,
+					"secondSignature": 250,
+					"transfer": 100,
+					"vote": 100
+				},
+				"enabled": true,
+				"minFeeBroadcast": 1000,
+				"minFeePool": 1000
+			}
+		},
+		"version": 30,
+		"wif": 170
+	}
+}
