@@ -73,8 +73,12 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 };
 
 export const SecondStep = () => {
-	const { getValues } = useFormContext();
+	const { getValues, unregister } = useFormContext();
 	const mnemonic = getValues("mnemonic");
+
+	React.useEffect(() => {
+		unregister("verification");
+	}, [unregister]);
 
 	return (
 		<section data-testid="CreateWallet__second-step">
@@ -135,8 +139,10 @@ export const ThirdStep = () => {
 	};
 
 	React.useEffect(() => {
-		register("verification", { required: true });
-	}, [register]);
+		if (!getValues("verification")) {
+			register("verification", { required: true });
+		}
+	}, [getValues, register]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
