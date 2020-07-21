@@ -67,7 +67,7 @@ describe("ImportWallet", () => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("select-asset__selected-ARK - Mainnet")).toBeTruthy();
+		expect(getByTestId("select-asset__selected-ARK-Mainnet")).toBeTruthy();
 	});
 
 	it("should render 2st step", async () => {
@@ -132,7 +132,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 
-			expect(getByTestId("select-asset__selected-DARK - Devnet")).toBeTruthy();
+			expect(getByTestId("select-asset__selected-DARK-Devnet")).toBeTruthy();
 
 			await fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
@@ -176,7 +176,7 @@ describe("ImportWallet", () => {
 			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 
-			expect(getByTestId("select-asset__selected-DARK - Devnet")).toBeTruthy();
+			expect(getByTestId("select-asset__selected-DARK-Devnet")).toBeTruthy();
 
 			await fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
