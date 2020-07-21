@@ -1,5 +1,6 @@
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
+import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -9,7 +10,7 @@ import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeade
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { wallet, wallets } from "../../data";
 
@@ -39,11 +40,14 @@ type Props = {
 };
 
 export const WalletDetails = ({ wallet, wallets }: Props) => {
-	const activeProfile = useActiveProfile();
-	const history = useHistory();
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
-	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
+	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
+
+	const history = useHistory();
+	const env = useEnvironment();
+	const activeProfile = useActiveProfile();
+	const { walletId } = useParams();
 
 	const crumbs = [
 		{
@@ -51,6 +55,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			label: "Go back to Portfolio",
 		},
 	];
+
+	const handleDeleteWallet = async () => {
+		const wallet = activeProfile?.wallets().findById(walletId);
+		activeProfile?.wallets().forget(wallet?.id() as string);
+		await env?.persist();
+		setIsDeleteWallet(false);
+	};
 
 	/* istanbul ignore next */
 	return (
@@ -116,6 +127,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				isOpen={isDeleteWallet}
 				onClose={() => setIsDeleteWallet(false)}
 				onCancel={() => setIsDeleteWallet(false)}
+				onDelete={handleDeleteWallet}
 			/>
 		</>
 	);
