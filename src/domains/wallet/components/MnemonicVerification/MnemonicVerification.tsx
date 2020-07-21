@@ -47,16 +47,13 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 		mnemonicWords,
 	]);
 
-	const handleNext = () => {
-		if (activeTab === positions.length - 1) {
-			handleComplete();
-		}
-		setActiveTab(activeTab + 1);
-	};
-
 	const handleChange = (value: string) => {
 		if (value === currentAnswer) {
-			handleNext();
+			if (activeTab === positions.length - 1) {
+				handleComplete();
+			}
+
+			setActiveTab(activeTab + 1);
 		}
 	};
 
