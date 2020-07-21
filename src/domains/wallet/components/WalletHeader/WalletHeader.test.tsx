@@ -126,7 +126,7 @@ describe("WalletHeader", () => {
 		expect(onSignMessage).toHaveBeenCalled();
 	});
 
-	it("should delete wallet", () => {
+	it("should handle delete wallet", () => {
 		const { getByTestId } = render(
 			<WalletHeader
 				currencyBalance="10"
