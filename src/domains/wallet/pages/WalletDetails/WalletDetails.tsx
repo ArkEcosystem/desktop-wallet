@@ -2,6 +2,7 @@ import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
+import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
@@ -41,6 +42,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
+	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
 
 	const crumbs = [
@@ -66,6 +68,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 					hasStarred={wallet?.hasStarred}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
 					onSignMessage={() => setIsSigningMessage(true)}
+					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
 				<Section>
@@ -107,6 +110,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				signatoryAddress={wallet?.address}
 				handleSign={() => setIsSigned(true)}
 				isSigned={isSigned}
+			/>
+
+			<DeleteWallet
+				isOpen={isDeleteWallet}
+				onClose={() => setIsDeleteWallet(false)}
+				onCancel={() => setIsDeleteWallet(false)}
 			/>
 		</>
 	);
