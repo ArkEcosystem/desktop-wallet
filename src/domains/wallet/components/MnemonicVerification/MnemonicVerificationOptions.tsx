@@ -45,6 +45,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 				{shuffled.map((item, index) => (
 					<OptionButton
 						data-testid="MnemonicVerificationOptions__button"
+						type="button"
 						whileHover={{ scale: 0.97 }}
 						custom={index}
 						animate={controls}

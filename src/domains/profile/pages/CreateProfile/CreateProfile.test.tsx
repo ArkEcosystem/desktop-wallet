@@ -9,7 +9,7 @@ import { StubStorage } from "tests/mocks";
 
 import { CreateProfile } from "./CreateProfile";
 
-let env: any;
+let env: Environment;
 
 describe("CreateProfile", () => {
 	beforeEach(() => {
