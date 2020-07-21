@@ -368,31 +368,34 @@ exports[`SendVoteTransaction should render 1`] = `
                           class="ml-2"
                         >
                           <div
-                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
                             data-testid="SelectionBar"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="true"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
+                              type="button"
                             >
                               Last
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
+                              type="button"
                             >
                               Min
                             </button>
                             <button
                               aria-checked="false"
-                              class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                              class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                               data-testid="SelectionBarOption"
                               role="radio"
+                              type="button"
                             >
                               Average
                             </button>
@@ -771,31 +774,34 @@ exports[`SendVoteTransaction should render 1st step 1`] = `
                 class="ml-2"
               >
                 <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
                   data-testid="SelectionBar"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="true"
-                    class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
+                    type="button"
                   >
                     Last
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
+                    type="button"
                   >
                     Min
                   </button>
                   <button
                     aria-checked="false"
-                    class="sc-fznKkj kMcNmk relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                    class="sc-fznKkj bhdesh relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                     data-testid="SelectionBarOption"
                     role="radio"
+                    type="button"
                   >
                     Average
                   </button>

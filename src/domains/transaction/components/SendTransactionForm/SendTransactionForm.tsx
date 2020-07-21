@@ -97,7 +97,7 @@ export const SendTransactionForm = ({
 					</InputGroup>
 				</FormField>
 
-				<div className="flex">
+				<div className="flex items-center">
 					<div className="w-2/4">
 						<FormField name="fee" className="relative mt-1">
 							<div className="mb-2">
@@ -106,7 +106,7 @@ export const SendTransactionForm = ({
 							</div>
 						</FormField>
 					</div>
-					<div className="w-2/4 text-right mt-7">
+					<div className="w-2/4 mt-6 text-right">
 						<SelectionBar>
 							<SelectionBarOption value={feeRange.last} {...feeRangeValue}>
 								Last
