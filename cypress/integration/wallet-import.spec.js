@@ -1,5 +1,6 @@
 describe("Import Wallet", () => {
 	it("should navigate to dashboard page", () => {
+		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
 		cy.visit("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard");
 
 		cy.get("div").contains("Wallets");
