@@ -106,7 +106,7 @@ export const SendTransactionForm = ({
 							</div>
 						</FormField>
 					</div>
-					<div className="w-2/4 text-right mt-6">
+					<div className="w-2/4 mt-6 text-right">
 						<SelectionBar>
 							<SelectionBarOption value={feeRange.last} {...feeRangeValue}>
 								Last
