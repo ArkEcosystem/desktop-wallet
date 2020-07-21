@@ -77,7 +77,7 @@ describe("CreateWallet", () => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("select-asset__selected-ARK - Mainnet")).toBeTruthy();
+		expect(getByTestId("select-asset__selected-ARK-Mainnet")).toBeTruthy();
 	});
 
 	it("should render 2nd step", async () => {
