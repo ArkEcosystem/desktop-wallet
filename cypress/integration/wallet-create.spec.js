@@ -1,3 +1,5 @@
+const mnemonicWords = [];
+
 describe("Create Wallet", () => {
 	it("should navigate to portfolio page", () => {
 		cy.visit("/");
@@ -11,15 +13,18 @@ describe("Create Wallet", () => {
 		cy.get("h1").contains("Select a Cryptoasset");
 	});
 
-	it("should select a network", () => {
+	it("should select a network & go to second step", () => {
 		cy.get("input").should("have.attr", "placeholder", "Enter a network name").type("ARK{enter}");
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Your Passphrase");
 	});
 
-	it("it should confirm passphrase", () => {
-		const mnemonicWords = [];
+	it("should go back and forth", () => {
+		cy.get("button").contains("Back").click();
+		cy.get("button").contains("Continue").click();
+	});
 
+	it("it should show passphrase & go to third step", () => {
 		cy.get("li[data-testid=MnemonicList__item]").each(($el) => {
 			mnemonicWords.push(
 				$el
@@ -31,6 +36,14 @@ describe("Create Wallet", () => {
 
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Confirm your passphrase");
+	});
+
+	it("should go back and forth", () => {
+		cy.get("button").contains("Back").click();
+		cy.get("button").contains("Continue").click();
+	});
+
+	it("it should confirm passphrase & go to fourth step", () => {
 		cy.get("button").contains("Continue").should("be.disabled");
 
 		for (let i = 0; i < 3; i++) {
@@ -46,6 +59,11 @@ describe("Create Wallet", () => {
 
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Completed");
+	});
+
+	it("should go back and forth", () => {
+		cy.get("button").contains("Back").click();
+		cy.get("button").contains("Continue").click();
 	});
 
 	it("should navigate back to portfolio page", () => {
