@@ -9,6 +9,7 @@ type Props = {
 	wordPositions?: number[];
 	optionsLimit: number;
 	handleComplete: () => void;
+	isCompleted?: boolean;
 };
 
 const randomWordPositions = () => {
@@ -23,7 +24,7 @@ const randomWordPositions = () => {
 	return positions;
 };
 
-export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete }: Props) {
+export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Props) {
 	const [activeTab, setActiveTab] = React.useState(0);
 	const [positions, setPositions] = React.useState([] as number[]);
 	const mnemonicWords = mnemonic.split(" ");
@@ -33,6 +34,12 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 	} else if (activeTab === 0 && !positions.length) {
 		setPositions(wordPositions as number[]);
 	}
+
+	React.useEffect(() => {
+		if (isCompleted) {
+			setActiveTab(positions.length);
+		}
+	}, [isCompleted, positions, setActiveTab]);
 
 	const currentAnswer = React.useMemo(() => mnemonicWords[positions[activeTab] - 1], [
 		activeTab,
@@ -76,4 +83,5 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 
 MnemonicVerification.defaultProps = {
 	wordPositions: [],
+	isCompleted: false,
 };
