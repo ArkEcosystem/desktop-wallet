@@ -22,11 +22,12 @@ export const Welcome = () => {
 	const history = useHistory();
 	const [profiles, setProfiles] = React.useState<Profile[]>([]);
 
+	// TODO: fix state management infinite loop
 	React.useEffect(() => {
 		if (env) {
 			setProfiles(env.profiles().all());
 		}
-	}, [env]);
+	}, [env, env?.profiles().all()]);
 
 	return (
 		<Page navbarStyle="logo-only">
