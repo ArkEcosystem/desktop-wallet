@@ -2,7 +2,7 @@ describe("Plugins Routing", () => {
 	it("should navigate to plugins manager page", () => {
 		cy.visit("/");
 
-		cy.get("p").contains("Anne Doe").click();
+		cy.get("p").contains("John Doe").click();
 
 		cy.get("a").contains("Plugins").click();
 		cy.get("h1").contains("Plugin Manager");

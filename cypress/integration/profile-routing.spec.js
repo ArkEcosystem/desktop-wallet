@@ -29,7 +29,7 @@ describe("Profile Routing", () => {
 	});
 
 	it("should list multiple profiles & navigate to dashboard", () => {
-		cy.get("p").contains("Anne Doe");
+		cy.get("p").contains("John Doe");
 		cy.get("p").contains("Test Profile").click();
 		cy.get("div").contains("Wallets");
 	});

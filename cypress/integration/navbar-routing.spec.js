@@ -2,7 +2,7 @@ describe("NavBar Routing", () => {
 	it("should navigate to dashboard", () => {
 		cy.visit("/");
 
-		cy.get("p").contains("Anne Doe").click();
+		cy.get("p").contains("John Doe").click();
 	});
 
 	it("should navigate to plugins", () => {

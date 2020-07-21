@@ -1,6 +1,6 @@
 describe("Setting Routing", () => {
 	it("should navigate to settings page", () => {
-		cy.visit("/profiles/1/settings");
+		cy.visit("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings");
 
 		cy.get("h1").contains("Wallet Settings");
 	});
