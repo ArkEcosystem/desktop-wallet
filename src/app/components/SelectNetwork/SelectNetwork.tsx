@@ -24,7 +24,7 @@ type InputValue = any;
 const IconPlaceholder = ({ icon, className, name }: Network) => {
 	if (!icon) return <Circle size="sm" noShadow className="border-theme-neutral-200" />;
 	return (
-		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name}`}>
+		<Circle className={className} size="sm" data-testid={`select-asset__selected-${name.replace(/\s+/g, "")}`}>
 			<Icon name={icon} width={16} height={16} />
 		</Circle>
 	);
@@ -79,7 +79,7 @@ export const SelectNetwork = ({ name, networks, onSelect, placeholder, value }: 
 	};
 
 	return (
-		<Downshift itemToString={(i) => i?.name} initialSelectedItem={value} onSelect={onSelect}>
+		<Downshift initialSelectedItem={value} itemToString={(item) => item?.name} onSelect={onSelect}>
 			{({
 				getLabelProps,
 				getInputProps,
