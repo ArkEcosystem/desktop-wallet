@@ -37,7 +37,7 @@ export const FirstStep = () => {
 				/>
 			</div>
 			<div className="space-y-2">
-				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
+				<span className="text-theme-neutral-dark text-sm font-medium">Network</span>
 				<SelectNetwork
 					name={currentNetwork?.name}
 					networks={networks}
@@ -88,8 +88,8 @@ export const SecondStep = () => {
 			</div>
 			<div className="flex flex-row items-center justify-between mt-8">
 				<div>
-					<p className="text-lg font-semibold text-theme-neutral-dark">Use the address only</p>
-					<p className="text-sm text-theme-neutral">You can only view your wallet but not send money.</p>
+					<p className="text-theme-neutral-dark text-lg font-semibold">Use the address only</p>
+					<p className="text-theme-neutral text-sm">You can only view your wallet but not send money.</p>
 				</div>
 				<Toggle
 					name="isAddressOnly"
@@ -129,8 +129,10 @@ export const ImportWallet = () => {
 	};
 
 	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
+		const wallet = await activeProfile?.wallets().importByMnemonic(password, network.coin, network.network);
+
 		await env?.persist();
+
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
 

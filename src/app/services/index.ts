@@ -1,3 +1,3 @@
-import { HttpClient } from "./HttpClient";
+import { Request } from "@arkecosystem/platform-sdk-http-node-fetch";
 
-export const httpClient = new HttpClient();
+export const httpClient = new Request();
