@@ -77,7 +77,7 @@ export const DelegateTable = ({ data, handleDropdown }: Props) => {
 						<td className="font-semibold text-theme-neutral-dark">
 							<span>{rowData.rank}</span>
 						</td>
-						<td className="font-semibold text-theme-primary text-center">
+						<td className="font-semibold text-center text-theme-primary">
 							<span className="flex justify-center">
 								<Icon name="Msq" width={22} height={22} />
 							</span>

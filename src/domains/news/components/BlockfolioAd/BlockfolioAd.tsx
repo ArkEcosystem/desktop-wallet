@@ -11,8 +11,8 @@ export const BlockfolioAd = () => {
 
 	return (
 		<div className="relative">
-			<div className="absolute flex text-center rounded-b-xl bg-theme-primary-contrast top-0 right-4">
-				<span className="text-xs font-semibold text-theme-primary pt-1 pb-2 px-2">{t("NEWS.AD")}</span>
+			<div className="absolute top-0 flex text-center rounded-b-xl bg-theme-primary-contrast right-4">
+				<span className="px-2 pt-1 pb-2 text-xs font-semibold text-theme-primary">{t("NEWS.AD")}</span>
 			</div>
 			<img
 				src={BlockfolioBanner}

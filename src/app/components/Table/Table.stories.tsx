@@ -66,10 +66,10 @@ export const Default = () => {
 							<td className="py-1">
 								<Address walletName={rowData.walletName} address={rowData.address} />
 							</td>
-							<td className="py-1 text-right font-semibold">
+							<td className="py-1 font-semibold text-right">
 								<div>{rowData.balance}</div>
 							</td>
-							<td className="py-1 text-right font-semibold text-theme-neutral-light">
+							<td className="py-1 font-semibold text-right text-theme-neutral-light">
 								<div>{rowData.fiat}</div>
 							</td>
 						</tr>

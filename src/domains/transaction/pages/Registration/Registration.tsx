@@ -144,7 +144,7 @@ const SecondStep = ({ form }: { form: any }) => {
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}</div>
 
 			<div>
-				<FormWrapper className="mt-8 pb-8">
+				<FormWrapper className="pb-8 mt-8">
 					<FormField name="name" className="font-normal">
 						<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} />

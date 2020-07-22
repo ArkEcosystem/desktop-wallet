@@ -77,23 +77,23 @@ export const BlockchainTable = ({ data, handleDropdown }: Props) => {
 						<td className="font-semibold">
 							<span>{rowData.blockchainName}</span>
 						</td>
-						<td className="font-semibold text-theme-primary text-center">
+						<td className="font-semibold text-center text-theme-primary">
 							<span>{t("COMMON.VIEW")}</span>
 						</td>
-						<td className="text-theme-neutral-light text-center">
+						<td className="text-center text-theme-neutral-light">
 							<span className="flex justify-center">
 								<Icon name="Redirect" className="text-center" />
 							</span>
 						</td>
-						<td className="font-semibold text-theme-primary text-center">
+						<td className="font-semibold text-center text-theme-primary">
 							<span className="flex justify-center">
 								<Icon name="Msq" width={22} height={22} />
 							</span>
 						</td>
-						<td className="font-semibold text-theme-primary text-center">
+						<td className="font-semibold text-center text-theme-primary">
 							<span>{t("COMMON.VIEW")}</span>
 						</td>
-						<td className="font-semibold text-theme-primary text-center">
+						<td className="font-semibold text-center text-theme-primary">
 							<span>{t("COMMON.VIEW")}</span>
 						</td>
 						<td className="align-middle">

@@ -108,12 +108,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 				<Section>
 					<div className="mb-16">
-						<h2 className="font-bold mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
+						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 						<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
 					</div>
 
 					<div>
-						<h2 className="font-bold mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
+						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
 						<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
 					</div>
 				</Section>
