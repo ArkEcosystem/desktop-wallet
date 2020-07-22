@@ -136,7 +136,7 @@ describe("WalletDetails", () => {
 			await fireEvent.click(updateWalletNameOption);
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			const name = "Sample label";
+			const name = "Sample label name";
 			const updateNameInput = getByTestId("UpdateWalletName__input");
 			act(() => {
 				fireEvent.change(updateNameInput, { target: { value: name } });
