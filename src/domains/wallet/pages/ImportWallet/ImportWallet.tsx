@@ -106,9 +106,10 @@ export const SecondStep = () => {
 };
 
 export const ImportWallet = () => {
-	const env = useEnvironment();
-	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
+
+	const history = useHistory();
+	const env = useEnvironment();
 	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;

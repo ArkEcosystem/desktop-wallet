@@ -73,8 +73,12 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 };
 
 export const SecondStep = () => {
-	const { getValues } = useFormContext();
+	const { getValues, unregister } = useFormContext();
 	const mnemonic = getValues("mnemonic");
+
+	React.useEffect(() => {
+		unregister("verification");
+	}, [unregister]);
 
 	return (
 		<section data-testid="CreateWallet__second-step">
@@ -129,14 +133,17 @@ export const SecondStep = () => {
 export const ThirdStep = () => {
 	const { getValues, register, setValue } = useFormContext();
 	const mnemonic = getValues("mnemonic");
+	const isVerified: boolean = getValues("verification");
 
 	const handleComplete = () => {
 		setValue("verification", true, true);
 	};
 
 	React.useEffect(() => {
-		register("verification", { required: true });
-	}, [register]);
+		if (!isVerified) {
+			register("verification", { required: true });
+		}
+	}, [isVerified, register]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
@@ -144,7 +151,12 @@ export const ThirdStep = () => {
 				<Header title="Confirm your passphrase" subtitle="Confirm your password to continue" />
 			</div>
 
-			<MnemonicVerification mnemonic={mnemonic} optionsLimit={6} handleComplete={handleComplete} />
+			<MnemonicVerification
+				mnemonic={mnemonic}
+				optionsLimit={6}
+				handleComplete={handleComplete}
+				isCompleted={isVerified}
+			/>
 
 			<Divider dashed />
 		</section>
