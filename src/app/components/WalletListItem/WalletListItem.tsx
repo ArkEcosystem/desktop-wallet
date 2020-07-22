@@ -1,4 +1,5 @@
 import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -10,7 +11,6 @@ import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
 	wallet: Wallet;
-	coinIcon: string;
 	coinClass?: string;
 	walletTypeIcons?: any[] | null;
 	actions?: any[];
@@ -20,7 +20,6 @@ export type WalletListItemProps = {
 
 export const WalletListItem = ({
 	wallet,
-	coinIcon,
 	coinClass,
 	walletTypeIcons,
 	actions,
@@ -36,18 +35,20 @@ export const WalletListItem = ({
 		if (typeof onAction === "function") onAction(action);
 	};
 
+	const coinName = wallet?.coin().manifest().get<string>("name");
+
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={coinClass} size="lg">
-						<Icon name={coinIcon} width={20} height={20} />
+						<Icon name={coinName ? upperFirst(coinName.toLowerCase()) : ""} width={20} height={20} />
 					</Circle>
-					<Avatar size="lg" address={wallet.address()} />
+					<Avatar size="lg" address={wallet?.address()} />
 				</div>
 			</td>
 			<td className="py-1">
-				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
+				<Address walletName={wallet.alias()} address={wallet?.address()} maxChars={22} />
 			</td>
 			{walletTypeIcons && (
 				<td className="py-1 text-sm font-bold text-center space-x-2">

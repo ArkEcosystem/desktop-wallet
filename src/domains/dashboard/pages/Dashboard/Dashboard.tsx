@@ -21,14 +21,20 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
+	// const [walletsTimer, setWalletsTimer] = useState<number|null>(null);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 
-	// TODO: fix state management infinite loop
-	const profileWallets = activeProfile?.wallets().values();
+	// TODO: remove use of timer
 	useEffect(() => {
-		setWallets(profileWallets!);
-	}, [profileWallets, wallets]);
+		const timer = setInterval(() => {
+			setWallets(activeProfile?.wallets().values() || []);
+		}, 1000);
+
+		return () => {
+			clearInterval(timer);
+		};
+	}, []); // @ts-ignore react-hooks/exhaustive-deps
 
 	// Wallet controls data
 	const filterProperties = {

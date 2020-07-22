@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import React from "react";
@@ -11,10 +11,22 @@ import { Dashboard } from "./Dashboard";
 
 export default { title: "Domains / Dashboard / Pages / Dashboard" };
 
-const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-const profile = env.profiles().create("John Doe");
+const generateWallet = async (env: Environment, profile: Profile, count: Number = 1) => {
+	const wallets = [];
+	for (let index = 0; index < count; index++) {
+		wallets.push(profile.wallets().generate("ARK", "mainnet"));
+	}
+
+	await Promise.all(wallets);
+
+	await env?.persist();
+};
 
 export const Default = () => {
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	const profile = env.profiles().create("John Doe");
+	generateWallet(env, profile, 11);
+
 	return (
 		<EnvironmentProvider env={env}>
 			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/dashboard`]}>
@@ -35,15 +47,9 @@ export const Default = () => {
 };
 
 export const FewerWallets = () => {
-	profile
-		.wallets()
-		.generate("ARK", "mainnet")
-		.then(() => {
-			console.log("generate wallet", profile.wallets().all());
-		})
-		.catch((e) => {
-			console.log("generate wallet error", e);
-		});
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	const profile = env.profiles().create("John Doe");
+	generateWallet(env, profile);
 
 	return (
 		<EnvironmentProvider env={env}>

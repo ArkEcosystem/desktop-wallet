@@ -67,15 +67,17 @@ export const Wallets = ({
 
 	// Pad with empty cards to fill the row
 	const walletsGridData = (wallets: Wallet[], walletsPerPage: number) => {
+		const walletObjects = wallets.map((wallet) => ({ wallet }));
 		if (wallets.length < walletsPerPage) {
 			const blankWalletsLength = walletsPerPage - wallets.length;
 			const blankWalletsCards = new Array(blankWalletsLength).fill({ isBlank: true });
-			return [...wallets.map((wallet) => ({ wallet })), ...blankWalletsCards];
+			return [...walletObjects, ...blankWalletsCards];
 		}
-		return wallets;
+
+		return walletObjects;
 	};
 
-	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank);
+	const walletListItems = wallets.filter((wallet: any) => !wallet.isBlank).map((wallet) => ({ wallet }));
 
 	return (
 		<div>
