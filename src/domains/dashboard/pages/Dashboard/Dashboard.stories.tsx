@@ -65,5 +65,5 @@ export const FewerWallets = () => {
 };
 
 export const Empty = () => {
-	return <Dashboard wallets={[]} networks={networks} portfolioPercentages={portfolioPercentages} />;
+	return <Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />;
 };
