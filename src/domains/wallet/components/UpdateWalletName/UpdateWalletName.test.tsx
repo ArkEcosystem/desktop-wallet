@@ -33,7 +33,7 @@ describe("UpdateWalletName", () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const profile = env.profiles().create("John Doe");
-		wallet = await profile.wallets().import("this is a top secret passphrase", "ARK", "devnet");
+		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
 	});
 
 	it("should not render if not open", () => {
