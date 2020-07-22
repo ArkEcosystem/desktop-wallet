@@ -1,3 +1,3 @@
-import { Request } from "@arkecosystem/platform-sdk-http-axios";
+import { HttpClient } from "./HttpClient";
 
-export const httpClient = new Request();
+export const httpClient = new HttpClient();

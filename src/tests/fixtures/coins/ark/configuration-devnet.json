@@ -1,23 +1,23 @@
 {
 	"data": {
-		"core": { "version": "2.6.42" },
-		"nethash": "6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988",
-		"slip44": 111,
+		"core": { "version": "2.7.0-next.1" },
+		"nethash": "2a44f340d76ffc3df204c5f38cd355b7496c9065a1ade2ef92071436bd72e867",
+		"slip44": 1,
 		"wif": 170,
-		"token": "ARK",
-		"symbol": "Ѧ",
-		"explorer": "https://explorer.ark.io",
-		"version": 23,
+		"token": "DARK",
+		"symbol": "DѦ",
+		"explorer": "https://dexplorer.ark.io",
+		"version": 30,
 		"ports": { "@arkecosystem/core-p2p": null, "@arkecosystem/core-api": 4003 },
 		"constants": {
-			"height": 11273000,
+			"height": 5636000,
 			"reward": 200000000,
 			"activeDelegates": 51,
 			"blocktime": 8,
 			"block": {
 				"version": 0,
-				"maxTransactions": 150,
-				"maxPayload": 6300000,
+				"maxTransactions": 500,
+				"maxPayload": 21000000,
 				"acceptExpiredTransactionTimestamps": false,
 				"idFullSha256": true
 			},
@@ -37,15 +37,20 @@
 					"htlcRefund": 0
 				}
 			},
+			"ignoreInvalidSecondSignatureField": false,
+			"ignoreExpiredTransactions": false,
 			"vendorFieldLength": 255,
-			"multiPaymentLimit": 64,
-			"aip11": true
+			"multiPaymentLimit": 128,
+			"p2p": { "minimumVersions": ["^2.6 || ^2.6.0-next.9"] },
+			"aip11": true,
+			"htlcEnabled": true,
+			"aip36": true
 		},
 		"transactionPool": {
 			"dynamicFees": {
 				"enabled": true,
-				"minFeePool": 3000,
-				"minFeeBroadcast": 3000,
+				"minFeePool": 1000,
+				"minFeeBroadcast": 1000,
 				"addonBytes": {
 					"transfer": 100,
 					"secondSignature": 250,
