@@ -171,13 +171,13 @@
     web3 "^1.2.11"
     yup "^0.29.1"
 
-"@arkecosystem/platform-sdk-http-node-fetch@^0.9.161":
+"@arkecosystem/platform-sdk-http-axios@^0.9.161":
   version "0.9.161"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-http-node-fetch/-/platform-sdk-http-node-fetch-0.9.161.tgz#85d70ae2f0c318ac6a643930e7f38a2a3c9f54d7"
-  integrity sha512-dM3vcc15Dascbe0HIGi9FONb11tATMf1/QNcnXjGEPWni2T35cb2FZafbwHZTJLnvevZwQK8gx/u2UUimOid2A==
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-http-axios/-/platform-sdk-http-axios-0.9.161.tgz#6539df6e950ced180eaf32474f7d285d478d3616"
+  integrity sha512-xdJxwQx0B7quz86mJfpIIE0aN3W2gZan8sSCjyiba9AhSXUj9J9V+RH26zIeGF/Tl65GY3M9brL72/QKwCZUlg==
   dependencies:
     "@arkecosystem/platform-sdk" "0.9.161"
-    node-fetch "^2.6.0"
+    axios "^0.19.2"
 
 "@arkecosystem/platform-sdk-intl@0.9.161", "@arkecosystem/platform-sdk-intl@^0.9.161":
   version "0.9.161"
