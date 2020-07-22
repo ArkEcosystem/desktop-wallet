@@ -5,33 +5,62 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironment } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 type Props = {
 	onSubmit?: any;
+	onCancel?: any;
 	isOpen: boolean;
 	handleClose?: any;
-	publicKey?: string;
+	signatory?: string;
+	profileId: string;
+	walletPublicKey: string;
 };
 
-export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Props) => {
+export const VerifyMessage = ({
+	profileId,
+	walletPublicKey,
+	onSubmit,
+	onCancel,
+	signatory,
+	isOpen,
+	handleClose,
+}: Props) => {
+	const env = useEnvironment();
 	const form = useForm();
 	const { register } = form;
 	const [verifyAddress, setVerifyAddress] = useState(true);
+
+	const handleSubmit = async () => {
+		let isVerified = false;
+		const formValues = form.getValues();
+		const profile = env?.profiles().findById(profileId);
+		const wallet = profile?.wallets().findByPublicKey(walletPublicKey);
+
+		try {
+			const signedMessage = JSON.parse(formValues["signet-message-content"]);
+			isVerified = (await wallet?.message().verify(signedMessage)) as boolean;
+			onSubmit?.(isVerified);
+		} catch {
+			onSubmit?.(false);
+		}
+	};
 
 	const renderFormContent = () => {
 		if (verifyAddress)
 			return (
 				<div className="mt-8">
 					<Alert variant="warning">
-						<span className="text-sm font-medium">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
+						<span className="text-sm font-medium">{`Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
 
 					<div className="mt-8">
 						<FormField name="signet-message-content">
 							<FormLabel label="Signet message content" />
 							<Input
+								data-testid="VerifyMessage_message-content"
 								type="text"
 								name="signet-message-content"
 								defaultValue={""}
@@ -45,19 +74,29 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 
 		return (
 			<div data-testid="noverify-address__content">
-				<FormField name="message-content" className="mt-8">
+				<FormField name="message" className="mt-8">
 					<FormLabel label="Message" />
-					<Input type="text" ref={register({ required: true })} />
+					<Input type="text" ref={register({ required: true })} data-testid="VerifyMessage__message-input" />
 					<FormHelperText />
 				</FormField>
-				<FormField name="public-key" className="mt-8">
-					<FormLabel label="Public key" />
-					<Input type="text" disabled defaultValue={publicKey} ref={register({ required: true })} />
+				<FormField name="signatory" className="mt-8">
+					<FormLabel label="Signatory" />
+					<Input
+						data-testid="VerifyMessage__signatory-input"
+						type="text"
+						disabled
+						defaultValue={signatory}
+						ref={register({ required: true })}
+					/>
 					<FormHelperText />
 				</FormField>
 				<FormField name="signature" className="mt-8">
 					<FormLabel label="Signature" />
-					<Input type="text" ref={register({ required: true })} />
+					<Input
+						type="text"
+						ref={register({ required: true })}
+						data-testid="VerifyMessage__signature-input"
+					/>
 					<FormHelperText />
 				</FormField>
 			</div>
@@ -79,7 +118,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 						</span>
 						<div className="mr-1 -mt-7">
 							<Toggle
-								data-testid="verify-address__togle"
+								data-testid="verify-address__toggle"
 								checked={verifyAddress}
 								onChange={(event) => setVerifyAddress(event.target.checked)}
 							/>
@@ -87,11 +126,15 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					</div>
 				</div>
 
-				<Form id="verify-message__form" context={form} onSubmit={onSubmit}>
+				<Form id="verify-message__form" context={form} onSubmit={handleSubmit}>
 					{renderFormContent()}
 					<div className="flex justify-end space-x-3">
-						<Button variant="plain">Cancel</Button>
-						<Button>Verify</Button>
+						<Button variant="plain" data-testid="VerifyMessage__cancel" onClick={onCancel}>
+							Cancel
+						</Button>
+						<Button type="submit" data-testid="VerifyMessage__submit">
+							Verify
+						</Button>
 					</div>
 				</Form>
 			</div>
