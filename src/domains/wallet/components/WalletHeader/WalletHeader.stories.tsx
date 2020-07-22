@@ -12,6 +12,7 @@ export const Default = () => (
 		balance="432,509.0892 ARK"
 		currencyBalance="789,008.45 USD"
 		onSignMessage={console.log}
+		onDeleteWallet={console.log}
 		coin="Ark"
 		isLedger
 		isMultisig

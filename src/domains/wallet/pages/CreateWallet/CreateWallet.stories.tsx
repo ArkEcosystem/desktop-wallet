@@ -17,7 +17,7 @@ export const Default = () => {
 	return (
 		<EnvironmentProvider env={env}>
 			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/create`]}>
-				<Route component={(routerProps: any) => <CreateWallet />} path="/profiles/:profileId/wallets/create" />
+				<Route component={() => <CreateWallet />} path="/profiles/:profileId/wallets/create" />
 			</MemoryRouter>
 		</EnvironmentProvider>
 	);
