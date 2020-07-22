@@ -264,7 +264,7 @@ exports[`Votes should render 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
@@ -314,8 +314,8 @@ exports[`Votes should render 1`] = `
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
                             id="downshift-0-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
+                            name="network"
+                            placeholder="Select Network"
                             value=""
                           />
                         </div>
@@ -469,7 +469,7 @@ exports[`Votes should render 1`] = `
                       <span
                         class="text-base font-semibold text-theme-neutral-light"
                       >
-                        Select address
+                        Select Address
                       </span>
                     </div>
                     <div
@@ -781,7 +781,7 @@ exports[`Votes should select a cryptoasset 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
@@ -844,8 +844,8 @@ exports[`Votes should select a cryptoasset 1`] = `
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
                             id="downshift-1-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
+                            name="network"
+                            placeholder="Select Network"
                             value="Bitcoin"
                           />
                         </div>
@@ -999,7 +999,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       <span
                         class="text-base font-semibold text-theme-neutral-light"
                       >
-                        Select address
+                        Select Address
                       </span>
                     </div>
                     <div
@@ -1052,7 +1052,9 @@ exports[`Votes should select a cryptoasset 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -1067,7 +1069,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          My Address
+                          Address
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
@@ -1092,9 +1094,11 @@ exports[`Votes should select a cryptoasset 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top flex justify-center"
+                        class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -1136,7 +1140,9 @@ exports[`Votes should select a cryptoasset 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -1206,7 +1212,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top flex justify-center"
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Profile
@@ -1220,7 +1226,7 @@ exports[`Votes should select a cryptoasset 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top flex justify-center"
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Status
@@ -1236,7 +1242,9 @@ exports[`Votes should select a cryptoasset 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                   </tr>
@@ -1967,7 +1975,7 @@ exports[`Votes should select a delegate 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
@@ -2030,8 +2038,8 @@ exports[`Votes should select a delegate 1`] = `
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
                             id="downshift-3-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
+                            name="network"
+                            placeholder="Select Network"
                             value="Bitcoin"
                           />
                         </div>
@@ -2260,7 +2268,9 @@ exports[`Votes should select a delegate 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -2439,7 +2449,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Min
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
@@ -3336,7 +3346,7 @@ exports[`Votes should select address 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
@@ -3399,8 +3409,8 @@ exports[`Votes should select address 1`] = `
                             class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
                             data-testid="select-asset__input"
                             id="downshift-2-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
+                            name="network"
+                            placeholder="Select Network"
                             value="Bitcoin"
                           />
                         </div>
@@ -3629,7 +3639,9 @@ exports[`Votes should select address 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -3808,7 +3820,7 @@ exports[`Votes should select address 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Min
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"

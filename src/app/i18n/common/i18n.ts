@@ -75,6 +75,7 @@ export const translations: { [key: string]: any } = {
 	NETWORK: "Network",
 	NEXT: "Next",
 	NOT: "not",
+	NOT_AVAILABLE: "N/A",
 	OF: "of",
 	OFFICIAL: "Official",
 	OPEN: "Open",
@@ -161,5 +162,9 @@ export const translations: { [key: string]: any } = {
 		MONTHS_AGO_plural: "{{count}} months ago",
 		YEARS_AGO: "A year ago",
 		YEARS_AGO_plural: "{{count}} years ago",
+	},
+
+	PERIODS: {
+		DAILY: "Daily",
 	},
 };

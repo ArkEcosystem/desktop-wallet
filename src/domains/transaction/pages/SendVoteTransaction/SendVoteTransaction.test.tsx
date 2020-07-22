@@ -33,9 +33,7 @@ describe("Vote For Delegate", () => {
 
 	it("should render 3rd step", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(
-			<ThirdStep form={form} passwordType="mnemonic" />
-		);
+		const { getByTestId, asFragment } = render(<ThirdStep form={form} passwordType="mnemonic" />);
 
 		expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

@@ -105,7 +105,13 @@ export const AddRecipient = ({
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
-							<FormLabel label={isSingle ? t("COMMON.RECIPIENT") : t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })} />
+							<FormLabel
+								label={
+									isSingle
+										? t("COMMON.RECIPIENT")
+										: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
+								}
+							/>
 						</div>
 
 						<SelectRecipient
