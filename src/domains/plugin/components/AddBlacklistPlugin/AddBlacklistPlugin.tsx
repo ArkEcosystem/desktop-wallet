@@ -36,6 +36,7 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 		{
 			Header: t("COMMON.RATING"),
 			accessor: "rating",
+			className: "justify-center",
 		},
 		{
 			Header: "  ",
@@ -78,7 +79,9 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 							</td>
 
 							<td className="py-10 text-theme-neutral-dark">
-								<ReviewRating rating={rowData.rating} width={3} />
+								<span className="flex justify-center">
+									<ReviewRating rating={rowData.rating} width={3} />
+								</span>
 							</td>
 
 							<td className="w-16">
@@ -94,4 +97,5 @@ export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPlu
 
 AddBlacklistPlugin.defaultProps = {
 	isOpen: false,
+	plugins: [],
 };

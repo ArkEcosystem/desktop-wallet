@@ -29,7 +29,7 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 		{
 			Header: t("COMMON.CATEGORY"),
 			accessor: "category",
-			className: "float-right",
+			className: "justify-end",
 		},
 		{
 			Header: "  ",
@@ -82,4 +82,5 @@ export const BlacklistPlugins = ({ isOpen, plugins, onClose }: BlacklistPluginsP
 
 BlacklistPlugins.defaultProps = {
 	isOpen: false,
+	plugins: [],
 };

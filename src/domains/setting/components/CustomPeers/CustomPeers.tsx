@@ -62,7 +62,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 					</label>
 				</FormField>
 
-				<div className="float-right mt-4">
+				<div className="flex justify-end mt-4">
 					<Button type="submit" data-testid="peer-list__add-button">
 						{t("SETTINGS.PEERS.ADD_PEER")}
 					</Button>
