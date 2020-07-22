@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile,Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import nock from "nock";
