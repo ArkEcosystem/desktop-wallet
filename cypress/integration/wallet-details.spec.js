@@ -35,6 +35,43 @@ describe("Wallet Details", () => {
 		cy.get("button").contains("Send");
 	});
 
+	it("should update wallet name", () => {
+		cy.get('[data-testid="WalletHeader__more-button"]').find("div.relative").click();
+		cy.get('[data-testid="WalletHeader__more-button"]')
+			.find("div.relative")
+			.find("ul > li")
+			.each(($el) => {
+				if ($el.text() === "Wallet Name") {
+					cy.wrap($el).contains("Wallet Name");
+					cy.wrap($el).click();
+				}
+			});
+
+		cy.get('[data-testid="modal__inner"]').find("h2").contains("Name Wallet");
+		cy.get("input[name=UpdateWalletName__input]").type("New Label");
+		cy.get('[data-testid="UpdateWalletName__submit"]').click();
+
+		cy.get('[data-testid="modal__inner"]').should("not.exist");
+	});
+
+	it("should error if new wallet name is not provided", () => {
+		cy.get('[data-testid="WalletHeader__more-button"]').find("div.relative").click();
+		cy.get('[data-testid="WalletHeader__more-button"]')
+			.find("div.relative")
+			.find("ul > li")
+			.each(($el) => {
+				if ($el.text() === "Wallet Name") {
+					cy.wrap($el).contains("Wallet Name");
+					cy.wrap($el).click();
+				}
+			});
+
+		cy.get('[data-testid="modal__inner"]').find("h2").contains("Name Wallet");
+		cy.get('[data-testid="UpdateWalletName__submit"]').click();
+		cy.get("fieldset p").contains("Wallet name is required");
+		cy.get('[data-testid="modal__close-btn"]').click();
+	});
+
 	it("should delete wallet", () => {
 		cy.get('[data-testid="WalletHeader__more-button"]').find("div.relative").click();
 		cy.get('[data-testid="WalletHeader__more-button"]')
