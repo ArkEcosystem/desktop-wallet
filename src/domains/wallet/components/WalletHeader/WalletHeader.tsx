@@ -20,6 +20,7 @@ type Props = {
 	onCopy?: () => void;
 	onSignMessage: () => void;
 	onDeleteWallet: () => void;
+	onUpdateWalletName: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
 };
@@ -35,6 +36,7 @@ export const WalletHeader = ({
 	onCopy,
 	onSignMessage,
 	onDeleteWallet,
+	onUpdateWalletName,
 	balance,
 	currencyBalance,
 	isLedger,
@@ -100,6 +102,10 @@ export const WalletHeader = ({
 
 									if (option.value === "delete-wallet") {
 										onDeleteWallet();
+									}
+
+									if (option.value === "wallet-name") {
+										onUpdateWalletName();
 									}
 								}}
 								dropdownClass="top-5 right-3 text-left bg-white"
