@@ -1,18 +1,5 @@
 const path = require("path");
 const { override, addPostcssPlugins } = require("customize-cra");
-const { dependencies } = require("./package.json");
-
-const customConfig = {
-	target: "electron-renderer",
-	node: {
-		__dirname: process.env.NODE_ENV !== "production",
-		__filename: process.env.NODE_ENV !== "production",
-		fs: "empty",
-	},
-	externals: {
-		"usb-detection": "commonjs usb-detection",
-	},
-};
 
 module.exports = override(
 	addPostcssPlugins([
@@ -21,16 +8,61 @@ module.exports = override(
 		require("autoprefixer"),
 	]),
 	(config) => {
-		const overridedConfig = {
-			...config,
-			...customConfig,
+		config.target = "electron-renderer";
+
+		config.node = {
+			fs: "empty",
 		};
 
-		overridedConfig.module.rules.push({
+		config.externals = {
+			"usb-detection": "commonjs usb-detection",
+		};
+
+		config.resolve = {
+			extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
+			alias: {
+				app: path.resolve(__dirname, "src/app/"),
+				domains: path.resolve(__dirname, "src/domains"),
+				resources: path.resolve(__dirname, "src/resources"),
+				styles: path.resolve(__dirname, "src/styles"),
+				utils: path.resolve(__dirname, "src/utils"),
+				tests: path.resolve(__dirname, "src/tests"),
+			},
+		};
+
+		config.module.rules.push({
+			test: /\.(ts|js|jsx|tsx)$/,
+			exclude: /node_modules/,
+			use: {
+				loader: require.resolve("babel-loader"),
+				options: {
+					presets: [
+						require.resolve("@babel/preset-env"),
+						require.resolve("@babel/preset-react"),
+						require.resolve("@babel/preset-typescript"),
+					],
+					babelrc: false,
+				},
+			},
+		});
+
+		config.module.rules.push({
 			test: /\.node$/,
 			use: "node-loader",
 		});
 
-		return overridedConfig;
+		config.optimization = {
+			usedExports: true,
+			providedExports: true,
+			sideEffects: true,
+			namedChunks: true,
+			namedModules: true,
+			removeAvailableModules: true,
+			mergeDuplicateChunks: true,
+			flagIncludedChunks: true,
+			removeEmptyChunks: true,
+		};
+
+		return config;
 	},
 );
