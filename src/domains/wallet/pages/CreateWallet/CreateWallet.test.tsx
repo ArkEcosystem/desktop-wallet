@@ -191,6 +191,7 @@ describe("CreateWallet", () => {
 		const selectAssetsInput = getByTestId("select-asset__input");
 		await act(async () => {
 			const continueButton = getByTestId("CreateWallet__continue-button");
+			const backButton = getByTestId("CreateWallet__back-button");
 
 			// Navigation between steps
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
@@ -207,10 +208,16 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
-			fireEvent.click(getByTestId(`CreateWallet__back-button`));
-			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+			fireEvent.click(backButton);
+			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 			fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+			fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+
+			fireEvent.click(backButton);
 			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 			fireEvent.click(continueButton);
@@ -230,6 +237,13 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+
+			fireEvent.click(backButton);
+			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+			fireEvent.click(getByTestId("CreateWallet__continue-button"));
 			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
 			await fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });

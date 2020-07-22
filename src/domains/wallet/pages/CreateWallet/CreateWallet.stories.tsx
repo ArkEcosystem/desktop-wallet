@@ -8,12 +8,12 @@ import { StubStorage } from "tests/mocks";
 
 import { CreateWallet } from "./CreateWallet";
 
-const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-const profile = env.profiles().create("Anne Doe");
-
 export default { title: "Domains / Wallet / Pages / CreateWallet" };
 
 export const Default = () => {
+	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	const profile = env.profiles().create("Anne Doe");
+
 	return (
 		<EnvironmentProvider env={env}>
 			<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/create`]}>
