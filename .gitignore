@@ -20,6 +20,9 @@
 .env.test.local
 .env.production.local
 
+# cypress
+cypress/screenshots/**/*.png
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
