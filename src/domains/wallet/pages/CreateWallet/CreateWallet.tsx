@@ -1,6 +1,9 @@
+import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -10,24 +13,42 @@ import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
+import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
 
-export const FirstStep = ({ networks }: { networks: Network[] }) => {
-	const { register, setValue } = useFormContext();
-	const [activeNetwork, setActiveNetwork] = React.useState<Network | undefined>(undefined);
+type Network = { coin: string; name: string; network: string; icon: string };
 
-	React.useEffect(() => {
-		register("network", { required: true });
-	}, [register]);
+export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
+	const { getValues, setValue } = useFormContext();
+	const currentNetwork = getValues("network");
 
-	const handleSelect = (network: Network) => {
-		setActiveNetwork(network);
+	const networks: Network[] = env.availableNetworks().map((network: any) => ({
+		name: `${network.ticker()} - ${network.name()}`,
+		icon: `${network.coin().charAt(0).toUpperCase()}${network.coin().slice(1).toLowerCase()}`,
+		coin: network.coin(),
+		network: network.name().toLowerCase(),
+	}));
+
+	const handleSelect = async (network: Network) => {
+		const currentWallet = getValues("wallet");
+
 		setValue("network", network, true);
+		setValue("wallet", null, true);
+		setValue("mnemonic", null, true);
+
+		if (currentWallet) {
+			profile.wallets().forget(currentWallet.id());
+		}
+
+		const { mnemonic, wallet } = await profile.wallets().generate(network.coin, network.network);
+		setValue("wallet", wallet, true);
+		setValue("mnemonic", mnemonic, true);
 	};
 
 	return (
@@ -41,24 +62,24 @@ export const FirstStep = ({ networks }: { networks: Network[] }) => {
 			<div className="space-y-2">
 				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
 				<SelectNetwork
-					name={activeNetwork as any}
+					name={currentNetwork?.name}
 					networks={networks}
-					onSelect={(selected) => handleSelect(selected?.name)}
+					onSelect={(network) => handleSelect(network)}
+					value={currentNetwork}
 				/>
 			</div>
 		</section>
 	);
 };
 
-export const SecondStep = ({
-	mnemonic,
-	onCopy,
-	onDownload,
-}: {
-	mnemonic: string;
-	onCopy: () => void;
-	onDownload: () => void;
-}) => {
+export const SecondStep = () => {
+	const { getValues, unregister } = useFormContext();
+	const mnemonic = getValues("mnemonic");
+
+	React.useEffect(() => {
+		unregister("verification");
+	}, [unregister]);
+
 	return (
 		<section data-testid="CreateWallet__second-step">
 			<div className="my-8">
@@ -73,10 +94,12 @@ export const SecondStep = ({
 				</Alert>
 				<MnemonicList mnemonic={mnemonic} />
 				<div className="flex justify-end w-full">
-					<Button data-testid="CreateWallet__copy" onClick={onCopy} variant="plain">
-						<Icon name="Copy" />
-						<span>Copy</span>
-					</Button>
+					<Clipboard data={mnemonic}>
+						<Button data-testid="CreateWallet__copy" variant="plain">
+							<Icon name="Copy" />
+							<span>Copy</span>
+						</Button>
+					</Clipboard>
 				</div>
 			</div>
 
@@ -92,7 +115,6 @@ export const SecondStep = ({
 				</div>
 				<div className="flex justify-end w-full">
 					<Button
-						onClick={onDownload}
 						data-testid="CreateWallet__download"
 						variant="plain"
 						className="flex items-center mt-4 space-x-2"
@@ -108,22 +130,20 @@ export const SecondStep = ({
 	);
 };
 
-export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: boolean; mnemonic: string }) => {
-	const { register, unregister, setValue } = useFormContext();
+export const ThirdStep = () => {
+	const { getValues, register, setValue } = useFormContext();
+	const mnemonic = getValues("mnemonic");
+	const isVerified: boolean = getValues("verification");
 
-	const handleComplete = React.useCallback(() => {
+	const handleComplete = () => {
 		setValue("verification", true, true);
-	}, [setValue]);
+	};
 
 	React.useEffect(() => {
-		register({ name: "verification", type: "custom" }, { required: true });
-
-		if (skipVerification) {
-			handleComplete();
+		if (!isVerified) {
+			register("verification", { required: true });
 		}
-
-		return () => unregister("verification");
-	}, [register, unregister, skipVerification, handleComplete]);
+	}, [isVerified, register]);
 
 	return (
 		<section data-testid="CreateWallet__third-step">
@@ -133,9 +153,9 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 
 			<MnemonicVerification
 				mnemonic={mnemonic}
-				wordPositions={[3, 6, 9]}
 				optionsLimit={6}
 				handleComplete={handleComplete}
+				isCompleted={isVerified}
 			/>
 
 			<Divider dashed />
@@ -146,6 +166,7 @@ export const ThirdStep = ({ skipVerification, mnemonic }: { skipVerification: bo
 export const FourthStep = () => {
 	const { getValues, register } = useFormContext();
 	const network: Network = getValues("network");
+	const wallet: Wallet = getValues("wallet");
 
 	return (
 		<section data-testid="CreateWallet__fourth-step">
@@ -157,7 +178,7 @@ export const FourthStep = () => {
 				<li className="flex justify-between">
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
-						<p data-testid="CrateWallet__network-name" className="text-lg font-medium">
+						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
 					</div>
@@ -171,9 +192,11 @@ export const FourthStep = () => {
 				<li className="flex justify-between">
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
-						<p className="text-lg font-medium">D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax</p>
+						<p data-testid="CreateWallet__wallet-address" className="text-lg font-medium">
+							{wallet.address()}
+						</p>
 					</div>
-					<Circle />
+					<Avatar address={wallet.address()} />
 				</li>
 			</ul>
 
@@ -187,24 +210,58 @@ export const FourthStep = () => {
 	);
 };
 
-type Network = { name: string; icon: string };
+export const CreateWallet = () => {
+	const env = useEnvironment();
+	const history = useHistory();
 
-type Props = {
-	networks: Network[];
-	mnemonic: string;
-	onSubmit: (data: { network: string; name: string }) => void;
-	onCopy: () => void;
-	onDownload: () => void;
-	skipMnemonicVerification?: boolean;
-};
-
-export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload, skipMnemonicVerification }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
+	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
+	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+	const crumbs = [
+		{
+			route: dashboardRoute,
+			label: "Go back to Portfolio",
+		},
+	];
 
 	const form = useForm({ mode: "onChange" });
-	const { formState } = form;
-	const { isValid } = formState;
+	const { getValues, formState, register } = form;
+
+	React.useEffect(() => {
+		register("network", { required: true });
+		register("wallet", { required: true });
+		register("mnemonic", { required: true });
+	}, [register]);
+
+	const submitForm = async ({ name }: any) => {
+		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
+
+		await env?.persist();
+
+		setHasSubmitted(true);
+	};
+
+	React.useEffect(() => {
+		if (hasSubmitted) {
+			history.push(dashboardRoute);
+		}
+
+		// TODO: Figure out a way without setTimeout
+		return () => {
+			setTimeout(() => {
+				if (hasSubmitted) {
+					return;
+				}
+
+				const currentWallet = getValues("wallet");
+
+				if (currentWallet) {
+					activeProfile?.wallets().forget(currentWallet.id());
+				}
+			}, 100);
+		};
+	}, [activeProfile, dashboardRoute, getValues, hasSubmitted, history]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -214,29 +271,22 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 		setActiveTab(activeTab + 1);
 	};
 
-	const crumbs = [
-		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
-		},
-	];
-
 	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onSubmit(data)}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
 						<div className="mt-4">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} />
+								<FirstStep env={env!} profile={activeProfile!} />
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<SecondStep onCopy={onCopy} onDownload={onDownload} mnemonic={mnemonic} />
+								<SecondStep />
 							</TabPanel>
 							<TabPanel tabId={3}>
-								<ThirdStep skipVerification={!!skipMnemonicVerification} mnemonic={mnemonic} />
+								<ThirdStep />
 							</TabPanel>
 							<TabPanel tabId={4}>
 								<FourthStep />
@@ -255,7 +305,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 								{activeTab < 4 && (
 									<Button
 										data-testid="CreateWallet__continue-button"
-										disabled={!isValid}
+										disabled={!formState.isValid}
 										onClick={handleNext}
 									>
 										Continue
@@ -264,7 +314,7 @@ export const CreateWallet = ({ networks, mnemonic, onSubmit, onCopy, onDownload,
 
 								{activeTab === 4 && (
 									<Button type="submit" data-testid="CreateWallet__save-button">
-										Save & Finish
+										Save &amp; Finish
 									</Button>
 								)}
 							</div>

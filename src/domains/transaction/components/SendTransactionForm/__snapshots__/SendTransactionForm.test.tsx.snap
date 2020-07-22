@@ -427,7 +427,7 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
         </div>
       </fieldset>
       <div
-        class="flex"
+        class="flex items-center"
       >
         <div
           class="w-2/4"
@@ -492,34 +492,37 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
           </fieldset>
         </div>
         <div
-          class="w-2/4 text-right mt-7"
+          class="w-2/4 mt-6 text-right"
         >
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
             data-testid="SelectionBar"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Last
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Min
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Average
             </button>
@@ -978,7 +981,7 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
         </div>
       </fieldset>
       <div
-        class="flex"
+        class="flex items-center"
       >
         <div
           class="w-2/4"
@@ -1043,34 +1046,37 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
           </fieldset>
         </div>
         <div
-          class="w-2/4 text-right mt-7"
+          class="w-2/4 mt-6 text-right"
         >
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
             data-testid="SelectionBar"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Last
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Min
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Average
             </button>
@@ -1529,7 +1535,7 @@ exports[`SendTransactionForm should render 1`] = `
         </div>
       </fieldset>
       <div
-        class="flex"
+        class="flex items-center"
       >
         <div
           class="w-2/4"
@@ -1594,34 +1600,37 @@ exports[`SendTransactionForm should render 1`] = `
           </fieldset>
         </div>
         <div
-          class="w-2/4 text-right mt-7"
+          class="w-2/4 mt-6 text-right"
         >
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
             data-testid="SelectionBar"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Last
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Min
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Average
             </button>
@@ -1972,7 +1981,7 @@ exports[`SendTransactionForm should set available amount 1`] = `
         </div>
       </fieldset>
       <div
-        class="flex"
+        class="flex items-center"
       >
         <div
           class="w-2/4"
@@ -2037,34 +2046,37 @@ exports[`SendTransactionForm should set available amount 1`] = `
           </fieldset>
         </div>
         <div
-          class="w-2/4 text-right mt-7"
+          class="w-2/4 mt-6 text-right"
         >
           <div
-            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+            class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
             data-testid="SelectionBar"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Last
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Min
             </button>
             <button
               aria-checked="false"
-              class="sc-fzpans bmTTmI relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+              class="sc-fzpans gWxirZ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
               data-testid="SelectionBarOption"
               role="radio"
+              type="button"
             >
               Average
             </button>

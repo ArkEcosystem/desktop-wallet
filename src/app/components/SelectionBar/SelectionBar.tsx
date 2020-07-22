@@ -10,7 +10,7 @@ export const SelectionBar = ({ children }: GroupProps) => {
 		<div
 			data-testid="SelectionBar"
 			role="radiogroup"
-			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
 		>
 			{children}
 		</div>
@@ -18,6 +18,9 @@ export const SelectionBar = ({ children }: GroupProps) => {
 };
 
 const SelectionBarOptionStyled = styled.button`
+	& {
+		padding: 0.6875rem 1.25rem 0.625rem;
+	}
 	&[aria-checked="true"] {
 		${tw`text-theme-success border-theme-success bg-theme-success-contrast font-semibold`}
 	}
@@ -40,11 +43,12 @@ export const SelectionBarOption = ({ value, isValueChecked, setCheckedValue, chi
 
 	return (
 		<SelectionBarOptionStyled
+			type="button"
 			data-testid="SelectionBarOption"
 			role="radio"
 			aria-checked={isChecked}
 			onClick={() => setCheckedValue(value)}
-			className="relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+			className="relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
 		>
 			{children}
 		</SelectionBarOptionStyled>

@@ -1,0 +1,71 @@
+{
+	"data": {
+		"core": { "version": "2.6.42" },
+		"nethash": "6e84d08bd299ed97c212c886c98a57e36545c8f5d645ca7eeae63a8bd62d8988",
+		"slip44": 111,
+		"wif": 170,
+		"token": "ARK",
+		"symbol": "Ѧ",
+		"explorer": "https://explorer.ark.io",
+		"version": 23,
+		"ports": { "@arkecosystem/core-p2p": null, "@arkecosystem/core-api": 4003 },
+		"constants": {
+			"height": 11273000,
+			"reward": 200000000,
+			"activeDelegates": 51,
+			"blocktime": 8,
+			"block": {
+				"version": 0,
+				"maxTransactions": 150,
+				"maxPayload": 6300000,
+				"acceptExpiredTransactionTimestamps": false,
+				"idFullSha256": true
+			},
+			"epoch": "2017-03-21T13:00:00.000Z",
+			"fees": {
+				"staticFees": {
+					"transfer": 10000000,
+					"secondSignature": 500000000,
+					"delegateRegistration": 2500000000,
+					"vote": 100000000,
+					"multiSignature": 500000000,
+					"ipfs": 500000000,
+					"multiPayment": 10000000,
+					"delegateResignation": 2500000000,
+					"htlcLock": 10000000,
+					"htlcClaim": 0,
+					"htlcRefund": 0
+				}
+			},
+			"vendorFieldLength": 255,
+			"multiPaymentLimit": 64,
+			"aip11": true
+		},
+		"transactionPool": {
+			"dynamicFees": {
+				"enabled": true,
+				"minFeePool": 3000,
+				"minFeeBroadcast": 3000,
+				"addonBytes": {
+					"transfer": 100,
+					"secondSignature": 250,
+					"delegateRegistration": 400000,
+					"vote": 100,
+					"multiSignature": 500,
+					"ipfs": 250,
+					"multiPayment": 500,
+					"delegateResignation": 100,
+					"htlcLock": 100,
+					"htlcClaim": 0,
+					"htlcRefund": 0,
+					"businessRegistration": 4000000,
+					"businessUpdate": 500,
+					"businessResignation": 100,
+					"bridgechainRegistration": 4000000,
+					"bridgechainUpdate": 500,
+					"bridgechainResignation": 100
+				}
+			}
+		}
+	}
+}
