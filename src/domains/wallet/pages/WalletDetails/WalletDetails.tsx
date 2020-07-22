@@ -49,9 +49,10 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const activeProfile = useActiveProfile();
 	const { walletId } = useParams();
 
+	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: dashboardRoute,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -61,6 +62,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		activeProfile?.wallets().forget(wallet?.id() as string);
 		await env?.persist();
 		setIsDeleteWallet(false);
+		history.push(dashboardRoute);
 	};
 
 	/* istanbul ignore next */

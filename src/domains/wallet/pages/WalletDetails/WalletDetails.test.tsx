@@ -68,7 +68,7 @@ describe("WalletDetails", () => {
 			rendered = renderWithRouter(
 				<EnvironmentProvider env={env}>
 					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={wallets[0]} wallet={walletData} />
+						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
 					</Route>
 				</EnvironmentProvider>,
 				{
