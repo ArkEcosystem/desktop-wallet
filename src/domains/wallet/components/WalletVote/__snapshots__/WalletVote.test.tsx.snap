@@ -326,3 +326,97 @@ exports[`WalletVote should render 1`] = `
   </section>
 </DocumentFragment>
 `;
+
+exports[`WalletVote should render without delegates 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="WalletVote"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <h2
+        class="font-bold"
+      >
+        My Vote
+      </h2>
+      <button
+        class="flex items-center px-4 py-2 font-semibold rounded focus:outline-none focus:shadow-outline space-x-2 text-theme-neutral"
+        data-testid="WalletVote__toggle"
+      >
+        <span>
+          Hide
+        </span>
+        <span
+          class="sc-AxhUy icixlS"
+        >
+          <div
+            class="sc-AxhCb idmnCf"
+            height="10"
+            width="10"
+          >
+            <svg>
+              chevron-down.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <div
+      aria-hidden="false"
+      data-testid="Collapse"
+      style="max-height: auto; height: auto; opacity: 1; overflow: auto;"
+    >
+      <div
+        class="px-1 py-4 grid grid-flow-row row-gap-6"
+      >
+        <div
+          class="flex items-center pr-8 space-x-4"
+          data-testid="WalletVote__empty"
+        >
+          <div
+            class="flex items-center -space-x-2"
+          >
+            <div
+              class="sc-AxiKw jQtkkF text-theme-neutral-light"
+            >
+              <div
+                class="sc-AxhCb fxrKLH"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  voted.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="sc-AxiKw jQtkkF bg-theme-background"
+            />
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <span
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Address Delegate
+            </span>
+            <span
+              class="font-semibold text-theme-neutral-900"
+            >
+              You haven't voted for more than one delegate yet.
+              <a
+                class="px-2 text-theme-primary"
+                href="/#"
+              >
+                Learn more
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

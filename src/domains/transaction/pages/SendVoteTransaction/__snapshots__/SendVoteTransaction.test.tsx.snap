@@ -1200,6 +1200,110 @@ exports[`Vote For Delegate should render 3rd step 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Vote For Delegate should render 3rd step 2`] = `
+<DocumentFragment>
+  <div
+    data-testid="SendVoteTransaction__step--third"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Authenticate
+      </h1>
+      <div
+        class="text-theme-neutral-dark"
+      >
+        Enter your twelve word mnemonic to authenticate the transaction.
+      </div>
+      <div
+        class="mt-8"
+      >
+        <fieldset
+          class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="name"
+          >
+            Encryption Password
+          </label>
+          <div
+            class="sc-fzozJi OgXfh max-w-20"
+          >
+            <input
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              data-testid="Input"
+              name="password"
+              type="password"
+            />
+            <div
+              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+            >
+              <button
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy cPXLjK"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 3rd step 3`] = `
+<DocumentFragment>
+  <div
+    data-testid="SendVoteTransaction__step--third"
+  >
+    <div>
+      <h1>
+        Confirm Your Transaction
+      </h1>
+      <svg
+        class="my-8"
+      >
+        confirm-transaction-ledger-banner.svg
+      </svg>
+      <div
+        class="mt-8 text-center text-theme-neutral-dark"
+        data-testid="LedgerConfirmation-description"
+      >
+        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+      </div>
+      <div
+        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+      >
+        <div
+          class="sc-fznWqX gRKjsl"
+          color="primary"
+        />
+        <span
+          class="font-semibold text-black"
+          data-testid="LedgerConfirmation-loading_message"
+        >
+          Waiting for confirmation ...
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Vote For Delegate should render 4th step 1`] = `
 <DocumentFragment>
   <section

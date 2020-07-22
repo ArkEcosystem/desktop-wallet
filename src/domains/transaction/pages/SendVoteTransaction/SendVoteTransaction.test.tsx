@@ -31,9 +31,9 @@ describe("Vote For Delegate", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render 3rd step", async () => {
+	it.each(["mnemonic", "password", "ledger"])("should render 3rd step", async (passwordType) => {
 		const { result: form } = renderHook(() => useForm());
-		const { getByTestId, asFragment } = render(<ThirdStep form={form} passwordType="mnemonic" />);
+		const { getByTestId, asFragment } = render(<ThirdStep form={form} passwordType={passwordType} />);
 
 		expect(getByTestId("SendVoteTransaction__step--third")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
