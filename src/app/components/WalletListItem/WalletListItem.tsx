@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -8,12 +9,9 @@ import React from "react";
 import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
+	wallet: Wallet;
 	coinIcon: string;
 	coinClass?: string;
-	address?: string;
-	walletName?: string;
-	balance?: string;
-	fiat?: string;
 	walletTypeIcons?: any[] | null;
 	actions?: any[];
 	variant?: "singleAction";
@@ -21,12 +19,9 @@ export type WalletListItemProps = {
 };
 
 export const WalletListItem = ({
+	wallet,
 	coinIcon,
 	coinClass,
-	address,
-	walletName,
-	balance,
-	fiat,
 	walletTypeIcons,
 	actions,
 	variant,
@@ -48,11 +43,11 @@ export const WalletListItem = ({
 					<Circle className={coinClass} size="lg">
 						<Icon name={coinIcon} width={20} height={20} />
 					</Circle>
-					<Avatar size="lg" address={address as string} />
+					<Avatar size="lg" address={wallet.address()} />
 				</div>
 			</td>
 			<td className="py-1">
-				<Address walletName={walletName} address={address} maxChars={22} />
+				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</td>
 			{walletTypeIcons && (
 				<td className="py-1 text-sm font-bold text-center space-x-2">
@@ -66,10 +61,10 @@ export const WalletListItem = ({
 				</td>
 			)}
 			<td className="font-semibold text-right">
-				<div>{balance}</div>
+				<div>{wallet.balance().toString()}</div>
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<div>{fiat}</div>
+				<div>{wallet.fiat().toString()}</div>
 			</td>
 			<td>
 				{actions &&

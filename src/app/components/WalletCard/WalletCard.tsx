@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
@@ -17,10 +18,7 @@ type WalletCardProps = {
 	blankSubtitle: string;
 	coinIcon?: string;
 	coinClass?: string;
-	walletName?: string;
-	id?: string;
-	address?: string;
-	balance?: string;
+	wallet?: Wallet;
 	actions?: any;
 	walletTypeIcons?: any[];
 	onSelect?: any;
@@ -38,10 +36,7 @@ export const WalletCard = ({
 	blankTitleClass,
 	blankSubtitleClass,
 	className,
-	id,
-	address,
-	walletName,
-	balance,
+	wallet,
 	coinIcon,
 	coinClass,
 	actions,
@@ -77,7 +72,7 @@ export const WalletCard = ({
 	}
 
 	return (
-		<Link to={`/profiles/${activeProfile?.id()}/wallets/${id}`}>
+		<Link to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`}>
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">
@@ -98,13 +93,13 @@ export const WalletCard = ({
 							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
 								{renderCoin(coinIcon)}
 							</Circle>
-							<Avatar size="lg" address={address as string} />
+							<Avatar size="lg" address={wallet.address()} />
 						</div>
 
 						<div className="mt-6 truncate max-w-12">
-							<Address walletName={walletName} address={address} maxChars={13} />
+							<Address walletName={wallet.alias()} address={wallet.address()} maxChars={13} />
 						</div>
-						<div className="font-bold text-theme-neutral-900">{balance}</div>
+						<div className="font-bold text-theme-neutral-900">{wallet.balance().toString()}</div>
 					</div>
 				</Card>
 			</div>

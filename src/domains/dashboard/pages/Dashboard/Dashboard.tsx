@@ -1,27 +1,34 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { balances, portfolioPercentages, transactions, wallets } from "../../data";
+import { balances, portfolioPercentages, transactions } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
 	transactions?: any;
-	wallets?: any;
 	networks?: any;
 	portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
+export const Dashboard = ({ transactions, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const [wallets, setWallets] = useState<Wallet[]>([]);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
+	// TODO: fix state management infinite loop
+	const profileWallets = activeProfile?.wallets().values();
+	useEffect(() => {
+		setWallets(profileWallets!);
+	}, [profileWallets, wallets]);
 
 	// Wallet controls data
 	const filterProperties = {
@@ -87,5 +94,4 @@ Dashboard.defaultProps = {
 	balances,
 	portfolioPercentages,
 	transactions,
-	wallets,
 };
