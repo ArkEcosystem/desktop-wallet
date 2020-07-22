@@ -81,12 +81,14 @@ exports[`WalletVote should render 1`] = `
                 </div>
               </div>
             </div>
-            <div>
-              <p
-                class="text-sm font-semibold text-theme-neutral space-y-1"
+            <div
+              class="flex flex-col justify-between"
+            >
+              <span
+                class="text-sm font-semibold text-theme-neutral"
               >
-                Address Delegate
-              </p>
+                Delegate
+              </span>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -112,13 +114,13 @@ exports[`WalletVote should render 1`] = `
               class="flex items-stretch divide-x-1 divide-theme-neutral-300"
             >
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Rank
-                </p>
+                </span>
                 <span
                   class="font-bold text-theme-neutral-dark"
                   data-testid="WalletVote__delegate__rank"
@@ -127,13 +129,13 @@ exports[`WalletVote should render 1`] = `
                 </span>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Explorer
-                </p>
+                </span>
                 <a
                   data-testid="WalletVote__delegate__explorer"
                   href="https://dexplorer.ark.io"
@@ -152,13 +154,13 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Marketpl.
-                </p>
+                  MarketSquare
+                </span>
                 <a
                   data-testid="WalletVote__delegate__msq"
                   href="https://marketsquare.ark.io"
@@ -177,13 +179,13 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Status
-                </p>
+                </span>
                 <div
                   class="sc-AxhCb fxrKLH text-theme-success"
                   height="1em"
@@ -243,12 +245,14 @@ exports[`WalletVote should render 1`] = `
                 </div>
               </div>
             </div>
-            <div>
-              <p
-                class="text-sm font-semibold text-theme-neutral space-y-1"
+            <div
+              class="flex flex-col justify-between"
+            >
+              <span
+                class="text-sm font-semibold text-theme-neutral"
               >
-                Address Delegate
-              </p>
+                Delegate
+              </span>
               <div
                 class="inline-block truncate align-middle"
               >
@@ -274,13 +278,13 @@ exports[`WalletVote should render 1`] = `
               class="flex items-stretch divide-x-1 divide-theme-neutral-300"
             >
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Rank
-                </p>
+                </span>
                 <span
                   class="font-bold text-theme-neutral-dark"
                   data-testid="WalletVote__delegate__rank"
@@ -289,13 +293,13 @@ exports[`WalletVote should render 1`] = `
                 </span>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Status
-                </p>
+                </span>
                 <div
                   class="sc-AxhCb fxrKLH text-theme-neutral"
                   height="1em"

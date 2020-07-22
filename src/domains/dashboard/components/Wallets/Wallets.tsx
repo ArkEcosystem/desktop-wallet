@@ -146,16 +146,17 @@ Wallets.defaultProps = {
 		},
 		{
 			Header: i18n.t("COMMON.WALLET_TYPE"),
+			className: "justify-center",
 		},
 		{
 			Header: i18n.t("COMMON.BALANCE"),
 			accessor: "balance",
-			className: "float-right",
+			className: "justify-end",
 		},
 		{
 			Header: i18n.t("COMMON.FIAT_VALUE"),
 			accessor: "fiat",
-			className: "float-right",
+			className: "justify-end",
 		},
 	],
 };

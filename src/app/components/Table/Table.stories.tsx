@@ -40,12 +40,12 @@ export const Default = () => {
 		{
 			Header: "Balance",
 			accessor: "balance",
-			className: "float-right",
+			className: "justify-end",
 		},
 		{
 			Header: "Fiat Value",
 			accessor: "fiat",
-			className: "float-right",
+			className: "justify-end",
 		},
 	];
 
