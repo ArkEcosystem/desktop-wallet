@@ -127,7 +127,7 @@ export const SecondStep = () => {
 	);
 };
 
-const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
+export const ThirdStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
 
 	const { t } = useTranslation();
