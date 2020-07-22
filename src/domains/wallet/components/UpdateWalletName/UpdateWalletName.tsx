@@ -29,9 +29,12 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 			onClose={props.onClose}
 		>
 			<Form context={methods} onSubmit={props.onSave} className="mt-8">
-				<FormField name="name">
+				<FormField name="UpdateWalletName__input">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
-					<Input ref={methods.register({ required: "Field required" })} />
+					<Input
+						ref={methods.register({ required: "Wallet name is required" })}
+						data-testid="UpdateWalletName__input"
+					/>
 					<FormHelperText />
 				</FormField>
 
@@ -40,7 +43,9 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 						Cancel
 					</Button>
 
-					<Button type="submit">Save</Button>
+					<Button type="submit" data-testid="UpdateWalletName__submit">
+						Save
+					</Button>
 				</div>
 			</Form>
 		</Modal>
