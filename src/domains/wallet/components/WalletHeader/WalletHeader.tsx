@@ -19,6 +19,7 @@ type Props = {
 	publicKey?: string | undefined;
 	onCopy?: () => void;
 	onSignMessage: () => void;
+	onDeleteWallet: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
 };
@@ -33,6 +34,7 @@ export const WalletHeader = ({
 	onStar,
 	onCopy,
 	onSignMessage,
+	onDeleteWallet,
 	balance,
 	currencyBalance,
 	isLedger,
@@ -89,15 +91,15 @@ export const WalletHeader = ({
 									{ label: "Wallet Name", value: "wallet-name" },
 									{ label: "Sign Message", value: "sign-message" },
 									{ label: "Store Hash", value: "store-hash" },
-									{ label: "Delete", value: "delete" },
+									{ label: "Delete", value: "delete-wallet" },
 								]}
-								onSelect={(option: any) => {
+								onSelect={(option: Record<string, string>) => {
 									if (option.value === "sign-message") {
-										return onSignMessage();
+										onSignMessage();
 									}
 
-									if (option.value === "delete") {
-										console.log(option);
+									if (option.value === "delete-wallet") {
+										onDeleteWallet();
 									}
 								}}
 								dropdownClass="top-5 right-3 text-left bg-white"
@@ -108,7 +110,7 @@ export const WalletHeader = ({
 			</div>
 
 			<Section>
-				<ul className="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8">
+				<ul className="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300">
 					<li className="space-y-2">
 						<div className="inline-flex items-center space-x-2">
 							<p
