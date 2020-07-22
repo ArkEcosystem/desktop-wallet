@@ -54,7 +54,7 @@ export const WithSelection = () => (
 		types={types}
 		data={links}
 		typeName="media"
-		selectionTypes={["twitter"]}
+		selectionTypes={["facebook", "twitter"]}
 		selectionTypeTitle="Primary"
 	/>
 );

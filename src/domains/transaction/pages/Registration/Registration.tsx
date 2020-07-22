@@ -34,7 +34,7 @@ type RegistrationProps = {
 	onDownload?: any;
 	networks?: any;
 	registrationTypes?: any;
-	profiles: any[];
+	wallets: any[];
 };
 
 type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
@@ -79,12 +79,12 @@ const FirstStep = ({
 	form,
 	networks,
 	registrationTypes,
-	profiles,
+	wallets,
 }: {
 	form: any;
 	networks: Network[];
 	registrationTypes: RegistrationType[];
-	profiles: any[];
+	wallets: any[];
 }) => {
 	const { register } = form;
 	const { address, registrationType } = form.watch();
@@ -110,10 +110,10 @@ const FirstStep = ({
 					<div data-testid="Registration__address-field">
 						<SelectAddress
 							contactSearchTitle="My addresses"
-							contactSearchDescription="Find and select preferred address from you saved profiles"
+							contactSearchDescription="Find and select preferred address from you saved wallets"
 							address={address}
 							ref={register}
-							contacts={profiles}
+							wallets={wallets}
 						/>
 					</div>
 				</FormField>
@@ -381,7 +381,7 @@ export const Registration = ({
 	formDefaultData,
 	onDownload,
 	networks,
-	profiles,
+	wallets,
 	registrationTypes,
 }: RegistrationProps) => {
 	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
@@ -400,7 +400,7 @@ export const Registration = ({
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/wallets/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -415,7 +415,7 @@ export const Registration = ({
 						<div className="mt-8">
 							<TabPanel tabId={1}>
 								<FirstStep
-									profiles={profiles}
+									wallets={wallets}
 									form={form}
 									networks={networks}
 									registrationTypes={registrationTypes}
@@ -510,5 +510,5 @@ Registration.defaultProps = {
 		network: null,
 		address: null,
 	},
-	profiles: [],
+	wallets: [],
 };

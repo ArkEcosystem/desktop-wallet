@@ -15,8 +15,8 @@ import { AddRecipientWrapper } from "./AddRecipient.styles";
 const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLabel, onChange }: ToggleButtonProps) => {
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
-			<div className="flex mb-2 space-x-2">
-				<div className="text-sm font-medium transition-colors duration-100">{labelText}</div>
+			<div className="flex items-center mb-2 space-x-2">
+				<div className="font-normal text-md transition-colors duration-100">{labelText}</div>
 				<div>
 					<Tippy content={helpText}>
 						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
@@ -104,51 +104,53 @@ export const AddRecipient = ({
 
 			<div
 				data-testid="add-recipient__form-wrapper"
-				className={`space-y-8 mt-8 mb-2 ${!isSingle ? "MultiRecipientWrapper" : ""}`}
+				className={`mt-8 mb-2 ${!isSingle ? "MultiRecipientWrapper" : ""}`}
 			>
-				<FormField name="recipientAddress" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label={isSingle ? "Recipient" : `Recipient #${addedRecipients.length + 1}`} />
-					</div>
+				<div className="space-y-8">
+					<FormField name="recipientAddress" className="relative mt-1">
+						<div className="mb-2">
+							<FormLabel label={isSingle ? "Recipient" : `Recipient #${addedRecipients.length + 1}`} />
+						</div>
 
-					<SelectRecipient
-						address={recipientAddress as any}
-						ref={register}
-						contacts={contacts}
-						onChange={(address: any) => setValue("recipientAddress", address)}
-					/>
-				</FormField>
-
-				<FormField name="amount" className="relative mt-1">
-					<div className="mb-2">
-						<FormLabel label="Amount ARK" />
-					</div>
-					<InputGroup>
-						<Input
-							data-testid="add-recipient__amount-input"
-							type="number"
-							name="amount"
-							placeholder="Amount"
-							className="pr-20"
+						<SelectRecipient
+							address={recipientAddress as any}
 							ref={register}
+							contacts={contacts}
+							onChange={(address: any) => setValue("recipientAddress", address)}
 						/>
-						<InputAddonEnd>
-							<button
-								data-testid="add-recipient__send-all"
-								onClick={() => setValue("amount", maxAvailableAmount)}
-								className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-							>
-								Send All
-							</button>
-						</InputAddonEnd>
-					</InputGroup>
-				</FormField>
+					</FormField>
+
+					<FormField name="amount" className="relative mt-1">
+						<div className="mb-2">
+							<FormLabel label="Amount ARK" />
+						</div>
+						<InputGroup>
+							<Input
+								data-testid="add-recipient__amount-input"
+								type="number"
+								name="amount"
+								placeholder="Amount"
+								className="pr-20"
+								ref={register}
+							/>
+							<InputAddonEnd>
+								<button
+									data-testid="add-recipient__send-all"
+									onClick={() => setValue("amount", maxAvailableAmount)}
+									className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+								>
+									Send All
+								</button>
+							</InputAddonEnd>
+						</InputGroup>
+					</FormField>
+				</div>
 
 				{!isSingle && amount > 0 && !!recipientAddress && (
 					<Button
 						data-testid="add-recipient__add-btn"
 						variant="plain"
-						className="w-full"
+						className="w-full mt-4"
 						onClick={() => onAddRecipient(recipientAddress as any, amount)}
 					>
 						Add Recipient

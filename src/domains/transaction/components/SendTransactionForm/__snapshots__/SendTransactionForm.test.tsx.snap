@@ -204,12 +204,12 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
         >
           <div>
             <button
-              class="sc-fzqNJr Uxstz SelectAddress  "
+              class="sc-fzqBZW iKvOTi SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                class="sc-fzplWN exzsOf mx-4 bg-theme-neutral-200 border-theme-neutral-200"
               />
               <div
                 class="absolute flex items-center right-4 space-x-3"
@@ -240,16 +240,16 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoLag iDWDrw"
+          class="sc-fzoLag bQzdMH"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex items-center mb-2 space-x-2"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="font-normal text-md transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -291,97 +291,101 @@ exports[`SendTransactionForm should not call onBack callback if not provided 1`]
             </div>
           </div>
           <div
-            class="space-y-8 mt-8 mb-2 "
+            class="mt-8 mb-2 "
             data-testid="add-recipient__form-wrapper"
           >
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
+            <div
+              class="space-y-8"
             >
-              <div
-                class="mb-2"
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="recipientAddress"
-                  label="Recipient"
-                >
-                  Recipient
-                </label>
-              </div>
-              <div>
                 <div
-                  class="relative flex items-center w-full text-left"
-                  data-testid="SelectRecipient__wrapper"
+                  class="mb-2"
                 >
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="recipientAddress"
+                    label="Recipient"
+                  >
+                    Recipient
+                  </label>
+                </div>
+                <div>
                   <div
-                    class="absolute left-1"
+                    class="relative flex items-center w-full text-left"
+                    data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                  <input
-                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                    data-testid="SelectRecipient__input"
-                    name="recipientAddress"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                    data-testid="SelectRecipient__select-contact"
-                  >
-                    <div
-                      class="sc-Axmtr hdGCex"
-                      height="20"
-                      width="20"
+                      class="absolute left-1"
                     >
-                      <svg>
-                        user.svg
-                      </svg>
+                      <div
+                        class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                      />
+                    </div>
+                    <input
+                      class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                      data-testid="SelectRecipient__input"
+                      name="recipientAddress"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                      data-testid="SelectRecipient__select-contact"
+                    >
+                      <div
+                        class="sc-Axmtr hdGCex"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          user.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
-            >
-              <div
-                class="mb-2"
+              </fieldset>
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="amount"
-                  label="Amount ARK"
-                >
-                  Amount ARK
-                </label>
-              </div>
-              <div
-                class="sc-AxheI IkGcK"
-              >
-                <input
-                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                  data-testid="add-recipient__amount-input"
-                  name="amount"
-                  placeholder="Amount"
-                  type="number"
-                />
                 <div
-                  class="sc-AxhCb sc-AxgMl jreOpL"
+                  class="mb-2"
                 >
-                  <button
-                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                    data-testid="add-recipient__send-all"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="amount"
+                    label="Amount ARK"
                   >
-                    Send All
-                  </button>
+                    Amount ARK
+                  </label>
                 </div>
-              </div>
-            </fieldset>
+                <div
+                  class="sc-AxheI IkGcK"
+                >
+                  <input
+                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                    data-testid="add-recipient__amount-input"
+                    name="amount"
+                    placeholder="Amount"
+                    type="number"
+                  />
+                  <div
+                    class="sc-AxhCb sc-AxgMl jreOpL"
+                  >
+                    <button
+                      class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                      data-testid="add-recipient__send-all"
+                    >
+                      Send All
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
       </div>
@@ -751,12 +755,12 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
         >
           <div>
             <button
-              class="sc-fzqNJr Uxstz SelectAddress  "
+              class="sc-fzqBZW iKvOTi SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                class="sc-fzplWN exzsOf mx-4 bg-theme-neutral-200 border-theme-neutral-200"
               />
               <div
                 class="absolute flex items-center right-4 space-x-3"
@@ -787,16 +791,16 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoLag iDWDrw"
+          class="sc-fzoLag bQzdMH"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex items-center mb-2 space-x-2"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="font-normal text-md transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -838,97 +842,101 @@ exports[`SendTransactionForm should not call onSubmit callback if not provided 1
             </div>
           </div>
           <div
-            class="space-y-8 mt-8 mb-2 "
+            class="mt-8 mb-2 "
             data-testid="add-recipient__form-wrapper"
           >
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
+            <div
+              class="space-y-8"
             >
-              <div
-                class="mb-2"
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="recipientAddress"
-                  label="Recipient"
-                >
-                  Recipient
-                </label>
-              </div>
-              <div>
                 <div
-                  class="relative flex items-center w-full text-left"
-                  data-testid="SelectRecipient__wrapper"
+                  class="mb-2"
                 >
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="recipientAddress"
+                    label="Recipient"
+                  >
+                    Recipient
+                  </label>
+                </div>
+                <div>
                   <div
-                    class="absolute left-1"
+                    class="relative flex items-center w-full text-left"
+                    data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                  <input
-                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                    data-testid="SelectRecipient__input"
-                    name="recipientAddress"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                    data-testid="SelectRecipient__select-contact"
-                  >
-                    <div
-                      class="sc-Axmtr hdGCex"
-                      height="20"
-                      width="20"
+                      class="absolute left-1"
                     >
-                      <svg>
-                        user.svg
-                      </svg>
+                      <div
+                        class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                      />
+                    </div>
+                    <input
+                      class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                      data-testid="SelectRecipient__input"
+                      name="recipientAddress"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                      data-testid="SelectRecipient__select-contact"
+                    >
+                      <div
+                        class="sc-Axmtr hdGCex"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          user.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
-            >
-              <div
-                class="mb-2"
+              </fieldset>
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="amount"
-                  label="Amount ARK"
-                >
-                  Amount ARK
-                </label>
-              </div>
-              <div
-                class="sc-AxheI IkGcK"
-              >
-                <input
-                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                  data-testid="add-recipient__amount-input"
-                  name="amount"
-                  placeholder="Amount"
-                  type="number"
-                />
                 <div
-                  class="sc-AxhCb sc-AxgMl jreOpL"
+                  class="mb-2"
                 >
-                  <button
-                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                    data-testid="add-recipient__send-all"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="amount"
+                    label="Amount ARK"
                   >
-                    Send All
-                  </button>
+                    Amount ARK
+                  </label>
                 </div>
-              </div>
-            </fieldset>
+                <div
+                  class="sc-AxheI IkGcK"
+                >
+                  <input
+                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                    data-testid="add-recipient__amount-input"
+                    name="amount"
+                    placeholder="Amount"
+                    type="number"
+                  />
+                  <div
+                    class="sc-AxhCb sc-AxgMl jreOpL"
+                  >
+                    <button
+                      class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                      data-testid="add-recipient__send-all"
+                    >
+                      Send All
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
       </div>
@@ -1298,12 +1306,12 @@ exports[`SendTransactionForm should render 1`] = `
         >
           <div>
             <button
-              class="sc-fzqNJr Uxstz SelectAddress  "
+              class="sc-fzqBZW iKvOTi SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                class="sc-fzplWN exzsOf mx-4 bg-theme-neutral-200 border-theme-neutral-200"
               />
               <div
                 class="absolute flex items-center right-4 space-x-3"
@@ -1334,16 +1342,16 @@ exports[`SendTransactionForm should render 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoLag iDWDrw"
+          class="sc-fzoLag bQzdMH"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex items-center mb-2 space-x-2"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="font-normal text-md transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -1385,97 +1393,101 @@ exports[`SendTransactionForm should render 1`] = `
             </div>
           </div>
           <div
-            class="space-y-8 mt-8 mb-2 "
+            class="mt-8 mb-2 "
             data-testid="add-recipient__form-wrapper"
           >
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
+            <div
+              class="space-y-8"
             >
-              <div
-                class="mb-2"
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="recipientAddress"
-                  label="Recipient"
-                >
-                  Recipient
-                </label>
-              </div>
-              <div>
                 <div
-                  class="relative flex items-center w-full text-left"
-                  data-testid="SelectRecipient__wrapper"
+                  class="mb-2"
                 >
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="recipientAddress"
+                    label="Recipient"
+                  >
+                    Recipient
+                  </label>
+                </div>
+                <div>
                   <div
-                    class="absolute left-1"
+                    class="relative flex items-center w-full text-left"
+                    data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                  <input
-                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                    data-testid="SelectRecipient__input"
-                    name="recipientAddress"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                    data-testid="SelectRecipient__select-contact"
-                  >
-                    <div
-                      class="sc-Axmtr hdGCex"
-                      height="20"
-                      width="20"
+                      class="absolute left-1"
                     >
-                      <svg>
-                        user.svg
-                      </svg>
+                      <div
+                        class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                      />
+                    </div>
+                    <input
+                      class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                      data-testid="SelectRecipient__input"
+                      name="recipientAddress"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                      data-testid="SelectRecipient__select-contact"
+                    >
+                      <div
+                        class="sc-Axmtr hdGCex"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          user.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
-            >
-              <div
-                class="mb-2"
+              </fieldset>
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="amount"
-                  label="Amount ARK"
-                >
-                  Amount ARK
-                </label>
-              </div>
-              <div
-                class="sc-AxheI IkGcK"
-              >
-                <input
-                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                  data-testid="add-recipient__amount-input"
-                  name="amount"
-                  placeholder="Amount"
-                  type="number"
-                />
                 <div
-                  class="sc-AxhCb sc-AxgMl jreOpL"
+                  class="mb-2"
                 >
-                  <button
-                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                    data-testid="add-recipient__send-all"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="amount"
+                    label="Amount ARK"
                   >
-                    Send All
-                  </button>
+                    Amount ARK
+                  </label>
                 </div>
-              </div>
-            </fieldset>
+                <div
+                  class="sc-AxheI IkGcK"
+                >
+                  <input
+                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                    data-testid="add-recipient__amount-input"
+                    name="amount"
+                    placeholder="Amount"
+                    type="number"
+                  />
+                  <div
+                    class="sc-AxhCb sc-AxgMl jreOpL"
+                  >
+                    <button
+                      class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                      data-testid="add-recipient__send-all"
+                    >
+                      Send All
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
       </div>
@@ -1737,12 +1749,12 @@ exports[`SendTransactionForm should set available amount 1`] = `
         >
           <div>
             <button
-              class="sc-fzqNJr Uxstz SelectAddress  "
+              class="sc-fzqBZW iKvOTi SelectAddress  "
               data-testid="SelectAddress__wrapper"
               type="button"
             >
               <div
-                class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                class="sc-fzplWN exzsOf mx-4 bg-theme-neutral-200 border-theme-neutral-200"
               />
               <div
                 class="absolute flex items-center right-4 space-x-3"
@@ -1773,16 +1785,16 @@ exports[`SendTransactionForm should set available amount 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="sc-fzoLag iDWDrw"
+          class="sc-fzoLag bQzdMH"
         >
           <div
             class="text-theme-neutral-dark hover:text-theme-primary"
           >
             <div
-              class="flex mb-2 space-x-2"
+              class="flex items-center mb-2 space-x-2"
             >
               <div
-                class="text-sm font-medium transition-colors duration-100"
+                class="font-normal text-md transition-colors duration-100"
               >
                 Select a Single or Multiple Recipient Transaction
               </div>
@@ -1824,97 +1836,101 @@ exports[`SendTransactionForm should set available amount 1`] = `
             </div>
           </div>
           <div
-            class="space-y-8 mt-8 mb-2 "
+            class="mt-8 mb-2 "
             data-testid="add-recipient__form-wrapper"
           >
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
+            <div
+              class="space-y-8"
             >
-              <div
-                class="mb-2"
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="recipientAddress"
-                  label="Recipient"
-                >
-                  Recipient
-                </label>
-              </div>
-              <div>
                 <div
-                  class="relative flex items-center w-full text-left"
-                  data-testid="SelectRecipient__wrapper"
+                  class="mb-2"
                 >
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="recipientAddress"
+                    label="Recipient"
+                  >
+                    Recipient
+                  </label>
+                </div>
+                <div>
                   <div
-                    class="absolute left-1"
+                    class="relative flex items-center w-full text-left"
+                    data-testid="SelectRecipient__wrapper"
                   >
                     <div
-                      class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
-                    />
-                  </div>
-                  <input
-                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
-                    data-testid="SelectRecipient__input"
-                    name="recipientAddress"
-                    type="text"
-                    value=""
-                  />
-                  <div
-                    class="absolute flex items-center cursor-pointer right-4 space-x-3"
-                    data-testid="SelectRecipient__select-contact"
-                  >
-                    <div
-                      class="sc-Axmtr hdGCex"
-                      height="20"
-                      width="20"
+                      class="absolute left-1"
                     >
-                      <svg>
-                        user.svg
-                      </svg>
+                      <div
+                        class="sc-fzplWN exzsOf mx-3 bg-theme-neutral-200 border-theme-neutral-200"
+                      />
+                    </div>
+                    <input
+                      class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-14 pr-11"
+                      data-testid="SelectRecipient__input"
+                      name="recipientAddress"
+                      type="text"
+                      value=""
+                    />
+                    <div
+                      class="absolute flex items-center cursor-pointer right-4 space-x-3"
+                      data-testid="SelectRecipient__select-contact"
+                    >
+                      <div
+                        class="sc-Axmtr hdGCex"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          user.svg
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </fieldset>
-            <fieldset
-              class="sc-AxirZ izhStr relative mt-1"
-            >
-              <div
-                class="mb-2"
+              </fieldset>
+              <fieldset
+                class="sc-AxirZ izhStr relative mt-1"
               >
-                <label
-                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                  data-testid="FormLabel"
-                  for="amount"
-                  label="Amount ARK"
-                >
-                  Amount ARK
-                </label>
-              </div>
-              <div
-                class="sc-AxheI IkGcK"
-              >
-                <input
-                  class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
-                  data-testid="add-recipient__amount-input"
-                  name="amount"
-                  placeholder="Amount"
-                  type="number"
-                />
                 <div
-                  class="sc-AxhCb sc-AxgMl jreOpL"
+                  class="mb-2"
                 >
-                  <button
-                    class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
-                    data-testid="add-recipient__send-all"
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="amount"
+                    label="Amount ARK"
                   >
-                    Send All
-                  </button>
+                    Amount ARK
+                  </label>
                 </div>
-              </div>
-            </fieldset>
+                <div
+                  class="sc-AxheI IkGcK"
+                >
+                  <input
+                    class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-20"
+                    data-testid="add-recipient__amount-input"
+                    name="amount"
+                    placeholder="Amount"
+                    type="number"
+                  />
+                  <div
+                    class="sc-AxhCb sc-AxgMl jreOpL"
+                  >
+                    <button
+                      class="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
+                      data-testid="add-recipient__send-all"
+                    >
+                      Send All
+                    </button>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
         </div>
       </div>

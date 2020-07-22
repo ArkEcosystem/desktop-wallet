@@ -83,16 +83,13 @@ export const LinkCollection = ({
 	);
 
 	return (
-		<Wrapper data-testid="LinkCollection" className="font-normal">
+		<Wrapper data-testid="LinkCollection" className="flex flex-col font-normal">
 			<div
 				data-testid="LinkCollection__header"
-				className="flex justify-between cursor-pointer"
+				className="flex items-center justify-between cursor-pointer"
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
-				<div>
-					<span className="text-lg font-semibold">{title}</span>
-					<div className="mt-2 text-theme-neutral-dark">{description}</div>
-				</div>
+				<span className="text-lg font-semibold">{title}</span>
 
 				<div>
 					{isExpanded && (
@@ -113,6 +110,8 @@ export const LinkCollection = ({
 					)}
 				</div>
 			</div>
+
+			<div className="mt-2 text-theme-neutral-dark">{description}</div>
 
 			{isExpanded && (
 				<div className="mt-4">

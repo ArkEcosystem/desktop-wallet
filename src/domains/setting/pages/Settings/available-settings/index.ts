@@ -1,3 +1,5 @@
-export * from "./General";
-export * from "./Peer";
-export * from "./Plugins";
+import { General } from "./General";
+import { Peer } from "./Peer";
+import { Plugins } from "./Plugins";
+
+export const availableSettings: Record<string, any> = { General, Peer, Plugins };
