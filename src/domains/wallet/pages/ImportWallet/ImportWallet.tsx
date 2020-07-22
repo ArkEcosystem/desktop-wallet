@@ -130,8 +130,10 @@ export const ImportWallet = () => {
 	};
 
 	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
+		const wallet = await activeProfile?.wallets().importByMnemonic(password, network.coin, network.network);
+
 		await env?.persist();
+
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
 

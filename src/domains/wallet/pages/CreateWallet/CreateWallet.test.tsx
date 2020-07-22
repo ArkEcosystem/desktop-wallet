@@ -26,11 +26,18 @@ const passphrase = "power return attend drink piece found tragic fire liar page 
 beforeAll(() => {
 	nock.disableNetConnect();
 
-	nock(/.+/)
+	nock("https://wallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+		.get("/api/peers")
+		.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
 		.get("/api/node/configuration/crypto")
 		.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
 		.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+		.persist();
+
+	nock("https://neoscan.io")
 		.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
 		.reply(200, [])
 		.persist();
