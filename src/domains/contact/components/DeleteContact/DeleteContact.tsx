@@ -9,7 +9,7 @@ type DeleteContactProps = {
 	onCancel?: any;
 	onDelete?: any;
 	profileId: string;
-	contactId?: string;
+	contactId?: string | null;
 };
 
 export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete, profileId, contactId }: DeleteContactProps) => {
