@@ -43,7 +43,7 @@ export const VerifyMessage = ({
 		const wallet = profile?.wallets().findByPublicKey(walletPublicKey);
 
 		try {
-			const signedMessage = verifyAddress ? JSON.parse(formValues["signet-message-content"]) : formValues;
+			const signedMessage = verifyAddress ? JSON.parse(formValues["signed-message-content"]) : formValues;
 			isVerified = (await wallet?.message().verify(signedMessage)) as boolean;
 			onSubmit?.(isVerified);
 		} catch {
