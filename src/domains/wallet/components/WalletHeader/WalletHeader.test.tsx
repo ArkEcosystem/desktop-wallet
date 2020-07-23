@@ -6,6 +6,7 @@ import { WalletHeader } from "./WalletHeader";
 describe("WalletHeader", () => {
 	const onSignMessage = jest.fn();
 	const onDeleteWallet = jest.fn();
+	const onUpdateWalletName = jest.fn();
 
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(
@@ -13,6 +14,7 @@ describe("WalletHeader", () => {
 				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -32,6 +34,7 @@ describe("WalletHeader", () => {
 				coin="Ark"
 				onStar={onStar}
 				onSend={onSend}
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -55,6 +58,7 @@ describe("WalletHeader", () => {
 				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -74,6 +78,7 @@ describe("WalletHeader", () => {
 				address={address}
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -101,6 +106,7 @@ describe("WalletHeader", () => {
 				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -131,6 +137,7 @@ describe("WalletHeader", () => {
 				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
 				onDeleteWallet={onDeleteWallet}
 			/>,
@@ -151,5 +158,36 @@ describe("WalletHeader", () => {
 		});
 
 		expect(onDeleteWallet).toHaveBeenCalled();
+	});
+
+	it("should handle update wallet name", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				currencyBalance="10"
+				publicKey="publicKey"
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
+				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const updateWalletNameOption = getByTestId("dropdown__option--0");
+		expect(updateWalletNameOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(updateWalletNameOption);
+		});
+
+		expect(onUpdateWalletName).toHaveBeenCalled();
 	});
 });

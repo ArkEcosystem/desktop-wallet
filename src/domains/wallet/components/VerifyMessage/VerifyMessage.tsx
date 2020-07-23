@@ -5,39 +5,66 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironment } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
 	onSubmit?: any;
+	onCancel?: any;
 	isOpen: boolean;
 	handleClose?: any;
-	publicKey?: string;
+	signatory?: string;
+	profileId: string;
+	walletPublicKey: string;
 };
 
-export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Props) => {
+export const VerifyMessage = ({
+	profileId,
+	walletPublicKey,
+	onSubmit,
+	onCancel,
+	signatory,
+	isOpen,
+	handleClose,
+}: Props) => {
+	const env = useEnvironment();
 	const form = useForm();
-
 	const { t } = useTranslation();
 
 	const { register } = form;
 	const [verifyAddress, setVerifyAddress] = useState(true);
+
+	const handleSubmit = async () => {
+		let isVerified = false;
+		const formValues = form.getValues();
+		const profile = env?.profiles().findById(profileId);
+		const wallet = profile?.wallets().findByPublicKey(walletPublicKey);
+
+		try {
+			const signedMessage = verifyAddress ? JSON.parse(formValues["signed-message-content"]) : formValues;
+			isVerified = (await wallet?.message().verify(signedMessage)) as boolean;
+			onSubmit?.(isVerified);
+		} catch {
+			onSubmit?.(false);
+		}
+	};
 
 	const renderFormContent = () => {
 		if (verifyAddress)
 			return (
 				<div className="mt-8">
 					<Alert variant="warning">
-						<span className="text-sm font-medium">{`Format(JSON): { "publicKey": "...", "signature": "...", "message": "..."}`}</span>
+						<span className="text-sm font-medium">{`Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}`}</span>
 					</Alert>
 
 					<div className="mt-8">
-						<FormField name="signet-message-content">
-							<FormLabel label="Signet message content" />
+						<FormField name="signed-message-content">
+							<FormLabel label="Signed message content" />
 							<Input
+								data-testid="VerifyMessage_message-content"
 								type="text"
-								name="signet-message-content"
 								defaultValue={""}
 								ref={register({ required: true })}
 							/>
@@ -49,10 +76,11 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 
 		return (
 			<div data-testid="noverify-address__content">
-				<FormField name="message-content" className="mt-8">
+				<FormField name="message" className="mt-8">
 					<FormLabel label={t("COMMON.MESSAGE")} />
 					<Input
 						type="text"
+						data-testid="VerifyMessage__message-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.MESSAGE"),
@@ -61,11 +89,12 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					/>
 					<FormHelperText />
 				</FormField>
-				<FormField name="public-key" className="mt-8">
+				<FormField name="signatory" className="mt-8">
 					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
 					<Input
 						type="text"
-						defaultValue={publicKey}
+						data-testid="VerifyMessage__signatory-input"
+						defaultValue={signatory}
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.PUBLIC_KEY"),
@@ -79,6 +108,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					<FormLabel label={t("COMMON.SIGNATURE")} />
 					<Input
 						type="text"
+						data-testid="VerifyMessage__signature-input"
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.SIGNATURE"),
@@ -106,7 +136,7 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 							</div>
 
 							<Toggle
-								data-testid="verify-address__togle"
+								data-testid="verify-address__toggle"
 								checked={verifyAddress}
 								onChange={(event) => setVerifyAddress(event.target.checked)}
 							/>
@@ -118,11 +148,15 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 					</div>
 				</div>
 
-				<Form id="verify-message__form" context={form} onSubmit={onSubmit}>
+				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
 					{renderFormContent()}
 					<div className="flex justify-end space-x-3">
-						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
-						<Button>{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY")}</Button>
+						<Button variant="plain" data-testid="VerifyMessage__cancel" onClick={onCancel}>
+							{t("COMMON.CANCEL")}
+						</Button>
+						<Button data-testid="VerifyMessage__submit" onClick={handleSubmit} type="submit">
+							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY")}
+						</Button>
 					</div>
 				</Form>
 			</div>

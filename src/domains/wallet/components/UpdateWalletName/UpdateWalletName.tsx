@@ -30,9 +30,10 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 			onClose={onClose}
 		>
 			<Form context={methods} onSubmit={onSave} className="mt-8">
-				<FormField name="name">
+				<FormField name="UpdateWalletName__input">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
+						data-testid="UpdateWalletName__input"
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 								field: t("COMMON.NAME"),
@@ -47,7 +48,9 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit">{t("COMMON.SAVE")}</Button>
+					<Button type="submit" data-testid="UpdateWalletName__submit">
+						{t("COMMON.SAVE")}
+					</Button>
 				</div>
 			</Form>
 		</Modal>
