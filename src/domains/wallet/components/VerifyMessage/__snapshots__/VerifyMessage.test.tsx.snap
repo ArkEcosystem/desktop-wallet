@@ -135,15 +135,15 @@ exports[`VerifyMessage should render 1`] = `
                   <label
                     class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                     data-testid="FormLabel"
-                    for="signet-message-content"
-                    label="Signet message content"
+                    for="signed-message-content"
+                    label="Signed message content"
                   >
-                    Signet message content
+                    Signed message content
                   </label>
                   <input
                     class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                     data-testid="VerifyMessage_message-content"
-                    name="signet-message-content"
+                    name="signed-message-content"
                     type="text"
                     value=""
                   />
