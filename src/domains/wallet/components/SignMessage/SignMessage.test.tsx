@@ -27,7 +27,7 @@ describe("SignMessage", () => {
 			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isOpen={true} onSign={handleSign} />,
 		);
 
-		fireEvent.click(getByTestId("sign-message__sign-button"));
+		fireEvent.click(getByTestId("SignMessage__sign-button"));
 		expect(handleSign).toHaveBeenCalled();
 	});
 

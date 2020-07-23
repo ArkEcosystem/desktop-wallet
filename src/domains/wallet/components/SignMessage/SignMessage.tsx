@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -8,18 +9,17 @@ import { Input, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import React, { createRef } from "react";
+import React, { createRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	signatoryAddress?: string;
+	profile: Profile;
+	walletId: string;
+	signatoryAddress: string;
 	isOpen: boolean;
-	isSigned?: boolean;
 	onClose?: any;
 	onCancel?: any;
-	onSign?: any;
-	onSubmit?: any;
 };
 
 const mockSignature = {
@@ -29,16 +29,31 @@ const mockSignature = {
 	message: "Xp879878687z6xc876Z*6cz87c68zx76c8x7zc68zx7cvsa7dc5as8d765as87d5sa8d7as65dsadasdsad",
 };
 
-export const SignMessage = ({ signatoryAddress, isOpen, isSigned, onClose, onCancel, onSign, onSubmit }: Props) => {
-	const form = useForm();
+export const SignMessage = ({ profile, walletId, signatoryAddress, isOpen, onClose, onCancel }: Props) => {
+	const [isSigned, setIsSigned] = useState(false);
 
+	const form = useForm({ mode: "onChange" });
 	const { t } = useTranslation();
 
 	const { register } = form;
 	const messageRef = createRef();
 
-	const SignForm = (
-		<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
+	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
+		const wallet = profile.wallets().findById(walletId);
+		const messageSigned = await wallet.message().sign({
+			message,
+			mnemonic,
+		});
+
+		if (messageSigned) {
+			setIsSigned(true);
+		}
+
+		console.log("messageSigned", messageSigned);
+	};
+
+	const SignFormRender = (
+		<Form context={form} onSubmit={handleSubmit} data-testid="SignMessage__form">
 			<FormField name="signatory-address">
 				<FormLabel label={t("WALLETS.SIGNATORY")} />
 				<div className="relative">
@@ -63,7 +78,7 @@ export const SignMessage = ({ signatoryAddress, isOpen, isSigned, onClose, onCan
 				/>
 				<FormHelperText />
 			</FormField>
-			<FormField name="passphrase">
+			<FormField name="mnemonic">
 				<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
 				<InputPassword
 					ref={register({
@@ -78,18 +93,18 @@ export const SignMessage = ({ signatoryAddress, isOpen, isSigned, onClose, onCan
 				<Button variant="plain" onClick={onCancel}>
 					Cancel
 				</Button>
-				<Button data-testid="sign-message__sign-button" onClick={onSign}>
+				<Button type="submit" data-testid="SignMessage__sign-button">
 					Sign
 				</Button>
 			</div>
 		</Form>
 	);
 
-	const MessageSigned = (
+	const MessageSignedRender = (
 		<div>
 			<TransactionDetail
 				border={false}
-				label={t("COMMON.SIGNATORY")}
+				label={t("WALLETS.SIGNATORY")}
 				extra={
 					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
@@ -123,7 +138,7 @@ export const SignMessage = ({ signatoryAddress, isOpen, isSigned, onClose, onCan
 		</div>
 	);
 
-	const renderSignedMessageContent = () => (isSigned ? MessageSigned : SignForm);
+	const renderSignedMessageContent = () => (isSigned ? MessageSignedRender : SignFormRender);
 
 	return (
 		<Modal

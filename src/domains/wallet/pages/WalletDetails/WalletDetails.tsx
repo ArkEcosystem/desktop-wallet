@@ -1,4 +1,4 @@
-import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useEnvironment } from "app/contexts";
@@ -45,7 +45,6 @@ type Props = {
 export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
-	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 
 	const history = useHistory();
@@ -140,12 +139,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			/>
 
 			<SignMessage
-				signatoryAddress={wallet?.address}
+				profile={activeProfile as Profile}
+				walletId={walletId}
+				signatoryAddress={wallet?.address as string}
 				isOpen={isSigningMessage}
-				isSigned={isSigned}
 				onClose={() => setIsSigningMessage(false)}
 				onCancel={() => setIsSigningMessage(false)}
-				onSign={() => setIsSigned(true)}
 			/>
 
 			<DeleteWallet
