@@ -13,12 +13,13 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	onSubmit?: any;
+	signatoryAddress?: string;
 	isOpen: boolean;
 	isSigned?: boolean;
-	handleClose?: any;
-	handleSign?: any;
-	signatoryAddress?: string;
+	onClose?: any;
+	onCancel?: any;
+	onSign?: any;
+	onSubmit?: any;
 };
 
 const mockSignature = {
@@ -28,7 +29,7 @@ const mockSignature = {
 	message: "Xp879878687z6xc876Z*6cz87c68zx76c8x7zc68zx7cvsa7dc5as8d765as87d5sa8d7as65dsadasdsad",
 };
 
-export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, handleClose, handleSign }: Props) => {
+export const SignMessage = ({ signatoryAddress, isOpen, isSigned, onClose, onCancel, onSign, onSubmit }: Props) => {
 	const form = useForm();
 
 	const { t } = useTranslation();
@@ -39,7 +40,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 	const SignForm = (
 		<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
 			<FormField name="signatory-address">
-				<FormLabel label={t("COMMON.SIGNATORY")} />
+				<FormLabel label={t("WALLETS.SIGNATORY")} />
 				<div className="relative">
 					<Input type="text" disabled />
 					<div className="absolute top-0 flex items-center mt-2 ml-4">
@@ -74,8 +75,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
-				<Button variant="plain">Cancel</Button>
-				<Button data-testid="sign-message__sign-button" onClick={() => handleSign()}>
+				<Button variant="plain" onClick={onCancel}>
+					Cancel
+				</Button>
+				<Button data-testid="sign-message__sign-button" onClick={onSign}>
 					Sign
 				</Button>
 			</div>
@@ -127,7 +130,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			isOpen={isOpen}
 			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
 			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : ""}
-			onClose={() => handleClose()}
+			onClose={onClose}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
 		</Modal>

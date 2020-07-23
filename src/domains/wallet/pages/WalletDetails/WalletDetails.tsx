@@ -134,17 +134,18 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 			<UpdateWalletName
 				isOpen={isUpdateWalletName}
-				onSave={handleUpdateName}
 				onClose={() => setIsUpdateWalletName(false)}
 				onCancel={() => setIsUpdateWalletName(false)}
+				onSave={handleUpdateName}
 			/>
 
 			<SignMessage
-				isOpen={isSigningMessage}
-				handleClose={() => setIsSigningMessage(false)}
 				signatoryAddress={wallet?.address}
-				handleSign={() => setIsSigned(true)}
+				isOpen={isSigningMessage}
 				isSigned={isSigned}
+				onClose={() => setIsSigningMessage(false)}
+				onCancel={() => setIsSigningMessage(false)}
+				onSign={() => setIsSigned(true)}
 			/>
 
 			<DeleteWallet

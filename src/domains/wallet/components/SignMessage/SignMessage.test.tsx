@@ -14,7 +14,7 @@ describe("SignMessage", () => {
 
 	it("should render as signed", () => {
 		const { asFragment } = render(
-			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isSigned={true} isOpen={true} />,
+			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isOpen={true} isSigned={true} />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -24,7 +24,7 @@ describe("SignMessage", () => {
 		const handleSign = jest.fn();
 
 		const { getByTestId } = render(
-			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" handleSign={handleSign} isOpen={true} />,
+			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isOpen={true} onSign={handleSign} />,
 		);
 
 		fireEvent.click(getByTestId("sign-message__sign-button"));
@@ -35,11 +35,7 @@ describe("SignMessage", () => {
 		const handleClose = jest.fn();
 
 		const { getByTestId } = render(
-			<SignMessage
-				signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-				handleClose={handleClose}
-				isOpen={true}
-			/>,
+			<SignMessage signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" isOpen={true} onClose={handleClose} />,
 		);
 
 		fireEvent.click(getByTestId("modal__close-btn"));

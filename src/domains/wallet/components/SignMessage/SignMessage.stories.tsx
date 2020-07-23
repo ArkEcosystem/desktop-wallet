@@ -15,8 +15,9 @@ export const Default = () => {
 			signatoryAddress={signatoryAddress}
 			isOpen={isOpen}
 			isSigned={isSigned}
-			handleClose={() => alert("Close action")}
-			handleSign={() => alert("Sign action")}
+			onClose={() => alert("Close action")}
+			onCancel={() => alert("Cancel action")}
+			onSign={() => alert("Sign action")}
 		/>
 	);
 };
