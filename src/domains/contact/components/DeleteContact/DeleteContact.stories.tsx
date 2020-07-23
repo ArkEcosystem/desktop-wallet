@@ -10,6 +10,7 @@ export default {
 
 export const Default = () => (
 	<DeleteContact
+		profileId="1"
 		isOpen={boolean("isOpen", true)}
 		onClose={() => alert("closed")}
 		onCancel={() => alert("cancelled")}
