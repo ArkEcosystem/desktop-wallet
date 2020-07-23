@@ -1,3 +1,4 @@
+import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useEnvironment } from "app/contexts";
@@ -5,6 +6,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
+import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
@@ -44,6 +46,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
+	const [isUpdateWalletNameOpen, setIsUpdateWalletNameOpen] = useState(false);
 
 	const history = useHistory();
 	const env = useEnvironment();
@@ -69,6 +72,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		history.push(dashboardRoute);
 	};
 
+	const handleUpdateName = async ({ name }: any) => {
+		const wallet = activeProfile?.wallets().findById(walletId);
+		wallet?.settings().set(WalletSetting.Alias, name);
+		await env?.persist();
+		setIsUpdateWalletNameOpen(false);
+	};
+
 	/* istanbul ignore next */
 	return (
 		<>
@@ -84,6 +94,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 					isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
 					hasStarred={wallet?.hasStarred}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
+					onUpdateWalletName={() => setIsUpdateWalletNameOpen(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
@@ -134,6 +145,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				onClose={() => setIsDeleteWallet(false)}
 				onCancel={() => setIsDeleteWallet(false)}
 				onDelete={handleDeleteWallet}
+			/>
+
+			<UpdateWalletName
+				isOpen={isUpdateWalletNameOpen}
+				onSave={handleUpdateName}
+				onClose={() => setIsUpdateWalletNameOpen(false)}
+				onCancel={() => setIsUpdateWalletNameOpen(false)}
 			/>
 		</>
 	);
