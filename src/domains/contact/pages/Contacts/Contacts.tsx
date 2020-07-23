@@ -4,8 +4,10 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
+import { useActiveProfile } from "app/hooks/env";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { CreateContact } from "domains/contact/components/CreateContact";
+import { DeleteContact } from "domains/contact/components/DeleteContact";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -44,8 +46,16 @@ type ContactsProps = {
 
 export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
+	const [contactToDelete, setContactToDelete] = useState(null);
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
+
+	const contactOptions = [
+		{ label: t("COMMON.SEND"), value: "send" },
+		{ label: t("COMMON.EDIT"), value: "edit" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
+	];
 
 	const crumbs = [
 		{
@@ -78,6 +88,12 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 		setCreateIsOpen(false);
 	};
 
+	const handleContactAction = (action: any, contact: any) => {
+		if (action === "delete") {
+			setContactToDelete(contact.id);
+		}
+	};
+
 	return (
 		<>
 			<Page crumbs={crumbs}>
@@ -107,9 +123,15 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 					)}
 
 					{contacts.length > 0 && (
-						<div className="w-full">
+						<div className="w-full" data-testid="ContactList">
 							<Table columns={listColumns} data={contacts}>
-								{(contact: any) => <ContactListItem contact={contact} />}
+								{(contact: any) => (
+									<ContactListItem
+										contact={contact}
+										options={contactOptions}
+										onAction={(action) => handleContactAction(action.value, contact)}
+									/>
+								)}
 							</Table>
 						</div>
 					)}
@@ -122,6 +144,15 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
+			/>
+
+			<DeleteContact
+				profileId={activeProfile?.id() as string}
+				contactId={contactToDelete}
+				isOpen={!!contactToDelete}
+				onClose={() => setContactToDelete(null)}
+				onCancel={() => setContactToDelete(null)}
+				onDelete={() => setContactToDelete(null)}
 			/>
 		</>
 	);
