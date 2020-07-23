@@ -11,6 +11,7 @@ import { useEnvironment } from "app/contexts";
 import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type Network = { coin: string; icon: string; name: string; network: string };
@@ -19,6 +20,8 @@ export const FirstStep = () => {
 	const { getValues, register, setValue } = useFormContext();
 	const networks = useAvailableNetworks();
 	const currentNetwork = getValues("network");
+
+	const { t } = useTranslation();
 
 	React.useEffect(() => {
 		register("network", { required: true });
@@ -32,18 +35,22 @@ export const FirstStep = () => {
 		<section className="space-y-8" data-testid="ImportWallet__first-step">
 			<div className="my-8">
 				<Header
-					title="Select a Cryptoasset"
-					subtitle="Select a cryptoasset to import your existing wallet address"
+					title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
 				/>
 			</div>
 			<div className="space-y-2">
-				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-				<SelectNetwork
-					name={currentNetwork?.name}
-					networks={networks}
-					value={currentNetwork}
-					onSelect={(network) => handleSelect(network)}
-				/>
+				<FormField name="network" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label={t("COMMON.NETWORK")} />
+					</div>
+					<SelectNetwork
+						name="network"
+						networks={networks}
+						onSelect={(network) => handleSelect(network)}
+						value={currentNetwork}
+					/>
+				</FormField>
 			</div>
 		</section>
 	);
@@ -53,14 +60,20 @@ export const SecondStep = () => {
 	const { register } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
+	const { t } = useTranslation();
+
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
 			return (
-				<FormField name="password">
-					<FormLabel label="Your Password" />
+				<FormField name="passphrase">
+					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
 					<InputPassword
-						ref={register({ required: "Password is required" })}
-						data-testid="ImportWallet__password-input"
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.YOUR_PASSPHRASE"),
+							}).toString(),
+						})}
+						data-testid="ImportWallet__passphrase-input"
 					/>
 					<FormHelperText />
 				</FormField>
@@ -70,8 +83,15 @@ export const SecondStep = () => {
 		return (
 			// TODO: Change to InputAddress
 			<FormField name="address">
-				<FormLabel label="Address" />
-				<Input ref={register({ required: "Address is required" })} data-testid="ImportWallet__address-input" />
+				<FormLabel label={t("COMMON.ADDRESS")} />
+				<Input
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.ADDRESS"),
+						}).toString(),
+					})}
+					data-testid="ImportWallet__address-input"
+				/>
 				<FormHelperText />
 			</FormField>
 		);
@@ -81,22 +101,27 @@ export const SecondStep = () => {
 		<section className="space-y-8" data-testid="ImportWallet__second-step">
 			<div className="my-8">
 				<Header
-					title="Import Wallet"
-					subtitle="Enter your wallet password in order to get full access to your money. Or you can choose an
-					address for vieweing only."
+					title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
 				/>
 			</div>
-			<div className="flex flex-row items-center justify-between mt-8">
-				<div>
-					<p className="text-lg font-semibold text-theme-neutral-dark">Use the address only</p>
-					<p className="text-sm text-theme-neutral">You can only view your wallet but not send money.</p>
+			<div className="flex flex-col mt-8">
+				<div className="flex items-center justify-between">
+					<div className="text-lg font-semibold text-theme-neutral-dark">
+						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
+					</div>
+
+					<Toggle
+						name="isAddressOnly"
+						checked={isAddressOnly}
+						onChange={() => setIsAddressOnly(!isAddressOnly)}
+						data-testid="ImportWallet__address-toggle"
+					/>
 				</div>
-				<Toggle
-					name="isAddressOnly"
-					checked={isAddressOnly}
-					onChange={() => setIsAddressOnly(!isAddressOnly)}
-					data-testid="ImportWallet__address-toggle"
-				/>
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
+				</div>
 			</div>
 			<div className="mt-8" data-testid="ImportWallet__fields">
 				{renderImportInput()}
@@ -110,6 +135,9 @@ export const ImportWallet = () => {
 
 	const history = useHistory();
 	const env = useEnvironment();
+
+	const { t } = useTranslation();
+
 	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
@@ -129,8 +157,8 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().importByMnemonic(password, network.coin, network.network);
+	const submitForm = async ({ network, passphrase }: any) => {
+		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin, network.network);
 
 		await env?.persist();
 
@@ -164,7 +192,7 @@ export const ImportWallet = () => {
 										onClick={handleNext}
 										data-testid="ImportWallet__continue-button"
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -175,10 +203,10 @@ export const ImportWallet = () => {
 											onClick={handleBack}
 											data-testid="ImportWallet__back-button"
 										>
-											Back
+											{t("COMMON.BACK")}
 										</Button>
 										<Button type="submit" data-testid="ImportWallet__submit-button">
-											Go to Wallet
+											{t("COMMON.GO_TO_WALLET")}
 										</Button>
 									</>
 								)}

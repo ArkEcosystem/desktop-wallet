@@ -5,6 +5,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
@@ -22,6 +23,8 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
+	const { t } = useTranslation();
 
 	// Wallet controls data
 	const filterProperties = {
@@ -49,17 +52,17 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 		},
 	];
 
-	const emptyTransactionsText =
-		"This will display the history of your transactions. But you don't have more than one transaction at the moment.";
-
 	return (
 		<Page>
 			{showPortfolio && balances && (
 				<Section>
-					<div className="-mb-2 text-4xl font-bold">Portfolio Chart</div>
+					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
 					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
-					<PercentageBar title="Total portfolio" data={portfolioPercentages} />
+					<PercentageBar
+						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
+						data={portfolioPercentages}
+					/>
 				</Section>
 			)}
 
@@ -76,7 +79,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={transactions} emptyText={emptyTransactionsText} />
+					<Transactions transactions={transactions} />
 				</Section>
 			)}
 		</Page>

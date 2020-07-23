@@ -12,6 +12,7 @@ import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeade
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
 import { wallet, wallets } from "../../data";
@@ -49,6 +50,9 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 	const history = useHistory();
 	const env = useEnvironment();
+
+	const { t } = useTranslation();
+
 	const activeProfile = useActiveProfile();
 	const { walletId } = useParams();
 
@@ -115,12 +119,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 				<Section>
 					<div className="mb-16">
-						<h2 className="font-bold">Pending Transactions</h2>
+						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 						<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
 					</div>
 
 					<div>
-						<h2 className="font-bold">Transaction History</h2>
+						<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY")}</h2>
 						<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
 					</div>
 				</Section>

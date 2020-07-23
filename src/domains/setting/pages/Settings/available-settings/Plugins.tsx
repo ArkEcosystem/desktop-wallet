@@ -8,6 +8,7 @@ import { Toggle } from "app/components/Toggle";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type PluginsProps = {
 	formConfig: any;
@@ -18,18 +19,19 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
 
+	const { t } = useTranslation();
+
 	const pluginItems = [
 		{
 			isFloatingLabel: true,
-			label: "Apply Blacklist",
+			label: t("SETTINGS.PLUGINS.APPLY_BLACKLIST.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pb-6",
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
 						<span className="text-sm text-theme-neutral">
-							This list is selected safely by ARK Ecosystem. You can view it and add to the list of
-							plugins that you find suspicious.
+							{t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">
 							<Toggle />
@@ -41,14 +43,14 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 							onClick={() => setModalOpenListIsOpen(true)}
 							data-testid="plugins__open-list"
 						>
-							Open List
+							{t("SETTINGS.PLUGINS.OPEN_BLACKLIST")}
 						</Button>
 						<Button
 							variant="plain"
 							onClick={() => setModalAddPluginIsOpen(true)}
 							data-testid="plugins__add-plugin"
 						>
-							Add Plugin
+							{t("SETTINGS.PLUGINS.ADD_PLUGIN")}
 						</Button>
 					</div>
 
@@ -59,22 +61,27 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 		},
 		{
 			isFloatingLabel: true,
-			label: "Plugin Source",
+			label: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pt-6",
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
 						<span className="text-sm text-theme-neutral">
-							Turn this feature on, you can upload plugins to your wallet from third-party sources.
+							{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">
 							<Toggle />
 						</div>
 					</div>
 					<FormField name="load-plugins">
-						<FormLabel>Load plugins from</FormLabel>
-						<Select placeholder="Select" options={[{ label: "Github", value: "github" }]} />
+						<FormLabel>{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.LOAD_FROM")}</FormLabel>
+						<Select
+							placeholder={t("COMMON.SELECT_OPTION", {
+								option: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE").toString(),
+							})}
+							options={[{ label: "Github", value: "github" }]}
+						/>
 					</FormField>
 				</>
 			),
@@ -83,13 +90,13 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 
 	return (
 		<>
-			<Header title="Plugin Settings" subtitle="Customize your wallet to suit your needs." />
+			<Header title={t("SETTINGS.PLUGINS.TITLE")} subtitle={t("SETTINGS.PLUGINS.SUBTITLE")} />
 
 			<Form id="plugin-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
 				<ListDivided items={pluginItems} />
 				<Divider dashed />
 				<div className="flex justify-end w-full pt-2">
-					<Button>Save</Button>
+					<Button>{t("COMMON.SAVE")}</Button>
 				</div>
 			</Form>
 		</>

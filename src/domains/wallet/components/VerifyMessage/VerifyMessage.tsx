@@ -7,6 +7,7 @@ import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	onSubmit?: any;
@@ -17,6 +18,9 @@ type Props = {
 
 export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Props) => {
 	const form = useForm();
+
+	const { t } = useTranslation();
+
 	const { register } = form;
 	const [verifyAddress, setVerifyAddress] = useState(true);
 
@@ -46,18 +50,41 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 		return (
 			<div data-testid="noverify-address__content">
 				<FormField name="message-content" className="mt-8">
-					<FormLabel label="Message" />
-					<Input type="text" ref={register({ required: true })} />
+					<FormLabel label={t("COMMON.MESSAGE")} />
+					<Input
+						type="text"
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.MESSAGE"),
+							}).toString(),
+						})}
+					/>
 					<FormHelperText />
 				</FormField>
 				<FormField name="public-key" className="mt-8">
-					<FormLabel label="Public key" />
-					<Input type="text" disabled defaultValue={publicKey} ref={register({ required: true })} />
+					<FormLabel label={t("COMMON.PUBLIC_KEY")} />
+					<Input
+						type="text"
+						defaultValue={publicKey}
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.PUBLIC_KEY"),
+							}).toString(),
+						})}
+						disabled
+					/>
 					<FormHelperText />
 				</FormField>
 				<FormField name="signature" className="mt-8">
-					<FormLabel label="Signature" />
-					<Input type="text" ref={register({ required: true })} />
+					<FormLabel label={t("COMMON.SIGNATURE")} />
+					<Input
+						type="text"
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.SIGNATURE"),
+							}).toString(),
+						})}
+					/>
 					<FormHelperText />
 				</FormField>
 			</div>
@@ -66,23 +93,27 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 	return (
 		<Modal
 			isOpen={isOpen}
-			title="Verify"
-			description="To make sure that you are the owner of this wallet, you can pass the check. and this more text."
+			title={t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE")}
+			description={t("WALLETS.MODAL_VERIFY_MESSAGE.DESCRIPTION")}
 			onClose={handleClose}
 		>
 			<div className="mt-8">
 				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">
-					<span className="text-lg font-semibold">Verify</span>
-					<div className="flex flex-row justify-between">
-						<span className="pt-2 text-sm text-theme-neutral">
-							You can verify only text using a JSON public key
-						</span>
-						<div className="mr-1 -mt-7">
+					<div className="flex flex-col">
+						<div className="flex items-center justify-between">
+							<div className="text-lg font-semibold">
+								{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.TITLE")}
+							</div>
+
 							<Toggle
 								data-testid="verify-address__togle"
 								checked={verifyAddress}
 								onChange={(event) => setVerifyAddress(event.target.checked)}
 							/>
+						</div>
+
+						<div className="pr-12 mt-1 text-sm text-theme-neutral">
+							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY_JSON.DESCRIPTION")}
 						</div>
 					</div>
 				</div>
@@ -90,8 +121,8 @@ export const VerifyMessage = ({ onSubmit, publicKey, isOpen, handleClose }: Prop
 				<Form id="verify-message__form" context={form} onSubmit={onSubmit}>
 					{renderFormContent()}
 					<div className="flex justify-end space-x-3">
-						<Button variant="plain">Cancel</Button>
-						<Button>Verify</Button>
+						<Button variant="plain">{t("COMMON.CANCEL")}</Button>
+						<Button>{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY")}</Button>
 					</div>
 				</Form>
 			</div>

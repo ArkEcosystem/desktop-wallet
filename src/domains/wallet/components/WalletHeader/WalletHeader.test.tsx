@@ -26,14 +26,12 @@ describe("WalletHeader", () => {
 	it("should emit actions", () => {
 		const onSend = jest.fn();
 		const onStar = jest.fn();
-		const onCopy = jest.fn();
 
 		const { getByTestId } = render(
 			<WalletHeader
 				address="abc"
 				balance="0"
 				coin="Ark"
-				onCopy={onCopy}
 				onStar={onStar}
 				onSend={onSend}
 				onUpdateWalletName={onUpdateWalletName}
@@ -41,7 +39,7 @@ describe("WalletHeader", () => {
 				onDeleteWallet={onDeleteWallet}
 			/>,
 		);
-		fireEvent.click(getByTestId("WalletHeader__copy-button"));
+
 		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("WalletHeader__star-button"));
 		fireEvent.click(getByTestId("WalletHeader__send-button"));
@@ -49,7 +47,6 @@ describe("WalletHeader", () => {
 		expect(onSend).toHaveBeenCalled();
 		expect(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__content")).toBeTruthy();
 		expect(onStar).toHaveBeenCalled();
-		expect(onCopy).toHaveBeenCalled();
 	});
 
 	it("should show modifiers", () => {

@@ -4,6 +4,7 @@ import { Table } from "app/components/Table";
 import { WalletListItem, WalletListItemProps } from "app/components/WalletListItem";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Backdrop = ({ isVisible }: { isVisible: boolean }) => {
 	return (
@@ -22,28 +23,30 @@ const Backdrop = ({ isVisible }: { isVisible: boolean }) => {
 };
 
 const WalletTable = ({ data }: { data: WalletListItemProps[] }) => {
+	const { t } = useTranslation();
+
 	const columns = [
 		{
-			Header: "Asset Type",
+			Header: t("COMMON.ASSET_TYPE"),
 			accessor: "avatarId",
 		},
 		{
-			Header: "Wallet Address",
+			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
 		},
 		{
-			Header: "Wallet Type",
+			Header: t("COMMON.WALLET_TYPE"),
 			className: "justify-center",
 		},
 		{
-			Header: "Balance",
+			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
-			className: "float-right",
+			className: "justify-end",
 		},
 		{
-			Header: "Fiat Value",
+			Header: t("COMMON.FIAT_VALUE"),
 			accessor: "fiat",
-			className: "float-right",
+			className: "justify-end",
 		},
 	];
 
@@ -62,6 +65,8 @@ type Props = {
 export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<Backdrop isVisible={isOpen} />
@@ -70,7 +75,9 @@ export const WalletBottomSheetMenu = ({ walletsData, defaultIsOpen }: Props) => 
 				<div data-testid="WalletBottomSheetMenu__header" className="flex items-center bg-theme-neutral-900">
 					<div className="container flex items-center justify-between mx-auto px-14 py-7">
 						<div>
-							<span className="text-lg font-bold text-theme-neutral-light">Your wallets</span>
+							<span className="text-lg font-bold text-theme-neutral-light">
+								{t("WALLETS.PAGE_WALLET_DETAILS.YOUR_WALLETS")}
+							</span>
 							<span
 								data-testid="WalletBottomSheetMenu__counter"
 								className="ml-1 font-bold text-theme-neutral-dark"

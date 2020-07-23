@@ -42,7 +42,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
       <h2
         class="mb-0 text-3xl font-bold"
       >
-        Verify
+        Verify Message
       </h2>
       <div
         class="flex-1"
@@ -58,22 +58,17 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
           <div
             class="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light"
           >
-            <span
-              class="text-lg font-semibold"
-            >
-              Verify
-            </span>
             <div
-              class="flex flex-row justify-between"
+              class="flex flex-col"
             >
-              <span
-                class="pt-2 text-sm text-theme-neutral"
-              >
-                You can verify only text using a JSON public key
-              </span>
               <div
-                class="mr-1 -mt-7"
+                class="flex items-center justify-between"
               >
+                <div
+                  class="text-lg font-semibold"
+                >
+                  Verify JSON
+                </div>
                 <label
                   class="flex"
                 >
@@ -92,6 +87,11 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="pr-12 mt-1 text-sm text-theme-neutral"
+              >
+                You can verify only text using a JSON public key
+              </div>
             </div>
           </div>
           <form
@@ -109,9 +109,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="message-content"
-                  label="Message"
+                  label="COMMON.MESSAGE"
                 >
-                  Message
+                  COMMON.MESSAGE
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -127,9 +127,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="public-key"
-                  label="Public key"
+                  label="Public Key"
                 >
-                  Public key
+                  Public Key
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -147,9 +147,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
-                  label="Signature"
+                  label="COMMON.SIGNATURE"
                 >
-                  Signature
+                  COMMON.SIGNATURE
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

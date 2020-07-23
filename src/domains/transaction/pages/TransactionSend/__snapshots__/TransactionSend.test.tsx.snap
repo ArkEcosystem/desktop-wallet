@@ -287,11 +287,11 @@ exports[`Transaction Send should render 1`] = `
                       >
                         Send
                       </h1>
-                      <p
+                      <div
                         class="text-theme-neutral-dark"
                       >
                         Enter details to send your money
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="mt-8"
@@ -544,9 +544,9 @@ exports[`Transaction Send should render 1`] = `
                                         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                         data-testid="FormLabel"
                                         for="amount"
-                                        label="Amount ARK"
+                                        label="Amount"
                                       >
-                                        Amount ARK
+                                        Amount
                                       </label>
                                     </div>
                                     <div
@@ -764,11 +764,11 @@ exports[`Transaction Send should render 1st step 1`] = `
       >
         Send
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
         Enter details to send your money
-      </p>
+      </div>
     </div>
     <div
       class="mt-8"
@@ -1021,9 +1021,9 @@ exports[`Transaction Send should render 1st step 1`] = `
                         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="amount"
-                        label="Amount ARK"
+                        label="Amount"
                       >
-                        Amount ARK
+                        Amount
                       </label>
                     </div>
                     <div
@@ -1230,11 +1230,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
       >
         Transaction Review
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
         Check the information again before voting
-      </p>
+      </div>
     </div>
     <div
       class="mt-4 grid grid-flow-row gap-2"
@@ -1302,7 +1302,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                 <span
                   class="text-sm"
                 >
-                  Your address
+                  label=Your address
                 </span>
               </div>
             </div>
@@ -1357,7 +1357,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               class="sc-fznWqX bzgpXZ"
             >
               <div
-                class="sc-fzqBZW cBnliu"
+                class="sc-fzqBZW eiFWfG"
                 role="table"
               >
                 <table
@@ -1780,13 +1780,13 @@ exports[`Transaction Send should render 3rd step 1`] = `
         <h1
           class="mb-0"
         >
-          Passphrase
+          Authenticate
         </h1>
-        <p
+        <div
           class="text-theme-neutral-dark"
         >
-          Confirm your password to continue
-        </p>
+          Enter your twelve word mnemonic to authenticate the transaction.
+        </div>
         <div
           class="grid grid-flow-row"
         >
@@ -1799,7 +1799,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Your password
+                Encryption Password
               </div>
               <div
                 class="font-semibold"
@@ -1931,33 +1931,37 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1980,33 +1984,37 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -2025,22 +2033,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             <div
               class="font-semibold"
             >
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  AUexKj…EVTQWK
-                </span>
-              </div>
+              ARK Ecosystem
             </div>
           </div>
           <div
