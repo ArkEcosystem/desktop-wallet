@@ -13,7 +13,10 @@ export const Default = () => {
 		<VerifyMessage
 			isOpen={boolean("isOpen", true)}
 			handleClose={() => alert("closed")}
-			publicKey="02ff171adaef486b7db9fc160b28433d20cf43163d56fd28fee72145f0d5219a4b"
+			onSubmit={console.log}
+			profileId="c73889ad-a15e-4f63-84c4-19704b98f472"
+			signatory="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
+			walletPublicKey="034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"
 		/>
 	);
 };

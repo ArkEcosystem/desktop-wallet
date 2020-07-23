@@ -1,6 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VerifyMessage should render 1`] = `<DocumentFragment />`;
+exports[`VerifyMessage should render 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fznyAO ioJhAT fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
+    >
+      <button
+        class="sc-AxhCb idLVlI"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="p-1"
+        >
+          <div
+            class="sc-AxjAm HWmvM"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
+        Verify Message
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="mt-1 text-theme-neutral-dark"
+        >
+          To make sure that you are the owner of this wallet, you can pass the check. and this more text.
+        </div>
+        <div
+          class="mt-8"
+        >
+          <div
+            class="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light"
+          >
+            <div
+              class="flex flex-col"
+            >
+              <div
+                class="flex items-center justify-between"
+              >
+                <div
+                  class="text-lg font-semibold"
+                >
+                  Verify JSON
+                </div>
+                <label
+                  class="flex"
+                >
+                  <input
+                    checked=""
+                    class="sc-fznKkj cHSYkT"
+                    data-testid="verify-address__toggle"
+                    type="checkbox"
+                  />
+                  <div
+                    class="sc-fznZeY brFAFO"
+                  >
+                    <span
+                      class="sc-fzokOt eGmHXf"
+                    />
+                  </div>
+                </label>
+              </div>
+              <div
+                class="pr-12 mt-1 text-sm text-theme-neutral"
+              >
+                You can verify only text using a JSON public key
+              </div>
+            </div>
+          </div>
+          <form
+            class="space-y-8"
+            data-testid="Form"
+            id="VerifyMessage__form"
+          >
+            <div
+              class="mt-8"
+            >
+              <div
+                class="flex rounded-lg overflow-hidden bg-theme-warning"
+              >
+                <div
+                  class="sc-AxiKw cPQbnD flex items-center justify-center text-theme-warning bg-theme-warning-200"
+                >
+                  <div
+                    class="sc-AxjAm bIZXgI"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      alert-default.svg
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="sc-AxirZ evPsEn flex-1 bg-theme-warning-100"
+                >
+                  <span
+                    class="text-sm font-medium"
+                  >
+                    Format(JSON): { "signatory": "...", "signature": "...", "message": "..."}
+                  </span>
+                </div>
+              </div>
+              <div
+                class="mt-8"
+              >
+                <fieldset
+                  class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+                >
+                  <label
+                    class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                    data-testid="FormLabel"
+                    for="signed-message-content"
+                    label="Signed message content"
+                  >
+                    Signed message content
+                  </label>
+                  <input
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="VerifyMessage_message-content"
+                    name="signed-message-content"
+                    type="text"
+                    value=""
+                  />
+                </fieldset>
+              </div>
+            </div>
+            <div
+              class="flex justify-end space-x-3"
+            >
+              <button
+                class="sc-AxhCb BegvR"
+                color="primary"
+                data-testid="VerifyMessage__cancel"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxhCb gBCygf"
+                color="primary"
+                data-testid="VerifyMessage__submit"
+                type="submit"
+              >
+                Verify
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
 exports[`VerifyMessage should render the non verify address content 1`] = `
 <DocumentFragment>
@@ -75,7 +251,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   <input
                     checked=""
                     class="sc-fznKkj cHSYkT"
-                    data-testid="verify-address__togle"
+                    data-testid="verify-address__toggle"
                     type="checkbox"
                   />
                   <div
@@ -97,7 +273,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
           <form
             class="space-y-8"
             data-testid="Form"
-            id="verify-message__form"
+            id="VerifyMessage__form"
           >
             <div
               data-testid="noverify-address__content"
@@ -108,15 +284,15 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 <label
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
-                  for="message-content"
-                  label="COMMON.MESSAGE"
+                  for="message"
+                  label="Message"
                 >
-                  COMMON.MESSAGE
+                  Message
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="Input"
-                  name="message-content"
+                  data-testid="VerifyMessage__message-input"
+                  name="message"
                   type="text"
                 />
               </fieldset>
@@ -126,18 +302,18 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 <label
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
-                  for="public-key"
+                  for="signatory"
                   label="Public Key"
                 >
                   Public Key
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="Input"
+                  data-testid="VerifyMessage__signatory-input"
                   disabled=""
-                  name="public-key"
+                  name="signatory"
                   type="text"
-                  value=""
+                  value="03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc"
                 />
               </fieldset>
               <fieldset
@@ -147,13 +323,13 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
-                  label="COMMON.SIGNATURE"
+                  label="Signature"
                 >
-                  COMMON.SIGNATURE
+                  Signature
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                  data-testid="Input"
+                  data-testid="VerifyMessage__signature-input"
                   name="signature"
                   type="text"
                 />
@@ -165,6 +341,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
               <button
                 class="sc-AxhCb BegvR"
                 color="primary"
+                data-testid="VerifyMessage__cancel"
                 type="button"
               >
                 Cancel
@@ -172,7 +349,8 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
               <button
                 class="sc-AxhCb gBCygf"
                 color="primary"
-                type="button"
+                data-testid="VerifyMessage__submit"
+                type="submit"
               >
                 Verify
               </button>

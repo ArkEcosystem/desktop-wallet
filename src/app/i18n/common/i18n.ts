@@ -89,6 +89,8 @@ export const translations: { [key: string]: any } = {
 	PREV: "Prev",
 	PREVIOUS: "Previous",
 	PUBLIC_KEY: "Public Key",
+	SIGNATURE: "Signature",
+	MESSAGE: "Message",
 	QUANTITY: "Quantity",
 	QR_CODE: "QR Code",
 	RANK: "Rank",
