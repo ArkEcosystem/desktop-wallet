@@ -6,7 +6,7 @@ import { httpClient } from "app/services";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter,waitFor, within } from "testing-library";
+import { act, fireEvent, renderWithRouter, waitFor, within } from "testing-library";
 import { profiles } from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
 
@@ -217,7 +217,7 @@ describe("Contacts", () => {
 		});
 	});
 
-	it("should close contact deletion modal on cancel click", async () => {
+	it("ignore random contact item action", async () => {
 		const { getByTestId } = renderWithRouter(<Contacts contacts={contacts} />);
 
 		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
@@ -231,20 +231,13 @@ describe("Contacts", () => {
 		});
 
 		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
 
 		act(() => {
-			fireEvent.click(deleteOption);
-		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
+			fireEvent.click(getByTestId("dropdown__option--1"));
 		});
 
 		waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeFalsy();
+			expect(getByTestId("dropdown__options")).toBeFalsy();
 		});
 	});
 
@@ -275,13 +268,13 @@ describe("Contacts", () => {
 		expect(getByTestId("dropdown__options")).toBeTruthy();
 		const deleteOption = getByTestId("dropdown__option--2");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(deleteOption);
 		});
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
