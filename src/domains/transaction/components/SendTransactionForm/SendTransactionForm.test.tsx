@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { contacts } from "domains/contact/data";
+import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render, waitFor, within } from "testing-library";
 
-import { networks } from "../../data";
 import { SendTransactionForm } from "./";
+
+const networks = availableNetworksMock;
 
 describe("SendTransactionForm", () => {
 	it("should render", () => {
@@ -105,31 +107,5 @@ describe("SendTransactionForm", () => {
 		waitFor(() => {
 			expect(fn).toBeCalled();
 		});
-	});
-
-	it("should not call onSubmit callback if not provided", async () => {
-		// Select network to enable buttons
-		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
-		const submit = getByTestId("send-transaction-click-submit");
-		await act(async () => {
-			fireEvent.click(submit);
-		});
-
-		expect(container).toMatchSnapshot();
-		expect(fn).not.toHaveBeenCalled();
-	});
-
-	it("should not call onBack callback if not provided", async () => {
-		// Select network to enable buttons
-		const fn = jest.fn();
-		const { getByTestId, container } = render(<SendTransactionForm contacts={contacts} networks={networks} />);
-		const back = getByTestId("send-transaction-click-back");
-		await act(async () => {
-			fireEvent.click(back);
-		});
-
-		expect(container).toMatchSnapshot();
-		expect(fn).not.toHaveBeenCalled();
 	});
 });

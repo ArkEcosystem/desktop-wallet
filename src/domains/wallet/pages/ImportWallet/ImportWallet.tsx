@@ -1,25 +1,24 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironment } from "app/contexts";
-import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
+import { useActiveProfile } from "app/hooks/env";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-type Network = { coin: string; icon: string; name: string; network: string };
-
 export const FirstStep = () => {
-	const { getValues, register, setValue } = useFormContext();
-	const networks = useAvailableNetworks();
-	const currentNetwork = getValues("network");
+	const { register, setValue } = useFormContext();
+	const env = useEnvironment();
+	const networks = React.useMemo(() => env!.availableNetworks(), [env]);
 
 	const { t } = useTranslation();
 
@@ -27,7 +26,7 @@ export const FirstStep = () => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleSelect = (network: Network) => {
+	const handleSelect = (network?: NetworkData) => {
 		setValue("network", network, true);
 	};
 
@@ -44,12 +43,7 @@ export const FirstStep = () => {
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork
-						name="network"
-						networks={networks}
-						onSelect={(network) => handleSelect(network)}
-						value={currentNetwork}
-					/>
+					<SelectNetwork id="ImportWallet__network" networks={networks} onSelect={handleSelect} />
 				</FormField>
 			</div>
 		</section>
@@ -157,8 +151,8 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, passphrase }: any) => {
-		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin, network.network);
+	const submitForm = async ({ network, passphrase }: { network: NetworkData; passphrase: string }) => {
+		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 
 		await env?.persist();
 
@@ -171,7 +165,7 @@ export const ImportWallet = () => {
 				<Form
 					className="max-w-xl mx-auto"
 					context={form}
-					onSubmit={submitForm}
+					onSubmit={(data) => submitForm(data as any)}
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>

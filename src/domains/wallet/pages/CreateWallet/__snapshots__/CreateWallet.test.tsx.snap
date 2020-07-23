@@ -170,7 +170,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                    class="sc-fznZeY kRxrNJ -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -187,13 +187,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-fznZeY kRxrNJ relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
                     />
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm iepfoc"
@@ -306,7 +306,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxheI dThsOi relative mt-1"
+                        class="sc-AxgMl cwpxCQ relative mt-1"
                       >
                         <div
                           class="mb-2"
@@ -323,101 +323,91 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-labelledby="downshift-4-label"
-                          class="relative"
+                          aria-owns="CreateWallet__network-menu"
+                          data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="downshift-4-input"
-                            id="downshift-4-label"
+                            for="CreateWallet__network-input"
+                            id="CreateWallet__network-label"
                           />
                           <div
-                            class="relative flex items-center w-full flex-inline"
+                            class="sc-fzoLsD rzdyj"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-fznJRM lnoAEP flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                              class="sc-Axmtr sc-AxmLO VVqBg px-4"
                             >
                               <div
-                                class="px-4 py-2 flex-0 w-14"
-                              >
-                                <div
-                                  class="sc-AxhUy iJOgmr border-theme-neutral-200"
-                                />
-                              </div>
-                              <div
-                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                              >
-                                <div
-                                  class="relative z-10 w-full"
-                                  data-testid="select-network__typeahead-"
-                                >
-                                  <div
-                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                  />
-                                </div>
-                                <input
-                                  aria-autocomplete="list"
-                                  aria-labelledby="downshift-4-label"
-                                  autocomplete="off"
-                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                  data-testid="select-asset__input"
-                                  id="downshift-4-input"
-                                  name="network"
-                                  placeholder="Enter a network name"
-                                  value=""
-                                />
-                              </div>
+                                class="sc-fznZeY eebuSp border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
                             </div>
-                          </div>
-                          <div
-                            aria-labelledby="downshift-4-label"
-                            class="select-asset__items"
-                            data-testid="select-asset__items"
-                            id="downshift-4-menu"
-                            role="listbox"
-                          >
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-4-item-0"
-                              role="option"
-                            >
-                              <div
-                                class="sc-AxhUy iZkFLc"
-                              >
-                                <div
-                                  class="sc-AxjAm jakjmk"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-4-item-1"
-                              role="option"
-                            >
-                              <div
-                                class="sc-AxhUy iZkFLc"
-                              >
-                                <div
-                                  class="sc-AxjAm jakjmk"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="CreateWallet__network-menu"
+                              aria-labelledby="CreateWallet__network-label"
+                              autocomplete="off"
+                              class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="CreateWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
+                            />
                           </div>
                         </div>
+                        <ul
+                          aria-labelledby="CreateWallet__network-label"
+                          id="CreateWallet__network-menu"
+                          role="listbox"
+                        >
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="CreateWallet__network-item-0"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark"
+                              class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="CreateWallet__network-item-1"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark Devnet"
+                              class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </fieldset>
                     </div>
                   </section>
@@ -624,7 +614,7 @@ exports[`CreateWallet should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                    class="sc-fznZeY kRxrNJ -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -641,13 +631,13 @@ exports[`CreateWallet should render 1`] = `
                     </span>
                   </div>
                   <div
-                    class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
+                    class="sc-fznZeY kRxrNJ relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
                     />
                     <span
-                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxjAm iepfoc"
@@ -760,7 +750,7 @@ exports[`CreateWallet should render 1`] = `
                       class="space-y-2"
                     >
                       <fieldset
-                        class="sc-AxheI dThsOi relative mt-1"
+                        class="sc-AxgMl cwpxCQ relative mt-1"
                       >
                         <div
                           class="mb-2"
@@ -777,101 +767,91 @@ exports[`CreateWallet should render 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-labelledby="downshift-1-label"
-                          class="relative"
+                          aria-owns="CreateWallet__network-menu"
+                          data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="downshift-1-input"
-                            id="downshift-1-label"
+                            for="CreateWallet__network-input"
+                            id="CreateWallet__network-label"
                           />
                           <div
-                            class="relative flex items-center w-full flex-inline"
+                            class="sc-fzoLsD rzdyj"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-fznJRM lnoAEP flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                              class="sc-Axmtr sc-AxmLO VVqBg px-4"
                             >
                               <div
-                                class="px-4 py-2 flex-0 w-14"
-                              >
-                                <div
-                                  class="sc-AxhUy iJOgmr border-theme-neutral-200"
-                                />
-                              </div>
-                              <div
-                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                              >
-                                <div
-                                  class="relative z-10 w-full"
-                                  data-testid="select-network__typeahead-"
-                                >
-                                  <div
-                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                  />
-                                </div>
-                                <input
-                                  aria-autocomplete="list"
-                                  aria-labelledby="downshift-1-label"
-                                  autocomplete="off"
-                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                  data-testid="select-asset__input"
-                                  id="downshift-1-input"
-                                  name="network"
-                                  placeholder="Enter a network name"
-                                  value=""
-                                />
-                              </div>
+                                class="sc-fznZeY eebuSp border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
                             </div>
-                          </div>
-                          <div
-                            aria-labelledby="downshift-1-label"
-                            class="select-asset__items"
-                            data-testid="select-asset__items"
-                            id="downshift-1-menu"
-                            role="listbox"
-                          >
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-1-item-0"
-                              role="option"
-                            >
-                              <div
-                                class="sc-AxhUy iZkFLc"
-                              >
-                                <div
-                                  class="sc-AxjAm jakjmk"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-1-item-1"
-                              role="option"
-                            >
-                              <div
-                                class="sc-AxhUy iZkFLc"
-                              >
-                                <div
-                                  class="sc-AxjAm jakjmk"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="CreateWallet__network-menu"
+                              aria-labelledby="CreateWallet__network-label"
+                              autocomplete="off"
+                              class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="CreateWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
+                            />
                           </div>
                         </div>
+                        <ul
+                          aria-labelledby="CreateWallet__network-label"
+                          id="CreateWallet__network-menu"
+                          role="listbox"
+                        >
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="CreateWallet__network-item-0"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark"
+                              class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="CreateWallet__network-item-1"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark Devnet"
+                              class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-AxjAm jakjmk"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </fieldset>
                     </div>
                   </section>
@@ -940,7 +920,7 @@ exports[`CreateWallet should render 1st step 1`] = `
       class="space-y-2"
     >
       <fieldset
-        class="sc-AxheI dThsOi relative mt-1"
+        class="sc-AxgMl cwpxCQ relative mt-1"
       >
         <div
           class="mb-2"
@@ -957,101 +937,91 @@ exports[`CreateWallet should render 1st step 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          class="relative"
+          aria-owns="CreateWallet__network-menu"
+          data-testid="SelectNetwork"
           role="combobox"
         >
           <label
-            for="downshift-0-input"
-            id="downshift-0-label"
+            for="CreateWallet__network-input"
+            id="CreateWallet__network-label"
           />
           <div
-            class="relative flex items-center w-full flex-inline"
+            class="sc-fzoLsD rzdyj"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-fznJRM lnoAEP flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+              class="sc-Axmtr sc-AxmLO VVqBg px-4"
             >
               <div
-                class="px-4 py-2 flex-0 w-14"
-              >
-                <div
-                  class="sc-AxhUy iJOgmr border-theme-neutral-200"
-                />
-              </div>
-              <div
-                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-              >
-                <div
-                  class="relative z-10 w-full"
-                  data-testid="select-network__typeahead-"
-                >
-                  <div
-                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                  />
-                </div>
-                <input
-                  aria-autocomplete="list"
-                  aria-labelledby="downshift-0-label"
-                  autocomplete="off"
-                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                  data-testid="select-asset__input"
-                  id="downshift-0-input"
-                  name="network"
-                  placeholder="Enter a network name"
-                  value=""
-                />
-              </div>
+                class="sc-fznZeY eebuSp border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
             </div>
-          </div>
-          <div
-            aria-labelledby="downshift-0-label"
-            class="select-asset__items"
-            data-testid="select-asset__items"
-            id="downshift-0-menu"
-            role="listbox"
-          >
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-0-item-0"
-              role="option"
-            >
-              <div
-                class="sc-AxhUy iZkFLc"
-              >
-                <div
-                  class="sc-AxjAm jakjmk"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-0-item-1"
-              role="option"
-            >
-              <div
-                class="sc-AxhUy iZkFLc"
-              >
-                <div
-                  class="sc-AxjAm jakjmk"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="CreateWallet__network-menu"
+              aria-labelledby="CreateWallet__network-label"
+              autocomplete="off"
+              class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="CreateWallet__network-input"
+              placeholder="Enter a network name"
+              value=""
+            />
           </div>
         </div>
+        <ul
+          aria-labelledby="CreateWallet__network-label"
+          id="CreateWallet__network-menu"
+          role="listbox"
+        >
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            id="CreateWallet__network-item-0"
+            role="option"
+          >
+            <div
+              aria-label="Ark"
+              class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
+              data-testid="NetworkIcon"
+            >
+              <div
+                class="sc-AxjAm jakjmk"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            id="CreateWallet__network-item-1"
+            role="option"
+          >
+            <div
+              aria-label="Ark Devnet"
+              class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon"
+            >
+              <div
+                class="sc-AxjAm jakjmk"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+        </ul>
       </fieldset>
     </div>
   </section>
@@ -1170,7 +1140,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhUy frUzJM border-theme-neutral-300"
       type="horizontal"
     />
     <div
@@ -1226,7 +1196,7 @@ exports[`CreateWallet should render 2nd step 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhUy frUzJM border-theme-neutral-300"
       type="horizontal"
     />
   </section>
@@ -1274,14 +1244,17 @@ exports[`CreateWallet should render 4th step 1`] = `
             class="text-lg font-medium"
             data-testid="CreateWallet__network-name"
           >
-            ARK Ecosystem
+            Ark
           </p>
         </div>
         <div
-          class="sc-AxhUy fHeTTV"
+          aria-label="Ark"
+          class="sc-fznZeY bvVXwc border-theme-danger-light text-theme-danger-400"
+          data-testid="NetworkIcon"
         >
           <div
             class="sc-AxjAm cpczEI"
+            data-testid="NetworkIcon__icon"
             height="1em"
             width="1em"
           >
@@ -1293,7 +1266,7 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
       <li>
         <div
-          class="sc-AxgMl fHSugy border-theme-neutral-300"
+          class="sc-AxhUy frUzJM border-theme-neutral-300"
           type="horizontal"
         />
       </li>
@@ -1330,11 +1303,11 @@ exports[`CreateWallet should render 4th step 1`] = `
       </li>
     </ul>
     <div
-      class="sc-AxgMl fHSugy border-theme-neutral-300"
+      class="sc-AxhUy frUzJM border-theme-neutral-300"
       type="horizontal"
     />
     <fieldset
-      class="sc-AxheI dThsOi flex flex-col space-y-2"
+      class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1345,7 +1318,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         Wallet name (optional)
       </label>
       <input
-        class="sc-Axmtr dEPowd overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="CreateWallet__wallet-name"
         name="name"
       />

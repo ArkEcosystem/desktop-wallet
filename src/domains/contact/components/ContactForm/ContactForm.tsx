@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -5,7 +6,7 @@ import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -72,7 +73,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: any;
-	networks: any;
+	networks: NetworkData[];
 	onCancel?: any;
 	onDelete?: any;
 	onSave: any;
@@ -92,13 +93,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		register({ name: "network" });
 	}, [register]);
 
-	const handleAddAddress = (network: any, address: string) => {
+	const handleAddAddress = () => {
 		setContactAddresses(
 			contactAddresses.concat({
-				network: network.name,
+				network: network.id(),
 				address,
-				coin: network.icon,
-				coinClassName: network.className,
+				coin: network.coin(),
 			}),
 		);
 
@@ -106,12 +106,16 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		form.setValue("address", null);
 	};
 
-	const handleRemoveAddress = (address: any) => {
+	const handleRemoveAddress = (item: any) => {
 		setContactAddresses(
 			contactAddresses.filter((curr: any) => {
-				return !(curr.address === address.address && curr.network === address.network);
+				return !(curr.address === item.address && curr.network === item.network);
 			}),
 		);
+	};
+
+	const handleSelectNetwork = (network?: NetworkData) => {
+		form.setValue("network", network, true);
 	};
 
 	return (
@@ -137,7 +141,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 			<FormField name="network">
 				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<SelectNetwork networks={networks} onSelect={(selected: any) => form.setValue("network", selected)} />
+				<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
 				<FormHelperText />
 			</FormField>
 
@@ -153,7 +157,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 					variant="plain"
 					className="w-full"
 					disabled={!network || !address}
-					onClick={() => handleAddAddress(network, address)}
+					onClick={handleAddAddress}
 				>
 					{t("CONTACTS.CONTACT_FORM.ADD_ADDRESS")}
 				</Button>
