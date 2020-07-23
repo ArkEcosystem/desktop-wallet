@@ -68,7 +68,7 @@ describe("Wallet Details", () => {
 
 		cy.get('[data-testid="modal__inner"]').find("h2").contains("Name Wallet");
 		cy.get('[data-testid="UpdateWalletName__submit"]').click();
-		cy.get("fieldset p").contains("Wallet name is required");
+		cy.get("fieldset p").contains("is required");
 		cy.get('[data-testid="modal__close-btn"]').click();
 	});
 
