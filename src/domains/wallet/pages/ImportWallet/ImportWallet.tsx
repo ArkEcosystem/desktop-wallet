@@ -65,7 +65,7 @@ export const SecondStep = () => {
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
 			return (
-				<FormField name="password">
+				<FormField name="passphrase">
 					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
 					<InputPassword
 						ref={register({
@@ -73,7 +73,7 @@ export const SecondStep = () => {
 								field: t("COMMON.YOUR_PASSPHRASE"),
 							}).toString(),
 						})}
-						data-testid="ImportWallet__password-input"
+						data-testid="ImportWallet__passphrase-input"
 					/>
 					<FormHelperText />
 				</FormField>
@@ -157,8 +157,8 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().importByMnemonic(password, network.coin, network.network);
+	const submitForm = async ({ network, passphrase }: any) => {
+		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin, network.network);
 
 		await env?.persist();
 

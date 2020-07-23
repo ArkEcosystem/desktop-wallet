@@ -1,6 +1,6 @@
 import { Table } from "app/components/Table";
-import i18n from "i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
@@ -15,35 +15,6 @@ type Props = {
 	onRowClick?: (row: Transaction) => void;
 };
 
-const commonColumns = [
-	{
-		Header: i18n.t("COMMON.ID"),
-	},
-	{
-		Header: i18n.t("COMMON.DATE"),
-		accessor: "timestamp",
-	},
-	{
-		Header: i18n.t("COMMON.TYPE"),
-		className: "invisible",
-	},
-	{
-		Header: i18n.t("COMMON.RECIPIENT"),
-	},
-	{
-		Header: i18n.t("COMMON.INFO"),
-	},
-	{
-		Header: i18n.t("COMMON.STATUS"),
-		className: "justify-center",
-	},
-	{
-		Header: i18n.t("COMMON.AMOUNT"),
-		className: "justify-end",
-		accessor: "amount",
-	},
-];
-
 export const TransactionTable = ({
 	transactions,
 	currencyRate,
@@ -52,30 +23,62 @@ export const TransactionTable = ({
 	isCompact,
 	onRowClick,
 }: Props) => {
+	const { t } = useTranslation();
+
+	const commonColumns = [
+		{
+			Header: t("COMMON.ID"),
+		},
+		{
+			Header: t("COMMON.DATE"),
+			accessor: "timestamp",
+		},
+		{
+			Header: t("COMMON.TYPE"),
+			className: "invisible",
+		},
+		{
+			Header: t("COMMON.RECIPIENT"),
+		},
+		{
+			Header: t("COMMON.INFO"),
+			className: "justify-center",
+		},
+		{
+			Header: t("COMMON.STATUS"),
+			className: "justify-center",
+		},
+		{
+			Header: t("COMMON.AMOUNT"),
+			className: "justify-end",
+			accessor: "amount",
+		},
+	];
+
 	const columns = React.useMemo(() => {
 		if (isCompact) {
 			return [
 				{
-					Header: "Type",
+					Header: t("COMMON.TYPE"),
 					className: "invisible",
 				},
 				{
-					Header: "Recipient",
+					Header: t("COMMON.RECIPIENT"),
 				},
 				{
-					Header: "Amount",
-					className: "justify-end",
+					Header: t("COMMON.AMOUNT"),
 					accessor: "amount",
+					className: "justify-end",
 				},
 			];
 		}
 
 		if (currencyRate) {
-			return [...commonColumns, { Header: "Currency", className: "justify-end" }];
+			return [...commonColumns, { Header: t("COMMON.CURRENCY"), className: "justify-end" }];
 		}
 
 		if (showSignColumn) {
-			return [...commonColumns, { Header: "Sign", className: "invisible" }];
+			return [...commonColumns, { Header: t("COMMON.SIGN"), className: "invisible" }];
 		}
 
 		return commonColumns;

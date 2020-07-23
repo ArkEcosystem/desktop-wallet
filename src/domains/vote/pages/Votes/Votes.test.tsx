@@ -15,7 +15,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a cryptoasset", () => {
+	it("should select a network", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);

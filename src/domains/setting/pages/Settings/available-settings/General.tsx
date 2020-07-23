@@ -102,7 +102,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 					<FormLabel label={t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_LOGOUT.TITLE")} />
 					<Select
 						placeholder={t("COMMON.SELECT_OPTION", {
-							option: t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_LOGOUT"),
+							option: t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_LOGOUT.TITLE"),
 						})}
 						ref={register()}
 						options={[

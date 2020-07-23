@@ -7,7 +7,7 @@ describe("Import Wallet", () => {
 
 	it("should navigate to import wallet page", () => {
 		cy.get("button").contains("Import").click();
-		cy.get("h1").contains("Select a Cryptoasset");
+		cy.get("h1").contains("Select a Network");
 	});
 
 	it("should select a network", () => {
@@ -18,7 +18,7 @@ describe("Import Wallet", () => {
 
 	it("should error without required fields", () => {
 		cy.get("button").contains("Go to Wallet").click();
-		cy.get("fieldset p").contains("Password is required");
+		cy.get("fieldset p").contains("Your Passphrase is required");
 
 		cy.get("input[name=isAddressOnly]").parent().click();
 		cy.get("button").contains("Go to Wallet").click();
@@ -28,8 +28,8 @@ describe("Import Wallet", () => {
 	});
 
 	it("should import a wallet", () => {
-		cy.get("label").contains("Your Password");
-		cy.get("input[name=password]").type("this is a top secret passphrase");
+		cy.get("label").contains("Your Passphrase");
+		cy.get("input[name=passphrase]").type("this is a top secret passphrase");
 
 		cy.get("button").contains("Go to Wallet").click();
 		cy.get("button").contains("Send");

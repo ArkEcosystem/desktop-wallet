@@ -86,7 +86,7 @@ export const translations: { [key: string]: any } = {
 	PAGE_IMPORT_WALLET: {
 		NETWORK_STEP: {
 			TITLE: "Select a Network",
-			SUBTITLE: "Select a Network to create your new wallet address",
+			SUBTITLE: "Select a Network to import your existing wallet address",
 		},
 
 		METHOD_STEP: {

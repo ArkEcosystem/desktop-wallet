@@ -289,7 +289,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="header__subtitle"
                           >
-                            Select a Network to create your new wallet address
+                            Select a Network to import your existing wallet address
                           </div>
                         </div>
                       </div>
@@ -726,7 +726,7 @@ exports[`ImportWallet should render 1`] = `
                             class="text-theme-neutral-dark"
                             data-testid="header__subtitle"
                           >
-                            Select a Network to create your new wallet address
+                            Select a Network to import your existing wallet address
                           </div>
                         </div>
                       </div>
@@ -897,7 +897,7 @@ exports[`ImportWallet should render 1st step 1`] = `
             class="text-theme-neutral-dark"
             data-testid="header__subtitle"
           >
-            Select a Network to create your new wallet address
+            Select a Network to import your existing wallet address
           </div>
         </div>
       </div>
@@ -1097,7 +1097,7 @@ exports[`ImportWallet should render 2st step 1`] = `
         <label
           class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
           data-testid="FormLabel"
-          for="password"
+          for="passphrase"
           label="Your Passphrase"
         >
           Your Passphrase
@@ -1107,8 +1107,8 @@ exports[`ImportWallet should render 2st step 1`] = `
         >
           <input
             class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-            data-testid="ImportWallet__password-input"
-            name="password"
+            data-testid="ImportWallet__passphrase-input"
+            name="passphrase"
             type="password"
           />
           <div
