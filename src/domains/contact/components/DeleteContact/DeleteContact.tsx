@@ -1,4 +1,5 @@
 import { DeleteResource } from "app/components/DeleteResource";
+import { useEnvironment } from "app/contexts";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -7,10 +8,23 @@ type DeleteContactProps = {
 	onClose?: any;
 	onCancel?: any;
 	onDelete?: any;
+	profileId: string;
+	contactId?: string;
 };
 
-export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete }: DeleteContactProps) => {
+export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete, profileId, contactId }: DeleteContactProps) => {
 	const { t } = useTranslation();
+	const env = useEnvironment();
+
+	const handleDelete = async () => {
+		if (!contactId) return;
+
+		const profile = env?.profiles().findById(profileId);
+		profile?.contacts().forget(contactId);
+		await env?.persist();
+
+		onDelete?.(contactId);
+	};
 
 	return (
 		<DeleteResource
@@ -19,7 +33,7 @@ export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete }: DeleteCon
 			isOpen={isOpen}
 			onClose={onClose}
 			onCancel={onCancel}
-			onDelete={onDelete}
+			onDelete={handleDelete}
 		/>
 	);
 };
