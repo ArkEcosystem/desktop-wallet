@@ -40,7 +40,7 @@ exports[`VerifyMessage should render 1`] = `
       <h2
         class="mb-0 text-3xl font-bold"
       >
-        Verify
+        Verify Message
       </h2>
       <div
         class="flex-1"
@@ -56,22 +56,17 @@ exports[`VerifyMessage should render 1`] = `
           <div
             class="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light"
           >
-            <span
-              class="text-lg font-semibold"
-            >
-              Verify
-            </span>
             <div
-              class="flex flex-row justify-between"
+              class="flex flex-col"
             >
-              <span
-                class="pt-2 text-sm text-theme-neutral"
-              >
-                You can verify only text using a JSON public key
-              </span>
               <div
-                class="mr-1 -mt-7"
+                class="flex items-center justify-between"
               >
+                <div
+                  class="text-lg font-semibold"
+                >
+                  Verify JSON
+                </div>
                 <label
                   class="flex"
                 >
@@ -90,12 +85,17 @@ exports[`VerifyMessage should render 1`] = `
                   </div>
                 </label>
               </div>
+              <div
+                class="pr-12 mt-1 text-sm text-theme-neutral"
+              >
+                You can verify only text using a JSON public key
+              </div>
             </div>
           </div>
           <form
             class="space-y-8"
             data-testid="Form"
-            id="verify-message__form"
+            id="VerifyMessage__form"
           >
             <div
               class="mt-8"
@@ -273,7 +273,7 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
           <form
             class="space-y-8"
             data-testid="Form"
-            id="verify-message__form"
+            id="VerifyMessage__form"
           >
             <div
               data-testid="noverify-address__content"
@@ -284,15 +284,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 <label
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
-<<<<<<< HEAD
                   for="message"
                   label="Message"
-=======
-                  for="message-content"
-                  label="COMMON.MESSAGE"
->>>>>>> 3.0-react
                 >
-                  COMMON.MESSAGE
+                  Message
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -307,17 +302,10 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                 <label
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
-<<<<<<< HEAD
                   for="signatory"
-                  label="Signatory"
-                >
-                  Signatory
-=======
-                  for="public-key"
                   label="Public Key"
                 >
                   Public Key
->>>>>>> 3.0-react
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -335,9 +323,9 @@ exports[`VerifyMessage should render the non verify address content 1`] = `
                   class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                   data-testid="FormLabel"
                   for="signature"
-                  label="COMMON.SIGNATURE"
+                  label="Signature"
                 >
-                  COMMON.SIGNATURE
+                  Signature
                 </label>
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
