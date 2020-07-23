@@ -60,12 +60,11 @@ export const VerifyMessage = ({
 					</Alert>
 
 					<div className="mt-8">
-						<FormField name="signet-message-content">
-							<FormLabel label="Signet message content" />
+						<FormField name="signed-message-content">
+							<FormLabel label="Signed message content" />
 							<Input
 								data-testid="VerifyMessage_message-content"
 								type="text"
-								name="signet-message-content"
 								defaultValue={""}
 								ref={register({ required: true })}
 							/>
