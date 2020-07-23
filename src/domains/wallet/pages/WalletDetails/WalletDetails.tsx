@@ -1,4 +1,4 @@
-import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useEnvironment } from "app/contexts";
@@ -139,7 +139,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			/>
 
 			<SignMessage
-				profile={activeProfile as Profile}
+				profileId={activeProfile?.id() as string}
 				walletId={walletId}
 				signatoryAddress={wallet?.address as string}
 				isOpen={isSigningMessage}
