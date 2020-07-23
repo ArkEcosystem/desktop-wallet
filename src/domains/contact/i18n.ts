@@ -27,5 +27,6 @@ export const translations: { [key: string]: any } = {
 	MODAL_SEARCH_CONTACT: {
 		TITLE: "Search Contact",
 		DESCRIPTION: "Find the contact you need quickly and conveniently",
+		PLACEHOLDER: "Search...",
 	},
 };

@@ -16,8 +16,9 @@ type UpdateWalletNameProps = {
 
 const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
-export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
+export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange" });
+
 	const { t } = useTranslation();
 
 	return (
@@ -25,22 +26,28 @@ export const UpdateWalletName = ({ ...props }: UpdateWalletNameProps) => {
 			title={t("WALLETS.MODAL_NAME_WALLET.TITLE")}
 			description={t("WALLETS.MODAL_NAME_WALLET.DESCRIPTION")}
 			image={<NameWalletBanner className="my-8" />}
-			isOpen={props.isOpen}
-			onClose={props.onClose}
+			isOpen={isOpen}
+			onClose={onClose}
 		>
-			<Form context={methods} onSubmit={props.onSave} className="mt-8">
+			<Form context={methods} onSubmit={onSave} className="mt-8">
 				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
-					<Input ref={methods.register({ required: "Field required" })} />
+					<Input
+						ref={methods.register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.NAME"),
+							}).toString(),
+						})}
+					/>
 					<FormHelperText />
 				</FormField>
 
 				<div className="flex justify-end mt-8 space-x-3">
-					<Button variant="plain" onClick={props.onCancel}>
-						Cancel
+					<Button variant="plain" onClick={onCancel}>
+						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit">Save</Button>
+					<Button type="submit">{t("COMMON.SAVE")}</Button>
 				</div>
 			</Form>
 		</Modal>

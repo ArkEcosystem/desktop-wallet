@@ -36,14 +36,18 @@ export const SearchWallet = ({
 			accessor: "address",
 		},
 		{
-			Header: t("COMMON.BALANCE"),
-			accessor: "balance",
-			className: "float-right",
+			Header: t("COMMON.WALLET_TYPE"),
+			className: "justify-center",
 		},
 		{
-			Header: t("Fiat Value"),
+			Header: t("COMMON.BALANCE"),
+			accessor: "balance",
+			className: "justify-end",
+		},
+		{
+			Header: t("COMMON.FIAT_VALUE"),
 			accessor: "fiat",
-			className: "float-right",
+			className: "justify-end",
 		},
 	];
 

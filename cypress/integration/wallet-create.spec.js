@@ -10,7 +10,7 @@ describe("Create Wallet", () => {
 
 	it("should navigate to create wallet page", () => {
 		cy.get("button").contains("Create").click();
-		cy.get("h1").contains("Select a Cryptoasset");
+		cy.get("h1").contains("Select a Network");
 	});
 
 	it("should select a network & go to second step", () => {
@@ -21,7 +21,7 @@ describe("Create Wallet", () => {
 
 	it("should go back and forth", () => {
 		cy.get("button").contains("Back").click();
-		cy.get("h1").contains("Select a Cryptoasset");
+		cy.get("h1").contains("Select a Network");
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Your Passphrase");
 	});

@@ -17,6 +17,7 @@ import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { MnemonicList } from "../../components/MnemonicList";
@@ -27,6 +28,8 @@ type Network = { coin: string; name: string; network: string; icon: string };
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
 	const currentNetwork = getValues("network");
+
+	const { t } = useTranslation();
 
 	const networks: Network[] = env.availableNetworks().map((network: any) => ({
 		name: `${network.ticker()} - ${network.name()}`,
@@ -55,18 +58,22 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 		<section data-testid="CreateWallet__first-step" className="space-y-8">
 			<div className="my-8">
 				<Header
-					title="Select a Cryptoasset"
-					subtitle="Select a cryptoasset to create your new wallet address"
+					title={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
 				/>
 			</div>
 			<div className="space-y-2">
-				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-				<SelectNetwork
-					name={currentNetwork?.name}
-					networks={networks}
-					onSelect={(network) => handleSelect(network)}
-					value={currentNetwork}
-				/>
+				<FormField name="network" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label={t("COMMON.NETWORK")} />
+					</div>
+					<SelectNetwork
+						name="network"
+						networks={networks}
+						onSelect={(network) => handleSelect(network)}
+						value={currentNetwork}
+					/>
+				</FormField>
 			</div>
 		</section>
 	);
@@ -76,6 +83,8 @@ export const SecondStep = () => {
 	const { getValues, unregister } = useFormContext();
 	const mnemonic = getValues("mnemonic");
 
+	const { t } = useTranslation();
+
 	React.useEffect(() => {
 		unregister("verification");
 	}, [unregister]);
@@ -83,21 +92,17 @@ export const SecondStep = () => {
 	return (
 		<section data-testid="CreateWallet__second-step">
 			<div className="my-8">
-				<Header title="Your Passphrase" />
+				<Header title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.TITLE")} />
 			</div>
 
 			<div className="space-y-8">
-				<Alert size="lg">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, optio ipsum, porro in dolore ex
-					ab iste labore illo perferendis maiores. Ratione quo ipsa adipisci repellendus consectetur ipsam
-					facere nostrum.
-				</Alert>
+				<Alert size="lg">{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>
 				<MnemonicList mnemonic={mnemonic} />
 				<div className="flex justify-end w-full">
 					<Clipboard data={mnemonic}>
 						<Button data-testid="CreateWallet__copy" variant="plain">
 							<Icon name="Copy" />
-							<span>Copy</span>
+							<span>{t("COMMON.COPY")}</span>
 						</Button>
 					</Clipboard>
 				</div>
@@ -108,8 +113,12 @@ export const SecondStep = () => {
 			<div className="py-3">
 				<div className="flex justify-between">
 					<div>
-						<h3 className="mb-1 text-theme-neutral-dark">Your password in the file</h3>
-						<p className="text-theme-neutral">You can also download and store safely your passphrase.</p>
+						<h3 className="mb-1 text-theme-neutral-dark">
+							{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
+						</h3>
+						<p className="text-theme-neutral">
+							{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
+						</p>
 					</div>
 					<Icon name="FilePassword" width={40} height={40} />
 				</div>
@@ -120,7 +129,7 @@ export const SecondStep = () => {
 						className="flex items-center mt-4 space-x-2"
 					>
 						<Icon name="Download" />
-						<span>Download</span>
+						<span>{t("COMMON.DOWNLOAD")}</span>
 					</Button>
 				</div>
 			</div>
@@ -135,6 +144,8 @@ export const ThirdStep = () => {
 	const mnemonic = getValues("mnemonic");
 	const isVerified: boolean = getValues("verification");
 
+	const { t } = useTranslation();
+
 	const handleComplete = () => {
 		setValue("verification", true, true);
 	};
@@ -148,7 +159,10 @@ export const ThirdStep = () => {
 	return (
 		<section data-testid="CreateWallet__third-step">
 			<div className="my-8">
-				<Header title="Confirm your passphrase" subtitle="Confirm your password to continue" />
+				<Header
+					title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}
+				/>
 			</div>
 
 			<MnemonicVerification
@@ -168,16 +182,21 @@ export const FourthStep = () => {
 	const network: Network = getValues("network");
 	const wallet: Wallet = getValues("wallet");
 
+	const { t } = useTranslation();
+
 	return (
 		<section data-testid="CreateWallet__fourth-step">
 			<div className="my-8">
-				<Header title="Completed" subtitle="Wallet creation is complete. Now you can use it." />
+				<Header
+					title={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
+				/>
 			</div>
 
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Network</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.NETWORK")}</p>
 						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
 							{network.name}
 						</p>
@@ -191,7 +210,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">Address</p>
+						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.ADDRESS")}</p>
 						<p data-testid="CreateWallet__wallet-address" className="text-lg font-medium">
 							{wallet.address()}
 						</p>
@@ -203,7 +222,7 @@ export const FourthStep = () => {
 			<Divider dashed />
 
 			<FormField name="name">
-				<FormLabel label="Wallet name (optional)" />
+				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} />
 				<Input data-testid="CreateWallet__wallet-name" ref={register} />
 			</FormField>
 		</section>
@@ -213,11 +232,13 @@ export const FourthStep = () => {
 export const CreateWallet = () => {
 	const env = useEnvironment();
 	const history = useHistory();
+	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = React.useState(1);
 	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+
 	const crumbs = [
 		{
 			route: dashboardRoute,
@@ -308,13 +329,13 @@ export const CreateWallet = () => {
 										disabled={!formState.isValid}
 										onClick={handleNext}
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
 								{activeTab === 4 && (
 									<Button type="submit" data-testid="CreateWallet__save-button">
-										Save &amp; Finish
+										{t("COMMON.SAVE_FINISH")}
 									</Button>
 								)}
 							</div>

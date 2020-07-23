@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	LOGIN: "Login with MarketSquare",
+	CREATE_PROFILE: "Create Profile",
 	MODAL_PROFILE_CREATED: {
 		TITLE: "Profile Created!",
 		DESCRIPTION_1: "If you are new to the ARK Desktop Wallet, view our tutorial to get started.",
@@ -24,5 +26,35 @@ export const translations: { [key: string]: any } = {
 	MODAL_SEARCH_ADDRESS: {
 		TITLE: "Select address",
 		DESCRIPTION: "Find and select an address from your wallets",
+	},
+	PAGE_CREATE_PROFILE: {
+		TITLE: "Create Profile",
+		DESCRIPTION: "Create a new Profile or login with your MarketSquare account to get started.",
+	},
+	PAGE_MY_REGISTRATIONS: {
+		TITLE: "My Registrations",
+		SUBTITLE: "You can register a Delegate, Business and Bridgechain.",
+		NO_REGISTRATIONS_MESSAGE: "Register Business, Bridgechain and Delegate in the most convenient way.",
+		AGENT: "Agent",
+		BLOCKCHAIN: "Blockchain",
+		BLOCKCHAIN_NAME: "Blockchain Name",
+		BUSINESS: "Business",
+		BUSINESS_NAME: "Business Name",
+		DELEGATE: "Delegate",
+		DELEGATE_NAME: "Delegate Name",
+		FORGED_AMOUNT: "Forged Amount",
+		HISTORY: "History",
+		MSQ: "MSQ",
+		RANK: "Rank",
+		REPOSITORY: "Repository",
+		SEED: "Seed",
+		STATUS: "Status",
+		VOTES: "Votes",
+		WEBSITE: "Website",
+	},
+	PAGE_WELCOME: {
+		TITLE: "Welcome to ARK",
+		DESCRIPTION: "Create a new Profile or login with your MarketSquare account to get started.",
+		HAS_PROFILES: "You already have a profile, you can choose any of them",
 	},
 };

@@ -87,14 +87,14 @@ describe("ImportWallet", () => {
 		const addressToggle = getByTestId("ImportWallet__address-toggle");
 		expect(addressToggle).toBeTruthy();
 
-		const passwordInput = getByTestId("ImportWallet__password-input");
-		expect(passwordInput).toBeTruthy();
+		const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+		expect(passphraseInput).toBeTruthy();
 
 		await act(async () => {
-			fireEvent.change(passwordInput, { target: { value: identity.mnemonic } });
+			fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
 		});
 
-		expect(form.current.getValues()).toEqual({ password: identity.mnemonic });
+		expect(form.current.getValues()).toEqual({ passphrase: identity.mnemonic });
 
 		await act(async () => {
 			fireEvent.click(addressToggle);
@@ -183,10 +183,10 @@ describe("ImportWallet", () => {
 			await fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
 
-			const passwordInput = getByTestId("ImportWallet__password-input");
-			expect(passwordInput).toBeTruthy();
+			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+			expect(passphraseInput).toBeTruthy();
 
-			await fireEvent.change(passwordInput, { target: { value: identity.mnemonic } });
+			await fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
 
 			await fireEvent.click(getByTestId("ImportWallet__submit-button"));
 

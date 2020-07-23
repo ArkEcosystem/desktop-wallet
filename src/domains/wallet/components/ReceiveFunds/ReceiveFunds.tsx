@@ -1,5 +1,6 @@
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
@@ -10,7 +11,6 @@ type ReceiveFundsProps = {
 	isOpen: boolean;
 	wallet: any;
 	qrCode?: string;
-	onCopy?: () => void;
 	handleClose?: any;
 };
 
@@ -42,7 +42,7 @@ const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps
 	);
 };
 
-export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: ReceiveFundsProps) => {
+export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -61,9 +61,13 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 				label={t("COMMON.ADDRESS")}
 				value={wallet.address}
 				copyButton={
-					<button onClick={onCopy} className="inline-block ml-4 text-theme-primary-300">
-						<Icon name="Copy" />
-					</button>
+					<span className="ml-4">
+						<Clipboard>
+							<div className="text-theme-primary-300">
+								<Icon name="Copy" />
+							</div>
+						</Clipboard>
+					</span>
 				}
 			>
 				<div className="flex items-center mb-2 ml-4">
@@ -77,7 +81,7 @@ export const ReceiveFunds = ({ isOpen, wallet, qrCode, onCopy, handleClose }: Re
 			</Wrapper>
 
 			<div className="mt-8">
-				<img src={qrCode} className="w-64 h-64 mx-auto" alt="QR Code" />
+				<img src={qrCode} className="w-64 h-64 mx-auto" alt={t("COMMON.QR_CODE")} />
 			</div>
 		</Modal>
 	);

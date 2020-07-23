@@ -7,6 +7,7 @@ import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { assets, categories, news } from "../../data";
 
@@ -19,6 +20,8 @@ type Props = {
 export const News = ({ news, categories, assets }: Props) => {
 	const activeProfile = useActiveProfile();
 
+	const { t } = useTranslation();
+
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
@@ -30,10 +33,12 @@ export const News = ({ news, categories, assets }: Props) => {
 		<Page crumbs={crumbs}>
 			<Section>
 				<Header
-					title="Blockchain News"
+					title={t("NEWS.PAGE_NEWS.TITLE")}
 					subtitle={
 						<div className="flex items-center space-x-2">
-							<span className="font-semibold text-theme-neutral-dark">Powered by</span>
+							<span className="font-semibold text-theme-neutral-dark">
+								{t("NEWS.PAGE_NEWS.POWERED_BY")}
+							</span>
 							<SvgCollection.Blockfolio width={100} height={27} />
 						</div>
 					}

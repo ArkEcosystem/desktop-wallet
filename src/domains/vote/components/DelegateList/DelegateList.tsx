@@ -61,46 +61,45 @@ export const DelegateList = (props: DelegateListProps) => {
 	const [showSelectedList, setShowSelectedList] = useState(false);
 	const columns = [
 		{
-			Header: "",
 			accessor: "delegateAddressAvatar",
 			disableSortBy: true,
 		},
 		{
-			Header: "Delegate Name",
+			Header: t("VOTE.DELEGATE_LIST.NAME"),
 			accessor: "delegateName",
 		},
 		{
-			Header: "Rank",
+			Header: t("COMMON.RANK"),
 			accessor: "rank",
 		},
 		{
-			Header: "Votes",
+			Header: t("VOTE.DELEGATE_LIST.VOTES"),
 			accessor: "votes",
 		},
 		{
-			Header: "Profile",
+			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
 			disableSortBy: true,
 			className: "flex justify-center",
 		},
 		{
-			Header: "Comm.",
+			Header: t("VOTE.DELEGATE_LIST.COMMISSION"),
 			accessor: "commissionPercentage",
 		},
 		{
-			Header: "Payout",
+			Header: t("VOTE.DELEGATE_LIST.PAYOUT_INTERVAL"),
 			accessor: "payout",
 		},
 		{
-			Header: "Min",
+			Header: t("VOTE.DELEGATE_LIST.MIN"),
 			accessor: "min",
 		},
 		{
-			Header: "Commission (Daily)",
+			Header: t("VOTE.DELEGATE_LIST.COMMISSION_BY_PERIOD", { period: t("COMMON.PERIODS.DAILY") }),
 			accessor: "commissionDaily",
 		},
 		{
-			Header: "Vote",
+			Header: t("VOTE.DELEGATE_LIST.VOTE"),
 			accessor: "onSelect",
 			className: "justify-end",
 		},
@@ -118,7 +117,7 @@ export const DelegateList = (props: DelegateListProps) => {
 
 	return (
 		<div data-testid="DelegateList">
-			<h2 className="py-5 text-2xl font-bold">Select a Delegate</h2>
+			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_LIST.TITLE")}</h2>
 			<Table columns={columns} data={props.data}>
 				{(rowData: any) => <DelegateListItem {...rowData} selected={selected} onSelect={toggleSelected} />}
 			</Table>
@@ -143,7 +142,7 @@ export const DelegateList = (props: DelegateListProps) => {
 												<Avatar address={selected[0].address} className="mr-4" />
 												<div className="flex flex-col">
 													<div className="text-sm text-theme-neutral-dark">
-														Address Delegate
+														{t("COMMON.DELEGATE")}
 													</div>
 													<div className="text-theme-neutral">
 														{selected[0].username} - {selected[0].address}
@@ -159,13 +158,15 @@ export const DelegateList = (props: DelegateListProps) => {
 												className="ml-4 cursor-pointer text-theme-primary-dark hover:text-theme-primary-500"
 												onClick={() => setShowSelectedList(!showSelectedList)}
 											>
-												{showSelectedList ? "Hide" : "Show"} List
+												{showSelectedList
+													? t("VOTE.DELEGATE_LIST.HIDE_LIST")
+													: t("VOTE.DELEGATE_LIST.SHOW_LIST")}
 											</div>
 										</div>
 									)}
 								</div>
 
-								<Button>Continue</Button>
+								<Button>{t("COMMON.CONTINUE")}</Button>
 							</div>
 
 							{showSelectedList && <SelectedDelegateList delegates={selected} className="mt-2" />}

@@ -4,7 +4,7 @@ describe("Transactions routing", () => {
 
 		cy.get("p").contains("Anne Doe").click();
 		cy.get("[data-testid=navbar__buttons--send]").click();
-		cy.get("p").contains("Enter details to send your money");
+		cy.get("div").contains("Enter details to send your money");
 	});
 
 	it("should handle the sign message action from dropdown", () => {
