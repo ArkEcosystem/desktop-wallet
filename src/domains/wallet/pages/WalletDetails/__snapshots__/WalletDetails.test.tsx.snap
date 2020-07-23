@@ -6298,16 +6298,16 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
             >
               <li
-                class="space-y-2"
+                class="flex flex-col space-y-2"
               >
                 <div
                   class="inline-flex items-center space-x-2"
                 >
-                  <p
+                  <span
                     class="font-semibold text-sm text-theme-neutral-dark"
                   >
                     Address
-                  </p>
+                  </span>
                   <label
                     class="flex"
                   >
@@ -6324,64 +6324,69 @@ exports[`WalletDetails should update wallet name 1`] = `
                       />
                     </div>
                   </label>
-                  <p
+                  <span
                     class="font-semibold text-sm text-theme-neutral-light"
                   >
                     Public Key
-                  </p>
+                  </span>
                 </div>
                 <div>
-                  <p
+                  <span
                     class="inline-block text-lg font-medium"
                     data-testid="WalletHeader__address-publickey"
                   >
                     ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-                  </p>
-                  <button
-                    class="inline-block px-3 text-theme-neutral focus:outline-none"
+                  </span>
+                  <span
+                    class="ml-4"
                     data-testid="WalletHeader__copy-button"
                   >
                     <div
-                      class="sc-AxirZ iQaTP text-theme-primary-400"
-                      height="1em"
-                      width="1em"
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
                     >
-                      <svg>
-                        copy.svg
-                      </svg>
+                      <div
+                        class="sc-AxirZ iQaTP text-theme-primary-300"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
                     </div>
-                  </button>
+                  </span>
                 </div>
               </li>
               <li
-                class="pl-8 space-y-2"
+                class="flex flex-col pl-8 space-y-2"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral-dark"
                 >
                   Balance
-                </p>
-                <p
+                </span>
+                <span
                   class="text-lg font-medium"
                   data-testid="WalletHeader__balance"
                 >
                   120 ARK
-                </p>
+                </span>
               </li>
               <li
-                class="pl-8 space-y-2"
+                class="flex flex-col pl-8 space-y-2"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral-dark"
                 >
-                  Fiat
-                </p>
-                <p
+                  Fiat Value
+                </span>
+                <span
                   class="text-lg font-medium"
                   data-testid="WalletHeader__currency-balance"
                 >
                   980 USD
-                </p>
+                </span>
               </li>
             </ul>
           </div>
@@ -6472,12 +6477,14 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <p
-                        class="text-sm font-semibold text-theme-neutral space-y-1"
+                    <div
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
                       >
-                        Address Delegate
-                      </p>
+                        Delegate
+                      </span>
                       <div
                         class="inline-block truncate align-middle"
                       >
@@ -6503,13 +6510,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                       class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
                       <li
-                        class="flex flex-col items-center px-10 space-y-1"
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        <p
+                        <span
                           class="text-sm font-semibold text-theme-neutral"
                         >
                           Rank
-                        </p>
+                        </span>
                         <span
                           class="font-bold text-theme-neutral-dark"
                           data-testid="WalletVote__delegate__rank"
@@ -6518,13 +6525,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </span>
                       </li>
                       <li
-                        class="flex flex-col items-center px-10 space-y-1"
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        <p
+                        <span
                           class="text-sm font-semibold text-theme-neutral"
                         >
                           Explorer
-                        </p>
+                        </span>
                         <a
                           data-testid="WalletVote__delegate__explorer"
                           href="https://dexplorer.ark.io"
@@ -6543,13 +6550,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </a>
                       </li>
                       <li
-                        class="flex flex-col items-center px-10 space-y-1"
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        <p
+                        <span
                           class="text-sm font-semibold text-theme-neutral"
                         >
-                          Marketpl.
-                        </p>
+                          MarketSquare
+                        </span>
                         <a
                           data-testid="WalletVote__delegate__msq"
                           href="https://marketsquare.ark.io"
@@ -6568,13 +6575,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </a>
                       </li>
                       <li
-                        class="flex flex-col items-center px-10 space-y-1"
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        <p
+                        <span
                           class="text-sm font-semibold text-theme-neutral"
                         >
                           Status
-                        </p>
+                        </span>
                         <div
                           class="sc-AxirZ iQaTP text-theme-success"
                           height="1em"
@@ -6685,18 +6692,20 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <p
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
                         class="text-sm font-semibold text-theme-neutral"
                       >
                         Delegate
-                      </p>
-                      <p
+                      </span>
+                      <span
                         class="font-semibold"
                         data-testid="WalletRegistrations__delegate"
                       >
                         Delegate 3
-                      </p>
+                      </span>
                     </div>
                   </div>
                   <div
@@ -6719,18 +6728,20 @@ exports[`WalletDetails should update wallet name 1`] = `
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <p
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
                         class="text-sm font-semibold text-theme-neutral"
                       >
                         Business
-                      </p>
-                      <p
+                      </span>
+                      <span
                         class="font-semibold"
                         data-testid="WalletRegistrations__business"
                       >
                         ROBank Eco
-                      </p>
+                      </span>
                     </div>
                   </div>
                   <div
@@ -6784,7 +6795,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
                     data-testid="WalletRegistrations__show-all"
                   >
-                    Show all
+                    Show All
                   </button>
                   <button
                     class="sc-AxhCb BegvR"
@@ -6810,12 +6821,12 @@ exports[`WalletDetails should update wallet name 1`] = `
             class="mb-16"
           >
             <h2
-              class="font-bold"
+              class="mb-6 font-bold"
             >
               Pending Transactions
             </h2>
             <div
-              class="sc-AxheI bjlCjh"
+              class="sc-AxheI VtiAt"
               role="table"
             >
               <table
@@ -6904,7 +6915,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Info
@@ -7159,12 +7170,12 @@ exports[`WalletDetails should update wallet name 1`] = `
           </div>
           <div>
             <h2
-              class="font-bold"
+              class="mb-6 font-bold"
             >
               Transaction History
             </h2>
             <div
-              class="sc-AxheI bjlCjh"
+              class="sc-AxheI VtiAt"
               role="table"
             >
               <table
@@ -7253,7 +7264,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top justify-center"
                       >
                         <div>
                           Info
