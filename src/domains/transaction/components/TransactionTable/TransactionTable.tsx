@@ -82,7 +82,7 @@ export const TransactionTable = ({
 		}
 
 		return commonColumns;
-	}, [currencyRate, showSignColumn, isCompact]);
+	}, [commonColumns, currencyRate, showSignColumn, isCompact, t]);
 
 	return (
 		<Table hideHeader={hideHeader} columns={columns} data={transactions}>
