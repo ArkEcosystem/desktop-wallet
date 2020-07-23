@@ -8,13 +8,13 @@ import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
 export const CreateProfile = () => {
-	const env: any = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const form = useForm();
 	const history = useHistory();
 	const { register } = form;

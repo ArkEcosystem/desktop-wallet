@@ -7,7 +7,7 @@ import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
 import React, { useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -109,7 +109,7 @@ export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 
 	const history = useHistory();
-	const env = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
@@ -131,7 +131,7 @@ export const ImportWallet = () => {
 
 	const submitForm = async ({ network, password }: any) => {
 		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
-		await env?.persist();
+		await env.persist();
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
 

@@ -1,6 +1,6 @@
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -45,7 +45,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 
 	const history = useHistory();
-	const env = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const { walletId } = useParams();
 
@@ -60,7 +60,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const handleDeleteWallet = async () => {
 		const wallet = activeProfile?.wallets().findById(walletId);
 		activeProfile?.wallets().forget(wallet?.id() as string);
-		await env?.persist();
+		await env.persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
 	};

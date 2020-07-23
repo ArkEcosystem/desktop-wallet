@@ -1,25 +1,34 @@
-import { Environment, Storage } from "@arkecosystem/platform-sdk-profiles";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 
-export const EnvironmentContext = React.createContext<any>(undefined);
+type Context = { env: Environment; state: Record<string, unknown> };
 
 type Props = {
 	children: React.ReactNode;
 	env: Environment;
-	storage?: Storage;
+	state?: Record<string, unknown>;
 };
 
-export const EnvironmentProvider = ({ children, env, storage }: Props) => {
-	const [state, setState] = React.useState<any>({});
-	const force = React.useCallback(() => setState({}), []);
+/**
+ * If you needs to react to changes in the environment state
+ * just don't destruct the object and pass it as dependency, eg:
+ *
+ * const context = useEnvironmentContext();
+ * const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
+ *
+ * Now your variable will get rerender whenever env.persist() is called.
+ */
 
-	React.useEffect(() => {
-		force();
-	}, [storage]);
+export const EnvironmentContext = React.createContext<any>(undefined);
 
-	return <EnvironmentContext.Provider value={{ env, state }}>{children}</EnvironmentContext.Provider>;
+export const EnvironmentProvider = ({ children, env, state }: Props) => {
+	return <EnvironmentContext.Provider value={{ env, state } as Context}>{children}</EnvironmentContext.Provider>;
 };
 
-export const EnvironmentConsumer = EnvironmentContext.Consumer;
-export const useEnvironment = (): Environment => React.useContext(EnvironmentContext).env;
-export const useEnvironmentState = () => React.useContext(EnvironmentContext);
+export const useEnvironmentContext = (): Context => {
+	const value = React.useContext(EnvironmentContext);
+	if (value === undefined) {
+		throw new Error("[useEnvironment] Component not wrapped within a Provider");
+	}
+	return value;
+};

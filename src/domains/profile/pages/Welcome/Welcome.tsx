@@ -1,16 +1,13 @@
-
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import {  useEnvironmentState } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-
-
 
 const { WelcomeBanner } = images.profile.pages.welcome;
 
@@ -19,13 +16,10 @@ export const Welcome = () => {
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-	const x = useEnvironmentState();
+	const context = useEnvironmentContext();
 	const { t } = useTranslation();
 	const history = useHistory();
-	const profiles = React.useMemo(() =>{
-		console.log("welcome");
-		return x.env.profiles().all();
-	}, [x]);
+	const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
 
 	return (
 		<Page navbarStyle="logo-only">

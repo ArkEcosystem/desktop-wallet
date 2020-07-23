@@ -13,7 +13,7 @@ import { Page, Section } from "app/components/Layout";
 import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
@@ -211,7 +211,7 @@ export const FourthStep = () => {
 };
 
 export const CreateWallet = () => {
-	const env = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = React.useState(1);
@@ -237,7 +237,7 @@ export const CreateWallet = () => {
 	const submitForm = async ({ name }: any) => {
 		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
 
-		await env?.persist();
+		await env.persist();
 
 		setHasSubmitted(true);
 	};
@@ -280,7 +280,7 @@ export const CreateWallet = () => {
 
 						<div className="mt-4">
 							<TabPanel tabId={1}>
-								<FirstStep env={env!} profile={activeProfile!} />
+								<FirstStep env={env} profile={activeProfile!} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
