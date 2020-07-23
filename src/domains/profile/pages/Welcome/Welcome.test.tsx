@@ -3,6 +3,7 @@ import { fireEvent, renderWithRouter, screen, waitFor } from "testing-library";
 import { identity } from "tests/fixtures/identity";
 import { env } from "utils/testing-library";
 
+import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
@@ -18,9 +19,7 @@ describe("Welcome", () => {
 		const profile = env.profiles().findById(identity.profiles.bob.id);
 
 		await waitFor(async () => {
-			await expect(
-				screen.findByText("You already have a profile, you can choose any of them"),
-			).resolves.toBeInTheDocument();
+			await expect(screen.findByText(translations.PAGE_WELCOME.HAS_PROFILES)).resolves.toBeInTheDocument();
 		});
 
 		expect(container).toBeTruthy();
@@ -33,9 +32,7 @@ describe("Welcome", () => {
 		const { container, asFragment } = renderWithRouter(<Welcome />, { withProviders: false });
 
 		await waitFor(async () => {
-			await expect(
-				screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
-			).resolves.toBeInTheDocument();
+			await expect(screen.findByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).resolves.toBeInTheDocument();
 		});
 
 		expect(container).toBeTruthy();
@@ -46,9 +43,7 @@ describe("Welcome", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />, { withProviders: false });
 
 		await waitFor(async () => {
-			await expect(
-				screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
-			).resolves.toBeInTheDocument();
+			await expect(screen.findByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).resolves.toBeInTheDocument();
 		});
 
 		expect(container).toBeTruthy();

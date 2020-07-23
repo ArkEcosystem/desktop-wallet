@@ -274,24 +274,20 @@ exports[`SendIPFSTransaction should render 1`] = `
                 <div
                   data-testid="tab-pabel__active-panel"
                 >
-                  <section
+                  <div
                     data-testid="SendIPFSTransaction__step--first"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        IPFS
-                      </h1>
-                      <p
-                        class="text-theme-neutral-dark"
-                      >
-                        Store an IPFS hash on the network
-                      </p>
-                    </div>
-                    <div
-                      class="mt-4 grid grid-flow-row"
+                    <h1
+                      class="mb-0"
                     >
+                      IPFS
+                    </h1>
+                    <div
+                      class="text-theme-neutral-dark"
+                    >
+                      Store an IPFS hash on the network.
+                    </div>
+                    <div>
                       <div
                         class="flex items-center py-4 true "
                       >
@@ -428,7 +424,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                           <div
                             class="text-sm font-medium text-theme-neutral-dark"
                           >
-                            Hash
+                            IPFS Hash
                           </div>
                           <div
                             class="mt-2"
@@ -450,7 +446,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                           <div
                             class="text-sm font-medium text-theme-neutral-dark"
                           >
-                            Fee ARK
+                            Transaction Fee
                           </div>
                           <div
                             class="mt-2"
@@ -543,7 +539,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                         </div>
                       </div>
                     </div>
-                  </section>
+                  </div>
                 </div>
                 <div
                   class="flex justify-end mt-8 space-x-2"
@@ -578,24 +574,20 @@ exports[`SendIPFSTransaction should render 1`] = `
 
 exports[`SendIPFSTransaction should render 1st step 1`] = `
 <DocumentFragment>
-  <section
+  <div
     data-testid="SendIPFSTransaction__step--first"
   >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        IPFS
-      </h1>
-      <p
-        class="text-theme-neutral-dark"
-      >
-        Store an IPFS hash on the network
-      </p>
-    </div>
-    <div
-      class="mt-4 grid grid-flow-row"
+    <h1
+      class="mb-0"
     >
+      IPFS
+    </h1>
+    <div
+      class="text-theme-neutral-dark"
+    >
+      Store an IPFS hash on the network.
+    </div>
+    <div>
       <div
         class="flex items-center py-4 true "
       >
@@ -732,7 +724,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           <div
             class="text-sm font-medium text-theme-neutral-dark"
           >
-            Hash
+            IPFS Hash
           </div>
           <div
             class="mt-2"
@@ -754,7 +746,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
           <div
             class="text-sm font-medium text-theme-neutral-dark"
           >
-            Fee ARK
+            Transaction Fee
           </div>
           <div
             class="mt-2"
@@ -847,7 +839,7 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </DocumentFragment>
 `;
 
@@ -856,17 +848,15 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
   <section
     data-testid="SendIPFSTransaction__step--second"
   >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Transaction Review
-      </h1>
-      <p
-        class="text-theme-neutral-dark"
-      >
-        Check the information again before voting
-      </p>
+    <h1
+      class="mb-0"
+    >
+      Transaction Review
+    </h1>
+    <div
+      class="text-theme-neutral-dark"
+    >
+      Check the information again before voting
     </div>
     <div
       class="mt-2 grid grid-flow-row gap-2"
@@ -941,7 +931,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
           data-testid="Avatar"
         >
           <div
@@ -964,7 +954,7 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Hash
+            IPFS Hash
           </div>
           <div
             class="font-semibold"
@@ -1076,25 +1066,24 @@ exports[`SendIPFSTransaction should render 2nd step 1`] = `
 exports[`SendIPFSTransaction should render 3rd step 1`] = `
 <DocumentFragment>
   <section
-    class="space-y-8"
     data-testid="SendIPFSTransaction__step--third"
   >
     <div>
       <h1
         class="mb-0"
       >
-        Passphrase
+        Authenticate
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
-        Confirm your password to continue
-      </p>
+        Enter your twelve word mnemonic to authenticate the transaction.
+      </div>
       <div
-        class="mt-4 grid grid-flow-row gap-2"
+        class="grid grid-flow-row"
       >
         <div
-          class="flex items-center py-6 true pb-0"
+          class="flex items-center py-6 true pt-8 pb-0"
         >
           <div
             class="flex-1 space-y-2"
@@ -1102,7 +1091,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral"
             >
-              Your password
+              Encryption Password
             </div>
             <div
               class="font-semibold"
@@ -1113,7 +1102,7 @@ exports[`SendIPFSTransaction should render 3rd step 1`] = `
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
                   data-testid="Input"
-                  name="passphras"
+                  name="passphrase"
                   type="password"
                 />
                 <div
@@ -1192,33 +1181,37 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1241,33 +1234,37 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1286,22 +1283,7 @@ exports[`SendIPFSTransaction should render 4th step 1`] = `
             <div
               class="font-semibold"
             >
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  AUexKj…EVTQWK
-                </span>
-              </div>
+              ARK Ecosystem
             </div>
           </div>
           <div

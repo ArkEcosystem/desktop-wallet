@@ -1,4 +1,6 @@
 export const translations: { [key: string]: any } = {
+	DEVELOPER_RESPONSE: "Developer response",
+
 	MODAL_BEST_PLUGINS: {
 		TITLE: "Best applications of the month",
 		DESCRIPTION:
@@ -51,7 +53,18 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	CATEGORY: {
+	PLUGIN_INFO: {
+		ABOUT: "About the plugin",
+		PERMISSIONS: "Permissions",
+		SCREENSHOTS: "Screemshots",
+	},
+
+	REVIEW_BOX: {
+		AVERAGE_RATING: "Avg. Rating",
+		OUT_OF_X_REVIEWS: "Out of {{count}} reviews",
+	},
+
+	CATEGORIES: {
 		GAME: "Game",
 		MY_PLUGINS: "My Plugins",
 		OTHER: "Other",

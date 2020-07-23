@@ -2,6 +2,7 @@ import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 
 import { addressListData, delegateListData, networks } from "../../data";
+import { translations } from "../../i18n";
 import { Votes } from "./Votes";
 
 describe("Votes", () => {
@@ -14,7 +15,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select a cryptoasset", () => {
+	it("should select a network", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
@@ -90,7 +91,7 @@ describe("Votes", () => {
 		fireEvent.click(selectDelegateButtons[1]);
 		fireEvent.click(selectDelegateButtons[2]);
 
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Show List");
+		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

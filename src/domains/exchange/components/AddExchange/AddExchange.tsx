@@ -14,7 +14,7 @@ type AddExchangeProps = {
 const AddExchangeBanner = images.exchange.components.AddExchange.AddExchangeBanner;
 const ChangeNowLogo = images.exchange.components.AddExchange.ChangeNowLogo;
 
-export const AddExchange = (props: AddExchangeProps) => {
+export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 	const { t } = useTranslation();
 	const data = [
 		{
@@ -80,8 +80,8 @@ export const AddExchange = (props: AddExchangeProps) => {
 			description={t("EXCHANGE.MODAL_ADD_EXCHANGE.DESCRIPTION")}
 			banner={<AddExchangeBanner className="w-full" />}
 			size="3xl"
-			isOpen={props.isOpen}
-			onClose={props.onClose}
+			isOpen={isOpen}
+			onClose={onClose}
 		>
 			<div className="mt-8 -mb-6">
 				<Table columns={columns} data={data}>
@@ -107,7 +107,7 @@ export const AddExchange = (props: AddExchangeProps) => {
 							<td className="py-10">v {rowData.version}</td>
 
 							<td className="w-16">
-								<Button variant="plain">Install</Button>
+								<Button variant="plain">{t("COMMON.INSTALL")}</Button>
 							</td>
 						</tr>
 					)}

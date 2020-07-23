@@ -45,16 +45,17 @@ const columns = [
 	},
 	{
 		Header: "Wallet Type",
+		className: "justify-center",
 	},
 	{
 		Header: "Balance",
 		accessor: "balance",
-		className: "float-right",
+		className: "justify-end",
 	},
 	{
 		Header: "Fiat Value",
 		accessor: "fiat",
-		className: "float-right",
+		className: "justify-end",
 	},
 ];
 

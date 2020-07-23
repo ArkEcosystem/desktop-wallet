@@ -68,14 +68,14 @@ exports[`WalletRegistrations should render empty mode 1`] = `
             />
           </div>
           <div
-            class="space-y-1"
+            class="flex flex-col"
           >
-            <p
+            <span
               class="text-sm font-semibold text-theme-neutral"
             >
               Type Registrations
-            </p>
-            <p
+            </span>
+            <span
               class="font-semibold text-theme-neutral-900"
             >
               You haven't registered more than one type of registration.
@@ -83,9 +83,9 @@ exports[`WalletRegistrations should render empty mode 1`] = `
                 class="px-2 text-theme-primary"
                 href="/#"
               >
-                Learn More
+                Learn more
               </a>
-            </p>
+            </span>
           </div>
         </div>
         <div
@@ -186,18 +186,20 @@ exports[`WalletRegistrations should show delegate 1`] = `
                 </div>
               </div>
             </div>
-            <div>
-              <p
+            <div
+              class="flex flex-col"
+            >
+              <span
                 class="text-sm font-semibold text-theme-neutral"
               >
                 Delegate
-              </p>
-              <p
+              </span>
+              <span
                 class="font-semibold"
                 data-testid="WalletRegistrations__delegate"
               >
                 Test
-              </p>
+              </span>
             </div>
           </div>
           0
@@ -209,7 +211,7 @@ exports[`WalletRegistrations should show delegate 1`] = `
             class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
             data-testid="WalletRegistrations__show-all"
           >
-            Show all
+            Show All
           </button>
           <button
             class="sc-AxjAm ddJBbC"
@@ -317,7 +319,7 @@ exports[`WalletRegistrations should show icons list 1`] = `
             class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
             data-testid="WalletRegistrations__show-all"
           >
-            Show all
+            Show All
           </button>
           <button
             class="sc-AxjAm ddJBbC"

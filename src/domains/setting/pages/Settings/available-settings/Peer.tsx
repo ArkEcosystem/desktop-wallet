@@ -7,6 +7,7 @@ import { Toggle } from "app/components/Toggle";
 import { PeerList } from "domains/setting/components/PeerList";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type PeerProps = {
 	formConfig: any;
@@ -14,16 +15,18 @@ type PeerProps = {
 };
 
 export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
+	const { t } = useTranslation();
+
 	const peerItems = [
 		{
 			isFloatingLabel: true,
-			label: "Broadcast to Multiple Peers",
+			label: t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">
-						This protection will protect your money from unwanted Screenshot your PC.
+						{t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
 						<Toggle />
@@ -33,14 +36,13 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 		},
 		{
 			isFloatingLabel: true,
-			label: "Use Custom Peers",
+			label: t("SETTINGS.PEERS.CUSTOM_PEERS.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm text-theme-neutral">
-						You hereby assume the risk associated with downloading files and installing said files from a
-						direct URL link.
+						{t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
 						<Toggle />
@@ -52,7 +54,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 
 	return (
 		<>
-			<Header title="Peer Settings" subtitle="Customize your wallet to suit your needs." />
+			<Header title={t("SETTINGS.PEERS.TITLE")} subtitle={t("SETTINGS.PEERS.SUBTITLE")} />
 
 			<Form id="peer-settings__form" context={formConfig.context} onSubmit={onSubmit} className="mt-8">
 				<ListDivided items={peerItems} />
@@ -66,7 +68,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 				</div>
 
 				<div className="flex justify-end w-full">
-					<Button>Save</Button>
+					<Button>{t("COMMON.SAVE")}</Button>
 				</div>
 			</Form>
 		</>

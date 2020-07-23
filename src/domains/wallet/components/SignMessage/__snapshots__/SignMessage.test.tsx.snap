@@ -58,7 +58,7 @@ exports[`SignMessage should render as signed 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Signatory
+                  COMMON.SIGNATORY
                 </div>
                 <div
                   class="font-semibold"
@@ -122,7 +122,7 @@ exports[`SignMessage should render as signed 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Message
+                  COMMON.MESSAGE
                 </div>
                 <div
                   class="font-semibold"
@@ -140,7 +140,7 @@ exports[`SignMessage should render as signed 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Signature
+                  COMMON.SIGNATURE
                 </div>
                 <div
                   class="font-semibold"
@@ -235,7 +235,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
         <div
           class="mt-1 text-theme-neutral-dark"
         >
-          Insert a message below to sign using your private key
+          Sign Message
         </div>
         <div
           class="mt-8"
@@ -252,9 +252,9 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="signatory-address"
-                label="Signatory"
+                label="COMMON.SIGNATORY"
               >
-                Signatory
+                COMMON.SIGNATORY
               </label>
               <div
                 class="relative"
@@ -302,9 +302,9 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="message"
-                label="Message"
+                label="COMMON.MESSAGE"
               >
-                Message
+                COMMON.MESSAGE
               </label>
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "

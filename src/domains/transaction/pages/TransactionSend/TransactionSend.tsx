@@ -18,6 +18,7 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const recipients = [
 	{
@@ -50,11 +51,15 @@ const recipients = [
 ];
 
 export const FirstStep = ({ onSubmit, formValues }: any) => {
+	const { t } = useTranslation();
+
 	return (
 		<section data-testid="TransactionSend__step--first">
 			<div>
-				<h1 className="mb-0">Send</h1>
-				<p className="text-theme-neutral-dark">Enter details to send your money</p>
+				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">
+					{t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}
+				</div>
 			</div>
 			<div className="mt-8">
 				<SendTransactionForm {...formValues} onSubmit={onSubmit} />
@@ -63,70 +68,88 @@ export const FirstStep = ({ onSubmit, formValues }: any) => {
 	);
 };
 
-export const SecondStep = () => (
-	<section data-testid="TransactionSend__step--second">
-		<div>
-			<h1 className="mb-0">Transaction Review</h1>
-			<p className="text-theme-neutral-dark">Check the information again before voting</p>
-		</div>
-		<div className="mt-4 grid grid-flow-row gap-2">
-			<TransactionDetail
-				border={false}
-				label="Network"
-				extra={
-					<div className="ml-1 text-theme-danger">
-						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-							<Icon name="Ark" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
-					ARK Ecosystem
+export const SecondStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<section data-testid="TransactionSend__step--second">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}</h1>
+				<div className="text-theme-neutral-dark">
+					{t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}
 				</div>
-			</TransactionDetail>
-			<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
-				<div className="mb-2 font-semibold text-theme-neutral">
-					<span className="mr-1 text-sm">Sender</span>
-					<Label color="warning">
-						<span className="text-sm">Your address</span>
-					</Label>
-				</div>
-				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
-			</TransactionDetail>
-			<TransactionDetail label="Recipients" className="py-6">
-				<RecipientList recipients={recipients} assetSymbol="ARK" isEditable={false} />
-			</TransactionDetail>
-			<TransactionDetail
-				label="Smartbridge"
-				className="pt-6"
-				extra={
-					<div className="mx-2">
-						<Icon name="Smartbridge" width={32} height={32} />
-					</div>
-				}
-			>
-				Hello!
-			</TransactionDetail>
-			<div className="mt-2">
-				<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
 			</div>
-		</div>
-	</section>
-);
+
+			<div className="mt-4 grid grid-flow-row gap-2">
+				<TransactionDetail
+					border={false}
+					label={t("TRANSACTION.NETWORK")}
+					extra={
+						<div className="ml-1 text-theme-danger">
+							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+								<Icon name="Ark" width={20} height={20} />
+							</Circle>
+						</div>
+					}
+				>
+					<div className="flex-auto font-semibold truncate text-md text-theme-neutral-800 max-w-24">
+						ARK Ecosystem
+					</div>
+				</TransactionDetail>
+
+				<TransactionDetail extra={<Avatar size="lg" address="ABUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>
+					<div className="mb-2 font-semibold text-theme-neutral">
+						<span className="mr-1 text-sm">Sender</span>
+						<Label color="warning">
+							<span className="text-sm">label={t("TRANSACTION.YOUR_ADDRESS")}</span>
+						</Label>
+					</div>
+					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+				</TransactionDetail>
+
+				<TransactionDetail label={t("TRANSACTION.RECIPIENTS")} className="py-6">
+					<RecipientList recipients={recipients} assetSymbol="ARK" isEditable={false} />
+				</TransactionDetail>
+
+				<TransactionDetail
+					label={t("TRANSACTION.SMARTBRIDGE")}
+					className="pt-6"
+					extra={
+						<div className="mx-2">
+							<Icon name="Smartbridge" width={32} height={32} />
+						</div>
+					}
+				>
+					Hello!
+				</TransactionDetail>
+
+				<div className="mt-2">
+					<TotalAmountBox transactionAmount="400" transactionFee="0.09660435" />
+				</div>
+			</div>
+		</section>
+	);
+};
 
 export const ThirdStep = ({ onSubmit }: any) => {
 	const form = useForm();
+	const { t } = useTranslation();
+
 	const { register } = form;
 
 	return (
 		<section data-testid="TransactionSend__step--third">
 			<Form context={form} onSubmit={onSubmit}>
 				<div>
-					<h1 className="mb-0">Passphrase</h1>
-					<p className="text-theme-neutral-dark">Confirm your password to continue</p>
+					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
+
 					<div className="grid grid-flow-row">
-						<TransactionDetail border={false} label="Your password" className="pt-8 pb-0">
+						<TransactionDetail
+							border={false}
+							label={t("TRANSACTION.ENCRYPTION_PASSWORD")}
+							className="pt-8 pb-0"
+						>
 							<InputPassword name="passphrase" ref={register({ required: true })} />
 						</TransactionDetail>
 					</div>
@@ -136,37 +159,45 @@ export const ThirdStep = ({ onSubmit }: any) => {
 	);
 };
 
-export const FourthStep = () => (
-	<section data-testid="TransactionSend__step--fourth">
-		<div>
-			<h1 className="mb-0">Confirm Your Transaction</h1>
-			<LedgerConfirmation />
-		</div>
-	</section>
-);
+export const FourthStep = () => {
+	const { t } = useTranslation();
 
-export const FifthStep = () => (
-	<TransactionSuccessful>
-		<TransactionDetail label="IPFS Hash">
-			<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
-				JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
+	return (
+		<section data-testid="TransactionSend__step--fourth">
+			<div>
+				<h1 className="mb-0">{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
+				<LedgerConfirmation />
 			</div>
-		</TransactionDetail>
-		<TransactionDetail
-			label="Amount"
-			className="pb-0"
-			extra={
-				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={22} height={22} />
-					</Circle>
+		</section>
+	);
+};
+
+export const FifthStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<TransactionSuccessful>
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>
+				<div className="mt-4 mr-1 font-semibold truncate text-theme-neutral-800 text-md">
+					JFKDJFKSDJFKDSJFKJKJFKDSJFKLJAKFJAKLJFKALSJFKLASJF
 				</div>
-			}
-		>
-			1.00 ARK
-		</TransactionDetail>
-	</TransactionSuccessful>
-);
+			</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.AMOUNT")}
+				className="pb-0"
+				extra={
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+							<Icon name="Sent" width={22} height={22} />
+						</Circle>
+					</div>
+				}
+			>
+				1.00 ARK
+			</TransactionDetail>
+		</TransactionSuccessful>
+	);
+};
 
 type Props = {
 	onCopy?: () => void;
@@ -176,6 +207,8 @@ type Props = {
 export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	const [activeTab, setActiveTab] = React.useState(1);
 	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -225,14 +258,14 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 											variant="plain"
 											onClick={handleBack}
 										>
-											Back
+											{t("COMMON.BACK")}
 										</Button>
 										<Button
 											data-testid="TransactionSend__button--continue"
 											// disabled={!isValid}
 											onClick={handleNext}
 										>
-											Continue
+											{t("COMMON.CONTINUE")}
 										</Button>
 									</>
 								)}
@@ -244,15 +277,16 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 											variant="plain"
 											className={"block"}
 										>
-											Back to wallet
+											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 										<Button
 											onClick={onCopy}
 											data-testid="TransactionSend__button--copy"
 											variant="plain"
+											className="space-x-2"
 										>
 											<Icon name="Copy" />
-											<span>Copy</span>
+											<span>{t("COMMON.COPY")}</span>
 										</Button>
 									</>
 								)}

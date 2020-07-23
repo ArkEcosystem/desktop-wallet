@@ -62,7 +62,11 @@ export const AddressListItem = ({
 			</td>
 
 			<td className="py-5 font-bold">
-				{delegateName ? <span>{delegateName}</span> : <span className="text-theme-neutral-light">N/A</span>}
+				{delegateName ? (
+					<span>{delegateName}</span>
+				) : (
+					<span className="text-theme-neutral-light">{t("COMMON.NOT_AVAILABLE")}</span>
+				)}
 			</td>
 
 			<td className="py-5 font-bold text-theme-neutral-dark">{rank && <span>#{rank}</span>}</td>

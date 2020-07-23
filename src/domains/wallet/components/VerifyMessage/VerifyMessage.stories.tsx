@@ -13,7 +13,7 @@ export const Default = () => {
 		<VerifyMessage
 			isOpen={boolean("isOpen", true)}
 			handleClose={() => alert("closed")}
-			publicKey="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM"
+			publicKey="02ff171adaef486b7db9fc160b28433d20cf43163d56fd28fee72145f0d5219a4b"
 		/>
 	);
 };

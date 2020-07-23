@@ -9,46 +9,15 @@ import { useTranslation } from "react-i18next";
 
 type BestPluginsProps = {
 	isOpen: boolean;
+	plugins: any;
 	onClose?: any;
 };
 
 const { BestPluginsBanner } = images.plugin.common;
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const BestPlugins = (props: BestPluginsProps) => {
+export const BestPlugins = ({ isOpen, plugins, onClose }: BestPluginsProps) => {
 	const { t } = useTranslation();
-	const data = [
-		{
-			name: "ARK Explorer",
-			description: "ARK Ecosystem",
-			category: "Utility",
-			rating: 4.6,
-			version: "1.3.8",
-			isOfficial: true,
-		},
-		{
-			name: "Animal Avatars",
-			description: "Breno Polanski",
-			category: "Utility",
-			rating: 4.6,
-			version: "1.3.8",
-		},
-		{
-			name: "ChangeNOW Plugin",
-			description: "ChangeNOW",
-			category: "Other",
-			rating: 4.8,
-			version: "1.3.8",
-		},
-		{
-			name: "Bold Ninja",
-			description: "Delegate Fun",
-			category: "Game",
-			rating: 4.9,
-			version: "2.0.0",
-			isGrant: true,
-		},
-	];
 
 	const columns = [
 		{
@@ -90,11 +59,11 @@ export const BestPlugins = (props: BestPluginsProps) => {
 			description={t("PLUGINS.MODAL_BEST_PLUGINS.DESCRIPTION")}
 			banner={<BestPluginsBanner className="w-full" />}
 			size="4xl"
-			isOpen={props.isOpen}
-			onClose={props.onClose}
+			isOpen={isOpen}
+			onClose={onClose}
 		>
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={data}>
+				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
 							<td className="w-16">
@@ -106,13 +75,15 @@ export const BestPlugins = (props: BestPluginsProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.description}</span>
+									<span className="text-theme-neutral-dark">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-center text-theme-neutral-dark">{rowData.category}</td>
+							<td className="py-10 text-center text-theme-neutral-dark">
+								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
+							</td>
 
 							<td className="flex justify-center py-10 text-theme-neutral-dark">
 								<ReviewRating rating={rowData.rating} width={3} />
