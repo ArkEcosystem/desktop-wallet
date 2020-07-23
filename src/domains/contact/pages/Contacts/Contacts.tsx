@@ -88,7 +88,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 		setCreateIsOpen(false);
 	};
 
-	const handleContactAction = (action: string, contact: any) => {
+	const handleContactAction = (action: any, contact: any) => {
 		if (action === "delete") {
 			setContactToDelete(contact.id);
 		}
