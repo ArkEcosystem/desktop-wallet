@@ -21,9 +21,11 @@ describe("VerifyMessage", () => {
 	beforeAll(() => {
 		nock.disableNetConnect();
 
-		nock(/.+/)
+		nock("https://dwallets.ark.io")
 			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
 			.get("/api/node/configuration/crypto")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
