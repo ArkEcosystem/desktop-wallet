@@ -33,7 +33,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	const { register } = form;
 	const messageRef = createRef();
 
-	let signedMessage: any = null;
+	let signedMessage: any;
 
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		const profile = env?.profiles().findById(profileId);
