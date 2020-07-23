@@ -43,7 +43,7 @@ export const VerifyMessage = ({
 		const wallet = profile?.wallets().findByPublicKey(walletPublicKey);
 
 		try {
-			const signedMessage = JSON.parse(formValues["signet-message-content"]);
+			const signedMessage = verifyAddress ? JSON.parse(formValues["signet-message-content"]) : formValues;
 			isVerified = (await wallet?.message().verify(signedMessage)) as boolean;
 			onSubmit?.(isVerified);
 		} catch {
@@ -149,13 +149,13 @@ export const VerifyMessage = ({
 					</div>
 				</div>
 
-				<Form id="verify-message__form" context={form} onSubmit={handleSubmit}>
+				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
 					{renderFormContent()}
 					<div className="flex justify-end space-x-3">
 						<Button variant="plain" data-testid="VerifyMessage__cancel" onClick={onCancel}>
 							{t("COMMON.CANCEL")}
 						</Button>
-						<Button data-testid="VerifyMessage__submit" onClick={handleSubmit}>
+						<Button data-testid="VerifyMessage__submit" onClick={handleSubmit} type="submit">
 							{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFY")}
 						</Button>
 					</div>

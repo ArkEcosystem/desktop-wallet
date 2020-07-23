@@ -107,7 +107,7 @@ describe("VerifyMessage", () => {
 		expect(fn).toBeCalled();
 	});
 
-	it("should require inputs on form submission", async () => {
+	it("should not verify if empty inputs", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
@@ -127,7 +127,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).not.toBeCalled();
+			expect(fn).toBeCalledWith(false);
 		});
 	});
 
@@ -167,9 +167,8 @@ describe("VerifyMessage", () => {
 			fireEvent.click(submitButton);
 		});
 
-		waitFor(() => {
-			const isVerified = true;
-			expect(fn).toBeCalledWith(isVerified);
+		await waitFor(() => {
+			expect(fn).toBeCalledWith(true);
 		});
 	});
 
@@ -201,8 +200,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			const isVerified = true;
-			expect(fn).toBeCalledWith(isVerified);
+			expect(fn).toBeCalledWith(true);
 		});
 	});
 
@@ -232,8 +230,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			const isVerified = false;
-			expect(fn).toBeCalledWith(isVerified);
+			expect(fn).toBeCalledWith(false);
 		});
 	});
 });
