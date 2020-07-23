@@ -7,7 +7,7 @@ export default {
 	title: "Domains / Transaction / Components / AddRecipient",
 };
 
-export const Step1 = () => (
+export const Default = () => (
 	<div className="p-8">
 		<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} contacts={contacts} />
 	</div>

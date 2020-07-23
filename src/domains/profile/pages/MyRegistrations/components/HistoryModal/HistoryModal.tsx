@@ -11,23 +11,22 @@ type Props = {
 	history?: any;
 };
 
-const columns = [
-	{
-		Header: "Type",
-		className: "font-semibold",
-	},
-	{
-		Header: "Date",
-		className: "font-semibold justify-center",
-	},
-	{
-		Header: "Transaction",
-		className: "font-semibold float-right",
-	},
-];
-
 export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 	const { t } = useTranslation();
+
+	const columns = [
+		{
+			Header: t("COMMON.TYPE"),
+		},
+		{
+			Header: t("COMMON.DATE"),
+			className: "justify-center",
+		},
+		{
+			Header: t("COMMON.TRANSACTION"),
+			className: "justify-end",
+		},
+	];
 
 	return (
 		<Modal isOpen={isOpen} onClose={handleClose} title={t("PROFILE.MODAL_HISTORY.TITLE")} size="md">
@@ -44,9 +43,9 @@ export const HistoryModal = ({ isOpen, handleClose, history }: Props) => {
 							<td className="py-6 font-semibold text-center">
 								<span>{rowData.date}</span>
 							</td>
-							<td className="flex items-center float-right py-6 font-semibold text-theme-primary-500">
-								<Icon name="Redirect" width={22} height={22} />
-								<span className="ml-1">View</span>
+							<td className="flex items-center justify-end py-6 font-semibold text-theme-primary-500">
+								<Icon name="Redirect" width={15} height={15} />
+								<span className="ml-2">View</span>
 							</td>
 						</tr>
 					)}

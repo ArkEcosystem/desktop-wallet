@@ -32,7 +32,7 @@ exports[`CreateProfile should render 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-md mx-auto"
+            class="max-w-lg mx-auto"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -98,13 +98,13 @@ exports[`CreateProfile should render 1`] = `
                           class="mr-5 text-xl font-semibold"
                           data-testid="list-divided-item__label"
                         >
-                          New Profile
+                          Personal Details
                         </span>
                         <span
                           class="text-sm text-theme-neutral-dark mt-1 font-medium text-theme-neutral-dark"
                           data-testid="list-divided-item__label--description"
                         >
-                          Select Profile Image
+                          Profile Image
                         </span>
                       </div>
                     </div>
@@ -430,7 +430,7 @@ exports[`CreateProfile should store profile 1`] = `
           class="container py-16 mx-auto px-14"
         >
           <div
-            class="max-w-md mx-auto"
+            class="max-w-lg mx-auto"
           >
             <h1
               class="mb-0 md:text-4xl"
@@ -496,13 +496,13 @@ exports[`CreateProfile should store profile 1`] = `
                           class="mr-5 text-xl font-semibold"
                           data-testid="list-divided-item__label"
                         >
-                          New Profile
+                          Personal Details
                         </span>
                         <span
                           class="text-sm text-theme-neutral-dark mt-1 font-medium text-theme-neutral-dark"
                           data-testid="list-divided-item__label--description"
                         >
-                          Select Profile Image
+                          Profile Image
                         </span>
                       </div>
                     </div>

@@ -10,6 +10,7 @@ import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import React, { createRef } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	onSubmit?: any;
@@ -29,13 +30,16 @@ const mockSignature = {
 
 export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, handleClose, handleSign }: Props) => {
 	const form = useForm();
+
+	const { t } = useTranslation();
+
 	const { register } = form;
 	const messageRef = createRef();
 
 	const SignForm = (
 		<Form id="sign-message__form" context={form} onSubmit={onSubmit}>
 			<FormField name="signatory-address">
-				<FormLabel label="Signatory" />
+				<FormLabel label={t("COMMON.SIGNATORY")} />
 				<div className="relative">
 					<Input type="text" disabled />
 					<div className="absolute top-0 flex items-center mt-2 ml-4">
@@ -47,13 +51,26 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 				</div>
 			</FormField>
 			<FormField name="message">
-				<FormLabel label="Message" />
-				<Input type="text" ref={register({ required: true })} />
+				<FormLabel label={t("COMMON.MESSAGE")} />
+				<Input
+					type="text"
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.MESSAGE"),
+						}).toString(),
+					})}
+				/>
 				<FormHelperText />
 			</FormField>
 			<FormField name="passphrase">
-				<FormLabel label="Your Passphrase" />
-				<InputPassword ref={register({ required: true })} />
+				<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
+				<InputPassword
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.YOUR_PASSPHRASE"),
+						}).toString(),
+					})}
+				/>
 				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
@@ -69,7 +86,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 		<div>
 			<TransactionDetail
 				border={false}
-				label="Signatory"
+				label={t("COMMON.SIGNATORY")}
 				extra={
 					<div className="flex items-center">
 						<Circle className="-mr-2 border-black">
@@ -81,10 +98,10 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			>
 				<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 			</TransactionDetail>
-			<TransactionDetail border label="Message" className="text-lg">
+			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg">
 				Oleg Happy in the Oleg Bank
 			</TransactionDetail>
-			<TransactionDetail border label="Signature">
+			<TransactionDetail border label={t("COMMON.SIGNATURE")}>
 				<TextArea
 					className="mt-2 rounded-lg"
 					name="signature"
@@ -97,7 +114,7 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 			<div className="flex justify-end pb-5 mt-3">
 				<Button variant="plain">
 					<Icon name="Copy" />
-					<span>Copy Signature</span>
+					<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 				</Button>
 			</div>
 		</div>
@@ -108,8 +125,8 @@ export const SignMessage = ({ onSubmit, signatoryAddress, isOpen, isSigned, hand
 	return (
 		<Modal
 			isOpen={isOpen}
-			title={!isSigned ? "Sign Message" : "Message Successfully Signed"}
-			description={!isSigned ? "Insert a message below to sign using your private key" : ""}
+			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
+			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : ""}
 			onClose={() => handleClose()}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>

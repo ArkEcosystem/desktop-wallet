@@ -22,7 +22,7 @@ describe("NavBar Routing", () => {
 
 	it("should navigate to transaction send page", () => {
 		cy.get("[data-testid=navbar__buttons--send]").click();
-		cy.get("p").contains("Enter details to send your money");
+		cy.get("div").contains("Enter details to send your money");
 	});
 
 	it("should navigate to portfolio", () => {

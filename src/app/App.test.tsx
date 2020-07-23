@@ -2,6 +2,7 @@ import nock from "nock";
 import React from "react";
 import { renderWithRouter, screen, waitFor } from "utils/testing-library";
 
+import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 beforeAll(() => {
@@ -27,7 +28,7 @@ describe("App", () => {
 
 		await waitFor(async () => {
 			await expect(
-				screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
+				screen.findByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION),
 			).resolves.toBeInTheDocument();
 		});
 

@@ -59,23 +59,23 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-					extra={<HeaderSearchBar placeholder="Enter the delegate’s name or address for a quick search" />}
+					extra={<HeaderSearchBar placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")} />}
 				/>
 			</Section>
 
 			<div className="container mx-auto px-14">
 				<div className="-my-5 grid grid-cols-2 grid-flow-col gap-6">
-					<TransactionDetail border={false} label="Cryptoasset">
+					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetworkWrapper>
 							<SelectNetwork
 								networks={networks}
-								name="cryptoasset"
-								placeholder="Select cryptoasset"
+								name="network"
+								placeholder={t("COMMON.SELECT_OPTION", { option: t("COMMON.NETWORK") })}
 								onSelect={handleSelectCrypto}
 							/>
 						</SelectNetworkWrapper>
 					</TransactionDetail>
-					<TransactionDetail border={false} label="Address" className="mt-2">
+					<TransactionDetail border={false} label={t("COMMON.ADDRESS")} className="mt-2">
 						<div className="relative flex items-center pb-24">
 							<Input type="text" disabled />
 							<div className="absolute flex items-center justify-between w-full ml-3">
@@ -89,7 +89,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 										<>
 											<Circle className="mr-3" avatarId="test" size="sm" noShadow />
 											<span className="text-base font-semibold text-theme-neutral-light">
-												Select address
+												{t("COMMON.SELECT_OPTION", { option: t("COMMON.ADDRESS") })}
 											</span>
 										</>
 									)}

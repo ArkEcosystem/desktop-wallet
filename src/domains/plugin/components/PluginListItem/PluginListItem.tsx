@@ -41,7 +41,7 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 				<div className="flex items-center justify-between pr-16">{plugin.author}</div>
 			</td>
 
-			<td className="py-10">{t(`PLUGINS.CATEGORY.${plugin.category.toUpperCase()}`)}</td>
+			<td className="py-10">{t(`PLUGINS.CATEGORIES.${plugin.category.toUpperCase()}`)}</td>
 
 			<td className="py-10">
 				<ReviewRating width={3} rating={plugin.rating} />
@@ -84,8 +84,8 @@ export const PluginListItem = ({ onDelete, onInstall, plugin }: PluginListItemPr
 							</Button>
 						}
 						options={[
-							{ label: "View", value: "view" },
-							{ label: "Delete", value: "delete" },
+							{ label: t("COMMON.VIEW"), value: "view" },
+							{ label: t("COMMON.DELETE"), value: "delete" },
 						]}
 						onSelect={(option: any) => {
 							if (option.value === "delete") {

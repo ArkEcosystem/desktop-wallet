@@ -1,6 +1,7 @@
 import { Button } from "app/components/Button";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	title: string;
@@ -9,6 +10,8 @@ type TransactionsProps = {
 };
 
 export const Transactions = ({ transactions, title, emptyText }: TransactionsProps) => {
+	const { t } = useTranslation();
+
 	return (
 		<div className="bg-white">
 			<div className="text-4xl font-bold">{title}</div>
@@ -17,7 +20,7 @@ export const Transactions = ({ transactions, title, emptyText }: TransactionsPro
 					<TransactionTable transactions={transactions} currencyRate="2" />
 
 					<Button variant="plain" className="w-full mt-10 mb-5">
-						See more
+						{t("COMMON.VIEW_MORE")}
 					</Button>
 				</div>
 			)}

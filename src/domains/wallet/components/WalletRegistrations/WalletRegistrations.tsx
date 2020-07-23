@@ -4,6 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Collapse, CollapseToggleButton } from "app/components/Collapse";
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const IconList = ({ icons, limit }: { icons: string[]; limit: number }) => {
 	const items = icons.slice(0, limit);
@@ -64,6 +65,9 @@ export const WalletRegistrations = ({
 	defaultIsOpen,
 }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
+
+	const { t } = useTranslation();
+
 	// @ts-ignore
 	const iconsList: string[] = [
 		hasSecondSignature && "Key",
@@ -77,7 +81,7 @@ export const WalletRegistrations = ({
 	return (
 		<section data-testid="WalletRegistrations">
 			<div className="flex items-center justify-between">
-				<h2 className="font-bold">Registrations</h2>
+				<h2 className="font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.TITLE")}</h2>
 				<CollapseToggleButton
 					data-testid="WalletRegistrations__toggle"
 					isOpen={isOpen}
@@ -95,14 +99,16 @@ export const WalletRegistrations = ({
 								</Circle>
 								<Circle size="lg" className="bg-theme-background" />
 							</div>
-							<div className="space-y-1">
-								<p className="text-sm font-semibold text-theme-neutral">Type Registrations</p>
-								<p className="font-semibold text-theme-neutral-900">
-									You haven&apos;t registered more than one type of registration.
+							<div className="flex flex-col">
+								<span className="text-sm font-semibold text-theme-neutral">
+									{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY.LABEL")}
+								</span>
+								<span className="font-semibold text-theme-neutral-900">
+									{t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATIONS.EMPTY.DESCRIPTION")}
 									<a href="/#" className="px-2 text-theme-primary">
-										Learn More
+										{t("COMMON.LEARN_MORE")}
 									</a>
-								</p>
+								</span>
 							</div>
 						</div>
 					) : (
@@ -115,11 +121,13 @@ export const WalletRegistrations = ({
 										</Circle>
 										<Avatar size="lg" address={address} />
 									</div>
-									<div>
-										<p className="text-sm font-semibold text-theme-neutral">Delegate</p>
-										<p data-testid="WalletRegistrations__delegate" className="font-semibold">
+									<div className="flex flex-col">
+										<span className="text-sm font-semibold text-theme-neutral">
+											{t("COMMON.DELEGATE")}
+										</span>
+										<span data-testid="WalletRegistrations__delegate" className="font-semibold">
 											{delegate?.username}
-										</p>
+										</span>
 									</div>
 								</div>
 							)}
@@ -131,11 +139,13 @@ export const WalletRegistrations = ({
 											<Icon name="Business" className="text-xl" />
 										</Circle>
 									</div>
-									<div>
-										<p className="text-sm font-semibold text-theme-neutral">Business</p>
-										<p data-testid="WalletRegistrations__business" className="font-semibold">
+									<div className="flex flex-col">
+										<span className="text-sm font-semibold text-theme-neutral">
+											{t("COMMON.BUSINESS")}
+										</span>
+										<span data-testid="WalletRegistrations__business" className="font-semibold">
 											{business?.name}
-										</p>
+										</span>
 									</div>
 								</div>
 							)}
@@ -155,12 +165,12 @@ export const WalletRegistrations = ({
 								onClick={onShowAll}
 								className="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
 							>
-								Show all
+								{t("COMMON.SHOW_ALL")}
 							</button>
 						)}
 
 						<Button data-testid="WalletRegistrations__register" onClick={onRegister} variant="plain">
-							Register
+							{t("COMMON.REGISTER")}
 						</Button>
 					</div>
 				</div>

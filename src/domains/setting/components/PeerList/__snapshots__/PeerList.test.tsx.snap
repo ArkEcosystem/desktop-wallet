@@ -41,7 +41,7 @@ exports[`PeerList should add peer 1`] = `
         <h2
           class="mb-0 text-3xl font-bold"
         >
-          Custom Peers
+          Custom Peer
         </h2>
         <div
           class="flex-1"
@@ -135,7 +135,7 @@ exports[`PeerList should add peer 1`] = `
                 data-testid="FormLabel"
                 for="peer-ip"
               >
-                Peer IP http://
+                IP
               </label>
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -151,7 +151,7 @@ exports[`PeerList should add peer 1`] = `
                 data-testid="FormLabel"
                 for="peer-type"
               >
-                Peer Type
+                Type
               </label>
               <label
                 class="inline-flex items-center"
@@ -165,12 +165,12 @@ exports[`PeerList should add peer 1`] = `
                 <span
                   class="ml-2 text-sm font-semibold text-theme-neutral-dark"
                 >
-                  Multisig
+                  Multisignature
                 </span>
               </label>
             </fieldset>
             <div
-              class="float-right mt-4"
+              class="flex justify-end mt-4"
             >
               <button
                 class="sc-AxjAm ddQVWI"
@@ -186,7 +186,7 @@ exports[`PeerList should add peer 1`] = `
       </div>
     </div>
     <div
-      class="sc-AxiKw bvfChE"
+      class="sc-AxiKw eDwAKA"
       role="table"
     >
       <table
@@ -234,7 +234,7 @@ exports[`PeerList should add peer 1`] = `
                 class="flex flex-inline align-top undefined"
               >
                 <div>
-                  Peer IP
+                  IP
                 </div>
               </div>
             </th>
@@ -513,7 +513,7 @@ exports[`PeerList should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw bvfChE"
+      class="sc-AxiKw eDwAKA"
       role="table"
     >
       <table
@@ -561,7 +561,7 @@ exports[`PeerList should render 1`] = `
                 class="flex flex-inline align-top undefined"
               >
                 <div>
-                  Peer IP
+                  IP
                 </div>
               </div>
             </th>
@@ -840,7 +840,7 @@ exports[`PeerList should render with empty peer list 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="sc-AxiKw bvfChE"
+      class="sc-AxiKw eDwAKA"
       role="table"
     >
       <table
@@ -888,7 +888,7 @@ exports[`PeerList should render with empty peer list 1`] = `
                 class="flex flex-inline align-top undefined"
               >
                 <div>
-                  Peer IP
+                  IP
                 </div>
               </div>
             </th>

@@ -70,11 +70,11 @@ export const LinkCollection = ({
 
 	columns.push(
 		{
-			Header: "Name",
+			Header: t("COMMON.NAME"),
 			accessor: "type",
 		},
 		{
-			Header: "Link",
+			Header: t("COMMON.LINK"),
 			accessor: "link",
 		},
 		{
@@ -128,7 +128,7 @@ export const LinkCollection = ({
 
 							<div className="flex-1">
 								<div className="mb-2">
-									<FormLabel label="Link" />
+									<FormLabel label={t("COMMON.LINK")} />
 								</div>
 								<InputGroup>
 									<Input
@@ -150,7 +150,7 @@ export const LinkCollection = ({
 							className="w-full mt-2"
 							onClick={() => addLink({ link, type: selectedType?.value })}
 						>
-							Add Link
+							{t("TRANSACTION.ADD_LINK")}
 						</Button>
 					</div>
 

@@ -47,33 +47,37 @@ exports[`TransactionSuccessful should render 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -96,33 +100,37 @@ exports[`TransactionSuccessful should render 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -141,22 +149,7 @@ exports[`TransactionSuccessful should render 1`] = `
             <div
               class="font-semibold"
             >
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  AUexKj…EVTQWK
-                </span>
-              </div>
+              ARK Ecosystem
             </div>
           </div>
           <div

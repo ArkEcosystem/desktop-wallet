@@ -21,7 +21,7 @@
 	"homepage": "./",
 	"main": "src/electron/index.js",
 	"scripts": {
-		"dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev": "REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"build": "react-app-rewired build",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",

@@ -98,3 +98,40 @@ export const paths = {
 	featured: "/?path=/story/domains-plugin-pages-plugins-category--featured",
 	topRated: "/?path=/story/domains-plugin-pages-plugins-category--top-rated",
 };
+
+export const plugins = [
+	{
+		name: "ARK Explorer",
+		author: "ARK Ecosystem",
+		description: "This is a description",
+		category: "Utility",
+		rating: 4.6,
+		version: "1.3.8",
+		isOfficial: true,
+	},
+	{
+		name: "Animal Avatars",
+		author: "Breno Polanski",
+		description: "This is a description",
+		category: "Utility",
+		rating: 4.6,
+		version: "1.3.8",
+	},
+	{
+		name: "ChangeNOW Plugin",
+		author: "ChangeNOW",
+		description: "This is a description",
+		category: "Other",
+		rating: 4.8,
+		version: "1.3.8",
+	},
+	{
+		name: "Bold Ninja",
+		author: "Delegate Fun",
+		description: "This is a description",
+		category: "Game",
+		rating: 4.9,
+		version: "2.0.0",
+		isGrant: true,
+	},
+];
