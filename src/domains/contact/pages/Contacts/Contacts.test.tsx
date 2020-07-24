@@ -177,12 +177,12 @@ describe("Contacts", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
 		waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeFalsy();
+			expect(() => getByTestId("modal__inner")).toBeFalsy();
 		});
 	});
 
