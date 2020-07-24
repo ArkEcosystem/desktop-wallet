@@ -2,7 +2,7 @@ import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, fireEvent, render, within } from "utils/testing-library";
 
-import { SelectNetwork } from "./SelectNetwork";
+import { itemToString, SelectNetwork } from "./SelectNetwork";
 
 describe("SelectNetwork", () => {
 	it("should render", () => {
@@ -137,5 +137,9 @@ describe("SelectNetwork", () => {
 			fireEvent.blur(input);
 		});
 		expect(input).toHaveValue("Bitcoin");
+	});
+
+	it("must return empty if the item has not defined", () => {
+		expect(itemToString(null)).toBe("");
 	});
 });

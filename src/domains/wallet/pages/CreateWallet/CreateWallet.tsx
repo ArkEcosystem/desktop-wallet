@@ -30,7 +30,7 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 
 	const { t } = useTranslation();
 
-	const handleSelect = async (network?: NetworkData) => {
+	const handleSelect = async (network?: NetworkData | null) => {
 		const currentWallet = getValues("wallet");
 
 		setValue("network", network, true);

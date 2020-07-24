@@ -15,8 +15,10 @@ type SelectNetworkProps = {
 	name?: string;
 	value?: string;
 	id?: string;
-	onSelect?: (network: NetworkData | undefined) => void;
+	onSelect?: (network?: NetworkData | null) => void;
 };
+
+export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
 
 export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: SelectNetworkProps) => {
 	const [items] = React.useState(() =>
@@ -36,11 +38,10 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id }: Sel
 		selectedItem,
 		inputValue,
 		reset,
-	} = useCombobox<Network>({
+	} = useCombobox<Network | null>({
 		id,
 		items,
-		initialSelectedItem: undefined,
-		itemToString: (item) => item.extra!.displayName,
+		itemToString,
 		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
 		onInputValueChange: ({ inputValue, selectedItem }) => {
 			// Clear selection when user is changing input,

@@ -27,7 +27,7 @@ const { PlaceholderVotes } = images.vote.pages.votes;
 export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	const { t } = useTranslation();
 
-	const [selectedCrypto, setSelectCrypto] = useState<NetworkData | undefined>(undefined);
+	const [selectedCrypto, setSelectCrypto] = useState<NetworkData | undefined | null>(undefined);
 	const [selectedAddress, setSelectAddress] = useState("");
 
 	const crumbs = [
@@ -37,7 +37,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 		},
 	];
 
-	const handleSelectCrypto = (network?: NetworkData) => {
+	const handleSelectCrypto = (network?: NetworkData | null) => {
 		setSelectCrypto(network);
 	};
 

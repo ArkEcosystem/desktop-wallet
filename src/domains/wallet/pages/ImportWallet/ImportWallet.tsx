@@ -26,7 +26,7 @@ export const FirstStep = () => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleSelect = (network?: NetworkData) => {
+	const handleSelect = (network?: NetworkData | null) => {
 		setValue("network", network, true);
 	};
 

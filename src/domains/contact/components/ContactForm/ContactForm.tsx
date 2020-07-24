@@ -114,7 +114,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 		);
 	};
 
-	const handleSelectNetwork = (network?: NetworkData) => {
+	const handleSelectNetwork = (network?: NetworkData | null) => {
 		form.setValue("network", network, true);
 	};
 
