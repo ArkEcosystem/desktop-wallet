@@ -686,7 +686,8 @@ export default {
         numeric
       },
       slip44: {
-        requiredIfFull
+        requiredIfFull,
+        numeric
       },
       activeDelegates: {
         requiredIfFull,
