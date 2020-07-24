@@ -18,7 +18,7 @@ const Main = () => {
 	React.useEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
-			persist();
+			await persist();
 		};
 
 		if (process.env.REACT_APP_BUILD_MODE === "demo") {

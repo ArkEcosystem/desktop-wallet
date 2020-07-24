@@ -14,14 +14,14 @@ type DeleteContactProps = {
 
 export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete, profileId, contactId }: DeleteContactProps) => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const handleDelete = async () => {
 		if (!contactId) return;
 
-		const profile = env?.profiles().findById(profileId);
+		const profile = env.profiles().findById(profileId);
 		profile?.contacts().forget(contactId);
-		await env?.persist();
+		await persist();
 
 		onDelete?.(contactId);
 	};

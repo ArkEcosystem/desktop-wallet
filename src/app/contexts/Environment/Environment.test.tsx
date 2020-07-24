@@ -39,9 +39,9 @@ describe("Environment Context", () => {
 		const Create = () => {
 			const { env, persist } = useEnvironmentContext();
 
-			const handleClick = () => {
+			const handleClick = async () => {
 				env.profiles().create("Test");
-				persist();
+				await persist();
 			};
 
 			return <button onClick={handleClick}>Create</button>;

@@ -220,7 +220,7 @@ export const FourthStep = () => {
 };
 
 export const CreateWallet = () => {
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -248,7 +248,7 @@ export const CreateWallet = () => {
 	const submitForm = async ({ name }: any) => {
 		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
 
-		await env.persist();
+		await persist();
 
 		setHasSubmitted(true);
 	};

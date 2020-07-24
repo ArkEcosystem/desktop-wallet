@@ -1,6 +1,6 @@
 import nock from "nock";
 import React from "react";
-import { renderWithRouter } from "utils/testing-library";
+import { renderWithRouter, waitFor } from "utils/testing-library";
 
 import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
@@ -24,7 +24,7 @@ beforeAll(() => {
 
 describe("App", () => {
 	it("should render", () => {
-		const { container, asFragment, getByText } = renderWithRouter(<App />);
+		const { container, asFragment, getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
 
@@ -32,10 +32,10 @@ describe("App", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render mock", () => {
+	it("should render mock", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		const { container } = renderWithRouter(<App />);
-		expect(container).toBeTruthy();
+		const { getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		await waitFor(() => expect(getByTestId("profile-card__user--avatar")).toBeInTheDocument());
 	});
 });

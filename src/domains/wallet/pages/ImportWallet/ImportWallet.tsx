@@ -128,7 +128,7 @@ export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 
 	const history = useHistory();
-	const { env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
@@ -154,7 +154,7 @@ export const ImportWallet = () => {
 	const submitForm = async ({ network, passphrase }: { network: NetworkData; passphrase: string }) => {
 		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 
-		await env?.persist();
+		await persist();
 
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
