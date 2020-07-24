@@ -1,8 +1,7 @@
-import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, NetworkData, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -10,11 +9,13 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
+import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -23,22 +24,13 @@ import { useHistory } from "react-router-dom";
 import { MnemonicList } from "../../components/MnemonicList";
 import { MnemonicVerification } from "../../components/MnemonicVerification";
 
-type Network = { coin: string; name: string; network: string; icon: string };
-
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
-	const currentNetwork = getValues("network");
+	const networks = React.useMemo(() => env.availableNetworks(), [env]);
 
 	const { t } = useTranslation();
 
-	const networks: Network[] = env.availableNetworks().map((network: any) => ({
-		name: `${network.ticker()} - ${network.name()}`,
-		icon: `${network.coin().charAt(0).toUpperCase()}${network.coin().slice(1).toLowerCase()}`,
-		coin: network.coin(),
-		network: network.name().toLowerCase(),
-	}));
-
-	const handleSelect = async (network: Network) => {
+	const handleSelect = async (network?: NetworkData | null) => {
 		const currentWallet = getValues("wallet");
 
 		setValue("network", network, true);
@@ -49,7 +41,11 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 			profile.wallets().forget(currentWallet.id());
 		}
 
-		const { mnemonic, wallet } = await profile.wallets().generate(network.coin, network.network);
+		if (!network) {
+			return;
+		}
+
+		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
 		setValue("wallet", wallet, true);
 		setValue("mnemonic", mnemonic, true);
 	};
@@ -67,12 +63,7 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork
-						name="network"
-						networks={networks}
-						onSelect={(network) => handleSelect(network)}
-						value={currentNetwork}
-					/>
+					<SelectNetwork id="CreateWallet__network" networks={networks} onSelect={handleSelect} />
 				</FormField>
 			</div>
 		</section>
@@ -179,8 +170,9 @@ export const ThirdStep = () => {
 
 export const FourthStep = () => {
 	const { getValues, register } = useFormContext();
-	const network: Network = getValues("network");
+	const network: NetworkData = getValues("network");
 	const wallet: Wallet = getValues("wallet");
+	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.name() });
 
 	const { t } = useTranslation();
 
@@ -198,12 +190,10 @@ export const FourthStep = () => {
 					<div>
 						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.NETWORK")}</p>
 						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
-							{network.name}
+							{networkConfig?.displayName}
 						</p>
 					</div>
-					<Circle>
-						<Icon name={network.icon} />
-					</Circle>
+					<NetworkIcon coin={network.coin()} network={network.name()} />
 				</li>
 				<li>
 					<Divider dashed />

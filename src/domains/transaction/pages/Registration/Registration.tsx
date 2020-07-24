@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -9,12 +10,13 @@ import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useActiveProfile } from "app/hooks/env";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
+import { availableNetworksMock } from "domains/network/data";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -27,18 +29,14 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-// Dummy data
-import { networks } from "../../data";
-
 type RegistrationProps = {
 	formDefaultData?: any;
 	onDownload?: any;
-	networks?: any;
+	networks?: NetworkData[];
 	registrationTypes?: any;
 	wallets: any[];
 };
 
-type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
 
 const FormWrapper = styled.div`
@@ -85,7 +83,7 @@ const FirstStep = ({
 	wallets,
 }: {
 	form: any;
-	networks: Network[];
+	networks: NetworkData[];
 	registrationTypes: RegistrationType[];
 	wallets: any[];
 }) => {
@@ -102,7 +100,7 @@ const FirstStep = ({
 			<FormWrapper className="mt-8">
 				<FormField name="network">
 					<FormLabel label={t("TRANSACTION.NETWORK")} />
-					<SelectNetwork networks={networks} />
+					<SelectNetwork id="Registration__network" networks={networks} />
 				</FormField>
 
 				<FormField name="address" className="relative mt-8">
@@ -431,7 +429,7 @@ export const Registration = ({
 								<FirstStep
 									wallets={wallets}
 									form={form}
-									networks={networks}
+									networks={networks!}
 									registrationTypes={registrationTypes}
 								/>
 							</TabPanel>
@@ -515,7 +513,7 @@ export const Registration = ({
 };
 
 Registration.defaultProps = {
-	networks,
+	networks: availableNetworksMock,
 	registrationTypes: [
 		{
 			value: "business",

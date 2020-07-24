@@ -1,15 +1,10 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { render } from "@testing-library/react";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import React from "react";
 import { MemoryRouter, Route } from "react-router-dom";
 import { identity } from "tests/fixtures/identity";
-import { StubStorage } from "tests/mocks";
 import { renderWithRouter } from "utils/testing-library";
 
-import { useActiveProfile, useAvailableNetworks } from "./env";
+import { useActiveProfile } from "./env";
 
 const TestProfile: React.FC = () => {
 	const profile = useActiveProfile();
@@ -20,24 +15,6 @@ const TestProfile: React.FC = () => {
 
 	return <span>404</span>;
 };
-
-const TestNetworks: React.FC = () => {
-	const networks = useAvailableNetworks();
-
-	if (networks) {
-		return (
-			<ul>
-				{networks.map((network, index) => (
-					<li key={index}>{network.name}</li>
-				))}
-			</ul>
-		);
-	}
-
-	return <span>No networks available</span>;
-};
-
-let env: Environment;
 
 describe("hooks / env", () => {
 	describe("useActiveProfile", () => {
@@ -72,27 +49,6 @@ describe("hooks / env", () => {
 				</MemoryRouter>,
 			);
 			expect(getByText("404")).toBeTruthy();
-		});
-	});
-
-	describe("useAvailableNetworks", () => {
-		beforeEach(() => {
-			env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		});
-
-		it("should return networks", () => {
-			const { getByText } = render(
-				<EnvironmentProvider env={env}>
-					<TestNetworks />
-				</EnvironmentProvider>,
-			);
-			expect(getByText("ARK - Mainnet")).toBeTruthy();
-			expect(getByText("DARK - Devnet")).toBeTruthy();
-		});
-
-		it("should return `no networks available` when no environment is provided", () => {
-			const { getByText } = render(<TestNetworks />);
-			expect(getByText("No networks available")).toBeTruthy();
 		});
 	});
 });

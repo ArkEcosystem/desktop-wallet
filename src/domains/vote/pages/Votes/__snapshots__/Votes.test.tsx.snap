@@ -270,167 +270,162 @@ exports[`Votes should render 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-0-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-0-input"
-                      id="downshift-0-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        class="sc-AxirZ dVFFmZ border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value=""
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ HSPq border-theme-neutral-200"
-                          />
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            />
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-0-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-0-input"
-                            name="network"
-                            placeholder="Select Network"
-                            value=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-0-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-0-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-primary border-theme-primary-400"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-primary-dark border-theme-primary-500"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy border-theme-warning-200 text-theme-warning-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy border-theme-primary-400 text-theme-primary"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy border-theme-primary-500 text-theme-primary-dark"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -787,180 +782,180 @@ exports[`Votes should select a delegate 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-3-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-3-input"
-                      id="downshift-3-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-3-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-3-input"
-                            name="network"
-                            placeholder="Select Network"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-3-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-3-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -2158,180 +2153,180 @@ exports[`Votes should select a network 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-1-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-1-input"
-                      id="downshift-1-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-1-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-1-input"
-                            name="network"
-                            placeholder="Select Network"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-1-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-1-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -3352,180 +3347,180 @@ exports[`Votes should select address 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-2-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-2-input"
-                      id="downshift-2-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-2-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-2-input"
-                            name="network"
-                            placeholder="Select Network"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-2-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-2-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
