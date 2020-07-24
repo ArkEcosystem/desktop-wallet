@@ -14,13 +14,8 @@ import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
 let env: Environment;
-let contact: Contact;
 let profile: Profile;
-const contactToEdit = {
-	name: () => "Test",
-	id: "",
-	addresses: () => [],
-};
+let updatingContact: Contact;
 
 describe("UpdateContact", () => {
 	beforeAll(() => {
@@ -46,19 +41,27 @@ describe("UpdateContact", () => {
 		await env.bootFromObject({ data: {}, profiles });
 		profile = env.profiles().findById("bob");
 
-		contact = profile.contacts().create("Test name");
-		contactToEdit.id = contact.id();
+		updatingContact = profile.contacts().create("Test");
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<UpdateContact isOpen={false} networks={availableNetworksMock} />);
+		const { asFragment, getByTestId } = render(
+			<UpdateContact
+				profileId={profile.id()}
+				isOpen={false}
+				networks={availableNetworksMock}
+				contact={updatingContact}
+			/>,
+		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(<UpdateContact isOpen={true} />);
+		const { asFragment, getByTestId } = render(
+			<UpdateContact profileId={profile.id()} isOpen={true} contact={updatingContact} />,
+		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_UPDATE_CONTACT.TITLE);
 		expect(asFragment()).toMatchSnapshot();
@@ -67,24 +70,24 @@ describe("UpdateContact", () => {
 	it("should display contact info in form", () => {
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} profileId={profile.id()} contact={contact} />
+				<UpdateContact isOpen={true} profileId={profile.id()} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contact.name());
+		expect(nameInput).toHaveValue(updatingContact.name());
 	});
 
 	it("should cancel contact update", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onCancel={fn} profileId={profile.id()} contact={contact} />
+				<UpdateContact isOpen={true} onCancel={fn} profileId={profile.id()} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contact.name());
+		expect(nameInput).toHaveValue(updatingContact.name());
 
 		act(() => {
 			fireEvent.click(getByTestId("contact-form__cancel-btn"));
@@ -99,12 +102,12 @@ describe("UpdateContact", () => {
 		const onDelete = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contact={contact} />
+				<UpdateContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contact.name());
+		expect(nameInput).toHaveValue(updatingContact.name());
 
 		act(() => {
 			fireEvent.click(getByTestId("contact-form__delete-btn"));
@@ -112,39 +115,56 @@ describe("UpdateContact", () => {
 
 		await waitFor(() => {
 			expect(onDelete).toBeCalled();
-			expect(() => profile.contacts().findById(contact.id())).toThrowError("Failed to find");
+			expect(() => profile.contacts().findById(updatingContact.id())).toThrowError("Failed to find");
 		});
 	});
 
-	it("should update contact name", async () => {
-		const fn = jest.fn();
+	it("should update contact name and address", async () => {
+		const onSaveAddress = jest.fn();
+
+		const contactToUpdate = {
+			name: () => "Test",
+			addresses: () => [],
+			id: "",
+		};
+
+		contactToUpdate.id = updatingContact.id();
+
+		const newName = "Updated name";
+		const newAddress = {
+			name: "Test Address",
+			network: "devnet",
+			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			coin: "ARK",
+		};
+
 		const { getByTestId, queryByTestId } = render(
 			<EnvironmentProvider env={env}>
 				<UpdateContact
 					isOpen={true}
-					onSave={fn}
+					onSave={onSaveAddress}
 					profileId={profile.id()}
-					contact={contactToEdit}
+					contact={contactToUpdate}
 					networks={availableNetworksMock}
 				/>
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contactToEdit.name());
+		expect(nameInput).toHaveValue(contactToUpdate.name());
 
 		act(() => {
 			fireEvent.change(nameInput, { target: { value: "Updated name" } });
 		});
 
-		expect(nameInput).toHaveValue("Updated name");
+		expect(nameInput).toHaveValue(newName);
 		const saveButton = getByTestId("contact-form__save-btn");
 		const assetInput = getByTestId("SelectNetworkInput__input");
 
 		// Add network
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: "address" },
+				target: { value: newAddress.address },
 			});
 
 			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
@@ -165,10 +185,14 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalled();
+			expect(onSaveAddress).toBeCalledWith(contactToUpdate.id);
 
-			const savedContact = profile.contacts().findById(contactToEdit.id);
-			expect(savedContact.name()).toEqual("Updated name");
+			const savedContact = profile.contacts().findById(contactToUpdate.id);
+			expect(savedContact.name()).toEqual(newName);
+
+			const savedAddresses = savedContact.addresses().findByAddress(newAddress.address);
+			expect(savedAddresses.length).toEqual(1);
+			expect(savedAddresses[0]?.address()).toEqual(newAddress.address);
 		});
 	});
 });
