@@ -28,19 +28,23 @@ export const UpdateContact = ({
 	const { t } = useTranslation();
 	const env = useEnvironment();
 
-	const handleSave = () => {
-		console.log("on handle save");
-		// if (!name) return;
-		// const contactId = contact?.id?.();
-		//
-		// const profile = env?.profiles().findById(profileId);
-		// profile?.contacts().update(contactId, {
-		// 	name,
-		// 	addresses: contactAddresses,
-		// });
-		// await env?.persist();
+	const handleSave = async ({ name, contactAddresses }: any) => {
+		if (!name) return;
+
+		const addresses = contactAddresses.map(({ coin, network, address }: any) => {
+			return {
+				coin,
+				network,
+				address,
+			};
+		});
+		const profile = env?.profiles().findById(profileId);
+		profile?.contacts().update(contact.id, {
+			name,
+			addresses,
+		});
+		await env?.persist();
 		onSave?.();
-		// console.log('saving!')
 	};
 
 	const handleDelete = async () => {
@@ -61,7 +65,7 @@ export const UpdateContact = ({
 					networks={networks}
 					onCancel={() => onCancel?.()}
 					onDelete={handleDelete}
-					onSave={console.log}
+					onSave={handleSave}
 				/>
 			</div>
 		</Modal>

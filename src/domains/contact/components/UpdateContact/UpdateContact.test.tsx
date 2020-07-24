@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
@@ -8,12 +9,14 @@ import { act, fireEvent, render, waitFor } from "testing-library";
 import { profiles } from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
 
+import { contact2 as contactObject } from "../../data";
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
 let env: Environment;
 let contact: Contact;
 let profile: Profile;
+let contactToEdit: any;
 
 let networks: any;
 
@@ -65,6 +68,9 @@ describe("UpdateContact", () => {
 		profile.contacts().update(contact.id(), {
 			addresses: [{ coin: "ARK", network: "testnet", address: "TESTNET-ADDRESS" }],
 		});
+
+		contactToEdit = contactObject;
+		contactToEdit.id = contact.id();
 	});
 
 	it("should not render if not open", () => {
@@ -133,22 +139,22 @@ describe("UpdateContact", () => {
 		});
 	});
 
-	it("should update contact name", async () => {
+	it("should update contact name and addresses", async () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(
+		const { getByTestId, queryByTestId } = render(
 			<EnvironmentProvider env={env}>
 				<UpdateContact
 					isOpen={true}
 					onSave={fn}
 					profileId={profile.id()}
-					contact={contact}
+					contact={contactToEdit}
 					networks={networks}
 				/>
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contact.name());
+		expect(nameInput).toHaveValue(contactToEdit.name());
 
 		act(() => {
 			fireEvent.change(nameInput, { target: { value: "Updated name" } });
@@ -156,9 +162,32 @@ describe("UpdateContact", () => {
 
 		expect(nameInput).toHaveValue("Updated name");
 		const saveButton = getByTestId("contact-form__save-btn");
+		const assetInput = getByTestId("select-asset__input");
+
+		// Add network
+		await act(async () => {
+			await fireEvent.change(getByTestId("contact-form__address-input"), {
+				target: { value: "address" },
+			});
+
+			fireEvent.change(assetInput, { target: { value: "ARK" } });
+			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => {
+			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		const addressInput = getByTestId("contact-form__address-input");
+
+		await act(async () => {
+			fireEvent.change(addressInput, { target: { value: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" } });
+			fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		});
+
 		expect(saveButton).not.toBeDisabled();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(saveButton);
 		});
 
