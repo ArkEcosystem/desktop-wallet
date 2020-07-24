@@ -264,173 +264,168 @@ exports[`Votes should render 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-0-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-0-input"
-                      id="downshift-0-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        class="sc-AxirZ dVFFmZ border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value=""
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ HSPq border-theme-neutral-200"
-                          />
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            />
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-0-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-0-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
-                            value=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-0-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-0-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-danger-400 border-theme-danger-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-warning-400 border-theme-warning-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-800 border-theme-neutral-600"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-primary border-theme-primary-400"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-0-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-primary-dark border-theme-primary-500"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy border-theme-warning-200 text-theme-warning-400"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy border-theme-primary-400 text-theme-primary"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy border-theme-primary-500 text-theme-primary-dark"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -469,7 +464,7 @@ exports[`Votes should render 1`] = `
                       <span
                         class="text-base font-semibold text-theme-neutral-light"
                       >
-                        Select address
+                        Select Address
                       </span>
                     </div>
                     <div
@@ -509,1192 +504,6 @@ exports[`Votes should render 1`] = `
             <svg>
               placeholder-votes.svg
             </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Votes should select a cryptoasset 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            />
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <a
-                data-testid="navbar__buttons--send"
-                href="/profiles/undefined/transactions/transfer"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <button
-                class="sc-fznKkj guwYPQ"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw fFXzuz"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              />
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    />
-                    <span
-                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxiKw ksjdLL"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxiKw bGpsrC"
-        height="10"
-        width="19"
-      >
-        <svg>
-          arrow-back.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-2"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/portfolio"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 space-y-5 "
-    >
-      <div
-        class="sc-fzoXzr imWwrn"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="flex items-end justify-between bg-theme-background"
-          >
-            <div>
-              <h1
-                class="mb-0 md:text-4xl"
-                data-testid="header__title"
-              >
-                My Votes
-              </h1>
-              <div
-                class="text-theme-neutral-dark"
-                data-testid="header__subtitle"
-              >
-                Manage your cryptoasset staking
-              </div>
-            </div>
-            <div>
-              <div
-                class="relative"
-              >
-                <button
-                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
-                  data-testid="header-search-bar__button"
-                >
-                  <div
-                    class="flex items-center space-x-3"
-                  >
-                    <span>
-                      Search
-                    </span>
-                    <div
-                      class="sc-AxiKw dklFyP"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        search.svg
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="container mx-auto px-14"
-      >
-        <div
-          class="-my-5 grid grid-cols-2 grid-flow-col gap-6"
-        >
-          <div
-            class="flex items-center py-6 true "
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral"
-              >
-                Cryptoasset
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="sc-fznxsB lkRyHE"
-                >
-                  <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-1-label"
-                    class="relative"
-                    role="combobox"
-                  >
-                    <label
-                      for="downshift-1-input"
-                      id="downshift-1-label"
-                    />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-1-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-1-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-1-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-1-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-1-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex items-center py-6 true mt-2"
-          >
-            <div
-              class="flex-1 space-y-2"
-            >
-              <div
-                class="text-sm font-semibold text-theme-neutral"
-              >
-                Address
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="relative flex items-center pb-24"
-                >
-                  <input
-                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                    data-testid="Input"
-                    disabled=""
-                    type="text"
-                  />
-                  <div
-                    class="absolute flex items-center justify-between w-full ml-3"
-                  >
-                    <div
-                      class="flex items-center"
-                    >
-                      <div
-                        class="sc-AxirZ kSZulD mr-3"
-                      />
-                      <span
-                        class="text-base font-semibold text-theme-neutral-light"
-                      >
-                        Select address
-                      </span>
-                    </div>
-                    <div
-                      class="sc-AxiKw dklFyP mr-6"
-                      height="20"
-                      width="20"
-                    >
-                      <svg>
-                        user.svg
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sc-fzoXzr imWwrn flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            data-testid="AddressList"
-          >
-            <h2
-              class="py-5 text-2xl font-bold"
-            >
-              Select Address
-            </h2>
-            <div
-              class="sc-fzokOt bVpfTX"
-              role="table"
-            >
-              <table
-                class="table-auto"
-              >
-                <thead>
-                  <tr
-                    role="row"
-                  >
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div />
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div>
-                          My Address
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top flex justify-center"
-                      >
-                        <div />
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div>
-                          Balance
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div />
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--5"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div>
-                          Delegate
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--6"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div>
-                          Rank
-                        </div>
-                        <div
-                          class="flex items-center ml-2 text-theme-color-neutral"
-                          data-testid="table__Sort"
-                        >
-                          <div
-                            class="sc-AxiKw GMmVY"
-                            height="12"
-                            width="15"
-                          >
-                            <svg>
-                              sort.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--7"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top flex justify-center"
-                      >
-                        <div>
-                          Profile
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--8"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top flex justify-center"
-                      >
-                        <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="text-sm text-left select-none text-theme-neutral"
-                      colspan="1"
-                      data-testid="table__th--9"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top undefined"
-                      >
-                        <div />
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
-                >
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                          data-testid="address__wallet-name"
-                        >
-                          OLEBank
-                        </span>
-                        <span
-                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          ASuusXSW9…6T9GQ3kqT
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="flex justify-center h-full"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-theme-neutral-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            multisig.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      432,509.08946384 ARK
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="DACFobAjNEKsc1CtPSMyp5uA4wp6uC3fgC"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-                            title="DACFobAjNEKsc1CtPSMyp5uA4wp6uC3fgC"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      <span>
-                        Delegate 1
-                      </span>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      <span>
-                        #2
-                      </span>
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="flex justify-center h-full"
-                      >
-                        <a
-                          href="https://marketsquare.ark.io"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          <div
-                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              msq.svg
-                            </svg>
-                          </div>
-                        </a>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="flex justify-center h-full"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-theme-success"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="text-right"
-                      >
-                        <button
-                          class="sc-fznKkj iOlpkV"
-                          color="primary"
-                          data-testid="AddressListItem__button--select"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                            title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          FSuusXSW9…6T9GQ3kqT
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="flex justify-center h-full"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-theme-neutral-600"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ledger.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      8,523.3884504 ARK
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      <span>
-                        Delegate 45
-                      </span>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      <span>
-                        #45
-                      </span>
-                    </td>
-                    <td
-                      class="py-5"
-                    />
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="flex justify-center h-full"
-                      >
-                        <div
-                          class="sc-AxiKw dzBdqj text-theme-success"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="text-right"
-                      >
-                        <button
-                          class="sc-fznKkj iOlpkV"
-                          color="primary"
-                          data-testid="AddressListItem__button--select"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          DSuusXSW9…6T9GQ3kqT
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      0.000462 ARK
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="sc-AxirZ hQTESw border-theme-neutral-300"
-                      />
-                    </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      <span
-                        class="text-theme-neutral-light"
-                      >
-                        N/A
-                      </span>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    />
-                    <td
-                      class="py-5"
-                    />
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="text-right"
-                      >
-                        <button
-                          class="sc-fznKkj iOlpkV"
-                          color="primary"
-                          data-testid="AddressListItem__button--select"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="border-b border-theme-neutral-200"
-                  >
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-                            title="HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    >
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          HSuusXSW9…6T9GQ3kqT
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20 py-5"
-                    />
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    >
-                      0.00 ARK
-                    </td>
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="sc-AxirZ hQTESw border-theme-neutral-300"
-                      />
-                    </td>
-                    <td
-                      class="py-5 font-bold"
-                    >
-                      <span
-                        class="text-theme-neutral-light"
-                      >
-                        N/A
-                      </span>
-                    </td>
-                    <td
-                      class="py-5 font-bold text-theme-neutral-dark"
-                    />
-                    <td
-                      class="py-5"
-                    />
-                    <td
-                      class="py-5"
-                    />
-                    <td
-                      class="py-5"
-                    >
-                      <div
-                        class="text-right"
-                      >
-                        <button
-                          class="sc-fznKkj iOlpkV"
-                          color="primary"
-                          data-testid="AddressListItem__button--select"
-                          type="button"
-                        >
-                          Select
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </div>
         </div>
       </div>
@@ -1967,186 +776,186 @@ exports[`Votes should select a delegate 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-3-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-3-input"
-                      id="downshift-3-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-3-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-3-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-3-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-3-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-3-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -2241,7 +1050,7 @@ exports[`Votes should select a delegate 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt bVpfTX"
+              class="sc-fzokOt dDPIyL"
               role="table"
             >
               <table
@@ -2260,7 +1069,9 @@ exports[`Votes should select a delegate 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -2439,7 +1250,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Min
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"
@@ -3072,6 +1883,1200 @@ exports[`Votes should select a delegate 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Votes should select a network 1`] = `
+<DocumentFragment>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoLag iezQBg"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            />
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/undefined/transactions/transfer"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-fznKkj guwYPQ"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxiKw fFXzuz"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </div>
+                  <div
+                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
+                  >
+                    <span
+                      class="text-sm text-theme-background"
+                    />
+                    <span
+                      class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                    >
+                      <div
+                        class="sc-AxiKw ksjdLL"
+                        height="10"
+                        width="10"
+                      >
+                        <svg>
+                          chevron-down.svg
+                        </svg>
+                      </div>
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
+      data-testid="breadcrumbs__wrapper"
+    >
+      <div
+        class="sc-AxiKw bGpsrC"
+        height="10"
+        width="19"
+      >
+        <svg>
+          arrow-back.svg
+        </svg>
+      </div>
+      <div
+        class="space-x-2"
+      >
+        <a
+          class="text-theme-neutral-dark"
+          href="/portfolio"
+        >
+          <span>
+            Go back to Portfolio
+          </span>
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col flex-1 space-y-5 "
+    >
+      <div
+        class="sc-fzoXzr imWwrn"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="flex items-end justify-between bg-theme-background"
+          >
+            <div>
+              <h1
+                class="mb-0 md:text-4xl"
+                data-testid="header__title"
+              >
+                My Votes
+              </h1>
+              <div
+                class="text-theme-neutral-dark"
+                data-testid="header__subtitle"
+              >
+                Manage your cryptoasset staking
+              </div>
+            </div>
+            <div>
+              <div
+                class="relative"
+              >
+                <button
+                  class="h-full my-auto font-semibold cursor-pointer text-theme-primary-light"
+                  data-testid="header-search-bar__button"
+                >
+                  <div
+                    class="flex items-center space-x-3"
+                  >
+                    <span>
+                      Search
+                    </span>
+                    <div
+                      class="sc-AxiKw dklFyP"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        search.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container mx-auto px-14"
+      >
+        <div
+          class="-my-5 grid grid-cols-2 grid-flow-col gap-6"
+        >
+          <div
+            class="flex items-center py-6 true "
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Network
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
+                  <div
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
+                  >
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
+                    />
+                  </div>
+                </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex items-center py-6 true mt-2"
+          >
+            <div
+              class="flex-1 space-y-2"
+            >
+              <div
+                class="text-sm font-semibold text-theme-neutral"
+              >
+                Address
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="relative flex items-center pb-24"
+                >
+                  <input
+                    class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                    data-testid="Input"
+                    disabled=""
+                    type="text"
+                  />
+                  <div
+                    class="absolute flex items-center justify-between w-full ml-3"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-AxirZ kSZulD mr-3"
+                      />
+                      <span
+                        class="text-base font-semibold text-theme-neutral-light"
+                      >
+                        Select Address
+                      </span>
+                    </div>
+                    <div
+                      class="sc-AxiKw dklFyP mr-6"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoXzr imWwrn flex-1"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            data-testid="AddressList"
+          >
+            <h2
+              class="py-5 text-2xl font-bold"
+            >
+              Select Address
+            </h2>
+            <div
+              class="sc-fzokOt dDPIyL"
+              role="table"
+            >
+              <table
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                          Address
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                          Balance
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                          Delegate
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--6"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                          Rank
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxiKw GMmVY"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Profile
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--8"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Status
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--9"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top undefined"
+                      >
+                        <div>
+                           
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
+                >
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          OLEBank
+                        </span>
+                        <span
+                          class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusXSW9…6T9GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral-600"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            multisig.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      432,509.08946384 ARK
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DACFobAjNEKsc1CtPSMyp5uA4wp6uC3fgC"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                            title="DACFobAjNEKsc1CtPSMyp5uA4wp6uC3fgC"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5 font-bold"
+                    >
+                      <span>
+                        Delegate 1
+                      </span>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      <span>
+                        #2
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <a
+                          href="https://marketsquare.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxiKw dzBdqj text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              msq.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-success"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ok.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-fznKkj iOlpkV"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="FSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          FSuusXSW9…6T9GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-neutral-600"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ledger.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      8,523.3884504 ARK
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            title="DBozeHpqr7fie1QrfmNcGzdtEb7NB73AGq"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5 font-bold"
+                    >
+                      <span>
+                        Delegate 45
+                      </span>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      <span>
+                        #45
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    />
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj text-theme-success"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            ok.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-fznKkj iOlpkV"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                            title="DSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          DSuusXSW9…6T9GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    />
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      0.000462 ARK
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="sc-AxirZ hQTESw border-theme-neutral-300"
+                      />
+                    </td>
+                    <td
+                      class="py-5 font-bold"
+                    >
+                      <span
+                        class="text-theme-neutral-light"
+                      >
+                        N/A
+                      </span>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    />
+                    <td
+                      class="py-5"
+                    />
+                    <td
+                      class="py-5"
+                    />
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-fznKkj iOlpkV"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-theme-neutral-200"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 152, 0)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                            title="HSuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    >
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          HSuusXSW9…6T9GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-20 py-5"
+                    />
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    >
+                      0.00 ARK
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="sc-AxirZ hQTESw border-theme-neutral-300"
+                      />
+                    </td>
+                    <td
+                      class="py-5 font-bold"
+                    >
+                      <span
+                        class="text-theme-neutral-light"
+                      >
+                        N/A
+                      </span>
+                    </td>
+                    <td
+                      class="py-5 font-bold text-theme-neutral-dark"
+                    />
+                    <td
+                      class="py-5"
+                    />
+                    <td
+                      class="py-5"
+                    />
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <button
+                          class="sc-fznKkj iOlpkV"
+                          color="primary"
+                          data-testid="AddressListItem__button--select"
+                          type="button"
+                        >
+                          Select
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Votes should select address 1`] = `
 <DocumentFragment>
   <div
@@ -3336,186 +3341,186 @@ exports[`Votes should select address 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Cryptoasset
+                Network
               </div>
               <div
                 class="font-semibold"
               >
                 <div
-                  class="sc-fznxsB lkRyHE"
+                  aria-expanded="true"
+                  aria-haspopup="listbox"
+                  aria-owns="Votes__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
                 >
+                  <label
+                    for="Votes__network-input"
+                    id="Votes__network-label"
+                  />
                   <div
-                    aria-expanded="false"
-                    aria-haspopup="listbox"
-                    aria-labelledby="downshift-2-label"
-                    class="relative"
-                    role="combobox"
+                    class="sc-Axmtr jzhOwR"
+                    data-testid="SelectNetworkInput"
                   >
-                    <label
-                      for="downshift-2-input"
-                      id="downshift-2-label"
+                    <div
+                      class="sc-AxhUy sc-AxgMl kAPRWA px-4"
+                    >
+                      <div
+                        aria-label="Bitcoin"
+                        class="sc-AxirZ dVFFmZ border-theme-warning-200 text-theme-warning-400"
+                        data-testid="SelectNetworkInput__network"
+                      >
+                        <div
+                          class="sc-AxiKw dzBdqj"
+                          data-testid="NetworkIcon__icon"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            btc.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <span
+                      class="sc-AxhUy escgqZ py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
+                      data-testid="SelectNetworkInput__typeahead"
+                    >
+                      Bitcoin
+                    </span>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="Votes__network-menu"
+                      aria-labelledby="Votes__network-label"
+                      autocomplete="off"
+                      class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="Votes__network-input"
+                      placeholder="Select Network"
+                      value="Bitcoin"
                     />
-                    <div
-                      class="relative flex items-center w-full flex-inline"
-                    >
-                      <div
-                        class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
-                      >
-                        <div
-                          class="px-4 py-2 flex-0 w-14"
-                        >
-                          <div
-                            class="sc-AxirZ dVFFmZ text-theme-warning-400 border-theme-warning-200"
-                            data-testid="select-asset__selected-Bitcoin"
-                          >
-                            <div
-                              class="sc-AxiKw bctdez"
-                              height="16"
-                              width="16"
-                            >
-                              <svg>
-                                btc.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                        >
-                          <div
-                            class="relative z-10 w-full"
-                            data-testid="select-network__typeahead-Bitcoin"
-                          >
-                            <div
-                              class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                            >
-                              Bitcoin
-                            </div>
-                          </div>
-                          <input
-                            aria-autocomplete="list"
-                            aria-labelledby="downshift-2-label"
-                            autocomplete="off"
-                            class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                            data-testid="select-asset__input"
-                            id="downshift-2-input"
-                            name="cryptoasset"
-                            placeholder="Select cryptoasset"
-                            value="Bitcoin"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      aria-labelledby="downshift-2-label"
-                      class="select-asset__items"
-                      data-testid="select-asset__items"
-                      id="downshift-2-menu"
-                      role="listbox"
-                    >
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-0"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              ark.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-1"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-success-500 border-theme-success-200"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              btc.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-2"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              eth.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-3"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              lsk.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        aria-selected="false"
-                        class="inline-block pt-6 mr-6 cursor-pointer"
-                        id="downshift-2-item-4"
-                        role="option"
-                      >
-                        <div
-                          class="sc-AxirZ ffmqtx text-theme-neutral-light"
-                        >
-                          <div
-                            class="sc-AxiKw fubePL"
-                            height="26"
-                            width="26"
-                          >
-                            <svg>
-                              xrp.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
+                <ul
+                  aria-labelledby="Votes__network-label"
+                  id="Votes__network-menu"
+                  role="listbox"
+                >
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-0"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-1"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ark Devnet"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          ark.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-2"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Bitcoin"
+                      class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-3"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Lisk"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          lsk.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="inline-block pt-6 mr-6 cursor-pointer"
+                    id="Votes__network-item-4"
+                    role="option"
+                  >
+                    <div
+                      aria-label="Ripple"
+                      class="sc-AxirZ jatHdy text-theme-neutral-light"
+                      data-testid="NetworkIcon"
+                    >
+                      <div
+                        class="sc-AxiKw fubePL"
+                        data-testid="NetworkIcon__icon"
+                        height="26"
+                        width="26"
+                      >
+                        <svg>
+                          xrp.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -3610,7 +3615,7 @@ exports[`Votes should select address 1`] = `
               Select a Delegate
             </h2>
             <div
-              class="sc-fzokOt bVpfTX"
+              class="sc-fzokOt dDPIyL"
               role="table"
             >
               <table
@@ -3629,7 +3634,9 @@ exports[`Votes should select address 1`] = `
                       <div
                         class="flex flex-inline align-top undefined"
                       >
-                        <div />
+                        <div>
+                           
+                        </div>
                       </div>
                     </th>
                     <th
@@ -3808,7 +3815,7 @@ exports[`Votes should select address 1`] = `
                         class="flex flex-inline align-top undefined"
                       >
                         <div>
-                          Min
+                          Min.
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"

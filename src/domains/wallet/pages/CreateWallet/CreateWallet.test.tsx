@@ -5,6 +5,7 @@ import { Environment, Profile, WalletSetting } from "@arkecosystem/platform-sdk-
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
+import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -14,7 +15,6 @@ import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "test
 import { profiles } from "tests/fixtures/env/data";
 import { StubStorage } from "tests/mocks";
 
-import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 let env: Environment;
@@ -26,11 +26,18 @@ const passphrase = "power return attend drink piece found tragic fire liar page 
 beforeAll(() => {
 	nock.disableNetConnect();
 
-	nock(/.+/)
+	nock("https://wallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+		.get("/api/peers")
+		.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
 		.get("/api/node/configuration/crypto")
 		.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
 		.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+		.persist();
+
+	nock("https://neoscan.io")
 		.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
 		.reply(200, [])
 		.persist();
@@ -66,7 +73,7 @@ describe("CreateWallet", () => {
 		expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("select-asset__input");
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		expect(selectAssetsInput).toBeTruthy();
 
 		await act(async () => {
@@ -77,7 +84,7 @@ describe("CreateWallet", () => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("select-asset__selected-ARK-Mainnet")).toBeTruthy();
+		expect(selectAssetsInput).toHaveValue("Ark");
 	});
 
 	it("should render 2nd step", async () => {
@@ -99,12 +106,14 @@ describe("CreateWallet", () => {
 
 		const writeTextMock = jest.fn();
 		const clipboardOriginal = navigator.clipboard;
+		// @ts-ignore
 		navigator.clipboard = { writeText: writeTextMock };
 
 		fireEvent.click(getByTestId(`CreateWallet__copy`));
 		await waitFor(async () => {
 			expect(writeTextMock).toHaveBeenCalledWith("test mnemonic");
 		});
+		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
 	});
 
@@ -132,7 +141,7 @@ describe("CreateWallet", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					network: networks[0],
+					network: availableNetworksMock[0],
 					wallet: {
 						address: () => "TEST-WALLET-ADDRESS",
 					},
@@ -149,7 +158,7 @@ describe("CreateWallet", () => {
 		expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId(`CreateWallet__network-name`)).toHaveTextContent(networks[0].name);
+		expect(getByTestId(`CreateWallet__network-name`)).toHaveTextContent("Ark");
 		expect(getByTestId(`CreateWallet__wallet-address`)).toHaveTextContent("TEST-WALLET-ADDRESS");
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
@@ -188,7 +197,7 @@ describe("CreateWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("select-asset__input");
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		await act(async () => {
 			const continueButton = getByTestId("CreateWallet__continue-button");
 			const backButton = getByTestId("CreateWallet__back-button");
@@ -199,9 +208,13 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			const previousWalletId = profile.wallets().values()[0].id();
+			fireEvent.change(selectAssetsInput, { target: { value: "" } });
+			await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
 			await waitFor(() => expect(profile.wallets().values().length).toBe(1));
 			await waitFor(() => expect(profile.wallets().values()[0].id()).not.toEqual(previousWalletId));
 
@@ -313,7 +326,7 @@ describe("CreateWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("select-asset__input");
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		await act(async () => {
 			const continueButton = getByTestId("CreateWallet__continue-button");
 

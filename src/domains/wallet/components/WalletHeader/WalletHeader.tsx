@@ -1,11 +1,14 @@
+import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Toggle } from "app/components/Toggle";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
 	address: string | undefined;
@@ -17,9 +20,9 @@ type Props = {
 	isMultisig?: boolean;
 	name?: string | undefined;
 	publicKey?: string | undefined;
-	onCopy?: () => void;
 	onSignMessage: () => void;
 	onDeleteWallet: () => void;
+	onUpdateWalletName: () => void;
 	onSend?: () => void;
 	onStar?: () => void;
 };
@@ -32,15 +35,17 @@ export const WalletHeader = ({
 	publicKey,
 	onSend,
 	onStar,
-	onCopy,
 	onSignMessage,
 	onDeleteWallet,
+	onUpdateWalletName,
 	balance,
 	currencyBalance,
 	isLedger,
 	isMultisig,
 }: Props) => {
 	const [showPublicKey, setShowPublicKey] = React.useState(false);
+
+	const { t } = useTranslation();
 
 	return (
 		<header data-testid="WalletHeader">
@@ -57,14 +62,18 @@ export const WalletHeader = ({
 							{name}
 						</h2>
 						{isLedger && (
-							<span data-testid="WalletHeader__ledger">
-								<Icon name="Ledger" className="text-theme-neutral-dark" />
-							</span>
+							<Tippy content={t("COMMON.LEDGER")}>
+								<span data-testid="WalletHeader__ledger">
+									<Icon name="Ledger" className="text-theme-neutral-dark" />
+								</span>
+							</Tippy>
 						)}
 						{isMultisig && (
-							<span data-testid="WalletHeader__multisig">
-								<Icon name="Multisig" className="text-theme-neutral-dark" />
-							</span>
+							<Tippy content={t("COMMON.MULTISIGNATURE")}>
+								<span data-testid="WalletHeader__multisig">
+									<Icon name="Multisig" className="text-theme-neutral-dark" />
+								</span>
+							</Tippy>
 						)}
 					</div>
 					<div className="flex items-stretch space-x-2">
@@ -77,7 +86,7 @@ export const WalletHeader = ({
 						</button>
 
 						<Button data-testid="WalletHeader__send-button" onClick={onSend}>
-							Send
+							{t("COMMON.SEND")}
 						</Button>
 
 						<div data-testid="WalletHeader__more-button">
@@ -88,10 +97,16 @@ export const WalletHeader = ({
 									</Button>
 								}
 								options={[
-									{ label: "Wallet Name", value: "wallet-name" },
-									{ label: "Sign Message", value: "sign-message" },
-									{ label: "Store Hash", value: "store-hash" },
-									{ label: "Delete", value: "delete-wallet" },
+									{
+										label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
+										value: "wallet-name",
+									},
+									{
+										label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
+										value: "sign-message",
+									},
+									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"), value: "store-hash" },
+									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"), value: "delete-wallet" },
 								]}
 								onSelect={(option: Record<string, string>) => {
 									if (option.value === "sign-message") {
@@ -100,6 +115,10 @@ export const WalletHeader = ({
 
 									if (option.value === "delete-wallet") {
 										onDeleteWallet();
+									}
+
+									if (option.value === "wallet-name") {
+										onUpdateWalletName();
 									}
 								}}
 								dropdownClass="top-5 right-3 text-left bg-white"
@@ -111,60 +130,60 @@ export const WalletHeader = ({
 
 			<Section>
 				<ul className="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300">
-					<li className="space-y-2">
+					<li className="flex flex-col space-y-2">
 						<div className="inline-flex items-center space-x-2">
-							<p
+							<span
 								className={`font-semibold text-sm ${
 									!showPublicKey ? "text-theme-neutral-dark" : "text-theme-neutral-light"
 								}`}
 							>
-								Address
-							</p>
+								{t("COMMON.ADDRESS")}
+							</span>
 							<Toggle
 								data-testid="WalletHeader__toggle"
 								disabled={!publicKey}
 								onChange={() => setShowPublicKey(!showPublicKey)}
 							/>
-							<p
+							<span
 								className={`font-semibold text-sm ${
 									showPublicKey ? "text-theme-neutral-dark" : "text-theme-neutral-light"
 								}`}
 							>
-								Public Key
-							</p>
+								{t("COMMON.PUBLIC_KEY")}
+							</span>
 						</div>
 						<div>
-							<p
+							<span
 								data-testid="WalletHeader__address-publickey"
 								className="inline-block text-lg font-medium"
 							>
 								{showPublicKey ? publicKey : address}
-							</p>
-							<button
-								data-testid="WalletHeader__copy-button"
-								className="inline-block px-3 text-theme-neutral focus:outline-none"
-								onClick={onCopy}
-							>
-								<Icon name="Copy" className="text-theme-primary-400" />
-							</button>
+							</span>
+							<span data-testid="WalletHeader__copy-button" className="ml-4">
+								<Clipboard data={showPublicKey ? publicKey : address}>
+									<Icon name="Copy" className="text-theme-primary-300" />
+								</Clipboard>
+							</span>
 						</div>
 					</li>
 
 					{!showPublicKey && (
-						<li className="pl-8 space-y-2">
-							<p className="text-sm font-semibold text-theme-neutral-dark">Balance</p>
-							<p data-testid="WalletHeader__balance" className="text-lg font-medium">
+						<li className="flex flex-col pl-8 space-y-2">
+							<span className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.BALANCE")}</span>
+							<span data-testid="WalletHeader__balance" className="text-lg font-medium">
 								{balance}
-							</p>
+							</span>
 						</li>
 					)}
 
 					{!showPublicKey && currencyBalance && (
-						<li className="pl-8 space-y-2">
-							<p className="text-sm font-semibold text-theme-neutral-dark">Fiat</p>
-							<p data-testid="WalletHeader__currency-balance" className="text-lg font-medium">
+						<li className="flex flex-col pl-8 space-y-2">
+							<span className="text-sm font-semibold text-theme-neutral-dark">
+								{t("COMMON.FIAT_VALUE")}
+							</span>
+							<span data-testid="WalletHeader__currency-balance" className="text-lg font-medium">
 								{currencyBalance}
-							</p>
+							</span>
 						</li>
 					)}
 				</ul>

@@ -1,12 +1,29 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import fetch from "node-fetch";
+import { Contracts, Http } from "@arkecosystem/platform-sdk";
+import fetch from "unfetch";
 
-export class HttpClient implements Contracts.HttpClient {
-	public async get(path: string, searchParams?: Record<string, any>) {
-		return (await fetch(searchParams ? `${path}?${new URLSearchParams(searchParams)}` : path)).json();
-	}
+export class HttpClient extends Http.Request {
+	protected async send(
+		method: string,
+		url: string,
+		data?: {
+			query?: object;
+			data?: any;
+		},
+	): Promise<Contracts.HttpResponse> {
+		let response;
 
-	public async post(path: string, body: object, headers = {}) {
-		return (await fetch(path, { method: "POST", body: JSON.stringify(body), headers })).json();
+		if (method === "GET") {
+			response = await fetch(data?.query ? `${url}?${new URLSearchParams(data.query as any)}` : url);
+		}
+
+		if (method === "POST") {
+			response = await fetch(url, { method: "POST", body: JSON.stringify(data?.data) });
+		}
+
+		return new Http.Response({
+			body: await response?.text(),
+			headers: response?.headers,
+			statusCode: response?.status,
+		});
 	}
 }

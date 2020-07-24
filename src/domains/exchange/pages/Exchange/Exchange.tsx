@@ -74,7 +74,9 @@ const ExchangesList = ({
 				{(exchange: any) => {
 					if (exchange.isNew) {
 						return <AddExchangeCard onAddExchange={onAddExchange} />;
-					} else if (exchange.isBlank) {
+					}
+
+					if (exchange.isBlank) {
 						return <BlankCard />;
 					}
 
@@ -91,7 +93,7 @@ const ExchangesList = ({
 	);
 };
 
-export const Exchange = (props: ExchangeProps) => {
+export const Exchange = ({ exchanges }: ExchangeProps) => {
 	const { t } = useTranslation();
 
 	const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -103,9 +105,9 @@ export const Exchange = (props: ExchangeProps) => {
 				<Section>
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 
-					{props.exchanges.length ? (
+					{exchanges.length ? (
 						<ExchangesList
-							exchanges={props.exchanges}
+							exchanges={exchanges}
 							selectedExchange={selectedExchange}
 							onAddExchange={() => setModalIsOpen(true)}
 							onSelect={(exchange: any) => setSelectedExchange(exchange)}
@@ -116,7 +118,7 @@ export const Exchange = (props: ExchangeProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{props.exchanges.length ? (
+					{exchanges.length ? (
 						<div className="text-center">
 							<ExchangeCardsBanner className="mx-auto" />
 

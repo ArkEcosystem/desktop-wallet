@@ -1,8 +1,8 @@
 describe("NavBar Routing", () => {
 	it("should navigate to dashboard", () => {
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/");
-		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
-
+		cy.wait("@getWallet");
 		cy.get("p").contains("John Doe").click();
 	});
 
@@ -23,7 +23,7 @@ describe("NavBar Routing", () => {
 
 	it("should navigate to transaction send page", () => {
 		cy.get("[data-testid=navbar__buttons--send]").click();
-		cy.get("p").contains("Enter details to send your money");
+		cy.get("div").contains("Enter details to send your money");
 	});
 
 	it("should navigate to portfolio", () => {

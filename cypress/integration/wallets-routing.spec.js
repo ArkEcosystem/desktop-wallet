@@ -15,12 +15,12 @@ describe("Wallets Routing", () => {
 
 	it("it should navigate to create page", () => {
 		cy.get("button").contains("Create").click();
-		cy.get("div").contains("Select a cryptoasset to create your new wallet address");
+		cy.get("div").contains("Select a Network to create your new wallet address");
 		cy.get("a").contains("Go back to Portfolio").click();
 	});
 
 	it("should navigate to import page", () => {
 		cy.get("button").contains("Import").click();
-		cy.get("div").contains("Select a cryptoasset to import your existing wallet address");
+		cy.get("div").contains("Select a Network to import your existing wallet address");
 	});
 });

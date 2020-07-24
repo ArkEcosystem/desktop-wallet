@@ -11,6 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const CreateProfile = () => {
@@ -19,12 +20,14 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { register } = form;
 
+	const { t } = useTranslation();
+
 	const personalDetails = [
 		{
 			isFloatingLabel: true,
-			label: "New Profile",
+			label: t("SETTINGS.GENERAL.PERSONAL.TITLE"),
 			labelClass: "text-xl font-semibold",
-			labelDescription: "Select Profile Image",
+			labelDescription: t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE"),
 			labelDescriptionClass: "mt-1 font-medium text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row mt-2 mb-8">
@@ -54,12 +57,12 @@ export const CreateProfile = () => {
 	const otherItems = [
 		{
 			isFloatingLabel: true,
-			label: "Dark Theme",
+			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
 					<span className="mt-1 text-sm font-medium text-theme-neutral">
-						Want to set the wallet to dark mode?
+						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
 					</span>
 					<div className="-mt-4">
 						<Toggle ref={register()} name="isDarkMode" />
@@ -83,16 +86,14 @@ export const CreateProfile = () => {
 	return (
 		<Page navbarStyle="logo-only">
 			<Section className="flex flex-col justify-center flex-1">
-				<div className="max-w-md mx-auto">
-					<h1 className="mb-0 md:text-4xl">Create Profile</h1>
-					<div className="text-theme-neutral-dark">
-						Create a new Profile or login with your MarketSquare account to get started.
-					</div>
+				<div className="max-w-lg mx-auto">
+					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
+					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<div className="pb-4 mt-8">
 						<Button className="w-full">
 							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">Login with MarketSquare</span>
+							<span className="ml-2">{t("PROFILE.LOGIN")}</span>
 						</Button>
 					</div>
 
@@ -104,16 +105,28 @@ export const CreateProfile = () => {
 
 							<div className="relative space-y-8">
 								<FormField name="name">
-									<FormLabel label="Name" />
-									<Input ref={register({ required: "Name is required" })} />
+									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+									<Input
+										ref={register({
+											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+												field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+											}).toString(),
+										})}
+									/>
 									<FormHelperText />
 								</FormField>
 
 								<FormField name="marketProvider">
-									<FormLabel label="Market Provider" />
+									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER")} />
 									<Select
-										placeholder="Select Market Provider"
-										ref={register({ required: "Market Provider is required" })}
+										placeholder={t("COMMON.SELECT_OPTION", {
+											option: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
+										})}
+										ref={register({
+											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+												field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
+											}).toString(),
+										})}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },
@@ -123,10 +136,16 @@ export const CreateProfile = () => {
 								</FormField>
 
 								<FormField name="currency">
-									<FormLabel label="Currency" />
+									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 									<Select
-										placeholder="Select Currency"
-										ref={register({ required: "Currency is required" })}
+										placeholder={t("COMMON.SELECT_OPTION", {
+											option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+										})}
+										ref={register({
+											required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+												field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+											}).toString(),
+										})}
 										options={[
 											{ label: "Option 1", value: "option1" },
 											{ label: "Option 2", value: "option2" },
@@ -145,10 +164,10 @@ export const CreateProfile = () => {
 
 						<div className="flex justify-end mt-8 space-x-3">
 							<Button variant="plain" onClick={() => history.go(-1)}>
-								Back
+								{t("COMMON.BACK")}
 							</Button>
 							<Button data-testid="CreateProfile__submit-button" type="submit">
-								Complete
+								{t("COMMON.COMPLETE")}
 							</Button>
 						</div>
 					</Form>

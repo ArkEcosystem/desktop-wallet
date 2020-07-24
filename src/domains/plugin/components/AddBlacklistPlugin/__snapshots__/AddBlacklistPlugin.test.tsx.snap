@@ -99,7 +99,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
           class="mt-8 -mb-6"
         >
           <div
-            class="sc-fzpans isbmKM"
+            class="sc-fzpans dvOscU"
             role="table"
           >
             <table
@@ -192,7 +192,7 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top undefined"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Rating
@@ -248,84 +248,6 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                     <div
                       class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
                     >
-                      Animal Avatars
-                    </div>
-                    <div
-                      class="inline-flex items-center space-x-2"
-                    >
-                      <span
-                        class="text-theme-neutral-dark"
-                      >
-                        Breno Polanski
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="py-10 text-center text-theme-neutral-dark"
-                  >
-                    Utility
-                  </td>
-                  <td
-                    class="py-10 text-theme-neutral-dark"
-                  >
-                    <div
-                      class="flex"
-                      data-testid="ReviewRating"
-                    >
-                      <div
-                        class="relative my-auto"
-                      >
-                        <div
-                          class="absolute overflow-hidden"
-                          style="width: 89.99999999999999%;"
-                        >
-                          <svg
-                            class="text-theme-warning-400 w-3"
-                          >
-                            star.svg
-                          </svg>
-                        </div>
-                        <svg
-                          class="text-theme-neutral w-3"
-                        >
-                          star.svg
-                        </svg>
-                      </div>
-                      <span
-                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                      >
-                        4.6
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="w-16"
-                  >
-                    <button
-                      class="sc-AxjAm ddJBbC"
-                      color="primary"
-                      type="button"
-                    >
-                      Add
-                    </button>
-                  </td>
-                </tr>
-                <tr
-                  class="border-b border-dashed border-theme-neutral-200"
-                >
-                  <td
-                    class="w-16"
-                  >
-                    <svg
-                      class="w-12 h-12"
-                    >
-                      changenow-logo.svg
-                    </svg>
-                  </td>
-                  <td>
-                    <div
-                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
-                    >
                       ARK Explorer
                     </div>
                     <div
@@ -355,35 +277,203 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   <td
                     class="py-10 text-theme-neutral-dark"
                   >
-                    <div
-                      class="flex"
-                      data-testid="ReviewRating"
+                    <span
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative my-auto"
+                        class="flex"
+                        data-testid="ReviewRating"
                       >
                         <div
-                          class="absolute overflow-hidden"
-                          style="width: 89.99999999999999%;"
+                          class="relative my-auto"
                         >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 89.99999999999999%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
                           <svg
-                            class="text-theme-warning-400 w-3"
+                            class="text-theme-neutral w-3"
                           >
                             star.svg
                           </svg>
                         </div>
-                        <svg
-                          class="text-theme-neutral w-3"
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                         >
-                          star.svg
-                        </svg>
+                          4.6
+                        </span>
                       </div>
+                    </span>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-16"
+                  >
+                    <svg
+                      class="w-12 h-12"
+                    >
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      Animal Avatars
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
                       <span
-                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        class="text-theme-neutral-dark"
                       >
-                        4.6
+                        Breno Polanski
                       </span>
                     </div>
+                  </td>
+                  <td
+                    class="py-10 text-center text-theme-neutral-dark"
+                  >
+                    Utility
+                  </td>
+                  <td
+                    class="py-10 text-theme-neutral-dark"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 89.99999999999999%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
+                          <svg
+                            class="text-theme-neutral w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        >
+                          4.6
+                        </span>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="w-16"
+                  >
+                    <button
+                      class="sc-AxjAm ddJBbC"
+                      color="primary"
+                      type="button"
+                    >
+                      Add
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class="border-b border-dashed border-theme-neutral-200"
+                >
+                  <td
+                    class="w-16"
+                  >
+                    <svg
+                      class="w-12 h-12"
+                    >
+                      changenow-logo.svg
+                    </svg>
+                  </td>
+                  <td>
+                    <div
+                      class="font-semibold text-theme-primary-500 hover:text-theme-primary-400"
+                    >
+                      ChangeNOW Plugin
+                    </div>
+                    <div
+                      class="inline-flex items-center space-x-2"
+                    >
+                      <span
+                        class="text-theme-neutral-dark"
+                      >
+                        ChangeNOW
+                      </span>
+                    </div>
+                  </td>
+                  <td
+                    class="py-10 text-center text-theme-neutral-dark"
+                  >
+                    Other
+                  </td>
+                  <td
+                    class="py-10 text-theme-neutral-dark"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="flex"
+                        data-testid="ReviewRating"
+                      >
+                        <div
+                          class="relative my-auto"
+                        >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 95%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
+                          <svg
+                            class="text-theme-neutral w-3"
+                          >
+                            star.svg
+                          </svg>
+                        </div>
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
+                        >
+                          4.8
+                        </span>
+                      </div>
+                    </span>
                   </td>
                   <td
                     class="w-16"
@@ -442,35 +532,39 @@ exports[`AddBlacklistPlugin should render a modal 1`] = `
                   <td
                     class="py-10 text-theme-neutral-dark"
                   >
-                    <div
-                      class="flex"
-                      data-testid="ReviewRating"
+                    <span
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative my-auto"
+                        class="flex"
+                        data-testid="ReviewRating"
                       >
                         <div
-                          class="absolute overflow-hidden"
-                          style="width: 97.50000000000001%;"
+                          class="relative my-auto"
                         >
+                          <div
+                            class="absolute overflow-hidden"
+                            style="width: 97.50000000000001%;"
+                          >
+                            <svg
+                              class="text-theme-warning-400 w-3"
+                            >
+                              star.svg
+                            </svg>
+                          </div>
                           <svg
-                            class="text-theme-warning-400 w-3"
+                            class="text-theme-neutral w-3"
                           >
                             star.svg
                           </svg>
                         </div>
-                        <svg
-                          class="text-theme-neutral w-3"
+                        <span
+                          class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
                         >
-                          star.svg
-                        </svg>
+                          4.9
+                        </span>
                       </div>
-                      <span
-                        class="leading-tight my-auto ml-1 {{ $ratingClass ?? '' }}"
-                      >
-                        4.9
-                      </span>
-                    </div>
+                    </span>
                   </td>
                   <td
                     class="w-16"

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contacts should render 1`] = `
+exports[`Contacts should render empty 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -537,9 +537,10 @@ exports[`Contacts should render with contacts 1`] = `
         >
           <div
             class="w-full"
+            data-testid="ContactList"
           >
             <div
-              class="sc-fznZeY dcDttg"
+              class="sc-fznZeY gcZndM"
               role="table"
             >
               <table
@@ -561,7 +562,7 @@ exports[`Contacts should render with contacts 1`] = `
                         class="flex flex-inline align-top pl-13"
                       >
                         <div>
-                          Nickname
+                          Name
                         </div>
                         <div
                           class="flex items-center ml-2 text-theme-color-neutral"

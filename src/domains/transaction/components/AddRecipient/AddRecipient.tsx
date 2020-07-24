@@ -8,17 +8,22 @@ import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLabel, onChange }: ToggleButtonProps) => {
+const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
+	const { t } = useTranslation();
+
 	return (
 		<div className="text-theme-neutral-dark hover:text-theme-primary">
 			<div className="flex items-center mb-2 space-x-2">
-				<div className="font-normal text-md transition-colors duration-100">{labelText}</div>
+				<div className="font-normal text-md transition-colors duration-100">
+					{t("TRANSACTION.SINGLE_OR_MULTI")}
+				</div>
 				<div>
-					<Tippy content={helpText}>
+					<Tippy content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
 						<div className="rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-500">
 							<Icon name="QuestionMark" width={20} height={20} />
 						</div>
@@ -33,7 +38,7 @@ const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLab
 					data-testid="add-recipient-is-single-toggle"
 					onClick={() => onChange?.(true)}
 				>
-					{singleLabel}
+					{t("TRANSACTION.SINGLE")}
 				</Button>
 				<Button
 					variant={!isSingle ? "solid" : "plain"}
@@ -41,7 +46,7 @@ const ToggleButtons = ({ helpText, labelText, isSingle, singleLabel, multipleLab
 					data-testid="add-recipient-is-multiple-toggle"
 					onClick={() => onChange?.(false)}
 				>
-					{multipleLabel}
+					{t("TRANSACTION.MULTIPLE")}
 				</Button>
 			</div>
 		</div>
@@ -53,16 +58,14 @@ export const AddRecipient = ({
 	availableAmount,
 	assetSymbol,
 	isSingleRecipient,
-	singleLabel,
-	multipleLabel,
 	contacts,
 	recipients,
 	onChange,
-	labelText,
-	helpText,
 }: AddRecipientProps) => {
 	const [addedRecipients, setAddressRecipients] = useState(recipients as RecipientListItem[]);
 	const [isSingle, setIsSingle] = useState(isSingleRecipient);
+
+	const { t } = useTranslation();
 
 	const form = useForm({
 		defaultValues: { amount: availableAmount, recipientAddress: null, isSingle: isSingleRecipient },
@@ -93,14 +96,7 @@ export const AddRecipient = ({
 
 	return (
 		<AddRecipientWrapper>
-			<ToggleButtons
-				isSingle={isSingle}
-				labelText={labelText}
-				helpText={helpText}
-				singleLabel={singleLabel}
-				multipleLabel={multipleLabel}
-				onChange={(isSingle) => setIsSingle(isSingle)}
-			/>
+			<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
 
 			<div
 				data-testid="add-recipient__form-wrapper"
@@ -109,7 +105,13 @@ export const AddRecipient = ({
 				<div className="space-y-8">
 					<FormField name="recipientAddress" className="relative mt-1">
 						<div className="mb-2">
-							<FormLabel label={isSingle ? "Recipient" : `Recipient #${addedRecipients.length + 1}`} />
+							<FormLabel
+								label={
+									isSingle
+										? t("COMMON.RECIPIENT")
+										: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
+								}
+							/>
 						</div>
 
 						<SelectRecipient
@@ -122,14 +124,14 @@ export const AddRecipient = ({
 
 					<FormField name="amount" className="relative mt-1">
 						<div className="mb-2">
-							<FormLabel label="Amount ARK" />
+							<FormLabel label={t("COMMON.AMOUNT")} />
 						</div>
 						<InputGroup>
 							<Input
 								data-testid="add-recipient__amount-input"
 								type="number"
 								name="amount"
-								placeholder="Amount"
+								placeholder={t("COMMON.AMOUNT")}
 								className="pr-20"
 								ref={register}
 							/>
@@ -139,7 +141,7 @@ export const AddRecipient = ({
 									onClick={() => setValue("amount", maxAvailableAmount)}
 									className="h-12 pl-6 pr-3 mr-1 bg-white text-theme-primary focus:outline-none"
 								>
-									Send All
+									{t("TRANSACTION.SEND_ALL")}
 								</button>
 							</InputAddonEnd>
 						</InputGroup>
@@ -153,7 +155,7 @@ export const AddRecipient = ({
 						className="w-full mt-4"
 						onClick={() => onAddRecipient(recipientAddress as any, amount)}
 					>
-						Add Recipient
+						{t("TRANSACTION.ADD_RECIPIENT")}
 					</Button>
 				)}
 			</div>
@@ -177,9 +179,5 @@ AddRecipient.defaultProps = {
 	assetSymbol: "ARK",
 	availableAmount: null,
 	isSingleRecipient: true,
-	singleLabel: "Single",
-	multipleLabel: "Multiple",
 	recipients: [],
-	labelText: "Select a Single or Multiple Recipient Transaction",
-	helpText: "A multiple recipient transaction allows up to 64 recipients in one transaction",
 };

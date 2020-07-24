@@ -9,7 +9,7 @@ describe("Setting Routing", () => {
 	it("should error without required fields", () => {
 		cy.get("button").contains("Save").click();
 
-		cy.get("fieldset p").contains("Profile Name is required");
+		cy.get("fieldset p").contains("Name is required");
 		cy.get("fieldset p").contains("Passphrase Language is required");
 		cy.get("fieldset p").contains("Currency is required");
 		cy.get("fieldset p").contains("Language is required");

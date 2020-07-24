@@ -3,6 +3,7 @@ import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Toggle } from "app/components/Toggle";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export type FilterWalletsProps = {
 	networks?: any;
@@ -28,6 +29,8 @@ export const FilterWallets = ({
 	const [showPortfolio, setShowPortfolio] = useState(visiblePortfolioView);
 	const [showTransactions, setShowTransactions] = useState(visibleTransactionsView);
 
+	const { t } = useTranslation();
+
 	const toggleTransactions = (isChecked: boolean) => {
 		setShowTransactions(isChecked);
 		if (typeof toggleTransactionsView === "function") toggleTransactionsView(isChecked);
@@ -45,8 +48,12 @@ export const FilterWallets = ({
 	return (
 		<div className="flex flex-col text-left">
 			<div className="mb-8">
-				<div className="font-semibold text-theme-neutral-dark">Filter Network</div>
-				<div className="mt-1 text-sm text-theme-neutral">Select the types of networks</div>
+				<div className="font-semibold text-theme-neutral-dark">
+					{t("DASHBOARD.FILTER_WALLETS.NETWORK.TITLE")}
+				</div>
+				<div className="mt-1 text-sm text-theme-neutral">
+					{t("DASHBOARD.FILTER_WALLETS.NETWORK.DESCRIPTION")}
+				</div>
 			</div>
 
 			<FilterNetwork networks={networks} onChange={onNetworkChange} onViewAll={onViewAllNetworks} />
@@ -55,7 +62,9 @@ export const FilterWallets = ({
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">Your Wallets</div>
+					<div className="font-semibold text-theme-neutral-dark">
+						{t("DASHBOARD.FILTER_WALLETS.WALLETS.TITLE")}
+					</div>
 
 					<Dropdown
 						toggleIcon="ChevronDown"
@@ -69,21 +78,25 @@ export const FilterWallets = ({
 								data-testid="filter-wallets__wallets"
 								className="flex items-center justify-end cursor-pointer text-theme-neutral-dark"
 							>
-								<span className="inline-block mr-2 font-semibold">All</span>
+								<span className="inline-block mr-2 font-semibold">{t("COMMON.ALL")}</span>
 								<Icon name="ChevronDown" width={12} height={12} />
 							</div>
 						}
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral">Select the display of your wallets</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("DASHBOARD.FILTER_WALLETS.WALLETS.DESCRIPTION")}
+				</div>
 			</div>
 
 			<div className="my-8 border-t border-dotted border-1 border-theme-neutral-200" />
 
 			<div className="flex flex-col mb-6">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">Portfolio Chart</div>
+					<div className="font-semibold text-theme-neutral-dark">
+						{t("DASHBOARD.FILTER_WALLETS.CHART.TITLE")}
+					</div>
 
 					<Toggle
 						checked={showPortfolio}
@@ -92,12 +105,16 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("DASHBOARD.FILTER_WALLETS.CHART.DESCRIPTION")}
+				</div>
 			</div>
 
 			<div className="flex flex-col">
 				<div className="flex items-center justify-between">
-					<div className="font-semibold text-theme-neutral-dark">Transaction History</div>
+					<div className="font-semibold text-theme-neutral-dark">
+						{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.TITLE")}
+					</div>
 
 					<Toggle
 						checked={showTransactions}
@@ -106,7 +123,9 @@ export const FilterWallets = ({
 					/>
 				</div>
 
-				<div className="pr-12 mt-1 text-sm text-theme-neutral">You can hide this unit if you like</div>
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("DASHBOARD.FILTER_WALLETS.TRANSACTION_HISTORY.DESCRIPTION")}
+				</div>
 			</div>
 		</div>
 	);

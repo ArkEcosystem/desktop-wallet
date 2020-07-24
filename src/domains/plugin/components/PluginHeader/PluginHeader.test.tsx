@@ -1,3 +1,4 @@
+import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { render } from "testing-library";
 
@@ -40,7 +41,7 @@ describe("PluginHeader", () => {
 		);
 
 		expect(getByRole("img")).toBeTruthy();
-		expect(getByTestId("PluginHeader__button--open")).toHaveTextContent("Open");
+		expect(getByTestId("PluginHeader__button--open")).toHaveTextContent(translations.OPEN);
 		expect(getByTestId("PluginHeader__button--update")).toBeTruthy();
 		expect(getByTestId("PluginHeader__button--uninstall")).toBeTruthy();
 

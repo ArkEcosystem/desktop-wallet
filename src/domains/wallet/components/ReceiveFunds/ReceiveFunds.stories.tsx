@@ -27,7 +27,6 @@ export const Default = () => {
 			}}
 			qrCode={qrCode}
 			isOpen={boolean("isOpen", true)}
-			onCopy={action("onCopy")}
 			handleClose={action("handleClose")}
 		/>
 	);
@@ -39,7 +38,6 @@ export const WithoutName = () => {
 			wallet={wallet}
 			qrCode={qrCode}
 			isOpen={boolean("isOpen", true)}
-			onCopy={action("onCopy")}
 			handleClose={action("handleClose")}
 		/>
 	);

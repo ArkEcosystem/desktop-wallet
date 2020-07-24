@@ -4,11 +4,7 @@ import React from "react";
 
 export type State = Record<string, unknown>;
 
-type Action =
-	| { type: "init"; state: State }
-	| { type: "set"; key: string; value: unknown }
-	| { type: "forget"; key: string }
-	| { type: "flush" };
+type Action = { type: "init"; state: State } | { type: "set"; key: string; value: unknown };
 
 const reducer = (state: State, action: Action) => {
 	switch (action.type) {
@@ -21,14 +17,24 @@ const reducer = (state: State, action: Action) => {
 	}
 };
 
-export const useStore = (storage: Storage): [Storage, State] => {
+export const useStore = (storage: Storage): [Storage, State, boolean] => {
 	const [state, dispatch] = React.useReducer(reducer, {});
+	const [initialized, setInitialized] = React.useState(false);
 
-	const all = async () => state;
+	React.useEffect(() => {
+		const load = async () => {
+			const data = await storage.all();
+			dispatch({ type: "init", state: data });
+			setInitialized(true);
+		};
+		load();
+	}, [storage]);
 
-	const get = async <T>(key: string) => state[key] as T | undefined;
+	const all = async () => await storage.all();
 
-	const count = async () => Object.keys(state).length;
+	const get = async <T>(key: string) => await storage.get<T>(key);
+
+	const count = async () => await storage.count();
 
 	const flush = async () => {
 		await storage.flush();
@@ -49,5 +55,5 @@ export const useStore = (storage: Storage): [Storage, State] => {
 
 	const restore = () => storage.restore();
 
-	return [{ all, get, count, set, flush, forget, snapshot, restore }, state];
+	return [{ all, get, count, set, flush, forget, snapshot, restore }, state, initialized];
 };

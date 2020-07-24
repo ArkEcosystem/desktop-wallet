@@ -2,12 +2,17 @@ import nock from "nock";
 import React from "react";
 import { renderWithRouter, screen, waitFor } from "utils/testing-library";
 
+import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 beforeAll(() => {
 	nock.disableNetConnect();
 
-	nock(/.+/)
+	nock("https://dwallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
+		.get("/api/peers")
+		.reply(200, require("../tests/fixtures/coins/ark/peers.json"))
 		.get("/api/node/configuration/crypto")
 		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
@@ -23,7 +28,7 @@ describe("App", () => {
 
 		await waitFor(async () => {
 			await expect(
-				screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
+				screen.findByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION),
 			).resolves.toBeInTheDocument();
 		});
 

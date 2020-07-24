@@ -14,18 +14,18 @@ import { httpClient } from "./services";
 const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
-	const { env } = useEnvironmentContext();
+	const { env, initialized } = useEnvironmentContext();
 
 	React.useEffect(() => {
 		const boot = async () => {
-			await env?.bootFromObject(fixtureData);
-			await env?.persist();
+			await env.bootFromObject(fixtureData);
+			await env.persist();
 		};
 
-		if (process.env.REACT_APP_BUILD_MODE === "demo") {
+		if (process.env.REACT_APP_BUILD_MODE === "demo" && initialized) {
 			boot();
 		}
-	}, [env]);
+	}, [env, initialized]);
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -38,17 +38,17 @@ const Main = () => {
 };
 
 export const App = () => {
-	/* istanbul ignore next */
-	const [storage, state] = useStore(new StubStorage());
-
 	/**
 	 * Ensure that the object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
 	 */
+
+	const [db] = React.useState(() => new StubStorage());
+	const [storage, state, initialized] = useStore(db);
 	const [env] = React.useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
 
 	return (
 		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env} state={state}>
+			<EnvironmentProvider env={env} state={state} initialized={initialized}>
 				<Main />
 			</EnvironmentProvider>
 		</I18nextProvider>

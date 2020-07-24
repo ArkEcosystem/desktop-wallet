@@ -24,7 +24,7 @@ export const Welcome = () => {
 	return (
 		<Page navbarStyle="logo-only">
 			<Section className="flex flex-col justify-center flex-1 text-center">
-				<h1 className="mb-8">{t("COMMON.WELCOME")}</h1>
+				<h1 className="mb-8">{t("PROFILE.PAGE_WELCOME.TITLE")}</h1>
 				<div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
 					<WelcomeBanner />
 				</div>
@@ -32,9 +32,11 @@ export const Welcome = () => {
 				<div className="max-w-lg mx-auto mt-8 md:max-w-xl">
 					{profiles.length > 0 && (
 						<>
-							<h2 className="mx-4 text-xl font-bold md:text-2xl">Select Profile</h2>
+							<h2 className="mx-4 text-xl font-bold md:text-2xl">
+								{t("COMMON.SELECT_OPTION", { option: t("COMMON.PROFILE") })}
+							</h2>
 							<p className="text-sm text-theme-neutral-dark md:text-base">
-								You already have a profile, you can choose any of them
+								{t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
 							</p>
 
 							<div className="mt-6 mb-8 space-y-3">
@@ -52,19 +54,19 @@ export const Welcome = () => {
 						</>
 					)}
 					<p className="mb-4 text-sm text-theme-neutral-dark md:text-base">
-						Create a new Profile or login with your MarketSquare account to get started
+						{t("PROFILE.PAGE_WELCOME.DESCRIPTION")}
 					</p>
 					<div className="flex flex-col md:space-x-3 md:flex-row">
 						<Button className="w-full">
 							<Icon name="Msq" width={20} height={20} />
-							<span className="ml-2">Sign in to MarketSquare</span>
+							<span className="ml-2">{t("PROFILE.LOGIN")}</span>
 						</Button>
 						<Button
 							variant="plain"
 							className="w-full mt-2 md:mt-0"
 							onClick={() => history.push("/profiles/create")}
 						>
-							Create Profile
+							{t("PROFILE.CREATE_PROFILE")}
 						</Button>
 					</div>
 				</div>

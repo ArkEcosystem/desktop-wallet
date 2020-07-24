@@ -14,16 +14,3 @@ export const useActiveProfile = () => {
 		}
 	}, [context, profileId]);
 };
-
-export const useAvailableNetworks = () => {
-	const context = useEnvironmentContext();
-
-	return useMemo(() => {
-		return context.env.availableNetworks().map((network) => ({
-			icon: `${network.coin().charAt(0).toUpperCase()}${network.coin().slice(1).toLowerCase()}`,
-			coin: network.coin(),
-			name: `${network.ticker()} - ${network.name()}`,
-			network: network.id(),
-		}));
-	}, [context]);
-};
