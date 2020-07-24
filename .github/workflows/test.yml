@@ -81,19 +81,13 @@ jobs:
               run: sudo apt-get install libudev-dev libusb-1.0-0-dev
 
             - name: Install (Yarn)
-              run: yarn install --frozen-lockfile
+              run: yarn install --ignore-engines --frozen-lockfile
 
-            - name: Install (Cypress)
-              run: yarn cy:install
+            - name: Start
+              run: REACT_APP_BUILD_MODE=demo BROWSER=none yarn start &
+
+            - name: Wait for App
+              run: yarn wait-on http://localhost:3000
 
             - name: Test
-              run: |
-                  echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-                  yarn test:e2e:ci
-
-            - name: Upload Screenshots
-              uses: actions/upload-artifact@v1
-              if: failure()
-              with:
-                  name: cypress-screenshots
-                  path: __tests__/e2e/screenshots
+              run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e
