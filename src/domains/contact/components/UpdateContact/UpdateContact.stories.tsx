@@ -16,7 +16,7 @@ export const Default = () => {
 			onClose={() => alert("closed")}
 			onCancel={() => alert("cancelled")}
 			onDelete={() => alert("deleted")}
-			onSave={() => alert("saved")}
+			onSave={console.log}
 		/>
 	);
 };
