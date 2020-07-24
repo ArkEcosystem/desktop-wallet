@@ -1,7 +1,9 @@
-import "swiper/css/swiper.min.css";
+import "swiper/swiper-bundle.css";
 
 import React, { useEffect } from "react";
-import Swiper from "swiper";
+import Swiper, { Pagination } from "swiper";
+
+Swiper.use([Pagination]);
 
 type SliderProps = {
 	children?: any;
