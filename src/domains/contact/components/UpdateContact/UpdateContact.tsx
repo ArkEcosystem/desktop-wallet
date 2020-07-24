@@ -29,29 +29,15 @@ export const UpdateContact = ({
 	const { t } = useTranslation();
 	const env = useEnvironment();
 
-	const handleSave = async ({ name, contactAddresses }: any) => {
-		if (!name) return;
-
-		const addresses = contactAddresses.map(({ coin, network, address }: any) => {
-			return {
-				coin,
-				network,
-				address,
-			};
-		});
+	const handleSave = async ({ name }: any) => {
 		const profile = env?.profiles().findById(profileId);
-		profile?.contacts().update(contact.id, {
-			name,
-			addresses,
-		});
+		profile?.contacts().update(contact.id, { name });
 		await env?.persist();
-		onSave?.();
+		onSave?.(contact.id);
 	};
 
 	const handleDelete = async () => {
 		const contactId = contact?.id?.();
-		if (!contactId) return;
-
 		const profile = env?.profiles().findById(profileId);
 		profile?.contacts().forget(contactId);
 		await env?.persist();

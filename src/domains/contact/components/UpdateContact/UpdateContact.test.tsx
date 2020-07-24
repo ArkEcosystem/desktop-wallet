@@ -3,24 +3,24 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
+import { availableNetworksMock } from "domains/network/data";
 import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
 import { profiles } from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
 
-import { contact2 as contactObject } from "../../data";
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
 let env: Environment;
 let contact: Contact;
 let profile: Profile;
-let contactToEdit: any;
-
-let networks: any;
-
-const onSave = jest.fn();
+const contactToEdit = {
+	name: () => "Test",
+	id: "",
+	addresses: () => [],
+};
 
 describe("UpdateContact", () => {
 	beforeAll(() => {
@@ -38,24 +38,6 @@ describe("UpdateContact", () => {
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
 			.persist();
-
-		networks = [
-			{
-				icon: "Ark",
-				name: "Ark Ecosystem",
-				className: "text-theme-danger-400 border-theme-danger-light",
-			},
-			{
-				icon: "Bitcoin",
-				name: "Bitcoin",
-				className: "text-theme-warning-400 border-theme-warning-200",
-			},
-			{
-				icon: "Ethereum",
-				name: "Ethereum",
-				className: "text-theme-neutral-800 border-theme-neutral-600",
-			},
-		];
 	});
 
 	beforeEach(async () => {
@@ -65,23 +47,18 @@ describe("UpdateContact", () => {
 		profile = env.profiles().findById("bob");
 
 		contact = profile.contacts().create("Test name");
-		profile.contacts().update(contact.id(), {
-			addresses: [{ coin: "ARK", network: "testnet", address: "TESTNET-ADDRESS" }],
-		});
-
-		contactToEdit = contactObject;
 		contactToEdit.id = contact.id();
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(<UpdateContact isOpen={false} onSave={onSave} />);
+		const { asFragment, getByTestId } = render(<UpdateContact isOpen={false} networks={availableNetworksMock} />);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(<UpdateContact isOpen={true} onSave={onSave} />);
+		const { asFragment, getByTestId } = render(<UpdateContact isOpen={true} />);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_UPDATE_CONTACT.TITLE);
 		expect(asFragment()).toMatchSnapshot();
@@ -90,7 +67,7 @@ describe("UpdateContact", () => {
 	it("should display contact info in form", () => {
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onSave={onSave} profileId={profile.id()} contact={contact} />
+				<UpdateContact isOpen={true} profileId={profile.id()} contact={contact} />
 			</EnvironmentProvider>,
 		);
 
@@ -139,7 +116,7 @@ describe("UpdateContact", () => {
 		});
 	});
 
-	it("should update contact name and addresses", async () => {
+	it("should update contact name", async () => {
 		const fn = jest.fn();
 		const { getByTestId, queryByTestId } = render(
 			<EnvironmentProvider env={env}>
@@ -148,7 +125,7 @@ describe("UpdateContact", () => {
 					onSave={fn}
 					profileId={profile.id()}
 					contact={contactToEdit}
-					networks={networks}
+					networks={availableNetworksMock}
 				/>
 			</EnvironmentProvider>,
 		);
@@ -162,7 +139,7 @@ describe("UpdateContact", () => {
 
 		expect(nameInput).toHaveValue("Updated name");
 		const saveButton = getByTestId("contact-form__save-btn");
-		const assetInput = getByTestId("select-asset__input");
+		const assetInput = getByTestId("SelectNetworkInput__input");
 
 		// Add network
 		await act(async () => {
@@ -170,18 +147,14 @@ describe("UpdateContact", () => {
 				target: { value: "address" },
 			});
 
-			fireEvent.change(assetInput, { target: { value: "ARK" } });
+			fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
 			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
 		});
 
 		await waitFor(() => {
 			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
-
-		const addressInput = getByTestId("contact-form__address-input");
-
 		await act(async () => {
-			fireEvent.change(addressInput, { target: { value: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" } });
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
 
@@ -193,6 +166,9 @@ describe("UpdateContact", () => {
 
 		await waitFor(() => {
 			expect(fn).toBeCalled();
+
+			const savedContact = profile.contacts().findById(contactToEdit.id);
+			expect(savedContact.name()).toEqual("Updated name");
 		});
 	});
 });
