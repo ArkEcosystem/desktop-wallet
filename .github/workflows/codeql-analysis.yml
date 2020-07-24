@@ -35,7 +35,7 @@ jobs:
               run: yarn install --frozen-lockfile
 
             - name: Build
-              run: yarn build
+              run: yarn build:ci
 
             - name: Perform CodeQL Analysis
               uses: github/codeql-action/analyze@v1

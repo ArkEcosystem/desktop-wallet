@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
+import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
@@ -16,7 +17,7 @@ describe("SendIPFSTransaction", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep />
+				<FirstStep networks={availableNetworksMock} />
 			</FormContext>,
 		);
 

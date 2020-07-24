@@ -5,7 +5,7 @@ import { FilterNetwork } from "app/components/FilterNetwork";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -35,7 +35,11 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 			<Form context={form} onSubmit={onUpdate}>
 				<FormField name="network" className="mt-8">
 					<FormLabel>{t("COMMON.CRYPTOASSET")}</FormLabel>
-					<SelectNetwork networks={[]} placeholder={t("NEWS.ADD_ASSETS.PLACEHOLDER")} />
+					<SelectNetwork
+						id="AddAssets__network"
+						networks={[]}
+						placeholder={t("NEWS.ADD_ASSETS.PLACEHOLDER")}
+					/>
 					<FormHelperText />
 				</FormField>
 

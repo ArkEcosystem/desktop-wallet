@@ -22,7 +22,7 @@ const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) =
 	);
 };
 
-const customRender = (component: React.ReactElement, options: any) =>
+const customRender = (component: React.ReactElement, options: any = {}) =>
 	render(component, { wrapper: WithProviders, ...options });
 
 const renderWithRouter = (

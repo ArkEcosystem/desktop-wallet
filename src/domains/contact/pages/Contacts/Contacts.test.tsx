@@ -3,6 +3,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
+import { availableNetworksMock } from "domains/network/data";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,13 +11,14 @@ import { act, fireEvent, renderWithRouter, waitFor, within } from "testing-libra
 import { profiles } from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
 
-import { contacts, networks } from "../../data";
+import { contacts } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
 let env: Environment;
 let profile: Profile;
 let firstContactId: string;
+const networks = availableNetworksMock;
 
 describe("Contacts", () => {
 	beforeAll(() => {
@@ -90,7 +92,7 @@ describe("Contacts", () => {
 			expect(getByTestId("contact-form__save-btn")).toBeDisabled();
 			expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
-			const assetInput = getByTestId("select-asset__input");
+			const assetInput = getByTestId("SelectNetworkInput__input");
 
 			expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
@@ -177,12 +179,12 @@ describe("Contacts", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
 		waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeFalsy();
+			expect(() => getByTestId("modal__inner")).toBeFalsy();
 		});
 	});
 

@@ -1,6 +1,7 @@
+import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 
-import { contact2 as contact, networks } from "../../data";
+import { contact2 as contact } from "../../data";
 import { UpdateContact } from "./UpdateContact";
 
 export default {
@@ -11,7 +12,7 @@ export const Default = () => {
 	return (
 		<UpdateContact
 			isOpen={true}
-			networks={networks}
+			networks={availableNetworksMock}
 			contact={contact}
 			onClose={() => alert("closed")}
 			onCancel={() => alert("cancelled")}

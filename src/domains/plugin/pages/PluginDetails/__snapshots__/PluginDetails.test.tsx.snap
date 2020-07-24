@@ -515,7 +515,7 @@ exports[`PluginDetails should render properly 1`] = `
                 >
                   <div
                     class="h-full swiper-wrapper "
-                    style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                    style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                   >
                     <div
                       class="swiper-slide"
@@ -583,11 +583,6 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                   <div
                     class="swiper-pagination"
-                  />
-                  <span
-                    aria-atomic="true"
-                    aria-live="assertive"
-                    class="swiper-notification"
                   />
                 </div>
               </div>
@@ -2046,7 +2041,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                 >
                   <div
                     class="h-full swiper-wrapper "
-                    style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                    style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                   >
                     <div
                       class="swiper-slide"
@@ -2114,11 +2109,6 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                   <div
                     class="swiper-pagination"
-                  />
-                  <span
-                    aria-atomic="true"
-                    aria-live="assertive"
-                    class="swiper-notification"
                   />
                 </div>
               </div>

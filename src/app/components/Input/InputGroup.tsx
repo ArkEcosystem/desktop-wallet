@@ -1,6 +1,6 @@
 import tw, { styled } from "twin.macro";
 
-const InputAddon = styled.div`
+export const InputAddon = styled.div`
 	${tw`absolute inset-y-0 flex items-center justify-center overflow-hidden`};
 `;
 
