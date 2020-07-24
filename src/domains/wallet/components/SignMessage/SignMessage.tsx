@@ -39,16 +39,14 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
 
-		try {
-			signedMessage = await wallet?.message().sign({
-				message,
-				mnemonic,
-			});
-			setIsSigned(true);
-			onSubmit?.(signedMessage);
-		} catch {
-			onSubmit?.(false);
-		}
+		signedMessage = await wallet?.message().sign({
+			message,
+			mnemonic,
+		});
+
+		setIsSigned(true);
+
+		onSubmit?.(signedMessage);
 	};
 
 	const SignFormRender = (

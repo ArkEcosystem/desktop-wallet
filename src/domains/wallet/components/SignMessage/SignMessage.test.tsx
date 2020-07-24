@@ -60,53 +60,6 @@ describe("SignMessage", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not sign message of the mnemonic is different", async () => {
-		const onSubmit = jest.fn();
-		let rendered: RenderResult;
-
-		await act(async () => {
-			rendered = render(
-				<EnvironmentProvider env={env}>
-					<SignMessage
-						profileId={profile.id()}
-						walletId={wallet.id()}
-						signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-						isOpen={true}
-						onSubmit={onSubmit}
-					/>
-				</EnvironmentProvider>,
-			);
-
-			await waitFor(() =>
-				expect(rendered.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SIGN_MESSAGE.TITLE),
-			);
-		});
-
-		const { getByTestId, asFragment } = rendered;
-
-		expect(asFragment()).toMatchSnapshot();
-
-		await act(async () => {
-			const messageText = "Hello World";
-
-			const messageInput = getByTestId("SignMessage__message-input");
-			expect(messageInput).toBeTruthy();
-
-			await fireEvent.change(messageInput, { target: { value: messageText } });
-
-			const mnemonicInput = getByTestId("SignMessage__mnemonic-input");
-			expect(mnemonicInput).toBeTruthy();
-
-			await fireEvent.change(mnemonicInput, { target: { value: "123" } });
-
-			await fireEvent.click(getByTestId("SignMessage__submit-button"));
-
-			await waitFor(() => {
-				expect(onSubmit).toBeCalledWith(false);
-			});
-		});
-	});
-
 	it("should sign message", async () => {
 		const onSubmit = jest.fn();
 		let rendered: RenderResult;
