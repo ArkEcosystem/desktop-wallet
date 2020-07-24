@@ -21,9 +21,9 @@
 	"homepage": "./",
 	"main": "src/electron/index.js",
 	"scripts": {
-		"dev": "REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"build": "react-app-rewired build",
-		"build:ci": "GENERATE_SOURCEMAP=false yarn build",
+		"build:ci": "crosss-env GENERATE_SOURCEMAP=false yarn build",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
