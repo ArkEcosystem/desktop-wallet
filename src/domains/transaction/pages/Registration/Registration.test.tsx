@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 
+import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -19,23 +20,7 @@ describe("Registration", () => {
 		history.push(registrationURL);
 
 		defaultFormValues = {
-			networks: [
-				{
-					icon: "Ark",
-					name: "Ark Ecosystem",
-					className: "text-theme-danger-400 border-theme-danger-light",
-				},
-				{
-					icon: "Bitcoin",
-					name: "Bitcoin",
-					className: "text-theme-warning-400 border-theme-warning-200",
-				},
-				{
-					icon: "Ethereum",
-					name: "Ethereum",
-					className: "text-theme-neutral-800 border-theme-neutral-600",
-				},
-			],
+			networks: availableNetworksMock,
 			registrationTypes: [
 				{
 					value: "business",

@@ -1,9 +1,10 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -12,7 +13,7 @@ type CustomPeersProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onAddPeer?: any;
-	networks?: any[];
+	networks?: NetworkData[];
 };
 
 export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeersProps) => {
@@ -24,7 +25,7 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 			<Form context={form} onSubmit={onAddPeer}>
 				<FormField name="network" className="mt-8">
 					<FormLabel>{t("SETTINGS.PEERS.NETWORK")}</FormLabel>
-					<SelectNetwork networks={networks} name="network" value="ARK" />
+					<SelectNetwork id="CustomPeers__network" networks={networks} />
 					<FormHelperText />
 				</FormField>
 
@@ -74,4 +75,5 @@ export const CustomPeers = ({ isOpen, onClose, onAddPeer, networks }: CustomPeer
 
 CustomPeers.defaultProps = {
 	isOpen: false,
+	networks: [],
 };

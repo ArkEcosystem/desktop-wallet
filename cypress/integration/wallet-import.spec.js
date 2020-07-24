@@ -11,7 +11,7 @@ describe("Import Wallet", () => {
 	});
 
 	it("should select a network", () => {
-		cy.get("input").should("have.attr", "placeholder", "Enter a network name").type("DARK{enter}");
+		cy.get("input").should("have.attr", "placeholder", "Enter a network name").type("Ark D{enter}");
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Import Wallet");
 	});

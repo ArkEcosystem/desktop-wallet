@@ -14,7 +14,7 @@ describe("Create Wallet", () => {
 	});
 
 	it("should select a network & go to second step", () => {
-		cy.get("input").should("have.attr", "placeholder", "Enter a network name").type("ARK{enter}");
+		cy.get("input").should("have.attr", "placeholder", "Enter a network name").type("Ark D{enter}");
 		cy.get("button").contains("Continue").click();
 		cy.get("h1").contains("Your Passphrase");
 	});

@@ -315,101 +315,91 @@ exports[`ImportWallet should go to previous step 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-labelledby="downshift-1-label"
-                          class="relative"
+                          aria-owns="ImportWallet__network-menu"
+                          data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="downshift-1-input"
-                            id="downshift-1-label"
+                            for="ImportWallet__network-input"
+                            id="ImportWallet__network-label"
                           />
                           <div
-                            class="relative flex items-center w-full flex-inline"
+                            class="sc-AxheI IkGcK"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                              class="sc-AxhCb sc-AxhUy jFkFxS px-4"
                             >
                               <div
-                                class="px-4 py-2 flex-0 w-14"
-                              >
-                                <div
-                                  class="sc-fznyAO crOapn border-theme-neutral-200"
-                                />
-                              </div>
-                              <div
-                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                              >
-                                <div
-                                  class="relative z-10 w-full"
-                                  data-testid="select-network__typeahead-"
-                                >
-                                  <div
-                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                  />
-                                </div>
-                                <input
-                                  aria-autocomplete="list"
-                                  aria-labelledby="downshift-1-label"
-                                  autocomplete="off"
-                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                  data-testid="select-asset__input"
-                                  id="downshift-1-input"
-                                  name="network"
-                                  placeholder="Enter a network name"
-                                  value=""
-                                />
-                              </div>
+                                class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
                             </div>
-                          </div>
-                          <div
-                            aria-labelledby="downshift-1-label"
-                            class="select-asset__items"
-                            data-testid="select-asset__items"
-                            id="downshift-1-menu"
-                            role="listbox"
-                          >
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-1-item-0"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-1-item-1"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="ImportWallet__network-menu"
+                              aria-labelledby="ImportWallet__network-label"
+                              autocomplete="off"
+                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="ImportWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
+                            />
                           </div>
                         </div>
+                        <ul
+                          aria-labelledby="ImportWallet__network-label"
+                          id="ImportWallet__network-menu"
+                          role="listbox"
+                        >
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="ImportWallet__network-item-0"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark"
+                              class="sc-fznyAO hDlzVD border-theme-danger-light text-theme-danger-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-Axmtr wZFix"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="ImportWallet__network-item-1"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark Devnet"
+                              class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-Axmtr wZFix"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </fieldset>
                     </div>
                   </section>
@@ -752,101 +742,91 @@ exports[`ImportWallet should render 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-labelledby="downshift-3-label"
-                          class="relative"
+                          aria-owns="ImportWallet__network-menu"
+                          data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="downshift-3-input"
-                            id="downshift-3-label"
+                            for="ImportWallet__network-input"
+                            id="ImportWallet__network-label"
                           />
                           <div
-                            class="relative flex items-center w-full flex-inline"
+                            class="sc-AxheI IkGcK"
+                            data-testid="SelectNetworkInput"
                           >
                             <div
-                              class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                              class="sc-AxhCb sc-AxhUy jFkFxS px-4"
                             >
                               <div
-                                class="px-4 py-2 flex-0 w-14"
-                              >
-                                <div
-                                  class="sc-fznyAO crOapn border-theme-neutral-200"
-                                />
-                              </div>
-                              <div
-                                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                              >
-                                <div
-                                  class="relative z-10 w-full"
-                                  data-testid="select-network__typeahead-"
-                                >
-                                  <div
-                                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                  />
-                                </div>
-                                <input
-                                  aria-autocomplete="list"
-                                  aria-labelledby="downshift-3-label"
-                                  autocomplete="off"
-                                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                  data-testid="select-asset__input"
-                                  id="downshift-3-input"
-                                  name="network"
-                                  placeholder="Enter a network name"
-                                  value=""
-                                />
-                              </div>
+                                class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
+                                data-testid="SelectNetworkInput__network"
+                              />
                             </div>
-                          </div>
-                          <div
-                            aria-labelledby="downshift-3-label"
-                            class="select-asset__items"
-                            data-testid="select-asset__items"
-                            id="downshift-3-menu"
-                            role="listbox"
-                          >
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-3-item-0"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                            <div
-                              aria-selected="false"
-                              class="inline-block pt-6 mr-6 cursor-pointer"
-                              id="downshift-3-item-1"
-                              role="option"
-                            >
-                              <div
-                                class="sc-fznyAO jA-dQzA"
-                              >
-                                <div
-                                  class="sc-Axmtr wZFix"
-                                  height="26"
-                                  width="26"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
+                            <input
+                              aria-autocomplete="list"
+                              aria-controls="ImportWallet__network-menu"
+                              aria-labelledby="ImportWallet__network-label"
+                              autocomplete="off"
+                              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                              data-testid="SelectNetworkInput__input"
+                              id="ImportWallet__network-input"
+                              placeholder="Enter a network name"
+                              value=""
+                            />
                           </div>
                         </div>
+                        <ul
+                          aria-labelledby="ImportWallet__network-label"
+                          id="ImportWallet__network-menu"
+                          role="listbox"
+                        >
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="ImportWallet__network-item-0"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark"
+                              class="sc-fznyAO hDlzVD border-theme-danger-light text-theme-danger-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-Axmtr wZFix"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                          <li
+                            aria-selected="false"
+                            class="inline-block pt-6 mr-6 cursor-pointer"
+                            id="ImportWallet__network-item-1"
+                            role="option"
+                          >
+                            <div
+                              aria-label="Ark Devnet"
+                              class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
+                              data-testid="NetworkIcon"
+                            >
+                              <div
+                                class="sc-Axmtr wZFix"
+                                data-testid="NetworkIcon__icon"
+                                height="26"
+                                width="26"
+                              >
+                                <svg>
+                                  ark.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
                       </fieldset>
                     </div>
                   </section>
@@ -923,101 +903,91 @@ exports[`ImportWallet should render 1st step 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          class="relative"
+          aria-owns="ImportWallet__network-menu"
+          data-testid="SelectNetwork"
           role="combobox"
         >
           <label
-            for="downshift-0-input"
-            id="downshift-0-label"
+            for="ImportWallet__network-input"
+            id="ImportWallet__network-label"
           />
           <div
-            class="relative flex items-center w-full flex-inline"
+            class="sc-AxheI IkGcK"
+            data-testid="SelectNetworkInput"
           >
             <div
-              class="sc-fzpjYC cMPAgI flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+              class="sc-AxhCb sc-AxhUy jFkFxS px-4"
             >
               <div
-                class="px-4 py-2 flex-0 w-14"
-              >
-                <div
-                  class="sc-fznyAO crOapn border-theme-neutral-200"
-                />
-              </div>
-              <div
-                class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-              >
-                <div
-                  class="relative z-10 w-full"
-                  data-testid="select-network__typeahead-"
-                >
-                  <div
-                    class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                  />
-                </div>
-                <input
-                  aria-autocomplete="list"
-                  aria-labelledby="downshift-0-label"
-                  autocomplete="off"
-                  class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                  data-testid="select-asset__input"
-                  id="downshift-0-input"
-                  name="network"
-                  placeholder="Enter a network name"
-                  value=""
-                />
-              </div>
+                class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
+                data-testid="SelectNetworkInput__network"
+              />
             </div>
-          </div>
-          <div
-            aria-labelledby="downshift-0-label"
-            class="select-asset__items"
-            data-testid="select-asset__items"
-            id="downshift-0-menu"
-            role="listbox"
-          >
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-0-item-0"
-              role="option"
-            >
-              <div
-                class="sc-fznyAO jA-dQzA"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              aria-selected="false"
-              class="inline-block pt-6 mr-6 cursor-pointer"
-              id="downshift-0-item-1"
-              role="option"
-            >
-              <div
-                class="sc-fznyAO jA-dQzA"
-              >
-                <div
-                  class="sc-Axmtr wZFix"
-                  height="26"
-                  width="26"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="ImportWallet__network-menu"
+              aria-labelledby="ImportWallet__network-label"
+              autocomplete="off"
+              class="sc-AxiKw ffjERP overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+              data-testid="SelectNetworkInput__input"
+              id="ImportWallet__network-input"
+              placeholder="Enter a network name"
+              value=""
+            />
           </div>
         </div>
+        <ul
+          aria-labelledby="ImportWallet__network-label"
+          id="ImportWallet__network-menu"
+          role="listbox"
+        >
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            id="ImportWallet__network-item-0"
+            role="option"
+          >
+            <div
+              aria-label="Ark"
+              class="sc-fznyAO hDlzVD border-theme-danger-light text-theme-danger-400"
+              data-testid="NetworkIcon"
+            >
+              <div
+                class="sc-Axmtr wZFix"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="inline-block pt-6 mr-6 cursor-pointer"
+            id="ImportWallet__network-item-1"
+            role="option"
+          >
+            <div
+              aria-label="Ark Devnet"
+              class="sc-fznyAO hDlzVD border-theme-primary-100 text-theme-primary-400"
+              data-testid="NetworkIcon"
+            >
+              <div
+                class="sc-Axmtr wZFix"
+                data-testid="NetworkIcon__icon"
+                height="26"
+                width="26"
+              >
+                <svg>
+                  ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+        </ul>
       </fieldset>
     </div>
   </section>
@@ -1067,16 +1037,16 @@ exports[`ImportWallet should render 2st step 1`] = `
           class="flex"
         >
           <input
-            class="sc-fznWqX iacyMP"
+            class="sc-fznJRM iRBZpo"
             data-testid="ImportWallet__address-toggle"
             name="isAddressOnly"
             type="checkbox"
           />
           <div
-            class="sc-fzoiQi eGdcKs"
+            class="sc-fznWqX KhVHO"
           >
             <span
-              class="sc-fzqARJ hZWoJI"
+              class="sc-fzoiQi jmuiQa"
             />
           </div>
         </label>

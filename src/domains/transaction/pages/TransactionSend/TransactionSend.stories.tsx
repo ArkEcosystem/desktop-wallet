@@ -1,8 +1,8 @@
 import { contacts } from "domains/contact/data";
+import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
 
-import { networks } from "../../data";
 import { TransactionSend } from "./TransactionSend";
 
 export default { title: "Domains / Transaction / Pages / Transaction Send" };
@@ -14,7 +14,7 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	networks,
+	networks: availableNetworksMock,
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
