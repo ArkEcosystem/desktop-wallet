@@ -39,7 +39,7 @@ const Main = () => {
 
 export const App = () => {
 	/**
-	 * Ensure that the object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
+	 * Ensure that the Environment object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
 	 */
 
 	const [db] = React.useState(() => new StubStorage());

@@ -1,7 +1,8 @@
 describe("Setting Routing", () => {
 	it("should navigate to settings page", () => {
-		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/settings");
+		cy.wait("@getWallet");
 
 		cy.get("h1").contains("Wallet Settings");
 	});

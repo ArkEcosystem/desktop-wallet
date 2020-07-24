@@ -1,7 +1,8 @@
 describe("Transactions routing", () => {
 	it("should navigate to transaction send page", () => {
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/");
-		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
+		cy.wait("@getWallet");
 
 		cy.get("p").contains("John Doe").click();
 		cy.get("[data-testid=navbar__buttons--send]").click();

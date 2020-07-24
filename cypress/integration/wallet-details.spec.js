@@ -1,6 +1,8 @@
 describe("Wallet Details", () => {
 	it("should navigate to dashboard page", () => {
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/profiles/1/dashboard");
+		cy.wait("@getWallet");
 
 		cy.get("div").contains("Wallets");
 	});

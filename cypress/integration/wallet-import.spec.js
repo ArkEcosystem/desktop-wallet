@@ -1,7 +1,8 @@
 describe("Import Wallet", () => {
 	it("should navigate to dashboard page", () => {
-		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard");
+		cy.wait("@getWallet");
 
 		cy.get("div").contains("Wallets");
 	});
@@ -33,6 +34,6 @@ describe("Import Wallet", () => {
 		cy.get("input[name=passphrase]").type("this is a top secret passphrase");
 
 		cy.get("button").contains("Go to Wallet").click();
-		cy.get("button").contains("Send");
+		cy.get("button").contains("Back");
 	});
 });

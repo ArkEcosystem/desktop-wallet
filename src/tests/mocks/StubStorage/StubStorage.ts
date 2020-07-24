@@ -2,7 +2,7 @@
 import { Storage } from "@arkecosystem/platform-sdk-profiles";
 
 export class StubStorage implements Storage {
-	storage: Record<string, unknown> = {};
+	storage: Record<string, unknown>;
 
 	public constructor(data?: any) {
 		this.storage = data || {};

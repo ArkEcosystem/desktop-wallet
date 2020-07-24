@@ -1,7 +1,8 @@
 describe("Profile Routing", () => {
 	it("should navigate to create profile", () => {
+		cy.server().route("/api/wallets/*").as("getWallet");
 		cy.visit("/");
-		cy.wait(2000); // eslint-disable-line cypress/no-unnecessary-waiting
+		cy.wait("@getWallet");
 
 		cy.get("button").contains("Create Profile").click();
 		cy.get("h1").contains("Create Profile");
