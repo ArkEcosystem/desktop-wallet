@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import {  Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
