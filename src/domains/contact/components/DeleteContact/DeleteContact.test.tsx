@@ -44,7 +44,6 @@ describe("DeleteContact", () => {
 
 		const firstContact = contacts[0];
 		contact = profile.contacts().create(firstContact.name());
-		profile.contacts().update(contact.id(), { addresses: firstContact.addresses() });
 	});
 
 	it("should not render if not open", () => {
