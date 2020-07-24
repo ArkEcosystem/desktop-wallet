@@ -139,7 +139,7 @@ describe("SelectNetwork", () => {
 		expect(input).toHaveValue("Bitcoin");
 	});
 
-	it("must return empty if the item has not defined", () => {
+	it("should return empty if the item has not defined", () => {
 		expect(itemToString(null)).toBe("");
 	});
 });
