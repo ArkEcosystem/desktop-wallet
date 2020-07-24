@@ -23,6 +23,7 @@
 	"scripts": {
 		"dev": "REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"build": "react-app-rewired build",
+		"build:ci": "GENERATE_SOURCEMAP=false yarn build",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
@@ -36,9 +37,9 @@
 		"cy:open": "cypress open",
 		"cy:install": "cypress install --force",
 		"eject": "react-app-rewired eject",
-		"build:mac": "yarn build && electron-builder --mac --publish never",
-		"build:linux": "yarn build && electron-builder --linux --publish never",
-		"build:win": "yarn build && electron-builder --win --x64 --ia32 --publish never",
+		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
+		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
+		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"dependencies": {
