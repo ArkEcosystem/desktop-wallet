@@ -69,52 +69,44 @@ exports[`AddAssets should render a modal 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
+              aria-owns="AddAssets__network-menu"
+              data-testid="SelectNetwork"
               role="combobox"
             >
               <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+                for="AddAssets__network-input"
+                id="AddAssets__network-label"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-fzoLsD rzdyj"
+                data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-AxheI fzoRuB flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-Axmtr sc-AxmLO VVqBg px-4"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
-                  >
-                    <div
-                      class="sc-AxhCb ditBgK border-theme-neutral-200"
-                    />
-                  </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      placeholder="Enter the asset name"
-                      value=""
-                    />
-                  </div>
+                    class="sc-AxhCb jSOIkt border-theme-neutral-light text-theme-neutral"
+                    data-testid="SelectNetworkInput__network"
+                  />
                 </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="AddAssets__network-menu"
+                  aria-labelledby="AddAssets__network-label"
+                  autocomplete="off"
+                  class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  data-testid="SelectNetworkInput__input"
+                  id="AddAssets__network-input"
+                  placeholder="Enter the asset name"
+                  value=""
+                />
               </div>
             </div>
+            <ul
+              aria-labelledby="AddAssets__network-label"
+              id="AddAssets__network-menu"
+              role="listbox"
+            />
           </fieldset>
           <div
             class="flex flex-col space-y-10"

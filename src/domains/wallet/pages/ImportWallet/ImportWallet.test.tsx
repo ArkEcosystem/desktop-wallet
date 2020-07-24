@@ -58,18 +58,18 @@ describe("ImportWallet", () => {
 		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		const selectAssetsInput = getByTestId("select-asset__input");
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		expect(selectAssetsInput).toBeTruthy();
 
 		await act(async () => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "ARK D" } });
 		});
 
 		await act(async () => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("select-asset__selected-ARK-Mainnet")).toBeTruthy();
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 	});
 
 	it("should render 2st step", async () => {
@@ -128,13 +128,13 @@ describe("ImportWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			const selectAssetsInput = getByTestId("select-asset__input");
+			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 			const continueButton = getByTestId("ImportWallet__continue-button");
 
-			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 
-			expect(getByTestId("select-asset__selected-DARK-Devnet")).toBeTruthy();
+			expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
 			await fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
@@ -172,13 +172,13 @@ describe("ImportWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			const selectAssetsInput = getByTestId("select-asset__input");
+			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 			const continueButton = getByTestId("ImportWallet__continue-button");
 
-			await fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 
-			expect(getByTestId("select-asset__selected-DARK-Devnet")).toBeTruthy();
+			expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
 			await fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
@@ -186,9 +186,9 @@ describe("ImportWallet", () => {
 			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
 			expect(passphraseInput).toBeTruthy();
 
-			await fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
+			fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
 
-			await fireEvent.click(getByTestId("ImportWallet__submit-button"));
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
 			await waitFor(() =>
 				expect(profile.wallets().values()[0].address()).toEqual("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"),

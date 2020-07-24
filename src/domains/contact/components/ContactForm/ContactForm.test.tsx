@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
 
@@ -6,24 +7,7 @@ import { contact2 as contact } from "../../data";
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
 
-const networks = [
-	{
-		icon: "Ark",
-		name: "Ark Ecosystem",
-		className: "text-theme-danger-400 border-theme-danger-light",
-	},
-	{
-		icon: "Bitcoin",
-		name: "Bitcoin",
-		className: "text-theme-warning-400 border-theme-warning-200",
-	},
-	{
-		icon: "Ethereum",
-		name: "Ethereum",
-		className: "text-theme-neutral-800 border-theme-neutral-600",
-	},
-];
-
+const networks = availableNetworksMock;
 const onDelete = jest.fn();
 const onSave = jest.fn();
 const onCancel = jest.fn();
@@ -32,7 +16,7 @@ describe("ContactForm", () => {
 	it("should select network", () => {
 		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
-		const input = getByTestId("select-asset__input");
+		const input = getByTestId("SelectNetworkInput__input");
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitco" } });
 		});
@@ -41,7 +25,7 @@ describe("ContactForm", () => {
 			fireEvent.keyDown(input, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
+		expect(input).toHaveValue("Bitcoin");
 	});
 
 	it("should add an address", async () => {
@@ -51,8 +35,7 @@ describe("ContactForm", () => {
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const assetInput = getByTestId("select-asset__input");
-		const addressInput = getByTestId("contact-form__address-input");
+		const assetInput = getByTestId("SelectNetworkInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
