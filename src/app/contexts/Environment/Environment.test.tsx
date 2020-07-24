@@ -1,13 +1,19 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Storage } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
-import { render } from "utils/testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
-import { EnvironmentProvider } from "./Environment";
+import { EnvironmentProvider, useEnvironmentContext } from "./Environment";
 
 describe("Environment Context", () => {
+	let db: Storage;
+
+	beforeEach(() => {
+		db = new StubStorage();
+	});
+
 	it("should render the wrapper properly", () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
@@ -21,5 +27,46 @@ describe("Environment Context", () => {
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should rerender components when env updates", async () => {
+		const Details = () => {
+			const context = useEnvironmentContext();
+			const count = React.useMemo(() => context.env.profiles().all().length, [context]);
+			return <h1>Counter {count}</h1>;
+		};
+
+		const Create = () => {
+			const { env, persist } = useEnvironmentContext();
+
+			const handleClick = () => {
+				env.profiles().create("Test");
+				persist();
+			};
+
+			return <button onClick={handleClick}>Create</button>;
+		};
+
+		const App = () => {
+			const env = new Environment({ coins: { ARK }, httpClient, storage: db });
+
+			return (
+				<EnvironmentProvider env={env}>
+					<Details />
+					<Create />
+				</EnvironmentProvider>
+			);
+		};
+
+		const { getByRole } = render(<App />, { withProviders: false });
+
+		act(() => {
+			fireEvent.click(getByRole("button"));
+		});
+
+		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
+
+		const profiles = await db.get<any>("profiles");
+		expect(Object.keys(profiles)).toHaveLength(1);
 	});
 });

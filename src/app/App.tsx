@@ -7,25 +7,24 @@ import { StubStorage } from "tests/mocks";
 
 import { RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
-import { useStore } from "./hooks/use-store";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
 
 const __DEV__ = process.env.NODE_ENV !== "production";
 
 const Main = () => {
-	const { env, initialized } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	React.useEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
-			await env.persist();
+			persist();
 		};
 
-		if (process.env.REACT_APP_BUILD_MODE === "demo" && initialized) {
+		if (process.env.REACT_APP_BUILD_MODE === "demo") {
 			boot();
 		}
-	}, [env, initialized]);
+	}, [env, persist]);
 
 	/* istanbul ignore next */
 	const className = __DEV__ ? "debug-screens" : "";
@@ -42,13 +41,12 @@ export const App = () => {
 	 * Ensure that the Environment object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
 	 */
 
-	const [db] = React.useState(() => new StubStorage());
-	const [storage, state, initialized] = useStore(db);
+	const storage = __DEV__ ? new StubStorage() : "indexeddb";
 	const [env] = React.useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
 
 	return (
 		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env} state={state} initialized={initialized}>
+			<EnvironmentProvider env={env}>
 				<Main />
 			</EnvironmentProvider>
 		</I18nextProvider>

@@ -1,22 +1,26 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 
-type Context = { env: Environment; state?: Record<string, unknown>; initialized?: boolean };
+type Context = { env: Environment; state?: Record<string, unknown>; persist: () => Promise<void> };
 
 type Props = {
 	children: React.ReactNode;
 	env: Environment;
-	state?: Record<string, unknown>;
-	initialized?: boolean;
 };
 
 export const EnvironmentContext = React.createContext<any>(undefined);
 
-export const EnvironmentProvider = ({ children, env, state, initialized }: Props) => {
+export const EnvironmentProvider = ({ children, env }: Props) => {
+	const [state, setState] = React.useState<any>(undefined);
+
+	const persist = React.useCallback(async () => {
+		await env.persist();
+		// Force update
+		setState({});
+	}, [env]);
+
 	return (
-		<EnvironmentContext.Provider value={{ env, state, initialized } as Context}>
-			{children}
-		</EnvironmentContext.Provider>
+		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>
 	);
 };
 
