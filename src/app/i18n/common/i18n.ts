@@ -40,6 +40,7 @@ export const translations: { [key: string]: any } = {
 	DELEGATE_ADDRESS: "Delegate Address",
 	DELEGATE_NAME: "Delegate Name",
 	DELETE: "Delete",
+	EDIT: "Edit",
 	DESKTOP_WALLET: "Desktop Wallet",
 	DISCLAIMER: "Disclaimer",
 	DONE: "Done",

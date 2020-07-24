@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contacts should render 1`] = `
+exports[`Contacts should render empty 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -537,6 +537,7 @@ exports[`Contacts should render with contacts 1`] = `
         >
           <div
             class="w-full"
+            data-testid="ContactList"
           >
             <div
               class="sc-fznZeY gcZndM"
