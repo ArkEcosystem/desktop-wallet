@@ -144,7 +144,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should render", async () => {
+	it("should import by mnemonic", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";
@@ -190,9 +190,62 @@ describe("ImportWallet", () => {
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
-			await waitFor(() =>
-				expect(profile.wallets().values()[0].address()).toEqual("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"),
+			await waitFor(() => expect(profile.wallets().values()[0].address()).toEqual(identity.address));
+		});
+	});
+
+	it("should import by address", async () => {
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const route = "/profiles/bob/wallets/import";
+
+		history.push(route);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/import">
+						<ImportWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
 			);
+
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+			const continueButton = getByTestId("ImportWallet__continue-button");
+
+			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
+			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+
+			expect(selectAssetsInput).toHaveValue("Ark Devnet");
+
+			await fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			const addressToggle = getByTestId("ImportWallet__address-toggle");
+			expect(addressToggle).toBeTruthy();
+
+			await fireEvent.click(addressToggle);
+
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
+
+			await fireEvent.change(addressInput, { target: { value: identity.address } });
+
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+
+			await waitFor(() => expect(profile.wallets().values()[0].address()).toEqual(identity.address));
 		});
 	});
 });
