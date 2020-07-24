@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -40,7 +41,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 
 type ContactsProps = {
 	contacts: any[];
-	networks: any[];
+	networks: NetworkData[];
 	onSearch?: any;
 };
 

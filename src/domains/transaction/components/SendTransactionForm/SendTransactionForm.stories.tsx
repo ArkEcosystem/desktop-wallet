@@ -1,8 +1,8 @@
 import { contacts } from "domains/contact/data";
+import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
 
-import { networks } from "../../data";
 import { SendTransactionForm } from "./SendTransactionForm";
 
 export default {
@@ -25,7 +25,7 @@ const defaultFormValues = {
 		smartbridge: null,
 		fee: 0,
 	},
-	networks,
+	networks: availableNetworksMock,
 	contacts,
 	wallets,
 };

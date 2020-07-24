@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { ContactForm } from "domains/contact/components/ContactForm";
 import React from "react";
@@ -6,7 +7,7 @@ import { useTranslation } from "react-i18next";
 type UpdateContactProps = {
 	isOpen: boolean;
 	contact: any;
-	networks: any;
+	networks: NetworkData[];
 	onClose?: any;
 	onCancel?: any;
 	onDelete: any;

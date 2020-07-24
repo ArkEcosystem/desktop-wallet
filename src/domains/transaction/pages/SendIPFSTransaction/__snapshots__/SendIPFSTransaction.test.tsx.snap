@@ -305,52 +305,44 @@ exports[`SendIPFSTransaction should render 1`] = `
                             <div
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-labelledby="downshift-1-label"
-                              class="relative"
+                              aria-owns="SendIPFSTransaction__network-menu"
+                              data-testid="SelectNetwork"
                               role="combobox"
                             >
                               <label
-                                for="downshift-1-input"
-                                id="downshift-1-label"
+                                for="SendIPFSTransaction__network-input"
+                                id="SendIPFSTransaction__network-label"
                               />
                               <div
-                                class="relative flex items-center w-full flex-inline"
+                                class="sc-fzozJi OgXfh"
+                                data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fznxsB dliqrP flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                                 >
                                   <div
-                                    class="px-4 py-2 flex-0 w-14"
-                                  >
-                                    <div
-                                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                                    />
-                                  </div>
-                                  <div
-                                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                                  >
-                                    <div
-                                      class="relative z-10 w-full"
-                                      data-testid="select-network__typeahead-"
-                                    >
-                                      <div
-                                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                      />
-                                    </div>
-                                    <input
-                                      aria-autocomplete="list"
-                                      aria-labelledby="downshift-1-label"
-                                      autocomplete="off"
-                                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                      data-testid="select-asset__input"
-                                      id="downshift-1-input"
-                                      placeholder="Enter a network name"
-                                      value=""
-                                    />
-                                  </div>
+                                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                                    data-testid="SelectNetworkInput__network"
+                                  />
                                 </div>
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-controls="SendIPFSTransaction__network-menu"
+                                  aria-labelledby="SendIPFSTransaction__network-label"
+                                  autocomplete="off"
+                                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  data-testid="SelectNetworkInput__input"
+                                  id="SendIPFSTransaction__network-input"
+                                  placeholder="Enter a network name"
+                                  value=""
+                                />
                               </div>
                             </div>
+                            <ul
+                              aria-labelledby="SendIPFSTransaction__network-label"
+                              id="SendIPFSTransaction__network-menu"
+                              role="listbox"
+                            />
                           </div>
                         </div>
                       </div>
@@ -605,52 +597,160 @@ exports[`SendIPFSTransaction should render 1st step 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
+              aria-owns="SendIPFSTransaction__network-menu"
+              data-testid="SelectNetwork"
               role="combobox"
             >
               <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+                for="SendIPFSTransaction__network-input"
+                id="SendIPFSTransaction__network-label"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-fzozJi OgXfh"
+                data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fznxsB dliqrP flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
-                  >
-                    <div
-                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                    />
-                  </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
-                  </div>
+                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                    data-testid="SelectNetworkInput__network"
+                  />
                 </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="SendIPFSTransaction__network-menu"
+                  aria-labelledby="SendIPFSTransaction__network-label"
+                  autocomplete="off"
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  data-testid="SelectNetworkInput__input"
+                  id="SendIPFSTransaction__network-input"
+                  placeholder="Enter a network name"
+                  value=""
+                />
               </div>
             </div>
+            <ul
+              aria-labelledby="SendIPFSTransaction__network-label"
+              id="SendIPFSTransaction__network-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                id="SendIPFSTransaction__network-item-0"
+                role="option"
+              >
+                <div
+                  aria-label="Ark"
+                  class="sc-AxiKw eqmOyq border-theme-danger-light text-theme-danger-400"
+                  data-testid="NetworkIcon"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                id="SendIPFSTransaction__network-item-1"
+                role="option"
+              >
+                <div
+                  aria-label="Ark Devnet"
+                  class="sc-AxiKw eqmOyq border-theme-primary-100 text-theme-primary-400"
+                  data-testid="NetworkIcon"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                id="SendIPFSTransaction__network-item-2"
+                role="option"
+              >
+                <div
+                  aria-label="Bitcoin"
+                  class="sc-AxiKw eqmOyq border-theme-warning-200 text-theme-warning-400"
+                  data-testid="NetworkIcon"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      btc.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                id="SendIPFSTransaction__network-item-3"
+                role="option"
+              >
+                <div
+                  aria-label="Lisk"
+                  class="sc-AxiKw eqmOyq border-theme-primary-400 text-theme-primary"
+                  data-testid="NetworkIcon"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      lsk.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                aria-selected="false"
+                class="inline-block pt-6 mr-6 cursor-pointer"
+                id="SendIPFSTransaction__network-item-4"
+                role="option"
+              >
+                <div
+                  aria-label="Ripple"
+                  class="sc-AxiKw eqmOyq border-theme-primary-500 text-theme-primary-dark"
+                  data-testid="NetworkIcon"
+                >
+                  <div
+                    class="sc-AxhUy gkBhrK"
+                    data-testid="NetworkIcon__icon"
+                    height="26"
+                    width="26"
+                  >
+                    <svg>
+                      xrp.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -7,10 +8,10 @@ import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { useSelectionState } from "app/components/SelectionBar";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionField } from "domains/transaction/components/TransactionField";
@@ -19,7 +20,7 @@ import React, { useEffect } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FirstStep = ({ networks = [] }: any) => {
+export const FirstStep = ({ networks }: { networks: NetworkData[] }) => {
 	const { register } = useFormContext();
 	const selectionBarState = useSelectionState(1);
 
@@ -37,7 +38,7 @@ export const FirstStep = ({ networks = [] }: any) => {
 
 			<div>
 				<TransactionField border={false} label={t("TRANSACTION.NETWORK")} padding={false}>
-					<SelectNetwork networks={networks} />
+					<SelectNetwork id="SendIPFSTransaction__network" networks={networks} />
 				</TransactionField>
 
 				<TransactionField border={false} label={t("TRANSACTION.SENDER")} padding={false}>
@@ -169,7 +170,7 @@ export const FourthStep = () => {
 type Props = {
 	onCopy?: () => void;
 	onSubmit?: any;
-	networks?: any[];
+	networks?: NetworkData[];
 };
 
 export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
@@ -205,7 +206,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep networks={networks} />
+								<FirstStep networks={networks!} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
@@ -266,4 +267,8 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 			</Section>
 		</Page>
 	);
+};
+
+SendIPFSTransaction.defaultProps = {
+	networks: [],
 };

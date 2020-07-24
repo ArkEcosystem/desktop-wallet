@@ -297,7 +297,7 @@ exports[`Transaction Send should render 1`] = `
                       class="mt-8"
                     >
                       <div
-                        class="sc-fzoNJl ksmXph"
+                        class="sc-fzoyTs fyIOmL"
                       >
                         <form
                           class="space-y-8"
@@ -322,53 +322,44 @@ exports[`Transaction Send should render 1`] = `
                             <div
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-labelledby="downshift-1-label"
-                              class="relative"
+                              aria-owns="SendTransactionForm__network-menu"
+                              data-testid="SelectNetwork"
                               role="combobox"
                             >
                               <label
-                                for="downshift-1-input"
-                                id="downshift-1-label"
+                                for="SendTransactionForm__network-input"
+                                id="SendTransactionForm__network-label"
                               />
                               <div
-                                class="relative flex items-center w-full flex-inline"
+                                class="sc-fzozJi OgXfh"
+                                data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                                 >
                                   <div
-                                    class="px-4 py-2 flex-0 w-14"
-                                  >
-                                    <div
-                                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                                    />
-                                  </div>
-                                  <div
-                                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                                  >
-                                    <div
-                                      class="relative z-10 w-full"
-                                      data-testid="select-network__typeahead-"
-                                    >
-                                      <div
-                                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                      />
-                                    </div>
-                                    <input
-                                      aria-autocomplete="list"
-                                      aria-labelledby="downshift-1-label"
-                                      autocomplete="off"
-                                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                      data-testid="select-asset__input"
-                                      id="downshift-1-input"
-                                      name="network"
-                                      placeholder="Enter a network name"
-                                      value=""
-                                    />
-                                  </div>
+                                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                                    data-testid="SelectNetworkInput__network"
+                                  />
                                 </div>
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-controls="SendTransactionForm__network-menu"
+                                  aria-labelledby="SendTransactionForm__network-label"
+                                  autocomplete="off"
+                                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  data-testid="SelectNetworkInput__input"
+                                  id="SendTransactionForm__network-input"
+                                  placeholder="Enter a network name"
+                                  value=""
+                                />
                               </div>
                             </div>
+                            <ul
+                              aria-labelledby="SendTransactionForm__network-label"
+                              id="SendTransactionForm__network-menu"
+                              role="listbox"
+                            />
                           </fieldset>
                           <fieldset
                             class="sc-AxhCb ckQmOL relative mt-1"
@@ -390,7 +381,7 @@ exports[`Transaction Send should render 1`] = `
                             >
                               <div>
                                 <button
-                                  class="sc-fzqNqU jiheyj SelectAddress  "
+                                  class="sc-fzqARJ dKMWCk SelectAddress  "
                                   data-testid="SelectAddress__wrapper"
                                   type="button"
                                 >
@@ -426,7 +417,7 @@ exports[`Transaction Send should render 1`] = `
                             data-testid="recipient-address"
                           >
                             <div
-                              class="sc-fzoyTs dLBgZb"
+                              class="sc-fzqNqU eijwDZ"
                             >
                               <div
                                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -774,7 +765,7 @@ exports[`Transaction Send should render 1st step 1`] = `
       class="mt-8"
     >
       <div
-        class="sc-fzoNJl ksmXph"
+        class="sc-fzoyTs fyIOmL"
       >
         <form
           class="space-y-8"
@@ -799,53 +790,44 @@ exports[`Transaction Send should render 1st step 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
+              aria-owns="SendTransactionForm__network-menu"
+              data-testid="SelectNetwork"
               role="combobox"
             >
               <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+                for="SendTransactionForm__network-input"
+                id="SendTransactionForm__network-label"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-fzozJi OgXfh"
+                data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
-                  >
-                    <div
-                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                    />
-                  </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      name="network"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
-                  </div>
+                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                    data-testid="SelectNetworkInput__network"
+                  />
                 </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="SendTransactionForm__network-menu"
+                  aria-labelledby="SendTransactionForm__network-label"
+                  autocomplete="off"
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  data-testid="SelectNetworkInput__input"
+                  id="SendTransactionForm__network-input"
+                  placeholder="Enter a network name"
+                  value=""
+                />
               </div>
             </div>
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
+            />
           </fieldset>
           <fieldset
             class="sc-AxhCb ckQmOL relative mt-1"
@@ -867,7 +849,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <div>
                 <button
-                  class="sc-fzqNqU jiheyj SelectAddress  "
+                  class="sc-fzqARJ dKMWCk SelectAddress  "
                   data-testid="SelectAddress__wrapper"
                   type="button"
                 >
@@ -903,7 +885,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="recipient-address"
           >
             <div
-              class="sc-fzoyTs dLBgZb"
+              class="sc-fzqNqU eijwDZ"
             >
               <div
                 class="text-theme-neutral-dark hover:text-theme-primary"

@@ -1,9 +1,12 @@
+import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 
-import { addressListData, delegateListData, networks } from "../../data";
+import { addressListData, delegateListData } from "../../data";
 import { translations } from "../../i18n";
 import { Votes } from "./Votes";
+
+const networks = availableNetworksMock;
 
 describe("Votes", () => {
 	it("should render", () => {
@@ -19,7 +22,7 @@ describe("Votes", () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
-		const selectAssetInput = getByTestId("select-asset__input");
+		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
 			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
@@ -30,7 +33,7 @@ describe("Votes", () => {
 		});
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("select-asset__selected-Bitcoin")).toBeTruthy();
+		expect(selectAssetInput).toHaveValue("Bitcoin");
 		expect(getByTestId("AddressList")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -39,7 +42,7 @@ describe("Votes", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
-		const selectAssetInput = getByTestId("select-asset__input");
+		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
 			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
@@ -65,7 +68,7 @@ describe("Votes", () => {
 		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
 			<Votes networks={networks} addressList={addressListData} delegateList={delegateListData} />,
 		);
-		const selectAssetInput = getByTestId("select-asset__input");
+		const selectAssetInput = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
 			fireEvent.change(selectAssetInput, { target: { value: "Bitco" } });
