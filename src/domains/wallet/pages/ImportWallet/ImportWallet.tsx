@@ -51,7 +51,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => {
-	const { register } = useFormContext();
+	const { register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const { t } = useTranslation();
@@ -108,7 +108,10 @@ export const SecondStep = () => {
 					<Toggle
 						name="isAddressOnly"
 						checked={isAddressOnly}
-						onChange={() => setIsAddressOnly(!isAddressOnly)}
+						onChange={() => {
+							unregister("passphrase");
+							setIsAddressOnly(!isAddressOnly);
+						}}
 						data-testid="ImportWallet__address-toggle"
 					/>
 				</div>
