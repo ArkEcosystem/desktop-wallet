@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -51,7 +51,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => {
-	const { register } = useFormContext();
+	const { register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const { t } = useTranslation();
@@ -108,7 +108,10 @@ export const SecondStep = () => {
 					<Toggle
 						name="isAddressOnly"
 						checked={isAddressOnly}
-						onChange={() => setIsAddressOnly(!isAddressOnly)}
+						onChange={() => {
+							unregister("passphrase");
+							setIsAddressOnly(!isAddressOnly);
+						}}
 						data-testid="ImportWallet__address-toggle"
 					/>
 				</div>
@@ -151,8 +154,22 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, passphrase }: { network: NetworkData; passphrase: string }) => {
-		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+	const handleSubmit = async ({
+		network,
+		passphrase,
+		address,
+	}: {
+		network: NetworkData;
+		passphrase: string;
+		address: string;
+	}) => {
+		let wallet: Wallet | undefined;
+
+		if (passphrase) {
+			wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		} else {
+			wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
+		}
 
 		await persist();
 
@@ -165,7 +182,7 @@ export const ImportWallet = () => {
 				<Form
 					className="max-w-xl mx-auto"
 					context={form}
-					onSubmit={(data) => submitForm(data as any)}
+					onSubmit={handleSubmit as any}
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>

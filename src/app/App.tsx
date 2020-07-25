@@ -15,7 +15,7 @@ const __DEV__ = process.env.NODE_ENV !== "production";
 const Main = () => {
 	const { env, persist } = useEnvironmentContext();
 
-	React.useEffect(() => {
+	React.useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
 			await persist();
