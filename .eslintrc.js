@@ -17,7 +17,7 @@ module.exports = {
 		"@typescript-eslint",
 		"prettier",
 		"testing-library",
-		"cypress",
+		"testcafe",
 		"simple-import-sort",
 		"unused-imports",
 		"react-hooks",
@@ -31,7 +31,7 @@ module.exports = {
 		"plugin:react/recommended",
 		"prettier/@typescript-eslint",
 		"plugin:testing-library/react",
-		"plugin:cypress/recommended",
+		"plugin:testcafe/recommended",
 	],
 	rules: {
 		"@typescript-eslint/ban-ts-comment": "off",
