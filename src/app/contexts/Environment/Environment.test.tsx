@@ -3,7 +3,7 @@ import { Environment, Storage } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import React from "react";
 import { StubStorage } from "tests/mocks";
-import { act, fireEvent, render, waitFor } from "utils/testing-library";
+import { act, fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { EnvironmentProvider, useEnvironmentContext } from "./Environment";
 
@@ -12,6 +12,18 @@ describe("Environment Context", () => {
 
 	beforeEach(() => {
 		db = new StubStorage();
+	});
+
+	it("should throw without provider", () => {
+		jest.spyOn(console, "error").mockImplementation(() => null);
+		const Test = () => {
+			const { env } = useEnvironmentContext();
+			const profiles = env.profiles().all();
+			return <p>{profiles.length}</p>;
+		};
+
+		expect(() => renderWithRouter(<Test />, { withProviders: false })).toThrowError();
+		console.error.mockRestore();
 	});
 
 	it("should render the wrapper properly", () => {
