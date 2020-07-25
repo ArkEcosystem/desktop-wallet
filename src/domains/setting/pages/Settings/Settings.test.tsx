@@ -105,6 +105,46 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should submit using default props", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Settings />
+			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profiles/1/settings"],
+			},
+		);
+
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
+		// Select Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Passphrase Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Market Provider
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Currency
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Time Format
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Toggle Screenshot Protection
+		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
+		// Toggle Advanced Mode
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Toggle Update Ledger in Background
+		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render peer settings", async () => {
 		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
 			routes: ["/", "/profiles/1/settings"],
