@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
@@ -17,8 +17,8 @@ import { useHistory } from "react-router-dom";
 
 export const FirstStep = () => {
 	const { register, setValue } = useFormContext();
-	const env = useEnvironment();
-	const networks = React.useMemo(() => env!.availableNetworks(), [env]);
+	const context = useEnvironmentContext();
+	const networks = React.useMemo(() => context.env.availableNetworks(), [context]);
 
 	const { t } = useTranslation();
 
@@ -51,7 +51,7 @@ export const FirstStep = () => {
 };
 
 export const SecondStep = () => {
-	const { register } = useFormContext();
+	const { register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
 
 	const { t } = useTranslation();
@@ -108,7 +108,10 @@ export const SecondStep = () => {
 					<Toggle
 						name="isAddressOnly"
 						checked={isAddressOnly}
-						onChange={() => setIsAddressOnly(!isAddressOnly)}
+						onChange={() => {
+							unregister("passphrase");
+							setIsAddressOnly(!isAddressOnly);
+						}}
 						data-testid="ImportWallet__address-toggle"
 					/>
 				</div>
@@ -128,7 +131,7 @@ export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 
 	const history = useHistory();
-	const env = useEnvironment();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
@@ -151,10 +154,24 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, passphrase }: { network: NetworkData; passphrase: string }) => {
-		const wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+	const handleSubmit = async ({
+		network,
+		passphrase,
+		address,
+	}: {
+		network: NetworkData;
+		passphrase: string;
+		address: string;
+	}) => {
+		let wallet: Wallet | undefined;
 
-		await env?.persist();
+		if (passphrase) {
+			wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		} else {
+			wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
+		}
+
+		await persist();
 
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
@@ -165,7 +182,7 @@ export const ImportWallet = () => {
 				<Form
 					className="max-w-xl mx-auto"
 					context={form}
-					onSubmit={(data) => submitForm(data as any)}
+					onSubmit={handleSubmit as any}
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>

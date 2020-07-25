@@ -1,26 +1,21 @@
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import React from "react";
-import { fireEvent, renderWithRouter, screen, waitFor } from "testing-library";
 import { identity } from "tests/fixtures/identity";
+import { StubStorage } from "tests/mocks";
+import { fireEvent, renderWithRouter } from "utils/testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
 
 describe("Welcome", () => {
-	it("should render without environment", () => {
-		const { queryByText } = renderWithRouter(<Welcome />, {
-			withProviders: false,
-		});
-		expect(queryByText("Select Profile")).toBeNull();
-	});
-
-	it("should render with profiles", async () => {
+	it("should render with profiles", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 		const profile = env.profiles().findById(identity.profiles.bob.id);
 
-		await waitFor(async () => {
-			await expect(screen.findByText(translations.PAGE_WELCOME.HAS_PROFILES)).resolves.toBeInTheDocument();
-		});
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText(profile.name()));
@@ -28,23 +23,24 @@ describe("Welcome", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render without profiles", async () => {
-		const { container, asFragment } = renderWithRouter(<Welcome />, { withProviders: false });
+	it("should render without profiles", () => {
+		const env = new Environment({ coins: {}, httpClient, storage: new StubStorage() });
+		const { container, asFragment, getByText } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Welcome />
+			</EnvironmentProvider>,
+		);
 
-		await waitFor(async () => {
-			await expect(screen.findByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).resolves.toBeInTheDocument();
-		});
+		expect(getByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should change route to create profile", async () => {
-		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />, { withProviders: false });
+	it("should change route to create profile", () => {
+		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 
-		await waitFor(async () => {
-			await expect(screen.findByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).resolves.toBeInTheDocument();
-		});
+		expect(getByText(translations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

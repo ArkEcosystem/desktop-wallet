@@ -1,5 +1,5 @@
 import { Contracts, Http } from "@arkecosystem/platform-sdk";
-import fetch from "node-fetch";
+import fetch from "isomorphic-fetch";
 
 export class HttpClient extends Http.Request {
 	protected async send(

@@ -1,10 +1,9 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -17,16 +16,10 @@ export const Welcome = () => {
 		{ label: "Setting", value: "setting" },
 		{ label: "Delete", value: "delete" },
 	];
-	const env = useEnvironment();
+	const context = useEnvironmentContext();
 	const { t } = useTranslation();
 	const history = useHistory();
-	const [profiles, setProfiles] = React.useState<Profile[]>([]);
-
-	React.useEffect(() => {
-		if (env) {
-			setProfiles(env.profiles().all());
-		}
-	}, [env]);
+	const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
 
 	return (
 		<Page navbarStyle="logo-only">

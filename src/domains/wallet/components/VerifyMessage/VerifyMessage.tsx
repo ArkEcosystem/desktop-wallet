@@ -5,7 +5,7 @@ import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form"
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -29,7 +29,7 @@ export const VerifyMessage = ({
 	isOpen,
 	handleClose,
 }: Props) => {
-	const env = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const form = useForm();
 	const { t } = useTranslation();
 
