@@ -14,7 +14,7 @@ test("should navigate to portfolio and sign message", async (t) => {
 	await t.click(Selector("[data-testid=WalletHeader__more-button]"));
 	await t.click(Selector("li").withText("Sign Message"));
 
-	await t.click(Selector("[data-testid=sign-message__sign-button]"));
+	await t.click(Selector("[data-testid=SignMessage__submit-button]"));
 	await t.expect(Selector("h2").withText("Message Successfully Signed").exists).ok();
 	await t.click(Selector("[data-testid=modal__close-btn]"));
 });
