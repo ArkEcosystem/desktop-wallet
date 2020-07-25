@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 fixture`Plugins screen routing`.page`http://localhost:3000/`;
 
 test("should navigate and apply filters", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.click(Selector("a").withText("Plugins"));
 	await t.expect(Selector("h1").withText("Plugin Manager").exists).ok();
 
@@ -29,7 +29,7 @@ test("should navigate and apply filters", async (t) => {
 });
 
 test("should navigate to plugin details", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.click(Selector("a").withText("Plugins"));
 	await t.expect(Selector("h1").withText("Plugin Manager").exists).ok();
 
@@ -38,7 +38,7 @@ test("should navigate to plugin details", async (t) => {
 });
 
 test("should navigate back to plugin store from plugin details", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.click(Selector("a").withText("Plugins"));
 	await t.expect(Selector("h1").withText("Plugin Manager").exists).ok();
 	await t.click(Selector('[data-testid="PluginCard--ark-explorer-0"]'));

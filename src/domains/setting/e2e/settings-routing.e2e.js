@@ -15,7 +15,7 @@ test("should return an error when submit without required fields", async (t) => 
 test("should salve settings", async (t) => {
 	const nameInput = Selector("input[name=name]");
 
-	await t.typeText(nameInput, "John Doe");
+	await t.typeText(nameInput, "Anne Doe");
 
 	await t.click(Selector("button").withText("Select Language"));
 	await t.click(Selector("li.select-list-option").withText("Option 1"));

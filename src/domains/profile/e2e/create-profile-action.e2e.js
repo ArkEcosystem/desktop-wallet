@@ -13,7 +13,7 @@ test("should return an error when submit without required fields", async (t) => 
 test("should create a profile and navigate to welcome screen", async (t) => {
 	const nameInput = Selector("input[name=name]");
 
-	await t.typeText(nameInput, "John Doe");
+	await t.typeText(nameInput, "Anne Doe");
 	await t.click(Selector("button").withText("Select Market Provider"));
 	await t.click(Selector("li.select-list-option").withText("Option 1"));
 	await t.click(Selector("button").withText("Select Currency"));

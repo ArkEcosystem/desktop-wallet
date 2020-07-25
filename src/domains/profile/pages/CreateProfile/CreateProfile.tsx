@@ -8,14 +8,14 @@ import { Page, Section } from "app/components/Layout";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const CreateProfile = () => {
-	const env: any = useEnvironment();
+	const { env, persist } = useEnvironmentContext();
 	const form = useForm();
 	const history = useHistory();
 	const { register } = form;
@@ -78,7 +78,7 @@ export const CreateProfile = () => {
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		await env.persist();
+		await persist();
 
 		history.push("/");
 	};

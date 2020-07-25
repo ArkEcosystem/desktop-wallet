@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
@@ -17,8 +17,8 @@ import { useHistory } from "react-router-dom";
 
 export const FirstStep = () => {
 	const { register, setValue } = useFormContext();
-	const env = useEnvironment();
-	const networks = React.useMemo(() => env!.availableNetworks(), [env]);
+	const context = useEnvironmentContext();
+	const networks = React.useMemo(() => context.env.availableNetworks(), [context]);
 
 	const { t } = useTranslation();
 
@@ -131,7 +131,7 @@ export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 
 	const history = useHistory();
-	const env = useEnvironment();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
@@ -171,7 +171,7 @@ export const ImportWallet = () => {
 			wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
 		}
 
-		await env?.persist();
+		await persist();
 
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};

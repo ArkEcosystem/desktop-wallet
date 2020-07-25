@@ -1,6 +1,6 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -12,7 +12,7 @@ type SettingsProps = {
 };
 
 export const Settings = ({ onSubmit }: SettingsProps) => {
-	const env: any = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const form = useForm();
 	const { register, errors } = form;
 	const [activeSettings, setActiveSettings] = useState("General");
