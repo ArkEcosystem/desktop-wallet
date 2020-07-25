@@ -68,7 +68,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__name-input"
                 name="name"
-                value=""
+                value="Test"
               />
             </fieldset>
             <fieldset
@@ -153,8 +153,27 @@ exports[`UpdateContact should render a modal 1`] = `
               </button>
             </div>
             <div
-              class="flex w-full justify-end"
+              class="flex w-full justify-between"
             >
+              <button
+                class="sc-AxjAm bxcsTZ"
+                color="danger"
+                data-testid="contact-form__delete-btn"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    trash.svg
+                  </svg>
+                </div>
+                <span>
+                  Delete Contact
+                </span>
+              </button>
               <div
                 class="space-x-3"
               >
