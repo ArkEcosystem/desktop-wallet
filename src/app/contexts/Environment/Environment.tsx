@@ -14,9 +14,9 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 	const [state, setState] = React.useState<any>(undefined);
 
 	const persist = React.useCallback(async () => {
+		await env.persist();
 		// Force update
 		setState({});
-		await env.persist();
 	}, [env]);
 
 	return (

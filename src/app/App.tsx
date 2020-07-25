@@ -41,6 +41,7 @@ export const App = () => {
 	 * Ensure that the Environment object will not be recreated when the state changes, as the data is stored in memory by the `DataRepository`.
 	 */
 
+	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
 	const [env] = React.useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
 
