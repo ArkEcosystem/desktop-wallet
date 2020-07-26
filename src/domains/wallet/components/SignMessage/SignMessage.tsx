@@ -8,7 +8,7 @@ import { Input, InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React, { createRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -26,7 +26,7 @@ type Props = {
 export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel, onSubmit }: Props) => {
 	const [isSigned, setIsSigned] = useState(false);
 
-	const env = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
 	const { t } = useTranslation();
 

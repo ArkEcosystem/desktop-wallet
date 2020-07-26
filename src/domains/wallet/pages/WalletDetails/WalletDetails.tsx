@@ -1,7 +1,7 @@
 import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -48,7 +48,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 
 	const history = useHistory();
-	const env = useEnvironment();
+	const { persist } = useEnvironmentContext();
 
 	const { t } = useTranslation();
 
@@ -66,14 +66,14 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const handleUpdateName = async ({ name }: any) => {
 		const wallet = activeProfile?.wallets().findById(walletId);
 		wallet?.settings().set(WalletSetting.Alias, name);
-		await env?.persist();
+		await persist();
 		setIsUpdateWalletName(false);
 	};
 
 	const handleDeleteWallet = async () => {
 		const wallet = activeProfile?.wallets().findById(walletId);
 		activeProfile?.wallets().forget(wallet?.id() as string);
-		await env?.persist();
+		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
 	};

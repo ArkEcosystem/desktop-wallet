@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 fixture`Wallets routing`.page`http://localhost:3000/`;
 
 test("should navigate to portfolio and access a wallet details", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
 	await t.click(Selector("[data-testid=WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT]"));
@@ -11,7 +11,7 @@ test("should navigate to portfolio and access a wallet details", async (t) => {
 });
 
 test("should navigate to create wallet page", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 	// Go to create wallet page
 	await t.click(Selector("button").withText("Create"));
@@ -19,7 +19,7 @@ test("should navigate to create wallet page", async (t) => {
 });
 
 test("should navigate to import wallet page", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 	// Go to create wallet page
 	await t.click(Selector("button").withText("Import"));

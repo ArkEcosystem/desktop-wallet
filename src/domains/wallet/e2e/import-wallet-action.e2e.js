@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 fixture`Import Wallet action`.page`http://localhost:3000/`;
 
 test("should import a wallet", async (t) => {
-	await t.click(Selector("p").withText("Anne Doe"));
+	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 	// Navigate to create page
 	await t.click(Selector("button").withExactText("Import"));

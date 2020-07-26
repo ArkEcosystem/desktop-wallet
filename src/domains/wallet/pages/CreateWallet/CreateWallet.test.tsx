@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Environment, Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
@@ -11,48 +10,42 @@ import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
+import envFixture from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
+import { fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
-let env: Environment;
-let profile: Profile;
-let bip39GenerateMock: any;
-
-const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-
-beforeAll(() => {
-	nock.disableNetConnect();
-
-	nock("https://wallets.ark.io")
-		.get("/api/node/configuration")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
-		.get("/api/peers")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-		.get("/api/node/configuration/crypto")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-		.get("/api/node/syncing")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-		.persist();
-
-	nock("https://neoscan.io")
-		.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
-		.reply(200, [])
-		.persist();
-});
-
 describe("CreateWallet", () => {
+	let env: Environment;
+	let profile: Profile;
+	let bip39GenerateMock: any;
+
+	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
+
+	beforeAll(() => {
+		nock.disableNetConnect();
+
+		nock("https://wallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.persist();
+
+		nock("https://neoscan.io")
+			.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
+			.reply(200, [])
+			.persist();
+	});
+
 	beforeEach(async () => {
-		env = new Environment({
-			coins: { ARK },
-			httpClient,
-			storage: new StubStorage(),
-		});
-
-		await env.bootFromObject({ data: {}, profiles });
-
+		env = new Environment({ coins: { ARK }, httpClient: httpClient, storage: new StubStorage() });
+		await env.bootFromObject(envFixture);
 		profile = env.profiles().findById("bob");
 
 		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
@@ -62,7 +55,7 @@ describe("CreateWallet", () => {
 		bip39GenerateMock.mockRestore();
 	});
 
-	it("should render 1st step", async () => {
+	it("should render 1st step", () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
@@ -76,11 +69,11 @@ describe("CreateWallet", () => {
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		expect(selectAssetsInput).toBeTruthy();
 
-		await act(async () => {
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
 		});
 
-		await act(async () => {
+		act(() => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
@@ -110,14 +103,12 @@ describe("CreateWallet", () => {
 		navigator.clipboard = { writeText: writeTextMock };
 
 		fireEvent.click(getByTestId(`CreateWallet__copy`));
-		await waitFor(async () => {
-			expect(writeTextMock).toHaveBeenCalledWith("test mnemonic");
-		});
+		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
 		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
 	});
 
-	it("should render 3rd step", async () => {
+	it("should render 3rd step", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -137,7 +128,7 @@ describe("CreateWallet", () => {
 		expect(form.current.getValues()).toEqual({ verification: undefined });
 	});
 
-	it("should render 4th step", async () => {
+	it("should render 4th step", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
@@ -164,7 +155,7 @@ describe("CreateWallet", () => {
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 
 		// Submit
-		await act(async () => {
+		act(() => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
 		});
 
@@ -172,29 +163,21 @@ describe("CreateWallet", () => {
 	});
 
 	it("should render", async () => {
-		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const createURL = "/profiles/bob/wallets/create";
 		history.push(createURL);
 
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/create">
-						<CreateWallet />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [createURL],
-					history,
-				},
-			);
+		const { queryAllByText, getByTestId, getByText, asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
+			{
+				routes: [createURL],
+				history,
+			},
+		);
 
-			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-		});
-
-		const { findAllByText, getByTestId, getByText, asFragment } = rendered!;
-
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
@@ -238,12 +221,12 @@ describe("CreateWallet", () => {
 
 			const walletMnemonic = passphrase.split(" ");
 			for (let i = 0; i < 3; i++) {
-				const wordNumber = getByText(/Select word #/).innerHTML.replace(/Select word #/, "");
+				const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
 
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
 
 				if (i < 2) {
-					await waitFor(async () => (await findAllByText(/The #([0-9]+) word/)).length === 2 - i);
+					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
 				}
 			}
 
@@ -259,8 +242,8 @@ describe("CreateWallet", () => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
 			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
-			await fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
-			await fireEvent.click(getByTestId(`CreateWallet__save-button`));
+			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
+			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 
 			await waitFor(() =>
 				expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
@@ -271,28 +254,22 @@ describe("CreateWallet", () => {
 	});
 
 	it("should not have a pending wallet if leaving on step 1", async () => {
-		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const createURL = "/profiles/bob/wallets/create";
 		history.push(createURL);
 
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/create">
-						<CreateWallet />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [createURL, "/"],
-					history,
-				},
-			);
-
-			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-		});
-
-		const { getByTestId, asFragment } = rendered!;
+		const { getByTestId, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/create">
+					<CreateWallet />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [createURL, "/"],
+				history,
+			},
+		);
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 		history.push("/");
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
@@ -301,28 +278,22 @@ describe("CreateWallet", () => {
 	});
 
 	it("should remove pending wallet if not submitted", async () => {
-		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const createURL = "/profiles/bob/wallets/create";
 		history.push(createURL);
 
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/create">
-						<CreateWallet />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [createURL, "/"],
-					history,
-				},
-			);
-
-			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-		});
-
-		const { getByTestId, asFragment } = rendered!;
+		const { getByTestId, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/create">
+					<CreateWallet />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [createURL, "/"],
+				history,
+			},
+		);
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -339,7 +310,7 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 			fireEvent.click(getByTestId(`CreateWallet__back-button`));
-			await waitFor(() => expect(rendered.getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 			fireEvent.click(continueButton);
 			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
