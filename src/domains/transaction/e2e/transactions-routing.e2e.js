@@ -12,13 +12,16 @@ test("should navigate to portfolio and sign message", async (t) => {
 	await t.click(Selector("[data-testid=navbar__buttons--send]"));
 	await t.expect(Selector("div").withText("Enter details to send your money").exists).ok();
 
-	// Handle sign message
+	// Open sign message modal
 	await t.click(Selector("span").withText("Go back to Portfolio"));
 	await t.click(Selector("[data-testid=WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT]"));
 	await scrollBy(0, -200);
 	await t.click(Selector("[data-testid=WalletHeader__more-button]"));
 	await t.click(Selector("li").withText("Sign Message"));
 
+	// Fill out form and sign message
+	await t.typeText(Selector("input[name=message]"), "Hello World");
+	await t.typeText(Selector("input[name=mnemonic]"), "this is a top secret passphrase");
 	await t.click(Selector("[data-testid=SignMessage__submit-button]"));
 	await t.expect(Selector("h2").withText("Message Successfully Signed").exists).ok();
 	await t.click(Selector("[data-testid=modal__close-btn]"));
