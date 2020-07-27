@@ -1,0 +1,69 @@
+{
+	"meta": {
+		"count": 2,
+		"pageCount": 1,
+		"totalCount": 2,
+		"next": null,
+		"previous": null,
+		"self": "/delegates?page=1&limit=100",
+		"first": "/delegates?page=1&limit=100",
+		"last": "/delegates?page=1&limit=100"
+	},
+	"data": [
+		{
+			"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+			"nonce": "111932",
+			"balance": "55827093444556",
+			"attributes": {
+				"delegate": {
+					"username": "arkx",
+					"voteBalance": "57037342430760",
+					"forgedFees": "124364463486",
+					"forgedRewards": "16899000000000",
+					"producedBlocks": 84709,
+					"lastBlock": {
+						"id": "682a1c53eb9e6fcf285d1b6819de08f88bd15b083a612c3fe32aa870001dbf22",
+						"height": 4269235,
+						"timestamp": 91907944,
+						"generatorPublicKey": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec"
+					},
+					"resigned": true
+				},
+				"vote": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec"
+			},
+			"isDelegate": true,
+			"isResigned": true,
+			"vote": "03bbfb43ecb5a54a1e227bb37b5812b5321213838d376e2b455b6af78442621dec",
+			"username": "arkx"
+		},
+		{
+			"username": "genesis_42",
+			"address": "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
+			"publicKey": "0346e1a1b5cb0720e863e8cf8a91dc8ed827e09fb4a4812f9f4d51f606e5359516",
+			"votes": "53411673185151",
+			"rank": 2,
+			"isResigned": false,
+			"blocks": {
+				"produced": 84472,
+				"last": {
+					"id": "3213d10a2c96f9f0a9aeddb0c2056e92f8b835c3c7e8a3e3575f2e4d7d47fe57",
+					"height": 5856920,
+					"timestamp": {
+						"epoch": 105497320,
+						"unix": 1595598520,
+						"human": "2020-07-24T13:48:40.000Z"
+					}
+				}
+			},
+			"production": {
+				"approval": 0.39
+			},
+			"forged": {
+				"fees": "169109715418",
+				"rewards": "16851800000000",
+				"total": "17020909715418"
+			}
+		}
+	]
+}
