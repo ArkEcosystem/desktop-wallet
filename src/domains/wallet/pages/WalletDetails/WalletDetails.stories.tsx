@@ -1,5 +1,7 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
 import React from "react";
+import { MemoryRouter, Route } from "react-router";
 import { WalletsDecorator } from "utils/storybook";
 
 import { WalletDetails } from "./WalletDetails";
@@ -15,12 +17,28 @@ export default {
 	],
 };
 
-export const Default = ({ wallets }: { wallets: Wallet[] }) => (
-	<WalletDetails wallets={[wallets[0]]} wallet={wallets[0]} />
+export const Default = ({ env, profile, wallets }: { env: Environment; profile: Profile; wallets: Wallet[] }) => (
+	<EnvironmentProvider env={env}>
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}`]}>
+			<Route path="/profiles/:profileId/wallets/:walletId" component={() => <WalletDetails />} />
+		</MemoryRouter>
+	</EnvironmentProvider>
 );
 
 export const Empty = () => <WalletDetails />;
 
-export const MultipleWallets = ({ wallets }: { wallets: Wallet[] }) => (
-	<WalletDetails wallets={wallets} wallet={wallets[0]} />
+export const MultipleWallets = ({
+	env,
+	profile,
+	wallets,
+}: {
+	env: Environment;
+	profile: Profile;
+	wallets: Wallet[];
+}) => (
+	<EnvironmentProvider env={env}>
+		<MemoryRouter initialEntries={[`/profiles/${profile.id()}/wallets/${wallets[0].id()}`]}>
+			<Route path="/profiles/:profileId/wallets/:walletId" component={() => <WalletDetails />} />
+		</MemoryRouter>
+	</EnvironmentProvider>
 );

@@ -20,4 +20,4 @@ export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }
 	<WalletVote delegates={delegates} onUnvote={action("onUnvote")} />
 );
 
-export const Empty = () => <WalletVote delegates={[]} onUnvote={action("onUnvote")} />;
+export const Empty = () => <WalletVote delegates={null} onUnvote={action("onUnvote")} />;
