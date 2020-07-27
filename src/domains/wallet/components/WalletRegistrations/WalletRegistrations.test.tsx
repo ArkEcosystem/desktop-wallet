@@ -1,4 +1,3 @@
-
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
