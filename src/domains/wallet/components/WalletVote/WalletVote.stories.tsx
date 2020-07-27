@@ -1,19 +1,21 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { action } from "@storybook/addon-actions";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
 import { WalletVote } from "./WalletVote";
 
-export default { title: "Domains / Wallet / Components / WalletVote" };
+export default {
+	title: "Domains / Wallet / Components / WalletVote",
+	decorators: [
+		(storyFn: any) => (
+			<WalletsDecorator count={1} withDelegates={true}>
+				{storyFn}
+			</WalletsDecorator>
+		),
+	],
+};
 
-const data = [
-	{
-		username: "Test",
-		address: "abc",
-		rank: 1,
-		explorerUrl: "https://dexplorer.ark.io",
-		msqUrl: "https://marketsquare.ark.io",
-		isActive: true,
-	},
-];
-
-export const Default = () => <WalletVote delegates={data} onUnvote={action("onUnvote")} />;
+export const Default = ({ delegates }: { delegates: Coins.WalletDataCollection }) => (
+	<WalletVote delegates={delegates} onUnvote={action("onUnvote")} />
+);

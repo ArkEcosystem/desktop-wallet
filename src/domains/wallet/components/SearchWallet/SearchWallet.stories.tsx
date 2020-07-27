@@ -1,8 +1,9 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { action } from "@storybook/addon-actions";
 import { boolean, withKnobs } from "@storybook/addon-knobs";
 import React from "react";
+import { WalletsDecorator } from "utils/storybook";
 
-import { wallets } from "../../data";
 import { SearchWallet } from "./SearchWallet";
 
 export default {
@@ -10,26 +11,42 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => {
-	const networks = [
-		{
-			name: "Ark",
-			isSelected: true,
-		},
-		{
-			name: "Ethereum",
-			isSelected: false,
-		},
-		{
-			name: "Bitcoin",
-			isSelected: true,
-		},
-	];
+const networks = [
+	{
+		name: "Ark",
+		isSelected: true,
+	},
+	{
+		name: "Ethereum",
+		isSelected: false,
+	},
+	{
+		name: "Bitcoin",
+		isSelected: true,
+	},
+];
 
+export const Default = () => {
+	return (
+		<WalletsDecorator count={3}>
+			{({ wallets }: { wallets: Wallet[] }) => (
+				<SearchWallet
+					isOpen={boolean("isOpen", true)}
+					wallets={wallets}
+					networks={networks}
+					onClose={action("onClose")}
+					onSearch={action("onSearch")}
+				/>
+			)}
+		</WalletsDecorator>
+	);
+};
+
+export const Empty = () => {
 	return (
 		<SearchWallet
 			isOpen={boolean("isOpen", true)}
-			wallets={wallets}
+			wallets={undefined}
 			networks={networks}
 			onClose={action("onClose")}
 			onSearch={action("onSearch")}
