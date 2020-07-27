@@ -62,7 +62,10 @@ export const WalletCard = ({
 	const coinName = wallet?.coin().manifest().get<string>("name");
 
 	return (
-		<Link to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`} data-testid={`WalletCard__${id}`}>
+		<Link
+			to={`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`}
+			data-testid={`WalletCard__${wallet?.address()}`}
+		>
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">

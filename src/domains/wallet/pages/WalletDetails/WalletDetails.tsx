@@ -15,25 +15,20 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-type Props = {
-	wallets?: Wallet[];
-	wallet?: Wallet;
-};
-
-export const WalletDetails = ({ wallet, wallets }: Props) => {
+export const WalletDetails = () => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isUpdateWalletNameOpen, setIsUpdateWalletNameOpen] = useState(false);
+	const [wallet, setWallet] = useState<Wallet | undefined>((null as unknown) as Wallet);
+	const [wallets, setWallets] = useState<Wallet[] | undefined>([]);
 	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
 		(null as unknown) as Coins.WalletDataCollection,
 	);
 
 	const history = useHistory();
 	const { persist } = useEnvironmentContext();
-
 	const { t } = useTranslation();
-
 	const activeProfile = useActiveProfile();
 	const { walletId } = useParams();
 
@@ -46,17 +41,28 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	];
 
 	const handleDeleteWallet = async () => {
-		const wallet = activeProfile?.wallets().findById(walletId);
-		activeProfile?.wallets().forget(wallet?.id() as string);
+		activeProfile?.wallets().forget(walletId);
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
 	};
 
 	React.useEffect(() => {
-		wallet?.delegates().then((delegates) => {
-			setDelegates(delegates.data);
-		});
+		const timer = setInterval(() => {
+			const wallets = activeProfile?.wallets().values();
+			const wallet = activeProfile?.wallets().findById(walletId);
+
+			setWallet(wallet);
+			setWallets(wallets);
+
+			wallet?.delegates().then((delegates) => {
+				setDelegates(delegates.data);
+			});
+		}, 1000);
+
+		return () => {
+			clearInterval(timer);
+		};
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const coinName = wallet?.coin().manifest().get<string>("name") || "";
@@ -144,9 +150,4 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			/>
 		</>
 	);
-};
-
-WalletDetails.defaultProps = {
-	wallets: [],
-	wallet: null,
 };

@@ -9,18 +9,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	delegates: Coins.WalletDataCollection;
+	delegates: Coins.WalletDataCollection | null;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 };
 
 // TODO: Delegate Explorer URL
 export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const { t } = useTranslation();
-
-	const hasNoVotes = !delegates || delegates.length === 0;
+	const hasNoVotes = !delegates || delegates.all().length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -56,7 +55,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 							</div>
 						</div>
 					) : (
-						delegates.map((delegate) => (
+						delegates?.all().map((delegate) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"
@@ -91,33 +90,33 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 										</li>
 
-                    <li className="flex flex-col items-center justify-between px-10">
-                      <span className="text-sm font-semibold text-theme-neutral">
-                        {t("COMMON.EXPLORER")}
-                      </span>
-                      <a
-                        data-testid="WalletVote__delegate__explorer"
-                        href="https://explorer.ark.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon name="Explorer" className="text-2xl text-theme-primary" />
-                      </a>
-                    </li>
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.EXPLORER")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__explorer"
+												href="https://explorer.ark.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Explorer" className="text-2xl text-theme-primary" />
+											</a>
+										</li>
 
-                    <li className="flex flex-col items-center justify-between px-10">
-                      <span className="text-sm font-semibold text-theme-neutral">
-                        {t("COMMON.MARKETSQUARE")}
-                      </span>
-                      <a
-                        data-testid="WalletVote__delegate__msq"
-                        href="https://marketsquare.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon name="Link" className="text-xl text-theme-primary" />
-                      </a>
-                    </li>
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.MARKETSQUARE")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__msq"
+												href="https://marketsquare.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Link" className="text-xl text-theme-primary" />
+											</a>
+										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
 											<span className="text-sm font-semibold text-theme-neutral">
@@ -125,7 +124,9 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 											<Icon
 												name={delegate.rank() ? "Ok" : "StatusClock"}
-												className={delegate.rank() ? "text-theme-success" : "text-theme-neutral"}
+												className={
+													delegate.rank() ? "text-theme-success" : "text-theme-neutral"
+												}
 											/>
 										</li>
 									</ul>
