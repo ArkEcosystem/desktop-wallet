@@ -1,25 +1,27 @@
 import { Selector } from "testcafe";
 
-
+import { buildTranslations as translations } from "../../../app/i18n/helpers";
 
 fixture`Create Wallet action`.page`http://localhost:3000/`;
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
 	await t.click(Selector("p").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
+	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
 	// Navigate to create page
-	await t.click(Selector("button").withExactText("Create"));
-	await t.expect(Selector("div").withText("Select a Network to create your new wallet address").exists).ok();
+	await t.click(Selector("button").withExactText(translations().COMMON.CREATE));
+	await t
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE).exists)
+		.ok();
 
 	// Select a network and advance to step two
 	await t.click(Selector("#CreateWallet__network-item-1"));
 	await t
-		.expect(Selector("button").withText("Continue").hasAttribute("disabled"))
+		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
 		.notOk("Network selected", { timeout: 5000 });
-	await t.click(Selector("button").withExactText("Continue"));
-	await t.click(Selector("h1").withExactText("Your Passphrase"));
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
+	await t.click(Selector("h1").withExactText(translations().COMMON.YOUR_PASSPHRASE));
 
 	// Show passphrase and go to third step
 	const mnemonicsCount = await Selector("[data-testid=MnemonicList__item]").count;
@@ -29,10 +31,10 @@ test("should create a wallet", async (t) => {
 
 		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
 	}
-	await t.click(Selector("button").withExactText("Continue"));
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
 
 	// Confirm your password
-	await t.expect(Selector("button").withText("Continue").hasAttribute("disabled")).ok();
+	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
 	for (let i = 0; i < 3; i++) {
 		const selectWordPhrase = await Selector("[data-testid=MnemonicVerificationOptions__title]").textContent;
 		const wordNumber = selectWordPhrase.replace(/Select word #/, "");
@@ -43,10 +45,10 @@ test("should create a wallet", async (t) => {
 		);
 	}
 
-	await t.click(Selector("button").withExactText("Continue"));
-	await t.expect(Selector("h1").withExactText("Completed").exists).ok();
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
+	await t.expect(Selector("h1").withExactText(translations().COMMON.COMPLETED).exists).ok();
 
 	// Save and finish
-	await t.click(Selector("button").withExactText("Save & Finish"));
-	await t.expect(Selector("div").withExactText("Wallets").exists).ok();
+	await t.click(Selector("button").withExactText(translations().COMMON.SAVE_FINISH));
+	await t.expect(Selector("div").withExactText(translations().COMMON.WALLETS).exists).ok();
 });
