@@ -3,39 +3,27 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
-import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
 import { profiles } from "tests/fixtures/env/data";
 import { identity } from "tests/fixtures/identity";
-import { StubStorage } from "tests/mocks";
+import { mockArkHttp, StubStorage } from "tests/mocks";
 
-import { wallet as walletData, wallets } from "../../data";
 import { WalletDetails } from "./WalletDetails";
 
 let env: Environment;
 let profile: Profile;
 let wallet: Wallet;
+let wallets: Wallet[];
+
+const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
+
+beforeAll(() => {
+	mockArkHttp();
+});
 
 describe("WalletDetails", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
-
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
@@ -43,20 +31,27 @@ describe("WalletDetails", () => {
 
 		profile = env.profiles().findById("bob");
 
-		wallet = await profile.wallets().importByMnemonic(identity.mnemonic, "ARK", "devnet");
+		wallet = await profile.wallets().importByMnemonic(identity.mnemonic, "ARK", "mainnet");
+		wallets = [wallet, await profile.wallets().importByMnemonic(passphrase2, "ARK", "mainnet")];
 	});
 
-	it("should render", () => {
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={walletData} />);
+	it("should render", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={wallet} />);
 
 		expect(getByTestId("WalletBottomSheetMenu")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without wallet", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails />);
+
+		expect(getByTestId("WalletHeader")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should not render the bottom sheet menu when there is only one wallet", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<WalletDetails wallets={[wallets[0]]} wallet={walletData} />,
-		);
+		wallets = [wallet];
+		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={wallet} />);
 
 		expect(() => getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
@@ -70,7 +65,7 @@ describe("WalletDetails", () => {
 			rendered = renderWithRouter(
 				<EnvironmentProvider env={env}>
 					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+						<WalletDetails wallets={wallets} wallet={wallet} />
 					</Route>
 				</EnvironmentProvider>,
 				{
@@ -97,9 +92,11 @@ describe("WalletDetails", () => {
 			await fireEvent.click(deleteWalletOption);
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
+			await waitFor(() => expect(profile.wallets().count()).toEqual(2));
+
 			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
 
-			await waitFor(() => expect(profile.wallets().count()).toEqual(0));
+			await waitFor(() => expect(profile.wallets().count()).toEqual(1));
 		});
 	});
 });

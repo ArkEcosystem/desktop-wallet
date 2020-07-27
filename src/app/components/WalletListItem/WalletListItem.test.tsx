@@ -1,15 +1,36 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage-mainnet.json";
+import { mockArkHttp, StubStorage } from "tests/mocks";
 
 import { WalletListItem } from "./WalletListItem";
 
+let wallet: Wallet;
+
+beforeAll(() => {
+	mockArkHttp();
+});
+
 describe("WalletListItem", () => {
+	beforeEach(async () => {
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		const profile = env.profiles().all()[0];
+		wallet = profile.wallets().values()[0];
+		wallet.data().set(WalletFlag.Starred, true);
+		wallet.data().set(WalletFlag.Ledger, true);
+	});
+
 	it("should render", () => {
 		const { container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coinIcon="Bitcoin" walletTypeIcons={["Star", 'Multisig", "Ledger']} />
+					<WalletListItem wallet={wallet} />
 				</tbody>
 			</table>,
 		);
@@ -22,7 +43,7 @@ describe("WalletListItem", () => {
 		const { container, getByTestId } = render(
 			<table>
 				<tbody>
-					<WalletListItem coinIcon="Bitcoin" actions={actions} variant="singleAction" />
+					<WalletListItem wallet={wallet} actions={actions} variant="singleAction" />
 				</tbody>
 			</table>,
 		);
@@ -42,7 +63,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Bitcoin" actions={options} onAction={fn} />
+					<WalletListItem wallet={wallet} actions={options} onAction={fn} />
 				</tbody>
 			</table>,
 		);
@@ -73,7 +94,7 @@ describe("WalletListItem", () => {
 		const { getByTestId, container } = render(
 			<table>
 				<tbody>
-					<WalletListItem coin="Bitcoin" actions={options} />
+					<WalletListItem wallet={wallet} actions={options} />
 				</tbody>
 			</table>,
 		);

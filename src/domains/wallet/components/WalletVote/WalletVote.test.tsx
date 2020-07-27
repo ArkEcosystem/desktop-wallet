@@ -1,38 +1,44 @@
+import { Coins } from "@arkecosystem/platform-sdk";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage-mainnet.json";
+import { mockArkHttp, StubStorage } from "tests/mocks";
 
 import { WalletVote } from "./WalletVote";
 
-const data = [
-	{
-		username: "Test",
-		address: "test1",
-		rank: 1,
-		explorerUrl: "https://dexplorer.ark.io",
-		msqUrl: "https://marketsquare.ark.io",
-		isActive: true,
-	},
-	{
-		username: "Test 2",
-		address: "test2",
-		rank: 2,
-	},
-];
+let delegates: Coins.WalletDataCollection;
+
+beforeAll(() => {
+	mockArkHttp();
+});
 
 describe("WalletVote", () => {
+	beforeEach(async () => {
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		const profile = env.profiles().all()[0];
+		const wallet = profile.wallets().values()[0];
+
+		delegates = (await wallet.delegates()).data;
+	});
+
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<WalletVote delegates={data} />);
+		const { getByTestId, asFragment } = render(<WalletVote delegates={delegates} />);
 		expect(getByTestId("WalletVote")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render closed", () => {
-		const { getByTestId } = render(<WalletVote delegates={data} defaultIsOpen={false} />);
+		const { getByTestId } = render(<WalletVote delegates={delegates} defaultIsOpen={false} />);
 		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");
 	});
 
 	it("should toggle", () => {
-		const { getByTestId } = render(<WalletVote delegates={data} />);
+		const { getByTestId } = render(<WalletVote delegates={delegates} />);
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__toggle"));
 		});
@@ -40,18 +46,18 @@ describe("WalletVote", () => {
 	});
 
 	it("should render delegates", () => {
-		const { getAllByTestId } = render(<WalletVote delegates={data} />);
-		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(data.length);
+		const { getAllByTestId } = render(<WalletVote delegates={delegates} />);
+		expect(getAllByTestId("WalletVote__delegate")).toHaveLength(delegates.all().length);
 	});
 
 	it("should emit action on unvote", () => {
 		const onUnvote = jest.fn();
-		const { getAllByTestId } = render(<WalletVote onUnvote={onUnvote} delegates={data} />);
+		const { getAllByTestId } = render(<WalletVote onUnvote={onUnvote} delegates={delegates} />);
 		const unvoteButtons = getAllByTestId("WalletVote__delegate__unvote");
-		expect(unvoteButtons).toHaveLength(data.length);
+		expect(unvoteButtons).toHaveLength(delegates.all().length);
 		act(() => {
 			fireEvent.click(unvoteButtons[0]);
 		});
-		expect(onUnvote).toHaveBeenCalledWith(data[0].address);
+		expect(onUnvote).toHaveBeenCalledWith(delegates.all()[0].address());
 	});
 });

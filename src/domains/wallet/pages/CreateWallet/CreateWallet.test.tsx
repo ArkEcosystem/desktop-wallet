@@ -6,13 +6,12 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
-import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
 import { profiles } from "tests/fixtures/env/data";
-import { StubStorage } from "tests/mocks";
+import { mockArkHttp, StubStorage } from "tests/mocks";
 
 import { networks } from "../../data";
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
@@ -24,23 +23,13 @@ let bip39GenerateMock: any;
 const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 beforeAll(() => {
-	nock.disableNetConnect();
+	mockArkHttp();
 
-	nock("https://wallets.ark.io")
-		.get("/api/node/configuration")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
-		.get("/api/peers")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-		.get("/api/node/configuration/crypto")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-		.get("/api/node/syncing")
-		.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-		.persist();
+	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+});
 
-	nock("https://neoscan.io")
-		.get(/\/api\/main_net\/v1\/get_last_transactions_by_address\/.+/)
-		.reply(200, [])
-		.persist();
+afterAll(() => {
+	bip39GenerateMock.mockRestore();
 });
 
 describe("CreateWallet", () => {
@@ -54,12 +43,6 @@ describe("CreateWallet", () => {
 		await env.bootFromObject({ data: {}, profiles });
 
 		profile = env.profiles().findById("bob");
-
-		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
-	});
-
-	afterEach(() => {
-		bip39GenerateMock.mockRestore();
 	});
 
 	it("should render 1st step", async () => {

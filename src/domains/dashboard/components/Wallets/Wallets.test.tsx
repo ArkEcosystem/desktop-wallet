@@ -1,17 +1,24 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { identity } from "tests/fixtures/identity";
-import { act, env, fireEvent, renderWithRouter } from "utils/testing-library";
+import fixtureData from "tests/fixtures/env/storage-mainnet.json";
+import { mockArkHttp, StubStorage } from "tests/mocks";
+import { act,  fireEvent, renderWithRouter } from "utils/testing-library";
 
-import { networks, wallets } from "../../data";
+import { networks } from "../../data";
 import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
-
-let profile: Profile;
 let dashboardURL: string;
+let profile: Profile;
+let wallet: Wallet;
+
+beforeAll(() => {
+	mockArkHttp();
+});
 
 // Wallet filter properties
 const filterProperties = {
@@ -37,16 +44,51 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
-	beforeAll(() => {
-		profile = env.profiles().findById(identity.profiles.bob.id);
+	beforeEach(async () => {
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		profile = env.profiles().all()[0];
+		wallet = profile.wallets().values()[0];
+
 		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 	});
 
-	it("should render", () => {
+	it("should render grid", () => {
+		const { container, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={[wallet]} filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getAllByTestId("WalletCard__blank")).toBeTruthy();
+		expect(container).toBeTruthy();
+	});
+
+	it("should render many wallets on grid", () => {
+		const { container, getAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Wallets wallets={new Array(10).fill(wallet)} filterProperties={filterProperties} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(() => getAllByTestId("WalletCard__blank")).toThrow(/^Unable to find an element by/);
+		expect(container).toBeTruthy();
+	});
+
+	it("should render list", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets wallets={wallets} filterProperties={filterProperties} />
+				<Wallets wallets={[wallet]} viewType="list" filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -74,7 +116,7 @@ describe("Wallets", () => {
 	it("should render with list view enabled as default", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
+				<Wallets viewType="list" wallets={[wallet]} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -88,7 +130,7 @@ describe("Wallets", () => {
 	it("should render with list view enabled as default and empty wallet list", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Wallets viewType="list" wallets={wallets} filterProperties={filterProperties} />
+				<Wallets viewType="list" wallets={[wallet]} filterProperties={filterProperties} />
 			</Route>,
 			{
 				routes: [dashboardURL],
