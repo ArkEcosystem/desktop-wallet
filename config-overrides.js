@@ -8,8 +8,6 @@ module.exports = override(
 		require("autoprefixer"),
 	]),
 	(config) => {
-		config.target = "electron-renderer";
-
 		config.node = {
 			fs: "empty",
 		};
