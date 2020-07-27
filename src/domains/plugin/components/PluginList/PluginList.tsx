@@ -23,6 +23,7 @@ export const PluginList = ({
 	withPagination,
 }: PluginListProps) => {
 	const { t } = useTranslation();
+
 	const [currentPage, setCurrentPage] = React.useState(1);
 
 	const columns = [

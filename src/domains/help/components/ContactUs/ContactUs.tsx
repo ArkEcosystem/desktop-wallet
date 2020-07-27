@@ -20,7 +20,10 @@ type ContactUsProps = {
 
 export const ContactUs = (props: ContactUsProps) => {
 	const methods = useForm({ mode: "onChange" });
+
 	const { t } = useTranslation();
+
+	const subjects = ["security", "other"];
 
 	return (
 		<Modal
@@ -59,37 +62,53 @@ export const ContactUs = (props: ContactUsProps) => {
 				<FormField name="name">
 					<h2 className="mb-0">Feedback</h2>
 
-					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_NAME")}</FormLabel>
-					<Input ref={methods.register({ required: "Field required" })} />
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FORM.NAME")}</FormLabel>
+					<Input
+						ref={methods.register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("HELP.MODAL_CONTACT_US.FORM.NAME"),
+							}).toString(),
+						})}
+					/>
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="email">
-					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_EMAIL")}</FormLabel>
-					<Input ref={methods.register({ required: "Field required" })} />
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FORM.EMAIL")}</FormLabel>
+					<Input
+						ref={methods.register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("HELP.MODAL_CONTACT_US.FORM.EMAIL"),
+							}).toString(),
+						})}
+					/>
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="subject">
-					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_SUBJECT")}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FORM.SUBJECT")}</FormLabel>
 					<Select
 						ref={methods.register({
-							required: t("HELP.MODAL_CONTACT_US.SUBJECT_REQUIRED").toString(),
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("HELP.MODAL_CONTACT_US.FORM.SUBJECT"),
+							}).toString(),
 						})}
 						placeholder={t("COMMON.SELECT")}
-						options={[
-							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.SECURITY"), value: "security" },
-							{ label: t("HELP.MODAL_CONTACT_US.SUBJECT_OPTION.OTHER"), value: "other" },
-						]}
+						options={subjects.map((value: string) => ({
+							label: t(`COMMON.${value.toUpperCase()}`),
+							value,
+						}))}
 					/>
 					<FormHelperText />
 				</FormField>
 
 				<FormField name="message">
-					<FormLabel>{t("HELP.MODAL_CONTACT_US.FIELD_MESSAGE")}</FormLabel>
+					<FormLabel>{t("HELP.MODAL_CONTACT_US.FORM.MESSAGE")}</FormLabel>
 					<TextArea
 						ref={methods.register({
-							required: t("HELP.MODAL_CONTACT_US.MESSAGE_REQUIRED").toString(),
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("HELP.MODAL_CONTACT_US.FORM.MESSAGE"),
+							}).toString(),
 						})}
 					/>
 				</FormField>

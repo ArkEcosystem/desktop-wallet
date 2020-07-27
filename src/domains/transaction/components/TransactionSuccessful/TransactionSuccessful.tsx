@@ -24,31 +24,35 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 				</p>
 				<TransactionDetail label="ID" border={false}>
 					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
+						<Address
+							addressClass="text-theme-primary"
+							address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+							maxChars={32}
+						/>
+						<span className="ml-5">
+							<Clipboard>
+								<div className="text-theme-primary-300">
+									<Icon name="Copy" />
+								</div>
+							</Clipboard>
+						</span>
 					</div>
 				</TransactionDetail>
 
 				<TransactionDetail label="Block ID">
 					<div className="flex items-center">
-						<Clipboard>
-							<Address
-								addressClass="text-theme-primary"
-								address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWKAUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
-								maxChars={32}
-							/>
-						</Clipboard>
-						<div className="mb-1 ml-5 text-theme-primary-300">
-							<Icon name="Copy" />
-						</div>
+						<Address
+							addressClass="text-theme-primary"
+							address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+							maxChars={32}
+						/>
+						<span className="ml-5">
+							<Clipboard>
+								<div className="text-theme-primary-300">
+									<Icon name="Copy" />
+								</div>
+							</Clipboard>
+						</span>
 					</div>
 				</TransactionDetail>
 
@@ -62,7 +66,7 @@ export const TransactionSuccessful = ({ children }: { children: React.ReactNode 
 						</div>
 					}
 				>
-					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
+					ARK Ecosystem
 				</TransactionDetail>
 
 				<TransactionDetail extra={<Avatar size="lg" address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" />}>

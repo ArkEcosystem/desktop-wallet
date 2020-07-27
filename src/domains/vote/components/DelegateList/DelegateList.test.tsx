@@ -2,6 +2,7 @@ import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
 import { delegateListData } from "../../data";
+import { translations } from "../../i18n";
 import { DelegateList } from "./DelegateList";
 
 describe("DelegateList", () => {
@@ -53,11 +54,12 @@ describe("DelegateList", () => {
 		fireEvent.click(selectButtons[1]);
 		fireEvent.click(selectButtons[2]);
 
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Show List");
+		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.SHOW_LIST);
 
 		fireEvent.click(getByTestId("DelegateList__toggle-show-selected"));
 
-		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Hide List");
+		expect(getByTestId("DelegateList__footer")).toHaveTextContent(translations.DELEGATE_LIST.HIDE_LIST);
+		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 1");
 		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 2");
 		expect(getByTestId("DelegateList__footer")).toHaveTextContent("Delegate 3");
 		expect(asFragment()).toMatchSnapshot();

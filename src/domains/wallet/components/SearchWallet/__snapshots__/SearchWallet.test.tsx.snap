@@ -111,7 +111,7 @@ exports[`SearchWallet should render 1`] = `
           class="mt-8"
         >
           <div
-            class="sc-fznKkj crvYjk"
+            class="sc-fznKkj eHfoqE"
             role="table"
           >
             <table
@@ -186,11 +186,25 @@ exports[`SearchWallet should render 1`] = `
                     colspan="1"
                     data-testid="table__th--2"
                     role="columnheader"
+                  >
+                    <div
+                      class="flex flex-inline align-top justify-center"
+                    >
+                      <div>
+                        Wallet Type
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-sm text-left select-none text-theme-neutral"
+                    colspan="1"
+                    data-testid="table__th--3"
+                    role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Balance
@@ -214,13 +228,13 @@ exports[`SearchWallet should render 1`] = `
                   <th
                     class="text-sm text-left select-none text-theme-neutral"
                     colspan="1"
-                    data-testid="table__th--3"
+                    data-testid="table__th--4"
                     role="columnheader"
                     style="cursor: pointer;"
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Fiat Value

@@ -23,7 +23,10 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 		>
 			<div className="flex flex-col space-y-8">
 				<div className="flex items-center justify-between px-2 py-4 shadow-xl rounded-md">
-					<Input className="border-none shadow-none NewsOptions__search" placeholder="Search" />
+					<Input
+						className="border-none shadow-none NewsOptions__search"
+						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
+					/>
 					<Icon className="mr-4 text-theme-neutral" name="Search" width={20} height={20} />
 				</div>
 
@@ -31,12 +34,12 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 
 				<div className="flex flex-col space-y-3">
 					<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
-					<p className="text-sm text-theme-neutral">{t("NEWS.SELECT_YOUR_CATEGORIES")}</p>
+					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
 
 					<div className="flex flex-wrap -mx-1">
 						{categories?.map((category, index) => (
 							<SelectCategory key={index} className="p-1" defaultChecked={category.isSelected}>
-								#{category.name}
+								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
 							</SelectCategory>
 						))}
 					</div>
@@ -45,15 +48,15 @@ export const NewsOptions = ({ categories, selectedAssets }: Props) => {
 				<Divider dashed />
 
 				<div className="flex flex-col space-y-3">
-					<h5 className="font-semibold">{t("NEWS.FILTER_ASSETS")}</h5>
-					<p className="text-sm text-theme-neutral">{t("NEWS.YOUR_CURRENT_SELECTIONS")}</p>
+					<h5 className="font-semibold">{t("NEWS.NEWS_OPTIONS.FILTER_ASSETS")}</h5>
+					<p className="text-sm text-theme-neutral">{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}</p>
 
 					<div className="pb-4">
 						<FilterNetwork networks={selectedAssets} hideViewAll />
 					</div>
 
 					<Button className="w-full" variant="plain">
-						{t("NEWS.UPDATE_FILTER")}
+						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
 					</Button>
 				</div>
 			</div>

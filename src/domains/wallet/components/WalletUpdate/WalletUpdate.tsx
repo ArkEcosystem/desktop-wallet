@@ -1,7 +1,4 @@
-// Packages
-// Assets
 import { images } from "app/assets/images";
-// Components
 import { Button } from "app/components/Button";
 import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Modal } from "app/components/Modal";

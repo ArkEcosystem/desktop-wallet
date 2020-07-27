@@ -32,6 +32,12 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without delegates", () => {
+		const { getByTestId, asFragment } = render(<WalletVote />);
+		expect(getByTestId("WalletVote__empty")).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render closed", () => {
 		const { getByTestId } = render(<WalletVote delegates={delegates} defaultIsOpen={false} />);
 		expect(getByTestId("Collapse")).toHaveAttribute("aria-hidden", "true");

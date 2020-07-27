@@ -1,5 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 import { shuffleOptions } from "./utils/shuffleOptions";
@@ -20,6 +21,8 @@ type Props = {
 export const MnemonicVerificationOptions = ({ handleChange, options, limit, answer, position }: Props) => {
 	const controls = useAnimation();
 
+	const { t } = useTranslation();
+
 	const shuffled = React.useMemo(() => shuffleOptions({ options, limit, value: answer }), [options, limit, answer]);
 
 	const handleClick = (value: string, index: number) => {
@@ -39,7 +42,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 	return (
 		<div>
 			<p data-testid="MnemonicVerificationOptions__title" className="mb-2 font-semibold text-theme-neutral-dark">
-				Select word #{position}
+				{t("WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD", { position })}
 			</p>
 			<div className="grid grid-cols-3 gap-2">
 				{shuffled.map((item, index) => (

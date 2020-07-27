@@ -1,8 +1,9 @@
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
-import { useEnvironment } from "app/contexts";
+import { useEnvironmentContext } from "app/contexts";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { availableSettings } from "./available-settings";
 
@@ -10,29 +11,31 @@ type SettingsProps = {
 	onSubmit?: any;
 };
 
-const settingsItems = [
-	{
-		itemKey: "General",
-		label: "General",
-		icon: "General",
-	},
-	{
-		itemKey: "Peer",
-		label: "Peer",
-		icon: "Peer",
-	},
-	{
-		itemKey: "Plugins",
-		label: "Plugins",
-		icon: "Plugin",
-	},
-];
-
 export const Settings = ({ onSubmit }: SettingsProps) => {
-	const env: any = useEnvironment();
+	const { env } = useEnvironmentContext();
 	const form = useForm();
 	const { register, errors } = form;
 	const [activeSettings, setActiveSettings] = useState("General");
+
+	const { t } = useTranslation();
+
+	const settingsItems = [
+		{
+			itemKey: "General",
+			label: t("SETTINGS.GENERAL.MENU_ITEM"),
+			icon: "General",
+		},
+		{
+			itemKey: "Peer",
+			label: t("SETTINGS.PEERS.MENU_ITEM"),
+			icon: "Peer",
+		},
+		{
+			itemKey: "Plugins",
+			label: t("SETTINGS.PLUGINS.MENU_ITEM"),
+			icon: "Plugin",
+		},
+	];
 
 	const renderSettings = () => {
 		const ActiveSettings = availableSettings[activeSettings];
@@ -55,4 +58,8 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 			<Section>{renderSettings()}</Section>
 		</Page>
 	);
+};
+
+Settings.defaultProps = {
+	onSubmit: (profileData: any) => console.log({ profileData }),
 };

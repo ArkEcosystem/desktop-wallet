@@ -1,5 +1,6 @@
 import { Icon } from "app/components/Icon";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 import { OptionButton } from "./MnemonicVerificationOptions";
@@ -27,6 +28,8 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 		[activeTab, tabId],
 	);
 
+	const { t } = useTranslation();
+
 	return (
 		<TabStyled
 			disabled
@@ -40,7 +43,7 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 					<Icon name="Ok" />
 				</span>
 			) : (
-				<span>The #{wordPosition} word</span>
+				<span>{t("WALLETS.MNEMONIC_VERIFICATION.WORD_NUMBER", { position: wordPosition })}</span>
 			)}
 		</TabStyled>
 	);

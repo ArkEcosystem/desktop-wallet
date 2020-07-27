@@ -10,35 +10,14 @@ import { useTranslation } from "react-i18next";
 
 type AddBlacklistPluginProps = {
 	isOpen: boolean;
+	plugins: any;
 	onClose?: any;
 };
 
 const { ChangeNowLogo } = images.exchange.components.AddExchange;
 
-export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
+export const AddBlacklistPlugin = ({ isOpen, plugins, onClose }: AddBlacklistPluginProps) => {
 	const { t } = useTranslation();
-	const data = [
-		{
-			name: "Animal Avatars",
-			description: "Breno Polanski",
-			category: "Utility",
-			rating: 4.6,
-		},
-		{
-			name: "ARK Explorer",
-			description: "ARK Ecosystem",
-			category: "Utility",
-			rating: 4.6,
-			isOfficial: true,
-		},
-		{
-			name: "Bold Ninja",
-			description: "Delegate Fun",
-			category: "Game",
-			rating: 4.9,
-			isGrant: true,
-		},
-	];
 
 	const columns = [
 		{
@@ -57,6 +36,7 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 		{
 			Header: t("COMMON.RATING"),
 			accessor: "rating",
+			className: "justify-center",
 		},
 		{
 			Header: "  ",
@@ -69,14 +49,14 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 			title={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.TITLE")}
 			description={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.DESCRIPTION")}
 			size="4xl"
-			isOpen={props.isOpen}
-			onClose={props.onClose}
+			isOpen={isOpen}
+			onClose={onClose}
 		>
 			<div className="-mx-12">
 				<SearchBar className="mt-8" placeholder={t("PLUGINS.MODAL_ADD_BLACKLIST_PLUGIN.SEARCH_PLACEHOLDER")} />
 			</div>
 			<div className="mt-8 -mb-6">
-				<Table columns={columns} data={data}>
+				<Table columns={columns} data={plugins}>
 					{(rowData: any) => (
 						<tr className="border-b border-dashed border-theme-neutral-200">
 							<td className="w-16">
@@ -88,16 +68,20 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 									{rowData.name}
 								</div>
 								<div className="inline-flex items-center space-x-2">
-									<span className="text-theme-neutral-dark">{rowData.description}</span>
+									<span className="text-theme-neutral-dark">{rowData.author}</span>
 									{rowData.isOfficial && <Icon name="OfficialArkPlugin" width={15} height={15} />}
 									{rowData.isGrant && <Icon name="Grant" width={16} height={16} />}
 								</div>
 							</td>
 
-							<td className="py-10 text-center text-theme-neutral-dark">{rowData.category}</td>
+							<td className="py-10 text-center text-theme-neutral-dark">
+								{t(`PLUGINS.CATEGORIES.${rowData.category.toUpperCase()}`)}
+							</td>
 
 							<td className="py-10 text-theme-neutral-dark">
-								<ReviewRating rating={rowData.rating} width={3} />
+								<span className="flex justify-center">
+									<ReviewRating rating={rowData.rating} width={3} />
+								</span>
 							</td>
 
 							<td className="w-16">
@@ -113,4 +97,5 @@ export const AddBlacklistPlugin = (props: AddBlacklistPluginProps) => {
 
 AddBlacklistPlugin.defaultProps = {
 	isOpen: false,
+	plugins: [],
 };

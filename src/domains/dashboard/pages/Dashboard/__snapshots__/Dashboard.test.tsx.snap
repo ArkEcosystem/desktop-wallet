@@ -315,7 +315,42 @@ exports[`Dashboard should hide portfolio view 1`] = `
                             data-testid="dropdown__options"
                           />
                         </div>
-                        <div>
+                        <span
+                          class="ml-2"
+                        >
+                          Import
+                        </span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-1"
+            >
+              <div
+                class="w-full"
+              >
+                <div
+                  class="relative"
+                >
+                  <div
+                    class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+                    style="height: 444px;"
+                  >
+                    <div
+                      class="h-full swiper-wrapper "
+                      style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+                    >
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
                           <div
                             class="px-10 py-7 w-128"
                           >
@@ -366,6 +401,24 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   </span>
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
                               <div
                                 class="my-8 border-t border-dotted border-1 border-theme-neutral-200"
                               />
@@ -449,6 +502,24 @@ exports[`Dashboard should hide portfolio view 1`] = `
                                   You can hide this unit if you like
                                 </div>
                               </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
                               <div
                                 class="flex flex-col"
                               >
@@ -501,10 +572,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       <div
                         class="flex items-center justify-center mr-2 text-sm align-middle"
                       >
-                        <div
-                          class="sc-AxirZ igJAf"
-                          height="1em"
-                          width="10"
+                        <a
+                          data-testid="WalletCard__4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <svg>
                             plus.svg
@@ -602,9 +672,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -674,9 +744,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -697,6 +767,24 @@ exports[`Dashboard should hide portfolio view 1`] = `
                               >
                                 New wallet
                               </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
                               <div
                                 class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                               >
@@ -772,8 +860,9 @@ exports[`Dashboard should hide portfolio view 1`] = `
                         style="cursor: pointer;"
                         title="Toggle SortBy"
                       >
-                        <div
-                          class="flex flex-inline align-top undefined"
+                        <a
+                          data-testid="WalletCard__8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div>
                             Date
@@ -830,6 +919,468 @@ exports[`Dashboard should hide portfolio view 1`] = `
                       >
                         <div
                           class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Info
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--5"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
+                        >
+                          <div>
+                            Status
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--6"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <a
+                          data-testid="WalletCard__9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                          <div
+                            class="flex items-center ml-2 text-theme-color-neutral"
+                            data-testid="table__Sort"
+                          >
+                            <div
+                              class="sc-AxirZ jMwzyA"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--7"
+                        role="columnheader"
+                      >
+                        <a
+                          data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
+                              <div
+                                class="relative p-2"
+                              >
+                                <div
+                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                >
+                                  <div
+                                    class="relative"
+                                    data-testid="dropdown__toggle"
+                                  >
+                                    <div
+                                      class="float-right outline-none cursor-pointer focus:outline-none"
+                                    >
+                                      <div
+                                        class="sc-AxirZ eEbZjj"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          settings.svg
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="absolute right-3 -top-1"
+                                >
+                                  <div
+                                    class="inline-block mr-2 text text-theme-warning-400"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        star.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        multisig.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        ledger.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex"
+                                >
+                                  <div
+                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-warning-400 border-theme-warning-200"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eViLYR"
+                                      height="16"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        btc.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                                        title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="mt-6 truncate max-w-12"
+                                >
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      My Wallet
+                                    </span>
+                                    <span
+                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      ASuu…3kqT
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="font-bold text-theme-neutral-900"
+                                >
+                                  100 BTC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
+                              <div
+                                class="relative p-2"
+                              >
+                                <div
+                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                >
+                                  <div
+                                    class="relative"
+                                    data-testid="dropdown__toggle"
+                                  >
+                                    <div
+                                      class="float-right outline-none cursor-pointer focus:outline-none"
+                                    >
+                                      <div
+                                        class="sc-AxirZ eEbZjj"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          settings.svg
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="absolute right-3 -top-1"
+                                >
+                                  <div
+                                    class="inline-block mr-2 text text-theme-warning-400"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        star.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        multisig.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        ledger.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex"
+                                >
+                                  <div
+                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-warning-400 border-theme-warning-200"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eViLYR"
+                                      height="16"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        btc.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"35\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                                        title="10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="mt-6 truncate max-w-12"
+                                >
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      My Wallet
+                                    </span>
+                                    <span
+                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      10AS…3kqT
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="font-bold text-theme-neutral-900"
+                                >
+                                  100 BTC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLag fvqzEZ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="bg-white"
+          >
+            <div
+              class="text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="pt-8"
+            >
+              <div
+                class="sc-AxheI VtiAt"
+                role="table"
+              >
+                <table
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      role="row"
+                    >
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Currency
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="border-b border-dotted border-theme-neutral-300"
+                      data-testid="TransactionRow"
+                    >
+                      <td
+                        class="w-16 py-6"
+                      >
+                        <div
+                          class="inline-block align-middle"
+                        >
+                          <a
+                            class="sc-fzozJi fCisHH inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+                            data-testid="TransactionRow__ID"
+                            href=""
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <div
+                              class="sc-AxirZ jMwzyA"
+                              height="12"
+                              width="15"
+                            >
+                              <svg>
+                                sort.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top invisible"
+                        >
+                          <div>
+                            Type
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top undefined"
+                        >
+                          <div>
+                            Recipient
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="text-sm text-left select-none text-theme-neutral"
+                        colspan="1"
+                        data-testid="table__th--4"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -1728,7 +2279,7 @@ exports[`Dashboard should hide portfolio view 1`] = `
                 color="primary"
                 type="button"
               >
-                See more
+                View More
               </button>
             </div>
           </div>
@@ -2492,15 +3043,15 @@ exports[`Dashboard should hide transaction view 1`] = `
                   >
                     <div
                       class="h-full swiper-wrapper "
-                      style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+                      style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
                     >
                       <div
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -2534,9 +3085,9 @@ exports[`Dashboard should hide transaction view 1`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -2570,9 +3121,9 @@ exports[`Dashboard should hide transaction view 1`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -2606,9 +3157,9 @@ exports[`Dashboard should hide transaction view 1`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -2624,11 +3175,47 @@ exports[`Dashboard should hide transaction view 1`] = `
                                   class="sc-AxhUy dSLmHc bg-white border-theme-primary-contrast"
                                 />
                               </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
                               <div
                                 class="mt-6 text-md text-theme-primary-contrast undefined"
                               >
                                 New wallet
                               </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
                               <div
                                 class="mt-1 text-md text-theme-primary-contrast my-px undefined"
                               >
@@ -9010,9 +9597,9 @@ exports[`Dashboard should render wallets 1`] = `
                       <td
                         class="w-32"
                       >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
+                        <a
+                          data-testid="WalletCard__8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
@@ -9088,9 +9675,9 @@ exports[`Dashboard should render wallets 1`] = `
                         class="text-right"
                         data-testid="TransactionRow__currency"
                       >
-                        <span
-                          class="text-theme-neutral-dark"
-                          data-testid="TransactionRowAmount"
+                        <a
+                          data-testid="WalletCard__9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           104.40
                         </span>
@@ -9138,9 +9725,9 @@ exports[`Dashboard should render wallets 1`] = `
                       <td
                         class="w-32"
                       >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
+                        <a
+                          data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
@@ -9191,9 +9778,9 @@ exports[`Dashboard should render wallets 1`] = `
                       <td
                         class="w-16 text-center"
                       >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
+                        <a
+                          data-testid="WalletCard__10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxirZ iQaTP text-theme-success"
@@ -9205,31 +9792,44 @@ exports[`Dashboard should render wallets 1`] = `
                               ok.svg
                             </svg>
                           </div>
-                        </div>
-                      </td>
-                      <td
-                        class="text-right"
-                      >
-                        <div
-                          class="sc-Axmtr cYWaUi"
-                          color="danger"
-                          data-testid="TransactionRowAmount"
-                        >
-                          0.10000000
-                        </div>
-                      </td>
-                      <td
-                        class="text-right"
-                        data-testid="TransactionRow__currency"
-                      >
-                        <span
-                          class="text-theme-neutral-dark"
-                          data-testid="TransactionRowAmount"
-                        >
-                          0.20
-                        </span>
-                      </td>
-                    </tr>
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLag fvqzEZ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="bg-white"
+          >
+            <div
+              class="text-4xl font-bold"
+            >
+              Transactions History
+            </div>
+            <div
+              class="pt-8"
+            >
+              <div
+                class="sc-AxheI VtiAt"
+                role="table"
+              >
+                <table
+                  class="table-auto"
+                >
+                  <thead>
                     <tr
                       class="border-b border-dotted border-theme-neutral-300"
                       data-testid="TransactionRow"
@@ -9345,9 +9945,7 @@ exports[`Dashboard should render wallets 1`] = `
                         class="text-right"
                       >
                         <div
-                          class="sc-Axmtr cYWaUi"
-                          color="danger"
-                          data-testid="TransactionRowAmount"
+                          class="flex flex-inline align-top justify-center"
                         >
                           0.10000000
                         </div>
@@ -10599,11 +11197,207 @@ exports[`Dashboard should render with no wallets 1`] = `
                         <span
                           data-testid="TransactionRow__timestamp"
                         >
-                          17 Mar 2020 22:02:10
+                          104.00
                         </span>
                       </td>
-                      <td
-                        class="w-32"
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <button
+                class="sc-AxhCb BegvR w-full mt-10 mb-5"
+                color="primary"
+                type="button"
+              >
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dashboard should render portfolio percentage bar 1`] = `
+<div>
+  <div
+    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="sc-fzoyAV bqFbiw"
+    >
+      <div
+        class="px-4 sm:px-6 lg:px-"
+      >
+        <div
+          class="relative flex justify-between h-20 md:h-24"
+        >
+          <div
+            class="flex items-center flex-shrink-0"
+          >
+            <div
+              class="flex p-2 mr-4 rounded-lg bg-logo"
+            >
+              <img
+                alt="ARK Logo"
+                class="h-6 md:h-8 lg:h-10"
+                src="ark-logo.png"
+              />
+            </div>
+            <ul
+              class="flex h-20 md:h-24"
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  aria-current="page"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
+                  href="/profiles/bob/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/bob/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex items-center"
+          >
+            <div
+              class="relative"
+              data-testid="dropdown__toggle"
+            >
+              <div
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    notification.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <a
+                data-testid="navbar__buttons--send"
+                href="/profiles/bob/transactions/transfer"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    sent.svg
+                  </svg>
+                </div>
+              </a>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
+            >
+              <button
+                class="sc-AxhCb dVGCEE"
+                color="primary"
+                data-testid="navbar__buttons--receive"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ hmuEJr"
+                  height="22"
+                  width="22"
+                >
+                  <svg>
+                    receive.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="h-8 border-r border-theme-neutral-200"
+            />
+            <div
+              class="p-2 ml-4 text-right"
+            >
+              <div
+                class="text-xs text-theme-neutral"
+              >
+                Your balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-neutral-dark"
+              />
+            </div>
+            <div
+              class="flex p-1 cusror-pointer"
+            >
+              <div
+                class="relative"
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="sc-AxhUy dSLmHc -mr-1 border-theme-neutral-300"
+                  >
+                    <span
+                      class="text-theme-neutral-600"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -11150,13 +11944,36 @@ exports[`Dashboard should render with no wallets 1`] = `
                         >
                           17 Mar 2020 10:22:05
                         </span>
-                      </td>
-                      <td
-                        class="w-32"
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-1"
+            >
+              <div
+                class="w-full"
+              >
+                <div
+                  class="relative"
+                >
+                  <div
+                    class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow swiper-container-multirow-column"
+                    style="height: 444px;"
+                  >
+                    <div
+                      class="h-full swiper-wrapper "
+                      style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
+                    >
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
                       >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
+                        <a
+                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
@@ -11172,6 +11989,16 @@ exports[`Dashboard should render with no wallets 1`] = `
                               </svg>
                             </div>
                           </div>
+                        </a>
+                      </div>
+                      <div
+                        class="swiper-slide"
+                        style="height: 185px;"
+                      >
+                        <a
+                          data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
                           <div
                             class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
                             data-testid="TransactionRowRecipientIcon"
@@ -11207,9 +12034,9 @@ exports[`Dashboard should render with no wallets 1`] = `
                       <td
                         class="w-16 text-center"
                       >
-                        <div
-                          class="inline-flex p-1 align-middle"
-                          data-testid="TransactionRowConfirmation"
+                        <a
+                          data-testid="WalletCard__3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/3ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxirZ iQaTP text-theme-success"
@@ -11288,9 +12115,9 @@ exports[`Dashboard should render with no wallets 1`] = `
                       <td
                         class="w-32"
                       >
-                        <div
-                          class="flex items-center -space-x-1"
-                          data-testid="TransactionRowMode"
+                        <a
+                          data-testid="WalletCard__4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/4ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxhUy fHeTTV border-theme-success-300 text-theme-success"
@@ -11602,65 +12429,151 @@ exports[`Dashboard should render with no wallets 2`] = `
                         height="10"
                         width="10"
                       >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex flex-col flex-1 space-y-5 mt-5"
-    >
-      <div
-        class="sc-fzoLag fvqzEZ"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="-mb-2 text-4xl font-bold"
-          >
-            Portfolio Chart
-          </div>
-          <div
-            class="recharts-responsive-container mb-16"
-            id="undefined"
-            style="width: 100%; height: 260px;"
-          >
-            <div
-              class="sc-fzoXzr hqEepg text-theme-neutral-300 pb"
-              data-testid="line-chart-wrapper"
-            >
-              <div>
-                <div
-                  class="flex"
-                >
-                  <div
-                    class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
-                  >
-                    <div
-                      class="flex"
-                    >
-                      <div
-                        class="my-auto"
-                      >
-                        Period: 22 Jun - 28 Jun
+                        <a
+                          data-testid="WalletCard__5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                        >
+                          <div
+                            class="w-64 inline-block w-full"
+                          >
+                            <div
+                              class="sc-fzpjYC bVVEWC"
+                            >
+                              <div
+                                class="relative p-2"
+                              >
+                                <div
+                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                >
+                                  <div
+                                    class="relative"
+                                    data-testid="dropdown__toggle"
+                                  >
+                                    <div
+                                      class="float-right outline-none cursor-pointer focus:outline-none"
+                                    >
+                                      <div
+                                        class="sc-AxirZ eEbZjj"
+                                        height="20"
+                                        width="20"
+                                      >
+                                        <svg>
+                                          settings.svg
+                                        </svg>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="absolute right-3 -top-1"
+                                >
+                                  <div
+                                    class="inline-block mr-2 text text-theme-warning-400"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        star.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        multisig.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  >
+                                    <div
+                                      class="sc-AxirZ EmuJz"
+                                      height="1em"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        ledger.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="flex"
+                                >
+                                  <div
+                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-warning-400 border-theme-warning-200"
+                                  >
+                                    <div
+                                      class="sc-AxirZ eViLYR"
+                                      height="16"
+                                      width="18"
+                                    >
+                                      <svg>
+                                        btc.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                                    data-testid="Avatar"
+                                  >
+                                    <div
+                                      class="w-full h-full"
+                                    >
+                                      <img
+                                        alt="5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
+                                        title="5ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="mt-6 truncate max-w-12"
+                                >
+                                  <div
+                                    class="inline-block truncate align-middle"
+                                  >
+                                    <span
+                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                                      data-testid="address__wallet-name"
+                                    >
+                                      My Wallet
+                                    </span>
+                                    <span
+                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                                      data-testid="address__wallet-address"
+                                    >
+                                      5ASu…3kqT
+                                    </span>
+                                  </div>
+                                </div>
+                                <div
+                                  class="font-bold text-theme-neutral-900"
+                                >
+                                  100 BTC
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
                       </div>
                       <div
                         class="my-auto ml-1"
                       >
-                        <div
-                          class="sc-AxirZ iQaTP"
-                          height="1em"
-                          width="1em"
+                        <a
+                          data-testid="WalletCard__6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/6ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <svg>
                             chevron-down.svg
@@ -11844,9 +12757,9 @@ exports[`Dashboard should render with no wallets 2`] = `
                         class="inline-block"
                         data-testid="LayoutControls__grid"
                       >
-                        <div
-                          class="px-3 py-3 h-full border-b-3 cursor-pointer text-theme-danger-300 border-theme-danger-contrast"
-                          data-testid="LayoutControls__grid--icon"
+                        <a
+                          data-testid="WalletCard__7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/7ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-AxirZ eLkhAQ"
@@ -11890,10 +12803,9 @@ exports[`Dashboard should render with no wallets 2`] = `
                       <div
                         class="float-right outline-none cursor-pointer focus:outline-none"
                       >
-                        <div
-                          class="sc-AxirZ eEbZjj"
-                          height="20"
-                          width="20"
+                        <a
+                          data-testid="WalletCard__8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/8ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <svg>
                             filters.svg
@@ -11913,10 +12825,9 @@ exports[`Dashboard should render with no wallets 2`] = `
                       <div
                         class="flex items-center justify-center mr-2 text-sm align-middle"
                       >
-                        <div
-                          class="sc-AxirZ igJAf"
-                          height="1em"
-                          width="10"
+                        <a
+                          data-testid="WalletCard__9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/9ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <svg>
                             plus.svg
@@ -12014,9 +12925,9 @@ exports[`Dashboard should render with no wallets 2`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -12050,9 +12961,9 @@ exports[`Dashboard should render with no wallets 2`] = `
                         class="swiper-slide"
                         style="height: 185px;"
                       >
-                        <div
-                          class="w-64 inline-block w-full"
-                          data-testid="WalletCard__blank"
+                        <a
+                          data-testid="WalletCard__10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                          href="/profiles/bob/wallets/10ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
                           <div
                             class="sc-fzpjYC bVVEWC"
@@ -12122,11 +13033,6 @@ exports[`Dashboard should render with no wallets 2`] = `
                     <div
                       class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
                     />
-                    <span
-                      aria-atomic="true"
-                      aria-live="assertive"
-                      class="swiper-notification"
-                    />
                   </div>
                 </div>
               </div>
@@ -12152,7 +13058,7 @@ exports[`Dashboard should render with no wallets 2`] = `
               class="pt-8"
             >
               <div
-                class="sc-AxheI bjlCjh"
+                class="sc-AxheI VtiAt"
                 role="table"
               >
                 <table
@@ -12241,7 +13147,7 @@ exports[`Dashboard should render with no wallets 2`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top justify-center"
                         >
                           <div>
                             Info
@@ -13140,7 +14046,7 @@ exports[`Dashboard should render with no wallets 2`] = `
                 color="primary"
                 type="button"
               >
-                See more
+                View More
               </button>
             </div>
           </div>
