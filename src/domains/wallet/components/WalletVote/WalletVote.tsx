@@ -91,33 +91,33 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 										</li>
 
-                    <li className="flex flex-col items-center justify-between px-10">
-                      <span className="text-sm font-semibold text-theme-neutral">
-                        {t("COMMON.EXPLORER")}
-                      </span>
-                      <a
-                        data-testid="WalletVote__delegate__explorer"
-                        href="https://explorer.ark.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon name="Explorer" className="text-2xl text-theme-primary" />
-                      </a>
-                    </li>
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.EXPLORER")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__explorer"
+												href="https://explorer.ark.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Explorer" className="text-2xl text-theme-primary" />
+											</a>
+										</li>
 
-                    <li className="flex flex-col items-center justify-between px-10">
-                      <span className="text-sm font-semibold text-theme-neutral">
-                        {t("COMMON.MARKETSQUARE")}
-                      </span>
-                      <a
-                        data-testid="WalletVote__delegate__msq"
-                        href="https://marketsquare.io"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Icon name="Link" className="text-xl text-theme-primary" />
-                      </a>
-                    </li>
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.MARKETSQUARE")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__msq"
+												href="https://marketsquare.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Link" className="text-xl text-theme-primary" />
+											</a>
+										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
 											<span className="text-sm font-semibold text-theme-neutral">
@@ -125,7 +125,9 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 											</span>
 											<Icon
 												name={delegate.rank() ? "Ok" : "StatusClock"}
-												className={delegate.rank() ? "text-theme-success" : "text-theme-neutral"}
+												className={
+													delegate.rank() ? "text-theme-success" : "text-theme-neutral"
+												}
 											/>
 										</li>
 									</ul>
