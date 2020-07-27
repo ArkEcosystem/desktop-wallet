@@ -71,7 +71,7 @@ const data = [
 
 export const Default = ({ wallets }: { wallets: Wallet[] }) => {
 	for (const walletIndex of Object.keys(data)) {
-		data[walletIndex].wallet = wallets[walletIndex];
+		data[walletIndex as any].wallet = wallets[walletIndex as any];
 	}
 
 	return (
