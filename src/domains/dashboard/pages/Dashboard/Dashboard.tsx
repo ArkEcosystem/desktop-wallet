@@ -33,7 +33,7 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 		return () => {
 			clearInterval(timer);
 		};
-	}, []); // @ts-ignore react-hooks/exhaustive-deps
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	// Wallet controls data
 	const filterProperties = {

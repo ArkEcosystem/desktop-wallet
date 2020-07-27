@@ -25,9 +25,6 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
 		(null as unknown) as Coins.WalletDataCollection,
 	);
-	const [transactions, setTransactions] = useState<Coins.TransactionDataCollection>(
-		(null as unknown) as Coins.TransactionDataCollection,
-	);
 
 	const history = useHistory();
 	const env = useEnvironment();
@@ -54,10 +51,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		wallet?.delegates().then((delegates) => {
 			setDelegates(delegates.data);
 		});
-		wallet?.transactions({}).then((transactions) => {
-			setTransactions(transactions.data);
-		});
-	}, []);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const coinName = wallet?.coin().manifest().get<string>("name") || "";
 
