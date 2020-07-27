@@ -1,11 +1,14 @@
 import { Selector } from "testcafe";
 
+
+
 fixture`Create Wallet action`.page`http://localhost:3000/`;
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
+
 	// Navigate to create page
 	await t.click(Selector("button").withExactText("Create"));
 	await t.expect(Selector("div").withText("Select a Network to create your new wallet address").exists).ok();
