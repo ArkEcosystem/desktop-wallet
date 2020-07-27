@@ -35,7 +35,7 @@ test("should create a wallet", async (t) => {
 		const wordNumber = selectWordPhrase.replace(/Select word #/, "");
 		await t.click(
 			Selector("[data-testid=MnemonicVerificationOptions__button]").withText(
-				new RegExp(`^${mnemonicWords[wordNumber - 1]}$`),
+				new RegExp(`^${mnemonicWords[Number(wordNumber) - 1]}$`),
 			),
 		);
 	}
