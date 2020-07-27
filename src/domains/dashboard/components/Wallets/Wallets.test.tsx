@@ -6,7 +6,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage-mainnet.json";
 import { mockArkHttp, StubStorage } from "tests/mocks";
-import { act,  fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { networks } from "../../data";
 import { Wallets } from "./Wallets";

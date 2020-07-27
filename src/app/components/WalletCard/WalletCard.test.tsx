@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Wallet, WalletFlag,WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
