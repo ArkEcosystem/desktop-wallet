@@ -37,7 +37,9 @@
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
-		"preversion": "cross-env ./scripts/version-artifacts.sh"
+		"preversion": "cross-env ./scripts/version-artifacts.sh",
+		"postinstall": "electron-builder install-app-deps && npm rebuild",
+		"electron-rebuild": "electron-rebuild ."
 	},
 	"dependencies": {
 		"@arkecosystem/platform-sdk": "^0.9.173",
