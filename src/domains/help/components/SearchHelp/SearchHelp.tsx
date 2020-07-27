@@ -1,7 +1,7 @@
 import { SearchBarOptions } from "app/components/SearchBar/SearchBarOptions";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type SearchHelpProps = {
@@ -15,14 +15,14 @@ export const SearchHelp = ({ isOpen, data, onClose, onSearch }: SearchHelpProps)
 	const { t } = useTranslation();
 
 	const options = [
-		{ label: "All", value: "all" },
-		{ label: "Delegate", value: "delegate" },
-		{ label: "Plugin", value: "plugin" },
-		{ label: "Transaction", value: "transaction" },
-		{ label: "Wallet", value: "wallet" },
+		{ label: t("COMMON.ALL"), value: "all" },
+		{ label: t("COMMON.DELEGATE"), value: "delegate" },
+		{ label: t("COMMON.PLUGIN"), value: "plugin" },
+		{ label: t("COMMON.TRANSACTION"), value: "transaction" },
+		{ label: t("COMMON.WALLET"), value: "wallet" },
 	];
 
-	const [selectedOption, setSelectedOption] = React.useState(options[0]);
+	const [selectedOption, setSelectedOption] = useState(options[0]);
 
 	const columns = [
 		{
@@ -61,7 +61,7 @@ export const SearchHelp = ({ isOpen, data, onClose, onSearch }: SearchHelpProps)
 							</td>
 
 							<td className="py-4 text-sm text-right align-top">
-								<div>{rowData.category}</div>
+								<div>{t(`COMMON.${rowData.category.toUpperCase()}`)}</div>
 							</td>
 						</tr>
 					)}

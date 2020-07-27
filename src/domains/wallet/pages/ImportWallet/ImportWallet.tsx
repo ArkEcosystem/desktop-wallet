@@ -1,40 +1,75 @@
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
-type Props = {
-	networks: any;
-	onSubmit?: any;
+export const FirstStep = () => {
+	const { register, setValue } = useFormContext();
+	const context = useEnvironmentContext();
+	const networks = React.useMemo(() => context.env.availableNetworks(), [context]);
+
+	const { t } = useTranslation();
+
+	React.useEffect(() => {
+		register("network", { required: true });
+	}, [register]);
+
+	const handleSelect = (network?: NetworkData | null) => {
+		setValue("network", network, true);
+	};
+
+	return (
+		<section className="space-y-8" data-testid="ImportWallet__first-step">
+			<div className="my-8">
+				<Header
+					title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+				/>
+			</div>
+			<div className="space-y-2">
+				<FormField name="network" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label={t("COMMON.NETWORK")} />
+					</div>
+					<SelectNetwork id="ImportWallet__network" networks={networks} onSelect={handleSelect} />
+				</FormField>
+			</div>
+		</section>
+	);
 };
 
-const ImportWallet = ({ networks, onSubmit }: Props) => {
-	const [activeIndex, setActiveIndex] = useState(1);
-	const [selected, setSelected] = useState(null);
+export const SecondStep = () => {
+	const { register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
-	const activeProfile = useActiveProfile();
-	const form = useForm();
-	const { register } = form;
 
-	const onPreviousBtnClick = (event: any) => {
-		// Prevent btn click event propagation to form submittion
-		event.preventDefault();
-		setActiveIndex(1);
-	};
+	const { t } = useTranslation();
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
 			return (
-				<FormField name="password">
-					<FormLabel label="Your Password" />
-					<InputPassword data-testid="import-wallet__password-input" ref={register} />
+				<FormField name="passphrase">
+					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
+					<InputPassword
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.YOUR_PASSPHRASE"),
+							}).toString(),
+						})}
+						data-testid="ImportWallet__passphrase-input"
+					/>
+					<FormHelperText />
 				</FormField>
 			);
 		}
@@ -42,11 +77,67 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 		return (
 			// TODO: Change to InputAddress
 			<FormField name="address">
-				<FormLabel label="Address" />
-				<Input data-testid="import-wallet__address-input" ref={register} />
+				<FormLabel label={t("COMMON.ADDRESS")} />
+				<Input
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.ADDRESS"),
+						}).toString(),
+					})}
+					data-testid="ImportWallet__address-input"
+				/>
+				<FormHelperText />
 			</FormField>
 		);
 	};
+
+	return (
+		<section className="space-y-8" data-testid="ImportWallet__second-step">
+			<div className="my-8">
+				<Header
+					title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
+				/>
+			</div>
+			<div className="flex flex-col mt-8">
+				<div className="flex items-center justify-between">
+					<div className="text-lg font-semibold text-theme-neutral-dark">
+						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
+					</div>
+
+					<Toggle
+						name="isAddressOnly"
+						checked={isAddressOnly}
+						onChange={() => {
+							unregister("passphrase");
+							setIsAddressOnly(!isAddressOnly);
+						}}
+						data-testid="ImportWallet__address-toggle"
+					/>
+				</div>
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
+				</div>
+			</div>
+			<div className="mt-8" data-testid="ImportWallet__fields">
+				{renderImportInput()}
+			</div>
+		</section>
+	);
+};
+
+export const ImportWallet = () => {
+	const [activeTab, setActiveTab] = useState(1);
+
+	const history = useHistory();
+	const { persist } = useEnvironmentContext();
+
+	const { t } = useTranslation();
+
+	const activeProfile = useActiveProfile();
+	const form = useForm({ mode: "onChange" });
+	const { formState } = form;
 
 	const crumbs = [
 		{
@@ -55,94 +146,86 @@ const ImportWallet = ({ networks, onSubmit }: Props) => {
 		},
 	];
 
+	const handleBack = () => {
+		setActiveTab(activeTab - 1);
+	};
+
+	const handleNext = () => {
+		setActiveTab(activeTab + 1);
+	};
+
+	const handleSubmit = async ({
+		network,
+		passphrase,
+		address,
+	}: {
+		network: NetworkData;
+		passphrase: string;
+		address: string;
+	}) => {
+		let wallet: Wallet | undefined;
+
+		if (passphrase) {
+			wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		} else {
+			wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
+		}
+
+		await persist();
+
+		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
+	};
+
 	return (
 		<Page crumbs={crumbs}>
 			<Section className="flex-1">
-				<Tabs className="max-w-xl mx-auto" activeId={activeIndex}>
-					<TabPanel tabId={1}>
-						<div className="flex justify-center w-full">
-							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeIndex} />
-								<div>
-									<div className="my-8">
-										<h1 className="mb-0">Select a Cryptoasset</h1>
-										<p className="text-medium text-theme-neutral-700">
-											Select a cryptoasset to import your existing wallet address
-										</p>
-									</div>
-									<div className="space-y-2">
-										<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-										<SelectNetwork
-											name={selected as any}
-											networks={networks}
-											onSelect={(selected) => setSelected(selected.name)}
-										/>
-									</div>
-								</div>
-								<div className="flex justify-end mt-10">
-									<Button
-										onClick={() => setActiveIndex(2)}
-										data-testid="import-wallet__next-step--button"
-									>
-										Continue
-									</Button>
-								</div>
-							</div>
-						</div>
-					</TabPanel>
+				<Form
+					className="max-w-xl mx-auto"
+					context={form}
+					onSubmit={handleSubmit as any}
+					data-testid="ImportWallet__form"
+				>
+					<Tabs activeId={activeTab}>
+						<StepIndicator size={2} activeIndex={activeTab} />
 
-					<TabPanel tabId={2}>
-						<div className="flex justify-center w-full">
-							<div className="w-full">
-								<StepIndicator size={2} activeIndex={activeIndex} />
-								<Form id="import-wallet__form" context={form} onSubmit={onSubmit}>
-									<div className="mt-8">
-										<div className="_header">
-											<h1 className="mb-0">Import Wallet</h1>
-											<p className="text-medium text-theme-neutral-700">
-												Enter your wallet password in order to get full access to your money. Or
-												you can choose an address for vieweing only.
-											</p>
-										</div>
-										<div className="flex flex-row items-center justify-between mt-8">
-											<div>
-												<p className="text-lg font-semibold text-theme-neutral-dark">
-													Use the address only
-												</p>
-												<p className="text-sm text-theme-neutral">
-													You can only view your wallet but not send money.
-												</p>
-											</div>
-											<Toggle
-												checked={isAddressOnly}
-												onChange={() => setIsAddressOnly(!isAddressOnly)}
-												data-testid="import-wallet__address-toggle"
-											/>
-										</div>
-										<div className="mt-8" data-testid="import-wallet__password">
-											{renderImportInput()}
-										</div>
-									</div>
-									<div className="flex justify-end mt-10 space-x-3">
+						<div className="mt-4">
+							<TabPanel tabId={1}>
+								<FirstStep />
+							</TabPanel>
+							<TabPanel tabId={2}>
+								<SecondStep />
+							</TabPanel>
+
+							<div className="flex justify-end mt-10 space-x-3">
+								{activeTab === 1 && (
+									<Button
+										disabled={!formState.isValid}
+										onClick={handleNext}
+										data-testid="ImportWallet__continue-button"
+									>
+										{t("COMMON.CONTINUE")}
+									</Button>
+								)}
+
+								{activeTab === 2 && (
+									<>
 										<Button
-											data-testid="import-wallet__prev-step--button"
 											variant="plain"
-											onClick={onPreviousBtnClick}
+											onClick={handleBack}
+											data-testid="ImportWallet__back-button"
 										>
-											Back
+											{t("COMMON.BACK")}
 										</Button>
-										<Button form="import-wallet__form" type="submit">
-											Go to Wallet
+										<Button type="submit" data-testid="ImportWallet__submit-button">
+											{t("COMMON.GO_TO_WALLET")}
 										</Button>
-									</div>
-								</Form>
+									</>
+								)}
 							</div>
 						</div>
-					</TabPanel>
-				</Tabs>
+					</Tabs>
+				</Form>
 			</Section>
 		</Page>
 	);
 };
-
-export { ImportWallet };

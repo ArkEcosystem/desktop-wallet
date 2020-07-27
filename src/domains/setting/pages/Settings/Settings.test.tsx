@@ -10,7 +10,7 @@ import { StubStorage } from "tests/mocks";
 
 import { Settings } from "./Settings";
 
-let env: any;
+let env: Environment;
 
 describe("Settings", () => {
 	beforeEach(() => {
@@ -30,7 +30,7 @@ describe("Settings", () => {
 		let savedProfile: any = null;
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
-		const { asFragment, container, getAllByTestId, getByTestId } = renderWithRouter(
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<Settings onSubmit={onSubmit} />
 			</EnvironmentProvider>,
@@ -102,6 +102,46 @@ describe("Settings", () => {
 		});
 
 		expect(env.profiles().all().length).toEqual(2);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should submit using default props", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Settings />
+			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profiles/1/settings"],
+			},
+		);
+
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
+		// Select Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Passphrase Language
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[1]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Market Provider
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[2]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Currency
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[3]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Time Format
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Toggle Screenshot Protection
+		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
+		// Toggle Advanced Mode
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Toggle Update Ledger in Background
+		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__submit-button"));
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

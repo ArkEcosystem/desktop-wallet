@@ -5,9 +5,19 @@ import { WalletHeader } from "./WalletHeader";
 
 describe("WalletHeader", () => {
 	const onSignMessage = jest.fn();
+	const onDeleteWallet = jest.fn();
+	const onUpdateWalletName = jest.fn();
+
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(
-			<WalletHeader address="abc" balance="0" coin="Ark" onSignMessage={onSignMessage} />,
+			<WalletHeader
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
+				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
+			/>,
 		);
 		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError();
 		expect(asFragment()).toMatchSnapshot();
@@ -16,20 +26,20 @@ describe("WalletHeader", () => {
 	it("should emit actions", () => {
 		const onSend = jest.fn();
 		const onStar = jest.fn();
-		const onCopy = jest.fn();
 
 		const { getByTestId } = render(
 			<WalletHeader
 				address="abc"
 				balance="0"
 				coin="Ark"
-				onCopy={onCopy}
 				onStar={onStar}
 				onSend={onSend}
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
 			/>,
 		);
-		fireEvent.click(getByTestId("WalletHeader__copy-button"));
+
 		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
 		fireEvent.click(getByTestId("WalletHeader__star-button"));
 		fireEvent.click(getByTestId("WalletHeader__send-button"));
@@ -37,7 +47,6 @@ describe("WalletHeader", () => {
 		expect(onSend).toHaveBeenCalled();
 		expect(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__content")).toBeTruthy();
 		expect(onStar).toHaveBeenCalled();
-		expect(onCopy).toHaveBeenCalled();
 	});
 
 	it("should show modifiers", () => {
@@ -49,42 +58,14 @@ describe("WalletHeader", () => {
 				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
 			/>,
 		);
 		expect(getByTestId("WalletHeader__ledger")).toBeTruthy();
 		expect(getByTestId("WalletHeader__multisig")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should delete wallet", () => {
-		const consoleSpy = jest.spyOn(console, "log").mockImplementation();
-
-		const { getByTestId, asFragment } = render(
-			<WalletHeader
-				hasStarred
-				isLedger
-				isMultisig
-				address="abc"
-				balance="0"
-				coin="Ark"
-				onSignMessage={onSignMessage}
-			/>,
-		);
-
-		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
-		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__option--3"));
-
-		expect(consoleSpy).toHaveBeenCalledWith({ label: "Delete", value: "delete" });
-		consoleSpy.mockReset();
-
-		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__toggle"));
-		fireEvent.click(within(getByTestId("WalletHeader__more-button")).getByTestId("dropdown__option--2"));
-
-		expect(consoleSpy).not.toHaveBeenCalled();
-		expect(asFragment()).toMatchSnapshot();
-
-		consoleSpy.mockRestore();
 	});
 
 	it("should show publicKey", () => {
@@ -97,7 +78,9 @@ describe("WalletHeader", () => {
 				address={address}
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
 			/>,
 		);
 
@@ -116,16 +99,16 @@ describe("WalletHeader", () => {
 	});
 
 	it("should handle sign message", () => {
-		const address = "abc";
-		const publicKey = "123";
 		const { getByTestId } = render(
 			<WalletHeader
 				currencyBalance="10"
-				publicKey={publicKey}
-				address={address}
+				publicKey="publicKey"
+				address="abc"
 				balance="0"
 				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
 				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
 			/>,
 		);
 
@@ -144,5 +127,67 @@ describe("WalletHeader", () => {
 		});
 
 		expect(onSignMessage).toHaveBeenCalled();
+	});
+
+	it("should handle delete wallet", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				currencyBalance="10"
+				publicKey="publicKey"
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
+				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const deleteWalletOption = getByTestId("dropdown__option--3");
+		expect(deleteWalletOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(deleteWalletOption);
+		});
+
+		expect(onDeleteWallet).toHaveBeenCalled();
+	});
+
+	it("should handle update wallet name", () => {
+		const { getByTestId } = render(
+			<WalletHeader
+				currencyBalance="10"
+				publicKey="publicKey"
+				address="abc"
+				balance="0"
+				coin="Ark"
+				onUpdateWalletName={onUpdateWalletName}
+				onSignMessage={onSignMessage}
+				onDeleteWallet={onDeleteWallet}
+			/>,
+		);
+
+		const dropdown = getByTestId("dropdown__toggle");
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const updateWalletNameOption = getByTestId("dropdown__option--0");
+		expect(updateWalletNameOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(updateWalletNameOption);
+		});
+
+		expect(onUpdateWalletName).toHaveBeenCalled();
 	});
 });

@@ -1,10 +1,11 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
 import { InputRange } from "app/components/Input/InputRange";
 import { SelectionBar, SelectionBarOption } from "app/components/SelectionBar";
 import { useSelectionState } from "app/components/SelectionBar/useSelectionState";
-import { SelectNetwork } from "app/components/SelectNetwork";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
@@ -21,9 +22,9 @@ type SendTransactionFormProps = {
 	defaultFee: number;
 	maxFee: number;
 	assetSymbol: string;
-	onSubmit?: any;
-	onBack?: any;
-	networks: any;
+	onSubmit?: (result: any) => void;
+	onBack?: () => void;
+	networks: NetworkData[];
 	contacts: any[];
 	wallets: any[];
 };
@@ -48,7 +49,7 @@ export const SendTransactionForm = ({
 
 	const form = useForm({ defaultValues: formDefaultData });
 	const { register } = form;
-	const { network, fee, sender, amount } = form.watch();
+	const { fee, sender, amount } = form.watch();
 	const feeRangeValue = useSelectionState(0);
 
 	const onFormSubmit = () => {
@@ -63,7 +64,7 @@ export const SendTransactionForm = ({
 					<div className="mb-2">
 						<FormLabel label="Network" />
 					</div>
-					<SelectNetwork networks={networks} name="network" value={network} />
+					<SelectNetwork id="SendTransactionForm__network" networks={networks} />
 				</FormField>
 
 				<FormField name="sender" className="relative mt-1">
@@ -97,7 +98,7 @@ export const SendTransactionForm = ({
 					</InputGroup>
 				</FormField>
 
-				<div className="flex">
+				<div className="flex items-center">
 					<div className="w-2/4">
 						<FormField name="fee" className="relative mt-1">
 							<div className="mb-2">
@@ -106,7 +107,7 @@ export const SendTransactionForm = ({
 							</div>
 						</FormField>
 					</div>
-					<div className="w-2/4 text-right mt-7">
+					<div className="w-2/4 mt-6 text-right">
 						<SelectionBar>
 							<SelectionBarOption value={feeRange.last} {...feeRangeValue}>
 								Last
@@ -121,7 +122,7 @@ export const SendTransactionForm = ({
 					</div>
 				</div>
 				<div className="flex justify-end space-x-3">
-					<Button data-testid="send-transaction-click-back" variant="plain" onClick={() => onBack?.()}>
+					<Button data-testid="send-transaction-click-back" variant="plain" onClick={onBack}>
 						Back
 					</Button>
 					<Button data-testid="send-transaction-click-submit" type="submit" onClick={onFormSubmit}>

@@ -5,6 +5,7 @@ import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks/env";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { BlockchainTable } from "./components/BlockchainTable";
@@ -23,17 +24,21 @@ type RegistrationProps = {
 
 const { RegisterBanner } = images.common;
 
-const EmptyRegistrations = (
-	<Section className="flex-1">
-		<div data-testid="my-registrations__empty-state" className="text-center">
-			<RegisterBanner className="mx-auto" />
+const EmptyRegistrations = () => {
+	const { t } = useTranslation();
 
-			<div className="mt-8 text-theme-neutral-dark">
-				Register Business, Bridgechain and Delegate in the most convenient way.
+	return (
+		<Section className="flex-1">
+			<div data-testid="my-registrations__empty-state" className="text-center">
+				<RegisterBanner className="mx-auto" />
+
+				<div className="mt-8 text-theme-neutral-dark">
+					{t("PROFILE.PAGE_MY_REGISTRATIONS.NO_REGISTRATIONS_MESSAGE")}
+				</div>
 			</div>
-		</div>
-	</Section>
-);
+		</Section>
+	);
+};
 
 const renderRegistration = ({ type, registrations }: RegistrationProps, handleDropdown: any) => {
 	switch (type) {
@@ -75,6 +80,8 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 			return renderRegistration(registrationsBlock, handleDropdown);
 		});
 
+	const { t } = useTranslation();
+
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
@@ -86,8 +93,8 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 		<Page crumbs={crumbs}>
 			<Section>
 				<Header
-					title="My Registrations"
-					subtitle="You can register a Delagate, Business and Bridgechain."
+					title={t("PROFILE.PAGE_MY_REGISTRATIONS.TITLE")}
+					subtitle={t("PROFILE.PAGE_MY_REGISTRATIONS.SUBTITLE")}
 					extra={
 						<div className="flex justify-end divide-theme-neutral-300 space-x-10 divide-x">
 							<HeaderSearchBar onSearch={console.log} />
@@ -97,7 +104,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 										history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
 									}
 								>
-									Register
+									{t("COMMON.REGISTER")}
 								</Button>
 							</div>
 						</div>
@@ -105,7 +112,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 				/>
 			</Section>
 
-			{!registrations.length ? EmptyRegistrations : mountRegistrations()}
+			{!registrations.length ? <EmptyRegistrations /> : mountRegistrations()}
 		</Page>
 	);
 };

@@ -1,18 +1,16 @@
-import { useEnvironment } from "app/contexts/Environment";
-import React from "react";
+import { useEnvironmentContext } from "app/contexts/Environment";
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 export const useActiveProfile = () => {
-	const env = useEnvironment();
+	const context = useEnvironmentContext();
 	const { profileId } = useParams();
 
-	return React.useMemo(() => {
-		if (env) {
-			try {
-				return env.profiles().findById(profileId);
-			} catch {
-				return undefined;
-			}
+	return useMemo(() => {
+		try {
+			return context.env.profiles().findById(profileId);
+		} catch {
+			return undefined;
 		}
-	}, [env, profileId]);
+	}, [context, profileId]);
 };

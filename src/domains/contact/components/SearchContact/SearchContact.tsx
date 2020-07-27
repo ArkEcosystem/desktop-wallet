@@ -30,16 +30,16 @@ export const SearchContact = ({
 
 	const columns = [
 		{
-			Header: "Nickname",
+			Header: t("COMMON.NAME"),
 			accessor: "name",
 			className: "pl-13",
 		},
 		{
-			Header: "Network",
+			Header: t("COMMON.NETWORK"),
 			className: "justify-center",
 		},
 		{
-			Header: "Address",
+			Header: t("COMMON.ADDRESS"),
 			className: "pl-13",
 		},
 	];
@@ -49,7 +49,7 @@ export const SearchContact = ({
 			isOpen={isOpen}
 			title={title || t("CONTACTS.MODAL_SEARCH_CONTACT.TITLE")}
 			description={description || t("CONTACTS.MODAL_SEARCH_CONTACT.DESCRIPTION")}
-			placeholder="Search..."
+			placeholder={t("CONTACTS.MODAL_SEARCH_CONTACT.PLACEHOLDER")}
 			onClose={onClose}
 			onSearch={onSearch}
 		>

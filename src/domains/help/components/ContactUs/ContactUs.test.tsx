@@ -17,10 +17,11 @@ describe("ContactUs", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FIELD_NAME);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FIELD_EMAIL);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FIELD_SUBJECT);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FIELD_MESSAGE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FORM.NAME);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FORM.EMAIL);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FORM.SUBJECT);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CONTACT_US.FORM.MESSAGE);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -63,6 +63,7 @@ exports[`DeleteContact should render a modal 1`] = `
           <button
             class="sc-AxjAm ddJBbC"
             color="primary"
+            data-testid="DeleteResource__cancel-button"
             type="button"
           >
             Cancel
@@ -70,6 +71,7 @@ exports[`DeleteContact should render a modal 1`] = `
           <button
             class="sc-AxjAm ddQVWI"
             color="primary"
+            data-testid="DeleteResource__submit-button"
             type="submit"
           >
             <div

@@ -42,7 +42,7 @@ exports[`CustomPeers should render a modal 1`] = `
       <h2
         class="mb-0 text-3xl font-bold"
       >
-        Custom Peers
+        Custom Peer
       </h2>
       <div
         class="flex-1"
@@ -64,53 +64,44 @@ exports[`CustomPeers should render a modal 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
+              aria-owns="CustomPeers__network-menu"
+              data-testid="SelectNetwork"
               role="combobox"
             >
               <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+                for="CustomPeers__network-input"
+                id="CustomPeers__network-label"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-Axmtr jzhOwR"
+                data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fznKkj ldGqxY flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-AxhUy sc-AxgMl kAPRWA px-4"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
-                  >
-                    <div
-                      class="sc-fznyAO crOapn border-theme-neutral-200"
-                    />
-                  </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      name="network"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
-                  </div>
+                    class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
+                    data-testid="SelectNetworkInput__network"
+                  />
                 </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="CustomPeers__network-menu"
+                  aria-labelledby="CustomPeers__network-label"
+                  autocomplete="off"
+                  class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  data-testid="SelectNetworkInput__input"
+                  id="CustomPeers__network-input"
+                  placeholder="Enter a network name"
+                  value=""
+                />
               </div>
             </div>
+            <ul
+              aria-labelledby="CustomPeers__network-label"
+              id="CustomPeers__network-menu"
+              role="listbox"
+            />
           </fieldset>
           <fieldset
             class="sc-AxiKw iQzisX flex flex-col space-y-2"
@@ -136,7 +127,7 @@ exports[`CustomPeers should render a modal 1`] = `
               data-testid="FormLabel"
               for="peer-ip"
             >
-              Peer IP http://
+              IP
             </label>
             <input
               class="sc-AxhCb biYFdn overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
@@ -152,7 +143,7 @@ exports[`CustomPeers should render a modal 1`] = `
               data-testid="FormLabel"
               for="peer-type"
             >
-              Peer Type
+              Type
             </label>
             <label
               class="inline-flex items-center"
@@ -166,12 +157,12 @@ exports[`CustomPeers should render a modal 1`] = `
               <span
                 class="ml-2 text-sm font-semibold text-theme-neutral-dark"
               >
-                Multisig
+                Multisignature
               </span>
             </label>
           </fieldset>
           <div
-            class="float-right mt-4"
+            class="flex justify-end mt-4"
           >
             <button
               class="sc-AxjAm ddQVWI"

@@ -1,221 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletHeader should delete wallet 1`] = `
-<DocumentFragment>
-  <header
-    data-testid="WalletHeader"
-  >
-    <div
-      class="py-8 bg-theme-neutral-900"
-    >
-      <div
-        class="container flex items-center justify-between mx-auto px-14"
-      >
-        <div
-          class="flex items-center space-x-4"
-        >
-          <div
-            class="flex"
-          >
-            <div
-              class="sc-AxirZ paroP -mr-1 border-theme-neutral-dark"
-            >
-              <div
-                class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  ark.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cnPtvA"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full"
-              >
-                <img
-                  alt="abc"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-                  title="abc"
-                />
-              </div>
-            </div>
-          </div>
-          <h2
-            class="mb-0 text-white"
-            data-testid="WalletHeader__name"
-          />
-          <span
-            data-testid="WalletHeader__ledger"
-          >
-            <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                ledger.svg
-              </svg>
-            </div>
-          </span>
-          <span
-            data-testid="WalletHeader__multisig"
-          >
-            <div
-              class="sc-AxiKw dzBdqj text-theme-neutral-dark"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                multisig.svg
-              </svg>
-            </div>
-          </span>
-        </div>
-        <div
-          class="flex items-stretch space-x-2"
-        >
-          <button
-            class="px-3 text-theme-neutral-dark"
-            data-testid="WalletHeader__star-button"
-          >
-            <div
-              class="sc-AxiKw dzBdqj"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                star.svg
-              </svg>
-            </div>
-          </button>
-          <button
-            class="sc-AxjAm ddQVWI"
-            color="primary"
-            data-testid="WalletHeader__send-button"
-            type="button"
-          >
-            Send
-          </button>
-          <div
-            data-testid="WalletHeader__more-button"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <button
-                class="sc-AxjAm kwTlRm text-left"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    settings.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="sc-fzoLag fvqzEZ"
-    >
-      <div
-        class="container py-16 mx-auto px-14"
-      >
-        <ul
-          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
-        >
-          <li
-            class="space-y-2"
-          >
-            <div
-              class="inline-flex items-center space-x-2"
-            >
-              <p
-                class="font-semibold text-sm text-theme-neutral-dark"
-              >
-                Address
-              </p>
-              <label
-                class="flex"
-              >
-                <input
-                  class="sc-fzoXzr hKGpbk"
-                  data-testid="WalletHeader__toggle"
-                  disabled=""
-                  type="checkbox"
-                />
-                <div
-                  class="sc-fzpjYC homzFa"
-                >
-                  <span
-                    class="sc-fznxsB cYsqyX"
-                  />
-                </div>
-              </label>
-              <p
-                class="font-semibold text-sm text-theme-neutral-light"
-              >
-                Public Key
-              </p>
-            </div>
-            <div>
-              <p
-                class="inline-block text-lg font-medium"
-                data-testid="WalletHeader__address-publickey"
-              >
-                abc
-              </p>
-              <button
-                class="inline-block px-3 text-theme-neutral focus:outline-none"
-                data-testid="WalletHeader__copy-button"
-              >
-                <div
-                  class="sc-AxiKw dzBdqj text-theme-primary-400"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    copy.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-          </li>
-          <li
-            class="pl-8 space-y-2"
-          >
-            <p
-              class="text-sm font-semibold text-theme-neutral-dark"
-            >
-              Balance
-            </p>
-            <p
-              class="text-lg font-medium"
-              data-testid="WalletHeader__balance"
-            >
-              0
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
-</DocumentFragment>
-`;
-
 exports[`WalletHeader should render 1`] = `
 <DocumentFragment>
   <header
@@ -325,19 +109,19 @@ exports[`WalletHeader should render 1`] = `
         class="container py-16 mx-auto px-14"
       >
         <ul
-          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+          class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
         >
           <li
-            class="space-y-2"
+            class="flex flex-col space-y-2"
           >
             <div
               class="inline-flex items-center space-x-2"
             >
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-dark"
               >
                 Address
-              </p>
+              </span>
               <label
                 class="flex"
               >
@@ -355,49 +139,54 @@ exports[`WalletHeader should render 1`] = `
                   />
                 </div>
               </label>
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-light"
               >
                 Public Key
-              </p>
+              </span>
             </div>
             <div>
-              <p
+              <span
                 class="inline-block text-lg font-medium"
                 data-testid="WalletHeader__address-publickey"
               >
                 abc
-              </p>
-              <button
-                class="inline-block px-3 text-theme-neutral focus:outline-none"
+              </span>
+              <span
+                class="ml-4"
                 data-testid="WalletHeader__copy-button"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-primary-400"
-                  height="1em"
-                  width="1em"
+                  class="inline-block cursor-pointer"
+                  data-testid="clipboard__wrapper"
                 >
-                  <svg>
-                    copy.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dzBdqj text-theme-primary-300"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
                 </div>
-              </button>
+              </span>
             </div>
           </li>
           <li
-            class="pl-8 space-y-2"
+            class="flex flex-col pl-8 space-y-2"
           >
-            <p
+            <span
               class="text-sm font-semibold text-theme-neutral-dark"
             >
               Balance
-            </p>
-            <p
+            </span>
+            <span
               class="text-lg font-medium"
               data-testid="WalletHeader__balance"
             >
               0
-            </p>
+            </span>
           </li>
         </ul>
       </div>
@@ -541,19 +330,19 @@ exports[`WalletHeader should show modifiers 1`] = `
         class="container py-16 mx-auto px-14"
       >
         <ul
-          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+          class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
         >
           <li
-            class="space-y-2"
+            class="flex flex-col space-y-2"
           >
             <div
               class="inline-flex items-center space-x-2"
             >
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-dark"
               >
                 Address
-              </p>
+              </span>
               <label
                 class="flex"
               >
@@ -571,49 +360,54 @@ exports[`WalletHeader should show modifiers 1`] = `
                   />
                 </div>
               </label>
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-light"
               >
                 Public Key
-              </p>
+              </span>
             </div>
             <div>
-              <p
+              <span
                 class="inline-block text-lg font-medium"
                 data-testid="WalletHeader__address-publickey"
               >
                 abc
-              </p>
-              <button
-                class="inline-block px-3 text-theme-neutral focus:outline-none"
+              </span>
+              <span
+                class="ml-4"
                 data-testid="WalletHeader__copy-button"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-primary-400"
-                  height="1em"
-                  width="1em"
+                  class="inline-block cursor-pointer"
+                  data-testid="clipboard__wrapper"
                 >
-                  <svg>
-                    copy.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dzBdqj text-theme-primary-300"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
                 </div>
-              </button>
+              </span>
             </div>
           </li>
           <li
-            class="pl-8 space-y-2"
+            class="flex flex-col pl-8 space-y-2"
           >
-            <p
+            <span
               class="text-sm font-semibold text-theme-neutral-dark"
             >
               Balance
-            </p>
-            <p
+            </span>
+            <span
               class="text-lg font-medium"
               data-testid="WalletHeader__balance"
             >
               0
-            </p>
+            </span>
           </li>
         </ul>
       </div>
@@ -731,19 +525,19 @@ exports[`WalletHeader should show publicKey 1`] = `
         class="container py-16 mx-auto px-14"
       >
         <ul
-          class="flex items-stretch divide-x-1 divide-theme-neutral-300 space-x-8"
+          class="flex items-stretch space-x-8 divide-x-1 divide-theme-neutral-300"
         >
           <li
-            class="space-y-2"
+            class="flex flex-col space-y-2"
           >
             <div
               class="inline-flex items-center space-x-2"
             >
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-light"
               >
                 Address
-              </p>
+              </span>
               <label
                 class="flex"
               >
@@ -760,33 +554,38 @@ exports[`WalletHeader should show publicKey 1`] = `
                   />
                 </div>
               </label>
-              <p
+              <span
                 class="font-semibold text-sm text-theme-neutral-dark"
               >
                 Public Key
-              </p>
+              </span>
             </div>
             <div>
-              <p
+              <span
                 class="inline-block text-lg font-medium"
                 data-testid="WalletHeader__address-publickey"
               >
                 123
-              </p>
-              <button
-                class="inline-block px-3 text-theme-neutral focus:outline-none"
+              </span>
+              <span
+                class="ml-4"
                 data-testid="WalletHeader__copy-button"
               >
                 <div
-                  class="sc-AxiKw dzBdqj text-theme-primary-400"
-                  height="1em"
-                  width="1em"
+                  class="inline-block cursor-pointer"
+                  data-testid="clipboard__wrapper"
                 >
-                  <svg>
-                    copy.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dzBdqj text-theme-primary-300"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
                 </div>
-              </button>
+              </span>
             </div>
           </li>
         </ul>
