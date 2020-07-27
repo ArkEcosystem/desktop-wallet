@@ -6,7 +6,6 @@ const baseWallet = {
 	publicKey: "028fe98e42e159f2450a52371dfb23ae69a39fc5fee6545690b7f51bfcee933357",
 	balance: "120 ARK",
 	fiat: "980 USD",
-	walletTypeIcons: ["Multisig", "Ledger", "Key", "Bridgechain"],
 	actions: [
 		{
 			label: "Action 1",

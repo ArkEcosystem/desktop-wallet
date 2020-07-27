@@ -1,8 +1,9 @@
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
-import { WalletListItemProps } from "app/components/WalletListItem";
 import { useEnvironment } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
-import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
+import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
@@ -11,28 +12,6 @@ import { WalletRegistrations } from "domains/wallet/components/WalletRegistratio
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
-import { wallet, wallets } from "../../data";
-
-type Wallet = WalletListItemProps & {
-	address: string;
-	balance: string;
-	publicKey?: string;
-	hasStarred?: boolean;
-	transactions?: Transaction[];
-	pendingTransactions?: Transaction[];
-	delegates: {
-		username: string;
-		address: string;
-		rank: number;
-		isActive?: boolean;
-		explorerUrl?: string;
-		msqUrl?: string;
-	}[];
-	business?: {
-		name: string;
-	};
-};
 
 type Props = {
 	wallets?: Wallet[];
@@ -43,6 +22,12 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
+	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
+		(null as unknown) as Coins.WalletDataCollection,
+	);
+	const [transactions, setTransactions] = useState<Coins.TransactionDataCollection>(
+		(null as unknown) as Coins.TransactionDataCollection,
+	);
 
 	const history = useHistory();
 	const env = useEnvironment();
@@ -65,38 +50,47 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		history.push(dashboardRoute);
 	};
 
+	React.useEffect(() => {
+		wallet?.delegates().then((delegates) => {
+			setDelegates(delegates.data);
+		});
+		wallet?.transactions({}).then((transactions) => {
+			setTransactions(transactions.data);
+		});
+	}, []);
+
+	const coinName = wallet?.coin().manifest().get<string>("name") || "";
+
 	/* istanbul ignore next */
 	return (
 		<>
 			<Page crumbs={crumbs}>
 				<WalletHeader
-					coin={wallet?.coinIcon || "Ark"}
-					address={wallet?.address}
-					publicKey={wallet?.publicKey}
-					balance={wallet?.balance}
-					currencyBalance={wallet?.fiat}
-					name={wallet?.walletName}
-					isLedger={wallet?.walletTypeIcons?.includes("Ledger")}
-					isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
-					hasStarred={wallet?.hasStarred}
+					coin={coinName}
+					address={wallet?.address()}
+					publicKey={wallet?.publicKey()}
+					balance={wallet?.balance().toString()}
+					currencyBalance={wallet?.fiat().toString()}
+					name={wallet?.alias()}
+					isLedger={wallet?.isLedger()}
+					isMultisig={wallet?.isMultiSignature()}
+					hasStarred={wallet?.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>
-					<WalletVote delegates={wallet?.delegates || []} />
-				</Section>
+				<Section>{delegates && <WalletVote delegates={delegates} />}</Section>
 
 				<Section>
 					<WalletRegistrations
-						address={wallet?.address}
-						delegate={wallet?.delegates?.[0]}
-						business={wallet?.business}
-						isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
-						hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
-						hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
-						hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
+						address={wallet?.address()}
+						delegate={wallet ? delegates?.findByAddress(wallet.address()) : undefined}
+						business={undefined}
+						isMultisig={wallet?.isMultiSignature()}
+						hasBridgechains={false}
+						hasSecondSignature={wallet?.isSecondSignature()}
+						hasPlugins={false}
 						onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
 						onRegister={() => history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)}
 					/>
@@ -105,22 +99,24 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				<Section>
 					<div className="mb-16">
 						<h2 className="font-bold">Pending Transactions</h2>
-						<TransactionTable transactions={wallet?.pendingTransactions || []} showSignColumn />
+						<TransactionTable transactions={[]} showSignColumn />
 					</div>
 
 					<div>
 						<h2 className="font-bold">Transaction History</h2>
-						<TransactionTable transactions={wallet?.transactions || []} currencyRate="2" />
+						<TransactionTable transactions={[]} currencyRate="2" />
 					</div>
 				</Section>
 			</Page>
 
-			{wallets && wallets.length > 1 && <WalletBottomSheetMenu walletsData={wallets} />}
+			{wallets && wallets.length > 1 && (
+				<WalletBottomSheetMenu walletsData={wallets.map((wallet) => ({ wallet }))} />
+			)}
 
 			<SignMessage
 				isOpen={isSigningMessage}
 				handleClose={() => setIsSigningMessage(false)}
-				signatoryAddress={wallet?.address}
+				signatoryAddress={wallet?.address()}
 				handleSign={() => setIsSigned(true)}
 				isSigned={isSigned}
 			/>
@@ -136,6 +132,6 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 };
 
 WalletDetails.defaultProps = {
-	wallets,
-	wallet,
+	wallets: [],
+	wallet: null,
 };

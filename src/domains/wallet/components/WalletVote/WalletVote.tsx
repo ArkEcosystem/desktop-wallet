@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -7,18 +8,12 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 
 type Props = {
-	delegates: {
-		username: string;
-		address: string;
-		rank: number;
-		isActive?: boolean;
-		explorerUrl?: string;
-		msqUrl?: string;
-	}[];
+	delegates: Coins.WalletDataCollection;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 };
 
+// TODO: Delegate Explorer URL
 export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
@@ -35,24 +30,24 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 
 			<Collapse isOpen={isOpen}>
 				<div className="px-1 py-4 grid grid-flow-row row-gap-6">
-					{delegates.map(({ address, username, rank, isActive, explorerUrl, msqUrl }) => (
+					{delegates.all().map((delegate) => (
 						<div
 							data-testid="WalletVote__delegate"
 							className="flex items-center justify-between"
-							key={address}
+							key={delegate.address()}
 						>
 							<div className="flex items-center space-x-4">
 								<div className="flex items-center -space-x-2">
 									<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 										<Icon name="Voted" />
 									</Circle>
-									<Avatar size="lg" address={address} />
+									<Avatar size="lg" address={delegate.address()} />
 								</div>
 								<div>
 									<p className="text-sm font-semibold text-theme-neutral space-y-1">
 										Address Delegate
 									</p>
-									<Address walletName={username} address={address} />
+									<Address walletName={delegate.username()} address={delegate.address()} />
 								</div>
 							</div>
 
@@ -64,43 +59,39 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 											data-testid="WalletVote__delegate__rank"
 											className="font-bold text-theme-neutral-dark"
 										>
-											#{rank}
+											#{delegate.rank()}
 										</span>
 									</li>
 
-									{explorerUrl && (
-										<li className="flex flex-col items-center px-10 space-y-1">
-											<p className="text-sm font-semibold text-theme-neutral">Explorer</p>
-											<a
-												data-testid="WalletVote__delegate__explorer"
-												href={explorerUrl}
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												<Icon name="Explorer" className="text-2xl text-theme-primary" />
-											</a>
-										</li>
-									)}
+									<li className="flex flex-col items-center px-10 space-y-1">
+										<p className="text-sm font-semibold text-theme-neutral">Explorer</p>
+										<a
+											data-testid="WalletVote__delegate__explorer"
+											href="https://explorer.ark.io"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Icon name="Explorer" className="text-2xl text-theme-primary" />
+										</a>
+									</li>
 
-									{msqUrl && (
-										<li className="flex flex-col items-center px-10 space-y-1">
-											<p className="text-sm font-semibold text-theme-neutral">Marketpl.</p>
-											<a
-												data-testid="WalletVote__delegate__msq"
-												href={msqUrl}
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												<Icon name="Link" className="text-xl text-theme-primary" />
-											</a>
-										</li>
-									)}
+									<li className="flex flex-col items-center px-10 space-y-1">
+										<p className="text-sm font-semibold text-theme-neutral">Marketpl.</p>
+										<a
+											data-testid="WalletVote__delegate__msq"
+											href="https://marketsquare.io"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<Icon name="Link" className="text-xl text-theme-primary" />
+										</a>
+									</li>
 
 									<li className="flex flex-col items-center px-10 space-y-1">
 										<p className="text-sm font-semibold text-theme-neutral">Status</p>
 										<Icon
-											name={isActive ? "Ok" : "StatusClock"}
-											className={isActive ? "text-theme-success" : "text-theme-neutral"}
+											name={delegate.rank() ? "Ok" : "StatusClock"}
+											className={delegate.rank() ? "text-theme-success" : "text-theme-neutral"}
 										/>
 									</li>
 								</ul>
@@ -108,7 +99,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 								<Button
 									data-testid="WalletVote__delegate__unvote"
 									variant="plain"
-									onClick={() => onUnvote?.(address)}
+									onClick={() => onUnvote?.(delegate.address())}
 								>
 									Unvote
 								</Button>

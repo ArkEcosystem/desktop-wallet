@@ -20,15 +20,14 @@ type DashboardProps = {
 export const Dashboard = ({ transactions, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [wallets, setWallets] = useState<Wallet[]>([]);
-	// const [walletsTimer, setWalletsTimer] = useState<number|null>(null);
+	const [wallets, setWallets] = useState<Wallet[] | undefined>([]);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 
 	// TODO: remove use of timer
 	useEffect(() => {
 		const timer = setInterval(() => {
-			setWallets(activeProfile?.wallets().values() || []);
+			setWallets(activeProfile?.wallets().values());
 		}, 1000);
 
 		return () => {
