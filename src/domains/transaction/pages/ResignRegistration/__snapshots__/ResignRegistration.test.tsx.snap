@@ -290,7 +290,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                               <span
                                 class="mr-1"
                               >
-                                Account
+                                Sender
                               </span>
                               <div
                                 class="sc-fznZeY kKCHjH"
@@ -365,7 +365,7 @@ exports[`ResignRegistration should render 1st step 1`] = `
                                 data-testid="FormLabel"
                                 for="name"
                               >
-                                Fee ARK
+                                Transaction Fee
                               </label>
                               <div
                                 class="flex space-x-2"
@@ -797,7 +797,7 @@ exports[`ResignRegistration should render 2nd step 1`] = `
                               <span
                                 class="mr-1"
                               >
-                                Account
+                                Sender
                               </span>
                               <div
                                 class="sc-fznZeY kKCHjH"
@@ -1259,7 +1259,7 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                           </div>
                         </fieldset>
                         <fieldset
-                          class="sc-AxheI dThsOi pb-4 mt-8"
+                          class="sc-AxheI dThsOi mt-8"
                         >
                           <label
                             class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -1314,13 +1314,13 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                     Back
                   </button>
                   <button
-                    class="sc-AxhUy hMFbHm"
+                    class="sc-AxhUy hMFbHm space-x-2"
                     color="primary"
                     data-testid="ResignRegistration__send-button"
                     type="button"
                   >
                     <div
-                      class="sc-AxirZ eEbZjj mr-2"
+                      class="sc-AxirZ eEbZjj"
                       height="20"
                       width="20"
                     >
@@ -1328,7 +1328,9 @@ exports[`ResignRegistration should render 3rd step 1`] = `
                         send.svg
                       </svg>
                     </div>
-                    Send
+                    <span>
+                      Send
+                    </span>
                   </button>
                 </div>
               </div>
@@ -1621,33 +1623,37 @@ exports[`ResignRegistration should render 4th step 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxirZ iQaTP"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -1670,33 +1676,37 @@ exports[`ResignRegistration should render 4th step 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxirZ iQaTP"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -1715,22 +1725,7 @@ exports[`ResignRegistration should render 4th step 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ROBank
-                                </span>
-                                <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  AUexKj…EVTQWK
-                                </span>
-                              </div>
+                              ARK Ecosystem
                             </div>
                           </div>
                           <div
@@ -1912,16 +1907,16 @@ exports[`ResignRegistration should render 4th step 1`] = `
                       data-testid="ResignRegistration__wallet-button"
                       type="button"
                     >
-                      Back to wallet
+                      Back to Wallet
                     </button>
                     <button
-                      class="sc-AxhUy hiyDSc"
+                      class="sc-AxhUy hiyDSc space-x-2"
                       color="primary"
                       data-testid="ResignRegistration__download-button"
                       type="submit"
                     >
                       <div
-                        class="sc-AxirZ iQaTP mr-2"
+                        class="sc-AxirZ iQaTP"
                         height="1em"
                         width="1em"
                       >
@@ -1929,7 +1924,9 @@ exports[`ResignRegistration should render 4th step 1`] = `
                           download.svg
                         </svg>
                       </div>
-                      Download
+                      <span>
+                        Download
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -2233,7 +2230,7 @@ exports[`ResignRegistration should should go back 1`] = `
                               <span
                                 class="mr-1"
                               >
-                                Account
+                                Sender
                               </span>
                               <div
                                 class="sc-fznZeY kKCHjH"
@@ -2308,7 +2305,7 @@ exports[`ResignRegistration should should go back 1`] = `
                                 data-testid="FormLabel"
                                 for="name"
                               >
-                                Fee ARK
+                                Transaction Fee
                               </label>
                               <div
                                 class="flex space-x-2"
@@ -2713,33 +2710,37 @@ exports[`ResignRegistration should submit 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxirZ iQaTP"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -2762,33 +2763,37 @@ exports[`ResignRegistration should submit 1`] = `
                                 class="flex items-center"
                               >
                                 <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                  class="inline-block truncate align-middle"
+                                >
+                                  <span
+                                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                                    data-testid="address__wallet-address"
+                                  >
+                                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                                  </span>
+                                </div>
+                                <span
+                                  class="ml-5"
                                 >
                                   <div
-                                    class="inline-block truncate align-middle"
+                                    class="inline-block cursor-pointer"
+                                    data-testid="clipboard__wrapper"
                                   >
-                                    <span
-                                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                    <div
+                                      class="text-theme-primary-300"
                                     >
-                                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                                    </span>
+                                      <div
+                                        class="sc-AxirZ iQaTP"
+                                        height="1em"
+                                        width="1em"
+                                      >
+                                        <svg>
+                                          copy.svg
+                                        </svg>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div
-                                  class="mb-1 ml-5 text-theme-primary-300"
-                                >
-                                  <div
-                                    class="sc-AxirZ iQaTP"
-                                    height="1em"
-                                    width="1em"
-                                  >
-                                    <svg>
-                                      copy.svg
-                                    </svg>
-                                  </div>
-                                </div>
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -2807,22 +2812,7 @@ exports[`ResignRegistration should submit 1`] = `
                             <div
                               class="font-semibold"
                             >
-                              <div
-                                class="inline-block truncate align-middle"
-                              >
-                                <span
-                                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                  data-testid="address__wallet-name"
-                                >
-                                  ROBank
-                                </span>
-                                <span
-                                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  AUexKj…EVTQWK
-                                </span>
-                              </div>
+                              ARK Ecosystem
                             </div>
                           </div>
                           <div
@@ -3004,16 +2994,16 @@ exports[`ResignRegistration should submit 1`] = `
                       data-testid="ResignRegistration__wallet-button"
                       type="button"
                     >
-                      Back to wallet
+                      Back to Wallet
                     </button>
                     <button
-                      class="sc-AxhUy hiyDSc"
+                      class="sc-AxhUy hiyDSc space-x-2"
                       color="primary"
                       data-testid="ResignRegistration__download-button"
                       type="submit"
                     >
                       <div
-                        class="sc-AxirZ iQaTP mr-2"
+                        class="sc-AxirZ iQaTP"
                         height="1em"
                         width="1em"
                       >
@@ -3021,7 +3011,9 @@ exports[`ResignRegistration should submit 1`] = `
                           download.svg
                         </svg>
                       </div>
-                      Download
+                      <span>
+                        Download
+                      </span>
                     </button>
                   </div>
                 </div>

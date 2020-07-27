@@ -1,5 +1,6 @@
 import { Table } from "app/components/Table";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import { AddressListItem } from "../AddressListItem";
 
@@ -9,53 +10,50 @@ type AddressListProps = {
 };
 
 export const AddressList = (props: AddressListProps) => {
+	const { t } = useTranslation();
+
 	const columns = [
 		{
-			Header: "",
 			accessor: "walletAddressAvatar",
 			disableSortBy: true,
 		},
 		{
-			Header: "My Address",
+			Header: t("COMMON.ADDRESS"),
 			accessor: "walletAddress",
 		},
 		{
-			Header: "",
 			accessor: "type",
 			disableSortBy: true,
-			className: "flex justify-center",
 		},
 		{
-			Header: "Balance",
+			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
 		},
 		{
-			Header: "",
 			accessor: "delegateAddressAvatar",
 			disableSortBy: true,
 		},
 		{
-			Header: "Delegate",
+			Header: t("COMMON.DELEGATE"),
 			accessor: "delegate",
 		},
 		{
-			Header: "Rank",
+			Header: t("COMMON.RANK"),
 			accessor: "rank",
 		},
 		{
-			Header: "Profile",
+			Header: t("COMMON.PROFILE"),
 			accessor: "profile",
 			disableSortBy: true,
-			className: "flex justify-center",
+			className: "justify-center",
 		},
 		{
-			Header: "Status",
+			Header: t("COMMON.STATUS"),
 			accessor: "status",
 			disableSortBy: true,
-			className: "flex justify-center",
+			className: "justify-center",
 		},
 		{
-			Header: "",
 			accessor: "onSelect",
 			disableSortBy: true,
 		},

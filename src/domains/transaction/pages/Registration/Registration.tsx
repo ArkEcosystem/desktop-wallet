@@ -1,3 +1,4 @@
+import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -9,12 +10,13 @@ import { Label } from "app/components/Label";
 import { Page, Section } from "app/components/Layout";
 import { Select } from "app/components/SelectDropdown";
 import { useSelectionState } from "app/components/SelectionBar";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
 import { useActiveProfile } from "app/hooks/env";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
+import { availableNetworksMock } from "domains/network/data";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
@@ -24,20 +26,17 @@ import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
-
-// Dummy data
-import { networks } from "../../data";
 
 type RegistrationProps = {
 	formDefaultData?: any;
 	onDownload?: any;
-	networks?: any;
+	networks?: NetworkData[];
 	registrationTypes?: any;
 	wallets: any[];
 };
 
-type Network = { name: string; label: string; value: string; icon: string; iconClass: string };
 type RegistrationType = { label: string; value: string };
 
 const FormWrapper = styled.div`
@@ -59,10 +58,12 @@ const FormWrapper = styled.div`
 `;
 
 const RegistrationTypeDropdown = ({ className, register, registrationTypes }: any) => {
+	const { t } = useTranslation();
+
 	return (
 		<FormField data-testid="Registration__type" name="registrationType" className={`relative h-20 ${className}`}>
 			<div className="mb-2">
-				<FormLabel label="Registration Type" />
+				<FormLabel label={t("TRANSACTION.REGISTRATION_TYPE")} />
 			</div>
 			<div>
 				<Select ref={register} data-testid="Registration__type-select" options={registrationTypes} />
@@ -82,35 +83,35 @@ const FirstStep = ({
 	wallets,
 }: {
 	form: any;
-	networks: Network[];
+	networks: NetworkData[];
 	registrationTypes: RegistrationType[];
 	wallets: any[];
 }) => {
 	const { register } = form;
 	const { address, registrationType } = form.watch();
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="Registration__first-step">
-			<h1 className="mb-0">Registration</h1>
-			<div className="text-theme-neutral-dark">
-				Select the type of registration and the address you want to register with.
-			</div>
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.FIRST_STEP.DESCRIPTION")}</div>
 
 			<FormWrapper className="mt-8">
 				<FormField name="network">
-					<FormLabel>Network</FormLabel>
-					<SelectNetwork networks={networks} />
+					<FormLabel label={t("TRANSACTION.NETWORK")} />
+					<SelectNetwork id="Registration__network" networks={networks} />
 				</FormField>
 
 				<FormField name="address" className="relative mt-8">
 					<div className="mb-2">
-						<FormLabel label="Address" />
+						<FormLabel label={t("TRANSACTION.ADDRESS")} />
 					</div>
 
 					<div data-testid="Registration__address-field">
 						<SelectAddress
-							contactSearchTitle="My addresses"
-							contactSearchDescription="Find and select preferred address from you saved wallets"
+							contactSearchTitle={t("TRANSACTION.CONTACT_SEARCH.TITLE")}
+							contactSearchDescription={t("TRANSACTION.CONTACT_SEARCH.DESCRIPTION")}
 							address={address}
 							ref={register}
 							wallets={wallets}
@@ -133,35 +134,35 @@ const SecondStep = ({ form }: { form: any }) => {
 	const { register } = form;
 	const selectionBarState = useSelectionState(1);
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="Registration__second-step">
-			<h1 className="mb-0">Register Business</h1>
-			<div className="text-theme-neutral-dark">
-				Select the type of registration and the address you want to register with.
-			</div>
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.SECOND_STEP.DESCRIPTION")}</div>
 
 			<div>
-				<TransactionDetail border={false} className="pb-8">
+				<FormWrapper className="pb-8 mt-8">
 					<FormField name="name" className="font-normal">
-						<FormLabel required>Name</FormLabel>
+						<FormLabel required>{t("TRANSACTION.NAME")}</FormLabel>
 						<Input type="text" ref={register} />
 					</FormField>
 
 					<FormField name="description" className="mt-8 font-normal">
-						<FormLabel required>Description</FormLabel>
+						<FormLabel required>{t("TRANSACTION.DESCRIPTION")}</FormLabel>
 						<TextArea ref={register} />
 					</FormField>
 
 					<FormField name="website" className="mt-8 font-normal">
-						<FormLabel>Website</FormLabel>
+						<FormLabel>{t("TRANSACTION.WEBSITE")}</FormLabel>
 						<Input type="website" ref={register} />
 					</FormField>
-				</TransactionDetail>
+				</FormWrapper>
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Repository"
-						description="Show your projects through your repository"
+						title={t("TRANSACTION.REPOSITORIES.TITLE")}
+						description={t("TRANSACTION.REPOSITORIES.DESCRIPTION")}
 						types={[
 							{ label: "BitBucket", value: "bitbucket" },
 							{ label: "GitHub", value: "github" },
@@ -173,8 +174,8 @@ const SecondStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Social Media"
-						description="Tell people more about yourself through social media"
+						title={t("TRANSACTION.SOCIAL_MEDIA.TITLE")}
+						description={t("TRANSACTION.SOCIAL_MEDIA.DESCRIPTION")}
 						types={[
 							{ label: "Facebook", value: "facebook" },
 							{ label: "Twitter", value: "twitter" },
@@ -186,8 +187,8 @@ const SecondStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pb-8">
 					<LinkCollection
-						title="Photo and Video"
-						description="Get more users and add more information about yourself"
+						title={t("TRANSACTION.PHOTO_VIDEO.TITLE")}
+						description={t("TRANSACTION.PHOTO_VIDEO.DESCRIPTION")}
 						types={[
 							{ label: "YouTube", value: "youtube" },
 							{ label: "Vimeo", value: "vimeo" },
@@ -201,8 +202,7 @@ const SecondStep = ({ form }: { form: any }) => {
 
 				<TransactionDetail className="pt-6 pb-0">
 					<FormField name="fee">
-						<FormLabel>Fee ARK</FormLabel>
-
+						<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 						<InputFee selectionBarState={selectionBarState} defaultValue={25} min={1} max={100} step={1} />
 					</FormField>
 				</TransactionDetail>
@@ -212,6 +212,8 @@ const SecondStep = ({ form }: { form: any }) => {
 };
 
 const ThirdStep = () => {
+	const { t } = useTranslation();
+
 	const links = [
 		{
 			link: "http://github.com/robank",
@@ -233,14 +235,12 @@ const ThirdStep = () => {
 
 	return (
 		<div data-testid="Registration__third-step">
-			<div>
-				<h1 className="mb-0">Transaction Review</h1>
-				<p className="text-theme-neutral-dark">Check the information again before voting</p>
-			</div>
+			<h1 className="mb-0">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.TITLE")}</h1>
+			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_REGISTRATION.THIRD_STEP.DESCRIPTION")}</div>
 			<div className="mt-4">
 				<TransactionDetail
 					border={false}
-					label="Network"
+					label={t("TRANSACTION.NETWORK")}
 					extra={
 						<div className="ml-1 text-theme-danger">
 							<Circle className="bg-theme-background border-theme-danger-light" size="lg">
@@ -259,16 +259,16 @@ const ThirdStep = () => {
 					className="pt-4"
 				>
 					<div className="mb-2 text-sm font-semibold text-theme-neutral">
-						<span className="mr-1">Sender</span>
+						<span className="mr-1">{t("TRANSACTION.SENDER")}</span>
 						<Label color="warning">
-							<span className="text-sm">Your address</span>
+							<span className="text-sm">{t("TRANSACTION.YOUR_ADDRESS")}</span>
 						</Label>
 					</div>
 					<Address address="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK" walletName={"ROBank"} />
 				</TransactionDetail>
 
 				<TransactionDetail
-					label="Type"
+					label={t("TRANSACTION.TYPE")}
 					extra={
 						<div>
 							<Circle className="border-black bg-theme-background" size="lg">
@@ -280,11 +280,11 @@ const ThirdStep = () => {
 					Business Registration
 				</TransactionDetail>
 
-				<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
 
-				<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
+				<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
 
-				<TransactionDetail label="Website">
+				<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
 					<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
 						http://robank.com
 					</a>
@@ -309,32 +309,38 @@ const ThirdStep = () => {
 const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic" | "password" | "ledger" }) => {
 	const { register } = form;
 
+	const { t } = useTranslation();
+
 	return (
 		<div data-testid="Registration__fourth-step">
 			{passwordType !== "ledger" && (
 				<div>
-					<h1 className="mb-0">Authenticate</h1>
-					<div className="text-theme-neutral-dark">
-						Enter your twelve word mnemonic to authenticate the transaction.
-					</div>
+					<h1 className="mb-0">{t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}</h1>
+					<div className="text-theme-neutral-dark">{t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}</div>
 
 					<div className="mt-8">
 						<FormField name="name">
-							<FormLabel>{passwordType === "mnemonic" ? "Mnemonic" : "Encryption Password"}</FormLabel>
+							<FormLabel>
+								{passwordType === "mnemonic"
+									? t("TRANSACTION.MNEMONIC")
+									: t("TRANSACTION.ENCRYPTION_PASSWORD")}
+							</FormLabel>
 							<InputPassword name={passwordType} ref={register} />
 						</FormField>
 
-						<FormField name="name" className="mt-8">
-							<FormLabel>2nd Mnemonic</FormLabel>
-							<InputPassword name="secondMnemonic" ref={register} />
-						</FormField>
+						{passwordType === "mnemonic" && (
+							<FormField name="name" className="mt-8">
+								<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+								<InputPassword name="secondMnemonic" ref={register} />
+							</FormField>
+						)}
 					</div>
 				</div>
 			)}
 
 			{passwordType === "ledger" && (
 				<div>
-					<h1>Confirm Your Transaction</h1>
+					<h1>{t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}</h1>
 					<LedgerConfirmation />
 				</div>
 			)}
@@ -342,40 +348,44 @@ const FourthStep = ({ form, passwordType }: { form: any; passwordType: "mnemonic
 	);
 };
 
-export const FifthStep = () => (
-	<TransactionSuccessful>
-		<TransactionDetail
-			label="Transaction Type"
-			extra={
-				<Circle className="border-black" size="lg">
-					<Icon name="Business" width={20} height={20} />
-				</Circle>
-			}
-		>
-			Business Registration
-		</TransactionDetail>
-		<TransactionDetail label="Name">ROBank Eco</TransactionDetail>
-		<TransactionDetail label="Description">Not a trustworthy bank</TransactionDetail>
-		<TransactionDetail label="Website">
-			<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
-				http://robank.com
-			</a>
-		</TransactionDetail>
-		<TransactionDetail
-			label="Amount"
-			className="pb-0"
-			extra={
-				<div className="ml-1 text-theme-danger">
-					<Circle className="bg-theme-background border-theme-danger-light" size="lg">
-						<Icon name="Sent" width={22} height={22} />
+export const FifthStep = () => {
+	const { t } = useTranslation();
+
+	return (
+		<TransactionSuccessful>
+			<TransactionDetail
+				label={t("TRANSACTION.TRANSACTION_TYPE")}
+				extra={
+					<Circle className="border-black" size="lg">
+						<Icon name="Business" width={20} height={20} />
 					</Circle>
-				</div>
-			}
-		>
-			1.09660435 ARK
-		</TransactionDetail>
-	</TransactionSuccessful>
-);
+				}
+			>
+				Business Registration
+			</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.NAME")}>ROBank Eco</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.DESCRIPTION")}>Not a trustworthy bank</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.WEBSITE")}>
+				<a href="http://robank.com" target="_blank" rel="noopener noreferrer" className="link">
+					http://robank.com
+				</a>
+			</TransactionDetail>
+			<TransactionDetail
+				label={t("TRANSACTION.AMOUNT")}
+				className="pb-0"
+				extra={
+					<div className="ml-1 text-theme-danger">
+						<Circle className="bg-theme-background border-theme-danger-light" size="lg">
+							<Icon name="Sent" width={22} height={22} />
+						</Circle>
+					</div>
+				}
+			>
+				1.09660435 ARK
+			</TransactionDetail>
+		</TransactionSuccessful>
+	);
+};
 
 export const Registration = ({
 	formDefaultData,
@@ -389,6 +399,8 @@ export const Registration = ({
 	const [activeTab, setActiveTab] = React.useState(1);
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const { t } = useTranslation();
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -417,7 +429,7 @@ export const Registration = ({
 								<FirstStep
 									wallets={wallets}
 									form={form}
-									networks={networks}
+									networks={networks!}
 									registrationTypes={registrationTypes}
 								/>
 							</TabPanel>
@@ -448,7 +460,7 @@ export const Registration = ({
 										variant="plain"
 										onClick={handleBack}
 									>
-										Back
+										{t("COMMON.BACK")}
 									</Button>
 								)}
 
@@ -458,7 +470,7 @@ export const Registration = ({
 										disabled={!isValid}
 										onClick={handleNext}
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -467,25 +479,27 @@ export const Registration = ({
 										data-testid="Registration__send-button"
 										disabled={!isValid}
 										onClick={handleNext}
+										className="space-x-2"
 									>
-										<Icon name="Send" className="mr-2" width={20} height={20} />
-										Send
+										<Icon name="Send" width={20} height={20} />
+										<span>{t("COMMON.SEND")}</span>
 									</Button>
 								)}
 
 								{activeTab === 7 && (
 									<div className="flex justify-end space-x-3">
 										<Button data-testid="Registration__wallet-button" variant="plain">
-											Back to wallet
+											{t("COMMON.BACK_TO_WALLET")}
 										</Button>
 
 										<Button
 											type="submit"
 											data-testid="Registration__download-button"
 											variant="plain"
+											className="space-x-2"
 										>
-											<Icon name="Download" className="mr-2" />
-											Download
+											<Icon name="Download" />
+											<span>{t("COMMON.DOWNLOAD")}</span>
 										</Button>
 									</div>
 								)}
@@ -499,7 +513,7 @@ export const Registration = ({
 };
 
 Registration.defaultProps = {
-	networks,
+	networks: availableNetworksMock,
 	registrationTypes: [
 		{
 			value: "business",

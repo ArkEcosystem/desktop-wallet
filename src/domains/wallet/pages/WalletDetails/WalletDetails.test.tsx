@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import nock from "nock";
@@ -100,6 +100,62 @@ describe("WalletDetails", () => {
 			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
 
 			await waitFor(() => expect(profile.wallets().count()).toEqual(0));
+		});
+	});
+
+	it("should update wallet name", async () => {
+		let rendered: RenderResult;
+		const route = `/profiles/bob/wallets/${wallet.id()}`;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/:walletId">
+						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
+		});
+
+		const { getByTestId, getAllByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const dropdown = getAllByTestId("dropdown__toggle")[2];
+			expect(dropdown).toBeTruthy();
+
+			await fireEvent.click(dropdown);
+
+			const updateWalletNameOption = getByTestId("dropdown__option--0");
+			expect(updateWalletNameOption).toBeTruthy();
+
+			await fireEvent.click(updateWalletNameOption);
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			const name = "Sample label name";
+			const updateNameInput = getByTestId("UpdateWalletName__input");
+			act(() => {
+				fireEvent.change(updateNameInput, { target: { value: name } });
+			});
+
+			expect(updateNameInput).toHaveValue(name);
+
+			const submitBtn = getByTestId("UpdateWalletName__submit");
+
+			act(() => {
+				fireEvent.click(submitBtn);
+			});
+
+			await waitFor(() => {
+				wallet.settings().set(WalletSetting.Alias, name);
+				expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
+			});
 		});
 	});
 });

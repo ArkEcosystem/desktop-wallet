@@ -263,7 +263,7 @@ exports[`Welcome should render empty state 1`] = `
                 class="text-theme-neutral-dark"
                 data-testid="header__subtitle"
               >
-                You can register a Delagate, Business and Bridgechain.
+                You can register a Delegate, Business and Bridgechain.
               </div>
             </div>
             <div>
@@ -600,7 +600,7 @@ exports[`Welcome should render null for a not knwown type of table 1`] = `
                 class="text-theme-neutral-dark"
                 data-testid="header__subtitle"
               >
-                You can register a Delagate, Business and Bridgechain.
+                You can register a Delegate, Business and Bridgechain.
               </div>
             </div>
             <div>
@@ -914,7 +914,7 @@ exports[`Welcome should render properly 1`] = `
                 class="text-theme-neutral-dark"
                 data-testid="header__subtitle"
               >
-                You can register a Delagate, Business and Bridgechain.
+                You can register a Delegate, Business and Bridgechain.
               </div>
             </div>
             <div>
@@ -974,7 +974,7 @@ exports[`Welcome should render properly 1`] = `
             Business
           </h2>
           <div
-            class="sc-fznZeY dcDttg"
+            class="sc-fznZeY gcZndM"
             role="table"
           >
             <table
@@ -1005,7 +1005,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Agent
@@ -1019,7 +1019,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Business Name
@@ -1033,7 +1033,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md -ml-8"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         History
@@ -1047,7 +1047,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md ml-8 -mr-6"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Website
@@ -1061,7 +1061,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         MSQ
@@ -1075,7 +1075,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md ml-2"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Repository
@@ -1089,21 +1089,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top invisible float-right"
-                    >
-                      <div>
-                        Spacer
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--8"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top invisible float-right"
+                      class="flex flex-inline align-top invisible"
                     >
                       <div>
                         Options
@@ -1139,7 +1125,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -1155,93 +1141,98 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       ARK Ecosystem
                     </span>
                   </td>
                   <td
-                    class="py-6 text-bold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
-                    <span
-                      class="-ml-8"
-                    >
+                    <span>
                       View
                     </span>
                   </td>
                   <td
-                    class="py-6 text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP ml-12"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-bold text-theme-primary"
-                  >
-                    <div
-                      class="sc-AxirZ hmuEJr ml-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-bold text-theme-primary"
+                    class="text-center text-theme-neutral-light"
                   >
                     <span
-                      class="ml-3"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="px-1 px-12"
-                  />
-                  <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
-                  >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
                 <tr
@@ -1268,7 +1259,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -1284,93 +1275,98 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       ARK Ecosystem
                     </span>
                   </td>
                   <td
-                    class="py-6 text-bold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
-                    <span
-                      class="-ml-8"
-                    >
+                    <span>
                       View
                     </span>
                   </td>
                   <td
-                    class="py-6 text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP ml-12"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-bold text-theme-primary"
-                  >
-                    <div
-                      class="sc-AxirZ hmuEJr ml-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-bold text-theme-primary"
+                    class="text-center text-theme-neutral-light"
                   >
                     <span
-                      class="ml-3"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="px-1 px-12"
-                  />
-                  <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
-                  >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -1390,7 +1386,7 @@ exports[`Welcome should render properly 1`] = `
             Blockchain
           </h2>
           <div
-            class="sc-fznZeY dcDttg"
+            class="sc-fznZeY gcZndM"
             role="table"
           >
             <table
@@ -1421,7 +1417,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Agent
@@ -1435,7 +1431,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Blockchain Name
@@ -1449,7 +1445,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         History
@@ -1463,7 +1459,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Website
@@ -1477,7 +1473,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         MSQ
@@ -1491,7 +1487,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md ml-4"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Repository
@@ -1505,7 +1501,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md -ml-4"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Seed
@@ -1519,21 +1515,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top invisible float-right"
-                    >
-                      <div>
-                        Spacer
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-sm text-left select-none text-theme-neutral"
-                    colspan="1"
-                    data-testid="table__th--9"
-                    role="columnheader"
-                  >
-                    <div
-                      class="flex flex-inline align-top invisible float-right"
+                      class="flex flex-inline align-top invisible"
                     >
                       <div>
                         Options
@@ -1569,7 +1551,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -1585,100 +1567,105 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       ARK Ecosystem
                     </span>
                   </td>
                   <td
-                    class="py-6 text-semibold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
                     <span>
                       View
                     </span>
                   </td>
                   <td
-                    class="py-6 text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP ml-4"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
-                  >
-                    <div
-                      class="sc-AxirZ hmuEJr ml-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
+                    class="text-center text-theme-neutral-light"
                   >
                     <span
-                      class="ml-7"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
-                  >
-                    <span
-                      class="-ml-5"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="px-1 px-11"
-                  />
-                  <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
-                  >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
                 <tr
@@ -1705,7 +1692,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -1721,100 +1708,105 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       ARK Ecosystem
                     </span>
                   </td>
                   <td
-                    class="py-6 text-semibold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
                     <span>
                       View
                     </span>
                   </td>
                   <td
-                    class="py-6 text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP ml-4"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
-                  >
-                    <div
-                      class="sc-AxirZ hmuEJr ml-1"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
+                    class="text-center text-theme-neutral-light"
                   >
                     <span
-                      class="ml-7"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="py-6 text-semibold text-theme-primary"
-                  >
-                    <span
-                      class="-ml-5"
-                    >
-                      View
-                    </span>
-                  </td>
-                  <td
-                    class="px-1 px-11"
-                  />
-                  <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
-                  >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                      class="flex justify-center"
                     >
                       <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                        class="sc-AxirZ iQaTP text-center"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
+                      >
+                        <svg>
+                          msq.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-center text-theme-primary"
+                  >
+                    <span>
+                      View
+                    </span>
+                  </td>
+                  <td
+                    class="align-middle"
+                  >
+                    <span
+                      class="flex justify-end"
+                    >
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -1834,7 +1826,7 @@ exports[`Welcome should render properly 1`] = `
             Delegate
           </h2>
           <div
-            class="sc-fznZeY dcDttg"
+            class="sc-fznZeY gcZndM"
             role="table"
           >
             <table
@@ -1865,7 +1857,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Delegate Name
@@ -1879,7 +1871,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md -ml-14"
+                      class="flex flex-inline align-top undefined"
                     >
                       <div>
                         Rank
@@ -1893,7 +1885,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         MSQ
@@ -1907,7 +1899,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Status
@@ -1921,10 +1913,10 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top invisible w-3 float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
-                        Amount
+                        Forged Amount
                       </div>
                     </div>
                   </th>
@@ -1935,7 +1927,7 @@ exports[`Welcome should render properly 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top font-semibold text-md float-right ml-32"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Votes
@@ -1971,7 +1963,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -1987,67 +1979,71 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6  text-theme-neutral-dark"
+                    class="font-semibold text-theme-neutral-dark"
                   >
-                    <span
-                      class="-ml-14"
-                    >
+                    <span>
                       #2
                     </span>
                   </td>
                   <td
-                    class="py-6  text-bold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
-                    <div
-                      class="sc-AxirZ hmuEJr"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6  text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ bMjbpr ml-1 text-theme-success"
-                      height="30"
-                      width="30"
-                    >
-                      <svg>
-                        checkmark.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex float-right text-semibold text-theme-neutral-800"
+                    <span
+                      class="flex justify-center"
                     >
                       <div
-                        class="flex items-center"
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
                       >
-                        <span
-                          class="ml-16"
-                        >
-                          2,450.643 Ѧ
-                        </span>
+                        <svg>
+                          msq.svg
+                        </svg>
                       </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ bMjbpr ml-1 text-theme-success"
+                        height="30"
+                        width="30"
+                      >
+                        <svg>
+                          checkmark.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                  >
+                    <div
+                      class="flex items-center justify-end"
+                    >
+                      <span
+                        class="whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
                     </div>
                   </td>
                   <td
-                    class="w-1/12 text-semibold text-theme-neutral-800"
+                    class="font-semibold text-theme-neutral-dark"
                   >
                     <div
-                      class="flex items-center ml-5 -mr-10"
+                      class="flex items-center justify-end"
                     >
                       <small
                         class="text-theme-neutral"
@@ -2055,39 +2051,43 @@ exports[`Welcome should render properly 1`] = `
                         2,43%
                       </small>
                       <span
-                        class="ml-1"
+                        class="ml-1 whitespace-no-wrap"
                       >
                         2,450.643 Ѧ
                       </span>
                     </div>
                   </td>
                   <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
+                    class="align-middle"
                   >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                    <span
+                      class="flex justify-end"
                     >
-                      <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
                 <tr
@@ -2114,7 +2114,7 @@ exports[`Welcome should render properly 1`] = `
                         </div>
                       </div>
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz mr-4"
                         data-testid="Avatar"
                       >
                         <div
@@ -2130,67 +2130,71 @@ exports[`Welcome should render properly 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-6 mt-1 font-semibold"
+                    class="font-semibold"
                   >
                     <span>
                       OLEBank
                     </span>
                   </td>
                   <td
-                    class="py-6  text-theme-neutral-dark"
+                    class="font-semibold text-theme-neutral-dark"
                   >
-                    <span
-                      class="-ml-14"
-                    >
+                    <span>
                       #352
                     </span>
                   </td>
                   <td
-                    class="py-6  text-bold text-theme-primary"
+                    class="font-semibold text-center text-theme-primary"
                   >
-                    <div
-                      class="sc-AxirZ hmuEJr"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        msq.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6  text-theme-neutral-light"
-                  >
-                    <div
-                      class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        status-clock.svg
-                      </svg>
-                    </div>
-                  </td>
-                  <td>
-                    <div
-                      class="flex float-right text-semibold text-theme-neutral-800"
+                    <span
+                      class="flex justify-center"
                     >
                       <div
-                        class="flex items-center"
+                        class="sc-AxirZ hmuEJr"
+                        height="22"
+                        width="22"
                       >
-                        <span
-                          class="ml-16"
-                        >
-                          2,450.643 Ѧ
-                        </span>
+                        <svg>
+                          msq.svg
+                        </svg>
                       </div>
+                    </span>
+                  </td>
+                  <td
+                    class="text-theme-neutral-light"
+                  >
+                    <span
+                      class="flex justify-center"
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP ml-2 text-theme-neutral"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          status-clock.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="font-semibold text-theme-neutral-dark"
+                  >
+                    <div
+                      class="flex items-center justify-end"
+                    >
+                      <span
+                        class="whitespace-no-wrap"
+                      >
+                        2,450.643 Ѧ
+                      </span>
                     </div>
                   </td>
                   <td
-                    class="w-1/12 text-semibold text-theme-neutral-800"
+                    class="font-semibold text-theme-neutral-dark"
                   >
                     <div
-                      class="flex items-center ml-5 -mr-10"
+                      class="flex items-center justify-end"
                     >
                       <small
                         class="text-theme-neutral"
@@ -2198,39 +2202,43 @@ exports[`Welcome should render properly 1`] = `
                         2,43%
                       </small>
                       <span
-                        class="ml-1"
+                        class="ml-1 whitespace-no-wrap"
                       >
                         2,450.643 Ѧ
                       </span>
                     </div>
                   </td>
                   <td
-                    class="flex items-center justify-center float-right py-6 mt-1"
+                    class="align-middle"
                   >
-                    <button
-                      class="sc-AxjAm kTAyCf"
-                      color="primary"
-                      type="button"
+                    <span
+                      class="flex justify-end"
                     >
-                      <div
-                        class="relative"
-                        data-testid="dropdown__toggle"
+                      <button
+                        class="sc-AxjAm kTAyCf ml-16"
+                        color="primary"
+                        type="button"
                       >
                         <div
-                          class="float-right outline-none cursor-pointer focus:outline-none"
+                          class="relative"
+                          data-testid="dropdown__toggle"
                         >
                           <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
+                            class="float-right outline-none cursor-pointer focus:outline-none"
                           >
-                            <svg>
-                              settings.svg
-                            </svg>
+                            <div
+                              class="sc-AxirZ eEbZjj"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                settings.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </span>
                   </td>
                 </tr>
               </tbody>

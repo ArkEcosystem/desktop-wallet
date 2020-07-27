@@ -156,7 +156,7 @@ exports[`Wallets should render with empty wallets list 1`] = `
           >
             <div
               class="h-full swiper-wrapper "
-              style="webkit-transition-duration: 0ms; transition-duration: 0ms; webkit-transform: translate3d(NaNpx, 0px, 0px); transform: translate3d(NaNpx, 0px, 0px);"
+              style="transition: 0ms; transform: translate3d(NaNpx, 0px, 0px);"
             >
               <div
                 class="swiper-slide"
@@ -301,11 +301,6 @@ exports[`Wallets should render with empty wallets list 1`] = `
             </div>
             <div
               class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
-            />
-            <span
-              aria-atomic="true"
-              aria-live="assertive"
-              class="swiper-notification"
             />
           </div>
         </div>
@@ -462,7 +457,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
       <div>
         <div>
           <div
-            class="sc-AxiKw bvfChE"
+            class="sc-AxiKw eDwAKA"
             role="table"
           >
             <table
@@ -539,7 +534,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top undefined"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Wallet Type
@@ -555,7 +550,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Balance
@@ -585,7 +580,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Fiat Value
@@ -2159,7 +2154,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
             color="primary"
             type="button"
           >
-            See more
+            View More
           </button>
         </div>
       </div>
@@ -2315,7 +2310,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
       <div>
         <div>
           <div
-            class="sc-AxiKw bvfChE"
+            class="sc-AxiKw eDwAKA"
             role="table"
           >
             <table
@@ -2392,7 +2387,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     role="columnheader"
                   >
                     <div
-                      class="flex flex-inline align-top undefined"
+                      class="flex flex-inline align-top justify-center"
                     >
                       <div>
                         Wallet Type
@@ -2408,7 +2403,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Balance
@@ -2438,7 +2433,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     title="Toggle SortBy"
                   >
                     <div
-                      class="flex flex-inline align-top float-right"
+                      class="flex flex-inline align-top justify-end"
                     >
                       <div>
                         Fiat Value
@@ -4012,7 +4007,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
             color="primary"
             type="button"
           >
-            See more
+            View More
           </button>
         </div>
       </div>

@@ -104,19 +104,28 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                 class="flex items-center font-semibold"
               >
                 ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-                <button
-                  class="inline-block ml-4 text-theme-primary-300"
+                <span
+                  class="ml-4"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="text-theme-primary-300"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </span>
               </div>
             </div>
             <div
@@ -221,19 +230,28 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                 class="flex items-center font-semibold"
               >
                 ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
-                <button
-                  class="inline-block ml-4 text-theme-primary-300"
+                <span
+                  class="ml-4"
                 >
                   <div
-                    class="sc-AxiKw dzBdqj"
-                    height="1em"
-                    width="1em"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <svg>
-                      copy.svg
-                    </svg>
+                    <div
+                      class="text-theme-primary-300"
+                    >
+                      <div
+                        class="sc-AxiKw dzBdqj"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </span>
               </div>
             </div>
             <div

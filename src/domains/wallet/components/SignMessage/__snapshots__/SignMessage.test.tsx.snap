@@ -58,7 +58,7 @@ exports[`SignMessage should render as signed 1`] = `
                 <div
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Signatory
+                  COMMON.SIGNATORY
                 </div>
                 <div
                   class="font-semibold"
@@ -235,7 +235,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
         <div
           class="mt-1 text-theme-neutral-dark"
         >
-          Insert a message below to sign using your private key
+          Sign Message
         </div>
         <div
           class="mt-8"
@@ -252,9 +252,9 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="signatory-address"
-                label="Signatory"
+                label="COMMON.SIGNATORY"
               >
-                Signatory
+                COMMON.SIGNATORY
               </label>
               <div
                 class="relative"
