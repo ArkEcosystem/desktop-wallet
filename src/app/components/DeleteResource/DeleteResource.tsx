@@ -39,11 +39,11 @@ export const DeleteResource = ({
 			{children && <div className="mt-4">{children}</div>}
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={onCancel}>
+				<Button variant="plain" onClick={onCancel} data-testid="DeleteResource__cancel-button">
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button type="submit" onClick={onDelete}>
+				<Button type="submit" onClick={onDelete} data-testid="DeleteResource__submit-button">
 					<Icon name="Trash" />
 					<span>{t("COMMON.DELETE")}</span>
 				</Button>

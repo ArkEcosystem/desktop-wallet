@@ -17,3 +17,5 @@ const data = [
 ];
 
 export const Default = () => <WalletVote delegates={data} onUnvote={action("onUnvote")} />;
+
+export const Empty = () => <WalletVote delegates={[]} onUnvote={action("onUnvote")} />;

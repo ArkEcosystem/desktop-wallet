@@ -191,7 +191,7 @@ exports[`Vote For Delegate should render 1`] = `
                       class="text-sm text-theme-background"
                     />
                     <span
-                      class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
+                      class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
                       <div
                         class="sc-AxhUy gKrfcW"
@@ -277,17 +277,15 @@ exports[`Vote For Delegate should render 1`] = `
                   <section
                     data-testid="SendVoteTransaction__step--first"
                   >
-                    <div>
-                      <h1
-                        class="mb-0"
-                      >
-                        Vote for delegate
-                      </h1>
-                      <p
-                        class="text-theme-neutral-dark"
-                      >
-                        Enter details to send your money
-                      </p>
+                    <h1
+                      class="mb-0"
+                    >
+                      Vote Transaction
+                    </h1>
+                    <div
+                      class="text-theme-neutral-dark"
+                    >
+                      Select a fee to continue
                     </div>
                     <div
                       class="mt-4 grid grid-flow-row gap-2"
@@ -301,11 +299,60 @@ exports[`Vote For Delegate should render 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-neutral"
                           >
-                            Account
+                            Network
                           </div>
                           <div
                             class="font-semibold"
                           >
+                            ARK Ecosystem
+                          </div>
+                        </div>
+                        <div
+                          class="ml-1 text-theme-danger"
+                        >
+                          <div
+                            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
+                          >
+                            <div
+                              class="sc-AxhUy hSYVGy"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                ark.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+                      >
+                        <div
+                          class="flex-1 space-y-2"
+                        >
+                          <div
+                            class="font-semibold"
+                          >
+                            <div
+                              class="mb-2 text-sm font-semibold text-theme-neutral"
+                            >
+                              <span
+                                class="mr-1"
+                              >
+                                Sender
+                              </span>
+                              <div
+                                class="sc-fznyAO dkNXHq"
+                                color="warning"
+                              >
+                                <span
+                                  class="text-sm"
+                                >
+                                  Your address
+                                </span>
+                              </div>
+                            </div>
                             <div
                               class="inline-block truncate align-middle"
                             >
@@ -387,102 +434,110 @@ exports[`Vote For Delegate should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex items-center py-4 true pb-0"
+                        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
                       >
                         <div
-                          class="flex-1"
+                          class="flex-1 space-y-2"
                         >
                           <div
-                            class="text-sm font-medium text-theme-neutral-dark"
+                            class="font-semibold"
                           >
-                            Fee ARK
-                          </div>
-                          <div
-                            class="mt-2"
-                          >
-                            <div
-                              class="flex"
+                            <fieldset
+                              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
                             >
+                              <label
+                                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                                data-testid="FormLabel"
+                                for="fee"
+                              >
+                                Transaction Fee
+                              </label>
                               <div
-                                class="w-3/5 mr-2"
+                                class="flex space-x-2"
                               >
                                 <div
-                                  class="sc-fzozJi OgXfh"
+                                  class="flex-1"
                                 >
-                                  <input
-                                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                                    data-testid="InputCurrency"
-                                    type="text"
-                                    value="25"
-                                  />
                                   <div
-                                    class="absolute bottom-0 w-full px-1"
+                                    class="sc-fzozJi OgXfh"
                                   >
+                                    <input
+                                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                                      data-testid="InputCurrency"
+                                      name="fee"
+                                      type="text"
+                                      value="25"
+                                    />
                                     <div
-                                      class="flex flex-wrap justify-center"
-                                      data-testid="Range"
+                                      class="absolute bottom-0 w-full px-1"
                                     >
                                       <div
-                                        class="sc-fzoLsD gcqOdX"
-                                        data-testid="Range__track"
-                                        style="transform: scale(1); cursor: pointer;"
+                                        class="flex flex-wrap justify-center"
+                                        data-testid="Range"
                                       >
                                         <div
-                                          class="sc-fzpans fDmiZy"
-                                          data-testid="Range__track__filled"
+                                          class="sc-fzoLsD gcqOdX"
+                                          data-testid="Range__track"
+                                          style="transform: scale(1); cursor: pointer;"
                                         >
                                           <div
-                                            aria-valuemax="100"
-                                            aria-valuemin="1"
-                                            aria-valuenow="25"
-                                            class="sc-fzplWN eSQZBV"
-                                            data-testid="Range__thumb"
-                                            draggable="false"
-                                            role="slider"
-                                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                                            tabindex="0"
-                                          />
+                                            class="sc-fzpans fDmiZy"
+                                            data-testid="Range__track__filled"
+                                          >
+                                            <div
+                                              aria-valuemax="100"
+                                              aria-valuemin="1"
+                                              aria-valuenow="25"
+                                              class="sc-fzplWN eSQZBV"
+                                              data-testid="Range__thumb"
+                                              draggable="false"
+                                              role="slider"
+                                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                              tabindex="0"
+                                            />
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div
-                                class="ml-2"
-                              >
-                                <div
-                                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                                  data-testid="SelectionBar"
-                                  role="radiogroup"
-                                >
-                                  <button
-                                    aria-checked="true"
-                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                    data-testid="SelectionBarOption"
-                                    role="radio"
+                                <div>
+                                  <div
+                                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                                    data-testid="SelectionBar"
+                                    role="radiogroup"
                                   >
-                                    Last
-                                  </button>
-                                  <button
-                                    aria-checked="false"
-                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                    data-testid="SelectionBarOption"
-                                    role="radio"
-                                  >
-                                    Min
-                                  </button>
-                                  <button
-                                    aria-checked="false"
-                                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                                    data-testid="SelectionBarOption"
-                                    role="radio"
-                                  >
-                                    Average
-                                  </button>
+                                    <button
+                                      aria-checked="true"
+                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Last
+                                    </button>
+                                    <button
+                                      aria-checked="false"
+                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Min
+                                    </button>
+                                    <button
+                                      aria-checked="false"
+                                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                      data-testid="SelectionBarOption"
+                                      role="radio"
+                                      type="button"
+                                    >
+                                      Average
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                            </fieldset>
                           </div>
                         </div>
                       </div>
@@ -525,17 +580,15 @@ exports[`Vote For Delegate should render 1st step 1`] = `
   <section
     data-testid="SendVoteTransaction__step--first"
   >
-    <div>
-      <h1
-        class="mb-0"
-      >
-        Vote for delegate
-      </h1>
-      <p
-        class="text-theme-neutral-dark"
-      >
-        Enter details to send your money
-      </p>
+    <h1
+      class="mb-0"
+    >
+      Vote Transaction
+    </h1>
+    <div
+      class="text-theme-neutral-dark"
+    >
+      Select a fee to continue
     </div>
     <div
       class="mt-4 grid grid-flow-row gap-2"
@@ -549,11 +602,60 @@ exports[`Vote For Delegate should render 1st step 1`] = `
           <div
             class="text-sm font-semibold text-theme-neutral"
           >
-            Account
+            Network
           </div>
           <div
             class="font-semibold"
           >
+            ARK Ecosystem
+          </div>
+        </div>
+        <div
+          class="ml-1 text-theme-danger"
+        >
+          <div
+            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
+          >
+            <div
+              class="sc-AxhUy hSYVGy"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
+      >
+        <div
+          class="flex-1 space-y-2"
+        >
+          <div
+            class="font-semibold"
+          >
+            <div
+              class="mb-2 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
+              >
+                Sender
+              </span>
+              <div
+                class="sc-fznyAO dkNXHq"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
+              </div>
+            </div>
             <div
               class="inline-block truncate align-middle"
             >
@@ -635,102 +737,110 @@ exports[`Vote For Delegate should render 1st step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-4 true pb-0"
+        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pt-6 pb-0"
       >
         <div
-          class="flex-1"
+          class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-medium text-theme-neutral-dark"
+            class="font-semibold"
           >
-            Fee ARK
-          </div>
-          <div
-            class="mt-2"
-          >
-            <div
-              class="flex"
+            <fieldset
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
             >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="fee"
+              >
+                Transaction Fee
+              </label>
               <div
-                class="w-3/5 mr-2"
+                class="flex space-x-2"
               >
                 <div
-                  class="sc-fzozJi OgXfh"
+                  class="flex-1"
                 >
-                  <input
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                    data-testid="InputCurrency"
-                    type="text"
-                    value="25"
-                  />
                   <div
-                    class="absolute bottom-0 w-full px-1"
+                    class="sc-fzozJi OgXfh"
                   >
+                    <input
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="25"
+                    />
                     <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
+                      class="absolute bottom-0 w-full px-1"
                     >
                       <div
-                        class="sc-fzoLsD gcqOdX"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
+                        class="flex flex-wrap justify-center"
+                        data-testid="Range"
                       >
                         <div
-                          class="sc-fzpans fDmiZy"
-                          data-testid="Range__track__filled"
+                          class="sc-fzoLsD gcqOdX"
+                          data-testid="Range__track"
+                          style="transform: scale(1); cursor: pointer;"
                         >
                           <div
-                            aria-valuemax="100"
-                            aria-valuemin="1"
-                            aria-valuenow="25"
-                            class="sc-fzplWN eSQZBV"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
+                            class="sc-fzpans fDmiZy"
+                            data-testid="Range__track__filled"
+                          >
+                            <div
+                              aria-valuemax="100"
+                              aria-valuemin="1"
+                              aria-valuenow="25"
+                              class="sc-fzplWN eSQZBV"
+                              data-testid="Range__thumb"
+                              draggable="false"
+                              role="slider"
+                              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                              tabindex="0"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="ml-2"
-              >
-                <div
-                  class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
-                  data-testid="SelectionBar"
-                  role="radiogroup"
-                >
-                  <button
-                    aria-checked="true"
-                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
+                <div>
+                  <div
+                    class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+                    data-testid="SelectionBar"
+                    role="radiogroup"
                   >
-                    Last
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                  >
-                    Min
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="sc-fzpjYC jFFclY relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
-                    data-testid="SelectionBarOption"
-                    role="radio"
-                  >
-                    Average
-                  </button>
+                    <button
+                      aria-checked="true"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Last
+                    </button>
+                    <button
+                      aria-checked="false"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Min
+                    </button>
+                    <button
+                      aria-checked="false"
+                      class="sc-fzpjYC gMsesJ relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                      data-testid="SelectionBarOption"
+                      role="radio"
+                      type="button"
+                    >
+                      Average
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </fieldset>
           </div>
         </div>
       </div>
@@ -773,29 +883,14 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           <div
             class="font-semibold"
           >
-            <div
-              class="inline-block truncate align-middle"
-            >
-              <span
-                class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                data-testid="address__wallet-name"
-              >
-                ROBank
-              </span>
-              <span
-                class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                AUexKj…EVTQWK
-              </span>
-            </div>
+            ARK Ecosystem
           </div>
         </div>
         <div
           class="ml-1 text-theme-danger"
         >
           <div
-            class="sc-AxiKw eHzXqc bg-theme-background border-theme-danger-light"
+            class="sc-AxiKw jQtkkF bg-theme-background border-theme-danger-light"
           >
             <div
               class="sc-AxhUy hSYVGy"
@@ -816,13 +911,27 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
           class="flex-1 space-y-2"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
-          >
-            Account
-          </div>
-          <div
             class="font-semibold"
           >
+            <div
+              class="mb-2 text-sm font-semibold text-theme-neutral"
+            >
+              <span
+                class="mr-1"
+              >
+                Sender
+              </span>
+              <div
+                class="sc-fznyAO dkNXHq"
+                color="warning"
+              >
+                <span
+                  class="text-sm"
+                >
+                  Your address
+                </span>
+              </div>
+            </div>
             <div
               class="inline-block truncate align-middle"
             >
@@ -877,7 +986,7 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
                 class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
                 data-testid="address__wallet-name"
               >
-                ROBank
+                Delegate 3
               </span>
               <span
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
@@ -904,20 +1013,80 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
         </div>
       </div>
       <div
-        class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 pb-0"
+        class="my-4"
       >
         <div
-          class="flex-1 space-y-2"
+          class="border rounded-lg border-theme-neutral-300"
         >
           <div
-            class="text-sm font-semibold text-theme-neutral"
+            class="relative p-3"
           >
-            Transaction fee
+            <div
+              class="grid grid-cols-2 divide-x divide-gray-400"
+            >
+              <div
+                class="flex flex-col justify-center px-6 py-5"
+              >
+                <span
+                  class="text-sm text-theme-neutral"
+                >
+                  Transaction(s) Amount
+                </span>
+                <span
+                  class="mt-2 font-semibold"
+                  data-testid="total-amount-box__transaction-amount"
+                >
+                  0.00 ARK
+                </span>
+              </div>
+              <div
+                class="flex flex-col justify-center px-6 py-5 text-right"
+              >
+                <span
+                  class="text-sm text-theme-neutral"
+                >
+                  Transaction fee
+                </span>
+                <span
+                  class="mt-2 text-lg font-semibold"
+                  data-testid="total-amount-box__transaction-fee"
+                >
+                  0.09660435 ARK
+                </span>
+              </div>
+            </div>
+            <div
+              class="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center h-full text-center"
+            >
+              <div
+                class="px-1 py-2 bg-white"
+              >
+                <div
+                  class="sc-AxhUy cIoObu"
+                  height="15"
+                  width="15"
+                >
+                  <svg>
+                    plus.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
           <div
-            class="font-semibold"
+            class="flex flex-col items-center border-t rounded-b-lg border-theme-neutral-300 justfiy-center py-7 bg-theme-neutral-contrast"
           >
-            0.09660435 ARK
+            <span
+              class="text-sm text-theme-neutral"
+            >
+              Total Amount
+            </span>
+            <span
+              class="text-2xl font-bold"
+              data-testid="total-amount-box__total"
+            >
+              0.09660435 ARK
+            </span>
           </div>
         </div>
       </div>
@@ -928,72 +1097,210 @@ exports[`Vote For Delegate should render 2nd step 1`] = `
 
 exports[`Vote For Delegate should render 3rd step 1`] = `
 <DocumentFragment>
-  <section
+  <div
     data-testid="SendVoteTransaction__step--third"
   >
     <div>
       <h1
         class="mb-0"
       >
-        Passphrase
+        Authenticate
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
-        Confirm your password to continue
-      </p>
+        Enter your twelve word mnemonic to authenticate the transaction.
+      </div>
       <div
-        class="mt-4 grid grid-flow-row gap-2"
+        class="mt-8"
       >
-        <div
-          class="flex items-center py-6 true pb-0"
+        <fieldset
+          class="sc-AxhCb ckQmOL flex flex-col space-y-2"
         >
-          <div
-            class="flex-1 space-y-2"
+          <label
+            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="name"
           >
+            Mnemonic
+          </label>
+          <div
+            class="sc-fzozJi OgXfh max-w-20"
+          >
+            <input
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              data-testid="Input"
+              name="mnemonic"
+              type="password"
+            />
             <div
-              class="text-sm font-semibold text-theme-neutral"
+              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
             >
-              Your password
-            </div>
-            <div
-              class="font-semibold"
-            >
-              <div
-                class="sc-fzozJi OgXfh max-w-20"
+              <button
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                data-testid="InputPassword__toggle"
+                type="button"
               >
-                <input
-                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                  data-testid="Input"
-                  name="passphras"
-                  type="password"
-                />
                 <div
-                  class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                  class="sc-AxhUy cPXLjK"
+                  height="1em"
+                  width="1em"
                 >
-                  <button
-                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
-                    data-testid="InputPassword__toggle"
-                    type="button"
-                  >
-                    <div
-                      class="sc-AxhUy cPXLjK"
-                      height="1em"
-                      width="1em"
-                    >
-                      <svg>
-                        eye.svg
-                      </svg>
-                    </div>
-                  </button>
+                  <svg>
+                    eye.svg
+                  </svg>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
-        </div>
+        </fieldset>
+        <fieldset
+          class="sc-AxhCb ckQmOL mt-8"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="name"
+          >
+            2nd Mnemonic
+          </label>
+          <div
+            class="sc-fzozJi OgXfh max-w-20"
+          >
+            <input
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              data-testid="Input"
+              name="secondMnemonic"
+              type="password"
+            />
+            <div
+              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+            >
+              <button
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy cPXLjK"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </fieldset>
       </div>
     </div>
-  </section>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 3rd step 2`] = `
+<DocumentFragment>
+  <div
+    data-testid="SendVoteTransaction__step--third"
+  >
+    <div>
+      <h1
+        class="mb-0"
+      >
+        Authenticate
+      </h1>
+      <div
+        class="text-theme-neutral-dark"
+      >
+        Enter your twelve word mnemonic to authenticate the transaction.
+      </div>
+      <div
+        class="mt-8"
+      >
+        <fieldset
+          class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+        >
+          <label
+            class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+            data-testid="FormLabel"
+            for="name"
+          >
+            Encryption Password
+          </label>
+          <div
+            class="sc-fzozJi OgXfh max-w-20"
+          >
+            <input
+              class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+              data-testid="Input"
+              name="password"
+              type="password"
+            />
+            <div
+              class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+            >
+              <button
+                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="sc-AxhUy cPXLjK"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Vote For Delegate should render 3rd step 3`] = `
+<DocumentFragment>
+  <div
+    data-testid="SendVoteTransaction__step--third"
+  >
+    <div>
+      <h1>
+        Confirm Your Transaction
+      </h1>
+      <svg
+        class="my-8"
+      >
+        confirm-transaction-ledger-banner.svg
+      </svg>
+      <div
+        class="mt-8 text-center text-theme-neutral-dark"
+        data-testid="LedgerConfirmation-description"
+      >
+        Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
+      </div>
+      <div
+        class="inline-flex items-center justify-center w-full mt-8 space-x-3"
+      >
+        <div
+          class="sc-fznWqX gRKjsl"
+          color="primary"
+        />
+        <span
+          class="font-semibold text-black"
+          data-testid="LedgerConfirmation-loading_message"
+        >
+          Waiting for confirmation ...
+        </span>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
@@ -1044,33 +1351,37 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1093,33 +1404,37 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1138,22 +1453,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             <div
               class="font-semibold"
             >
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  AUexKj…EVTQWK
-                </span>
-              </div>
+              ARK Ecosystem
             </div>
           </div>
           <div
@@ -1192,7 +1492,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
                   Sender
                 </span>
                 <div
-                  class="sc-fzqBZW gkKxDF"
+                  class="sc-fznyAO dkNXHq"
                   color="warning"
                 >
                   <span
@@ -1291,7 +1591,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral"
             >
-              Transaction fee
+              Transaction Fee
             </div>
             <div
               class="font-semibold"
@@ -1309,7 +1609,7 @@ exports[`Vote For Delegate should render 4th step 1`] = `
             <div
               class="text-sm font-semibold text-theme-neutral"
             >
-              Transaction type
+              Transaction Type
             </div>
             <div
               class="font-semibold"

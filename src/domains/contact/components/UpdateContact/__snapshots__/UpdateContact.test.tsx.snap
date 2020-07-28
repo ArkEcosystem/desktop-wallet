@@ -68,7 +68,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__name-input"
                 name="name"
-                value=""
+                value="Test"
               />
             </fieldset>
             <fieldset
@@ -84,52 +84,44 @@ exports[`UpdateContact should render a modal 1`] = `
               <div
                 aria-expanded="false"
                 aria-haspopup="listbox"
-                aria-labelledby="downshift-0-label"
-                class="relative"
+                aria-owns="ContactForm__network-menu"
+                data-testid="SelectNetwork"
                 role="combobox"
               >
                 <label
-                  for="downshift-0-input"
-                  id="downshift-0-label"
+                  for="ContactForm__network-input"
+                  id="ContactForm__network-label"
                 />
                 <div
-                  class="relative flex items-center w-full flex-inline"
+                  class="sc-fzoLsD rzdyj"
+                  data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="sc-fznKkj ldGqxY flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                    class="sc-Axmtr sc-AxmLO VVqBg px-4"
                   >
                     <div
-                      class="px-4 py-2 flex-0 w-14"
-                    >
-                      <div
-                        class="sc-AxhUy iJOgmr border-theme-neutral-200"
-                      />
-                    </div>
-                    <div
-                      class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                    >
-                      <div
-                        class="relative z-10 w-full"
-                        data-testid="select-network__typeahead-"
-                      >
-                        <div
-                          class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                        />
-                      </div>
-                      <input
-                        aria-autocomplete="list"
-                        aria-labelledby="downshift-0-label"
-                        autocomplete="off"
-                        class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                        data-testid="select-asset__input"
-                        id="downshift-0-input"
-                        placeholder="Enter a network name"
-                        value=""
-                      />
-                    </div>
+                      class="sc-AxhUy iPLNDc border-theme-neutral-light text-theme-neutral"
+                      data-testid="SelectNetworkInput__network"
+                    />
                   </div>
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="ContactForm__network-menu"
+                    aria-labelledby="ContactForm__network-label"
+                    autocomplete="off"
+                    class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    data-testid="SelectNetworkInput__input"
+                    id="ContactForm__network-input"
+                    placeholder="Enter a network name"
+                    value=""
+                  />
                 </div>
               </div>
+              <ul
+                aria-labelledby="ContactForm__network-label"
+                id="ContactForm__network-menu"
+                role="listbox"
+              />
             </fieldset>
             <fieldset
               class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
@@ -161,8 +153,27 @@ exports[`UpdateContact should render a modal 1`] = `
               </button>
             </div>
             <div
-              class="flex w-full justify-end"
+              class="flex w-full justify-between"
             >
+              <button
+                class="sc-AxjAm bxcsTZ"
+                color="danger"
+                data-testid="contact-form__delete-btn"
+                type="button"
+              >
+                <div
+                  class="sc-AxirZ iQaTP"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    trash.svg
+                  </svg>
+                </div>
+                <span>
+                  Delete Contact
+                </span>
+              </button>
               <div
                 class="space-x-3"
               >

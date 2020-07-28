@@ -1,30 +1,32 @@
+import { NetworkData, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputPassword } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
-import { SelectNetwork } from "app/components/SelectNetwork";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { Toggle } from "app/components/Toggle";
-import { useEnvironment } from "app/contexts";
-import { useActiveProfile, useAvailableNetworks } from "app/hooks/env";
+import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks/env";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-type Network = { coin: string; icon: string; name: string; network: string };
-
 export const FirstStep = () => {
-	const { getValues, register, setValue } = useFormContext();
-	const networks = useAvailableNetworks();
-	const currentNetwork = getValues("network");
+	const { register, setValue } = useFormContext();
+	const context = useEnvironmentContext();
+	const networks = React.useMemo(() => context.env.availableNetworks(), [context]);
+
+	const { t } = useTranslation();
 
 	React.useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
 
-	const handleSelect = (network: Network) => {
+	const handleSelect = (network?: NetworkData | null) => {
 		setValue("network", network, true);
 	};
 
@@ -32,35 +34,40 @@ export const FirstStep = () => {
 		<section className="space-y-8" data-testid="ImportWallet__first-step">
 			<div className="my-8">
 				<Header
-					title="Select a Cryptoasset"
-					subtitle="Select a cryptoasset to import your existing wallet address"
+					title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
 				/>
 			</div>
 			<div className="space-y-2">
-				<span className="text-sm font-medium text-theme-neutral-dark">Network</span>
-				<SelectNetwork
-					name={currentNetwork?.name}
-					networks={networks}
-					value={currentNetwork}
-					onSelect={(network) => handleSelect(network)}
-				/>
+				<FormField name="network" className="relative mt-1">
+					<div className="mb-2">
+						<FormLabel label={t("COMMON.NETWORK")} />
+					</div>
+					<SelectNetwork id="ImportWallet__network" networks={networks} onSelect={handleSelect} />
+				</FormField>
 			</div>
 		</section>
 	);
 };
 
 export const SecondStep = () => {
-	const { register } = useFormContext();
+	const { register, unregister } = useFormContext();
 	const [isAddressOnly, setIsAddressOnly] = useState(false);
+
+	const { t } = useTranslation();
 
 	const renderImportInput = () => {
 		if (!isAddressOnly) {
 			return (
-				<FormField name="password">
-					<FormLabel label="Your Password" />
+				<FormField name="passphrase">
+					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
 					<InputPassword
-						ref={register({ required: "Password is required" })}
-						data-testid="ImportWallet__password-input"
+						ref={register({
+							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+								field: t("COMMON.YOUR_PASSPHRASE"),
+							}).toString(),
+						})}
+						data-testid="ImportWallet__passphrase-input"
 					/>
 					<FormHelperText />
 				</FormField>
@@ -70,8 +77,15 @@ export const SecondStep = () => {
 		return (
 			// TODO: Change to InputAddress
 			<FormField name="address">
-				<FormLabel label="Address" />
-				<Input ref={register({ required: "Address is required" })} data-testid="ImportWallet__address-input" />
+				<FormLabel label={t("COMMON.ADDRESS")} />
+				<Input
+					ref={register({
+						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.ADDRESS"),
+						}).toString(),
+					})}
+					data-testid="ImportWallet__address-input"
+				/>
 				<FormHelperText />
 			</FormField>
 		);
@@ -81,22 +95,30 @@ export const SecondStep = () => {
 		<section className="space-y-8" data-testid="ImportWallet__second-step">
 			<div className="my-8">
 				<Header
-					title="Import Wallet"
-					subtitle="Enter your wallet password in order to get full access to your money. Or you can choose an
-					address for vieweing only."
+					title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
+					subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
 				/>
 			</div>
-			<div className="flex flex-row items-center justify-between mt-8">
-				<div>
-					<p className="text-lg font-semibold text-theme-neutral-dark">Use the address only</p>
-					<p className="text-sm text-theme-neutral">You can only view your wallet but not send money.</p>
+			<div className="flex flex-col mt-8">
+				<div className="flex items-center justify-between">
+					<div className="text-lg font-semibold text-theme-neutral-dark">
+						{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.TITLE")}
+					</div>
+
+					<Toggle
+						name="isAddressOnly"
+						checked={isAddressOnly}
+						onChange={() => {
+							unregister("passphrase");
+							setIsAddressOnly(!isAddressOnly);
+						}}
+						data-testid="ImportWallet__address-toggle"
+					/>
 				</div>
-				<Toggle
-					name="isAddressOnly"
-					checked={isAddressOnly}
-					onChange={() => setIsAddressOnly(!isAddressOnly)}
-					data-testid="ImportWallet__address-toggle"
-				/>
+
+				<div className="pr-12 mt-1 text-sm text-theme-neutral">
+					{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.ADDRESS_ONLY.DESCRIPTION")}
+				</div>
 			</div>
 			<div className="mt-8" data-testid="ImportWallet__fields">
 				{renderImportInput()}
@@ -106,9 +128,13 @@ export const SecondStep = () => {
 };
 
 export const ImportWallet = () => {
-	const env = useEnvironment();
-	const history = useHistory();
 	const [activeTab, setActiveTab] = useState(1);
+
+	const history = useHistory();
+	const { persist } = useEnvironmentContext();
+
+	const { t } = useTranslation();
+
 	const activeProfile = useActiveProfile();
 	const form = useForm({ mode: "onChange" });
 	const { formState } = form;
@@ -128,9 +154,25 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab + 1);
 	};
 
-	const submitForm = async ({ network, password }: any) => {
-		const wallet = await activeProfile?.wallets().import(password, network.coin, network.network);
-		await env?.persist();
+	const handleSubmit = async ({
+		network,
+		passphrase,
+		address,
+	}: {
+		network: NetworkData;
+		passphrase: string;
+		address: string;
+	}) => {
+		let wallet: Wallet | undefined;
+
+		if (passphrase) {
+			wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+		} else {
+			wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
+		}
+
+		await persist();
+
 		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
 	};
 
@@ -140,7 +182,7 @@ export const ImportWallet = () => {
 				<Form
 					className="max-w-xl mx-auto"
 					context={form}
-					onSubmit={submitForm}
+					onSubmit={handleSubmit as any}
 					data-testid="ImportWallet__form"
 				>
 					<Tabs activeId={activeTab}>
@@ -161,7 +203,7 @@ export const ImportWallet = () => {
 										onClick={handleNext}
 										data-testid="ImportWallet__continue-button"
 									>
-										Continue
+										{t("COMMON.CONTINUE")}
 									</Button>
 								)}
 
@@ -172,10 +214,10 @@ export const ImportWallet = () => {
 											onClick={handleBack}
 											data-testid="ImportWallet__back-button"
 										>
-											Back
+											{t("COMMON.BACK")}
 										</Button>
 										<Button type="submit" data-testid="ImportWallet__submit-button">
-											Go to Wallet
+											{t("COMMON.GO_TO_WALLET")}
 										</Button>
 									</>
 								)}

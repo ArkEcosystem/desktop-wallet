@@ -3,7 +3,7 @@ import { Size } from "types";
 
 import { getStyles } from "./Circle.styles";
 
-type CircleProps = {
+export type CircleProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	avatarId?: string | null;

@@ -1,13 +1,18 @@
 import nock from "nock";
 import React from "react";
-import { renderWithRouter, screen, waitFor } from "utils/testing-library";
+import { renderWithRouter, waitFor } from "utils/testing-library";
 
+import { translations as profileTranslations } from "../domains/profile/i18n";
 import { App } from "./App";
 
 beforeAll(() => {
 	nock.disableNetConnect();
 
-	nock(/.+/)
+	nock("https://dwallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
+		.get("/api/peers")
+		.reply(200, require("../tests/fixtures/coins/ark/peers.json"))
 		.get("/api/node/configuration/crypto")
 		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 		.get("/api/node/syncing")
@@ -18,23 +23,19 @@ beforeAll(() => {
 });
 
 describe("App", () => {
-	it("should render", async () => {
-		const { container, asFragment } = renderWithRouter(<App />, { withProviders: false });
+	it("should render", () => {
+		const { container, asFragment, getByText } = renderWithRouter(<App />, { withProviders: false });
 
-		await waitFor(async () => {
-			await expect(
-				screen.findByText("Create a new Profile or login with your MarketSquare account to get started"),
-			).resolves.toBeInTheDocument();
-		});
+		expect(getByText(profileTranslations.PAGE_CREATE_PROFILE.DESCRIPTION)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render mock", () => {
+	it("should render mock", async () => {
 		process.env.REACT_APP_BUILD_MODE = "demo";
 
-		const { container } = renderWithRouter(<App />, { withProviders: false });
-		expect(container).toBeTruthy();
+		const { getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		await waitFor(() => expect(getByTestId("profile-card__user--avatar")).toBeInTheDocument());
 	});
 });

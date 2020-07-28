@@ -287,17 +287,17 @@ exports[`Transaction Send should render 1`] = `
                       >
                         Send
                       </h1>
-                      <p
+                      <div
                         class="text-theme-neutral-dark"
                       >
                         Enter details to send your money
-                      </p>
+                      </div>
                     </div>
                     <div
                       class="mt-8"
                     >
                       <div
-                        class="sc-fzoNJl ksmXph"
+                        class="sc-fzoyTs fyIOmL"
                       >
                         <form
                           class="space-y-8"
@@ -322,53 +322,44 @@ exports[`Transaction Send should render 1`] = `
                             <div
                               aria-expanded="false"
                               aria-haspopup="listbox"
-                              aria-labelledby="downshift-1-label"
-                              class="relative"
+                              aria-owns="SendTransactionForm__network-menu"
+                              data-testid="SelectNetwork"
                               role="combobox"
                             >
                               <label
-                                for="downshift-1-input"
-                                id="downshift-1-label"
+                                for="SendTransactionForm__network-input"
+                                id="SendTransactionForm__network-label"
                               />
                               <div
-                                class="relative flex items-center w-full flex-inline"
+                                class="sc-fzozJi OgXfh"
+                                data-testid="SelectNetworkInput"
                               >
                                 <div
-                                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                                 >
                                   <div
-                                    class="px-4 py-2 flex-0 w-14"
-                                  >
-                                    <div
-                                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                                    />
-                                  </div>
-                                  <div
-                                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                                  >
-                                    <div
-                                      class="relative z-10 w-full"
-                                      data-testid="select-network__typeahead-"
-                                    >
-                                      <div
-                                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                                      />
-                                    </div>
-                                    <input
-                                      aria-autocomplete="list"
-                                      aria-labelledby="downshift-1-label"
-                                      autocomplete="off"
-                                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                                      data-testid="select-asset__input"
-                                      id="downshift-1-input"
-                                      name="network"
-                                      placeholder="Enter a network name"
-                                      value=""
-                                    />
-                                  </div>
+                                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                                    data-testid="SelectNetworkInput__network"
+                                  />
                                 </div>
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-controls="SendTransactionForm__network-menu"
+                                  aria-labelledby="SendTransactionForm__network-label"
+                                  autocomplete="off"
+                                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                                  data-testid="SelectNetworkInput__input"
+                                  id="SendTransactionForm__network-input"
+                                  placeholder="Enter a network name"
+                                  value=""
+                                />
                               </div>
                             </div>
+                            <ul
+                              aria-labelledby="SendTransactionForm__network-label"
+                              id="SendTransactionForm__network-menu"
+                              role="listbox"
+                            />
                           </fieldset>
                           <fieldset
                             class="sc-AxhCb ckQmOL relative mt-1"
@@ -390,7 +381,7 @@ exports[`Transaction Send should render 1`] = `
                             >
                               <div>
                                 <button
-                                  class="sc-fzqNqU jiheyj SelectAddress  "
+                                  class="sc-fzqARJ dKMWCk SelectAddress  "
                                   data-testid="SelectAddress__wrapper"
                                   type="button"
                                 >
@@ -426,7 +417,7 @@ exports[`Transaction Send should render 1`] = `
                             data-testid="recipient-address"
                           >
                             <div
-                              class="sc-fzoyTs dLBgZb"
+                              class="sc-fzqNqU eijwDZ"
                             >
                               <div
                                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -544,9 +535,9 @@ exports[`Transaction Send should render 1`] = `
                                         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                                         data-testid="FormLabel"
                                         for="amount"
-                                        label="Amount ARK"
+                                        label="Amount"
                                       >
-                                        Amount ARK
+                                        Amount
                                       </label>
                                     </div>
                                     <div
@@ -613,7 +604,7 @@ exports[`Transaction Send should render 1`] = `
                             </div>
                           </fieldset>
                           <div
-                            class="flex"
+                            class="flex items-center"
                           >
                             <div
                               class="w-2/4"
@@ -678,34 +669,37 @@ exports[`Transaction Send should render 1`] = `
                               </fieldset>
                             </div>
                             <div
-                              class="w-2/4 text-right mt-7"
+                              class="w-2/4 mt-6 text-right"
                             >
                               <div
-                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
                                 data-testid="SelectionBar"
                                 role="radiogroup"
                               >
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
+                                  type="button"
                                 >
                                   Last
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
+                                  type="button"
                                 >
                                   Min
                                 </button>
                                 <button
                                   aria-checked="false"
-                                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                                   data-testid="SelectionBarOption"
                                   role="radio"
+                                  type="button"
                                 >
                                   Average
                                 </button>
@@ -761,17 +755,17 @@ exports[`Transaction Send should render 1st step 1`] = `
       >
         Send
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
         Enter details to send your money
-      </p>
+      </div>
     </div>
     <div
       class="mt-8"
     >
       <div
-        class="sc-fzoNJl ksmXph"
+        class="sc-fzoyTs fyIOmL"
       >
         <form
           class="space-y-8"
@@ -796,53 +790,44 @@ exports[`Transaction Send should render 1st step 1`] = `
             <div
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-0-label"
-              class="relative"
+              aria-owns="SendTransactionForm__network-menu"
+              data-testid="SelectNetwork"
               role="combobox"
             >
               <label
-                for="downshift-0-input"
-                id="downshift-0-label"
+                for="SendTransactionForm__network-input"
+                id="SendTransactionForm__network-label"
               />
               <div
-                class="relative flex items-center w-full flex-inline"
+                class="sc-fzozJi OgXfh"
+                data-testid="SelectNetworkInput"
               >
                 <div
-                  class="sc-fzqARJ fZlWcQ flex w-full border rounded transition-colors duration-200 bg-theme-background border-theme-neutral-300 hover:outline-none hover:border-theme-primary"
+                  class="sc-AxheI sc-Axmtr kSmZlB px-4"
                 >
                   <div
-                    class="px-4 py-2 flex-0 w-14"
-                  >
-                    <div
-                      class="sc-AxiKw cxOZEi border-theme-neutral-200"
-                    />
-                  </div>
-                  <div
-                    class="relative flex-1 p-1 font-semibold text-theme-neutral-800"
-                  >
-                    <div
-                      class="relative z-10 w-full"
-                      data-testid="select-network__typeahead-"
-                    >
-                      <div
-                        class="absolute left-0 font-semibold top-2 text-theme-neutral-light"
-                      />
-                    </div>
-                    <input
-                      aria-autocomplete="list"
-                      aria-labelledby="downshift-0-label"
-                      autocomplete="off"
-                      class="relative z-20 w-full h-full font-semibold bg-transparent outline-none"
-                      data-testid="select-asset__input"
-                      id="downshift-0-input"
-                      name="network"
-                      placeholder="Enter a network name"
-                      value=""
-                    />
-                  </div>
+                    class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+                    data-testid="SelectNetworkInput__network"
+                  />
                 </div>
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="SendTransactionForm__network-menu"
+                  aria-labelledby="SendTransactionForm__network-label"
+                  autocomplete="off"
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                  data-testid="SelectNetworkInput__input"
+                  id="SendTransactionForm__network-input"
+                  placeholder="Enter a network name"
+                  value=""
+                />
               </div>
             </div>
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
+            />
           </fieldset>
           <fieldset
             class="sc-AxhCb ckQmOL relative mt-1"
@@ -864,7 +849,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             >
               <div>
                 <button
-                  class="sc-fzqNqU jiheyj SelectAddress  "
+                  class="sc-fzqARJ dKMWCk SelectAddress  "
                   data-testid="SelectAddress__wrapper"
                   type="button"
                 >
@@ -900,7 +885,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             data-testid="recipient-address"
           >
             <div
-              class="sc-fzoyTs dLBgZb"
+              class="sc-fzqNqU eijwDZ"
             >
               <div
                 class="text-theme-neutral-dark hover:text-theme-primary"
@@ -1018,9 +1003,9 @@ exports[`Transaction Send should render 1st step 1`] = `
                         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                         data-testid="FormLabel"
                         for="amount"
-                        label="Amount ARK"
+                        label="Amount"
                       >
-                        Amount ARK
+                        Amount
                       </label>
                     </div>
                     <div
@@ -1087,7 +1072,7 @@ exports[`Transaction Send should render 1st step 1`] = `
             </div>
           </fieldset>
           <div
-            class="flex"
+            class="flex items-center"
           >
             <div
               class="w-2/4"
@@ -1152,34 +1137,37 @@ exports[`Transaction Send should render 1st step 1`] = `
               </fieldset>
             </div>
             <div
-              class="w-2/4 text-right mt-7"
+              class="w-2/4 mt-6 text-right"
             >
               <div
-                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300 shadow-sm"
+                class="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
                 data-testid="SelectionBar"
                 role="radiogroup"
               >
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
+                  type="button"
                 >
                   Last
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
+                  type="button"
                 >
                   Min
                 </button>
                 <button
                   aria-checked="false"
-                  class="sc-fzoiQi xOWTS relative px-5 py-3 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
+                  class="sc-fzoiQi xpDdP relative px-5 border-transparent focus:outline-none border-b-3 transition-colors duration-300"
                   data-testid="SelectionBarOption"
                   role="radio"
+                  type="button"
                 >
                   Average
                 </button>
@@ -1224,11 +1212,11 @@ exports[`Transaction Send should render 2nd step 1`] = `
       >
         Transaction Review
       </h1>
-      <p
+      <div
         class="text-theme-neutral-dark"
       >
         Check the information again before voting
-      </p>
+      </div>
     </div>
     <div
       class="mt-4 grid grid-flow-row gap-2"
@@ -1296,7 +1284,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
                 <span
                   class="text-sm"
                 >
-                  Your address
+                  label=Your address
                 </span>
               </div>
             </div>
@@ -1351,7 +1339,7 @@ exports[`Transaction Send should render 2nd step 1`] = `
               class="sc-fznWqX bzgpXZ"
             >
               <div
-                class="sc-fzqBZW cBnliu"
+                class="sc-fzqBZW eiFWfG"
                 role="table"
               >
                 <table
@@ -1774,13 +1762,13 @@ exports[`Transaction Send should render 3rd step 1`] = `
         <h1
           class="mb-0"
         >
-          Passphrase
+          Authenticate
         </h1>
-        <p
+        <div
           class="text-theme-neutral-dark"
         >
-          Confirm your password to continue
-        </p>
+          Enter your twelve word mnemonic to authenticate the transaction.
+        </div>
         <div
           class="grid grid-flow-row"
         >
@@ -1793,7 +1781,7 @@ exports[`Transaction Send should render 3rd step 1`] = `
               <div
                 class="text-sm font-semibold text-theme-neutral"
               >
-                Your password
+                Encryption Password
               </div>
               <div
                 class="font-semibold"
@@ -1925,33 +1913,37 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -1974,33 +1966,37 @@ exports[`Transaction Send should render 5th step 1`] = `
                 class="flex items-center"
               >
                 <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                  class="inline-block truncate align-middle"
+                >
+                  <span
+                    class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    AUexKjGtgsSpVz…MM6vJ6znEVTQWK
+                  </span>
+                </div>
+                <span
+                  class="ml-5"
                 >
                   <div
-                    class="inline-block truncate align-middle"
+                    class="inline-block cursor-pointer"
+                    data-testid="clipboard__wrapper"
                   >
-                    <span
-                      class="sc-AxjAm StDqN text-theme-primary font-semibold text-base"
-                      data-testid="address__wallet-address"
+                    <div
+                      class="text-theme-primary-300"
                     >
-                      AUexKjGtgsSpVz…MM6vJ6znEVTQWK
-                    </span>
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  class="mb-1 ml-5 text-theme-primary-300"
-                >
-                  <div
-                    class="sc-AxhUy cPXLjK"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                </div>
+                </span>
               </div>
             </div>
           </div>
@@ -2019,22 +2015,7 @@ exports[`Transaction Send should render 5th step 1`] = `
             <div
               class="font-semibold"
             >
-              <div
-                class="inline-block truncate align-middle"
-              >
-                <span
-                  class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                  data-testid="address__wallet-name"
-                >
-                  ROBank
-                </span>
-                <span
-                  class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                  data-testid="address__wallet-address"
-                >
-                  AUexKj…EVTQWK
-                </span>
-              </div>
+              ARK Ecosystem
             </div>
           </div>
           <div

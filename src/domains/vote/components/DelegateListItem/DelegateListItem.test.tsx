@@ -1,3 +1,4 @@
+import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
@@ -64,7 +65,7 @@ describe("DelegateListItem", () => {
 		);
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("DelegateListItem__button--toggle")).toHaveTextContent("Unselect");
+		expect(getByTestId("DelegateListItem__button--toggle")).toHaveTextContent(translations.UNSELECT);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

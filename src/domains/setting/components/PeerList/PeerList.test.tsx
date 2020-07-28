@@ -1,3 +1,4 @@
+import { translations } from "domains/setting/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
@@ -27,13 +28,13 @@ describe("PeerList", () => {
 		});
 
 		expect(container).toBeTruthy();
-		expect(getByTestId("modal__inner")).toHaveTextContent("Custom Peers");
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CUSTOM_PEER.TITLE);
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		expect(queryByText(/Custom Peers/i)).not.toBeInTheDocument();
+		expect(queryByText(translations.MODAL_CUSTOM_PEER.TITLE)).not.toBeInTheDocument();
 	});
 });
