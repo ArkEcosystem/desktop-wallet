@@ -2,6 +2,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
@@ -13,18 +14,24 @@ import React, { createRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+type SignMessageProps = {
 	profileId: string;
 	walletId: string;
 	signatoryAddress: string;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
-	onSubmit?: any;
 };
 
-export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel, onSubmit }: Props) => {
+type SignedMessageProps = { message: string; signatory: string; signature: string };
+
+export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
+	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>({
+		message: "",
+		signatory: "",
+		signature: "",
+	});
 
 	const { env } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
@@ -33,20 +40,17 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	const { register } = form;
 	const messageRef = createRef();
 
-	let signedMessage: any;
-
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
 
-		signedMessage = await wallet?.message().sign({
+		const signedMessageResult = await wallet?.message().sign({
 			message,
 			mnemonic,
 		});
 
 		setIsSigned(true);
-
-		onSubmit?.(signedMessage);
+		setSignedMessage(signedMessageResult);
 	};
 
 	const SignFormRender = (
@@ -109,14 +113,14 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 						<Circle className="-mr-2 border-black">
 							<Icon name="Delegate" width={25} height={25} />
 						</Circle>
-						<Avatar address={signedMessage?.signatory} size="sm" />
+						<Avatar address={signedMessage.signatory} />
 					</div>
 				}
 			>
-				<Address address={signedMessage?.signatory} />
+				<Address address={signedMessage.signatory} />
 			</TransactionDetail>
 			<TransactionDetail border label={t("COMMON.MESSAGE")} className="text-lg">
-				{signedMessage?.message}
+				{signedMessage.message}
 			</TransactionDetail>
 			<TransactionDetail border label={t("COMMON.SIGNATURE")}>
 				<TextArea
@@ -124,15 +128,17 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					name="signature"
 					wrap="hard"
 					ref={messageRef}
-					defaultValue={JSON.stringify(signedMessage?.signature)}
+					defaultValue={signedMessage.signature}
 				/>
 			</TransactionDetail>
 
 			<div className="flex justify-end pb-5 mt-3">
-				<Button variant="plain">
-					<Icon name="Copy" />
-					<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-				</Button>
+				<Clipboard data={signedMessage.signature}>
+					<Button variant="plain">
+						<Icon name="Copy" />
+						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
+					</Button>
+				</Clipboard>
 			</div>
 		</div>
 	);
@@ -153,5 +159,4 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 SignMessage.defaultProps = {
 	isOpen: false,
-	isSigned: false,
 };
