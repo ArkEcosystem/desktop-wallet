@@ -34,7 +34,7 @@ describe("WalletDetails", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
 			.persist();
 	});
@@ -55,12 +55,6 @@ describe("WalletDetails", () => {
 			message: signedMessageText,
 			mnemonic: signedMessageMnemonic,
 		});
-
-		// signed message {
-		//         message: 'Hello world',
-		//         signatory: '03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc',
-		//         signature: '3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff'
-		//       }
 	});
 
 	it("should render", () => {
