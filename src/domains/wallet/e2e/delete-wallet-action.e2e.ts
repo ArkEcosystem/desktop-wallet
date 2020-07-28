@@ -1,5 +1,7 @@
 import { ClientFunction, Selector } from "testcafe";
 
+import { buildTranslations } from "../../../app/i18n/helpers";
+
 fixture`Delete Wallet action`.page`http://localhost:3000/`;
 
 const getLocation = ClientFunction(() => document.location.href);
@@ -18,7 +20,7 @@ test("Should open and cancel deletion modal in wallet detail page", async (t) =>
 	// Click delete message in dropdown menu
 	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').nth(3));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector("[data-testid=DeleteResource__cancel-button]").exists).ok();
@@ -37,7 +39,7 @@ test("Should open and close deletion modal in wallet detail page", async (t) => 
 	// Click delete message in dropdown menu
 	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').nth(3));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector('[data-testid="modal__close-btn"]').exists).ok();
@@ -56,7 +58,7 @@ test("Should delete wallet from wallet details page", async (t) => {
 	// Click delete message in dropdown menu
 	await scrollTop();
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
-	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').nth(3));
+	await t.click(Selector('[data-testid="WalletHeader__more-button"] li').withText(buildTranslations().COMMON.DELETE));
 
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector("[data-testid=DeleteResource__submit-button]").exists).ok();
