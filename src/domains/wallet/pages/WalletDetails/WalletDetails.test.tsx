@@ -17,6 +17,10 @@ let env: Environment;
 let profile: Profile;
 let wallet: Wallet;
 
+let signedMessage: any;
+let signedMessageText: string;
+let signedMessageMnemonic: string;
+
 describe("WalletDetails", () => {
 	beforeAll(() => {
 		nock.disableNetConnect();
@@ -43,6 +47,20 @@ describe("WalletDetails", () => {
 
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+
+		signedMessageText = "Hello world";
+		signedMessageMnemonic = "top secret";
+
+		signedMessage = await wallet.message().sign({
+			message: signedMessageText,
+			mnemonic: signedMessageMnemonic,
+		});
+
+		// signed message {
+		//         message: 'Hello world',
+		//         signatory: '03600a30cb66c6f6275ead993078d691764629c4f9244e5d38fea73483f31821cc',
+		//         signature: '3044022027fdda09a4bc3e2215b56d7f0cedda8bfdc4fb97507bef3b7e74505f2e988e3102205e4aa5afa72d2011ac0c3e05bbcb72dccb17ad63f0c77a097b0046066c8030ff'
+		//       }
 	});
 
 	it("should render", () => {
@@ -85,7 +103,7 @@ describe("WalletDetails", () => {
 
 			await fireEvent.click(dropdown);
 
-			const deleteWalletOption = getByTestId("dropdown__option--3");
+			const deleteWalletOption = getByTestId("dropdown__option--4");
 			expect(deleteWalletOption).toBeTruthy();
 
 			await fireEvent.click(deleteWalletOption);
@@ -95,6 +113,62 @@ describe("WalletDetails", () => {
 
 			await waitFor(() => expect(profile.wallets().count()).toEqual(0));
 		});
+	});
+
+	it("should open verify message modal and verify", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+
+		const { getByTestId, getAllByTestId, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [route],
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const dropdown = getAllByTestId("dropdown__toggle")[2];
+			expect(dropdown).toBeTruthy();
+
+			await fireEvent.click(dropdown);
+
+			const deleteWalletOption = getByTestId("dropdown__option--2");
+			expect(deleteWalletOption).toBeTruthy();
+
+			await fireEvent.click(deleteWalletOption);
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			const verifyAddressToggle = getByTestId("verify-address__toggle");
+
+			act(() => {
+				fireEvent.click(verifyAddressToggle);
+			});
+
+			const verifyMessageInput = getByTestId("VerifyMessage__message-input");
+			const verifySignatureInput = getByTestId("VerifyMessage__signature-input");
+
+			act(() => {
+				fireEvent.change(verifyMessageInput, { target: { value: signedMessage.message } });
+			});
+			act(() => {
+				fireEvent.change(verifySignatureInput, { target: { value: signedMessage.signature } });
+			});
+
+			const submitButton = getByTestId("VerifyMessage__submit");
+
+			act(() => {
+				fireEvent.click(submitButton);
+			});
+		});
+
+		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
 	});
 
 	it("should update wallet name", async () => {
