@@ -23,6 +23,8 @@ module.exports = override(
 			"usb-detection": "commonjs usb-detection",
 		};
 
+		config.target = "electron-renderer";
+
 		config.resolve = {
 			extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
 			alias: {
