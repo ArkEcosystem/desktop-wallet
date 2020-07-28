@@ -18,15 +18,6 @@ const Main = () => {
 	React.useLayoutEffect(() => {
 		const boot = async () => {
 			await env.bootFromObject(fixtureData);
-
-			// TODO: should be pulled from fixture
-			for (const profile of env.profiles().all()) {
-				const wallets = profile.wallets().values();
-				for (const walletIndex of Object.keys(wallets)) {
-					wallets[walletIndex as any].settings().set("ALIAS", `ARK Wallet ${Number(walletIndex) + 1}`);
-				}
-			}
-
 			await persist();
 		};
 

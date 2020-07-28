@@ -9,17 +9,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	delegates: Coins.WalletDataCollection | null;
+	votes?: Coins.WalletDataCollection;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 };
 
 // TODO: Delegate Explorer URL
-export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
+export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const hasNoVotes = !delegates || delegates.all().length === 0;
+	const hasNoVotes = !votes || votes.all().length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -55,7 +55,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 							</div>
 						</div>
 					) : (
-						delegates?.all().map((delegate) => (
+						votes?.all().map((delegate) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"

@@ -1,25 +1,26 @@
 import Tippy from "@tippyjs/react";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Section } from "app/components/Layout";
 import { Toggle } from "app/components/Toggle";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	address: string | undefined;
-	balance: string | undefined;
 	coin: string;
-	currencyBalance?: string | undefined;
+	network: string;
+	address?: string;
+	balance?: string;
+	currencyBalance?: string;
 	hasStarred?: boolean;
 	isLedger?: boolean;
 	isMultisig?: boolean;
-	name?: string | undefined;
-	publicKey?: string | undefined;
+	name?: string;
+	publicKey?: string;
 	onSignMessage: () => void;
 	onDeleteWallet: () => void;
 	onUpdateWalletName: () => void;
@@ -29,6 +30,7 @@ type Props = {
 
 export const WalletHeader = ({
 	coin,
+	network,
 	hasStarred,
 	name,
 	address,
@@ -53,9 +55,12 @@ export const WalletHeader = ({
 				<div className="container flex items-center justify-between mx-auto px-14">
 					<div className="flex items-center space-x-4">
 						<div className="flex">
-							<Circle className="-mr-1 border-theme-neutral-dark" noShadow={true}>
-								<Icon name={coin} className="text-theme-neutral-dark" />
-							</Circle>
+							<NetworkIcon
+								coin={coin}
+								network={network}
+								className="-mr-1 border-theme-neutral-dark text-theme-neutral-dark"
+								noShadow
+							/>
 							<Avatar address={address} shadowColor="--theme-color-neutral-900" />
 						</div>
 						<h2 data-testid="WalletHeader__name" className="mb-0 text-white">

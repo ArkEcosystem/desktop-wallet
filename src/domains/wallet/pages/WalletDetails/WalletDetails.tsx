@@ -1,8 +1,10 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
+import { WalletData } from "@arkecosystem/platform-sdk/dist/contracts";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks/env";
+import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
@@ -13,26 +15,26 @@ import { WalletRegistrations } from "domains/wallet/components/WalletRegistratio
 import { WalletVote } from "domains/wallet/components/WalletVote";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export const WalletDetails = () => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isUpdateWalletNameOpen, setIsUpdateWalletNameOpen] = useState(false);
-	const [wallet, setWallet] = useState<Wallet | undefined>((null as unknown) as Wallet);
-	const [wallets, setWallets] = useState<Wallet[] | undefined>([]);
-	const [delegates, setDelegates] = useState<Coins.WalletDataCollection>(
-		(null as unknown) as Coins.WalletDataCollection,
-	);
+	const [votes, setVotes] = React.useState<Coins.WalletDataCollection>();
+	const [walletData, setWalletData] = React.useState<WalletData>();
 
+	const history = useHistory();
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
-	const history = useHistory();
-	const { walletId } = useParams();
-
 	const activeProfile = useActiveProfile();
+	const activeWallet = useActiveWallet();
+	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+
+	const coinName = activeWallet!.coin().manifest().get<string>("name");
+	const networkName = activeWallet!.network().name;
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -42,71 +44,92 @@ export const WalletDetails = () => {
 		},
 	];
 
+	// TODO: Replace logic with sdk
+	const getVotes = React.useCallback(async () => {
+		const response = await activeWallet!.votes();
+		const transactions = response.data.all();
+		const result: WalletData[] = [];
+
+		for (const tx of transactions) {
+			const votes = (tx.asset().votes as string[]) || [];
+
+			for (const vote of votes) {
+				const publicKey = vote.substr(1);
+				const data = await activeWallet!.coin().client().wallet(publicKey);
+				result.push(data);
+			}
+		}
+
+		setVotes(new WalletDataCollection(result));
+	}, [activeWallet]);
+
+	// TODO: Hacky to access `WalletData` instead of `Wallet`
+	const getWalletData = React.useCallback(async () => {
+		const data = await activeWallet!.coin().client().wallet(activeWallet!.id());
+		setWalletData(data);
+	}, [activeWallet]);
+
 	const handleDeleteWallet = async () => {
-		const activeWallet = activeProfile?.wallets().findById(walletId);
-		activeProfile?.wallets().forget(activeWallet?.id() as string);
+		activeProfile?.wallets().forget(activeWallet!.id());
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
 	};
 
-	React.useEffect(() => {
-		const timer = setInterval(() => {
-			const wallets = activeProfile?.wallets().values();
-			const wallet = activeProfile?.wallets().findById(walletId);
-
-			setWallet(wallet);
-			setWallets(wallets);
-
-			wallet?.delegates().then((delegates) => {
-				setDelegates(delegates.data);
-			});
-		}, 1000);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-	const coinName = wallet?.coin().manifest().get<string>("name") || "";
-
 	const handleUpdateName = async ({ name }: any) => {
-		const wallet = activeProfile?.wallets().findById(walletId);
-		wallet?.settings().set(WalletSetting.Alias, name);
+		activeWallet?.settings().set(WalletSetting.Alias, name);
 		await persist();
 		setIsUpdateWalletNameOpen(false);
 	};
+
+	React.useEffect(() => {
+		getVotes();
+	}, [getVotes]);
+
+	React.useEffect(() => {
+		getWalletData();
+	}, [getWalletData]);
+
+	React.useEffect(() => {
+		const timer = setInterval(async () => {
+			await activeWallet!.syncIdentity();
+			await persist();
+		}, 30000);
+
+		return () => clearInterval(timer);
+	}, [activeWallet, persist]);
 
 	/* istanbul ignore next */
 	return (
 		<>
 			<Page crumbs={crumbs}>
 				<WalletHeader
-					coin={coinName}
-					address={wallet?.address()}
-					publicKey={wallet?.publicKey()}
-					balance={wallet?.balance().toString()}
-					currencyBalance={wallet?.fiat().toString()}
-					name={wallet?.alias()}
-					isLedger={wallet?.isLedger()}
-					isMultisig={wallet?.isMultiSignature()}
-					hasStarred={wallet?.isStarred()}
+					coin={coinName!}
+					network={networkName}
+					address={activeWallet?.address()}
+					publicKey={activeWallet?.publicKey()}
+					balance={activeWallet?.balance().toString()}
+					currencyBalance={activeWallet?.fiat().toString()}
+					name={activeWallet?.alias()}
+					isLedger={activeWallet?.isLedger()}
+					isMultisig={activeWallet?.isMultiSignature()}
+					hasStarred={activeWallet?.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletNameOpen(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>{delegates && <WalletVote delegates={delegates} />}</Section>
+				<Section>{<WalletVote votes={votes} />}</Section>
 
 				<Section>
 					<WalletRegistrations
-						address={wallet?.address()}
-						delegate={wallet ? delegates?.findByAddress(wallet.address()) : undefined}
+						address={activeWallet?.address()}
+						delegate={activeWallet?.isDelegate() ? walletData : undefined}
 						business={undefined}
-						isMultisig={wallet?.isMultiSignature()}
+						isMultisig={activeWallet?.isMultiSignature()}
 						hasBridgechains={false}
-						hasSecondSignature={wallet?.isSecondSignature()}
+						hasSecondSignature={activeWallet?.isSecondSignature()}
 						hasPlugins={false}
 						onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
 						onRegister={() => history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)}
@@ -133,7 +156,7 @@ export const WalletDetails = () => {
 			<SignMessage
 				isOpen={isSigningMessage}
 				handleClose={() => setIsSigningMessage(false)}
-				signatoryAddress={wallet?.address()}
+				signatoryAddress={activeWallet?.address()}
 				handleSign={() => setIsSigned(true)}
 				isSigned={isSigned}
 			/>

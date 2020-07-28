@@ -15,6 +15,7 @@ export const Default = () => (
 		onUpdateWalletName={console.log}
 		onDeleteWallet={console.log}
 		coin="Ark"
+		network="Mainnet"
 		isLedger
 		isMultisig
 	/>
