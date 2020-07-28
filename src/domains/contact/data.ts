@@ -4,7 +4,7 @@ export const contact1 = {
 		{
 			coin: "Ark",
 			network: "mainnet",
-			address: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			avatar: "avatar",
 			isDelegate: () => true,
 			isBusiness: () => true,
