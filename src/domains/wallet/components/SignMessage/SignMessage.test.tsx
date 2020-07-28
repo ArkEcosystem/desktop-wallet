@@ -61,7 +61,6 @@ describe("SignMessage", () => {
 	});
 
 	it("should sign message", async () => {
-		const onSubmit = jest.fn();
 		let rendered: RenderResult;
 
 		await act(async () => {
@@ -72,7 +71,6 @@ describe("SignMessage", () => {
 						walletId={wallet.id()}
 						signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
 						isOpen={true}
-						onSubmit={onSubmit}
 					/>
 				</EnvironmentProvider>,
 			);
@@ -87,14 +85,10 @@ describe("SignMessage", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
-			const messageText = "Hello World";
-			const signature =
-				"304402200fb4adddd1f1d652b544ea6ab62828a0a65b712ed447e2538db0caebfa68929e02205ecb2e1c63b29879c2ecf1255db506d671c8b3fa6017f67cfd1bf07e6edd1cc8";
-
 			const messageInput = getByTestId("SignMessage__message-input");
 			expect(messageInput).toBeTruthy();
 
-			await fireEvent.change(messageInput, { target: { value: messageText } });
+			await fireEvent.change(messageInput, { target: { value: "Hello World" } });
 
 			const mnemonicInput = getByTestId("SignMessage__mnemonic-input");
 			expect(mnemonicInput).toBeTruthy();
@@ -103,12 +97,10 @@ describe("SignMessage", () => {
 
 			await fireEvent.click(getByTestId("SignMessage__submit-button"));
 
-			await waitFor(() => {
-				expect(onSubmit).toBeCalledWith({ message: messageText, signatory: wallet.publicKey(), signature });
-			});
-
-			expect(rendered.getByTestId("modal__inner")).toHaveTextContent(
-				translations.MODAL_SIGN_MESSAGE.SUCCESS_TITLE,
+			await waitFor(() =>
+				expect(rendered.getByTestId("modal__inner")).toHaveTextContent(
+					translations.MODAL_SIGN_MESSAGE.SUCCESS_TITLE,
+				),
 			);
 		});
 	});
