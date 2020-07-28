@@ -14,7 +14,7 @@ test("should return an error when submit without required fields", async (t) => 
 	await t.click(Selector("fieldset p").withText("Time Format is required"));
 });
 
-test("should salve settings", async (t) => {
+test("should save settings", async (t) => {
 	const nameInput = Selector("input[name=name]");
 
 	await t.typeText(nameInput, "Anne Doe");
