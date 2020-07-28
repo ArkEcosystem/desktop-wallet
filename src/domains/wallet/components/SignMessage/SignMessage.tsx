@@ -2,6 +2,7 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
+import { Clipboard } from "app/components/Clipboard";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input, InputPassword } from "app/components/Input";
@@ -52,7 +53,7 @@ export const SignMessage = ({
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
 
-		const signedMessageResult: any = await wallet?.message().sign({
+		const signedMessageResult = await wallet?.message().sign({
 			message,
 			mnemonic,
 		});
@@ -143,10 +144,12 @@ export const SignMessage = ({
 			</TransactionDetail>
 
 			<div className="flex justify-end pb-5 mt-3">
-				<Button variant="plain">
-					<Icon name="Copy" />
-					<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-				</Button>
+				<Clipboard data={signedMessage.signature}>
+					<Button variant="plain">
+						<Icon name="Copy" />
+						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
+					</Button>
+				</Clipboard>
 			</div>
 		</div>
 	);
