@@ -6,7 +6,7 @@ test("should navigate to portfolio and access a wallet details", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
-	await t.click(Selector("[data-testid=WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT]"));
+	await t.click(Selector("[data-testid=WalletCard__D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax]"));
 	await t.expect(Selector("h2").withText("ARK Wallet 1").exists).ok();
 });
 

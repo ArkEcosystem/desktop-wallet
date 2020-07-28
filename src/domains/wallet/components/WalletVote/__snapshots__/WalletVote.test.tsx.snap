@@ -299,7 +299,7 @@ exports[`WalletVote should render 1`] = `
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Explorer
-                </p>
+                </span>
                 <a
                   data-testid="WalletVote__delegate__explorer"
                   href="https://explorer.ark.io"
@@ -318,13 +318,13 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
-                  Marketpl.
-                </p>
+                  MarketSquare
+                </span>
                 <a
                   data-testid="WalletVote__delegate__msq"
                   href="https://marketsquare.io"
@@ -343,9 +343,9 @@ exports[`WalletVote should render 1`] = `
                 </a>
               </li>
               <li
-                class="flex flex-col items-center px-10 space-y-1"
+                class="flex flex-col items-center justify-between px-10"
               >
-                <p
+                <span
                   class="text-sm font-semibold text-theme-neutral"
                 >
                   Status

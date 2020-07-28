@@ -3,14 +3,17 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { identity } from "tests/fixtures/identity";
+import fixtureData from "tests/fixtures/env/storage-mainnet.json";
 import { mockArkHttp, StubStorage } from "tests/mocks";
 
 import { WalletDetails } from "./WalletDetails";
+
+const history = createMemoryHistory();
+let dashboardURL: string;
 
 let env: Environment;
 let profile: Profile;
@@ -26,20 +29,53 @@ beforeAll(() => {
 describe("WalletDetails", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
 
-		await env.bootFromObject({ data: {}, profiles });
+		profile = env.profiles().all()[0];
 
-		profile = env.profiles().findById("bob");
-
-		wallet = await profile.wallets().importByMnemonic(identity.mnemonic, "ARK", "mainnet");
+		wallet = profile.wallets().values()[0];
 		wallets = [wallet, await profile.wallets().importByMnemonic(passphrase2, "ARK", "mainnet")];
+
+		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+		history.push(dashboardURL);
 	});
 
 	it("should render", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={wallet} />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
 
-		expect(getByTestId("WalletBottomSheetMenu")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+	});
+
+	it("should render wallet data", async () => {
+		await Promise.resolve().then(() => jest.useFakeTimers());
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		jest.runOnlyPendingTimers();
+
+		await waitFor(() => expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render without wallet", async () => {
@@ -51,7 +87,7 @@ describe("WalletDetails", () => {
 
 	it("should not render the bottom sheet menu when there is only one wallet", () => {
 		wallets = [wallet];
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={wallet} />);
+		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails />);
 
 		expect(() => getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
@@ -59,13 +95,13 @@ describe("WalletDetails", () => {
 
 	it("should delete wallet", async () => {
 		let rendered: RenderResult;
-		const route = `/profiles/bob/wallets/${wallet.id()}`;
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
 		await act(async () => {
 			rendered = renderWithRouter(
 				<EnvironmentProvider env={env}>
 					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={wallets} wallet={wallet} />
+						<WalletDetails />
 					</Route>
 				</EnvironmentProvider>,
 				{
@@ -108,7 +144,7 @@ describe("WalletDetails", () => {
 			rendered = renderWithRouter(
 				<EnvironmentProvider env={env}>
 					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+						<WalletDetails />
 					</Route>
 				</EnvironmentProvider>,
 				{
