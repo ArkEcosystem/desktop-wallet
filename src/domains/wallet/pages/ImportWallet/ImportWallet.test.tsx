@@ -217,7 +217,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
-		const { getByTestId, asFragment } = rendered;
+		const { findByTestId, getByTestId, asFragment } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -240,6 +240,17 @@ describe("ImportWallet", () => {
 
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
+
+			await fireEvent.change(addressInput, { target: { value: "123" } });
+
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+
+			const errorAlert = await findByTestId("ImportWallet__error-alert");
+			await waitFor(() => expect(errorAlert).toBeTruthy());
+
+			expect(errorAlert.textContent).toMatchInlineSnapshot(
+				`"alert-danger.svgErrorFailed to retrieve information for 123 because it is invalid."`,
+			);
 
 			await fireEvent.change(addressInput, { target: { value: identity.address } });
 
