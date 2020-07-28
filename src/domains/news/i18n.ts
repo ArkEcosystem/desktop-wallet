@@ -1,5 +1,6 @@
 export const translations: { [key: string]: any } = {
 	AD: "Ad",
+	NEWS: "News",
 
 	CATEGORIES: {
 		ALL: "All",
