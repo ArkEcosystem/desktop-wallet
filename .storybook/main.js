@@ -46,8 +46,6 @@ module.exports = {
 				},
 			};
 
-			console.log(storybookConfig);
-
 			return storybookConfig;
 		},
 	),
