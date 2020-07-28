@@ -1,17 +1,65 @@
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render } from "testing-library";
+import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { httpClient } from "app/services";
+import { profiles } from "tests/fixtures/env/data.json";
+import { StubStorage } from "tests/mocks";
+import nock from "nock";
 
-import { contact1 as contact } from "../../data";
 import { ContactListItem } from "./ContactListItem";
 
-const option = [{ label: "Option 1", value: "1" }];
-const options = [
-	{ label: "Option 1", value: "1" },
-	{ label: "Option 1", value: "1" },
+const singleOption = [
+	{ label: "Option 1", value: "option_1" },
 ];
 
+const multiOptions = [
+	...singleOption,
+	{ label: "Option 2", value: "option_2" },
+];
+
+let contact: Contact;
+let addressId: string;
+
 describe("ContactListItem", () => {
+	beforeAll(() => {
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.persist();
+	});
+
+	beforeEach(async () => {
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		await env.bootFromObject({ data: {}, profiles });
+		const profile = env.profiles().findById("bob");
+
+		contact = profile.contacts().create("Jane Doe");
+
+		const address = await contact.addresses().create(
+			{
+				coin: "ARK",
+				network: "devnet",
+				name: "Jane's Devnet Address",
+				address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			}
+		);
+
+		addressId = address.id();
+	});
+
 	it("should render", () => {
 		const { asFragment } = render(
 			<table>
@@ -28,7 +76,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={option} />
+					<ContactListItem contact={contact} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -40,7 +88,7 @@ describe("ContactListItem", () => {
 		const { asFragment } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={options} />
+					<ContactListItem contact={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -51,12 +99,10 @@ describe("ContactListItem", () => {
 	it("should call onAction callback if provided with one option", () => {
 		const onAction = jest.fn();
 
-		const options = [{ label: "Option 1", value: "1" }];
-
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={options} />
+					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -74,7 +120,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={options} />
+					<ContactListItem contact={contact} onAction={onAction} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -96,7 +142,7 @@ describe("ContactListItem", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} options={options} />
+					<ContactListItem contact={contact} options={multiOptions} />
 				</tbody>
 			</table>,
 		);
@@ -118,7 +164,7 @@ describe("ContactListItem", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<ContactListItem contact={contact} onAction={onAction} options={option} />
+					<ContactListItem contact={contact} onAction={onAction} options={singleOption} />
 				</tbody>
 			</table>,
 		);
@@ -127,7 +173,6 @@ describe("ContactListItem", () => {
 			fireEvent.click(getByTestId("ContactListItem__one-option-button-0"));
 		});
 
-		const address = contact.addresses?.()[0].address;
-		expect(onAction).toHaveBeenCalledWith(option[0], expect.objectContaining({ address }));
+		expect(onAction).toHaveBeenCalledWith(singleOption[0], addressId);
 	});
 });

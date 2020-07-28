@@ -40,15 +40,18 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	contacts: any[];
 	networks: NetworkData[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
+export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
+
 	const activeProfile = useActiveProfile();
+	const contacts = activeProfile?.contacts();
+
+	const hasContacts = !!activeProfile?.contacts().count();
 
 	const { t } = useTranslation();
 
@@ -91,7 +94,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const handleContactAction = (action: any, contact: any) => {
 		if (action === "delete") {
-			setContactToDelete(contact.id);
+			setContactToDelete(contact.id());
 		}
 	};
 
@@ -104,7 +107,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={contacts.length > 0}
+								showSearchBar={hasContacts}
 								onSearch={onSearch}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -113,7 +116,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{contacts.length === 0 && (
+					{!hasContacts && (
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
@@ -123,9 +126,9 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						</div>
 					)}
 
-					{contacts.length > 0 && (
+					{hasContacts && (
 						<div className="w-full" data-testid="ContactList">
-							<Table columns={listColumns} data={contacts}>
+							<Table columns={listColumns} data={contacts!.values()}>
 								{(contact: any) => (
 									<ContactListItem
 										contact={contact}
