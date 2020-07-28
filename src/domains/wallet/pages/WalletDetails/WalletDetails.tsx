@@ -47,13 +47,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 
-	const history = useHistory();
-	const { persist } = useEnvironmentContext();
-
 	const { t } = useTranslation();
 
-	const activeProfile = useActiveProfile();
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 	const { walletId } = useParams();
+
+	const activeProfile = useActiveProfile();
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [

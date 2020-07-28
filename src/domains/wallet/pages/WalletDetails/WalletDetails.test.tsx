@@ -7,8 +7,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { identity } from "tests/fixtures/identity";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { wallet as walletData, wallets } from "../../data";
@@ -39,11 +38,11 @@ describe("WalletDetails", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		await env.bootFromObject({ data: {}, profiles });
+		await env.bootFromObject(fixtureData);
+		await env.persist();
 
-		profile = env.profiles().findById("bob");
-
-		wallet = await profile.wallets().importByMnemonic(identity.mnemonic, "ARK", "devnet");
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should render", () => {
@@ -81,7 +80,7 @@ describe("WalletDetails", () => {
 			await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
 		});
 
-		const { getByTestId, getAllByTestId, asFragment } = rendered;
+		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -120,7 +119,7 @@ describe("WalletDetails", () => {
 
 	it("should delete wallet", async () => {
 		let rendered: RenderResult;
-		const route = `/profiles/bob/wallets/${wallet.id()}`;
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
 		await act(async () => {
 			rendered = renderWithRouter(
