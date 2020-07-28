@@ -15,30 +15,6 @@ export const networks = [
 
 export const wallets = [
 	{
-		id: "1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		coinIcon: "Ark",
-		coinClass: "text-theme-danger-400 border-theme-danger-light",
-		address: "1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		walletName: "My Wallet",
-		balance: "2,000,000 ARK",
-		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
-		actions: [
-			{
-				label: "Action 1",
-				value: "1",
-			},
-			{
-				label: "Action 2",
-				value: "2",
-			},
-			{
-				label: "Action 3",
-				value: "3",
-			},
-		],
-	},
-	{
 		id: "2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
 		coinIcon: "Ethereum",
 		coinClass: "text-theme-neutral-800 border-theme-neutral-600",

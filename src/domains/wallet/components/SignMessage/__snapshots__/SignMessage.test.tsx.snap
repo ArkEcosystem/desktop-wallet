@@ -1,193 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SignMessage should render as signed 1`] = `
-<DocumentFragment>
-  <div
-    class="fixed inset-0 z-50 bg-black opacity-50"
-    data-testid="modal__overlay"
-  />
-  <div
-    class="sc-fznyAO ioJhAT fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
-    data-testid="modal__inner"
-  >
-    <div
-      class="absolute top-0 right-0 z-50 mt-5 mr-5"
-    >
-      <button
-        class="sc-AxirZ iJKGpA"
-        color="neutral"
-        data-testid="modal__close-btn"
-        type="button"
-      >
-        <div
-          class="p-1"
-        >
-          <div
-            class="sc-AxhUy iFvBPK"
-            height="12"
-            width="12"
-          >
-            <svg>
-              cross-slim.svg
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
-    <div
-      class="py-4"
-    >
-      <h2
-        class="mb-0 text-3xl font-bold"
-      >
-        Message Successfully Signed
-      </h2>
-      <div
-        class="flex-1"
-      >
-        <div
-          class="mt-2"
-        >
-          <div>
-            <div
-              class="flex items-center py-6 true "
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  COMMON.SIGNATORY
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div
-                    class="inline-block truncate align-middle"
-                  >
-                    <span
-                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                      data-testid="address__wallet-name"
-                    >
-                      ROBank
-                    </span>
-                    <span
-                      class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
-                      data-testid="address__wallet-address"
-                    >
-                      AUexKj…EVTQWK
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex items-center"
-              >
-                <div
-                  class="sc-AxiKw eHzXqc -mr-2 border-black"
-                >
-                  <div
-                    class="sc-AxhUy fZIogq"
-                    height="25"
-                    width="25"
-                  >
-                    <svg>
-                      delegate.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 fbgOiH"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full"
-                  >
-                    <img
-                      alt="test"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                      title="test"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 text-lg"
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Message
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  Oleg Happy in the Oleg Bank
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center py-6 border-t border-dashed border-theme-neutral-300 "
-            >
-              <div
-                class="flex-1 space-y-2"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-neutral"
-                >
-                  Signature
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <textarea
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 mt-2 rounded-lg"
-                    data-testid="TextArea"
-                    name="signature"
-                    style="height: 4px;"
-                    wrap="hard"
-                  >
-                    {"publicKey":"03basda32b03s2df1as0csd32f1asd0asd21sv0asd5sa3d1as03d2as","signature":"304444354032424a3sd210a3s2d4as3d54as0321das03d777cas32f1as3d21as03v5ds4sd3asc045as35d4a03x24z3c5z4sd3as054cas65xv4cxz3v24zs30x24c3xz2v4zs03d54czdv54z3x5c40zx6v54z3df2c4zd0","message":"Xp879878687z6xc876Z*6cz87c68zx76c8x7zc68zx7cvsa7dc5as8d765as87d5sa8d7as65dsadasdsad"}
-                  </textarea>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex justify-end pb-5 mt-3"
-            >
-              <button
-                class="sc-AxirZ fhzkRl"
-                color="primary"
-                type="button"
-              >
-                <div
-                  class="sc-AxhUy cPXLjK"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    copy.svg
-                  </svg>
-                </div>
-                <span>
-                  Copy Signature
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`SignMessage should render the SignMessage 1`] = `
+exports[`SignMessage should render 1`] = `
 <DocumentFragment>
   <div
     class="fixed inset-0 z-50 bg-black opacity-50"
@@ -242,8 +55,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
         >
           <form
             class="space-y-8"
-            data-testid="Form"
-            id="sign-message__form"
+            data-testid="SignMessage__form"
           >
             <fieldset
               class="sc-AxhCb ckQmOL flex flex-col space-y-2"
@@ -252,9 +64,9 @@ exports[`SignMessage should render the SignMessage 1`] = `
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
                 for="signatory-address"
-                label="COMMON.SIGNATORY"
+                label="Signatory"
               >
-                COMMON.SIGNATORY
+                Signatory
               </label>
               <div
                 class="relative"
@@ -308,7 +120,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               </label>
               <input
                 class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                data-testid="Input"
+                data-testid="SignMessage__message-input"
                 name="message"
                 type="text"
               />
@@ -319,7 +131,7 @@ exports[`SignMessage should render the SignMessage 1`] = `
               <label
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
                 data-testid="FormLabel"
-                for="passphrase"
+                for="mnemonic"
                 label="Your Passphrase"
               >
                 Your Passphrase
@@ -329,8 +141,8 @@ exports[`SignMessage should render the SignMessage 1`] = `
               >
                 <input
                   class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
-                  data-testid="Input"
-                  name="passphrase"
+                  data-testid="SignMessage__mnemonic-input"
+                  name="mnemonic"
                   type="password"
                 />
                 <div
@@ -367,8 +179,201 @@ exports[`SignMessage should render the SignMessage 1`] = `
               <button
                 class="sc-AxirZ dPtiuf"
                 color="primary"
-                data-testid="sign-message__sign-button"
+                data-testid="SignMessage__submit-button"
+                type="submit"
+              >
+                Sign
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SignMessage should sign message 1`] = `
+<DocumentFragment>
+  <div
+    class="fixed inset-0 z-50 bg-black opacity-50"
+    data-testid="modal__overlay"
+  />
+  <div
+    class="sc-fznyAO ioJhAT fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+    data-testid="modal__inner"
+  >
+    <div
+      class="absolute top-0 right-0 z-50 mt-5 mr-5"
+    >
+      <button
+        class="sc-AxirZ iJKGpA"
+        color="neutral"
+        data-testid="modal__close-btn"
+        type="button"
+      >
+        <div
+          class="p-1"
+        >
+          <div
+            class="sc-AxhUy iFvBPK"
+            height="12"
+            width="12"
+          >
+            <svg>
+              cross-slim.svg
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      class="py-4"
+    >
+      <h2
+        class="mb-0 text-3xl font-bold"
+      >
+        Sign Message
+      </h2>
+      <div
+        class="flex-1"
+      >
+        <div
+          class="mt-1 text-theme-neutral-dark"
+        >
+          Sign Message
+        </div>
+        <div
+          class="mt-8"
+        >
+          <form
+            class="space-y-8"
+            data-testid="SignMessage__form"
+          >
+            <fieldset
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="signatory-address"
+                label="Signatory"
+              >
+                Signatory
+              </label>
+              <div
+                class="relative"
+              >
+                <input
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="Input"
+                  disabled=""
+                  name="signatory-address"
+                  type="text"
+                />
+                <div
+                  class="absolute top-0 flex items-center mt-2 ml-4"
+                >
+                  <div
+                    class="flex items-center"
+                  >
+                    <div
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 laNXvc"
+                      data-testid="Avatar"
+                    >
+                      <div
+                        class="w-full h-full"
+                      >
+                        <img
+                          alt="test"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                          title="test"
+                        />
+                      </div>
+                    </div>
+                    <span
+                      class="ml-3 font-semibold "
+                    >
+                      AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="message"
+                label="Message"
+              >
+                Message
+              </label>
+              <input
+                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                data-testid="SignMessage__message-input"
+                name="message"
+                type="text"
+              />
+            </fieldset>
+            <fieldset
+              class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+            >
+              <label
+                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                data-testid="FormLabel"
+                for="mnemonic"
+                label="Your Passphrase"
+              >
+                Your Passphrase
+              </label>
+              <div
+                class="sc-fzozJi OgXfh max-w-20"
+              >
+                <input
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pr-12"
+                  data-testid="SignMessage__mnemonic-input"
+                  name="mnemonic"
+                  type="password"
+                />
+                <div
+                  class="sc-AxheI sc-AxmLO jcthaj my-px mr-4"
+                >
+                  <button
+                    class="flex items-center justify-center w-full h-full text-2xl focus:outline-none bg-theme-background text-theme-primary-400"
+                    data-testid="InputPassword__toggle"
+                    type="button"
+                  >
+                    <div
+                      class="sc-AxhUy cPXLjK"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        eye.svg
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+            <div
+              class="flex justify-end space-x-3"
+            >
+              <button
+                class="sc-AxirZ fhzkRl"
+                color="primary"
                 type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="sc-AxirZ dPtiuf"
+                color="primary"
+                data-testid="SignMessage__submit-button"
+                type="submit"
               >
                 Sign
               </button>

@@ -14,7 +14,7 @@ export const Default = () => {
 					coinIcon="Ethereum"
 					coinClass="border-theme-neutral-800"
 					walletName="Primary"
-					address="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+					address="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 					balance="100,000 ETH"
 					actions={[
 						{ label: "Action 1", value: "1" },

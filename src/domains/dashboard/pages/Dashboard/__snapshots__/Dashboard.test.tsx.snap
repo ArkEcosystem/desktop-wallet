@@ -591,149 +591,6 @@ exports[`Dashboard should render 1`] = `
                         style="height: 185px;"
                       >
                         <a
-                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        >
-                          <div
-                            class="w-64 inline-block w-full"
-                          >
-                            <div
-                              class="sc-fzpjYC bVVEWC"
-                            >
-                              <div
-                                class="relative p-2"
-                              >
-                                <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-                                >
-                                  <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="flex"
-                                >
-                                  <div
-                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eViLYR"
-                                      height="16"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                                        title="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="mt-6 truncate max-w-12"
-                                >
-                                  <div
-                                    class="inline-block truncate align-middle"
-                                  >
-                                    <span
-                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                      data-testid="address__wallet-name"
-                                    >
-                                      My Wallet
-                                    </span>
-                                    <span
-                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
-                                      data-testid="address__wallet-address"
-                                    >
-                                      1ASu…3kqT
-                                    </span>
-                                  </div>
-                                </div>
-                                <div
-                                  class="font-bold text-theme-neutral-900"
-                                >
-                                  2,000,000 ARK
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <a
                           data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                           href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
@@ -2240,7 +2097,7 @@ exports[`Dashboard should render 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             ID
@@ -2256,7 +2113,7 @@ exports[`Dashboard should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Date
@@ -2298,7 +2155,7 @@ exports[`Dashboard should render 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Recipient
@@ -3813,149 +3670,6 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         style="height: 185px;"
                       >
                         <a
-                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        >
-                          <div
-                            class="w-64 inline-block w-full"
-                          >
-                            <div
-                              class="sc-fzpjYC bVVEWC"
-                            >
-                              <div
-                                class="relative p-2"
-                              >
-                                <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-                                >
-                                  <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="flex"
-                                >
-                                  <div
-                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eViLYR"
-                                      height="16"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                                        title="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="mt-6 truncate max-w-12"
-                                >
-                                  <div
-                                    class="inline-block truncate align-middle"
-                                  >
-                                    <span
-                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                      data-testid="address__wallet-name"
-                                    >
-                                      My Wallet
-                                    </span>
-                                    <span
-                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
-                                      data-testid="address__wallet-address"
-                                    >
-                                      1ASu…3kqT
-                                    </span>
-                                  </div>
-                                </div>
-                                <div
-                                  class="font-bold text-theme-neutral-900"
-                                >
-                                  2,000,000 ARK
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <a
                           data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                           href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
@@ -5462,7 +5176,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             ID
@@ -5478,7 +5192,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Date
@@ -5520,7 +5234,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Recipient
@@ -7035,149 +6749,6 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         style="height: 185px;"
                       >
                         <a
-                          data-testid="WalletCard__1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          href="/profiles/bob/wallets/1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                        >
-                          <div
-                            class="w-64 inline-block w-full"
-                          >
-                            <div
-                              class="sc-fzpjYC bVVEWC"
-                            >
-                              <div
-                                class="relative p-2"
-                              >
-                                <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
-                                >
-                                  <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="flex"
-                                >
-                                  <div
-                                    class="sc-AxhUy dSLmHc border-theme-primary-contrast -mr-2 text-theme-danger-400 border-theme-danger-light"
-                                  >
-                                    <div
-                                      class="sc-AxirZ eViLYR"
-                                      height="16"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ark.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
-                                    data-testid="Avatar"
-                                  >
-                                    <div
-                                      class="w-full h-full"
-                                    >
-                                      <img
-                                        alt="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                                        title="1ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="mt-6 truncate max-w-12"
-                                >
-                                  <div
-                                    class="inline-block truncate align-middle"
-                                  >
-                                    <span
-                                      class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
-                                      data-testid="address__wallet-name"
-                                    >
-                                      My Wallet
-                                    </span>
-                                    <span
-                                      class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
-                                      data-testid="address__wallet-address"
-                                    >
-                                      1ASu…3kqT
-                                    </span>
-                                  </div>
-                                </div>
-                                <div
-                                  class="font-bold text-theme-neutral-900"
-                                >
-                                  2,000,000 ARK
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div
-                        class="swiper-slide"
-                        style="height: 185px;"
-                      >
-                        <a
                           data-testid="WalletCard__2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                           href="/profiles/bob/wallets/2ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
                         >
@@ -8684,7 +8255,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             ID
@@ -8700,7 +8271,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Date
@@ -8742,7 +8313,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top undefined"
+                          class="flex flex-inline align-top "
                         >
                           <div>
                             Recipient
