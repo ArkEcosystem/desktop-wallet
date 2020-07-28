@@ -61,21 +61,26 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should update wallet name", async () => {
-		const route = `/profiles/bob/wallets/${wallet.id()}`;
+	it.only("should update wallet name", async () => {
+		let rendered: RenderResult;
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
-		const { getByTestId, getAllByTestId, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/:walletId">
-					<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
-				</Route>
-			</EnvironmentProvider>,
-			{
-				routes: [route],
-			},
-		);
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/:walletId">
+						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+				},
+			);
 
-		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
+		});
+
+		const { getByTestId, getAllByTestId, asFragment } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 
