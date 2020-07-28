@@ -6,6 +6,7 @@ import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
+import { VerifyMessageStatus } from "domains/wallet/components/VerifyMessageStatus";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,8 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 
 	const { register } = form;
 	const [verifyAddress, setVerifyAddress] = useState(true);
+	const [isMessageVerified, setIsMessageVerified] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const handleSubmit = async () => {
 		let isVerified = false;
@@ -36,9 +39,13 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 
 		try {
 			const signedMessage = verifyAddress ? JSON.parse(formValues["signed-message-content"]) : formValues;
-			isVerified = (await wallet?.message().verify(signedMessage));
+			isVerified = await wallet?.message().verify(signedMessage);
+			setIsSubmitted(true);
+			setIsMessageVerified(isVerified);
 			onSubmit?.(isVerified);
 		} catch {
+			setIsSubmitted(true);
+			setIsMessageVerified(false);
 			onSubmit?.(false);
 		}
 	};
@@ -112,6 +119,23 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signato
 			</div>
 		);
 	};
+
+	if (isSubmitted) {
+		const statusKey = isMessageVerified ? "SUCCESS" : "FAIL";
+		return (
+			<VerifyMessageStatus
+				title={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_TITLE`)}
+				description={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_DESCRIPTION`)}
+				type={isMessageVerified ? "success" : "error"}
+				isOpen={isOpen}
+				onClose={() => {
+					setIsSubmitted(false);
+					onClose?.();
+				}}
+			/>
+		);
+	}
+
 	return (
 		<Modal
 			isOpen={isOpen}
