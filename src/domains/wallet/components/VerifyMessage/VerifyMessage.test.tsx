@@ -6,6 +6,7 @@ import { httpClient } from "app/services";
 import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { VerifyMessage } from "./VerifyMessage";
@@ -30,7 +31,7 @@ describe("VerifyMessage", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
 			.persist();
 	});
@@ -38,8 +39,11 @@ describe("VerifyMessage", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		profile = env.profiles().create("John Doe");
-		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
 		signedMessageText = "Hello world";
 		signedMessageMnemonic = "top secret";
@@ -222,6 +226,11 @@ describe("VerifyMessage", () => {
 
 		await waitFor(() => {
 			expect(fn).toBeCalledWith(true);
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 	});
 
