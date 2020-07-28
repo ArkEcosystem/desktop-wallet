@@ -114,6 +114,8 @@ describe("WalletDetails", () => {
 
 		const { getByTestId, getAllByTestId, asFragment } = rendered;
 
+		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		await act(async () => {
@@ -138,7 +140,7 @@ describe("WalletDetails", () => {
 
 	it("should update wallet name", async () => {
 		let rendered: RenderResult;
-		const route = `/profiles/bob/wallets/${wallet.id()}`;
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
 		await act(async () => {
 			rendered = renderWithRouter(

@@ -2914,7 +2914,9 @@ exports[`WalletDetails should render wallet data 1`] = `
               <h2
                 class="mb-0 text-white"
                 data-testid="WalletHeader__name"
-              />
+              >
+                ARK Wallet 1
+              </h2>
               <span
                 data-testid="WalletHeader__multisig"
               >
@@ -3063,7 +3065,7 @@ exports[`WalletDetails should render wallet data 1`] = `
                   class="text-lg font-medium"
                   data-testid="WalletHeader__balance"
                 >
-                  55827093444556
+                  NaN
                 </span>
               </li>
               <li
@@ -3796,7 +3798,13 @@ exports[`WalletDetails should render wallet data 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        data-testid="address__wallet-name"
+                      >
+                        ARK Wallet 1
+                      </span>
+                      <span
+                        class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         AHZLH1CwM…DpezntksA
@@ -3824,7 +3832,7 @@ exports[`WalletDetails should render wallet data 1`] = `
                     class="font-semibold text-right"
                   >
                     <div>
-                      55827093444556
+                      NaN
                     </div>
                   </td>
                   <td
@@ -4811,7 +4819,52 @@ exports[`WalletDetails should update wallet name 1`] = `
             </div>
             <ul
               class="flex h-20 md:h-24"
-            />
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
           <div
             class="flex items-center"
@@ -4842,7 +4895,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/undefined/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4967,7 +5020,7 @@ exports[`WalletDetails should update wallet name 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/undefined/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio

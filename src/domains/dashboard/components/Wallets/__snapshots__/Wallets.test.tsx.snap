@@ -655,7 +655,13 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxhCb ccMvAG text-theme-text font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        data-testid="address__wallet-name"
+                      >
+                        ARK Wallet 1
+                      </span>
+                      <span
+                        class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         AHZLH1CwM…DpezntksA
@@ -683,7 +689,7 @@ exports[`Wallets should render with list view enabled as default 1`] = `
                     class="font-semibold text-right"
                   >
                     <div>
-                      55827093444556
+                      NaN
                     </div>
                   </td>
                   <td
@@ -1055,7 +1061,13 @@ exports[`Wallets should render with list view enabled as default and empty walle
                       class="inline-block truncate align-middle"
                     >
                       <span
-                        class="sc-AxhCb ccMvAG text-theme-text font-semibold text-base"
+                        class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                        data-testid="address__wallet-name"
+                      >
+                        ARK Wallet 1
+                      </span>
+                      <span
+                        class="sc-AxhCb ccMvAG text-theme-neutral-light font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         AHZLH1CwM…DpezntksA
@@ -1083,7 +1095,7 @@ exports[`Wallets should render with list view enabled as default and empty walle
                     class="font-semibold text-right"
                   >
                     <div>
-                      55827093444556
+                      NaN
                     </div>
                   </td>
                   <td

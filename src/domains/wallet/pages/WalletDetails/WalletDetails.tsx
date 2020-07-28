@@ -26,11 +26,13 @@ export const WalletDetails = () => {
 		(null as unknown) as Coins.WalletDataCollection,
 	);
 
-	const history = useHistory();
-	const { persist } = useEnvironmentContext();
 	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
+
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 	const { walletId } = useParams();
+
+	const activeProfile = useActiveProfile();
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -41,7 +43,8 @@ export const WalletDetails = () => {
 	];
 
 	const handleDeleteWallet = async () => {
-		activeProfile?.wallets().forget(walletId);
+		const activeWallet = activeProfile?.wallets().findById(walletId);
+		activeProfile?.wallets().forget(activeWallet?.id() as string);
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);

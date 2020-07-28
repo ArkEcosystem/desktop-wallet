@@ -3,13 +3,17 @@ import { Environment, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-p
 import { httpClient } from "app/services";
 import React from "react";
 import { fireEvent, render, waitFor } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { mockArkHttp, StubStorage } from "tests/mocks";
 
 // i18n
 import { translations } from "../../i18n";
 import { SearchWallet } from "./SearchWallet";
 
 let wallets: Wallet[];
+
+beforeAll(() => {
+	mockArkHttp();
+});
 
 describe("SearchWallet", () => {
 	beforeEach(async () => {
