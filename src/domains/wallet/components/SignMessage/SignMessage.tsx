@@ -21,20 +21,11 @@ type SignMessageProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
-	onSubmit?: any;
 };
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
-export const SignMessage = ({
-	profileId,
-	walletId,
-	signatoryAddress,
-	isOpen,
-	onClose,
-	onCancel,
-	onSubmit,
-}: SignMessageProps) => {
+export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
 	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>({
 		message: "",
@@ -60,8 +51,6 @@ export const SignMessage = ({
 
 		setIsSigned(true);
 		setSignedMessage(signedMessageResult);
-
-		onSubmit?.(signedMessageResult);
 	};
 
 	const SignFormRender = (
