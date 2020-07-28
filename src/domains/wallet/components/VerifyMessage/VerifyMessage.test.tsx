@@ -56,7 +56,7 @@ describe("VerifyMessage", () => {
 				<VerifyMessage
 					isOpen={true}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -72,7 +72,7 @@ describe("VerifyMessage", () => {
 				<VerifyMessage
 					isOpen={true}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -86,7 +86,7 @@ describe("VerifyMessage", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger cancel event", () => {
+	it("should open verify message modal and cancel", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
@@ -94,7 +94,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onCancel={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -107,6 +107,27 @@ describe("VerifyMessage", () => {
 		expect(fn).toBeCalled();
 	});
 
+	it("should open verify message modal and close modal", () => {
+		const fn = jest.fn();
+		const { getByTestId } = render(
+			<EnvironmentProvider env={env}>
+				<VerifyMessage
+					isOpen={true}
+					onClose={fn}
+					signatory={signedMessage.signatory}
+					walletId={wallet.id()}
+					profileId={profile.id()}
+				/>
+			</EnvironmentProvider>,
+		);
+
+		const closeButton = getByTestId("modal__close-btn");
+		act(() => {
+			fireEvent.click(closeButton);
+		});
+		expect(fn).toBeCalled();
+	});
+
 	it("should not verify if empty inputs", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
@@ -115,7 +136,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -139,7 +160,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -180,7 +201,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -212,7 +233,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
