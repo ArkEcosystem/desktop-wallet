@@ -61,5 +61,5 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 };
 
 Settings.defaultProps = {
-	onSubmit: (profileData: any) => console.log({ profileData }),
+	onSubmit: (profileData: any) => profileData,
 };
