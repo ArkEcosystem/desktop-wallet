@@ -60,7 +60,11 @@ export const Table = ({ children, data, columns, hideHeader }: TableProps) => {
 										data-testid={`table__th--${thIndex}`}
 										{...column.getHeaderProps(column.getSortByToggleProps())}
 									>
-										<div className={`flex flex-inline align-top ${column.className}`}>
+										<div
+											className={`flex flex-inline align-top ${
+												column.className ? column.className : ""
+											}`}
+										>
 											<div>{column.render("Header")}</div>
 											{column.canSort && (
 												<div
