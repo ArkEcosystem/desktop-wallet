@@ -61,7 +61,7 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.only("should update wallet name", async () => {
+	it("should update wallet name", async () => {
 		let rendered: RenderResult;
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
