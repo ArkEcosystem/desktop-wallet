@@ -1,5 +1,6 @@
 const path = require("path");
-const { override, addPostcssPlugins } = require("customize-cra");
+const { override, addPostcssPlugins, addWebpackPlugin } = require("customize-cra");
+const webpack = require("webpack");
 
 module.exports = override(
 	addPostcssPlugins([
@@ -7,6 +8,12 @@ module.exports = override(
 		require("tailwindcss")("./src/tailwind.config.js"),
 		require("autoprefixer"),
 	]),
+	addWebpackPlugin(
+		new webpack.NormalModuleReplacementPlugin(
+			/node_modules\/@arkecosystem\/crypto\/dist\/index\.bundled\.js/,
+			"index.js",
+		),
+	),
 	(config) => {
 		config.node = {
 			fs: "empty",
