@@ -48,13 +48,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isUpdateWalletNameOpen, setIsUpdateWalletNameOpen] = useState(false);
 
-	const history = useHistory();
-	const { persist } = useEnvironmentContext();
-
 	const { t } = useTranslation();
 
-	const activeProfile = useActiveProfile();
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 	const { walletId } = useParams();
+
+	const activeProfile = useActiveProfile();
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -65,8 +65,8 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	];
 
 	const handleDeleteWallet = async () => {
-		const wallet = activeProfile?.wallets().findById(walletId);
-		activeProfile?.wallets().forget(wallet?.id() as string);
+		const activeWallet = activeProfile?.wallets().findById(walletId);
+		activeProfile?.wallets().forget(activeWallet?.id() as string);
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
