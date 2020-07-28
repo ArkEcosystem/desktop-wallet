@@ -82,10 +82,6 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 		setIsUpdateWalletNameOpen(false);
 	};
 
-	const handleVerifymessage = () => {
-		setIsVerifyingMessage(false);
-	};
-
 	/* istanbul ignore next */
 	return (
 		<>
@@ -166,9 +162,9 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				isOpen={isVerifyingMessage}
 				onClose={() => setIsVerifyingMessage(false)}
 				onCancel={() => setIsVerifyingMessage(false)}
-				onSubmit={handleVerifymessage}
 				walletId={walletId}
 				profileId={activeProfile?.id() as string}
+				signatory={wallet?.publicKey}
 			/>
 		</>
 	);
