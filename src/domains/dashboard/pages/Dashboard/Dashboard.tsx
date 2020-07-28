@@ -28,9 +28,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
-		setScreenshotProtection(
-			activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === false ? false : true,
-		);
+		setScreenshotProtection(Boolean(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection)));
 	}, [activeProfile]);
 
 	// Wallet controls data
