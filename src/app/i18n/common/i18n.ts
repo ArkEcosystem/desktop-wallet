@@ -49,6 +49,7 @@ export const translations: { [key: string]: any } = {
 	DOWNLOAD: "Download",
 	DOWNLOADED: "Downloaded",
 	ENABLE_ADVANCED_MODE: "Enable Advanced Mode to use this feature",
+	ERROR: "Error",
 	EXPLORER: "Explorer",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reaso: {{reason}}",
