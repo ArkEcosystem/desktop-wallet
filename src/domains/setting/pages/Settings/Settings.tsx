@@ -41,7 +41,11 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 		const ActiveSettings = availableSettings[activeSettings];
 
 		return (
-			<ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={() => onSubmit?.()} />
+			<ActiveSettings
+				env={env}
+				formConfig={{ context: form, register, errors }}
+				onSubmit={(savedSettings: any) => onSubmit?.(savedSettings)}
+			/>
 		);
 	};
 
