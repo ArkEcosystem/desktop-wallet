@@ -10,7 +10,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { CreateContact } from "domains/contact/components/CreateContact";
 import { DeleteContact } from "domains/contact/components/DeleteContact";
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const { ContactsBanner } = images.contacts.pages.contacts;
@@ -140,7 +140,6 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 							<Table columns={listColumns} data={profileContacts}>
 								{(contact: any) => (
 									<ContactListItem
-										variant="condensed"
 										contact={contact}
 										options={contactOptions}
 										onAction={(action) => handleContactAction(action.value, contact)}
