@@ -249,7 +249,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should show an error message for invalid wallet", async () => {
+	it("should show an error message for invalid address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";
@@ -309,7 +309,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should show an error if import a NEO mainnet wallet", async () => {
+	it("should show an error if import a NEO mainnet address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";
@@ -370,7 +370,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should show an error message if trying to import a duplicate wallet", async () => {
+	it("should show an error message if trying to import a duplicate address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";

@@ -69,7 +69,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
 });
 
-test("should show an error message for invalid wallet", async (t) => {
+test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
@@ -102,7 +102,7 @@ test("should show an error message for invalid wallet", async (t) => {
 		.ok();
 });
 
-test("should show an error if import a NEO mainnet wallet", async (t) => {
+test("should show an error if import a NEO mainnet address", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
@@ -134,7 +134,7 @@ test("should show an error if import a NEO mainnet wallet", async (t) => {
 	await t.expect(Selector("div").withText("This address exists on the NEO Mainnet.").exists).ok();
 });
 
-test("should show an error message if trying to import a duplicate wallet", async (t) => {
+test("should show an error message if trying to import a duplicate address", async (t) => {
 	let addressInput: Selector;
 
 	await t.click(Selector("p").withText("John Doe"));
