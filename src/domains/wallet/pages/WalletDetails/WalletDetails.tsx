@@ -50,7 +50,7 @@ export const WalletDetails = () => {
 		const result: WalletData[] = [];
 
 		for (const tx of transactions) {
-			const votes = (tx.asset().votes as string[]) || [];
+			const votes = tx.asset().votes as string[];
 
 			for (const vote of votes) {
 				const publicKey = vote.substr(1);

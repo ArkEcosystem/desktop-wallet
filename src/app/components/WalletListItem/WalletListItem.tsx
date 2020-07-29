@@ -23,7 +23,7 @@ export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }
 	};
 
 	const coinName = wallet?.coin().manifest().get<string>("name");
-	const hasTypeIcons = wallet?.isLedger() || wallet?.isMultiSignature() || wallet?.isStarred();
+	const hasTypeIcons = wallet?.isLedger() || wallet?.isStarred() || wallet?.isMultiSignature();
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
