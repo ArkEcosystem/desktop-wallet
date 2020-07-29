@@ -310,6 +310,24 @@ describe("ImportWallet", () => {
 	});
 
 	it("should show an error if import a NEO mainnet address", async () => {
+		nock("https://wallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.persist();
+
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1")
+			.thrice()
+			.reply(200, require("../../../../tests/fixtures/coins/ark/neo-duplicate.json"));
+
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";
@@ -365,7 +383,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(errorAlert).toBeTruthy());
 
 			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorFailed to discovery any peers."`,
+				`"alert-danger.svgErrorThis address exists on the NEO Mainnet."`,
 			);
 		});
 	});
