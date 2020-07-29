@@ -5,11 +5,12 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { CreateContact } from "domains/contact/components/CreateContact";
 import { DeleteContact } from "domains/contact/components/DeleteContact";
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const { ContactsBanner } = images.contacts.pages.contacts;
@@ -40,17 +41,25 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	contacts: any[];
-	networks: NetworkData[];
+	contacts?: any[];
+	networks?: NetworkData[];
 	onSearch?: any;
 };
 
 export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
-	const [createIsOpen, setCreateIsOpen] = useState(false);
-	const [contactToDelete, setContactToDelete] = useState(null);
+	const { env, persist } = useEnvironmentContext();
+	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
-	const { t } = useTranslation();
+	const [profileContacts] = useState<any>(contacts);
+	const [createIsOpen, setCreateIsOpen] = useState(false);
+	const [contactToDelete, setContactToDelete] = useState(null);
+
+	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
+
+	useEffect(() => {
+		// setContacts(activeProfile?.contacts().values() || []);
+	}, [activeProfile, env]);
 
 	const contactOptions = [
 		{ label: t("COMMON.SEND"), value: "send" },
@@ -85,7 +94,10 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 		},
 	];
 
-	const handleOnSave = () => {
+	const handleOnSave = async ({ name, addresses }: any) => {
+		const contact = activeProfile?.contacts().create(name);
+		await activeProfile?.contacts().update(contact?.id() as string, { addresses });
+		await persist();
 		setCreateIsOpen(false);
 	};
 
@@ -104,7 +116,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={contacts.length > 0}
+								showSearchBar={profileContacts.length > 0}
 								onSearch={onSearch}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -113,7 +125,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{contacts.length === 0 && (
+					{profileContacts.length === 0 && (
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
@@ -123,11 +135,12 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						</div>
 					)}
 
-					{contacts.length > 0 && (
+					{profileContacts.length > 0 && (
 						<div className="w-full" data-testid="ContactList">
-							<Table columns={listColumns} data={contacts}>
+							<Table columns={listColumns} data={profileContacts}>
 								{(contact: any) => (
 									<ContactListItem
+										variant="condensed"
 										contact={contact}
 										options={contactOptions}
 										onAction={(action) => handleContactAction(action.value, contact)}
@@ -141,7 +154,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				networks={networks}
+				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
@@ -161,5 +174,4 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
-	networks: [],
 };
