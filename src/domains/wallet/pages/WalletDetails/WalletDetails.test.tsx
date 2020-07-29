@@ -13,7 +13,7 @@ import { mockArkHttp, StubStorage } from "tests/mocks";
 import { WalletDetails } from "./WalletDetails";
 
 const history = createMemoryHistory();
-let dashboardURL: string;
+let route: string;
 
 let env: Environment;
 let profile: Profile;
@@ -36,8 +36,8 @@ describe("WalletDetails", () => {
 		wallet = profile.wallets().values()[0];
 		wallets = [wallet, await profile.wallets().importByMnemonic(passphrase2, "ARK", "mainnet")];
 
-		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-		history.push(dashboardURL);
+		route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+		history.push(route);
 	});
 
 	it("should render", async () => {
@@ -48,7 +48,7 @@ describe("WalletDetails", () => {
 				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: [dashboardURL],
+				routes: [route],
 				history,
 			},
 		);
@@ -67,7 +67,7 @@ describe("WalletDetails", () => {
 				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: [dashboardURL],
+				routes: [route],
 				history,
 			},
 		);
@@ -79,68 +79,47 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render without wallet", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [route],
+				history,
+			},
+		);
 
 		expect(getByTestId("WalletHeader")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not render the bottom sheet menu when there is only one wallet", () => {
-		wallets = [wallet];
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails />);
+	it("should not render the bottom sheet menu when there is only one wallet", async () => {
+		await Promise.resolve().then(() => jest.useFakeTimers());
+
+		profile.wallets().forget(wallets[1].id());
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [route],
+				history,
+			},
+		);
+
+		jest.runOnlyPendingTimers();
 
 		expect(() => getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should delete wallet", async () => {
-		let rendered: RenderResult;
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails />
-					</Route>
-				</EnvironmentProvider>,
-				{
-					routes: [route],
-				},
-			);
-
-			await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
-		});
-
-		const { getByTestId, getAllByTestId, asFragment } = rendered;
-
-		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
-
-		await act(async () => {
-			const dropdown = getAllByTestId("dropdown__toggle")[2];
-			expect(dropdown).toBeTruthy();
-
-			await fireEvent.click(dropdown);
-
-			const deleteWalletOption = getByTestId("dropdown__option--3");
-			expect(deleteWalletOption).toBeTruthy();
-
-			await fireEvent.click(deleteWalletOption);
-			expect(getByTestId("modal__inner")).toBeTruthy();
-
-			await waitFor(() => expect(profile.wallets().count()).toEqual(2));
-
-			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
-
-			await waitFor(() => expect(profile.wallets().count()).toEqual(1));
-		});
-	});
-
 	it("should update wallet name", async () => {
 		let rendered: RenderResult;
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -151,6 +130,7 @@ describe("WalletDetails", () => {
 				</EnvironmentProvider>,
 				{
 					routes: [route],
+					history,
 				},
 			);
 
@@ -193,17 +173,17 @@ describe("WalletDetails", () => {
 
 	it("should delete wallet", async () => {
 		let rendered: RenderResult;
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
 		await act(async () => {
 			rendered = renderWithRouter(
 				<EnvironmentProvider env={env}>
 					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+						<WalletDetails />
 					</Route>
 				</EnvironmentProvider>,
 				{
 					routes: [route],
+					history,
 				},
 			);
 
@@ -211,6 +191,8 @@ describe("WalletDetails", () => {
 		});
 
 		const { getByTestId, getAllByTestId, asFragment } = rendered;
+
+		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -226,9 +208,11 @@ describe("WalletDetails", () => {
 			await fireEvent.click(deleteWalletOption);
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
+			await waitFor(() => expect(profile.wallets().count()).toEqual(2));
+
 			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
 
-			await waitFor(() => expect(profile.wallets().count()).toEqual(0));
+			await waitFor(() => expect(profile.wallets().count()).toEqual(1));
 		});
 	});
 });
