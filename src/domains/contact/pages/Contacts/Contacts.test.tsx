@@ -182,10 +182,6 @@ describe("Contacts", () => {
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
-
-		waitFor(() => {
-			expect(() => getByTestId("modal__inner")).toBeFalsy();
-		});
 	});
 
 	it("should cancel contact deletion modal", async () => {
