@@ -52,6 +52,10 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Verify JSON",
 			DESCRIPTION: "You can verify only text using a JSON public key",
 		},
+		SUCCESS_TITLE: "Confirmed",
+		SUCCESS_DESCRIPTION: "Verification was successfully confirmed",
+		FAIL_TITLE: "Failed",
+		FAIL_DESCRIPTION: "Verification failed",
 	},
 
 	PAGE_CREATE_WALLET: {
