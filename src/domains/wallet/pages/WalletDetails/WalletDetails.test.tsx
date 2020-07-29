@@ -26,6 +26,8 @@ beforeAll(() => {
 	mockArkHttp();
 });
 
+jest.useFakeTimers();
+
 describe("WalletDetails", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
@@ -41,81 +43,57 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/:walletId">
-					<WalletDetails />
-				</Route>
-			</EnvironmentProvider>,
-			{
-				routes: [route],
-				history,
-			},
+		let rendered: any;
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/:walletId">
+						<WalletDetails />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+		});
+
+		await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
+		await waitFor(() =>
+			expect(rendered.getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()),
 		);
-
-		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should render wallet data", async () => {
-		await Promise.resolve().then(() => jest.useFakeTimers());
-
-		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/:walletId">
-					<WalletDetails />
-				</Route>
-			</EnvironmentProvider>,
-			{
-				routes: [route],
-				history,
-			},
-		);
+		await waitFor(() => expect(rendered.asFragment()).toMatchSnapshot());
 
 		jest.runOnlyPendingTimers();
-
-		await waitFor(() => expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
-	});
-
-	it("should render without wallet", async () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/:walletId">
-					<WalletDetails />
-				</Route>
-			</EnvironmentProvider>,
-			{
-				routes: [route],
-				history,
-			},
-		);
-
-		expect(getByTestId("WalletHeader")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not render the bottom sheet menu when there is only one wallet", async () => {
-		await Promise.resolve().then(() => jest.useFakeTimers());
-
 		profile.wallets().forget(wallets[1].id());
 
-		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/:walletId">
-					<WalletDetails />
-				</Route>
-			</EnvironmentProvider>,
-			{
-				routes: [route],
-				history,
-			},
+		let rendered: any;
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/:walletId">
+						<WalletDetails />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+		});
+
+		await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
+		await waitFor(() =>
+			expect(rendered.getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()),
 		);
 
-		jest.runOnlyPendingTimers();
+		expect(() => rendered.getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
+		await waitFor(() => expect(rendered.asFragment()).toMatchSnapshot());
 
-		expect(() => getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
-		expect(asFragment()).toMatchSnapshot();
+		jest.runOnlyPendingTimers();
 	});
 
 	it("should update wallet name", async () => {
@@ -139,36 +117,29 @@ describe("WalletDetails", () => {
 
 		const { getByTestId, getAllByTestId, asFragment } = rendered;
 
-		expect(asFragment()).toMatchSnapshot();
+		jest.runOnlyPendingTimers();
 
-		await act(async () => {
-			const dropdown = getAllByTestId("dropdown__toggle")[2];
-			expect(dropdown).toBeTruthy();
+		const dropdown = getAllByTestId("dropdown__toggle")[2];
+		await waitFor(() => expect(dropdown).toBeTruthy());
+		fireEvent.click(dropdown);
 
-			await fireEvent.click(dropdown);
+		const updateWalletNameOption = getByTestId("dropdown__option--0");
+		await waitFor(() => expect(updateWalletNameOption).toBeTruthy());
 
-			const updateWalletNameOption = getByTestId("dropdown__option--0");
-			await waitFor(() => expect(updateWalletNameOption).toBeTruthy());
+		fireEvent.click(updateWalletNameOption);
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-			fireEvent.click(updateWalletNameOption);
-			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+		const name = "Sample label name";
+		const updateNameInput = getByTestId("UpdateWalletName__input");
+		fireEvent.change(updateNameInput, { target: { value: name } });
+		await waitFor(() => expect(updateNameInput).toHaveValue(name));
 
-			const name = "Sample label name";
-			const updateNameInput = getByTestId("UpdateWalletName__input");
-			act(() => {
-				fireEvent.change(updateNameInput, { target: { value: name } });
-			});
+		fireEvent.click(getByTestId("UpdateWalletName__submit"));
+		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
 
-			await waitFor(() => expect(updateNameInput).toHaveValue(name));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 
-			const submitBtn = getByTestId("UpdateWalletName__submit");
-
-			fireEvent.click(submitBtn);
-
-			await waitFor(() => {
-				expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
-			});
-		});
+		jest.runOnlyPendingTimers();
 	});
 
 	it("should delete wallet", async () => {
@@ -192,27 +163,23 @@ describe("WalletDetails", () => {
 
 		const { getByTestId, getAllByTestId, asFragment } = rendered;
 
-		await waitFor(() => expect(getByTestId("WalletHeader")).toBeTruthy());
+		const dropdown = getAllByTestId("dropdown__toggle")[2];
+		await waitFor(() => expect(dropdown).toBeTruthy());
+		fireEvent.click(dropdown);
 
-		expect(asFragment()).toMatchSnapshot();
+		const deleteWalletOption = getByTestId("dropdown__option--3");
+		await waitFor(() => expect(deleteWalletOption).toBeTruthy());
 
-		await act(async () => {
-			const dropdown = getAllByTestId("dropdown__toggle")[2];
-			expect(dropdown).toBeTruthy();
+		fireEvent.click(deleteWalletOption);
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-			await fireEvent.click(dropdown);
+		await waitFor(() => expect(profile.wallets().count()).toEqual(2));
 
-			const deleteWalletOption = getByTestId("dropdown__option--3");
-			expect(deleteWalletOption).toBeTruthy();
+		fireEvent.click(getByTestId("DeleteResource__submit-button"));
 
-			await fireEvent.click(deleteWalletOption);
-			expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => expect(profile.wallets().count()).toEqual(1));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 
-			await waitFor(() => expect(profile.wallets().count()).toEqual(2));
-
-			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
-
-			await waitFor(() => expect(profile.wallets().count()).toEqual(1));
-		});
+		jest.runOnlyPendingTimers();
 	});
 });
