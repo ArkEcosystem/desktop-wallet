@@ -11,6 +11,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 type GeneralProps = {
 	env: Environment;
@@ -180,6 +181,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+
+		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
 
