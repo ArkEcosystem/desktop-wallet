@@ -20,19 +20,19 @@ test("should save settings", async (t) => {
 	await t.typeText(nameInput, "Anne Doe");
 
 	await t.click(Selector("button").withText("Select Language"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("English"));
 
 	await t.click(Selector("button").withText("Select Passphrase Language"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("English"));
 
 	await t.click(Selector("button").withText("Select Market Provider"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("CoinGecko"));
 
 	await t.click(Selector("button").withText("Select Currency"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("ETH"));
 
 	await t.click(Selector("button").withText("Select Time Format"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("24h"));
 
 	await t.click(Selector("input[name=isScreenshotProtection]").parent());
 	await t.click(Selector("input[name=isAdvancedMode]").parent());

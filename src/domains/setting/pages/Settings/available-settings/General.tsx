@@ -8,6 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
+import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -219,10 +220,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.passphraseLanguages}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -238,10 +236,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.currencies}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -259,10 +254,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.languages}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -278,10 +270,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.marketProviders}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -297,10 +286,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
 										}).toString(),
 									})}
-									options={[
-										{ label: "Option 1", value: "option1" },
-										{ label: "Option 2", value: "option2" },
-									]}
+									options={PlatformSdkChoices.timeFormats}
 								/>
 								<FormHelperText />
 							</FormField>
