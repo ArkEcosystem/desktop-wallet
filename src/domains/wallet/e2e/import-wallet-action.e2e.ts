@@ -1,8 +1,14 @@
-import { Selector } from "testcafe";
+import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
 
 fixture`Import Wallet action`.page`http://localhost:3000/`;
+
+const neoscanMock = RequestMock()
+	.onRequestTo("https://neoscan.io/api/main_net/v1/")
+	.respond(require("../../../tests/fixtures/coins/ark/neo-duplicate.json"), 200, {
+		"Access-Control-Allow-Origin": "https://neoscan.io",
+	});
 
 test("should import a wallet by mnemonic", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
@@ -102,7 +108,7 @@ test("should show an error message for invalid address", async (t) => {
 		.ok();
 });
 
-test("should show an error if import a NEO mainnet address", async (t) => {
+test.requestHooks(neoscanMock)("should show an error if import a NEO mainnet address", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
@@ -130,7 +136,7 @@ test("should show an error if import a NEO mainnet address", async (t) => {
 	await t.typeText(addressInput, "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
-	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 5000 });
 	await t.expect(Selector("div").withText("This address exists on the NEO Mainnet.").exists).ok();
 });
 
