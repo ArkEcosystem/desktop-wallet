@@ -7,13 +7,14 @@ import delegates from "../fixtures/coins/ark/delegates.json";
 import peers from "../fixtures/coins/ark/peers.json";
 import syncing from "../fixtures/coins/ark/syncing.json";
 import transactions from "../fixtures/coins/ark/transactions.json";
+import votesDevnet from "../fixtures/coins/ark/votes-devnet.json";
 import votes from "../fixtures/coins/ark/votes.json";
 import wallet from "../fixtures/coins/ark/wallet.json";
 
 export const mockArkHttp = () => {
 	nock.disableNetConnect();
 
-	nock(/https:\/\/.+.ark.io/)
+	nock("https://wallets.ark.io")
 		.get("/api/node/configuration")
 		.reply(200, configuration)
 		.get("/api/peers")
@@ -55,7 +56,7 @@ export const mockArkDevnetHttp = () => {
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, wallet)
 		.get(/\/api\/wallets\/.+\/votes/)
-		.reply(200, votes)
+		.reply(200, votesDevnet)
 		.get(/\/api\/wallets\/.+/)
 		.reply(200, wallet)
 		.get("/api/delegates")
