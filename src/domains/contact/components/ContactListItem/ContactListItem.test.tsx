@@ -1,23 +1,18 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Contact, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
+import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render } from "testing-library";
-import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { httpClient } from "app/services";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import nock from "nock";
 
 import { ContactListItem } from "./ContactListItem";
 
-const singleOption = [
-	{ label: "Option 1", value: "option_1" },
-];
+const singleOption = [{ label: "Option 1", value: "option_1" }];
 
-const multiOptions = [
-	...singleOption,
-	{ label: "Option 2", value: "option_2" },
-];
+const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }];
 
 let contact: Contact;
 let addressId: string;

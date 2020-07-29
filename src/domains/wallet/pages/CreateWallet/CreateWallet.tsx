@@ -172,7 +172,7 @@ export const FourthStep = () => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
 	const wallet: Wallet = getValues("wallet");
-	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.name() });
+	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 
 	const { t } = useTranslation();
 

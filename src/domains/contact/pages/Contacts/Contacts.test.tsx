@@ -138,7 +138,7 @@ describe("Contacts", () => {
 						target: { value: "name" },
 					});
 
-					fireEvent.click(getByTestId("NetworkIcon-ARK-Devnet"));
+					fireEvent.click(within(getByTestId("contact-form")).getByTestId("NetworkIcon-ARK-devnet"));
 				});
 
 				await waitFor(() => expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled());
@@ -177,7 +177,9 @@ describe("Contacts", () => {
 				expect(getByTestId("ContactList")).toBeTruthy();
 			});
 
-			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
+			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId(
+				"dropdown__toggle",
+			)[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
 			act(() => {
@@ -203,7 +205,9 @@ describe("Contacts", () => {
 				expect(getByTestId("ContactList")).toBeTruthy();
 			});
 
-			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
+			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId(
+				"dropdown__toggle",
+			)[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
 			act(() => {
@@ -238,7 +242,9 @@ describe("Contacts", () => {
 				expect(getByTestId("ContactList")).toBeTruthy();
 			});
 
-			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
+			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId(
+				"dropdown__toggle",
+			)[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
 			act(() => {
@@ -273,7 +279,9 @@ describe("Contacts", () => {
 				expect(getByTestId("ContactList")).toBeTruthy();
 			});
 
-			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
+			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId(
+				"dropdown__toggle",
+			)[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
 			act(() => {
@@ -301,7 +309,9 @@ describe("Contacts", () => {
 				expect(getByTestId("ContactList")).toBeTruthy();
 			});
 
-			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
+			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId(
+				"dropdown__toggle",
+			)[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
 			act(() => {
