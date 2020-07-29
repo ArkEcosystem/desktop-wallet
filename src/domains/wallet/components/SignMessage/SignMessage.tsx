@@ -93,11 +93,11 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
-				<Button variant="plain" onClick={onCancel}>
-					Cancel
+				<Button variant="plain" onClick={onCancel} data-testid="SignMessage__cancel">
+					{t("COMMON.CANCEL")}
 				</Button>
 				<Button type="submit" data-testid="SignMessage__submit-button">
-					Sign
+					{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
 				</Button>
 			</div>
 		</Form>
