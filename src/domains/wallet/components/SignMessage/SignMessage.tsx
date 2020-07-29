@@ -49,8 +49,6 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			mnemonic,
 		});
 
-		console.log("signedMessageResult", signedMessageResult);
-
 		setSignedMessage(signedMessageResult);
 		setIsSigned(true);
 	};
