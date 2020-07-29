@@ -1,11 +1,10 @@
-import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -21,21 +20,11 @@ type DashboardProps = {
 export const Dashboard = ({ transactions, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [wallets, setWallets] = useState<Wallet[] | undefined>([]);
+
 	const activeProfile = useActiveProfile();
+	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
+
 	const history = useHistory();
-
-	// TODO: remove use of timer
-	useEffect(() => {
-		const timer = setInterval(() => {
-			setWallets(activeProfile?.wallets().values());
-		}, 1000);
-
-		return () => {
-			clearInterval(timer);
-		};
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
-
 	const { t } = useTranslation();
 
 	// Wallet controls data
