@@ -59,7 +59,3 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 		</Page>
 	);
 };
-
-Settings.defaultProps = {
-	onSubmit: (profileData: any) => profileData,
-};
