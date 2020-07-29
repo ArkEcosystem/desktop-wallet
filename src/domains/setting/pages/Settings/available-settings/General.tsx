@@ -7,6 +7,7 @@ import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -20,6 +21,7 @@ type GeneralProps = {
 };
 
 export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
+	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
@@ -169,22 +171,22 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		isDarkMode,
 		isUpdateLedger,
 	}: any) => {
-		const profile = env.profiles().create(name);
-		profile.settings().set(ProfileSetting.Locale, language);
-		profile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.TimeFormat, timeFormat);
-		profile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
-		profile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
-		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		profile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+		activeProfile.settings().set(ProfileSetting.Name, name);
+		activeProfile.settings().set(ProfileSetting.Locale, language);
+		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
+		activeProfile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		activeProfile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		activeProfile.settings().set(ProfileSetting.TimeFormat, timeFormat);
+		activeProfile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
+		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
+		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 
 		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
 
-		onSubmit(profile);
+		onSubmit(activeProfile);
 	};
 
 	return (
