@@ -1,4 +1,5 @@
 export const translations: { [key: string]: any } = {
+	SETTINGS: "Settings",
 	CONTACTS: "Contacts",
 	ACCOUNT_TYPE: "Account Type",
 	ADAPTER: "Adapter",
