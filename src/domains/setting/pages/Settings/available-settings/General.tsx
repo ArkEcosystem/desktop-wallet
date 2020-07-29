@@ -10,6 +10,7 @@ import { Toggle } from "app/components/Toggle";
 import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 type GeneralProps = {
 	env: Environment;
@@ -178,6 +179,8 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		profile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		profile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
+
+		setScreenshotProtection(isScreenshotProtection);
 
 		await env.persist();
 
