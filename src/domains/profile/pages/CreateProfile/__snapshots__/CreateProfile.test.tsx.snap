@@ -35,7 +35,7 @@ exports[`CreateProfile should render 1`] = `
             class="max-w-lg mx-auto"
           >
             <h1
-              class="mb-0 md:text-4xl"
+              class="md:text-4xl mb-0"
             >
               Create Profile
             </h1>
@@ -116,10 +116,10 @@ exports[`CreateProfile should render 1`] = `
                         class="flex flex-row mt-2 mb-8"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
+                          class="border-theme-neutral-300 flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded"
                         >
                           <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                            class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
                             type="button"
                           >
                             <div
@@ -134,7 +134,7 @@ exports[`CreateProfile should render 1`] = `
                           </button>
                         </div>
                         <div
-                          class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                          class="bg-theme-neutral-light relative w-24 h-24 rounded"
                         >
                           <img
                             alt="random avatar"
@@ -142,7 +142,7 @@ exports[`CreateProfile should render 1`] = `
                             src="https://randomuser.me/api/portraits/men/3.jpg"
                           />
                           <button
-                            class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                            class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
                           >
                             <div
                               class="sc-AxhCb jYYSCW"
@@ -336,7 +336,7 @@ exports[`CreateProfile should render 1`] = `
                           class="flex flex-row justify-between"
                         >
                           <span
-                            class="mt-1 text-sm font-medium text-theme-neutral"
+                            class="text-theme-neutral mt-1 text-sm font-medium"
                           >
                             Want to set the wallet to dark mode?
                           </span>
@@ -433,7 +433,7 @@ exports[`CreateProfile should store profile 1`] = `
             class="max-w-lg mx-auto"
           >
             <h1
-              class="mb-0 md:text-4xl"
+              class="md:text-4xl mb-0"
             >
               Create Profile
             </h1>
@@ -514,10 +514,10 @@ exports[`CreateProfile should store profile 1`] = `
                         class="flex flex-row mt-2 mb-8"
                       >
                         <div
-                          class="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300"
+                          class="border-theme-neutral-300 flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded"
                         >
                           <button
-                            class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                            class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
                             type="button"
                           >
                             <div
@@ -532,7 +532,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </button>
                         </div>
                         <div
-                          class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                          class="bg-theme-neutral-light relative w-24 h-24 rounded"
                         >
                           <img
                             alt="random avatar"
@@ -540,7 +540,7 @@ exports[`CreateProfile should store profile 1`] = `
                             src="https://randomuser.me/api/portraits/men/3.jpg"
                           />
                           <button
-                            class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                            class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
                           >
                             <div
                               class="sc-AxhCb jYYSCW"
@@ -597,7 +597,7 @@ exports[`CreateProfile should store profile 1`] = `
                         name="marketProvider"
                         readonly=""
                         type="text"
-                        value="option1"
+                        value="coincap"
                       />
                       <div
                         class="relative w-full cursor-pointer"
@@ -612,7 +612,7 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-2-toggle-button"
                             type="button"
                           >
-                            Option 1
+                            CoinCap
                           </button>
                           <ul
                             aria-labelledby="downshift-2-label"
@@ -658,7 +658,7 @@ exports[`CreateProfile should store profile 1`] = `
                         name="currency"
                         readonly=""
                         type="text"
-                        value="option1"
+                        value="btc"
                       />
                       <div
                         class="relative w-full cursor-pointer"
@@ -673,7 +673,7 @@ exports[`CreateProfile should store profile 1`] = `
                             id="downshift-3-toggle-button"
                             type="button"
                           >
-                            Option 1
+                            BTC (Ƀ)
                           </button>
                           <ul
                             aria-labelledby="downshift-3-label"
@@ -734,7 +734,7 @@ exports[`CreateProfile should store profile 1`] = `
                           class="flex flex-row justify-between"
                         >
                           <span
-                            class="mt-1 text-sm font-medium text-theme-neutral"
+                            class="text-theme-neutral mt-1 text-sm font-medium"
                           >
                             Want to set the wallet to dark mode?
                           </span>

@@ -918,10 +918,10 @@ exports[`Settings should render 1`] = `
                             class="flex flex-row mt-2"
                           >
                             <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                              class="border-theme-neutral-200 flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded"
                             >
                               <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
                                 type="button"
                               >
                                 <div
@@ -936,7 +936,7 @@ exports[`Settings should render 1`] = `
                               </button>
                             </div>
                             <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                              class="bg-theme-neutral-light relative w-24 h-24 rounded"
                             >
                               <img
                                 alt="random avatar"
@@ -944,7 +944,7 @@ exports[`Settings should render 1`] = `
                                 src="https://randomuser.me/api/portraits/men/3.jpg"
                               />
                               <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                                class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -1334,7 +1334,7 @@ exports[`Settings should render 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
@@ -1389,7 +1389,7 @@ exports[`Settings should render 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
@@ -1540,7 +1540,7 @@ exports[`Settings should render 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               Want to set the wallet to dark mode?
                             </span>
@@ -1595,7 +1595,7 @@ exports[`Settings should render 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
@@ -3393,10 +3393,10 @@ exports[`Settings should store profile 1`] = `
                             class="flex flex-row mt-2"
                           >
                             <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                              class="border-theme-neutral-200 flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded"
                             >
                               <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
                                 type="button"
                               >
                                 <div
@@ -3411,7 +3411,7 @@ exports[`Settings should store profile 1`] = `
                               </button>
                             </div>
                             <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                              class="bg-theme-neutral-light relative w-24 h-24 rounded"
                             >
                               <img
                                 alt="random avatar"
@@ -3419,7 +3419,7 @@ exports[`Settings should store profile 1`] = `
                                 src="https://randomuser.me/api/portraits/men/3.jpg"
                               />
                               <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                                class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -3480,7 +3480,7 @@ exports[`Settings should store profile 1`] = `
                               name="passphraseLanguage"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="chinese_simplified"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -3495,7 +3495,7 @@ exports[`Settings should store profile 1`] = `
                                   id="downshift-6-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  Chinese Simplified
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-6-label"
@@ -3541,7 +3541,7 @@ exports[`Settings should store profile 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="btc"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -3556,7 +3556,7 @@ exports[`Settings should store profile 1`] = `
                                   id="downshift-7-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  BTC (Ƀ)
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-7-label"
@@ -3606,7 +3606,7 @@ exports[`Settings should store profile 1`] = `
                               name="language"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="en-US"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -3621,7 +3621,7 @@ exports[`Settings should store profile 1`] = `
                                   id="downshift-8-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  English
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-8-label"
@@ -3667,7 +3667,7 @@ exports[`Settings should store profile 1`] = `
                               name="marketProvider"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="coincap"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -3682,7 +3682,7 @@ exports[`Settings should store profile 1`] = `
                                   id="downshift-9-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  CoinCap
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-9-label"
@@ -3728,7 +3728,7 @@ exports[`Settings should store profile 1`] = `
                               name="timeFormat"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="h:mm A"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -3743,7 +3743,7 @@ exports[`Settings should store profile 1`] = `
                                   id="downshift-10-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  12h
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-10-label"
@@ -3809,7 +3809,7 @@ exports[`Settings should store profile 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
@@ -3864,7 +3864,7 @@ exports[`Settings should store profile 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
@@ -4015,7 +4015,7 @@ exports[`Settings should store profile 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               Want to set the wallet to dark mode?
                             </span>
@@ -4070,7 +4070,7 @@ exports[`Settings should store profile 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
@@ -4522,10 +4522,10 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex flex-row mt-2"
                           >
                             <div
-                              class="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200"
+                              class="border-theme-neutral-200 flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded"
                             >
                               <button
-                                class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                class="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
                                 type="button"
                               >
                                 <div
@@ -4540,7 +4540,7 @@ exports[`Settings should submit using default props 1`] = `
                               </button>
                             </div>
                             <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
+                              class="bg-theme-neutral-light relative w-24 h-24 rounded"
                             >
                               <img
                                 alt="random avatar"
@@ -4548,7 +4548,7 @@ exports[`Settings should submit using default props 1`] = `
                                 src="https://randomuser.me/api/portraits/men/3.jpg"
                               />
                               <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+                                class="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded"
                               >
                                 <div
                                   class="sc-AxirZ hDwaov"
@@ -4609,7 +4609,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="passphraseLanguage"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="chinese_simplified"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -4624,7 +4624,7 @@ exports[`Settings should submit using default props 1`] = `
                                   id="downshift-51-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  Chinese Simplified
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-51-label"
@@ -4670,7 +4670,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="btc"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -4685,7 +4685,7 @@ exports[`Settings should submit using default props 1`] = `
                                   id="downshift-52-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  BTC (Ƀ)
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-52-label"
@@ -4735,7 +4735,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="language"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="en-US"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -4750,7 +4750,7 @@ exports[`Settings should submit using default props 1`] = `
                                   id="downshift-53-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  English
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-53-label"
@@ -4796,7 +4796,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="marketProvider"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="coincap"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -4811,7 +4811,7 @@ exports[`Settings should submit using default props 1`] = `
                                   id="downshift-54-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  CoinCap
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-54-label"
@@ -4857,7 +4857,7 @@ exports[`Settings should submit using default props 1`] = `
                               name="timeFormat"
                               readonly=""
                               type="text"
-                              value="option1"
+                              value="h:mm A"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -4872,7 +4872,7 @@ exports[`Settings should submit using default props 1`] = `
                                   id="downshift-55-toggle-button"
                                   type="button"
                                 >
-                                  Option 1
+                                  12h
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-55-label"
@@ -4938,7 +4938,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               This protection will protect your money from unwanted Screenshot you PC.
                             </span>
@@ -4993,7 +4993,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
@@ -5144,7 +5144,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               Want to set the wallet to dark mode?
                             </span>
@@ -5199,7 +5199,7 @@ exports[`Settings should submit using default props 1`] = `
                             class="flex flex-row justify-between"
                           >
                             <span
-                              class="mt-1 text-sm text-theme-neutral"
+                              class="text-theme-neutral mt-1 text-sm"
                             >
                               You hereby assume the risk associated with downloading files and installing said files from a direct URL link.
                             </span>
