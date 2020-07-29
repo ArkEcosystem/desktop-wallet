@@ -46,20 +46,24 @@ export const WalletDetails = () => {
 	// TODO: Replace logic with sdk
 	const getVotes = React.useCallback(async () => {
 		const response = await activeWallet!.votes();
-		const transactions = response.data.all();
+		const transaction = response.data.first();
 		const result: WalletData[] = [];
 
-		for (const tx of transactions) {
-			const votes = tx.asset().votes as string[];
+		const votes = transaction.asset().votes as string[];
 
-			for (const vote of votes) {
-				const publicKey = vote.substr(1);
-				const data = await activeWallet!.coin().client().wallet(publicKey);
-				result.push(data);
+		for (const vote of votes) {
+			const mode = vote[0];
+			const publicKey = vote.substr(1);
+			/* istanbul ignore next */
+			if (mode === "-") {
+				continue;
 			}
+
+			const data = await activeWallet!.coin().client().wallet(publicKey);
+			result.push(data);
 		}
 
-		setVotes(new WalletDataCollection(result));
+		setVotes(() => new WalletDataCollection(result));
 	}, [activeWallet]);
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
@@ -119,20 +123,24 @@ export const WalletDetails = () => {
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
 
-				<Section>{<WalletVote votes={votes} />}</Section>
+				<Section>{votes && <WalletVote votes={votes} />}</Section>
 
 				<Section>
-					<WalletRegistrations
-						address={activeWallet?.address()}
-						delegate={activeWallet?.isDelegate() ? walletData : undefined}
-						business={undefined}
-						isMultisig={activeWallet?.isMultiSignature()}
-						hasBridgechains={false}
-						hasSecondSignature={activeWallet?.isSecondSignature()}
-						hasPlugins={false}
-						onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
-						onRegister={() => history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)}
-					/>
+					{walletData && (
+						<WalletRegistrations
+							address={activeWallet?.address()}
+							delegate={activeWallet?.isDelegate() ? walletData : undefined}
+							business={undefined}
+							isMultisig={activeWallet?.isMultiSignature()}
+							hasBridgechains={false}
+							hasSecondSignature={activeWallet?.isSecondSignature()}
+							hasPlugins={false}
+							onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
+							onRegister={() =>
+								history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
+							}
+						/>
+					)}
 				</Section>
 
 				<Section>
@@ -160,9 +168,9 @@ export const WalletDetails = () => {
 			/>
 
 			<SignMessage
-				profileId={activeProfile?.id() as string}
-				walletId={activeWallet?.id() as string}
-				signatoryAddress={activeWallet?.address() as string}
+				profileId={activeProfile!.id()}
+				walletId={activeWallet!.id()}
+				signatoryAddress={activeWallet!.address()}
 				isOpen={isSigningMessage}
 				onClose={() => setIsSigningMessage(false)}
 				onCancel={() => setIsSigningMessage(false)}
