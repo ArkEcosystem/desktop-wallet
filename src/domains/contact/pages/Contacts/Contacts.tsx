@@ -58,6 +58,9 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
 
 	useEffect(() => {
+		// TODO: Uncomment this to fill contacts from platform-sdk.
+		//       Needs 'ContactListItem' component to be refactored to
+		//       render ContactAddress model.
 		// setContacts(activeProfile?.contacts().values() || []);
 	}, [activeProfile, env]);
 
