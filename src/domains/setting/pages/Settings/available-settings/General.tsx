@@ -33,21 +33,21 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			labelDescriptionClass: "mt-1",
 			content: (
 				<div className="flex flex-row mt-2">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded border-theme-neutral-200">
+					<div className="border-theme-neutral-200 flex items-center justify-center w-24 h-24 mr-6 border border-dashed rounded">
 						<button
 							type="button"
-							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							className="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+					<div className="bg-theme-neutral-light relative w-24 h-24 rounded">
 						<img
 							src="https://randomuser.me/api/portraits/men/3.jpg"
 							className="object-cover rounded"
 							alt="random avatar"
 						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
+						<button className="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded">
 							<Icon name="Close" height={12} width={12} />
 						</button>
 					</div>
@@ -64,7 +64,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
@@ -84,7 +84,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			wrapperClass: "py-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
@@ -108,8 +108,11 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						})}
 						ref={register()}
 						options={[
-							{ label: "Option 1", value: "option1" },
-							{ label: "Option 2", value: "option2" },
+							{ label: "5 Minutes", value: 5 },
+							{ label: "10 Minutes", value: 10 },
+							{ label: "15 Minutes", value: 15 },
+							{ label: "30 Minutes", value: 30 },
+							{ label: "60 Minutes", value: 60 },
 						]}
 					/>
 					<FormHelperText />
@@ -126,7 +129,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
@@ -142,7 +145,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.GENERAL.OTHER.UPDATE_LEDGER.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
