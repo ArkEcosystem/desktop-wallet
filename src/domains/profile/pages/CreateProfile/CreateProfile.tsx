@@ -9,7 +9,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { PlatformOptions } from "data/options";
+import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -128,7 +128,7 @@ export const CreateProfile = () => {
 												field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 											}).toString(),
 										})}
-										options={PlatformOptions.marketProviders}
+										options={PlatformSdkChoices.marketProviders}
 									/>
 									<FormHelperText />
 								</FormField>
@@ -144,7 +144,7 @@ export const CreateProfile = () => {
 												field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 											}).toString(),
 										})}
-										options={PlatformOptions.currencies}
+										options={PlatformSdkChoices.currencies}
 									/>
 									<FormHelperText />
 								</FormField>

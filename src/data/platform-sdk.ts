@@ -1,4 +1,11 @@
-export const PlatformOptions = {
+/**
+ * These options are intended to be used with drop-down menus.
+ *
+ * All of them correspond to values that the Platform SDK and
+ * its various components can understand and correspond to as
+ * you would expect without having to implement any wrappers.
+ */
+export const PlatformSdkChoices = {
 	marketProviders: [
 		{ label: "CoinCap", value: "coincap" },
 		{ label: "CoinGecko", value: "coingecko" },

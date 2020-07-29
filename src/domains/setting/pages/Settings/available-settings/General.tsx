@@ -7,7 +7,7 @@ import { Input } from "app/components/Input";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { PlatformOptions } from "data/options";
+import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -218,7 +218,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 										}).toString(),
 									})}
-									options={PlatformOptions.passphraseLanguages}
+									options={PlatformSdkChoices.passphraseLanguages}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -234,7 +234,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 										}).toString(),
 									})}
-									options={PlatformOptions.currencies}
+									options={PlatformSdkChoices.currencies}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -252,7 +252,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
 										}).toString(),
 									})}
-									options={PlatformOptions.languages}
+									options={PlatformSdkChoices.languages}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -268,7 +268,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 										}).toString(),
 									})}
-									options={PlatformOptions.marketProviders}
+									options={PlatformSdkChoices.marketProviders}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -284,7 +284,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
 										}).toString(),
 									})}
-									options={PlatformOptions.timeFormats}
+									options={PlatformSdkChoices.timeFormats}
 								/>
 								<FormHelperText />
 							</FormField>
