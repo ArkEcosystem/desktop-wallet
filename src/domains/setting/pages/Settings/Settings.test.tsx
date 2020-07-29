@@ -68,6 +68,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
+			NAME: "test profile",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
 			MARKET_PROVIDER: "coincap",
@@ -90,6 +91,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
+			NAME: "test profile 2",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
 			MARKET_PROVIDER: "coincap",
