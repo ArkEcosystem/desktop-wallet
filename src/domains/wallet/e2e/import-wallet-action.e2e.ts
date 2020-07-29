@@ -128,7 +128,7 @@ test("should show an error message if trying to import a duplicate wallet", asyn
 	// Input address and import wallet
 	addressInput = Selector("input[name=address]");
 
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.typeText(addressInput, "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	// Try to import a duplicate wallet
@@ -154,12 +154,11 @@ test("should show an error message if trying to import a duplicate wallet", asyn
 	// Input address and import wallet
 	addressInput = Selector("input[name=address]");
 
-	// Import a duplicate wallet
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
+	await t.typeText(addressInput, "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
 	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 5000 });
 	await t
-		.expect(Selector("div").withText("The wallet [D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib] already exists.").exists)
+		.expect(Selector("div").withText("The wallet [D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD] already exists.").exists)
 		.ok();
 });
