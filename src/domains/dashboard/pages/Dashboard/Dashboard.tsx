@@ -28,7 +28,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
-		setScreenshotProtection(Boolean(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection)));
+		setScreenshotProtection(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === true);
 	}, [activeProfile]);
 
 	// Wallet controls data
@@ -63,7 +63,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
 					<PercentageBar
 						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
 						data={portfolioPercentages}
