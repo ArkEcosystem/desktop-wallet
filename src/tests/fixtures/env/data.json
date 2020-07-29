@@ -2,12 +2,11 @@
 	"profiles": {
 		"bob": {
 			"id": "bob",
-			"name": "Bob",
 			"contacts": {},
 			"data": {},
 			"notifications": {},
 			"plugins": { "data": {}, "blacklist": [] },
-			"settings": {},
+			"settings": { "NAME": "Bob" },
 			"wallets": {}
 		}
 	},
