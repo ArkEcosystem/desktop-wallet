@@ -15,7 +15,7 @@ export const VerifyMessageStatus = ({ title, description, type, onClose, isOpen 
 	const StatusInfo = type === "success" ? ConfirmedBanner : MistakeBanner;
 
 	return (
-		<Modal title={title} description={description} isOpen={isOpen} onClick={onClose}>
+		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose}>
 			<StatusInfo className="w-full mt-8" />
 		</Modal>
 	);
