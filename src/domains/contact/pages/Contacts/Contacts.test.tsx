@@ -155,6 +155,11 @@ describe("Contacts", () => {
 		});
 
 		await waitFor(() => expect(queryByTestId("modal__inner")).toBeNull());
+
+		// Check if contact is created
+		if (buttonId === "contact-form__save-btn") {
+			expect(profile.contacts().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD").length).toBe(1);
+		}
 	});
 
 	it("should open delete contact modal", async () => {
