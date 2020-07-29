@@ -6,47 +6,46 @@ import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
+import { VerifyMessageStatus } from "domains/wallet/components/VerifyMessageStatus";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	onSubmit?: any;
-	onCancel?: any;
 	isOpen: boolean;
-	handleClose?: any;
 	signatory?: string;
 	profileId: string;
-	walletPublicKey: string;
+	walletId: string;
+	onSubmit?: any;
+	onCancel?: any;
+	onClose?: any;
 };
 
-export const VerifyMessage = ({
-	profileId,
-	walletPublicKey,
-	onSubmit,
-	onCancel,
-	signatory,
-	isOpen,
-	handleClose,
-}: Props) => {
+export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, signatory, isOpen, onClose }: Props) => {
 	const { env } = useEnvironmentContext();
 	const form = useForm();
 	const { t } = useTranslation();
 
 	const { register } = form;
 	const [verifyAddress, setVerifyAddress] = useState(true);
+	const [isMessageVerified, setIsMessageVerified] = useState(false);
+	const [isSubmitted, setIsSubmitted] = useState(false);
 
 	const handleSubmit = async () => {
 		let isVerified = false;
 		const formValues = form.getValues();
 		const profile = env?.profiles().findById(profileId);
-		const wallet = profile?.wallets().findByPublicKey(walletPublicKey);
+		const wallet = profile?.wallets().findById(walletId);
 
 		try {
 			const signedMessage = verifyAddress ? JSON.parse(formValues["signed-message-content"]) : formValues;
-			isVerified = (await wallet?.message().verify(signedMessage)) as boolean;
+			isVerified = await wallet?.message().verify(signedMessage);
+			setIsSubmitted(true);
+			setIsMessageVerified(isVerified);
 			onSubmit?.(isVerified);
 		} catch {
+			setIsSubmitted(true);
+			setIsMessageVerified(false);
 			onSubmit?.(false);
 		}
 	};
@@ -120,12 +119,29 @@ export const VerifyMessage = ({
 			</div>
 		);
 	};
+
+	if (isSubmitted) {
+		const statusKey = isMessageVerified ? "SUCCESS" : "FAIL";
+		return (
+			<VerifyMessageStatus
+				title={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_TITLE`)}
+				description={t(`WALLETS.MODAL_VERIFY_MESSAGE.${statusKey}_DESCRIPTION`)}
+				type={isMessageVerified ? "success" : "error"}
+				isOpen={isOpen}
+				onClose={() => {
+					setIsSubmitted(false);
+					onClose?.();
+				}}
+			/>
+		);
+	}
+
 	return (
 		<Modal
 			isOpen={isOpen}
 			title={t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE")}
 			description={t("WALLETS.MODAL_VERIFY_MESSAGE.DESCRIPTION")}
-			onClose={handleClose}
+			onClose={() => onClose?.()}
 		>
 			<div className="mt-8">
 				<div className="flex flex-col pb-6 border-b border-dashed border-theme-neutral-light">

@@ -51,8 +51,9 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
-			EXCHANGE_CURRENCY: "option1",
-			MARKET_PROVIDER: "option1",
+			NAME: "test profile",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
 			THEME: "light",
 		});
 
@@ -67,8 +68,9 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
-			EXCHANGE_CURRENCY: "option1",
-			MARKET_PROVIDER: "option1",
+			NAME: "test profile 2",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
 			THEME: "dark",
 		});
 

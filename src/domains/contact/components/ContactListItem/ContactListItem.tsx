@@ -14,7 +14,8 @@ import { ContactListItemProps, Option } from "./ContactListItem.models";
 export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
-	const walletTypes: string[] = ["Delegate", "Business", "Bridgechain"];
+	// const walletTypes: string[] = ["Delegate", "Business", "Bridgechain"];
+	const walletTypes: string[] = [];
 
 	const isCondensed = () => {
 		return variant === "condensed";
@@ -58,19 +59,13 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 					{!isCondensed() && (
 						<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
 							{walletTypes.map((type: string) => {
-								try {
-									if (address[`is${type}`]()) {
-										return (
-											<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-												<Circle className="border-black">
-													<Icon name={type} width={25} height={25} />
-												</Circle>
-											</Tippy>
-										);
-									}
-								} catch {
-									return null;
-								}
+								return address[`is${type}`]() ? (
+									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+										<Circle className="border-black">
+											<Icon name={type} width={25} height={25} />
+										</Circle>
+									</Tippy>
+								) : null;
 							})}
 						</td>
 					)}

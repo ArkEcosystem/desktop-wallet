@@ -68,11 +68,12 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
-			LOCALE: "option1",
-			BIP39_LOCALE: "option1",
-			MARKET_PROVIDER: "option1",
-			EXCHANGE_CURRENCY: "option1",
-			TIME_FORMAT: "option1",
+			NAME: "test profile",
+			LOCALE: "en-US",
+			BIP39_LOCALE: "chinese_simplified",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
+			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: true,
 			THEME: "light",
@@ -90,11 +91,12 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
-			LOCALE: "option1",
-			BIP39_LOCALE: "option1",
-			MARKET_PROVIDER: "option1",
-			EXCHANGE_CURRENCY: "option1",
-			TIME_FORMAT: "option1",
+			NAME: "test profile 2",
+			LOCALE: "en-US",
+			BIP39_LOCALE: "chinese_simplified",
+			MARKET_PROVIDER: "coincap",
+			EXCHANGE_CURRENCY: "btc",
+			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: true,
 			THEME: "dark",

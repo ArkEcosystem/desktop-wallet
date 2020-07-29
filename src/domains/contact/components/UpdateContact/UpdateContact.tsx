@@ -29,11 +29,11 @@ export const UpdateContact = ({
 	const { t } = useTranslation();
 	const { env, persist } = useEnvironmentContext();
 
-	const handleSave = async ({ name, contactAddresses }: any) => {
+	const handleSave = async ({ name, addresses }: any) => {
 		const profile = env.profiles().findById(profileId);
 		await profile?.contacts().update(contact.id, {
 			name,
-			addresses: contactAddresses,
+			addresses,
 		});
 		await persist();
 		onSave?.(contact.id);

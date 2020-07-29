@@ -1,15 +1,16 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { Table } from "app/components/Table";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import { CreateContact } from "domains/contact/components/CreateContact";
 import { DeleteContact } from "domains/contact/components/DeleteContact";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const { ContactsBanner } = images.contacts.pages.contacts;
@@ -40,20 +41,26 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	networks: NetworkData[];
+	networks?: NetworkData[];
 	onSearch?: any;
 };
 
 export const Contacts = ({ networks, onSearch }: ContactsProps) => {
+	const { env, persist } = useEnvironmentContext();
+	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
+
+	const [contacts, setContacts] = useState<Contact[]>([]);
+	const hasContacts = !!contacts.length;
+
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
 
-	const activeProfile = useActiveProfile();
-	const contacts = activeProfile?.contacts();
+	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
 
-	const hasContacts = !!activeProfile?.contacts().count();
-
-	const { t } = useTranslation();
+	useEffect(() => {
+		setContacts(activeProfile?.contacts().values() || []);
+	}, [activeProfile, env]);
 
 	const contactOptions = [
 		{ label: t("COMMON.SEND"), value: "send" },
@@ -88,7 +95,10 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 		},
 	];
 
-	const handleOnSave = () => {
+	const handleOnSave = async ({ name, addresses }: any) => {
+		const contact = activeProfile?.contacts().create(name);
+		await activeProfile?.contacts().update(contact?.id() as string, { addresses });
+		await persist();
 		setCreateIsOpen(false);
 	};
 
@@ -128,7 +138,7 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 
 					{hasContacts && (
 						<div className="w-full" data-testid="ContactList">
-							<Table columns={listColumns} data={contacts!.values()}>
+							<Table columns={listColumns} data={contacts}>
 								{(contact: any) => (
 									<ContactListItem
 										contact={contact}
@@ -144,7 +154,7 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 
 			<CreateContact
 				isOpen={createIsOpen}
-				networks={networks}
+				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={handleOnSave}
@@ -164,5 +174,4 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 
 Contacts.defaultProps = {
 	contacts: [],
-	networks: [],
 };

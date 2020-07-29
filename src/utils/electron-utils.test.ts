@@ -1,15 +1,22 @@
 import electron from "electron";
 
-import { openFile, saveFile } from "./electron-utils";
+import { openFile, saveFile, setScreenshotProtection } from "./electron-utils";
 
-jest.mock("electron", () => ({
-	remote: {
-		dialog: {
-			showOpenDialog: jest.fn(),
-			showSaveDialog: jest.fn(),
+jest.mock("electron", () => {
+	const setContentProtection = jest.fn();
+
+	return {
+		remote: {
+			dialog: {
+				showOpenDialog: jest.fn(),
+				showSaveDialog: jest.fn(),
+			},
+			getCurrentWindow: () => ({
+				setContentProtection,
+			}),
 		},
-	},
-}));
+	};
+});
 
 jest.mock("fs", () => ({
 	writeFileSync: jest.fn(),
@@ -22,7 +29,24 @@ const defaultFilters = [
 ];
 
 describe("Electron utils", () => {
-	let wrapper;
+	describe("setScreenshotProtection", () => {
+		it("should toggle", () => {
+			const setContentProtectionMock = jest
+				.spyOn(electron.remote.getCurrentWindow(), "setContentProtection")
+				.mockImplementation();
+
+			setScreenshotProtection(true);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, true);
+
+			setContentProtectionMock.mockClear();
+			setScreenshotProtection(false);
+
+			expect(setContentProtectionMock).toHaveBeenNthCalledWith(1, false);
+
+			setContentProtectionMock.mockRestore();
+		});
+	});
 
 	describe("saveFile", () => {
 		let showSaveDialogMock;

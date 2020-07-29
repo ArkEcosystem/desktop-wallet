@@ -35,7 +35,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -105,7 +105,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -230,7 +230,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/portfolio"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/portfolio"
         >
           <span>
             Go back to Portfolio
@@ -436,7 +436,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                       <div
                         aria-label="Ark Devnet"
                         class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
-                        data-testid="NetworkIcon"
+                        data-testid="NetworkIcon-ARK-devnet"
                       >
                         <div
                           class="sc-AxirZ iQaTP"
@@ -484,21 +484,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                     </td>
                     <td
                       class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
-                    >
-                      <div
-                        class="sc-fznyAO gQONjx border-black"
-                      >
-                        <div
-                          class="sc-AxirZ dCVESD"
-                          height="25"
-                          width="25"
-                        >
-                          <svg>
-                            delegate.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
+                    />
                     <td
                       class="border-b border-dashed border-theme-neutral-200"
                     >
@@ -530,316 +516,6 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Contacts without contacts should render empty 1`] = `
-<DocumentFragment>
-  <div
-    class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
-  >
-    <nav
-      aria-labelledby="main menu"
-      class="sc-fzoLag iezQBg"
-    >
-      <div
-        class="px-4 sm:px-6 lg:px-"
-      >
-        <div
-          class="relative flex justify-between h-20 md:h-24"
-        >
-          <div
-            class="flex items-center flex-shrink-0"
-          >
-            <div
-              class="flex p-2 mr-4 rounded-lg bg-logo"
-            >
-              <img
-                alt="ARK Logo"
-                class="h-6 md:h-8 lg:h-10"
-                src="ark-logo.png"
-              />
-            </div>
-            <ul
-              class="flex h-20 md:h-24"
-            >
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
-                  title="Portfolio"
-                >
-                  Portfolio
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
-                  title="Plugins"
-                >
-                  Plugins
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
-                  title="Exchange"
-                >
-                  Exchange
-                </a>
-              </li>
-              <li
-                class="flex"
-              >
-                <a
-                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
-                  title="News"
-                >
-                  News
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="flex items-center"
-          >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
-            >
-              <div
-                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    notification.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <a
-                data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    sent.svg
-                  </svg>
-                </div>
-              </a>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
-            >
-              <button
-                class="sc-AxjAm JgGpT"
-                color="primary"
-                data-testid="navbar__buttons--receive"
-                type="button"
-              >
-                <div
-                  class="sc-AxirZ hmuEJr"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    receive.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="h-8 border-r border-theme-neutral-200"
-            />
-            <div
-              class="p-2 ml-4 text-right"
-            >
-              <div
-                class="text-xs text-theme-neutral"
-              >
-                Your balance
-              </div>
-              <div
-                class="text-sm font-bold text-theme-neutral-dark"
-              />
-            </div>
-            <div
-              class="flex p-1 cusror-pointer"
-            >
-              <div
-                class="relative"
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="cursor-pointer"
-                  data-testid="navbar__useractions"
-                >
-                  <div
-                    class="sc-fznyAO hUVUQM -mr-1 border-theme-neutral-300"
-                  >
-                    <span
-                      class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </div>
-                  <div
-                    class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
-                  >
-                    <span
-                      class="text-sm text-theme-background"
-                    />
-                    <span
-                      class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
-                    >
-                      <div
-                        class="sc-AxirZ fttODj"
-                        height="10"
-                        width="10"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                      <span />
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <div
-      class="flex items-center space-x-2 container py-5 mx-auto font-semibold px-14 text-theme-neutral-dark"
-      data-testid="breadcrumbs__wrapper"
-    >
-      <div
-        class="sc-AxirZ hVzDKK"
-        height="10"
-        width="19"
-      >
-        <svg>
-          arrow-back.svg
-        </svg>
-      </div>
-      <div
-        class="space-x-2"
-      >
-        <a
-          class="text-theme-neutral-dark"
-          href="/profiles/bob/portfolio"
-        >
-          <span>
-            Go back to Portfolio
-          </span>
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col flex-1 space-y-5 "
-    >
-      <div
-        class="sc-fzoXzr imWwrn"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="flex items-end justify-between bg-theme-background"
-          >
-            <div>
-              <h1
-                class="mb-0 md:text-4xl"
-                data-testid="header__title"
-              >
-                My Contacts
-              </h1>
-              <div
-                class="text-theme-neutral-dark"
-                data-testid="header__subtitle"
-              >
-                Manage your frequent contacts
-              </div>
-            </div>
-            <div>
-              <div
-                class="flex justify-end items-top"
-              >
-                <button
-                  class="sc-AxjAm ddQVWI whitespace-no-wrap"
-                  color="primary"
-                  data-testid="contacts__add-contact-btn"
-                  type="button"
-                >
-                  Add Contact
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="sc-fzoXzr imWwrn flex-1"
-      >
-        <div
-          class="container py-16 mx-auto px-14"
-        >
-          <div
-            class="text-center"
-            data-testid="contacts__banner"
-          >
-            <svg
-              class="mx-auto"
-              height="175"
-            >
-              contacts-banner.svg
-            </svg>
-            <div
-              class="mt-8 text-theme-neutral-dark"
-            >
-              Add your most frequent contacts for fast, easy payments
             </div>
           </div>
         </div>

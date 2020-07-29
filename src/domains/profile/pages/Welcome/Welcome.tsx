@@ -8,6 +8,7 @@ import { ProfileCard } from "domains/profile/components/ProfileCard";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { setScreenshotProtection } from "utils/electron-utils";
 
 const { WelcomeBanner } = images.profile.pages.welcome;
 
@@ -20,6 +21,8 @@ export const Welcome = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
+
+	React.useEffect(() => setScreenshotProtection(true));
 
 	return (
 		<Page navbarStyle="logo-only">

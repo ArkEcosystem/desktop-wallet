@@ -6,7 +6,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { profiles } from "tests/fixtures/env/data.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { act, fireEvent, RenderResult, renderWithRouter, waitFor, within } from "utils/testing-library";
 
@@ -19,7 +19,6 @@ let firstContactId: string;
 
 let rendered: RenderResult;
 const history = createMemoryHistory();
-const contactsURL = "/profiles/bob/contacts";
 
 describe("Contacts", () => {
 	beforeAll(() => {
@@ -34,52 +33,56 @@ describe("Contacts", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
 			.persist();
 	});
 
-	describe("without contacts", () => {
-		it("should render empty", () => {
-			history.push(contactsURL);
+	// describe("without contacts", () => {
+	// 	it("should render empty", () => {
+	// 		history.push(contactsURL);
 
-			const { asFragment, getByTestId } = renderWithRouter(
-				<Route path="/profiles/:profileId/contacts">
-					<Contacts />
-				</Route>,
-				{
-					routes: [contactsURL],
-					history,
-				},
-			);
+	// 		const { asFragment, getByTestId } = renderWithRouter(
+	// 			<Route path="/profiles/:profileId/contacts">
+	// 				<Contacts />
+	// 			</Route>,
+	// 			{
+	// 				routes: [contactsURL],
+	// 				history,
+	// 			},
+	// 		);
 
-			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+	// 		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+	// 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
-			expect(getByTestId("contacts__banner")).toBeTruthy();
+	// 		expect(getByTestId("contacts__banner")).toBeTruthy();
 
-			expect(asFragment()).toMatchSnapshot();
-		});
-	});
+	// 		expect(asFragment()).toMatchSnapshot();
+	// 	});
+	// });
 
 	describe("with contacts", () => {
 		beforeEach(async () => {
 			env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-			await env.bootFromObject({ data: {}, profiles });
-			profile = env.profiles().findById("bob");
+			await env.bootFromObject(fixtureData);
+			profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
-			const contact = profile.contacts().create("Jane Doe");
-			firstContactId = contact.id();
+			firstContactId = profile.contacts().values()[0].id();
 
-			await contact.addresses().create(
-				{
-					coin: "ARK",
-					network: "devnet",
-					name: "Jane's Devnet Address",
-					address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-				}
-			);
+			// await contact.addresses().create(
+			// 	{
+			// 		coin: "ARK",
+			// 		network: "devnet",
+			// 		name: "Jane's Devnet Address",
+			// 		address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			// 	}
+			// );
+
+			const contactsURL = `/profiles/${profile.id()}/contacts`;
+			history.push(contactsURL);
 
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/contacts">
@@ -103,69 +106,70 @@ describe("Contacts", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 
-		// it.each([
-		// 	["close", "modal__close-btn"],
-		// 	["cancel", "contact-form__cancel-btn"],
-		// 	["save", "contact-form__save-btn"],
-		// ])("should open & close add contact modal (%s)", async (_, buttonId) => {
-		// 	const { getAllByTestId, getByTestId, queryByTestId, debug } = renderWithRouter(
-		// 		<Contacts networks={networks} />,
-		// 	);
+		it.each([
+			["close", "modal__close-btn"],
+			["cancel", "contact-form__cancel-btn"],
+			["save", "contact-form__save-btn"],
+		])("should open & close add contact modal (%s)", async (_, buttonId) => {
+			const { getAllByTestId, getByTestId, queryByTestId, debug } = rendered;
 
-		// 	fireEvent.click(getByTestId("contacts__add-contact-btn"));
+			fireEvent.click(getByTestId("contacts__add-contact-btn"));
 
-		// 	if (buttonId === "contact-form__save-btn") {
-		// 		expect(getByTestId("contact-form__save-btn")).toBeDisabled();
-		// 		expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
+			if (buttonId === "contact-form__save-btn") {
+				expect(getByTestId("contact-form__save-btn")).toBeDisabled();
+				expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
-		// 		const assetInput = getByTestId("SelectNetworkInput__input");
+				const assetInput = getByTestId("SelectNetworkInput__input");
 
-		// 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+				expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		// 		act(() => {
-		// 			fireEvent.change(getByTestId("contact-form__address-input"), {
-		// 				target: { value: "address" },
-		// 			});
+				act(() => {
+					fireEvent.change(getByTestId("contact-form__address-input"), {
+						target: { value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
+					});
 
-		// 			fireEvent.change(getByTestId("contact-form__name-input"), {
-		// 				target: { value: "name" },
-		// 			});
+					fireEvent.change(getByTestId("contact-form__name-input"), {
+						target: { value: "name" },
+					});
 
-		// 			fireEvent.change(assetInput, { target: { value: "Bitc" } });
-		// 		});
+					fireEvent.click(getByTestId("NetworkIcon-ARK-Devnet"));
+				});
 
-		// 		act(() => {
-		// 			fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
-		// 		});
+				await waitFor(() => expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled());
 
-		// 		expect(assetInput).toHaveValue("Bitcoin");
+				act(() => {
+					fireEvent.click(getByTestId("contact-form__add-address-btn"));
+				});
 
-		// 		await waitFor(() => expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled());
+				await waitFor(() => expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1));
+			}
 
-		// 		act(() => {
-		// 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-		// 		});
+			await waitFor(() => expect(queryByTestId(buttonId)).not.toBeDisabled());
 
-		// 		await waitFor(() => expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1));
-		// 	}
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
-		// 	await waitFor(() => expect(queryByTestId(buttonId)).not.toBeDisabled());
+			act(() => {
+				fireEvent.click(getByTestId(buttonId));
+			});
 
-		// 	expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
-		// 	expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
+			await waitFor(() => expect(queryByTestId("modal__inner")).toBeNull());
 
-		// 	act(() => {
-		// 		fireEvent.click(getByTestId(buttonId));
-		// 	});
-
-		// 	await waitFor(() => expect(queryByTestId("modal__inner")).toBeNull());
-		// });
+			// Check if contact is created
+			if (buttonId === "contact-form__save-btn") {
+				expect(profile.contacts().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD").length).toBe(1);
+			}
+		});
 
 		it("should open delete contact modal", async () => {
 			const { getByTestId } = rendered;
 
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+
+			await waitFor(() => {
+				expect(getByTestId("ContactList")).toBeTruthy();
+			});
 
 			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
@@ -188,6 +192,10 @@ describe("Contacts", () => {
 
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+
+			await waitFor(() => {
+				expect(getByTestId("ContactList")).toBeTruthy();
+			});
 
 			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
@@ -220,6 +228,10 @@ describe("Contacts", () => {
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
+			await waitFor(() => {
+				expect(getByTestId("ContactList")).toBeTruthy();
+			});
+
 			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
@@ -251,6 +263,10 @@ describe("Contacts", () => {
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
+			await waitFor(() => {
+				expect(getByTestId("ContactList")).toBeTruthy();
+			});
+
 			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
 
@@ -274,6 +290,10 @@ describe("Contacts", () => {
 
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
 			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+
+			await waitFor(() => {
+				expect(getByTestId("ContactList")).toBeTruthy();
+			});
 
 			const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 			expect(firstContactOptionsDropdown).toBeTruthy();
