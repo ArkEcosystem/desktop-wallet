@@ -7,7 +7,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
     data-testid="contact-form"
   >
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -17,14 +17,14 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Name
       </label>
       <input
-        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value=""
       />
     </fieldset>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -45,14 +45,14 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
           id="ContactForm__network-label"
         />
         <div
-          class="sc-fzozJi OgXfh"
+          class="sc-AxmLO kuiknc"
           data-testid="SelectNetworkInput"
         >
           <div
-            class="sc-AxheI sc-Axmtr kSmZlB px-4"
+            class="sc-AxgMl sc-AxheI hUEXQW px-4"
           >
             <div
-              class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+              class="sc-fzplWN fEJfwQ border-theme-neutral-light text-theme-neutral"
               data-testid="SelectNetworkInput__network"
             />
           </div>
@@ -61,7 +61,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
             aria-controls="ContactForm__network-menu"
             aria-labelledby="ContactForm__network-label"
             autocomplete="off"
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
             data-testid="SelectNetworkInput__input"
             id="ContactForm__network-input"
             placeholder="Enter a network name"
@@ -76,7 +76,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       />
     </fieldset>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -86,7 +86,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
         Address
       </label>
       <input
-        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -140,7 +140,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
     data-testid="contact-form"
   >
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -150,14 +150,14 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Name
       </label>
       <input
-        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__name-input"
         name="name"
         value="OLEBank"
       />
     </fieldset>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -178,14 +178,14 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
           id="ContactForm__network-label"
         />
         <div
-          class="sc-fzozJi OgXfh"
+          class="sc-AxmLO kuiknc"
           data-testid="SelectNetworkInput"
         >
           <div
-            class="sc-AxheI sc-Axmtr kSmZlB px-4"
+            class="sc-AxgMl sc-AxheI hUEXQW px-4"
           >
             <div
-              class="sc-AxiKw dEJjWx border-theme-neutral-light text-theme-neutral"
+              class="sc-fzplWN fEJfwQ border-theme-neutral-light text-theme-neutral"
               data-testid="SelectNetworkInput__network"
             />
           </div>
@@ -194,7 +194,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             aria-controls="ContactForm__network-menu"
             aria-labelledby="ContactForm__network-label"
             autocomplete="off"
-            class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+            class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
             data-testid="SelectNetworkInput__input"
             id="ContactForm__network-input"
             placeholder="Enter a network name"
@@ -209,7 +209,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       />
     </fieldset>
     <fieldset
-      class="sc-AxhCb ckQmOL flex flex-col space-y-2"
+      class="sc-AxiKw iQzisX flex flex-col space-y-2"
     >
       <label
         class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -219,7 +219,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         Address
       </label>
       <input
-        class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+        class="sc-AxhUy jqmzti overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
         data-testid="contact-form__address-input"
         name="address"
       />
@@ -259,18 +259,9 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxiKw eHzXqc -mr-1 undefined"
-              >
-                <div
-                  class="sc-AxhUy cPXLjK"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    ark.svg
-                  </svg>
-                </div>
-              </div>
+                class="sc-fzplWN iVxRgF border-theme-neutral-light text-theme-neutral"
+                data-testid="NetworkIcon__placeholder"
+              />
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
@@ -308,7 +299,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             type="button"
           >
             <div
-              class="sc-AxhUy cPXLjK"
+              class="sc-AxhCb fxrKLH"
               height="1em"
               width="1em"
             >
@@ -329,18 +320,9 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxiKw eHzXqc -mr-1 undefined"
-              >
-                <div
-                  class="sc-AxhUy cPXLjK"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    btc.svg
-                  </svg>
-                </div>
-              </div>
+                class="sc-fzplWN iVxRgF border-theme-neutral-light text-theme-neutral"
+                data-testid="NetworkIcon__placeholder"
+              />
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
@@ -378,7 +360,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             type="button"
           >
             <div
-              class="sc-AxhUy cPXLjK"
+              class="sc-AxhCb fxrKLH"
               height="1em"
               width="1em"
             >
@@ -399,18 +381,9 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
               class="flex items-center -space-x-1"
             >
               <div
-                class="sc-AxiKw eHzXqc -mr-1 undefined"
-              >
-                <div
-                  class="sc-AxhUy cPXLjK"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    eth.svg
-                  </svg>
-                </div>
-              </div>
+                class="sc-fzplWN iVxRgF border-theme-neutral-light text-theme-neutral"
+                data-testid="NetworkIcon__placeholder"
+              />
               <div
                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
                 data-testid="Avatar"
@@ -448,7 +421,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             type="button"
           >
             <div
-              class="sc-AxhUy cPXLjK"
+              class="sc-AxhCb fxrKLH"
               height="1em"
               width="1em"
             >
@@ -470,7 +443,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         type="button"
       >
         <div
-          class="sc-AxhUy cPXLjK"
+          class="sc-AxhCb fxrKLH"
           height="1em"
           width="1em"
         >

@@ -2,10 +2,10 @@ import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -24,9 +24,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
 		>
 			<div className="mr-4">
 				<div className="flex items-center -space-x-1">
-					<Circle className={`-mr-1 ${address.coinClassName}`}>
-						<Icon name={address.coin} />
-					</Circle>
+					<NetworkIcon coin={address.coin} network={address.network} />
 					<Avatar address={address.address} />
 				</div>
 			</div>
