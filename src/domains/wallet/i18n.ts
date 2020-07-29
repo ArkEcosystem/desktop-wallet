@@ -39,7 +39,6 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_SIGN_MESSAGE: {
 		TITLE: "Sign Message",
-		SUBTITLE: "Insert a message below to sign using your private key",
 		SUCCESS_TITLE: "Message Successfully Signed",
 		DESCRIPTION: "Insert a message below to sign using your private key",
 		SIGN: "Sign",

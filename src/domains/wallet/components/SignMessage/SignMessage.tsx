@@ -149,7 +149,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 		<Modal
 			isOpen={isOpen}
 			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
-			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.SUBTITLE") : ""}
+			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
 			onClose={onClose}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
