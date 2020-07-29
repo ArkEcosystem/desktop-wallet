@@ -80,7 +80,7 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
-	const [contactAddresses, setContactAddresses] = useState(() => {
+	const [addresses, setAddresses] = useState(() => {
 		return contact ? contact.addresses() : [];
 	});
 
@@ -94,10 +94,11 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	}, [register]);
 
 	const handleAddAddress = () => {
-		setContactAddresses(
-			contactAddresses.concat({
+		setAddresses(
+			addresses.concat({
 				network: network.id(),
 				address,
+				name: address,
 				coin: network.coin(),
 			}),
 		);
@@ -107,8 +108,8 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	};
 
 	const handleRemoveAddress = (item: any) => {
-		setContactAddresses(
-			contactAddresses.filter((curr: any) => {
+		setAddresses(
+			addresses.filter((curr: any) => {
 				return !(curr.address === item.address && curr.network === item.network);
 			}),
 		);
@@ -125,7 +126,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 			onSubmit={() =>
 				onSave({
 					name,
-					contactAddresses,
+					addresses,
 				})
 			}
 		>
@@ -163,9 +164,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				</Button>
 			</div>
 
-			{contactAddresses && contactAddresses.length > 0 && (
-				<AddressList addresses={contactAddresses} onRemove={handleRemoveAddress} />
-			)}
+			{addresses && addresses.length > 0 && <AddressList addresses={addresses} onRemove={handleRemoveAddress} />}
 
 			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
 				{contact && (
@@ -184,7 +183,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!contactAddresses.length}
+						disabled={!addresses.length}
 					>
 						{t("COMMON.SAVE")}
 					</Button>
