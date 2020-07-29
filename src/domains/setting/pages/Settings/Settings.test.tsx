@@ -1,41 +1,57 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
+import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter } from "testing-library";
+import { profiles } from "tests/fixtures/env/data";
 import { StubStorage } from "tests/mocks";
 
 import { Settings } from "./Settings";
 
 let env: Environment;
+let profile: Profile;
+
+beforeEach(async () => {
+	env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+	await env.bootFromObject({ data: {}, profiles });
+
+	profile = env.profiles().findById("bob");
+});
 
 describe("Settings", () => {
-	beforeEach(() => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	});
-
 	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should store profile", async () => {
+	it("should update profile", async () => {
 		let savedProfile: any = null;
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
-				<Settings onSubmit={onSubmit} />
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={onSubmit} />
+				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
 
@@ -103,17 +119,19 @@ describe("Settings", () => {
 			LEDGER_UPDATE_METHOD: true,
 		});
 
-		expect(env.profiles().all().length).toEqual(2);
+		expect(env.profiles().all().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
-				<Settings />
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
 
@@ -148,9 +166,16 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByText } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Peer"));
@@ -158,22 +183,38 @@ describe("Settings", () => {
 	});
 
 	it("should render plugin settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should open & close modals in the plugin settings", async () => {
-		const { container, asFragment, getByTestId, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, getByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		act(() => {
+			fireEvent.click(getByTestId("side-menu__item--Plugins"));
+		});
 		expect(asFragment()).toMatchSnapshot();
 
 		// Open `BlacklistPlugins` modal

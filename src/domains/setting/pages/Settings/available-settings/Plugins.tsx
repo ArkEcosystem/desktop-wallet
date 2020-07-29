@@ -5,6 +5,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useState } from "react";
@@ -16,6 +17,8 @@ type PluginsProps = {
 };
 
 export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const activeProfile = useActiveProfile()!;
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
 
