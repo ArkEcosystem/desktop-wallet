@@ -4,11 +4,10 @@ import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profil
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
-import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
 import { profiles } from "tests/fixtures/env/data.json";
-import { StubStorage } from "tests/mocks";
+import { mockArkDevnetHttp, StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
@@ -17,24 +16,11 @@ let env: Environment;
 let profile: Profile;
 let updatingContact: Contact;
 
+beforeAll(() => {
+	mockArkDevnetHttp();
+});
+
 describe("UpdateContact", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
-
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
