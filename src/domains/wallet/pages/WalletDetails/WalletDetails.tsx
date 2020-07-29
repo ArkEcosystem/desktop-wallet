@@ -49,7 +49,7 @@ export const WalletDetails = () => {
 		const transaction = response.data.first();
 		const result: WalletData[] = [];
 
-		const votes = transaction.asset().votes as string[];
+		const votes = (transaction?.asset().votes as string[]) || [];
 
 		for (const vote of votes) {
 			const mode = vote[0];

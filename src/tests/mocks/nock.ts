@@ -25,10 +25,22 @@ export const mockArkHttp = () => {
 		.reply(200, syncing)
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, wallet)
-		.get(/\/api\/wallets\/.+\/votes/)
+		.get("/api/wallets/AHZLH1CwMEGPBxMjuohAgdR79DpezntksA/votes")
 		.reply(200, votes)
-		.get(/\/api\/wallets\/.+/)
+		.get("/api/wallets/AHZLH1CwMEGPBxMjuohAgdR79DpezntksA")
 		.reply(200, wallet)
+		.get(/\/api\/wallets\/.+\/votes/)
+		.reply(404, {
+			statusCode: 404,
+			error: "Not Found",
+			message: "Wallet not found",
+		})
+		.get(/\/api\/wallets\/.+/)
+		.reply(404, {
+			statusCode: 404,
+			error: "Not Found",
+			message: "Wallet not found",
+		})
 		.get("/api/delegates")
 		.reply(200, delegates)
 		.post("/api/transactions/search")
