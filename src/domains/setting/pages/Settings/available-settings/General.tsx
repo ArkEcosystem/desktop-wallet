@@ -108,6 +108,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						})}
 						ref={register()}
 						options={[
+							{ label: "1 Minute", value: 1 },
 							{ label: "5 Minutes", value: 5 },
 							{ label: "10 Minutes", value: 10 },
 							{ label: "15 Minutes", value: 15 },
