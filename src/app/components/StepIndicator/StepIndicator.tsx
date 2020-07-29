@@ -12,14 +12,18 @@ const StepStyled = styled.li<{ isActive: boolean }>`
 	${({ isActive }) => isActive && tw`bg-theme-warning`}
 `;
 
+const StepWrapper = styled.ul`
+	${tw`flex space-x-3`}
+`;
+
 export const StepIndicator: React.FC<StepIndicatorProps> = (props: StepIndicatorProps) => {
 	const steps = [...Array(props.size)];
 	return (
-		<ul tw="flex space-x-3">
+		<StepWrapper>
 			{steps.map((_, index) => (
 				<StepStyled key={index} isActive={props.activeIndex! >= index + 1} />
 			))}
-		</ul>
+		</StepWrapper>
 	);
 };
 
