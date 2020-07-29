@@ -34,34 +34,49 @@ describe("Contacts", () => {
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
 			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
 	});
 
-	// describe("without contacts", () => {
-	// 	it("should render empty", () => {
-	// 		history.push(contactsURL);
+	describe("without contacts", () => {
+		beforeEach(async () => {
+			env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-	// 		const { asFragment, getByTestId } = renderWithRouter(
-	// 			<Route path="/profiles/:profileId/contacts">
-	// 				<Contacts />
-	// 			</Route>,
-	// 			{
-	// 				routes: [contactsURL],
-	// 				history,
-	// 			},
-	// 		);
+			await env.bootFromObject(fixtureData);
+			profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
-	// 		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-	// 		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+			firstContactId = profile.contacts().values()[0].id();
+			profile.contacts().forget(firstContactId);
 
-	// 		expect(getByTestId("contacts__banner")).toBeTruthy();
+			const contactsURL = `/profiles/${profile.id()}/contacts`;
+			history.push(contactsURL);
 
-	// 		expect(asFragment()).toMatchSnapshot();
-	// 	});
-	// });
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/contacts">
+					<Contacts />
+				</Route>,
+				{
+					routes: [contactsURL],
+					history,
+				},
+			);
+		});
+
+		it("should render empty", () => {
+			const { asFragment, getByTestId } = rendered;
+
+			expect(() => getByTestId("ContactList")).toThrow(/Unable to find an element by/);
+
+			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+			expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+
+			expect(getByTestId("contacts__banner")).toBeTruthy();
+
+			expect(asFragment()).toMatchSnapshot();
+		});
+	});
 
 	describe("with contacts", () => {
 		beforeEach(async () => {
@@ -71,15 +86,6 @@ describe("Contacts", () => {
 			profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
 			firstContactId = profile.contacts().values()[0].id();
-
-			// await contact.addresses().create(
-			// 	{
-			// 		coin: "ARK",
-			// 		network: "devnet",
-			// 		name: "Jane's Devnet Address",
-			// 		address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-			// 	}
-			// );
 
 			const contactsURL = `/profiles/${profile.id()}/contacts`;
 			history.push(contactsURL);

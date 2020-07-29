@@ -41,22 +41,20 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	networks?: NetworkData[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ networks, onSearch }: ContactsProps) => {
+export const Contacts = ({ onSearch }: ContactsProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 
 	const [contacts, setContacts] = useState<Contact[]>([]);
-	const hasContacts = !!contacts.length;
 
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
 
-	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
+	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks() || []);
 
 	useEffect(() => {
 		setContacts(activeProfile?.contacts().values() || []);
@@ -117,7 +115,7 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={hasContacts}
+								showSearchBar={!!contacts.length}
 								onSearch={onSearch}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -126,7 +124,7 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{!hasContacts && (
+					{!contacts.length && (
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
@@ -136,7 +134,7 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 						</div>
 					)}
 
-					{hasContacts && (
+					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">
 							<Table columns={listColumns} data={contacts}>
 								{(contact: any) => (
@@ -170,8 +168,4 @@ export const Contacts = ({ networks, onSearch }: ContactsProps) => {
 			/>
 		</>
 	);
-};
-
-Contacts.defaultProps = {
-	contacts: [],
 };
