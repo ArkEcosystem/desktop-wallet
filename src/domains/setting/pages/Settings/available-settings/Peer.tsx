@@ -4,6 +4,7 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { PeerList } from "domains/setting/components/PeerList";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
@@ -15,6 +16,8 @@ type PeerProps = {
 };
 
 export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
 	const peerItems = [
@@ -25,7 +28,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
@@ -41,7 +44,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm">
 						{t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">

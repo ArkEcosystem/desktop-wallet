@@ -1,41 +1,57 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
+import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter } from "testing-library";
+import { profiles } from "tests/fixtures/env/data";
 import { StubStorage } from "tests/mocks";
 
 import { Settings } from "./Settings";
 
 let env: Environment;
+let profile: Profile;
+
+beforeEach(async () => {
+	env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+	await env.bootFromObject({ data: {}, profiles });
+
+	profile = env.profiles().findById("bob");
+});
 
 describe("Settings", () => {
-	beforeEach(() => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-	});
-
 	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: ["/", `/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should store profile", async () => {
+	it("should update profile", async () => {
 		let savedProfile: any = null;
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
-				<Settings onSubmit={onSubmit} />
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={onSubmit} />
+				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: ["/", `/profiles/${profile.id()}/settings`],
 			},
 		);
 
@@ -68,6 +84,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
+			NAME: "test profile",
 			LOCALE: "option1",
 			BIP39_LOCALE: "option1",
 			MARKET_PROVIDER: "option1",
@@ -90,6 +107,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
+			NAME: "test profile 2",
 			LOCALE: "option1",
 			BIP39_LOCALE: "option1",
 			MARKET_PROVIDER: "option1",
@@ -101,17 +119,19 @@ describe("Settings", () => {
 			LEDGER_UPDATE_METHOD: true,
 		});
 
-		expect(env.profiles().all().length).toEqual(2);
+		expect(env.profiles().all().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
-				<Settings />
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
 			</EnvironmentProvider>,
 			{
-				routes: ["/", "/profiles/1/settings"],
+				routes: ["/", `/profiles/${profile.id()}/settings`],
 			},
 		);
 
@@ -146,9 +166,16 @@ describe("Settings", () => {
 	});
 
 	it("should render peer settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByText } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: ["/", `/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(await findByText("Peer"));
@@ -156,44 +183,50 @@ describe("Settings", () => {
 	});
 
 	it("should render plugin settings", async () => {
-		const { container, asFragment, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, findByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: ["/", `/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should open & close modals in the plugin settings", async () => {
-		const { container, asFragment, getByTestId, findByText } = renderWithRouter(<Settings />, {
-			routes: ["/", "/profiles/1/settings"],
-		});
+		const { container, asFragment, getByTestId, findByTestId } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<Route path="/profiles/:profileId/settings">
+					<Settings onSubmit={jest.fn()} />
+				</Route>
+			</EnvironmentProvider>,
+			{
+				routes: ["/", `/profiles/${profile.id()}/settings`],
+			},
+		);
 
 		expect(container).toBeTruthy();
-		fireEvent.click(await findByText("Plugins"));
+		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
 		expect(asFragment()).toMatchSnapshot();
 
 		// Open `BlacklistPlugins` modal
-		act(() => {
-			fireEvent.click(getByTestId("plugins__open-list"));
-		});
+		act(() => fireEvent.click(getByTestId("plugins__open-list")));
 		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_BLACKLIST_PLUGINS.TITLE);
 
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
+		act(() => fireEvent.click(getByTestId("modal__close-btn")));
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		// Open `AddBlacklistPlugin` modal
-		act(() => {
-			fireEvent.click(getByTestId("plugins__add-plugin"));
-		});
+		act(() => fireEvent.click(getByTestId("plugins__add-plugin")));
 		expect(getByTestId("modal__inner")).toHaveTextContent(pluginTranslations.MODAL_ADD_BLACKLIST_PLUGIN.TITLE);
 
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
+		act(() => fireEvent.click(getByTestId("modal__close-btn")));
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 });

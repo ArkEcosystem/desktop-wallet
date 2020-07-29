@@ -104,7 +104,7 @@ export const SecondStep = () => {
 			<div className="py-3">
 				<div className="flex justify-between">
 					<div>
-						<h3 className="mb-1 text-theme-neutral-dark">
+						<h3 className="text-theme-neutral-dark mb-1">
 							{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
 						</h3>
 						<p className="text-theme-neutral">
@@ -188,7 +188,7 @@ export const FourthStep = () => {
 			<ul>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.NETWORK")}</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">{t("COMMON.NETWORK")}</p>
 						<p data-testid="CreateWallet__network-name" className="text-lg font-medium">
 							{networkConfig?.displayName}
 						</p>
@@ -200,7 +200,7 @@ export const FourthStep = () => {
 				</li>
 				<li className="flex justify-between">
 					<div>
-						<p className="text-sm font-semibold text-theme-neutral-dark">{t("COMMON.ADDRESS")}</p>
+						<p className="text-theme-neutral-dark text-sm font-semibold">{t("COMMON.ADDRESS")}</p>
 						<p data-testid="CreateWallet__wallet-address" className="text-lg font-medium">
 							{wallet.address()}
 						</p>

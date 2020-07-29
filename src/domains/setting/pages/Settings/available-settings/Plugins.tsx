@@ -5,6 +5,7 @@ import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { AddBlacklistPlugin } from "domains/plugin/components/AddBlacklistPlugin";
 import { BlacklistPlugins } from "domains/plugin/components/BlacklistPlugins";
 import React, { useState } from "react";
@@ -16,6 +17,8 @@ type PluginsProps = {
 };
 
 export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const activeProfile = useActiveProfile()!;
 	const [modalOpenListIsOpen, setModalOpenListIsOpen] = useState(false);
 	const [modalAddPluginIsOpen, setModalAddPluginIsOpen] = useState(false);
 
@@ -30,7 +33,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="text-sm text-theme-neutral">
+						<span className="text-theme-neutral text-sm">
 							{t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">
@@ -67,7 +70,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
-						<span className="text-sm text-theme-neutral">
+						<span className="text-theme-neutral text-sm">
 							{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">
