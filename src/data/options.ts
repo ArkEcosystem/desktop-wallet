@@ -34,6 +34,9 @@ export const PlatformOptions = {
 		{ label: "RUB (₽)", value: "rub" },
 		{ label: "USD ($)", value: "usd" },
 	],
-	languages: [],
-	timeFormats: [],
+	languages: [{ label: "English", value: "en-US" }],
+	timeFormats: [
+		{ label: "12h", value: "h:mm A" },
+		{ label: "24h", value: "HH:mm" },
+	],
 };
