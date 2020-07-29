@@ -51,6 +51,7 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
+			NAME: "test profile",
 			EXCHANGE_CURRENCY: "option1",
 			MARKET_PROVIDER: "option1",
 			THEME: "light",
@@ -67,6 +68,7 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
+			NAME: "test profile 2",
 			EXCHANGE_CURRENCY: "option1",
 			MARKET_PROVIDER: "option1",
 			THEME: "dark",
