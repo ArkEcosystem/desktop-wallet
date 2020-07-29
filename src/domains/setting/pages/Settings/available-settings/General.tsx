@@ -9,7 +9,8 @@ import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
-import React from "react";
+import { AdvancedMode } from "domains/setting/components/AdvancedMode";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -21,10 +22,28 @@ type GeneralProps = {
 };
 
 export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
+	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isAdvancedMode, setIsAdvancedMode] = useState(false);
+
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
+
+	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { checked } = event.target;
+
+		if (checked) {
+			setIsOpenAdvancedModeModal(checked);
+		} else {
+			setIsAdvancedMode(false);
+		}
+	};
+
+	const handleAdvancedMode = (isAccepted: boolean) => {
+		setIsOpenAdvancedModeModal(false);
+		setIsAdvancedMode(isAccepted);
+	};
 
 	const personalDetails = [
 		{
@@ -93,9 +112,18 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						<Toggle
 							ref={register()}
 							name="isAdvancedMode"
+							checked={isAdvancedMode}
+							onChange={handleOpenAdvancedModeModal}
 							data-testid="General-settings__toggle--isAdvancedMode"
 						/>
 					</div>
+
+					<AdvancedMode
+						isOpen={isOpenAdvancedModeModal}
+						onClose={() => handleAdvancedMode(false)}
+						onDecline={() => handleAdvancedMode(false)}
+						onAccept={() => handleAdvancedMode(true)}
+					/>
 				</div>
 			),
 		},
@@ -163,7 +191,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		},
 	];
 
-	const submitForm = async ({
+	const handleSubmit = async ({
 		name,
 		language,
 		passphraseLanguage,
@@ -196,7 +224,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	return (
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
-			<Form data-testid="General-settings__form" context={context} onSubmit={submitForm}>
+			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 

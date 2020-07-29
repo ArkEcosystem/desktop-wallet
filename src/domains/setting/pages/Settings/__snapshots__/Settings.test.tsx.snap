@@ -954,7 +954,7 @@ exports[`Settings should render 1`] = `
                       class="mb-0 md:text-4xl"
                       data-testid="header__title"
                     >
-                      Wallet Settings
+                      Profile Settings
                     </h1>
                     <div
                       class="text-theme-neutral-dark"
@@ -3564,7 +3564,7 @@ exports[`Settings should submit using default props 1`] = `
                       class="mb-0 md:text-4xl"
                       data-testid="header__title"
                     >
-                      Wallet Settings
+                      Profile Settings
                     </h1>
                     <div
                       class="text-theme-neutral-dark"
@@ -3714,18 +3714,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-51-label downshift-51-toggle-button"
+                                  aria-labelledby="downshift-45-label downshift-45-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-51-toggle-button"
+                                  id="downshift-45-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-51-label"
+                                  aria-labelledby="downshift-45-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-51-menu"
+                                  id="downshift-45-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3775,18 +3775,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-52-label downshift-52-toggle-button"
+                                  aria-labelledby="downshift-46-label downshift-46-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-52-toggle-button"
+                                  id="downshift-46-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-52-label"
+                                  aria-labelledby="downshift-46-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-52-menu"
+                                  id="downshift-46-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3840,18 +3840,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-53-label downshift-53-toggle-button"
+                                  aria-labelledby="downshift-47-label downshift-47-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-53-toggle-button"
+                                  id="downshift-47-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-53-label"
+                                  aria-labelledby="downshift-47-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-53-menu"
+                                  id="downshift-47-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3901,18 +3901,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-54-label downshift-54-toggle-button"
+                                  aria-labelledby="downshift-48-label downshift-48-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-54-toggle-button"
+                                  id="downshift-48-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-54-label"
+                                  aria-labelledby="downshift-48-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-54-menu"
+                                  id="downshift-48-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3962,18 +3962,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-55-label downshift-55-toggle-button"
+                                  aria-labelledby="downshift-49-label downshift-49-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-55-toggle-button"
+                                  id="downshift-49-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-55-label"
+                                  aria-labelledby="downshift-49-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-55-menu"
+                                  id="downshift-49-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4114,6 +4114,75 @@ exports[`Settings should submit using default props 1`] = `
                                 </div>
                               </label>
                             </div>
+                            <div
+                              class="fixed inset-0 z-50 bg-black opacity-50"
+                              data-testid="modal__overlay"
+                            />
+                            <div
+                              class="sc-fzoLsD hImDCl fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+                              data-testid="modal__inner"
+                            >
+                              <div
+                                class="absolute top-0 right-0 z-50 mt-5 mr-5"
+                              >
+                                <button
+                                  class="sc-AxhCb idLVlI"
+                                  color="neutral"
+                                  data-testid="modal__close-btn"
+                                  type="button"
+                                >
+                                  <div
+                                    class="p-1"
+                                  >
+                                    <div
+                                      class="sc-AxirZ hDwaov"
+                                      height="12"
+                                      width="12"
+                                    >
+                                      <svg>
+                                        cross-slim.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="py-4"
+                              >
+                                <h2
+                                  class="mb-0 text-3xl font-bold"
+                                >
+                                  Advanced Mode Disclaimer
+                                </h2>
+                                <div
+                                  class="flex-1"
+                                >
+                                  <div
+                                    class="mt-1 text-theme-neutral-dark"
+                                  >
+                                    By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
+                                  </div>
+                                  <div
+                                    class="flex justify-end mt-8 space-x-3"
+                                  >
+                                    <button
+                                      class="sc-AxhCb BegvR"
+                                      color="primary"
+                                      type="button"
+                                    >
+                                      I Decline
+                                    </button>
+                                    <button
+                                      class="sc-AxhCb gBCygf"
+                                      color="primary"
+                                      type="button"
+                                    >
+                                      I Accept
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </li>
@@ -4167,18 +4236,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-56-label downshift-56-toggle-button"
+                                    aria-labelledby="downshift-50-label downshift-50-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-56-toggle-button"
+                                    id="downshift-50-toggle-button"
                                     type="button"
                                   >
                                     Select Auto-logoff
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-56-label"
+                                    aria-labelledby="downshift-50-label"
                                     class="sc-fzoiQi eFpDPy"
-                                    id="downshift-56-menu"
+                                    id="downshift-50-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
