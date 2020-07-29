@@ -4,6 +4,7 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
+import { useActiveProfile } from "app/hooks/env";
 import { PeerList } from "domains/setting/components/PeerList";
 import { networks, peers } from "domains/setting/data";
 import React from "react";
@@ -15,6 +16,8 @@ type PeerProps = {
 };
 
 export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
 	const peerItems = [

@@ -40,7 +40,13 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 	const renderSettings = () => {
 		const ActiveSettings = availableSettings[activeSettings];
 
-		return <ActiveSettings env={env} formConfig={{ context: form, register, errors }} onSubmit={onSubmit} />;
+		return (
+			<ActiveSettings
+				env={env}
+				formConfig={{ context: form, register, errors }}
+				onSubmit={(savedSettings: any) => onSubmit?.(savedSettings)}
+			/>
+		);
 	};
 
 	const crumbs = [
@@ -58,8 +64,4 @@ export const Settings = ({ onSubmit }: SettingsProps) => {
 			<Section>{renderSettings()}</Section>
 		</Page>
 	);
-};
-
-Settings.defaultProps = {
-	onSubmit: (profileData: any) => profileData,
 };
