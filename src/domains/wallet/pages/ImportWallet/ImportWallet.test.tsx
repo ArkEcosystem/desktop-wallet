@@ -309,6 +309,67 @@ describe("ImportWallet", () => {
 		});
 	});
 
+	it("should show an error if import a NEO mainnet wallet", async () => {
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const route = "/profiles/bob/wallets/import";
+
+		history.push(route);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/import">
+						<ImportWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { findByTestId, getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+			const continueButton = getByTestId("ImportWallet__continue-button");
+
+			await fireEvent.change(selectAssetsInput, { target: { value: "Ark" } });
+			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+
+			expect(selectAssetsInput).toHaveValue("Ark");
+
+			await fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			const addressToggle = getByTestId("ImportWallet__address-toggle");
+			expect(addressToggle).toBeTruthy();
+
+			await fireEvent.click(addressToggle);
+
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
+
+			// NEO address: https://neoscan.io/address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1
+			await fireEvent.change(addressInput, { target: { value: "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN" } });
+
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+
+			const errorAlert = await findByTestId("ImportWallet__error-alert");
+			await waitFor(() => expect(errorAlert).toBeTruthy());
+
+			expect(errorAlert.textContent).toMatchInlineSnapshot(
+				`"alert-danger.svgErrorFailed to discovery any peers."`,
+			);
+		});
+	});
+
 	it("should show an error message if trying to import a duplicate wallet", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
