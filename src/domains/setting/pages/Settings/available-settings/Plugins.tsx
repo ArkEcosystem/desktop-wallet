@@ -33,7 +33,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between">
-						<span className="text-theme-neutral text-sm">
+						<span className="text-sm text-theme-neutral">
 							{t("SETTINGS.PLUGINS.APPLY_BLACKLIST.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">
@@ -70,7 +70,7 @@ export const Plugins = ({ formConfig, onSubmit }: PluginsProps) => {
 			content: (
 				<>
 					<div className="flex flex-row justify-between mb-5">
-						<span className="text-theme-neutral text-sm">
+						<span className="text-sm text-theme-neutral">
 							{t("SETTINGS.PLUGINS.PLUGIN_SOURCE.DESCRIPTION")}
 						</span>
 						<div className="-mt-7">

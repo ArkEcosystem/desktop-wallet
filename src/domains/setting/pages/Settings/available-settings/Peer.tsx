@@ -28,7 +28,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pb-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-theme-neutral mt-1 text-sm">
+					<span className="mt-1 text-sm text-theme-neutral">
 						{t("SETTINGS.PEERS.BROADCAST_TRANSACTIONS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
@@ -44,7 +44,7 @@ export const Peer = ({ formConfig, onSubmit }: PeerProps) => {
 			wrapperClass: "pt-6",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="text-theme-neutral mt-1 text-sm">
+					<span className="mt-1 text-sm text-theme-neutral">
 						{t("SETTINGS.PEERS.CUSTOM_PEERS.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
