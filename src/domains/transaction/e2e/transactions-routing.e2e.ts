@@ -25,7 +25,9 @@ test("should navigate to portfolio and sign message", async (t) => {
 	await t.click(Selector("[data-testid=WalletHeader__more-button]"));
 	await t.click(Selector("li").withText(translations().WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE));
 
-	await t.click(Selector("[data-testid=sign-message__sign-button]"));
+	await t.typeText(Selector("input[name=message]"), "Hello World");
+	await t.typeText(Selector("input[name=mnemonic]"), "this is a top secret passphrase");
+	await t.click(Selector("[data-testid=SignMessage__submit-button]"));
 	await t.expect(Selector("h2").withText(translations().WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE).exists).ok();
 	await t.click(Selector("[data-testid=modal__close-btn]"));
 });

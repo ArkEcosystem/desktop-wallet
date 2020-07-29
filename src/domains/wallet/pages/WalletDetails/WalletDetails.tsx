@@ -18,10 +18,9 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const WalletDetails = () => {
+	const [isUpdateWalletName, setIsUpdateWalletName] = useState(false);
 	const [isSigningMessage, setIsSigningMessage] = useState(false);
-	const [isSigned, setIsSigned] = useState(false);
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
-	const [isUpdateWalletNameOpen, setIsUpdateWalletNameOpen] = useState(false);
 	const [votes, setVotes] = React.useState<Coins.WalletDataCollection>();
 	const [walletData, setWalletData] = React.useState<WalletData>();
 
@@ -79,7 +78,7 @@ export const WalletDetails = () => {
 	const handleUpdateName = async ({ name }: any) => {
 		activeWallet?.settings().set(WalletSetting.Alias, name);
 		await persist();
-		setIsUpdateWalletNameOpen(false);
+		setIsUpdateWalletName(false);
 	};
 
 	React.useEffect(() => {
@@ -115,7 +114,7 @@ export const WalletDetails = () => {
 					isMultisig={activeWallet?.isMultiSignature()}
 					hasStarred={activeWallet?.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
-					onUpdateWalletName={() => setIsUpdateWalletNameOpen(true)}
+					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
@@ -153,9 +152,20 @@ export const WalletDetails = () => {
 				<WalletBottomSheetMenu walletsData={wallets.map((wallet) => ({ wallet }))} />
 			)}
 
+			<UpdateWalletName
+				isOpen={isUpdateWalletName}
+				onClose={() => setIsUpdateWalletName(false)}
+				onCancel={() => setIsUpdateWalletName(false)}
+				onSave={handleUpdateName}
+			/>
+
 			<SignMessage
+				profileId={activeProfile?.id() as string}
+				walletId={walletId}
+				signatoryAddress={wallet?.address as string}
 				isOpen={isSigningMessage}
-				handleClose={() => setIsSigningMessage(false)}
+				onClose={() => setIsSigningMessage(false)}
+				onCancel={() => setIsSigningMessage(false)}
 				signatoryAddress={activeWallet?.address()}
 				handleSign={() => setIsSigned(true)}
 				isSigned={isSigned}
@@ -166,13 +176,6 @@ export const WalletDetails = () => {
 				onClose={() => setIsDeleteWallet(false)}
 				onCancel={() => setIsDeleteWallet(false)}
 				onDelete={handleDeleteWallet}
-			/>
-
-			<UpdateWalletName
-				isOpen={isUpdateWalletNameOpen}
-				onSave={handleUpdateName}
-				onClose={() => setIsUpdateWalletNameOpen(false)}
-				onCancel={() => setIsUpdateWalletNameOpen(false)}
 			/>
 		</>
 	);

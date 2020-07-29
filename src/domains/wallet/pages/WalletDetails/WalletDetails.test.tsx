@@ -193,4 +193,45 @@ describe("WalletDetails", () => {
 			});
 		});
 	});
+
+	it("should delete wallet", async () => {
+		let rendered: RenderResult;
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/:walletId">
+						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeTruthy());
+		});
+
+		const { getByTestId, getAllByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const dropdown = getAllByTestId("dropdown__toggle")[2];
+			expect(dropdown).toBeTruthy();
+
+			await fireEvent.click(dropdown);
+
+			const deleteWalletOption = getByTestId("dropdown__option--3");
+			expect(deleteWalletOption).toBeTruthy();
+
+			await fireEvent.click(deleteWalletOption);
+			expect(getByTestId("modal__inner")).toBeTruthy();
+
+			await fireEvent.click(getByTestId("DeleteResource__submit-button"));
+
+			await waitFor(() => expect(profile.wallets().count()).toEqual(0));
+		});
+	});
 });

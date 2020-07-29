@@ -614,6 +614,197 @@ exports[`WalletDetails should delete wallet 1`] = `
                       data-testid="table__th--2"
                       role="columnheader"
                     >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        Delegate 3
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center px-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            business.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Business
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__business"
+                      >
+                        ROBank Eco
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="px-8"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                      data-testid="WalletRegistrations__icon-list"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__icon"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy dSLmHc bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__icon"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            bridgechain.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="sc-AxhUy dSLmHc text-lg font-bold bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
+                        data-testid="WalletRegistrations__icon-list__rest"
+                      >
+                        +1
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="space-x-2"
+                >
+                  <button
+                    class="px-5 py-3 font-semibold leading-tight rounded text-theme-primary focus:outline-none focus:shadow-outline"
+                    data-testid="WalletRegistrations__show-all"
+                  >
+                    Show All
+                  </button>
+                  <button
+                    class="sc-AxhCb BegvR"
+                    color="primary"
+                    data-testid="WalletRegistrations__register"
+                    type="button"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div
+        class="sc-fzoLag fvqzEZ"
+      >
+        <div
+          class="container py-16 mx-auto px-14"
+        >
+          <div
+            class="mb-16"
+          >
+            <h2
+              class="mb-6 font-bold"
+            >
+              Pending Transactions
+            </h2>
+            <div
+              class="sc-AxheI VtiAt"
+              role="table"
+            >
+              <table
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          ID
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Date
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
                       <div
                         class="flex flex-inline align-top invisible"
                       >
@@ -629,7 +820,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -740,7 +931,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           ID
@@ -756,7 +947,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Date
@@ -798,7 +989,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -1418,7 +1609,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           ID
@@ -1434,7 +1625,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Date
@@ -1476,7 +1667,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -1593,6 +1784,190 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           ID
                         </div>
                       </div>
+                    </td>
+                    <td
+                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                    >
+                      <span
+                        data-testid="TransactionRow__timestamp"
+                      >
+                        17 Mar 2020 10:22:05
+                      </span>
+                    </td>
+                    <td
+                      class="w-32"
+                    >
+                      <div
+                        class="flex items-center -space-x-1"
+                        data-testid="TransactionRowMode"
+                      >
+                        <div
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowMode__Sent"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              sent.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="text-center"
+                    >
+                      <div
+                        class="inline-flex align-middle space-x-1"
+                        data-testid="TransactionRowInfo"
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__multiSignature"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-16 text-center"
+                    >
+                      <div
+                        class="inline-flex p-1 align-middle"
+                        data-testid="TransactionRowConfirmation"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-danger-400"
+                          data-testid="TransactionRowConfirmation__actionRequired"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            edit.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="sc-Axmtr cYWaUi"
+                        color="danger"
+                        data-testid="TransactionRowAmount"
+                      >
+                        52.20000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-right"
+                    >
+                      <button
+                        class="sc-AxhCb BegvR"
+                        color="primary"
+                        data-testid="TransactionRow__sign"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            edit.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Sign
+                        </span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h2
+              class="mb-6 font-bold"
+            >
+              Transaction History
+            </h2>
+            <div
+              class="sc-AxheI VtiAt"
+              role="table"
+            >
+              <table
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          ID
+                        </div>
+                      </div>
                     </th>
                     <th
                       class="text-sm text-left select-none text-theme-neutral"
@@ -1603,7 +1978,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Date
@@ -1645,7 +2020,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -2310,7 +2685,7 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           ID
@@ -2326,7 +2701,7 @@ exports[`WalletDetails should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Date
@@ -2368,7 +2743,7 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -2501,6 +2876,188 @@ exports[`WalletDetails should render 1`] = `
                           Date
                         </div>
                         <div
+                          class="sc-AxhUy fHeTTV border-theme-danger-contrast text-theme-danger"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowMode__Sent"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              sent.svg
+                            </svg>
+                          </div>
+                        </div>
+                        <div
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
+                        >
+                          <div
+                            class="w-full h-full"
+                          >
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="text-center"
+                    >
+                      <div
+                        class="inline-flex align-middle space-x-1"
+                        data-testid="TransactionRowInfo"
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__multiSignature"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              multisig.svg
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="w-16 text-center"
+                    >
+                      <div
+                        class="inline-flex p-1 align-middle"
+                        data-testid="TransactionRowConfirmation"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-danger-400"
+                          data-testid="TransactionRowConfirmation__actionRequired"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            edit.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </td>
+                    <td
+                      class="text-right"
+                    >
+                      <div
+                        class="sc-Axmtr cYWaUi"
+                        color="danger"
+                        data-testid="TransactionRowAmount"
+                      >
+                        52.20000000
+                      </div>
+                    </td>
+                    <td
+                      class="text-right"
+                    >
+                      <button
+                        class="sc-AxhCb BegvR"
+                        color="primary"
+                        data-testid="TransactionRow__sign"
+                        type="button"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            edit.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Sign
+                        </span>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <h2
+              class="mb-6 font-bold"
+            >
+              Transaction History
+            </h2>
+            <div
+              class="sc-AxheI VtiAt"
+              role="table"
+            >
+              <table
+                class="table-auto"
+              >
+                <thead>
+                  <tr
+                    role="row"
+                  >
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          ID
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Date
+                        </div>
+                        <div
                           class="flex items-center ml-2 text-theme-color-neutral"
                           data-testid="table__Sort"
                         >
@@ -2537,7 +3094,7 @@ exports[`WalletDetails should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
@@ -3012,7 +3569,7 @@ exports[`WalletDetails should render wallet data 1`] = `
                       type="checkbox"
                     />
                     <div
-                      class="sc-fznJRM cjWbrJ"
+                      class="flex flex-inline align-top "
                     >
                       <span
                         class="sc-fznWqX kLTWXY"
@@ -3037,8 +3594,7 @@ exports[`WalletDetails should render wallet data 1`] = `
                     data-testid="WalletHeader__copy-button"
                   >
                     <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                      class="flex flex-inline align-top "
                     >
                       <div
                         class="sc-AxirZ iQaTP text-theme-primary-300"
@@ -5062,50 +5618,154 @@ exports[`WalletDetails should update wallet name 1`] = `
                   <div
                     class="w-full h-full"
                   >
-                    <img
-                      alt=""
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      title=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <h2
-                class="mb-0 text-white"
-                data-testid="WalletHeader__name"
-              />
-            </div>
-            <div
-              class="flex items-stretch space-x-2"
-            >
-              <button
-                class="px-3 text-theme-neutral-dark"
-                data-testid="WalletHeader__star-button"
-              >
-                <div
-                  class="sc-AxirZ iQaTP"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    star-outline.svg
-                  </svg>
-                </div>
-              </button>
-              <button
-                class="sc-AxhCb gBCygf"
-                color="primary"
-                data-testid="WalletHeader__send-button"
-                type="button"
-              >
-                Send
-              </button>
-              <div
-                data-testid="WalletHeader__more-button"
-              >
-                <div
-                  class="relative"
-                  data-testid="dropdown__toggle"
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--0"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          ID
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--1"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Date
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--2"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible"
+                      >
+                        <div>
+                          Type
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--3"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top "
+                      >
+                        <div>
+                          Recipient
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--4"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Info
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--5"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-center"
+                      >
+                        <div>
+                          Status
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--6"
+                      role="columnheader"
+                      style="cursor: pointer;"
+                      title="Toggle SortBy"
+                    >
+                      <div
+                        class="flex flex-inline align-top justify-end"
+                      >
+                        <div>
+                          Amount
+                        </div>
+                        <div
+                          class="flex items-center ml-2 text-theme-color-neutral"
+                          data-testid="table__Sort"
+                        >
+                          <div
+                            class="sc-AxirZ jMwzyA"
+                            height="12"
+                            width="15"
+                          >
+                            <svg>
+                              sort.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th
+                      class="text-sm text-left select-none text-theme-neutral"
+                      colspan="1"
+                      data-testid="table__th--7"
+                      role="columnheader"
+                    >
+                      <div
+                        class="flex flex-inline align-top invisible"
+                      >
+                        <div>
+                          Sign
+                        </div>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  role="rowgroup"
                 >
                   <button
                     class="sc-AxhCb bFTKKh text-left"
@@ -5361,7 +6021,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           ID
@@ -5377,7 +6037,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Date
@@ -5419,7 +6079,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top undefined"
+                        class="flex flex-inline align-top "
                       >
                         <div>
                           Recipient
