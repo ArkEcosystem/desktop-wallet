@@ -20,7 +20,7 @@ type GeneralProps = {
 	onSubmit: (profile: Profile) => void;
 };
 
-export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
