@@ -79,6 +79,7 @@ function createWindow() {
 	windowState.manage(mainWindow);
 	mainWindow.loadURL(winURL);
 	mainWindow.setBackgroundColor("#f7fafb");
+	mainWindow.setContentProtection(true);
 
 	mainWindow.on("close", () => (mainWindow = null));
 	mainWindow.on("closed", () => (mainWindow = null));
