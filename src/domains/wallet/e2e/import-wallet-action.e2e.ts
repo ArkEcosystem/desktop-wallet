@@ -154,6 +154,7 @@ test("should show an error message if trying to import a duplicate wallet", asyn
 	// Input address and import wallet
 	addressInput = Selector("input[name=address]");
 
+	// Import a duplicate wallet
 	await t.typeText(addressInput, "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
