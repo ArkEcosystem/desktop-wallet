@@ -134,7 +134,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 			<div className="flex justify-end pb-5 mt-3">
 				<Clipboard data={JSON.stringify(signedMessage)}>
-					<Button variant="plain">
+					<Button variant="plain" data-testid="SignMessage__copy-button">
 						<Icon name="Copy" />
 						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 					</Button>
