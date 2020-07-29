@@ -193,7 +193,7 @@ export const FourthStep = () => {
 							{networkConfig?.displayName}
 						</p>
 					</div>
-					<NetworkIcon coin={network.coin()} network={network.name()} />
+					<NetworkIcon coin={network.coin()} network={network.id()} />
 				</li>
 				<li>
 					<Divider dashed />

@@ -28,7 +28,7 @@ export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
 					<NetworkIcon
 						data-testid="SelectNetworkInput__network"
 						coin={network?.coin()}
-						network={network?.name()}
+						network={network?.id()}
 						size="sm"
 						showTooltip={false}
 					/>

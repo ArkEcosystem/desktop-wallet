@@ -47,6 +47,7 @@ type ContactsProps = {
 export const Contacts = ({ onSearch }: ContactsProps) => {
 	const { env, persist } = useEnvironmentContext();
 	const { t } = useTranslation();
+
 	const activeProfile = useActiveProfile();
 
 	const [contacts, setContacts] = useState<Contact[]>([]);

@@ -4,7 +4,7 @@ import { fireEvent, render } from "testing-library";
 import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { httpClient } from "app/services";
-import { profiles } from "tests/fixtures/env/data.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import nock from "nock";
 
@@ -35,29 +35,20 @@ describe("ContactListItem", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
 	});
 
-	beforeEach(async () => {
+	beforeAll(async () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		await env.bootFromObject({ data: {}, profiles });
-		const profile = env.profiles().findById("bob");
+		await env.bootFromObject(fixtureData);
+		const profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
-		contact = profile.contacts().create("Jane Doe");
-
-		const address = await contact.addresses().create(
-			{
-				coin: "ARK",
-				network: "devnet",
-				name: "Jane's Devnet Address",
-				address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-			}
-		);
-
-		addressId = address.id();
+		contact = profile.contacts().values()[0];
 	});
 
 	it("should render", () => {
@@ -173,6 +164,6 @@ describe("ContactListItem", () => {
 			fireEvent.click(getByTestId("ContactListItem__one-option-button-0"));
 		});
 
-		expect(onAction).toHaveBeenCalledWith(singleOption[0], addressId);
+		expect(onAction).toHaveBeenCalledWith(singleOption[0], contact.addresses().values()[0].id());
 	});
 });

@@ -25,7 +25,7 @@ const Placeholder = (props: CircleProps) => (
 );
 
 export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, ...props }: Props) => {
-	const networkExtendedData = coin && network ? getNetworkExtendedData({ coin, network: network.toLowerCase() }) : undefined;
+	const networkExtendedData = coin && network ? getNetworkExtendedData({ coin, network }) : undefined;
 
 	if (!networkExtendedData) {
 		return <Placeholder {...props} />;
