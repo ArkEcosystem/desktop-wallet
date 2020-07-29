@@ -168,10 +168,10 @@ describe("WalletDetails", () => {
 			await fireEvent.click(dropdown);
 
 			const updateWalletNameOption = getByTestId("dropdown__option--0");
-			expect(updateWalletNameOption).toBeTruthy();
+			await waitFor(() => expect(updateWalletNameOption).toBeTruthy());
 
-			await fireEvent.click(updateWalletNameOption);
-			expect(getByTestId("modal__inner")).toBeTruthy();
+			fireEvent.click(updateWalletNameOption);
+			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 			const name = "Sample label name";
 			const updateNameInput = getByTestId("UpdateWalletName__input");
@@ -179,16 +179,13 @@ describe("WalletDetails", () => {
 				fireEvent.change(updateNameInput, { target: { value: name } });
 			});
 
-			expect(updateNameInput).toHaveValue(name);
+			await waitFor(() => expect(updateNameInput).toHaveValue(name));
 
 			const submitBtn = getByTestId("UpdateWalletName__submit");
 
-			act(() => {
-				fireEvent.click(submitBtn);
-			});
+			fireEvent.click(submitBtn);
 
 			await waitFor(() => {
-				wallet.settings().set(WalletSetting.Alias, name);
 				expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 			});
 		});
