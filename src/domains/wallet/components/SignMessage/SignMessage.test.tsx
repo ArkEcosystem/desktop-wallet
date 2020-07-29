@@ -51,7 +51,7 @@ describe("SignMessage", () => {
 				<SignMessage
 					profileId={profile.id()}
 					walletId={wallet.id()}
-					signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+					signatoryAddress="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 					isOpen={true}
 				/>
 			</EnvironmentProvider>,
@@ -69,7 +69,7 @@ describe("SignMessage", () => {
 					<SignMessage
 						profileId={profile.id()}
 						walletId={wallet.id()}
-						signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+						signatoryAddress="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 						isOpen={true}
 					/>
 				</EnvironmentProvider>,

@@ -49,8 +49,10 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			mnemonic,
 		});
 
-		setIsSigned(true);
+		console.log("signedMessageResult", signedMessageResult);
+
 		setSignedMessage(signedMessageResult);
+		setIsSigned(true);
 	};
 
 	const SignFormRender = (
@@ -128,12 +130,12 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					name="signature"
 					wrap="hard"
 					ref={messageRef}
-					defaultValue={signedMessage.signature}
+					defaultValue={JSON.stringify(signedMessage)}
 				/>
 			</TransactionDetail>
 
 			<div className="flex justify-end pb-5 mt-3">
-				<Clipboard data={signedMessage.signature}>
+				<Clipboard data={JSON.stringify(signedMessage)}>
 					<Button variant="plain">
 						<Icon name="Copy" />
 						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
