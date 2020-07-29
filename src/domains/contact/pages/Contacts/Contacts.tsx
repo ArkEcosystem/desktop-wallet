@@ -25,11 +25,11 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	const { t } = useTranslation();
 
 	return (
-		<div className="items-top flex justify-end">
+		<div className="flex justify-end items-top">
 			{showSearchBar && (
 				<>
 					<HeaderSearchBar onSearch={onSearch} />
-					<div className="border-theme-neutral-200 h-10 pl-8 my-auto ml-8 border-l" />
+					<div className="h-10 pl-8 my-auto ml-8 border-l border-theme-neutral-200" />
 				</>
 			)}
 
@@ -132,7 +132,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
-							<div className="text-theme-neutral-dark mt-8">
+							<div className="mt-8 text-theme-neutral-dark">
 								{t("CONTACTS.CONTACTS_PAGE.ADD_CONTACT_MESSAGE")}
 							</div>
 						</div>
