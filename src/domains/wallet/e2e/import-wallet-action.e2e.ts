@@ -136,7 +136,7 @@ test.requestHooks(neoscanMock)("should show an error if import a NEO mainnet add
 	await t.typeText(addressInput, "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
-	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 5000 });
+	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 10000 });
 	await t.expect(Selector("div").withText("This address exists on the NEO Mainnet.").exists).ok();
 });
 
