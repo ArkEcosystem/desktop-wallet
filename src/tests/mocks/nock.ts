@@ -6,6 +6,7 @@ import delegates from "../fixtures/coins/ark/delegates.json";
 import peers from "../fixtures/coins/ark/peers.json";
 import syncing from "../fixtures/coins/ark/syncing.json";
 import transactions from "../fixtures/coins/ark/transactions.json";
+import votes from "../fixtures/coins/ark/votes.json";
 import wallet from "../fixtures/coins/ark/wallet.json";
 
 export const mockArkHttp = () => {
@@ -22,6 +23,8 @@ export const mockArkHttp = () => {
 		.reply(200, syncing)
 		.get(/\/api\/delegates\/.+/)
 		.reply(200, wallet)
+		.get(/\/api\/wallets\/.+\/votes/)
+		.reply(200, votes)
 		.get(/\/api\/wallets\/.+/)
 		.reply(200, wallet)
 		.get("/api/delegates")
