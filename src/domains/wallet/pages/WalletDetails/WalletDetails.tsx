@@ -161,14 +161,11 @@ export const WalletDetails = () => {
 
 			<SignMessage
 				profileId={activeProfile?.id() as string}
-				walletId={walletId}
-				signatoryAddress={wallet?.address as string}
+				walletId={activeWallet?.id() as string}
+				signatoryAddress={activeWallet?.address() as string}
 				isOpen={isSigningMessage}
 				onClose={() => setIsSigningMessage(false)}
 				onCancel={() => setIsSigningMessage(false)}
-				signatoryAddress={activeWallet?.address()}
-				handleSign={() => setIsSigned(true)}
-				isSigned={isSigned}
 			/>
 
 			<DeleteWallet
