@@ -79,7 +79,7 @@ export const WalletCard = ({
 								</div>
 							)}
 
-							{wallet?.isMultiSignature() && (
+							{wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature() && (
 								<div className="inline-block mr-2 text text-theme-neutral-600">
 									<Icon name="Multisig" width={18} />
 								</div>
