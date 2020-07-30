@@ -41,7 +41,7 @@ describe("Welcome", () => {
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
-		const profileCardMenu = getAllByTestId("dropdown__toggle")[1];
+		const profileCardMenu = getAllByTestId("dropdown__toggle")[0];
 		act(() => {
 			fireEvent.click(profileCardMenu);
 		});

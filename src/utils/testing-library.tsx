@@ -12,9 +12,7 @@ import { Router } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
-import envFixture from "../tests/fixtures/env/data.json";
-
-export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envFixture) });
+export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
