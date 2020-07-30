@@ -112,7 +112,7 @@ export const WalletRegistrations = ({
 						</div>
 					) : (
 						<div className="flex items-center divide-x-1 divide-theme-neutral-light">
-							{delegate && (
+							{delegate && delegate.hasData() && (
 								<div className="flex items-center pr-8 space-x-4">
 									<div className="flex items-center -space-x-2">
 										<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">

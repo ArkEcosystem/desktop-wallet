@@ -63,6 +63,10 @@ export const WalletDetails = () => {
 			}
 
 			const data = await activeWallet!.coin().client().wallet(publicKey);
+			if (!data.hasData()) {
+				continue;
+			}
+
 			result.push(data);
 		}
 
@@ -118,7 +122,7 @@ export const WalletDetails = () => {
 					currencyBalance={activeWallet?.fiat().toString()}
 					name={activeWallet?.alias()}
 					isLedger={activeWallet?.isLedger()}
-					isMultisig={activeWallet?.isMultiSignature()}
+					isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
 					hasStarred={activeWallet?.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
