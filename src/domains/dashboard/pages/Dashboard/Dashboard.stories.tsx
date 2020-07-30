@@ -70,6 +70,4 @@ export const FewerWallets = () => {
 	);
 };
 
-export const Empty = () => {
-	return <Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />;
-};
+export const Empty = () => <Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />;
