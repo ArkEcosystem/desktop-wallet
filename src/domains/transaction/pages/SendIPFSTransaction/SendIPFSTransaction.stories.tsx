@@ -5,10 +5,8 @@ import { SendIPFSTransaction } from "./SendIPFSTransaction";
 
 export default { title: "Domains / Transaction / Pages / SendIPFSTransaction" };
 
-export const Default = () => {
-	return (
-		<div>
-			<SendIPFSTransaction networks={availableNetworksMock} />
-		</div>
-	);
-};
+export const Default = () => (
+	<div>
+		<SendIPFSTransaction networks={availableNetworksMock} />
+	</div>
+);

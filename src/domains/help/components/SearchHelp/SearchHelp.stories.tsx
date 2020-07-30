@@ -6,6 +6,4 @@ import { SearchHelp } from "./SearchHelp";
 
 export default { title: "Domains / Help / Components / SearchHelp", decorators: [withKnobs] };
 
-export const Default = () => {
-	return <SearchHelp isOpen={true} data={data} />;
-};
+export const Default = () => <SearchHelp isOpen={true} data={data} />;

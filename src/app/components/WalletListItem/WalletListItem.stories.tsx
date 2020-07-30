@@ -65,11 +65,9 @@ export const Default = ({ wallets }: { wallets: Wallet[] }) => {
 
 	return (
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} />}
+			</Table>
 		</div>
 	);
 };
@@ -79,11 +77,9 @@ export const SingleAction = ({ wallets }: { wallets: Wallet[] }) => {
 
 	return (
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
+			</Table>
 		</div>
 	);
 };

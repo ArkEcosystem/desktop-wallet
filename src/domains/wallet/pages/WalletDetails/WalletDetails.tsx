@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
 import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { WalletDataCollection } from "@arkecosystem/platform-sdk/dist/coins";
@@ -9,6 +10,7 @@ import { TransactionTable } from "domains/transaction/components/TransactionTabl
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
+import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { WalletBottomSheetMenu } from "domains/wallet/components/WalletBottomSheetMenu";
 import { WalletHeader } from "domains/wallet/components/WalletHeader/WalletHeader";
 import { WalletRegistrations } from "domains/wallet/components/WalletRegistrations";
@@ -23,6 +25,7 @@ export const WalletDetails = () => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [votes, setVotes] = React.useState<Coins.WalletDataCollection>();
 	const [walletData, setWalletData] = React.useState<WalletData>();
+	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -119,6 +122,7 @@ export const WalletDetails = () => {
 					hasStarred={activeWallet?.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
+					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
 					onDeleteWallet={() => setIsDeleteWallet(true)}
 				/>
@@ -181,6 +185,15 @@ export const WalletDetails = () => {
 				onClose={() => setIsDeleteWallet(false)}
 				onCancel={() => setIsDeleteWallet(false)}
 				onDelete={handleDeleteWallet}
+			/>
+
+			<VerifyMessage
+				isOpen={isVerifyingMessage}
+				onClose={() => setIsVerifyingMessage(false)}
+				onCancel={() => setIsVerifyingMessage(false)}
+				walletId={walletId}
+				profileId={activeProfile?.id() as string}
+				signatory={wallet?.publicKey}
 			/>
 		</>
 	);

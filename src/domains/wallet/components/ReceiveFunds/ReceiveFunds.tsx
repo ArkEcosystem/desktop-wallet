@@ -22,25 +22,23 @@ type WrapperProps = {
 	copyButton?: React.ReactNode;
 };
 
-const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps) => {
-	return (
-		<div className={className}>
-			<div className="flex items-center mt-6 mb-6">
-				<div className="flex-1">
-					<div className="text-sm font-semibold text-theme-neutral">{label}</div>
-					<div className="flex items-center font-semibold">
-						{value}
-						{copyButton}
-					</div>
+const Wrapper = ({ label, value, className, children, copyButton }: WrapperProps) => (
+	<div className={className}>
+		<div className="flex items-center mt-6 mb-6">
+			<div className="flex-1">
+				<div className="text-sm font-semibold text-theme-neutral">{label}</div>
+				<div className="flex items-center font-semibold">
+					{value}
+					{copyButton}
 				</div>
-
-				{children}
 			</div>
 
-			<Divider dashed={true} />
+			{children}
 		</div>
-	);
-};
+
+		<Divider dashed={true} />
+	</div>
+);
 
 export const ReceiveFunds = ({ isOpen, wallet, qrCode, handleClose }: ReceiveFundsProps) => {
 	const { t } = useTranslation();

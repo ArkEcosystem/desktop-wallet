@@ -33,10 +33,7 @@ export const PeerListItem = ({ coin, coinClass, name, peerIp, type, actions, onA
 			</div>
 		</td>
 		<td className="text-theme-neutral-300">
-			{actions?.length &&
-				(() => {
-					return <Dropdown options={actions} onSelect={onAction} />;
-				})()}
+			{actions?.length && (() => <Dropdown options={actions} onSelect={onAction} />)()}
 		</td>
 	</tr>
 );

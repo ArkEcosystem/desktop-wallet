@@ -37,11 +37,13 @@ module.exports = {
 				extensions: [".ts", ".js", ".jsx", ".tsx", ".scss", ".json", ".node"],
 				alias: {
 					app: path.resolve(__dirname, "../src/app/"),
+					data: path.resolve(__dirname, "../src/data/"),
 					domains: path.resolve(__dirname, "../src/domains"),
 					resources: path.resolve(__dirname, "../src/resources"),
 					styles: path.resolve(__dirname, "../src/styles"),
 					utils: path.resolve(__dirname, "../src/utils"),
 					tests: path.resolve(__dirname, "../src/tests"),
+					// Mocks
 					fs: path.resolve(__dirname, "mocks/fsMock.js"),
 				},
 			};

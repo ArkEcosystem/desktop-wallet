@@ -6,8 +6,7 @@ import { WalletCard } from "./WalletCard";
 
 export default { title: "App / Components / WalletCard" };
 
-export const Default = () => {
-	return (
+export const Default = () => (
 		<WalletsDecorator count={3}>
 			{({ wallets }: { wallets: Wallet[] }) => (
 				<div className="">
@@ -45,18 +44,15 @@ export const Default = () => {
 			)}
 		</WalletsDecorator>
 	);
-};
 
-export const Blank = () => {
-	return (
-		<div className="">
-			<div className="mb-5">
-				<WalletCard isBlank={true} className="mr-4" />
-			</div>
-			<div className="mb-10">
-				<WalletCard isBlank={true} className="mr-4" />
-				<WalletCard isBlank={true} />
-			</div>
+export const Blank = () => (
+	<div className="">
+		<div className="mb-5">
+			<WalletCard isBlank={true} className="mr-4" />
 		</div>
-	);
-};
+		<div className="mb-10">
+			<WalletCard isBlank={true} className="mr-4" />
+			<WalletCard isBlank={true} />
+		</div>
+	</div>
+);

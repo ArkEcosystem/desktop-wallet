@@ -23,6 +23,8 @@ const getVariant = (name?: any) => {
 	}
 };
 
-export const getStyles = ({ color, variant }: { color?: string; variant?: string }) => {
-	return [...baseStyle, ...getColor(color!), ...getVariant(variant!)];
-};
+export const getStyles = ({ color, variant }: { color?: string; variant?: string }) => [
+	...baseStyle,
+	...getColor(color!),
+	...getVariant(variant!),
+];

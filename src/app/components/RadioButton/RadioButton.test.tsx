@@ -20,15 +20,13 @@ describe("RadioButton", () => {
 	});
 
 	it("should render if something went wrong", () => {
-		const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
-			return (
-				<div role="alert">
-					<p>Something went wrong: </p>
-					<pre>{error.message}</pre>
-					<button onClick={resetErrorBoundary}>Try again?</button>
-				</div>
-			);
-		};
+		const ErrorFallback = ({ error, resetErrorBoundary }: any) => (
+			<div role="alert">
+				<p>Something went wrong: </p>
+				<pre>{error.message}</pre>
+				<button onClick={resetErrorBoundary}>Try again?</button>
+			</div>
+		);
 
 		const { rerender, getByText, queryByText, getByRole, queryByRole } = render(
 			<ErrorBoundary FallbackComponent={ErrorFallback}>

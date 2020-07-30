@@ -17,9 +17,9 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 
 	await t.typeText(nameInput, "Anne Doe");
 	await t.click(Selector("button").withText("Select Market Provider"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("CoinGecko"));
 	await t.click(Selector("button").withText("Select Currency"));
-	await t.click(Selector("li.select-list-option").withText("Option 1"));
+	await t.click(Selector("li.select-list-option").withText("ETH"));
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));
 

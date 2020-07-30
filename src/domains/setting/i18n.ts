@@ -1,7 +1,7 @@
 export const translations: { [key: string]: any } = {
 	GENERAL: {
 		MENU_ITEM: "General",
-		TITLE: "Wallet Settings",
+		TITLE: "Profile Settings",
 		SUBTITLE: "Customize your wallet to suit your needs.",
 		PERSONAL: {
 			TITLE: "Personal Details",

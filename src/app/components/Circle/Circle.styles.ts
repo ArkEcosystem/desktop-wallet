@@ -45,6 +45,4 @@ export const getStyles = ({
 	size?: Size;
 	avatarId?: string | null;
 	noShadow?: boolean;
-}) => {
-	return [...defaultStyle(noShadow!), getSize(size), ...getAvatarCss(avatarId)];
-};
+}) => [...defaultStyle(noShadow!), getSize(size), ...getAvatarCss(avatarId)];

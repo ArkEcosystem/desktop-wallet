@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "testing-library";
 
-// i18n
 import { translations } from "../../i18n";
 import { AdvancedMode } from "./AdvancedMode";
 

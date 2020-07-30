@@ -6,6 +6,7 @@ import { httpClient } from "app/services";
 import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { VerifyMessage } from "./VerifyMessage";
@@ -30,7 +31,7 @@ describe("VerifyMessage", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
 			.persist();
 	});
@@ -38,8 +39,11 @@ describe("VerifyMessage", () => {
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
-		profile = env.profiles().create("John Doe");
-		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
 		signedMessageText = "Hello world";
 		signedMessageMnemonic = "top secret";
@@ -56,7 +60,7 @@ describe("VerifyMessage", () => {
 				<VerifyMessage
 					isOpen={true}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -72,7 +76,7 @@ describe("VerifyMessage", () => {
 				<VerifyMessage
 					isOpen={true}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -86,7 +90,7 @@ describe("VerifyMessage", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should trigger cancel event", () => {
+	it("should open verify message modal and cancel", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
@@ -94,7 +98,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onCancel={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -107,6 +111,27 @@ describe("VerifyMessage", () => {
 		expect(fn).toBeCalled();
 	});
 
+	it("should open verify message modal and close modal", () => {
+		const fn = jest.fn();
+		const { getByTestId } = render(
+			<EnvironmentProvider env={env}>
+				<VerifyMessage
+					isOpen={true}
+					onClose={fn}
+					signatory={signedMessage.signatory}
+					walletId={wallet.id()}
+					profileId={profile.id()}
+				/>
+			</EnvironmentProvider>,
+		);
+
+		const closeButton = getByTestId("modal__close-btn");
+		act(() => {
+			fireEvent.click(closeButton);
+		});
+		expect(fn).toBeCalled();
+	});
+
 	it("should not verify if empty inputs", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
@@ -115,7 +140,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -139,7 +164,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -180,7 +205,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,
@@ -201,6 +226,11 @@ describe("VerifyMessage", () => {
 
 		await waitFor(() => {
 			expect(fn).toBeCalledWith(true);
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
+
+		await act(async () => {
+			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 	});
 
@@ -212,7 +242,7 @@ describe("VerifyMessage", () => {
 					isOpen={true}
 					onSubmit={fn}
 					signatory={signedMessage.signatory}
-					walletPublicKey={wallet.publicKey() as string}
+					walletId={wallet.id()}
 					profileId={profile.id()}
 				/>
 			</EnvironmentProvider>,

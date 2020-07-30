@@ -51,7 +51,7 @@ describe("SignMessage", () => {
 				<SignMessage
 					profileId={profile.id()}
 					walletId={wallet.id()}
-					signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+					signatoryAddress="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 					isOpen={true}
 				/>
 			</EnvironmentProvider>,
@@ -61,6 +61,12 @@ describe("SignMessage", () => {
 	});
 
 	it("should sign message", async () => {
+		const signedMessage = {
+			message: "Hello World",
+			signatory: "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+			signature:
+				"304402200fb4adddd1f1d652b544ea6ab62828a0a65b712ed447e2538db0caebfa68929e02205ecb2e1c63b29879c2ecf1255db506d671c8b3fa6017f67cfd1bf07e6edd1cc8",
+		};
 		let rendered: RenderResult;
 
 		await act(async () => {
@@ -69,7 +75,7 @@ describe("SignMessage", () => {
 					<SignMessage
 						profileId={profile.id()}
 						walletId={wallet.id()}
-						signatoryAddress="AUexKjGtgsSpVzPLs6jNMM6vJ6znEVTQWK"
+						signatoryAddress="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 						isOpen={true}
 					/>
 				</EnvironmentProvider>,
@@ -102,6 +108,18 @@ describe("SignMessage", () => {
 					translations.MODAL_SIGN_MESSAGE.SUCCESS_TITLE,
 				),
 			);
+
+			const writeTextMock = jest.fn();
+			const clipboardOriginal = navigator.clipboard;
+
+			// @ts-ignore
+			navigator.clipboard = { writeText: writeTextMock };
+
+			await fireEvent.click(getByTestId(`SignMessage__copy-button`));
+			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith(JSON.stringify(signedMessage)));
+
+			// @ts-ignore
+			navigator.clipboard = clipboardOriginal;
 		});
 	});
 });

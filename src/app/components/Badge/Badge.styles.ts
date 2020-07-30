@@ -36,6 +36,4 @@ const getPosition = (position: string): any => {
 	}
 };
 
-export const getStyles = ({ position }: any) => {
-	return [...baseStyle, getPosition(position)];
-};
+export const getStyles = ({ position }: any) => [...baseStyle, getPosition(position)];

@@ -7,27 +7,23 @@ export default {
 	title: "Domains / Help / Pages / Article",
 };
 
-export const Default = () => {
-	return (
-		<Article
-			title={article.title}
-			category={article.category}
-			categoryIcon={article.categoryIcon}
-			views={article.views}
-			sections={article.sections}
-		/>
-	);
-};
+export const Default = () => (
+	<Article
+		title={article.title}
+		category={article.category}
+		categoryIcon={article.categoryIcon}
+		views={article.views}
+		sections={article.sections}
+	/>
+);
 
-export const WithImage = () => {
-	return (
-		<Article
-			title={article.title}
-			category={article.category}
-			categoryIcon={article.categoryIcon}
-			views={article.views}
-			sections={article.sections}
-			image={article.image}
-		/>
-	);
-};
+export const WithImage = () => (
+	<Article
+		title={article.title}
+		category={article.category}
+		categoryIcon={article.categoryIcon}
+		views={article.views}
+		sections={article.sections}
+		image={article.image}
+	/>
+);
