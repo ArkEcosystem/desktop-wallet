@@ -511,48 +511,167 @@ exports[`WalletDetails should delete wallet 1`] = `
                 class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AXzxJ8…EJb8HX
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="flex flex-col"
+                    class="flex items-center"
                   >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
-                      Address Delegate
-                    </span>
-                    <span
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      You haven't voted for more than one delegate yet.
-                      <a
-                        class="px-2 text-theme-primary"
-                        href="/#"
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        Learn more
-                      </a>
-                    </span>
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://explorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxhCb BegvR"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -610,6 +729,56 @@ exports[`WalletDetails should delete wallet 1`] = `
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        arkx
+                      </span>
+                    </div>
+                  </div>
                   <div
                     class="px-8"
                   >
@@ -1903,48 +2072,167 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AXzxJ8…EJb8HX
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="flex flex-col"
+                    class="flex items-center"
                   >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
-                      Address Delegate
-                    </span>
-                    <span
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      You haven't voted for more than one delegate yet.
-                      <a
-                        class="px-2 text-theme-primary"
-                        href="/#"
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        Learn more
-                      </a>
-                    </span>
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://explorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxhCb BegvR"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2002,6 +2290,56 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        arkx
+                      </span>
+                    </div>
+                  </div>
                   <div
                     class="px-8"
                   >
@@ -2682,9 +3020,9 @@ exports[`WalletDetails should render 1`] = `
                     class="w-full h-full"
                   >
                     <img
-                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      alt="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
+                      title="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
                     />
                   </div>
                 </div>
@@ -2808,7 +3146,7 @@ exports[`WalletDetails should render 1`] = `
                     class="inline-block text-lg font-medium"
                     data-testid="WalletHeader__address-publickey"
                   >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    AHZLH1CwMEGPBxMjuohAgdR79DpezntksA
                   </span>
                   <span
                     class="ml-4"
@@ -2943,9 +3281,9 @@ exports[`WalletDetails should render 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
                           />
                         </div>
                       </div>
@@ -2971,7 +3309,7 @@ exports[`WalletDetails should render 1`] = `
                           class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D61mfS…J3Dyib
+                          AXzxJ8…EJb8HX
                         </span>
                       </div>
                     </div>
@@ -3158,9 +3496,9 @@ exports[`WalletDetails should render 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                           />
                         </div>
                       </div>
@@ -3613,7 +3951,7 @@ exports[`WalletDetails should render 1`] = `
               Show
             </span>
             <span
-              class="sc-fzpjYC eysiUh"
+              class="sc-fzqARJ hMpgBB"
             >
               <div
                 class="sc-AxirZ fttODj"
@@ -3936,27 +4274,10 @@ exports[`WalletDetails should render 1`] = `
                     </div>
                   </td>
                   <td
-                    class="py-1 text-sm font-bold text-center space-x-2"
-                  >
-                    <div
-                      class="inline-block align-middle text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ hPsuTj"
-                        height="16"
-                        width="16"
-                      >
-                        <svg>
-                          multisig.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
                     class="font-semibold text-right"
                   >
                     <div>
-                      55827093444556
+                      0
                     </div>
                   </td>
                   <td
@@ -4491,48 +4812,167 @@ exports[`WalletDetails should render wallet data 1`] = `
                 class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AXzxJ8…EJb8HX
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="flex flex-col"
+                    class="flex items-center"
                   >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
-                      Address Delegate
-                    </span>
-                    <span
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      You haven't voted for more than one delegate yet.
-                      <a
-                        class="px-2 text-theme-primary"
-                        href="/#"
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        Learn more
-                      </a>
-                    </span>
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://explorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxhCb BegvR"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -4590,6 +5030,56 @@ exports[`WalletDetails should render wallet data 1`] = `
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        arkx
+                      </span>
+                    </div>
+                  </div>
                   <div
                     class="px-8"
                   >
@@ -5883,48 +6373,167 @@ exports[`WalletDetails should render with timers 1`] = `
                 class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AXzxJ8…EJb8HX
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="flex flex-col"
+                    class="flex items-center"
                   >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
-                      Address Delegate
-                    </span>
-                    <span
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      You haven't voted for more than one delegate yet.
-                      <a
-                        class="px-2 text-theme-primary"
-                        href="/#"
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        Learn more
-                      </a>
-                    </span>
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://explorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxhCb BegvR"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -5982,6 +6591,56 @@ exports[`WalletDetails should render with timers 1`] = `
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        arkx
+                      </span>
+                    </div>
+                  </div>
                   <div
                     class="px-8"
                   >
@@ -7275,48 +7934,167 @@ exports[`WalletDetails should update wallet name 1`] = `
                 class="px-1 py-4 grid grid-flow-row row-gap-6"
               >
                 <div
-                  class="flex items-center pr-8 space-x-4"
-                  data-testid="WalletVote__empty"
+                  class="flex items-center justify-between"
+                  data-testid="WalletVote__delegate"
                 >
                   <div
-                    class="flex items-center -space-x-2"
+                    class="flex items-center space-x-4"
                   >
                     <div
-                      class="sc-AxhUy dSLmHc text-theme-neutral-light"
+                      class="flex items-center -space-x-2"
                     >
                       <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
                       >
-                        <svg>
-                          voted.svg
-                        </svg>
+                        <div
+                          class="sc-AxirZ iQaTP"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            voted.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
+                            title="AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX"
+                          />
+                        </div>
                       </div>
                     </div>
                     <div
-                      class="sc-AxhUy dSLmHc bg-theme-background"
-                    />
+                      class="flex flex-col justify-between"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <div
+                        class="inline-block truncate align-middle"
+                      >
+                        <span
+                          class="text-theme-text max-w-24 flex-auto truncate mt-4 mr-1 font-semibold text-base"
+                          data-testid="address__wallet-name"
+                        >
+                          arkx
+                        </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-neutral-light font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          AXzxJ8…EJb8HX
+                        </span>
+                      </div>
+                    </div>
                   </div>
                   <div
-                    class="flex flex-col"
+                    class="flex items-center"
                   >
-                    <span
-                      class="text-sm font-semibold text-theme-neutral"
+                    <ul
+                      class="flex items-stretch divide-x-1 divide-theme-neutral-300"
                     >
-                      Address Delegate
-                    </span>
-                    <span
-                      class="font-semibold text-theme-neutral-900"
-                    >
-                      You haven't voted for more than one delegate yet.
-                      <a
-                        class="px-2 text-theme-primary"
-                        href="/#"
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
                       >
-                        Learn more
-                      </a>
-                    </span>
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Rank
+                        </span>
+                        <span
+                          class="font-bold text-theme-neutral-dark"
+                          data-testid="WalletVote__delegate__rank"
+                        >
+                          #
+                        </span>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Explorer
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__explorer"
+                          href="https://explorer.ark.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-2xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              explorer.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          MarketSquare
+                        </span>
+                        <a
+                          data-testid="WalletVote__delegate__msq"
+                          href="https://marketsquare.io"
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP text-xl text-theme-primary"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              link.svg
+                            </svg>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        class="flex flex-col items-center justify-between px-10"
+                      >
+                        <span
+                          class="text-sm font-semibold text-theme-neutral"
+                        >
+                          Status
+                        </span>
+                        <div
+                          class="sc-AxirZ iQaTP text-theme-neutral"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            status-clock.svg
+                          </svg>
+                        </div>
+                      </li>
+                    </ul>
+                    <button
+                      class="sc-AxhCb BegvR"
+                      color="primary"
+                      data-testid="WalletVote__delegate__unvote"
+                      type="button"
+                    >
+                      Unvote
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7374,6 +8152,56 @@ exports[`WalletDetails should update wallet name 1`] = `
                 <div
                   class="flex items-center divide-x-1 divide-theme-neutral-light"
                 >
+                  <div
+                    class="flex items-center pr-8 space-x-4"
+                  >
+                    <div
+                      class="flex items-center -space-x-2"
+                    >
+                      <div
+                        class="sc-AxhUy dSLmHc border-theme-neutral-900 text-theme-neutral-900"
+                      >
+                        <div
+                          class="sc-AxirZ iQaTP text-xl"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            delegate.svg
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="Avatar"
+                      >
+                        <div
+                          class="w-full h-full"
+                        >
+                          <img
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex flex-col"
+                    >
+                      <span
+                        class="text-sm font-semibold text-theme-neutral"
+                      >
+                        Delegate
+                      </span>
+                      <span
+                        class="font-semibold"
+                        data-testid="WalletRegistrations__delegate"
+                      >
+                        arkx
+                      </span>
+                    </div>
+                  </div>
                   <div
                     class="px-8"
                   >
