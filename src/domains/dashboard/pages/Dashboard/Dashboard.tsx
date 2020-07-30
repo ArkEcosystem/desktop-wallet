@@ -5,12 +5,12 @@ import { PercentageBar } from "app/components/PercentageBar";
 import { useActiveProfile } from "app/hooks/env";
 import { Transactions } from "domains/dashboard/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-import { balances, portfolioPercentages, transactions, wallets } from "../../data";
+import { balances, portfolioPercentages, wallets } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
@@ -20,17 +20,27 @@ type DashboardProps = {
 	portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
+export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+	const [allTransactions, setAllTransactions] = useState(undefined);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	React.useEffect(() => {
+	useEffect(() => {
+		const fetchProfileTransactions = async () => {
+			const profileTransactions = await activeProfile?.transactionAggregate().transactions(1);
+			const allTransactions: any = profileTransactions?.all();
+
+			return allTransactions && setAllTransactions(allTransactions);
+		};
+
 		setScreenshotProtection(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === true);
+		fetchProfileTransactions();
 	}, [activeProfile]);
 
+	console.log({ allTransactions });
 	// Wallet controls data
 	const filterProperties = {
 		visibleTransactionsView: showTransactions,
@@ -84,7 +94,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 			{showTransactions && (
 				<Section data-testid="dashboard__transactions-view">
-					<Transactions transactions={transactions} />
+					<Transactions transactions={allTransactions} />
 				</Section>
 			)}
 		</Page>
@@ -94,6 +104,5 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 Dashboard.defaultProps = {
 	balances,
 	portfolioPercentages,
-	transactions,
 	wallets,
 };

@@ -1,10 +1,11 @@
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { identity } from "tests/fixtures/identity";
 import { act, fireEvent, renderWithRouter, within } from "utils/testing-library";
 
-import { balances, portfolioPercentages, transactions, wallets } from "../../data";
+import { balances, portfolioPercentages, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
@@ -14,6 +15,12 @@ const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
 describe("Dashboard", () => {
 	beforeAll(() => {
 		history.push(dashboardURL);
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.post("/api/transactions/search")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/transactions.json"))
+			.persist();
 	});
 
 	it("should render", () => {
@@ -31,9 +38,9 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard wallets={wallets} transactions={transactions} />
+				<Dashboard wallets={wallets} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -84,7 +91,7 @@ describe("Dashboard", () => {
 	it("should hide portfolio view", () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
+				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -128,7 +135,7 @@ describe("Dashboard", () => {
 
 		const { getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Dashboard balances={balances} wallets={wallets} transactions={transactions} />
+				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
 			{
 				routes: [dashboardURL],
