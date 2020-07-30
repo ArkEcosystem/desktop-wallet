@@ -17,34 +17,32 @@ type SearchContactProps = {
 	onAction?: (actionName: string, address: any) => void;
 };
 
-const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index, selectActionLabel }: any) => {
-	return (
-		<tr className="border-b border-theme-neutral-200">
-			<td className="py-6 mt-1">
-				<Avatar size="lg" address={address} />
-			</td>
-			<td className="py-1">
-				<Address walletName={walletName} address={address} maxChars={22} />
-			</td>
-			<td className="font-semibold">
-				<div>{balance}</div>
-			</td>
-			<td className="text-theme-neutral-light">
-				<div>{fiat}</div>
-			</td>
-			<td className="border-b border-dashed border-theme-neutral-200">
-				<Button
-					data-testid={`AddressListItem__select-${index}`}
-					className="float-right"
-					variant="plain"
-					onClick={() => onAction?.("select" as any, address)}
-				>
-					{selectActionLabel}
-				</Button>
-			</td>
-		</tr>
-	);
-};
+const SearchAddressListItem = ({ walletName, address, fiat, balance, onAction, index, selectActionLabel }: any) => (
+	<tr className="border-b border-theme-neutral-200">
+		<td className="py-6 mt-1">
+			<Avatar size="lg" address={address} />
+		</td>
+		<td className="py-1">
+			<Address walletName={walletName} address={address} maxChars={22} />
+		</td>
+		<td className="font-semibold">
+			<div>{balance}</div>
+		</td>
+		<td className="text-theme-neutral-light">
+			<div>{fiat}</div>
+		</td>
+		<td className="border-b border-dashed border-theme-neutral-200">
+			<Button
+				data-testid={`AddressListItem__select-${index}`}
+				className="float-right"
+				variant="plain"
+				onClick={() => onAction?.("select" as any, address)}
+			>
+				{selectActionLabel}
+			</Button>
+		</td>
+	</tr>
+);
 export const SearchAddress = ({
 	isOpen,
 	wallets,

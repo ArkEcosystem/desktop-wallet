@@ -26,9 +26,7 @@ const validatePath = (parentPath: string, filePath: string) => {
 	return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
 };
 
-const parseFilters = (filters: FileFilter | FileFilter[]) => {
-	return Array.isArray(filters) ? filters : [filters];
-};
+const parseFilters = (filters: FileFilter | FileFilter[]) => (Array.isArray(filters) ? filters : [filters]);
 
 const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions) => {
 	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;

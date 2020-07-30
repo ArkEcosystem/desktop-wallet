@@ -17,9 +17,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 	// const walletTypes: string[] = ["Delegate", "Business", "Bridgechain"];
 	const walletTypes: string[] = [];
 
-	const isCondensed = () => {
-		return variant === "condensed";
-	};
+	const isCondensed = () => variant === "condensed";
 
 	return (
 		<>
@@ -63,15 +61,15 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						</td>
 						{!isCondensed() && (
 							<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
-								{walletTypes.map((type: string) => {
-									return address[`is${type}`]() ? (
+								{walletTypes.map((type: string) =>
+									address[`is${type}`]() ? (
 										<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 											<Circle className="border-black">
 												<Icon name={type} width={25} height={25} />
 											</Circle>
 										</Tippy>
-									) : null;
-								})}
+									) : null,
+								)}
 							</td>
 						)}
 						<td className="border-b border-dashed border-theme-neutral-200">

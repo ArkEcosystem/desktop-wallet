@@ -59,26 +59,22 @@ const columns = [
 	},
 ];
 
-export const Default = () => {
-	return (
+export const Default = () => (
+	<div>
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} />}
+			</Table>
 		</div>
-	);
-};
+	</div>
+);
 
-export const SingleAction = () => {
-	return (
+export const SingleAction = () => (
+	<div>
 		<div>
-			<div>
-				<Table columns={columns} data={data}>
-					{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
-				</Table>
-			</div>
+			<Table columns={columns} data={data}>
+				{(rowData: any) => <WalletListItem {...rowData} variant="singleAction" />}
+			</Table>
 		</div>
-	);
-};
+	</div>
+);

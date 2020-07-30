@@ -10,21 +10,19 @@ type Props = {
 	wrapper?: React.ElementType;
 };
 
-export const RouterView = ({ routes, wrapper }: Props) => {
-	return (
-		<Switch>
-			{routes.map((route, i) => (
-				<Route
-					key={i}
-					path={route.path}
-					render={(props) => (
-						<Wrapper data-testid="RouterView__wrapper" as={wrapper}>
-							{/* @ts-ignore */}
-							<route.component {...props} routes={route.routes} />
-						</Wrapper>
-					)}
-				/>
-			))}
-		</Switch>
-	);
-};
+export const RouterView = ({ routes, wrapper }: Props) => (
+	<Switch>
+		{routes.map((route, i) => (
+			<Route
+				key={i}
+				path={route.path}
+				render={(props) => (
+					<Wrapper data-testid="RouterView__wrapper" as={wrapper}>
+						{/* @ts-ignore */}
+						<route.component {...props} routes={route.routes} />
+					</Wrapper>
+				)}
+			/>
+		))}
+	</Switch>
+);

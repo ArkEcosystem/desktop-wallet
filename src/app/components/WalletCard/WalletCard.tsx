@@ -86,13 +86,11 @@ export const WalletCard = ({
 						</div>
 						<div className="absolute right-3 -top-1">
 							{walletTypeIcons &&
-								walletTypeIcons.map((type: string, index: number) => {
-									return (
-										<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
-											<Icon name={type} width={18} />
-										</div>
-									);
-								})}
+								walletTypeIcons.map((type: string, index: number) => (
+									<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
+										<Icon name={type} width={18} />
+									</div>
+								))}
 						</div>
 						<div className="flex">
 							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>
