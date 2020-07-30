@@ -1,16 +1,23 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, renderWithRouter } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { PluginDetails } from "./PluginDetails";
 
-describe("PluginDetails", () => {
-	const history = createMemoryHistory();
-	const pluginDetailsURL = `/profiles/${identity.profiles.bob.id}/plugins/wsx123`;
+const history = createMemoryHistory();
 
-	history.push(pluginDetailsURL);
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const pluginDetailsURL = `/profiles/${fixtureProfileId}/plugins/wsx123`;
+
+describe("PluginDetails", () => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
+		history.push(pluginDetailsURL);
+	});
 
 	it("should render properly", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
