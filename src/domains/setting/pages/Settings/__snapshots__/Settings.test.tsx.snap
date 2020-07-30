@@ -532,18 +532,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-148-label downshift-148-toggle-button"
+                                  aria-labelledby="downshift-154-label downshift-154-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-148-toggle-button"
+                                  id="downshift-154-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-148-label"
+                                  aria-labelledby="downshift-154-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-148-menu"
+                                  id="downshift-154-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -1096,7 +1096,7 @@ exports[`Settings should render 1`] = `
                               name="passphraseLanguage"
                               readonly=""
                               type="text"
-                              value="english"
+                              value=""
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1106,12 +1106,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fznWqX iNiXlu  is-selected "
+                                  class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-0-toggle-button"
                                   type="button"
                                 >
-                                  English
+                                  Select Passphrase Language
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-0-label"
@@ -1157,7 +1157,7 @@ exports[`Settings should render 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value="btc"
+                              value=""
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1167,12 +1167,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                                  class="sc-fznWqX iNiXlu  is-selected "
+                                  class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-1-toggle-button"
                                   type="button"
                                 >
-                                  BTC (Ƀ)
+                                  Select Currency
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-1-label"
@@ -1222,7 +1222,7 @@ exports[`Settings should render 1`] = `
                               name="language"
                               readonly=""
                               type="text"
-                              value="en-US"
+                              value=""
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1232,12 +1232,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fznWqX iNiXlu  is-selected "
+                                  class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-2-toggle-button"
                                   type="button"
                                 >
-                                  English
+                                  Select Language
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-2-label"
@@ -1283,7 +1283,7 @@ exports[`Settings should render 1`] = `
                               name="marketProvider"
                               readonly=""
                               type="text"
-                              value="coingecko"
+                              value=""
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1293,12 +1293,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                                  class="sc-fznWqX iNiXlu  is-selected "
+                                  class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-3-toggle-button"
                                   type="button"
                                 >
-                                  CoinGecko
+                                  Select Market Provider
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-3-label"
@@ -1344,7 +1344,7 @@ exports[`Settings should render 1`] = `
                               name="timeFormat"
                               readonly=""
                               type="text"
-                              value="h:mm A"
+                              value=""
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1354,12 +1354,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                                  class="sc-fznWqX iNiXlu  is-selected "
+                                  class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-4-toggle-button"
                                   type="button"
                                 >
-                                  12h
+                                  Select Time Format
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-4-label"
@@ -3143,18 +3143,18 @@ exports[`Settings should render plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-141-label downshift-141-toggle-button"
+                                  aria-labelledby="downshift-147-label downshift-147-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-141-toggle-button"
+                                  id="downshift-147-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-141-label"
+                                  aria-labelledby="downshift-147-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-141-menu"
+                                  id="downshift-147-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3716,18 +3716,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-93-label downshift-93-toggle-button"
+                                  aria-labelledby="downshift-96-label downshift-96-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-93-toggle-button"
+                                  id="downshift-96-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-93-label"
+                                  aria-labelledby="downshift-96-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-93-menu"
+                                  id="downshift-96-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3777,18 +3777,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-94-label downshift-94-toggle-button"
+                                  aria-labelledby="downshift-97-label downshift-97-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-94-toggle-button"
+                                  id="downshift-97-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-94-label"
+                                  aria-labelledby="downshift-97-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-94-menu"
+                                  id="downshift-97-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3842,18 +3842,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-95-label downshift-95-toggle-button"
+                                  aria-labelledby="downshift-98-label downshift-98-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-95-toggle-button"
+                                  id="downshift-98-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-95-label"
+                                  aria-labelledby="downshift-98-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-95-menu"
+                                  id="downshift-98-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3903,18 +3903,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-96-label downshift-96-toggle-button"
+                                  aria-labelledby="downshift-99-label downshift-99-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-96-toggle-button"
+                                  id="downshift-99-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-96-label"
+                                  aria-labelledby="downshift-99-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-96-menu"
+                                  id="downshift-99-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3964,18 +3964,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-97-label downshift-97-toggle-button"
+                                  aria-labelledby="downshift-100-label downshift-100-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-97-toggle-button"
+                                  id="downshift-100-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-97-label"
+                                  aria-labelledby="downshift-100-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-97-menu"
+                                  id="downshift-100-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4241,18 +4241,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-98-label downshift-98-toggle-button"
+                                    aria-labelledby="downshift-101-label downshift-101-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-98-toggle-button"
+                                    id="downshift-101-toggle-button"
                                     type="button"
                                   >
                                     Select Auto-logoff
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-98-label"
+                                    aria-labelledby="downshift-101-label"
                                     class="sc-fzoiQi eFpDPy"
-                                    id="downshift-98-menu"
+                                    id="downshift-101-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
