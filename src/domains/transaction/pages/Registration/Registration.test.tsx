@@ -4,7 +4,7 @@ import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { Registration } from "./Registration";
@@ -27,6 +27,8 @@ const defaultFormValues = {
 };
 
 describe("Registration", () => {
+	beforeAll(useDefaultNetMocks);
+
 	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();

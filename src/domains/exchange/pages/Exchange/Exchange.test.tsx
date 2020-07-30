@@ -1,7 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, fireEvent, renderWithRouter } from "testing-library";
+import { env, fireEvent, getDefaultProfileId,renderWithRouter, useDefaultNetMocks } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -9,9 +9,11 @@ import { Exchange } from "./Exchange";
 
 const history = createMemoryHistory();
 
-const exchangeURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange`;
+const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;
 
 describe("Exchange", () => {
+	beforeAll(useDefaultNetMocks);
+
 	beforeAll(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();

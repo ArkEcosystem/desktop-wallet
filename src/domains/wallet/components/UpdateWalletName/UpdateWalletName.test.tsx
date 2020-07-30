@@ -1,40 +1,22 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
-import nock from "nock";
+import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId,render, useDefaultNetMocks, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 // i18n
 import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
-let env: Environment;
 let wallet: Wallet;
 
 describe("UpdateWalletName", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
+	beforeAll(useDefaultNetMocks);
 
 	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+		await env.persist();
 
-		const profile = env.profiles().create("John Doe");
+		const profile = env.profiles().findById(getDefaultProfileId());
 		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
 	});
 

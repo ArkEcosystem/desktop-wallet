@@ -1,7 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, renderWithRouter } from "testing-library";
+import { env, renderWithRouter, useDefaultNetMocks } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { WalletCard } from "./WalletCard";
@@ -13,6 +13,8 @@ const fixtureWalletAddress = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD";
 
 describe("Wallet Card", () => {
 	beforeAll(async () => {
+		useDefaultNetMocks();
+
 		history.push(dashboardURL);
 
 		await env.bootFromObject(fixtureData);

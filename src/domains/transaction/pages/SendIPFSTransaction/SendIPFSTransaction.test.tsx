@@ -5,7 +5,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { env, fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { env, fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
@@ -14,6 +14,8 @@ const onCopy = jest.fn();
 const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
 
 describe("SendIPFSTransaction", () => {
+	beforeAll(useDefaultNetMocks);
+
 	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();

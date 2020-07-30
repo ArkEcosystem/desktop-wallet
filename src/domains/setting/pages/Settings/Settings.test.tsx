@@ -3,7 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -11,15 +11,17 @@ import { Settings } from "./Settings";
 
 let profile: Profile;
 
-beforeEach(async () => {
-	await env.bootFromObject(fixtureData);
-	await env.persist();
-
-	const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
-	profile = env.profiles().findById(fixtureProfileId);
-});
-
 describe("Settings", () => {
+	beforeAll(useDefaultNetMocks);
+
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
+		const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+		profile = env.profiles().findById(fixtureProfileId);
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">

@@ -3,12 +3,11 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
-import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter, waitFor, within } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter, useDefaultNetMocks,waitFor, within } from "utils/testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
@@ -19,22 +18,7 @@ let profile: Profile;
 let firstContactId: string;
 
 describe("Contacts", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
+	beforeAll(useDefaultNetMocks);
 
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
@@ -97,7 +81,7 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (_, buttonId) => {
-		const { getAllByTestId, getByTestId, queryByTestId, debug } = renderWithRouter(
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<Route path="/profiles/:profileId/contacts/">
 					<Contacts contacts={[]} />

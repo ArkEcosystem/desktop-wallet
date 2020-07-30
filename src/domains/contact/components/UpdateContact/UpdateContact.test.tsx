@@ -2,9 +2,8 @@
 import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { availableNetworksMock } from "domains/network/data";
-import nock from "nock";
 import React from "react";
-import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -14,22 +13,7 @@ let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
+	beforeAll(useDefaultNetMocks);
 
 	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);

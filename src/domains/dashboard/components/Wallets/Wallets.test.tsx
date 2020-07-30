@@ -2,7 +2,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { act, env, fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
@@ -35,6 +35,8 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
+	beforeAll(useDefaultNetMocks);
+
 	beforeAll(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();

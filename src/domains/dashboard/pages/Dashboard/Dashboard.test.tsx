@@ -2,7 +2,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { act, env, fireEvent, renderWithRouter, within } from "utils/testing-library";
+import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks,within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
@@ -12,7 +12,9 @@ const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
 const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
-	beforeAll(async () => {
+	beforeAll(useDefaultNetMocks);
+
+	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

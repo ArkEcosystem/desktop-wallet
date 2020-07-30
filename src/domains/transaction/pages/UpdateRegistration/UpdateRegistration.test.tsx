@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { UpdateRegistration } from "../UpdateRegistration";
@@ -13,6 +13,8 @@ const defaultFormValues = {
 };
 
 describe("UpdateRegistration", () => {
+	beforeAll(useDefaultNetMocks);
+
 	beforeEach(async () => {
 		const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
 		await env.bootFromObject(fixtureData);
