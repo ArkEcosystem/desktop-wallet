@@ -4,10 +4,12 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
+
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
 
 const onCopy = jest.fn();
 
@@ -19,23 +21,6 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	assets: [
-		{
-			icon: "Ark",
-			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-light",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-	],
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
@@ -44,36 +29,14 @@ const defaultFormValues = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
-	contactList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Wallet",
-			formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-		{
-			address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Multisig",
-			formatted: " Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ",
-			isMultisig: true,
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient in Ark",
-			formatted: "Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ",
-			isInArkNetwork: true,
-		},
-	],
 };
 
 describe("Transaction Send", () => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+	});
+
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
@@ -131,9 +94,9 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render", async () => {
+	it("should navigate between teps", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${identity.profiles.bob.id}/transactions/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
 
 		history.push(transferURL);
 
