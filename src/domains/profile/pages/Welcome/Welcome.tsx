@@ -26,11 +26,18 @@ export const Welcome = () => {
 
 	React.useEffect(() => setScreenshotProtection(true));
 
+	const handleDelete = async (profile: Profile) => {
+		context.env.profiles().forget(profile.id());
+		await context.persist();
+	};
+
 	const handleProfileCardAction = (profile: Profile, action: any) => {
 		switch (action?.value) {
 			case "setting":
 				history.push(`/profiles/${profile.id()}/settings`);
 				break;
+			case "delete":
+				handleDelete(profile);
 		}
 	};
 

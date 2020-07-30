@@ -5,7 +5,7 @@ import { httpClient } from "app/services";
 import React from "react";
 import { identity } from "tests/fixtures/identity";
 import { StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -44,6 +44,25 @@ describe("Welcome", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/settings`);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should delete profile from profile card menu", async () => {
+		const { getByText, queryByTestId, getByTestId } = renderWithRouter(<Welcome />);
+
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+
+		const profileCardMenu = getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(profileCardMenu);
+		});
+
+		const deleteOption = getByTestId("dropdown__option--1");
+		expect(deleteOption).toHaveTextContent(commonTranslations.DELETE);
+		act(() => {
+			fireEvent.click(deleteOption);
+		});
+
+		await waitFor(() => expect(queryByTestId(translations.PAGE_WELCOME.HAS_PROFILES)).toBeNull());
 	});
 
 	it("should render without profiles", () => {
