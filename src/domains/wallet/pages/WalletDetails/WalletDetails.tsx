@@ -63,9 +63,6 @@ export const WalletDetails = () => {
 			}
 
 			const data = await activeWallet!.coin().client().wallet(publicKey);
-			if (!data.hasData()) {
-				continue;
-			}
 
 			result.push(data);
 		}
