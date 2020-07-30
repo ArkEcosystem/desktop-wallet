@@ -1,8 +1,14 @@
-import { Selector } from "testcafe";
+import { RequestMock, Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
 
 fixture`Import Wallet action`.page`http://localhost:3000/`;
+
+const neoscanMock = RequestMock()
+	.onRequestTo("https://neoscan.io/api/main_net/v1/")
+	.respond(require("../../../tests/fixtures/coins/ark/neo-duplicate.json"), 200, {
+		"Access-Control-Allow-Origin": "https://neoscan.io",
+	});
 
 test("should import a wallet by mnemonic", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
@@ -69,7 +75,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("button").withExactText(translations().COMMON.GO_TO_WALLET));
 });
 
-test("should show an error message for invalid wallet", async (t) => {
+test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
@@ -102,8 +108,40 @@ test("should show an error message for invalid wallet", async (t) => {
 		.ok();
 });
 
-test("should show an error message if trying to import a duplicate wallet", async (t) => {
-	let addressInput;
+test.requestHooks(neoscanMock)("should show an error if import a NEO mainnet address", async (t) => {
+	await t.click(Selector("p").withText("John Doe"));
+	await t.expect(Selector("div").withText("Wallets").exists).ok();
+
+	// Navigate to import page
+	await t.click(Selector("button").withExactText("Import"));
+	await t
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
+		.ok();
+
+	// Select a network and advance to step two
+	await t.click(Selector("#ImportWallet__network-item-0"));
+	await t
+		.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled"))
+		.notOk("Network selected", { timeout: 5000 });
+	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
+	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
+
+	// Use the address only
+	await t.click(Selector("input[name=isAddressOnly]").parent());
+
+	// Input address and import wallet
+	const addressInput = Selector("input[name=address]");
+
+	// NEO address: https://neoscan.io/address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1
+	await t.typeText(addressInput, "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN");
+	await t.click(Selector("button").withExactText("Go to Wallet"));
+
+	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("div").withText("This address exists on the NEO Mainnet.").exists).ok();
+});
+
+test("should show an error message if trying to import a duplicate address", async (t) => {
+	let addressInput: Selector;
 
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
