@@ -10,6 +10,7 @@ import { act, fireEvent, renderWithRouter } from "testing-library";
 import { profiles } from "tests/fixtures/env/data";
 import { StubStorage } from "tests/mocks";
 
+import { translations } from "../../i18n";
 import { Settings } from "./Settings";
 
 let env: Environment;
@@ -71,10 +72,17 @@ describe("Settings", () => {
 		// Select Time Format
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[4]);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		// Select Auto-logoff
+		fireEvent.click(getAllByTestId("select-list__toggle-button")[5]);
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 		// Toggle Screenshot Protection
 		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
 		// Toggle Advanced Mode
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Open Advanced Mode Modal
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("AdvancedMode__accept-button"));
 		// Toggle Update Ledger in Background
 		fireEvent.click(getByTestId("General-settings__toggle--isUpdateLedger"));
 
@@ -92,6 +100,7 @@ describe("Settings", () => {
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
 			ADVANCED_MODE: true,
+			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
 		});
@@ -99,6 +108,13 @@ describe("Settings", () => {
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
+		// Toggle Advanced Mode
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		// Open Advanced Mode Modal
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("AdvancedMode__decline-button"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("General-settings__submit-button"));
@@ -114,10 +130,17 @@ describe("Settings", () => {
 			EXCHANGE_CURRENCY: "btc",
 			TIME_FORMAT: "h:mm A",
 			SCREENSHOT_PROTECTION: true,
-			ADVANCED_MODE: true,
+			ADVANCED_MODE: false,
+			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
 		});
+
+		// Open & close Advanced Mode Modal
+		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.TITLE);
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
+		fireEvent.click(getByTestId("modal__close-btn"));
 
 		expect(env.profiles().all().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();

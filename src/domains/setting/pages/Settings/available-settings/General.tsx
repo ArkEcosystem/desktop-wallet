@@ -9,7 +9,8 @@ import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useActiveProfile } from "app/hooks/env";
 import { PlatformSdkChoices } from "data";
-import React from "react";
+import { AdvancedMode } from "domains/setting/components/AdvancedMode";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { setScreenshotProtection } from "utils/electron-utils";
 
@@ -20,11 +21,31 @@ type GeneralProps = {
 	onSubmit: (profile: Profile) => void;
 };
 
-export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps) => {
+export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
+	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
+	const [isAdvancedMode, setIsAdvancedMode] = useState(
+		activeProfile?.settings().get(ProfileSetting.AdvancedMode) || false,
+	);
+
 	const { context, register } = formConfig;
+
+	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { checked } = event.target;
+
+		if (checked) {
+			setIsOpenAdvancedModeModal(checked);
+		} else {
+			setIsAdvancedMode(false);
+		}
+	};
+
+	const handleAdvancedMode = (isAccepted: boolean) => {
+		setIsOpenAdvancedModeModal(false);
+		setIsAdvancedMode(isAccepted);
+	};
 
 	const personalDetails = [
 		{
@@ -73,6 +94,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isScreenshotProtection"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.ScreenshotProtection)}
 							data-testid="General-settings__toggle--isScreenshotProtection"
 						/>
 					</div>
@@ -93,9 +115,18 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isAdvancedMode"
+							checked={isAdvancedMode}
+							onChange={handleOpenAdvancedModeModal}
 							data-testid="General-settings__toggle--isAdvancedMode"
 						/>
 					</div>
+
+					<AdvancedMode
+						isOpen={isOpenAdvancedModeModal}
+						onClose={() => handleAdvancedMode(false)}
+						onDecline={() => handleAdvancedMode(false)}
+						onAccept={() => handleAdvancedMode(true)}
+					/>
 				</div>
 			),
 		},
@@ -117,6 +148,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 							{ label: "30 Minutes", value: 30 },
 							{ label: "60 Minutes", value: 60 },
 						]}
+						defaultValue={activeProfile?.settings().get(ProfileSetting.AutomaticLogoffPeriod)}
 					/>
 					<FormHelperText />
 				</FormField>
@@ -136,7 +168,12 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
 					</span>
 					<div className="-mt-7">
-						<Toggle ref={register()} name="isDarkMode" data-testid="General-settings__toggle--isDarkMode" />
+						<Toggle
+							ref={register()}
+							name="isDarkMode"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.Theme) === "dark"}
+							data-testid="General-settings__toggle--isDarkMode"
+						/>
 					</div>
 				</div>
 			),
@@ -155,6 +192,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 						<Toggle
 							ref={register()}
 							name="isUpdateLedger"
+							defaultChecked={activeProfile?.settings().get(ProfileSetting.LedgerUpdateMethod)}
 							data-testid="General-settings__toggle--isUpdateLedger"
 						/>
 					</div>
@@ -163,13 +201,14 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		},
 	];
 
-	const submitForm = async ({
+	const handleSubmit = async ({
 		name,
 		language,
 		passphraseLanguage,
 		marketProvider,
 		currency,
 		timeFormat,
+		autoLogoff,
 		isScreenshotProtection,
 		isAdvancedMode,
 		isDarkMode,
@@ -183,6 +222,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 		activeProfile.settings().set(ProfileSetting.TimeFormat, timeFormat);
 		activeProfile.settings().set(ProfileSetting.ScreenshotProtection, isScreenshotProtection);
 		activeProfile.settings().set(ProfileSetting.AdvancedMode, isAdvancedMode);
+		activeProfile.settings().set(ProfileSetting.AutomaticLogoffPeriod, autoLogoff);
 		activeProfile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(ProfileSetting.LedgerUpdateMethod, isUpdateLedger);
 
@@ -196,7 +236,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 	return (
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
-			<Form data-testid="General-settings__form" context={context} onSubmit={submitForm}>
+			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
 				<div className="mt-8">
 					<ListDivided items={personalDetails} />
 
@@ -211,6 +251,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 										}).toString(),
 									})}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
 								<FormHelperText />
@@ -228,6 +269,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.passphraseLanguages}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Bip39Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -244,6 +286,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.currencies}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.ExchangeCurrency)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -262,6 +305,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.languages}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -278,6 +322,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.marketProviders}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.MarketProvider)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -294,6 +339,7 @@ export const General = ({ env, formConfig, pageConfig, onSubmit }: GeneralProps)
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.timeFormats}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.TimeFormat)}
 								/>
 								<FormHelperText />
 							</FormField>
