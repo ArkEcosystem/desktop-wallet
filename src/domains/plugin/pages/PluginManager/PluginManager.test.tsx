@@ -3,8 +3,8 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
 import { Route } from "react-router-dom";
-import { fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, fireEvent, RenderResult, renderWithRouter, within } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
@@ -13,10 +13,15 @@ jest.useFakeTimers();
 
 let rendered: RenderResult;
 const history = createMemoryHistory();
-const pluginsURL = `/profiles/${identity.profiles.bob.id}/plugins`;
+
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		history.push(pluginsURL);
 
 		rendered = renderWithRouter(
@@ -212,7 +217,7 @@ describe("PluginManager", () => {
 			);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-1`);
 	});
 
 	it("should select plugin on game grid", () => {
@@ -223,7 +228,7 @@ describe("PluginManager", () => {
 			fireEvent.click(getAllByTestId("PluginCard--ark-explorer-1")[0]);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/plugins/ark-explorer-1`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/ark-explorer-1`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
