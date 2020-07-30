@@ -32,21 +32,21 @@ export const CreateProfile = () => {
 			labelDescriptionClass: "mt-1 font-medium text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row mt-2 mb-8">
-					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
+					<div className="border-theme-neutral-300 flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded">
 						<button
 							type="button"
-							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							className="bg-theme-primary-contrast flex items-center justify-center w-20 h-20 rounded-full"
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+					<div className="bg-theme-neutral-light relative w-24 h-24 rounded">
 						<img
 							src="https://randomuser.me/api/portraits/men/3.jpg"
 							className="object-cover rounded"
 							alt="random avatar"
 						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
+						<button className="bg-theme-danger-contrast text-theme-danger -top-3 -right-3 absolute flex items-center justify-center w-6 h-6 p-1 rounded">
 							<Icon name="Close" width={13} height={16} />
 						</button>
 					</div>
@@ -62,7 +62,7 @@ export const CreateProfile = () => {
 			labelClass: "text-lg font-semibold text-theme-neutral-dark",
 			content: (
 				<div className="flex flex-row justify-between">
-					<span className="mt-1 text-sm font-medium text-theme-neutral">
+					<span className="text-theme-neutral mt-1 text-sm font-medium">
 						{t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION")}
 					</span>
 					<div className="-mt-4">
@@ -75,9 +75,15 @@ export const CreateProfile = () => {
 
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
 		const profile = env.profiles().create(name);
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
+		profile.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
 
 		await persist();
 
@@ -88,7 +94,7 @@ export const CreateProfile = () => {
 		<Page navbarStyle="logo-only">
 			<Section className="flex flex-col justify-center flex-1">
 				<div className="max-w-lg mx-auto">
-					<h1 className="mb-0 md:text-4xl">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
+					<h1 className="md:text-4xl mb-0">{t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}</h1>
 					<div className="text-theme-neutral-dark">{t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}</div>
 
 					<div className="pb-4 mt-8">
