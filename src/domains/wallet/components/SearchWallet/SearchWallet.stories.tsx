@@ -26,30 +26,26 @@ const networks = [
 	},
 ];
 
-export const Default = () => {
-	return (
-		<WalletsDecorator count={3}>
-			{({ wallets }: { wallets: Wallet[] }) => (
-				<SearchWallet
-					isOpen={boolean("isOpen", true)}
-					wallets={wallets}
-					networks={networks}
-					onClose={action("onClose")}
-					onSearch={action("onSearch")}
-				/>
-			)}
-		</WalletsDecorator>
-	);
-};
+export const Default = () => (
+	<WalletsDecorator count={3}>
+		{({ wallets }: { wallets: Wallet[] }) => (
+			<SearchWallet
+				isOpen={boolean("isOpen", true)}
+				wallets={wallets}
+				networks={networks}
+				onClose={action("onClose")}
+				onSearch={action("onSearch")}
+			/>
+		)}
+	</WalletsDecorator>
+);
 
-export const Empty = () => {
-	return (
-		<SearchWallet
-			isOpen={boolean("isOpen", true)}
-			wallets={undefined}
-			networks={networks}
-			onClose={action("onClose")}
-			onSearch={action("onSearch")}
-		/>
-	);
-};
+export const Empty = () => (
+	<SearchWallet
+		isOpen={boolean("isOpen", true)}
+		wallets={undefined}
+		networks={networks}
+		onClose={action("onClose")}
+		onSearch={action("onSearch")}
+	/>
+);

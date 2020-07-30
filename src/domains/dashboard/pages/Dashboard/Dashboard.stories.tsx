@@ -48,10 +48,8 @@ export const FewerWallets = ({ env, profile }: { env: Environment; profile: Prof
 	</EnvironmentProvider>
 );
 
-export const Empty = ({ env }: { env: Environment }) => {
-	return (
-		<EnvironmentProvider env={env}>
-			<Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />
-		</EnvironmentProvider>
-	);
-};
+export const Empty = ({ env }: { env: Environment }) => (
+	<EnvironmentProvider env={env}>
+		<Dashboard networks={networks} portfolioPercentages={portfolioPercentages} />
+	</EnvironmentProvider>
+);
