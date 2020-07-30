@@ -2,17 +2,22 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, renderWithRouter } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { faqArticles } from "../../data";
 import { Faq } from "./Faq";
 
 const history = createMemoryHistory();
-const categoryURL = `/profiles/${identity.profiles.bob.id}/support/categories/portfolio`;
+
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const categoryURL = `/profiles/${fixtureProfileId}/support/categories/portfolio`;
 
 describe("Faq", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		history.push(categoryURL);
 	});
 
