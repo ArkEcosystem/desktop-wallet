@@ -62,7 +62,11 @@ export const CreateProfile = () => {
 								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
 								alt="Profile avatar"
 							/>
-							<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
+							<button
+								type="button"
+								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+								onClick={() => setAvatarImage("")}
+							>
 								<Icon name="Close" width={13} height={16} />
 							</button>
 						</div>

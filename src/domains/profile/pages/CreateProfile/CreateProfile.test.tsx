@@ -51,6 +51,7 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
+			AVATAR: "",
 			ADVANCED_MODE: false,
 			AUTOMATIC_LOGOFF_PERIOD: 15,
 			BIP39_LOCALE: "english",
@@ -75,6 +76,7 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
+			AVATAR: "",
 			ADVANCED_MODE: false,
 			AUTOMATIC_LOGOFF_PERIOD: 15,
 			BIP39_LOCALE: "english",

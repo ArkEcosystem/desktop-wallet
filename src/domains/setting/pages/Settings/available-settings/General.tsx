@@ -12,7 +12,7 @@ import { PlatformSdkChoices } from "data";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { setScreenshotProtection } from "utils/electron-utils";
+import { openFile, setScreenshotProtection } from "utils/electron-utils";
 
 type GeneralProps = {
 	env: Environment;
@@ -25,12 +25,24 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const activeProfile = useActiveProfile()!;
 	const { t } = useTranslation();
 
+	const [avatarImage, setAvatarImage] = useState(activeProfile?.settings().get(ProfileSetting.Avatar) || "");
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
 		activeProfile?.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
 
 	const { context, register } = formConfig;
+
+	const handleChangeAvatar = async () => {
+		const raw = await openFile(null, {
+			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
+			encoding: "base64",
+		});
+
+		if (raw) {
+			setAvatarImage(`data:image/png;base64,${raw}`);
+		}
+	};
 
 	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -60,20 +72,27 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						<button
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							onClick={handleChangeAvatar}
 						>
 							<Icon name="Upload" />
 						</button>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
-						<img
-							src="https://randomuser.me/api/portraits/men/3.jpg"
-							className="object-cover rounded"
-							alt="random avatar"
-						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
-							<Icon name="Close" height={12} width={12} />
-						</button>
-					</div>
+					{avatarImage && (
+						<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+							<img
+								src={avatarImage}
+								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+								alt="Profile avatar"
+							/>
+							<button
+								type="button"
+								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
+								onClick={() => setAvatarImage("")}
+							>
+								<Icon name="Close" height={12} width={12} />
+							</button>
+						</div>
+					)}
 				</div>
 			),
 		},
@@ -214,6 +233,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 		isDarkMode,
 		isUpdateLedger,
 	}: any) => {
+		activeProfile.settings().set(ProfileSetting.Avatar, avatarImage);
 		activeProfile.settings().set(ProfileSetting.Name, name);
 		activeProfile.settings().set(ProfileSetting.Locale, language);
 		activeProfile.settings().set(ProfileSetting.Bip39Locale, passphraseLanguage);
