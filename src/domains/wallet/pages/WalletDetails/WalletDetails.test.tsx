@@ -114,7 +114,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const deleteWalletOption = getByTestId("dropdown__option--3");
+		const deleteWalletOption = getByTestId("dropdown__option--4");
 		expect(deleteWalletOption).toBeTruthy();
 
 		act(() => {
