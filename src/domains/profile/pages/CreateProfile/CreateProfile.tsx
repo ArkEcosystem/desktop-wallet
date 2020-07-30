@@ -14,6 +14,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { openFile } from "utils/electron-utils";
 
 export const CreateProfile = () => {
 	const { env, persist } = useEnvironmentContext();
@@ -21,16 +22,18 @@ export const CreateProfile = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const [avatarImage, setAvatarImage] = useState({ preview: "", raw: "" });
+	const [avatarImage, setAvatarImage] = useState("");
 
 	const { register } = form;
 
-	const handleChangeAvatar = (event: any) => {
-		if (event.target.files.length) {
-			setAvatarImage({
-				preview: URL.createObjectURL(event.target.files[0]),
-				raw: event.target.files[0],
-			});
+	const handleChangeAvatar = async () => {
+		const raw = await openFile(null, {
+			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
+			encoding: "base64",
+		});
+
+		if (raw) {
+			setAvatarImage(`data:image/png;base64,${raw}`);
 		}
 	};
 
@@ -44,22 +47,18 @@ export const CreateProfile = () => {
 			content: (
 				<div className="flex flex-row mt-2 mb-8">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
-						<div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast">
-							<input
-								ref={register}
-								type="file"
-								name="avatar"
-								className="absolute w-20 h-20 opacity-0 cursor-pointer"
-								accept="image/jpg,image/jpeg,image/bmp,image/png"
-								onChange={handleChangeAvatar}
-							/>
+						<button
+							type="button"
+							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+							onClick={handleChangeAvatar}
+						>
 							<Icon name="Upload" />
-						</div>
+						</button>
 					</div>
-					{avatarImage.preview && (
+					{avatarImage && (
 						<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
 							<img
-								src={avatarImage.preview}
+								src={avatarImage}
 								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
 								alt="Profile avatar"
 							/>
@@ -93,6 +92,7 @@ export const CreateProfile = () => {
 
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
 		const profile = env.profiles().create(name);
+		profile.settings().set(ProfileSetting.Avatar, avatarImage);
 		profile.settings().set(ProfileSetting.AdvancedMode, false);
 		profile.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
 		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);

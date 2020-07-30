@@ -6,12 +6,15 @@ import path from "path";
 type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
 	restrictToPath?: string;
+	encoding?: "ascii" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex";
 };
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
 	{ name: "All Files", extensions: ["*"] },
 ];
+
+const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
 	if (!electron.remote) {
@@ -47,8 +50,9 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 	return filePath;
 };
 
-const openFile = async (defaultPath?: string, options?: DialogOptions) => {
+const openFile = async (defaultPath?: string | null, options?: DialogOptions) => {
 	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;
+	const encode = options?.encoding || defaultEncode;
 
 	const { filePaths } = await electron.remote.dialog.showOpenDialog({
 		defaultPath: defaultPath || os.homedir(),
@@ -62,7 +66,7 @@ const openFile = async (defaultPath?: string, options?: DialogOptions) => {
 		throw new Error(`Reading from "${filePaths[0]}" is not allowed`);
 	}
 
-	return readFileSync(filePaths[0], "utf8");
+	return readFileSync(filePaths[0], encode);
 };
 
 export { openFile, saveFile, setScreenshotProtection };
