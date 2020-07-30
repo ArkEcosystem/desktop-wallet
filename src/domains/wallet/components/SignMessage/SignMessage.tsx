@@ -49,8 +49,8 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			mnemonic,
 		});
 
-		setIsSigned(true);
 		setSignedMessage(signedMessageResult);
+		setIsSigned(true);
 	};
 
 	const SignFormRender = (
@@ -93,11 +93,11 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 				<FormHelperText />
 			</FormField>
 			<div className="flex justify-end space-x-3">
-				<Button variant="plain" onClick={onCancel}>
-					Cancel
+				<Button variant="plain" onClick={onCancel} data-testid="SignMessage__cancel">
+					{t("COMMON.CANCEL")}
 				</Button>
 				<Button type="submit" data-testid="SignMessage__submit-button">
-					Sign
+					{t("WALLETS.MODAL_SIGN_MESSAGE.SIGN")}
 				</Button>
 			</div>
 		</Form>
@@ -128,13 +128,13 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 					name="signature"
 					wrap="hard"
 					ref={messageRef}
-					defaultValue={signedMessage.signature}
+					defaultValue={JSON.stringify(signedMessage)}
 				/>
 			</TransactionDetail>
 
 			<div className="flex justify-end pb-5 mt-3">
-				<Clipboard data={signedMessage.signature}>
-					<Button variant="plain">
+				<Clipboard data={JSON.stringify(signedMessage)}>
+					<Button variant="plain" data-testid="SignMessage__copy-button">
 						<Icon name="Copy" />
 						<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 					</Button>
@@ -149,7 +149,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 		<Modal
 			isOpen={isOpen}
 			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
-			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : ""}
+			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
 			onClose={onClose}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
