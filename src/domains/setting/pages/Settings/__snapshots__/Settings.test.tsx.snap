@@ -1073,6 +1073,7 @@ exports[`Settings should render 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
+                            value="Bob"
                           />
                         </fieldset>
                         <fieldset
@@ -3683,6 +3684,7 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
+                            value="test profile"
                           />
                         </fieldset>
                         <fieldset
@@ -4045,6 +4047,7 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isScreenshotProtection"
                                   name="isScreenshotProtection"
@@ -4375,6 +4378,7 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isUpdateLedger"
                                   name="isUpdateLedger"
