@@ -1,11 +1,17 @@
 {
-	"private": true,
 	"name": "ark-desktop-wallet",
 	"version": "3.0.0",
+	"private": true,
+	"description": "Ark Ecosystem Desktop Wallet",
+	"homepage": "./",
+	"bugs": {
+		"url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
 	},
+	"license": "MIT",
 	"author": "ArkEcosystem <info@ark.io>",
 	"contributors": [
 		"Alex Barnsley <alex@ark.io>",
@@ -13,31 +19,98 @@
 		"ItsANameToo <itsanametoo@protonmail.com>",
 		"Lúcio Rubens <lucio@ark.io>"
 	],
-	"description": "Ark Ecosystem Desktop Wallet",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
-	},
-	"homepage": "./",
 	"main": "src/electron/index.js",
 	"scripts": {
-		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
 		"build": "react-app-rewired build",
 		"build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
+		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
+		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
+		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
+		"dev": "cross-env REACT_APP_BUILD_MODE=demo concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+		"eject": "react-app-rewired eject",
 		"format": "yarn lint && yarn prettier",
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
-		"storybook": "start-storybook -p 5000",
 		"start": "react-app-rewired start",
-		"test": "react-app-rewired test",
-		"test:coverage": "react-app-rewired test --coverage --watchAll=false",
+		"storybook": "start-storybook -p 5000",
+		"test": "react-app-rewired test --logHeapUsage",
+		"test:coverage": "react-app-rewired test --logHeapUsage --coverage --watchAll=false",
 		"test:e2e": "testcafe \"electron:.\" \"./src/domains/**/e2e/*.e2e.ts\"",
 		"test:e2e:ci": "REACT_APP_BUILD_MODE=demo concurrently -k -s first \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && yarn test:e2e\"",
-		"eject": "react-app-rewired eject",
-		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
-		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
-		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
 		"preversion": "cross-env ./scripts/version-artifacts.sh"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{css,html,json,md}": [
+			"prettier --write"
+		],
+		"*.{js,ts,tsx}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"jest": {
+		"automock": false,
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!<rootDir>/build/*",
+			"!<rootDir>/dist/*",
+			"!jest.setup.js",
+			"!src/**/*.e2e.ts",
+			"!src/**/*.models.{js,jsx,ts,tsx}",
+			"!src/**/*.stories.{js,jsx,ts,tsx}",
+			"!src/**/*.styles.{js,jsx,ts,tsx}",
+			"!src/electron/**/*",
+			"!src/i18n/**/*",
+			"!src/tailwind.config.js"
+		],
+		"coveragePathIgnorePatterns": [
+			"index.ts",
+			"index.tsx"
+		],
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
+		"coverageThreshold": {
+			"global": {
+				"branches": 100,
+				"functions": 100,
+				"lines": 100,
+				"statements": 100
+			}
+		},
+		"moduleDirectories": [
+			"node_modules",
+			"utils"
+		],
+		"resetModules": true,
+		"setupFilesAfterEnv": [
+			"<rootDir>/jest.setup.js"
+		],
+		"testRunner": "jest-circus/runner"
 	},
 	"dependencies": {
 		"@arkecosystem/platform-sdk": "^0.9.194",
@@ -146,6 +219,7 @@
 		"eslint-plugin-unused-imports": "^0.1.3",
 		"history": "^5.0.0",
 		"husky": "^4.2.5",
+		"jest-circus": "^26.2.0",
 		"jest-fetch-mock": "^3.0.3",
 		"lint-staged": "^10.2.7",
 		"mockdate": "^3.0.2",
@@ -176,35 +250,6 @@
 			"config": "src/tailwind.config.js",
 			"autoCssProp": true
 		}
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,ts,tsx}": [
-			"prettier --write",
-			"eslint --fix"
-		],
-		"*.{css,html,json,md}": [
-			"prettier --write"
-		]
 	},
 	"build": {
 		"productName": "ARK Desktop Wallet",
@@ -276,47 +321,5 @@
 			"oneClick": false,
 			"allowToChangeInstallationDirectory": true
 		}
-	},
-	"jest": {
-		"setupFilesAfterEnv": [
-			"<rootDir>/jest.setup.js"
-		],
-		"automock": false,
-		"collectCoverageFrom": [
-			"src/**/*.{js,jsx,ts,tsx}",
-			"!<rootDir>/build/*",
-			"!<rootDir>/dist/*",
-			"!jest.setup.js",
-			"!src/**/*.e2e.ts",
-			"!src/**/*.models.{js,jsx,ts,tsx}",
-			"!src/**/*.stories.{js,jsx,ts,tsx}",
-			"!src/**/*.styles.{js,jsx,ts,tsx}",
-			"!src/electron/**/*",
-			"!src/i18n/**/*",
-			"!src/tailwind.config.js"
-		],
-		"coveragePathIgnorePatterns": [
-			"index.ts",
-			"index.tsx"
-		],
-		"coverageReporters": [
-			"json",
-			"lcov",
-			"text",
-			"clover",
-			"html"
-		],
-		"coverageThreshold": {
-			"global": {
-				"branches": 100,
-				"functions": 100,
-				"lines": 100,
-				"statements": 100
-			}
-		},
-		"moduleDirectories": [
-			"node_modules",
-			"utils"
-		]
 	}
 }
