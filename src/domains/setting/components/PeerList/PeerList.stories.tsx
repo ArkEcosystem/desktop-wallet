@@ -5,6 +5,4 @@ import { PeerList } from "./PeerList";
 
 export default { title: "Domains / Setting / Components / PeerList" };
 
-export const Default = () => {
-	return <PeerList networks={networks} peers={peers} />;
-};
+export const Default = () => <PeerList networks={networks} peers={peers} />;

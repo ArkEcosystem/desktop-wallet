@@ -11,17 +11,15 @@ export const PluginManagerControls = ({
 	onSelectGridView,
 	onSelectListView,
 	selectedViewType,
-}: PluginManagerControlsProps) => {
-	return (
-		<div data-testid="PluginManagerControls" className="flex items-center">
-			<LayoutControls
-				onSelectGridView={onSelectGridView}
-				onSelectListView={onSelectListView}
-				selectedViewType={selectedViewType}
-			/>
-		</div>
-	);
-};
+}: PluginManagerControlsProps) => (
+	<div data-testid="PluginManagerControls" className="flex items-center">
+		<LayoutControls
+			onSelectGridView={onSelectGridView}
+			onSelectListView={onSelectListView}
+			selectedViewType={selectedViewType}
+		/>
+	</div>
+);
 
 PluginManagerControls.defaultProps = {
 	selectedViewType: "grid",

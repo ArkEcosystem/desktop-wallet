@@ -14,13 +14,11 @@ import envFixture from "../tests/fixtures/env/data.json";
 
 export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envFixture) });
 
-const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => {
-	return (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>{children}</EnvironmentProvider>
-		</I18nextProvider>
-	);
-};
+const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
+	<I18nextProvider i18n={i18n}>
+		<EnvironmentProvider env={env}>{children}</EnvironmentProvider>
+	</I18nextProvider>
+);
 
 const customRender = (component: React.ReactElement, options: any = {}) =>
 	render(component, { wrapper: WithProviders, ...options });

@@ -72,9 +72,8 @@ const RegistrationTypeDropdown = ({ className, register, registrationTypes }: an
 	);
 };
 
-const getRegistrationByName = (registrationTypes: any[], registrationType: string) => {
-	return registrationTypes.find((type: any) => type.value === registrationType);
-};
+const getRegistrationByName = (registrationTypes: any[], registrationType: string) =>
+	registrationTypes.find((type: any) => type.value === registrationType);
 
 const FirstStep = ({
 	form,

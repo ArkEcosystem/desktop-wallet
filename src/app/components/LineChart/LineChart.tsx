@@ -16,76 +16,66 @@ type LineChartProps = {
 };
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
-const ActiveDot = ({ cx, cy, color }: any) => {
-	return (
-		<ActiveDotSvg
-			className={`text-theme-${color}`}
-			width={50}
-			height={50}
-			x={cx - 25}
-			y={cy - 25}
-			fill="currentColor"
-			stroke="currentColor"
-		/>
-	);
-};
+const ActiveDot = ({ cx, cy, color }: any) => (
+	<ActiveDotSvg
+		className={`text-theme-${color}`}
+		width={50}
+		height={50}
+		x={cx - 25}
+		y={cy - 25}
+		fill="currentColor"
+		stroke="currentColor"
+	/>
+);
 
-const Dot = ({ cx, cy, index }: any) => {
-	return (
-		<circle
-			cy={cy}
-			cx={cx}
-			r="5"
-			data-testid={`line-chart-dot-${index}`}
-			type="monotone"
-			stroke="currentColor"
-			fill="#FFFFFF"
-			className="recharts-dot recharts-l2ne-dot"
-			strokeWidth="3"
-		/>
-	);
-};
+const Dot = ({ cx, cy, index }: any) => (
+	<circle
+		cy={cy}
+		cx={cx}
+		r="5"
+		data-testid={`line-chart-dot-${index}`}
+		type="monotone"
+		stroke="currentColor"
+		fill="#FFFFFF"
+		className="recharts-dot recharts-l2ne-dot"
+		strokeWidth="3"
+	/>
+);
 
-const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
-	return (
-		<div>
-			<div className="flex">
-				{period && (
-					<div
-						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
-						onClick={onPeriodClick}
-					>
-						<div className="flex">
-							<div className="my-auto">Period: {period}</div>
-							<div className="my-auto ml-1">
-								<Icon name="ChevronDown" />
-							</div>
+const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => (
+	<div>
+		<div className="flex">
+			{period && (
+				<div
+					className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
+					onClick={onPeriodClick}
+				>
+					<div className="flex">
+						<div className="my-auto">Period: {period}</div>
+						<div className="my-auto ml-1">
+							<Icon name="ChevronDown" />
 						</div>
 					</div>
-				)}
-				<div className="flex justify-end flex-1">
-					{legend && <div className="my-auto ml-3 text-sm text-theme-neutral-600">{legend?.label}</div>}
-					{lines &&
-						lines.map((item: any, index: number) => {
-							return (
-								<div key={index} className="w-32 p-4 pt-4 pr-0 ml-3 text-right">
-									<div
-										className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
-									/>
-									<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
-										{legend.formatted[item.dataKey] && (
-											<span>{legend.formatted[item.dataKey]} - </span>
-										)}
-										{item.label}
-									</div>
-								</div>
-							);
-						})}
 				</div>
+			)}
+			<div className="flex justify-end flex-1">
+				{legend && <div className="my-auto ml-3 text-sm text-theme-neutral-600">{legend?.label}</div>}
+				{lines &&
+					lines.map((item: any, index: number) => (
+						<div key={index} className="w-32 p-4 pt-4 pr-0 ml-3 text-right">
+							<div
+								className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
+							/>
+							<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
+								{legend.formatted[item.dataKey] && <span>{legend.formatted[item.dataKey]} - </span>}
+								{item.label}
+							</div>
+						</div>
+					))}
 			</div>
 		</div>
-	);
-};
+	</div>
+);
 
 const Wrapper = styled.div`
 	${chartStyles}
@@ -113,22 +103,20 @@ export const ChartContent = ({ period, onPeriodClick, data, lines, width, height
 				<CartesianGrid stroke="currentColor" />
 				<Tooltip content={() => <div />} />
 				{lines &&
-					lines.map((line: any, index: number) => {
-						return (
-							<Line
-								type="monotone"
-								key={index}
-								dataKey={line.dataKey}
-								stroke="currentColor"
-								fill="currentColor"
-								className={`text-theme-${line.color}`}
-								strokeWidth={3}
-								yAxisId={0}
-								activeDot={<ActiveDot {...line} />}
-								dot={<Dot {...line} {...index} />}
-							/>
-						);
-					})}
+					lines.map((line: any, index: number) => (
+						<Line
+							type="monotone"
+							key={index}
+							dataKey={line.dataKey}
+							stroke="currentColor"
+							fill="currentColor"
+							className={`text-theme-${line.color}`}
+							strokeWidth={3}
+							yAxisId={0}
+							activeDot={<ActiveDot {...line} />}
+							dot={<Dot {...line} {...index} />}
+						/>
+					))}
 			</RechartsLine>
 
 			<div className="active-dot">

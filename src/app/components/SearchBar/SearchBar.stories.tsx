@@ -7,13 +7,11 @@ import { SearchBar } from "./SearchBar";
 
 export default { title: "App / Components / SearchBar", decorators: [withKnobs] };
 
-export const Default = () => {
-	return (
-		<div className="w-full h-full">
-			<SearchBar />
-		</div>
-	);
-};
+export const Default = () => (
+	<div className="w-full h-full">
+		<SearchBar />
+	</div>
+);
 
 export const WithOptions = () => {
 	const options = [

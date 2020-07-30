@@ -25,28 +25,26 @@ type AnchorProps = {
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
-	({ isExternal, children, target, rel, ...props }: AnchorProps, ref) => {
-		return (
-			<AnchorStyled
-				data-testid="Link"
-				isExternal={isExternal!}
-				className="inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
-				target={isExternal ? "_blank" : target}
-				rel={isExternal ? "noopener noreferrer" : rel}
-				ref={ref}
-				{...props}
-			>
-				{children}
-				{isExternal && (
-					<Icon
-						data-testid="Link__external"
-						name="Redirect"
-						className={`flex-shrink-0 ${children ? "ml-2 text-sm" : ""}`}
-					/>
-				)}
-			</AnchorStyled>
-		);
-	},
+	({ isExternal, children, target, rel, ...props }: AnchorProps, ref) => (
+		<AnchorStyled
+			data-testid="Link"
+			isExternal={isExternal!}
+			className="inline-flex items-center font-semibold cursor-pointer transition-colors duration-200 text-theme-primary hover:text-theme-primary-dark hover:underline active:text-theme-primary-500"
+			target={isExternal ? "_blank" : target}
+			rel={isExternal ? "noopener noreferrer" : rel}
+			ref={ref}
+			{...props}
+		>
+			{children}
+			{isExternal && (
+				<Icon
+					data-testid="Link__external"
+					name="Redirect"
+					className={`flex-shrink-0 ${children ? "ml-2 text-sm" : ""}`}
+				/>
+			)}
+		</AnchorStyled>
+	),
 );
 
 Anchor.displayName = "Anchor";
@@ -57,13 +55,11 @@ type Props = {
 	tooltip?: string;
 } & LinkProps;
 
-export const Link = ({ tooltip, ...props }: Props) => {
-	return (
-		<Tippy content={tooltip} disabled={!tooltip}>
-			<RouterLink component={Anchor} {...props} />
-		</Tippy>
-	);
-};
+export const Link = ({ tooltip, ...props }: Props) => (
+	<Tippy content={tooltip} disabled={!tooltip}>
+		<RouterLink component={Anchor} {...props} />
+	</Tippy>
+);
 
 Link.defaultProps = {
 	isExternal: false,

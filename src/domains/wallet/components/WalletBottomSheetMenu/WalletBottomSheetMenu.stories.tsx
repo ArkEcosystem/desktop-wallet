@@ -79,15 +79,13 @@ const data = [
 	},
 ];
 
-export const Default = () => {
-	return (
-		<div className="relative" style={{ height: "calc(100vh - 1.25rem)" }}>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ab nobis dolor aperiam consectetur, eius
-				velit autem, error quam magnam adipisci laboriosam sapiente ratione illo possimus dignissimos quo
-				accusantium laborum.
-			</p>
-			<WalletBottomSheetMenu walletsData={data} />
-		</div>
-	);
-};
+export const Default = () => (
+	<div className="relative" style={{ height: "calc(100vh - 1.25rem)" }}>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ab nobis dolor aperiam consectetur, eius velit
+			autem, error quam magnam adipisci laboriosam sapiente ratione illo possimus dignissimos quo accusantium
+			laborum.
+		</p>
+		<WalletBottomSheetMenu walletsData={data} />
+	</div>
+);

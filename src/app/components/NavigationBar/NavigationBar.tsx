@@ -64,35 +64,33 @@ const NotificationsDropdown = ({
 	</Dropdown>
 );
 
-const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavigationBarProps) => {
-	return (
-		<Dropdown
-			onSelect={onUserAction}
-			options={userActions}
-			toggleContent={(isOpen: boolean) => (
-				<div className="cursor-pointer" data-testid="navbar__useractions">
-					<Circle className="-mr-1 border-theme-neutral-300" size="lg">
-						<span className="text-theme-neutral-600">
-							<Icon name={currencyIcon} />
-						</span>
-					</Circle>
-					<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
-						<span className="text-sm text-theme-background">{userInitials}</span>
-						<Badge
-							className={`transform ${
-								isOpen ? "rotate-180" : ""
-							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
-							position="right"
-							icon="ChevronDown"
-							iconWidth={10}
-							iconHeight={10}
-						/>
-					</Circle>
-				</div>
-			)}
-		/>
-	);
-};
+const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavigationBarProps) => (
+	<Dropdown
+		onSelect={onUserAction}
+		options={userActions}
+		toggleContent={(isOpen: boolean) => (
+			<div className="cursor-pointer" data-testid="navbar__useractions">
+				<Circle className="-mr-1 border-theme-neutral-300" size="lg">
+					<span className="text-theme-neutral-600">
+						<Icon name={currencyIcon} />
+					</span>
+				</Circle>
+				<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
+					<span className="text-sm text-theme-background">{userInitials}</span>
+					<Badge
+						className={`transform ${
+							isOpen ? "rotate-180" : ""
+						} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
+						position="right"
+						icon="ChevronDown"
+						iconWidth={10}
+						iconHeight={10}
+					/>
+				</Circle>
+			</div>
+		)}
+	/>
+);
 
 export const NavigationBar = ({
 	menu,

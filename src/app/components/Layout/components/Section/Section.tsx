@@ -12,13 +12,11 @@ const SectionWrapper = styled.div(({ hasBackground }: SectionProps) => [
 	hasBackground && tw`bg-theme-background`,
 ]);
 
-export const Section = ({ children, hasBackground, className }: SectionProps) => {
-	return (
-		<SectionWrapper hasBackground={hasBackground} className={className}>
-			<div className="container py-16 mx-auto px-14">{children}</div>
-		</SectionWrapper>
-	);
-};
+export const Section = ({ children, hasBackground, className }: SectionProps) => (
+	<SectionWrapper hasBackground={hasBackground} className={className}>
+		<div className="container py-16 mx-auto px-14">{children}</div>
+	</SectionWrapper>
+);
 
 Section.defaultProps = {
 	hasBackground: true,

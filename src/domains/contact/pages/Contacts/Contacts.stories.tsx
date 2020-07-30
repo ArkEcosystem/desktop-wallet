@@ -7,18 +7,14 @@ import { Contacts } from "./Contacts";
 
 export default { title: "Domains / Contact / Pages / Contacts" };
 
-export const Default = () => {
-	return (
-		<div>
-			<Contacts networks={availableNetworksMock} onSearch={action("onSearch")} />
-		</div>
-	);
-};
+export const Default = () => (
+	<div>
+		<Contacts networks={availableNetworksMock} onSearch={action("onSearch")} />
+	</div>
+);
 
-export const WithContacts = () => {
-	return (
-		<div>
-			<Contacts networks={availableNetworksMock} contacts={data} onSearch={action("onSearch")} />
-		</div>
-	);
-};
+export const WithContacts = () => (
+	<div>
+		<Contacts networks={availableNetworksMock} contacts={data} onSearch={action("onSearch")} />
+	</div>
+);

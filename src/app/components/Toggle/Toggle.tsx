@@ -27,15 +27,13 @@ const HandleInner = styled.span`
 
 type ToggleProps = React.InputHTMLAttributes<any>;
 
-export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => {
-	return (
-		<label className="flex">
-			<Input type="checkbox" ref={ref} {...props} />
-			<Handle>
-				<HandleInner />
-			</Handle>
-		</label>
-	);
-});
+export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>((props, ref) => (
+	<label className="flex">
+		<Input type="checkbox" ref={ref} {...props} />
+		<Handle>
+			<HandleInner />
+		</Handle>
+	</label>
+));
 
 Toggle.displayName = "Toggle";

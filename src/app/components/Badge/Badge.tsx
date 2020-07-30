@@ -15,14 +15,12 @@ type BadgeProps = {
 
 export const Wrapper = styled.span<BadgeProps>(getStyles);
 
-export const Badge = ({ className, children, icon, iconWidth, iconHeight, position }: BadgeProps) => {
-	return (
-		<Wrapper position={position} className={`${defaultClasses} ${className}`}>
-			{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
-			<span>{children}</span>
-		</Wrapper>
-	);
-};
+export const Badge = ({ className, children, icon, iconWidth, iconHeight, position }: BadgeProps) => (
+	<Wrapper position={position} className={`${defaultClasses} ${className}`}>
+		{!!icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
+		<span>{children}</span>
+	</Wrapper>
+);
 
 Badge.defaultProps = {
 	iconWidth: 12,

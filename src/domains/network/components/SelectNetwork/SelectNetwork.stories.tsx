@@ -7,10 +7,8 @@ export default {
 	title: "Domains / Network / Components / SelectNetwork",
 };
 
-export const Default = () => {
-	return (
-		<div className="p-5 w-128">
-			<SelectNetwork networks={availableNetworksMock} />
-		</div>
-	);
-};
+export const Default = () => (
+	<div className="p-5 w-128">
+		<SelectNetwork networks={availableNetworksMock} />
+	</div>
+);
