@@ -11,7 +11,7 @@ import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { StubStorage } from "tests/mocks";
-import { fireEvent, getDefaultProfileId,render, renderWithRouter, waitFor } from "utils/testing-library";
+import { fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
