@@ -48,7 +48,7 @@ module.exports = {
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
 		"@typescript-eslint/restrict-template-expressions": "off",
-		"unused-imports/no-unused-imports-ts": "error",
+		"arrow-body-style": ["error", "as-needed"],
 		"prefer-const": [
 			"error",
 			{
@@ -61,11 +61,11 @@ module.exports = {
 				endOfLine: "auto",
 			},
 		],
-		"simple-import-sort/sort": "error",
-		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
+		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
-		"arrow-body-style": ["error", "as-needed"],
+		"simple-import-sort/sort": "error",
+		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {
 		react: {
