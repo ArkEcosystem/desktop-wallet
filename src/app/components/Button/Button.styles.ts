@@ -11,15 +11,13 @@ const baseStyle = [
 	`,
 ];
 
-const getColorsVariable = (name: string): any => {
-	return {
-		base: `var(--theme-color-${name})`,
-		contrast: `var(--theme-color-${name}-contrast)`,
-		rgb: `var(--theme-color-${name}-rgb)`,
-		dark: `var(--theme-color-${name}-dark)`,
-		light: `var(--theme-color-${name}-light)`,
-	};
-};
+const getColorsVariable = (name: string): any => ({
+	base: `var(--theme-color-${name})`,
+	contrast: `var(--theme-color-${name}-contrast)`,
+	rgb: `var(--theme-color-${name}-rgb)`,
+	dark: `var(--theme-color-${name}-dark)`,
+	light: `var(--theme-color-${name}-light)`,
+});
 
 const getVariant = (name: string, colorName: string, color: ReturnType<typeof getColorsVariable>): any => {
 	switch (name) {
@@ -69,6 +67,8 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: Size }) => {
-	return [getSize(size), ...baseStyle, ...getVariant(variant!, color!, getColorsVariable(color!))];
-};
+export const getStyles = ({ variant, color, size }: { variant?: string; color?: string; size?: Size }) => [
+	getSize(size),
+	...baseStyle,
+	...getVariant(variant!, color!, getColorsVariable(color!)),
+];

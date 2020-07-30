@@ -76,9 +76,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 	const mountRegistrations = () =>
-		registrations.map((registrationsBlock: any) => {
-			return renderRegistration(registrationsBlock, handleDropdown);
-		});
+		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
 
 	const { t } = useTranslation();
 

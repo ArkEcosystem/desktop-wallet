@@ -35,33 +35,29 @@ const StateStyle = styled.div`
 	}
 `;
 
-export const CardControlState = () => {
-	return (
-		<StateStyle data-testid="card__control-state">
-			<Icon name="Checkmark" />
-		</StateStyle>
-	);
-};
+export const CardControlState = () => (
+	<StateStyle data-testid="card__control-state">
+		<Icon name="Checkmark" />
+	</StateStyle>
+);
 
 export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
-	({ children, type, checked, defaultChecked, onChange, disabled, value, name, ...props }: CardControlProps, ref) => {
-		return (
-			<label tw="cursor-pointer" {...props}>
-				<Input
-					data-testid={`card-control__${name}`}
-					ref={ref}
-					type={type}
-					checked={checked}
-					onChange={onChange}
-					defaultChecked={defaultChecked}
-					disabled={disabled}
-					value={value}
-					name={name}
-				/>
-				<CustomCard>{children}</CustomCard>
-			</label>
-		);
-	},
+	({ children, type, checked, defaultChecked, onChange, disabled, value, name, ...props }: CardControlProps, ref) => (
+		<label tw="cursor-pointer" {...props}>
+			<Input
+				data-testid={`card-control__${name}`}
+				ref={ref}
+				type={type}
+				checked={checked}
+				onChange={onChange}
+				defaultChecked={defaultChecked}
+				disabled={disabled}
+				value={value}
+				name={name}
+			/>
+			<CustomCard>{children}</CustomCard>
+		</label>
+	),
 );
 
 CardControl.displayName = "CardControl";
