@@ -56,7 +56,7 @@ export const CreateProfile = () => {
 						</button>
 					</div>
 					{avatarImage && (
-						<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+						<div className="relative w-24 h-24 rounded bg-theme-neutral-contrast">
 							<img
 								src={avatarImage}
 								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"

@@ -1,3 +1,4 @@
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Dropdown } from "app/components/Dropdown";
@@ -19,6 +20,7 @@ type ProfileCardProps = {
 
 export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSettings }: ProfileCardProps) => {
 	const { t } = useTranslation();
+	const profileImage = profile?.settings().get(ProfileSetting.Avatar);
 
 	return (
 		<Card handleClick={handleClick}>
@@ -31,13 +33,24 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 
 				<div className="flex flex-row justify-between w-full">
 					<div className="flex items-center">
-						<AvatarWrapper data-testid="profile-card__user--avatar" size="lg">
-							<img
-								alt={profile.name()}
-								title={profile.name()}
-								src={`data:image/svg+xml;utf8,${profile.avatar()}`}
-							/>
-						</AvatarWrapper>
+						{profileImage ? (
+							<div className="rounded-full bg-theme-neutral-contrast w-11 h-11">
+								<img
+									src={profileImage}
+									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+									title={profile.name()}
+									alt={profile.name()}
+								/>
+							</div>
+						) : (
+							<AvatarWrapper data-testid="profile-card__user--avatar" size="lg">
+								<img
+									src={`data:image/svg+xml;utf8,${profile.avatar()}`}
+									title={profile.name()}
+									alt={profile.name()}
+								/>
+							</AvatarWrapper>
+						)}
 
 						<div className="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
 							<p className="text-sm font-semibold text-theme-neutral">{t("COMMON.NAME")}</p>
