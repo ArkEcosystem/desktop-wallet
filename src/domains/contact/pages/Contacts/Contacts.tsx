@@ -160,7 +160,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 			/>
 
 			<DeleteContact
-				profileId={activeProfile?.id() as string}
+				profile={activeProfile!}
 				contactId={contactToDelete}
 				isOpen={!!contactToDelete}
 				onClose={() => setContactToDelete(null)}

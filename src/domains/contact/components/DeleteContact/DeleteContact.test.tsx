@@ -2,11 +2,10 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
-import { contacts } from "domains/contact/data";
 import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
@@ -31,6 +30,8 @@ describe("DeleteContact", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
@@ -38,18 +39,16 @@ describe("DeleteContact", () => {
 
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
 
-		await env.bootFromObject({ data: {}, profiles });
-		profile = env.profiles().findById("bob");
-
-		const firstContact = contacts[0];
-		contact = profile.contacts().create(firstContact.name());
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		contact = profile.contacts().values()[0];
 	});
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={false} onDelete={onDelete} profileId="1" />
+				<DeleteContact isOpen={false} onDelete={onDelete} profile={profile} />
 			</EnvironmentProvider>,
 		);
 
@@ -60,7 +59,7 @@ describe("DeleteContact", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={onDelete} profileId="1" />
+				<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />
 			</EnvironmentProvider>,
 		);
 
@@ -72,7 +71,7 @@ describe("DeleteContact", () => {
 	it("should delete contact", async () => {
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contactId={contact.id()} />
+				<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contactId={contact.id()} />
 			</EnvironmentProvider>,
 		);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
@@ -89,7 +88,7 @@ describe("DeleteContact", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={fn} profileId={profile.id()} />
+				<DeleteContact isOpen={true} onDelete={fn} profile={profile} />
 			</EnvironmentProvider>,
 		);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");

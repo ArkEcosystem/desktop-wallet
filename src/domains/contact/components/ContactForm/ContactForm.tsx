@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -68,7 +68,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 };
 
 type ContactFormProps = {
-	contact?: any;
+	contact?: Contact;
 	networks: NetworkData[];
 	onCancel?: any;
 	onDelete?: any;
@@ -76,7 +76,19 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
-	const [addresses, setAddresses] = useState(() => (contact ? contact.addresses() : []));
+	const [addresses, setAddresses] = useState(() =>
+		contact
+			? contact
+					.addresses()
+					.values()
+					.map((address: ContactAddress) => ({
+						network: address.network(),
+						address: address.address(),
+						name: address.name(),
+						coin: address.coin(),
+					}))
+			: [],
+	);
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });

@@ -1,18 +1,48 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { availableNetworksMock } from "domains/network/data";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Contact, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
+import { availableNetworksMock as networks } from "domains/network/data";
+import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
+import { StubStorage } from "tests/mocks";
 
-import { contact2 as contact } from "../../data";
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
 
-const networks = availableNetworksMock;
 const onDelete = jest.fn();
 const onSave = jest.fn();
 const onCancel = jest.fn();
 
+let contact: Contact;
+
 describe("ContactForm", () => {
+	beforeAll(async () => {
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+			.persist();
+
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		contact = env.profiles().all()[0].contacts().values()[0];
+	});
+
 	it("should select network", () => {
 		const { getByTestId } = render(<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />);
 
@@ -73,13 +103,13 @@ describe("ContactForm", () => {
 
 		const { getAllByTestId } = renderContext;
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length);
+		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 
 		await act(async () => {
 			fireEvent.click(getAllByTestId("contact-form__remove-address-btn")[0]);
 		});
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length - 1);
+		waitFor(() => expect(getByTestId("contact-form__address-list-item")).toBeFalsy());
 	});
 
 	it("should handle save", async () => {
@@ -130,7 +160,7 @@ describe("ContactForm", () => {
 			expect(getByTestId("contact-form__address-list")).toBeTruthy();
 			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
 			expect(getByTestId("contact-form__delete-btn")).toBeTruthy();
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().length);
+			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 			expect(asFragment()).toMatchSnapshot();
 		});
 

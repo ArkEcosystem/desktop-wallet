@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
@@ -7,13 +7,13 @@ import { useTranslation } from "react-i18next";
 
 type UpdateContactProps = {
 	isOpen: boolean;
-	contact: any;
+	contact: Contact;
 	networks: NetworkData[];
 	onClose?: any;
 	onCancel?: any;
 	onDelete?: any;
 	onSave?: any;
-	profileId: string;
+	profile: Profile;
 };
 
 export const UpdateContact = ({
@@ -24,25 +24,24 @@ export const UpdateContact = ({
 	onCancel,
 	onDelete,
 	onSave,
-	profileId,
+	profile,
 }: UpdateContactProps) => {
 	const { t } = useTranslation();
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
+
+	const contactId = contact.id();
 
 	const handleSave = async ({ name, addresses }: any) => {
-		const profile = env.profiles().findById(profileId);
-		await profile?.contacts().update(contact.id, {
+		await profile.contacts().update(contactId, {
 			name,
 			addresses,
 		});
 		await persist();
-		onSave?.(contact.id);
+		onSave?.(contact.id());
 	};
 
 	const handleDelete = async () => {
-		const contactId = contact?.id?.();
-		const profile = env.profiles().findById(profileId);
-		profile?.contacts().forget(contactId);
+		profile.contacts().forget(contactId);
 		await persist();
 		onDelete?.(contactId);
 	};

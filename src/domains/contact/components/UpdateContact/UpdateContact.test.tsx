@@ -7,7 +7,7 @@ import { availableNetworksMock } from "domains/network/data";
 import nock from "nock";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
@@ -30,6 +30,8 @@ describe("UpdateContact", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
@@ -37,17 +39,16 @@ describe("UpdateContact", () => {
 
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
 
-		await env.bootFromObject({ data: {}, profiles });
-		profile = env.profiles().findById("bob");
-
-		updatingContact = profile.contacts().create("Test");
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		updatingContact = profile.contacts().values()[0];
 	});
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<UpdateContact
-				profileId={profile.id()}
+				profile={profile}
 				isOpen={false}
 				networks={availableNetworksMock}
 				contact={updatingContact}
@@ -60,7 +61,7 @@ describe("UpdateContact", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<UpdateContact profileId={profile.id()} isOpen={true} contact={updatingContact} />,
+			<UpdateContact profile={profile} isOpen={true} contact={updatingContact} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_UPDATE_CONTACT.TITLE);
@@ -70,7 +71,7 @@ describe("UpdateContact", () => {
 	it("should display contact info in form", () => {
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} profileId={profile.id()} contact={updatingContact} />
+				<UpdateContact isOpen={true} profile={profile} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
@@ -82,7 +83,7 @@ describe("UpdateContact", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onCancel={fn} profileId={profile.id()} contact={updatingContact} />
+				<UpdateContact isOpen={true} onCancel={fn} profile={profile} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
@@ -102,7 +103,7 @@ describe("UpdateContact", () => {
 		const onDelete = jest.fn();
 		const { getByTestId } = render(
 			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contact={updatingContact} />
+				<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={updatingContact} />
 			</EnvironmentProvider>,
 		);
 
@@ -122,19 +123,11 @@ describe("UpdateContact", () => {
 	it("should update contact name and address", async () => {
 		const onSaveAddress = jest.fn();
 
-		const contactToUpdate = {
-			name: () => "Test",
-			addresses: () => [],
-			id: "",
-		};
-
-		contactToUpdate.id = updatingContact.id();
-
 		const newName = "Updated name";
 		const newAddress = {
 			name: "Test Address",
 			network: "devnet",
-			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};
 
@@ -143,18 +136,18 @@ describe("UpdateContact", () => {
 				<UpdateContact
 					isOpen={true}
 					onSave={onSaveAddress}
-					profileId={profile.id()}
-					contact={contactToUpdate}
+					profile={profile}
+					contact={updatingContact}
 					networks={availableNetworksMock}
 				/>
 			</EnvironmentProvider>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contactToUpdate.name());
+		expect(nameInput).toHaveValue(updatingContact.name());
 
 		act(() => {
-			fireEvent.change(nameInput, { target: { value: "Updated name" } });
+			fireEvent.change(nameInput, { target: { value: newName } });
 		});
 
 		expect(nameInput).toHaveValue(newName);
@@ -174,6 +167,7 @@ describe("UpdateContact", () => {
 		await waitFor(() => {
 			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
@@ -185,14 +179,12 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(onSaveAddress).toBeCalledWith(contactToUpdate.id);
+			expect(onSaveAddress).toBeCalledWith(updatingContact.id());
 
-			const savedContact = profile.contacts().findById(contactToUpdate.id);
+			const savedContact = profile.contacts().findById(updatingContact.id());
 			expect(savedContact.name()).toEqual(newName);
 
-			const savedAddresses = savedContact.addresses().findByAddress(newAddress.address);
-			expect(savedAddresses.length).toEqual(1);
-			expect(savedAddresses[0]?.address()).toEqual(newAddress.address);
+			expect(savedContact.addresses().findByAddress(newAddress.address).length).toBeGreaterThan(0);
 		});
 	});
 });
