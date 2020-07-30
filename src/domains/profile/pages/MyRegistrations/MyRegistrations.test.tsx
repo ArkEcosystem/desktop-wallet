@@ -1,18 +1,22 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, within } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, env, fireEvent, renderWithRouter, within } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-let history;
-const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
+const history = createMemoryHistory();
+
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 
 describe("Welcome", () => {
-	beforeEach(() => {
-		history = createMemoryHistory();
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		history.push(registrationsURL);
 	});
 
@@ -79,7 +83,7 @@ describe("Welcome", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/transactions/registration`);
 	});
 
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {
