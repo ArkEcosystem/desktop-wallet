@@ -10,11 +10,26 @@ import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import envFixture from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
-import { fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
+import { fireEvent, getDefaultProfileId,render, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
+
+const fixtureProfileId = getDefaultProfileId();
+const fixture = {
+	profiles: {
+		[fixtureProfileId]: {
+			id: fixtureProfileId,
+			contacts: {},
+			data: {},
+			notifications: {},
+			plugins: { data: {}, blacklist: [] },
+			settings: { NAME: "John Doe" },
+			wallets: {},
+		},
+	},
+	data: {},
+};
 
 describe("CreateWallet", () => {
 	let env: Environment;
@@ -45,8 +60,8 @@ describe("CreateWallet", () => {
 
 	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient: httpClient, storage: new StubStorage() });
-		await env.bootFromObject(envFixture);
-		profile = env.profiles().findById("bob");
+		await env.bootFromObject(fixture);
+		profile = env.profiles().findById(fixtureProfileId);
 
 		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 	});
@@ -164,7 +179,7 @@ describe("CreateWallet", () => {
 
 	it("should render", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { queryAllByText, getByTestId, getByText, asFragment } = renderWithRouter(
@@ -255,7 +270,7 @@ describe("CreateWallet", () => {
 
 	it("should not have a pending wallet if leaving on step 1", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
@@ -279,7 +294,7 @@ describe("CreateWallet", () => {
 
 	it("should remove pending wallet if not submitted", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
