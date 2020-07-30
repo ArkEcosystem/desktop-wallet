@@ -137,9 +137,9 @@ export const WalletDetails = () => {
 							delegate={activeWallet?.isDelegate() ? walletData : undefined}
 							business={undefined}
 							isMultisig={activeWallet?.isMultiSignature()}
-							hasBridgechains={false}
+							hasBridgechains={true}
 							hasSecondSignature={activeWallet?.isSecondSignature()}
-							hasPlugins={false}
+							hasPlugins={true}
 							onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
 							onRegister={() =>
 								history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
