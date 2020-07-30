@@ -2,18 +2,20 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, renderWithRouter } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { article } from "../../data";
 import { Article } from "./Article";
 
 const history = createMemoryHistory();
 
-const articleURL = `/profiles/${identity.profiles.bob.id}/support/articles/art123`;
+const articleURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/support/articles/art123`;
 
 describe("Article", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
 		history.push(articleURL);
 	});
 
