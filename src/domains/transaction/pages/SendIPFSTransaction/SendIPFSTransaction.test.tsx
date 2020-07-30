@@ -5,14 +5,20 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FirstStep, FourthStep, SecondStep, SendIPFSTransaction, ThirdStep } from "./SendIPFSTransaction";
 
 const onCopy = jest.fn();
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
 
 describe("SendIPFSTransaction", () => {
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+	});
+
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
@@ -59,7 +65,7 @@ describe("SendIPFSTransaction", () => {
 
 	it("should render", async () => {
 		const history = createMemoryHistory();
-		const ipfsURL = `/profiles/${identity.profiles.bob.id}/transactions/ipfs`;
+		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/ipfs`;
 
 		history.push(ipfsURL);
 
