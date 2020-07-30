@@ -1,18 +1,21 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { identity } from "tests/fixtures/identity";
-import { act, fireEvent, renderWithRouter, within } from "utils/testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, renderWithRouter, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
-
-const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		history.push(dashboardURL);
 	});
 
@@ -31,7 +34,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard wallets={wallets} transactions={transactions} />
 			</Route>,
@@ -120,7 +123,7 @@ describe("Dashboard", () => {
 			fireEvent.click(importButton);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/import`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 	});
 
 	it("should navigate to create page", () => {
@@ -141,6 +144,6 @@ describe("Dashboard", () => {
 			fireEvent.click(createButton);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/create`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
 	});
 });
