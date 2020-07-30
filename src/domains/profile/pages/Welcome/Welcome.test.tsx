@@ -5,7 +5,7 @@ import { httpClient } from "app/services";
 import React from "react";
 import { identity } from "tests/fixtures/identity";
 import { StubStorage } from "tests/mocks";
-import { act,fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter } from "utils/testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
