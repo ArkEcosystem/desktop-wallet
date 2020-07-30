@@ -4,43 +4,38 @@ import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, env, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { Registration } from "./Registration";
 
 let rendered: RenderResult;
-let defaultFormValues = {};
+
+const defaultFormValues = {
+	networks: availableNetworksMock,
+	registrationTypes: [
+		{
+			value: "business",
+			label: "Business",
+		},
+	],
+	formDefaultData: {
+		network: null,
+		address: null,
+	},
+	onDownload: jest.fn(),
+};
 
 describe("Registration", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		const history = createMemoryHistory();
-		const registrationURL = `/profiles/${identity.profiles.bob.id}/transactions/registration`;
+		const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+		const registrationURL = `/profiles/${fixtureProfileId}/transactions/registration`;
 
 		history.push(registrationURL);
-
-		defaultFormValues = {
-			networks: availableNetworksMock,
-			registrationTypes: [
-				{
-					value: "business",
-					label: "Business",
-				},
-			],
-			formDefaultData: {
-				network: null,
-				address: null,
-			},
-			addresses: [
-				{
-					address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-					walletName: "My Wallet",
-					avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-					formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-				},
-			],
-			onDownload: jest.fn(),
-		};
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/registration">
