@@ -1,7 +1,15 @@
 import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { contacts } from "domains/contact/data";
 import React from "react";
-import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -19,7 +27,7 @@ describe("DeleteContact", () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		const firstContact = contacts[0];
 		contact = profile.contacts().create(firstContact.name());

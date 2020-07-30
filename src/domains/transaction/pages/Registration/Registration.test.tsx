@@ -4,7 +4,16 @@ import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { Registration } from "./Registration";
@@ -34,8 +43,7 @@ describe("Registration", () => {
 		await env.persist();
 
 		const history = createMemoryHistory();
-		const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
-		const registrationURL = `/profiles/${fixtureProfileId}/transactions/registration`;
+		const registrationURL = `/profiles/${getDefaultProfileId()}/transactions/registration`;
 
 		history.push(registrationURL);
 

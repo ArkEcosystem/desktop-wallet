@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, renderWithRouter } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { article } from "../../data";
@@ -10,7 +10,7 @@ import { Article } from "./Article";
 
 const history = createMemoryHistory();
 
-const articleURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/support/articles/art123`;
+const articleURL = `/profiles/${getDefaultProfileId()}/support/articles/art123`;
 
 describe("Article", () => {
 	beforeAll(async () => {

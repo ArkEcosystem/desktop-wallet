@@ -1,7 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -16,7 +25,7 @@ describe("SignMessage", () => {
 
 	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 

@@ -1,12 +1,12 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, renderWithRouter, useDefaultNetMocks } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { WalletCard } from "./WalletCard";
 
-const dashboardURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard`;
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 const fixtureWalletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
 const fixtureWalletAddress = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD";

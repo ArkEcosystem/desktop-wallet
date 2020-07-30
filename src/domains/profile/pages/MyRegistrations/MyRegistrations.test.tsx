@@ -1,7 +1,15 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks,within } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	useDefaultNetMocks,
+	within,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { registrations } from "../../data";
@@ -9,7 +17,7 @@ import { MyRegistrations } from "./MyRegistrations";
 
 const history = createMemoryHistory();
 
-const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const fixtureProfileId = getDefaultProfileId();
 const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 
 describe("Welcome", () => {

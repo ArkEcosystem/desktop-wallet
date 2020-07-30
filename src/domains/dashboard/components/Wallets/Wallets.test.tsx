@@ -2,14 +2,14 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { act, env, fireEvent, renderWithRouter, useDefaultNetMocks } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
 
-const dashboardURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard`;
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 // Wallet filter properties
 const filterProperties = {

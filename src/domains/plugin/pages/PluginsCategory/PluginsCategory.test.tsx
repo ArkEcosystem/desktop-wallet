@@ -3,7 +3,15 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import TestUtils from "react-dom/test-utils";
 import { Route } from "react-router-dom";
-import { env, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,within } from "testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	useDefaultNetMocks,
+	within,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
@@ -14,8 +22,7 @@ jest.useFakeTimers();
 let rendered = RenderResult;
 const history = createMemoryHistory();
 
-const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
-const pluginsCategoryURL = `/profiles/${fixtureProfileId}/plugins/categories/game`;
+const pluginsCategoryURL = `/profiles/${getDefaultProfileId()}/plugins/categories/game`;
 
 describe("PluginsCategory", () => {
 	beforeAll(useDefaultNetMocks);

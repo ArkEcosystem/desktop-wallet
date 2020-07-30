@@ -4,12 +4,21 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { env, fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	RenderResult,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
-const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+const fixtureProfileId = getDefaultProfileId();
 
 const onCopy = jest.fn();
 

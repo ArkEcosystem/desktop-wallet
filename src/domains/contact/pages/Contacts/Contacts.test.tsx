@@ -7,7 +7,15 @@ import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter, useDefaultNetMocks,waitFor, within } from "utils/testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
@@ -24,7 +32,7 @@ describe("Contacts", () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		await env.bootFromObject(fixtureData);
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		// Add all used contacts in page to profile,
 		// to retrieve id and perform deletion tests.

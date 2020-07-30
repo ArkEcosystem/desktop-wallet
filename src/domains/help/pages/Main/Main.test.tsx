@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, renderWithRouter } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { categories, helpfulArticles, newestArticles, popularArticles } from "../../data";
@@ -10,7 +10,7 @@ import { Main } from "./Main";
 
 const history = createMemoryHistory();
 
-const supportURL = "/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/support";
+const supportURL = `/profiles/${getDefaultProfileId()}/support`;
 
 describe("SupportPage", () => {
 	beforeAll(() => {

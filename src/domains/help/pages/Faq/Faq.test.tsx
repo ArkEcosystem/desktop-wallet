@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, renderWithRouter } from "testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { faqArticles } from "../../data";
@@ -10,8 +10,7 @@ import { Faq } from "./Faq";
 
 const history = createMemoryHistory();
 
-const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
-const categoryURL = `/profiles/${fixtureProfileId}/support/categories/portfolio`;
+const categoryURL = `/profiles/${getDefaultProfileId()}/support/categories/portfolio`;
 
 describe("Faq", () => {
 	beforeAll(async () => {

@@ -5,7 +5,15 @@ import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import {
+	act,
+	fireEvent,
+	getDefaultProfileId,
+	RenderResult,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -25,7 +33,7 @@ describe("WalletDetails", () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
