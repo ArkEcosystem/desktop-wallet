@@ -1,7 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, fireEvent, getDefaultProfileId,renderWithRouter, useDefaultNetMocks } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";

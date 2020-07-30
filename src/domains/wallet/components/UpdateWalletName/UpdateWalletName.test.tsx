@@ -1,6 +1,6 @@
 import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId,render, useDefaultNetMocks, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, useDefaultNetMocks, waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 // i18n

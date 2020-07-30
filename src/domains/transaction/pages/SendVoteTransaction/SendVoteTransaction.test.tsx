@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { env, fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks,waitFor } from "testing-library";
+import { env, fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks, waitFor } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
