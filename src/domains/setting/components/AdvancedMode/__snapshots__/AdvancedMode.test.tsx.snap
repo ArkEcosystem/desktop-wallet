@@ -58,6 +58,7 @@ exports[`AdvancedMode should render a modal 1`] = `
           <button
             class="sc-AxjAm ddJBbC"
             color="primary"
+            data-testid="AdvancedMode__decline-button"
             type="button"
           >
             I Decline
@@ -65,6 +66,7 @@ exports[`AdvancedMode should render a modal 1`] = `
           <button
             class="sc-AxjAm ddQVWI"
             color="primary"
+            data-testid="AdvancedMode__accept-button"
             type="button"
           >
             I Accept

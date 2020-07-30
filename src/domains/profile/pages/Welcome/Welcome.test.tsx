@@ -1,10 +1,11 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
+import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import React from "react";
 import { identity } from "tests/fixtures/identity";
 import { StubStorage } from "tests/mocks";
-import { fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter } from "utils/testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
@@ -23,10 +24,32 @@ describe("Welcome", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should navigate in profile settings from profile card menu", () => {
+		const { container, getByText, asFragment, history, getByTestId } = renderWithRouter(<Welcome />);
+		const profile = env.profiles().findById(identity.profiles.bob.id);
+
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+
+		expect(container).toBeTruthy();
+		const profileCardMenu = getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(profileCardMenu);
+		});
+		const settingsOption = getByTestId("dropdown__option--0");
+		expect(settingsOption).toBeTruthy();
+		expect(settingsOption).toHaveTextContent(commonTranslations.SETTINGS);
+		act(() => {
+			fireEvent.click(settingsOption);
+		});
+
+		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/settings`);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render without profiles", () => {
-		const env = new Environment({ coins: {}, httpClient, storage: new StubStorage() });
+		const emptyEnv = new Environment({ coins: {}, httpClient, storage: new StubStorage() });
 		const { container, asFragment, getByText } = renderWithRouter(
-			<EnvironmentProvider env={env}>
+			<EnvironmentProvider env={emptyEnv}>
 				<Welcome />
 			</EnvironmentProvider>,
 		);

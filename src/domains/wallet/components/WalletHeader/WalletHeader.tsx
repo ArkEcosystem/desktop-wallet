@@ -21,6 +21,7 @@ type Props = {
 	name?: string | undefined;
 	publicKey?: string | undefined;
 	onSignMessage: () => void;
+	onVerifyMessage: () => void;
 	onDeleteWallet: () => void;
 	onUpdateWalletName: () => void;
 	onSend?: () => void;
@@ -36,6 +37,7 @@ export const WalletHeader = ({
 	onSend,
 	onStar,
 	onSignMessage,
+	onVerifyMessage,
 	onDeleteWallet,
 	onUpdateWalletName,
 	balance,
@@ -105,12 +107,20 @@ export const WalletHeader = ({
 										label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 										value: "sign-message",
 									},
+									{
+										label: t("WALLETS.MODAL_VERIFY_MESSAGE.TITLE"),
+										value: "verify-message",
+									},
 									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"), value: "store-hash" },
 									{ label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"), value: "delete-wallet" },
 								]}
 								onSelect={(option: Record<string, string>) => {
 									if (option.value === "sign-message") {
 										onSignMessage();
+									}
+
+									if (option.value === "verify-message") {
+										onVerifyMessage();
 									}
 
 									if (option.value === "delete-wallet") {

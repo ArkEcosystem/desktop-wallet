@@ -9,6 +9,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
+import { PlatformSdkChoices } from "data";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -74,9 +75,16 @@ export const CreateProfile = () => {
 
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
 		const profile = env.profiles().create(name);
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
+		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
+		profile.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
 
 		await persist();
 
@@ -127,10 +135,7 @@ export const CreateProfile = () => {
 												field: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 											}).toString(),
 										})}
-										options={[
-											{ label: "Option 1", value: "option1" },
-											{ label: "Option 2", value: "option2" },
-										]}
+										options={PlatformSdkChoices.marketProviders}
 									/>
 									<FormHelperText />
 								</FormField>
@@ -146,10 +151,7 @@ export const CreateProfile = () => {
 												field: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 											}).toString(),
 										})}
-										options={[
-											{ label: "Option 1", value: "option1" },
-											{ label: "Option 2", value: "option2" },
-										]}
+										options={PlatformSdkChoices.currencies}
 									/>
 									<FormHelperText />
 								</FormField>

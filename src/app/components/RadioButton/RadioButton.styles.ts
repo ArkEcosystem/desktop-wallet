@@ -14,6 +14,4 @@ const getColor = (color: string) => {
 	`;
 };
 
-export const getStyles = ({ color }: { color?: string }) => {
-	return [...baseStyle, ...getColor(color!)];
-};
+export const getStyles = ({ color }: { color?: string }) => [...baseStyle, ...getColor(color!)];

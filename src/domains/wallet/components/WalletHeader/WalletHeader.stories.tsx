@@ -11,6 +11,7 @@ export const Default = () => (
 		address="AdzbhuDTyhnfAqepZzVcVsgd1Ym6FgETuW"
 		balance="432,509.0892 ARK"
 		currencyBalance="789,008.45 USD"
+		onVerifyMessage={console.log}
 		onSignMessage={console.log}
 		onUpdateWalletName={console.log}
 		onDeleteWallet={console.log}

@@ -25,8 +25,6 @@ export const SideBarItem = withRouter(
 
 		const handleClick = () => {
 			handleActiveItem(itemKey);
-
-			return history.push(route);
 		};
 
 		return (

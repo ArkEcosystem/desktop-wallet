@@ -16,37 +16,35 @@ type AddressListItemProps = {
 	onRemove: any;
 };
 
-const AddressListItem = ({ address, onRemove }: AddressListItemProps) => {
-	return (
-		<div
-			data-testid="contact-form__address-list-item"
-			className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
-		>
-			<div className="mr-4">
-				<div className="flex items-center -space-x-1">
-					<Circle className={`-mr-1 ${address.coinClassName}`}>
-						<Icon name={address.coin} />
-					</Circle>
-					<Avatar address={address.address} />
-				</div>
+const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
+	<div
+		data-testid="contact-form__address-list-item"
+		className="flex items-center py-4 border-b border-dashed border-theme-neutral-300"
+	>
+		<div className="mr-4">
+			<div className="flex items-center -space-x-1">
+				<Circle className={`-mr-1 ${address.coinClassName}`}>
+					<Icon name={address.coin} />
+				</Circle>
+				<Avatar address={address.address} />
 			</div>
-
-			<span className="font-semibold">
-				<Address address={address.address} maxChars={24} />
-			</span>
-
-			<Button
-				data-testid="contact-form__remove-address-btn"
-				size="icon"
-				className="flex items-center ml-auto"
-				variant="plain"
-				onClick={() => onRemove(address)}
-			>
-				<Icon name="Trash" />
-			</Button>
 		</div>
-	);
-};
+
+		<span className="font-semibold">
+			<Address address={address.address} maxChars={24} />
+		</span>
+
+		<Button
+			data-testid="contact-form__remove-address-btn"
+			size="icon"
+			className="flex items-center ml-auto"
+			variant="plain"
+			onClick={() => onRemove(address)}
+		>
+			<Icon name="Trash" />
+		</Button>
+	</div>
+);
 
 type AddressListProps = {
 	addresses: any[];
@@ -80,9 +78,7 @@ type ContactFormProps = {
 };
 
 export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
-	const [contactAddresses, setContactAddresses] = useState(() => {
-		return contact ? contact.addresses() : [];
-	});
+	const [addresses, setAddresses] = useState(() => (contact ? contact.addresses() : []));
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
@@ -94,10 +90,11 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	}, [register]);
 
 	const handleAddAddress = () => {
-		setContactAddresses(
-			contactAddresses.concat({
+		setAddresses(
+			addresses.concat({
 				network: network.id(),
 				address,
+				name: address,
 				coin: network.coin(),
 			}),
 		);
@@ -107,10 +104,8 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	};
 
 	const handleRemoveAddress = (item: any) => {
-		setContactAddresses(
-			contactAddresses.filter((curr: any) => {
-				return !(curr.address === item.address && curr.network === item.network);
-			}),
+		setAddresses(
+			addresses.filter((curr: any) => !(curr.address === item.address && curr.network === item.network)),
 		);
 	};
 
@@ -125,7 +120,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 			onSubmit={() =>
 				onSave({
 					name,
-					contactAddresses,
+					addresses,
 				})
 			}
 		>
@@ -163,9 +158,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				</Button>
 			</div>
 
-			{contactAddresses && contactAddresses.length > 0 && (
-				<AddressList addresses={contactAddresses} onRemove={handleRemoveAddress} />
-			)}
+			{addresses && addresses.length > 0 && <AddressList addresses={addresses} onRemove={handleRemoveAddress} />}
 
 			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
 				{contact && (
@@ -184,7 +177,7 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="solid"
-						disabled={!contactAddresses.length}
+						disabled={!addresses.length}
 					>
 						{t("COMMON.SAVE")}
 					</Button>

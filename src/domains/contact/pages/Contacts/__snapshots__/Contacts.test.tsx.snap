@@ -29,7 +29,52 @@ exports[`Contacts should render empty 1`] = `
             </div>
             <ul
               class="flex h-20 md:h-24"
-            />
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
           <div
             class="flex items-center"
@@ -60,7 +105,7 @@ exports[`Contacts should render empty 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/undefined/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -185,7 +230,7 @@ exports[`Contacts should render empty 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/portfolio"
         >
           <span>
             Go back to Portfolio
@@ -294,7 +339,52 @@ exports[`Contacts should render with contacts 1`] = `
             </div>
             <ul
               class="flex h-20 md:h-24"
-            />
+            >
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                  title="Portfolio"
+                >
+                  Portfolio
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                  title="Plugins"
+                >
+                  Plugins
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                  title="Exchange"
+                >
+                  Exchange
+                </a>
+              </li>
+              <li
+                class="flex"
+              >
+                <a
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                  title="News"
+                >
+                  News
+                </a>
+              </li>
+            </ul>
           </div>
           <div
             class="flex items-center"
@@ -325,7 +415,7 @@ exports[`Contacts should render with contacts 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/undefined/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -450,7 +540,7 @@ exports[`Contacts should render with contacts 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/portfolio"
         >
           <span>
             Go back to Portfolio
@@ -681,9 +771,9 @@ exports[`Contacts should render with contacts 1`] = `
                             class="w-full h-full"
                           >
                             <img
-                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                             />
                           </div>
                         </div>
@@ -694,7 +784,7 @@ exports[`Contacts should render with contacts 1`] = `
                             class="sc-fzqBZW kvyVsY text-theme-text font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            ASuusX…GQ3kqT
+                            D8rr7B…s6YUYD
                           </span>
                         </div>
                       </div>

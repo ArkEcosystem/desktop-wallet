@@ -52,13 +52,11 @@ export const WalletListItem = ({
 			</td>
 			{walletTypeIcons && (
 				<td className="py-1 text-sm font-bold text-center space-x-2">
-					{walletTypeIcons.map((type: string, index: number) => {
-						return (
-							<div key={index} className={`inline-block align-middle ${getIconTypeClass(type)}`}>
-								<Icon name={type} width={16} height={16} />
-							</div>
-						);
-					})}
+					{walletTypeIcons.map((type: string, index: number) => (
+						<div key={index} className={`inline-block align-middle ${getIconTypeClass(type)}`}>
+							<Icon name={type} width={16} height={16} />
+						</div>
+					))}
 				</td>
 			)}
 			<td className="font-semibold text-right">

@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 
 type AdvancedModeProps = {
 	isOpen: boolean;
-	onAccept?: any;
-	onDecline?: any;
 	onClose?: any;
+	onDecline?: any;
+	onAccept?: any;
 };
 
-export const AdvancedMode = (props: AdvancedModeProps) => {
+export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedModeProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -18,15 +18,15 @@ export const AdvancedMode = (props: AdvancedModeProps) => {
 			title={t("SETTINGS.MODAL_ADVANCED_MODE.TITLE")}
 			description={t("SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER")}
 			size="xl"
-			isOpen={props.isOpen}
-			onClose={props.onClose}
+			isOpen={isOpen}
+			onClose={onClose}
 		>
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="plain" onClick={props.onDecline}>
+				<Button variant="plain" onClick={onDecline} data-testid="AdvancedMode__decline-button">
 					{t("COMMON.I_DECLINE")}
 				</Button>
 
-				<Button variant="solid" onClick={props.onAccept}>
+				<Button variant="solid" onClick={onAccept} data-testid="AdvancedMode__accept-button">
 					{t("COMMON.I_ACCEPT")}
 				</Button>
 			</div>

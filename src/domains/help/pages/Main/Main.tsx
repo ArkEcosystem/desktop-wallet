@@ -82,16 +82,14 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 			<Section>
 				<div className="flex flex-row -mx-2 divide-x divide-theme-neutral-200">
 					{categories &&
-						categories.map((category: CategoryItemProps, index: number) => {
-							return (
-								<CategoryItem
-									title={category.title}
-									subtitle={category.subtitle}
-									icon={category.icon}
-									key={index}
-								/>
-							);
-						})}
+						categories.map((category: CategoryItemProps, index: number) => (
+							<CategoryItem
+								title={category.title}
+								subtitle={category.subtitle}
+								icon={category.icon}
+								key={index}
+							/>
+						))}
 				</div>
 			</Section>
 
