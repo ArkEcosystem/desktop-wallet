@@ -266,7 +266,9 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.passphraseLanguages}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.Bip39Locale)}
+									defaultValue={
+										activeProfile?.settings().get(ProfileSetting.Bip39Locale) || "english"
+									}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -283,7 +285,9 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.currencies}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.ExchangeCurrency)}
+									defaultValue={
+										activeProfile?.settings().get(ProfileSetting.ExchangeCurrency) || "btc"
+									}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -302,7 +306,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.languages}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.Locale)}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.Locale) || "en-US"}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -319,7 +323,9 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.marketProviders}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.MarketProvider)}
+									defaultValue={
+										activeProfile?.settings().get(ProfileSetting.MarketProvider) || "coingecko"
+									}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -336,7 +342,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.timeFormats}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.TimeFormat)}
+									defaultValue={activeProfile?.settings().get(ProfileSetting.TimeFormat) || "h:mm A"}
 								/>
 								<FormHelperText />
 							</FormField>
