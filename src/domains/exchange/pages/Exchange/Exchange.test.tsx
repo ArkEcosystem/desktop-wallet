@@ -1,18 +1,20 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { fireEvent, renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { env, fireEvent, renderWithRouter } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
 const history = createMemoryHistory();
 
-const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
+const exchangeURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange`;
 
 describe("Exchange", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
 		history.push(exchangeURL);
 	});
 
