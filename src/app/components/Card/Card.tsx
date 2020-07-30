@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 export const Card = ({ handleClick, children, className }: CardProps) => (
-	<Wrapper className={className} onClick={() => handleClick?.()}>
+	<Wrapper className={className} onClick={() => handleClick?.()} data-testid="ProfileCard">
 		{children}
 	</Wrapper>
 );

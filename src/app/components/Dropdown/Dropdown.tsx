@@ -39,7 +39,7 @@ const renderOptions = (options: any[], onSelect: any) => (
 				key={key}
 				data-testid={`dropdown__option--${key}`}
 				onClick={(e: any) => {
-					onSelect(option);
+					onSelect?.(option);
 					e.preventDefault();
 					e.stopPropagation();
 				}}

@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
@@ -13,16 +14,25 @@ import { setScreenshotProtection } from "utils/electron-utils";
 const { WelcomeBanner } = images.profile.pages.welcome;
 
 export const Welcome = () => {
-	const profileCardActions = [
-		{ label: "Setting", value: "setting" },
-		{ label: "Delete", value: "delete" },
-	];
 	const context = useEnvironmentContext();
 	const { t } = useTranslation();
 	const history = useHistory();
 	const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
 
+	const profileCardActions = [
+		{ label: t("COMMON.SETTINGS"), value: "setting" },
+		{ label: t("COMMON.DELETE"), value: "delete" },
+	];
+
 	React.useEffect(() => setScreenshotProtection(true));
+
+	const handleProfileCardAction = (profile: Profile, action: any) => {
+		switch (action?.value) {
+			case "setting":
+				history.push(`/profiles/${profile.id()}/settings`);
+				break;
+		}
+	};
 
 	return (
 		<Page navbarStyle="logo-only">
@@ -49,6 +59,7 @@ export const Welcome = () => {
 										key={index}
 										profile={profile}
 										actions={profileCardActions}
+										onSelect={(action: any) => handleProfileCardAction(profile, action)}
 									/>
 								))}
 							</div>
