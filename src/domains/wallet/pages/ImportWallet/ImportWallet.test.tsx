@@ -1,24 +1,34 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import {  Profile } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import TestRenderer from "react-test-renderer";
-import { act, fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { identity } from "tests/fixtures/identity";
-import { StubStorage } from "tests/mocks";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	RenderResult,
+	renderWithRouter,
+	waitFor,
+} from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FirstStep, ImportWallet, SecondStep } from "./ImportWallet";
 
-let env: Environment;
 let profile: Profile;
+const fixtureProfileId = getDefaultProfileId();
+
+const identityAddress = "DSzj2pHzzM2vks8JU181VsWpoUtLMrT9Sq";
+const mnemonic = "quantum sketch safe large poet space fortune wide vapor jealous dwarf step";
+
+const route = `/profiles/${fixtureProfileId}/wallets/import`;
 
 describe("ImportWallet", () => {
 	beforeAll(() => {
@@ -33,17 +43,15 @@ describe("ImportWallet", () => {
 			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
 			.get("/api/node/syncing")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 			.persist();
 	});
 
 	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
 
-		await env.bootFromObject({ data: {}, profiles });
-
-		profile = env.profiles().findById("bob");
+		profile = env.profiles().findById(fixtureProfileId);
 	});
 
 	it("should render 1st step", async () => {
@@ -91,10 +99,10 @@ describe("ImportWallet", () => {
 		expect(passphraseInput).toBeTruthy();
 
 		await act(async () => {
-			fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
+			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 		});
 
-		expect(form.current.getValues()).toEqual({ passphrase: identity.mnemonic });
+		expect(form.current.getValues()).toEqual({ passphrase: mnemonic });
 
 		await act(async () => {
 			fireEvent.click(addressToggle);
@@ -106,7 +114,6 @@ describe("ImportWallet", () => {
 
 	it("should go to previous step", async () => {
 		let rendered: RenderResult;
-		const route = "/profiles/bob/wallets/import";
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -147,7 +154,6 @@ describe("ImportWallet", () => {
 	it("should import by mnemonic", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
-		const route = "/profiles/bob/wallets/import";
 
 		history.push(route);
 
@@ -186,18 +192,17 @@ describe("ImportWallet", () => {
 			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
 			expect(passphraseInput).toBeTruthy();
 
-			fireEvent.change(passphraseInput, { target: { value: identity.mnemonic } });
+			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
-			await waitFor(() => expect(profile.wallets().values()[0].address()).toEqual(identity.address));
+			await waitFor(() => expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy());
 		});
 	});
 
 	it("should import by address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
-		const route = "/profiles/bob/wallets/import";
 
 		history.push(route);
 
@@ -241,18 +246,17 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			await fireEvent.change(addressInput, { target: { value: identity.address } });
+			await fireEvent.change(addressInput, { target: { value: identityAddress } });
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
-			await waitFor(() => expect(profile.wallets().values()[0].address()).toEqual(identity.address));
+			await waitFor(() => expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy());
 		});
 	});
 
 	it("should show an error message for invalid address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
-		const route = "/profiles/bob/wallets/import";
 
 		history.push(route);
 
@@ -330,7 +334,6 @@ describe("ImportWallet", () => {
 
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
-		const route = "/profiles/bob/wallets/import";
 
 		history.push(route);
 
@@ -391,11 +394,11 @@ describe("ImportWallet", () => {
 	it("should show an error message if trying to import a duplicate address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
-		const route = "/profiles/bob/wallets/import";
+		const route = `/profiles/${fixtureProfileId}/wallets/import`;
 
 		history.push(route);
 
-		await profile.wallets().importByAddress(identity.address, "ARK", "devnet");
+		await profile.wallets().importByAddress(identityAddress, "ARK", "devnet");
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -437,7 +440,7 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			await fireEvent.change(addressInput, { target: { value: identity.address } });
+			await fireEvent.change(addressInput, { target: { value: identityAddress } });
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
@@ -445,7 +448,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(errorAlert).toBeTruthy());
 
 			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorThe wallet [D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib] already exists."`,
+				`"alert-danger.svgErrorThe wallet [${identityAddress}] already exists."`,
 			);
 		});
 	});
