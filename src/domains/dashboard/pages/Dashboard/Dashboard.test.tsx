@@ -3,7 +3,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { identity } from "tests/fixtures/identity";
-import { act, fireEvent, renderWithRouter, within } from "utils/testing-library";
+import { act, fireEvent, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
@@ -34,7 +34,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it("should hide transaction view", () => {
@@ -71,7 +71,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it("should render portfolio chart", () => {
@@ -85,7 +85,7 @@ describe("Dashboard", () => {
 			},
 		);
 
-		expect(container).toMatchSnapshot();
+		waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it("should hide portfolio view", () => {
@@ -127,7 +127,9 @@ describe("Dashboard", () => {
 			fireEvent.click(importButton);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/import`);
+		waitFor(() =>
+			expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/import`),
+		);
 	});
 
 	it("should navigate to create page", () => {
@@ -148,6 +150,8 @@ describe("Dashboard", () => {
 			fireEvent.click(createButton);
 		});
 
-		expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/create`);
+		waitFor(() =>
+			expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/create`),
+		);
 	});
 });
