@@ -75,9 +75,16 @@ export const CreateProfile = () => {
 
 	const submitForm = async ({ name, currency, isDarkMode, marketProvider }: any) => {
 		const profile = env.profiles().create(name);
-		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(ProfileSetting.AutomaticLogoffPeriod, 15);
+		profile.settings().set(ProfileSetting.Bip39Locale, PlatformSdkChoices.passphraseLanguages[2].value);
 		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(ProfileSetting.LedgerUpdateMethod, false);
+		profile.settings().set(ProfileSetting.Locale, PlatformSdkChoices.languages[0].value);
+		profile.settings().set(ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(ProfileSetting.ScreenshotProtection, true);
 		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(ProfileSetting.TimeFormat, PlatformSdkChoices.timeFormats[0].value);
 
 		await persist();
 
