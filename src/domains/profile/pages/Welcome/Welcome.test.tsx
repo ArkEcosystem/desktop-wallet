@@ -3,7 +3,7 @@ import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import React from "react";
-import { identity } from "tests/fixtures/identity";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { act, fireEvent, renderWithRouter } from "utils/testing-library";
 import { env } from "utils/testing-library";
@@ -11,27 +11,37 @@ import { env } from "utils/testing-library";
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
 
+const profileDashboardUrl = "/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard";
+const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+
 describe("Welcome", () => {
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+	});
+
 	it("should render with profiles", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
-		const profile = env.profiles().findById(identity.profiles.bob.id);
+		const profile = env.profiles().findById(fixtureProfileId);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText(profile.name()));
-		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/dashboard`);
+		expect(history.location.pathname).toEqual(profileDashboardUrl);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate in profile settings from profile card menu", () => {
-		const { container, getByText, asFragment, history, getByTestId } = renderWithRouter(<Welcome />);
-		const profile = env.profiles().findById(identity.profiles.bob.id);
+		const { container, getByText, asFragment, history, getByTestId, getAllByTestId } = renderWithRouter(
+			<Welcome />,
+		);
+		const profile = env.profiles().findById(fixtureProfileId);
 
 		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
-		const profileCardMenu = getByTestId("dropdown__toggle");
+		const profileCardMenu = getAllByTestId("dropdown__toggle")[1];
 		act(() => {
 			fireEvent.click(profileCardMenu);
 		});
