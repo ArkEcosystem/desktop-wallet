@@ -33,12 +33,16 @@ export const CreateProfile = () => {
 			content: (
 				<div className="flex flex-row mt-2 mb-8">
 					<div className="flex items-center justify-center w-24 h-24 mr-6 border-2 border-dashed rounded border-theme-neutral-300">
-						<button
-							type="button"
-							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
-						>
+						<div className="relative flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast">
+							<input
+								ref={register}
+								type="file"
+								name="avatar"
+								className="absolute w-20 h-20 opacity-0 cursor-pointer"
+								accept="image/jpg,image/jpeg,image/bmp,image/png"
+							/>
 							<Icon name="Upload" />
-						</button>
+						</div>
 					</div>
 					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
 						<img
