@@ -89,7 +89,7 @@ test("Should fail verification", async (t) => {
 		.ok();
 });
 
-test("Should succesfully verify message", async (t) => {
+test("Should successfully verify message", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 

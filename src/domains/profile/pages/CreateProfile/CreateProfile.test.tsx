@@ -51,10 +51,17 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
-			NAME: "test profile",
-			MARKET_PROVIDER: "coincap",
+			ADVANCED_MODE: false,
+			AUTOMATIC_LOGOFF_PERIOD: 15,
+			BIP39_LOCALE: "english",
 			EXCHANGE_CURRENCY: "btc",
+			LEDGER_UPDATE_METHOD: false,
+			LOCALE: "en-US",
+			MARKET_PROVIDER: "coincap",
+			NAME: "test profile",
+			SCREENSHOT_PROTECTION: true,
 			THEME: "light",
+			TIME_FORMAT: "h:mm A",
 		});
 
 		fireEvent.input(getByTestId("Input"), { target: { value: "test profile 2" } });
@@ -68,10 +75,17 @@ describe("CreateProfile", () => {
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
-			NAME: "test profile 2",
-			MARKET_PROVIDER: "coincap",
+			ADVANCED_MODE: false,
+			AUTOMATIC_LOGOFF_PERIOD: 15,
+			BIP39_LOCALE: "english",
 			EXCHANGE_CURRENCY: "btc",
+			LEDGER_UPDATE_METHOD: false,
+			LOCALE: "en-US",
+			MARKET_PROVIDER: "coincap",
+			NAME: "test profile 2",
+			SCREENSHOT_PROTECTION: true,
 			THEME: "dark",
+			TIME_FORMAT: "h:mm A",
 		});
 
 		expect(asFragment()).toMatchSnapshot();

@@ -532,18 +532,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-103-label downshift-103-toggle-button"
+                                  aria-labelledby="downshift-154-label downshift-154-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-103-toggle-button"
+                                  id="downshift-154-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-103-label"
+                                  aria-labelledby="downshift-154-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-103-menu"
+                                  id="downshift-154-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -954,7 +954,7 @@ exports[`Settings should render 1`] = `
                       class="mb-0 md:text-4xl"
                       data-testid="header__title"
                     >
-                      Wallet Settings
+                      Profile Settings
                     </h1>
                     <div
                       class="text-theme-neutral-dark"
@@ -1073,6 +1073,7 @@ exports[`Settings should render 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
+                            value="Bob"
                           />
                         </fieldset>
                         <fieldset
@@ -3142,18 +3143,18 @@ exports[`Settings should render plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-96-label downshift-96-toggle-button"
+                                  aria-labelledby="downshift-147-label downshift-147-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-96-toggle-button"
+                                  id="downshift-147-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-96-label"
+                                  aria-labelledby="downshift-147-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-96-menu"
+                                  id="downshift-147-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3564,7 +3565,7 @@ exports[`Settings should submit using default props 1`] = `
                       class="mb-0 md:text-4xl"
                       data-testid="header__title"
                     >
-                      Wallet Settings
+                      Profile Settings
                     </h1>
                     <div
                       class="text-theme-neutral-dark"
@@ -3683,6 +3684,7 @@ exports[`Settings should submit using default props 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
+                            value="test profile"
                           />
                         </fieldset>
                         <fieldset
@@ -3714,18 +3716,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-51-label downshift-51-toggle-button"
+                                  aria-labelledby="downshift-96-label downshift-96-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-51-toggle-button"
+                                  id="downshift-96-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-51-label"
+                                  aria-labelledby="downshift-96-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-51-menu"
+                                  id="downshift-96-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3775,18 +3777,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-52-label downshift-52-toggle-button"
+                                  aria-labelledby="downshift-97-label downshift-97-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-52-toggle-button"
+                                  id="downshift-97-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-52-label"
+                                  aria-labelledby="downshift-97-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-52-menu"
+                                  id="downshift-97-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3840,18 +3842,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-53-label downshift-53-toggle-button"
+                                  aria-labelledby="downshift-98-label downshift-98-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-53-toggle-button"
+                                  id="downshift-98-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-53-label"
+                                  aria-labelledby="downshift-98-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-53-menu"
+                                  id="downshift-98-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3901,18 +3903,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-54-label downshift-54-toggle-button"
+                                  aria-labelledby="downshift-99-label downshift-99-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-54-toggle-button"
+                                  id="downshift-99-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-54-label"
+                                  aria-labelledby="downshift-99-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-54-menu"
+                                  id="downshift-99-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3962,18 +3964,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-55-label downshift-55-toggle-button"
+                                  aria-labelledby="downshift-100-label downshift-100-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-55-toggle-button"
+                                  id="downshift-100-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-55-label"
+                                  aria-labelledby="downshift-100-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-55-menu"
+                                  id="downshift-100-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4045,6 +4047,7 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isScreenshotProtection"
                                   name="isScreenshotProtection"
@@ -4114,6 +4117,77 @@ exports[`Settings should submit using default props 1`] = `
                                 </div>
                               </label>
                             </div>
+                            <div
+                              class="fixed inset-0 z-50 bg-black opacity-50"
+                              data-testid="modal__overlay"
+                            />
+                            <div
+                              class="sc-fzoLsD hImDCl fixed top-0 left-0 right-0 z-50 flex flex-col px-10 pt-6 pb-8 mx-auto mt-24 overflow-hidden rounded-xl bg-theme-background"
+                              data-testid="modal__inner"
+                            >
+                              <div
+                                class="absolute top-0 right-0 z-50 mt-5 mr-5"
+                              >
+                                <button
+                                  class="sc-AxhCb idLVlI"
+                                  color="neutral"
+                                  data-testid="modal__close-btn"
+                                  type="button"
+                                >
+                                  <div
+                                    class="p-1"
+                                  >
+                                    <div
+                                      class="sc-AxirZ hDwaov"
+                                      height="12"
+                                      width="12"
+                                    >
+                                      <svg>
+                                        cross-slim.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="py-4"
+                              >
+                                <h2
+                                  class="mb-0 text-3xl font-bold"
+                                >
+                                  Advanced Mode Disclaimer
+                                </h2>
+                                <div
+                                  class="flex-1"
+                                >
+                                  <div
+                                    class="mt-1 text-theme-neutral-dark"
+                                  >
+                                    By enabling Advanced Mode you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC. We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL or feature that is activated via toggling on Advanced Mode. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users who bypass certain measures by toggling on Advanced Mode. By clicking “I Accept” you acknowledge that enabling Advanced Mode may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
+                                  </div>
+                                  <div
+                                    class="flex justify-end mt-8 space-x-3"
+                                  >
+                                    <button
+                                      class="sc-AxhCb BegvR"
+                                      color="primary"
+                                      data-testid="AdvancedMode__decline-button"
+                                      type="button"
+                                    >
+                                      I Decline
+                                    </button>
+                                    <button
+                                      class="sc-AxhCb gBCygf"
+                                      color="primary"
+                                      data-testid="AdvancedMode__accept-button"
+                                      type="button"
+                                    >
+                                      I Accept
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </li>
@@ -4167,18 +4241,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-56-label downshift-56-toggle-button"
+                                    aria-labelledby="downshift-101-label downshift-101-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-56-toggle-button"
+                                    id="downshift-101-toggle-button"
                                     type="button"
                                   >
                                     Select Auto-logoff
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-56-label"
+                                    aria-labelledby="downshift-101-label"
                                     class="sc-fzoiQi eFpDPy"
-                                    id="downshift-56-menu"
+                                    id="downshift-101-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4306,6 +4380,7 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isUpdateLedger"
                                   name="isUpdateLedger"
@@ -4738,7 +4813,7 @@ exports[`Settings should update profile 1`] = `
                       class="mb-0 md:text-4xl"
                       data-testid="header__title"
                     >
-                      Wallet Settings
+                      Profile Settings
                     </h1>
                     <div
                       class="text-theme-neutral-dark"
@@ -4857,6 +4932,7 @@ exports[`Settings should update profile 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
+                            value="test profile 2"
                           />
                         </fieldset>
                         <fieldset
@@ -5219,6 +5295,7 @@ exports[`Settings should update profile 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isScreenshotProtection"
                                   name="isScreenshotProtection"
@@ -5332,7 +5409,7 @@ exports[`Settings should update profile 1`] = `
                                 name="autoLogoff"
                                 readonly=""
                                 type="text"
-                                value=""
+                                value="1"
                               />
                               <div
                                 class="relative w-full cursor-pointer"
@@ -5342,12 +5419,12 @@ exports[`Settings should update profile 1`] = `
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-labelledby="downshift-11-label downshift-11-toggle-button"
-                                    class="sc-fznWqX iNiXlu   "
+                                    class="sc-fznWqX iNiXlu  is-selected "
                                     data-testid="select-list__toggle-button"
                                     id="downshift-11-toggle-button"
                                     type="button"
                                   >
-                                    Select Auto-logoff
+                                    1 Minute
                                   </button>
                                   <ul
                                     aria-labelledby="downshift-11-label"
@@ -5425,6 +5502,7 @@ exports[`Settings should update profile 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isDarkMode"
                                   name="isDarkMode"
@@ -5480,6 +5558,7 @@ exports[`Settings should update profile 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isUpdateLedger"
                                   name="isUpdateLedger"
