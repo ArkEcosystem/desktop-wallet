@@ -54,7 +54,19 @@
 			},
 			"plugins": { "data": {}, "blacklist": [] },
 			"data": { "key": "value" },
-			"settings": { "ADVANCED_MODE": "value", "NAME": "John Doe" }
+			"settings": {
+				"ADVANCED_MODE": false,
+				"AUTOMATIC_LOGOFF_PERIOD": 15,
+				"BIP39_LOCALE": "english",
+				"EXCHANGE_CURRENCY": "btc",
+				"LEDGER_UPDATE_METHOD": false,
+				"LOCALE": "en-US",
+				"MARKET_PROVIDER": "coincap",
+				"NAME": "John Doe",
+				"SCREENSHOT_PROTECTION": true,
+				"THEME": "light",
+				"TIME_FORMAT": "h:mm A"
+			}
 		}
 	},
 	"data": { "key": "value" }
