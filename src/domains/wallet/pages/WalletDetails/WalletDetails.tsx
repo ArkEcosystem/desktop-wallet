@@ -195,9 +195,9 @@ export const WalletDetails = () => {
 				isOpen={isVerifyingMessage}
 				onClose={() => setIsVerifyingMessage(false)}
 				onCancel={() => setIsVerifyingMessage(false)}
-				walletId={walletId}
-				profileId={activeProfile?.id() as string}
-				signatory={wallet?.publicKey}
+				walletId={activeWallet!.id()}
+				profileId={activeProfile!.id()}
+				signatory={activeWallet!.publicKey()}
 			/>
 		</>
 	);
