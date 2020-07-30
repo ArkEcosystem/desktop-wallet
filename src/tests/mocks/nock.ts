@@ -29,6 +29,8 @@ export const mockArkHttp = () => {
 		.reply(200, votes)
 		.get("/api/wallets/AHZLH1CwMEGPBxMjuohAgdR79DpezntksA")
 		.reply(200, wallet)
+		.get("/api/wallets/03da05c1c1d4f9c6bda13695b2f29fbc65d9589edc070fc61fe97974be3e59c14e")
+		.reply(200, { data: delegates.data[0] })
 		.get(/\/api\/wallets\/.+\/votes/)
 		.reply(404, {
 			statusCode: 404,
