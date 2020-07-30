@@ -10,7 +10,7 @@ import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { PlatformSdkChoices } from "data";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -19,9 +19,20 @@ export const CreateProfile = () => {
 	const { env, persist } = useEnvironmentContext();
 	const form = useForm();
 	const history = useHistory();
+	const { t } = useTranslation();
+
+	const [avatarImage, setAvatarImage] = useState({ preview: "", raw: "" });
+
 	const { register } = form;
 
-	const { t } = useTranslation();
+	const handleChangeAvatar = (event: any) => {
+		if (event.target.files.length) {
+			setAvatarImage({
+				preview: URL.createObjectURL(event.target.files[0]),
+				raw: event.target.files[0],
+			});
+		}
+	};
 
 	const personalDetails = [
 		{
@@ -40,20 +51,23 @@ export const CreateProfile = () => {
 								name="avatar"
 								className="absolute w-20 h-20 opacity-0 cursor-pointer"
 								accept="image/jpg,image/jpeg,image/bmp,image/png"
+								onChange={handleChangeAvatar}
 							/>
 							<Icon name="Upload" />
 						</div>
 					</div>
-					<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
-						<img
-							src="https://randomuser.me/api/portraits/men/3.jpg"
-							className="object-cover rounded"
-							alt="random avatar"
-						/>
-						<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
-							<Icon name="Close" width={13} height={16} />
-						</button>
-					</div>
+					{avatarImage.preview && (
+						<div className="relative w-24 h-24 rounded bg-theme-neutral-light">
+							<img
+								src={avatarImage.preview}
+								className="object-cover w-24 h-24 bg-center bg-no-repeat bg-cover rounded"
+								alt="Profile avatar"
+							/>
+							<button className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3">
+								<Icon name="Close" width={13} height={16} />
+							</button>
+						</div>
+					)}
 				</div>
 			),
 		},
