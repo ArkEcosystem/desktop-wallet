@@ -1,11 +1,20 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
-import { identity } from "tests/fixtures/identity";
-import { renderWithRouter } from "utils/testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
+import { env, renderWithRouter } from "utils/testing-library";
 
 import { useActiveProfile } from "./env";
 
+let profile: Profile;
+
 describe("useActiveProfile", () => {
+	beforeEach(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	});
 	const TestProfile: React.FC = () => {
 		const profile = useActiveProfile();
 
@@ -22,10 +31,10 @@ describe("useActiveProfile", () => {
 				<TestProfile />
 			</Route>,
 			{
-				routes: [`/profiles/${identity.profiles.bob.id}`],
+				routes: [`/profiles/${profile.id()}`],
 			},
 		);
-		expect(getByText("Bob")).toBeTruthy();
+		expect(getByText(profile.name())).toBeTruthy();
 	});
 
 	it("should return 404 when no profile is found", () => {
