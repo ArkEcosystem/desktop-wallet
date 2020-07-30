@@ -45,6 +45,9 @@ test("should save settings", async (t) => {
 	await t.click(Selector("[data-testid=AdvancedMode__accept-button]"));
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 
+	await t.click(Selector("button").withText("Select Auto-logoff"));
+	await t.click(Selector("li.select-list-option").withText("10 Minutes"));
+
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("input[name=isUpdateLedger]").parent());
 
