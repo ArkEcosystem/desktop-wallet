@@ -249,7 +249,7 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should show an error message for invalid wallet", async () => {
+	it("should show an error message for invalid address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";
@@ -309,7 +309,86 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should show an error message if trying to import a duplicate wallet", async () => {
+	it("should show an error if import a NEO mainnet address", async () => {
+		nock("https://wallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
+			.persist();
+
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1")
+			.thrice()
+			.reply(200, require("../../../../tests/fixtures/coins/ark/neo-duplicate.json"));
+
+		let rendered: RenderResult;
+		const history = createMemoryHistory();
+		const route = "/profiles/bob/wallets/import";
+
+		history.push(route);
+
+		await act(async () => {
+			rendered = renderWithRouter(
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/wallets/import">
+						<ImportWallet />
+					</Route>
+				</EnvironmentProvider>,
+				{
+					routes: [route],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+		});
+
+		const { findByTestId, getByTestId, asFragment } = rendered;
+
+		expect(asFragment()).toMatchSnapshot();
+
+		await act(async () => {
+			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
+			const continueButton = getByTestId("ImportWallet__continue-button");
+
+			await fireEvent.change(selectAssetsInput, { target: { value: "Ark" } });
+			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+
+			expect(selectAssetsInput).toHaveValue("Ark");
+
+			await fireEvent.click(continueButton);
+			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+
+			const addressToggle = getByTestId("ImportWallet__address-toggle");
+			expect(addressToggle).toBeTruthy();
+
+			await fireEvent.click(addressToggle);
+
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
+
+			// NEO address: https://neoscan.io/address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1
+			await fireEvent.change(addressInput, { target: { value: "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN" } });
+
+			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+
+			const errorAlert = await findByTestId("ImportWallet__error-alert");
+			await waitFor(() => expect(errorAlert).toBeTruthy());
+
+			expect(errorAlert.textContent).toMatchInlineSnapshot(
+				`"alert-danger.svgErrorThis address exists on the NEO Mainnet."`,
+			);
+		});
+	});
+
+	it("should show an error message if trying to import a duplicate address", async () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 		const route = "/profiles/bob/wallets/import";

@@ -41,6 +41,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Sign Message",
 		SUCCESS_TITLE: "Message Successfully Signed",
 		DESCRIPTION: "Insert a message below to sign using your private key",
+		SIGN: "Sign",
 		COPY_SIGNATURE: "Copy Signature",
 	},
 
