@@ -5,17 +5,15 @@ type GroupProps = {
 	children?: React.ReactNode;
 };
 
-export const SelectionBar = ({ children }: GroupProps) => {
-	return (
-		<div
-			data-testid="SelectionBar"
-			role="radiogroup"
-			className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
-		>
-			{children}
-		</div>
-	);
-};
+export const SelectionBar = ({ children }: GroupProps) => (
+	<div
+		data-testid="SelectionBar"
+		role="radiogroup"
+		className="inline-flex items-center flex-shrink-0 overflow-hidden border rounded border-theme-neutral-300"
+	>
+		{children}
+	</div>
+);
 
 const SelectionBarOptionStyled = styled.button`
 	& {

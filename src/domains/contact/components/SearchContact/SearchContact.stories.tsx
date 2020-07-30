@@ -10,29 +10,25 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => {
-	return (
-		<div>
-			<SearchContact
-				isOpen={boolean("isOpen", true)}
-				contacts={contacts}
-				onClose={action("onClose")}
-				onAction={console.log}
-			/>
-		</div>
-	);
-};
+export const Default = () => (
+	<div>
+		<SearchContact
+			isOpen={boolean("isOpen", true)}
+			contacts={contacts}
+			onClose={action("onClose")}
+			onAction={console.log}
+		/>
+	</div>
+);
 
-export const OneAction = () => {
-	return (
-		<div>
-			<SearchContact
-				isOpen={boolean("isOpen", true)}
-				contacts={contacts}
-				onClose={action("onClose")}
-				onAction={console.log}
-				options={[{ value: "select", label: "Select" }]}
-			/>
-		</div>
-	);
-};
+export const OneAction = () => (
+	<div>
+		<SearchContact
+			isOpen={boolean("isOpen", true)}
+			contacts={contacts}
+			onClose={action("onClose")}
+			onAction={console.log}
+			options={[{ value: "select", label: "Select" }]}
+		/>
+	</div>
+);

@@ -26,6 +26,8 @@ const getSize = (size?: Size): any => {
 	}
 };
 
-export const getStyles = ({ color, size }: { color?: string; size?: Size }) => {
-	return [getSize(size), baseStyle, getColors(color!)];
-};
+export const getStyles = ({ color, size }: { color?: string; size?: Size }) => [
+	getSize(size),
+	baseStyle,
+	getColors(color!),
+];

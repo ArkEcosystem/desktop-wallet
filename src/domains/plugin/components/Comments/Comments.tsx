@@ -45,9 +45,7 @@ export const Comments = ({ comments, sortOptions }: CommentsProps) => {
 
 	const { t } = useTranslation();
 
-	const transformType = (type: string) => {
-		return type.replace(" ", "_").toUpperCase();
-	};
+	const transformType = (type: string) => type.replace(" ", "_").toUpperCase();
 
 	return (
 		<div className="w-full">

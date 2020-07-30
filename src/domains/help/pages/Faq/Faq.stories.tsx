@@ -7,6 +7,4 @@ export default {
 	title: "Domains / Help / Pages / Faq",
 };
 
-export const Default = () => {
-	return <Faq articles={faqArticles} />;
-};
+export const Default = () => <Faq articles={faqArticles} />;

@@ -5,6 +5,4 @@ import { InputCurrency } from "./InputCurrency";
 
 export default { title: "App / Components / InputCurrency" };
 
-export const Default = () => {
-	return <InputCurrency onChange={action("onChange")} />;
-};
+export const Default = () => <InputCurrency onChange={action("onChange")} />;

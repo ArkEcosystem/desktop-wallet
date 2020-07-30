@@ -14,9 +14,7 @@ type BreadcrumbsProps = {
 };
 
 export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
-	const isLast = (index: number) => {
-		return index === crumbs.length - 1;
-	};
+	const isLast = (index: number) => index === crumbs.length - 1;
 
 	return crumbs.length ? (
 		<div
@@ -27,21 +25,19 @@ export const Breadcrumbs = ({ crumbs, className }: BreadcrumbsProps) => {
 		>
 			{crumbs.length && <Icon name="ArrowBack" width={19} height={10} />}
 
-			{crumbs.map((crumb: Crumb, index: number) => {
-				return (
-					<div key={index} className="space-x-2">
-						<NavLink to={crumb.route} className={`${isLast(index) ? "text-theme-neutral-dark" : ""}`}>
-							<span>{crumb.label}</span>
-						</NavLink>
+			{crumbs.map((crumb: Crumb, index: number) => (
+				<div key={index} className="space-x-2">
+					<NavLink to={crumb.route} className={`${isLast(index) ? "text-theme-neutral-dark" : ""}`}>
+						<span>{crumb.label}</span>
+					</NavLink>
 
-						{!isLast(index) && (
-							<span>
-								<Divider className="border-1 border-theme-neutral" type="vertical" />
-							</span>
-						)}
-					</div>
-				);
-			})}
+					{!isLast(index) && (
+						<span>
+							<Divider className="border-1 border-theme-neutral" type="vertical" />
+						</span>
+					)}
+				</div>
+			))}
 		</div>
 	) : null;
 };

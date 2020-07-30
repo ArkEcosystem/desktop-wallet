@@ -6,6 +6,4 @@ export const getNetworkExtendedData = ({
 }: {
 	coin: string;
 	network: string;
-}): CoinNetworkExtended | undefined => {
-	return coinsNetworkExtendedData[coin]?.[network];
-};
+}): CoinNetworkExtended | undefined => coinsNetworkExtendedData[coin]?.[network];

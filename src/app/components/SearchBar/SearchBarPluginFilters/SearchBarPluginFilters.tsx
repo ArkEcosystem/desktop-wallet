@@ -24,52 +24,44 @@ const Stars = ({ length = 5, value }: any) => {
 	const stars = Array.from({ length });
 	return (
 		<span className="flex text-theme-neutral-400">
-			{stars.map((_, index: number) => {
-				return (
-					<span key={index} className={`${index < value ? "text-theme-warning-300" : ""} mr-1`}>
-						<Icon name={`${index < value ? "Star" : "StarOutline"}`} width={20} height={20} />
-					</span>
-				);
-			})}
+			{stars.map((_, index: number) => (
+				<span key={index} className={`${index < value ? "text-theme-warning-300" : ""} mr-1`}>
+					<Icon name={`${index < value ? "Star" : "StarOutline"}`} width={20} height={20} />
+				</span>
+			))}
 		</span>
 	);
 };
 
-const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => {
-	return (
-		<fieldset>
-			{ratings &&
-				ratings.map((rating: number) => {
-					return (
-						<label
-							className="flex items-center block px-2 pb-1 cursor-pointer space-x-2 text-theme-neutral-dark hover:bg-theme-neutral-contrast rounded-md"
-							key={rating}
-						>
-							<span>
-								<Checkbox
-									name="test"
-									type="radio"
-									checked={value === rating}
-									onChange={() => onChange(rating)}
-									className="mt-px rounded-lg"
-									data-testid={`SearchBarPluginFilters-rating-${rating}`}
-								/>
-							</span>
-							<span className="flex items-center mt-1 space-x-1">
-								<Stars value={rating} />
-								<span>{suffixLabel}</span>
-							</span>
-						</label>
-					);
-				})}
-		</fieldset>
-	);
-};
+const RatingsCheckboxes = ({ ratings, suffixLabel, value, onChange }: any) => (
+	<fieldset>
+		{ratings &&
+			ratings.map((rating: number) => (
+				<label
+					className="flex items-center block px-2 pb-1 cursor-pointer space-x-2 text-theme-neutral-dark hover:bg-theme-neutral-contrast rounded-md"
+					key={rating}
+				>
+					<span>
+						<Checkbox
+							name="test"
+							type="radio"
+							checked={value === rating}
+							onChange={() => onChange(rating)}
+							className="mt-px rounded-lg"
+							data-testid={`SearchBarPluginFilters-rating-${rating}`}
+						/>
+					</span>
+					<span className="flex items-center mt-1 space-x-1">
+						<Stars value={rating} />
+						<span>{suffixLabel}</span>
+					</span>
+				</label>
+			))}
+	</fieldset>
+);
 
 const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
-	const isSelected = (categoryValue: any, list: string[]) => {
-		return list?.some((item) => item === categoryValue);
-	};
+	const isSelected = (categoryValue: any, list: string[]) => list?.some((item) => item === categoryValue);
 
 	const updateCategories = (isChecked: boolean, categoryValue: any) => {
 		const values = selected.concat();
@@ -86,24 +78,22 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	return (
 		<fieldset>
 			{categories &&
-				categories.map((category: Category, index: number) => {
-					return (
-						<label
-							className="flex items-center block px-2 pb-1 mb-1 cursor-pointer space-x-2 text-theme-neutral-dark hover:bg-theme-neutral-contrast rounded-md"
-							key={index}
-						>
-							<span>
-								<Checkbox
-									checked={isSelected(category.value, selected)}
-									onChange={(ev: any) => updateCategories(ev.target.checked, category.value)}
-									name="category"
-									data-testid={`SearchBarPluginFilters-category-${category.value}`}
-								/>
-							</span>
-							<span className="mt-1">{category.label}</span>
-						</label>
-					);
-				})}
+				categories.map((category: Category, index: number) => (
+					<label
+						className="flex items-center block px-2 pb-1 mb-1 cursor-pointer space-x-2 text-theme-neutral-dark hover:bg-theme-neutral-contrast rounded-md"
+						key={index}
+					>
+						<span>
+							<Checkbox
+								checked={isSelected(category.value, selected)}
+								onChange={(ev: any) => updateCategories(ev.target.checked, category.value)}
+								name="category"
+								data-testid={`SearchBarPluginFilters-category-${category.value}`}
+							/>
+						</span>
+						<span className="mt-1">{category.label}</span>
+					</label>
+				))}
 		</fieldset>
 	);
 };

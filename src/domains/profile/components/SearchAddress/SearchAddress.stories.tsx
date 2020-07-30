@@ -9,15 +9,13 @@ export default {
 	decorators: [withKnobs],
 };
 
-export const Default = () => {
-	return (
-		<div>
-			<SearchAddress
-				isOpen={boolean("isOpen", true)}
-				wallets={wallets}
-				onClose={action("onClose")}
-				onAction={console.log}
-			/>
-		</div>
-	);
-};
+export const Default = () => (
+	<div>
+		<SearchAddress
+			isOpen={boolean("isOpen", true)}
+			wallets={wallets}
+			onClose={action("onClose")}
+			onAction={console.log}
+		/>
+	</div>
+);

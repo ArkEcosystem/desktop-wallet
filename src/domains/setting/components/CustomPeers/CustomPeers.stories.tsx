@@ -6,13 +6,11 @@ import { CustomPeers } from "./CustomPeers";
 
 export default { title: "Domains / Setting / Components / CustomPeers" };
 
-export const Default = () => {
-	return (
-		<CustomPeers
-			networks={availableNetworksMock}
-			isOpen={boolean("Is Open", true)}
-			onClose={() => alert("closed")}
-			onAddPeer={() => alert("added peer")}
-		/>
-	);
-};
+export const Default = () => (
+	<CustomPeers
+		networks={availableNetworksMock}
+		isOpen={boolean("Is Open", true)}
+		onClose={() => alert("closed")}
+		onAddPeer={() => alert("added peer")}
+	/>
+);

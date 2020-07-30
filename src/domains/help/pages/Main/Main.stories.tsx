@@ -7,13 +7,11 @@ export default {
 	title: "Domains / Help / Pages / Main",
 };
 
-export const Default = () => {
-	return (
-		<Main
-			categories={categories}
-			helpfulArticles={helpfulArticles}
-			popularArticles={popularArticles}
-			newestArticles={newestArticles}
-		/>
-	);
-};
+export const Default = () => (
+	<Main
+		categories={categories}
+		helpfulArticles={helpfulArticles}
+		popularArticles={popularArticles}
+		newestArticles={newestArticles}
+	/>
+);

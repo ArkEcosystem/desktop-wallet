@@ -8,11 +8,10 @@ type LayoutControlsProps = {
 };
 
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => {
-	const getViewTypeIconClass = (viewType: any) => {
-		return selectedViewType === viewType
+	const getViewTypeIconClass = (viewType: any) =>
+		selectedViewType === viewType
 			? "text-theme-danger-300 border-theme-danger-contrast"
 			: "text-theme-primary-400 border-transparent";
-	};
 
 	return (
 		<div className="flex items-center">

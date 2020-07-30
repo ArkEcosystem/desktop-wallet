@@ -10,17 +10,15 @@ type Props = {
 	className?: string;
 };
 
-const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string }) => {
-	return (
-		<Circle
-			data-testid="TransactionRowRecipientIcon"
-			className={"bg-theme-background border-theme-neutral-900 text-theme-neutral-900"}
-			{...props}
-		>
-			{children}
-		</Circle>
-	);
-};
+const Wrapper = ({ children, ...props }: { children: React.ReactNode; className?: string }) => (
+	<Circle
+		data-testid="TransactionRowRecipientIcon"
+		className={"bg-theme-background border-theme-neutral-900 text-theme-neutral-900"}
+		{...props}
+	>
+		{children}
+	</Circle>
+);
 
 export const TransactionRowRecipientIcon = ({ type, recipient, recipients, className }: Props) => {
 	const transactionIcon: Record<string, string> = {

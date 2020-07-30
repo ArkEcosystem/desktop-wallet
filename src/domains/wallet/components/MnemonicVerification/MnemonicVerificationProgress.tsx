@@ -54,12 +54,10 @@ type Props = {
 	wordPositions: number[];
 };
 
-export const MnemonicVerificationProgress = ({ activeTab, wordPositions }: Props) => {
-	return (
-		<ul className="flex space-x-2">
-			{wordPositions.map((position, index) => (
-				<Tab key={index} activeTab={activeTab} tabId={index} wordPosition={position} />
-			))}
-		</ul>
-	);
-};
+export const MnemonicVerificationProgress = ({ activeTab, wordPositions }: Props) => (
+	<ul className="flex space-x-2">
+		{wordPositions.map((position, index) => (
+			<Tab key={index} activeTab={activeTab} tabId={index} wordPosition={position} />
+		))}
+	</ul>
+);

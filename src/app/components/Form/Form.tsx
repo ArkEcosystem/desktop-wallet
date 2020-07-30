@@ -7,21 +7,19 @@ type FormProps = {
 } & Omit<React.FormHTMLAttributes<any>, "onSubmit">;
 
 export const Form = React.forwardRef<HTMLFormElement, FormProps>(
-	({ children, context, onSubmit, ...props }: FormProps, ref) => {
-		return (
-			<FormContext {...context}>
-				<form
-					data-testid="Form"
-					ref={ref}
-					className="space-y-8"
-					onSubmit={context.handleSubmit(onSubmit)}
-					{...props}
-				>
-					{children}
-				</form>
-			</FormContext>
-		);
-	},
+	({ children, context, onSubmit, ...props }: FormProps, ref) => (
+		<FormContext {...context}>
+			<form
+				data-testid="Form"
+				ref={ref}
+				className="space-y-8"
+				onSubmit={context.handleSubmit(onSubmit)}
+				{...props}
+			>
+				{children}
+			</form>
+		</FormContext>
+	),
 );
 
 Form.displayName = "Form";

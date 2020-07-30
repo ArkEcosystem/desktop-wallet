@@ -13,9 +13,7 @@ import { ContactListItemProps, Option } from "./ContactListItem.models";
 export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
-	const isCondensed = () => {
-		return variant === "condensed";
-	};
+	const isCondensed = () => variant === "condensed";
 
 	return (
 		<>
@@ -59,15 +57,15 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 					</td>
 					{!isCondensed() && (
 						<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
-							{["Delegate", "Business", "Bridgechain"].map((type: string) => {
-								return address[`is${type}`]() ? (
+							{["Delegate", "Business", "Bridgechain"].map((type: string) =>
+								address[`is${type}`]() ? (
 									<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 										<Circle className="border-black">
 											<Icon name={type} width={25} height={25} />
 										</Circle>
 									</Tippy>
-								) : null;
-							})}
+								) : null,
+							)}
 						</td>
 					)}
 					<td className="border-b border-dashed border-theme-neutral-200">
