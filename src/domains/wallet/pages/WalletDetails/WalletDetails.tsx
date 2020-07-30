@@ -72,7 +72,7 @@ export const WalletDetails = () => {
 
 	// TODO: Hacky to access `WalletData` instead of `Wallet`
 	const getWalletData = React.useCallback(async () => {
-		const data = await activeWallet!.coin().client().wallet(activeWallet!.id());
+		const data = await activeWallet!.coin().client().wallet(activeWallet!.address());
 		setWalletData(data);
 	}, [activeWallet]);
 
