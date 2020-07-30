@@ -2,24 +2,26 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, env, fireEvent, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
 let rendered: RenderResult;
-let defaultFormValues = {};
+const defaultFormValues = {
+	onDownload: jest.fn(),
+};
 
 describe("UpdateRegistration", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
+		const fixtureProfileId = "b999d134-7a24-481e-a95d-bc47c543bfc9";
+		await env.bootFromObject(fixtureData);
+		await env.persist();
+
 		const history = createMemoryHistory();
-		const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
+		const updateRegistrationURL = `/profiles/${fixtureProfileId}/transactions/update`;
 
 		history.push(updateRegistrationURL);
-
-		defaultFormValues = {
-			onDownload: jest.fn(),
-		};
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/update">
