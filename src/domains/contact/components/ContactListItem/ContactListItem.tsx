@@ -83,7 +83,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 										</div>
 									}
 									options={options}
-									onSelect={(action: Option) => onAction?.(action, address.id())}
+									onSelect={(action: Option) => onAction?.(action, address)}
 								/>
 							)}
 
@@ -92,7 +92,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 									data-testid={`ContactListItem__one-option-button-${index}`}
 									className="float-right"
 									variant="plain"
-									onClick={() => onAction?.(options[0], address.id())}
+									onClick={() => onAction?.(options[0], address)}
 								>
 									{options[0]?.label}
 								</Button>

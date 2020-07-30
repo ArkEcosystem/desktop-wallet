@@ -1,28 +1,58 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { contacts } from "domains/contact/data";
-import { availableNetworksMock } from "domains/network/data";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
+import { availableNetworksMock as networks } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
+import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render, waitFor, within } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
+import { StubStorage } from "tests/mocks";
 
 import { SendTransactionForm } from "./";
 
-const networks = availableNetworksMock;
+let profile: Profile;
 
 describe("SendTransactionForm", () => {
+	beforeAll(async () => {
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+			.persist();
+
+		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	});
+
 	it("should render", () => {
-		const { container } = render(<SendTransactionForm wallets={wallets} contacts={contacts} networks={networks} />);
+		const { container } = render(<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should select sender and recipient", () => {
 		const { getByTestId, getAllByTestId } = render(
-			<SendTransactionForm wallets={wallets} contacts={contacts} networks={networks} />,
+			<SendTransactionForm wallets={wallets} profile={profile} networks={networks} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
+		// Select sender
 		act(() => {
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 		});
@@ -35,13 +65,10 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(
-			() => {
-				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
-			},
-			{ timeout: 2000 },
-		);
-		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
+		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
+
+		const selectedAddressValue = profile.wallets().values()[0].address();
+
 		expect(within(getByTestId("sender-address")).getByTestId("SelectAddress__input")).toHaveValue(
 			selectedAddressValue,
 		);
@@ -59,19 +86,16 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(address);
 		});
 
-		waitFor(
-			() => {
-				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
-			},
-			{ timeout: 2000 },
-		);
-		const recipientSelectedAddress = contacts[0]?.addresses()[0]?.address;
-		expect(getByTestId("SelectRecipient__input")).toHaveValue(recipientSelectedAddress);
+		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
+
+		const selectedRecipientAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
+
+		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedRecipientAddressValue);
 	});
 
 	it("should set available amount", () => {
 		const { getByTestId, container } = render(
-			<SendTransactionForm wallets={wallets} contacts={contacts} maxAvailableAmount={100} />,
+			<SendTransactionForm wallets={wallets} profile={profile} maxAvailableAmount={100} />,
 		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
@@ -86,7 +110,7 @@ describe("SendTransactionForm", () => {
 	it("should emit goBack button click", () => {
 		// Select network to enable buttons
 		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onBack={fn} contacts={contacts} networks={networks} />);
+		const { getByTestId } = render(<SendTransactionForm onBack={fn} profile={profile} networks={networks} />);
 		const backBtn = getByTestId("send-transaction-click-back");
 
 		act(() => {
@@ -98,7 +122,7 @@ describe("SendTransactionForm", () => {
 
 	it("should submit form", () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} contacts={contacts} networks={networks} />);
+		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} profile={profile} networks={networks} />);
 		const submit = getByTestId("send-transaction-click-submit");
 		act(() => {
 			fireEvent.click(submit);

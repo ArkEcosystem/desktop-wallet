@@ -1,11 +1,17 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import fixtureData from "tests/fixtures/env/storage.json";
+import { StubStorage } from "tests/mocks";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
@@ -52,33 +58,42 @@ const defaultFormValues = {
 			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
 		},
 	],
-	contactList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Wallet",
-			formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-		{
-			address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient Multisig",
-			formatted: " Recipient Multisig AhFJKDSALJFKA...SAJFKLASJKDFJ",
-			isMultisig: true,
-		},
-		{
-			address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "Recipient in Ark",
-			formatted: "Recipient in Ark FAhFJKDSALJFK...SAJFKLASJKDFJ",
-			isInArkNetwork: true,
-		},
-	],
 };
 
+let env: Environment;
+let profile: Profile;
+
 describe("Transaction Send", () => {
+	beforeAll(async () => {
+		nock.disableNetConnect();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/node/configuration")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
+			.get("/api/peers")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
+			.get("/api/node/configuration/crypto")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+			.get("/api/node/syncing")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
+			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+			.persist();
+
+		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+		await env.bootFromObject(fixtureData);
+
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	});
+
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
+
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep formValues={defaultFormValues} />
+				<FirstStep formValues={defaultFormValues} profile={profile} />
 			</FormContext>,
 		);
 
@@ -133,7 +148,7 @@ describe("Transaction Send", () => {
 
 	it("should render", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${identity.profiles.bob.id}/transactions/transfer`;
+		const transferURL = `/profiles/${profile.id()}/transactions/transfer`;
 
 		history.push(transferURL);
 
@@ -141,9 +156,11 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/transactions/transfer">
-					<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
-				</Route>,
+				<EnvironmentProvider env={env}>
+					<Route path="/profiles/:profileId/transactions/transfer">
+						<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
+					</Route>
+				</EnvironmentProvider>,
 				{
 					routes: [transferURL],
 					history,

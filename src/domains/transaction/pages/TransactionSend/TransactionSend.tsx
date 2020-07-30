@@ -50,7 +50,7 @@ const recipients = [
 	},
 ];
 
-export const FirstStep = ({ onSubmit, formValues }: any) => {
+export const FirstStep = ({ onSubmit, formValues, profile }: any) => {
 	const { t } = useTranslation();
 
 	return (
@@ -62,7 +62,7 @@ export const FirstStep = ({ onSubmit, formValues }: any) => {
 				</div>
 			</div>
 			<div className="mt-8">
-				<SendTransactionForm {...formValues} onSubmit={onSubmit} />
+				<SendTransactionForm {...formValues} profile={profile} onSubmit={onSubmit} />
 			</div>
 		</section>
 	);
@@ -234,7 +234,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FirstStep onSubmit={handleNext} formValues={formValues} />
+								<FirstStep onSubmit={handleNext} formValues={formValues} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />

@@ -18,7 +18,7 @@ let contact: Contact;
 let addressId: string;
 
 describe("ContactListItem", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		nock.disableNetConnect();
 
 		nock("https://dwallets.ark.io")
@@ -35,9 +35,7 @@ describe("ContactListItem", () => {
 			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
 			.reply(200, require("../../../../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 			.persist();
-	});
 
-	beforeAll(async () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		await env.bootFromObject(fixtureData);
@@ -159,6 +157,6 @@ describe("ContactListItem", () => {
 			fireEvent.click(getByTestId("ContactListItem__one-option-button-0"));
 		});
 
-		expect(onAction).toHaveBeenCalledWith(singleOption[0], contact.addresses().values()[0].id());
+		expect(onAction).toHaveBeenCalledWith(singleOption[0], contact.addresses().values()[0]);
 	});
 });
