@@ -10,7 +10,6 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "test
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
 
-
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
 
@@ -30,7 +29,6 @@ jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
-let env: Environment;
 let profile: Profile;
 let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParams = {
