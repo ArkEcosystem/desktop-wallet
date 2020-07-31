@@ -214,7 +214,7 @@ describe("Contacts", () => {
 			fireEvent.click(deleteOption);
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
