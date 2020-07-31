@@ -3,9 +3,8 @@ import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
-import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
