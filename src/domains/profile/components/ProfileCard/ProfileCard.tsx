@@ -20,7 +20,7 @@ type ProfileCardProps = {
 
 export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSettings }: ProfileCardProps) => {
 	const { t } = useTranslation();
-	const profileImage = profile?.settings().get(ProfileSetting.Avatar);
+	const avatarImage = profile?.settings().get(ProfileSetting.Avatar);
 
 	return (
 		<Card handleClick={handleClick}>
@@ -33,10 +33,13 @@ export const ProfileCard = ({ profile, actions, handleClick, onSelect, showSetti
 
 				<div className="flex flex-row justify-between w-full">
 					<div className="flex items-center">
-						{profileImage ? (
-							<div className="rounded-full bg-theme-neutral-contrast w-11 h-11">
+						{avatarImage ? (
+							<div
+								className="rounded-full bg-theme-neutral-contrast w-11 h-11"
+								data-testid="profile-card__user--avatarImage"
+							>
 								<img
-									src={profileImage}
+									src={avatarImage}
 									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 									title={profile.name()}
 									alt={profile.name()}

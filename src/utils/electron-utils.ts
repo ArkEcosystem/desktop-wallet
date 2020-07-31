@@ -6,7 +6,7 @@ import path from "path";
 type DialogOptions = {
 	filters?: FileFilter | FileFilter[];
 	restrictToPath?: string;
-	encoding?: "ascii" | "utf-8" | "utf16le" | "ucs2" | "ucs-2" | "base64" | "latin1" | "binary" | "hex";
+	encoding?: "utf-8" | "base64";
 };
 
 const defaultFilters = [
@@ -33,6 +33,7 @@ const parseFilters = (filters: FileFilter | FileFilter[]) => (Array.isArray(filt
 
 const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions) => {
 	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;
+	const encode = options?.encoding || defaultEncode;
 
 	const { filePath } = await electron.remote.dialog.showSaveDialog({
 		defaultPath,
@@ -45,7 +46,7 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 		throw new Error(`Writing to "${filePath}" is not allowed`);
 	}
 
-	writeFileSync(filePath, raw, "utf8");
+	writeFileSync(filePath, raw, encode);
 
 	return filePath;
 };

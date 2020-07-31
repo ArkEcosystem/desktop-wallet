@@ -16,15 +16,15 @@ import { Settings } from "./Settings";
 let env: Environment;
 let profile: Profile;
 
-beforeEach(async () => {
-	env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-	await env.bootFromObject({ data: {}, profiles });
-
-	profile = env.profiles().findById("bob");
-});
-
 describe("Settings", () => {
+	beforeEach(async () => {
+		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		await env.bootFromObject({ data: {}, profiles });
+
+		profile = env.profiles().findById("bob");
+	});
+
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
 			<EnvironmentProvider env={env}>
