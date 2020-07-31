@@ -4,8 +4,10 @@ import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platf
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
+import walletMock from "tests/fixtures/coins/ark/wallet.json";
 import fixtureData from "tests/fixtures/env/storage-mainnet.json";
 import { mockArkHttp, StubStorage } from "tests/mocks";
 import { act, cleanup, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
@@ -37,16 +39,19 @@ const renderPage = async () => {
 
 	jest.useRealTimers();
 
-	await waitFor(() => expect(rendered.getByTestId("WalletVote")).toBeInTheDocument());
+	await waitFor(() => expect(rendered.getByTestId("WalletHeader")).toBeInTheDocument());
 	await waitFor(() => expect(rendered.getByTestId("WalletRegistrations")).toBeTruthy());
 
 	return rendered;
 };
 
 describe("WalletDetails", () => {
-	afterEach(cleanup);
+	afterEach(() => {
+		cleanup();
+		nock.cleanAll();
+	});
 
-	beforeAll(() => {
+	beforeEach(() => {
 		mockArkHttp();
 	});
 
@@ -64,8 +69,8 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render", async () => {
-		const { getByTestId, asFragment } = await renderPage();
-		expect(getByTestId("WalletVote__delegate")).toBeInTheDocument();
+		const { asFragment, getByTestId } = await renderPage();
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -87,10 +92,47 @@ describe("WalletDetails", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render wallet data", async () => {
+	it("should render when wallet not found for votes", async () => {
+		dashboardURL = `/profiles/${profile.id()}/wallets/${secondWallet.id()}`;
+		history.push(dashboardURL);
+
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(secondWallet.address());
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render when wallet hasn't voted", async () => {
+		const unvotedWallet = await profile.wallets().importByMnemonic("test wallet", "ARK", "mainnet");
+
+		nock.cleanAll();
+
+		nock("https://wallets.ark.io")
+			.get(`/api/wallets/${unvotedWallet.address()}`)
+			.reply(200, walletMock)
+			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
+			.reply(200, {
+				meta: {
+					totalCountIsEstimate: false,
+					count: 0,
+					pageCount: 1,
+					totalCount: 0,
+					next: null,
+					previous: null,
+					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					last: null,
+				},
+				data: [],
+			})
+			.persist();
+
+		dashboardURL = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
+		history.push(dashboardURL);
+
+		const { asFragment, getByTestId } = await renderPage();
+
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(unvotedWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
