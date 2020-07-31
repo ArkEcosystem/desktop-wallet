@@ -40,7 +40,7 @@ describe("ContactForm", () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 		await env.bootFromObject(fixtureData);
 
-		contact = env.profiles().all()[0].contacts().values()[0];
+		contact = env.profiles().values()[0].contacts().values()[0];
 	});
 
 	it("should select network", () => {

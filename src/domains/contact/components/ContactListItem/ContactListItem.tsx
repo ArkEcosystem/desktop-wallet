@@ -1,5 +1,5 @@
-import Tippy from "@tippyjs/react";
 import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
+import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -15,8 +15,8 @@ import { ContactListItemProps, Option } from "./ContactListItem.models";
 export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
-	// TODO: add "Delegate", "Business", "Bridgechain"
-	const walletTypes: string[] = [];
+	// TODO: add "Business", "Bridgechain"
+	const walletTypes: string[] = ["Delegate"];
 
 	const isCondensed = () => variant === "condensed";
 
@@ -62,16 +62,17 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						</td>
 						{!isCondensed() && (
 							<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
-								{walletTypes.map((type: string) =>
-									// @ts-ignore
-									address[`is${type}`]() ? (
-										<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
-											<Circle className="border-black">
-												<Icon name={type} width={25} height={25} />
-											</Circle>
-										</Tippy>
-									) : null,
-								)}
+								{address.hasSyncedWithNetwork() &&
+									walletTypes.map((type: string) =>
+										// @ts-ignore
+										address[`is${type}`]() ? (
+											<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
+												<Circle className="border-black">
+													<Icon name={type} width={25} height={25} />
+												</Circle>
+											</Tippy>
+										) : null,
+									)}
 							</td>
 						)}
 						<td className="border-b border-dashed border-theme-neutral-200">

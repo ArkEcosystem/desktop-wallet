@@ -45,7 +45,7 @@ type ContactsProps = {
 };
 
 export const Contacts = ({ onSearch }: ContactsProps) => {
-	const { env, persist } = useEnvironmentContext();
+	const { env, persist, state } = useEnvironmentContext();
 	const { t } = useTranslation();
 
 	const activeProfile = useActiveProfile();
@@ -59,7 +59,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	useEffect(() => {
 		setContacts(activeProfile?.contacts().values() || []);
-	}, [activeProfile, env]);
+	}, [activeProfile, state]);
 
 	const contactOptions = [
 		{ label: t("COMMON.SEND"), value: "send" },
