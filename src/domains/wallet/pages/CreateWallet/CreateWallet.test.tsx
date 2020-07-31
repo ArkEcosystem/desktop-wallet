@@ -342,6 +342,7 @@ describe("CreateWallet", () => {
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
+		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
