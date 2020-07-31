@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { WalletListItemProps } from "app/components/WalletListItem";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks/env";
-import { Transaction, TransactionTable } from "domains/transaction/components/TransactionTable";
+import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
@@ -24,8 +25,8 @@ type Wallet = WalletListItemProps & {
 	balance: string;
 	publicKey?: string;
 	hasStarred?: boolean;
-	transactions?: Transaction[];
-	pendingTransactions?: Transaction[];
+	transactions?: Contracts.TransactionDataType[];
+	pendingTransactions?: Contracts.TransactionDataType[];
 	delegates: {
 		username: string;
 		address: string;
