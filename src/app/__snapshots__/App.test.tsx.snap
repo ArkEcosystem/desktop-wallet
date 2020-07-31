@@ -44,22 +44,22 @@ exports[`App should render 1`] = `
                 Welcome to ARK
               </h1>
               <div
-                class="w-full mx-auto lg:w-4/5 xl:w-2/3"
+                class="lg:w-4/5 xl:w-2/3 w-full mx-auto"
               >
                 <svg>
                   welcome-banner.svg
                 </svg>
               </div>
               <div
-                class="max-w-lg mx-auto mt-8 md:max-w-xl"
+                class="md:max-w-xl max-w-lg mx-auto mt-8"
               >
                 <p
-                  class="mb-4 text-sm text-theme-neutral-dark md:text-base"
+                  class="text-theme-neutral-dark md:text-base mb-4 text-sm"
                 >
                   Create a new Profile or login with your MarketSquare account to get started.
                 </p>
                 <div
-                  class="flex flex-col md:space-x-3 md:flex-row"
+                  class="md:space-x-3 md:flex-row flex flex-col"
                 >
                   <button
                     class="sc-AxjAm ddQVWI w-full"
@@ -82,7 +82,7 @@ exports[`App should render 1`] = `
                     </span>
                   </button>
                   <button
-                    class="sc-AxjAm ddJBbC w-full mt-2 md:mt-0"
+                    class="sc-AxjAm ddJBbC md:mt-0 w-full mt-2"
                     color="primary"
                     type="button"
                   >

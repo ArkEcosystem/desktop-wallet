@@ -330,7 +330,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </button>
@@ -1067,7 +1067,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -1097,12 +1097,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -1166,20 +1166,6 @@ exports[`WalletDetails should delete wallet 1`] = `
                         >
                           <div
                             class="sc-AxirZ iQaTP"
-                            data-testid="TransactionRowInfo__multiSignature"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                        <span
-                          class="p-1"
-                        >
-                          <div
-                            class="sc-AxirZ iQaTP"
                             data-testid="TransactionRowInfo__vendorField"
                             height="1em"
                             width="1em"
@@ -1199,13 +1185,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-danger-400"
-                          data-testid="TransactionRowConfirmation__actionRequired"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            edit.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -1213,13 +1199,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        52.20000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -1416,7 +1401,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -1446,12 +1431,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -1476,28 +1461,32 @@ exports[`WalletDetails should delete wallet 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              delegate.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        Delegate Registration
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -1505,7 +1494,22 @@ exports[`WalletDetails should delete wallet 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -1515,13 +1519,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -1529,13 +1533,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -1545,12 +1548,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        242.00
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -1580,12 +1583,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -1610,28 +1613,32 @@ exports[`WalletDetails should delete wallet 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              key.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        2nd Signature Creation
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -1639,7 +1646,22 @@ exports[`WalletDetails should delete wallet 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -1649,13 +1671,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -1663,13 +1685,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        104.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -1679,12 +1700,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        104.40
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -1714,12 +1735,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -1753,7 +1774,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                             width="1em"
                           >
                             <svg>
-                              business.svg
+                              voted.svg
                             </svg>
                           </div>
                         </div>
@@ -1764,7 +1785,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                         class="font-semibold text-theme-text"
                         data-testid="TransactionRowRecipientLabel"
                       >
-                        Business Registration
+                        Vote
                       </span>
                     </td>
                     <td
@@ -1773,7 +1794,22 @@ exports[`WalletDetails should delete wallet 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -1783,13 +1819,13 @@ exports[`WalletDetails should delete wallet 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -1797,13 +1833,12 @@ exports[`WalletDetails should delete wallet 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        2.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -1813,7 +1848,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        2.40
                       </span>
                     </td>
                   </tr>
@@ -2113,7 +2148,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </button>
@@ -2850,7 +2885,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -2880,12 +2915,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -2949,20 +2984,6 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         >
                           <div
                             class="sc-AxirZ iQaTP"
-                            data-testid="TransactionRowInfo__multiSignature"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                        <span
-                          class="p-1"
-                        >
-                          <div
-                            class="sc-AxirZ iQaTP"
                             data-testid="TransactionRowInfo__vendorField"
                             height="1em"
                             width="1em"
@@ -2982,13 +3003,13 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-danger-400"
-                          data-testid="TransactionRowConfirmation__actionRequired"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            edit.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -2996,13 +3017,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        52.20000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -3199,7 +3219,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -3229,12 +3249,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -3259,28 +3279,32 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              delegate.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        Delegate Registration
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -3288,7 +3312,22 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -3298,13 +3337,13 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -3312,13 +3351,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -3328,12 +3366,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        242.00
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -3363,12 +3401,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -3393,28 +3431,32 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              key.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        2nd Signature Creation
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -3422,7 +3464,22 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -3432,13 +3489,13 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -3446,13 +3503,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        104.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -3462,12 +3518,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        104.40
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -3497,12 +3553,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -3536,7 +3592,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                             width="1em"
                           >
                             <svg>
-                              business.svg
+                              voted.svg
                             </svg>
                           </div>
                         </div>
@@ -3547,7 +3603,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="font-semibold text-theme-text"
                         data-testid="TransactionRowRecipientLabel"
                       >
-                        Business Registration
+                        Vote
                       </span>
                     </td>
                     <td
@@ -3556,7 +3612,22 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -3566,13 +3637,13 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -3580,13 +3651,12 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        2.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -3596,7 +3666,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        2.40
                       </span>
                     </td>
                   </tr>
@@ -3896,7 +3966,7 @@ exports[`WalletDetails should render 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </button>
@@ -4633,7 +4703,7 @@ exports[`WalletDetails should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -4663,12 +4733,12 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -4732,20 +4802,6 @@ exports[`WalletDetails should render 1`] = `
                         >
                           <div
                             class="sc-AxirZ iQaTP"
-                            data-testid="TransactionRowInfo__multiSignature"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                        <span
-                          class="p-1"
-                        >
-                          <div
-                            class="sc-AxirZ iQaTP"
                             data-testid="TransactionRowInfo__vendorField"
                             height="1em"
                             width="1em"
@@ -4765,13 +4821,13 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-danger-400"
-                          data-testid="TransactionRowConfirmation__actionRequired"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            edit.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -4779,13 +4835,12 @@ exports[`WalletDetails should render 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        52.20000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -4982,7 +5037,7 @@ exports[`WalletDetails should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -5012,12 +5067,12 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -5042,28 +5097,32 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              delegate.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        Delegate Registration
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -5071,7 +5130,22 @@ exports[`WalletDetails should render 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -5081,13 +5155,13 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -5095,13 +5169,12 @@ exports[`WalletDetails should render 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -5111,12 +5184,12 @@ exports[`WalletDetails should render 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        242.00
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -5146,12 +5219,12 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -5176,28 +5249,32 @@ exports[`WalletDetails should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              key.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        2nd Signature Creation
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -5205,7 +5282,22 @@ exports[`WalletDetails should render 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -5215,13 +5307,13 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -5229,13 +5321,12 @@ exports[`WalletDetails should render 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        104.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -5245,12 +5336,12 @@ exports[`WalletDetails should render 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        104.40
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -5280,12 +5371,12 @@ exports[`WalletDetails should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -5319,7 +5410,7 @@ exports[`WalletDetails should render 1`] = `
                             width="1em"
                           >
                             <svg>
-                              business.svg
+                              voted.svg
                             </svg>
                           </div>
                         </div>
@@ -5330,7 +5421,7 @@ exports[`WalletDetails should render 1`] = `
                         class="font-semibold text-theme-text"
                         data-testid="TransactionRowRecipientLabel"
                       >
-                        Business Registration
+                        Vote
                       </span>
                     </td>
                     <td
@@ -5339,7 +5430,22 @@ exports[`WalletDetails should render 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -5349,13 +5455,13 @@ exports[`WalletDetails should render 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -5363,13 +5469,12 @@ exports[`WalletDetails should render 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        2.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -5379,7 +5484,7 @@ exports[`WalletDetails should render 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        2.40
                       </span>
                     </td>
                   </tr>
@@ -6249,7 +6354,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   width="1em"
                 >
                   <svg>
-                    star.svg
+                    star-outline.svg
                   </svg>
                 </div>
               </button>
@@ -6986,7 +7091,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -7016,12 +7121,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -7085,20 +7190,6 @@ exports[`WalletDetails should update wallet name 1`] = `
                         >
                           <div
                             class="sc-AxirZ iQaTP"
-                            data-testid="TransactionRowInfo__multiSignature"
-                            height="1em"
-                            width="1em"
-                          >
-                            <svg>
-                              multisig.svg
-                            </svg>
-                          </div>
-                        </span>
-                        <span
-                          class="p-1"
-                        >
-                          <div
-                            class="sc-AxirZ iQaTP"
                             data-testid="TransactionRowInfo__vendorField"
                             height="1em"
                             width="1em"
@@ -7118,13 +7209,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-danger-400"
-                          data-testid="TransactionRowConfirmation__actionRequired"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            edit.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -7132,13 +7223,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        52.20000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -7335,7 +7425,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -7365,12 +7455,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -7395,28 +7485,32 @@ exports[`WalletDetails should update wallet name 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              delegate.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        Delegate Registration
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -7424,7 +7518,22 @@ exports[`WalletDetails should update wallet name 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -7434,13 +7543,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -7448,13 +7557,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        242.00
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -7464,12 +7572,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        242.00
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -7499,12 +7607,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -7529,28 +7637,32 @@ exports[`WalletDetails should update wallet name 1`] = `
                           </div>
                         </div>
                         <div
-                          class="sc-AxhUy fHeTTV bg-theme-background border-theme-neutral-900 text-theme-neutral-900"
-                          data-testid="TransactionRowRecipientIcon"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+                          data-testid="Avatar"
                         >
                           <div
-                            class="sc-AxirZ iQaTP"
-                            height="1em"
-                            width="1em"
+                            class="w-full h-full"
                           >
-                            <svg>
-                              key.svg
-                            </svg>
+                            <img
+                              alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                            />
                           </div>
                         </div>
                       </div>
                     </td>
                     <td>
-                      <span
-                        class="font-semibold text-theme-text"
-                        data-testid="TransactionRowRecipientLabel"
+                      <div
+                        class="inline-block truncate align-middle"
                       >
-                        2nd Signature Creation
-                      </span>
+                        <span
+                          class="sc-AxmLO cAKCgh text-theme-text font-semibold text-base"
+                          data-testid="address__wallet-address"
+                        >
+                          ASuusX…GQ3kqT
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="text-center"
@@ -7558,7 +7670,22 @@ exports[`WalletDetails should update wallet name 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -7568,13 +7695,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -7582,13 +7709,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        104.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -7598,12 +7724,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        104.40
                       </span>
                     </td>
                   </tr>
                   <tr
-                    class="border-b border-dotted border-theme-neutral-300"
+                    class="border-theme-neutral-300 border-b border-dotted"
                     data-testid="TransactionRow"
                   >
                     <td
@@ -7633,12 +7759,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-48 py-1 text-sm text-theme-neutral-600"
+                      class="text-theme-neutral-600 w-48 py-1 text-sm"
                     >
                       <span
                         data-testid="TransactionRow__timestamp"
                       >
-                        17 Mar 2020 10:22:05
+                        19 Jan 1970 11:23:33
                       </span>
                     </td>
                     <td
@@ -7672,7 +7798,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             width="1em"
                           >
                             <svg>
-                              business.svg
+                              voted.svg
                             </svg>
                           </div>
                         </div>
@@ -7683,7 +7809,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="font-semibold text-theme-text"
                         data-testid="TransactionRowRecipientLabel"
                       >
-                        Business Registration
+                        Vote
                       </span>
                     </td>
                     <td
@@ -7692,7 +7818,22 @@ exports[`WalletDetails should update wallet name 1`] = `
                       <div
                         class="inline-flex align-middle space-x-1"
                         data-testid="TransactionRowInfo"
-                      />
+                      >
+                        <span
+                          class="p-1"
+                        >
+                          <div
+                            class="sc-AxirZ iQaTP"
+                            data-testid="TransactionRowInfo__vendorField"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              smartbridge.svg
+                            </svg>
+                          </div>
+                        </span>
+                      </div>
                     </td>
                     <td
                       class="w-16 text-center"
@@ -7702,13 +7843,13 @@ exports[`WalletDetails should update wallet name 1`] = `
                         data-testid="TransactionRowConfirmation"
                       >
                         <div
-                          class="sc-AxirZ iQaTP text-theme-success"
-                          data-testid="TransactionRowConfirmation__confirmed"
+                          class="sc-AxirZ iQaTP text-theme-warning"
+                          data-testid="TransactionRowConfirmation__pending"
                           height="1em"
                           width="1em"
                         >
                           <svg>
-                            ok.svg
+                            status-clock.svg
                           </svg>
                         </div>
                       </div>
@@ -7716,13 +7857,12 @@ exports[`WalletDetails should update wallet name 1`] = `
                     <td
                       class="text-right"
                     >
-                      <div
-                        class="sc-Axmtr cYWaUi"
-                        color="danger"
+                      <span
+                        class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.10000000
-                      </div>
+                        2.40
+                      </span>
                     </td>
                     <td
                       class="text-right"
@@ -7732,7 +7872,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                         class="text-theme-neutral-dark"
                         data-testid="TransactionRowAmount"
                       >
-                        0.20
+                        2.40
                       </span>
                     </td>
                   </tr>
