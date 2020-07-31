@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
-import nock from "nock";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { identity } from "tests/fixtures/identity";
+import nock from "nock";
+
+import { EnvironmentProvider } from "app/contexts";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Profile, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 

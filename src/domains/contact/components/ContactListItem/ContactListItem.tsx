@@ -1,4 +1,5 @@
 import Tippy from "@tippyjs/react";
+import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -14,7 +15,7 @@ import { ContactListItemProps, Option } from "./ContactListItem.models";
 export const ContactListItem = ({ contact, variant, onAction, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
 
-	// const walletTypes: string[] = ["Delegate", "Business", "Bridgechain"];
+	// TODO: add "Delegate", "Business", "Bridgechain"
 	const walletTypes: string[] = [];
 
 	const isCondensed = () => variant === "condensed";
@@ -24,7 +25,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 			{contact
 				.addresses()
 				.values()
-				.map((address: any, index: number) => (
+				.map((address: ContactAddress, index: number) => (
 					<tr key={index}>
 						<td
 							className={`text-center ${
@@ -62,6 +63,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						{!isCondensed() && (
 							<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
 								{walletTypes.map((type: string) =>
+									// @ts-ignore
 									address[`is${type}`]() ? (
 										<Tippy key={type} content={t(`COMMON.${type.toUpperCase()}`)}>
 											<Circle className="border-black">
