@@ -36,6 +36,12 @@ jest.mock("fs", () => ({
 
 let env: Environment;
 let profile: Profile;
+let showOpenDialogMock: jest.SpyInstance;
+const showOpenDialogParams = {
+	defaultPath: os.homedir(),
+	properties: ["openFile"],
+	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+};
 
 describe("Settings", () => {
 	beforeEach(async () => {
@@ -78,7 +84,7 @@ describe("Settings", () => {
 		);
 
 		// Upload avatar image
-		let showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["filePath"],
 		}));
 
@@ -86,11 +92,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("General-settings__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 		// Select Language
@@ -147,11 +149,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("General-settings__remove-avatar"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		// Toggle Dark Theme
@@ -194,11 +192,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("General-settings__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		// Open & close Advanced Mode Modal
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));

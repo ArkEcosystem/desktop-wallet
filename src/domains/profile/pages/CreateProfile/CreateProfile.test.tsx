@@ -24,10 +24,20 @@ jest.mock("fs", () => ({
 }));
 
 let env: Environment;
+let showOpenDialogMock: jest.SpyInstance;
+const showOpenDialogParams = {
+	defaultPath: os.homedir(),
+	properties: ["openFile"],
+	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+};
 
 describe("CreateProfile", () => {
 	beforeEach(() => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
 	});
 
 	it("should render", () => {
@@ -52,19 +62,11 @@ describe("CreateProfile", () => {
 		);
 
 		// Upload avatar image
-		const showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-			filePaths: ["filePath"],
-		}));
-
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
@@ -133,19 +135,11 @@ describe("CreateProfile", () => {
 		);
 
 		// Upload avatar image
-		const showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-			filePaths: ["filePath"],
-		}));
-
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__remove-avatar"));
@@ -161,7 +155,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		const profiles = env.profiles().all();
+		const profiles = env.profiles().values();
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
@@ -193,7 +187,7 @@ describe("CreateProfile", () => {
 		);
 
 		// Not upload avatar image
-		const showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: undefined,
 		}));
 
@@ -201,11 +195,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: os.homedir(),
-			properties: ["openFile"],
-			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
-		});
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("Input"), { target: { value: "test profile" } });
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
@@ -217,7 +207,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		const profiles = env.profiles().all();
+		const profiles = env.profiles().values();
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
