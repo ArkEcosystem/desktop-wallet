@@ -75,7 +75,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		let profiles = env.profiles().all();
+		let profiles = env.profiles().values();
 		expect(profiles.length).toEqual(1);
 		expect(profiles[0].name()).toEqual("test profile");
 		expect(profiles[0].settings().all()).toEqual({
@@ -100,7 +100,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		profiles = env.profiles().all();
+		profiles = env.profiles().values();
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
