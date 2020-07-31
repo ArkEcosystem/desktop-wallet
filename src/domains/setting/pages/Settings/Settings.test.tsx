@@ -206,7 +206,7 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("modal__close-btn"));
 
-		expect(env.profiles().all().length).toEqual(1);
+		expect(env.profiles().values().length).toEqual(1);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
