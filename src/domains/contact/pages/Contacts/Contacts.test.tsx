@@ -238,8 +238,8 @@ describe("Contacts", () => {
 			fireEvent.click(getByTestId("DeleteResource__cancel-button"));
 		});
 
-		waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeFalsy();
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
@@ -259,18 +259,20 @@ describe("Contacts", () => {
 		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 		expect(firstContactOptionsDropdown).toBeTruthy();
 
-		await act(async () => {
+		act(() => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
-		await act(async () => {
+		act(() => {
 			fireEvent.click(getByTestId("dropdown__option--1"));
 		});
 
 		await waitFor(() => {
-			expect(getByTestId("dropdown__options")).toBeFalsy();
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
@@ -290,23 +292,29 @@ describe("Contacts", () => {
 		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 		expect(firstContactOptionsDropdown).toBeTruthy();
 
-		await act(async () => {
+		act(() => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
-		await act(async () => {
+		const deleteOption = getByTestId("dropdown__option--2");
+		act(() => {
 			fireEvent.click(deleteOption);
 		});
 
-		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
-		await act(async () => {
+		act(() => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		expect(() => profile.contacts().findById(firstContactId)).toThrowError("Failed to find");
+		await waitFor(() => {
+			expect(() => profile.contacts().findById(firstContactId)).toThrowError("Failed to find");
+		});
 	});
 });
