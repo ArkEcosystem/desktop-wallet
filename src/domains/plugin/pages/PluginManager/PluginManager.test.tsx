@@ -9,11 +9,10 @@ import {
 	RenderResult,
 	renderWithRouter,
 	useDefaultNetMocks,
+	waitFor,
 	within,
-  waitFor
 } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
-
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
@@ -28,14 +27,14 @@ const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 describe("PluginManager", () => {
 	beforeAll(() => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-    useDefaultNetMocks();
+		useDefaultNetMocks();
 	});
 
 	beforeEach(() => {
-    await env.bootFromObject(fixtureData);
+		await env.bootFromObject(fixtureData);
 		await env.persist();
-		
-    history.push(pluginsURL);
+
+		history.push(pluginsURL);
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
@@ -49,11 +48,11 @@ describe("PluginManager", () => {
 
 		consoleSpy.mockReset();
 	});
-  
+
 	afterAll(() => {
 		consoleSpy.mockRestore();
 	});
-  
+
 	it("should render", () => {
 		const { asFragment, getByTestId } = rendered;
 
