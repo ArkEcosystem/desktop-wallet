@@ -262,13 +262,16 @@ export const CreateWallet = () => {
 		history.push(dashboardRoute);
 	};
 
-	React.useEffect(() => () => {
+	React.useEffect(
+		() => () => {
 			const currentWallet = getValues("wallet");
 
 			if (currentWallet) {
 				activeProfile?.wallets().forget(currentWallet.id());
 			}
-		}, [activeProfile, getValues]);
+		},
+		[activeProfile, getValues],
+	);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
