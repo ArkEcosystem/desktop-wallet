@@ -39,6 +39,6 @@ describe("DeleteProfile", () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(env.profiles().all()).toHaveLength(0));
+		await waitFor(() => expect(env.profiles().values()).toHaveLength(0));
 	});
 });
