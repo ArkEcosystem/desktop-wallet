@@ -73,6 +73,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
 							onClick={handleChangeAvatar}
+							data-testid="General-settings__upload-button"
 						>
 							<Icon name="Upload" />
 						</button>
@@ -88,6 +89,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 								type="button"
 								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
 								onClick={() => setAvatarImage("")}
+								data-testid="General-settings__remove-avatar"
 							>
 								<Icon name="Close" height={12} width={12} />
 							</button>

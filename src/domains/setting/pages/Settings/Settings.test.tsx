@@ -4,6 +4,7 @@ import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
+import electron from "electron";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter } from "testing-library";
@@ -12,6 +13,25 @@ import { StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
+
+jest.mock("electron", () => {
+	const setContentProtection = jest.fn();
+
+	return {
+		remote: {
+			dialog: {
+				showOpenDialog: jest.fn(),
+			},
+			getCurrentWindow: () => ({
+				setContentProtection,
+			}),
+		},
+	};
+});
+
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
 
 let env: Environment;
 let profile: Profile;
@@ -56,6 +76,21 @@ describe("Settings", () => {
 			},
 		);
 
+		// Upload avatar image
+		let showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: "/root",
+			properties: ["openFile"],
+			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+		});
+
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 		// Select Language
 		fireEvent.click(getAllByTestId("select-list__toggle-button")[0]);
@@ -92,7 +127,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
-			AVATAR: "",
+			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
@@ -104,6 +139,17 @@ describe("Settings", () => {
 			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
+		});
+
+		// Upload and remove avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__remove-avatar"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: "/root",
+			properties: ["openFile"],
+			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
@@ -136,6 +182,21 @@ describe("Settings", () => {
 			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
+		});
+
+		// should not upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: undefined,
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: "/root",
+			properties: ["openFile"],
+			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
 
 		// Open & close Advanced Mode Modal
