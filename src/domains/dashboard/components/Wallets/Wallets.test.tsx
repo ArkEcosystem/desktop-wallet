@@ -48,7 +48,7 @@ describe("Wallets", () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 		await env.bootFromObject(fixtureData);
 
-		profile = env.profiles().all()[0];
+		profile = env.profiles().values()[0];
 		wallet = profile.wallets().values()[0];
 
 		dashboardURL = `/profiles/${profile.id()}/dashboard`;

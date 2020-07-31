@@ -54,7 +54,7 @@ describe("WalletDetails", () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 		await env.bootFromObject(fixtureData);
 
-		profile = env.profiles().all()[0];
+		profile = env.profiles().values()[0];
 
 		wallet = profile.wallets().values()[0];
 		secondWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "mainnet");

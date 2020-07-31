@@ -20,7 +20,7 @@ describe("WalletVote", () => {
 		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 		await env.bootFromObject(fixtureData);
 
-		const profile = env.profiles().all()[0];
+		const profile = env.profiles().values()[0];
 		const wallet = profile.wallets().values()[0];
 
 		votes = (await wallet.delegates()).data;
