@@ -120,7 +120,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-2 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -137,10 +137,11 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                  class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
                 >
-                  <span
-                    class="text-sm text-theme-background"
+                  <img
+                    alt="Profile avatar"
+                    class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                   />
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -287,7 +288,7 @@ exports[`NavigationBar should render 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-2 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -304,10 +305,11 @@ exports[`NavigationBar should render 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                  class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
                 >
-                  <span
-                    class="text-sm text-theme-background"
+                  <img
+                    alt="Profile avatar"
+                    class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                   />
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -454,7 +456,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 data-testid="navbar__useractions"
               >
                 <div
-                  class="sc-AxhCb bzWLYJ -mr-1 border-theme-neutral-300"
+                  class="sc-AxhCb bzWLYJ -mr-2 border-theme-neutral-300"
                 >
                   <span
                     class="text-theme-neutral-600"
@@ -471,10 +473,11 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   </span>
                 </div>
                 <div
-                  class="sc-AxhCb bzWLYJ relative bg-theme-primary border-theme-primary rotate-90"
+                  class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
                 >
-                  <span
-                    class="text-sm text-theme-background"
+                  <img
+                    alt="Profile avatar"
+                    class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                   />
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"

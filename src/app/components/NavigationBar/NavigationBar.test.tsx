@@ -31,7 +31,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -85,7 +85,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -320,7 +320,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
