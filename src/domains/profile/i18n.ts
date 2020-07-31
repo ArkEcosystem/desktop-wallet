@@ -8,6 +8,10 @@ export const translations: { [key: string]: any } = {
 		START_TUTORIAL: "Start Tutorial",
 		SKIP_TUTORIAL: "Skip Tutorial",
 	},
+	MODAL_DELETE_PROFILE: {
+		TITLE: "Delete Profile",
+		DESCRIPTION: "Do you really want to delete this profile? Once deleted, you will not be able to restore it.",
+	},
 	MODAL_REPOSITORIES: {
 		TITLE: "Repository",
 		BitBucket: "Bitbucket",

@@ -5,6 +5,7 @@ import { httpClient } from "app/services";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 import { StubStorage } from "tests/mocks";
+import { env, act, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
@@ -47,6 +48,32 @@ describe("Welcome", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/settings`);
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should delete profile from profile card menu", async () => {
+		const { getByText, queryByTestId, getByTestId } = renderWithRouter(<Welcome />);
+
+		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+
+		const profileCardMenu = getByTestId("dropdown__toggle");
+		act(() => {
+			fireEvent.click(profileCardMenu);
+		});
+
+		const deleteOption = getByTestId("dropdown__option--1");
+		expect(deleteOption).toHaveTextContent(commonTranslations.DELETE);
+
+		act(() => {
+			fireEvent.click(deleteOption);
+		});
+
+		await waitFor(() => expect(queryByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("DeleteResource__submit-button"));
+		});
+
+		await waitFor(() => expect(queryByTestId("ProfileCard")).toBeNull());
 	});
 
 	it("should render without profiles", () => {
