@@ -5,6 +5,7 @@ import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import electron from "electron";
+import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, renderWithRouter } from "testing-library";
@@ -86,7 +87,7 @@ describe("Settings", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
@@ -147,7 +148,7 @@ describe("Settings", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
@@ -184,7 +185,7 @@ describe("Settings", () => {
 			LEDGER_UPDATE_METHOD: true,
 		});
 
-		// should not upload avatar image
+		// Not upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: undefined,
 		}));
@@ -194,7 +195,7 @@ describe("Settings", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});

@@ -4,6 +4,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { httpClient } from "app/services";
 import electron from "electron";
+import os from "os";
 import React from "react";
 import { act, fireEvent, renderWithRouter } from "testing-library";
 import { StubStorage } from "tests/mocks";
@@ -60,7 +61,7 @@ describe("CreateProfile", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
@@ -141,7 +142,7 @@ describe("CreateProfile", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
@@ -191,7 +192,7 @@ describe("CreateProfile", () => {
 			},
 		);
 
-		// Upload avatar image
+		// Not upload avatar image
 		const showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: undefined,
 		}));
@@ -201,7 +202,7 @@ describe("CreateProfile", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: "/root",
+			defaultPath: os.homedir(),
 			properties: ["openFile"],
 			filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 		});
