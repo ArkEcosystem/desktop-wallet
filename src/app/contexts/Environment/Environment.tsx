@@ -29,7 +29,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
  * use the `state` field that will be updated whenever env.persist() is called:
  *
  * const context = useEnvironmentContext();
- * const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
+ * const profiles = React.useMemo(() => context.env.profiles().values(), [context]);
  */
 
 export const useEnvironmentContext = (): Context => {
