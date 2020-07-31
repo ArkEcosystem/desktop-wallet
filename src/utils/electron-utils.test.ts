@@ -49,7 +49,7 @@ describe("Electron utils", () => {
 	});
 
 	describe("saveFile", () => {
-		let showSaveDialogMock;
+		let showSaveDialogMock: jest.SpyInstance;
 
 		beforeEach(() => {
 			showSaveDialogMock = jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
@@ -118,7 +118,7 @@ describe("Electron utils", () => {
 	});
 
 	describe("openFile", () => {
-		let showOpenDialogMock;
+		let showOpenDialogMock: jest.SpyInstance;
 
 		beforeEach(() => {
 			showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
