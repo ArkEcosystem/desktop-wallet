@@ -21,9 +21,9 @@ let wallet: Wallet;
 const mnemonic = "this is a top secret password";
 
 describe("SignMessage", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");

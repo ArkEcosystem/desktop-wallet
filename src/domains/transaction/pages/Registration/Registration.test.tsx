@@ -36,12 +36,14 @@ const defaultFormValues = {
 };
 
 describe("Registration", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(() => {
 		const history = createMemoryHistory();
 		const registrationURL = `/profiles/${getDefaultProfileId()}/transactions/registration`;
 

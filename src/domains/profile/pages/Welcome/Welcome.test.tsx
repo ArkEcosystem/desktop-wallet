@@ -16,6 +16,7 @@ const profileDashboardUrl = `/profiles/${fixtureProfileId}/dashboard`;
 describe("Welcome", () => {
 	beforeAll(async () => {
 		useDefaultNetMocks();
+
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 	});

@@ -11,9 +11,9 @@ const history = createMemoryHistory();
 const newsURL = `/profiles/${getDefaultProfileId()}/news`;
 
 describe("News", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

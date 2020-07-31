@@ -12,9 +12,9 @@ const history = createMemoryHistory();
 const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;
 
 describe("Exchange", () => {
-	beforeAll(useDefaultNetMocks);
-
 	beforeAll(async () => {
+		useDefaultNetMocks();
+
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 		history.push(exchangeURL);

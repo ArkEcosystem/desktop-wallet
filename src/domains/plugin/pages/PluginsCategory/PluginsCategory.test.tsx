@@ -24,15 +24,15 @@ const history = createMemoryHistory();
 const pluginsCategoryURL = `/profiles/${getDefaultProfileId()}/plugins/categories/game`;
 
 describe("PluginsCategory", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 		useDefaultNetMocks();
-	});
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(() => {
 		history.push(pluginsCategoryURL);
 
 		rendered = renderWithRouter(

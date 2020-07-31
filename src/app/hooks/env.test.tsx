@@ -9,8 +9,9 @@ import { useActiveProfile } from "./env";
 let profile: Profile;
 
 describe("useActiveProfile", () => {
-	beforeAll(useDefaultNetMocks);
-	beforeEach(async () => {
+	beforeAll(async () => {
+		useDefaultNetMocks();
+
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

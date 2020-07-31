@@ -21,12 +21,14 @@ const fixtureProfileId = getDefaultProfileId();
 const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 
 describe("Welcome", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(() => {
 		history.push(registrationsURL);
 	});
 

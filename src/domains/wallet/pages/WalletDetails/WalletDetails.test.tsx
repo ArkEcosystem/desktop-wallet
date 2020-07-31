@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
 import {
 	act,
+	env,
 	fireEvent,
 	getDefaultProfileId,
 	RenderResult,
@@ -15,20 +13,16 @@ import {
 	waitFor,
 } from "testing-library";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
 
 import { wallet as walletData, wallets } from "../../data";
 import { WalletDetails } from "./WalletDetails";
 
-let env: Environment;
 let profile: Profile;
 let wallet: Wallet;
 
 describe("WalletDetails", () => {
-	beforeAll(useDefaultNetMocks);
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
 		await env.bootFromObject(fixtureData);
 		await env.persist();
@@ -59,11 +53,9 @@ describe("WalletDetails", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+				</Route>,
 				{
 					routes: [route],
 				},
@@ -115,11 +107,9 @@ describe("WalletDetails", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/wallets/:walletId">
-						<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/wallets/:walletId">
+					<WalletDetails wallets={[wallets[0]]} wallet={walletData} />
+				</Route>,
 				{
 					routes: [route],
 				},

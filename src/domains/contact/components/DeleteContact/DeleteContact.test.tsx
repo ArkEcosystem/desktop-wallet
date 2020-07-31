@@ -21,9 +21,9 @@ let profile: Profile;
 const onDelete = jest.fn();
 
 describe("DeleteContact", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

@@ -22,12 +22,14 @@ const defaultFormValues = {
 };
 
 describe("UpdateRegistration", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(() => {
 		const history = createMemoryHistory();
 		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/update`;
 

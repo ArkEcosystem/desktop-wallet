@@ -11,9 +11,9 @@ const history = createMemoryHistory();
 const pluginDetailsURL = `/profiles/${getDefaultProfileId()}/plugins/wsx123`;
 
 describe("PluginDetails", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

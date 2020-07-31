@@ -13,9 +13,9 @@ const onCopy = jest.fn();
 const voteURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/vote`;
 
 describe("Vote For Delegate", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 	});

@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
 import {
 	act,
+	env,
 	fireEvent,
 	getDefaultProfileId,
 	renderWithRouter,
@@ -21,15 +18,12 @@ import { contacts } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
-let env: Environment;
 let profile: Profile;
 let firstContactId: string;
 
 describe("Contacts", () => {
-	beforeAll(useDefaultNetMocks);
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
 		await env.bootFromObject(fixtureData);
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -47,11 +41,9 @@ describe("Contacts", () => {
 
 	it("should render empty", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -66,11 +58,9 @@ describe("Contacts", () => {
 
 	it("should render with contacts", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -90,11 +80,9 @@ describe("Contacts", () => {
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (_, buttonId) => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={[]} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={[]} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -156,11 +144,9 @@ describe("Contacts", () => {
 
 	it("should open delete contact modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -187,11 +173,9 @@ describe("Contacts", () => {
 
 	it("should close contact deletion modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -223,11 +207,9 @@ describe("Contacts", () => {
 
 	it("should cancel contact deletion modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -263,11 +245,9 @@ describe("Contacts", () => {
 
 	it("ignore random contact item action", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -296,11 +276,9 @@ describe("Contacts", () => {
 
 	it("should delete contact from modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},

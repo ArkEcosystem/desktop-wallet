@@ -25,15 +25,15 @@ const fixtureProfileId = getDefaultProfileId();
 const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
 
 describe("PluginManager", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 		useDefaultNetMocks();
-	});
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(() => {
 		history.push(pluginsURL);
 
 		rendered = renderWithRouter(

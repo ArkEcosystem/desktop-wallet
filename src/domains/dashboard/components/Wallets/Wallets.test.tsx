@@ -35,9 +35,9 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
-	beforeAll(useDefaultNetMocks);
-
 	beforeAll(async () => {
+		useDefaultNetMocks();
+
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 		history.push(dashboardURL);

@@ -21,12 +21,14 @@ let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
+	});
 
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		updatingContact = profile.contacts().create("Test");
 	});

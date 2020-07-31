@@ -18,9 +18,9 @@ let signedMessageText: string;
 let signedMessageMnemonic: string;
 
 describe("VerifyMessage", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		await env.bootFromObject(fixtureData);

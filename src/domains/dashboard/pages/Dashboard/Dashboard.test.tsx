@@ -20,9 +20,9 @@ const fixtureProfileId = getDefaultProfileId();
 const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

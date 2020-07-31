@@ -10,9 +10,9 @@ import { UpdateWalletName } from "./UpdateWalletName";
 let wallet: Wallet;
 
 describe("UpdateWalletName", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

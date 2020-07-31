@@ -12,9 +12,9 @@ import { Settings } from "./Settings";
 let profile: Profile;
 
 describe("Settings", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 

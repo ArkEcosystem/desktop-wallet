@@ -41,9 +41,9 @@ const defaultFormValues = {
 };
 
 describe("Transaction Send", () => {
-	beforeAll(useDefaultNetMocks);
+	beforeAll(async () => {
+		useDefaultNetMocks();
 
-	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 	});
