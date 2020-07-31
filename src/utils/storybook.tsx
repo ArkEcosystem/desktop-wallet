@@ -62,7 +62,7 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 		if (!profile) {
 			const existingProfile = env
 				.profiles()
-				.all()
+				.values()
 				.find((profile) => profile.name() === "John Doe");
 			if (existingProfile) {
 				env.profiles().forget(existingProfile.id());
