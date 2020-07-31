@@ -95,18 +95,22 @@ describe("ImportWallet", () => {
 		const passphraseInput = getByTestId("ImportWallet__passphrase-input");
 		expect(passphraseInput).toBeTruthy();
 
-		await act(async () => {
+		act(() => {
 			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 		});
 
-		expect(form.current.getValues()).toEqual({ passphrase: mnemonic });
+		await waitFor(() => {
+			expect(form.current.getValues()).toEqual({ passphrase: mnemonic });
+		});
 
-		await act(async () => {
+		act(() => {
 			fireEvent.click(addressToggle);
 		});
 
-		const addressInput = getByTestId("ImportWallet__address-input");
-		expect(addressInput).toBeTruthy();
+		await waitFor(() => {
+			const addressInput = getByTestId("ImportWallet__address-input");
+			expect(addressInput).toBeTruthy();
+		});
 	});
 
 	it("should go to previous step", async () => {
@@ -131,20 +135,27 @@ describe("ImportWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-			const continueButton = getByTestId("ImportWallet__continue-button");
-
 			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		});
 
-			expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
-			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+		const continueButton = getByTestId("ImportWallet__continue-button");
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+		await waitFor(() => {
+			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+		});
 
-			await fireEvent.click(getByTestId("ImportWallet__back-button"));
-			await waitFor(() => expect(getByTestId("ImportWallet__first-step")).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByTestId("ImportWallet__back-button"));
+		});
+		await waitFor(() => {
+			expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
 		});
 	});
 
@@ -174,26 +185,32 @@ describe("ImportWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-			const continueButton = getByTestId("ImportWallet__continue-button");
-
 			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		});
 
-			expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
-			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+		const continueButton = getByTestId("ImportWallet__continue-button");
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+		await waitFor(() => {
+			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+		});
 
-			const passphraseInput = getByTestId("ImportWallet__passphrase-input");
-			expect(passphraseInput).toBeTruthy();
+		const passphraseInput = getByTestId("ImportWallet__passphrase-input");
+		expect(passphraseInput).toBeTruthy();
 
+		await act(async () => {
 			fireEvent.change(passphraseInput, { target: { value: mnemonic } });
-
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
+		});
 
-			await waitFor(() => expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy());
+		await waitFor(() => {
+			expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy();
 		});
 	});
 
@@ -217,7 +234,6 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-
 			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
 		});
 
@@ -225,31 +241,39 @@ describe("ImportWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
+		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		await act(async () => {
-			const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-			const continueButton = getByTestId("ImportWallet__continue-button");
-
 			await fireEvent.change(selectAssetsInput, { target: { value: "Ark D" } });
 			await fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
+		});
 
-			expect(selectAssetsInput).toHaveValue("Ark Devnet");
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
-			await fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId("ImportWallet__second-step")).toBeTruthy());
+		const continueButton = getByTestId("ImportWallet__continue-button");
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+		await waitFor(() => {
+			expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+		});
 
-			const addressToggle = getByTestId("ImportWallet__address-toggle");
-			expect(addressToggle).toBeTruthy();
+		const addressToggle = getByTestId("ImportWallet__address-toggle");
+		expect(addressToggle).toBeTruthy();
 
+		await act(async () => {
 			await fireEvent.click(addressToggle);
+		});
 
-			const addressInput = getByTestId("ImportWallet__address-input");
-			expect(addressInput).toBeTruthy();
+		const addressInput = getByTestId("ImportWallet__address-input");
+		expect(addressInput).toBeTruthy();
 
+		await act(async () => {
 			await fireEvent.change(addressInput, { target: { value: randomAddress } });
+			await fireEvent.click(getByTestId("ImportWallet__submit-button"));
+		});
 
-			fireEvent.click(getByTestId("ImportWallet__submit-button"));
-
-			await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy());
+		await waitFor(() => {
+			expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 		});
 	});
 
