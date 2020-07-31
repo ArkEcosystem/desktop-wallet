@@ -26,6 +26,7 @@ import { MnemonicVerification } from "../../components/MnemonicVerification";
 
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
+	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
 	const networks = React.useMemo(() => env.availableNetworks(), [env]);
 
 	const { t } = useTranslation();
@@ -45,9 +46,11 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 			return;
 		}
 
+		setIsGeneratingWallet(true);
 		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
 		setValue("wallet", wallet, true);
 		setValue("mnemonic", mnemonic, true);
+		setIsGeneratingWallet(false);
 	};
 
 	return (
@@ -63,7 +66,12 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork id="CreateWallet__network" networks={networks} onSelect={handleSelect} />
+					<SelectNetwork
+						id="CreateWallet__network"
+						networks={networks}
+						onSelect={handleSelect}
+						disabled={isGeneratingWallet}
+					/>
 				</FormField>
 			</div>
 		</section>
