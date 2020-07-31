@@ -51,6 +51,7 @@ export const CreateProfile = () => {
 							type="button"
 							className="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
 							onClick={handleChangeAvatar}
+							data-testid="CreateProfile__upload-button"
 						>
 							<Icon name="Upload" />
 						</button>
@@ -66,6 +67,7 @@ export const CreateProfile = () => {
 								type="button"
 								className="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
 								onClick={() => setAvatarImage("")}
+								data-testid="CreateProfile__remove-avatar"
 							>
 								<Icon name="Close" width={13} height={16} />
 							</button>
@@ -129,7 +131,7 @@ export const CreateProfile = () => {
 
 					<Divider />
 
-					<Form data-testid="CreateProfile__form" className="mt-8" context={form} onSubmit={submitForm}>
+					<Form className="mt-8" context={form} onSubmit={submitForm} data-testid="CreateProfile__form">
 						<div className="">
 							<ListDivided items={personalDetails} />
 
@@ -190,7 +192,7 @@ export const CreateProfile = () => {
 							<Button variant="plain" onClick={() => history.go(-1)}>
 								{t("COMMON.BACK")}
 							</Button>
-							<Button data-testid="CreateProfile__submit-button" type="submit">
+							<Button type="submit" data-testid="CreateProfile__submit-button">
 								{t("COMMON.COMPLETE")}
 							</Button>
 						</div>
