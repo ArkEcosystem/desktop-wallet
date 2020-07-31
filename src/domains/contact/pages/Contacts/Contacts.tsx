@@ -55,10 +55,10 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
 
-	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks() || []);
+	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
 
 	useEffect(() => {
-		setContacts(activeProfile?.contacts().values() || []);
+		setContacts(activeProfile!.contacts().values());
 	}, [activeProfile, state]);
 
 	const contactOptions = [

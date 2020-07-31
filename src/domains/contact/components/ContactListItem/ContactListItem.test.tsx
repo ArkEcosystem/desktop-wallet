@@ -56,6 +56,22 @@ describe("ContactListItem", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with multiple addresses", async () => {
+		await contact
+			.addresses()
+			.create({ coin: "ARK", network: "devnet", name: "test", address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" });
+
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<ContactListItem contact={contact} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render with one option", () => {
 		const { asFragment } = render(
 			<table>
