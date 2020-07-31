@@ -11,9 +11,18 @@ import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { StubStorage } from "tests/mocks";
-import { fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
+import {
+	act as actAsync,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	renderWithRouter,
+	waitFor,
+} from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
+
+jest.setTimeout(8000);
 
 const fixtureProfileId = getDefaultProfileId();
 const fixture = {
@@ -117,7 +126,9 @@ describe("CreateWallet", () => {
 		// @ts-ignore
 		navigator.clipboard = { writeText: writeTextMock };
 
-		fireEvent.click(getByTestId(`CreateWallet__copy`));
+		act(() => {
+			fireEvent.click(getByTestId(`CreateWallet__copy`));
+		});
 		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
 		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
@@ -196,75 +207,94 @@ describe("CreateWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			const continueButton = getByTestId("CreateWallet__continue-button");
-			const backButton = getByTestId("CreateWallet__back-button");
+		const continueButton = getByTestId("CreateWallet__continue-button");
+		const backButton = getByTestId("CreateWallet__back-button");
 
-			// Navigation between steps
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
-			const previousWalletId = profile.wallets().values()[0].id();
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "" } });
-			await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
 
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
 
-			await waitFor(() => expect(profile.wallets().values().length).toBe(1));
-			await waitFor(() => expect(profile.wallets().values()[0].id()).not.toEqual(previousWalletId));
-
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 
-			const walletMnemonic = passphrase.split(" ");
-			for (let i = 0; i < 3; i++) {
-				const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+		const walletMnemonic = passphrase.split(" ");
+		for (let i = 0; i < 3; i++) {
+			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
 
+			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
-
 				if (i < 2) {
 					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
 				}
-			}
+			});
+		}
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
-
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+			// );
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
+		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
-			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
+		act(() => {
 			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
-
-			await waitFor(() =>
-				expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
-			);
 		});
-
+		await waitFor(() =>
+			expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -310,29 +340,34 @@ describe("CreateWallet", () => {
 		);
 		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
-		expect(asFragment()).toMatchSnapshot();
-
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			const continueButton = getByTestId("CreateWallet__continue-button");
+		const continueButton = getByTestId("CreateWallet__continue-button");
 
-			// Navigation between steps
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
-
-			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
-
-			fireEvent.click(getByTestId(`CreateWallet__back-button`));
-			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-
-			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
-
-			history.push("/");
-			await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId(`CreateWallet__back-button`));
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
+			history.push("/");
+		});
+		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
