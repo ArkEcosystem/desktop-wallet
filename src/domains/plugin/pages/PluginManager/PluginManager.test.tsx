@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -19,20 +20,22 @@ describe("PluginManager", () => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		history.push(pluginsURL);
 
-		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/plugins">
-				<PluginManager />
-			</Route>,
-			{
-				routes: [pluginsURL],
-				history,
-			},
-		);
+		await act(async () => {
+			rendered = renderWithRouter(
+				<Route path="/profiles/:profileId/plugins">
+					<PluginManager />
+				</Route>,
+				{
+					routes: [pluginsURL],
+					history,
+				},
+			);
 
-		consoleSpy.mockReset();
+			consoleSpy.mockReset();
+		});
 	});
 
 	afterAll(() => {
