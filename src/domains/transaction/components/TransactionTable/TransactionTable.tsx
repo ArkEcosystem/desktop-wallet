@@ -90,7 +90,12 @@ export const TransactionTable = ({
 				isCompact ? (
 					<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 				) : (
-					<TransactionRow onClick={() => onRowClick?.(row)} transaction={row} currencyRate={currencyRate} />
+					<TransactionRow
+						onClick={() => onRowClick?.(row)}
+						transaction={row}
+						currencyRate={currencyRate}
+						isSignaturePending={row.isMultiSignature && showSignColumn}
+					/>
 				)
 			}
 		</Table>
