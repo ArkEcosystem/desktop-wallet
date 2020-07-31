@@ -4,8 +4,7 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { env, fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
@@ -13,13 +12,6 @@ const onCopy = jest.fn();
 const voteURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/vote`;
 
 describe("Vote For Delegate", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-	});
-
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(

@@ -24,7 +24,6 @@ describe("VerifyMessage", () => {
 		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		await env.bootFromObject(fixtureData);
-		await env.persist();
 
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");

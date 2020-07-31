@@ -2,17 +2,7 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage.json";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-	within,
-} from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
@@ -23,9 +13,6 @@ let firstContactId: string;
 
 describe("Contacts", () => {
 	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		// Add all used contacts in page to profile,

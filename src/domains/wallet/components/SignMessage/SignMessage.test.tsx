@@ -1,17 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	RenderResult,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SignMessage } from "./SignMessage";
@@ -21,10 +11,7 @@ let wallet: Wallet;
 const mnemonic = "this is a top secret password";
 
 describe("SignMessage", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
+	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});

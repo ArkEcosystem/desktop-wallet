@@ -18,7 +18,6 @@ import {
 	renderWithRouter,
 	waitFor,
 } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
 
 import { FirstStep, ImportWallet, SecondStep } from "./ImportWallet";
 
@@ -49,8 +48,6 @@ describe("ImportWallet", () => {
 	});
 
 	beforeEach(async () => {
-		await env.bootFromObject(fixtureData);
-
 		profile = env.profiles().findById(fixtureProfileId);
 	});
 
@@ -204,6 +201,8 @@ describe("ImportWallet", () => {
 		let rendered: RenderResult;
 		const history = createMemoryHistory();
 
+		const randomAddress = "D8vwEEvKgMPVvvK2Zwzyb5uHzRadurCcKq";
+
 		history.push(route);
 
 		await act(async () => {
@@ -246,11 +245,11 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			await fireEvent.change(addressInput, { target: { value: identityAddress } });
+			await fireEvent.change(addressInput, { target: { value: randomAddress } });
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
-			await waitFor(() => expect(profile.wallets().findByAddress(identityAddress)).toBeTruthy());
+			await waitFor(() => expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy());
 		});
 	});
 
@@ -398,7 +397,8 @@ describe("ImportWallet", () => {
 
 		history.push(route);
 
-		await profile.wallets().importByAddress(identityAddress, "ARK", "devnet");
+		const randomAddress = "DEz1Mr4uJ7NaiufwKEj28atCRPTmsUqh9t";
+		await profile.wallets().importByAddress(randomAddress, "ARK", "devnet");
 
 		await act(async () => {
 			rendered = renderWithRouter(
@@ -440,7 +440,7 @@ describe("ImportWallet", () => {
 			const addressInput = getByTestId("ImportWallet__address-input");
 			expect(addressInput).toBeTruthy();
 
-			await fireEvent.change(addressInput, { target: { value: identityAddress } });
+			await fireEvent.change(addressInput, { target: { value: randomAddress } });
 
 			fireEvent.click(getByTestId("ImportWallet__submit-button"));
 
@@ -448,7 +448,7 @@ describe("ImportWallet", () => {
 			await waitFor(() => expect(errorAlert).toBeTruthy());
 
 			expect(errorAlert.textContent).toMatchInlineSnapshot(
-				`"alert-danger.svgErrorThe wallet [${identityAddress}] already exists."`,
+				`"alert-danger.svgErrorThe wallet [${randomAddress}] already exists."`,
 			);
 		});
 	});

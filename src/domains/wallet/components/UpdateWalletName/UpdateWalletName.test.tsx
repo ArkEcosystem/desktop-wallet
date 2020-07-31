@@ -1,7 +1,6 @@
 import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -11,11 +10,6 @@ let wallet: Wallet;
 
 describe("UpdateWalletName", () => {
 	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
 		const profile = env.profiles().findById(getDefaultProfileId());
 		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
 	});

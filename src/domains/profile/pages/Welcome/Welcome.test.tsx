@@ -3,8 +3,7 @@ import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 import { StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
@@ -14,13 +13,6 @@ const fixtureProfileId = getDefaultProfileId();
 const profileDashboardUrl = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Welcome", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-	});
-
 	it("should render with profiles", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 		const profile = env.profiles().findById(fixtureProfileId);

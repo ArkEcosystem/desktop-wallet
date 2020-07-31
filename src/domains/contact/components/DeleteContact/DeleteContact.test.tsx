@@ -1,16 +1,7 @@
 import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { contacts } from "domains/contact/data";
 import React from "react";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { DeleteContact } from "./DeleteContact";
@@ -21,12 +12,7 @@ let profile: Profile;
 const onDelete = jest.fn();
 
 describe("DeleteContact", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		const firstContact = contacts[0];

@@ -3,16 +3,7 @@ import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
@@ -21,13 +12,6 @@ let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-	});
-
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		updatingContact = profile.contacts().create("Test");

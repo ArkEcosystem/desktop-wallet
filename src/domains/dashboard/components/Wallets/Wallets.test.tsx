@@ -1,8 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "utils/testing-library";
+import { act,  fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
@@ -35,11 +34,7 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
+	beforeAll(() => {
 		history.push(dashboardURL);
 	});
 

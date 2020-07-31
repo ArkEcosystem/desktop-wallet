@@ -1,20 +1,14 @@
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { env, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { useActiveProfile } from "./env";
 
 let profile: Profile;
 
 describe("useActiveProfile", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 	const TestProfile: React.FC = () => {

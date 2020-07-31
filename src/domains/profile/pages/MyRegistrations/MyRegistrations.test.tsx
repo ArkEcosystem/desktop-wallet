@@ -1,16 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	within,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, within } from "testing-library";
 
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
@@ -21,13 +12,6 @@ const fixtureProfileId = getDefaultProfileId();
 const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 
 describe("Welcome", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-	});
-
 	beforeEach(() => {
 		history.push(registrationsURL);
 	});

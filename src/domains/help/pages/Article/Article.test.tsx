@@ -2,8 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { article } from "../../data";
 import { Article } from "./Article";
@@ -13,12 +12,7 @@ const history = createMemoryHistory();
 const articleURL = `/profiles/${getDefaultProfileId()}/support/articles/art123`;
 
 describe("Article", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		history.push(articleURL);
 	});
 

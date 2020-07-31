@@ -2,8 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import {  getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { faqArticles } from "../../data";
 import { Faq } from "./Faq";
@@ -13,10 +12,7 @@ const history = createMemoryHistory();
 const categoryURL = `/profiles/${getDefaultProfileId()}/support/categories/portfolio`;
 
 describe("Faq", () => {
-	beforeAll(async () => {
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		history.push(categoryURL);
 	});
 

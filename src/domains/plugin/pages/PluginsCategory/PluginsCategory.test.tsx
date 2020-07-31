@@ -2,34 +2,20 @@ import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	RenderResult,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-	within,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 
 import { translations } from "../../i18n";
 import { PluginsCategory } from "./PluginsCategory";
 
-let consoleSpy;
+let consoleSpy: any;
 let rendered = RenderResult;
 const history = createMemoryHistory();
 
 const pluginsCategoryURL = `/profiles/${getDefaultProfileId()}/plugins/categories/game`;
 
 describe("PluginsCategory", () => {
-	beforeAll(async () => {
+	beforeAll(() => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
 	});
 
 	beforeEach(() => {

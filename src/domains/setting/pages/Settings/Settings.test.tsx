@@ -3,8 +3,7 @@ import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
@@ -12,12 +11,7 @@ import { Settings } from "./Settings";
 let profile: Profile;
 
 describe("Settings", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 

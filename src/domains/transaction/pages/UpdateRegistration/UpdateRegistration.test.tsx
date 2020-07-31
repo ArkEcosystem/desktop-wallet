@@ -2,17 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	RenderResult,
-	renderWithRouter,
-	useDefaultNetMocks,
-	waitFor,
-} from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
@@ -22,13 +12,6 @@ const defaultFormValues = {
 };
 
 describe("UpdateRegistration", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-	});
-
 	beforeEach(() => {
 		const history = createMemoryHistory();
 		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/update`;

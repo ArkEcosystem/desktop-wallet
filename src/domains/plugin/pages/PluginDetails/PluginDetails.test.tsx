@@ -1,8 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { PluginDetails } from "./PluginDetails";
 
@@ -11,12 +10,7 @@ const history = createMemoryHistory();
 const pluginDetailsURL = `/profiles/${getDefaultProfileId()}/plugins/wsx123`;
 
 describe("PluginDetails", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		history.push(pluginDetailsURL);
 	});
 

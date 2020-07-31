@@ -1,16 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage.json";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	useDefaultNetMocks,
-	within,
-} from "utils/testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
@@ -20,12 +11,7 @@ const fixtureProfileId = getDefaultProfileId();
 const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		await env.bootFromObject(fixtureData);
-		await env.persist();
-
+	beforeAll(() => {
 		history.push(dashboardURL);
 	});
 

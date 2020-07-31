@@ -12,8 +12,6 @@ import { Router } from "react-router-dom";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
-export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
 		<EnvironmentProvider env={env}>{children}</EnvironmentProvider>
@@ -46,7 +44,9 @@ export * from "@testing-library/react";
 
 export { customRender as render, renderWithRouter };
 
-export const useDefaultNetMocks = () => {
+export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+
+export const defaultNetMocks = () => {
 	nock.disableNetConnect();
 	nock("https://dwallets.ark.io")
 		.get("/api/node/configuration")
@@ -63,5 +63,11 @@ export const useDefaultNetMocks = () => {
 		.reply(200, require("../tests/fixtures/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 		.persist();
 };
+export const useDefaultNetMocks = defaultNetMocks;
 
-export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+const envWithMocks = () => {
+	defaultNetMocks();
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(fixtureData) });
+};
+
+export const env = envWithMocks();
