@@ -28,6 +28,10 @@ export const Welcome = () => {
 
 	React.useEffect(() => setScreenshotProtection(true));
 
+	const closeDeleteProfileModal = () => {
+		setDeletingProfileId(undefined);
+	};
+
 	const handleProfileCardAction = (profile: Profile, action: any) => {
 		switch (action?.value) {
 			case "setting":
@@ -96,9 +100,9 @@ export const Welcome = () => {
 			<DeleteProfile
 				profileId={deletingProfileId!}
 				isOpen={!!deletingProfileId}
-				onCancel={() => setDeletingProfileId(undefined)}
-				onClose={() => setDeletingProfileId(undefined)}
-				onDelete={() => setDeletingProfileId(undefined)}
+				onCancel={closeDeleteProfileModal}
+				onClose={closeDeleteProfileModal}
+				onDelete={closeDeleteProfileModal}
 			/>
 		</>
 	);

@@ -58,11 +58,18 @@ describe("Welcome", () => {
 
 		const deleteOption = getByTestId("dropdown__option--1");
 		expect(deleteOption).toHaveTextContent(commonTranslations.DELETE);
+
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
 
-		await waitFor(() => expect(queryByTestId(translations.PAGE_WELCOME.HAS_PROFILES)).toBeNull());
+		await waitFor(() => expect(queryByTestId("modal__inner")).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("DeleteResource__submit-button"));
+		});
+
+		await waitFor(() => expect(queryByTestId("ProfileCard")).toBeNull());
 	});
 
 	it("should render without profiles", () => {
