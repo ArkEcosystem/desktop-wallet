@@ -1,7 +1,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act,  fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";

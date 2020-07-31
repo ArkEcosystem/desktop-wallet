@@ -2,7 +2,7 @@ import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import {  fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";

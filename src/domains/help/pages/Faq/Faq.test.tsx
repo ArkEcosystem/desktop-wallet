@@ -2,7 +2,7 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import {  getDefaultProfileId, renderWithRouter } from "testing-library";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { faqArticles } from "../../data";
 import { Faq } from "./Faq";

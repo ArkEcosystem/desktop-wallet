@@ -5,7 +5,7 @@ import { httpClient } from "app/services";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 import { StubStorage } from "tests/mocks";
-import { env, act, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
+import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
