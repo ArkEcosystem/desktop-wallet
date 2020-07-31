@@ -17,7 +17,7 @@ export const Welcome = () => {
 	const context = useEnvironmentContext();
 	const { t } = useTranslation();
 	const history = useHistory();
-	const profiles = React.useMemo(() => context.env.profiles().all(), [context]);
+	const profiles = React.useMemo(() => context.env.profiles().values(), [context]);
 
 	const profileCardActions = [
 		{ label: t("COMMON.SETTINGS"), value: "setting" },
