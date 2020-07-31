@@ -12,7 +12,7 @@ import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import envFixture from "tests/fixtures/env/data.json";
 import { StubStorage } from "tests/mocks";
-import { fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
+import { fireEvent, render, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
@@ -281,14 +281,16 @@ describe("CreateWallet", () => {
 			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
+			const historySpy = jest.spyOn(history, "push");
+
 			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
 			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 
-			await waitFor(() =>
-				expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
-			);
+			await waitFor(() => expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile?.id()}/dashboard`));
+
+			expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet");
 		});
 
 		expect(asFragment()).toMatchSnapshot();
