@@ -233,7 +233,6 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = React.useState(1);
-	const [hasSubmitted, setHasSubmitted] = React.useState(false);
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 
@@ -245,7 +244,7 @@ export const CreateWallet = () => {
 	];
 
 	const form = useForm({ mode: "onChange" });
-	const { getValues, formState, register } = form;
+	const { getValues, formState, register, setValue } = form;
 
 	React.useEffect(() => {
 		register("network", { required: true });
@@ -258,29 +257,18 @@ export const CreateWallet = () => {
 
 		await persist();
 
-		setHasSubmitted(true);
+		setValue("wallet", null);
+
+		history.push(dashboardRoute);
 	};
 
-	React.useEffect(() => {
-		if (hasSubmitted) {
-			history.push(dashboardRoute);
-		}
+	React.useEffect(() => () => {
+			const currentWallet = getValues("wallet");
 
-		// TODO: Figure out a way without setTimeout
-		return () => {
-			setTimeout(() => {
-				if (hasSubmitted) {
-					return;
-				}
-
-				const currentWallet = getValues("wallet");
-
-				if (currentWallet) {
-					activeProfile?.wallets().forget(currentWallet.id());
-				}
-			}, 100);
-		};
-	}, [activeProfile, dashboardRoute, getValues, hasSubmitted, history]);
+			if (currentWallet) {
+				activeProfile?.wallets().forget(currentWallet.id());
+			}
+		}, [activeProfile, getValues]);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
