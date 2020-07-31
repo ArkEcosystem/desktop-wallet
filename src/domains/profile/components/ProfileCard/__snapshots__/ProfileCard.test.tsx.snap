@@ -20,9 +20,9 @@ exports[`ProfileCard should hide the settings icon 1`] = `
             data-testid="profile-card__user--avatar"
           >
             <img
-              alt="Oleg Gelo"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-              title="Oleg Gelo"
+              alt="Bob"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+              title="Bob"
             />
           </div>
           <div
@@ -37,7 +37,7 @@ exports[`ProfileCard should hide the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              Oleg Gelo
+              Bob
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ exports[`ProfileCard should hide the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              234,500.46 USD
+              0
             </p>
           </div>
         </div>
@@ -108,9 +108,9 @@ exports[`ProfileCard should render 1`] = `
             data-testid="profile-card__user--avatar"
           >
             <img
-              alt="Oleg Gelo"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-              title="Oleg Gelo"
+              alt="Bob"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+              title="Bob"
             />
           </div>
           <div
@@ -125,7 +125,7 @@ exports[`ProfileCard should render 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              Oleg Gelo
+              Bob
             </p>
           </div>
         </div>
@@ -144,7 +144,96 @@ exports[`ProfileCard should render 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              234,500.46 USD
+              0
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ProfileCard should render the profile with avatar image 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxjAm eWJHeF"
+    data-testid="ProfileCard"
+  >
+    <div
+      class="relative px-6 py-4 sm:flex sm:items-center"
+    >
+      <div
+        class="absolute top-0 right-0 flex items-center justify-center w-6 h-6 p-1 mt-3 -mt-2 -mr-4 text-theme-neutral-light"
+      >
+        <div
+          class="relative"
+          data-testid="dropdown__toggle"
+        >
+          <div
+            class="float-right outline-none cursor-pointer focus:outline-none"
+          >
+            <div
+              class="sc-AxirZ eEbZjj"
+              height="20"
+              width="20"
+            >
+              <svg>
+                settings.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-row justify-between w-full"
+      >
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="rounded-full bg-theme-neutral-contrast w-11 h-11"
+            data-testid="profile-card__user--avatarImage"
+          >
+            <img
+              alt="Bob"
+              class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+              src="avatarImage"
+              title="Bob"
+            />
+          </div>
+          <div
+            class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Name
+            </p>
+            <p
+              class="font-semibold text-theme-neutral-dark"
+              data-testid="profile-card__user--name"
+            >
+              Bob
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex items-center"
+        >
+          <div
+            class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-right"
+          >
+            <p
+              class="text-sm font-semibold text-theme-neutral"
+            >
+              Total balance
+            </p>
+            <p
+              class="font-semibold text-theme-neutral-dark"
+              data-testid="profile-card__user--balance"
+            >
+              0
             </p>
           </div>
         </div>
@@ -196,9 +285,9 @@ exports[`ProfileCard should render the settings icon 1`] = `
             data-testid="profile-card__user--avatar"
           >
             <img
-              alt="Oleg Gelo"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-              title="Oleg Gelo"
+              alt="Bob"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+              title="Bob"
             />
           </div>
           <div
@@ -213,7 +302,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--name"
             >
-              Oleg Gelo
+              Bob
             </p>
           </div>
         </div>
@@ -232,7 +321,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
               class="font-semibold text-theme-neutral-dark"
               data-testid="profile-card__user--balance"
             >
-              234,500.46 USD
+              0
             </p>
           </div>
         </div>
