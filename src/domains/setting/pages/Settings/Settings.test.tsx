@@ -10,6 +10,8 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "test
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
 
+jest.setTimeout(8000);
+
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
 
