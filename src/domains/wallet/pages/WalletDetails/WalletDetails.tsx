@@ -48,12 +48,19 @@ export const WalletDetails = () => {
 
 	// TODO: Replace logic with sdk
 	const getVotes = React.useCallback(async () => {
-		const response = await activeWallet!.votes();
+		let response;
+		// catch 404 wallet not found until sdk logic
+		try {
+			response = await activeWallet!.votes();
+		} catch (error) {
+			console.log(error);
+			return;
+		}
+
 		const transaction = response.data.first();
 		const result: WalletData[] = [];
 
 		const votes = (transaction?.asset().votes as string[]) || [];
-
 		for (const vote of votes) {
 			const mode = vote[0];
 			const publicKey = vote.substr(1);
