@@ -1,3 +1,4 @@
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -6,10 +7,10 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
-import { useActiveProfile } from "app/hooks/env";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -23,11 +24,9 @@ type MenuItem = {
 };
 
 type NavigationBarProps = {
+	profile?: Profile;
 	menu?: MenuItem[];
 	userActions?: Action[];
-	userInitials?: string;
-	currencyIcon: string;
-	balance?: string;
 	notifications?: any;
 	onUserAction?: any;
 	onNotificationAction?: any;
@@ -64,16 +63,21 @@ const NotificationsDropdown = ({
 	</Dropdown>
 );
 
-const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: NavigationBarProps) => (
+type UserInfoProps = {
+	currencyIcon?: string;
+	onUserAction?: any;
+	userActions?: Action[];
+	userInitials?: string;
+};
+
+const UserInfo = ({ currencyIcon, onUserAction, userActions, userInitials }: UserInfoProps) => (
 	<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
 			<div className="cursor-pointer" data-testid="navbar__useractions">
 				<Circle className="-mr-1 border-theme-neutral-300" size="lg">
-					<span className="text-theme-neutral-600">
-						<Icon name={currencyIcon} />
-					</span>
+					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
 				<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
 					<span className="text-sm text-theme-background">{userInitials}</span>
@@ -93,21 +97,21 @@ const UserInfo = ({ onUserAction, currencyIcon, userActions, userInitials }: Nav
 );
 
 export const NavigationBar = ({
+	profile,
 	menu,
 	userActions,
-	userInitials,
-	balance,
-	currencyIcon,
 	notifications,
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
-	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
+
 	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
 	const renderMenu = () => {
-		if (!activeProfile?.id()) {
+		if (!profile?.id()) {
 			return null;
 		}
 
@@ -116,7 +120,7 @@ export const NavigationBar = ({
 			menu.map((menuItem: any, index: number) => (
 				<li key={index} className="flex">
 					<NavLink
-						to={menuItem.mountPath(activeProfile.id())}
+						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
 						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
 					>
@@ -127,11 +131,29 @@ export const NavigationBar = ({
 		);
 	};
 
+	const getUserInitials = () => {
+		const name = profile?.settings().get(ProfileSetting.Name);
+		return name ? (name as string).slice(0, 2) : undefined;
+	};
+
+	const getCurrencyIcon = () => {
+		// TODO get full name from SDK
+		const currencyIcons: Record<string, string> = {
+			btc: "Bitcoin",
+			eth: "Ethereum",
+		};
+
+		const currency = profile?.settings().get(ProfileSetting.ExchangeCurrency);
+
+		return currency ? currencyIcons[(currency as string).toLowerCase()] : undefined;
+	};
+
 	const handleSearchWallet = () => {
 		setIsSearchingWallet(false);
 
 		return setReceiveFundsIsOpen(true);
 	};
+
 	return (
 		<NavWrapper aria-labelledby="main menu">
 			<div className="px-4 sm:px-6 lg:px-">
@@ -150,7 +172,7 @@ export const NavigationBar = ({
 
 						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
 							<NavLink
-								to={`/profiles/${activeProfile?.id()}/transactions/transfer`}
+								to={`/profiles/${profile?.id()}/transactions/transfer`}
 								data-testid="navbar__buttons--send"
 							>
 								<Icon name="Sent" width={22} height={22} />
@@ -172,16 +194,18 @@ export const NavigationBar = ({
 						<div className="h-8 border-r border-theme-neutral-200" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
+							<div className="text-xs text-theme-neutral">{t("COMMON.YOUR_BALANCE")}</div>
+							<div className="text-sm font-bold text-theme-neutral-dark">
+								{profile?.balance().toString()}
+							</div>
 						</div>
 
 						<div className="flex p-1 cusror-pointer">
 							<UserInfo
-								userInitials={userInitials}
-								currencyIcon={currencyIcon}
+								userInitials={getUserInitials()}
+								currencyIcon={getCurrencyIcon()}
 								userActions={userActions}
-								onUserAction={(action: any) => history.push(action.mountPath(activeProfile?.id()))}
+								onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
 							/>
 						</div>
 					</div>
@@ -198,7 +222,6 @@ export const NavigationBar = ({
 };
 
 NavigationBar.defaultProps = {
-	currencyIcon: "Bitcoin",
 	notifications: {
 		transactionsHeader: "Transactions",
 		transactions: [],

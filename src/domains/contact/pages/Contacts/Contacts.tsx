@@ -48,14 +48,15 @@ type ContactsProps = {
 
 export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 	const { env, persist } = useEnvironmentContext();
-	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
 
 	const [profileContacts] = useState<any>(contacts);
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
-
 	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
+
+	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		// TODO: Uncomment this to fill contacts from platform-sdk.
@@ -72,7 +73,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -112,7 +113,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<Section>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}

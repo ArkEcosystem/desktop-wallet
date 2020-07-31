@@ -1,6 +1,7 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -62,17 +63,19 @@ const FastNavigation = ({ sections }: FastNavProps) => {
 };
 
 export const Article = ({ title, category, categoryIcon, views, sections, image }: ArticleProps) => {
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const crumbs = [
 		{
-			route: "help",
+			route: `/profiles/${activeProfile?.id()}/support`,
 			label: "Go back to Help & Support",
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<FastNavigation sections={sections} />
 
