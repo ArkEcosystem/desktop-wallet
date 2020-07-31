@@ -18,7 +18,7 @@ describe("Environment Context", () => {
 		jest.spyOn(console, "error").mockImplementation(() => null);
 		const Test = () => {
 			const { env } = useEnvironmentContext();
-			const profiles = env.profiles().all();
+			const profiles = env.profiles().values();
 			return <p>{profiles.length}</p>;
 		};
 
@@ -44,7 +44,7 @@ describe("Environment Context", () => {
 	it("should rerender components when env updates", async () => {
 		const Details = () => {
 			const context = useEnvironmentContext();
-			const count = React.useMemo(() => context.env.profiles().all().length, [context]);
+			const count = React.useMemo(() => context.env.profiles().values().length, [context]);
 			return <h1>Counter {count}</h1>;
 		};
 
