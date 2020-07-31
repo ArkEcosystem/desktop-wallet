@@ -141,11 +141,17 @@ export const WalletDetails = () => {
 					{walletData && (
 						<WalletRegistrations
 							address={activeWallet?.address()}
-							delegate={activeWallet?.isDelegate() ? walletData : undefined}
+							delegate={
+								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isDelegate()
+									? walletData
+									: undefined
+							}
 							business={undefined}
-							isMultisig={activeWallet?.isMultiSignature()}
+							isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
 							hasBridgechains={true}
-							hasSecondSignature={activeWallet?.isSecondSignature()}
+							hasSecondSignature={
+								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isSecondSignature()
+							}
 							hasPlugins={true}
 							onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
 							onRegister={() =>
