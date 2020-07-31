@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
+import electron from "electron";
+import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
@@ -8,7 +10,34 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "test
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
 
+
+jest.mock("electron", () => {
+	const setContentProtection = jest.fn();
+
+	return {
+		remote: {
+			dialog: {
+				showOpenDialog: jest.fn(),
+			},
+			getCurrentWindow: () => ({
+				setContentProtection,
+			}),
+		},
+	};
+});
+
+jest.mock("fs", () => ({
+	readFileSync: jest.fn(() => "avatarImage"),
+}));
+
+let env: Environment;
 let profile: Profile;
+let showOpenDialogMock: jest.SpyInstance;
+const showOpenDialogParams = {
+	defaultPath: os.homedir(),
+	properties: ["openFile"],
+	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+};
 
 describe("Settings", () => {
 	beforeAll(() => {
@@ -43,6 +72,17 @@ describe("Settings", () => {
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
+
+		// Upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: ["filePath"],
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 		// Select Language
@@ -80,6 +120,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile");
 		expect(savedProfile.settings().all()).toEqual({
+			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
@@ -92,6 +133,13 @@ describe("Settings", () => {
 			THEME: "light",
 			LEDGER_UPDATE_METHOD: true,
 		});
+
+		// Upload and remove avatar image
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__remove-avatar"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile 2" } });
 		// Toggle Dark Theme
@@ -111,6 +159,7 @@ describe("Settings", () => {
 		expect(onSubmit).toHaveBeenNthCalledWith(1, savedProfile);
 		expect(savedProfile.name()).toEqual("test profile 2");
 		expect(savedProfile.settings().all()).toEqual({
+			AVATAR: "",
 			NAME: "test profile 2",
 			LOCALE: "en-US",
 			BIP39_LOCALE: "chinese_simplified",
@@ -123,6 +172,17 @@ describe("Settings", () => {
 			THEME: "dark",
 			LEDGER_UPDATE_METHOD: true,
 		});
+
+		// Not upload avatar image
+		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
+			filePaths: undefined,
+		}));
+
+		await act(async () => {
+			fireEvent.click(getByTestId("General-settings__upload-button"));
+		});
+
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
 
 		// Open & close Advanced Mode Modal
 		fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));

@@ -532,18 +532,20 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-145-label downshift-145-toggle-button"
+
+                                  aria-labelledby="downshift-166-label downshift-166-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-145-toggle-button"
+                                  id="downshift-166-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-145-label"
+
+                                  aria-labelledby="downshift-166-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-145-menu"
+                                  id="downshift-166-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -1012,6 +1014,7 @@ exports[`Settings should render 1`] = `
                             >
                               <button
                                 class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                data-testid="General-settings__upload-button"
                                 type="button"
                               >
                                 <div
@@ -1021,28 +1024,6 @@ exports[`Settings should render 1`] = `
                                 >
                                   <svg>
                                     upload.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                            <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
-                            >
-                              <img
-                                alt="random avatar"
-                                class="object-cover rounded"
-                                src="https://randomuser.me/api/portraits/men/3.jpg"
-                              />
-                              <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-                              >
-                                <div
-                                  class="sc-AxirZ hDwaov"
-                                  height="12"
-                                  width="12"
-                                >
-                                  <svg>
-                                    close.svg
                                   </svg>
                                 </div>
                               </button>
@@ -3144,18 +3125,18 @@ exports[`Settings should render plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-138-label downshift-138-toggle-button"
+                                  aria-labelledby="downshift-159-label downshift-159-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-138-toggle-button"
+                                  id="downshift-159-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-138-label"
+                                  aria-labelledby="downshift-159-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-138-menu"
+                                  id="downshift-159-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3624,6 +3605,7 @@ exports[`Settings should submit using default props 1`] = `
                             >
                               <button
                                 class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                data-testid="General-settings__upload-button"
                                 type="button"
                               >
                                 <div
@@ -3633,28 +3615,6 @@ exports[`Settings should submit using default props 1`] = `
                                 >
                                   <svg>
                                     upload.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                            <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
-                            >
-                              <img
-                                alt="random avatar"
-                                class="object-cover rounded"
-                                src="https://randomuser.me/api/portraits/men/3.jpg"
-                              />
-                              <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-                              >
-                                <div
-                                  class="sc-AxirZ hDwaov"
-                                  height="12"
-                                  width="12"
-                                >
-                                  <svg>
-                                    close.svg
                                   </svg>
                                 </div>
                               </button>
@@ -3717,18 +3677,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-92-label downshift-92-toggle-button"
+                                  aria-labelledby="downshift-108-label downshift-108-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-92-toggle-button"
+                                  id="downshift-108-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-92-label"
+                                  aria-labelledby="downshift-108-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-92-menu"
+                                  id="downshift-108-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3778,18 +3738,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-93-label downshift-93-toggle-button"
+                                  aria-labelledby="downshift-109-label downshift-109-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-93-toggle-button"
+                                  id="downshift-109-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-93-label"
+                                  aria-labelledby="downshift-109-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-93-menu"
+                                  id="downshift-109-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3843,18 +3803,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-94-label downshift-94-toggle-button"
+                                  aria-labelledby="downshift-110-label downshift-110-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-94-toggle-button"
+                                  id="downshift-110-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-94-label"
+                                  aria-labelledby="downshift-110-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-94-menu"
+                                  id="downshift-110-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3904,18 +3864,19 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-95-label downshift-95-toggle-button"
+
+                                  aria-labelledby="downshift-111-label downshift-111-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-95-toggle-button"
+                                  id="downshift-111-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-95-label"
+                                  aria-labelledby="downshift-111-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-95-menu"
+                                  id="downshift-111-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3965,18 +3926,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-96-label downshift-96-toggle-button"
+                                  aria-labelledby="downshift-112-label downshift-112-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-96-toggle-button"
+                                  id="downshift-112-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-96-label"
+                                  aria-labelledby="downshift-112-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-96-menu"
+                                  id="downshift-112-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4242,18 +4203,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-97-label downshift-97-toggle-button"
+                                    aria-labelledby="downshift-113-label downshift-113-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-97-toggle-button"
+                                    id="downshift-113-toggle-button"
                                     type="button"
                                   >
                                     Select Auto-logoff
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-97-label"
+                                    aria-labelledby="downshift-113-label"
                                     class="sc-fzoiQi eFpDPy"
-                                    id="downshift-97-menu"
+                                    id="downshift-113-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4872,6 +4833,7 @@ exports[`Settings should update profile 1`] = `
                             >
                               <button
                                 class="flex items-center justify-center w-20 h-20 rounded-full bg-theme-primary-contrast"
+                                data-testid="General-settings__upload-button"
                                 type="button"
                               >
                                 <div
@@ -4881,28 +4843,6 @@ exports[`Settings should update profile 1`] = `
                                 >
                                   <svg>
                                     upload.svg
-                                  </svg>
-                                </div>
-                              </button>
-                            </div>
-                            <div
-                              class="relative w-24 h-24 rounded bg-theme-neutral-light"
-                            >
-                              <img
-                                alt="random avatar"
-                                class="object-cover rounded"
-                                src="https://randomuser.me/api/portraits/men/3.jpg"
-                              />
-                              <button
-                                class="absolute flex items-center justify-center w-6 h-6 p-1 rounded bg-theme-danger-contrast text-theme-danger -top-3 -right-3"
-                              >
-                                <div
-                                  class="sc-AxirZ hDwaov"
-                                  height="12"
-                                  width="12"
-                                >
-                                  <svg>
-                                    close.svg
                                   </svg>
                                 </div>
                               </button>
