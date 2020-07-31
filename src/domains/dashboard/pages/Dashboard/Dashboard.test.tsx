@@ -19,7 +19,7 @@ describe("Dashboard", () => {
 
 		nock("https://dwallets.ark.io")
 			.post("/api/transactions/search")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/transactions.json"))
+			.reply(200, require("tests/fixtures/coins/ark/transactions.json"))
 			.persist();
 	});
 

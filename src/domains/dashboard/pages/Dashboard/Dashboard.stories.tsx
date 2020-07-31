@@ -1,18 +1,12 @@
 import React from "react";
 
-import { balances, networks, portfolioPercentages, transactions, wallets } from "../../data";
+import { balances, networks, portfolioPercentages, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 export default { title: "Domains / Dashboard / Pages / Dashboard" };
 
 export const Default = () => (
-	<Dashboard
-		balances={balances}
-		networks={networks}
-		wallets={wallets}
-		transactions={transactions}
-		portfolioPercentages={portfolioPercentages}
-	/>
+	<Dashboard balances={balances} networks={networks} wallets={wallets} portfolioPercentages={portfolioPercentages} />
 );
 
 export const FewerWallets = () => (
@@ -20,7 +14,6 @@ export const FewerWallets = () => (
 		balances={balances}
 		networks={networks}
 		wallets={wallets.concat().splice(0, 2)}
-		transactions={transactions}
 		portfolioPercentages={portfolioPercentages}
 	/>
 );

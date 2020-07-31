@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
@@ -14,7 +15,6 @@ import { balances, portfolioPercentages, wallets } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
-	transactions?: any;
 	wallets?: any;
 	networks?: any;
 	portfolioPercentages?: any[];
@@ -23,7 +23,7 @@ type DashboardProps = {
 export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
-	const [allTransactions, setAllTransactions] = useState(undefined);
+	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -31,7 +31,7 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
 			const profileTransactions = await activeProfile?.transactionAggregate().transactions(1);
-			const allTransactions: any = profileTransactions?.all();
+			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.all();
 
 			return allTransactions && setAllTransactions(allTransactions);
 		};
@@ -40,7 +40,6 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 		fetchProfileTransactions();
 	}, [activeProfile]);
 
-	console.log({ allTransactions });
 	// Wallet controls data
 	const filterProperties = {
 		visibleTransactionsView: showTransactions,

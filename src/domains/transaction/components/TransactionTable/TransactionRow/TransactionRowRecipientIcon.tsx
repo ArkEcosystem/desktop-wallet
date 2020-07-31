@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -6,7 +7,7 @@ import React from "react";
 type Props = {
 	type: string;
 	recipient?: string;
-	recipients?: { amount: string; address: string }[];
+	recipients?: Contracts.MultiPaymentRecipient[];
 	className?: string;
 };
 
