@@ -85,7 +85,7 @@ describe("Contacts", () => {
 
 			expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-			act(() => {
+			await act(async () => {
 				fireEvent.change(getByTestId("contact-form__address-input"), {
 					target: { value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				});
@@ -97,7 +97,7 @@ describe("Contacts", () => {
 				fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
 			});
 
-			act(() => {
+			await act(async () => {
 				fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
 			});
 
@@ -149,13 +149,18 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
+		const deleteOption = getByTestId("dropdown__option--2");
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
-		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 	});
 
 	it("should close contact deletion modal", async () => {
@@ -178,17 +183,25 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
+		const deleteOption = getByTestId("dropdown__option--2");
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
 
-		waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
@@ -246,17 +259,17 @@ describe("Contacts", () => {
 		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 		expect(firstContactOptionsDropdown).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
 		expect(getByTestId("dropdown__options")).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("dropdown__option--1"));
 		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			expect(getByTestId("dropdown__options")).toBeFalsy();
 		});
 	});
@@ -277,20 +290,20 @@ describe("Contacts", () => {
 		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
 		expect(firstContactOptionsDropdown).toBeTruthy();
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
 		expect(getByTestId("dropdown__options")).toBeTruthy();
 		const deleteOption = getByTestId("dropdown__option--2");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(deleteOption);
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
