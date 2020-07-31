@@ -11,5 +11,6 @@ test("should delete profile from profile card menu", async (t) => {
 			translations().COMMON.DELETE,
 		),
 	);
+	await t.click(Selector('[data-testid="DeleteResource__submit-button"]'));
 	await t.expect(Selector('[data-testid="ProfileCard"]').exists).notOk();
 });

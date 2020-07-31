@@ -24,8 +24,8 @@ export const DeleteProfile = ({ isOpen, onClose, onCancel, onDelete, profileId }
 
 	return (
 		<DeleteResource
-			title={t("CONTACTS.MODAL_DELETE_PROFILE.TITLE")}
-			description={t("CONTACTS.MODAL_DELETE_PROFILE.DESCRIPTION")}
+			title={t("PROFILE.MODAL_DELETE_PROFILE.TITLE")}
+			description={t("PROFILE.MODAL_DELETE_PROFILE.DESCRIPTION")}
 			isOpen={isOpen}
 			onClose={onClose}
 			onCancel={onCancel}

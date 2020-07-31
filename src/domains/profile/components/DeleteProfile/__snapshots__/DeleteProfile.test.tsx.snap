@@ -40,7 +40,7 @@ exports[`DeleteProfile should render 1`] = `
       <h2
         class="mb-0 text-3xl font-bold"
       >
-        CONTACTS.MODAL_DELETE_PROFILE.TITLE
+        Delete Profile
       </h2>
       <div
         class="flex-1"
@@ -53,7 +53,7 @@ exports[`DeleteProfile should render 1`] = `
         <div
           class="mt-1 text-theme-neutral-dark"
         >
-          CONTACTS.MODAL_DELETE_PROFILE.DESCRIPTION
+          Do you really want to delete this profile? Once deleted, you will not be able to restore it.
         </div>
         <div
           class="flex justify-end mt-8 space-x-3"
