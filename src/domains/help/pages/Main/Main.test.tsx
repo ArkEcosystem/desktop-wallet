@@ -13,11 +13,9 @@ const history = createMemoryHistory();
 const supportURL = `/profiles/${getDefaultProfileId()}/support`;
 
 describe("SupportPage", () => {
-	beforeAll(() => {
-		beforeAll(async () => {
-			await env.bootFromObject(fixtureData);
-			await env.persist();
-		});
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		await env.persist();
 		history.push(supportURL);
 	});
 

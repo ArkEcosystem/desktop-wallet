@@ -29,7 +29,7 @@ describe("PluginsCategory", () => {
 		useDefaultNetMocks();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		await env.bootFromObject(fixtureData);
 		await env.persist();
 
