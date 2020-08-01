@@ -72,13 +72,13 @@ type UserInfoProps = {
 	userInitials?: string;
 };
 
-const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions }: UserInfoProps) => (
+const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
 	<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
 			<div className="cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-1 border-theme-neutral-300" size="lg">
+				<Circle className="-mr-2 border-theme-neutral-300" size="lg">
 					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
 				{avatarImage?.endsWith("</svg>") ? (
@@ -88,6 +88,7 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions }: User
 							src={`data:image/svg+xml;utf8,${avatarImage}`}
 							alt="Profile avatar"
 						/>
+						<span className="absolute text-sm font-semibold text-theme-background">{userInitials}</span>
 						<Badge
 							className={`transform ${
 								isOpen ? "rotate-180" : ""
@@ -158,7 +159,7 @@ export const NavigationBar = ({
 
 	const getUserInitials = () => {
 		const name = profile?.settings().get(ProfileSetting.Name);
-		return name ? (name as string).slice(0, 2) : undefined;
+		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
 	const getCurrencyIcon = () => {
