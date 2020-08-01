@@ -11,7 +11,7 @@ import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -31,8 +31,9 @@ type PluginManagerProps = {
 const { PluginManagerHomeBanner } = images.plugin.pages.PluginManager;
 
 const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManagerHomeProps) => {
-	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
 	const history = useHistory();
 
 	const handleSelectPlugin = (pluginId: string) =>
@@ -151,9 +152,9 @@ const PluginManagerHome = ({ onDelete, onInstall, viewType, paths }: PluginManag
 export const PluginManager = ({ paths }: PluginManagerProps) => {
 	const { t } = useTranslation();
 
-	const [currentView, setCurrentView] = React.useState("home");
-	const [viewType, setViewType] = React.useState("grid");
-	const [installPlugin, setInstallPlugin] = React.useState(false);
+	const [currentView, setCurrentView] = useState("home");
+	const [viewType, setViewType] = useState("grid");
+	const [installPlugin, setInstallPlugin] = useState(false);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 
@@ -190,7 +191,7 @@ export const PluginManager = ({ paths }: PluginManagerProps) => {
 
 	return (
 		<>
-			<Page>
+			<Page profile={activeProfile}>
 				<Section>
 					<Header
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}

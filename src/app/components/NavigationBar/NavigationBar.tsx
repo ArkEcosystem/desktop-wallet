@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Badge } from "app/components/Badge";
 import { Button } from "app/components/Button";
@@ -7,10 +7,10 @@ import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Notifications } from "app/components/Notifications";
 import { Action, NotificationsProps } from "app/components/Notifications/models";
-import { useActiveProfile } from "app/hooks/env";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, useHistory } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
@@ -24,12 +24,10 @@ type MenuItem = {
 };
 
 type NavigationBarProps = {
+	profile?: Profile;
 	menu?: MenuItem[];
 	userActions?: Action[];
-	userInitials?: string;
 	avatarImage?: string;
-	currencyIcon: string;
-	balance?: string;
 	notifications?: any;
 	onUserAction?: any;
 	onNotificationAction?: any;
@@ -49,12 +47,12 @@ const NotificationsDropdown = ({
 }: NotificationsProps) => (
 	<Dropdown
 		toggleContent={
-			<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+			<div className="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer">
 				<Icon name="Notification" width={22} height={22} />
 			</div>
 		}
 	>
-		<div className="p-8 py-3 mt-2 w-128">
+		<div className="w-128 p-8 py-3 mt-2">
 			<Notifications
 				pluginsHeader={pluginsHeader}
 				plugins={plugins}
@@ -66,21 +64,27 @@ const NotificationsDropdown = ({
 	</Dropdown>
 );
 
-const UserInfo = ({ currencyIcon, avatarImage, userActions, onUserAction }: NavigationBarProps) => (
+type UserInfoProps = {
+	avatarImage?: string;
+	currencyIcon?: string;
+	onUserAction?: any;
+	userActions?: Action[];
+	userInitials?: string;
+};
+
+const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions }: UserInfoProps) => (
 	<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
 			<div className="cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-2 border-theme-neutral-300" size="lg">
-					<span className="text-theme-neutral-600">
-						<Icon name={currencyIcon} />
-					</span>
+				<Circle className="border-theme-neutral-300 -mr-1" size="lg">
+					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
 				{avatarImage?.endsWith("</svg>") ? (
 					<div className="relative inline-flex items-center justify-center align-middle rounded-full">
 						<img
-							className="rounded-full w-11 h-11"
+							className="w-11 h-11 rounded-full"
 							src={`data:image/svg+xml;utf8,${avatarImage}`}
 							alt="Profile avatar"
 						/>
@@ -95,9 +99,9 @@ const UserInfo = ({ currencyIcon, avatarImage, userActions, onUserAction }: Navi
 						/>
 					</div>
 				) : (
-					<div className="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11">
+					<div className="bg-theme-neutral-contrast w-11 h-11 relative inline-flex items-center justify-center align-middle rounded-full">
 						<img
-							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+							className="w-11 h-11 object-cover bg-center bg-no-repeat bg-cover rounded-full"
 							src={avatarImage}
 							alt="Profile avatar"
 						/>
@@ -118,24 +122,21 @@ const UserInfo = ({ currencyIcon, avatarImage, userActions, onUserAction }: Navi
 );
 
 export const NavigationBar = ({
+	profile,
 	menu,
 	userActions,
-	userInitials,
-	balance,
-	currencyIcon,
 	notifications,
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
-	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
 
 	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
 	const [receiveFundsIsOpen, setReceiveFundsIsOpen] = useState(false);
 
-	const avatarImage = activeProfile?.settings().get(ProfileSetting.Avatar) || activeProfile?.avatar();
-
 	const renderMenu = () => {
-		if (!activeProfile?.id()) {
+		if (!profile?.id()) {
 			return null;
 		}
 
@@ -144,9 +145,9 @@ export const NavigationBar = ({
 			menu.map((menuItem: any, index: number) => (
 				<li key={index} className="flex">
 					<NavLink
-						to={menuItem.mountPath(activeProfile.id())}
+						to={menuItem.mountPath(profile.id())}
 						title={menuItem.title}
-						className="flex items-center mx-4 font-bold text-md text-theme-neutral"
+						className="text-md text-theme-neutral flex items-center mx-4 font-bold"
 					>
 						{menuItem.title}
 					</NavLink>
@@ -155,39 +156,57 @@ export const NavigationBar = ({
 		);
 	};
 
+	const getUserInitials = () => {
+		const name = profile?.settings().get(ProfileSetting.Name);
+		return name ? (name as string).slice(0, 2) : undefined;
+	};
+
+	const getCurrencyIcon = () => {
+		// TODO get full name from SDK
+		const currencyIcons: Record<string, string> = {
+			btc: "Bitcoin",
+			eth: "Ethereum",
+		};
+
+		const currency = profile?.settings().get(ProfileSetting.ExchangeCurrency);
+
+		return currency ? currencyIcons[(currency as string).toLowerCase()] : undefined;
+	};
+
 	const handleSearchWallet = () => {
 		setIsSearchingWallet(false);
 
 		return setReceiveFundsIsOpen(true);
 	};
+
 	return (
 		<NavWrapper aria-labelledby="main menu">
-			<div className="px-4 sm:px-6 lg:px-">
-				<div className="relative flex justify-between h-20 md:h-24">
+			<div className="sm:px-6 lg:px- px-4">
+				<div className="md:h-24 relative flex justify-between h-20">
 					<div className="flex items-center flex-shrink-0">
-						<div className="flex p-2 mr-4 rounded-lg bg-logo">
-							<img src={commonAssets.ARKLogo} className="h-6 md:h-8 lg:h-10" alt="ARK Logo" />
+						<div className="bg-logo flex p-2 mr-4 rounded-lg">
+							<img src={commonAssets.ARKLogo} className="md:h-8 lg:h-10 h-6" alt="ARK Logo" />
 						</div>
-						<ul className="flex h-20 md:h-24">{renderMenu()}</ul>
+						<ul className="md:h-24 flex h-20">{renderMenu()}</ul>
 					</div>
 
 					<div className="flex items-center">
 						<NotificationsDropdown {...notifications} onAction={onNotificationAction} />
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="border-theme-neutral-200 h-8 border-r" />
 
-						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+						<div className="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer">
 							<NavLink
-								to={`/profiles/${activeProfile?.id()}/transactions/transfer`}
+								to={`/profiles/${profile?.id()}/transactions/transfer`}
 								data-testid="navbar__buttons--send"
 							>
 								<Icon name="Sent" width={22} height={22} />
 							</NavLink>
 						</div>
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="border-theme-neutral-200 h-8 border-r" />
 
-						<div className="flex items-center h-full px-6 cursor-pointer text-theme-primary-300">
+						<div className="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer">
 							<Button
 								variant="transparent"
 								onClick={() => setIsSearchingWallet(true)}
@@ -197,20 +216,22 @@ export const NavigationBar = ({
 							</Button>
 						</div>
 
-						<div className="h-8 border-r border-theme-neutral-200" />
+						<div className="border-theme-neutral-200 h-8 border-r" />
 
 						<div className="p-2 ml-4 text-right">
-							<div className="text-xs text-theme-neutral">Your balance</div>
-							<div className="text-sm font-bold text-theme-neutral-dark">{balance}</div>
+							<div className="text-theme-neutral text-xs">{t("COMMON.YOUR_BALANCE")}</div>
+							<div className="text-theme-neutral-dark text-sm font-bold">
+								{profile?.balance().toString()}
+							</div>
 						</div>
 
-						<div className="flex p-1 cusror-pointer">
+						<div className="cusror-pointer flex p-1">
 							<UserInfo
-								currencyIcon={currencyIcon}
-								userInitials={userInitials}
-								avatarImage={avatarImage as string}
+								userInitials={getUserInitials()}
+								currencyIcon={getCurrencyIcon()}
+								avatarImage={profile?.avatar()}
 								userActions={userActions}
-								onUserAction={(action: any) => history.push(action.mountPath(activeProfile?.id()))}
+								onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
 							/>
 						</div>
 					</div>
@@ -227,7 +248,6 @@ export const NavigationBar = ({
 };
 
 NavigationBar.defaultProps = {
-	currencyIcon: "Bitcoin",
 	notifications: {
 		transactionsHeader: "Transactions",
 		transactions: [],

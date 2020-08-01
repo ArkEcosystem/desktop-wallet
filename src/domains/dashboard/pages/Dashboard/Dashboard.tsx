@@ -23,8 +23,10 @@ type DashboardProps = {
 export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
+
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
@@ -58,7 +60,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	];
 
 	return (
-		<Page>
+		<Page profile={activeProfile}>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
@@ -76,7 +78,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
 					viewType="grid"
-					title="Wallets"
+					title={t("COMMON.WALLETS")}
 					wallets={wallets}
 					filterProperties={filterProperties}
 				/>
