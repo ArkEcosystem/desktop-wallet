@@ -238,18 +238,19 @@ exports[`Dashboard should render 1`] = `
             >
               <div>
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <div
                     class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
                   >
                     <div
-                      class="flex"
+                      class="flex items-center"
                     >
                       <div
-                        class="my-auto"
+                        class="my-auto text-base"
                       >
-                        Period: 
+                        Period
+                        : 
                         22 Jun - 28 Jun
                       </div>
                       <div
@@ -268,21 +269,21 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1"
+                    class="flex justify-end flex-1 space-x-3"
                   >
                     <div
-                      class="my-auto ml-3 text-sm text-theme-neutral-600"
+                      class="my-auto text-sm text-theme-neutral-600 text-base"
                     >
                       28 Jun, 2020
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           2.16
@@ -292,13 +293,13 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           8,000
@@ -333,74 +334,82 @@ exports[`Dashboard should render 1`] = `
           />
           <div>
             <div
-              class="flex"
+              class="flex space-x-3"
             >
               <div
-                class="py-4 font-bold text-theme-neutral-800"
+                class="py-4 font-bold text-theme-neutral-800 text-lg"
               >
                 Total portfolio
               </div>
               <div
-                class="flex justify-end flex-1"
+                class="flex justify-end flex-1 space-x-3"
               >
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ARK
-                     - 
-                    40
-                    %
+                    <span>
+                      ARK
+                       - 
+                      40
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    BTC
-                     - 
-                    25
-                    %
+                    <span>
+                      BTC
+                       - 
+                      25
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ETH
-                     - 
-                    20
-                    %
+                    <span>
+                      ETH
+                       - 
+                      20
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    Other
-                     - 
-                    15
-                    %
+                    <span>
+                      Other
+                       - 
+                      15
+                      %
+                    </span>
                   </div>
                 </div>
               </div>
@@ -3328,18 +3337,19 @@ exports[`Dashboard should render portfolio chart 1`] = `
             >
               <div>
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <div
                     class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
                   >
                     <div
-                      class="flex"
+                      class="flex items-center"
                     >
                       <div
-                        class="my-auto"
+                        class="my-auto text-base"
                       >
-                        Period: 
+                        Period
+                        : 
                         22 Jun - 28 Jun
                       </div>
                       <div
@@ -3358,21 +3368,21 @@ exports[`Dashboard should render portfolio chart 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1"
+                    class="flex justify-end flex-1 space-x-3"
                   >
                     <div
-                      class="my-auto ml-3 text-sm text-theme-neutral-600"
+                      class="my-auto text-sm text-theme-neutral-600 text-base"
                     >
                       28 Jun, 2020
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           2.16
@@ -3382,13 +3392,13 @@ exports[`Dashboard should render portfolio chart 1`] = `
                       </div>
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           8,000
@@ -3423,74 +3433,82 @@ exports[`Dashboard should render portfolio chart 1`] = `
           />
           <div>
             <div
-              class="flex"
+              class="flex space-x-3"
             >
               <div
-                class="py-4 font-bold text-theme-neutral-800"
+                class="py-4 font-bold text-theme-neutral-800 text-lg"
               >
                 Total portfolio
               </div>
               <div
-                class="flex justify-end flex-1"
+                class="flex justify-end flex-1 space-x-3"
               >
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ARK
-                     - 
-                    40
-                    %
+                    <span>
+                      ARK
+                       - 
+                      40
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    BTC
-                     - 
-                    25
-                    %
+                    <span>
+                      BTC
+                       - 
+                      25
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ETH
-                     - 
-                    20
-                    %
+                    <span>
+                      ETH
+                       - 
+                      20
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    Other
-                     - 
-                    15
-                    %
+                    <span>
+                      Other
+                       - 
+                      15
+                      %
+                    </span>
                   </div>
                 </div>
               </div>
@@ -6418,18 +6436,19 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
             >
               <div>
                 <div
-                  class="flex"
+                  class="flex space-x-3"
                 >
                   <div
                     class="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
                   >
                     <div
-                      class="flex"
+                      class="flex items-center"
                     >
                       <div
-                        class="my-auto"
+                        class="my-auto text-base"
                       >
-                        Period: 
+                        Period
+                        : 
                         22 Jun - 28 Jun
                       </div>
                       <div
@@ -6448,21 +6467,21 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex justify-end flex-1"
+                    class="flex justify-end flex-1 space-x-3"
                   >
                     <div
-                      class="my-auto ml-3 text-sm text-theme-neutral-600"
+                      class="my-auto text-sm text-theme-neutral-600 text-base"
                     >
                       28 Jun, 2020
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           2.16
@@ -6472,13 +6491,13 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                       </div>
                     </div>
                     <div
-                      class="w-32 p-4 pt-4 pr-0 ml-3 text-right"
+                      class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
                     >
                       <div
-                        class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
+                        class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-success-600"
                       />
                       <div
-                        class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                        class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                       >
                         <span>
                           8,000
@@ -6513,74 +6532,82 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
           />
           <div>
             <div
-              class="flex"
+              class="flex space-x-3"
             >
               <div
-                class="py-4 font-bold text-theme-neutral-800"
+                class="py-4 font-bold text-theme-neutral-800 text-lg"
               >
                 Total portfolio
               </div>
               <div
-                class="flex justify-end flex-1"
+                class="flex justify-end flex-1 space-x-3"
               >
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ARK
-                     - 
-                    40
-                    %
+                    <span>
+                      ARK
+                       - 
+                      40
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    BTC
-                     - 
-                    25
-                    %
+                    <span>
+                      BTC
+                       - 
+                      25
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    ETH
-                     - 
-                    20
-                    %
+                    <span>
+                      ETH
+                       - 
+                      20
+                      %
+                    </span>
                   </div>
                 </div>
                 <div
-                  class="py-4 pl-6 pr-0 ml-3"
+                  class="flex items-center justify-end py-4 pl-6 pr-0"
                 >
                   <div
-                    class="mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
+                    class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"
                   />
                   <div
-                    class="inline-block text-sm font-semibold text-theme-neutral-dark"
+                    class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
                   >
-                    Other
-                     - 
-                    15
-                    %
+                    <span>
+                      Other
+                       - 
+                      15
+                      %
+                    </span>
                   </div>
                 </div>
               </div>

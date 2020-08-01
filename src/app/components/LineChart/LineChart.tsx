@@ -1,5 +1,6 @@
 import { SvgCollection } from "app/assets/svg";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CartesianGrid, Line, LineChart as RechartsLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { styled } from "twin.macro";
 
@@ -42,40 +43,46 @@ const Dot = ({ cx, cy, index }: any) => (
 	/>
 );
 
-const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => (
-	<div>
-		<div className="flex">
-			{period && (
-				<div
-					className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
-					onClick={onPeriodClick}
-				>
-					<div className="flex">
-						<div className="my-auto">Period: {period}</div>
-						<div className="my-auto ml-1">
-							<Icon name="ChevronDown" />
-						</div>
-					</div>
-				</div>
-			)}
-			<div className="flex justify-end flex-1">
-				{legend && <div className="my-auto ml-3 text-sm text-theme-neutral-600">{legend?.label}</div>}
-				{lines &&
-					lines.map((item: any, index: number) => (
-						<div key={index} className="w-32 p-4 pt-4 pr-0 ml-3 text-right">
-							<div
-								className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
-							/>
-							<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
-								{legend.formatted[item.dataKey] && <span>{legend.formatted[item.dataKey]} - </span>}
-								{item.label}
+const ChartLegend = ({ legend = {}, lines, period, onPeriodClick }: any) => {
+	const { t } = useTranslation();
+
+	return (
+		<div>
+			<div className="flex space-x-3">
+				{period && (
+					<div
+						className="pt-4 text-sm font-semibold cursor-pointer text-theme-neutral-dark"
+						onClick={onPeriodClick}
+					>
+						<div className="flex items-center">
+							<div className="my-auto text-base">
+								{t("COMMON.PERIOD")}: {period}
+							</div>
+							<div className="my-auto ml-1">
+								<Icon name="ChevronDown" />
 							</div>
 						</div>
-					))}
+					</div>
+				)}
+				<div className="flex justify-end flex-1 space-x-3">
+					{legend && <div className="my-auto text-sm text-theme-neutral-600 text-base">{legend?.label}</div>}
+					{lines &&
+						lines.map((item: any, index: number) => (
+							<div key={index} className="flex items-center justify-end min-w-32 p-4 pt-4 pr-0">
+								<div
+									className={`mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
+								/>
+								<div className="inline-block text-sm font-semibold text-theme-neutral-dark text-base">
+									{legend.formatted[item.dataKey] && <span>{legend.formatted[item.dataKey]} - </span>}
+									{item.label}
+								</div>
+							</div>
+						))}
+				</div>
 			</div>
 		</div>
-	</div>
-);
+	);
+};
 
 const Wrapper = styled.div`
 	${chartStyles}

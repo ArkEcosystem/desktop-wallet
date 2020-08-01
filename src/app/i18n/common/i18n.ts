@@ -91,6 +91,7 @@ export const translations: { [key: string]: any } = {
 	OPEN: "Open",
 	OTHER: "Other",
 	PAGE: "Page",
+	PERIOD: "Period",
 	PLUGIN: "Plugin",
 	PLUGINS: "Plugins",
 	PROFILE: "Profile",
