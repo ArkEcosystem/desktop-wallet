@@ -1,40 +1,15 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
-import nock from "nock";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, renderWithRouter } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, renderWithRouter } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 let profile: Profile;
-let dashboardURL: string;
 
 describe("NavigationBar", () => {
-	beforeAll(async () => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
+	beforeAll(() => {
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 	});
 
 	it("should render", () => {

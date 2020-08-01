@@ -60,7 +60,7 @@ describe("Settings", () => {
 
 	it("should update profile", async () => {
 		let savedProfile: any = null;
-		const profilesCount = env.profiles().all().length;
+		const profilesCount = env.profiles().count();
 
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
@@ -190,7 +190,7 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("modal__close-btn"));
 
-		expect(env.profiles().all().length).toEqual(profilesCount);
+		expect(env.profiles().count()).toEqual(profilesCount);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -58,7 +58,7 @@ export const AddRecipient = ({
 	availableAmount,
 	assetSymbol,
 	isSingleRecipient,
-	contacts,
+	profile,
 	recipients,
 	onChange,
 }: AddRecipientProps) => {
@@ -117,7 +117,7 @@ export const AddRecipient = ({
 						<SelectRecipient
 							address={recipientAddress as any}
 							ref={register}
-							contacts={contacts}
+							profile={profile}
 							onChange={(address: any) => setValue("recipientAddress", address)}
 						/>
 					</FormField>

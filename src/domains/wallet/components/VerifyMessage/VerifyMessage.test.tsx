@@ -1,16 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, getDefaultProfileId, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { VerifyMessage } from "./VerifyMessage";
 
-let env: Environment;
 let wallet: Wallet;
 let profile: Profile;
 let signedMessage: any;
@@ -19,12 +14,6 @@ let signedMessageMnemonic: string;
 
 describe("VerifyMessage", () => {
 	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject(fixtureData);
-
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
@@ -39,14 +28,12 @@ describe("VerifyMessage", () => {
 
 	it("should render", () => {
 		const { container, asFragment } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		expect(container).toBeTruthy();
@@ -55,14 +42,12 @@ describe("VerifyMessage", () => {
 
 	it("should render the non verify address content", () => {
 		const { asFragment, getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const verifyAddressToggle = getByTestId("verify-address__toggle");
@@ -74,59 +59,53 @@ describe("VerifyMessage", () => {
 	});
 
 	it("should open verify message modal and cancel", () => {
-		const fn = jest.fn();
+		const onCancel = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onCancel={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onCancel={onCancel}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const cancelButton = getByTestId("VerifyMessage__cancel");
 		act(() => {
 			fireEvent.click(cancelButton);
 		});
-		expect(fn).toBeCalled();
+		expect(onCancel).toBeCalled();
 	});
 
 	it("should open verify message modal and close modal", () => {
-		const fn = jest.fn();
+		const onClose = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onClose={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onClose={onClose}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const closeButton = getByTestId("modal__close-btn");
 		act(() => {
 			fireEvent.click(closeButton);
 		});
-		expect(fn).toBeCalled();
+		expect(onClose).toBeCalled();
 	});
 
 	it("should not verify if empty inputs", async () => {
-		const fn = jest.fn();
+		const onSubmit = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onSubmit={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onSubmit={onSubmit}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const submitButton = getByTestId("VerifyMessage__submit");
@@ -135,22 +114,20 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalledWith(false);
+			expect(onSubmit).toBeCalledWith(false);
 		});
 	});
 
 	it("should verify message ", async () => {
-		const fn = jest.fn();
+		const onSubmit = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onSubmit={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onSubmit={onSubmit}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const verifyAddressToggle = getByTestId("verify-address__toggle");
@@ -176,22 +153,20 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalledWith(true);
+			expect(onSubmit).toBeCalledWith(true);
 		});
 	});
 
 	it("should verify message using json", async () => {
-		const fn = jest.fn();
+		const onSubmit = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onSubmit={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onSubmit={onSubmit}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const submitButton = getByTestId("VerifyMessage__submit");
@@ -208,7 +183,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalledWith(true);
+			expect(onSubmit).toBeCalledWith(true);
 			expect(getByTestId("modal__inner")).toBeTruthy();
 		});
 
@@ -218,17 +193,15 @@ describe("VerifyMessage", () => {
 	});
 
 	it("should not verify message using invalid json", async () => {
-		const fn = jest.fn();
+		const onSubmit = jest.fn();
 		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<VerifyMessage
-					isOpen={true}
-					onSubmit={fn}
-					signatory={signedMessage.signatory}
-					walletId={wallet.id()}
-					profileId={profile.id()}
-				/>
-			</EnvironmentProvider>,
+			<VerifyMessage
+				isOpen={true}
+				onSubmit={onSubmit}
+				signatory={signedMessage.signatory}
+				walletId={wallet.id()}
+				profileId={profile.id()}
+			/>,
 		);
 
 		const submitButton = getByTestId("VerifyMessage__submit");
@@ -243,7 +216,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalledWith(false);
+			expect(onSubmit).toBeCalledWith(false);
 		});
 	});
 });

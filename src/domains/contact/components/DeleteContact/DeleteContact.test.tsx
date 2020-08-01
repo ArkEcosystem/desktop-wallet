@@ -1,5 +1,4 @@
 import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { contacts } from "domains/contact/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
@@ -14,14 +13,16 @@ const onDelete = jest.fn();
 describe("DeleteContact", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		contact = profile.contacts().values()[0];
+	});
 
-		const firstContact = contacts[0];
-		contact = profile.contacts().create(firstContact.name());
+	afterEach(() => {
+		onDelete.mockRestore();
 	});
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<DeleteContact isOpen={false} onDelete={onDelete} profileId="1" />,
+			<DeleteContact isOpen={false} onDelete={onDelete} profile={profile} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -30,7 +31,7 @@ describe("DeleteContact", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<DeleteContact isOpen={true} onDelete={onDelete} profileId="1" />,
+			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
@@ -40,7 +41,7 @@ describe("DeleteContact", () => {
 
 	it("should delete contact", async () => {
 		const { getByTestId } = renderWithRouter(
-			<DeleteContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contactId={contact.id()} />,
+			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contactId={contact.id()} />,
 		);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
 
@@ -53,16 +54,13 @@ describe("DeleteContact", () => {
 	});
 
 	it("should not emit onDelete if contactId is not provided", () => {
-		const fn = jest.fn();
-		const { getByTestId } = renderWithRouter(
-			<DeleteContact isOpen={true} onDelete={fn} profileId={profile.id()} />,
-		);
+		const { getByTestId } = renderWithRouter(<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
 
 		act(() => {
 			fireEvent.click(deleteBtn);
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(onDelete).not.toBeCalled();
 	});
 });
