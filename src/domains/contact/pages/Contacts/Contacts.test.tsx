@@ -1,46 +1,19 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
-import nock from "nock";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter, waitFor, within } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { contacts } from "../../data";
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
-let env: Environment;
 let profile: Profile;
 let firstContactId: string;
 
 describe("Contacts", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject(fixtureData);
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
 
 		// Add all used contacts in page to profile,
 		// to retrieve id and perform deletion tests.
@@ -55,11 +28,9 @@ describe("Contacts", () => {
 
 	it("should render empty", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -74,11 +45,9 @@ describe("Contacts", () => {
 
 	it("should render with contacts", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -97,12 +66,10 @@ describe("Contacts", () => {
 		["cancel", "contact-form__cancel-btn"],
 		["save", "contact-form__save-btn"],
 	])("should open & close add contact modal (%s)", async (_, buttonId) => {
-		const { getAllByTestId, getByTestId, queryByTestId, debug } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={[]} />
-				</Route>
-			</EnvironmentProvider>,
+		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={[]} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -118,7 +85,7 @@ describe("Contacts", () => {
 
 			expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-			act(() => {
+			await act(async () => {
 				fireEvent.change(getByTestId("contact-form__address-input"), {
 					target: { value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				});
@@ -130,7 +97,7 @@ describe("Contacts", () => {
 				fireEvent.change(assetInput, { target: { value: "Ark Devnet" } });
 			});
 
-			act(() => {
+			await act(async () => {
 				fireEvent.keyDown(assetInput, { key: "Enter", code: 13 });
 			});
 
@@ -164,11 +131,9 @@ describe("Contacts", () => {
 
 	it("should open delete contact modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -184,22 +149,25 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
+		const deleteOption = getByTestId("dropdown__option--2");
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
-		expect(getByTestId("modal__inner")).toBeTruthy();
+
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 	});
 
 	it("should close contact deletion modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -215,27 +183,33 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
+		const deleteOption = getByTestId("dropdown__option--2");
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
+		});
+
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
 	it("should cancel contact deletion modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -264,18 +238,16 @@ describe("Contacts", () => {
 			fireEvent.click(getByTestId("DeleteResource__cancel-button"));
 		});
 
-		waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeFalsy();
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
 	it("ignore random contact item action", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -291,24 +263,24 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__option--1"));
 		});
 
-		waitFor(() => {
-			expect(getByTestId("dropdown__options")).toBeFalsy();
+		await waitFor(() => {
+			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
 	it("should delete contact from modal", async () => {
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/contacts/">
-					<Contacts contacts={contacts} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/contacts/">
+				<Contacts contacts={contacts} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/contacts`],
 			},
@@ -324,19 +296,25 @@ describe("Contacts", () => {
 			fireEvent.click(firstContactOptionsDropdown);
 		});
 
-		expect(getByTestId("dropdown__options")).toBeTruthy();
-		const deleteOption = getByTestId("dropdown__option--2");
+		await waitFor(() => {
+			expect(getByTestId("dropdown__options")).toBeTruthy();
+		});
 
+		const deleteOption = getByTestId("dropdown__option--2");
 		act(() => {
 			fireEvent.click(deleteOption);
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		expect(() => profile.contacts().findById(firstContactId)).toThrowError("Failed to find");
+		await waitFor(() => {
+			expect(() => profile.contacts().findById(firstContactId)).toThrowError("Failed to find");
+		});
 	});
 });

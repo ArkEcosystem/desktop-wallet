@@ -1,51 +1,24 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
-import nock from "nock";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
-import { profiles } from "tests/fixtures/env/data.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
-let env: Environment;
 let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeAll(() => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-			.reply(200, require("../../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-	});
-
 	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject({ data: {}, profiles });
-		profile = env.profiles().findById("bob");
-
+		profile = env.profiles().findById(getDefaultProfileId());
 		updatingContact = profile.contacts().create("Test");
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<UpdateContact
 				profileId={profile.id()}
 				isOpen={false}
@@ -59,7 +32,7 @@ describe("UpdateContact", () => {
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<UpdateContact profileId={profile.id()} isOpen={true} contact={updatingContact} />,
 		);
 
@@ -68,10 +41,8 @@ describe("UpdateContact", () => {
 	});
 
 	it("should display contact info in form", () => {
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} profileId={profile.id()} contact={updatingContact} />
-			</EnvironmentProvider>,
+		const { getByTestId } = renderWithRouter(
+			<UpdateContact isOpen={true} profileId={profile.id()} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -80,7 +51,7 @@ describe("UpdateContact", () => {
 
 	it("should cancel contact update", async () => {
 		const fn = jest.fn();
-		const { getByTestId } = render(
+		const { getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<UpdateContact isOpen={true} onCancel={fn} profileId={profile.id()} contact={updatingContact} />
 			</EnvironmentProvider>,
@@ -100,7 +71,7 @@ describe("UpdateContact", () => {
 
 	it("should delete contact", async () => {
 		const onDelete = jest.fn();
-		const { getByTestId } = render(
+		const { getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>
 				<UpdateContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contact={updatingContact} />
 			</EnvironmentProvider>,
@@ -134,20 +105,18 @@ describe("UpdateContact", () => {
 		const newAddress = {
 			name: "Test Address",
 			network: "devnet",
-			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
 		};
 
-		const { getByTestId, queryByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact
-					isOpen={true}
-					onSave={onSaveAddress}
-					profileId={profile.id()}
-					contact={contactToUpdate}
-					networks={availableNetworksMock}
-				/>
-			</EnvironmentProvider>,
+		const { getByTestId, queryByTestId } = renderWithRouter(
+			<UpdateContact
+				isOpen={true}
+				onSave={onSaveAddress}
+				profileId={profile.id()}
+				contact={contactToUpdate}
+				networks={availableNetworksMock}
+			/>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");

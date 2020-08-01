@@ -5,11 +5,11 @@ import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { fireEvent, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
 
 import { FirstStep, FourthStep, SecondStep, SendVoteTransaction, ThirdStep } from "../SendVoteTransaction";
 
 const onCopy = jest.fn();
+const voteURL = `/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/vote`;
 
 describe("Vote For Delegate", () => {
 	it("should render 1st step", async () => {
@@ -31,7 +31,7 @@ describe("Vote For Delegate", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.each(["mnemonic", "password", "ledger"])("should render 3rd step", async (passwordType) => {
+	it.each(["mnemonic", "password", "ledger"])("should render 3rd step", async (passwordType: any) => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(<ThirdStep form={form} passwordType={passwordType} />);
 
@@ -54,8 +54,6 @@ describe("Vote For Delegate", () => {
 
 	it("should render", async () => {
 		const history = createMemoryHistory();
-		const voteURL = `/profiles/${identity.profiles.bob.id}/transactions/vote`;
-
 		history.push(voteURL);
 
 		let rendered: RenderResult;
@@ -63,7 +61,7 @@ describe("Vote For Delegate", () => {
 		await act(async () => {
 			rendered = renderWithRouter(
 				<Route path="/profiles/:profileId/transactions/vote">
-					<SendVoteTransaction onCopy={onCopy} />
+					<SendVoteTransaction onCopy={onCopy} onSubmit={() => null} />
 				</Route>,
 				{
 					routes: [voteURL],

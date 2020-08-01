@@ -16,7 +16,7 @@ describe("SendTransactionForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should select sender and recipient", () => {
+	it("should select sender and recipient", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<SendTransactionForm wallets={wallets} contacts={contacts} networks={networks} />,
 		);
@@ -26,8 +26,9 @@ describe("SendTransactionForm", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const firstAddress = getByTestId("AddressListItem__select-0");
 
@@ -35,9 +36,9 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(
+		await waitFor(
 			() => {
-				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+				expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 			},
 			{ timeout: 2000 },
 		);
@@ -50,8 +51,9 @@ describe("SendTransactionForm", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-contact"));
 		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const address = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
@@ -59,9 +61,9 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(address);
 		});
 
-		waitFor(
+		await waitFor(
 			() => {
-				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
+				expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 			},
 			{ timeout: 2000 },
 		);
@@ -69,13 +71,14 @@ describe("SendTransactionForm", () => {
 		expect(getByTestId("SelectRecipient__input")).toHaveValue(recipientSelectedAddress);
 	});
 
-	it("should set available amount", () => {
+	it("should set available amount", async () => {
 		const { getByTestId, container } = render(
 			<SendTransactionForm wallets={wallets} contacts={contacts} maxAvailableAmount={100} />,
 		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
-		act(() => {
+
+		await act(async () => {
 			fireEvent.click(sendAll);
 		});
 
@@ -83,20 +86,20 @@ describe("SendTransactionForm", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should emit goBack button click", () => {
+	it("should emit goBack button click", async () => {
 		// Select network to enable buttons
 		const fn = jest.fn();
 		const { getByTestId } = render(<SendTransactionForm onBack={fn} contacts={contacts} networks={networks} />);
 		const backBtn = getByTestId("send-transaction-click-back");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(backBtn);
 		});
 
 		expect(fn).toBeCalled();
 	});
 
-	it("should submit form", () => {
+	it("should submit form", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<SendTransactionForm onSubmit={fn} contacts={contacts} networks={networks} />);
 		const submit = getByTestId("send-transaction-click-submit");
@@ -104,7 +107,7 @@ describe("SendTransactionForm", () => {
 			fireEvent.click(submit);
 		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			expect(fn).toBeCalled();
 		});
 	});
