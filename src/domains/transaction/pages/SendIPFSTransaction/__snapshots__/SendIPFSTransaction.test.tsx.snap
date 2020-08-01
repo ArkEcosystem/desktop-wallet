@@ -10,31 +10,31 @@ exports[`SendIPFSTransaction should render 1`] = `
       class="sc-fzoLag iezQBg"
     >
       <div
-        class="sm:px-6 lg:px- px-4"
+        class="px-4 sm:px-6 lg:px-"
       >
         <div
-          class="md:h-24 relative flex justify-between h-20"
+          class="relative flex justify-between h-20 md:h-24"
         >
           <div
             class="flex items-center flex-shrink-0"
           >
             <div
-              class="bg-logo flex p-2 mr-4 rounded-lg"
+              class="flex p-2 mr-4 rounded-lg bg-logo"
             >
               <img
                 alt="ARK Logo"
-                class="md:h-8 lg:h-10 h-6"
+                class="h-6 md:h-8 lg:h-10"
                 src="ark-logo.png"
               />
             </div>
             <ul
-              class="md:h-24 flex h-20"
+              class="flex h-20 md:h-24"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="text-md text-theme-neutral flex items-center mx-4 font-bold"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/dashboard"
                   title="Portfolio"
                 >
@@ -45,7 +45,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="text-md text-theme-neutral flex items-center mx-4 font-bold"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/plugins"
                   title="Plugins"
                 >
@@ -56,7 +56,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="text-md text-theme-neutral flex items-center mx-4 font-bold"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/exchange"
                   title="Exchange"
                 >
@@ -67,7 +67,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="text-md text-theme-neutral flex items-center mx-4 font-bold"
+                  class="flex items-center mx-4 font-bold text-md text-theme-neutral"
                   href="/profiles/bob/news"
                   title="News"
                 >
@@ -84,7 +84,7 @@ exports[`SendIPFSTransaction should render 1`] = `
               data-testid="dropdown__toggle"
             >
               <div
-                class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
+                class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -98,10 +98,10 @@ exports[`SendIPFSTransaction should render 1`] = `
               </div>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
               <a
                 data-testid="navbar__buttons--send"
@@ -119,10 +119,10 @@ exports[`SendIPFSTransaction should render 1`] = `
               </a>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
-              class="text-theme-primary-300 flex items-center h-full px-6 cursor-pointer"
+              class="flex items-center h-full px-6 cursor-pointer text-theme-primary-300"
             >
               <button
                 class="sc-AxirZ dACfZY"
@@ -142,24 +142,24 @@ exports[`SendIPFSTransaction should render 1`] = `
               </button>
             </div>
             <div
-              class="border-theme-neutral-200 h-8 border-r"
+              class="h-8 border-r border-theme-neutral-200"
             />
             <div
               class="p-2 ml-4 text-right"
             >
               <div
-                class="text-theme-neutral text-xs"
+                class="text-xs text-theme-neutral"
               >
                 Your balance
               </div>
               <div
-                class="text-theme-neutral-dark text-sm font-bold"
+                class="text-sm font-bold text-theme-neutral-dark"
               >
                 0
               </div>
             </div>
             <div
-              class="cusror-pointer flex p-1"
+              class="flex p-1 cusror-pointer"
             >
               <div
                 class="relative"
@@ -170,7 +170,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxiKw jQtkkF border-theme-neutral-300 -mr-1"
+                    class="sc-AxiKw jQtkkF -mr-1 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
@@ -181,7 +181,7 @@ exports[`SendIPFSTransaction should render 1`] = `
                   >
                     <img
                       alt="Profile avatar"
-                      class="w-11 h-11 rounded-full"
+                      class="rounded-full w-11 h-11"
                       src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
                     />
                     <span
