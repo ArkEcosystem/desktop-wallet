@@ -19,7 +19,7 @@ exports[`LineChart should render 1`] = `
             class="flex justify-end flex-1 space-x-3"
           >
             <div
-              class="my-auto text-sm text-theme-neutral-600 text-base"
+              class="my-auto text-sm text-base text-theme-neutral-600"
             />
           </div>
         </div>
@@ -92,18 +92,18 @@ exports[`LineChart should render with data 1`] = `
             class="flex justify-end flex-1 space-x-3"
           >
             <div
-              class="my-auto text-sm text-theme-neutral-600 text-base"
+              class="my-auto text-sm text-base text-theme-neutral-600"
             >
               22 Jun, 2020
             </div>
             <div
-              class="flex items-center justify-end min-w-32 p-4 pt-4 pr-0"
+              class="flex items-center justify-end p-4 pt-4 pr-0 min-w-32"
             >
               <div
                 class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-600"
               />
               <div
-                class="inline-block text-sm font-semibold text-theme-neutral-dark text-base"
+                class="inline-block text-sm text-base font-semibold text-theme-neutral-dark"
               >
                 <span>
                   0.26
