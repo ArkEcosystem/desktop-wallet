@@ -76,7 +76,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
 					viewType="grid"
-					title="Wallets"
+					title={t("COMMON.WALLETS")}
 					wallets={wallets}
 					filterProperties={filterProperties}
 				/>

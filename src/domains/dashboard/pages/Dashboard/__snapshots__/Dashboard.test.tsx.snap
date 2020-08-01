@@ -432,7 +432,7 @@ exports[`Dashboard should render 1`] = `
         >
           <div>
             <div
-              class="flex justify-between pb-8"
+              class="flex items-center justify-between pb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -605,32 +605,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -643,20 +621,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -668,6 +633,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -749,58 +736,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -812,6 +751,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -893,32 +854,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -930,32 +869,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
                                   >
                                     <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
                                     >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1037,32 +972,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1075,7 +988,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1088,7 +1001,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1100,6 +1013,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1181,32 +1116,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1219,7 +1132,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1232,7 +1145,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1244,6 +1157,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1325,32 +1260,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1363,7 +1276,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1376,7 +1289,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1388,6 +1301,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1505,32 +1440,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1543,7 +1456,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1556,7 +1469,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1568,6 +1481,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1649,32 +1584,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1687,7 +1600,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1700,7 +1613,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1712,6 +1625,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1793,32 +1728,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1831,7 +1744,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1844,7 +1757,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1856,6 +1769,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -1937,32 +1872,10 @@ exports[`Dashboard should render 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1975,7 +1888,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -1988,7 +1901,7 @@ exports[`Dashboard should render 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -2000,6 +1913,28 @@ exports[`Dashboard should render 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -3522,7 +3457,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
         >
           <div>
             <div
-              class="flex justify-between pb-8"
+              class="flex items-center justify-between pb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -3695,32 +3630,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -3733,20 +3646,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -3758,6 +3658,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -3839,58 +3761,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -3902,6 +3776,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -3983,32 +3879,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4020,32 +3894,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
                                   >
                                     <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
                                     >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4127,32 +3997,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4165,7 +4013,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4178,7 +4026,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4190,6 +4038,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4271,32 +4141,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4309,7 +4157,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4322,7 +4170,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4334,6 +4182,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4415,32 +4285,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4453,7 +4301,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4466,7 +4314,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4478,6 +4326,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4595,32 +4465,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4633,7 +4481,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4646,7 +4494,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4658,6 +4506,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4739,32 +4609,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4777,7 +4625,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4790,7 +4638,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4802,6 +4650,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -4883,32 +4753,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4921,7 +4769,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4934,7 +4782,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -4946,6 +4794,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -5027,32 +4897,10 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -5065,7 +4913,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -5078,7 +4926,7 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -5090,6 +4938,28 @@ exports[`Dashboard should render portfolio chart 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -6612,7 +6482,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
         >
           <div>
             <div
-              class="flex justify-between pb-8"
+              class="flex items-center justify-between pb-8"
             >
               <div
                 class="-mt-1 text-4xl font-bold"
@@ -6785,32 +6655,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -6823,20 +6671,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -6848,6 +6683,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -6929,58 +6786,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        star.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
-                                    </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -6992,6 +6801,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7073,32 +6904,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7110,32 +6919,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
                                   >
                                     <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
                                     >
-                                      <svg>
-                                        multisig.svg
-                                      </svg>
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
                                     </div>
-                                  </div>
-                                  <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
-                                  >
-                                    <div
-                                      class="sc-AxirZ EmuJz"
-                                      height="1em"
-                                      width="18"
-                                    >
-                                      <svg>
-                                        ledger.svg
-                                      </svg>
-                                    </div>
-                                  </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7217,32 +7022,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7255,7 +7038,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7268,7 +7051,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7280,6 +7063,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7361,32 +7166,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7399,7 +7182,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7412,7 +7195,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7424,6 +7207,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7505,32 +7310,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7543,7 +7326,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7556,7 +7339,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7568,6 +7351,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7685,32 +7490,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7723,7 +7506,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7736,7 +7519,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7748,6 +7531,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7829,32 +7634,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7867,7 +7650,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7880,7 +7663,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -7892,6 +7675,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -7973,32 +7778,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8011,7 +7794,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8024,7 +7807,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8036,6 +7819,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
@@ -8117,32 +7922,10 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                 class="relative p-2"
                               >
                                 <div
-                                  class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
                                 >
                                   <div
-                                    class="relative"
-                                    data-testid="dropdown__toggle"
-                                  >
-                                    <div
-                                      class="float-right outline-none cursor-pointer focus:outline-none"
-                                    >
-                                      <div
-                                        class="sc-AxirZ eEbZjj"
-                                        height="20"
-                                        width="20"
-                                      >
-                                        <svg>
-                                          settings.svg
-                                        </svg>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="absolute right-3 -top-1"
-                                >
-                                  <div
-                                    class="inline-block mr-2 text text-theme-warning-400"
+                                    class="inline-block text text-theme-warning-400"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8155,7 +7938,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8168,7 +7951,7 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="inline-block mr-2 text text-theme-neutral-600"
+                                    class="inline-block text text-theme-neutral-600"
                                   >
                                     <div
                                       class="sc-AxirZ EmuJz"
@@ -8180,6 +7963,28 @@ exports[`Dashboard should render portfolio percentage bar 1`] = `
                                       </svg>
                                     </div>
                                   </div>
+                                  <span
+                                    class="text-theme-neutral-400 hover:text-theme-neutral-500"
+                                  >
+                                    <div
+                                      class="relative"
+                                      data-testid="dropdown__toggle"
+                                    >
+                                      <div
+                                        class="float-right outline-none cursor-pointer focus:outline-none"
+                                      >
+                                        <div
+                                          class="sc-AxirZ eEbZjj"
+                                          height="20"
+                                          width="20"
+                                        >
+                                          <svg>
+                                            settings.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </span>
                                 </div>
                                 <div
                                   class="flex"
