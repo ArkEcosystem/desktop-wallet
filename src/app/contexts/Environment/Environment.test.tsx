@@ -18,8 +18,7 @@ describe("Environment Context", () => {
 		jest.spyOn(console, "error").mockImplementation(() => null);
 		const Test = () => {
 			const { env } = useEnvironmentContext();
-			const profiles = env.profiles().values();
-			return <p>{profiles.length}</p>;
+			return <p>{env.profiles().count()}</p>;
 		};
 
 		expect(() => renderWithRouter(<Test />, { withProviders: false })).toThrowError();
@@ -44,7 +43,7 @@ describe("Environment Context", () => {
 	it("should rerender components when env updates", async () => {
 		const Details = () => {
 			const context = useEnvironmentContext();
-			const count = React.useMemo(() => context.env.profiles().values().length, [context]);
+			const count = React.useMemo(() => context.env.profiles().count(), [context]);
 			return <h1>Counter {count}</h1>;
 		};
 

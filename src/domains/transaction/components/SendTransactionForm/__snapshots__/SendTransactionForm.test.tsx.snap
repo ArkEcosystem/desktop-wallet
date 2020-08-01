@@ -75,7 +75,7 @@ exports[`SendTransactionForm should render 1`] = `
             <div
               aria-label="Ark"
               class="sc-fzplWN bGwGlP border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-mainnet"
             >
               <div
                 class="sc-Axmtr wZFix"
@@ -98,7 +98,7 @@ exports[`SendTransactionForm should render 1`] = `
             <div
               aria-label="Ark Devnet"
               class="sc-fzplWN bGwGlP border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-devnet"
             >
               <div
                 class="sc-Axmtr wZFix"
@@ -121,7 +121,7 @@ exports[`SendTransactionForm should render 1`] = `
             <div
               aria-label="Bitcoin"
               class="sc-fzplWN bGwGlP border-theme-warning-200 text-theme-warning-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-BTC-livenet"
             >
               <div
                 class="sc-Axmtr wZFix"

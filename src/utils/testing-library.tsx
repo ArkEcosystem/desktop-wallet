@@ -48,6 +48,7 @@ export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
 
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
+
 	nock("https://dwallets.ark.io")
 		.get("/api/node/configuration")
 		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
@@ -58,11 +59,12 @@ export const defaultNetMocks = () => {
 		.get("/api/node/syncing")
 		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
 		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-		.reply(200, require("../tests/fixtures/coins/ark/wallet.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-		.reply(200, require("../tests/fixtures/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
 		.persist();
 };
+
 export const useDefaultNetMocks = defaultNetMocks;
 
 const envWithMocks = () => {

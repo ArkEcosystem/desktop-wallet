@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
@@ -14,13 +13,13 @@ let updatingContact: Contact;
 describe("UpdateContact", () => {
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		updatingContact = profile.contacts().create("Test");
+		updatingContact = profile.contacts().values()[0];
 	});
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<UpdateContact
-				profileId={profile.id()}
+				profile={profile}
 				isOpen={false}
 				networks={availableNetworksMock}
 				contact={updatingContact}
@@ -33,7 +32,7 @@ describe("UpdateContact", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<UpdateContact profileId={profile.id()} isOpen={true} contact={updatingContact} />,
+			<UpdateContact profile={profile} isOpen={true} contact={updatingContact} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_UPDATE_CONTACT.TITLE);
@@ -42,7 +41,7 @@ describe("UpdateContact", () => {
 
 	it("should display contact info in form", () => {
 		const { getByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} profileId={profile.id()} contact={updatingContact} />,
+			<UpdateContact isOpen={true} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -50,11 +49,9 @@ describe("UpdateContact", () => {
 	});
 
 	it("should cancel contact update", async () => {
-		const fn = jest.fn();
+		const onCancel = jest.fn();
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onCancel={fn} profileId={profile.id()} contact={updatingContact} />
-			</EnvironmentProvider>,
+			<UpdateContact isOpen={true} onCancel={onCancel} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -65,20 +62,20 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalled();
+			expect(onCancel).toBeCalled();
 		});
 	});
 
 	it("should delete contact", async () => {
+		const contactToDelete = profile.contacts().create("Test");
+
 		const onDelete = jest.fn();
 		const { getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onDelete={onDelete} profileId={profile.id()} contact={updatingContact} />
-			</EnvironmentProvider>,
+			<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={contactToDelete} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(updatingContact.name());
+		expect(nameInput).toHaveValue(contactToDelete.name());
 
 		act(() => {
 			fireEvent.click(getByTestId("contact-form__delete-btn"));
@@ -86,20 +83,12 @@ describe("UpdateContact", () => {
 
 		await waitFor(() => {
 			expect(onDelete).toBeCalled();
-			expect(() => profile.contacts().findById(updatingContact.id())).toThrowError("Failed to find");
+			expect(() => profile.contacts().findById(contactToDelete.id())).toThrowError("Failed to find");
 		});
 	});
 
 	it("should update contact name and address", async () => {
-		const onSaveAddress = jest.fn();
-
-		const contactToUpdate = {
-			name: () => "Test",
-			addresses: () => [],
-			id: "",
-		};
-
-		contactToUpdate.id = updatingContact.id();
+		const onSave = jest.fn();
 
 		const newName = "Updated name";
 		const newAddress = {
@@ -112,18 +101,18 @@ describe("UpdateContact", () => {
 		const { getByTestId, queryByTestId } = renderWithRouter(
 			<UpdateContact
 				isOpen={true}
-				onSave={onSaveAddress}
-				profileId={profile.id()}
-				contact={contactToUpdate}
+				onSave={onSave}
+				profile={profile}
+				contact={updatingContact}
 				networks={availableNetworksMock}
 			/>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contactToUpdate.name());
+		expect(nameInput).toHaveValue(updatingContact.name());
 
 		act(() => {
-			fireEvent.change(nameInput, { target: { value: "Updated name" } });
+			fireEvent.change(nameInput, { target: { value: newName } });
 		});
 
 		expect(nameInput).toHaveValue(newName);
@@ -143,6 +132,7 @@ describe("UpdateContact", () => {
 		await waitFor(() => {
 			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
+
 		await act(async () => {
 			fireEvent.click(getByTestId("contact-form__add-address-btn"));
 		});
@@ -154,14 +144,12 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(onSaveAddress).toBeCalledWith(contactToUpdate.id);
+			expect(onSave).toBeCalledWith(updatingContact.id());
 
-			const savedContact = profile.contacts().findById(contactToUpdate.id);
+			const savedContact = profile.contacts().findById(updatingContact.id());
 			expect(savedContact.name()).toEqual(newName);
 
-			const savedAddresses = savedContact.addresses().findByAddress(newAddress.address);
-			expect(savedAddresses.length).toEqual(1);
-			expect(savedAddresses[0]?.address()).toEqual(newAddress.address);
+			expect(savedContact.addresses().findByAddress(newAddress.address).length).toBeGreaterThan(0);
 		});
 	});
 });

@@ -60,7 +60,7 @@ exports[`CreateContact should render a modal 1`] = `
             data-testid="contact-form"
           >
             <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -70,14 +70,14 @@ exports[`CreateContact should render a modal 1`] = `
                 Name
               </label>
               <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__name-input"
                 name="name"
                 value=""
               />
             </fieldset>
             <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -98,14 +98,14 @@ exports[`CreateContact should render a modal 1`] = `
                   id="ContactForm__network-label"
                 />
                 <div
-                  class="sc-fzoLsD rzdyj"
+                  class="sc-fzozJi OgXfh"
                   data-testid="SelectNetworkInput"
                 >
                   <div
-                    class="sc-Axmtr sc-AxmLO VVqBg px-4"
+                    class="sc-AxheI sc-Axmtr kSmZlB px-4"
                   >
                     <div
-                      class="sc-AxhUy iPLNDc border-theme-neutral-light text-theme-neutral"
+                      class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
                       data-testid="SelectNetworkInput__network"
                     />
                   </div>
@@ -114,7 +114,7 @@ exports[`CreateContact should render a modal 1`] = `
                     aria-controls="ContactForm__network-menu"
                     aria-labelledby="ContactForm__network-label"
                     autocomplete="off"
-                    class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
                     data-testid="SelectNetworkInput__input"
                     id="ContactForm__network-input"
                     placeholder="Enter a network name"
@@ -129,7 +129,7 @@ exports[`CreateContact should render a modal 1`] = `
               />
             </fieldset>
             <fieldset
-              class="sc-AxgMl cwpxCQ flex flex-col space-y-2"
+              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
             >
               <label
                 class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
@@ -139,7 +139,7 @@ exports[`CreateContact should render a modal 1`] = `
                 Address
               </label>
               <input
-                class="sc-AxheI bCUUVi overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
                 data-testid="contact-form__address-input"
                 name="address"
               />
