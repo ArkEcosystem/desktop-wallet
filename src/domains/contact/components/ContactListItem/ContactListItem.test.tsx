@@ -1,11 +1,7 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Contact, Environment } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { ContactListItem } from "./ContactListItem";
 
@@ -17,15 +13,9 @@ let contact: Contact;
 let addressId: string;
 
 describe("ContactListItem", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject(fixtureData);
-		const profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-
-		contact = profile.contacts().values()[0];
+	beforeAll(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		contact = env.profiles().values()[0].contacts().values()[0];
 	});
 
 	it("should render", () => {

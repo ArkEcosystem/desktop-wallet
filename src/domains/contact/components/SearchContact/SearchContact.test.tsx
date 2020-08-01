@@ -1,10 +1,6 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { render, useDefaultNetMocks } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, getDefaultProfileId, render } from "testing-library";
 
 import { translations } from "../../i18n";
 import { SearchContact } from "./SearchContact";
@@ -12,13 +8,8 @@ import { SearchContact } from "./SearchContact";
 let profile: Profile;
 
 describe("SearchContact", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should not render if not open", () => {

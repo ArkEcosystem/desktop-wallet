@@ -1,27 +1,18 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock as networks } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render, useDefaultNetMocks, waitFor, within } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, getDefaultProfileId, render, waitFor, within } from "testing-library";
 
 import { SendTransactionForm } from "./";
 
 let profile: Profile;
 
 describe("SendTransactionForm", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should render", () => {

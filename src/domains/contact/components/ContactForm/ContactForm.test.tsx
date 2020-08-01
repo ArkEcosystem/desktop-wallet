@@ -1,12 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Contact, Environment } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
-import { act, fireEvent, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
@@ -18,12 +14,8 @@ const onCancel = jest.fn();
 let contact: Contact;
 
 describe("ContactForm", () => {
-	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
+	beforeAll(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
 		contact = env.profiles().values()[0].contacts().values()[0];
 	});
 
