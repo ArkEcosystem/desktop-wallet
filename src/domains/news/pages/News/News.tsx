@@ -30,7 +30,7 @@ export const News = ({ news, categories, assets }: Props) => {
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}

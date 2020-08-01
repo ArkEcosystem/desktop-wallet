@@ -154,7 +154,9 @@ exports[`Article should render article support page 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
-              />
+              >
+                0
+              </div>
             </div>
             <div
               class="flex p-1 cusror-pointer"
@@ -172,24 +174,16 @@ exports[`Article should render article support page 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
-                    />
+                    >
+                      Bo
+                    </span>
                     <span
                       class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
@@ -229,8 +223,9 @@ exports[`Article should render article support page 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-dark"
-          href="/profiles/bob/support/articles/help"
+          aria-current="page"
+          class="text-theme-neutral-dark active"
+          href="/profiles/bob/support"
         >
           <span>
             Go back to Help & Support
@@ -571,7 +566,9 @@ exports[`Article should render article support page with main image 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
-              />
+              >
+                0
+              </div>
             </div>
             <div
               class="flex p-1 cusror-pointer"
@@ -589,24 +586,16 @@ exports[`Article should render article support page with main image 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
-                    />
+                    >
+                      Bo
+                    </span>
                     <span
                       class="sc-AxhCb dsxoZl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
@@ -646,8 +635,9 @@ exports[`Article should render article support page with main image 1`] = `
         class="space-x-2"
       >
         <a
-          class="text-theme-neutral-dark"
-          href="/profiles/bob/support/articles/help"
+          aria-current="page"
+          class="text-theme-neutral-dark active"
+          href="/profiles/bob/support"
         >
           <span>
             Go back to Help & Support

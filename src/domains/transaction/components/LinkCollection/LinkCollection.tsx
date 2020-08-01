@@ -5,7 +5,7 @@ import { Input, InputGroup } from "app/components/Input";
 import { RadioButton } from "app/components/RadioButton";
 import { Select } from "app/components/SelectDropdown";
 import { Table } from "app/components/Table";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
@@ -46,11 +46,11 @@ export const LinkCollection = ({
 }: LinkCollectionProps) => {
 	const { t } = useTranslation();
 
-	const [isExpanded, setIsExpanded] = React.useState(false);
-	const [links, setLinks] = React.useState(data || []);
-	const [selected, setSelected] = React.useState((null as unknown) as Link);
-	const [link, setLink] = React.useState("");
-	const [selectedType, setSelectedType] = React.useState((null as unknown) as Type);
+	const [isExpanded, setIsExpanded] = useState(false);
+	const [links, setLinks] = useState(data || []);
+	const [selected, setSelected] = useState((null as unknown) as Link);
+	const [link, setLink] = useState("");
+	const [selectedType, setSelectedType] = useState((null as unknown) as Type);
 
 	const addLink = ({ link, type }: Link) => {
 		setLinks([...links, { link, type }]);

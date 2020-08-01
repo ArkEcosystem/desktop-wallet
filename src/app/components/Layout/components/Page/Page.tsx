@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Breadcrumbs } from "app/components/Breadcrumbs";
 import { NavigationBar } from "app/components/NavigationBar";
@@ -7,14 +8,15 @@ const commonAssets = images.common;
 
 type PageProps = {
 	navbarStyle?: string;
+	profile?: Profile;
 	crumbs?: any;
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };
 
-export const Page = ({ navbarStyle = "full", crumbs, sidebar, children }: PageProps) => (
+export const Page = ({ navbarStyle = "full", profile, crumbs, sidebar, children }: PageProps) => (
 	<div className="relative flex flex-col min-h-screen bg-theme-neutral-contrast">
-		{navbarStyle === "full" && <NavigationBar />}
+		{navbarStyle === "full" && <NavigationBar profile={profile} />}
 
 		{navbarStyle === "logo-only" && (
 			<div className="px-4 sm:px-6 lg:px-8 bg-theme-background">

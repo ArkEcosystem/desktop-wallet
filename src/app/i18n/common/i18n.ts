@@ -151,6 +151,7 @@ export const translations: { [key: string]: any } = {
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
 	YOU: "You",
+	YOUR_BALANCE: "Your balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
 
 	CLIPBOARD: {

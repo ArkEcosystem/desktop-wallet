@@ -74,11 +74,12 @@ const renderRegistration = ({ type, registrations }: RegistrationProps, handleDr
 
 export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	const activeProfile = useActiveProfile();
+
 	const history = useHistory();
+	const { t } = useTranslation();
+
 	const mountRegistrations = () =>
 		registrations.map((registrationsBlock: any) => renderRegistration(registrationsBlock, handleDropdown));
-
-	const { t } = useTranslation();
 
 	const crumbs = [
 		{
@@ -88,7 +89,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("PROFILE.PAGE_MY_REGISTRATIONS.TITLE")}

@@ -26,7 +26,30 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           </div>
           <ul
             class="flex h-20 md:h-24"
-          />
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/test"
+                title="test"
+              >
+                test
+              </a>
+            </li>
+          </ul>
         </div>
         <div
           class="flex items-center"
@@ -57,7 +80,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
           >
             <a
               data-testid="navbar__buttons--send"
-              href="/profiles/undefined/transactions/transfer"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -106,7 +129,9 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-neutral-dark"
-            />
+            >
+              1000
+            </div>
           </div>
           <div
             class="flex p-1 cusror-pointer"
@@ -141,7 +166,9 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 >
                   <span
                     class="text-sm text-theme-background"
-                  />
+                  >
+                    Jo
+                  </span>
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
@@ -193,7 +220,52 @@ exports[`NavigationBar should render 1`] = `
           </div>
           <ul
             class="flex h-20 md:h-24"
-          />
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                News
+              </a>
+            </li>
+          </ul>
         </div>
         <div
           class="flex items-center"
@@ -224,7 +296,7 @@ exports[`NavigationBar should render 1`] = `
           >
             <a
               data-testid="navbar__buttons--send"
-              href="/profiles/undefined/transactions/transfer"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -273,7 +345,9 @@ exports[`NavigationBar should render 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-neutral-dark"
-            />
+            >
+              1000
+            </div>
           </div>
           <div
             class="flex p-1 cusror-pointer"
@@ -308,7 +382,9 @@ exports[`NavigationBar should render 1`] = `
                 >
                   <span
                     class="text-sm text-theme-background"
-                  />
+                  >
+                    Jo
+                  </span>
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
@@ -360,7 +436,30 @@ exports[`NavigationBar should render with custom menu 1`] = `
           </div>
           <ul
             class="flex h-20 md:h-24"
-          />
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex items-center mx-4 font-bold text-md text-theme-neutral"
+                href="/test"
+                title="test"
+              >
+                test
+              </a>
+            </li>
+          </ul>
         </div>
         <div
           class="flex items-center"
@@ -391,7 +490,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
           >
             <a
               data-testid="navbar__buttons--send"
-              href="/profiles/undefined/transactions/transfer"
+              href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
             >
               <div
                 class="sc-AxjAm jmgDQY"
@@ -440,7 +539,9 @@ exports[`NavigationBar should render with custom menu 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-neutral-dark"
-            />
+            >
+              1000
+            </div>
           </div>
           <div
             class="flex p-1 cusror-pointer"
@@ -475,7 +576,9 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 >
                   <span
                     class="text-sm text-theme-background"
-                  />
+                  >
+                    Jo
+                  </span>
                   <span
                     class="sc-AxirZ cGZUNJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                   >
