@@ -17,7 +17,7 @@ exports[`Formatted Address should render 1`] = `
           class="relative p-2"
         >
           <div
-            class="flex items-center absolute top-0 right-0 -mr-2 space-x-2"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
             <span
               class="text-theme-neutral-400 hover:text-theme-neutral-500"
@@ -129,7 +129,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
           class="relative p-2"
         >
           <div
-            class="flex items-center absolute top-0 right-0 -mr-2 space-x-2"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
             <span
               class="text-theme-neutral-400 hover:text-theme-neutral-500"
@@ -235,7 +235,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
           class="relative p-2"
         >
           <div
-            class="flex items-center absolute top-0 right-0 -mr-2 space-x-2"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
             <span
               class="text-theme-neutral-400 hover:text-theme-neutral-500"
