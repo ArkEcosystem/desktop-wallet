@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 
 export type AddRecipientProps = {
@@ -8,7 +9,7 @@ export type AddRecipientProps = {
 	singleLabel?: string;
 	multipleLabel?: string;
 	recipients?: RecipientListItem[];
-	contacts?: any;
+	profile: Profile;
 	labelText?: string;
 	helpText?: string;
 	onChange?: (recipients: RecipientListItem[]) => void;

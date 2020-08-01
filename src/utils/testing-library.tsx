@@ -5,14 +5,12 @@ import { EnvironmentProvider } from "app/contexts";
 import { i18n } from "app/i18n";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
+import nock from "nock";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-
-import envFixture from "../tests/fixtures/env/data.json";
-
-export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envFixture) });
 
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
@@ -45,3 +43,33 @@ const renderWithRouter = (
 export * from "@testing-library/react";
 
 export { customRender as render, renderWithRouter };
+
+export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+
+export const defaultNetMocks = () => {
+	nock.disableNetConnect();
+
+	nock("https://dwallets.ark.io")
+		.get("/api/node/configuration")
+		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
+		.get("/api/peers")
+		.reply(200, require("../tests/fixtures/coins/ark/peers.json"))
+		.get("/api/node/configuration/crypto")
+		.reply(200, require("../tests/fixtures/coins/ark/cryptoConfiguration.json"))
+		.get("/api/node/syncing")
+		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
+		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+		.reply(200, require("../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+		.persist();
+};
+
+export const useDefaultNetMocks = defaultNetMocks;
+
+const envWithMocks = () => {
+	defaultNetMocks();
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(fixtureData) });
+};
+
+export const env = envWithMocks();

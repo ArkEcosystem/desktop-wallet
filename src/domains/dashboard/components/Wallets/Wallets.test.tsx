@@ -1,17 +1,14 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { identity } from "tests/fixtures/identity";
-import { act, env, fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { networks, wallets } from "../../data";
 import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
 
-let profile: Profile;
-let dashboardURL: string;
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 // Wallet filter properties
 const filterProperties = {
@@ -38,8 +35,6 @@ const filterProperties = {
 
 describe("Wallets", () => {
 	beforeAll(() => {
-		profile = env.profiles().findById(identity.profiles.bob.id);
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 		history.push(dashboardURL);
 	});
 

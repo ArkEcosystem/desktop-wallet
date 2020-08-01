@@ -2,24 +2,20 @@ import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { fireEvent, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
 
 import { translations } from "../../i18n";
 import { PluginsCategory } from "./PluginsCategory";
 
-let consoleSpy;
+let consoleSpy: any;
 let rendered = RenderResult;
 const history = createMemoryHistory();
-const pluginsCategoryURL = `/profiles/${identity.profiles.bob.id}/plugins/categories/game`;
+
+const pluginsCategoryURL = `/profiles/${getDefaultProfileId()}/plugins/categories/game`;
 
 describe("PluginsCategory", () => {
 	beforeAll(() => {
 		consoleSpy = jest.spyOn(global.console, "log").mockImplementation();
-	});
-
-	afterAll(() => {
-		consoleSpy.mockRestore();
 	});
 
 	beforeEach(() => {
@@ -40,6 +36,10 @@ describe("PluginsCategory", () => {
 		);
 
 		consoleSpy.mockReset();
+	});
+
+	afterAll(() => {
+		consoleSpy.mockRestore();
 	});
 
 	it("should render", () => {

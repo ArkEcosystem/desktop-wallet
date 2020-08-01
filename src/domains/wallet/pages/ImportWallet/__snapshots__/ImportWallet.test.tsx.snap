@@ -35,7 +35,7 @@ exports[`ImportWallet should go to previous step 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`ImportWallet should go to previous step 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`ImportWallet should go to previous step 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`ImportWallet should go to previous step 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -105,7 +105,7 @@ exports[`ImportWallet should go to previous step 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -155,7 +155,7 @@ exports[`ImportWallet should go to previous step 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -174,7 +174,17 @@ exports[`ImportWallet should go to previous step 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -182,7 +192,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -224,7 +234,7 @@ exports[`ImportWallet should go to previous step 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -356,7 +366,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -379,7 +389,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -456,7 +466,7 @@ exports[`ImportWallet should import by address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -467,7 +477,7 @@ exports[`ImportWallet should import by address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -478,7 +488,7 @@ exports[`ImportWallet should import by address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -489,7 +499,7 @@ exports[`ImportWallet should import by address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -526,7 +536,7 @@ exports[`ImportWallet should import by address 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -576,7 +586,7 @@ exports[`ImportWallet should import by address 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -595,7 +605,17 @@ exports[`ImportWallet should import by address 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -603,7 +623,7 @@ exports[`ImportWallet should import by address 1`] = `
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -645,7 +665,7 @@ exports[`ImportWallet should import by address 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -777,7 +797,7 @@ exports[`ImportWallet should import by address 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -800,7 +820,7 @@ exports[`ImportWallet should import by address 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -877,7 +897,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -888,7 +908,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -899,7 +919,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -910,7 +930,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -947,7 +967,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -997,7 +1017,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -1016,7 +1036,17 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -1024,7 +1054,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -1066,7 +1096,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1198,7 +1228,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1221,7 +1251,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1359,7 +1389,7 @@ exports[`ImportWallet should render 1st step 1`] = `
             <div
               aria-label="Ark"
               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-mainnet"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -1382,7 +1412,7 @@ exports[`ImportWallet should render 1st step 1`] = `
             <div
               aria-label="Ark Devnet"
               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-devnet"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -1551,7 +1581,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -1562,7 +1592,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -1573,7 +1603,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -1584,7 +1614,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -1621,7 +1651,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -1671,7 +1701,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -1690,7 +1720,17 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -1698,7 +1738,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -1740,7 +1780,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1872,7 +1912,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1895,7 +1935,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1972,7 +2012,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -1983,7 +2023,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -1994,7 +2034,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -2005,7 +2045,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -2042,7 +2082,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -2092,7 +2132,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -2111,7 +2151,17 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -2119,7 +2169,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -2161,7 +2211,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2293,7 +2343,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -2316,7 +2366,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -2393,7 +2443,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -2404,7 +2454,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -2415,7 +2465,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -2426,7 +2476,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -2463,7 +2513,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -2513,7 +2563,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                55827093444556
+                1000
               </div>
             </div>
             <div
@@ -2532,7 +2582,17 @@ exports[`ImportWallet should show an error message if trying to import a duplica
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -2540,7 +2600,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -2582,7 +2642,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2714,7 +2774,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -2737,7 +2797,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"

@@ -38,7 +38,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 		<Tippy content={displayName} disabled={!showTooltip || !displayName}>
 			<Circle
 				aria-label={displayName}
-				data-testid="NetworkIcon"
+				data-testid={`NetworkIcon-${coin}-${network}`}
 				className={className ? className : `${borderClass} ${textClass}`}
 				{...props}
 			>

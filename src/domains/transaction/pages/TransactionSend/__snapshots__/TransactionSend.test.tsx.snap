@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Transaction Send should render 1`] = `
+exports[`Transaction Send should navigate between teps 1`] = `
 <DocumentFragment>
   <div
     class="relative flex flex-col min-h-screen bg-theme-neutral-contrast"
@@ -35,7 +35,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`Transaction Send should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -107,7 +107,7 @@ exports[`Transaction Send should render 1`] = `
                 aria-current="page"
                 class="active"
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxhUy gwxBWy"
@@ -157,7 +157,7 @@ exports[`Transaction Send should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -176,7 +176,17 @@ exports[`Transaction Send should render 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxhUy cPXLjK"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -184,7 +194,7 @@ exports[`Transaction Send should render 1`] = `
                     <img
                       alt="Profile avatar"
                       class="rounded-full w-11 h-11"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(76, 175, 80)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
                     />
                     <span
                       class="sc-fznZeY irzLuJ flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -226,7 +236,7 @@ exports[`Transaction Send should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio

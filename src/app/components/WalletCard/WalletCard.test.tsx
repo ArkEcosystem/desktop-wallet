@@ -1,15 +1,16 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletCard } from "./WalletCard";
 
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
-const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+const fixtureWalletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
+const fixtureWalletAddress = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD";
 
-describe("Formatted Address", () => {
+describe("Wallet Card", () => {
 	beforeAll(() => {
 		history.push(dashboardURL);
 	});
@@ -17,7 +18,7 @@ describe("Formatted Address", () => {
 	it("should render", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />
+				<WalletCard id={fixtureWalletId} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -31,7 +32,7 @@ describe("Formatted Address", () => {
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard isBlank id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT" />
+				<WalletCard isBlank />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -46,13 +47,12 @@ describe("Formatted Address", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletCard
-					id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					coinIcon="Bitcoin"
+					id={fixtureWalletId}
+					coinIcon="Ark"
 					coinClass="border-theme-warning-200"
-					avatarId="test"
 					walletName="My wallet"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
+					address={fixtureWalletAddress}
+					balance="100,000 ARK"
 				/>
 				,
 			</Route>,
@@ -69,13 +69,12 @@ describe("Formatted Address", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<WalletCard
-					id="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					coinIcon="Bitcoin"
+					id={fixtureWalletId}
+					coinIcon="Ark"
 					coinClass="border-theme-warning-200"
-					avatarId="test"
 					walletName="My wallet"
-					address="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-					balance="100,000 BTC"
+					address={fixtureWalletAddress}
+					balance="100,000 ARK"
 				/>
 			</Route>,
 			{

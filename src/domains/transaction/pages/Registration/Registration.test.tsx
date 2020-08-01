@@ -4,43 +4,33 @@ import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { Registration } from "./Registration";
 
 let rendered: RenderResult;
-let defaultFormValues = {};
+
+const defaultFormValues = {
+	networks: availableNetworksMock,
+	registrationTypes: [
+		{
+			value: "business",
+			label: "Business",
+		},
+	],
+	formDefaultData: {
+		network: null,
+		address: null,
+	},
+	onDownload: jest.fn(),
+};
 
 describe("Registration", () => {
 	beforeEach(() => {
 		const history = createMemoryHistory();
-		const registrationURL = `/profiles/${identity.profiles.bob.id}/transactions/registration`;
+		const registrationURL = `/profiles/${getDefaultProfileId()}/transactions/registration`;
 
 		history.push(registrationURL);
-
-		defaultFormValues = {
-			networks: availableNetworksMock,
-			registrationTypes: [
-				{
-					value: "business",
-					label: "Business",
-				},
-			],
-			formDefaultData: {
-				network: null,
-				address: null,
-			},
-			addresses: [
-				{
-					address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-					walletName: "My Wallet",
-					avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-					formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-				},
-			],
-			onDownload: jest.fn(),
-		};
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/registration">

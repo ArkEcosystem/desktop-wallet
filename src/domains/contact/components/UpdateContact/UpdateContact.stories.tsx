@@ -6,7 +6,6 @@ import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { StubStorage } from "tests/mocks";
 
-import { contact2 as contact } from "../../data";
 import { UpdateContact } from "./UpdateContact";
 
 export default {
@@ -16,10 +15,12 @@ export default {
 export const Default = () => {
 	const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 	const profile = env.profiles().create("Test profile");
+	const contact = profile.contacts().create("Test contact");
+
 	return (
 		<EnvironmentProvider env={env}>
 			<UpdateContact
-				profileId={profile.id()}
+				profile={profile}
 				isOpen={true}
 				networks={availableNetworksMock}
 				contact={contact}
