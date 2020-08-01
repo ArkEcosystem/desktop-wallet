@@ -2,15 +2,14 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { identity } from "tests/fixtures/identity";
-import { act, fireEvent, renderWithRouter, waitFor, within } from "utils/testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, within, waitFor } from "utils/testing-library";
 
 import { balances, portfolioPercentages, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
-
-const dashboardURL = `/profiles/${identity.profiles.bob.id}/dashboard`;
+const fixtureProfileId = getDefaultProfileId();
+const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
 	beforeAll(() => {
@@ -127,9 +126,7 @@ describe("Dashboard", () => {
 			fireEvent.click(importButton);
 		});
 
-		waitFor(() =>
-			expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/import`),
-		);
+		waitFor(() => expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`));
 	});
 
 	it("should navigate to create page", () => {
@@ -150,8 +147,6 @@ describe("Dashboard", () => {
 			fireEvent.click(createButton);
 		});
 
-		waitFor(() =>
-			expect(history.location.pathname).toEqual(`/profiles/${identity.profiles.bob.id}/wallets/create`),
-		);
+		waitFor(() => expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`));
 	});
 });

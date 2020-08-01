@@ -1,24 +1,17 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
-import { httpClient } from "app/services";
 import React from "react";
-import { fireEvent, render } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 import { ProfileCard } from "./ProfileCard";
 
-let env: Environment;
 let profile: Profile;
 
 describe("ProfileCard", () => {
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject({ data: {}, profiles });
-
-		profile = env.profiles().findById("bob");
+	beforeAll(async () => {
+		await env.bootFromObject(fixtureData);
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should render", () => {

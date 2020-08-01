@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Formatted Address should render 1`] = `
+exports[`Wallet Card should render 1`] = `
 <div>
   <a
-    data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+    data-testid="WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+    href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
       class="w-64 inline-block undefined"
@@ -17,30 +17,31 @@ exports[`Formatted Address should render 1`] = `
           class="relative p-2"
         >
           <div
-            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
+            <span
+              class="text-theme-neutral-400 hover:text-theme-neutral-500"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="float-right outline-none cursor-pointer focus:outline-none"
                 >
-                  <svg>
-                    settings.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </span>
           </div>
-          <div
-            class="absolute right-3 -top-1"
-          />
           <div
             class="flex"
           >
@@ -75,7 +76,7 @@ exports[`Formatted Address should render 1`] = `
 </div>
 `;
 
-exports[`Formatted Address should render blank 1`] = `
+exports[`Wallet Card should render blank 1`] = `
 <div>
   <div
     class="w-64 inline-block undefined"
@@ -111,11 +112,11 @@ exports[`Formatted Address should render blank 1`] = `
 </div>
 `;
 
-exports[`Formatted Address should render with wallet data 1`] = `
+exports[`Wallet Card should render with wallet data 1`] = `
 <div>
   <a
-    data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+    data-testid="WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+    href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
       class="w-64 inline-block undefined"
@@ -128,30 +129,31 @@ exports[`Formatted Address should render with wallet data 1`] = `
           class="relative p-2"
         >
           <div
-            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
+            <span
+              class="text-theme-neutral-400 hover:text-theme-neutral-500"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="float-right outline-none cursor-pointer focus:outline-none"
                 >
-                  <svg>
-                    settings.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </span>
           </div>
-          <div
-            class="absolute right-3 -top-1"
-          />
           <div
             class="flex"
           >
@@ -164,7 +166,7 @@ exports[`Formatted Address should render with wallet data 1`] = `
                 width="18"
               >
                 <svg>
-                  btc.svg
+                  ark.svg
                 </svg>
               </div>
             </div>
@@ -176,9 +178,9 @@ exports[`Formatted Address should render with wallet data 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -199,14 +201,14 @@ exports[`Formatted Address should render with wallet data 1`] = `
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuu…3kqT
+                D8rr…YUYD
               </span>
             </div>
           </div>
           <div
             class="font-bold text-theme-neutral-900"
           >
-            100,000 BTC
+            100,000 ARK
           </div>
         </div>
       </div>
@@ -216,11 +218,11 @@ exports[`Formatted Address should render with wallet data 1`] = `
 </div>
 `;
 
-exports[`Formatted Address should render with wallet data and optional icon 1`] = `
+exports[`Wallet Card should render with wallet data and optional icon 1`] = `
 <div>
   <a
-    data-testid="WalletCard__ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-    href="/profiles/bob/wallets/ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+    data-testid="WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129"
+    href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
       class="w-64 inline-block undefined"
@@ -233,30 +235,31 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
           class="relative p-2"
         >
           <div
-            class="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500"
+            class="absolute top-0 right-0 flex items-center -mr-2 space-x-2"
           >
-            <div
-              class="relative"
-              data-testid="dropdown__toggle"
+            <span
+              class="text-theme-neutral-400 hover:text-theme-neutral-500"
             >
               <div
-                class="float-right outline-none cursor-pointer focus:outline-none"
+                class="relative"
+                data-testid="dropdown__toggle"
               >
                 <div
-                  class="sc-AxiKw dklFyP"
-                  height="20"
-                  width="20"
+                  class="float-right outline-none cursor-pointer focus:outline-none"
                 >
-                  <svg>
-                    settings.svg
-                  </svg>
+                  <div
+                    class="sc-AxiKw dklFyP"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      settings.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
+            </span>
           </div>
-          <div
-            class="absolute right-3 -top-1"
-          />
           <div
             class="flex"
           >
@@ -269,7 +272,7 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
                 width="18"
               >
                 <svg>
-                  btc.svg
+                  ark.svg
                 </svg>
               </div>
             </div>
@@ -281,9 +284,9 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
                 class="w-full h-full"
               >
                 <img
-                  alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                  title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -304,14 +307,14 @@ exports[`Formatted Address should render with wallet data and optional icon 1`] 
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                ASuu…3kqT
+                D8rr…YUYD
               </span>
             </div>
           </div>
           <div
             class="font-bold text-theme-neutral-900"
           >
-            100,000 BTC
+            100,000 ARK
           </div>
         </div>
       </div>

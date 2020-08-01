@@ -12,6 +12,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TextArea } from "app/components/TextArea";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { LinkCollection } from "domains/transaction/components/LinkCollection";
@@ -290,10 +291,13 @@ export const FourthStep = () => {
 };
 
 export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegistrationProps) => {
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const [activeTab, setActiveTab] = React.useState(1);
+
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -307,13 +311,13 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

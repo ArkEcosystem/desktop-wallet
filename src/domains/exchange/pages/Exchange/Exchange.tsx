@@ -2,6 +2,7 @@ import { images } from "app/assets/images";
 import { Header } from "app/components/Header";
 import { Page, Section } from "app/components/Layout";
 import { Slider } from "app/components/Slider";
+import { useActiveProfile } from "app/hooks/env";
 import { AddExchange } from "domains/exchange/components/AddExchange";
 import { AddExchangeCard, BlankCard, ExchangeCard } from "domains/exchange/components/ExchangeCard";
 import React, { useState } from "react";
@@ -94,14 +95,16 @@ const ExchangesList = ({
 };
 
 export const Exchange = ({ exchanges }: ExchangeProps) => {
-	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
 
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [selectedExchange, setSelectedExchange] = useState(null);
 
+	const { t } = useTranslation();
+
 	return (
 		<>
-			<Page data-testid="Exchange">
+			<Page profile={activeProfile} data-testid="Exchange">
 				<Section>
 					<Header title={t("EXCHANGE.TITLE")} subtitle={t("EXCHANGE.DESCRIPTION")} />
 

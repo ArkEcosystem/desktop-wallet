@@ -26,6 +26,7 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 	const [allTransactions, setAllTransactions] = useState<Contracts.TransactionDataType[] | undefined>(undefined);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
+
 	const { t } = useTranslation();
 
 	useEffect(() => {
@@ -67,12 +68,12 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 	];
 
 	return (
-		<Page>
+		<Page profile={activeProfile}>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
 					<LineChart height={260} period="22 Jun - 28 Jun" data={balances} lines={chartLines} />
-					<div className="pt-6 mb-2 border-b border-dotted border-theme-neutral-200" />
+					<div className="border-theme-neutral-200 pt-6 mb-2 border-b border-dotted" />
 					<PercentageBar
 						title={t("DASHBOARD.DASHBOARD_PAGE.CHART.PERCENTAGES_LABEL")}
 						data={portfolioPercentages}
@@ -85,7 +86,7 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
 					viewType="grid"
-					title="Wallets"
+					title={t("COMMON.WALLETS")}
 					wallets={wallets}
 					filterProperties={filterProperties}
 				/>

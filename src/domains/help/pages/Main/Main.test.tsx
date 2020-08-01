@@ -2,14 +2,14 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { categories, helpfulArticles, newestArticles, popularArticles } from "../../data";
 import { Main } from "./Main";
 
 const history = createMemoryHistory();
-const supportURL = `/profiles/${identity.profiles.bob.id}/support`;
+
+const supportURL = `/profiles/${getDefaultProfileId()}/support`;
 
 describe("SupportPage", () => {
 	beforeAll(() => {

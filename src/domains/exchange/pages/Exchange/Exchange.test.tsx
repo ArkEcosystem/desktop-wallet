@@ -1,15 +1,14 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { fireEvent, renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
 const history = createMemoryHistory();
 
-const exchangeURL = `/profiles/${identity.profiles.bob.id}/exchange`;
+const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;
 
 describe("Exchange", () => {
 	beforeAll(() => {
