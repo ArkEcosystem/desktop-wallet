@@ -9,11 +9,8 @@ import nock from "nock";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
+import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
-
-import envFixture from "../tests/fixtures/env/data.json";
-
-export const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(envFixture) });
 
 const WithProviders: React.FC = ({ children }: { children?: React.ReactNode }) => (
 	<I18nextProvider i18n={i18n}>
@@ -47,8 +44,11 @@ export * from "@testing-library/react";
 
 export { customRender as render, renderWithRouter };
 
+export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+
 export const defaultNetMocks = () => {
 	nock.disableNetConnect();
+
 	nock("https://dwallets.ark.io")
 		.get("/api/node/configuration")
 		.reply(200, require("../tests/fixtures/coins/ark/configuration-devnet.json"))
@@ -66,3 +66,10 @@ export const defaultNetMocks = () => {
 };
 
 export const useDefaultNetMocks = defaultNetMocks;
+
+const envWithMocks = () => {
+	defaultNetMocks();
+	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage(fixtureData) });
+};
+
+export const env = envWithMocks();

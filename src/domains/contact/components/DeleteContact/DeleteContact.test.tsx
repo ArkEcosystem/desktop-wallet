@@ -1,37 +1,28 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { DeleteContact } from "./DeleteContact";
 
-let env: Environment;
 let contact: Contact;
 let profile: Profile;
 
 const onDelete = jest.fn();
 
 describe("DeleteContact", () => {
-	beforeAll(useDefaultNetMocks);
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
 		contact = profile.contacts().values()[0];
 	});
 
+	afterEach(() => {
+		onDelete.mockRestore();
+	});
+
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={false} onDelete={onDelete} profile={profile} />
-			</EnvironmentProvider>,
+		const { asFragment, getByTestId } = renderWithRouter(
+			<DeleteContact isOpen={false} onDelete={onDelete} profile={profile} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -39,10 +30,8 @@ describe("DeleteContact", () => {
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />
-			</EnvironmentProvider>,
+		const { asFragment, getByTestId } = renderWithRouter(
+			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
@@ -51,10 +40,8 @@ describe("DeleteContact", () => {
 	});
 
 	it("should delete contact", async () => {
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contactId={contact.id()} />
-			</EnvironmentProvider>,
+		const { getByTestId } = renderWithRouter(
+			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contactId={contact.id()} />,
 		);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
 
@@ -67,18 +54,13 @@ describe("DeleteContact", () => {
 	});
 
 	it("should not emit onDelete if contactId is not provided", () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<DeleteContact isOpen={true} onDelete={fn} profile={profile} />
-			</EnvironmentProvider>,
-		);
+		const { getByTestId } = renderWithRouter(<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
 
 		act(() => {
 			fireEvent.click(deleteBtn);
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(onDelete).not.toBeCalled();
 	});
 });

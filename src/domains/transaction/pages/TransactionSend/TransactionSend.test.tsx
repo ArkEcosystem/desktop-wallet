@@ -1,18 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { fireEvent, render, RenderResult, renderWithRouter, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, getDefaultProfileId, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
+
+const fixtureProfileId = getDefaultProfileId();
 
 const onCopy = jest.fn();
 
@@ -24,23 +22,6 @@ const defaultFormValues = {
 		min: 1,
 		average: 14,
 	},
-	assets: [
-		{
-			icon: "Ark",
-			name: "Ark Ecosystem",
-			className: "text-theme-danger-400 border-theme-danger-light",
-		},
-		{
-			icon: "Bitcoin",
-			name: "Bitcoin",
-			className: "text-theme-warning-400 border-theme-warning-200",
-		},
-		{
-			icon: "Ethereum",
-			name: "Ethereum",
-			className: "text-theme-neutral-800 border-theme-neutral-600",
-		},
-	],
 	defaultFee: 0,
 	formDefaultData: {
 		network: null,
@@ -49,26 +30,12 @@ const defaultFormValues = {
 		smartbridge: null,
 		fee: 0,
 	},
-	senderList: [
-		{
-			address: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			walletName: "My Wallet",
-			avatarId: "FJKDSALJFKASLJFKSDAJFKFKDSAJFKSAJFKLASJKDFJ",
-			formatted: "My Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-		},
-	],
 };
 
-let env: Environment;
 let profile: Profile;
 
 describe("Transaction Send", () => {
 	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 	});
 
@@ -130,9 +97,9 @@ describe("Transaction Send", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render", async () => {
+	it("should navigate between teps", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${profile.id()}/transactions/transfer`;
+		const transferURL = `/profiles/${fixtureProfileId}/transactions/transfer`;
 
 		history.push(transferURL);
 
@@ -140,11 +107,9 @@ describe("Transaction Send", () => {
 
 		await act(async () => {
 			rendered = renderWithRouter(
-				<EnvironmentProvider env={env}>
-					<Route path="/profiles/:profileId/transactions/transfer">
-						<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
-					</Route>
-				</EnvironmentProvider>,
+				<Route path="/profiles/:profileId/transactions/transfer">
+					<TransactionSend onCopy={onCopy} formValues={defaultFormValues} />
+				</Route>,
 				{
 					routes: [transferURL],
 					history,

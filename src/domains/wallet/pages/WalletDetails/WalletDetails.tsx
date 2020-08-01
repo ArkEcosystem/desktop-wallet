@@ -50,13 +50,13 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const [isDeleteWallet, setIsDeleteWallet] = useState(false);
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { walletId } = useParams();
-
-	const activeProfile = useActiveProfile();
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -84,7 +84,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	/* istanbul ignore next */
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
 					coin={wallet?.coinIcon || "Ark"}
 					address={wallet?.address}

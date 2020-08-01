@@ -1,40 +1,15 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
 let profile: Profile;
 
-const recipients = [
-	{
-		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient Wallet",
-		formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-	},
-	{
-		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient Multisig",
-	},
-	{
-		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient in Ark",
-	},
-];
-
 describe("AddRecipient", () => {
 	beforeAll(async () => {
-		useDefaultNetMocks();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should render", () => {
@@ -62,26 +37,28 @@ describe("AddRecipient", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should select recipient", () => {
+	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(() => expect(getByTestId("modal__inner")).toBeFalsy());
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
@@ -104,13 +81,7 @@ describe("AddRecipient", () => {
 
 	it("should toggle between single and multiple recipients", async () => {
 		const { getByTestId } = render(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
-				recipients={recipients}
-			/>,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
 		const singleButton = getByTestId("add-recipient-is-single-toggle");
 		const multipleButton = getByTestId("add-recipient-is-multiple-toggle");
@@ -144,19 +115,18 @@ describe("AddRecipient", () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);
-		});
-
-		act(() => {
 			fireEvent.click(getByTestId("add-recipient__send-all"));
 		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			const addedRecipientBtn = getByTestId("add-recipient__add-btn");
 			expect(addedRecipientBtn).toBeTruthy();
 		});
@@ -222,12 +192,12 @@ describe("AddRecipient", () => {
 		);
 
 		const sendAll = getByTestId("add-recipient__send-all");
-		act(() => {
+		await act(async () => {
 			fireEvent.click(sendAll);
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		waitFor(
+		await waitFor(
 			() => {
 				expect(getByTestId("modal__inner")).toBeTruthy();
 			},
@@ -235,17 +205,17 @@ describe("AddRecipient", () => {
 		);
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("add-recipient__add-btn"));
 		});
 
 		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
 		expect(removeBtn[0]).toBeTruthy();
-		act(() => {
+		await act(async () => {
 			fireEvent.click(removeBtn[0]);
 		});
 

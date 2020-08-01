@@ -46,7 +46,6 @@ type ContactsProps = {
 
 export const Contacts = ({ onSearch }: ContactsProps) => {
 	const { env, persist, state } = useEnvironmentContext();
-	const { t } = useTranslation();
 
 	const activeProfile = useActiveProfile();
 
@@ -56,6 +55,8 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const [contactToDelete, setContactToDelete] = useState(null);
 
 	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
+
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		setContacts(activeProfile!.contacts().values());
@@ -69,7 +70,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -109,7 +110,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<Section>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}

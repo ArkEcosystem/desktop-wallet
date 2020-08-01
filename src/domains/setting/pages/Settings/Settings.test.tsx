@@ -1,19 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import electron from "electron";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter } from "testing-library";
-import { profiles } from "tests/fixtures/env/data";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { translations } from "../../i18n";
 import { Settings } from "./Settings";
+
+jest.setTimeout(8000);
 
 jest.mock("electron", () => {
 	const setContentProtection = jest.fn();
@@ -34,7 +31,6 @@ jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
-let env: Environment;
 let profile: Profile;
 let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParams = {
@@ -44,21 +40,15 @@ const showOpenDialogParams = {
 };
 
 describe("Settings", () => {
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-
-		await env.bootFromObject({ data: {}, profiles });
-
-		profile = env.profiles().findById("bob");
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={jest.fn()} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
@@ -70,14 +60,14 @@ describe("Settings", () => {
 
 	it("should update profile", async () => {
 		let savedProfile: any = null;
+		const profilesCount = env.profiles().count();
+
 		const onSubmit = jest.fn((profile: any) => (savedProfile = profile));
 
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={onSubmit} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={onSubmit} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
@@ -137,7 +127,7 @@ describe("Settings", () => {
 			MARKET_PROVIDER: "coincap",
 			EXCHANGE_CURRENCY: "btc",
 			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
+			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: true,
 			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "light",
@@ -176,7 +166,7 @@ describe("Settings", () => {
 			MARKET_PROVIDER: "coincap",
 			EXCHANGE_CURRENCY: "btc",
 			TIME_FORMAT: "h:mm A",
-			SCREENSHOT_PROTECTION: true,
+			SCREENSHOT_PROTECTION: false,
 			ADVANCED_MODE: false,
 			AUTOMATIC_LOGOFF_PERIOD: "1",
 			THEME: "dark",
@@ -200,17 +190,15 @@ describe("Settings", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_ADVANCED_MODE.DISCLAIMER);
 		fireEvent.click(getByTestId("modal__close-btn"));
 
-		expect(env.profiles().count()).toEqual(1);
+		expect(env.profiles().count()).toEqual(profilesCount);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should submit using default props", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={jest.fn()} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
@@ -248,11 +236,9 @@ describe("Settings", () => {
 
 	it("should render peer settings", async () => {
 		const { container, asFragment, findByText } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={jest.fn()} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
@@ -265,11 +251,9 @@ describe("Settings", () => {
 
 	it("should render plugin settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={jest.fn()} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
@@ -282,11 +266,9 @@ describe("Settings", () => {
 
 	it("should open & close modals in the plugin settings", async () => {
 		const { container, asFragment, getByTestId } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/settings">
-					<Settings onSubmit={jest.fn()} />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/settings">
+				<Settings onSubmit={jest.fn()} />
+			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
 			},

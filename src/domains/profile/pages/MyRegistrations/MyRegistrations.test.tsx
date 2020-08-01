@@ -1,18 +1,18 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, within } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, within } from "testing-library";
 
 import { registrations } from "../../data";
 import { MyRegistrations } from "./MyRegistrations";
 
-let history;
-const registrationsURL = `/profiles/${identity.profiles.bob.id}/registrations`;
+const history = createMemoryHistory();
+
+const fixtureProfileId = getDefaultProfileId();
+const registrationsURL = `/profiles/${fixtureProfileId}/registrations`;
 
 describe("Welcome", () => {
 	beforeEach(() => {
-		history = createMemoryHistory();
 		history.push(registrationsURL);
 	});
 
@@ -79,7 +79,7 @@ describe("Welcome", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
-		expect(history.location.pathname).toEqual("/profiles/bob/transactions/registration");
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/transactions/registration`);
 	});
 
 	it.each(["business", "blockchain", "delegate"])("should handle %s dropdown", (type) => {

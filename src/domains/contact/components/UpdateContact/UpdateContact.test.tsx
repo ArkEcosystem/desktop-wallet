@@ -1,34 +1,23 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Contact, Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
-import { act, fireEvent, render, useDefaultNetMocks, waitFor } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { UpdateContact } from "./UpdateContact";
 
-let env: Environment;
 let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeAll(useDefaultNetMocks);
-
 	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+		profile = env.profiles().findById(getDefaultProfileId());
 		updatingContact = profile.contacts().values()[0];
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<UpdateContact
 				profile={profile}
 				isOpen={false}
@@ -42,7 +31,7 @@ describe("UpdateContact", () => {
 	});
 
 	it("should render a modal", () => {
-		const { asFragment, getByTestId } = render(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<UpdateContact profile={profile} isOpen={true} contact={updatingContact} />,
 		);
 
@@ -51,10 +40,8 @@ describe("UpdateContact", () => {
 	});
 
 	it("should display contact info in form", () => {
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} profile={profile} contact={updatingContact} />
-			</EnvironmentProvider>,
+		const { getByTestId } = renderWithRouter(
+			<UpdateContact isOpen={true} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -62,11 +49,9 @@ describe("UpdateContact", () => {
 	});
 
 	it("should cancel contact update", async () => {
-		const fn = jest.fn();
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onCancel={fn} profile={profile} contact={updatingContact} />
-			</EnvironmentProvider>,
+		const onCancel = jest.fn();
+		const { getByTestId } = renderWithRouter(
+			<UpdateContact isOpen={true} onCancel={onCancel} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -77,20 +62,20 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(fn).toBeCalled();
+			expect(onCancel).toBeCalled();
 		});
 	});
 
 	it("should delete contact", async () => {
+		const contactToDelete = profile.contacts().create("Test");
+
 		const onDelete = jest.fn();
-		const { getByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={updatingContact} />
-			</EnvironmentProvider>,
+		const { getByTestId } = renderWithRouter(
+			<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={contactToDelete} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(updatingContact.name());
+		expect(nameInput).toHaveValue(contactToDelete.name());
 
 		act(() => {
 			fireEvent.click(getByTestId("contact-form__delete-btn"));
@@ -98,12 +83,12 @@ describe("UpdateContact", () => {
 
 		await waitFor(() => {
 			expect(onDelete).toBeCalled();
-			expect(() => profile.contacts().findById(updatingContact.id())).toThrowError("Failed to find");
+			expect(() => profile.contacts().findById(contactToDelete.id())).toThrowError("Failed to find");
 		});
 	});
 
 	it("should update contact name and address", async () => {
-		const onSaveAddress = jest.fn();
+		const onSave = jest.fn();
 
 		const newName = "Updated name";
 		const newAddress = {
@@ -113,16 +98,14 @@ describe("UpdateContact", () => {
 			coin: "ARK",
 		};
 
-		const { getByTestId, queryByTestId } = render(
-			<EnvironmentProvider env={env}>
-				<UpdateContact
-					isOpen={true}
-					onSave={onSaveAddress}
-					profile={profile}
-					contact={updatingContact}
-					networks={availableNetworksMock}
-				/>
-			</EnvironmentProvider>,
+		const { getByTestId, queryByTestId } = renderWithRouter(
+			<UpdateContact
+				isOpen={true}
+				onSave={onSave}
+				profile={profile}
+				contact={updatingContact}
+				networks={availableNetworksMock}
+			/>,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -161,7 +144,7 @@ describe("UpdateContact", () => {
 		});
 
 		await waitFor(() => {
-			expect(onSaveAddress).toBeCalledWith(updatingContact.id());
+			expect(onSave).toBeCalledWith(updatingContact.id());
 
 			const savedContact = profile.contacts().findById(updatingContact.id());
 			expect(savedContact.name()).toEqual(newName);

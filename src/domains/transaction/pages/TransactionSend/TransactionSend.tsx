@@ -226,7 +226,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<div className="max-w-xl mx-auto">
 					<Tabs activeId={activeTab}>

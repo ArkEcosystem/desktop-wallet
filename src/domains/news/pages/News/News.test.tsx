@@ -1,14 +1,13 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { news } from "../../data";
 import { News } from "./News";
 
 const history = createMemoryHistory();
-const newsURL = `/profiles/${identity.profiles.bob.id}/news`;
+const newsURL = `/profiles/${getDefaultProfileId()}/news`;
 
 describe("News", () => {
 	beforeAll(() => {
