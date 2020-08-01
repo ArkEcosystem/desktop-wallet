@@ -82,7 +82,10 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
 				{avatarImage?.endsWith("</svg>") ? (
-					<div className="relative inline-flex items-center justify-center align-middle rounded-full">
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						data-testid="navbar__user--avatar"
+					>
 						<img
 							className="rounded-full w-11 h-11"
 							src={`data:image/svg+xml;utf8,${avatarImage}`}
@@ -100,7 +103,10 @@ const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userIn
 						/>
 					</div>
 				) : (
-					<div className="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11">
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+						data-testid="navbar__user--avatarImage"
+					>
 						<img
 							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 							src={avatarImage}

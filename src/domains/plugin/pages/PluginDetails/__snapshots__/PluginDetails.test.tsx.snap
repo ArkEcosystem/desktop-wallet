@@ -189,6 +189,7 @@ exports[`PluginDetails should render properly 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -1692,6 +1693,7 @@ exports[`PluginDetails should render properly as installed 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"

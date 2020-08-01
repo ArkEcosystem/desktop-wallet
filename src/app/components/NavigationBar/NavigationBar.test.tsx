@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, renderWithRouter } from "testing-library";
@@ -75,9 +75,18 @@ describe("NavigationBar", () => {
 			fireEvent.click(toggle);
 		});
 
+		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
 		expect(history.location.pathname).toMatch("/test");
+	});
+
+	it("should render the navbar with avatar image", () => {
+		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
+
+		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(getByTestId("navbar__user--avatarImage")).toBeTruthy();
 	});
 
 	it.each(["Contacts", "Settings", "Support"])("should handle '%s' click on user actions dropdown", async (label) => {

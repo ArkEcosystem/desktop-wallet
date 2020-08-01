@@ -188,6 +188,7 @@ exports[`WalletDetails should delete wallet 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -1968,6 +1969,7 @@ exports[`WalletDetails should not render the bottom sheet menu when there is onl
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"
@@ -3742,6 +3744,7 @@ exports[`WalletDetails should render 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"
@@ -6098,6 +6101,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"

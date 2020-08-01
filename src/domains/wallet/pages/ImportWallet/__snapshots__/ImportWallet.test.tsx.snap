@@ -188,6 +188,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -624,6 +625,7 @@ exports[`ImportWallet should import by address 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -1060,6 +1062,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -1749,6 +1752,7 @@ exports[`ImportWallet should show an error if import a NEO mainnet address 1`] =
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -2185,6 +2189,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -2621,6 +2626,7 @@ exports[`ImportWallet should show an error message if trying to import a duplica
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"

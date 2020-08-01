@@ -131,6 +131,7 @@ exports[`Votes should render 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"
@@ -588,6 +589,7 @@ exports[`Votes should select a delegate 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"
@@ -1904,6 +1906,7 @@ exports[`Votes should select a network 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"
@@ -3043,6 +3046,7 @@ exports[`Votes should select address 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
                     <img
                       alt="Profile avatar"

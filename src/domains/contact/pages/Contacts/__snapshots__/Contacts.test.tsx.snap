@@ -188,6 +188,7 @@ exports[`Contacts with contacts should render with contacts 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -843,6 +844,7 @@ exports[`Contacts without contacts should render empty 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"

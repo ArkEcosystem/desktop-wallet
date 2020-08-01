@@ -180,6 +180,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
@@ -623,6 +624,7 @@ exports[`CreateWallet should render 1`] = `
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
+                    data-testid="navbar__user--avatar"
                   >
                     <img
                       alt="Profile avatar"
