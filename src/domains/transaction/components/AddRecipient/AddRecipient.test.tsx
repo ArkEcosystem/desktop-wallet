@@ -5,22 +5,6 @@ import { act, fireEvent, render, waitFor } from "testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
-const recipients = [
-	{
-		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient Wallet",
-		formatted: "Recipient Wallet FJKDSALJFKASL...SAJFKLASJKDFJ",
-	},
-	{
-		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient Multisig",
-	},
-	{
-		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient in Ark",
-	},
-];
-
 describe("AddRecipient", () => {
 	it("should render", () => {
 		const { container } = render(<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />);
@@ -39,32 +23,28 @@ describe("AddRecipient", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should select recipient", () => {
+	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} contacts={contacts} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
 
-		waitFor(
-			() => {
-				expect(getByTestId("modal__inner").toThrow(/Unable to find an element by/));
-			},
-			{ timeout: 2000 },
-		);
-
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
 		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
 	});
@@ -84,9 +64,7 @@ describe("AddRecipient", () => {
 	});
 
 	it("should toggle between single and multiple recipients", async () => {
-		const { getByTestId } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} recipients={recipients} />,
-		);
+		const { getByTestId } = render(<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />);
 		const singleButton = getByTestId("add-recipient-is-single-toggle");
 		const multipleButton = getByTestId("add-recipient-is-multiple-toggle");
 
@@ -119,72 +97,22 @@ describe("AddRecipient", () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("modal__inner")).toBeTruthy();
+		});
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);
-		});
-
-		act(() => {
 			fireEvent.click(getByTestId("add-recipient__send-all"));
 		});
 
-		waitFor(() => {
+		await waitFor(() => {
 			const addedRecipientBtn = getByTestId("add-recipient__add-btn");
 			expect(addedRecipientBtn).toBeTruthy();
 		});
 	});
-
-	it("should add two recipients in multiple tab", async () => {
-		const { getByTestId, getAllByTestId } = render(
-			<AddRecipient
-				assetSymbol="ARK"
-				maxAvailableAmount={80}
-				availableAmount={0}
-				isSingleRecipient={false}
-				contacts={contacts}
-			/>,
-		);
-
-		const sendAll = getByTestId("add-recipient__send-all");
-		act(() => {
-			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
-		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
-		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-
-		act(() => {
-			fireEvent.click(firstAddress);
-		});
-
-		const addedRecipientBtn1 = getByTestId("add-recipient__add-btn");
-		act(() => {
-			fireEvent.click(addedRecipientBtn1);
-		});
-
-		// 2nd recipient
-
-		act(() => {
-			fireEvent.click(sendAll);
-			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
-		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
-		const secondAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-		act(() => {
-			fireEvent.click(secondAddress);
-		});
-
-		waitFor(() => {
-			const addedRecipients = getAllByTestId("recipient-list__recipient-list-item");
-			expect(addedRecipients).toHaveLength(2);
-		});
-	});
-
 	it("should add and remove recipient", async () => {
 		const { getByTestId, getAllByTestId, queryByText } = render(
 			<AddRecipient
@@ -197,12 +125,12 @@ describe("AddRecipient", () => {
 		);
 
 		const sendAll = getByTestId("add-recipient__send-all");
-		act(() => {
+		await act(async () => {
 			fireEvent.click(sendAll);
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		waitFor(
+		await waitFor(
 			() => {
 				expect(getByTestId("modal__inner")).toBeTruthy();
 			},
@@ -210,17 +138,17 @@ describe("AddRecipient", () => {
 		);
 
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
-		act(() => {
+		await act(async () => {
 			fireEvent.click(firstAddress);
 		});
 
-		act(() => {
+		await act(async () => {
 			fireEvent.click(getByTestId("add-recipient__add-btn"));
 		});
 
 		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
 		expect(removeBtn[0]).toBeTruthy();
-		act(() => {
+		await act(async () => {
 			fireEvent.click(removeBtn[0]);
 		});
 

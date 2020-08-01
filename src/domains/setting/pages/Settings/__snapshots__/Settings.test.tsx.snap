@@ -35,7 +35,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -46,7 +46,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -57,7 +57,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -68,7 +68,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -105,7 +105,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -155,7 +155,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -174,7 +174,17 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
@@ -182,7 +192,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      te
                     </span>
                     <span
                       class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -224,7 +234,7 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -526,18 +536,18 @@ exports[`Settings should open & close modals in the plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-166-label downshift-166-toggle-button"
+                                  aria-labelledby="downshift-157-label downshift-157-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-166-toggle-button"
+                                  id="downshift-157-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-166-label"
+                                  aria-labelledby="downshift-157-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-166-menu"
+                                  id="downshift-157-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -622,7 +632,7 @@ exports[`Settings should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -633,7 +643,7 @@ exports[`Settings should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -644,7 +654,7 @@ exports[`Settings should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -655,7 +665,7 @@ exports[`Settings should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -692,7 +702,7 @@ exports[`Settings should render 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -742,7 +752,7 @@ exports[`Settings should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -761,7 +771,17 @@ exports[`Settings should render 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
@@ -769,7 +789,7 @@ exports[`Settings should render 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -811,7 +831,7 @@ exports[`Settings should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1040,7 +1060,7 @@ exports[`Settings should render 1`] = `
                             data-testid="General-settings__input--name"
                             name="name"
                             type="text"
-                            value="Bob"
+                            value="John Doe"
                           />
                         </fieldset>
                         <fieldset
@@ -1063,7 +1083,7 @@ exports[`Settings should render 1`] = `
                               name="passphraseLanguage"
                               readonly=""
                               type="text"
-                              value=""
+                              value="english"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1073,12 +1093,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-0-label downshift-0-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
+                                  class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-0-toggle-button"
                                   type="button"
                                 >
-                                  Select Passphrase Language
+                                  English
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-0-label"
@@ -1124,7 +1144,7 @@ exports[`Settings should render 1`] = `
                               name="currency"
                               readonly=""
                               type="text"
-                              value=""
+                              value="btc"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1134,12 +1154,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-1-label downshift-1-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
+                                  class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-1-toggle-button"
                                   type="button"
                                 >
-                                  Select Currency
+                                  BTC (Ƀ)
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-1-label"
@@ -1189,7 +1209,7 @@ exports[`Settings should render 1`] = `
                               name="language"
                               readonly=""
                               type="text"
-                              value=""
+                              value="en-US"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1199,12 +1219,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-2-label downshift-2-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
+                                  class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-2-toggle-button"
                                   type="button"
                                 >
-                                  Select Language
+                                  English
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-2-label"
@@ -1250,7 +1270,7 @@ exports[`Settings should render 1`] = `
                               name="marketProvider"
                               readonly=""
                               type="text"
-                              value=""
+                              value="coincap"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1260,12 +1280,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-3-label downshift-3-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
+                                  class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-3-toggle-button"
                                   type="button"
                                 >
-                                  Select Market Provider
+                                  CoinCap
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-3-label"
@@ -1311,7 +1331,7 @@ exports[`Settings should render 1`] = `
                               name="timeFormat"
                               readonly=""
                               type="text"
-                              value=""
+                              value="h:mm A"
                             />
                             <div
                               class="relative w-full cursor-pointer"
@@ -1321,12 +1341,12 @@ exports[`Settings should render 1`] = `
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
                                   aria-labelledby="downshift-4-label downshift-4-toggle-button"
-                                  class="sc-fznWqX iNiXlu   "
+                                  class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
                                   id="downshift-4-toggle-button"
                                   type="button"
                                 >
-                                  Select Time Format
+                                  12h
                                 </button>
                                 <ul
                                   aria-labelledby="downshift-4-label"
@@ -1403,6 +1423,7 @@ exports[`Settings should render 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isScreenshotProtection"
                                   name="isScreenshotProtection"
@@ -1516,7 +1537,7 @@ exports[`Settings should render 1`] = `
                                 name="autoLogoff"
                                 readonly=""
                                 type="text"
-                                value=""
+                                value="15"
                               />
                               <div
                                 class="relative w-full cursor-pointer"
@@ -1526,12 +1547,12 @@ exports[`Settings should render 1`] = `
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
                                     aria-labelledby="downshift-5-label downshift-5-toggle-button"
-                                    class="sc-fznWqX iNiXlu   "
+                                    class="sc-fznWqX iNiXlu  is-selected "
                                     data-testid="select-list__toggle-button"
                                     id="downshift-5-toggle-button"
                                     type="button"
                                   >
-                                    Select Auto-logoff
+                                    15 Minutes
                                   </button>
                                   <ul
                                     aria-labelledby="downshift-5-label"
@@ -1770,7 +1791,7 @@ exports[`Settings should render peer settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -1781,7 +1802,7 @@ exports[`Settings should render peer settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -1792,7 +1813,7 @@ exports[`Settings should render peer settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -1803,7 +1824,7 @@ exports[`Settings should render peer settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -1840,7 +1861,7 @@ exports[`Settings should render peer settings 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1890,7 +1911,7 @@ exports[`Settings should render peer settings 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -1909,7 +1930,17 @@ exports[`Settings should render peer settings 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
@@ -1917,7 +1948,7 @@ exports[`Settings should render peer settings 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      te
                     </span>
                     <span
                       class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -1959,7 +1990,7 @@ exports[`Settings should render peer settings 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2607,7 +2638,7 @@ exports[`Settings should render plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -2618,7 +2649,7 @@ exports[`Settings should render plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -2629,7 +2660,7 @@ exports[`Settings should render plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -2640,7 +2671,7 @@ exports[`Settings should render plugin settings 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -2677,7 +2708,7 @@ exports[`Settings should render plugin settings 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -2727,7 +2758,7 @@ exports[`Settings should render plugin settings 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -2746,7 +2777,17 @@ exports[`Settings should render plugin settings 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-AxhUy dSLmHc relative bg-theme-primary border-theme-primary rotate-90"
@@ -2754,7 +2795,7 @@ exports[`Settings should render plugin settings 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      te
                     </span>
                     <span
                       class="sc-AxiKw eGdvNF flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -2796,7 +2837,7 @@ exports[`Settings should render plugin settings 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3098,18 +3139,18 @@ exports[`Settings should render plugin settings 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-159-label downshift-159-toggle-button"
+                                  aria-labelledby="downshift-150-label downshift-150-toggle-button"
                                   class="sc-fznWqX iNiXlu   "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-159-toggle-button"
+                                  id="downshift-150-toggle-button"
                                   type="button"
                                 >
                                   Select Plugin Source
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-159-label"
+                                  aria-labelledby="downshift-150-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-159-menu"
+                                  id="downshift-150-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3194,7 +3235,7 @@ exports[`Settings should submit using default props 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -3205,7 +3246,7 @@ exports[`Settings should submit using default props 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -3216,7 +3257,7 @@ exports[`Settings should submit using default props 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -3227,7 +3268,7 @@ exports[`Settings should submit using default props 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -3264,7 +3305,7 @@ exports[`Settings should submit using default props 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3314,7 +3355,7 @@ exports[`Settings should submit using default props 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -3393,7 +3434,7 @@ exports[`Settings should submit using default props 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3654,18 +3695,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-108-label downshift-108-toggle-button"
+                                  aria-labelledby="downshift-104-label downshift-104-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-108-toggle-button"
+                                  id="downshift-104-toggle-button"
                                   type="button"
                                 >
                                   Chinese Simplified
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-108-label"
+                                  aria-labelledby="downshift-104-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-108-menu"
+                                  id="downshift-104-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3715,18 +3756,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-109-label downshift-109-toggle-button"
+                                  aria-labelledby="downshift-105-label downshift-105-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-109-toggle-button"
+                                  id="downshift-105-toggle-button"
                                   type="button"
                                 >
                                   BTC (Ƀ)
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-109-label"
+                                  aria-labelledby="downshift-105-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-109-menu"
+                                  id="downshift-105-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3780,18 +3821,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-110-label downshift-110-toggle-button"
+                                  aria-labelledby="downshift-106-label downshift-106-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-110-toggle-button"
+                                  id="downshift-106-toggle-button"
                                   type="button"
                                 >
                                   English
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-110-label"
+                                  aria-labelledby="downshift-106-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-110-menu"
+                                  id="downshift-106-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3841,18 +3882,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-111-label downshift-111-toggle-button"
+                                  aria-labelledby="downshift-107-label downshift-107-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-111-toggle-button"
+                                  id="downshift-107-toggle-button"
                                   type="button"
                                 >
                                   CoinCap
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-111-label"
+                                  aria-labelledby="downshift-107-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-111-menu"
+                                  id="downshift-107-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -3902,18 +3943,18 @@ exports[`Settings should submit using default props 1`] = `
                                 <button
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-labelledby="downshift-112-label downshift-112-toggle-button"
+                                  aria-labelledby="downshift-108-label downshift-108-toggle-button"
                                   class="sc-fznWqX iNiXlu  is-selected "
                                   data-testid="select-list__toggle-button"
-                                  id="downshift-112-toggle-button"
+                                  id="downshift-108-toggle-button"
                                   type="button"
                                 >
                                   12h
                                 </button>
                                 <ul
-                                  aria-labelledby="downshift-112-label"
+                                  aria-labelledby="downshift-108-label"
                                   class="sc-fzoiQi eFpDPy"
-                                  id="downshift-112-menu"
+                                  id="downshift-108-menu"
                                   role="listbox"
                                   tabindex="-1"
                                 />
@@ -4179,18 +4220,18 @@ exports[`Settings should submit using default props 1`] = `
                                   <button
                                     aria-expanded="false"
                                     aria-haspopup="listbox"
-                                    aria-labelledby="downshift-113-label downshift-113-toggle-button"
+                                    aria-labelledby="downshift-109-label downshift-109-toggle-button"
                                     class="sc-fznWqX iNiXlu   "
                                     data-testid="select-list__toggle-button"
-                                    id="downshift-113-toggle-button"
+                                    id="downshift-109-toggle-button"
                                     type="button"
                                   >
                                     Select Auto-logoff
                                   </button>
                                   <ul
-                                    aria-labelledby="downshift-113-label"
+                                    aria-labelledby="downshift-109-label"
                                     class="sc-fzoiQi eFpDPy"
-                                    id="downshift-113-menu"
+                                    id="downshift-109-menu"
                                     role="listbox"
                                     tabindex="-1"
                                   />
@@ -4263,6 +4304,7 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
+                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isDarkMode"
                                   name="isDarkMode"
@@ -4318,7 +4360,6 @@ exports[`Settings should submit using default props 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isUpdateLedger"
                                   name="isUpdateLedger"
@@ -4425,7 +4466,7 @@ exports[`Settings should update profile 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -4436,7 +4477,7 @@ exports[`Settings should update profile 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -4447,7 +4488,7 @@ exports[`Settings should update profile 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -4458,7 +4499,7 @@ exports[`Settings should update profile 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -4495,7 +4536,7 @@ exports[`Settings should update profile 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4545,7 +4586,7 @@ exports[`Settings should update profile 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -4624,7 +4665,7 @@ exports[`Settings should update profile 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -5216,7 +5257,6 @@ exports[`Settings should update profile 1`] = `
                                 class="flex"
                               >
                                 <input
-                                  checked=""
                                   class="sc-fzqARJ qvHrv"
                                   data-testid="General-settings__toggle--isScreenshotProtection"
                                   name="isScreenshotProtection"

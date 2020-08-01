@@ -35,7 +35,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -47,7 +47,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -58,7 +58,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -69,7 +69,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -106,7 +106,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -156,7 +156,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -175,7 +175,17 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -183,7 +193,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -226,7 +236,7 @@ exports[`PluginsCategory should cancel install plugin 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -1794,7 +1804,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -1806,7 +1816,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -1817,7 +1827,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -1828,7 +1838,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -1865,7 +1875,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -1915,7 +1925,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -1934,7 +1944,17 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -1942,7 +1962,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -1985,7 +2005,7 @@ exports[`PluginsCategory should close install plugin modal 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -3553,7 +3573,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -3565,7 +3585,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -3576,7 +3596,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -3587,7 +3607,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -3624,7 +3644,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -3674,7 +3694,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -3693,7 +3713,17 @@ exports[`PluginsCategory should delete plugin 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -3701,7 +3731,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -3744,7 +3774,7 @@ exports[`PluginsCategory should delete plugin 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -4654,7 +4684,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -4666,7 +4696,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -4677,7 +4707,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -4688,7 +4718,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -4725,7 +4755,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -4775,7 +4805,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -4794,7 +4824,17 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -4802,7 +4842,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -4845,7 +4885,7 @@ exports[`PluginsCategory should download & install plugin 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -6568,7 +6608,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -6580,7 +6620,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -6591,7 +6631,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -6602,7 +6642,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -6639,7 +6679,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -6689,7 +6729,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -6708,7 +6748,17 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -6716,7 +6766,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -6759,7 +6809,7 @@ exports[`PluginsCategory should install plugin from header install button 1`] = 
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -7824,7 +7874,7 @@ exports[`PluginsCategory should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -7836,7 +7886,7 @@ exports[`PluginsCategory should render 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -7847,7 +7897,7 @@ exports[`PluginsCategory should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -7858,7 +7908,7 @@ exports[`PluginsCategory should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -7895,7 +7945,7 @@ exports[`PluginsCategory should render 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -7945,7 +7995,7 @@ exports[`PluginsCategory should render 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -7964,7 +8014,17 @@ exports[`PluginsCategory should render 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -7972,7 +8032,7 @@ exports[`PluginsCategory should render 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -8015,7 +8075,7 @@ exports[`PluginsCategory should render 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -8925,7 +8985,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -8937,7 +8997,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -8948,7 +9008,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -8959,7 +9019,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -8996,7 +9056,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -9046,7 +9106,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -9065,7 +9125,17 @@ exports[`PluginsCategory should search for plugin 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -9073,7 +9143,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -9116,7 +9186,7 @@ exports[`PluginsCategory should search for plugin 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -10076,7 +10146,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -10088,7 +10158,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -10099,7 +10169,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -10110,7 +10180,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -10147,7 +10217,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -10197,7 +10267,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -10216,7 +10286,17 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -10224,7 +10304,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -10267,7 +10347,7 @@ exports[`PluginsCategory should select plugin on grid 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
@@ -11177,7 +11257,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -11189,7 +11269,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                 <a
                   aria-current="page"
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral active"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -11200,7 +11280,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -11211,7 +11291,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -11248,7 +11328,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxirZ hmuEJr"
@@ -11298,7 +11378,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
               >
-                0
+                1000
               </div>
             </div>
             <div
@@ -11317,7 +11397,17 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxirZ iQaTP"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="sc-fznyAO hUVUQM relative bg-theme-primary border-theme-primary rotate-90"
@@ -11325,7 +11415,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
                     <span
                       class="text-sm text-theme-background"
                     >
-                      Bo
+                      Jo
                     </span>
                     <span
                       class="sc-fzplWN dtBkxc flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -11368,7 +11458,7 @@ exports[`PluginsCategory should toggle between grid and list 1`] = `
         <a
           aria-current="page"
           class="text-theme-neutral-dark active"
-          href="/profiles/bob/plugins"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
         >
           <span>
             Go back to Plugin Manager
