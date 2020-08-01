@@ -481,7 +481,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -492,7 +492,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -503,7 +503,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -514,7 +514,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -551,7 +551,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -600,7 +600,9 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
-              />
+              >
+                0
+              </div>
             </div>
             <div
               class="flex p-1 cusror-pointer"
@@ -618,24 +620,16 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
                     class="sc-fznZeY kRxrNJ relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
-                    />
+                    >
+                      Jo
+                    </span>
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
@@ -676,7 +670,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -815,7 +809,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -839,7 +833,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -927,7 +921,7 @@ exports[`CreateWallet should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/dashboard"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   Portfolio
@@ -938,7 +932,7 @@ exports[`CreateWallet should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/plugins"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   Plugins
@@ -949,7 +943,7 @@ exports[`CreateWallet should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/exchange"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   Exchange
@@ -960,7 +954,7 @@ exports[`CreateWallet should render 1`] = `
               >
                 <a
                   class="flex items-center mx-4 font-bold text-md text-theme-neutral"
-                  href="/profiles/bob/news"
+                  href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   News
@@ -997,7 +991,7 @@ exports[`CreateWallet should render 1`] = `
             >
               <a
                 data-testid="navbar__buttons--send"
-                href="/profiles/bob/transactions/transfer"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/transactions/transfer"
               >
                 <div
                   class="sc-AxjAm jmgDQY"
@@ -1046,7 +1040,9 @@ exports[`CreateWallet should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-neutral-dark"
-              />
+              >
+                0
+              </div>
             </div>
             <div
               class="flex p-1 cusror-pointer"
@@ -1064,24 +1060,16 @@ exports[`CreateWallet should render 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxjAm cpczEI"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
                     class="sc-fznZeY kRxrNJ relative bg-theme-primary border-theme-primary rotate-90"
                   >
                     <span
                       class="text-sm text-theme-background"
-                    />
+                    >
+                      Jo
+                    </span>
                     <span
                       class="sc-fznKkj fcSzPl flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
                     >
@@ -1122,7 +1110,7 @@ exports[`CreateWallet should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/profiles/bob/dashboard"
+          href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -1261,7 +1249,7 @@ exports[`CreateWallet should render 1`] = `
                             <div
                               aria-label="Ark"
                               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-mainnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1285,7 +1273,7 @@ exports[`CreateWallet should render 1`] = `
                             <div
                               aria-label="Ark Devnet"
                               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-                              data-testid="NetworkIcon"
+                              data-testid="NetworkIcon-ARK-devnet"
                             >
                               <div
                                 class="sc-AxjAm jakjmk"
@@ -1433,7 +1421,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             <div
               aria-label="Ark"
               class="sc-fznZeY QYNxm border-theme-danger-light text-theme-danger-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-mainnet"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -1457,7 +1445,7 @@ exports[`CreateWallet should render 1st step 1`] = `
             <div
               aria-label="Ark Devnet"
               class="sc-fznZeY QYNxm border-theme-primary-100 text-theme-primary-400"
-              data-testid="NetworkIcon"
+              data-testid="NetworkIcon-ARK-devnet"
             >
               <div
                 class="sc-AxjAm jakjmk"
@@ -1700,7 +1688,7 @@ exports[`CreateWallet should render 4th step 1`] = `
         <div
           aria-label="Ark"
           class="sc-fznZeY bvVXwc border-theme-danger-light text-theme-danger-400"
-          data-testid="NetworkIcon"
+          data-testid="NetworkIcon-ARK-mainnet"
         >
           <div
             class="sc-AxjAm cpczEI"

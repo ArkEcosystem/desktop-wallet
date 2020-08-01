@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
+import { useActiveProfile } from "app/hooks/env";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -36,17 +37,19 @@ const ArticleListItem = ({ title, path, description }: ArticleListItemProps) => 
 );
 
 export const Faq = ({ articles }: FaqProps) => {
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const crumbs = [
 		{
-			route: "help",
+			route: `/profiles/${activeProfile?.id()}/support`,
 			label: "Go back to Help & Support",
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("HELP.PAGE_FAQ.PORTFOLIO.TITLE")}

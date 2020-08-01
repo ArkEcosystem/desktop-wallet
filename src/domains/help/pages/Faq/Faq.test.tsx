@@ -2,14 +2,14 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { faqArticles } from "../../data";
 import { Faq } from "./Faq";
 
 const history = createMemoryHistory();
-const categoryURL = `/profiles/${identity.profiles.bob.id}/support/categories/portfolio`;
+
+const categoryURL = `/profiles/${getDefaultProfileId()}/support/categories/portfolio`;
 
 describe("Faq", () => {
 	beforeAll(() => {

@@ -393,11 +393,13 @@ export const Registration = ({
 	wallets,
 	registrationTypes,
 }: RegistrationProps) => {
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
-	const activeProfile = useActiveProfile();
 	const [activeTab, setActiveTab] = React.useState(1);
+
+	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
 	const { formState } = form;
 	const { isValid } = formState;
+
+	const activeProfile = useActiveProfile();
 
 	const { t } = useTranslation();
 
@@ -417,7 +419,7 @@ export const Registration = ({
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={(data: any) => onDownload(data)}>
 					<Tabs activeId={activeTab}>

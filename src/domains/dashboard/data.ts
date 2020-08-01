@@ -22,7 +22,7 @@ export const wallets = [
 		walletName: "My Eth",
 		balance: "100,150 ETH",
 		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
+		walletTypeIcons: ["Star", "Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -46,7 +46,7 @@ export const wallets = [
 		walletName: "My Wallet",
 		balance: "100 BTC",
 		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
+		walletTypeIcons: ["Ledger"],
 		actions: [
 			{
 				label: "Action 1",
@@ -70,7 +70,7 @@ export const wallets = [
 		walletName: "My Wallet",
 		balance: "100 BTC",
 		fiat: "1,000,000 USD",
-		walletTypeIcons: ["Star", "Multisig", "Ledger"],
+		walletTypeIcons: ["Star"],
 		actions: [
 			{
 				label: "Action 1",

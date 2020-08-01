@@ -12,17 +12,19 @@ type PercentageBarProps = {
 
 export const PercentageBar = ({ data, title }: PercentageBarProps) => (
 	<div>
-		<div className="flex">
-			<div className="py-4 font-bold text-theme-neutral-800">{title}</div>
-			<div className="flex justify-end flex-1">
+		<div className="flex space-x-3">
+			<div className="py-4 text-lg font-bold text-theme-neutral-800">{title}</div>
+			<div className="flex justify-end flex-1 space-x-3">
 				{data &&
 					data.map((item: BarItem, index: number) => (
-						<div key={index} className="py-4 pl-6 pr-0 ml-3">
+						<div key={index} className="flex items-center justify-end py-4 pl-6 pr-0">
 							<div
-								className={`mr-2 mb-1 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
+								className={`mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 							/>
-							<div className="inline-block text-sm font-semibold text-theme-neutral-dark">
-								{item.label} - {item.value}%
+							<div className="inline-block text-sm text-base font-semibold text-theme-neutral-dark">
+								<span>
+									{item.label} - {item.value}%
+								</span>
 							</div>
 						</div>
 					))}

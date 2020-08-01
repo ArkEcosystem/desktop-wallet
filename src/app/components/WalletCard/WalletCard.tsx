@@ -81,16 +81,16 @@ export const WalletCard = ({
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">
-						<div className="absolute -right-2 -top-1 text-theme-neutral-400 hover:text-theme-neutral-500">
-							<Dropdown options={actions} onSelect={onSelect} />
-						</div>
-						<div className="absolute right-3 -top-1">
+						<div className="absolute top-0 right-0 flex items-center -mr-2 space-x-2">
 							{walletTypeIcons &&
 								walletTypeIcons.map((type: string, index: number) => (
-									<div key={index} className={`inline-block mr-2 text ${getIconTypeClass(type)}`}>
+									<div key={index} className={`inline-block text ${getIconTypeClass(type)}`}>
 										<Icon name={type} width={18} />
 									</div>
 								))}
+							<span className="text-theme-neutral-400 hover:text-theme-neutral-500">
+								<Dropdown options={actions} onSelect={onSelect} />
+							</span>
 						</div>
 						<div className="flex">
 							<Circle size="lg" className={`border-theme-primary-contrast -mr-2 ${coinClass}`}>

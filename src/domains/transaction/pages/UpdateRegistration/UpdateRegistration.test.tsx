@@ -2,24 +2,21 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, renderWithRouter, waitFor } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { UpdateRegistration } from "../UpdateRegistration";
 
 let rendered: RenderResult;
-let defaultFormValues = {};
+const defaultFormValues = {
+	onDownload: jest.fn(),
+};
 
 describe("UpdateRegistration", () => {
 	beforeEach(() => {
 		const history = createMemoryHistory();
-		const updateRegistrationURL = `/profiles/${identity.profiles.bob.id}/transactions/update`;
+		const updateRegistrationURL = `/profiles/${getDefaultProfileId()}/transactions/update`;
 
 		history.push(updateRegistrationURL);
-
-		defaultFormValues = {
-			onDownload: jest.fn(),
-		};
 
 		rendered = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/update">

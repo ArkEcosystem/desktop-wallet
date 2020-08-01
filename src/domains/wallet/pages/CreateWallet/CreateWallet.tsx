@@ -16,7 +16,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { getNetworkExtendedData } from "domains/network/helpers";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -27,7 +27,7 @@ import { MnemonicVerification } from "../../components/MnemonicVerification";
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
 	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
-	const networks = React.useMemo(() => env.availableNetworks(), [env]);
+	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { t } = useTranslation();
 
@@ -84,7 +84,7 @@ export const SecondStep = () => {
 
 	const { t } = useTranslation();
 
-	React.useEffect(() => {
+	useEffect(() => {
 		unregister("verification");
 	}, [unregister]);
 
@@ -149,7 +149,7 @@ export const ThirdStep = () => {
 		setValue("verification", true, true);
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!isVerified) {
 			register("verification", { required: true });
 		}
@@ -180,7 +180,7 @@ export const FourthStep = () => {
 	const { getValues, register } = useFormContext();
 	const network: NetworkData = getValues("network");
 	const wallet: Wallet = getValues("wallet");
-	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.name() });
+	const networkConfig = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 
 	const { t } = useTranslation();
 
@@ -201,7 +201,7 @@ export const FourthStep = () => {
 							{networkConfig?.displayName}
 						</p>
 					</div>
-					<NetworkIcon coin={network.coin()} network={network.name()} />
+					<NetworkIcon coin={network.coin()} network={network.id()} />
 				</li>
 				<li>
 					<Divider dashed />
@@ -232,7 +232,7 @@ export const CreateWallet = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const [activeTab, setActiveTab] = React.useState(1);
+	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 
@@ -246,7 +246,7 @@ export const CreateWallet = () => {
 	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;
 
-	React.useEffect(() => {
+	useEffect(() => {
 		register("network", { required: true });
 		register("wallet", { required: true });
 		register("mnemonic", { required: true });
@@ -262,7 +262,7 @@ export const CreateWallet = () => {
 		history.push(dashboardRoute);
 	};
 
-	React.useEffect(
+	useEffect(
 		() => () => {
 			const currentWallet = getValues("wallet");
 
@@ -282,7 +282,7 @@ export const CreateWallet = () => {
 	};
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>

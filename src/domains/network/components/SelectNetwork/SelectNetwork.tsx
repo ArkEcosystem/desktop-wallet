@@ -24,7 +24,7 @@ export const itemToString = (item: Network | null) => item?.extra?.displayName |
 export const SelectNetwork = ({ networks, placeholder, onSelect, name, id, disabled }: SelectNetworkProps) => {
 	const [items] = React.useState(() =>
 		networks.map((network) => {
-			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.name() });
+			const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
 			return Object.assign(network, { extra: extended });
 		}),
 	);
@@ -122,8 +122,8 @@ export const SelectNetwork = ({ networks, placeholder, onSelect, name, id, disab
 						{...getItemProps({ item, index, disabled })}
 					>
 						<NetworkIcon
-							network={item.name()}
 							coin={item.coin()}
+							network={item.id()}
 							size="xl"
 							iconSize={26}
 							className={assetClassName(item)}
