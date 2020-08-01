@@ -85,7 +85,7 @@ describe("ContactForm", () => {
 			);
 		});
 
-		const { getAllByTestId } = renderContext;
+		const { getByTestId, getAllByTestId } = renderContext;
 
 		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 
@@ -93,7 +93,9 @@ describe("ContactForm", () => {
 			fireEvent.click(getAllByTestId("contact-form__remove-address-btn")[0]);
 		});
 
-		waitFor(() => expect(getByTestId("contact-form__address-list-item")).toBeFalsy());
+		await waitFor(() => {
+			expect(() => getByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		});
 	});
 
 	it("should handle save", async () => {
