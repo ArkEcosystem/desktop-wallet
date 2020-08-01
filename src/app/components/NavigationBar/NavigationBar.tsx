@@ -130,7 +130,6 @@ export const NavigationBar = ({
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
-
 	const { t } = useTranslation();
 
 	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
