@@ -1,8 +1,17 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { EnvironmentProvider } from "app/contexts";
+import { httpClient } from "app/services";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
 import { NavigationBar } from "./NavigationBar";
 
 export default { title: "App / Components / NavigationBar" };
+
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+const profile = env.profiles().create("Test profile");
+profile.settings().set(ProfileSetting.ExchangeCurrency, "btc");
 
 export const Default = () => {
 	const notifications = {
@@ -46,14 +55,14 @@ export const Default = () => {
 	};
 
 	return (
-		<NavigationBar
-			currencyIcon="Ark"
-			balance="34,253.75"
-			userInitials="IO"
-			onUserAction={(action: any) => alert(action.label)}
-			notifications={notifications}
-			onNotificationAction={(actionName: string) => alert(actionName)}
-		/>
+		<EnvironmentProvider env={env}>
+			<NavigationBar
+				profile={profile}
+				onUserAction={(action: any) => alert(action.label)}
+				notifications={notifications}
+				onNotificationAction={(actionName: string) => alert(actionName)}
+			/>
+		</EnvironmentProvider>
 	);
 };
 
@@ -64,13 +73,13 @@ export const EmptyNotifications = () => {
 	};
 
 	return (
-		<NavigationBar
-			currencyIcon="Ark"
-			balance="34,253.75"
-			userInitials="IO"
-			onUserAction={(action: any) => alert(action.label)}
-			notifications={notifications}
-			onNotificationAction={(actionName: string) => alert(actionName)}
-		/>
+		<EnvironmentProvider env={env}>
+			<NavigationBar
+				profile={profile}
+				onUserAction={(action: any) => alert(action.label)}
+				notifications={notifications}
+				onNotificationAction={(actionName: string) => alert(actionName)}
+			/>
+		</EnvironmentProvider>
 	);
 };

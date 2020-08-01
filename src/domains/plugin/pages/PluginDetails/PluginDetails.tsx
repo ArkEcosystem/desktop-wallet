@@ -21,9 +21,10 @@ type PluginDetailsProps = {
 };
 
 export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDetailsProps) => {
+	const activeProfile = useActiveProfile();
+
 	const { author, about, permissions, screenshots, category, url, averageRating, version, size } = pluginData;
 	const { comments, ratings, totalAvaliations } = reviewData;
-	const activeProfile = useActiveProfile();
 
 	const crumbs = [
 		{
@@ -33,7 +34,7 @@ export const PluginDetails = ({ pluginData, reviewData, isInstalled }: PluginDet
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<PluginHeader
 					author={author}
