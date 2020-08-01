@@ -18,7 +18,7 @@ import {
 	render,
 	renderWithRouter,
 	waitFor,
-	within
+	within,
 } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
