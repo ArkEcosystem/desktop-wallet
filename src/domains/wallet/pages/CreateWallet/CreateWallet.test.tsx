@@ -18,7 +18,6 @@ import {
 	render,
 	renderWithRouter,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
@@ -196,7 +195,7 @@ describe("CreateWallet", () => {
 
 	it("should not allow quick swapping of networks", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { queryAllByText, getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
@@ -224,9 +223,7 @@ describe("CreateWallet", () => {
 		}
 		expect(continueButton).toHaveAttribute("disabled");
 
-		expect(
-			within(getAllByTestId("SelectNetwork__NetworkIcon--container")[0]).getByTestId("NetworkIcon"),
-		).toHaveClass("border-theme-success-200");
+		expect(getByTestId("NetworkIcon-ARK-mainnet")).toHaveClass("border-theme-success-200");
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 	});
