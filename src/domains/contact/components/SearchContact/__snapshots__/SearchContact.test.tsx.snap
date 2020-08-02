@@ -180,18 +180,24 @@ exports[`SearchContact should render a modal 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="ContactListItem__user--avatar"
                       >
+                        <img
+                          alt="Brian"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="Brian"
+                        />
                         <span
-                          class="text-sm text-theme-background"
+                          class="absolute text-sm font-semibold text-theme-background"
                         >
-                          RO
+                          BR
                         </span>
                       </div>
                       <span
                         class="font-semibold"
                       >
-                        ROBank
+                        Brian
                       </span>
                     </div>
                   </td>
@@ -199,10 +205,13 @@ exports[`SearchContact should render a modal 1`] = `
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
+                      aria-label="Ark Devnet"
+                      class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
+                        class="sc-AxirZ iQaTP"
+                        data-testid="NetworkIcon__icon"
                         height="1em"
                         width="1em"
                       >
@@ -226,9 +235,9 @@ exports[`SearchContact should render a modal 1`] = `
                           class="w-full h-full"
                         >
                           <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                           />
                         </div>
                       </div>
@@ -239,7 +248,7 @@ exports[`SearchContact should render a modal 1`] = `
                           class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D61mfSggzb…oHaqJ3Dyib
                         </span>
                       </div>
                     </div>
@@ -272,221 +281,6 @@ exports[`SearchContact should render a modal 1`] = `
                       </div>
                     </div>
                   </td>
-                </tr>
-                <tr>
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
-                      >
-                        <span
-                          class="text-sm text-theme-background"
-                        >
-                          OL
-                        </span>
-                      </div>
-                      <span
-                        class="font-semibold"
-                      >
-                        OLEBank
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          ASuusXSW9k…P6T9GQ3kqT
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right"
-                      >
-                        <button
-                          class="sc-AxjAm kwTlRm"
-                          color="primary"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    class="text-center "
-                  />
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-bitcoin-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-bitcoin-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                            title="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          15pyr1HRAx…myCtXXu9G8
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
-                  />
-                  <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-ethereum-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-ethereum-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          eth.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          0x5e8f7a63…8b380d7c33
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  />
                 </tr>
               </tbody>
             </table>
@@ -676,18 +470,24 @@ exports[`SearchContact should render a modal with custom title and description 1
                       class="flex items-center space-x-3"
                     >
                       <div
-                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+                        data-testid="ContactListItem__user--avatar"
                       >
+                        <img
+                          alt="Brian"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                          title="Brian"
+                        />
                         <span
-                          class="text-sm text-theme-background"
+                          class="absolute text-sm font-semibold text-theme-background"
                         >
-                          RO
+                          BR
                         </span>
                       </div>
                       <span
                         class="font-semibold"
                       >
-                        ROBank
+                        Brian
                       </span>
                     </div>
                   </td>
@@ -695,10 +495,13 @@ exports[`SearchContact should render a modal with custom title and description 1
                     class="text-center border-b border-dashed border-theme-neutral-200"
                   >
                     <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
+                      aria-label="Ark Devnet"
+                      class="sc-fznyAO gQONjx border-theme-primary-100 text-theme-primary-400"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
+                        class="sc-AxirZ iQaTP"
+                        data-testid="NetworkIcon__icon"
                         height="1em"
                         width="1em"
                       >
@@ -722,9 +525,9 @@ exports[`SearchContact should render a modal with custom title and description 1
                           class="w-full h-full"
                         >
                           <img
-                            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                            alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                            title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                           />
                         </div>
                       </div>
@@ -735,7 +538,7 @@ exports[`SearchContact should render a modal with custom title and description 1
                           class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D61mfSggzb…oHaqJ3Dyib
                         </span>
                       </div>
                     </div>
@@ -768,221 +571,6 @@ exports[`SearchContact should render a modal with custom title and description 1
                       </div>
                     </div>
                   </td>
-                </tr>
-                <tr>
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="sc-fznyAO gQONjx bg-theme-primary border-theme-primary"
-                      >
-                        <span
-                          class="text-sm text-theme-background"
-                        >
-                          OL
-                        </span>
-                      </div>
-                      <span
-                        class="font-semibold"
-                      >
-                        OLEBank
-                      </span>
-                    </div>
-                  </td>
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-ark-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-ark-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          ark.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"35\\" cx=\\"10\\" cy=\\"40\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          ASuusXSW9k…P6T9GQ3kqT
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="relative"
-                      data-testid="dropdown__toggle"
-                    >
-                      <div
-                        class="float-right"
-                      >
-                        <button
-                          class="sc-AxjAm kwTlRm"
-                          color="primary"
-                          type="button"
-                        >
-                          <div
-                            class="sc-AxirZ eEbZjj"
-                            height="20"
-                            width="20"
-                          >
-                            <svg>
-                              settings.svg
-                            </svg>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    class="text-center "
-                  />
-                  <td
-                    class="text-center "
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-bitcoin-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-bitcoin-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                            title="15pyr1HRAxpq3x64duXav1csmyCtXXu9G8"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          15pyr1HRAx…myCtXXu9G8
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  />
-                </tr>
-                <tr>
-                  <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
-                  />
-                  <td
-                    class="text-center border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="sc-fznyAO gQONjx border-ethereum-mainnet"
-                    >
-                      <div
-                        class="sc-AxirZ iQaTP text-ethereum-mainnet"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          eth.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="py-6 border-b border-dashed border-theme-neutral-200"
-                  >
-                    <div
-                      class="flex items-center space-x-3"
-                    >
-                      <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
-                        data-testid="Avatar"
-                      >
-                        <div
-                          class="w-full h-full"
-                        >
-                          <img
-                            alt="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="0x5e8f7a63e31c759ef0ad5e71594e838b380d7c33"
-                          />
-                        </div>
-                      </div>
-                      <div
-                        class="inline-block truncate align-middle"
-                      >
-                        <span
-                          class="sc-fzplWN kfkaqr text-theme-text font-semibold text-base"
-                          data-testid="address__wallet-address"
-                        >
-                          0x5e8f7a63…8b380d7c33
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td
-                    class="border-b border-dashed border-theme-neutral-200"
-                  />
                 </tr>
               </tbody>
             </table>

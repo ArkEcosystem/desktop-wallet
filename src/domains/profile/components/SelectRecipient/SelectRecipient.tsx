@@ -1,3 +1,4 @@
+import { ContactAddress, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
@@ -8,7 +9,7 @@ import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
 	address?: string;
-	contacts: any[];
+	profile: Profile;
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
@@ -29,7 +30,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			contactSearchDescription,
 			selectActionLabel,
 			address,
-			contacts,
+			profile,
 			disabled,
 			isInvalid,
 			onChange,
@@ -43,7 +44,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 		const fieldContext = useFormField();
 		const isInvalidField = fieldContext?.isInvalid || isInvalid;
 
-		const onSelectProfile = (address: any) => {
+		const onSelectProfile = (address: string) => {
 			setSelectedAddress(address);
 			setIsContactSearchOpen(false);
 			onChange?.(address);
@@ -89,9 +90,9 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 					title={contactSearchTitle}
 					description={contactSearchDescription}
 					isOpen={isContactSearchOpen}
-					contacts={contacts}
+					profile={profile}
 					options={[{ value: "select", label: selectActionLabel }]}
-					onAction={(_, { address }: any) => onSelectProfile(address)}
+					onAction={(_, address: ContactAddress) => onSelectProfile(address.address())}
 					onClose={() => setIsContactSearchOpen(false)}
 				/>
 			</div>

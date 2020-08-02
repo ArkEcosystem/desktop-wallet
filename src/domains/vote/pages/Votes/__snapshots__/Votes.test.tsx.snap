@@ -123,27 +123,19 @@ exports[`Votes should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
-                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
-                    <span
-                      class="text-sm text-theme-background"
+                    <img
+                      alt="Profile avatar"
+                      class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                     />
                     <span
                       class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -185,7 +177,7 @@ exports[`Votes should render 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/undefined/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -319,7 +311,7 @@ exports[`Votes should render 1`] = `
                     <div
                       aria-label="Ark"
                       class="sc-AxirZ jatHdy border-theme-danger-light text-theme-danger-400"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -342,7 +334,7 @@ exports[`Votes should render 1`] = `
                     <div
                       aria-label="Ark Devnet"
                       class="sc-AxirZ jatHdy border-theme-primary-100 text-theme-primary-400"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -365,7 +357,7 @@ exports[`Votes should render 1`] = `
                     <div
                       aria-label="Bitcoin"
                       class="sc-AxirZ jatHdy border-theme-warning-200 text-theme-warning-400"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-BTC-livenet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -589,27 +581,19 @@ exports[`Votes should select a delegate 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
-                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
-                    <span
-                      class="text-sm text-theme-background"
+                    <img
+                      alt="Profile avatar"
+                      class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                     />
                     <span
                       class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -651,7 +635,7 @@ exports[`Votes should select a delegate 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/undefined/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -803,7 +787,7 @@ exports[`Votes should select a delegate 1`] = `
                     <div
                       aria-label="Ark"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -826,7 +810,7 @@ exports[`Votes should select a delegate 1`] = `
                     <div
                       aria-label="Ark Devnet"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -849,7 +833,7 @@ exports[`Votes should select a delegate 1`] = `
                     <div
                       aria-label="Bitcoin"
                       class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-BTC-livenet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -1914,27 +1898,19 @@ exports[`Votes should select a network 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
-                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
-                    <span
-                      class="text-sm text-theme-background"
+                    <img
+                      alt="Profile avatar"
+                      class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                     />
                     <span
                       class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -1976,7 +1952,7 @@ exports[`Votes should select a network 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/undefined/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -2128,7 +2104,7 @@ exports[`Votes should select a network 1`] = `
                     <div
                       aria-label="Ark"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -2151,7 +2127,7 @@ exports[`Votes should select a network 1`] = `
                     <div
                       aria-label="Ark Devnet"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -2174,7 +2150,7 @@ exports[`Votes should select a network 1`] = `
                     <div
                       aria-label="Bitcoin"
                       class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-BTC-livenet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -3062,27 +3038,19 @@ exports[`Votes should select address 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-AxirZ cZokSJ -mr-1 border-theme-neutral-300"
+                    class="sc-AxirZ cZokSJ -mr-2 border-theme-neutral-300"
                   >
                     <span
                       class="text-theme-neutral-600"
-                    >
-                      <div
-                        class="sc-AxiKw dzBdqj"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          btc.svg
-                        </svg>
-                      </div>
-                    </span>
+                    />
                   </div>
                   <div
-                    class="sc-AxirZ cZokSJ relative bg-theme-primary border-theme-primary rotate-90"
+                    class="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+                    data-testid="navbar__user--avatarImage"
                   >
-                    <span
-                      class="text-sm text-theme-background"
+                    <img
+                      alt="Profile avatar"
+                      class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                     />
                     <span
                       class="sc-fznyAO hoFCfo flex border-2 rounded-full justify-center w-5 h-5 items-center align-middle bg-theme-background border-transparent transform  bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500"
@@ -3124,7 +3092,7 @@ exports[`Votes should select address 1`] = `
       >
         <a
           class="text-theme-neutral-dark"
-          href="/portfolio"
+          href="/profiles/undefined/dashboard"
         >
           <span>
             Go back to Portfolio
@@ -3276,7 +3244,7 @@ exports[`Votes should select address 1`] = `
                     <div
                       aria-label="Ark"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-mainnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -3299,7 +3267,7 @@ exports[`Votes should select address 1`] = `
                     <div
                       aria-label="Ark Devnet"
                       class="sc-AxirZ jatHdy text-theme-neutral-light"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-ARK-devnet"
                     >
                       <div
                         class="sc-AxiKw fubePL"
@@ -3322,7 +3290,7 @@ exports[`Votes should select address 1`] = `
                     <div
                       aria-label="Bitcoin"
                       class="sc-AxirZ jatHdy text-theme-success-500 border-theme-success-200"
-                      data-testid="NetworkIcon"
+                      data-testid="NetworkIcon-BTC-livenet"
                     >
                       <div
                         class="sc-AxiKw fubePL"

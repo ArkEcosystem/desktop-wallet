@@ -23,7 +23,6 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 	const [wallets, setWallets] = useState<Wallet[]>([]);
-	// const [walletsTimer, setWalletsTimer] = useState<number|null>(null);
 	const activeProfile = useActiveProfile();
 	const history = useHistory();
 
@@ -71,7 +70,7 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 	];
 
 	return (
-		<Page>
+		<Page profile={activeProfile}>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
@@ -89,7 +88,7 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
 					viewType="grid"
-					title="Wallets"
+					title={t("COMMON.WALLETS")}
 					wallets={wallets}
 					filterProperties={filterProperties}
 				/>

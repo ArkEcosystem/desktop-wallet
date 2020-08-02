@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { DeleteResource } from "app/components/DeleteResource";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
@@ -8,19 +9,18 @@ type DeleteContactProps = {
 	onClose?: any;
 	onCancel?: any;
 	onDelete?: any;
-	profileId: string;
+	profile: Profile;
 	contactId?: string | null;
 };
 
-export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete, profileId, contactId }: DeleteContactProps) => {
+export const DeleteContact = ({ isOpen, onClose, onCancel, onDelete, profile, contactId }: DeleteContactProps) => {
 	const { t } = useTranslation();
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	const handleDelete = async () => {
 		if (!contactId) return;
 
-		const profile = env.profiles().findById(profileId);
-		profile?.contacts().forget(contactId);
+		profile.contacts().forget(contactId);
 		await persist();
 
 		onDelete?.(contactId);

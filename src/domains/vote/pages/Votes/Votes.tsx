@@ -9,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { Page, Section } from "app/components/Layout";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -25,14 +26,16 @@ type VotesProps = {
 const { PlaceholderVotes } = images.vote.pages.votes;
 
 export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
-	const { t } = useTranslation();
-
 	const [selectedCrypto, setSelectCrypto] = useState<NetworkData | undefined | null>(undefined);
 	const [selectedAddress, setSelectAddress] = useState("");
 
+	const activeProfile = useActiveProfile();
+
+	const { t } = useTranslation();
+
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -46,7 +49,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	};
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section>
 				<Header
 					title={t("VOTE.VOTES_PAGE.TITLE")}

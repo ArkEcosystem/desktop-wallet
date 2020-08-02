@@ -5,7 +5,6 @@ import { Table } from "app/components/Table";
 import { WalletCard } from "app/components/WalletCard";
 import { WalletListItem } from "app/components/WalletListItem";
 import { WalletsControls } from "domains/dashboard/components/WalletsControls";
-import i18n from "i18next";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -15,7 +14,6 @@ type WalletsProps = {
 	walletsEmptyText?: string;
 	filterProperties: any;
 	viewType?: "grid" | "list";
-	listColumns?: any;
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onWalletAction?: any;
@@ -26,7 +24,6 @@ export const Wallets = ({
 	title,
 	wallets,
 	filterProperties,
-	listColumns,
 	onCreateWallet,
 	onImportWallet,
 	onWalletAction,
@@ -35,6 +32,31 @@ export const Wallets = ({
 	const [walletsViewType, setWalletsViewType] = useState(viewType);
 
 	const { t } = useTranslation();
+
+	const listColumns = [
+		{
+			Header: t("COMMON.ASSET_TYPE"),
+			accessor: "avatarId",
+		},
+		{
+			Header: t("COMMON.WALLET_ADDRESS"),
+			accessor: "address",
+		},
+		{
+			Header: t("COMMON.WALLET_TYPE"),
+			className: "justify-center",
+		},
+		{
+			Header: t("COMMON.BALANCE"),
+			accessor: "balance",
+			className: "justify-end",
+		},
+		{
+			Header: t("COMMON.FIAT_VALUE"),
+			accessor: "fiat",
+			className: "justify-end",
+		},
+	];
 
 	const walletSliderOptions = {
 		slideHeight: 185,
@@ -85,7 +107,7 @@ export const Wallets = ({
 
 	return (
 		<div>
-			<div className="flex justify-between pb-8">
+			<div className="flex items-center justify-between pb-8">
 				<div className="-mt-1 text-4xl font-bold">{title}</div>
 				<div className="text-right">
 					<WalletsControls
@@ -133,33 +155,8 @@ export const Wallets = ({
 };
 
 Wallets.defaultProps = {
-	title: i18n.t("COMMON.WALLETS"),
 	networks: [],
 	wallets: [],
 	walletsEmptyText: "",
 	viewType: "grid",
-	listColumns: [
-		{
-			Header: i18n.t("COMMON.ASSET_TYPE"),
-			accessor: "avatarId",
-		},
-		{
-			Header: i18n.t("COMMON.WALLET_ADDRESS"),
-			accessor: "address",
-		},
-		{
-			Header: i18n.t("COMMON.WALLET_TYPE"),
-			className: "justify-center",
-		},
-		{
-			Header: i18n.t("COMMON.BALANCE"),
-			accessor: "balance",
-			className: "justify-end",
-		},
-		{
-			Header: i18n.t("COMMON.FIAT_VALUE"),
-			accessor: "fiat",
-			className: "justify-end",
-		},
-	],
 };

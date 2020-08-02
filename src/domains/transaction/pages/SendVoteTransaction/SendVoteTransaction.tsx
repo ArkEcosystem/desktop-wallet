@@ -11,6 +11,7 @@ import { useSelectionState } from "app/components/SelectionBar";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail } from "app/components/TransactionDetail";
+import { useActiveProfile } from "app/hooks/env";
 import { InputFee } from "domains/transaction/components/InputFee";
 import { LedgerConfirmation } from "domains/transaction/components/LedgerConfirmation";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -212,6 +213,8 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 	// const { formState } = form;
 	// const { isValid } = formState;
 
+	const activeProfile = useActiveProfile();
+
 	const { t } = useTranslation();
 
 	const handleBack = () => {
@@ -224,13 +227,13 @@ export const SendVoteTransaction = ({ onCopy, onSubmit }: Props) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
 
 	return (
-		<Page crumbs={crumbs}>
+		<Page profile={activeProfile} crumbs={crumbs}>
 			<Section className="flex-1">
 				<Form className="max-w-xl mx-auto" context={form} onSubmit={onSubmit}>
 					<Tabs activeId={activeTab}>

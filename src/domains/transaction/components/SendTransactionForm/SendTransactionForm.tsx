@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
@@ -25,7 +25,7 @@ type SendTransactionFormProps = {
 	onSubmit?: (result: any) => void;
 	onBack?: () => void;
 	networks: NetworkData[];
-	contacts: any[];
+	profile: Profile;
 	wallets: any[];
 };
 
@@ -42,7 +42,7 @@ export const SendTransactionForm = ({
 	onBack,
 	assetSymbol,
 	networks,
-	contacts,
+	profile,
 	wallets,
 }: SendTransactionFormProps) => {
 	const [addedRecipients] = useState([] as RecipientListItem[]);
@@ -82,7 +82,7 @@ export const SendTransactionForm = ({
 						assetSymbol={assetSymbol}
 						maxAvailableAmount={maxAvailableAmount}
 						availableAmount={amount}
-						contacts={contacts}
+						profile={profile}
 					/>
 				</div>
 

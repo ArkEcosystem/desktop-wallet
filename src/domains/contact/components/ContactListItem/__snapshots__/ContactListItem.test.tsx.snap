@@ -12,18 +12,24 @@ exports[`ContactListItem should render 1`] = `
             class="flex items-center space-x-3"
           >
             <div
-              class="sc-AxiKw eHzXqc bg-theme-primary border-theme-primary"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="ContactListItem__user--avatar"
             >
+              <img
+                alt="Brian"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                title="Brian"
+              />
               <span
-                class="text-sm text-theme-background"
+                class="absolute text-sm font-semibold text-theme-background"
               >
-                RO
+                BR
               </span>
             </div>
             <span
               class="font-semibold"
             >
-              ROBank
+              Brian
             </span>
           </div>
         </td>
@@ -31,10 +37,13 @@ exports[`ContactListItem should render 1`] = `
           class="text-center border-b border-dashed border-theme-neutral-200"
         >
           <div
-            class="sc-AxiKw eHzXqc border-ark-mainnet"
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="sc-AxhCb fxrKLH text-ark-mainnet"
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
               height="1em"
               width="1em"
             >
@@ -58,9 +67,9 @@ exports[`ContactListItem should render 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                 />
               </div>
             </div>
@@ -71,13 +80,13 @@ exports[`ContactListItem should render 1`] = `
                 class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D8rr7B…s6YUYD
+                D61mfS…J3Dyib
               </span>
             </div>
           </div>
         </td>
         <td
-          class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
         >
           <div
             class="sc-AxiKw eHzXqc border-black"
@@ -89,32 +98,6 @@ exports[`ContactListItem should render 1`] = `
             >
               <svg>
                 delegate.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="sc-AxiKw eHzXqc border-black"
-          >
-            <div
-              class="sc-AxhCb gZVKaf"
-              height="25"
-              width="25"
-            >
-              <svg>
-                business.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="sc-AxiKw eHzXqc border-black"
-          >
-            <div
-              class="sc-AxhCb gZVKaf"
-              height="25"
-              width="25"
-            >
-              <svg>
-                bridgechain.svg
               </svg>
             </div>
           </div>
@@ -147,6 +130,219 @@ exports[`ContactListItem should render 1`] = `
             </div>
           </div>
         </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`ContactListItem should render with multiple addresses 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="text-center "
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="ContactListItem__user--avatar"
+            >
+              <img
+                alt="Brian"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                title="Brian"
+              />
+              <span
+                class="absolute text-sm font-semibold text-theme-background"
+              >
+                BR
+              </span>
+            </div>
+            <span
+              class="font-semibold"
+            >
+              Brian
+            </span>
+          </div>
+        </td>
+        <td
+          class="text-center "
+        >
+          <div
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-6 border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D61mfS…J3Dyib
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
+        >
+          <div
+            class="sc-AxiKw eHzXqc border-black"
+          >
+            <div
+              class="sc-AxhCb gZVKaf"
+              height="25"
+              width="25"
+            >
+              <svg>
+                delegate.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="relative"
+            data-testid="dropdown__toggle"
+          >
+            <div
+              class="float-right"
+            >
+              <button
+                class="sc-AxirZ ggAYoh"
+                color="primary"
+                type="button"
+              >
+                <div
+                  class="sc-AxhCb VoPpj"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    settings.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        />
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-6 border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D61mfS…J3Dyib
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
+        >
+          <div
+            class="sc-AxiKw eHzXqc border-black"
+          >
+            <div
+              class="sc-AxhCb gZVKaf"
+              height="25"
+              width="25"
+            >
+              <svg>
+                delegate.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        />
       </tr>
     </tbody>
   </table>
@@ -159,35 +355,44 @@ exports[`ContactListItem should render with multiple options 1`] = `
     <tbody>
       <tr>
         <td
-          class="text-center border-b border-dashed border-theme-neutral-200"
+          class="text-center "
         >
           <div
             class="flex items-center space-x-3"
           >
             <div
-              class="sc-AxiKw eHzXqc bg-theme-primary border-theme-primary"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="ContactListItem__user--avatar"
             >
+              <img
+                alt="Brian"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                title="Brian"
+              />
               <span
-                class="text-sm text-theme-background"
+                class="absolute text-sm font-semibold text-theme-background"
               >
-                RO
+                BR
               </span>
             </div>
             <span
               class="font-semibold"
             >
-              ROBank
+              Brian
             </span>
           </div>
         </td>
         <td
-          class="text-center border-b border-dashed border-theme-neutral-200"
+          class="text-center "
         >
           <div
-            class="sc-AxiKw eHzXqc border-ark-mainnet"
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="sc-AxhCb fxrKLH text-ark-mainnet"
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
               height="1em"
               width="1em"
             >
@@ -211,9 +416,9 @@ exports[`ContactListItem should render with multiple options 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                 />
               </div>
             </div>
@@ -224,13 +429,13 @@ exports[`ContactListItem should render with multiple options 1`] = `
                 class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D8rr7B…s6YUYD
+                D61mfS…J3Dyib
               </span>
             </div>
           </div>
         </td>
         <td
-          class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
         >
           <div
             class="sc-AxiKw eHzXqc border-black"
@@ -242,32 +447,6 @@ exports[`ContactListItem should render with multiple options 1`] = `
             >
               <svg>
                 delegate.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="sc-AxiKw eHzXqc border-black"
-          >
-            <div
-              class="sc-AxhCb gZVKaf"
-              height="25"
-              width="25"
-            >
-              <svg>
-                business.svg
-              </svg>
-            </div>
-          </div>
-          <div
-            class="sc-AxiKw eHzXqc border-black"
-          >
-            <div
-              class="sc-AxhCb gZVKaf"
-              height="25"
-              width="25"
-            >
-              <svg>
-                bridgechain.svg
               </svg>
             </div>
           </div>
@@ -301,46 +480,21 @@ exports[`ContactListItem should render with multiple options 1`] = `
           </div>
         </td>
       </tr>
-    </tbody>
-  </table>
-</DocumentFragment>
-`;
-
-exports[`ContactListItem should render with one option 1`] = `
-<DocumentFragment>
-  <table>
-    <tbody>
       <tr>
         <td
           class="text-center border-b border-dashed border-theme-neutral-200"
-        >
-          <div
-            class="flex items-center space-x-3"
-          >
-            <div
-              class="sc-AxiKw eHzXqc bg-theme-primary border-theme-primary"
-            >
-              <span
-                class="text-sm text-theme-background"
-              >
-                RO
-              </span>
-            </div>
-            <span
-              class="font-semibold"
-            >
-              ROBank
-            </span>
-          </div>
-        </td>
+        />
         <td
           class="text-center border-b border-dashed border-theme-neutral-200"
         >
           <div
-            class="sc-AxiKw eHzXqc border-ark-mainnet"
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
           >
             <div
-              class="sc-AxhCb fxrKLH text-ark-mainnet"
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
               height="1em"
               width="1em"
             >
@@ -364,9 +518,9 @@ exports[`ContactListItem should render with one option 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                 />
               </div>
             </div>
@@ -377,13 +531,13 @@ exports[`ContactListItem should render with one option 1`] = `
                 class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D8rr7B…s6YUYD
+                D61mfS…J3Dyib
               </span>
             </div>
           </div>
         </td>
         <td
-          class="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2"
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
         >
           <div
             class="sc-AxiKw eHzXqc border-black"
@@ -398,19 +552,104 @@ exports[`ContactListItem should render with one option 1`] = `
               </svg>
             </div>
           </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        />
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;
+
+exports[`ContactListItem should render with one option 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody>
+      <tr>
+        <td
+          class="text-center "
+        >
           <div
-            class="sc-AxiKw eHzXqc border-black"
+            class="flex items-center space-x-3"
           >
             <div
-              class="sc-AxhCb gZVKaf"
-              height="25"
-              width="25"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ikUhMz"
+              data-testid="ContactListItem__user--avatar"
+            >
+              <img
+                alt="Brian"
+                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                title="Brian"
+              />
+              <span
+                class="absolute text-sm font-semibold text-theme-background"
+              >
+                BR
+              </span>
+            </div>
+            <span
+              class="font-semibold"
+            >
+              Brian
+            </span>
+          </div>
+        </td>
+        <td
+          class="text-center "
+        >
+          <div
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
+              height="1em"
+              width="1em"
             >
               <svg>
-                business.svg
+                ark.svg
               </svg>
             </div>
           </div>
+        </td>
+        <td
+          class="py-6 border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D61mfS…J3Dyib
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
+        >
           <div
             class="sc-AxiKw eHzXqc border-black"
           >
@@ -420,7 +659,7 @@ exports[`ContactListItem should render with one option 1`] = `
               width="25"
             >
               <svg>
-                bridgechain.svg
+                delegate.svg
               </svg>
             </div>
           </div>
@@ -437,6 +676,83 @@ exports[`ContactListItem should render with one option 1`] = `
             Option 1
           </button>
         </td>
+      </tr>
+      <tr>
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        />
+        <td
+          class="text-center border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            aria-label="Ark Devnet"
+            class="sc-AxiKw eHzXqc border-theme-primary-100 text-theme-primary-400"
+            data-testid="NetworkIcon-ARK-devnet"
+          >
+            <div
+              class="sc-AxhCb fxrKLH"
+              data-testid="NetworkIcon__icon"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="py-6 border-b border-dashed border-theme-neutral-200"
+        >
+          <div
+            class="flex items-center space-x-3"
+          >
+            <div
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 SBrFf"
+              data-testid="Avatar"
+            >
+              <div
+                class="w-full h-full"
+              >
+                <img
+                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
+                />
+              </div>
+            </div>
+            <div
+              class="inline-block truncate align-middle"
+            >
+              <span
+                class="sc-AxjAm StDqN text-theme-text font-semibold text-base"
+                data-testid="address__wallet-address"
+              >
+                D61mfS…J3Dyib
+              </span>
+            </div>
+          </div>
+        </td>
+        <td
+          class="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200"
+        >
+          <div
+            class="sc-AxiKw eHzXqc border-black"
+          >
+            <div
+              class="sc-AxhCb gZVKaf"
+              height="25"
+              width="25"
+            >
+              <svg>
+                delegate.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+        <td
+          class="border-b border-dashed border-theme-neutral-200"
+        />
       </tr>
     </tbody>
   </table>

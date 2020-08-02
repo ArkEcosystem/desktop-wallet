@@ -9,7 +9,7 @@ export const Default = () => (
 	<div className="flex space-x-2">
 		{availableNetworksMock.map((networkData, index) => (
 			<div className="flex space-x-2" key={index}>
-				<NetworkIcon coin={networkData.coin()} network={networkData.name()} />
+				<NetworkIcon coin={networkData.coin()} network={networkData.id()} />
 			</div>
 		))}
 	</div>
