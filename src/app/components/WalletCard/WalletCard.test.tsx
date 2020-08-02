@@ -1,35 +1,24 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Wallet, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+
+import {  Wallet,  WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
+import { env, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletCard } from "./WalletCard";
 
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
-let dashboardURL: string;
 let wallet: Wallet;
 
-beforeAll(() => {
-	mockArkHttp();
-});
-
-describe("WalletCard", () => {
-	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		const profile = env.profiles().values()[0];
-		wallet = profile.wallets().values()[0];
-		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.Ledger, true);
-
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
+describe("Wallet Card", () => {
+	beforeAll(() => {
 		history.push(dashboardURL);
+	});
+
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should render", () => {
@@ -49,7 +38,7 @@ describe("WalletCard", () => {
 	it("should render blank", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard isBlank wallet={wallet} />
+				<WalletCard isBlank />
 			</Route>,
 			{
 				routes: [dashboardURL],

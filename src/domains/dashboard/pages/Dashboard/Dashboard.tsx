@@ -60,7 +60,7 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 	];
 
 	return (
-		<Page>
+		<Page profile={activeProfile}>
 			{showPortfolio && balances && (
 				<Section>
 					<div className="-mb-2 text-4xl font-bold">{t("DASHBOARD.DASHBOARD_PAGE.CHART.TITLE")}</div>
@@ -78,7 +78,7 @@ export const Dashboard = ({ transactions, networks, portfolioPercentages, balanc
 					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
 					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
 					viewType="grid"
-					title="Wallets"
+					title={t("COMMON.WALLETS")}
 					wallets={wallets}
 					filterProperties={filterProperties}
 				/>

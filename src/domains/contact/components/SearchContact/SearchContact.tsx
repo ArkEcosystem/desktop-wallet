@@ -1,3 +1,4 @@
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
@@ -9,7 +10,7 @@ type SearchContactProps = {
 	title?: string;
 	description?: string;
 	isOpen: boolean;
-	contacts: any[];
+	profile: Profile;
 	options?: any[];
 	onClose?: any;
 	onSearch?: any;
@@ -18,7 +19,7 @@ type SearchContactProps = {
 
 export const SearchContact = ({
 	isOpen,
-	contacts,
+	profile,
 	onClose,
 	onSearch,
 	onAction,
@@ -53,15 +54,11 @@ export const SearchContact = ({
 			onClose={onClose}
 			onSearch={onSearch}
 		>
-			<Table columns={columns} data={contacts}>
+			<Table columns={columns} data={profile.contacts().values()}>
 				{(contact: any) => (
 					<ContactListItem contact={contact} variant="condensed" onAction={onAction} options={options} />
 				)}
 			</Table>
 		</SearchResource>
 	);
-};
-
-SearchContact.defaultProps = {
-	contacts: [],
 };

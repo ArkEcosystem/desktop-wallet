@@ -1,4 +1,4 @@
-import { NetworkData } from "@arkecosystem/platform-sdk-profiles";
+import { Contact, NetworkData } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
@@ -41,28 +41,26 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 type ContactsProps = {
-	contacts?: any[];
-	networks?: NetworkData[];
 	onSearch?: any;
 };
 
-export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
-	const { env, persist } = useEnvironmentContext();
-	const { t } = useTranslation();
+export const Contacts = ({ onSearch }: ContactsProps) => {
+	const { env, persist, state } = useEnvironmentContext();
+
 	const activeProfile = useActiveProfile();
 
-	const [profileContacts] = useState<any>(contacts);
+	const [contacts, setContacts] = useState<Contact[]>([]);
+
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 	const [contactToDelete, setContactToDelete] = useState(null);
 
-	const [availableNetworks] = useState<NetworkData[]>(networks || env.availableNetworks());
+	const [availableNetworks] = useState<NetworkData[]>(env.availableNetworks());
+
+	const { t } = useTranslation();
 
 	useEffect(() => {
-		// TODO: Uncomment this to fill contacts from platform-sdk.
-		//       Needs 'ContactListItem' component to be refactored to
-		//       render ContactAddress model.
-		// setContacts(activeProfile?.contacts().values() || []);
-	}, [activeProfile, env]);
+		setContacts(activeProfile!.contacts().values());
+	}, [activeProfile, state]);
 
 	const contactOptions = [
 		{ label: t("COMMON.SEND"), value: "send" },
@@ -72,7 +70,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const crumbs = [
 		{
-			route: "portfolio",
+			route: `/profiles/${activeProfile?.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -106,20 +104,20 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 
 	const handleContactAction = (action: any, contact: any) => {
 		if (action === "delete") {
-			setContactToDelete(contact.id);
+			setContactToDelete(contact.id());
 		}
 	};
 
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<Section>
 					<Header
 						title={t("CONTACTS.CONTACTS_PAGE.TITLE")}
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={profileContacts.length > 0}
+								showSearchBar={!!contacts.length}
 								onSearch={onSearch}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -128,7 +126,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section className="flex-1">
-					{profileContacts.length === 0 && (
+					{!contacts.length && (
 						<div data-testid="contacts__banner" className="text-center">
 							<ContactsBanner height={175} className="mx-auto" />
 
@@ -138,9 +136,9 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 						</div>
 					)}
 
-					{profileContacts.length > 0 && (
+					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">
-							<Table columns={listColumns} data={profileContacts}>
+							<Table columns={listColumns} data={contacts}>
 								{(contact: any) => (
 									<ContactListItem
 										contact={contact}
@@ -163,7 +161,7 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 			/>
 
 			<DeleteContact
-				profileId={activeProfile?.id() as string}
+				profile={activeProfile!}
 				contactId={contactToDelete}
 				isOpen={!!contactToDelete}
 				onClose={() => setContactToDelete(null)}
@@ -172,8 +170,4 @@ export const Contacts = ({ contacts, networks, onSearch }: ContactsProps) => {
 			/>
 		</>
 	);
-};
-
-Contacts.defaultProps = {
-	contacts: [],
 };

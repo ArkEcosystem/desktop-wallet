@@ -1,41 +1,57 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
+
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment, Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import {  Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import envFixture from "tests/fixtures/env/data.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
-import { fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
-import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
-
-let env: Environment;
 let profile: Profile;
 let bip39GenerateMock: any;
 
 const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
 beforeAll(() => {
-	mockArkHttp();
-
 	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 });
+
+
+import {
+	act as actAsync,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	renderWithRouter,
+	waitFor,
+} from "utils/testing-library";
+
+import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
+
+jest.setTimeout(8000);
+
+const fixtureProfileId = getDefaultProfileId();
 
 afterAll(() => {
 	bip39GenerateMock.mockRestore();
 });
 
 describe("CreateWallet", () => {
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient: httpClient, storage: new StubStorage() });
-		await env.bootFromObject(envFixture);
-		profile = env.profiles().findById("bob");
+	beforeEach(() => {
+		profile = env.profiles().findById(fixtureProfileId);
+
+		for (const wallet of profile.wallets().values()) {
+			profile.wallets().forget(wallet.id());
+		}
+
+		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+	});
+
+	afterEach(() => {
+		bip39GenerateMock.mockRestore();
 	});
 
 	it("should render 1st step", () => {
@@ -46,21 +62,21 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		expect(selectAssetsInput).toBeTruthy();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectAssetsInput).toHaveValue("Ark");
+		expect(selectAssetsInput).toHaveValue("DARK");
 	});
 
 	it("should render 2nd step", async () => {
@@ -77,7 +93,7 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__second-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const writeTextMock = jest.fn();
@@ -85,7 +101,10 @@ describe("CreateWallet", () => {
 		// @ts-ignore
 		navigator.clipboard = { writeText: writeTextMock };
 
-		fireEvent.click(getByTestId(`CreateWallet__copy`));
+		act(() => {
+			fireEvent.click(getByTestId(`CreateWallet__copy`));
+		});
+
 		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
 		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
@@ -105,8 +124,8 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy();
-		expect(getAllByTestId(`MnemonicVerificationOptions__button`).length).toBeGreaterThan(1);
+		expect(getByTestId("CreateWallet__third-step")).toBeTruthy();
+		expect(getAllByTestId("MnemonicVerificationOptions__button").length).toBeGreaterThan(1);
 
 		expect(form.current.getValues()).toEqual({ verification: undefined });
 	});
@@ -115,7 +134,7 @@ describe("CreateWallet", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					network: availableNetworksMock[0],
+					network: availableNetworksMock[1],
 					wallet: {
 						address: () => "TEST-WALLET-ADDRESS",
 					},
@@ -129,11 +148,11 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId(`CreateWallet__network-name`)).toHaveTextContent("Ark");
-		expect(getByTestId(`CreateWallet__wallet-address`)).toHaveTextContent("TEST-WALLET-ADDRESS");
+		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("Ark Devnet");
+		expect(getByTestId("CreateWallet__wallet-address")).toHaveTextContent("TEST-WALLET-ADDRESS");
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 
@@ -147,7 +166,7 @@ describe("CreateWallet", () => {
 
 	it("should render", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { queryAllByText, getByTestId, getByText, asFragment } = renderWithRouter(
@@ -160,85 +179,114 @@ describe("CreateWallet", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			const continueButton = getByTestId("CreateWallet__continue-button");
-			const backButton = getByTestId("CreateWallet__back-button");
+		const continueButton = getByTestId("CreateWallet__continue-button");
+		const backButton = getByTestId("CreateWallet__back-button");
 
-			// Navigation between steps
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+		act(() => {
+			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
-			const previousWalletId = profile.wallets().values()[0].id();
+		act(() => {
 			fireEvent.change(selectAssetsInput, { target: { value: "" } });
-			await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
 
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+		act(() => {
+			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
 
-			await waitFor(() => expect(profile.wallets().values().length).toBe(1));
-			await waitFor(() => expect(profile.wallets().values()[0].id()).not.toEqual(previousWalletId));
-
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		});
 
-			const walletMnemonic = passphrase.split(" ");
-			for (let i = 0; i < 3; i++) {
-				const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 
+		const walletMnemonic = passphrase.split(" ");
+		for (let i = 0; i < 3; i++) {
+			const wordNumber = parseInt(getByText(/Select word #/).innerHTML.replace(/Select word #/, ""));
+
+			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
-
 				if (i < 2) {
 					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
 				}
-			}
+			});
+		}
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
-
+		act(() => {
 			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.click(backButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
-			await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+		});
 
+		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
+
+		act(() => {
 			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
-
-			await waitFor(() =>
-				expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
-			);
 		});
+
+		await waitFor(() =>
+			expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not have a pending wallet if leaving on step 1", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
@@ -252,7 +300,7 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		history.push("/");
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
@@ -262,7 +310,7 @@ describe("CreateWallet", () => {
 
 	it("should remove pending wallet if not submitted", async () => {
 		const history = createMemoryHistory();
-		const createURL = "/profiles/bob/wallets/create";
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
@@ -276,31 +324,40 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
-		await act(async () => {
-			const continueButton = getByTestId("CreateWallet__continue-button");
+		const continueButton = getByTestId("CreateWallet__continue-button");
+		expect(asFragment()).toMatchSnapshot();
 
-			// Navigation between steps
-			fireEvent.change(selectAssetsInput, { target: { value: "ARK" } });
+		act(() => {
+			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
-			await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
-
-			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
-
-			fireEvent.click(getByTestId(`CreateWallet__back-button`));
-			await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
-
-			fireEvent.click(continueButton);
-			await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
-
-			history.push("/");
-			await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 		});
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId(`CreateWallet__back-button`));
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(continueButton);
+		});
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
+
+		act(() => {
+			history.push("/");
+		});
+		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 
 		expect(asFragment()).toMatchSnapshot();
 	});

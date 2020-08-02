@@ -27,16 +27,17 @@ export const WalletDetails = () => {
 	const [walletData, setWalletData] = React.useState<WalletData>();
 	const [isVerifyingMessage, setIsVerifyingMessage] = useState(false);
 
-	const history = useHistory();
-	const { t } = useTranslation();
-
-	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
 
 	const coinName = activeWallet!.coin().manifest().get<string>("name");
 	const networkName = activeWallet!.network().name;
+
+	const { t } = useTranslation();
+
+	const { persist } = useEnvironmentContext();
+	const history = useHistory();
 
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 	const crumbs = [
@@ -116,7 +117,7 @@ export const WalletDetails = () => {
 	/* istanbul ignore next */
 	return (
 		<>
-			<Page crumbs={crumbs}>
+			<Page profile={activeProfile} crumbs={crumbs}>
 				<WalletHeader
 					coin={coinName!}
 					network={networkName}

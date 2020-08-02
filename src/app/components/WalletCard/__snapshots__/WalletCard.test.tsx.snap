@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`WalletCard should render 1`] = `
+exports[`Wallet Card should render 1`] = `
 <div>
   <a
-    data-testid="WalletCard__AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
@@ -40,47 +40,7 @@ exports[`WalletCard should render 1`] = `
           </div>
           <div
             class="absolute right-3 -top-1"
-          >
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  ledger.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  multisig.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-warning-400"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-            </div>
-          </div>
+          />
           <div
             class="flex"
           >
@@ -105,9 +65,9 @@ exports[`WalletCard should render 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                  title="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -128,14 +88,14 @@ exports[`WalletCard should render 1`] = `
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                AHZL…tksA
+                D8rr…YUYD
               </span>
             </div>
           </div>
           <div
             class="font-bold text-theme-neutral-900"
           >
-            NaN
+            1000
           </div>
         </div>
       </div>
@@ -144,7 +104,7 @@ exports[`WalletCard should render 1`] = `
 </div>
 `;
 
-exports[`WalletCard should render blank 1`] = `
+exports[`Wallet Card should render blank 1`] = `
 <div>
   <div
     class="w-64 inline-block undefined"
@@ -181,10 +141,10 @@ exports[`WalletCard should render blank 1`] = `
 </div>
 `;
 
-exports[`WalletCard should render with wallet data 1`] = `
+exports[`Wallet Card should render with wallet data 1`] = `
 <div>
   <a
-    data-testid="WalletCard__AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
@@ -221,47 +181,7 @@ exports[`WalletCard should render with wallet data 1`] = `
           </div>
           <div
             class="absolute right-3 -top-1"
-          >
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  ledger.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  multisig.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-warning-400"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-            </div>
-          </div>
+          />
           <div
             class="flex"
           >
@@ -286,9 +206,9 @@ exports[`WalletCard should render with wallet data 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                  title="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -309,14 +229,14 @@ exports[`WalletCard should render with wallet data 1`] = `
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                AHZL…tksA
+                D8rr…YUYD
               </span>
             </div>
           </div>
           <div
             class="font-bold text-theme-neutral-900"
           >
-            NaN
+            1000
           </div>
         </div>
       </div>
@@ -326,10 +246,10 @@ exports[`WalletCard should render with wallet data 1`] = `
 </div>
 `;
 
-exports[`WalletCard should render with wallet data and optional icon 1`] = `
+exports[`Wallet Card should render with wallet data and optional icon 1`] = `
 <div>
   <a
-    data-testid="WalletCard__AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+    data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
     href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/wallets/ac38fe6d-4b67-4ef1-85be-17c5f6841129"
   >
     <div
@@ -366,47 +286,7 @@ exports[`WalletCard should render with wallet data and optional icon 1`] = `
           </div>
           <div
             class="absolute right-3 -top-1"
-          >
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  ledger.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-neutral-600"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  multisig.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="inline-block mr-2 text text-theme-warning-400"
-            >
-              <div
-                class="sc-AxiKw gETsj"
-                height="1em"
-                width="18"
-              >
-                <svg>
-                  star.svg
-                </svg>
-              </div>
-            </div>
-          </div>
+          />
           <div
             class="flex"
           >
@@ -431,9 +311,9 @@ exports[`WalletCard should render with wallet data and optional icon 1`] = `
                 class="w-full h-full"
               >
                 <img
-                  alt="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"10\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                  title="AHZLH1CwMEGPBxMjuohAgdR79DpezntksA"
+                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                 />
               </div>
             </div>
@@ -454,14 +334,14 @@ exports[`WalletCard should render with wallet data and optional icon 1`] = `
                 class="sc-AxjAm StDqN text-theme-neutral-light font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                AHZL…tksA
+                D8rr…YUYD
               </span>
             </div>
           </div>
           <div
             class="font-bold text-theme-neutral-900"
           >
-            NaN
+            1000
           </div>
         </div>
       </div>

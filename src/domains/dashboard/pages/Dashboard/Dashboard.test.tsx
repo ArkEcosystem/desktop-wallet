@@ -1,36 +1,26 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter, waitFor, within } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, transactions } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
 let dashboardURL: string;
-let profile: Profile;
+let emptyProfile: Profile;
 let wallet: Wallet;
 
-beforeAll(() => {
-	mockArkHttp();
-});
+const fixtureProfileId = getDefaultProfileId();
 
 describe("Dashboard", () => {
-	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
+	beforeAll(() => {
+		emptyProfile = env.profiles().create("John Gone");
+	});
 
-		profile = env.profiles().values()[0];
-		wallet = profile.wallets().values()[0];
-		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletFlag.Ledger, true);
-
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
+	beforeEach(() => {
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 	});
 
@@ -67,7 +57,8 @@ describe("Dashboard", () => {
 	});
 
 	it("should render with no wallets", async () => {
-		profile.wallets().forget(wallet.id());
+		dashboardURL = `/profiles/${emptyProfile.id()}/dashboard`;
+		history.push(dashboardURL);
 
 		Promise.resolve().then(() => jest.useFakeTimers());
 
@@ -165,13 +156,11 @@ describe("Dashboard", () => {
 
 		fireEvent.click(getByText("Import"));
 
-		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/wallets/import`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to create page", () => {
-		history.push(dashboardURL);
-
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} transactions={transactions} />
@@ -184,7 +173,7 @@ describe("Dashboard", () => {
 
 		fireEvent.click(getByText("Create"));
 
-		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/wallets/create`);
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

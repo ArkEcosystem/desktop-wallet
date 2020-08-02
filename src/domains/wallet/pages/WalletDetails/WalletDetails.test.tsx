@@ -1,23 +1,16 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { EnvironmentProvider } from "app/contexts";
-import { httpClient } from "app/services";
+import { Profile, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import walletMock from "tests/fixtures/coins/ark/wallet.json";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
-import { act, cleanup, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId,  renderWithRouter, waitFor } from "testing-library";
+import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { WalletDetails } from "./WalletDetails";
 
 const history = createMemoryHistory();
 let dashboardURL: string;
-
-let env: Environment;
 let profile: Profile;
 let wallet: Wallet;
 let secondWallet: Wallet;
@@ -26,11 +19,9 @@ const passphrase2 = "power return attend drink piece found tragic fire liar page
 
 const renderPage = async () => {
 	const rendered = renderWithRouter(
-		<EnvironmentProvider env={env}>
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<WalletDetails />
-			</Route>
-		</EnvironmentProvider>,
+		<Route path="/profiles/:profileId/wallets/:walletId">
+			<WalletDetails />
+		</Route>,
 		{
 			routes: [dashboardURL],
 			history,
@@ -46,24 +37,13 @@ const renderPage = async () => {
 };
 
 describe("WalletDetails", () => {
-	afterEach(() => {
-		cleanup();
-		nock.cleanAll();
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		secondWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
 	});
 
 	beforeEach(() => {
-		mockArkHttp();
-	});
-
-	beforeEach(async () => {
-		env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().values()[0];
-
-		wallet = profile.wallets().values()[0];
-		secondWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "mainnet");
-
 		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(dashboardURL);
 	});
@@ -103,7 +83,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render when wallet hasn't voted", async () => {
-		const unvotedWallet = await profile.wallets().importByMnemonic("test wallet", "ARK", "mainnet");
+		const unvotedWallet = await profile.wallets().importByMnemonic("test wallet", "ARK", "devnet");
 
 		nock.cleanAll();
 

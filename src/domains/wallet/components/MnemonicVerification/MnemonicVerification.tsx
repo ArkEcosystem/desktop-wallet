@@ -1,5 +1,5 @@
 import { TabPanel, Tabs } from "app/components/Tabs";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
 import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
@@ -25,8 +25,8 @@ const randomWordPositions = () => {
 };
 
 export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Props) {
-	const [activeTab, setActiveTab] = React.useState(0);
-	const [positions, setPositions] = React.useState([] as number[]);
+	const [activeTab, setActiveTab] = useState(0);
+	const [positions, setPositions] = useState([] as number[]);
 	const mnemonicWords = mnemonic.split(" ");
 
 	if (!wordPositions?.length && activeTab === 0 && !positions.length) {
@@ -35,17 +35,13 @@ export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, ha
 		setPositions(wordPositions as number[]);
 	}
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (isCompleted) {
 			setActiveTab(positions.length);
 		}
 	}, [isCompleted, positions, setActiveTab]);
 
-	const currentAnswer = React.useMemo(() => mnemonicWords[positions[activeTab] - 1], [
-		activeTab,
-		positions,
-		mnemonicWords,
-	]);
+	const currentAnswer = useMemo(() => mnemonicWords[positions[activeTab] - 1], [activeTab, positions, mnemonicWords]);
 
 	const handleChange = (value: string) => {
 		if (value === currentAnswer) {

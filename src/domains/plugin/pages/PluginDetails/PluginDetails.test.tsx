@@ -1,16 +1,18 @@
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { renderWithRouter } from "testing-library";
-import { identity } from "tests/fixtures/identity";
+import { getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { PluginDetails } from "./PluginDetails";
 
-describe("PluginDetails", () => {
-	const history = createMemoryHistory();
-	const pluginDetailsURL = `/profiles/${identity.profiles.bob.id}/plugins/wsx123`;
+const history = createMemoryHistory();
 
-	history.push(pluginDetailsURL);
+const pluginDetailsURL = `/profiles/${getDefaultProfileId()}/plugins/wsx123`;
+
+describe("PluginDetails", () => {
+	beforeAll(() => {
+		history.push(pluginDetailsURL);
+	});
 
 	it("should render properly", () => {
 		const { asFragment, getByTestId } = renderWithRouter(

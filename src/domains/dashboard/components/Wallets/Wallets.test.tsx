@@ -1,24 +1,15 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
-import { act, fireEvent, renderWithRouter } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { networks } from "../../data";
 import { Wallets } from "./Wallets";
 
 const history = createMemoryHistory();
-let dashboardURL: string;
-let profile: Profile;
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 let wallet: Wallet;
-
-beforeAll(() => {
-	mockArkHttp();
-});
 
 // Wallet filter properties
 const filterProperties = {
@@ -44,15 +35,13 @@ const filterProperties = {
 };
 
 describe("Wallets", () => {
-	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		profile = env.profiles().values()[0];
-		wallet = profile.wallets().values()[0];
-
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
+	beforeAll(() => {
 		history.push(dashboardURL);
+	});
+
+	beforeEach(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should render grid", () => {
