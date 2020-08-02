@@ -67,7 +67,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 							</div>
 						</td>
 						{!isCondensed() && (
-							<td className="space-x-2 text-sm font-bold text-center border-b border-dashed border-theme-neutral-200">
+							<td className="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200">
 								{address.hasSyncedWithNetwork() &&
 									walletTypes.map((type: string) =>
 										// @ts-ignore
