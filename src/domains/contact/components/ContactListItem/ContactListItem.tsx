@@ -2,6 +2,7 @@ import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
+import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -36,11 +37,16 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						>
 							{index === 0 && (
 								<div className="flex items-center space-x-3">
-									<Circle className="bg-theme-primary border-theme-primary">
-										<span className="text-sm text-theme-background">
-											{contact.name().slice(0, 2)}
+									<AvatarWrapper size="lg" data-testid="ContactListItem__user--avatar">
+										<img
+											src={`data:image/svg+xml;utf8,${contact.avatar()}`}
+											title={contact.name()}
+											alt={contact.name()}
+										/>
+										<span className="absolute text-sm font-semibold text-theme-background">
+											{contact.name().slice(0, 2).toUpperCase()}
 										</span>
-									</Circle>
+									</AvatarWrapper>
 									<span className="font-semibold">{contact.name()}</span>
 								</div>
 							)}
@@ -61,7 +67,7 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 							</div>
 						</td>
 						{!isCondensed() && (
-							<td className="text-sm font-bold text-center border-b border-dashed border-theme-neutral-200 space-x-2">
+							<td className="text-sm font-bold text-center border-b border-dashed space-x-2 border-theme-neutral-200">
 								{address.hasSyncedWithNetwork() &&
 									walletTypes.map((type: string) =>
 										// @ts-ignore

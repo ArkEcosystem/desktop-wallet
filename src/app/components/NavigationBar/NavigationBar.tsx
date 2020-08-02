@@ -27,6 +27,7 @@ type NavigationBarProps = {
 	profile?: Profile;
 	menu?: MenuItem[];
 	userActions?: Action[];
+	avatarImage?: string;
 	notifications?: any;
 	onUserAction?: any;
 	onNotificationAction?: any;
@@ -64,33 +65,64 @@ const NotificationsDropdown = ({
 );
 
 type UserInfoProps = {
+	avatarImage?: string;
 	currencyIcon?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 };
 
-const UserInfo = ({ currencyIcon, onUserAction, userActions, userInitials }: UserInfoProps) => (
+const UserInfo = ({ currencyIcon, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
 	<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
 		toggleContent={(isOpen: boolean) => (
 			<div className="cursor-pointer" data-testid="navbar__useractions">
-				<Circle className="-mr-1 border-theme-neutral-300" size="lg">
+				<Circle className="-mr-2 border-theme-neutral-300" size="lg">
 					<span className="text-theme-neutral-600">{currencyIcon && <Icon name={currencyIcon} />}</span>
 				</Circle>
-				<Circle className="relative bg-theme-primary border-theme-primary rotate-90" size="lg">
-					<span className="text-sm text-theme-background">{userInitials}</span>
-					<Badge
-						className={`transform ${
-							isOpen ? "rotate-180" : ""
-						} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
-						position="right"
-						icon="ChevronDown"
-						iconWidth={10}
-						iconHeight={10}
-					/>
-				</Circle>
+				{avatarImage?.endsWith("</svg>") ? (
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full"
+						data-testid="navbar__user--avatar"
+					>
+						<img
+							className="rounded-full w-11 h-11"
+							src={`data:image/svg+xml;utf8,${avatarImage}`}
+							alt="Profile avatar"
+						/>
+						<span className="absolute text-sm font-semibold text-theme-background">{userInitials}</span>
+						<Badge
+							className={`transform ${
+								isOpen ? "rotate-180" : ""
+							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
+							position="right"
+							icon="ChevronDown"
+							iconWidth={10}
+							iconHeight={10}
+						/>
+					</div>
+				) : (
+					<div
+						className="relative inline-flex items-center justify-center align-middle rounded-full bg-theme-neutral-contrast w-11 h-11"
+						data-testid="navbar__user--avatarImage"
+					>
+						<img
+							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+							src={avatarImage}
+							alt="Profile avatar"
+						/>
+						<Badge
+							className={`transform ${
+								isOpen ? "rotate-180" : ""
+							} bg-theme-primary-contrast border-theme-primary-contrast text-theme-primary-500`}
+							position="right"
+							icon="ChevronDown"
+							iconWidth={10}
+							iconHeight={10}
+						/>
+					</div>
+				)}
 			</div>
 		)}
 	/>
@@ -104,7 +136,6 @@ export const NavigationBar = ({
 	onNotificationAction,
 }: NavigationBarProps) => {
 	const history = useHistory();
-
 	const { t } = useTranslation();
 
 	const [isSearchingWallet, setIsSearchingWallet] = useState(false);
@@ -133,7 +164,7 @@ export const NavigationBar = ({
 
 	const getUserInitials = () => {
 		const name = profile?.settings().get(ProfileSetting.Name);
-		return name ? (name as string).slice(0, 2) : undefined;
+		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
 	const getCurrencyIcon = () => {
@@ -204,6 +235,7 @@ export const NavigationBar = ({
 							<UserInfo
 								userInitials={getUserInitials()}
 								currencyIcon={getCurrencyIcon()}
+								avatarImage={profile?.avatar()}
 								userActions={userActions}
 								onUserAction={(action: any) => history.push(action.mountPath(profile?.id()))}
 							/>
