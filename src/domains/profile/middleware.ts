@@ -8,8 +8,14 @@ export class ProfileMiddleware implements Middleware {
 		});
 
 		if (match) {
+			const { profileId } = match.params;
+
+			if (profileId === "create") {
+				return true;
+			}
+
 			try {
-				const profile = env.profiles().findById(match.params.profileId);
+				const profile = env.profiles().findById(profileId);
 				return !!profile;
 			} catch {
 				return false;
