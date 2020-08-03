@@ -65,7 +65,7 @@ describe("CreateWallet", () => {
 		expect(selectAssetsInput).toBeTruthy();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 		});
 
 		act(() => {
@@ -74,7 +74,7 @@ describe("CreateWallet", () => {
 
 		expect(selectAssetsInput).toHaveAttribute("disabled");
 
-		expect(selectAssetsInput).toHaveValue("DARK");
+		expect(selectAssetsInput).toHaveValue("Ark Devnet");
 
 		await waitFor(() => expect(selectAssetsInput).not.toHaveAttribute("disabled"));
 	});
@@ -185,8 +185,8 @@ describe("CreateWallet", () => {
 		const continueButton = getByTestId("CreateWallet__continue-button");
 		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
 
-		fireEvent.click(networkIcons[0]); // click ARK
 		fireEvent.click(networkIcons[1]); // click DARK
+		fireEvent.click(networkIcons[0]); // click ARK
 
 		expect(getByTestId("SelectNetworkInput__input")).toHaveAttribute("disabled");
 		for (const networkIcon of getAllByTestId("SelectNetwork__NetworkIcon--container")) {
@@ -194,7 +194,7 @@ describe("CreateWallet", () => {
 		}
 		expect(continueButton).toHaveAttribute("disabled");
 
-		expect(getByTestId("NetworkIcon-ARK-mainnet")).toHaveClass("border-theme-success-200");
+		expect(getByTestId("NetworkIcon-ARK-devnet")).toHaveClass("border-theme-success-200");
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 	});
@@ -222,7 +222,7 @@ describe("CreateWallet", () => {
 		const backButton = getByTestId("CreateWallet__back-button");
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -233,7 +233,7 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(continueButton).toHaveAttribute("disabled"));
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -362,7 +362,7 @@ describe("CreateWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
-			fireEvent.change(selectAssetsInput, { target: { value: "DARK" } });
+			fireEvent.change(selectAssetsInput, { target: { value: "Ark Dev" } });
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
