@@ -25,7 +25,7 @@ describe("Dashboard", () => {
 	afterEach(() => nock.cleanAll());
 
 	it("should render", async () => {
-		const { getAllByTestId } = renderWithRouter(
+		const { getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -36,6 +36,7 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should hide transaction view", async () => {
@@ -64,7 +65,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should render portfolio percentage bar", async () => {
-		const { getAllByTestId } = renderWithRouter(
+		const { getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -75,10 +76,11 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render portfolio chart", async () => {
-		const { getAllByTestId } = renderWithRouter(
+		const { getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -89,10 +91,11 @@ describe("Dashboard", () => {
 		);
 
 		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should hide portfolio view", async () => {
-		const { getByTestId, getAllByTestId } = renderWithRouter(
+		const { getByTestId, getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
@@ -114,10 +117,12 @@ describe("Dashboard", () => {
 		act(() => {
 			fireEvent.click(toggle);
 		});
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to import page", async () => {
-		const { getByText, getAllByTestId } = renderWithRouter(
+		const { getByText, getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -136,10 +141,11 @@ describe("Dashboard", () => {
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to create page", async () => {
-		const { getByText, getAllByTestId } = renderWithRouter(
+		const { getByText, getAllByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
@@ -158,5 +164,6 @@ describe("Dashboard", () => {
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
