@@ -26,6 +26,7 @@ import { MnemonicVerification } from "../../components/MnemonicVerification";
 
 export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile }) => {
 	const { getValues, setValue } = useFormContext();
+	const [isGeneratingWallet, setIsGeneratingWallet] = React.useState(false);
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { t } = useTranslation();
@@ -45,9 +46,11 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 			return;
 		}
 
+		setIsGeneratingWallet(true);
 		const { mnemonic, wallet } = await profile.wallets().generate(network.coin(), network.id());
 		setValue("wallet", wallet, true);
 		setValue("mnemonic", mnemonic, true);
+		setIsGeneratingWallet(false);
 	};
 
 	return (
@@ -63,7 +66,12 @@ export const FirstStep = ({ env, profile }: { env: Environment; profile: Profile
 					<div className="mb-2">
 						<FormLabel label={t("COMMON.NETWORK")} />
 					</div>
-					<SelectNetwork id="CreateWallet__network" networks={networks} onSelect={handleSelect} />
+					<SelectNetwork
+						id="CreateWallet__network"
+						networks={networks}
+						onSelect={handleSelect}
+						disabled={isGeneratingWallet}
+					/>
 				</FormField>
 			</div>
 		</section>
@@ -225,7 +233,6 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [hasSubmitted, setHasSubmitted] = useState(false);
 	const activeProfile = useActiveProfile();
 	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
 
@@ -237,7 +244,7 @@ export const CreateWallet = () => {
 	];
 
 	const form = useForm({ mode: "onChange" });
-	const { getValues, formState, register } = form;
+	const { getValues, formState, register, setValue } = form;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -250,29 +257,21 @@ export const CreateWallet = () => {
 
 		await persist();
 
-		setHasSubmitted(true);
+		setValue("wallet", null);
+
+		history.push(dashboardRoute);
 	};
 
-	useEffect(() => {
-		if (hasSubmitted) {
-			history.push(dashboardRoute);
-		}
+	useEffect(
+		() => () => {
+			const currentWallet = getValues("wallet");
 
-		// TODO: Figure out a way without setTimeout
-		return () => {
-			setTimeout(() => {
-				if (hasSubmitted) {
-					return;
-				}
-
-				const currentWallet = getValues("wallet");
-
-				if (currentWallet) {
-					activeProfile?.wallets().forget(currentWallet.id());
-				}
-			}, 100);
-		};
-	}, [activeProfile, dashboardRoute, getValues, hasSubmitted, history]);
+			if (currentWallet) {
+				activeProfile?.wallets().forget(currentWallet.id());
+			}
+		},
+		[activeProfile, getValues],
+	);
 
 	const handleBack = () => {
 		setActiveTab(activeTab - 1);
@@ -291,7 +290,7 @@ export const CreateWallet = () => {
 
 						<div className="mt-4">
 							<TabPanel tabId={1}>
-								<FirstStep env={env} profile={activeProfile!} />
+								<FirstStep env={env} profile={activeProfile} />
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<SecondStep />
