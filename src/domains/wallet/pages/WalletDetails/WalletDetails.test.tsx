@@ -9,26 +9,40 @@ import { WalletDetails } from "./WalletDetails";
 
 let profile: Profile;
 let wallet: Wallet;
+let route: string;
 
 describe("WalletDetails", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		route = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 	});
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = renderWithRouter(<WalletDetails wallets={wallets} wallet={walletData} />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails wallets={wallets} wallet={walletData} />
+			</Route>,
+			{
+				routes: [route],
+			},
+		);
 
 		expect(getByTestId("WalletBottomSheetMenu")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not render the bottom sheet menu when there is only one wallet", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<WalletDetails wallets={[wallets[0]]} wallet={walletData} />,
+		const { asFragment, queryByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<WalletDetails wallets={wallets[0]} wallet={walletData} />
+			</Route>,
+			{
+				routes: [route],
+			},
 		);
 
-		expect(() => getByTestId("WalletBottomSheetMenu")).toThrow(/Unable to find an element by/);
+		expect(queryByTestId("WalletBottomSheetMenu")).toBeNull();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
