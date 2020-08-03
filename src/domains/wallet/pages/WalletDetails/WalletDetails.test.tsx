@@ -53,6 +53,8 @@ describe("WalletDetails", () => {
 		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
 		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
 
+		useDefaultNetMocks();
+
 		nock("https://dwallets.ark.io")
 			.get(`/api/wallets/${unvotedWallet.address()}`)
 			.reply(200, walletMock)
@@ -84,8 +86,6 @@ describe("WalletDetails", () => {
 				message: "Wallet not found",
 			})
 			.persist();
-
-		useDefaultNetMocks();
 	});
 
 	beforeEach(async () => {
@@ -95,8 +95,9 @@ describe("WalletDetails", () => {
 
 	it("should render", async () => {
 		const { asFragment, getByTestId } = await renderPage();
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address());
-		expect(asFragment()).toMatchSnapshot();
+
+		await waitFor(() => expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(wallet.address()));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should render with timers", async () => {
