@@ -112,7 +112,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/plugins`,
-			label: "Go back to Plugin Manager",
+			label: t("PLUGINS.GO_BACK_TO_PLUGIN_MANAGER"),
 		},
 	];
 
@@ -135,7 +135,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 									onClick={() => setInstallPlugin(true)}
 									data-testid="PluginsCategory_header--install"
 								>
-									<div className="flex items-center whitespace-no-wrap space-x-2">
+									<div className="flex items-center space-x-2 whitespace-no-wrap">
 										<Icon name="File" width={15} height={15} />
 										<span>Install File</span>
 									</div>

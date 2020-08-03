@@ -72,7 +72,7 @@ export const SecondStep = () => {
 			<h1 className="mb-0">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.TITLE")}</h1>
 			<div className="text-theme-neutral-dark">{t("TRANSACTION.PAGE_IPFS.SECOND_STEP.DESCRIPTION")}</div>
 
-			<div className="mt-2 grid grid-flow-row gap-2">
+			<div className="grid grid-flow-row gap-2 mt-2">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -196,7 +196,7 @@ export const SendIPFSTransaction = ({ onCopy, onSubmit, networks }: Props) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 

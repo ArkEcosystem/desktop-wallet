@@ -141,7 +141,7 @@ const SecondStep = () => {
 					{t("TRANSACTION.PAGE_UPDATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
 				</p>
 			</div>
-			<div className="mt-4 grid grid-flow-row">
+			<div className="grid grid-flow-row mt-4">
 				<TransactionDetail
 					border={false}
 					label={t("TRANSACTION.NETWORK")}
@@ -312,7 +312,7 @@ export const UpdateRegistration = ({ formDefaultData, onDownload }: UpdateRegist
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
