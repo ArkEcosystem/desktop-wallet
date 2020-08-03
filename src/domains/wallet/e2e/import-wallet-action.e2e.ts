@@ -5,9 +5,11 @@ import { buildTranslations as translations } from "../../../app/i18n/helpers";
 fixture`Import Wallet action`.page`http://localhost:3000/`;
 
 const neoscanMock = RequestMock()
-	.onRequestTo("https://neoscan.io/api/main_net/v1/")
+	.onRequestTo(
+		"https://neoscan.io/api/main_net/v1/get_last_transactions_by_address/AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN/1",
+	)
 	.respond(require("../../../tests/fixtures/coins/ark/neo-duplicate.json"), 200, {
-		"Access-Control-Allow-Origin": "https://neoscan.io",
+		"access-control-allow-origin": "*",
 	});
 
 test("should import a wallet by mnemonic", async (t) => {
@@ -136,7 +138,7 @@ test.requestHooks(neoscanMock)("should show an error if import a NEO mainnet add
 	await t.typeText(addressInput, "AGuf6U4ZeNA2P8FHYiQZPXypLbPAtCNGFN");
 	await t.click(Selector("button").withExactText("Go to Wallet"));
 
-	await t.expect(Selector("p").withText("Error").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("p").withText("Error").exists).ok();
 	await t.expect(Selector("div").withText("This address exists on the NEO Mainnet.").exists).ok();
 });
 
