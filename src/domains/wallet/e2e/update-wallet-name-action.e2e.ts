@@ -105,7 +105,7 @@ test("Should require wallet name input on submit", async (t) => {
 	await t.expect(Selector("fieldset p").withText(translations().COMMON.VALIDATION.IS_REQUIRED).exists).ok();
 });
 
-test("Should limit wallet name to 120 characters", async (t) => {
+test("Should limit wallet name to 42 characters", async (t) => {
 	await t.click(Selector("p").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
@@ -125,13 +125,12 @@ test("Should limit wallet name to 120 characters", async (t) => {
 	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
 	await t.expect(Selector('[data-testid="modal__close-btn"]').exists).ok();
 
-	const longName =
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+	const longName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor";
+	const correctName = longName.substring(0, 42);
+
 	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');
 	await t.typeText(walletLabelNameInput, longName);
 
-	const correctName =
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq";
 	await t.expect(walletLabelNameInput.value).eql(correctName);
 
 	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));

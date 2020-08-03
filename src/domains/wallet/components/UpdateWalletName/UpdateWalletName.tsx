@@ -20,7 +20,12 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 	const methods = useForm({ mode: "onChange" });
 
 	const { t } = useTranslation();
-	const nameMaxLength = 120;
+	const nameMaxLength = 42;
+
+	const handleSubmit = ({ name }: any) => {
+		const formattedName = name.substring(0, nameMaxLength);
+		onSave?.({ name: formattedName });
+	};
 
 	return (
 		<Modal
@@ -30,8 +35,8 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<Form context={methods} onSubmit={onSave} className="mt-8">
-				<FormField name="UpdateWalletName__input">
+			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
+				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
 						maxLength={nameMaxLength}

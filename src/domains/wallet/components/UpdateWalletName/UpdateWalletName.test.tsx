@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 // i18n
 import { translations } from "../../i18n";
@@ -30,27 +31,23 @@ describe("UpdateWalletName", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should rename wallet with max 120 characters", () => {
+	it("should rename wallet with max 42 characters", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
 
-		const longName =
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-		const correctName =
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq";
+		const longName = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor";
+		const correctName = longName.substring(0, 42);
 
 		const input = getByTestId("UpdateWalletName__input");
 		const submitBtn = getByTestId("UpdateWalletName__submit");
 
-		act(() => {
+		await act(async () => {
 			fireEvent.change(input, { target: { value: longName } });
 			fireEvent.click(submitBtn);
 		});
 
-		waitFor(() => {
-			expect(fn).toHaveBeenCalledWith({ name: correctName }, expect.anything());
-			wallet.settings().set(WalletSetting.Alias, name);
-			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
-		});
+		expect(fn).toHaveBeenCalledWith({ name: correctName });
+		wallet.settings().set(WalletSetting.Alias, name);
+		expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 	});
 });
