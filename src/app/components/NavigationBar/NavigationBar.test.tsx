@@ -1,40 +1,15 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
-import nock from "nock";
+import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, renderWithRouter } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
+import { env, fireEvent, renderWithRouter } from "testing-library";
 
 import { NavigationBar } from "./NavigationBar";
 
 let profile: Profile;
-let dashboardURL: string;
 
 describe("NavigationBar", () => {
-	beforeAll(async () => {
-		nock.disableNetConnect();
-
-		nock("https://dwallets.ark.io")
-			.get("/api/node/configuration")
-			.reply(200, require("../../../tests/fixtures/coins/ark/configuration-devnet.json"))
-			.get("/api/peers")
-			.reply(200, require("../../../tests/fixtures/coins/ark/peers.json"))
-			.get("/api/node/configuration/crypto")
-			.reply(200, require("../../../tests/fixtures/coins/ark/cryptoConfiguration.json"))
-			.get("/api/node/syncing")
-			.reply(200, require("../../../tests/fixtures/coins/ark/syncing.json"))
-			.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, require("../../../tests/fixtures/coins/ark/wallet.json"))
-			.persist();
-
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
+	beforeAll(() => {
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
-		dashboardURL = `/profiles/${profile.id()}/dashboard`;
 	});
 
 	it("should render", () => {
@@ -48,7 +23,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",
@@ -71,7 +46,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "Test",
@@ -100,9 +75,18 @@ describe("NavigationBar", () => {
 			fireEvent.click(toggle);
 		});
 
+		expect(getByTestId("navbar__user--avatar")).toBeTruthy();
 		expect(getByText("Option 1")).toBeTruthy();
 		fireEvent.click(getByText("Option 1"));
 		expect(history.location.pathname).toMatch("/test");
+	});
+
+	it("should render the navbar with avatar image", () => {
+		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
+
+		const { getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
+
+		expect(getByTestId("navbar__user--avatarImage")).toBeTruthy();
 	});
 
 	it.each(["Contacts", "Settings", "Support"])("should handle '%s' click on user actions dropdown", async (label) => {
@@ -196,7 +180,7 @@ describe("NavigationBar", () => {
 		const menu = [
 			{
 				title: "Portfolio",
-				mountPath: (profileId) => `/profiles/${profileId}/dashboard`,
+				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
 			},
 			{
 				title: "test",

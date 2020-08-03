@@ -1,28 +1,34 @@
-import { contacts } from "domains/contact/data";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
 import { SelectRecipient } from "./SelectRecipient";
 
 export default { title: "Domains / Profile / Components / Select Recipient" };
 
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+const profile = env.profiles().create("Test profile");
+
 export const Default = () => (
 	<div className="max-w-lg space-y-8">
 		<div>
-			<SelectRecipient contacts={contacts} />
+			<SelectRecipient profile={profile} />
 		</div>
 		<div>
-			<SelectRecipient contacts={contacts} isInvalid />
+			<SelectRecipient profile={profile} isInvalid />
 		</div>
 		<div>
-			<SelectRecipient contacts={contacts} disabled />
+			<SelectRecipient profile={profile} disabled />
 		</div>
 		<div>
 			<div className="mb-3">Selected address</div>
-			<SelectRecipient contacts={contacts} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
+			<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
 		</div>
 		<div>
 			<div className="mb-3">Selected address (disabled)</div>
-			<SelectRecipient disabled contacts={contacts} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />
+			<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" disabled />
 		</div>
 	</div>
 );

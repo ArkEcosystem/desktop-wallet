@@ -87,7 +87,7 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__first-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
@@ -118,7 +118,7 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__second-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const writeTextMock = jest.fn();
@@ -129,6 +129,7 @@ describe("CreateWallet", () => {
 		act(() => {
 			fireEvent.click(getByTestId(`CreateWallet__copy`));
 		});
+
 		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
 		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
@@ -148,8 +149,8 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy();
-		expect(getAllByTestId(`MnemonicVerificationOptions__button`).length).toBeGreaterThan(1);
+		expect(getByTestId("CreateWallet__third-step")).toBeTruthy();
+		expect(getAllByTestId("MnemonicVerificationOptions__button").length).toBeGreaterThan(1);
 
 		expect(form.current.getValues()).toEqual({ verification: undefined });
 	});
@@ -172,11 +173,11 @@ describe("CreateWallet", () => {
 			</FormContext>,
 		);
 
-		expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy();
+		expect(getByTestId("CreateWallet__fourth-step")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
-		expect(getByTestId(`CreateWallet__network-name`)).toHaveTextContent("Ark");
-		expect(getByTestId(`CreateWallet__wallet-address`)).toHaveTextContent("TEST-WALLET-ADDRESS");
+		expect(getByTestId("CreateWallet__network-name")).toHaveTextContent("Ark");
+		expect(getByTestId("CreateWallet__wallet-address")).toHaveTextContent("TEST-WALLET-ADDRESS");
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
 
@@ -203,7 +204,7 @@ describe("CreateWallet", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
@@ -231,31 +232,37 @@ describe("CreateWallet", () => {
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 
 		const walletMnemonic = passphrase.split(" ");
@@ -274,27 +281,31 @@ describe("CreateWallet", () => {
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(backButton);
-			// );
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__third-step`)).toBeTruthy());
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
 		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 		});
+
 		await waitFor(() =>
 			expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -314,7 +325,7 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		history.push("/");
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
@@ -338,7 +349,7 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		await waitFor(() => expect(getByTestId("CreateWallet__first-step")).toBeTruthy());
 
 		const selectAssetsInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
@@ -353,16 +364,19 @@ describe("CreateWallet", () => {
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId(`CreateWallet__back-button`));
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
 		});
+
 		await waitFor(() => expect(getByTestId(`CreateWallet__second-step`)).toBeTruthy());
 
 		act(() => {

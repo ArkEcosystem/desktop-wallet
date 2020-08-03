@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
+
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { fireEvent, getDefaultProfileId, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render, RenderResult, renderWithRouter, waitFor } from "testing-library";
 
 import { FifthStep, FirstStep, FourthStep, SecondStep, ThirdStep, TransactionSend } from "../TransactionSend";
 
@@ -30,12 +32,19 @@ const defaultFormValues = {
 	},
 };
 
+let profile: Profile;
+
 describe("Transaction Send", () => {
+	beforeAll(async () => {
+		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+	});
+
 	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
+
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
-				<FirstStep formValues={defaultFormValues} />
+				<FirstStep formValues={defaultFormValues} profile={profile} />
 			</FormContext>,
 		);
 

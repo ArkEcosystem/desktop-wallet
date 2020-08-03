@@ -1,13 +1,19 @@
-import { contacts } from "domains/contact/data";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { httpClient } from "app/services";
 import { availableNetworksMock } from "domains/network/data";
 import { wallets } from "domains/wallet/data";
 import React from "react";
+import { StubStorage } from "tests/mocks";
 
 import { SendTransactionForm } from "./SendTransactionForm";
 
 export default {
 	title: "Domains / Transaction / Components / SendTransactionForm",
 };
+
+const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
+const profile = env.profiles().create("Test profile");
 
 const defaultFormValues = {
 	maxAvailableAmount: 80,
@@ -26,7 +32,7 @@ const defaultFormValues = {
 		fee: 0,
 	},
 	networks: availableNetworksMock,
-	contacts,
+	profile,
 	wallets,
 };
 

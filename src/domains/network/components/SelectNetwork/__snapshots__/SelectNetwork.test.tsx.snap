@@ -98,7 +98,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       <div
         aria-label="Ark"
         class="sc-AxjAm gIAugl border-theme-danger-light text-theme-danger-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-ARK-mainnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -121,7 +121,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       <div
         aria-label="Ark Devnet"
         class="sc-AxjAm gIAugl border-theme-primary-100 text-theme-primary-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-ARK-devnet"
       >
         <div
           class="sc-AxirZ hyqZof"
@@ -144,7 +144,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       <div
         aria-label="Bitcoin"
         class="sc-AxjAm gIAugl border-theme-warning-200 text-theme-warning-400"
-        data-testid="NetworkIcon"
+        data-testid="NetworkIcon-BTC-livenet"
       >
         <div
           class="sc-AxirZ hyqZof"

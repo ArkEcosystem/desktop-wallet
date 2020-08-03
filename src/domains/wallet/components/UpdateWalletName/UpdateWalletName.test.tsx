@@ -9,9 +9,9 @@ import { UpdateWalletName } from "./UpdateWalletName";
 let wallet: Wallet;
 
 describe("UpdateWalletName", () => {
-	beforeAll(async () => {
+	beforeAll(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		wallet = await profile.wallets().importByMnemonic("this is a top secret passphrase", "ARK", "devnet");
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 	});
 
 	it("should not render if not open", () => {

@@ -1,31 +1,45 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { contacts } from "domains/contact/data";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, fireEvent, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { AddRecipient } from "./AddRecipient";
 
+let profile: Profile;
+
 describe("AddRecipient", () => {
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
 	it("should render", () => {
-		const { container } = render(<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />);
+		const { container } = render(
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without recipients", () => {
-		const { container } = render(<AddRecipient />);
+		const { container } = render(<AddRecipient profile={profile} />);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with multiple recipients tab", () => {
 		const { container } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} isSingleRecipient={false} />,
+			<AddRecipient
+				profile={profile}
+				assetSymbol="ARK"
+				maxAvailableAmount={80}
+				availableAmount={0}
+				isSingleRecipient={false}
+			/>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} contacts={contacts} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -45,13 +59,15 @@ describe("AddRecipient", () => {
 		});
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-		const selectedAddressValue = contacts[0]?.addresses()[0]?.address;
+
+		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
+
 		expect(getByTestId("SelectRecipient__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
 		const { getByTestId, container } = render(
-			<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
 		);
 		const sendAll = getByTestId("add-recipient__send-all");
 		const amountInput = getByTestId("add-recipient__amount-input");
@@ -64,7 +80,9 @@ describe("AddRecipient", () => {
 	});
 
 	it("should toggle between single and multiple recipients", async () => {
-		const { getByTestId } = render(<AddRecipient assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />);
+		const { getByTestId } = render(
+			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={80} availableAmount={0} />,
+		);
 		const singleButton = getByTestId("add-recipient-is-single-toggle");
 		const multipleButton = getByTestId("add-recipient-is-multiple-toggle");
 
@@ -83,11 +101,11 @@ describe("AddRecipient", () => {
 	it("should show add recipient button when recipient and amount are set in multipe tab", async () => {
 		const { getByTestId, getAllByTestId } = render(
 			<AddRecipient
+				profile={profile}
 				assetSymbol="ARK"
 				maxAvailableAmount={80}
 				availableAmount={0}
 				isSingleRecipient={false}
-				contacts={contacts}
 			/>,
 		);
 
@@ -113,14 +131,63 @@ describe("AddRecipient", () => {
 			expect(addedRecipientBtn).toBeTruthy();
 		});
 	});
-	it("should add and remove recipient", async () => {
-		const { getByTestId, getAllByTestId, queryByText } = render(
+
+	it("should add two recipients in multiple tab", async () => {
+		const { getByTestId, getAllByTestId } = render(
 			<AddRecipient
+				profile={profile}
 				assetSymbol="ARK"
 				maxAvailableAmount={80}
 				availableAmount={0}
 				isSingleRecipient={false}
-				contacts={contacts}
+			/>,
+		);
+
+		const sendAll = getByTestId("add-recipient__send-all");
+		act(() => {
+			fireEvent.click(sendAll);
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+
+		act(() => {
+			fireEvent.click(firstAddress);
+		});
+
+		const addedRecipientBtn1 = getByTestId("add-recipient__add-btn");
+		act(() => {
+			fireEvent.click(addedRecipientBtn1);
+		});
+
+		// 2nd recipient
+
+		act(() => {
+			fireEvent.click(sendAll);
+			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
+		});
+
+		expect(getByTestId("modal__inner")).toBeTruthy();
+		const secondAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
+		act(() => {
+			fireEvent.click(secondAddress);
+		});
+
+		waitFor(() => {
+			const addedRecipients = getAllByTestId("recipient-list__recipient-list-item");
+			expect(addedRecipients).toHaveLength(2);
+		});
+	});
+
+	it("should add and remove recipient", async () => {
+		const { getByTestId, getAllByTestId, queryByText } = render(
+			<AddRecipient
+				profile={profile}
+				assetSymbol="ARK"
+				maxAvailableAmount={80}
+				availableAmount={0}
+				isSingleRecipient={false}
 			/>,
 		);
 

@@ -32,7 +32,7 @@ export const Dashboard = ({ wallets, networks, portfolioPercentages, balances }:
 	useEffect(() => {
 		const fetchProfileTransactions = async () => {
 			const profileTransactions = await activeProfile?.transactionAggregate().transactions(1);
-			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.all();
+			const allTransactions: Contracts.TransactionDataType[] | undefined = profileTransactions?.items();
 
 			return allTransactions && setAllTransactions(allTransactions);
 		};
