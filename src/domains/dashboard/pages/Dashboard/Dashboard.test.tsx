@@ -2,7 +2,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, within, waitFor } from "utils/testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "utils/testing-library";
 
 import { balances, portfolioPercentages, wallets } from "../../data";
 import { Dashboard } from "./Dashboard";
