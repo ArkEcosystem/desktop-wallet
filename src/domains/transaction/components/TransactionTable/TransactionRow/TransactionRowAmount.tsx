@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Label } from "app/components/Label";
 import React from "react";
 
@@ -11,7 +10,7 @@ type Props = {
 export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
 	// Decouple logic to sdk or a specific component/hook
 	const total = React.useMemo(() => {
-		let value = BigNumber.make(transaction.amount());
+		let value = transaction.amount();
 
 		if (transaction.isSent()) {
 			value = value.plus(transaction.fee());
@@ -39,8 +38,4 @@ export const TransactionRowAmount = ({ transaction, currencyRate }: Props) => {
 			{total}
 		</Label>
 	);
-};
-
-TransactionRowAmount.defaultProps = {
-	currencyRate: 2,
 };
