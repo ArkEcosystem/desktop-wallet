@@ -174,7 +174,17 @@ exports[`CreateWallet should not allow quick swapping of networks 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -620,7 +630,17 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -1066,7 +1086,17 @@ exports[`CreateWallet should render 1`] = `
                   >
                     <span
                       class="text-theme-neutral-600"
-                    />
+                    >
+                      <div
+                        class="sc-AxjAm cpczEI"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          btc.svg
+                        </svg>
+                      </div>
+                    </span>
                   </div>
                   <div
                     class="relative inline-flex items-center justify-center align-middle rounded-full"
@@ -1694,13 +1724,13 @@ exports[`CreateWallet should render 4th step 1`] = `
             class="text-lg font-medium"
             data-testid="CreateWallet__network-name"
           >
-            Ark
+            Ark Devnet
           </p>
         </div>
         <div
-          aria-label="Ark"
-          class="sc-fznZeY bvVXwc border-theme-danger-light text-theme-danger-400"
-          data-testid="NetworkIcon-ARK-mainnet"
+          aria-label="Ark Devnet"
+          class="sc-fznZeY bvVXwc border-theme-primary-100 text-theme-primary-400"
+          data-testid="NetworkIcon-ARK-devnet"
         >
           <div
             class="sc-AxjAm cpczEI"
