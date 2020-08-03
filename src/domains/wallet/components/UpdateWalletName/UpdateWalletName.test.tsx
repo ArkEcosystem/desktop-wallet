@@ -30,31 +30,25 @@ describe("UpdateWalletName", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should rename wallet", () => {
+	it("should rename wallet with max 120 characters", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<UpdateWalletName isOpen={true} onSave={fn} />);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.DESCRIPTION);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.FIELD_NAME);
+		const longName =
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+		const correctName =
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq";
 
 		const input = getByTestId("UpdateWalletName__input");
-		const name = "Sample label";
-
-		act(() => {
-			fireEvent.change(input, { target: { value: name } });
-		});
-
-		expect(input).toHaveValue(name);
-
 		const submitBtn = getByTestId("UpdateWalletName__submit");
 
 		act(() => {
+			fireEvent.change(input, { target: { value: longName } });
 			fireEvent.click(submitBtn);
 		});
 
 		waitFor(() => {
-			expect(fn).toHaveBeenCalledWith({ name }, expect.anything());
+			expect(fn).toHaveBeenCalledWith({ name: correctName }, expect.anything());
 			wallet.settings().set(WalletSetting.Alias, name);
 			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
 		});
