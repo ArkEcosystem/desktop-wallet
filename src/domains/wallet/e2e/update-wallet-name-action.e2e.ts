@@ -104,3 +104,36 @@ test("Should require wallet name input on submit", async (t) => {
 	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));
 	await t.expect(Selector("fieldset p").withText(translations().COMMON.VALIDATION.IS_REQUIRED).exists).ok();
 });
+
+test("Should limit wallet name to 120 characters", async (t) => {
+	await t.click(Selector("p").withText("John Doe"));
+	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
+
+	// Navigate to wallet details page
+	await t.click(Selector("[data-testid=WalletCard__ac38fe6d-4b67-4ef1-85be-17c5f6841129]"));
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
+
+	// Click wallet update name option in dropdown menu
+	await scrollTop();
+	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
+	await t.click(
+		Selector('[data-testid="WalletHeader__more-button"] li').withText(
+			translations().WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME,
+		),
+	);
+
+	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
+	await t.expect(Selector('[data-testid="modal__close-btn"]').exists).ok();
+
+	const longName =
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');
+	await t.typeText(walletLabelNameInput, longName);
+
+	const correctName =
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq";
+	await t.expect(walletLabelNameInput.value).eql(correctName);
+
+	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));
+	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
+});
