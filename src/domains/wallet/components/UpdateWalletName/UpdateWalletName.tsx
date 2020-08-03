@@ -20,6 +20,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 	const methods = useForm({ mode: "onChange" });
 
 	const { t } = useTranslation();
+	const nameMaxLength = 120;
 
 	return (
 		<Modal
@@ -33,6 +34,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 				<FormField name="UpdateWalletName__input">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
+						maxLength={nameMaxLength}
 						data-testid="UpdateWalletName__input"
 						ref={methods.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
