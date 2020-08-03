@@ -6,11 +6,5 @@ export const useActiveProfile = () => {
 	const context = useEnvironmentContext();
 	const { profileId } = useParams();
 
-	return useMemo(() => {
-		try {
-			return context.env.profiles().findById(profileId);
-		} catch {
-			return undefined;
-		}
-	}, [context, profileId]);
+	return useMemo(() => context.env.profiles().findById(profileId), [context, profileId]);
 };
