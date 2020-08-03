@@ -4,6 +4,7 @@ import React from "react";
 import { I18nextProvider } from "react-i18next";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import { isIdle } from "utils/electron-utils";
 
 import { RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
@@ -44,6 +45,18 @@ export const App = () => {
 	/* istanbul ignore next */
 	const storage = __DEV__ ? new StubStorage() : "indexeddb";
 	const [env] = React.useState(() => new Environment({ coins: { ARK }, httpClient, storage }));
+
+	React.useEffect(() => {
+		const idleCheckInterval = 30; // 30 seconds
+
+		const idleInterval = setInterval(() => {
+			if (isIdle(idleCheckInterval * 2 * 10)) {
+				console.log("uhuh, looks like someone is idle");
+			}
+		}, idleCheckInterval * 1000);
+
+		return () => clearInterval(idleInterval);
+	}, []);
 
 	return (
 		<I18nextProvider i18n={i18n}>
