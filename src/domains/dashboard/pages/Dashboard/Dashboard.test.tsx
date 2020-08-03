@@ -12,7 +12,7 @@ const fixtureProfileId = getDefaultProfileId();
 const dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 
 describe("Dashboard", () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		history.push(dashboardURL);
 		nock.disableNetConnect();
 
@@ -22,8 +22,10 @@ describe("Dashboard", () => {
 			.persist();
 	});
 
-	it("should render", () => {
-		const { container } = renderWithRouter(
+	afterEach(() => nock.cleanAll());
+
+	it("should render", async () => {
+		const { getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -33,11 +35,11 @@ describe("Dashboard", () => {
 			},
 		);
 
-		waitFor(() => expect(container).toMatchSnapshot());
+		await waitFor(() => expect(getAllByTestId("TransactionRow")).toHaveLength(2));
 	});
 
-	it("should hide transaction view", () => {
-		const { getByTestId } = renderWithRouter(
+	it("should hide transaction view", async () => {
+		const { getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard wallets={wallets} />
 			</Route>,
@@ -46,6 +48,8 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
+
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -59,8 +63,8 @@ describe("Dashboard", () => {
 		});
 	});
 
-	it("should render portfolio percentage bar", () => {
-		const { container } = renderWithRouter(
+	it("should render portfolio percentage bar", async () => {
+		const { getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -70,11 +74,11 @@ describe("Dashboard", () => {
 			},
 		);
 
-		waitFor(() => expect(container).toMatchSnapshot());
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 	});
 
-	it("should render portfolio chart", () => {
-		const { container } = renderWithRouter(
+	it("should render portfolio chart", async () => {
+		const { getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} portfolioPercentages={portfolioPercentages} />
 			</Route>,
@@ -84,11 +88,11 @@ describe("Dashboard", () => {
 			},
 		);
 
-		waitFor(() => expect(container).toMatchSnapshot());
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 	});
 
-	it("should hide portfolio view", () => {
-		const { getByTestId } = renderWithRouter(
+	it("should hide portfolio view", async () => {
+		const { getByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
@@ -97,6 +101,8 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
+
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
 
 		const filterNetwork = within(getByTestId("WalletControls")).getByTestId("dropdown__toggle");
 
@@ -110,8 +116,8 @@ describe("Dashboard", () => {
 		});
 	});
 
-	it("should navigate to import page", () => {
-		const { getByText } = renderWithRouter(
+	it("should navigate to import page", async () => {
+		const { getByText, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -120,19 +126,20 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
+
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+
 		const importButton = getByText("Import");
 
 		act(() => {
 			fireEvent.click(importButton);
 		});
 
-		waitFor(() => expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`));
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 	});
 
-	it("should navigate to create page", () => {
-		history.push(dashboardURL);
-
-		const { getByText } = renderWithRouter(
+	it("should navigate to create page", async () => {
+		const { getByText, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard balances={balances} wallets={wallets} />
 			</Route>,
@@ -141,12 +148,15 @@ describe("Dashboard", () => {
 				history,
 			},
 		);
+
+		await waitFor(() => expect(getAllByTestId("item-percentage")).toHaveLength(4));
+
 		const createButton = getByText("Create");
 
 		act(() => {
 			fireEvent.click(createButton);
 		});
 
-		waitFor(() => expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`));
+		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/create`);
 	});
 });
