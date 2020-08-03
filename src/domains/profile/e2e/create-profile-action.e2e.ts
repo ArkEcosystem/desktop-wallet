@@ -24,6 +24,7 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.click(Selector("button").withExactText(translations().COMMON.COMPLETE));
 
 	// Check welcome with created profiles
+	await t.wait(1000); // TODO: the profile loading is async so we need to give it a moment
 	await t.expect(Selector("p").withText("John Doe").exists).ok();
 	await t.expect(Selector("p").withText("Anne Doe").exists).ok();
 });
