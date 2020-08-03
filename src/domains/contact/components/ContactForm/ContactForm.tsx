@@ -2,7 +2,7 @@ import { Contact, ContactAddress, NetworkData } from "@arkecosystem/platform-sdk
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
+import { Form, FormField, FormHelperText, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
@@ -144,29 +144,31 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 				<FormHelperText />
 			</FormField>
 
-			<FormField name="network">
-				<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
-				<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
-				<FormHelperText />
-			</FormField>
+			<SubForm>
+				<FormField name="network">
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.NETWORK")}</FormLabel>
+					<SelectNetwork id="ContactForm__network" networks={networks} onSelect={handleSelectNetwork} />
+					<FormHelperText />
+				</FormField>
 
-			<FormField name="address">
-				<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
-				<Input data-testid="contact-form__address-input" ref={form.register({})} />
-				<FormHelperText />
-			</FormField>
+				<FormField name="address">
+					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
+					<Input data-testid="contact-form__address-input" ref={form.register({})} />
+					<FormHelperText />
+				</FormField>
 
-			<div className="mt-4">
-				<Button
-					data-testid="contact-form__add-address-btn"
-					variant="plain"
-					className="w-full"
-					disabled={!network || !address}
-					onClick={handleAddAddress}
-				>
-					{t("CONTACTS.CONTACT_FORM.ADD_ADDRESS")}
-				</Button>
-			</div>
+				<div className="mt-4">
+					<Button
+						data-testid="contact-form__add-address-btn"
+						variant="plain"
+						className="w-full"
+						disabled={!network || !address}
+						onClick={handleAddAddress}
+					>
+						{t("CONTACTS.CONTACT_FORM.ADD_ADDRESS")}
+					</Button>
+				</div>
+			</SubForm>
 
 			{addresses && addresses.length > 0 && <AddressList addresses={addresses} onRemove={handleRemoveAddress} />}
 

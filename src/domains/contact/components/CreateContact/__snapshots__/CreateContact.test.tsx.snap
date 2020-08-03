@@ -76,86 +76,90 @@ exports[`CreateContact should render a modal 1`] = `
                 value=""
               />
             </fieldset>
-            <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+            <div
+              class="SubForm__SubFormWrapper-c4tqfs-0 jZidsI"
             >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="network"
-              >
-                Network
-              </label>
-              <div
-                aria-expanded="false"
-                aria-haspopup="listbox"
-                aria-owns="ContactForm__network-menu"
-                data-testid="SelectNetwork"
-                role="combobox"
+              <fieldset
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
               >
                 <label
-                  for="ContactForm__network-input"
-                  id="ContactForm__network-label"
-                />
-                <div
-                  class="sc-fzozJi OgXfh"
-                  data-testid="SelectNetworkInput"
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="network"
                 >
+                  Network
+                </label>
+                <div
+                  aria-expanded="false"
+                  aria-haspopup="listbox"
+                  aria-owns="ContactForm__network-menu"
+                  data-testid="SelectNetwork"
+                  role="combobox"
+                >
+                  <label
+                    for="ContactForm__network-input"
+                    id="ContactForm__network-label"
+                  />
                   <div
-                    class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                    class="sc-fzozJi OgXfh"
+                    data-testid="SelectNetworkInput"
                   >
                     <div
-                      class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
-                      data-testid="SelectNetworkInput__network"
+                      class="sc-AxheI sc-Axmtr kSmZlB px-4"
+                    >
+                      <div
+                        class="sc-fznyAO iBucrA border-theme-neutral-light text-theme-neutral"
+                        data-testid="SelectNetworkInput__network"
+                      />
+                    </div>
+                    <input
+                      aria-autocomplete="list"
+                      aria-controls="ContactForm__network-menu"
+                      aria-labelledby="ContactForm__network-label"
+                      autocomplete="off"
+                      class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
+                      data-testid="SelectNetworkInput__input"
+                      id="ContactForm__network-input"
+                      placeholder="Enter a network name"
+                      value=""
                     />
                   </div>
-                  <input
-                    aria-autocomplete="list"
-                    aria-controls="ContactForm__network-menu"
-                    aria-labelledby="ContactForm__network-label"
-                    autocomplete="off"
-                    class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 pl-15"
-                    data-testid="SelectNetworkInput__input"
-                    id="ContactForm__network-input"
-                    placeholder="Enter a network name"
-                    value=""
-                  />
                 </div>
+                <ul
+                  aria-labelledby="ContactForm__network-label"
+                  id="ContactForm__network-menu"
+                  role="listbox"
+                />
+              </fieldset>
+              <fieldset
+                class="sc-AxhUy dJlYTe flex flex-col space-y-2"
+              >
+                <label
+                  class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
+                  data-testid="FormLabel"
+                  for="address"
+                >
+                  Address
+                </label>
+                <input
+                  class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
+                  data-testid="contact-form__address-input"
+                  name="address"
+                />
+              </fieldset>
+              <div
+                class="mt-4"
+              >
+                <button
+                  class="sc-AxjAm ddJBbC w-full"
+                  color="primary"
+                  data-testid="contact-form__add-address-btn"
+                  disabled=""
+                  type="button"
+                >
+                  Add address
+                </button>
               </div>
-              <ul
-                aria-labelledby="ContactForm__network-label"
-                id="ContactForm__network-menu"
-                role="listbox"
-              />
-            </fieldset>
-            <fieldset
-              class="sc-AxhUy dJlYTe flex flex-col space-y-2"
-            >
-              <label
-                class="flex inline-block mb-2 text-sm font-medium FormLabel transition-colors duration-100 text-theme-neutral-dark"
-                data-testid="FormLabel"
-                for="address"
-              >
-                Address
-              </label>
-              <input
-                class="sc-AxgMl jRvGoE overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-neutral-300 text-theme-neutral-900 transition-colors duration-200 px-4 py-3 "
-                data-testid="contact-form__address-input"
-                name="address"
-              />
-            </fieldset>
-            <div
-              class="mt-4"
-            >
-              <button
-                class="sc-AxjAm ddJBbC w-full"
-                color="primary"
-                data-testid="contact-form__add-address-btn"
-                disabled=""
-                type="button"
-              >
-                Add address
-              </button>
             </div>
             <div
               class="flex w-full justify-end"
