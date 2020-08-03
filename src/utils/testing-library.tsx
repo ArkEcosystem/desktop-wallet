@@ -9,6 +9,7 @@ import nock from "nock";
 import React from "react";
 import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
+import delegate from "tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 
@@ -59,9 +60,13 @@ export const defaultNetMocks = () => {
 		.get("/api/node/syncing")
 		.reply(200, require("../tests/fixtures/coins/ark/syncing.json"))
 		.get("/api/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib")
-		.reply(200, require("../tests/fixtures/coins/ark/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json"))
+		.reply(200, delegate)
 		.get("/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 		.reply(200, require("../tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json"))
+		.get("/api/delegates")
+		.reply(200, require("../tests/fixtures/coins/ark/delegates.json"))
+		.get(/\/api\/delegates\/.+/)
+		.reply(200, delegate)
 		.persist();
 };
 
