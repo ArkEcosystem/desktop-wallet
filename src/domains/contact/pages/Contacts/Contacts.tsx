@@ -59,7 +59,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const { t } = useTranslation();
 
 	useEffect(() => {
-		setContacts(activeProfile!.contacts().values());
+		setContacts(activeProfile.contacts().values());
 	}, [activeProfile, state]);
 
 	const contactOptions = [
@@ -97,7 +97,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const handleOnSave = async ({ name, addresses }: any) => {
 		const contact = activeProfile?.contacts().create(name);
-		await activeProfile?.contacts().update(contact?.id() as string, { addresses });
+		await activeProfile?.contacts().update(contact?.id(), { addresses });
 		await persist();
 		setCreateIsOpen(false);
 	};
@@ -161,7 +161,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 			/>
 
 			<DeleteContact
-				profile={activeProfile!}
+				profile={activeProfile}
 				contactId={contactToDelete}
 				isOpen={!!contactToDelete}
 				onClose={() => setContactToDelete(null)}

@@ -75,7 +75,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 
 	const handleDeleteWallet = async () => {
 		const wallet = activeProfile?.wallets().findById(walletId);
-		activeProfile?.wallets().forget(wallet?.id() as string);
+		activeProfile?.wallets().forget(wallet?.id());
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
@@ -143,7 +143,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			/>
 
 			<SignMessage
-				profileId={activeProfile?.id() as string}
+				profileId={activeProfile?.id()}
 				walletId={walletId}
 				signatoryAddress={wallet?.address as string}
 				isOpen={isSigningMessage}
@@ -163,7 +163,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				onClose={() => setIsVerifyingMessage(false)}
 				onCancel={() => setIsVerifyingMessage(false)}
 				walletId={walletId}
-				profileId={activeProfile?.id() as string}
+				profileId={activeProfile?.id()}
 				signatory={wallet?.publicKey}
 			/>
 		</>
