@@ -58,7 +58,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const history = useHistory();
 	const { walletId } = useParams();
 
-	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 	const crumbs = [
 		{
 			route: dashboardRoute,
@@ -74,8 +74,8 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	};
 
 	const handleDeleteWallet = async () => {
-		const wallet = activeProfile?.wallets().findById(walletId);
-		activeProfile?.wallets().forget(wallet?.id());
+		const wallet = activeProfile.wallets().findById(walletId);
+		activeProfile.wallets().forget(wallet.id());
 		await persist();
 		setIsDeleteWallet(false);
 		history.push(dashboardRoute);
@@ -95,7 +95,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 					isLedger={wallet?.walletTypeIcons?.includes("Ledger")}
 					isMultisig={wallet?.walletTypeIcons?.includes("Multisig")}
 					hasStarred={wallet?.hasStarred}
-					onSend={() => history.push(`/profiles/${activeProfile?.id()}/transactions/transfer`)}
+					onSend={() => history.push(`/profiles/${activeProfile.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
 					onSignMessage={() => setIsSigningMessage(true)}
@@ -115,8 +115,8 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 						hasBridgechains={wallet?.walletTypeIcons?.includes("Bridgechain")}
 						hasSecondSignature={wallet?.walletTypeIcons?.includes("Key")}
 						hasPlugins={wallet?.walletTypeIcons?.includes("Plugins")}
-						onShowAll={() => history.push(`/profiles/${activeProfile?.id()}/registrations`)}
-						onRegister={() => history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)}
+						onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
+						onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
 					/>
 				</Section>
 
@@ -143,7 +143,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 			/>
 
 			<SignMessage
-				profileId={activeProfile?.id()}
+				profileId={activeProfile.id()}
 				walletId={walletId}
 				signatoryAddress={wallet?.address as string}
 				isOpen={isSigningMessage}
@@ -163,7 +163,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 				onClose={() => setIsVerifyingMessage(false)}
 				onCancel={() => setIsVerifyingMessage(false)}
 				walletId={walletId}
-				profileId={activeProfile?.id()}
+				profileId={activeProfile.id()}
 				signatory={wallet?.publicKey}
 			/>
 		</>

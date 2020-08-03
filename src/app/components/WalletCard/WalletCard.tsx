@@ -77,7 +77,7 @@ export const WalletCard = ({
 	}
 
 	return (
-		<Link to={`/profiles/${activeProfile?.id()}/wallets/${id}`} data-testid={`WalletCard__${id}`}>
+		<Link to={`/profiles/${activeProfile.id()}/wallets/${id}`} data-testid={`WalletCard__${id}`}>
 			<div className={`w-64 inline-block ${className}`}>
 				<Card>
 					<div className="relative p-2">

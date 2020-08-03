@@ -30,7 +30,7 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
-		setScreenshotProtection(activeProfile?.settings().get(ProfileSetting.ScreenshotProtection) === true);
+		setScreenshotProtection(activeProfile.settings().get(ProfileSetting.ScreenshotProtection) === true);
 	}, [activeProfile]);
 
 	// Wallet controls data
@@ -75,8 +75,8 @@ export const Dashboard = ({ transactions, wallets, networks, portfolioPercentage
 
 			<Section className="flex-1">
 				<Wallets
-					onCreateWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/create`)}
-					onImportWallet={() => history.push(`/profiles/${activeProfile?.id()}/wallets/import`)}
+					onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+					onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 					viewType="grid"
 					title={t("COMMON.WALLETS")}
 					wallets={wallets}

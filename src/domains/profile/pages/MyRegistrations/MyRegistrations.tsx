@@ -83,7 +83,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -100,7 +100,7 @@ export const MyRegistrations = ({ registrations, handleDropdown }: Props) => {
 							<div className="pl-10">
 								<Button
 									onClick={() =>
-										history.push(`/profiles/${activeProfile?.id()}/transactions/registration`)
+										history.push(`/profiles/${activeProfile.id()}/transactions/registration`)
 									}
 								>
 									{t("COMMON.REGISTER")}

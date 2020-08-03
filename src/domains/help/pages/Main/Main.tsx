@@ -67,7 +67,7 @@ export const Main = ({ categories, helpfulArticles, popularArticles, newestArtic
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/support`,
+			route: `/profiles/${activeProfile.id()}/support`,
 			label: "Go back to Help & Support",
 		},
 	];

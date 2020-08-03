@@ -35,7 +35,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];

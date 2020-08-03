@@ -234,7 +234,7 @@ export const CreateWallet = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const activeProfile = useActiveProfile();
-	const dashboardRoute = `/profiles/${activeProfile?.id()}/dashboard`;
+	const dashboardRoute = `/profiles/${activeProfile.id()}/dashboard`;
 
 	const crumbs = [
 		{
@@ -253,7 +253,7 @@ export const CreateWallet = () => {
 	}, [register]);
 
 	const submitForm = async ({ name }: any) => {
-		activeProfile?.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
+		activeProfile.wallets().findById(getValues("wallet").id()).settings().set(WalletSetting.Alias, name);
 
 		await persist();
 
@@ -267,7 +267,7 @@ export const CreateWallet = () => {
 			const currentWallet = getValues("wallet");
 
 			if (currentWallet) {
-				activeProfile?.wallets().forget(currentWallet.id());
+				activeProfile.wallets().forget(currentWallet.id());
 			}
 		},
 		[activeProfile, getValues],

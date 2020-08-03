@@ -28,7 +28,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 	const [avatarImage, setAvatarImage] = useState(activeProfile?.settings().get(ProfileSetting.Avatar) || "");
 	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isAdvancedMode, setIsAdvancedMode] = useState(
-		activeProfile?.settings().get(ProfileSetting.AdvancedMode) || false,
+		activeProfile.settings().get(ProfileSetting.AdvancedMode) || false,
 	);
 
 	const { context, register } = formConfig;
@@ -115,7 +115,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						<Toggle
 							ref={register()}
 							name="isScreenshotProtection"
-							defaultChecked={activeProfile?.settings().get(ProfileSetting.ScreenshotProtection)}
+							defaultChecked={activeProfile.settings().get(ProfileSetting.ScreenshotProtection)}
 							data-testid="General-settings__toggle--isScreenshotProtection"
 						/>
 					</div>
@@ -169,7 +169,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 							{ label: "30 Minutes", value: 30 },
 							{ label: "60 Minutes", value: 60 },
 						]}
-						defaultValue={activeProfile?.settings().get(ProfileSetting.AutomaticLogoffPeriod)}
+						defaultValue={activeProfile.settings().get(ProfileSetting.AutomaticLogoffPeriod)}
 					/>
 					<FormHelperText />
 				</FormField>
@@ -192,7 +192,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						<Toggle
 							ref={register()}
 							name="isDarkMode"
-							defaultChecked={activeProfile?.settings().get(ProfileSetting.Theme) === "dark"}
+							defaultChecked={activeProfile.settings().get(ProfileSetting.Theme) === "dark"}
 							data-testid="General-settings__toggle--isDarkMode"
 						/>
 					</div>
@@ -213,7 +213,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 						<Toggle
 							ref={register()}
 							name="isUpdateLedger"
-							defaultChecked={activeProfile?.settings().get(ProfileSetting.LedgerUpdateMethod)}
+							defaultChecked={activeProfile.settings().get(ProfileSetting.LedgerUpdateMethod)}
 							data-testid="General-settings__toggle--isUpdateLedger"
 						/>
 					</div>
@@ -273,7 +273,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 											field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
 										}).toString(),
 									})}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.Name)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.Name)}
 									data-testid="General-settings__input--name"
 								/>
 								<FormHelperText />
@@ -308,7 +308,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.currencies}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.ExchangeCurrency)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.ExchangeCurrency)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -327,7 +327,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.languages}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.Locale)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.Locale)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -344,7 +344,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.marketProviders}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.MarketProvider)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.MarketProvider)}
 								/>
 								<FormHelperText />
 							</FormField>
@@ -361,7 +361,7 @@ export const General = ({ env, formConfig, onSubmit }: GeneralProps) => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.timeFormats}
-									defaultValue={activeProfile?.settings().get(ProfileSetting.TimeFormat)}
+									defaultValue={activeProfile.settings().get(ProfileSetting.TimeFormat)}
 								/>
 								<FormHelperText />
 							</FormField>

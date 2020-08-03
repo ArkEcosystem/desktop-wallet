@@ -220,7 +220,7 @@ export const TransactionSend = ({ onCopy, formValues }: Props) => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];

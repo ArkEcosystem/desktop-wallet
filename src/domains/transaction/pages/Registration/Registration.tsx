@@ -413,7 +413,7 @@ export const Registration = ({
 
 	const crumbs = [
 		{
-			route: `/wallets/${activeProfile?.id()}/dashboard`,
+			route: `/wallets/${activeProfile.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];

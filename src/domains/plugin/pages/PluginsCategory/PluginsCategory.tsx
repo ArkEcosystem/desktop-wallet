@@ -111,7 +111,7 @@ export const PluginsCategory = ({ title, description, initialViewType }: Plugins
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/plugins`,
+			route: `/profiles/${activeProfile.id()}/plugins`,
 			label: "Go back to Plugin Manager",
 		},
 	];

@@ -96,8 +96,8 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	];
 
 	const handleOnSave = async ({ name, addresses }: any) => {
-		const contact = activeProfile?.contacts().create(name);
-		await activeProfile?.contacts().update(contact?.id(), { addresses });
+		const contact = activeProfile.contacts().create(name);
+		await activeProfile.contacts().update(contact.id(), { addresses });
 		await persist();
 		setCreateIsOpen(false);
 	};

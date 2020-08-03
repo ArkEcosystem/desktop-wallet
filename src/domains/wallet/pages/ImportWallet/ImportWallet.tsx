@@ -152,7 +152,7 @@ export const ImportWallet = () => {
 
 	const crumbs = [
 		{
-			route: `/profiles/${activeProfile?.id()}/dashboard`,
+			route: `/profiles/${activeProfile.id()}/dashboard`,
 			label: "Go back to Portfolio",
 		},
 	];
@@ -178,9 +178,9 @@ export const ImportWallet = () => {
 
 		try {
 			if (passphrase) {
-				wallet = await activeProfile?.wallets().importByMnemonic(passphrase, network.coin(), network.id());
+				wallet = await activeProfile.wallets().importByMnemonic(passphrase, network.coin(), network.id());
 			} else {
-				wallet = await activeProfile?.wallets().importByAddress(address, network.coin(), network.id());
+				wallet = await activeProfile.wallets().importByAddress(address, network.coin(), network.id());
 			}
 		} catch (error) {
 			return setError(error.message);
@@ -188,7 +188,7 @@ export const ImportWallet = () => {
 
 		await persist();
 
-		history.push(`/profiles/${activeProfile?.id()}/wallets/${wallet?.id()}`);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`);
 	};
 
 	return (
