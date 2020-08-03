@@ -4,16 +4,26 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId,  renderWithRouter, waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	useDefaultNetMocks,
+	waitFor,
+} from "testing-library";
 import walletMock from "tests/fixtures/coins/ark/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 
 import { WalletDetails } from "./WalletDetails";
 
 const history = createMemoryHistory();
 let dashboardURL: string;
+
 let profile: Profile;
 let wallet: Wallet;
-let secondWallet: Wallet;
+let blankWallet: Wallet;
+let unvotedWallet: Wallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
@@ -40,10 +50,45 @@ describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		secondWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
+		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "devnet");
+		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "devnet");
+
+		nock("https://dwallets.ark.io")
+			.get(`/api/wallets/${unvotedWallet.address()}`)
+			.reply(200, walletMock)
+			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
+			.reply(200, {
+				meta: {
+					totalCountIsEstimate: false,
+					count: 0,
+					pageCount: 1,
+					totalCount: 0,
+					next: null,
+					previous: null,
+					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
+					last: null,
+				},
+				data: [],
+			})
+			.get(/\/api\/wallets\/.+/)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.get(/\/api\/wallets\/.+\/votes/)
+			.reply(404, {
+				statusCode: 404,
+				error: "Not Found",
+				message: "Wallet not found",
+			})
+			.persist();
+
+		useDefaultNetMocks();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(dashboardURL);
 	});
@@ -73,40 +118,16 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render when wallet not found for votes", async () => {
-		dashboardURL = `/profiles/${profile.id()}/wallets/${secondWallet.id()}`;
+		dashboardURL = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(dashboardURL);
 
 		const { asFragment, getByTestId } = await renderPage();
 
-		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(secondWallet.address());
+		expect(getByTestId("WalletHeader__address-publickey")).toHaveTextContent(blankWallet.address());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render when wallet hasn't voted", async () => {
-		const unvotedWallet = await profile.wallets().importByMnemonic("test wallet", "ARK", "devnet");
-
-		nock.cleanAll();
-
-		nock("https://wallets.ark.io")
-			.get(`/api/wallets/${unvotedWallet.address()}`)
-			.reply(200, walletMock)
-			.get(`/api/wallets/${unvotedWallet.address()}/votes`)
-			.reply(200, {
-				meta: {
-					totalCountIsEstimate: false,
-					count: 0,
-					pageCount: 1,
-					totalCount: 0,
-					next: null,
-					previous: null,
-					self: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					first: "/wallets/AXzxJ8Ts3dQ2bvBR1tPE7GUee9iSEJb8HX/votes?transform=true&page=1&limit=100",
-					last: null,
-				},
-				data: [],
-			})
-			.persist();
-
 		dashboardURL = `/profiles/${profile.id()}/wallets/${unvotedWallet.id()}`;
 		history.push(dashboardURL);
 
@@ -117,7 +138,12 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not render the bottom sheet menu when there is only one wallet", async () => {
-		profile.wallets().forget(secondWallet.id());
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		const wallet2 = await profile.wallets().importByAddress(wallet.address(), "ARK", "devnet");
+
+		dashboardURL = `/profiles/${profile.id()}/wallets/${wallet2.id()}`;
+		history.push(dashboardURL);
+
 		const { asFragment, queryByTestId } = await renderPage();
 
 		expect(queryByTestId("WalletBottomSheetMenu")).toBeNull();
@@ -125,6 +151,10 @@ describe("WalletDetails", () => {
 	});
 
 	it("should delete wallet", async () => {
+		const deleteWallet = await profile.wallets().importByMnemonic("delete wallet", "ARK", "devnet");
+		dashboardURL = `/profiles/${profile.id()}/wallets/${deleteWallet.id()}`;
+		history.push(dashboardURL);
+
 		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
 
 		expect(asFragment()).toMatchSnapshot();
@@ -143,14 +173,14 @@ describe("WalletDetails", () => {
 			fireEvent.click(deleteWalletOption);
 		});
 
-		expect(profile.wallets().count()).toEqual(2);
+		expect(profile.wallets().count()).toEqual(4);
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByTestId("DeleteResource__submit-button"));
 		});
 
-		await waitFor(() => expect(profile.wallets().count()).toEqual(1));
+		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
 	});
 
 	it("should update wallet name", async () => {

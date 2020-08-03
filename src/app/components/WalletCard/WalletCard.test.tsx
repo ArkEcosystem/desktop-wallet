@@ -1,5 +1,4 @@
-
-import {  Wallet,  WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";

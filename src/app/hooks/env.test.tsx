@@ -61,7 +61,7 @@ describe("useActiveProfile", () => {
 				<TestWallet />
 			</Route>,
 			{
-				routes: [`/profiles/${identity.profiles.bob.id}/wallets/nonexistent-id`],
+				routes: [`/profiles/${profile.id()}/wallets/nonexistent-id`],
 			},
 		);
 		expect(getByText("404")).toBeTruthy();

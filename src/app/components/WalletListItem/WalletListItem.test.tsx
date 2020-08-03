@@ -1,25 +1,13 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
+import { Wallet, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
+import { act, env, fireEvent, render } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
 let wallet: Wallet;
 
-beforeAll(() => {
-	mockArkHttp();
-});
-
 describe("WalletListItem", () => {
-	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
+	beforeAll(() => {
 		const profile = env.profiles().values()[0];
 		wallet = profile.wallets().values()[0];
 		wallet.data().set(WalletFlag.Starred, true);

@@ -1,4 +1,4 @@
-import { Profile, Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -8,18 +8,14 @@ import { balances, portfolioPercentages, transactions } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
-let dashboardURL: string;
 let emptyProfile: Profile;
-let wallet: Wallet;
 
 const fixtureProfileId = getDefaultProfileId();
+let dashboardURL: string;
 
 describe("Dashboard", () => {
-	beforeAll(() => {
-		emptyProfile = env.profiles().create("John Gone");
-	});
-
 	beforeEach(() => {
+		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 	});
@@ -78,7 +74,7 @@ describe("Dashboard", () => {
 	});
 
 	it("should hide transaction view", () => {
-		const { asFragment, getByTestId, getAllByTestId } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard transactions={transactions} />
 			</Route>,

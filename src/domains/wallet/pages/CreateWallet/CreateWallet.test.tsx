@@ -1,24 +1,11 @@
-
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import {  Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Profile, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { EnvironmentProvider } from "app/contexts";
 import { availableNetworksMock } from "domains/network/data";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { FormContext, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-
-let profile: Profile;
-let bip39GenerateMock: any;
-
-const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-
-beforeAll(() => {
-	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
-});
-
-
 import {
 	act as actAsync,
 	env,
@@ -32,6 +19,15 @@ import {
 import { CreateWallet, FirstStep, FourthStep, SecondStep, ThirdStep } from "./CreateWallet";
 
 jest.setTimeout(8000);
+
+let profile: Profile;
+let bip39GenerateMock: any;
+
+const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
+
+beforeAll(() => {
+	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+});
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -290,11 +286,9 @@ describe("CreateWallet", () => {
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/create">
-					<CreateWallet />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
 			{
 				routes: [createURL, "/"],
 				history,
@@ -314,11 +308,9 @@ describe("CreateWallet", () => {
 		history.push(createURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
-			<EnvironmentProvider env={env}>
-				<Route path="/profiles/:profileId/wallets/create">
-					<CreateWallet />
-				</Route>
-			</EnvironmentProvider>,
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
 			{
 				routes: [createURL, "/"],
 				history,

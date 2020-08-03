@@ -11,7 +11,7 @@ let profile: Profile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		updatingContact = profile.contacts().values()[0];
 	});

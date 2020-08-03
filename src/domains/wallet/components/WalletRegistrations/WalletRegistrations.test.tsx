@@ -1,34 +1,15 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
-import { mockArkHttp, StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletRegistrations } from "./WalletRegistrations";
 
 let delegate: Contracts.WalletData;
-let bip39GenerateMock: any;
-
-const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-
-beforeAll(() => {
-	mockArkHttp();
-
-	bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
-});
-
-afterAll(() => {
-	bip39GenerateMock.mockRestore();
-});
 
 describe("WalletRegistrations", () => {
 	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		const profile = env.profiles().create("John Doe");
-		const wallet = (await profile.wallets().generate("ARK", "mainnet")).wallet;
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
 		delegate = await wallet.delegate("test");
 	});

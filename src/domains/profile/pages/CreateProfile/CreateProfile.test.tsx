@@ -41,9 +41,15 @@ describe("CreateProfile", () => {
 	});
 
 	it("should render", () => {
-		const { container, getByText, asFragment } = renderWithRouter(<CreateProfile />, {
-			routes: ["/", "/profile/create"],
-		});
+		const { container, getByText, asFragment } = renderWithRouter(
+			<EnvironmentProvider env={env}>
+				<CreateProfile />
+			</EnvironmentProvider>,
+			{
+				routes: ["/", "/profile/create"],
+				withProviders: false,
+			},
+		);
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText("Back"));
@@ -58,6 +64,7 @@ describe("CreateProfile", () => {
 			</EnvironmentProvider>,
 			{
 				routes: ["/", "/profile/create"],
+				withProviders: false,
 			},
 		);
 
@@ -131,6 +138,7 @@ describe("CreateProfile", () => {
 			</EnvironmentProvider>,
 			{
 				routes: ["/", "/profile/create"],
+				withProviders: false,
 			},
 		);
 
@@ -183,6 +191,7 @@ describe("CreateProfile", () => {
 			</EnvironmentProvider>,
 			{
 				routes: ["/", "/profile/create"],
+				withProviders: false,
 			},
 		);
 

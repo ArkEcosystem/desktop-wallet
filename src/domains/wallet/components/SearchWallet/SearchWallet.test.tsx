@@ -1,26 +1,18 @@
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment, Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
-import React from "react";
-import { fireEvent, render, waitFor } from "testing-library";
-import { mockArkHttp, StubStorage } from "tests/mocks";
 
-// i18n
+import {  Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import React from "react";
+import { env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+
 import { translations } from "../../i18n";
 import { SearchWallet } from "./SearchWallet";
 
 let wallets: Wallet[];
 
-beforeAll(() => {
-	mockArkHttp();
-});
-
 describe("SearchWallet", () => {
-	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		const profile = env.profiles().create("John Doe");
+	beforeAll(() => {
+		const profile = env.profiles().findById(getDefaultProfileId());
 
-		wallets = [await profile.wallets().importByAddress("ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT", "ARK", "mainnet")];
+		wallets = [profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129")];
 		wallets[0].settings().set(WalletSetting.Alias, "Sample Wallet");
 	});
 

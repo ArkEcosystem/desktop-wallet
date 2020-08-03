@@ -1,27 +1,15 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { httpClient } from "app/services";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
-import fixtureData from "tests/fixtures/env/storage-mainnet.json";
-import { mockArkHttp, StubStorage } from "tests/mocks";
+import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { WalletVote } from "./WalletVote";
 
 let votes: Coins.WalletDataCollection;
 
-beforeAll(() => {
-	mockArkHttp();
-});
-
 describe("WalletVote", () => {
 	beforeEach(async () => {
-		const env = new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
-		await env.bootFromObject(fixtureData);
-
-		const profile = env.profiles().values()[0];
-		const wallet = profile.wallets().values()[0];
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
 		votes = (await wallet.delegates()).data;
 	});
