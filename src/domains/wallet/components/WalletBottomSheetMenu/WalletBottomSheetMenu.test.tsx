@@ -1,4 +1,3 @@
-
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render } from "testing-library";

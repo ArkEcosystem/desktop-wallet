@@ -1,5 +1,4 @@
-
-import {  Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
