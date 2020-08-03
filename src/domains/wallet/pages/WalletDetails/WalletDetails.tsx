@@ -54,7 +54,6 @@ export const WalletDetails = () => {
 		try {
 			response = await activeWallet!.votes();
 		} catch (error) {
-			console.log(error);
 			return;
 		}
 
