@@ -79,7 +79,7 @@ describe("CreateWallet", () => {
 		bip39GenerateMock.mockRestore();
 	});
 
-	it("should render 1st step", () => {
+	it("should render 1st step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormContext {...form.current}>
@@ -101,7 +101,11 @@ describe("CreateWallet", () => {
 			fireEvent.keyDown(selectAssetsInput, { key: "Enter", code: 13 });
 		});
 
+		expect(selectAssetsInput).toHaveAttribute("disabled");
+
 		expect(selectAssetsInput).toHaveValue("Ark");
+
+		await waitFor(() => expect(selectAssetsInput).not.toHaveAttribute("disabled"));
 	});
 
 	it("should render 2nd step", async () => {
@@ -187,6 +191,41 @@ describe("CreateWallet", () => {
 		});
 
 		expect(form.current.getValues()).toEqual({ name: "Test" });
+	});
+
+	it("should not allow quick swapping of networks", async () => {
+		const history = createMemoryHistory();
+		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
+		history.push(createURL);
+
+		const { queryAllByText, getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/create">
+				<CreateWallet />
+			</Route>,
+			{
+				routes: [createURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId(`CreateWallet__first-step`)).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+
+		const continueButton = getByTestId("CreateWallet__continue-button");
+		const networkIcons = getAllByTestId("SelectNetwork__NetworkIcon--container");
+
+		fireEvent.click(networkIcons[0]); // click ARK
+		fireEvent.click(networkIcons[1]); // click DARK
+
+		expect(getByTestId("SelectNetworkInput__input")).toHaveAttribute("disabled");
+		for (const networkIcon of getAllByTestId("SelectNetwork__NetworkIcon--container")) {
+			expect(networkIcon).toHaveAttribute("disabled");
+		}
+		expect(continueButton).toHaveAttribute("disabled");
+
+		expect(getByTestId("NetworkIcon-ARK-mainnet")).toHaveClass("border-theme-success-200");
+
+		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 	});
 
 	it("should render", async () => {
@@ -297,14 +336,14 @@ describe("CreateWallet", () => {
 
 		await waitFor(() => expect(getByTestId(`CreateWallet__fourth-step`)).toBeTruthy());
 
+		const historySpy = jest.spyOn(history, "push");
 		act(() => {
 			fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: "Test Wallet" } });
 			fireEvent.click(getByTestId(`CreateWallet__save-button`));
 		});
 
-		await waitFor(() =>
-			expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet"),
-		);
+		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile?.id()}/dashboard`));
+		expect(profile.wallets().values()[0].settings().get(WalletSetting.Alias)).toEqual("Test Wallet");
 
 		expect(asFragment()).toMatchSnapshot();
 	});
