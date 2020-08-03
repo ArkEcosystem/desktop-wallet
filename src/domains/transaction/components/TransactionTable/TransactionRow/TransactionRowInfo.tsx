@@ -3,6 +3,10 @@ import Tippy from "@tippyjs/react";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
+type Props = {
+	transaction: Contracts.TransactionDataType;
+};
+
 const VendorField = ({ vendorField }: { vendorField: string | undefined }) => (
 	<Tippy content={vendorField}>
 		<span className="p-1">
@@ -19,9 +23,6 @@ const MultiSignature = () => (
 		</span>
 	</Tippy>
 );
-type Props = {
-	transaction: Contracts.TransactionDataType;
-};
 
 export const TransactionRowInfo = ({ transaction }: Props) => (
 	<div data-testid="TransactionRowInfo" className="inline-flex align-middle space-x-1">
