@@ -34,6 +34,7 @@ exports[`PercentageBar should render with data 1`] = `
       >
         <div
           class="flex items-center justify-end py-4 pl-6 pr-0"
+          data-testid="item-percentage"
         >
           <div
             class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-500"
@@ -51,6 +52,7 @@ exports[`PercentageBar should render with data 1`] = `
         </div>
         <div
           class="flex items-center justify-end py-4 pl-6 pr-0"
+          data-testid="item-percentage"
         >
           <div
             class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-warning-500"
@@ -68,6 +70,7 @@ exports[`PercentageBar should render with data 1`] = `
         </div>
         <div
           class="flex items-center justify-end py-4 pl-6 pr-0"
+          data-testid="item-percentage"
         >
           <div
             class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-primary-500"
@@ -85,6 +88,7 @@ exports[`PercentageBar should render with data 1`] = `
         </div>
         <div
           class="flex items-center justify-end py-4 pl-6 pr-0"
+          data-testid="item-percentage"
         >
           <div
             class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-neutral-400"

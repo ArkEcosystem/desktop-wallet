@@ -1,13 +1,13 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import React from "react";
 
 type Props = {
-	type: string;
-	recipient: string;
+	transaction: Contracts.TransactionDataType;
 	walletName?: string;
 };
 
-export const TransactionRowRecipientLabel = ({ type, recipient, walletName }: Props) => {
+export const TransactionRowRecipientLabel = ({ transaction, walletName }: Props) => {
 	// TODO: i18n
 	const transactionLabel: Record<string, string> = {
 		transfer: "Transfer",
@@ -29,13 +29,13 @@ export const TransactionRowRecipientLabel = ({ type, recipient, walletName }: Pr
 		bridgechainUpdate: "Bridgechain Update",
 	};
 
-	if (type === "transfer") {
-		return <Address walletName={walletName} address={recipient} />;
+	if (transaction?.type() === "transfer") {
+		return <Address walletName={walletName} address={transaction?.recipient()} />;
 	}
 
 	return (
 		<span data-testid="TransactionRowRecipientLabel" className="font-semibold text-theme-text">
-			{transactionLabel[type]}
+			{transactionLabel[transaction?.type()]}
 		</span>
 	);
 };

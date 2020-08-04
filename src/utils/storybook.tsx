@@ -79,7 +79,7 @@ export const WalletsDecorator = ({ count, children, withDelegate, withDelegates 
 		}
 
 		if (withDelegates) {
-			setDelegates((await wallets[0].delegates()).data);
+			setDelegates(await wallets[0].delegates());
 		}
 
 		setWallets(wallets);

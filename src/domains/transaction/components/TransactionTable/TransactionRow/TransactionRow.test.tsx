@@ -1,27 +1,15 @@
 import React from "react";
+import { TransactionFixture } from "tests/fixtures/transactions";
 import { fireEvent, renderWithRouter } from "utils/testing-library";
 
-import { Transaction } from "../TransactionTable.models";
 import { TransactionRow } from "./TransactionRow";
-
-const transaction: Transaction = {
-	id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-	confirmations: "10",
-	timestamp: "17 Mar 2020 22:02:10",
-	type: "transfer",
-	sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-	recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-	amount: "100",
-	fee: "21",
-	isSent: true,
-};
 
 describe("TransactionRow", () => {
 	it("should show transaction", () => {
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={transaction} />
+					<TransactionRow transaction={TransactionFixture} />
 				</tbody>
 			</table>,
 		);
@@ -38,7 +26,7 @@ describe("TransactionRow", () => {
 		const { getAllByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={transaction} currencyRate="2" />
+					<TransactionRow transaction={TransactionFixture} currencyRate="2" />
 				</tbody>
 			</table>,
 		);
@@ -47,16 +35,16 @@ describe("TransactionRow", () => {
 	});
 
 	it("should show transaction with signature pending", () => {
-		const transaction2 = {
-			...transaction,
-			type: "transfer",
-			isSignaturePending: true,
-		};
 		const onSign = jest.fn();
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
-					<TransactionRow transaction={transaction2} currencyRate="2" onSign={onSign} />
+					<TransactionRow
+						transaction={TransactionFixture}
+						currencyRate="2"
+						onSign={onSign}
+						isSignaturePending
+					/>
 				</tbody>
 			</table>,
 		);

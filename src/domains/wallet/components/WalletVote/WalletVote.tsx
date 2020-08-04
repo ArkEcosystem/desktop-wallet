@@ -19,7 +19,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const hasNoVotes = !votes || votes.all().length === 0;
+	const hasNoVotes = !votes || votes.items().length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -55,7 +55,7 @@ export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
 							</div>
 						</div>
 					) : (
-						votes?.all().map((delegate) => (
+						votes?.items().map((delegate) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"

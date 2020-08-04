@@ -1,32 +1,96 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { fireEvent, renderWithRouter } from "utils/testing-library";
 
 import { TransactionTable } from "./TransactionTable";
-import { Transaction } from "./TransactionTable.models";
 
-const transactions: Transaction[] = [
+const transactions: Contracts.TransactionDataType[] = [
 	{
-		id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-		confirmations: "10",
-		timestamp: "17 Mar 2020 22:02:10",
-		type: "transfer",
-		sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		amount: "100",
-		fee: "21",
-		vendorField: "Test",
-		isSent: true,
+		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+		type: () => "transfer",
+		timestamp: () => 1596213281,
+		confirmations: () => BigNumber.make(10),
+		votes: () => ["10"],
+		unvotes: () => ["10"],
+		sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		recipients: () => [],
+		amount: () => BigNumber.make(100),
+		fee: () => BigNumber.make(21),
+		memo: () => "Test",
+		asset: () => ({ a: "b" }),
+		isSent: () => true,
+		isReceived: () => false,
+		isTransfer: () => true,
+		isSecondSignature: () => false,
+		isMultiSignature: () => false,
+		isDelegateRegistration: () => false,
+		isDelegateResignation: () => false,
+		isVote: () => false,
+		isUnvote: () => false,
+		isIpfs: () => false,
+		isMultiPayment: () => false,
+		isBusinessRegistration: () => false,
+		isBusinessResignation: () => false,
+		isBusinessUpdate: () => false,
+		isBridgechainRegistration: () => false,
+		isBridgechainResignation: () => false,
+		isBridgechainUpdate: () => false,
+		isEntityRegistration: () => false,
+		isEntityResignation: () => false,
+		isEntityUpdate: () => false,
+		isHtlcLock: () => false,
+		isHtlcClaim: () => false,
+		isHtlcRefund: () => false,
+		toObject: () => ({ a: "b" }),
+		hasPassed: () => true,
+		hasFailed: () => false,
+		getMeta: () => "",
+		setMeta: () => "",
 	},
 	{
-		id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-		confirmations: "100",
-		timestamp: "17 Mar 2020 10:22:05",
-		type: "secondSignature",
-		sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-		amount: "0",
-		fee: "0.1",
-		isSent: true,
+		id: () => "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
+		type: () => "transfer",
+		timestamp: () => 1596213281,
+		confirmations: () => BigNumber.make(5),
+		votes: () => ["10"],
+		unvotes: () => ["10"],
+		sender: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		recipient: () => "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
+		recipients: () => [],
+		amount: () => BigNumber.make(52),
+		fee: () => BigNumber.make(0.2),
+		memo: () => "Test",
+		asset: () => ({ a: "b" }),
+		isSent: () => true,
+		isReceived: () => false,
+		isTransfer: () => true,
+		isSecondSignature: () => true,
+		isMultiSignature: () => true,
+		isDelegateRegistration: () => false,
+		isDelegateResignation: () => false,
+		isVote: () => false,
+		isUnvote: () => false,
+		isIpfs: () => false,
+		isMultiPayment: () => false,
+		isBusinessRegistration: () => false,
+		isBusinessResignation: () => false,
+		isBusinessUpdate: () => false,
+		isBridgechainRegistration: () => false,
+		isBridgechainResignation: () => false,
+		isBridgechainUpdate: () => false,
+		isEntityRegistration: () => false,
+		isEntityResignation: () => false,
+		isEntityUpdate: () => false,
+		isHtlcLock: () => false,
+		isHtlcClaim: () => false,
+		isHtlcRefund: () => false,
+		toObject: () => ({ a: "b" }),
+		hasPassed: () => true,
+		hasFailed: () => false,
+		getMeta: () => "",
+		setMeta: () => "",
 	},
 ];
 
@@ -44,27 +108,9 @@ describe("TransactionTable", () => {
 
 	it("should render with sign", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
-			<TransactionTable
-				transactions={[
-					{
-						id: "ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe",
-						confirmations: "100",
-						timestamp: "17 Mar 2020 10:22:05",
-						type: "transfer",
-						sender: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-						recipient: "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT",
-						amount: "52",
-						fee: "0.2",
-						vendorField: "Test",
-						isSent: true,
-						isMultiSignature: true,
-						isSignaturePending: true,
-					},
-				]}
-				showSignColumn
-			/>,
+			<TransactionTable transactions={transactions} showSignColumn />,
 		);
-		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(1);
+		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(2);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

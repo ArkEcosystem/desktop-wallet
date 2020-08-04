@@ -17,7 +17,11 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => (
 			<div className="flex justify-end flex-1 space-x-3">
 				{data &&
 					data.map((item: BarItem, index: number) => (
-						<div key={index} className="flex items-center justify-end py-4 pl-6 pr-0">
+						<div
+							data-testid="item-percentage"
+							key={index}
+							className="flex items-center justify-end py-4 pl-6 pr-0"
+						>
 							<div
 								className={`mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-${item.color}`}
 							/>

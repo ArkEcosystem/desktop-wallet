@@ -4,7 +4,7 @@ import React from "react";
 import { MemoryRouter, Route } from "react-router";
 import { WalletsDecorator } from "utils/storybook";
 
-import { balances, networks, portfolioPercentages, transactions } from "../../data";
+import { balances, networks, portfolioPercentages } from "../../data";
 import { Dashboard } from "./Dashboard";
 
 export default {
@@ -18,12 +18,7 @@ export const Default = ({ env, profile }: { env: Environment; profile: Profile }
 			<Route
 				path="/profiles/:profileId/dashboard"
 				component={() => (
-					<Dashboard
-						balances={balances}
-						networks={networks}
-						transactions={transactions}
-						portfolioPercentages={portfolioPercentages}
-					/>
+					<Dashboard balances={balances} networks={networks} portfolioPercentages={portfolioPercentages} />
 				)}
 			/>
 		</MemoryRouter>
@@ -36,12 +31,7 @@ export const FewerWallets = ({ env, profile }: { env: Environment; profile: Prof
 			<Route
 				path="/profiles/:profileId/dashboard"
 				component={() => (
-					<Dashboard
-						balances={balances}
-						networks={networks}
-						transactions={transactions}
-						portfolioPercentages={portfolioPercentages}
-					/>
+					<Dashboard balances={balances} networks={networks} portfolioPercentages={portfolioPercentages} />
 				)}
 			/>
 		</MemoryRouter>

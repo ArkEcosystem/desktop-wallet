@@ -64,7 +64,7 @@ export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }
 				<div>{wallet?.balance().toString()}</div>
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<div>{wallet?.fiat().toString()}</div>
+				<div>{wallet?.convertedBalance().toString()}</div>
 			</td>
 			<td>
 				{actions &&
