@@ -8,6 +8,7 @@ import { ProfileMiddleware } from "domains/profile/middleware";
 import { ProfileRoutes } from "domains/profile/routing";
 import { SettingRoutes } from "domains/setting/routing";
 import { TransactionRoutes } from "domains/transaction/routing";
+import { WalletMiddleware } from "domains/wallet/middleware";
 import { WalletRoutes } from "domains/wallet/routing";
 
 import { Middleware } from "./interfaces";
@@ -27,8 +28,4 @@ export const routes: Array<Object> = [
 	...ProfileRoutes,
 ];
 
-export const middlewares: Middleware[] = [
-	new ProfileMiddleware(),
-	// TODO: Enable when the wallet listing from env is implemented
-	// new WalletMiddleware()
-];
+export const middlewares: Middleware[] = [new ProfileMiddleware(), new WalletMiddleware()];
