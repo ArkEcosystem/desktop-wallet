@@ -9,7 +9,7 @@ import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
 import { isIdle } from "utils/electron-utils";
 
-import { RouterView, routes } from "../router";
+import { middlewares, RouterView, routes } from "../router";
 import { EnvironmentProvider, useEnvironmentContext } from "./contexts";
 import { i18n } from "./i18n";
 import { httpClient } from "./services";
@@ -35,7 +35,7 @@ const Main = () => {
 
 	return (
 		<main className={className}>
-			<RouterView routes={routes} />
+			<RouterView routes={routes} middlewares={middlewares} />
 		</main>
 	);
 };
