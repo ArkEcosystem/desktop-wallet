@@ -30,7 +30,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave }: UpdateWa
 			onClose={onClose}
 		>
 			<Form context={methods} onSubmit={onSave} className="mt-8">
-				<FormField name="UpdateWalletName__input">
+				<FormField name="name">
 					<FormLabel>{t("WALLETS.MODAL_NAME_WALLET.FIELD_NAME")}</FormLabel>
 					<Input
 						data-testid="UpdateWalletName__input"

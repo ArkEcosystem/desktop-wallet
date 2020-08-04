@@ -1,3 +1,4 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -8,24 +9,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {
-	delegates: {
-		username: string;
-		address: string;
-		rank: number;
-		isActive?: boolean;
-		explorerUrl?: string;
-		msqUrl?: string;
-	}[];
+	votes?: Coins.WalletDataCollection;
 	onUnvote?: (address: string) => void;
 	defaultIsOpen?: boolean;
 };
 
-export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
+// TODO: Delegate Explorer URL
+export const WalletVote = ({ votes, onUnvote, defaultIsOpen }: Props) => {
+	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
-	const { t } = useTranslation();
-
-	const hasNoVotes = !delegates || delegates.length === 0;
+	const hasNoVotes = !votes || votes.all().length === 0;
 
 	return (
 		<section data-testid="WalletVote">
@@ -61,24 +55,24 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 							</div>
 						</div>
 					) : (
-						delegates.map(({ address, username, rank, isActive, explorerUrl, msqUrl }) => (
+						votes?.all().map((delegate) => (
 							<div
 								data-testid="WalletVote__delegate"
 								className="flex items-center justify-between"
-								key={address}
+								key={delegate.address()}
 							>
 								<div className="flex items-center space-x-4">
 									<div className="flex items-center -space-x-2">
 										<Circle size="lg" className="border-theme-neutral-900 text-theme-neutral-900">
 											<Icon name="Voted" />
 										</Circle>
-										<Avatar size="lg" address={address} />
+										<Avatar size="lg" address={delegate.address()} />
 									</div>
 									<div className="flex flex-col justify-between">
 										<span className="text-sm font-semibold text-theme-neutral">
 											{t("COMMON.DELEGATE")}
 										</span>
-										<Address walletName={username} address={address} />
+										<Address walletName={delegate.username()} address={delegate.address()} />
 									</div>
 								</div>
 
@@ -92,49 +86,47 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 												data-testid="WalletVote__delegate__rank"
 												className="font-bold text-theme-neutral-dark"
 											>
-												#{rank}
+												#{delegate.rank()}
 											</span>
 										</li>
 
-										{explorerUrl && (
-											<li className="flex flex-col items-center justify-between px-10">
-												<span className="text-sm font-semibold text-theme-neutral">
-													{t("COMMON.EXPLORER")}
-												</span>
-												<a
-													data-testid="WalletVote__delegate__explorer"
-													href={explorerUrl}
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<Icon name="Explorer" className="text-2xl text-theme-primary" />
-												</a>
-											</li>
-										)}
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.EXPLORER")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__explorer"
+												href="https://explorer.ark.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Explorer" className="text-2xl text-theme-primary" />
+											</a>
+										</li>
 
-										{msqUrl && (
-											<li className="flex flex-col items-center justify-between px-10">
-												<span className="text-sm font-semibold text-theme-neutral">
-													{t("COMMON.MARKETSQUARE")}
-												</span>
-												<a
-													data-testid="WalletVote__delegate__msq"
-													href={msqUrl}
-													target="_blank"
-													rel="noopener noreferrer"
-												>
-													<Icon name="Link" className="text-xl text-theme-primary" />
-												</a>
-											</li>
-										)}
+										<li className="flex flex-col items-center justify-between px-10">
+											<span className="text-sm font-semibold text-theme-neutral">
+												{t("COMMON.MARKETSQUARE")}
+											</span>
+											<a
+												data-testid="WalletVote__delegate__msq"
+												href="https://marketsquare.io"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<Icon name="Link" className="text-xl text-theme-primary" />
+											</a>
+										</li>
 
 										<li className="flex flex-col items-center justify-between px-10">
 											<span className="text-sm font-semibold text-theme-neutral">
 												{t("COMMON.STATUS")}
 											</span>
 											<Icon
-												name={isActive ? "Ok" : "StatusClock"}
-												className={isActive ? "text-theme-success" : "text-theme-neutral"}
+												name={delegate.rank() ? "Ok" : "StatusClock"}
+												className={
+													delegate.rank() ? "text-theme-success" : "text-theme-neutral"
+												}
 											/>
 										</li>
 									</ul>
@@ -142,7 +134,7 @@ export const WalletVote = ({ delegates, onUnvote, defaultIsOpen }: Props) => {
 									<Button
 										data-testid="WalletVote__delegate__unvote"
 										variant="plain"
-										onClick={() => onUnvote?.(address)}
+										onClick={() => onUnvote?.(delegate.address())}
 									>
 										{t("COMMON.UNVOTE")}
 									</Button>

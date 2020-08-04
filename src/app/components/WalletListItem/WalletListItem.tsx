@@ -1,3 +1,5 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
+import { upperFirst } from "@arkecosystem/utils";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -8,66 +10,61 @@ import React from "react";
 import { Dropdown } from "../Dropdown";
 
 export type WalletListItemProps = {
-	coinIcon: string;
+	wallet: Wallet;
 	coinClass?: string;
-	address?: string;
-	walletName?: string;
-	balance?: string;
-	fiat?: string;
-	walletTypeIcons?: any[] | null;
 	actions?: any[];
 	variant?: "singleAction";
 	onAction?: any;
 };
 
-export const WalletListItem = ({
-	coinIcon,
-	coinClass,
-	address,
-	walletName,
-	balance,
-	fiat,
-	walletTypeIcons,
-	actions,
-	variant,
-	onAction,
-}: WalletListItemProps) => {
-	const getIconTypeClass = (icon: string) => {
-		if (icon === "Star") return "text-theme-warning-400";
-		return "text-theme-neutral-600";
-	};
-
+export const WalletListItem = ({ wallet, coinClass, actions, variant, onAction }: WalletListItemProps) => {
 	const onDropdownAction = (action: any) => {
 		if (typeof onAction === "function") onAction(action);
 	};
+
+	const coinName = wallet?.coin().manifest().get<string>("name");
+	const hasTypeIcons =
+		wallet?.isLedger() || wallet?.isStarred() || (wallet?.hasSyncedWithNetwork() && wallet?.isMultiSignature());
 
 	return (
 		<tr className="border-b border-theme-neutral-200">
 			<td className="py-6 mt-1">
 				<div className="flex">
 					<Circle className={coinClass} size="lg">
-						<Icon name={coinIcon} width={20} height={20} />
+						{coinName && <Icon name={upperFirst(coinName.toLowerCase())} width={20} height={20} />}
 					</Circle>
-					<Avatar size="lg" address={address as string} />
+					<Avatar size="lg" address={wallet?.address()} />
 				</div>
 			</td>
 			<td className="py-1">
-				<Address walletName={walletName} address={address} maxChars={22} />
+				<Address walletName={wallet?.alias()} address={wallet?.address()} maxChars={22} />
 			</td>
-			{walletTypeIcons && (
+			{hasTypeIcons && (
 				<td className="py-1 text-sm font-bold text-center space-x-2">
-					{walletTypeIcons.map((type: string, index: number) => (
-						<div key={index} className={`inline-block align-middle ${getIconTypeClass(type)}`}>
-							<Icon name={type} width={16} height={16} />
+					{wallet?.isLedger() && (
+						<div className="inline-block align-middle text-theme-neutral-600">
+							<Icon name="Ledger" width={16} height={16} />
 						</div>
-					))}
+					)}
+
+					{wallet?.isMultiSignature() && (
+						<div className="inline-block align-middle text-theme-neutral-600">
+							<Icon name="Multisig" width={16} height={16} />
+						</div>
+					)}
+
+					{wallet?.isStarred() && (
+						<div className="inline-block align-middle text-theme-warning-400">
+							<Icon name="Star" width={16} height={16} />
+						</div>
+					)}
 				</td>
 			)}
 			<td className="font-semibold text-right">
-				<div>{balance}</div>
+				<div>{wallet?.balance().toString()}</div>
 			</td>
 			<td className="text-right text-theme-neutral-light">
-				<div>{fiat}</div>
+				<div>{wallet?.fiat().toString()}</div>
 			</td>
 			<td>
 				{actions &&
@@ -95,7 +92,6 @@ export const WalletListItem = ({
 };
 
 WalletListItem.defaultProps = {
-	walletTypeIcons: [],
 	actions: [],
 	address: "",
 };

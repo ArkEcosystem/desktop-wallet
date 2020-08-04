@@ -149,17 +149,18 @@ describe("AddRecipient", () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 		const firstAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
 
-		const addedRecipientBtn1 = getByTestId("add-recipient__add-btn");
 		act(() => {
-			fireEvent.click(addedRecipientBtn1);
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
 		});
+
+		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(1));
 
 		// 2nd recipient
 
@@ -168,16 +169,17 @@ describe("AddRecipient", () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-contact"));
 		});
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 		const secondAddress = getAllByTestId("ContactListItem__one-option-button-0")[0];
 		act(() => {
 			fireEvent.click(secondAddress);
 		});
 
-		waitFor(() => {
-			const addedRecipients = getAllByTestId("recipient-list__recipient-list-item");
-			expect(addedRecipients).toHaveLength(2);
+		act(() => {
+			fireEvent.click(getByTestId("add-recipient__add-btn"));
 		});
+
+		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(2));
 	});
 
 	it("should add and remove recipient", async () => {

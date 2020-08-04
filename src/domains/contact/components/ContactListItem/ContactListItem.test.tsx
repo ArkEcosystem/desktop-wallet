@@ -10,12 +10,11 @@ const singleOption = [{ label: "Option 1", value: "option_1" }];
 const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }];
 
 let contact: Contact;
-let addressId: string;
 
 describe("ContactListItem", () => {
 	beforeAll(() => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		contact = env.profiles().values()[0].contacts().values()[0];
+		contact = profile.contacts().values()[0];
 	});
 
 	it("should render", () => {

@@ -10,23 +10,23 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-import { balances, portfolioPercentages, transactions, wallets } from "../../data";
+import { balances, portfolioPercentages, transactions } from "../../data";
 
 type DashboardProps = {
 	balances?: any;
 	transactions?: any;
-	wallets?: any;
 	networks?: any;
 	portfolioPercentages?: any[];
 };
 
-export const Dashboard = ({ transactions, wallets, networks, portfolioPercentages, balances }: DashboardProps) => {
+export const Dashboard = ({ transactions, networks, portfolioPercentages, balances }: DashboardProps) => {
 	const [showTransactions, setShowTransactions] = useState(true);
 	const [showPortfolio, setShowPortfolio] = useState(true);
 
 	const activeProfile = useActiveProfile();
-	const history = useHistory();
+	const wallets = React.useMemo(() => activeProfile!.wallets().values(), [activeProfile]);
 
+	const history = useHistory();
 	const { t } = useTranslation();
 
 	React.useEffect(() => {
@@ -97,5 +97,4 @@ Dashboard.defaultProps = {
 	balances,
 	portfolioPercentages,
 	transactions,
-	wallets,
 };

@@ -1,3 +1,4 @@
+import { Wallet } from "@arkecosystem/platform-sdk-profiles";
 import { SearchBarFilters } from "app/components/SearchBar/SearchBarFilters";
 import { SearchResource } from "app/components/SearchResource";
 import { Table } from "app/components/Table";
@@ -7,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 type SearchWalletProps = {
 	isOpen: boolean;
-	wallets?: any;
+	wallets?: Wallet[];
 	networks?: any;
 	onNetworkChange?: any;
 	onViewAllNetworks?: any;
@@ -66,8 +67,8 @@ export const SearchWallet = ({
 			onClose={onClose}
 			onSearch={onSearch}
 		>
-			<Table columns={listColumns} data={wallets}>
-				{(rowData: any) => <WalletListItem variant="singleAction" {...rowData} />}
+			<Table columns={listColumns} data={wallets?.map((wallet) => ({ wallet }))}>
+				{(rowData: any) => <WalletListItem variant="singleAction" wallet={rowData.wallet} />}
 			</Table>
 		</SearchResource>
 	);
