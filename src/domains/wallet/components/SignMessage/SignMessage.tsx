@@ -42,6 +42,15 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 	const { register } = form;
 	const messageRef = createRef();
 
+	const handleClose = () => {
+		if (isSigned) {
+			setSignedMessage(INITIAL_STATE);
+			setIsSigned(false);
+		}
+
+		onClose?.();
+	};
+
 	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
@@ -53,15 +62,6 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 		setSignedMessage(signedMessageResult);
 		setIsSigned(true);
-	};
-
-	const handleClose = () => {
-		if (isSigned) {
-			setSignedMessage(INITIAL_STATE);
-			setIsSigned(false);
-		}
-
-		onClose?.();
 	};
 
 	const SignFormRender = (
