@@ -91,7 +91,7 @@ export const WalletDetails = () => {
 	};
 
 	const handleUpdateName = async ({ name }: any) => {
-		activeWallet?.settings().set(WalletSetting.Alias, name);
+		activeWallet.settings().set(WalletSetting.Alias, name);
 		await persist();
 		setIsUpdateWalletName(false);
 	};
@@ -120,14 +120,14 @@ export const WalletDetails = () => {
 				<WalletHeader
 					coin={coinName!}
 					network={networkName}
-					address={activeWallet?.address()}
-					publicKey={activeWallet?.publicKey()}
-					balance={activeWallet?.balance().toString()}
-					currencyBalance={activeWallet?.convertedBalance().toString()}
-					name={activeWallet?.alias()}
-					isLedger={activeWallet?.isLedger()}
-					isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
-					hasStarred={activeWallet?.isStarred()}
+					address={activeWallet.address()}
+					publicKey={activeWallet.publicKey()}
+					balance={activeWallet.balance().toString()}
+					currencyBalance={activeWallet.convertedBalance().toString()}
+					name={activeWallet.alias()}
+					isLedger={activeWallet.isLedger()}
+					isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
+					hasStarred={activeWallet.isStarred()}
 					onSend={() => history.push(`/profiles/${activeProfile.id()}/transactions/transfer`)}
 					onUpdateWalletName={() => setIsUpdateWalletName(true)}
 					onVerifyMessage={() => setIsVerifyingMessage(true)}
@@ -140,18 +140,16 @@ export const WalletDetails = () => {
 				<Section>
 					{walletData && (
 						<WalletRegistrations
-							address={activeWallet?.address()}
+							address={activeWallet.address()}
 							delegate={
-								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isDelegate()
+								activeWallet.hasSyncedWithNetwork() && activeWallet.isDelegate()
 									? walletData
 									: undefined
 							}
 							business={undefined}
-							isMultisig={activeWallet?.hasSyncedWithNetwork() && activeWallet?.isMultiSignature()}
+							isMultisig={activeWallet.hasSyncedWithNetwork() && activeWallet.isMultiSignature()}
 							hasBridgechains={true}
-							hasSecondSignature={
-								activeWallet?.hasSyncedWithNetwork() && activeWallet?.isSecondSignature()
-							}
+							hasSecondSignature={activeWallet.hasSyncedWithNetwork() && activeWallet.isSecondSignature()}
 							hasPlugins={true}
 							onShowAll={() => history.push(`/profiles/${activeProfile.id()}/registrations`)}
 							onRegister={() => history.push(`/profiles/${activeProfile.id()}/transactions/registration`)}
