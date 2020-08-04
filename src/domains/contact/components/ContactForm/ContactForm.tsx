@@ -71,11 +71,13 @@ type ContactFormProps = {
 	contact?: Contact;
 	networks: NetworkData[];
 	onCancel?: any;
+	onChange?: any;
 	onDelete?: any;
 	onSave: any;
+	errors?: any;
 };
 
-export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: ContactFormProps) => {
+export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
 	const nameMaxLength = 42;
 
 	const [addresses, setAddresses] = useState(() =>
@@ -100,6 +102,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 	useEffect(() => {
 		register({ name: "network" });
 	}, [register]);
+
+	useEffect(() => {
+		for (const [field, message] of Object.entries(errors)) {
+			form.setError(field, message as string);
+		}
+	}, [errors]);
 
 	const handleAddAddress = () => {
 		setAddresses(
@@ -154,9 +162,10 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 							value: nameMaxLength,
 						},
 					})}
+					onChange={() => onChange?.("name", name)}
 					defaultValue={contact?.name?.()}
 				/>
-				<FormHelperText />
+				<FormHelperText errorMessage={errors?.name} />
 			</FormField>
 
 			<SubForm>
@@ -173,8 +182,12 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 				<FormField name="address">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
-					<Input data-testid="contact-form__address-input" ref={form.register({})} />
-					<FormHelperText />
+					<Input
+						data-testid="contact-form__address-input"
+						ref={form.register({})}
+						onChange={() => onChange?.("address", address)}
+					/>
+					<FormHelperText errorMessage={errors?.address} />
 				</FormField>
 
 				<div className="mt-4">
@@ -221,4 +234,5 @@ export const ContactForm = ({ contact, networks, onCancel, onDelete, onSave }: C
 
 ContactForm.defaultProps = {
 	networks: [],
+	errors: {},
 };
