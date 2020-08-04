@@ -25,13 +25,15 @@ type SignMessageProps = {
 
 type SignedMessageProps = { message: string; signatory: string; signature: string };
 
+const INITIAL_STATE = {
+	message: "",
+	signatory: "",
+	signature: "",
+};
+
 export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onClose, onCancel }: SignMessageProps) => {
 	const [isSigned, setIsSigned] = useState(false);
-	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>({
-		message: "",
-		signatory: "",
-		signature: "",
-	});
+	const [signedMessage, setSignedMessage] = useState<SignedMessageProps>(INITIAL_STATE);
 
 	const { env } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });
@@ -51,6 +53,15 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 
 		setSignedMessage(signedMessageResult);
 		setIsSigned(true);
+	};
+
+	const handleClose = () => {
+		if (isSigned) {
+			setSignedMessage(INITIAL_STATE);
+			setIsSigned(false);
+		}
+
+		onClose?.();
 	};
 
 	const SignFormRender = (
@@ -150,7 +161,7 @@ export const SignMessage = ({ profileId, walletId, signatoryAddress, isOpen, onC
 			isOpen={isOpen}
 			title={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.TITLE") : t("WALLETS.MODAL_SIGN_MESSAGE.SUCCESS_TITLE")}
 			description={!isSigned ? t("WALLETS.MODAL_SIGN_MESSAGE.DESCRIPTION") : ""}
-			onClose={onClose}
+			onClose={handleClose}
 		>
 			<div className={!isSigned ? "mt-8" : "mt-2"}>{renderSignedMessageContent()}</div>
 		</Modal>
