@@ -179,7 +179,7 @@ export const WalletDetails = () => {
 			)}
 
 			<UpdateWalletName
-				name={wallet?.walletName}
+				name={activeWallet?.settings().get(WalletSetting.Alias)}
 				isOpen={isUpdateWalletName}
 				onClose={() => setIsUpdateWalletName(false)}
 				onCancel={() => setIsUpdateWalletName(false)}
