@@ -62,7 +62,7 @@ export const WalletDetails = ({ wallet, wallets }: Props) => {
 	const crumbs = [
 		{
 			route: dashboardRoute,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
