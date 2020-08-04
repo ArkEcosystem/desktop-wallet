@@ -2,7 +2,7 @@ import { NetworkData, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type CreateContactProps = {
@@ -19,6 +19,8 @@ export const CreateContact = ({ isOpen, networks, profile, onClose, onCancel, on
 	const [errors, setErrors] = useState<any>({});
 
 	const { persist } = useEnvironmentContext();
+
+	useEffect(() => setErrors({}), [isOpen]);
 
 	const formatError = (errorMessage: string, name: string) => {
 		switch (true) {
