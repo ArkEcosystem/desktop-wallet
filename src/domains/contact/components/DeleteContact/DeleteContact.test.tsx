@@ -41,7 +41,7 @@ describe("DeleteContact", () => {
 
 	it("should delete contact", async () => {
 		const { getByTestId } = renderWithRouter(
-			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contactId={contact.id()} />,
+			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contact={contact} />,
 		);
 		const deleteBtn = getByTestId("DeleteResource__submit-button");
 
@@ -51,16 +51,5 @@ describe("DeleteContact", () => {
 
 		await waitFor(() => expect(onDelete).toBeCalled());
 		expect(() => profile.contacts().findById(contact.id())).toThrowError("Failed to find");
-	});
-
-	it("should not emit onDelete if contactId is not provided", () => {
-		const { getByTestId } = renderWithRouter(<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} />);
-		const deleteBtn = getByTestId("DeleteResource__submit-button");
-
-		act(() => {
-			fireEvent.click(deleteBtn);
-		});
-
-		expect(onDelete).not.toBeCalled();
 	});
 });

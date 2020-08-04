@@ -36,7 +36,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 	const crumbs = [
 		{
 			route: `/profiles/${activeProfile?.id()}/dashboard`,
-			label: "Go back to Portfolio",
+			label: t("COMMON.GO_BACK_TO_PORTFOLIO"),
 		},
 	];
 
@@ -59,7 +59,7 @@ export const Votes = ({ networks, addressList, delegateList }: VotesProps) => {
 			</Section>
 
 			<div className="container mx-auto px-14">
-				<div className="-my-5 grid grid-cols-2 grid-flow-col gap-6">
+				<div className="-my-5 grid grid-flow-col grid-cols-2 gap-6">
 					<TransactionDetail border={false} label={t("COMMON.NETWORK")}>
 						<SelectNetwork
 							networks={networks}

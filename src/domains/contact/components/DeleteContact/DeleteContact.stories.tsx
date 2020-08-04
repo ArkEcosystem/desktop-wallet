@@ -21,6 +21,7 @@ export const Default = () => {
 	return (
 		<EnvironmentProvider env={env}>
 			<DeleteContact
+				contact={contact}
 				profile={profile}
 				isOpen={boolean("isOpen", true)}
 				onClose={() => alert("closed")}

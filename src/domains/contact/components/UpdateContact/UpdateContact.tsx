@@ -8,12 +8,12 @@ import { useTranslation } from "react-i18next";
 type UpdateContactProps = {
 	isOpen: boolean;
 	contact: Contact;
+	profile: Profile;
 	networks: NetworkData[];
-	onClose?: any;
 	onCancel?: any;
+	onClose?: any;
 	onDelete?: any;
 	onSave?: any;
-	profile: Profile;
 };
 
 export const UpdateContact = ({
@@ -29,21 +29,14 @@ export const UpdateContact = ({
 	const { t } = useTranslation();
 	const { persist } = useEnvironmentContext();
 
-	const contactId = contact.id();
-
 	const handleSave = async ({ name, addresses }: any) => {
-		await profile.contacts().update(contactId, {
+		await profile.contacts().update(contact.id(), {
 			name,
 			addresses,
 		});
 		await persist();
-		onSave?.(contact.id());
-	};
 
-	const handleDelete = async () => {
-		profile.contacts().forget(contactId);
-		await persist();
-		onDelete?.(contactId);
+		onSave?.(contact.id());
 	};
 
 	return (
@@ -53,7 +46,7 @@ export const UpdateContact = ({
 					contact={contact}
 					networks={networks}
 					onCancel={() => onCancel?.()}
-					onDelete={handleDelete}
+					onDelete={onDelete}
 					onSave={handleSave}
 				/>
 			</div>

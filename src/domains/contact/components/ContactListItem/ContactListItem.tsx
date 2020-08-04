@@ -83,17 +83,19 @@ export const ContactListItem = ({ contact, variant, onAction, options }: Contact
 						)}
 						<td className="border-b border-dashed border-theme-neutral-200">
 							{index === 0 && options && options.length > 1 && (
-								<Dropdown
-									toggleContent={
-										<div className="float-right">
-											<Button variant="plain" size="icon">
-												<Icon name="Settings" width={20} height={20} />
-											</Button>
-										</div>
-									}
-									options={options}
-									onSelect={(action: Option) => onAction?.(action, address)}
-								/>
+								<div className="flex justify-end">
+									<Dropdown
+										toggleContent={
+											<div className="float-right">
+												<Button variant="plain" size="icon">
+													<Icon name="Settings" width={20} height={20} />
+												</Button>
+											</div>
+										}
+										options={options}
+										onSelect={(action: Option) => onAction?.(action, address)}
+									/>
+								</div>
 							)}
 
 							{index === 0 && options && options.length === 1 && (
