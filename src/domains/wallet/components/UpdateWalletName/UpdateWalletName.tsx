@@ -3,7 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import React from "react";
+import React, { useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -19,18 +19,16 @@ const { NameWalletBanner } = images.wallet.components.updateWalletName;
 
 export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: UpdateWalletNameProps) => {
 	const methods = useForm({ mode: "onChange", defaultValues: { name } });
+	const formValues = methods.watch();
 
 	const { t } = useTranslation();
 	const nameMaxLength = 42;
 
+	const isNameValid = useMemo(() => !!formValues.name?.trim() && !methods.errors?.name, [formValues]);
+
 	const handleSubmit = ({ name }: any) => {
 		const formattedName = name.substring(0, nameMaxLength);
 		onSave?.({ name: formattedName });
-	};
-
-	const isNameValid = () => {
-		const { name } = methods.getValues();
-		return !!name && !methods.errors?.name;
 	};
 
 	return (
@@ -66,7 +64,7 @@ export const UpdateWalletName = ({ isOpen, onClose, onCancel, onSave, name }: Up
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!isNameValid()}>
+					<Button type="submit" data-testid="UpdateWalletName__submit" disabled={!isNameValid}>
 						{t("COMMON.SAVE")}
 					</Button>
 				</div>
