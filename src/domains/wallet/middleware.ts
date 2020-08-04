@@ -8,15 +8,17 @@ export class WalletMiddleware implements Middleware {
 		});
 
 		if (match) {
+			const { profileId, walletId } = match.params;
+
+			if (["create", "import"].includes(walletId)) {
+				return true;
+			}
+
 			try {
-				const wallet = env
-					.profiles()
-					.findById(match.params.profileId)
-					.wallets()
-					.findById(match.params.walletId);
+				const wallet = env.profiles().findById(profileId).wallets().findById(walletId);
 				return !!wallet;
 			} catch {
-				redirect(`/profiles/${match.params.profileId}/dashboard`);
+				redirect(`/profiles/${profileId}/dashboard`);
 				return false;
 			}
 		}
