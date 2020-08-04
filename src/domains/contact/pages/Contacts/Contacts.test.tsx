@@ -244,7 +244,7 @@ describe("Contacts", () => {
 			});
 		});
 
-		it("ignore random contact item action", async () => {
+		it("should prompt for contact deletion from update modal", async () => {
 			const { getByTestId } = rendered;
 
 			expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
@@ -267,13 +267,21 @@ describe("Contacts", () => {
 				expect(getByTestId("dropdown__options")).toBeTruthy();
 			});
 
+			const editOption = getByTestId("dropdown__option--1");
+
 			act(() => {
-				fireEvent.click(getByTestId("dropdown__option--1"));
+				fireEvent.click(editOption);
 			});
 
 			await waitFor(() => {
-				expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+				expect(getByTestId("modal__inner")).toBeTruthy();
 			});
+
+			act(() => {
+				fireEvent.click(getByTestId("contact-form__delete-btn"));
+			});
+
+			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
 		});
 
 		it("should delete contact from modal", async () => {
